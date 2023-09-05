@@ -39,8 +39,8 @@ type ItemListsItemContentTypesItemBaseTypesRequestBuilderGetRequestConfiguration
     // Request query parameters
     QueryParameters *ItemListsItemContentTypesItemBaseTypesRequestBuilderGetQueryParameters
 }
-// ByContentTypeId1String provides operations to manage the baseTypes property of the microsoft.graph.contentType entity.
-func (m *ItemListsItemContentTypesItemBaseTypesRequestBuilder) ByContentTypeId1String(contentTypeId1 string)(*ItemListsItemContentTypesItemBaseTypesContentTypeItemRequestBuilder) {
+// ByContentTypeId1 provides operations to manage the baseTypes property of the microsoft.graph.contentType entity.
+func (m *ItemListsItemContentTypesItemBaseTypesRequestBuilder) ByContentTypeId1(contentTypeId1 string)(*ItemListsItemContentTypesItemBaseTypesContentTypeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *ItemListsItemContentTypesItemBaseTypesRequestBuilder) ToGetRequestInfor
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemListsItemContentTypesItemBaseTypesRequestBuilder) WithUrl(rawUrl string)(*ItemListsItemContentTypesItemBaseTypesRequestBuilder) {
+    return NewItemListsItemContentTypesItemBaseTypesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

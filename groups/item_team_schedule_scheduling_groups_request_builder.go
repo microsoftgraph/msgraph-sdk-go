@@ -44,8 +44,8 @@ type ItemTeamScheduleSchedulingGroupsRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySchedulingGroupIdString provides operations to manage the schedulingGroups property of the microsoft.graph.schedule entity.
-func (m *ItemTeamScheduleSchedulingGroupsRequestBuilder) BySchedulingGroupIdString(schedulingGroupId string)(*ItemTeamScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) {
+// BySchedulingGroupId provides operations to manage the schedulingGroups property of the microsoft.graph.schedule entity.
+func (m *ItemTeamScheduleSchedulingGroupsRequestBuilder) BySchedulingGroupId(schedulingGroupId string)(*ItemTeamScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -148,4 +148,8 @@ func (m *ItemTeamScheduleSchedulingGroupsRequestBuilder) ToPostRequestInformatio
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamScheduleSchedulingGroupsRequestBuilder) WithUrl(rawUrl string)(*ItemTeamScheduleSchedulingGroupsRequestBuilder) {
+    return NewItemTeamScheduleSchedulingGroupsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

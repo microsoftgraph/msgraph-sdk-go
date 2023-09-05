@@ -92,3 +92,6 @@ func SerializeServiceRole(values []ServiceRole) []string {
     }
     return result
 }
+func (i ServiceRole) isMultiValue() bool {
+    return false
+}

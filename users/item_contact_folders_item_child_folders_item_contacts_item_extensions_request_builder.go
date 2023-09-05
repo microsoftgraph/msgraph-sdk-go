@@ -44,8 +44,8 @@ type ItemContactFoldersItemChildFoldersItemContactsItemExtensionsRequestBuilderP
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByExtensionIdString provides operations to manage the extensions property of the microsoft.graph.contact entity.
-func (m *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsRequestBuilder) ByExtensionIdString(extensionId string)(*ItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionItemRequestBuilder) {
+// ByExtensionId provides operations to manage the extensions property of the microsoft.graph.contact entity.
+func (m *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsRequestBuilder) ByExtensionId(extensionId string)(*ItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -142,4 +142,8 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsRequestBuil
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsRequestBuilder) WithUrl(rawUrl string)(*ItemContactFoldersItemChildFoldersItemContactsItemExtensionsRequestBuilder) {
+    return NewItemContactFoldersItemChildFoldersItemContactsItemExtensionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

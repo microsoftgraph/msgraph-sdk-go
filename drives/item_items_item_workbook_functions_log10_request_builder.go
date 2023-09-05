@@ -67,3 +67,7 @@ func (m *ItemItemsItemWorkbookFunctionsLog10RequestBuilder) ToPostRequestInforma
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemWorkbookFunctionsLog10RequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookFunctionsLog10RequestBuilder) {
+    return NewItemItemsItemWorkbookFunctionsLog10RequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

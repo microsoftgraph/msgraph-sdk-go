@@ -74,3 +74,6 @@ func SerializeDeviceEnrollmentFailureReason(values []DeviceEnrollmentFailureReas
     }
     return result
 }
+func (i DeviceEnrollmentFailureReason) isMultiValue() bool {
+    return false
+}

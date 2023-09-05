@@ -46,8 +46,8 @@ type ServiceAnnouncementIssuesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByServiceHealthIssueIdString provides operations to manage the issues property of the microsoft.graph.serviceAnnouncement entity.
-func (m *ServiceAnnouncementIssuesRequestBuilder) ByServiceHealthIssueIdString(serviceHealthIssueId string)(*ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) {
+// ByServiceHealthIssueId provides operations to manage the issues property of the microsoft.graph.serviceAnnouncement entity.
+func (m *ServiceAnnouncementIssuesRequestBuilder) ByServiceHealthIssueId(serviceHealthIssueId string)(*ServiceAnnouncementIssuesServiceHealthIssueItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ServiceAnnouncementIssuesRequestBuilder) ToPostRequestInformation(ctx c
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ServiceAnnouncementIssuesRequestBuilder) WithUrl(rawUrl string)(*ServiceAnnouncementIssuesRequestBuilder) {
+    return NewServiceAnnouncementIssuesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

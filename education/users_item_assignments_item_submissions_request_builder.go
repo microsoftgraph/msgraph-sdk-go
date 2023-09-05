@@ -46,8 +46,8 @@ type UsersItemAssignmentsItemSubmissionsRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEducationSubmissionIdString provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
-func (m *UsersItemAssignmentsItemSubmissionsRequestBuilder) ByEducationSubmissionIdString(educationSubmissionId string)(*UsersItemAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) {
+// ByEducationSubmissionId provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
+func (m *UsersItemAssignmentsItemSubmissionsRequestBuilder) ByEducationSubmissionId(educationSubmissionId string)(*UsersItemAssignmentsItemSubmissionsEducationSubmissionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *UsersItemAssignmentsItemSubmissionsRequestBuilder) ToPostRequestInforma
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UsersItemAssignmentsItemSubmissionsRequestBuilder) WithUrl(rawUrl string)(*UsersItemAssignmentsItemSubmissionsRequestBuilder) {
+    return NewUsersItemAssignmentsItemSubmissionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

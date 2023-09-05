@@ -65,3 +65,7 @@ func (m *CallsItemChangeScreenSharingRoleRequestBuilder) ToPostRequestInformatio
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CallsItemChangeScreenSharingRoleRequestBuilder) WithUrl(rawUrl string)(*CallsItemChangeScreenSharingRoleRequestBuilder) {
+    return NewCallsItemChangeScreenSharingRoleRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

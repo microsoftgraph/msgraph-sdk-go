@@ -165,3 +165,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesRequestBuilder) ToPatc
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesRequestBuilder) ValueAxis()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

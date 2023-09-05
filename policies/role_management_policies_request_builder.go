@@ -46,8 +46,8 @@ type RoleManagementPoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUnifiedRoleManagementPolicyIdString provides operations to manage the roleManagementPolicies property of the microsoft.graph.policyRoot entity.
-func (m *RoleManagementPoliciesRequestBuilder) ByUnifiedRoleManagementPolicyIdString(unifiedRoleManagementPolicyId string)(*RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) {
+// ByUnifiedRoleManagementPolicyId provides operations to manage the roleManagementPolicies property of the microsoft.graph.policyRoot entity.
+func (m *RoleManagementPoliciesRequestBuilder) ByUnifiedRoleManagementPolicyId(unifiedRoleManagementPolicyId string)(*RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *RoleManagementPoliciesRequestBuilder) ToPostRequestInformation(ctx cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *RoleManagementPoliciesRequestBuilder) WithUrl(rawUrl string)(*RoleManagementPoliciesRequestBuilder) {
+    return NewRoleManagementPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

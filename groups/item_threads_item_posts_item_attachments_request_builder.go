@@ -44,8 +44,8 @@ type ItemThreadsItemPostsItemAttachmentsRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAttachmentIdString provides operations to manage the attachments property of the microsoft.graph.post entity.
-func (m *ItemThreadsItemPostsItemAttachmentsRequestBuilder) ByAttachmentIdString(attachmentId string)(*ItemThreadsItemPostsItemAttachmentsAttachmentItemRequestBuilder) {
+// ByAttachmentId provides operations to manage the attachments property of the microsoft.graph.post entity.
+func (m *ItemThreadsItemPostsItemAttachmentsRequestBuilder) ByAttachmentId(attachmentId string)(*ItemThreadsItemPostsItemAttachmentsAttachmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -149,4 +149,8 @@ func (m *ItemThreadsItemPostsItemAttachmentsRequestBuilder) ToPostRequestInforma
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemThreadsItemPostsItemAttachmentsRequestBuilder) WithUrl(rawUrl string)(*ItemThreadsItemPostsItemAttachmentsRequestBuilder) {
+    return NewItemThreadsItemPostsItemAttachmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

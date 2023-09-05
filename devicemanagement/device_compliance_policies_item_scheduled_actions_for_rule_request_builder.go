@@ -46,8 +46,8 @@ type DeviceCompliancePoliciesItemScheduledActionsForRuleRequestBuilderPostReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceComplianceScheduledActionForRuleIdString provides operations to manage the scheduledActionsForRule property of the microsoft.graph.deviceCompliancePolicy entity.
-func (m *DeviceCompliancePoliciesItemScheduledActionsForRuleRequestBuilder) ByDeviceComplianceScheduledActionForRuleIdString(deviceComplianceScheduledActionForRuleId string)(*DeviceCompliancePoliciesItemScheduledActionsForRuleDeviceComplianceScheduledActionForRuleItemRequestBuilder) {
+// ByDeviceComplianceScheduledActionForRuleId provides operations to manage the scheduledActionsForRule property of the microsoft.graph.deviceCompliancePolicy entity.
+func (m *DeviceCompliancePoliciesItemScheduledActionsForRuleRequestBuilder) ByDeviceComplianceScheduledActionForRuleId(deviceComplianceScheduledActionForRuleId string)(*DeviceCompliancePoliciesItemScheduledActionsForRuleDeviceComplianceScheduledActionForRuleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *DeviceCompliancePoliciesItemScheduledActionsForRuleRequestBuilder) ToPo
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceCompliancePoliciesItemScheduledActionsForRuleRequestBuilder) WithUrl(rawUrl string)(*DeviceCompliancePoliciesItemScheduledActionsForRuleRequestBuilder) {
+    return NewDeviceCompliancePoliciesItemScheduledActionsForRuleRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

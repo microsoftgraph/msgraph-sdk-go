@@ -47,3 +47,6 @@ func SerializeLobbyBypassScope(values []LobbyBypassScope) []string {
     }
     return result
 }
+func (i LobbyBypassScope) isMultiValue() bool {
+    return false
+}

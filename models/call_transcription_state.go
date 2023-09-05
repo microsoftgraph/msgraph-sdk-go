@@ -38,3 +38,6 @@ func SerializeCallTranscriptionState(values []CallTranscriptionState) []string {
     }
     return result
 }
+func (i CallTranscriptionState) isMultiValue() bool {
+    return false
+}

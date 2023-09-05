@@ -46,8 +46,8 @@ type TeamsAppsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTeamsAppIdString provides operations to manage the teamsApps property of the microsoft.graph.appCatalogs entity.
-func (m *TeamsAppsRequestBuilder) ByTeamsAppIdString(teamsAppId string)(*TeamsAppsTeamsAppItemRequestBuilder) {
+// ByTeamsAppId provides operations to manage the teamsApps property of the microsoft.graph.appCatalogs entity.
+func (m *TeamsAppsRequestBuilder) ByTeamsAppId(teamsAppId string)(*TeamsAppsTeamsAppItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *TeamsAppsRequestBuilder) ToPostRequestInformation(ctx context.Context, 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TeamsAppsRequestBuilder) WithUrl(rawUrl string)(*TeamsAppsRequestBuilder) {
+    return NewTeamsAppsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

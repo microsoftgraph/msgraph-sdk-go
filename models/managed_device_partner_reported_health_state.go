@@ -66,3 +66,6 @@ func SerializeManagedDevicePartnerReportedHealthState(values []ManagedDevicePart
     }
     return result
 }
+func (i ManagedDevicePartnerReportedHealthState) isMultiValue() bool {
+    return false
+}

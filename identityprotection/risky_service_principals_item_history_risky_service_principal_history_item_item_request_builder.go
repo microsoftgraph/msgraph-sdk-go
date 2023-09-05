@@ -153,3 +153,7 @@ func (m *RiskyServicePrincipalsItemHistoryRiskyServicePrincipalHistoryItemItemRe
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *RiskyServicePrincipalsItemHistoryRiskyServicePrincipalHistoryItemItemRequestBuilder) WithUrl(rawUrl string)(*RiskyServicePrincipalsItemHistoryRiskyServicePrincipalHistoryItemItemRequestBuilder) {
+    return NewRiskyServicePrincipalsItemHistoryRiskyServicePrincipalHistoryItemItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -46,3 +46,6 @@ func SerializeUserExperienceAnalyticsHealthState(values []UserExperienceAnalytic
     }
     return result
 }
+func (i UserExperienceAnalyticsHealthState) isMultiValue() bool {
+    return false
+}

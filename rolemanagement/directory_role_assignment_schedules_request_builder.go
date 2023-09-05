@@ -46,8 +46,8 @@ type DirectoryRoleAssignmentSchedulesRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUnifiedRoleAssignmentScheduleIdString provides operations to manage the roleAssignmentSchedules property of the microsoft.graph.rbacApplication entity.
-func (m *DirectoryRoleAssignmentSchedulesRequestBuilder) ByUnifiedRoleAssignmentScheduleIdString(unifiedRoleAssignmentScheduleId string)(*DirectoryRoleAssignmentSchedulesUnifiedRoleAssignmentScheduleItemRequestBuilder) {
+// ByUnifiedRoleAssignmentScheduleId provides operations to manage the roleAssignmentSchedules property of the microsoft.graph.rbacApplication entity.
+func (m *DirectoryRoleAssignmentSchedulesRequestBuilder) ByUnifiedRoleAssignmentScheduleId(unifiedRoleAssignmentScheduleId string)(*DirectoryRoleAssignmentSchedulesUnifiedRoleAssignmentScheduleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -151,4 +151,8 @@ func (m *DirectoryRoleAssignmentSchedulesRequestBuilder) ToPostRequestInformatio
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DirectoryRoleAssignmentSchedulesRequestBuilder) WithUrl(rawUrl string)(*DirectoryRoleAssignmentSchedulesRequestBuilder) {
+    return NewDirectoryRoleAssignmentSchedulesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

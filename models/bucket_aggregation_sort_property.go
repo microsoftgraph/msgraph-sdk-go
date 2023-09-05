@@ -38,3 +38,6 @@ func SerializeBucketAggregationSortProperty(values []BucketAggregationSortProper
     }
     return result
 }
+func (i BucketAggregationSortProperty) isMultiValue() bool {
+    return false
+}

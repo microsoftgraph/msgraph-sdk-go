@@ -39,8 +39,8 @@ type CasesEdiscoveryCasesItemTagsItemChildTagsRequestBuilderGetRequestConfigurat
     // Request query parameters
     QueryParameters *CasesEdiscoveryCasesItemTagsItemChildTagsRequestBuilderGetQueryParameters
 }
-// ByEdiscoveryReviewTagId1String provides operations to manage the childTags property of the microsoft.graph.security.ediscoveryReviewTag entity.
-func (m *CasesEdiscoveryCasesItemTagsItemChildTagsRequestBuilder) ByEdiscoveryReviewTagId1String(ediscoveryReviewTagId1 string)(*CasesEdiscoveryCasesItemTagsItemChildTagsEdiscoveryReviewTagItemRequestBuilder) {
+// ByEdiscoveryReviewTagId1 provides operations to manage the childTags property of the microsoft.graph.security.ediscoveryReviewTag entity.
+func (m *CasesEdiscoveryCasesItemTagsItemChildTagsRequestBuilder) ByEdiscoveryReviewTagId1(ediscoveryReviewTagId1 string)(*CasesEdiscoveryCasesItemTagsItemChildTagsEdiscoveryReviewTagItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *CasesEdiscoveryCasesItemTagsItemChildTagsRequestBuilder) ToGetRequestIn
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CasesEdiscoveryCasesItemTagsItemChildTagsRequestBuilder) WithUrl(rawUrl string)(*CasesEdiscoveryCasesItemTagsItemChildTagsRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemTagsItemChildTagsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

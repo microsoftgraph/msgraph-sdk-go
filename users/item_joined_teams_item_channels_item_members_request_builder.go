@@ -50,8 +50,8 @@ type ItemJoinedTeamsItemChannelsItemMembersRequestBuilderPostRequestConfiguratio
 func (m *ItemJoinedTeamsItemChannelsItemMembersRequestBuilder) Add()(*ItemJoinedTeamsItemChannelsItemMembersAddRequestBuilder) {
     return NewItemJoinedTeamsItemChannelsItemMembersAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByConversationMemberIdString provides operations to manage the members property of the microsoft.graph.channel entity.
-func (m *ItemJoinedTeamsItemChannelsItemMembersRequestBuilder) ByConversationMemberIdString(conversationMemberId string)(*ItemJoinedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilder) {
+// ByConversationMemberId provides operations to manage the members property of the microsoft.graph.channel entity.
+func (m *ItemJoinedTeamsItemChannelsItemMembersRequestBuilder) ByConversationMemberId(conversationMemberId string)(*ItemJoinedTeamsItemChannelsItemMembersConversationMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -154,4 +154,8 @@ func (m *ItemJoinedTeamsItemChannelsItemMembersRequestBuilder) ToPostRequestInfo
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemJoinedTeamsItemChannelsItemMembersRequestBuilder) WithUrl(rawUrl string)(*ItemJoinedTeamsItemChannelsItemMembersRequestBuilder) {
+    return NewItemJoinedTeamsItemChannelsItemMembersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

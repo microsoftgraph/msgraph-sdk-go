@@ -39,8 +39,8 @@ type ItemClaimsMappingPoliciesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemClaimsMappingPoliciesRequestBuilderGetQueryParameters
 }
-// ByClaimsMappingPolicyIdString gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.claimsMappingPolicies.item collection
-func (m *ItemClaimsMappingPoliciesRequestBuilder) ByClaimsMappingPolicyIdString(claimsMappingPolicyId string)(*ItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) {
+// ByClaimsMappingPolicyId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.servicePrincipals.item.claimsMappingPolicies.item collection
+func (m *ItemClaimsMappingPoliciesRequestBuilder) ByClaimsMappingPolicyId(claimsMappingPolicyId string)(*ItemClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -108,4 +108,8 @@ func (m *ItemClaimsMappingPoliciesRequestBuilder) ToGetRequestInformation(ctx co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemClaimsMappingPoliciesRequestBuilder) WithUrl(rawUrl string)(*ItemClaimsMappingPoliciesRequestBuilder) {
+    return NewItemClaimsMappingPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

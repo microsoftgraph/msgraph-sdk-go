@@ -50,3 +50,6 @@ func SerializeSiteSecurityLevel(values []SiteSecurityLevel) []string {
     }
     return result
 }
+func (i SiteSecurityLevel) isMultiValue() bool {
+    return false
+}

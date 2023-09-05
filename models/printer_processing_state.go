@@ -41,3 +41,6 @@ func SerializePrinterProcessingState(values []PrinterProcessingState) []string {
     }
     return result
 }
+func (i PrinterProcessingState) isMultiValue() bool {
+    return false
+}

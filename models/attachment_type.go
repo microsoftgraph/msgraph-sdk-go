@@ -35,3 +35,6 @@ func SerializeAttachmentType(values []AttachmentType) []string {
     }
     return result
 }
+func (i AttachmentType) isMultiValue() bool {
+    return false
+}

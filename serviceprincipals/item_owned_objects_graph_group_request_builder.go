@@ -91,3 +91,7 @@ func (m *ItemOwnedObjectsGraphGroupRequestBuilder) ToGetRequestInformation(ctx c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemOwnedObjectsGraphGroupRequestBuilder) WithUrl(rawUrl string)(*ItemOwnedObjectsGraphGroupRequestBuilder) {
+    return NewItemOwnedObjectsGraphGroupRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

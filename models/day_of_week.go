@@ -47,3 +47,6 @@ func SerializeDayOfWeek(values []DayOfWeek) []string {
     }
     return result
 }
+func (i DayOfWeek) isMultiValue() bool {
+    return false
+}

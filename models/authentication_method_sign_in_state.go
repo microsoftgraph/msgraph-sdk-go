@@ -47,3 +47,6 @@ func SerializeAuthenticationMethodSignInState(values []AuthenticationMethodSignI
     }
     return result
 }
+func (i AuthenticationMethodSignInState) isMultiValue() bool {
+    return false
+}

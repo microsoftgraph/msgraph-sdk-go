@@ -153,3 +153,7 @@ func (m *MonthlyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilder) ToPatc
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MonthlyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilder) WithUrl(rawUrl string)(*MonthlyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilder) {
+    return NewMonthlyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

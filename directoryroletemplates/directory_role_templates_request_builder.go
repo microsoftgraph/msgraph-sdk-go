@@ -44,8 +44,8 @@ type DirectoryRoleTemplatesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDirectoryRoleTemplateIdString provides operations to manage the collection of directoryRoleTemplate entities.
-func (m *DirectoryRoleTemplatesRequestBuilder) ByDirectoryRoleTemplateIdString(directoryRoleTemplateId string)(*DirectoryRoleTemplateItemRequestBuilder) {
+// ByDirectoryRoleTemplateId provides operations to manage the collection of directoryRoleTemplate entities.
+func (m *DirectoryRoleTemplatesRequestBuilder) ByDirectoryRoleTemplateId(directoryRoleTemplateId string)(*DirectoryRoleTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -161,4 +161,8 @@ func (m *DirectoryRoleTemplatesRequestBuilder) ToPostRequestInformation(ctx cont
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *DirectoryRoleTemplatesRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
     return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DirectoryRoleTemplatesRequestBuilder) WithUrl(rawUrl string)(*DirectoryRoleTemplatesRequestBuilder) {
+    return NewDirectoryRoleTemplatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

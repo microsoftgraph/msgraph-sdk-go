@@ -38,3 +38,6 @@ func SerializeWellknownListName(values []WellknownListName) []string {
     }
     return result
 }
+func (i WellknownListName) isMultiValue() bool {
+    return false
+}

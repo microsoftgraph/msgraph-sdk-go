@@ -46,8 +46,8 @@ type MobileThreatDefenseConnectorsRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMobileThreatDefenseConnectorIdString provides operations to manage the mobileThreatDefenseConnectors property of the microsoft.graph.deviceManagement entity.
-func (m *MobileThreatDefenseConnectorsRequestBuilder) ByMobileThreatDefenseConnectorIdString(mobileThreatDefenseConnectorId string)(*MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilder) {
+// ByMobileThreatDefenseConnectorId provides operations to manage the mobileThreatDefenseConnectors property of the microsoft.graph.deviceManagement entity.
+func (m *MobileThreatDefenseConnectorsRequestBuilder) ByMobileThreatDefenseConnectorId(mobileThreatDefenseConnectorId string)(*MobileThreatDefenseConnectorsMobileThreatDefenseConnectorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *MobileThreatDefenseConnectorsRequestBuilder) ToPostRequestInformation(c
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MobileThreatDefenseConnectorsRequestBuilder) WithUrl(rawUrl string)(*MobileThreatDefenseConnectorsRequestBuilder) {
+    return NewMobileThreatDefenseConnectorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

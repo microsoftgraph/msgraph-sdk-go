@@ -46,8 +46,8 @@ type CertificateBasedAuthConfigurationRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCertificateBasedAuthConfigurationIdString provides operations to manage the collection of certificateBasedAuthConfiguration entities.
-func (m *CertificateBasedAuthConfigurationRequestBuilder) ByCertificateBasedAuthConfigurationIdString(certificateBasedAuthConfigurationId string)(*CertificateBasedAuthConfigurationItemRequestBuilder) {
+// ByCertificateBasedAuthConfigurationId provides operations to manage the collection of certificateBasedAuthConfiguration entities.
+func (m *CertificateBasedAuthConfigurationRequestBuilder) ByCertificateBasedAuthConfigurationId(certificateBasedAuthConfigurationId string)(*CertificateBasedAuthConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *CertificateBasedAuthConfigurationRequestBuilder) ToPostRequestInformati
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CertificateBasedAuthConfigurationRequestBuilder) WithUrl(rawUrl string)(*CertificateBasedAuthConfigurationRequestBuilder) {
+    return NewCertificateBasedAuthConfigurationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -35,3 +35,6 @@ func SerializeExternalAudienceScope(values []ExternalAudienceScope) []string {
     }
     return result
 }
+func (i ExternalAudienceScope) isMultiValue() bool {
+    return false
+}

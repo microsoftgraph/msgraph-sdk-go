@@ -38,3 +38,6 @@ func SerializePostType(values []PostType) []string {
     }
     return result
 }
+func (i PostType) isMultiValue() bool {
+    return false
+}

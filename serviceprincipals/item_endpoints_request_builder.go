@@ -46,8 +46,8 @@ type ItemEndpointsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEndpointIdString provides operations to manage the endpoints property of the microsoft.graph.servicePrincipal entity.
-func (m *ItemEndpointsRequestBuilder) ByEndpointIdString(endpointId string)(*ItemEndpointsEndpointItemRequestBuilder) {
+// ByEndpointId provides operations to manage the endpoints property of the microsoft.graph.servicePrincipal entity.
+func (m *ItemEndpointsRequestBuilder) ByEndpointId(endpointId string)(*ItemEndpointsEndpointItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ItemEndpointsRequestBuilder) ToPostRequestInformation(ctx context.Conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemEndpointsRequestBuilder) WithUrl(rawUrl string)(*ItemEndpointsRequestBuilder) {
+    return NewItemEndpointsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

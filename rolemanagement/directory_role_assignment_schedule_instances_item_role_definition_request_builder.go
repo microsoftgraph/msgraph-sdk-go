@@ -75,3 +75,7 @@ func (m *DirectoryRoleAssignmentScheduleInstancesItemRoleDefinitionRequestBuilde
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DirectoryRoleAssignmentScheduleInstancesItemRoleDefinitionRequestBuilder) WithUrl(rawUrl string)(*DirectoryRoleAssignmentScheduleInstancesItemRoleDefinitionRequestBuilder) {
+    return NewDirectoryRoleAssignmentScheduleInstancesItemRoleDefinitionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

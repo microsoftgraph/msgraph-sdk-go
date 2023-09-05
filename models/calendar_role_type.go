@@ -50,3 +50,6 @@ func SerializeCalendarRoleType(values []CalendarRoleType) []string {
     }
     return result
 }
+func (i CalendarRoleType) isMultiValue() bool {
+    return false
+}

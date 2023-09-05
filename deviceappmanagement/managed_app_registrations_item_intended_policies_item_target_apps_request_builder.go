@@ -33,7 +33,7 @@ func NewManagedAppRegistrationsItemIntendedPoliciesItemTargetAppsRequestBuilder(
 // Post not yet documented
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-managedappprotection-targetapps?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-managedapppolicy-targetapps?view=graph-rest-1.0
 func (m *ManagedAppRegistrationsItemIntendedPoliciesItemTargetAppsRequestBuilder) Post(ctx context.Context, body ManagedAppRegistrationsItemIntendedPoliciesItemTargetAppsPostRequestBodyable, requestConfiguration *ManagedAppRegistrationsItemIntendedPoliciesItemTargetAppsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -64,4 +64,8 @@ func (m *ManagedAppRegistrationsItemIntendedPoliciesItemTargetAppsRequestBuilder
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedAppRegistrationsItemIntendedPoliciesItemTargetAppsRequestBuilder) WithUrl(rawUrl string)(*ManagedAppRegistrationsItemIntendedPoliciesItemTargetAppsRequestBuilder) {
+    return NewManagedAppRegistrationsItemIntendedPoliciesItemTargetAppsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

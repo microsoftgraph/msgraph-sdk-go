@@ -39,8 +39,8 @@ type ItemMembersWithLicenseErrorsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemMembersWithLicenseErrorsRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectIdString provides operations to manage the membersWithLicenseErrors property of the microsoft.graph.group entity.
-func (m *ItemMembersWithLicenseErrorsRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectId provides operations to manage the membersWithLicenseErrors property of the microsoft.graph.group entity.
+func (m *ItemMembersWithLicenseErrorsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemMembersWithLicenseErrorsDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -125,4 +125,8 @@ func (m *ItemMembersWithLicenseErrorsRequestBuilder) ToGetRequestInformation(ctx
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemMembersWithLicenseErrorsRequestBuilder) WithUrl(rawUrl string)(*ItemMembersWithLicenseErrorsRequestBuilder) {
+    return NewItemMembersWithLicenseErrorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

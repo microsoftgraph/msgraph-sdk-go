@@ -41,3 +41,6 @@ func SerializeEndpointType(values []EndpointType) []string {
     }
     return result
 }
+func (i EndpointType) isMultiValue() bool {
+    return false
+}

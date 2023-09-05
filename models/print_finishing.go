@@ -86,3 +86,6 @@ func SerializePrintFinishing(values []PrintFinishing) []string {
     }
     return result
 }
+func (i PrintFinishing) isMultiValue() bool {
+    return false
+}

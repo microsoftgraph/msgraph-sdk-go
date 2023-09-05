@@ -46,8 +46,8 @@ type EntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDirectoryObjectIdString gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.connectedOrganizations.item.externalSponsors.item collection
-func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*EntitlementManagementConnectedOrganizationsItemExternalSponsorsDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.identityGovernance.entitlementManagement.connectedOrganizations.item.externalSponsors.item collection
+func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*EntitlementManagementConnectedOrganizationsItemExternalSponsorsDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -170,4 +170,8 @@ func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestB
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestBuilder) ValidateProperties()(*EntitlementManagementConnectedOrganizationsItemExternalSponsorsValidatePropertiesRequestBuilder) {
     return NewEntitlementManagementConnectedOrganizationsItemExternalSponsorsValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestBuilder) {
+    return NewEntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

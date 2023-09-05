@@ -104,3 +104,6 @@ func SerializeCategoryColor(values []CategoryColor) []string {
     }
     return result
 }
+func (i CategoryColor) isMultiValue() bool {
+    return false
+}

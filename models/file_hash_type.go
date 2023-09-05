@@ -50,3 +50,6 @@ func SerializeFileHashType(values []FileHashType) []string {
     }
     return result
 }
+func (i FileHashType) isMultiValue() bool {
+    return false
+}

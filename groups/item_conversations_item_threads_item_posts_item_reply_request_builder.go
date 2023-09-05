@@ -30,10 +30,10 @@ func NewItemConversationsItemThreadsItemPostsItemReplyRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewItemConversationsItemThreadsItemPostsItemReplyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.
+// Post reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
 func (m *ItemConversationsItemThreadsItemPostsItemReplyRequestBuilder) Post(ctx context.Context, body ItemConversationsItemThreadsItemPostsItemReplyPostRequestBodyable, requestConfiguration *ItemConversationsItemThreadsItemPostsItemReplyRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +49,7 @@ func (m *ItemConversationsItemThreadsItemPostsItemReplyRequestBuilder) Post(ctx 
     }
     return nil
 }
-// ToPostRequestInformation create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.
+// ToPostRequestInformation reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
 func (m *ItemConversationsItemThreadsItemPostsItemReplyRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemConversationsItemThreadsItemPostsItemReplyPostRequestBodyable, requestConfiguration *ItemConversationsItemThreadsItemPostsItemReplyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -64,4 +64,8 @@ func (m *ItemConversationsItemThreadsItemPostsItemReplyRequestBuilder) ToPostReq
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemConversationsItemThreadsItemPostsItemReplyRequestBuilder) WithUrl(rawUrl string)(*ItemConversationsItemThreadsItemPostsItemReplyRequestBuilder) {
+    return NewItemConversationsItemThreadsItemPostsItemReplyRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

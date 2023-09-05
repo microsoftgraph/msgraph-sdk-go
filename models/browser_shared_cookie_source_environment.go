@@ -42,3 +42,6 @@ func SerializeBrowserSharedCookieSourceEnvironment(values []BrowserSharedCookieS
     }
     return result
 }
+func (i BrowserSharedCookieSourceEnvironment) isMultiValue() bool {
+    return false
+}

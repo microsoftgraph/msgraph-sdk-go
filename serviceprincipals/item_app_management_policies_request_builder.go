@@ -39,8 +39,8 @@ type ItemAppManagementPoliciesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemAppManagementPoliciesRequestBuilderGetQueryParameters
 }
-// ByAppManagementPolicyIdString provides operations to manage the appManagementPolicies property of the microsoft.graph.servicePrincipal entity.
-func (m *ItemAppManagementPoliciesRequestBuilder) ByAppManagementPolicyIdString(appManagementPolicyId string)(*ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
+// ByAppManagementPolicyId provides operations to manage the appManagementPolicies property of the microsoft.graph.servicePrincipal entity.
+func (m *ItemAppManagementPoliciesRequestBuilder) ByAppManagementPolicyId(appManagementPolicyId string)(*ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *ItemAppManagementPoliciesRequestBuilder) ToGetRequestInformation(ctx co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemAppManagementPoliciesRequestBuilder) WithUrl(rawUrl string)(*ItemAppManagementPoliciesRequestBuilder) {
+    return NewItemAppManagementPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -46,8 +46,8 @@ type ItemMessagesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByChatMessageIdString provides operations to manage the messages property of the microsoft.graph.chat entity.
-func (m *ItemMessagesRequestBuilder) ByChatMessageIdString(chatMessageId string)(*ItemMessagesChatMessageItemRequestBuilder) {
+// ByChatMessageId provides operations to manage the messages property of the microsoft.graph.chat entity.
+func (m *ItemMessagesRequestBuilder) ByChatMessageId(chatMessageId string)(*ItemMessagesChatMessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -154,4 +154,8 @@ func (m *ItemMessagesRequestBuilder) ToPostRequestInformation(ctx context.Contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemMessagesRequestBuilder) WithUrl(rawUrl string)(*ItemMessagesRequestBuilder) {
+    return NewItemMessagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -46,8 +46,8 @@ type ItemAuthenticationTemporaryAccessPassMethodsRequestBuilderPostRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTemporaryAccessPassAuthenticationMethodIdString provides operations to manage the temporaryAccessPassMethods property of the microsoft.graph.authentication entity.
-func (m *ItemAuthenticationTemporaryAccessPassMethodsRequestBuilder) ByTemporaryAccessPassAuthenticationMethodIdString(temporaryAccessPassAuthenticationMethodId string)(*ItemAuthenticationTemporaryAccessPassMethodsTemporaryAccessPassAuthenticationMethodItemRequestBuilder) {
+// ByTemporaryAccessPassAuthenticationMethodId provides operations to manage the temporaryAccessPassMethods property of the microsoft.graph.authentication entity.
+func (m *ItemAuthenticationTemporaryAccessPassMethodsRequestBuilder) ByTemporaryAccessPassAuthenticationMethodId(temporaryAccessPassAuthenticationMethodId string)(*ItemAuthenticationTemporaryAccessPassMethodsTemporaryAccessPassAuthenticationMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemAuthenticationTemporaryAccessPassMethodsRequestBuilder) ToPostReque
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemAuthenticationTemporaryAccessPassMethodsRequestBuilder) WithUrl(rawUrl string)(*ItemAuthenticationTemporaryAccessPassMethodsRequestBuilder) {
+    return NewItemAuthenticationTemporaryAccessPassMethodsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

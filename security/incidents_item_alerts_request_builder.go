@@ -39,8 +39,8 @@ type IncidentsItemAlertsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *IncidentsItemAlertsRequestBuilderGetQueryParameters
 }
-// ByAlertIdString provides operations to manage the alerts property of the microsoft.graph.security.incident entity.
-func (m *IncidentsItemAlertsRequestBuilder) ByAlertIdString(alertId string)(*IncidentsItemAlertsAlertItemRequestBuilder) {
+// ByAlertId provides operations to manage the alerts property of the microsoft.graph.security.incident entity.
+func (m *IncidentsItemAlertsRequestBuilder) ByAlertId(alertId string)(*IncidentsItemAlertsAlertItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *IncidentsItemAlertsRequestBuilder) ToGetRequestInformation(ctx context.
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IncidentsItemAlertsRequestBuilder) WithUrl(rawUrl string)(*IncidentsItemAlertsRequestBuilder) {
+    return NewIncidentsItemAlertsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

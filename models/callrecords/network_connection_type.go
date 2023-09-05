@@ -44,3 +44,6 @@ func SerializeNetworkConnectionType(values []NetworkConnectionType) []string {
     }
     return result
 }
+func (i NetworkConnectionType) isMultiValue() bool {
+    return false
+}

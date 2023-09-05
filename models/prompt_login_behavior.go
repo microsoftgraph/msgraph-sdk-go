@@ -38,3 +38,6 @@ func SerializePromptLoginBehavior(values []PromptLoginBehavior) []string {
     }
     return result
 }
+func (i PromptLoginBehavior) isMultiValue() bool {
+    return false
+}

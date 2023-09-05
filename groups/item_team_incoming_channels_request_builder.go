@@ -39,8 +39,8 @@ type ItemTeamIncomingChannelsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemTeamIncomingChannelsRequestBuilderGetQueryParameters
 }
-// ByChannelIdString provides operations to manage the incomingChannels property of the microsoft.graph.team entity.
-func (m *ItemTeamIncomingChannelsRequestBuilder) ByChannelIdString(channelId string)(*ItemTeamIncomingChannelsChannelItemRequestBuilder) {
+// ByChannelId provides operations to manage the incomingChannels property of the microsoft.graph.team entity.
+func (m *ItemTeamIncomingChannelsRequestBuilder) ByChannelId(channelId string)(*ItemTeamIncomingChannelsChannelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *ItemTeamIncomingChannelsRequestBuilder) ToGetRequestInformation(ctx con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamIncomingChannelsRequestBuilder) WithUrl(rawUrl string)(*ItemTeamIncomingChannelsRequestBuilder) {
+    return NewItemTeamIncomingChannelsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

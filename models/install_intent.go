@@ -42,3 +42,6 @@ func SerializeInstallIntent(values []InstallIntent) []string {
     }
     return result
 }
+func (i InstallIntent) isMultiValue() bool {
+    return false
+}

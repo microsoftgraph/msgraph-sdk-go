@@ -42,8 +42,8 @@ type ItemOutlookMasterCategoriesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByOutlookCategoryIdString provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.
-func (m *ItemOutlookMasterCategoriesRequestBuilder) ByOutlookCategoryIdString(outlookCategoryId string)(*ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) {
+// ByOutlookCategoryId provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.
+func (m *ItemOutlookMasterCategoriesRequestBuilder) ByOutlookCategoryId(outlookCategoryId string)(*ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -146,4 +146,8 @@ func (m *ItemOutlookMasterCategoriesRequestBuilder) ToPostRequestInformation(ctx
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemOutlookMasterCategoriesRequestBuilder) WithUrl(rawUrl string)(*ItemOutlookMasterCategoriesRequestBuilder) {
+    return NewItemOutlookMasterCategoriesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

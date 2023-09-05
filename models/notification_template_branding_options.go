@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
 type NotificationTemplateBrandingOptions int
@@ -23,27 +24,36 @@ const (
 )
 
 func (i NotificationTemplateBrandingOptions) String() string {
-    return []string{"none", "includeCompanyLogo", "includeCompanyName", "includeContactInformation", "includeCompanyPortalLink", "includeDeviceDetails", "unknownFutureValue"}[i]
+    var values []string
+    for p := NotificationTemplateBrandingOptions(1); p <= UNKNOWNFUTUREVALUE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"none", "includeCompanyLogo", "includeCompanyName", "includeContactInformation", "includeCompanyPortalLink", "includeDeviceDetails", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseNotificationTemplateBrandingOptions(v string) (any, error) {
-    result := NONE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
-    switch v {
-        case "none":
-            result = NONE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
-        case "includeCompanyLogo":
-            result = INCLUDECOMPANYLOGO_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
-        case "includeCompanyName":
-            result = INCLUDECOMPANYNAME_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
-        case "includeContactInformation":
-            result = INCLUDECONTACTINFORMATION_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
-        case "includeCompanyPortalLink":
-            result = INCLUDECOMPANYPORTALLINK_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
-        case "includeDeviceDetails":
-            result = INCLUDEDEVICEDETAILS_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
-        default:
-            return 0, errors.New("Unknown NotificationTemplateBrandingOptions value: " + v)
+    var result NotificationTemplateBrandingOptions
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "none":
+                result |= NONE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
+            case "includeCompanyLogo":
+                result |= INCLUDECOMPANYLOGO_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
+            case "includeCompanyName":
+                result |= INCLUDECOMPANYNAME_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
+            case "includeContactInformation":
+                result |= INCLUDECONTACTINFORMATION_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
+            case "includeCompanyPortalLink":
+                result |= INCLUDECOMPANYPORTALLINK_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
+            case "includeDeviceDetails":
+                result |= INCLUDEDEVICEDETAILS_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
+            default:
+                return 0, errors.New("Unknown NotificationTemplateBrandingOptions value: " + v)
+        }
     }
     return &result, nil
 }
@@ -53,4 +63,7 @@ func SerializeNotificationTemplateBrandingOptions(values []NotificationTemplateB
         result[i] = v.String()
     }
     return result
+}
+func (i NotificationTemplateBrandingOptions) isMultiValue() bool {
+    return true
 }

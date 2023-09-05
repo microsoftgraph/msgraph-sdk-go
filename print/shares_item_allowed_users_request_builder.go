@@ -39,8 +39,8 @@ type SharesItemAllowedUsersRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *SharesItemAllowedUsersRequestBuilderGetQueryParameters
 }
-// ByUserIdString gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.shares.item.allowedUsers.item collection
-func (m *SharesItemAllowedUsersRequestBuilder) ByUserIdString(userId string)(*SharesItemAllowedUsersUserItemRequestBuilder) {
+// ByUserId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.shares.item.allowedUsers.item collection
+func (m *SharesItemAllowedUsersRequestBuilder) ByUserId(userId string)(*SharesItemAllowedUsersUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -108,4 +108,8 @@ func (m *SharesItemAllowedUsersRequestBuilder) ToGetRequestInformation(ctx conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SharesItemAllowedUsersRequestBuilder) WithUrl(rawUrl string)(*SharesItemAllowedUsersRequestBuilder) {
+    return NewSharesItemAllowedUsersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

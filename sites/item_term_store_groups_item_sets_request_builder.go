@@ -46,8 +46,8 @@ type ItemTermStoreGroupsItemSetsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySetIdString provides operations to manage the sets property of the microsoft.graph.termStore.group entity.
-func (m *ItemTermStoreGroupsItemSetsRequestBuilder) BySetIdString(setId string)(*ItemTermStoreGroupsItemSetsSetItemRequestBuilder) {
+// BySetId provides operations to manage the sets property of the microsoft.graph.termStore.group entity.
+func (m *ItemTermStoreGroupsItemSetsRequestBuilder) BySetId(setId string)(*ItemTermStoreGroupsItemSetsSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ItemTermStoreGroupsItemSetsRequestBuilder) ToPostRequestInformation(ctx
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTermStoreGroupsItemSetsRequestBuilder) WithUrl(rawUrl string)(*ItemTermStoreGroupsItemSetsRequestBuilder) {
+    return NewItemTermStoreGroupsItemSetsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

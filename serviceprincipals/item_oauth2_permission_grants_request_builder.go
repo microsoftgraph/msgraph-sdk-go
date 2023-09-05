@@ -39,8 +39,8 @@ type ItemOauth2PermissionGrantsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemOauth2PermissionGrantsRequestBuilderGetQueryParameters
 }
-// ByOAuth2PermissionGrantIdString provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.servicePrincipal entity.
-func (m *ItemOauth2PermissionGrantsRequestBuilder) ByOAuth2PermissionGrantIdString(oAuth2PermissionGrantId string)(*ItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilder) {
+// ByOAuth2PermissionGrantId provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.servicePrincipal entity.
+func (m *ItemOauth2PermissionGrantsRequestBuilder) ByOAuth2PermissionGrantId(oAuth2PermissionGrantId string)(*ItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *ItemOauth2PermissionGrantsRequestBuilder) ToGetRequestInformation(ctx c
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemOauth2PermissionGrantsRequestBuilder) WithUrl(rawUrl string)(*ItemOauth2PermissionGrantsRequestBuilder) {
+    return NewItemOauth2PermissionGrantsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

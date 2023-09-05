@@ -44,3 +44,6 @@ func SerializeIdentityUserFlowAttributeDataType(values []IdentityUserFlowAttribu
     }
     return result
 }
+func (i IdentityUserFlowAttributeDataType) isMultiValue() bool {
+    return false
+}

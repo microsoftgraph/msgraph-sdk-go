@@ -46,8 +46,8 @@ type ItemInsightsUsedRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUsedInsightIdString provides operations to manage the used property of the microsoft.graph.officeGraphInsights entity.
-func (m *ItemInsightsUsedRequestBuilder) ByUsedInsightIdString(usedInsightId string)(*ItemInsightsUsedUsedInsightItemRequestBuilder) {
+// ByUsedInsightId provides operations to manage the used property of the microsoft.graph.officeGraphInsights entity.
+func (m *ItemInsightsUsedRequestBuilder) ByUsedInsightId(usedInsightId string)(*ItemInsightsUsedUsedInsightItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ItemInsightsUsedRequestBuilder) ToPostRequestInformation(ctx context.Co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemInsightsUsedRequestBuilder) WithUrl(rawUrl string)(*ItemInsightsUsedRequestBuilder) {
+    return NewItemInsightsUsedRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

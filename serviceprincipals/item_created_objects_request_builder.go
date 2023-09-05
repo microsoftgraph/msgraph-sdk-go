@@ -39,8 +39,8 @@ type ItemCreatedObjectsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemCreatedObjectsRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectIdString provides operations to manage the createdObjects property of the microsoft.graph.servicePrincipal entity.
-func (m *ItemCreatedObjectsRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemCreatedObjectsDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectId provides operations to manage the createdObjects property of the microsoft.graph.servicePrincipal entity.
+func (m *ItemCreatedObjectsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemCreatedObjectsDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -105,4 +105,8 @@ func (m *ItemCreatedObjectsRequestBuilder) ToGetRequestInformation(ctx context.C
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCreatedObjectsRequestBuilder) WithUrl(rawUrl string)(*ItemCreatedObjectsRequestBuilder) {
+    return NewItemCreatedObjectsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

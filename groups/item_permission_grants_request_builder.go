@@ -46,8 +46,8 @@ type ItemPermissionGrantsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByResourceSpecificPermissionGrantIdString provides operations to manage the permissionGrants property of the microsoft.graph.group entity.
-func (m *ItemPermissionGrantsRequestBuilder) ByResourceSpecificPermissionGrantIdString(resourceSpecificPermissionGrantId string)(*ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) {
+// ByResourceSpecificPermissionGrantId provides operations to manage the permissionGrants property of the microsoft.graph.group entity.
+func (m *ItemPermissionGrantsRequestBuilder) ByResourceSpecificPermissionGrantId(resourceSpecificPermissionGrantId string)(*ItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -163,4 +163,8 @@ func (m *ItemPermissionGrantsRequestBuilder) ToPostRequestInformation(ctx contex
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *ItemPermissionGrantsRequestBuilder) ValidateProperties()(*ItemPermissionGrantsValidatePropertiesRequestBuilder) {
     return NewItemPermissionGrantsValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemPermissionGrantsRequestBuilder) WithUrl(rawUrl string)(*ItemPermissionGrantsRequestBuilder) {
+    return NewItemPermissionGrantsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

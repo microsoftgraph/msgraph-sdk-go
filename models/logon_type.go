@@ -47,3 +47,6 @@ func SerializeLogonType(values []LogonType) []string {
     }
     return result
 }
+func (i LogonType) isMultiValue() bool {
+    return false
+}

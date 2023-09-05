@@ -46,8 +46,8 @@ type ItemActivitiesItemHistoryItemsRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByActivityHistoryItemIdString provides operations to manage the historyItems property of the microsoft.graph.userActivity entity.
-func (m *ItemActivitiesItemHistoryItemsRequestBuilder) ByActivityHistoryItemIdString(activityHistoryItemId string)(*ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) {
+// ByActivityHistoryItemId provides operations to manage the historyItems property of the microsoft.graph.userActivity entity.
+func (m *ItemActivitiesItemHistoryItemsRequestBuilder) ByActivityHistoryItemId(activityHistoryItemId string)(*ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ItemActivitiesItemHistoryItemsRequestBuilder) ToPostRequestInformation(
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemActivitiesItemHistoryItemsRequestBuilder) WithUrl(rawUrl string)(*ItemActivitiesItemHistoryItemsRequestBuilder) {
+    return NewItemActivitiesItemHistoryItemsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -46,8 +46,8 @@ type ItemSitesItemListsItemOperationsRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByRichLongRunningOperationIdString provides operations to manage the operations property of the microsoft.graph.list entity.
-func (m *ItemSitesItemListsItemOperationsRequestBuilder) ByRichLongRunningOperationIdString(richLongRunningOperationId string)(*ItemSitesItemListsItemOperationsRichLongRunningOperationItemRequestBuilder) {
+// ByRichLongRunningOperationId provides operations to manage the operations property of the microsoft.graph.list entity.
+func (m *ItemSitesItemListsItemOperationsRequestBuilder) ByRichLongRunningOperationId(richLongRunningOperationId string)(*ItemSitesItemListsItemOperationsRichLongRunningOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ItemSitesItemListsItemOperationsRequestBuilder) ToPostRequestInformatio
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSitesItemListsItemOperationsRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemListsItemOperationsRequestBuilder) {
+    return NewItemSitesItemListsItemOperationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

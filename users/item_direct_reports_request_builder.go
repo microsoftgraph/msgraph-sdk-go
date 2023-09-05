@@ -39,8 +39,8 @@ type ItemDirectReportsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemDirectReportsRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectIdString provides operations to manage the directReports property of the microsoft.graph.user entity.
-func (m *ItemDirectReportsRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemDirectReportsDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectId provides operations to manage the directReports property of the microsoft.graph.user entity.
+func (m *ItemDirectReportsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemDirectReportsDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -112,4 +112,8 @@ func (m *ItemDirectReportsRequestBuilder) ToGetRequestInformation(ctx context.Co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemDirectReportsRequestBuilder) WithUrl(rawUrl string)(*ItemDirectReportsRequestBuilder) {
+    return NewItemDirectReportsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

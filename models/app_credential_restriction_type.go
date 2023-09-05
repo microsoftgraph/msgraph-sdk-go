@@ -44,3 +44,6 @@ func SerializeAppCredentialRestrictionType(values []AppCredentialRestrictionType
     }
     return result
 }
+func (i AppCredentialRestrictionType) isMultiValue() bool {
+    return false
+}

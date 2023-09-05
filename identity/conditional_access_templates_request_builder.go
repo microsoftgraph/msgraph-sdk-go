@@ -39,8 +39,8 @@ type ConditionalAccessTemplatesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ConditionalAccessTemplatesRequestBuilderGetQueryParameters
 }
-// ByConditionalAccessTemplateIdString provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.
-func (m *ConditionalAccessTemplatesRequestBuilder) ByConditionalAccessTemplateIdString(conditionalAccessTemplateId string)(*ConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilder) {
+// ByConditionalAccessTemplateId provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.
+func (m *ConditionalAccessTemplatesRequestBuilder) ByConditionalAccessTemplateId(conditionalAccessTemplateId string)(*ConditionalAccessTemplatesConditionalAccessTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *ConditionalAccessTemplatesRequestBuilder) ToGetRequestInformation(ctx c
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ConditionalAccessTemplatesRequestBuilder) WithUrl(rawUrl string)(*ConditionalAccessTemplatesRequestBuilder) {
+    return NewConditionalAccessTemplatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

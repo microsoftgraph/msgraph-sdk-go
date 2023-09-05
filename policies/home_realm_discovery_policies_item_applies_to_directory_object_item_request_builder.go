@@ -75,3 +75,7 @@ func (m *HomeRealmDiscoveryPoliciesItemAppliesToDirectoryObjectItemRequestBuilde
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *HomeRealmDiscoveryPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) WithUrl(rawUrl string)(*HomeRealmDiscoveryPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
+    return NewHomeRealmDiscoveryPoliciesItemAppliesToDirectoryObjectItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

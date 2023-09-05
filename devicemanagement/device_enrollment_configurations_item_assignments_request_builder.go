@@ -46,8 +46,8 @@ type DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEnrollmentConfigurationAssignmentIdString provides operations to manage the assignments property of the microsoft.graph.deviceEnrollmentConfiguration entity.
-func (m *DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) ByEnrollmentConfigurationAssignmentIdString(enrollmentConfigurationAssignmentId string)(*DeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilder) {
+// ByEnrollmentConfigurationAssignmentId provides operations to manage the assignments property of the microsoft.graph.deviceEnrollmentConfiguration entity.
+func (m *DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) ByEnrollmentConfigurationAssignmentId(enrollmentConfigurationAssignmentId string)(*DeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) ToPostRequ
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) WithUrl(rawUrl string)(*DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) {
+    return NewDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

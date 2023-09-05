@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // 
 type OnlineMeetingContentSharingDisabledReason int
@@ -11,17 +12,26 @@ const (
 )
 
 func (i OnlineMeetingContentSharingDisabledReason) String() string {
-    return []string{"watermarkProtection", "unknownFutureValue"}[i]
+    var values []string
+    for p := OnlineMeetingContentSharingDisabledReason(1); p <= UNKNOWNFUTUREVALUE_ONLINEMEETINGCONTENTSHARINGDISABLEDREASON; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"watermarkProtection", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseOnlineMeetingContentSharingDisabledReason(v string) (any, error) {
-    result := WATERMARKPROTECTION_ONLINEMEETINGCONTENTSHARINGDISABLEDREASON
-    switch v {
-        case "watermarkProtection":
-            result = WATERMARKPROTECTION_ONLINEMEETINGCONTENTSHARINGDISABLEDREASON
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_ONLINEMEETINGCONTENTSHARINGDISABLEDREASON
-        default:
-            return 0, errors.New("Unknown OnlineMeetingContentSharingDisabledReason value: " + v)
+    var result OnlineMeetingContentSharingDisabledReason
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "watermarkProtection":
+                result |= WATERMARKPROTECTION_ONLINEMEETINGCONTENTSHARINGDISABLEDREASON
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_ONLINEMEETINGCONTENTSHARINGDISABLEDREASON
+            default:
+                return 0, errors.New("Unknown OnlineMeetingContentSharingDisabledReason value: " + v)
+        }
     }
     return &result, nil
 }
@@ -31,4 +41,7 @@ func SerializeOnlineMeetingContentSharingDisabledReason(values []OnlineMeetingCo
         result[i] = v.String()
     }
     return result
+}
+func (i OnlineMeetingContentSharingDisabledReason) isMultiValue() bool {
+    return true
 }

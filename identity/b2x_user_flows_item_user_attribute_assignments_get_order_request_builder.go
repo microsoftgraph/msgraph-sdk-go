@@ -63,3 +63,7 @@ func (m *B2xUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder) ToGetRe
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *B2xUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder) WithUrl(rawUrl string)(*B2xUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder) {
+    return NewB2xUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

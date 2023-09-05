@@ -46,3 +46,6 @@ func SerializeWebBrowserCookieSettings(values []WebBrowserCookieSettings) []stri
     }
     return result
 }
+func (i WebBrowserCookieSettings) isMultiValue() bool {
+    return false
+}

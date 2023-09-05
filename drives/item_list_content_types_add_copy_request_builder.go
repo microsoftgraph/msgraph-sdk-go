@@ -70,3 +70,7 @@ func (m *ItemListContentTypesAddCopyRequestBuilder) ToPostRequestInformation(ctx
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemListContentTypesAddCopyRequestBuilder) WithUrl(rawUrl string)(*ItemListContentTypesAddCopyRequestBuilder) {
+    return NewItemListContentTypesAddCopyRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

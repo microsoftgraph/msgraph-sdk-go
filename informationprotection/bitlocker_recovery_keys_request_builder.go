@@ -39,8 +39,8 @@ type BitlockerRecoveryKeysRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *BitlockerRecoveryKeysRequestBuilderGetQueryParameters
 }
-// ByBitlockerRecoveryKeyIdString provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.
-func (m *BitlockerRecoveryKeysRequestBuilder) ByBitlockerRecoveryKeyIdString(bitlockerRecoveryKeyId string)(*BitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilder) {
+// ByBitlockerRecoveryKeyId provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.
+func (m *BitlockerRecoveryKeysRequestBuilder) ByBitlockerRecoveryKeyId(bitlockerRecoveryKeyId string)(*BitlockerRecoveryKeysBitlockerRecoveryKeyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *BitlockerRecoveryKeysRequestBuilder) ToGetRequestInformation(ctx contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *BitlockerRecoveryKeysRequestBuilder) WithUrl(rawUrl string)(*BitlockerRecoveryKeysRequestBuilder) {
+    return NewBitlockerRecoveryKeysRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -46,8 +46,8 @@ type NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByLocalizedNotificationMessageIdString provides operations to manage the localizedNotificationMessages property of the microsoft.graph.notificationMessageTemplate entity.
-func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder) ByLocalizedNotificationMessageIdString(localizedNotificationMessageId string)(*NotificationMessageTemplatesItemLocalizedNotificationMessagesLocalizedNotificationMessageItemRequestBuilder) {
+// ByLocalizedNotificationMessageId provides operations to manage the localizedNotificationMessages property of the microsoft.graph.notificationMessageTemplate entity.
+func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder) ByLocalizedNotificationMessageId(localizedNotificationMessageId string)(*NotificationMessageTemplatesItemLocalizedNotificationMessagesLocalizedNotificationMessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBui
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder) WithUrl(rawUrl string)(*NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder) {
+    return NewNotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

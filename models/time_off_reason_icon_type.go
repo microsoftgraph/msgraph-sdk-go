@@ -92,3 +92,6 @@ func SerializeTimeOffReasonIconType(values []TimeOffReasonIconType) []string {
     }
     return result
 }
+func (i TimeOffReasonIconType) isMultiValue() bool {
+    return false
+}

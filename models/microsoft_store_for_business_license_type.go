@@ -32,3 +32,6 @@ func SerializeMicrosoftStoreForBusinessLicenseType(values []MicrosoftStoreForBus
     }
     return result
 }
+func (i MicrosoftStoreForBusinessLicenseType) isMultiValue() bool {
+    return false
+}

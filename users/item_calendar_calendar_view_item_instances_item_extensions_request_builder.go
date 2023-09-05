@@ -44,8 +44,8 @@ type ItemCalendarCalendarViewItemInstancesItemExtensionsRequestBuilderPostReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByExtensionIdString provides operations to manage the extensions property of the microsoft.graph.event entity.
-func (m *ItemCalendarCalendarViewItemInstancesItemExtensionsRequestBuilder) ByExtensionIdString(extensionId string)(*ItemCalendarCalendarViewItemInstancesItemExtensionsExtensionItemRequestBuilder) {
+// ByExtensionId provides operations to manage the extensions property of the microsoft.graph.event entity.
+func (m *ItemCalendarCalendarViewItemInstancesItemExtensionsRequestBuilder) ByExtensionId(extensionId string)(*ItemCalendarCalendarViewItemInstancesItemExtensionsExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -145,4 +145,8 @@ func (m *ItemCalendarCalendarViewItemInstancesItemExtensionsRequestBuilder) ToPo
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCalendarCalendarViewItemInstancesItemExtensionsRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarCalendarViewItemInstancesItemExtensionsRequestBuilder) {
+    return NewItemCalendarCalendarViewItemInstancesItemExtensionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

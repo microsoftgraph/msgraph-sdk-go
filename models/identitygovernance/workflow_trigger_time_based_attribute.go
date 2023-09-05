@@ -38,3 +38,6 @@ func SerializeWorkflowTriggerTimeBasedAttribute(values []WorkflowTriggerTimeBase
     }
     return result
 }
+func (i WorkflowTriggerTimeBasedAttribute) isMultiValue() bool {
+    return false
+}

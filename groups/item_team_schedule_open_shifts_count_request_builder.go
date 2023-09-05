@@ -74,3 +74,7 @@ func (m *ItemTeamScheduleOpenShiftsCountRequestBuilder) ToGetRequestInformation(
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamScheduleOpenShiftsCountRequestBuilder) WithUrl(rawUrl string)(*ItemTeamScheduleOpenShiftsCountRequestBuilder) {
+    return NewItemTeamScheduleOpenShiftsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -42,3 +42,6 @@ func SerializeIosNotificationAlertType(values []IosNotificationAlertType) []stri
     }
     return result
 }
+func (i IosNotificationAlertType) isMultiValue() bool {
+    return false
+}

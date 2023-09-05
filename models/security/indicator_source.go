@@ -38,3 +38,6 @@ func SerializeIndicatorSource(values []IndicatorSource) []string {
     }
     return result
 }
+func (i IndicatorSource) isMultiValue() bool {
+    return false
+}

@@ -61,3 +61,7 @@ func (m *ItemManagedDevicesItemRemoteLockRequestBuilder) ToPostRequestInformatio
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemManagedDevicesItemRemoteLockRequestBuilder) WithUrl(rawUrl string)(*ItemManagedDevicesItemRemoteLockRequestBuilder) {
+    return NewItemManagedDevicesItemRemoteLockRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

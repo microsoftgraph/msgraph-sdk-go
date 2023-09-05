@@ -32,3 +32,6 @@ func SerializeFilterMode(values []FilterMode) []string {
     }
     return result
 }
+func (i FilterMode) isMultiValue() bool {
+    return false
+}

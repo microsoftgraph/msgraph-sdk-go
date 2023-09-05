@@ -38,3 +38,6 @@ func SerializeAdvancedConfigState(values []AdvancedConfigState) []string {
     }
     return result
 }
+func (i AdvancedConfigState) isMultiValue() bool {
+    return false
+}

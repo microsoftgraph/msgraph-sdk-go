@@ -44,3 +44,6 @@ func SerializeAppliedConditionalAccessPolicyResult(values []AppliedConditionalAc
     }
     return result
 }
+func (i AppliedConditionalAccessPolicyResult) isMultiValue() bool {
+    return false
+}

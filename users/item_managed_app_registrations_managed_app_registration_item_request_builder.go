@@ -75,3 +75,7 @@ func (m *ItemManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) To
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) WithUrl(rawUrl string)(*ItemManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) {
+    return NewItemManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

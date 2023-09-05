@@ -47,3 +47,6 @@ func SerializeCaseOperationStatus(values []CaseOperationStatus) []string {
     }
     return result
 }
+func (i CaseOperationStatus) isMultiValue() bool {
+    return false
+}

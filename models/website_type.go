@@ -41,3 +41,6 @@ func SerializeWebsiteType(values []WebsiteType) []string {
     }
     return result
 }
+func (i WebsiteType) isMultiValue() bool {
+    return false
+}

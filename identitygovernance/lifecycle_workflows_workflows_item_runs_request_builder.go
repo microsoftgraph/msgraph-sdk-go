@@ -40,8 +40,8 @@ type LifecycleWorkflowsWorkflowsItemRunsRequestBuilderGetRequestConfiguration st
     // Request query parameters
     QueryParameters *LifecycleWorkflowsWorkflowsItemRunsRequestBuilderGetQueryParameters
 }
-// ByRunIdString provides operations to manage the runs property of the microsoft.graph.identityGovernance.workflow entity.
-func (m *LifecycleWorkflowsWorkflowsItemRunsRequestBuilder) ByRunIdString(runId string)(*LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) {
+// ByRunId provides operations to manage the runs property of the microsoft.graph.identityGovernance.workflow entity.
+func (m *LifecycleWorkflowsWorkflowsItemRunsRequestBuilder) ByRunId(runId string)(*LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -109,4 +109,8 @@ func (m *LifecycleWorkflowsWorkflowsItemRunsRequestBuilder) ToGetRequestInformat
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *LifecycleWorkflowsWorkflowsItemRunsRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsWorkflowsItemRunsRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsItemRunsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

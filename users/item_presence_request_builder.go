@@ -123,6 +123,10 @@ func (m *ItemPresenceRequestBuilder) Patch(ctx context.Context, body iadcd811244
 func (m *ItemPresenceRequestBuilder) SetPresence()(*ItemPresenceSetPresenceRequestBuilder) {
     return NewItemPresenceSetPresenceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// SetStatusMessage provides operations to call the setStatusMessage method.
+func (m *ItemPresenceRequestBuilder) SetStatusMessage()(*ItemPresenceSetStatusMessageRequestBuilder) {
+    return NewItemPresenceSetStatusMessageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // SetUserPreferredPresence provides operations to call the setUserPreferredPresence method.
 func (m *ItemPresenceRequestBuilder) SetUserPreferredPresence()(*ItemPresenceSetUserPreferredPresenceRequestBuilder) {
     return NewItemPresenceSetUserPreferredPresenceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -171,4 +175,8 @@ func (m *ItemPresenceRequestBuilder) ToPatchRequestInformation(ctx context.Conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemPresenceRequestBuilder) WithUrl(rawUrl string)(*ItemPresenceRequestBuilder) {
+    return NewItemPresenceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -159,3 +159,7 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) ToPatchRequest
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) WithUrl(rawUrl string)(*IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) {
+    return NewIdentitySecurityDefaultsEnforcementPolicyRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

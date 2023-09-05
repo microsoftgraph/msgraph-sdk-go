@@ -46,8 +46,8 @@ type TaskDefinitionsItemTasksRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPrintTaskIdString provides operations to manage the tasks property of the microsoft.graph.printTaskDefinition entity.
-func (m *TaskDefinitionsItemTasksRequestBuilder) ByPrintTaskIdString(printTaskId string)(*TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) {
+// ByPrintTaskId provides operations to manage the tasks property of the microsoft.graph.printTaskDefinition entity.
+func (m *TaskDefinitionsItemTasksRequestBuilder) ByPrintTaskId(printTaskId string)(*TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *TaskDefinitionsItemTasksRequestBuilder) ToPostRequestInformation(ctx co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TaskDefinitionsItemTasksRequestBuilder) WithUrl(rawUrl string)(*TaskDefinitionsItemTasksRequestBuilder) {
+    return NewTaskDefinitionsItemTasksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

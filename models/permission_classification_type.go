@@ -38,3 +38,6 @@ func SerializePermissionClassificationType(values []PermissionClassificationType
     }
     return result
 }
+func (i PermissionClassificationType) isMultiValue() bool {
+    return false
+}

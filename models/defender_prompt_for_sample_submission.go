@@ -46,3 +46,6 @@ func SerializeDefenderPromptForSampleSubmission(values []DefenderPromptForSample
     }
     return result
 }
+func (i DefenderPromptForSampleSubmission) isMultiValue() bool {
+    return false
+}

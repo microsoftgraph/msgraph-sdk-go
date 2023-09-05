@@ -35,3 +35,6 @@ func SerializeFollowupFlagStatus(values []FollowupFlagStatus) []string {
     }
     return result
 }
+func (i FollowupFlagStatus) isMultiValue() bool {
+    return false
+}

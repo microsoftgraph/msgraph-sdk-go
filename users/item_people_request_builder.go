@@ -37,8 +37,8 @@ type ItemPeopleRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemPeopleRequestBuilderGetQueryParameters
 }
-// ByPersonIdString provides operations to manage the people property of the microsoft.graph.user entity.
-func (m *ItemPeopleRequestBuilder) ByPersonIdString(personId string)(*ItemPeoplePersonItemRequestBuilder) {
+// ByPersonId provides operations to manage the people property of the microsoft.graph.user entity.
+func (m *ItemPeopleRequestBuilder) ByPersonId(personId string)(*ItemPeoplePersonItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -102,4 +102,8 @@ func (m *ItemPeopleRequestBuilder) ToGetRequestInformation(ctx context.Context, 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemPeopleRequestBuilder) WithUrl(rawUrl string)(*ItemPeopleRequestBuilder) {
+    return NewItemPeopleRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

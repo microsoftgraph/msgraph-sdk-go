@@ -46,8 +46,8 @@ type MdmWindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWindowsInformationProtectionAppLockerFileIdString provides operations to manage the exemptAppLockerFiles property of the microsoft.graph.windowsInformationProtection entity.
-func (m *MdmWindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilder) ByWindowsInformationProtectionAppLockerFileIdString(windowsInformationProtectionAppLockerFileId string)(*MdmWindowsInformationProtectionPoliciesItemExemptAppLockerFilesWindowsInformationProtectionAppLockerFileItemRequestBuilder) {
+// ByWindowsInformationProtectionAppLockerFileId provides operations to manage the exemptAppLockerFiles property of the microsoft.graph.windowsInformationProtection entity.
+func (m *MdmWindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilder) ByWindowsInformationProtectionAppLockerFileId(windowsInformationProtectionAppLockerFileId string)(*MdmWindowsInformationProtectionPoliciesItemExemptAppLockerFilesWindowsInformationProtectionAppLockerFileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *MdmWindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestB
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MdmWindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilder) WithUrl(rawUrl string)(*MdmWindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilder) {
+    return NewMdmWindowsInformationProtectionPoliciesItemExemptAppLockerFilesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

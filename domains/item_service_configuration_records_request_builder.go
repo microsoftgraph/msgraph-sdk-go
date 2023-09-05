@@ -46,8 +46,8 @@ type ItemServiceConfigurationRecordsRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDomainDnsRecordIdString provides operations to manage the serviceConfigurationRecords property of the microsoft.graph.domain entity.
-func (m *ItemServiceConfigurationRecordsRequestBuilder) ByDomainDnsRecordIdString(domainDnsRecordId string)(*ItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilder) {
+// ByDomainDnsRecordId provides operations to manage the serviceConfigurationRecords property of the microsoft.graph.domain entity.
+func (m *ItemServiceConfigurationRecordsRequestBuilder) ByDomainDnsRecordId(domainDnsRecordId string)(*ItemServiceConfigurationRecordsDomainDnsRecordItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ItemServiceConfigurationRecordsRequestBuilder) ToPostRequestInformation
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemServiceConfigurationRecordsRequestBuilder) WithUrl(rawUrl string)(*ItemServiceConfigurationRecordsRequestBuilder) {
+    return NewItemServiceConfigurationRecordsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

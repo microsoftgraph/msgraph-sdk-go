@@ -38,3 +38,6 @@ func SerializeAppListType(values []AppListType) []string {
     }
     return result
 }
+func (i AppListType) isMultiValue() bool {
+    return false
+}

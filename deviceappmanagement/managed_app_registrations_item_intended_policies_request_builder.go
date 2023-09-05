@@ -46,8 +46,8 @@ type ManagedAppRegistrationsItemIntendedPoliciesRequestBuilderPostRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagedAppPolicyIdString provides operations to manage the intendedPolicies property of the microsoft.graph.managedAppRegistration entity.
-func (m *ManagedAppRegistrationsItemIntendedPoliciesRequestBuilder) ByManagedAppPolicyIdString(managedAppPolicyId string)(*ManagedAppRegistrationsItemIntendedPoliciesManagedAppPolicyItemRequestBuilder) {
+// ByManagedAppPolicyId provides operations to manage the intendedPolicies property of the microsoft.graph.managedAppRegistration entity.
+func (m *ManagedAppRegistrationsItemIntendedPoliciesRequestBuilder) ByManagedAppPolicyId(managedAppPolicyId string)(*ManagedAppRegistrationsItemIntendedPoliciesManagedAppPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ManagedAppRegistrationsItemIntendedPoliciesRequestBuilder) ToPostReques
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedAppRegistrationsItemIntendedPoliciesRequestBuilder) WithUrl(rawUrl string)(*ManagedAppRegistrationsItemIntendedPoliciesRequestBuilder) {
+    return NewManagedAppRegistrationsItemIntendedPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -41,3 +41,6 @@ func SerializePlannerPreviewType(values []PlannerPreviewType) []string {
     }
     return result
 }
+func (i PlannerPreviewType) isMultiValue() bool {
+    return false
+}

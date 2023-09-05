@@ -46,8 +46,8 @@ type TasksRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPlannerTaskIdString provides operations to manage the tasks property of the microsoft.graph.planner entity.
-func (m *TasksRequestBuilder) ByPlannerTaskIdString(plannerTaskId string)(*TasksPlannerTaskItemRequestBuilder) {
+// ByPlannerTaskId provides operations to manage the tasks property of the microsoft.graph.planner entity.
+func (m *TasksRequestBuilder) ByPlannerTaskId(plannerTaskId string)(*TasksPlannerTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *TasksRequestBuilder) ToPostRequestInformation(ctx context.Context, body
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TasksRequestBuilder) WithUrl(rawUrl string)(*TasksRequestBuilder) {
+    return NewTasksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

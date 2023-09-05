@@ -34,3 +34,6 @@ func SerializeEditionUpgradeLicenseType(values []EditionUpgradeLicenseType) []st
     }
     return result
 }
+func (i EditionUpgradeLicenseType) isMultiValue() bool {
+    return false
+}

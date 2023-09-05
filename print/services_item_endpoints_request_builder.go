@@ -46,8 +46,8 @@ type ServicesItemEndpointsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPrintServiceEndpointIdString provides operations to manage the endpoints property of the microsoft.graph.printService entity.
-func (m *ServicesItemEndpointsRequestBuilder) ByPrintServiceEndpointIdString(printServiceEndpointId string)(*ServicesItemEndpointsPrintServiceEndpointItemRequestBuilder) {
+// ByPrintServiceEndpointId provides operations to manage the endpoints property of the microsoft.graph.printService entity.
+func (m *ServicesItemEndpointsRequestBuilder) ByPrintServiceEndpointId(printServiceEndpointId string)(*ServicesItemEndpointsPrintServiceEndpointItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ServicesItemEndpointsRequestBuilder) ToPostRequestInformation(ctx conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ServicesItemEndpointsRequestBuilder) WithUrl(rawUrl string)(*ServicesItemEndpointsRequestBuilder) {
+    return NewServicesItemEndpointsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -56,3 +56,6 @@ func SerializeAllowedTargetScope(values []AllowedTargetScope) []string {
     }
     return result
 }
+func (i AllowedTargetScope) isMultiValue() bool {
+    return false
+}

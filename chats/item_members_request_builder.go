@@ -50,8 +50,8 @@ type ItemMembersRequestBuilderPostRequestConfiguration struct {
 func (m *ItemMembersRequestBuilder) Add()(*ItemMembersAddRequestBuilder) {
     return NewItemMembersAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByConversationMemberIdString provides operations to manage the members property of the microsoft.graph.chat entity.
-func (m *ItemMembersRequestBuilder) ByConversationMemberIdString(conversationMemberId string)(*ItemMembersConversationMemberItemRequestBuilder) {
+// ByConversationMemberId provides operations to manage the members property of the microsoft.graph.chat entity.
+func (m *ItemMembersRequestBuilder) ByConversationMemberId(conversationMemberId string)(*ItemMembersConversationMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -154,4 +154,8 @@ func (m *ItemMembersRequestBuilder) ToPostRequestInformation(ctx context.Context
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemMembersRequestBuilder) WithUrl(rawUrl string)(*ItemMembersRequestBuilder) {
+    return NewItemMembersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -54,3 +54,6 @@ func SerializeDefenderThreatAction(values []DefenderThreatAction) []string {
     }
     return result
 }
+func (i DefenderThreatAction) isMultiValue() bool {
+    return false
+}

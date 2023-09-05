@@ -74,3 +74,7 @@ func (m *ItemTransitiveMemberOfCountRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTransitiveMemberOfCountRequestBuilder) WithUrl(rawUrl string)(*ItemTransitiveMemberOfCountRequestBuilder) {
+    return NewItemTransitiveMemberOfCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

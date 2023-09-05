@@ -1,6 +1,7 @@
 package security
 import (
     "errors"
+    "strings"
 )
 // 
 type DataSourceScopes int
@@ -15,25 +16,34 @@ const (
 )
 
 func (i DataSourceScopes) String() string {
-    return []string{"none", "allTenantMailboxes", "allTenantSites", "allCaseCustodians", "allCaseNoncustodialDataSources", "unknownFutureValue"}[i]
+    var values []string
+    for p := DataSourceScopes(1); p <= UNKNOWNFUTUREVALUE_DATASOURCESCOPES; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"none", "allTenantMailboxes", "allTenantSites", "allCaseCustodians", "allCaseNoncustodialDataSources", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseDataSourceScopes(v string) (any, error) {
-    result := NONE_DATASOURCESCOPES
-    switch v {
-        case "none":
-            result = NONE_DATASOURCESCOPES
-        case "allTenantMailboxes":
-            result = ALLTENANTMAILBOXES_DATASOURCESCOPES
-        case "allTenantSites":
-            result = ALLTENANTSITES_DATASOURCESCOPES
-        case "allCaseCustodians":
-            result = ALLCASECUSTODIANS_DATASOURCESCOPES
-        case "allCaseNoncustodialDataSources":
-            result = ALLCASENONCUSTODIALDATASOURCES_DATASOURCESCOPES
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_DATASOURCESCOPES
-        default:
-            return 0, errors.New("Unknown DataSourceScopes value: " + v)
+    var result DataSourceScopes
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "none":
+                result |= NONE_DATASOURCESCOPES
+            case "allTenantMailboxes":
+                result |= ALLTENANTMAILBOXES_DATASOURCESCOPES
+            case "allTenantSites":
+                result |= ALLTENANTSITES_DATASOURCESCOPES
+            case "allCaseCustodians":
+                result |= ALLCASECUSTODIANS_DATASOURCESCOPES
+            case "allCaseNoncustodialDataSources":
+                result |= ALLCASENONCUSTODIALDATASOURCES_DATASOURCESCOPES
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_DATASOURCESCOPES
+            default:
+                return 0, errors.New("Unknown DataSourceScopes value: " + v)
+        }
     }
     return &result, nil
 }
@@ -43,4 +53,7 @@ func SerializeDataSourceScopes(values []DataSourceScopes) []string {
         result[i] = v.String()
     }
     return result
+}
+func (i DataSourceScopes) isMultiValue() bool {
+    return true
 }

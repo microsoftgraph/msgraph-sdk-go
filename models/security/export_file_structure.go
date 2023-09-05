@@ -38,3 +38,6 @@ func SerializeExportFileStructure(values []ExportFileStructure) []string {
     }
     return result
 }
+func (i ExportFileStructure) isMultiValue() bool {
+    return false
+}

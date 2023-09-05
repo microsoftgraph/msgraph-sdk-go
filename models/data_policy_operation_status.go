@@ -41,3 +41,6 @@ func SerializeDataPolicyOperationStatus(values []DataPolicyOperationStatus) []st
     }
     return result
 }
+func (i DataPolicyOperationStatus) isMultiValue() bool {
+    return false
+}

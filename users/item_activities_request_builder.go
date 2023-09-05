@@ -46,8 +46,8 @@ type ItemActivitiesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserActivityIdString provides operations to manage the activities property of the microsoft.graph.user entity.
-func (m *ItemActivitiesRequestBuilder) ByUserActivityIdString(userActivityId string)(*ItemActivitiesUserActivityItemRequestBuilder) {
+// ByUserActivityId provides operations to manage the activities property of the microsoft.graph.user entity.
+func (m *ItemActivitiesRequestBuilder) ByUserActivityId(userActivityId string)(*ItemActivitiesUserActivityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -151,4 +151,8 @@ func (m *ItemActivitiesRequestBuilder) ToPostRequestInformation(ctx context.Cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemActivitiesRequestBuilder) WithUrl(rawUrl string)(*ItemActivitiesRequestBuilder) {
+    return NewItemActivitiesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

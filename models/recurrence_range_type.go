@@ -35,3 +35,6 @@ func SerializeRecurrenceRangeType(values []RecurrenceRangeType) []string {
     }
     return result
 }
+func (i RecurrenceRangeType) isMultiValue() bool {
+    return false
+}

@@ -38,3 +38,6 @@ func SerializeInitiatorType(values []InitiatorType) []string {
     }
     return result
 }
+func (i InitiatorType) isMultiValue() bool {
+    return false
+}

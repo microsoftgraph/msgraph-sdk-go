@@ -74,3 +74,7 @@ func (m *ItemChatsItemPinnedMessagesCountRequestBuilder) ToGetRequestInformation
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemChatsItemPinnedMessagesCountRequestBuilder) WithUrl(rawUrl string)(*ItemChatsItemPinnedMessagesCountRequestBuilder) {
+    return NewItemChatsItemPinnedMessagesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -74,3 +74,7 @@ func (m *ItemInsightsTrendingCountRequestBuilder) ToGetRequestInformation(ctx co
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemInsightsTrendingCountRequestBuilder) WithUrl(rawUrl string)(*ItemInsightsTrendingCountRequestBuilder) {
+    return NewItemInsightsTrendingCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

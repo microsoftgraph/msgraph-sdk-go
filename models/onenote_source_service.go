@@ -38,3 +38,6 @@ func SerializeOnenoteSourceService(values []OnenoteSourceService) []string {
     }
     return result
 }
+func (i OnenoteSourceService) isMultiValue() bool {
+    return false
+}

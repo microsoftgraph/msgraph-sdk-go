@@ -46,8 +46,8 @@ type TriggerTypesRetentionEventTypesRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByRetentionEventTypeIdString provides operations to manage the retentionEventTypes property of the microsoft.graph.security.triggerTypesRoot entity.
-func (m *TriggerTypesRetentionEventTypesRequestBuilder) ByRetentionEventTypeIdString(retentionEventTypeId string)(*TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) {
+// ByRetentionEventTypeId provides operations to manage the retentionEventTypes property of the microsoft.graph.security.triggerTypesRoot entity.
+func (m *TriggerTypesRetentionEventTypesRequestBuilder) ByRetentionEventTypeId(retentionEventTypeId string)(*TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *TriggerTypesRetentionEventTypesRequestBuilder) ToPostRequestInformation
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TriggerTypesRetentionEventTypesRequestBuilder) WithUrl(rawUrl string)(*TriggerTypesRetentionEventTypesRequestBuilder) {
+    return NewTriggerTypesRetentionEventTypesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

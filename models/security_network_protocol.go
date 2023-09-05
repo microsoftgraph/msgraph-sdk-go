@@ -98,3 +98,6 @@ func SerializeSecurityNetworkProtocol(values []SecurityNetworkProtocol) []string
     }
     return result
 }
+func (i SecurityNetworkProtocol) isMultiValue() bool {
+    return false
+}

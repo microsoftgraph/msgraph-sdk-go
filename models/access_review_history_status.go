@@ -41,3 +41,6 @@ func SerializeAccessReviewHistoryStatus(values []AccessReviewHistoryStatus) []st
     }
     return result
 }
+func (i AccessReviewHistoryStatus) isMultiValue() bool {
+    return false
+}

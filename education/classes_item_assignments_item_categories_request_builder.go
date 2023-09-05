@@ -46,8 +46,8 @@ type ClassesItemAssignmentsItemCategoriesRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEducationCategoryIdString gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.classes.item.assignments.item.categories.item collection
-func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) ByEducationCategoryIdString(educationCategoryId string)(*ClassesItemAssignmentsItemCategoriesEducationCategoryItemRequestBuilder) {
+// ByEducationCategoryId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.classes.item.assignments.item.categories.item collection
+func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) ByEducationCategoryId(educationCategoryId string)(*ClassesItemAssignmentsItemCategoriesEducationCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -158,4 +158,8 @@ func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) ToPostRequestInform
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) WithUrl(rawUrl string)(*ClassesItemAssignmentsItemCategoriesRequestBuilder) {
+    return NewClassesItemAssignmentsItemCategoriesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

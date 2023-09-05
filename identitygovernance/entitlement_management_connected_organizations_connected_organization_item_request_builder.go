@@ -170,3 +170,7 @@ func (m *EntitlementManagementConnectedOrganizationsConnectedOrganizationItemReq
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EntitlementManagementConnectedOrganizationsConnectedOrganizationItemRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementConnectedOrganizationsConnectedOrganizationItemRequestBuilder) {
+    return NewEntitlementManagementConnectedOrganizationsConnectedOrganizationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

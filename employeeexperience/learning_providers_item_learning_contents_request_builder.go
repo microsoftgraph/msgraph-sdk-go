@@ -46,8 +46,8 @@ type LearningProvidersItemLearningContentsRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByLearningContentIdString provides operations to manage the learningContents property of the microsoft.graph.learningProvider entity.
-func (m *LearningProvidersItemLearningContentsRequestBuilder) ByLearningContentIdString(learningContentId string)(*LearningProvidersItemLearningContentsLearningContentItemRequestBuilder) {
+// ByLearningContentId provides operations to manage the learningContents property of the microsoft.graph.learningProvider entity.
+func (m *LearningProvidersItemLearningContentsRequestBuilder) ByLearningContentId(learningContentId string)(*LearningProvidersItemLearningContentsLearningContentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *LearningProvidersItemLearningContentsRequestBuilder) ToPostRequestInfor
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *LearningProvidersItemLearningContentsRequestBuilder) WithUrl(rawUrl string)(*LearningProvidersItemLearningContentsRequestBuilder) {
+    return NewLearningProvidersItemLearningContentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

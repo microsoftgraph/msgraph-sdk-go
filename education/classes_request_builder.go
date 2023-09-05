@@ -46,8 +46,8 @@ type ClassesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEducationClassIdString provides operations to manage the classes property of the microsoft.graph.educationRoot entity.
-func (m *ClassesRequestBuilder) ByEducationClassIdString(educationClassId string)(*ClassesEducationClassItemRequestBuilder) {
+// ByEducationClassId provides operations to manage the classes property of the microsoft.graph.educationRoot entity.
+func (m *ClassesRequestBuilder) ByEducationClassId(educationClassId string)(*ClassesEducationClassItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -154,4 +154,8 @@ func (m *ClassesRequestBuilder) ToPostRequestInformation(ctx context.Context, bo
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ClassesRequestBuilder) WithUrl(rawUrl string)(*ClassesRequestBuilder) {
+    return NewClassesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

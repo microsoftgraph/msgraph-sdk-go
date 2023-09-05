@@ -50,8 +50,8 @@ type ItemPrimaryChannelMembersRequestBuilderPostRequestConfiguration struct {
 func (m *ItemPrimaryChannelMembersRequestBuilder) Add()(*ItemPrimaryChannelMembersAddRequestBuilder) {
     return NewItemPrimaryChannelMembersAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByConversationMemberIdString provides operations to manage the members property of the microsoft.graph.channel entity.
-func (m *ItemPrimaryChannelMembersRequestBuilder) ByConversationMemberIdString(conversationMemberId string)(*ItemPrimaryChannelMembersConversationMemberItemRequestBuilder) {
+// ByConversationMemberId provides operations to manage the members property of the microsoft.graph.channel entity.
+func (m *ItemPrimaryChannelMembersRequestBuilder) ByConversationMemberId(conversationMemberId string)(*ItemPrimaryChannelMembersConversationMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -154,4 +154,8 @@ func (m *ItemPrimaryChannelMembersRequestBuilder) ToPostRequestInformation(ctx c
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemPrimaryChannelMembersRequestBuilder) WithUrl(rawUrl string)(*ItemPrimaryChannelMembersRequestBuilder) {
+    return NewItemPrimaryChannelMembersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

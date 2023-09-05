@@ -46,8 +46,8 @@ type ThreatIntelligenceHostTrackersRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByHostTrackerIdString provides operations to manage the hostTrackers property of the microsoft.graph.security.threatIntelligence entity.
-func (m *ThreatIntelligenceHostTrackersRequestBuilder) ByHostTrackerIdString(hostTrackerId string)(*ThreatIntelligenceHostTrackersHostTrackerItemRequestBuilder) {
+// ByHostTrackerId provides operations to manage the hostTrackers property of the microsoft.graph.security.threatIntelligence entity.
+func (m *ThreatIntelligenceHostTrackersRequestBuilder) ByHostTrackerId(hostTrackerId string)(*ThreatIntelligenceHostTrackersHostTrackerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ThreatIntelligenceHostTrackersRequestBuilder) ToPostRequestInformation(
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ThreatIntelligenceHostTrackersRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceHostTrackersRequestBuilder) {
+    return NewThreatIntelligenceHostTrackersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

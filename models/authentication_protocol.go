@@ -35,3 +35,6 @@ func SerializeAuthenticationProtocol(values []AuthenticationProtocol) []string {
     }
     return result
 }
+func (i AuthenticationProtocol) isMultiValue() bool {
+    return false
+}

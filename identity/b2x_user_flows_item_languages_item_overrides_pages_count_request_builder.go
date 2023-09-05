@@ -74,3 +74,7 @@ func (m *B2xUserFlowsItemLanguagesItemOverridesPagesCountRequestBuilder) ToGetRe
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *B2xUserFlowsItemLanguagesItemOverridesPagesCountRequestBuilder) WithUrl(rawUrl string)(*B2xUserFlowsItemLanguagesItemOverridesPagesCountRequestBuilder) {
+    return NewB2xUserFlowsItemLanguagesItemOverridesPagesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

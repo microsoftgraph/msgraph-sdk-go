@@ -46,8 +46,8 @@ type Alerts_v2RequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAlertIdString provides operations to manage the alerts_v2 property of the microsoft.graph.security entity.
-func (m *Alerts_v2RequestBuilder) ByAlertIdString(alertId string)(*Alerts_v2AlertItemRequestBuilder) {
+// ByAlertId provides operations to manage the alerts_v2 property of the microsoft.graph.security entity.
+func (m *Alerts_v2RequestBuilder) ByAlertId(alertId string)(*Alerts_v2AlertItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *Alerts_v2RequestBuilder) ToPostRequestInformation(ctx context.Context, 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *Alerts_v2RequestBuilder) WithUrl(rawUrl string)(*Alerts_v2RequestBuilder) {
+    return NewAlerts_v2RequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

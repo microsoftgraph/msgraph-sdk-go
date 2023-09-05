@@ -174,3 +174,7 @@ func (m *AuthenticationStrengthPoliciesAuthenticationStrengthPolicyItemRequestBu
 func (m *AuthenticationStrengthPoliciesAuthenticationStrengthPolicyItemRequestBuilder) Usage()(*AuthenticationStrengthPoliciesItemUsageRequestBuilder) {
     return NewAuthenticationStrengthPoliciesItemUsageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AuthenticationStrengthPoliciesAuthenticationStrengthPolicyItemRequestBuilder) WithUrl(rawUrl string)(*AuthenticationStrengthPoliciesAuthenticationStrengthPolicyItemRequestBuilder) {
+    return NewAuthenticationStrengthPoliciesAuthenticationStrengthPolicyItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

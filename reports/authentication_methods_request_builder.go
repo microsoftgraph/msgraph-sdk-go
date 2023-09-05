@@ -173,3 +173,7 @@ func (m *AuthenticationMethodsRequestBuilder) UsersRegisteredByMethod()(*Authent
 func (m *AuthenticationMethodsRequestBuilder) UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRoles(includedUserRoles *string, includedUserTypes *string)(*AuthenticationMethodsUsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder) {
     return NewAuthenticationMethodsUsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, includedUserRoles, includedUserTypes)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AuthenticationMethodsRequestBuilder) WithUrl(rawUrl string)(*AuthenticationMethodsRequestBuilder) {
+    return NewAuthenticationMethodsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

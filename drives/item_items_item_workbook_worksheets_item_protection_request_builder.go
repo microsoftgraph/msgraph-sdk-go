@@ -164,3 +164,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) ToPatchReq
 func (m *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) Unprotect()(*ItemItemsItemWorkbookWorksheetsItemProtectionUnprotectRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemProtectionUnprotectRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

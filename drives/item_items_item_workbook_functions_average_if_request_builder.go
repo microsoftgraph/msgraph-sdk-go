@@ -67,3 +67,7 @@ func (m *ItemItemsItemWorkbookFunctionsAverageIfRequestBuilder) ToPostRequestInf
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemWorkbookFunctionsAverageIfRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookFunctionsAverageIfRequestBuilder) {
+    return NewItemItemsItemWorkbookFunctionsAverageIfRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

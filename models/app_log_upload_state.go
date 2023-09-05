@@ -42,3 +42,6 @@ func SerializeAppLogUploadState(values []AppLogUploadState) []string {
     }
     return result
 }
+func (i AppLogUploadState) isMultiValue() bool {
+    return false
+}

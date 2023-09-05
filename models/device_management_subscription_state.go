@@ -54,3 +54,6 @@ func SerializeDeviceManagementSubscriptionState(values []DeviceManagementSubscri
     }
     return result
 }
+func (i DeviceManagementSubscriptionState) isMultiValue() bool {
+    return false
+}

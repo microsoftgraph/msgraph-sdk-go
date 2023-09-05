@@ -50,8 +50,8 @@ type IdentityProvidersRequestBuilderPostRequestConfiguration struct {
 func (m *IdentityProvidersRequestBuilder) AvailableProviderTypes()(*IdentityProvidersAvailableProviderTypesRequestBuilder) {
     return NewIdentityProvidersAvailableProviderTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByIdentityProviderBaseIdString provides operations to manage the identityProviders property of the microsoft.graph.identityContainer entity.
-func (m *IdentityProvidersRequestBuilder) ByIdentityProviderBaseIdString(identityProviderBaseId string)(*IdentityProvidersIdentityProviderBaseItemRequestBuilder) {
+// ByIdentityProviderBaseId provides operations to manage the identityProviders property of the microsoft.graph.identityContainer entity.
+func (m *IdentityProvidersRequestBuilder) ByIdentityProviderBaseId(identityProviderBaseId string)(*IdentityProvidersIdentityProviderBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -154,4 +154,8 @@ func (m *IdentityProvidersRequestBuilder) ToPostRequestInformation(ctx context.C
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IdentityProvidersRequestBuilder) WithUrl(rawUrl string)(*IdentityProvidersRequestBuilder) {
+    return NewIdentityProvidersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

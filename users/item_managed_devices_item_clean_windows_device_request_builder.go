@@ -65,3 +65,7 @@ func (m *ItemManagedDevicesItemCleanWindowsDeviceRequestBuilder) ToPostRequestIn
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemManagedDevicesItemCleanWindowsDeviceRequestBuilder) WithUrl(rawUrl string)(*ItemManagedDevicesItemCleanWindowsDeviceRequestBuilder) {
+    return NewItemManagedDevicesItemCleanWindowsDeviceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

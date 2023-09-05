@@ -41,3 +41,6 @@ func SerializeExchangeIdFormat(values []ExchangeIdFormat) []string {
     }
     return result
 }
+func (i ExchangeIdFormat) isMultiValue() bool {
+    return false
+}

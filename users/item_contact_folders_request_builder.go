@@ -44,8 +44,8 @@ type ItemContactFoldersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByContactFolderIdString provides operations to manage the contactFolders property of the microsoft.graph.user entity.
-func (m *ItemContactFoldersRequestBuilder) ByContactFolderIdString(contactFolderId string)(*ItemContactFoldersContactFolderItemRequestBuilder) {
+// ByContactFolderId provides operations to manage the contactFolders property of the microsoft.graph.user entity.
+func (m *ItemContactFoldersRequestBuilder) ByContactFolderId(contactFolderId string)(*ItemContactFoldersContactFolderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -152,4 +152,8 @@ func (m *ItemContactFoldersRequestBuilder) ToPostRequestInformation(ctx context.
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemContactFoldersRequestBuilder) WithUrl(rawUrl string)(*ItemContactFoldersRequestBuilder) {
+    return NewItemContactFoldersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

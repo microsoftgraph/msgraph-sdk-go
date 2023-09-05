@@ -46,8 +46,8 @@ type ManagedEBooksItemAssignmentsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagedEBookAssignmentIdString provides operations to manage the assignments property of the microsoft.graph.managedEBook entity.
-func (m *ManagedEBooksItemAssignmentsRequestBuilder) ByManagedEBookAssignmentIdString(managedEBookAssignmentId string)(*ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) {
+// ByManagedEBookAssignmentId provides operations to manage the assignments property of the microsoft.graph.managedEBook entity.
+func (m *ManagedEBooksItemAssignmentsRequestBuilder) ByManagedEBookAssignmentId(managedEBookAssignmentId string)(*ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -96,10 +96,10 @@ func (m *ManagedEBooksItemAssignmentsRequestBuilder) Get(ctx context.Context, re
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedEBookAssignmentCollectionResponseable), nil
 }
-// Post create a new iosVppEBookAssignment object.
+// Post create a new managedEBookAssignment object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-create?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-create?view=graph-rest-1.0
 func (m *ManagedEBooksItemAssignmentsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedEBookAssignmentable, requestConfiguration *ManagedEBooksItemAssignmentsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedEBookAssignmentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -134,7 +134,7 @@ func (m *ManagedEBooksItemAssignmentsRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new iosVppEBookAssignment object.
+// ToPostRequestInformation create a new managedEBookAssignment object.
 func (m *ManagedEBooksItemAssignmentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedEBookAssignmentable, requestConfiguration *ManagedEBooksItemAssignmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -150,4 +150,8 @@ func (m *ManagedEBooksItemAssignmentsRequestBuilder) ToPostRequestInformation(ct
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedEBooksItemAssignmentsRequestBuilder) WithUrl(rawUrl string)(*ManagedEBooksItemAssignmentsRequestBuilder) {
+    return NewManagedEBooksItemAssignmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

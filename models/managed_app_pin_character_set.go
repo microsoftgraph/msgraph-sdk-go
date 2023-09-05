@@ -34,3 +34,6 @@ func SerializeManagedAppPinCharacterSet(values []ManagedAppPinCharacterSet) []st
     }
     return result
 }
+func (i ManagedAppPinCharacterSet) isMultiValue() bool {
+    return false
+}

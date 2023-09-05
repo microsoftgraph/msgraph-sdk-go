@@ -80,3 +80,7 @@ func (m *AuditEventsGetAuditCategoriesRequestBuilder) ToGetRequestInformation(ct
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AuditEventsGetAuditCategoriesRequestBuilder) WithUrl(rawUrl string)(*AuditEventsGetAuditCategoriesRequestBuilder) {
+    return NewAuditEventsGetAuditCategoriesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

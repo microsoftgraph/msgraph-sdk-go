@@ -41,3 +41,6 @@ func SerializeWeekIndex(values []WeekIndex) []string {
     }
     return result
 }
+func (i WeekIndex) isMultiValue() bool {
+    return false
+}

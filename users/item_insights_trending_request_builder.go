@@ -46,8 +46,8 @@ type ItemInsightsTrendingRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTrendingIdString provides operations to manage the trending property of the microsoft.graph.officeGraphInsights entity.
-func (m *ItemInsightsTrendingRequestBuilder) ByTrendingIdString(trendingId string)(*ItemInsightsTrendingTrendingItemRequestBuilder) {
+// ByTrendingId provides operations to manage the trending property of the microsoft.graph.officeGraphInsights entity.
+func (m *ItemInsightsTrendingRequestBuilder) ByTrendingId(trendingId string)(*ItemInsightsTrendingTrendingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ItemInsightsTrendingRequestBuilder) ToPostRequestInformation(ctx contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemInsightsTrendingRequestBuilder) WithUrl(rawUrl string)(*ItemInsightsTrendingRequestBuilder) {
+    return NewItemInsightsTrendingRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

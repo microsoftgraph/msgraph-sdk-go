@@ -39,8 +39,8 @@ type ItemSitesItemDrivesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemSitesItemDrivesRequestBuilderGetQueryParameters
 }
-// ByDriveIdString provides operations to manage the drives property of the microsoft.graph.site entity.
-func (m *ItemSitesItemDrivesRequestBuilder) ByDriveIdString(driveId string)(*ItemSitesItemDrivesDriveItemRequestBuilder) {
+// ByDriveId provides operations to manage the drives property of the microsoft.graph.site entity.
+func (m *ItemSitesItemDrivesRequestBuilder) ByDriveId(driveId string)(*ItemSitesItemDrivesDriveItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *ItemSitesItemDrivesRequestBuilder) ToGetRequestInformation(ctx context.
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSitesItemDrivesRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemDrivesRequestBuilder) {
+    return NewItemSitesItemDrivesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

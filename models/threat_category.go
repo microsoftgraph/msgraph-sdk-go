@@ -41,3 +41,6 @@ func SerializeThreatCategory(values []ThreatCategory) []string {
     }
     return result
 }
+func (i ThreatCategory) isMultiValue() bool {
+    return false
+}

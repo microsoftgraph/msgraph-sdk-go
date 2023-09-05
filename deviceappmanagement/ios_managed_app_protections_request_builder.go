@@ -46,8 +46,8 @@ type IosManagedAppProtectionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByIosManagedAppProtectionIdString provides operations to manage the iosManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
-func (m *IosManagedAppProtectionsRequestBuilder) ByIosManagedAppProtectionIdString(iosManagedAppProtectionId string)(*IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) {
+// ByIosManagedAppProtectionId provides operations to manage the iosManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
+func (m *IosManagedAppProtectionsRequestBuilder) ByIosManagedAppProtectionId(iosManagedAppProtectionId string)(*IosManagedAppProtectionsIosManagedAppProtectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *IosManagedAppProtectionsRequestBuilder) ToPostRequestInformation(ctx co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IosManagedAppProtectionsRequestBuilder) WithUrl(rawUrl string)(*IosManagedAppProtectionsRequestBuilder) {
+    return NewIosManagedAppProtectionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

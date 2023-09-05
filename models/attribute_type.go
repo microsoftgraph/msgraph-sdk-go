@@ -44,3 +44,6 @@ func SerializeAttributeType(values []AttributeType) []string {
     }
     return result
 }
+func (i AttributeType) isMultiValue() bool {
+    return false
+}

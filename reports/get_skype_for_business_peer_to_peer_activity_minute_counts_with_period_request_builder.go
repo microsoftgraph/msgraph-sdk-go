@@ -64,3 +64,7 @@ func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriodRequestBuild
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriodRequestBuilder) WithUrl(rawUrl string)(*GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriodRequestBuilder) {
+    return NewGetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriodRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

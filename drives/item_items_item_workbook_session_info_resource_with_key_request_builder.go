@@ -66,3 +66,7 @@ func (m *ItemItemsItemWorkbookSessionInfoResourceWithKeyRequestBuilder) ToGetReq
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemWorkbookSessionInfoResourceWithKeyRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookSessionInfoResourceWithKeyRequestBuilder) {
+    return NewItemItemsItemWorkbookSessionInfoResourceWithKeyRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

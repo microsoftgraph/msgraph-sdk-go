@@ -35,3 +35,6 @@ func SerializeGiphyRatingType(values []GiphyRatingType) []string {
     }
     return result
 }
+func (i GiphyRatingType) isMultiValue() bool {
+    return false
+}

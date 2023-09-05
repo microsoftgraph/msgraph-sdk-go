@@ -46,8 +46,8 @@ type ItemOnenoteNotebooksRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByNotebookIdString provides operations to manage the notebooks property of the microsoft.graph.onenote entity.
-func (m *ItemOnenoteNotebooksRequestBuilder) ByNotebookIdString(notebookId string)(*ItemOnenoteNotebooksNotebookItemRequestBuilder) {
+// ByNotebookId provides operations to manage the notebooks property of the microsoft.graph.onenote entity.
+func (m *ItemOnenoteNotebooksRequestBuilder) ByNotebookId(notebookId string)(*ItemOnenoteNotebooksNotebookItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -158,4 +158,8 @@ func (m *ItemOnenoteNotebooksRequestBuilder) ToPostRequestInformation(ctx contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemOnenoteNotebooksRequestBuilder) WithUrl(rawUrl string)(*ItemOnenoteNotebooksRequestBuilder) {
+    return NewItemOnenoteNotebooksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

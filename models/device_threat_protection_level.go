@@ -50,3 +50,6 @@ func SerializeDeviceThreatProtectionLevel(values []DeviceThreatProtectionLevel) 
     }
     return result
 }
+func (i DeviceThreatProtectionLevel) isMultiValue() bool {
+    return false
+}

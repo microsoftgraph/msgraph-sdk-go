@@ -38,3 +38,6 @@ func SerializeWindowsInformationProtectionPinCharacterRequirements(values []Wind
     }
     return result
 }
+func (i WindowsInformationProtectionPinCharacterRequirements) isMultiValue() bool {
+    return false
+}

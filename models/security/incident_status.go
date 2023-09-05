@@ -44,3 +44,6 @@ func SerializeIncidentStatus(values []IncidentStatus) []string {
     }
     return result
 }
+func (i IncidentStatus) isMultiValue() bool {
+    return false
+}

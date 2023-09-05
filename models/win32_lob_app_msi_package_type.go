@@ -38,3 +38,6 @@ func SerializeWin32LobAppMsiPackageType(values []Win32LobAppMsiPackageType) []st
     }
     return result
 }
+func (i Win32LobAppMsiPackageType) isMultiValue() bool {
+    return false
+}

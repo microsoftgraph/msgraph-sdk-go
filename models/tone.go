@@ -77,3 +77,6 @@ func SerializeTone(values []Tone) []string {
     }
     return result
 }
+func (i Tone) isMultiValue() bool {
+    return false
+}

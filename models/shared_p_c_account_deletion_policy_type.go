@@ -38,3 +38,6 @@ func SerializeSharedPCAccountDeletionPolicyType(values []SharedPCAccountDeletion
     }
     return result
 }
+func (i SharedPCAccountDeletionPolicyType) isMultiValue() bool {
+    return false
+}

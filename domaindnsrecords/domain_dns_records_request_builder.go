@@ -46,8 +46,8 @@ type DomainDnsRecordsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDomainDnsRecordIdString provides operations to manage the collection of domainDnsRecord entities.
-func (m *DomainDnsRecordsRequestBuilder) ByDomainDnsRecordIdString(domainDnsRecordId string)(*DomainDnsRecordItemRequestBuilder) {
+// ByDomainDnsRecordId provides operations to manage the collection of domainDnsRecord entities.
+func (m *DomainDnsRecordsRequestBuilder) ByDomainDnsRecordId(domainDnsRecordId string)(*DomainDnsRecordItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *DomainDnsRecordsRequestBuilder) ToPostRequestInformation(ctx context.Co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DomainDnsRecordsRequestBuilder) WithUrl(rawUrl string)(*DomainDnsRecordsRequestBuilder) {
+    return NewDomainDnsRecordsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

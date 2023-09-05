@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // 
 type TemplateScenarios int
@@ -16,27 +17,36 @@ const (
 )
 
 func (i TemplateScenarios) String() string {
-    return []string{"new", "secureFoundation", "zeroTrust", "remoteWork", "protectAdmins", "emergingThreats", "unknownFutureValue"}[i]
+    var values []string
+    for p := TemplateScenarios(1); p <= UNKNOWNFUTUREVALUE_TEMPLATESCENARIOS; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"new", "secureFoundation", "zeroTrust", "remoteWork", "protectAdmins", "emergingThreats", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseTemplateScenarios(v string) (any, error) {
-    result := NEW_TEMPLATESCENARIOS
-    switch v {
-        case "new":
-            result = NEW_TEMPLATESCENARIOS
-        case "secureFoundation":
-            result = SECUREFOUNDATION_TEMPLATESCENARIOS
-        case "zeroTrust":
-            result = ZEROTRUST_TEMPLATESCENARIOS
-        case "remoteWork":
-            result = REMOTEWORK_TEMPLATESCENARIOS
-        case "protectAdmins":
-            result = PROTECTADMINS_TEMPLATESCENARIOS
-        case "emergingThreats":
-            result = EMERGINGTHREATS_TEMPLATESCENARIOS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_TEMPLATESCENARIOS
-        default:
-            return 0, errors.New("Unknown TemplateScenarios value: " + v)
+    var result TemplateScenarios
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "new":
+                result |= NEW_TEMPLATESCENARIOS
+            case "secureFoundation":
+                result |= SECUREFOUNDATION_TEMPLATESCENARIOS
+            case "zeroTrust":
+                result |= ZEROTRUST_TEMPLATESCENARIOS
+            case "remoteWork":
+                result |= REMOTEWORK_TEMPLATESCENARIOS
+            case "protectAdmins":
+                result |= PROTECTADMINS_TEMPLATESCENARIOS
+            case "emergingThreats":
+                result |= EMERGINGTHREATS_TEMPLATESCENARIOS
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_TEMPLATESCENARIOS
+            default:
+                return 0, errors.New("Unknown TemplateScenarios value: " + v)
+        }
     }
     return &result, nil
 }
@@ -46,4 +56,7 @@ func SerializeTemplateScenarios(values []TemplateScenarios) []string {
         result[i] = v.String()
     }
     return result
+}
+func (i TemplateScenarios) isMultiValue() bool {
+    return true
 }

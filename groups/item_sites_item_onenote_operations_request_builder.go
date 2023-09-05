@@ -46,8 +46,8 @@ type ItemSitesItemOnenoteOperationsRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByOnenoteOperationIdString provides operations to manage the operations property of the microsoft.graph.onenote entity.
-func (m *ItemSitesItemOnenoteOperationsRequestBuilder) ByOnenoteOperationIdString(onenoteOperationId string)(*ItemSitesItemOnenoteOperationsOnenoteOperationItemRequestBuilder) {
+// ByOnenoteOperationId provides operations to manage the operations property of the microsoft.graph.onenote entity.
+func (m *ItemSitesItemOnenoteOperationsRequestBuilder) ByOnenoteOperationId(onenoteOperationId string)(*ItemSitesItemOnenoteOperationsOnenoteOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ItemSitesItemOnenoteOperationsRequestBuilder) ToPostRequestInformation(
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSitesItemOnenoteOperationsRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemOnenoteOperationsRequestBuilder) {
+    return NewItemSitesItemOnenoteOperationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

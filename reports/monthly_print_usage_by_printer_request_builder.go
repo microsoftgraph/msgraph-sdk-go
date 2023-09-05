@@ -46,8 +46,8 @@ type MonthlyPrintUsageByPrinterRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPrintUsageByPrinterIdString provides operations to manage the monthlyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
-func (m *MonthlyPrintUsageByPrinterRequestBuilder) ByPrintUsageByPrinterIdString(printUsageByPrinterId string)(*MonthlyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilder) {
+// ByPrintUsageByPrinterId provides operations to manage the monthlyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
+func (m *MonthlyPrintUsageByPrinterRequestBuilder) ByPrintUsageByPrinterId(printUsageByPrinterId string)(*MonthlyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *MonthlyPrintUsageByPrinterRequestBuilder) ToPostRequestInformation(ctx 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MonthlyPrintUsageByPrinterRequestBuilder) WithUrl(rawUrl string)(*MonthlyPrintUsageByPrinterRequestBuilder) {
+    return NewMonthlyPrintUsageByPrinterRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

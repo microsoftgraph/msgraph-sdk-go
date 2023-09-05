@@ -38,3 +38,6 @@ func SerializeSecurityResourceType(values []SecurityResourceType) []string {
     }
     return result
 }
+func (i SecurityResourceType) isMultiValue() bool {
+    return false
+}

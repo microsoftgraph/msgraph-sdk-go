@@ -38,3 +38,6 @@ func SerializeBrowserSiteMergeType(values []BrowserSiteMergeType) []string {
     }
     return result
 }
+func (i BrowserSiteMergeType) isMultiValue() bool {
+    return false
+}

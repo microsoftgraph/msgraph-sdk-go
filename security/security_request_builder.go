@@ -117,6 +117,10 @@ func (m *SecurityRequestBuilder) SecureScoreControlProfiles()(*SecureScoreContro
 func (m *SecurityRequestBuilder) SecureScores()(*SecureScoresRequestBuilder) {
     return NewSecureScoresRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// SubjectRightsRequests provides operations to manage the subjectRightsRequests property of the microsoft.graph.security entity.
+func (m *SecurityRequestBuilder) SubjectRightsRequests()(*SubjectRightsRequestsRequestBuilder) {
+    return NewSubjectRightsRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ThreatIntelligence provides operations to manage the threatIntelligence property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) ThreatIntelligence()(*ThreatIntelligenceRequestBuilder) {
     return NewThreatIntelligenceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -161,4 +165,8 @@ func (m *SecurityRequestBuilder) Triggers()(*TriggersRequestBuilder) {
 // TriggerTypes provides operations to manage the triggerTypes property of the microsoft.graph.security entity.
 func (m *SecurityRequestBuilder) TriggerTypes()(*TriggerTypesRequestBuilder) {
     return NewTriggerTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SecurityRequestBuilder) WithUrl(rawUrl string)(*SecurityRequestBuilder) {
+    return NewSecurityRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

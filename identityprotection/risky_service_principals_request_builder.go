@@ -46,8 +46,8 @@ type RiskyServicePrincipalsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByRiskyServicePrincipalIdString provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.
-func (m *RiskyServicePrincipalsRequestBuilder) ByRiskyServicePrincipalIdString(riskyServicePrincipalId string)(*RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilder) {
+// ByRiskyServicePrincipalId provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.
+func (m *RiskyServicePrincipalsRequestBuilder) ByRiskyServicePrincipalId(riskyServicePrincipalId string)(*RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -155,4 +155,8 @@ func (m *RiskyServicePrincipalsRequestBuilder) ToPostRequestInformation(ctx cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *RiskyServicePrincipalsRequestBuilder) WithUrl(rawUrl string)(*RiskyServicePrincipalsRequestBuilder) {
+    return NewRiskyServicePrincipalsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

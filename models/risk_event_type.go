@@ -71,3 +71,6 @@ func SerializeRiskEventType(values []RiskEventType) []string {
     }
     return result
 }
+func (i RiskEventType) isMultiValue() bool {
+    return false
+}

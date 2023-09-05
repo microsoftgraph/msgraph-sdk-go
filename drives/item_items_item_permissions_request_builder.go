@@ -46,8 +46,8 @@ type ItemItemsItemPermissionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPermissionIdString provides operations to manage the permissions property of the microsoft.graph.driveItem entity.
-func (m *ItemItemsItemPermissionsRequestBuilder) ByPermissionIdString(permissionId string)(*ItemItemsItemPermissionsPermissionItemRequestBuilder) {
+// ByPermissionId provides operations to manage the permissions property of the microsoft.graph.driveItem entity.
+func (m *ItemItemsItemPermissionsRequestBuilder) ByPermissionId(permissionId string)(*ItemItemsItemPermissionsPermissionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ItemItemsItemPermissionsRequestBuilder) ToPostRequestInformation(ctx co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemPermissionsRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemPermissionsRequestBuilder) {
+    return NewItemItemsItemPermissionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

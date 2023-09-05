@@ -65,3 +65,7 @@ func (m *ItemRemovePasswordRequestBuilder) ToPostRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemRemovePasswordRequestBuilder) WithUrl(rawUrl string)(*ItemRemovePasswordRequestBuilder) {
+    return NewItemRemovePasswordRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -153,3 +153,7 @@ func (m *ScopedRoleMembershipItemRequestBuilder) ToPatchRequestInformation(ctx c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ScopedRoleMembershipItemRequestBuilder) WithUrl(rawUrl string)(*ScopedRoleMembershipItemRequestBuilder) {
+    return NewScopedRoleMembershipItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

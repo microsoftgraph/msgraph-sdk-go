@@ -46,8 +46,8 @@ type ManagedEBooksItemUserStateSummaryItemDeviceStatesRequestBuilderPostRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceInstallStateIdString provides operations to manage the deviceStates property of the microsoft.graph.userInstallStateSummary entity.
-func (m *ManagedEBooksItemUserStateSummaryItemDeviceStatesRequestBuilder) ByDeviceInstallStateIdString(deviceInstallStateId string)(*ManagedEBooksItemUserStateSummaryItemDeviceStatesDeviceInstallStateItemRequestBuilder) {
+// ByDeviceInstallStateId provides operations to manage the deviceStates property of the microsoft.graph.userInstallStateSummary entity.
+func (m *ManagedEBooksItemUserStateSummaryItemDeviceStatesRequestBuilder) ByDeviceInstallStateId(deviceInstallStateId string)(*ManagedEBooksItemUserStateSummaryItemDeviceStatesDeviceInstallStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ManagedEBooksItemUserStateSummaryItemDeviceStatesRequestBuilder) ToPost
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedEBooksItemUserStateSummaryItemDeviceStatesRequestBuilder) WithUrl(rawUrl string)(*ManagedEBooksItemUserStateSummaryItemDeviceStatesRequestBuilder) {
+    return NewManagedEBooksItemUserStateSummaryItemDeviceStatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

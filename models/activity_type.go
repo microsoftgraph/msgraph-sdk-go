@@ -38,3 +38,6 @@ func SerializeActivityType(values []ActivityType) []string {
     }
     return result
 }
+func (i ActivityType) isMultiValue() bool {
+    return false
+}

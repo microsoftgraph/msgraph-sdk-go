@@ -50,8 +50,8 @@ type ServiceAnnouncementMessagesRequestBuilderPostRequestConfiguration struct {
 func (m *ServiceAnnouncementMessagesRequestBuilder) Archive()(*ServiceAnnouncementMessagesArchiveRequestBuilder) {
     return NewServiceAnnouncementMessagesArchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByServiceUpdateMessageIdString provides operations to manage the messages property of the microsoft.graph.serviceAnnouncement entity.
-func (m *ServiceAnnouncementMessagesRequestBuilder) ByServiceUpdateMessageIdString(serviceUpdateMessageId string)(*ServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilder) {
+// ByServiceUpdateMessageId provides operations to manage the messages property of the microsoft.graph.serviceAnnouncement entity.
+func (m *ServiceAnnouncementMessagesRequestBuilder) ByServiceUpdateMessageId(serviceUpdateMessageId string)(*ServiceAnnouncementMessagesServiceUpdateMessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -171,4 +171,8 @@ func (m *ServiceAnnouncementMessagesRequestBuilder) Unarchive()(*ServiceAnnounce
 // Unfavorite provides operations to call the unfavorite method.
 func (m *ServiceAnnouncementMessagesRequestBuilder) Unfavorite()(*ServiceAnnouncementMessagesUnfavoriteRequestBuilder) {
     return NewServiceAnnouncementMessagesUnfavoriteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ServiceAnnouncementMessagesRequestBuilder) WithUrl(rawUrl string)(*ServiceAnnouncementMessagesRequestBuilder) {
+    return NewServiceAnnouncementMessagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

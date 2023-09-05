@@ -74,3 +74,6 @@ func SerializeDetectedAppPlatformType(values []DetectedAppPlatformType) []string
     }
     return result
 }
+func (i DetectedAppPlatformType) isMultiValue() bool {
+    return false
+}

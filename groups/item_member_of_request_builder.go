@@ -39,8 +39,8 @@ type ItemMemberOfRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemMemberOfRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectIdString provides operations to manage the memberOf property of the microsoft.graph.group entity.
-func (m *ItemMemberOfRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemMemberOfDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectId provides operations to manage the memberOf property of the microsoft.graph.group entity.
+func (m *ItemMemberOfRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemMemberOfDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -112,4 +112,8 @@ func (m *ItemMemberOfRequestBuilder) ToGetRequestInformation(ctx context.Context
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemMemberOfRequestBuilder) WithUrl(rawUrl string)(*ItemMemberOfRequestBuilder) {
+    return NewItemMemberOfRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

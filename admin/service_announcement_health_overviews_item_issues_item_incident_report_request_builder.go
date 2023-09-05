@@ -61,3 +61,7 @@ func (m *ServiceAnnouncementHealthOverviewsItemIssuesItemIncidentReportRequestBu
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ServiceAnnouncementHealthOverviewsItemIssuesItemIncidentReportRequestBuilder) WithUrl(rawUrl string)(*ServiceAnnouncementHealthOverviewsItemIssuesItemIncidentReportRequestBuilder) {
+    return NewServiceAnnouncementHealthOverviewsItemIssuesItemIncidentReportRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

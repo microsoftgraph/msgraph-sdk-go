@@ -38,3 +38,6 @@ func SerializeScheduleChangeState(values []ScheduleChangeState) []string {
     }
     return result
 }
+func (i ScheduleChangeState) isMultiValue() bool {
+    return false
+}

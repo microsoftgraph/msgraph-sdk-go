@@ -34,3 +34,6 @@ func SerializeEdgeSearchEngineType(values []EdgeSearchEngineType) []string {
     }
     return result
 }
+func (i EdgeSearchEngineType) isMultiValue() bool {
+    return false
+}
