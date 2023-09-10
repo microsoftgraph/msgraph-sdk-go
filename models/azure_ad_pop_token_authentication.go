@@ -8,7 +8,7 @@ import (
 type AzureAdPopTokenAuthentication struct {
     CustomExtensionAuthenticationConfiguration
 }
-// NewAzureAdPopTokenAuthentication instantiates a new AzureAdPopTokenAuthentication and sets the default values.
+// NewAzureAdPopTokenAuthentication instantiates a new azureAdPopTokenAuthentication and sets the default values.
 func NewAzureAdPopTokenAuthentication()(*AzureAdPopTokenAuthentication) {
     m := &AzureAdPopTokenAuthentication{
         CustomExtensionAuthenticationConfiguration: *NewCustomExtensionAuthenticationConfiguration(),

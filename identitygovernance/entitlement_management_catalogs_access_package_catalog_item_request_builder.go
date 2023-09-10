@@ -58,10 +58,14 @@ func NewEntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// CustomWorkflowExtensions provides operations to manage the customWorkflowExtensions property of the microsoft.graph.accessPackageCatalog entity.
+func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) CustomWorkflowExtensions()(*EntitlementManagementCatalogsItemCustomWorkflowExtensionsRequestBuilder) {
+    return NewEntitlementManagementCatalogsItemCustomWorkflowExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete an accessPackageCatalog.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/accesspackagecatalog-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackagecatalog-delete?view=graph-rest-1.0
 func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,7 +84,7 @@ func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) De
 // Get retrieve the properties and relationships of an accessPackageCatalog object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/accesspackagecatalog-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackagecatalog-get?view=graph-rest-1.0
 func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCatalogable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -102,7 +106,7 @@ func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) Ge
 // Patch update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/accesspackagecatalog-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackagecatalog-update?view=graph-rest-1.0
 func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCatalogable, requestConfiguration *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCatalogable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,6 +124,18 @@ func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) Pa
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCatalogable), nil
+}
+// ResourceRoles provides operations to manage the resourceRoles property of the microsoft.graph.accessPackageCatalog entity.
+func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) ResourceRoles()(*EntitlementManagementCatalogsItemResourceRolesRequestBuilder) {
+    return NewEntitlementManagementCatalogsItemResourceRolesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Resources provides operations to manage the resources property of the microsoft.graph.accessPackageCatalog entity.
+func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) Resources()(*EntitlementManagementCatalogsItemResourcesRequestBuilder) {
+    return NewEntitlementManagementCatalogsItemResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ResourceScopes provides operations to manage the resourceScopes property of the microsoft.graph.accessPackageCatalog entity.
+func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) ResourceScopes()(*EntitlementManagementCatalogsItemResourceScopesRequestBuilder) {
+    return NewEntitlementManagementCatalogsItemResourceScopesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete an accessPackageCatalog.
 func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

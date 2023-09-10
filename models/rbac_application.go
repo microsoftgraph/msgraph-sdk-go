@@ -8,7 +8,7 @@ import (
 type RbacApplication struct {
     Entity
 }
-// NewRbacApplication instantiates a new RbacApplication and sets the default values.
+// NewRbacApplication instantiates a new rbacApplication and sets the default values.
 func NewRbacApplication()(*RbacApplication) {
     m := &RbacApplication{
         Entity: *NewEntity(),

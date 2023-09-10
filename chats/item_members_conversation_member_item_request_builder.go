@@ -18,7 +18,7 @@ type ItemMembersConversationMemberItemRequestBuilderDeleteRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemMembersConversationMemberItemRequestBuilderGetQueryParameters retrieve a conversationMember from a chat.
+// ItemMembersConversationMemberItemRequestBuilderGetQueryParameters retrieve a conversationMember from a chat or channel.
 type ItemMembersConversationMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,7 +57,7 @@ func NewItemMembersConversationMemberItemRequestBuilder(rawUrl string, requestAd
 // Delete remove a conversationMember from a chat.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chat-delete-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-delete-members?view=graph-rest-1.0
 func (m *ItemMembersConversationMemberItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemMembersConversationMemberItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,10 +73,10 @@ func (m *ItemMembersConversationMemberItemRequestBuilder) Delete(ctx context.Con
     }
     return nil
 }
-// Get retrieve a conversationMember from a chat.
+// Get retrieve a conversationMember from a chat or channel.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0
 func (m *ItemMembersConversationMemberItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMembersConversationMemberItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -126,7 +126,7 @@ func (m *ItemMembersConversationMemberItemRequestBuilder) ToDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve a conversationMember from a chat.
+// ToGetRequestInformation retrieve a conversationMember from a chat or channel.
 func (m *ItemMembersConversationMemberItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMembersConversationMemberItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

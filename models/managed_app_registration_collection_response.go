@@ -8,7 +8,7 @@ import (
 type ManagedAppRegistrationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewManagedAppRegistrationCollectionResponse instantiates a new ManagedAppRegistrationCollectionResponse and sets the default values.
+// NewManagedAppRegistrationCollectionResponse instantiates a new managedAppRegistrationCollectionResponse and sets the default values.
 func NewManagedAppRegistrationCollectionResponse()(*ManagedAppRegistrationCollectionResponse) {
     m := &ManagedAppRegistrationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

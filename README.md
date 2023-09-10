@@ -124,15 +124,14 @@ import (
 result, err := client.Users().Get(context.Background(), nil)
 if err != nil {
     fmt.Printf("Error getting users: %v\n", err)
-    printOdataError(err error)
+    printOdataError(err)
     return err
 }
 
 // Use PageIterator to iterate through all users
-pageIterator, err := msgraphcore.NewPageIterator(result, client.GetAdapter(), models.CreateUserCollectionResponseFromDiscriminatorValue)
+pageIterator, err := msgraphcore.NewPageIterator[models.Userable](result, client.GetAdapter(), models.CreateUserCollectionResponseFromDiscriminatorValue)
 
-err = pageIterator.Iterate(context.Background(), func(pageItem interface{}) bool {
-    user := pageItem.(models.Userable)
+err = pageIterator.Iterate(context.Background(), func(user models.Userable) bool {
     fmt.Printf("%s\n", *user.GetDisplayName())
     // Return true to continue the iteration
     return true
@@ -144,7 +143,7 @@ func printOdataError(err error) {
         switch err.(type) {
         case *odataerrors.ODataError:
                 typed := err.(*odataerrors.ODataError)
-                fmt.Printf("error:", typed.Error())
+                fmt.Printf("error: %s", typed.Error())
                 if terr := typed.GetError(); terr != nil {
                         fmt.Printf("code: %s", *terr.GetCode())
                         fmt.Printf("msg: %s", *terr.GetMessage())

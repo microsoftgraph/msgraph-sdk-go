@@ -8,7 +8,7 @@ import (
 type EmailFileAssessmentRequest struct {
     ThreatAssessmentRequest
 }
-// NewEmailFileAssessmentRequest instantiates a new EmailFileAssessmentRequest and sets the default values.
+// NewEmailFileAssessmentRequest instantiates a new emailFileAssessmentRequest and sets the default values.
 func NewEmailFileAssessmentRequest()(*EmailFileAssessmentRequest) {
     m := &EmailFileAssessmentRequest{
         ThreatAssessmentRequest: *NewThreatAssessmentRequest(),

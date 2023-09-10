@@ -57,7 +57,7 @@ func NewItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder(rawUrl string, 
 // Delete deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/serviceprincipal-delete-approleassignedto?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-delete-approleassignedto?view=graph-rest-1.0
 func (m *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

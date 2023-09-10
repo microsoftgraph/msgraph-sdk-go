@@ -8,7 +8,7 @@ import (
 type GroupLifecyclePolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewGroupLifecyclePolicyCollectionResponse instantiates a new GroupLifecyclePolicyCollectionResponse and sets the default values.
+// NewGroupLifecyclePolicyCollectionResponse instantiates a new groupLifecyclePolicyCollectionResponse and sets the default values.
 func NewGroupLifecyclePolicyCollectionResponse()(*GroupLifecyclePolicyCollectionResponse) {
     m := &GroupLifecyclePolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

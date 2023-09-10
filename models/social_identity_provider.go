@@ -8,7 +8,7 @@ import (
 type SocialIdentityProvider struct {
     IdentityProviderBase
 }
-// NewSocialIdentityProvider instantiates a new SocialIdentityProvider and sets the default values.
+// NewSocialIdentityProvider instantiates a new socialIdentityProvider and sets the default values.
 func NewSocialIdentityProvider()(*SocialIdentityProvider) {
     m := &SocialIdentityProvider{
         IdentityProviderBase: *NewIdentityProviderBase(),
@@ -32,7 +32,7 @@ func (m *SocialIdentityProvider) GetClientId()(*string) {
     }
     return nil
 }
-// GetClientSecret gets the clientSecret property value. The client secret for the application that is obtained when the application is registered with the identity provider. This is write-only. A read operation returns ****. Required.
+// GetClientSecret gets the clientSecret property value. The client secret for the application that is obtained when the application is registered with the identity provider. This is write-only. A read operation returns . Required.
 func (m *SocialIdentityProvider) GetClientSecret()(*string) {
     val, err := m.GetBackingStore().Get("clientSecret")
     if err != nil {
@@ -122,7 +122,7 @@ func (m *SocialIdentityProvider) SetClientId(value *string)() {
         panic(err)
     }
 }
-// SetClientSecret sets the clientSecret property value. The client secret for the application that is obtained when the application is registered with the identity provider. This is write-only. A read operation returns ****. Required.
+// SetClientSecret sets the clientSecret property value. The client secret for the application that is obtained when the application is registered with the identity provider. This is write-only. A read operation returns . Required.
 func (m *SocialIdentityProvider) SetClientSecret(value *string)() {
     err := m.GetBackingStore().Set("clientSecret", value)
     if err != nil {

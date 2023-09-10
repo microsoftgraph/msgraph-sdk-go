@@ -8,7 +8,7 @@ import (
 type SchedulingGroup struct {
     ChangeTrackedEntity
 }
-// NewSchedulingGroup instantiates a new SchedulingGroup and sets the default values.
+// NewSchedulingGroup instantiates a new schedulingGroup and sets the default values.
 func NewSchedulingGroup()(*SchedulingGroup) {
     m := &SchedulingGroup{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),

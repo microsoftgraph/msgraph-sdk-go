@@ -61,7 +61,7 @@ func NewSubscriptionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 // Get retrieve the properties and relationships of webhook subscriptions, based on the app ID, the user, and the user's role with a tenant. The content of the response depends on the context in which the app is calling; for details, see the scenarios in the Permissions section.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/subscription-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/subscription-list?view=graph-rest-1.0
 func (m *SubscriptionsRequestBuilder) Get(ctx context.Context, requestConfiguration *SubscriptionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubscriptionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -83,7 +83,7 @@ func (m *SubscriptionsRequestBuilder) Get(ctx context.Context, requestConfigurat
 // Post subscribes a listener application to receive change notifications when the requested type of changes occur to the specified resource in Microsoft Graph. To identify the resources for which you can create subscriptions and the limitations on subscriptions, see Set up notifications for changes in resource data: Supported resources. Some resources support rich notifications, that is, notifications that include resource data. For more information about these resources, see Set up change notifications that include resource data: Supported resources.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/subscription-post-subscriptions?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/subscription-post-subscriptions?view=graph-rest-1.0
 func (m *SubscriptionsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable, requestConfiguration *SubscriptionsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

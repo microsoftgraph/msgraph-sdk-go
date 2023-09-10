@@ -33,7 +33,7 @@ func NewItemManagedDevicesItemRemoteLockRequestBuilder(rawUrl string, requestAda
 // Post remote lock
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-remotelock?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-remotelock?view=graph-rest-1.0
 func (m *ItemManagedDevicesItemRemoteLockRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemManagedDevicesItemRemoteLockRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

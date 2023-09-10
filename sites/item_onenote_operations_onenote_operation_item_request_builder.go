@@ -18,7 +18,7 @@ type ItemOnenoteOperationsOnenoteOperationItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemOnenoteOperationsOnenoteOperationItemRequestBuilderGetQueryParameters get the status of a long-running OneNote operation. This applies to operations that return the **Operation-Location** header in the response, such as `CopyNotebook`, `CopyToNotebook`, `CopyToSectionGroup`, `and CopyToSection`.    You can poll the Operation-Location endpoint until the `status` property returns `completed` or `failed`.  If the status is `completed`, the `resourceLocation` property contains the resource endpoint URI.  If the status is `failed`, the error and `@api.diagnostics` properties provide error information.
+// ItemOnenoteOperationsOnenoteOperationItemRequestBuilderGetQueryParameters get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.
 type ItemOnenoteOperationsOnenoteOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,10 @@ func (m *ItemOnenoteOperationsOnenoteOperationItemRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get get the status of a long-running OneNote operation. This applies to operations that return the **Operation-Location** header in the response, such as `CopyNotebook`, `CopyToNotebook`, `CopyToSectionGroup`, `and CopyToSection`.    You can poll the Operation-Location endpoint until the `status` property returns `completed` or `failed`.  If the status is `completed`, the `resourceLocation` property contains the resource endpoint URI.  If the status is `failed`, the error and `@api.diagnostics` properties provide error information.
+// Get get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/onenoteoperation-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/onenoteoperation-get?view=graph-rest-1.0
 func (m *ItemOnenoteOperationsOnenoteOperationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnenoteOperationsOnenoteOperationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteOperationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -123,7 +123,7 @@ func (m *ItemOnenoteOperationsOnenoteOperationItemRequestBuilder) ToDeleteReques
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the status of a long-running OneNote operation. This applies to operations that return the **Operation-Location** header in the response, such as `CopyNotebook`, `CopyToNotebook`, `CopyToSectionGroup`, `and CopyToSection`.    You can poll the Operation-Location endpoint until the `status` property returns `completed` or `failed`.  If the status is `completed`, the `resourceLocation` property contains the resource endpoint URI.  If the status is `failed`, the error and `@api.diagnostics` properties provide error information.
+// ToGetRequestInformation get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.
 func (m *ItemOnenoteOperationsOnenoteOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteOperationsOnenoteOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

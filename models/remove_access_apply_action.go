@@ -8,7 +8,7 @@ import (
 type RemoveAccessApplyAction struct {
     AccessReviewApplyAction
 }
-// NewRemoveAccessApplyAction instantiates a new RemoveAccessApplyAction and sets the default values.
+// NewRemoveAccessApplyAction instantiates a new removeAccessApplyAction and sets the default values.
 func NewRemoveAccessApplyAction()(*RemoveAccessApplyAction) {
     m := &RemoveAccessApplyAction{
         AccessReviewApplyAction: *NewAccessReviewApplyAction(),

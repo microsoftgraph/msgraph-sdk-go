@@ -10,7 +10,7 @@ type SearchRequest struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSearchRequest instantiates a new SearchRequest and sets the default values.
+// NewSearchRequest instantiates a new searchRequest and sets the default values.
 func NewSearchRequest()(*SearchRequest) {
     m := &SearchRequest{
     }
@@ -34,7 +34,7 @@ func (m *SearchRequest) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAggregationFilters gets the aggregationFilters property value. The aggregationFilters property
+// GetAggregationFilters gets the aggregationFilters property value. Contains one or more filters to obtain search results aggregated and filtered to a specific value of a field. Optional.Build this filter based on a prior search that aggregates by the same field. From the response of the prior search, identify the searchBucket that filters results to the specific value of the field, use the string in its aggregationFilterToken property, and build an aggregation filter string in the format '{field}:/'{aggregationFilterToken}/''. If multiple values for the same field need to be provided, use the strings in its aggregationFilterToken property and build an aggregation filter string in the format '{field}:or(/'{aggregationFilterToken1}/',/'{aggregationFilterToken2}/')'. For example, searching and aggregating drive items by file type returns a searchBucket for the file type docx in the response. You can conveniently use the aggregationFilterToken returned for this searchBucket in a subsequent search query and filter matches down to drive items of the docx file type. Example 1 and example 2 show the actual requests and responses.
 func (m *SearchRequest) GetAggregationFilters()([]string) {
     val, err := m.GetBackingStore().Get("aggregationFilters")
     if err != nil {
@@ -45,7 +45,7 @@ func (m *SearchRequest) GetAggregationFilters()([]string) {
     }
     return nil
 }
-// GetAggregations gets the aggregations property value. The aggregations property
+// GetAggregations gets the aggregations property value. Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.
 func (m *SearchRequest) GetAggregations()([]AggregationOptionable) {
     val, err := m.GetBackingStore().Get("aggregations")
     if err != nil {
@@ -60,7 +60,7 @@ func (m *SearchRequest) GetAggregations()([]AggregationOptionable) {
 func (m *SearchRequest) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCollapseProperties gets the collapseProperties property value. The collapseProperties property
+// GetCollapseProperties gets the collapseProperties property value. Contains the ordered collection of fields and limit to collapse results. Optional.
 func (m *SearchRequest) GetCollapseProperties()([]CollapsePropertyable) {
     val, err := m.GetBackingStore().Get("collapseProperties")
     if err != nil {
@@ -71,7 +71,7 @@ func (m *SearchRequest) GetCollapseProperties()([]CollapsePropertyable) {
     }
     return nil
 }
-// GetContentSources gets the contentSources property value. The contentSources property
+// GetContentSources gets the contentSources property value. Contains the connection to be targeted.
 func (m *SearchRequest) GetContentSources()([]string) {
     val, err := m.GetBackingStore().Get("contentSources")
     if err != nil {
@@ -82,7 +82,7 @@ func (m *SearchRequest) GetContentSources()([]string) {
     }
     return nil
 }
-// GetEnableTopResults gets the enableTopResults property value. The enableTopResults property
+// GetEnableTopResults gets the enableTopResults property value. This triggers hybrid sort for messages : the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.
 func (m *SearchRequest) GetEnableTopResults()(*bool) {
     val, err := m.GetBackingStore().Get("enableTopResults")
     if err != nil {
@@ -93,7 +93,7 @@ func (m *SearchRequest) GetEnableTopResults()(*bool) {
     }
     return nil
 }
-// GetEntityTypes gets the entityTypes property value. The entityTypes property
+// GetEntityTypes gets the entityTypes property value. One or more types of resources expected in the response. Possible values are: event, message, driveItem, externalItem, site, list, listItem, drive, chatMessage, person, acronym, bookmark.  Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum:chatMessage, person, acronym, bookmark. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
 func (m *SearchRequest) GetEntityTypes()([]EntityType) {
     val, err := m.GetBackingStore().Get("entityTypes")
     if err != nil {
@@ -311,7 +311,7 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetFields gets the fields property value. The fields property
+// GetFields gets the fields property value. Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default; otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from the content that Microsoft Graph connectors bring in. The fields property can use the semantic labels applied to properties. For example, if a property is labeled as title, you can retrieve it using the following syntax: label_title. Optional.
 func (m *SearchRequest) GetFields()([]string) {
     val, err := m.GetBackingStore().Get("fields")
     if err != nil {
@@ -322,7 +322,7 @@ func (m *SearchRequest) GetFields()([]string) {
     }
     return nil
 }
-// GetFrom gets the from property value. The from property
+// GetFrom gets the from property value. Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
 func (m *SearchRequest) GetFrom()(*int32) {
     val, err := m.GetBackingStore().Get("from")
     if err != nil {
@@ -355,7 +355,7 @@ func (m *SearchRequest) GetQuery()(SearchQueryable) {
     }
     return nil
 }
-// GetQueryAlterationOptions gets the queryAlterationOptions property value. The queryAlterationOptions property
+// GetQueryAlterationOptions gets the queryAlterationOptions property value. Query alteration options formatted in a JSON blob that contains two optional flags related to spelling correction. Optional.
 func (m *SearchRequest) GetQueryAlterationOptions()(SearchAlterationOptionsable) {
     val, err := m.GetBackingStore().Get("queryAlterationOptions")
     if err != nil {
@@ -366,7 +366,7 @@ func (m *SearchRequest) GetQueryAlterationOptions()(SearchAlterationOptionsable)
     }
     return nil
 }
-// GetRegion gets the region property value. The region property
+// GetRegion gets the region property value. The geographic location for the search. Required for searches that use application permissions. For details, see Get the region value.
 func (m *SearchRequest) GetRegion()(*string) {
     val, err := m.GetBackingStore().Get("region")
     if err != nil {
@@ -377,7 +377,7 @@ func (m *SearchRequest) GetRegion()(*string) {
     }
     return nil
 }
-// GetResultTemplateOptions gets the resultTemplateOptions property value. The resultTemplateOptions property
+// GetResultTemplateOptions gets the resultTemplateOptions property value. Provides the search result template options to render search results from connectors.
 func (m *SearchRequest) GetResultTemplateOptions()(ResultTemplateOptionable) {
     val, err := m.GetBackingStore().Get("resultTemplateOptions")
     if err != nil {
@@ -388,7 +388,7 @@ func (m *SearchRequest) GetResultTemplateOptions()(ResultTemplateOptionable) {
     }
     return nil
 }
-// GetSharePointOneDriveOptions gets the sharePointOneDriveOptions property value. The sharePointOneDriveOptions property
+// GetSharePointOneDriveOptions gets the sharePointOneDriveOptions property value. Indicates the kind of contents to be searched when a search is performed using application permissions. Optional.
 func (m *SearchRequest) GetSharePointOneDriveOptions()(SharePointOneDriveOptionsable) {
     val, err := m.GetBackingStore().Get("sharePointOneDriveOptions")
     if err != nil {
@@ -399,7 +399,7 @@ func (m *SearchRequest) GetSharePointOneDriveOptions()(SharePointOneDriveOptions
     }
     return nil
 }
-// GetSize gets the size property value. The size property
+// GetSize gets the size property value. The size of the page to be retrieved. The maximum value is 500. Optional.
 func (m *SearchRequest) GetSize()(*int32) {
     val, err := m.GetBackingStore().Get("size")
     if err != nil {
@@ -410,7 +410,7 @@ func (m *SearchRequest) GetSize()(*int32) {
     }
     return nil
 }
-// GetSortProperties gets the sortProperties property value. The sortProperties property
+// GetSortProperties gets the sortProperties property value. Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.
 func (m *SearchRequest) GetSortProperties()([]SortPropertyable) {
     val, err := m.GetBackingStore().Get("sortProperties")
     if err != nil {
@@ -552,14 +552,14 @@ func (m *SearchRequest) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAggregationFilters sets the aggregationFilters property value. The aggregationFilters property
+// SetAggregationFilters sets the aggregationFilters property value. Contains one or more filters to obtain search results aggregated and filtered to a specific value of a field. Optional.Build this filter based on a prior search that aggregates by the same field. From the response of the prior search, identify the searchBucket that filters results to the specific value of the field, use the string in its aggregationFilterToken property, and build an aggregation filter string in the format '{field}:/'{aggregationFilterToken}/''. If multiple values for the same field need to be provided, use the strings in its aggregationFilterToken property and build an aggregation filter string in the format '{field}:or(/'{aggregationFilterToken1}/',/'{aggregationFilterToken2}/')'. For example, searching and aggregating drive items by file type returns a searchBucket for the file type docx in the response. You can conveniently use the aggregationFilterToken returned for this searchBucket in a subsequent search query and filter matches down to drive items of the docx file type. Example 1 and example 2 show the actual requests and responses.
 func (m *SearchRequest) SetAggregationFilters(value []string)() {
     err := m.GetBackingStore().Set("aggregationFilters", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAggregations sets the aggregations property value. The aggregations property
+// SetAggregations sets the aggregations property value. Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.
 func (m *SearchRequest) SetAggregations(value []AggregationOptionable)() {
     err := m.GetBackingStore().Set("aggregations", value)
     if err != nil {
@@ -570,42 +570,42 @@ func (m *SearchRequest) SetAggregations(value []AggregationOptionable)() {
 func (m *SearchRequest) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCollapseProperties sets the collapseProperties property value. The collapseProperties property
+// SetCollapseProperties sets the collapseProperties property value. Contains the ordered collection of fields and limit to collapse results. Optional.
 func (m *SearchRequest) SetCollapseProperties(value []CollapsePropertyable)() {
     err := m.GetBackingStore().Set("collapseProperties", value)
     if err != nil {
         panic(err)
     }
 }
-// SetContentSources sets the contentSources property value. The contentSources property
+// SetContentSources sets the contentSources property value. Contains the connection to be targeted.
 func (m *SearchRequest) SetContentSources(value []string)() {
     err := m.GetBackingStore().Set("contentSources", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEnableTopResults sets the enableTopResults property value. The enableTopResults property
+// SetEnableTopResults sets the enableTopResults property value. This triggers hybrid sort for messages : the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.
 func (m *SearchRequest) SetEnableTopResults(value *bool)() {
     err := m.GetBackingStore().Set("enableTopResults", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEntityTypes sets the entityTypes property value. The entityTypes property
+// SetEntityTypes sets the entityTypes property value. One or more types of resources expected in the response. Possible values are: event, message, driveItem, externalItem, site, list, listItem, drive, chatMessage, person, acronym, bookmark.  Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum:chatMessage, person, acronym, bookmark. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
 func (m *SearchRequest) SetEntityTypes(value []EntityType)() {
     err := m.GetBackingStore().Set("entityTypes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFields sets the fields property value. The fields property
+// SetFields sets the fields property value. Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default; otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from the content that Microsoft Graph connectors bring in. The fields property can use the semantic labels applied to properties. For example, if a property is labeled as title, you can retrieve it using the following syntax: label_title. Optional.
 func (m *SearchRequest) SetFields(value []string)() {
     err := m.GetBackingStore().Set("fields", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFrom sets the from property value. The from property
+// SetFrom sets the from property value. Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
 func (m *SearchRequest) SetFrom(value *int32)() {
     err := m.GetBackingStore().Set("from", value)
     if err != nil {
@@ -626,42 +626,42 @@ func (m *SearchRequest) SetQuery(value SearchQueryable)() {
         panic(err)
     }
 }
-// SetQueryAlterationOptions sets the queryAlterationOptions property value. The queryAlterationOptions property
+// SetQueryAlterationOptions sets the queryAlterationOptions property value. Query alteration options formatted in a JSON blob that contains two optional flags related to spelling correction. Optional.
 func (m *SearchRequest) SetQueryAlterationOptions(value SearchAlterationOptionsable)() {
     err := m.GetBackingStore().Set("queryAlterationOptions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRegion sets the region property value. The region property
+// SetRegion sets the region property value. The geographic location for the search. Required for searches that use application permissions. For details, see Get the region value.
 func (m *SearchRequest) SetRegion(value *string)() {
     err := m.GetBackingStore().Set("region", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResultTemplateOptions sets the resultTemplateOptions property value. The resultTemplateOptions property
+// SetResultTemplateOptions sets the resultTemplateOptions property value. Provides the search result template options to render search results from connectors.
 func (m *SearchRequest) SetResultTemplateOptions(value ResultTemplateOptionable)() {
     err := m.GetBackingStore().Set("resultTemplateOptions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSharePointOneDriveOptions sets the sharePointOneDriveOptions property value. The sharePointOneDriveOptions property
+// SetSharePointOneDriveOptions sets the sharePointOneDriveOptions property value. Indicates the kind of contents to be searched when a search is performed using application permissions. Optional.
 func (m *SearchRequest) SetSharePointOneDriveOptions(value SharePointOneDriveOptionsable)() {
     err := m.GetBackingStore().Set("sharePointOneDriveOptions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSize sets the size property value. The size property
+// SetSize sets the size property value. The size of the page to be retrieved. The maximum value is 500. Optional.
 func (m *SearchRequest) SetSize(value *int32)() {
     err := m.GetBackingStore().Set("size", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSortProperties sets the sortProperties property value. The sortProperties property
+// SetSortProperties sets the sortProperties property value. Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.
 func (m *SearchRequest) SetSortProperties(value []SortPropertyable)() {
     err := m.GetBackingStore().Set("sortProperties", value)
     if err != nil {

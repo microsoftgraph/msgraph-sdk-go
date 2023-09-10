@@ -57,7 +57,7 @@ func NewWorkforceIntegrationsWorkforceIntegrationItemRequestBuilder(rawUrl strin
 // Delete delete an instance of a workforceIntegration.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/workforceintegration-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/workforceintegration-delete?view=graph-rest-1.0
 func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) Delete(ctx
 // Get retrieve the properties and relationships of a workforceIntegration object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/workforceintegration-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/workforceintegration-get?view=graph-rest-1.0
 func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) Get(ctx co
 // Patch update the properties of a workforceIntegration object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/workforceintegration-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/workforceintegration-update?view=graph-rest-1.0
 func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable, requestConfiguration *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

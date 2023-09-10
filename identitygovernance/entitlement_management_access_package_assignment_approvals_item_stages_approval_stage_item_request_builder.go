@@ -73,7 +73,7 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsItemStagesApproval
 // Get in Azure AD entitlement management, retrieve the properties of an approvalStage object. An approval stage is contained within an approval object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/approvalstage-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/approvalstage-get?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsItemStagesApprovalStageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentApprovalsItemStagesApprovalStageItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApprovalStageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsItemStagesApproval
 // Patch in Azure AD entitlement management, approve or deny an approvalStage object in an approval.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/approvalstage-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/approvalstage-update?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsItemStagesApprovalStageItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApprovalStageable, requestConfiguration *EntitlementManagementAccessPackageAssignmentApprovalsItemStagesApprovalStageItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApprovalStageable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

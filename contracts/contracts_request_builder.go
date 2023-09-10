@@ -81,7 +81,7 @@ func (m *ContractsRequestBuilder) Delta()(*DeltaRequestBuilder) {
 // Get retrieve a list of contract objects associated to a partner tenant.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/contract-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/contract-list?view=graph-rest-1.0
 func (m *ContractsRequestBuilder) Get(ctx context.Context, requestConfiguration *ContractsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContractCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -8,7 +8,7 @@ import (
 type SiteCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSiteCollectionResponse instantiates a new SiteCollectionResponse and sets the default values.
+// NewSiteCollectionResponse instantiates a new siteCollectionResponse and sets the default values.
 func NewSiteCollectionResponse()(*SiteCollectionResponse) {
     m := &SiteCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type EmailIdentity struct {
     Identity
 }
-// NewEmailIdentity instantiates a new EmailIdentity and sets the default values.
+// NewEmailIdentity instantiates a new emailIdentity and sets the default values.
 func NewEmailIdentity()(*EmailIdentity) {
     m := &EmailIdentity{
         Identity: *NewIdentity(),

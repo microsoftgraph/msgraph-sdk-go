@@ -8,11 +8,13 @@ import (
 type MailClusterEvidence struct {
     AlertEvidence
 }
-// NewMailClusterEvidence instantiates a new MailClusterEvidence and sets the default values.
+// NewMailClusterEvidence instantiates a new mailClusterEvidence and sets the default values.
 func NewMailClusterEvidence()(*MailClusterEvidence) {
     m := &MailClusterEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
+    odataTypeValue := "#microsoft.graph.security.mailClusterEvidence"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateMailClusterEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

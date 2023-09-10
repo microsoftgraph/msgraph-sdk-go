@@ -69,14 +69,14 @@ func (m *ItemItemsItemWorkbookFunctionsCountIfPostRequestBody) GetFieldDeseriali
             return err
         }
         if val != nil {
-            m.SetRange(val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable))
+            m.SetRangeEscaped(val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable))
         }
         return nil
     }
     return res
 }
-// GetRange gets the range property value. The range property
-func (m *ItemItemsItemWorkbookFunctionsCountIfPostRequestBody) GetRange()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
+// GetRangeEscaped gets the range property value. The range property
+func (m *ItemItemsItemWorkbookFunctionsCountIfPostRequestBody) GetRangeEscaped()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("rangeEscaped")
     if err != nil {
         panic(err)
@@ -95,7 +95,7 @@ func (m *ItemItemsItemWorkbookFunctionsCountIfPostRequestBody) Serialize(writer 
         }
     }
     {
-        err := writer.WriteObjectValue("range", m.GetRange())
+        err := writer.WriteObjectValue("range", m.GetRangeEscaped())
         if err != nil {
             return err
         }
@@ -126,8 +126,8 @@ func (m *ItemItemsItemWorkbookFunctionsCountIfPostRequestBody) SetCriteria(value
         panic(err)
     }
 }
-// SetRange sets the range property value. The range property
-func (m *ItemItemsItemWorkbookFunctionsCountIfPostRequestBody) SetRange(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
+// SetRangeEscaped sets the range property value. The range property
+func (m *ItemItemsItemWorkbookFunctionsCountIfPostRequestBody) SetRangeEscaped(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
     err := m.GetBackingStore().Set("rangeEscaped", value)
     if err != nil {
         panic(err)
@@ -140,8 +140,8 @@ type ItemItemsItemWorkbookFunctionsCountIfPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCriteria()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
-    GetRange()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetRangeEscaped()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCriteria(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
-    SetRange(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetRangeEscaped(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
 }

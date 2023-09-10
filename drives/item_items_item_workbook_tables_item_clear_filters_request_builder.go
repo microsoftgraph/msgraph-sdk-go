@@ -33,7 +33,7 @@ func NewItemItemsItemWorkbookTablesItemClearFiltersRequestBuilder(rawUrl string,
 // Post clears all the filters currently applied on the table.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/table-clearfilters?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/table-clearfilters?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookTablesItemClearFiltersRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemClearFiltersRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -33,7 +33,7 @@ func NewItemCalendarViewItemAcceptRequestBuilder(rawUrl string, requestAdapter i
 // Post accept the specified event in a user calendar.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
 func (m *ItemCalendarViewItemAcceptRequestBuilder) Post(ctx context.Context, body ItemCalendarViewItemAcceptPostRequestBodyable, requestConfiguration *ItemCalendarViewItemAcceptRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -8,7 +8,7 @@ import (
 type AadUserNotificationRecipient struct {
     TeamworkNotificationRecipient
 }
-// NewAadUserNotificationRecipient instantiates a new AadUserNotificationRecipient and sets the default values.
+// NewAadUserNotificationRecipient instantiates a new aadUserNotificationRecipient and sets the default values.
 func NewAadUserNotificationRecipient()(*AadUserNotificationRecipient) {
     m := &AadUserNotificationRecipient{
         TeamworkNotificationRecipient: *NewTeamworkNotificationRecipient(),

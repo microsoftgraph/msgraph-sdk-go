@@ -8,7 +8,7 @@ import (
 type LinkedResourceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewLinkedResourceCollectionResponse instantiates a new LinkedResourceCollectionResponse and sets the default values.
+// NewLinkedResourceCollectionResponse instantiates a new linkedResourceCollectionResponse and sets the default values.
 func NewLinkedResourceCollectionResponse()(*LinkedResourceCollectionResponse) {
     m := &LinkedResourceCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

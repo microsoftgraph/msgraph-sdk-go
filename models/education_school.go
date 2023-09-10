@@ -8,7 +8,7 @@ import (
 type EducationSchool struct {
     EducationOrganization
 }
-// NewEducationSchool instantiates a new EducationSchool and sets the default values.
+// NewEducationSchool instantiates a new educationSchool and sets the default values.
 func NewEducationSchool()(*EducationSchool) {
     m := &EducationSchool{
         EducationOrganization: *NewEducationOrganization(),

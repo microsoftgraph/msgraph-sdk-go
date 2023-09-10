@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOSLobApp 
+// MacOSLobApp contains properties and inherited properties for the macOS LOB App.
 type MacOSLobApp struct {
     MobileLobApp
 }
-// NewMacOSLobApp instantiates a new MacOSLobApp and sets the default values.
+// NewMacOSLobApp instantiates a new macOSLobApp and sets the default values.
 func NewMacOSLobApp()(*MacOSLobApp) {
     m := &MacOSLobApp{
         MobileLobApp: *NewMobileLobApp(),

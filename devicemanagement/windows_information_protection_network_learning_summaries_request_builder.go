@@ -77,7 +77,7 @@ func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) Cou
 // Get list properties and relationships of the windowsInformationProtectionNetworkLearningSummary objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-wip-windowsinformationprotectionnetworklearningsummary-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-wip-windowsinformationprotectionnetworklearningsummary-list?view=graph-rest-1.0
 func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsInformationProtectionNetworkLearningSummariesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionNetworkLearningSummaryCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) Get
 // Post create a new windowsInformationProtectionNetworkLearningSummary object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-wip-windowsinformationprotectionnetworklearningsummary-create?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-wip-windowsinformationprotectionnetworklearningsummary-create?view=graph-rest-1.0
 func (m *WindowsInformationProtectionNetworkLearningSummariesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionNetworkLearningSummaryable, requestConfiguration *WindowsInformationProtectionNetworkLearningSummariesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsInformationProtectionNetworkLearningSummaryable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

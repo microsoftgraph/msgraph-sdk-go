@@ -9,7 +9,7 @@ import (
 type Event struct {
     OutlookItem
 }
-// NewEvent instantiates a new Event and sets the default values.
+// NewEvent instantiates a new event and sets the default values.
 func NewEvent()(*Event) {
     m := &Event{
         OutlookItem: *NewOutlookItem(),
@@ -561,7 +561,7 @@ func (m *Event) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
             return err
         }
         if val != nil {
-            m.SetType(val.(*EventType))
+            m.SetTypeEscaped(val.(*EventType))
         }
         return nil
     }
@@ -929,8 +929,8 @@ func (m *Event) GetTransactionId()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *Event) GetType()(*EventType) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *Event) GetTypeEscaped()(*EventType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -1243,8 +1243,8 @@ func (m *Event) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -1538,8 +1538,8 @@ func (m *Event) SetTransactionId(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *Event) SetType(value *EventType)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *Event) SetTypeEscaped(value *EventType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -1596,7 +1596,7 @@ type Eventable interface {
     GetStart()(DateTimeTimeZoneable)
     GetSubject()(*string)
     GetTransactionId()(*string)
-    GetType()(*EventType)
+    GetTypeEscaped()(*EventType)
     GetWebLink()(*string)
     SetAllowNewTimeProposals(value *bool)()
     SetAttachments(value []Attachmentable)()
@@ -1638,6 +1638,6 @@ type Eventable interface {
     SetStart(value DateTimeTimeZoneable)()
     SetSubject(value *string)()
     SetTransactionId(value *string)()
-    SetType(value *EventType)()
+    SetTypeEscaped(value *EventType)()
     SetWebLink(value *string)()
 }

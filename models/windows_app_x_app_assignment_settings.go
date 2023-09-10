@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsAppXAppAssignmentSettings 
+// WindowsAppXAppAssignmentSettings contains properties used when assigning a Windows AppX mobile app to a group.
 type WindowsAppXAppAssignmentSettings struct {
     MobileAppAssignmentSettings
 }
-// NewWindowsAppXAppAssignmentSettings instantiates a new WindowsAppXAppAssignmentSettings and sets the default values.
+// NewWindowsAppXAppAssignmentSettings instantiates a new windowsAppXAppAssignmentSettings and sets the default values.
 func NewWindowsAppXAppAssignmentSettings()(*WindowsAppXAppAssignmentSettings) {
     m := &WindowsAppXAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),

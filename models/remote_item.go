@@ -180,7 +180,7 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
             return err
         }
         if val != nil {
-            m.SetPackage(val.(PackageEscapedable))
+            m.SetPackageEscaped(val.(PackageEscapedable))
         }
         return nil
     }
@@ -365,8 +365,8 @@ func (m *RemoteItem) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPackage gets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
-func (m *RemoteItem) GetPackage()(PackageEscapedable) {
+// GetPackageEscaped gets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
+func (m *RemoteItem) GetPackageEscaped()(PackageEscapedable) {
     val, err := m.GetBackingStore().Get("packageEscaped")
     if err != nil {
         panic(err)
@@ -533,7 +533,7 @@ func (m *RemoteItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
-        err := writer.WriteObjectValue("package", m.GetPackage())
+        err := writer.WriteObjectValue("package", m.GetPackageEscaped())
         if err != nil {
             return err
         }
@@ -682,8 +682,8 @@ func (m *RemoteItem) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPackage sets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
-func (m *RemoteItem) SetPackage(value PackageEscapedable)() {
+// SetPackageEscaped sets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
+func (m *RemoteItem) SetPackageEscaped(value PackageEscapedable)() {
     err := m.GetBackingStore().Set("packageEscaped", value)
     if err != nil {
         panic(err)
@@ -762,7 +762,7 @@ type RemoteItemable interface {
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetName()(*string)
     GetOdataType()(*string)
-    GetPackage()(PackageEscapedable)
+    GetPackageEscaped()(PackageEscapedable)
     GetParentReference()(ItemReferenceable)
     GetShared()(Sharedable)
     GetSharepointIds()(SharepointIdsable)
@@ -783,7 +783,7 @@ type RemoteItemable interface {
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetName(value *string)()
     SetOdataType(value *string)()
-    SetPackage(value PackageEscapedable)()
+    SetPackageEscaped(value PackageEscapedable)()
     SetParentReference(value ItemReferenceable)()
     SetShared(value Sharedable)()
     SetSharepointIds(value SharepointIdsable)()

@@ -8,7 +8,7 @@ import (
 type ChannelDeletedEventMessageDetail struct {
     EventMessageDetail
 }
-// NewChannelDeletedEventMessageDetail instantiates a new ChannelDeletedEventMessageDetail and sets the default values.
+// NewChannelDeletedEventMessageDetail instantiates a new channelDeletedEventMessageDetail and sets the default values.
 func NewChannelDeletedEventMessageDetail()(*ChannelDeletedEventMessageDetail) {
     m := &ChannelDeletedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),

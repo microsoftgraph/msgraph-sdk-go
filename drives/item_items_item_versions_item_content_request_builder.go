@@ -41,7 +41,7 @@ func NewItemItemsItemVersionsItemContentRequestBuilder(rawUrl string, requestAda
 // Get the content stream for this version of the item.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/driveitem-list-versions?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-list-versions?view=graph-rest-1.0
 func (m *ItemItemsItemVersionsItemContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemVersionsItemContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -70,7 +70,7 @@ func (m *LifecycleWorkflowsWorkflowsItemVersionsRequestBuilder) Count()(*Lifecyc
 // Get get a list of the workflowVersion objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identitygovernance-workflow-list-versions?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-versions?view=graph-rest-1.0
 func (m *LifecycleWorkflowsWorkflowsItemVersionsRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemVersionsRequestBuilderGetRequestConfiguration)(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.WorkflowVersionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

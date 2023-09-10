@@ -65,7 +65,7 @@ func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) CreatedByUser()(
 // Delete removes an item from a [list][].
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/listitem-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/listitem-delete?view=graph-rest-1.0
 func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsListItemItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,7 +96,7 @@ func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) Fields()(*ItemSi
 // Get returns the metadata for an [item][] in a [list][].
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/listitem-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/listitem-get?view=graph-rest-1.0
 func (m *ItemSitesItemListsItemItemsListItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsListItemItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

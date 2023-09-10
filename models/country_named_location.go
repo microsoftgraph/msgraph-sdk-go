@@ -8,7 +8,7 @@ import (
 type CountryNamedLocation struct {
     NamedLocation
 }
-// NewCountryNamedLocation instantiates a new CountryNamedLocation and sets the default values.
+// NewCountryNamedLocation instantiates a new countryNamedLocation and sets the default values.
 func NewCountryNamedLocation()(*CountryNamedLocation) {
     m := &CountryNamedLocation{
         NamedLocation: *NewNamedLocation(),

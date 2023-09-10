@@ -35,6 +35,8 @@ func CreateCaseOperationFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
                         return NewEdiscoveryAddToReviewSetOperation(), nil
                     case "#microsoft.graph.security.ediscoveryEstimateOperation":
                         return NewEdiscoveryEstimateOperation(), nil
+                    case "#microsoft.graph.security.ediscoveryExportOperation":
+                        return NewEdiscoveryExportOperation(), nil
                     case "#microsoft.graph.security.ediscoveryHoldOperation":
                         return NewEdiscoveryHoldOperation(), nil
                     case "#microsoft.graph.security.ediscoveryIndexOperation":

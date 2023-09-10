@@ -8,7 +8,7 @@ import (
 type ServiceHealthIssue struct {
     ServiceAnnouncementBase
 }
-// NewServiceHealthIssue instantiates a new ServiceHealthIssue and sets the default values.
+// NewServiceHealthIssue instantiates a new serviceHealthIssue and sets the default values.
 func NewServiceHealthIssue()(*ServiceHealthIssue) {
     m := &ServiceHealthIssue{
         ServiceAnnouncementBase: *NewServiceAnnouncementBase(),

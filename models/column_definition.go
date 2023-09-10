@@ -449,7 +449,7 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e
             return err
         }
         if val != nil {
-            m.SetType(val.(*ColumnTypes))
+            m.SetTypeEscaped(val.(*ColumnTypes))
         }
         return nil
     }
@@ -674,8 +674,8 @@ func (m *ColumnDefinition) GetThumbnail()(ThumbnailColumnable) {
     }
     return nil
 }
-// GetType gets the type property value. For site columns, the type of column. Read-only.
-func (m *ColumnDefinition) GetType()(*ColumnTypes) {
+// GetTypeEscaped gets the type property value. For site columns, the type of column. Read-only.
+func (m *ColumnDefinition) GetTypeEscaped()(*ColumnTypes) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -882,8 +882,8 @@ func (m *ColumnDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -1107,8 +1107,8 @@ func (m *ColumnDefinition) SetThumbnail(value ThumbnailColumnable)() {
         panic(err)
     }
 }
-// SetType sets the type property value. For site columns, the type of column. Read-only.
-func (m *ColumnDefinition) SetType(value *ColumnTypes)() {
+// SetTypeEscaped sets the type property value. For site columns, the type of column. Read-only.
+func (m *ColumnDefinition) SetTypeEscaped(value *ColumnTypes)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -1155,7 +1155,7 @@ type ColumnDefinitionable interface {
     GetTerm()(TermColumnable)
     GetText()(TextColumnable)
     GetThumbnail()(ThumbnailColumnable)
-    GetType()(*ColumnTypes)
+    GetTypeEscaped()(*ColumnTypes)
     GetValidation()(ColumnValidationable)
     SetBoolean(value BooleanColumnable)()
     SetCalculated(value CalculatedColumnable)()
@@ -1187,6 +1187,6 @@ type ColumnDefinitionable interface {
     SetTerm(value TermColumnable)()
     SetText(value TextColumnable)()
     SetThumbnail(value ThumbnailColumnable)()
-    SetType(value *ColumnTypes)()
+    SetTypeEscaped(value *ColumnTypes)()
     SetValidation(value ColumnValidationable)()
 }

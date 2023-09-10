@@ -8,7 +8,7 @@ import (
 type CalendarPermissionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCalendarPermissionCollectionResponse instantiates a new CalendarPermissionCollectionResponse and sets the default values.
+// NewCalendarPermissionCollectionResponse instantiates a new calendarPermissionCollectionResponse and sets the default values.
 func NewCalendarPermissionCollectionResponse()(*CalendarPermissionCollectionResponse) {
     m := &CalendarPermissionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

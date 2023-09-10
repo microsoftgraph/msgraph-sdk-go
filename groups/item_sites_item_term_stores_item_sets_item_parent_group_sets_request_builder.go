@@ -77,7 +77,7 @@ func (m *ItemSitesItemTermStoresItemSetsItemParentGroupSetsRequestBuilder) Count
 // Get get a list of the set objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/termstore-group-list-sets?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-group-list-sets?view=graph-rest-1.0
 func (m *ItemSitesItemTermStoresItemSetsItemParentGroupSetsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemTermStoresItemSetsItemParentGroupSetsRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.SetCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

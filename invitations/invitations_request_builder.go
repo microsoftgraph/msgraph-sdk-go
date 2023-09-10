@@ -96,7 +96,7 @@ func (m *InvitationsRequestBuilder) Get(ctx context.Context, requestConfiguratio
 // Post use this API to create a new invitation. Invitation adds an external user to the organization. When creating a new invitation you have several options available:
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/invitation-post?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/invitation-post?view=graph-rest-1.0
 func (m *InvitationsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Invitationable, requestConfiguration *InvitationsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Invitationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

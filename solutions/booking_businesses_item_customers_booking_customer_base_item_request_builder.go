@@ -57,7 +57,7 @@ func NewBookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder(rawU
 // Delete delete the specified bookingCustomer object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingcustomer-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingcustomer-delete?view=graph-rest-1.0
 func (m *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder) De
 // Get get the properties and relationships of a bookingCustomer object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingcustomer-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingcustomer-get?view=graph-rest-1.0
 func (m *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCustomerBaseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder) Ge
 // Patch update the properties of a bookingCustomer object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingcustomer-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingcustomer-update?view=graph-rest-1.0
 func (m *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCustomerBaseable, requestConfiguration *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCustomerBaseable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

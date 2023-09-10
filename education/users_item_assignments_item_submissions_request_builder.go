@@ -77,7 +77,7 @@ func (m *UsersItemAssignmentsItemSubmissionsRequestBuilder) Count()(*UsersItemAs
 // Get list all the submissions associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can get all the submissions while a student can only get submissions that they are associated with.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationassignment-list-submissions?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-list-submissions?view=graph-rest-1.0
 func (m *UsersItemAssignmentsItemSubmissionsRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemSubmissionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationSubmissionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

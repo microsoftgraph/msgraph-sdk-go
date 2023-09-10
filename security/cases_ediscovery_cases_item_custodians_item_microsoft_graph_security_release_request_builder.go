@@ -33,7 +33,7 @@ func NewCasesEdiscoveryCasesItemCustodiansItemMicrosoftGraphSecurityReleaseReque
 // Post release a custodian from a case. For details, see Release a custodian from a case.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-release?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-release?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemCustodiansItemMicrosoftGraphSecurityReleaseRequestBuilder) Post(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCustodiansItemMicrosoftGraphSecurityReleaseRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -30,10 +30,10 @@ func NewItemItemsItemCheckoutRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemCheckoutRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
+// Post check out a driveItem resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/driveitem-checkout?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-checkout?view=graph-rest-1.0
 func (m *ItemItemsItemCheckoutRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemCheckoutRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +49,7 @@ func (m *ItemItemsItemCheckoutRequestBuilder) Post(ctx context.Context, requestC
     }
     return nil
 }
-// ToPostRequestInformation check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
+// ToPostRequestInformation check out a driveItem resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
 func (m *ItemItemsItemCheckoutRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemCheckoutRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

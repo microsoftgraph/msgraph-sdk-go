@@ -106,7 +106,7 @@ func (m *SynchronizationLinkedObjects) GetManager()(SynchronizationJobSubjectabl
     }
     return nil
 }
-// GetMembers gets the members property value. The members property
+// GetMembers gets the members property value. All group members that you would like to provision.
 func (m *SynchronizationLinkedObjects) GetMembers()([]SynchronizationJobSubjectable) {
     val, err := m.GetBackingStore().Get("members")
     if err != nil {
@@ -203,7 +203,7 @@ func (m *SynchronizationLinkedObjects) SetManager(value SynchronizationJobSubjec
         panic(err)
     }
 }
-// SetMembers sets the members property value. The members property
+// SetMembers sets the members property value. All group members that you would like to provision.
 func (m *SynchronizationLinkedObjects) SetMembers(value []SynchronizationJobSubjectable)() {
     err := m.GetBackingStore().Set("members", value)
     if err != nil {

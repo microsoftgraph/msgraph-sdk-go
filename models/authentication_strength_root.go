@@ -8,7 +8,7 @@ import (
 type AuthenticationStrengthRoot struct {
     Entity
 }
-// NewAuthenticationStrengthRoot instantiates a new AuthenticationStrengthRoot and sets the default values.
+// NewAuthenticationStrengthRoot instantiates a new authenticationStrengthRoot and sets the default values.
 func NewAuthenticationStrengthRoot()(*AuthenticationStrengthRoot) {
     m := &AuthenticationStrengthRoot{
         Entity: *NewEntity(),

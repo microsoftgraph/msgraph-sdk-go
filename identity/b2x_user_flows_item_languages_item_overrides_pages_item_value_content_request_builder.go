@@ -40,7 +40,7 @@ func NewB2xUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilde
 // Get get media content for the navigation property overridesPages from identity
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/userflowlanguageconfiguration-list-overridespages?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/userflowlanguageconfiguration-list-overridespages?view=graph-rest-1.0
 func (m *B2xUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *B2xUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

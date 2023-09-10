@@ -40,7 +40,7 @@ func NewItemPhotosItemValueContentRequestBuilder(rawUrl string, requestAdapter i
 // Get get media content for the navigation property photos from groups
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/group-list-photos?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-list-photos?view=graph-rest-1.0
 func (m *ItemPhotosItemValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPhotosItemValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

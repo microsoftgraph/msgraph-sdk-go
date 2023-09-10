@@ -9,7 +9,7 @@ import (
 type LifecycleWorkflowsContainer struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewLifecycleWorkflowsContainer instantiates a new LifecycleWorkflowsContainer and sets the default values.
+// NewLifecycleWorkflowsContainer instantiates a new lifecycleWorkflowsContainer and sets the default values.
 func NewLifecycleWorkflowsContainer()(*LifecycleWorkflowsContainer) {
     m := &LifecycleWorkflowsContainer{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),

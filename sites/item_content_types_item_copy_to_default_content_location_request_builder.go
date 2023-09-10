@@ -33,7 +33,7 @@ func NewItemContentTypesItemCopyToDefaultContentLocationRequestBuilder(rawUrl st
 // Post copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
 func (m *ItemContentTypesItemCopyToDefaultContentLocationRequestBuilder) Post(ctx context.Context, body ItemContentTypesItemCopyToDefaultContentLocationPostRequestBodyable, requestConfiguration *ItemContentTypesItemCopyToDefaultContentLocationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

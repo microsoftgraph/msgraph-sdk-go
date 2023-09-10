@@ -37,10 +37,10 @@ func NewItemBrandingLocalizationsItemCustomCSSRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewItemBrandingLocalizationsItemCustomCSSRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get customCSS for the navigation property localizations from organization
+// Get cSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
 func (m *ItemBrandingLocalizationsItemCustomCSSRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemBrandingLocalizationsItemCustomCSSRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ItemBrandingLocalizationsItemCustomCSSRequestBuilder) Get(ctx context.C
     }
     return res.([]byte), nil
 }
-// Put update customCSS for the navigation property localizations in organization
+// Put cSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
 func (m *ItemBrandingLocalizationsItemCustomCSSRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemBrandingLocalizationsItemCustomCSSRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -78,7 +78,7 @@ func (m *ItemBrandingLocalizationsItemCustomCSSRequestBuilder) Put(ctx context.C
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation get customCSS for the navigation property localizations from organization
+// ToGetRequestInformation cSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
 func (m *ItemBrandingLocalizationsItemCustomCSSRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemBrandingLocalizationsItemCustomCSSRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -90,7 +90,7 @@ func (m *ItemBrandingLocalizationsItemCustomCSSRequestBuilder) ToGetRequestInfor
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation update customCSS for the navigation property localizations in organization
+// ToPutRequestInformation cSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
 func (m *ItemBrandingLocalizationsItemCustomCSSRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemBrandingLocalizationsItemCustomCSSRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -65,7 +65,7 @@ func NewTermsAndConditionsTermsAndConditionsItemRequestBuilder(rawUrl string, re
 // Delete deletes a termsAndConditions.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-companyterms-termsandconditions-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditions-delete?view=graph-rest-1.0
 func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TermsAndConditionsTermsAndConditionsItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -84,7 +84,7 @@ func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) Delete(ctx cont
 // Get read properties and relationships of the termsAndConditions object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-companyterms-termsandconditions-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditions-get?view=graph-rest-1.0
 func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TermsAndConditionsTermsAndConditionsItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -106,7 +106,7 @@ func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) Get(ctx context
 // Patch update the properties of a termsAndConditions object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-companyterms-termsandconditions-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditions-update?view=graph-rest-1.0
 func (m *TermsAndConditionsTermsAndConditionsItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsable, requestConfiguration *TermsAndConditionsTermsAndConditionsItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TermsAndConditionsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

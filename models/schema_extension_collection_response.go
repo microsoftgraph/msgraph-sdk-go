@@ -8,7 +8,7 @@ import (
 type SchemaExtensionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSchemaExtensionCollectionResponse instantiates a new SchemaExtensionCollectionResponse and sets the default values.
+// NewSchemaExtensionCollectionResponse instantiates a new schemaExtensionCollectionResponse and sets the default values.
 func NewSchemaExtensionCollectionResponse()(*SchemaExtensionCollectionResponse) {
     m := &SchemaExtensionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

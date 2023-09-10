@@ -8,7 +8,7 @@ import (
 type MdmWindowsInformationProtectionPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMdmWindowsInformationProtectionPolicyCollectionResponse instantiates a new MdmWindowsInformationProtectionPolicyCollectionResponse and sets the default values.
+// NewMdmWindowsInformationProtectionPolicyCollectionResponse instantiates a new mdmWindowsInformationProtectionPolicyCollectionResponse and sets the default values.
 func NewMdmWindowsInformationProtectionPolicyCollectionResponse()(*MdmWindowsInformationProtectionPolicyCollectionResponse) {
     m := &MdmWindowsInformationProtectionPolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

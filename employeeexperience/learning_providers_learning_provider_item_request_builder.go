@@ -57,7 +57,7 @@ func NewLearningProvidersLearningProviderItemRequestBuilder(rawUrl string, reque
 // Delete delete a learningProvider resource and remove its registration in Viva Learning for a tenant.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/employeeexperience-delete-learningproviders?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/employeeexperience-delete-learningproviders?view=graph-rest-1.0
 func (m *LearningProvidersLearningProviderItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *LearningProvidersLearningProviderItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *LearningProvidersLearningProviderItemRequestBuilder) Delete(ctx context
 // Get read the properties and relationships of a learningProvider object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/learningprovider-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/learningprovider-get?view=graph-rest-1.0
 func (m *LearningProvidersLearningProviderItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LearningProvidersLearningProviderItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LearningProviderable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,10 +99,14 @@ func (m *LearningProvidersLearningProviderItemRequestBuilder) Get(ctx context.Co
 func (m *LearningProvidersLearningProviderItemRequestBuilder) LearningContents()(*LearningProvidersItemLearningContentsRequestBuilder) {
     return NewLearningProvidersItemLearningContentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// LearningCourseActivities provides operations to manage the learningCourseActivities property of the microsoft.graph.learningProvider entity.
+func (m *LearningProvidersLearningProviderItemRequestBuilder) LearningCourseActivities()(*LearningProvidersItemLearningCourseActivitiesRequestBuilder) {
+    return NewLearningProvidersItemLearningCourseActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the properties of a learningProvider object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/learningprovider-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/learningprovider-update?view=graph-rest-1.0
 func (m *LearningProvidersLearningProviderItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LearningProviderable, requestConfiguration *LearningProvidersLearningProviderItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LearningProviderable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

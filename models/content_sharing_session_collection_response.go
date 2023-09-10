@@ -8,7 +8,7 @@ import (
 type ContentSharingSessionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewContentSharingSessionCollectionResponse instantiates a new ContentSharingSessionCollectionResponse and sets the default values.
+// NewContentSharingSessionCollectionResponse instantiates a new contentSharingSessionCollectionResponse and sets the default values.
 func NewContentSharingSessionCollectionResponse()(*ContentSharingSessionCollectionResponse) {
     m := &ContentSharingSessionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

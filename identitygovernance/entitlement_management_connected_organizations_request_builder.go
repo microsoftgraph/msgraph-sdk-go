@@ -77,7 +77,7 @@ func (m *EntitlementManagementConnectedOrganizationsRequestBuilder) Count()(*Ent
 // Get retrieve a list of connectedOrganization objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/entitlementmanagement-list-connectedorganizations?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/entitlementmanagement-list-connectedorganizations?view=graph-rest-1.0
 func (m *EntitlementManagementConnectedOrganizationsRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementConnectedOrganizationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConnectedOrganizationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *EntitlementManagementConnectedOrganizationsRequestBuilder) Get(ctx cont
 // Post create a new connectedOrganization object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/entitlementmanagement-post-connectedorganizations?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/entitlementmanagement-post-connectedorganizations?view=graph-rest-1.0
 func (m *EntitlementManagementConnectedOrganizationsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConnectedOrganizationable, requestConfiguration *EntitlementManagementConnectedOrganizationsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConnectedOrganizationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

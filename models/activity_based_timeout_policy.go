@@ -8,7 +8,7 @@ import (
 type ActivityBasedTimeoutPolicy struct {
     StsPolicy
 }
-// NewActivityBasedTimeoutPolicy instantiates a new ActivityBasedTimeoutPolicy and sets the default values.
+// NewActivityBasedTimeoutPolicy instantiates a new activityBasedTimeoutPolicy and sets the default values.
 func NewActivityBasedTimeoutPolicy()(*ActivityBasedTimeoutPolicy) {
     m := &ActivityBasedTimeoutPolicy{
         StsPolicy: *NewStsPolicy(),

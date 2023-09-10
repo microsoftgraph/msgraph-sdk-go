@@ -8,7 +8,7 @@ import (
 type DaylightTimeZoneOffset struct {
     StandardTimeZoneOffset
 }
-// NewDaylightTimeZoneOffset instantiates a new DaylightTimeZoneOffset and sets the default values.
+// NewDaylightTimeZoneOffset instantiates a new daylightTimeZoneOffset and sets the default values.
 func NewDaylightTimeZoneOffset()(*DaylightTimeZoneOffset) {
     m := &DaylightTimeZoneOffset{
         StandardTimeZoneOffset: *NewStandardTimeZoneOffset(),

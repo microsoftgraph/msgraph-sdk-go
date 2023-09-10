@@ -8,7 +8,7 @@ import (
 type CrossCloudAzureActiveDirectoryTenant struct {
     IdentitySource
 }
-// NewCrossCloudAzureActiveDirectoryTenant instantiates a new CrossCloudAzureActiveDirectoryTenant and sets the default values.
+// NewCrossCloudAzureActiveDirectoryTenant instantiates a new crossCloudAzureActiveDirectoryTenant and sets the default values.
 func NewCrossCloudAzureActiveDirectoryTenant()(*CrossCloudAzureActiveDirectoryTenant) {
     m := &CrossCloudAzureActiveDirectoryTenant{
         IdentitySource: *NewIdentitySource(),

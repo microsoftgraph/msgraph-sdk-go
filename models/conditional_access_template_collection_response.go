@@ -8,7 +8,7 @@ import (
 type ConditionalAccessTemplateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewConditionalAccessTemplateCollectionResponse instantiates a new ConditionalAccessTemplateCollectionResponse and sets the default values.
+// NewConditionalAccessTemplateCollectionResponse instantiates a new conditionalAccessTemplateCollectionResponse and sets the default values.
 func NewConditionalAccessTemplateCollectionResponse()(*ConditionalAccessTemplateCollectionResponse) {
     m := &ConditionalAccessTemplateCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

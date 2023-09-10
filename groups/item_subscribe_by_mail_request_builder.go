@@ -33,7 +33,7 @@ func NewItemSubscribeByMailRequestBuilder(rawUrl string, requestAdapter i2ae4187
 // Post calling this method will enable the current user to receive email notifications for this group, about new posts, events, and files in that group. Supported for Microsoft 365 groups only.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/group-subscribebymail?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-subscribebymail?view=graph-rest-1.0
 func (m *ItemSubscribeByMailRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemSubscribeByMailRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

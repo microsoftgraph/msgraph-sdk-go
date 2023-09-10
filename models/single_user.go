@@ -8,7 +8,7 @@ import (
 type SingleUser struct {
     SubjectSet
 }
-// NewSingleUser instantiates a new SingleUser and sets the default values.
+// NewSingleUser instantiates a new singleUser and sets the default values.
 func NewSingleUser()(*SingleUser) {
     m := &SingleUser{
         SubjectSet: *NewSubjectSet(),

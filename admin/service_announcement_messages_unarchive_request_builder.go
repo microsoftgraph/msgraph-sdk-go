@@ -33,7 +33,7 @@ func NewServiceAnnouncementMessagesUnarchiveRequestBuilder(rawUrl string, reques
 // Post unarchive a list of serviceUpdateMessages for the signed in user.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-1.0
 func (m *ServiceAnnouncementMessagesUnarchiveRequestBuilder) Post(ctx context.Context, body ServiceAnnouncementMessagesUnarchivePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesUnarchiveRequestBuilderPostRequestConfiguration)(ServiceAnnouncementMessagesUnarchiveResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

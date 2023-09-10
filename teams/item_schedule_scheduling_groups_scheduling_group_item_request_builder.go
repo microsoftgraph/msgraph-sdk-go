@@ -52,10 +52,10 @@ func NewItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete mark a schedulingGroup as inactive by setting its **isActive** property.This method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group.
+// Delete mark a schedulingGroup as inactive by setting its isActive property.This method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/schedulinggroup-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/schedulinggroup-delete?view=graph-rest-1.0
 func (m *ItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,7 +74,7 @@ func (m *ItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) Delete(c
 // Get retrieve the properties and relationships of a schedulingGroup by ID.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/schedulinggroup-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/schedulinggroup-get?view=graph-rest-1.0
 func (m *ItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SchedulingGroupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,10 +93,10 @@ func (m *ItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) Get(ctx 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SchedulingGroupable), nil
 }
-// Patch replace an existing schedulingGroup. If the specified schedulingGroup doesn't exist, this method returns `404 Not found`.
+// Patch replace an existing schedulingGroup. If the specified schedulingGroup doesn't exist, this method returns 404 Not found.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/schedulinggroup-put?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/schedulinggroup-put?view=graph-rest-1.0
 func (m *ItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SchedulingGroupable, requestConfiguration *ItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SchedulingGroupable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -115,7 +115,7 @@ func (m *ItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) Patch(ct
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SchedulingGroupable), nil
 }
-// ToDeleteRequestInformation mark a schedulingGroup as inactive by setting its **isActive** property.This method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group.
+// ToDeleteRequestInformation mark a schedulingGroup as inactive by setting its isActive property.This method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group.
 func (m *ItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -143,7 +143,7 @@ func (m *ItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) ToGetReq
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation replace an existing schedulingGroup. If the specified schedulingGroup doesn't exist, this method returns `404 Not found`.
+// ToPatchRequestInformation replace an existing schedulingGroup. If the specified schedulingGroup doesn't exist, this method returns 404 Not found.
 func (m *ItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SchedulingGroupable, requestConfiguration *ItemScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

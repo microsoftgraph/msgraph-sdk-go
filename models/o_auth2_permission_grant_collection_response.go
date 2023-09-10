@@ -8,7 +8,7 @@ import (
 type OAuth2PermissionGrantCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewOAuth2PermissionGrantCollectionResponse instantiates a new OAuth2PermissionGrantCollectionResponse and sets the default values.
+// NewOAuth2PermissionGrantCollectionResponse instantiates a new oAuth2PermissionGrantCollectionResponse and sets the default values.
 func NewOAuth2PermissionGrantCollectionResponse()(*OAuth2PermissionGrantCollectionResponse) {
     m := &OAuth2PermissionGrantCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

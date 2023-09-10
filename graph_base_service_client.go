@@ -21,6 +21,7 @@ import (
     i35d7bbcc8f7e8b8e9525ea0ee5b3c51c3a1a58f9ed512b727d181bfcd08eb032 "github.com/microsoftgraph/msgraph-sdk-go/security"
     i3e9b5129e2bb8b32b0374f7afe2536be6674d73df6c41d7c529f5a5432c4e0aa "github.com/microsoftgraph/msgraph-sdk-go/agreementacceptances"
     i4794c103c0d044c27a3ca3af0a0e498e93a9863420c1a4e7a29ef37590053c7b "github.com/microsoftgraph/msgraph-sdk-go/groupsettings"
+    i49531dee6233ce59a870e4c19c3d202ad6358927c073b9d54fc443416439637d "github.com/microsoftgraph/msgraph-sdk-go/deviceswithdeviceid"
     i4a624e38d68c2a9fc4db1ea915bcaffde116f967f58ec2c99e2ea8bbff3690e1 "github.com/microsoftgraph/msgraph-sdk-go/schemaextensions"
     i4ac7f0a844871066493521918f268cafe2a25c71c28a98221ea3f22d5153090f "github.com/microsoftgraph/msgraph-sdk-go/policies"
     i4c91eeb51f03f9d59a342065f7c6ee027ad1fe84ada6b1946b8162c5ae146cfb "github.com/microsoftgraph/msgraph-sdk-go/devices"
@@ -28,7 +29,6 @@ import (
     i5310ba7d4cfddbf5de4c1be94a30f9ca8c747c30a87e76587ce88d1cbfff01b4 "github.com/microsoftgraph/msgraph-sdk-go/applicationtemplates"
     i535d6c02ba98f73ff3a8c1c12a035ba5de51606f93aa2c0babdfed56fe505550 "github.com/microsoftgraph/msgraph-sdk-go/certificatebasedauthconfiguration"
     i58857a108d6e260e56ef0dd7e783668388f113eb436006780703ac59f0abb3b1 "github.com/microsoftgraph/msgraph-sdk-go/privacy"
-    i61686672307beee899fe5a14188df42982da47730f55a14800b102cd10ab2d72 "github.com/microsoftgraph/msgraph-sdk-go/localizations"
     i62c2771f3f3a1e5e085aedcde54473e9f043cc57b9ce4dd88980a77aca7a5a10 "github.com/microsoftgraph/msgraph-sdk-go/identityproviders"
     i638650494f9db477daff56d31ff923f5c100f72df0257ed7fa5c222cb1a77a94 "github.com/microsoftgraph/msgraph-sdk-go/deviceappmanagement"
     i663c30678b300c2c4b619c4964b4326e471e4da61a44d7c39f752349da7a468e "github.com/microsoftgraph/msgraph-sdk-go/identityprotection"
@@ -41,6 +41,7 @@ import (
     i80d5f91f6f8d9dc3428331303d1837675adde9653ceda73f120faa5f0545ac4b "github.com/microsoftgraph/msgraph-sdk-go/tenantrelationships"
     i86cada4d4a5f2f8a9d1e7a85eacd70a661ea7b20d2737008c0719e95b5be3e16 "github.com/microsoftgraph/msgraph-sdk-go/oauth2permissiongrants"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i8a94e224d4b14a30028778cb54ce1696f016a1e14d193c4593c6569d5c945b82 "github.com/microsoftgraph/msgraph-sdk-go/serviceprincipalswithappid"
     i93194122344a685a2f9264205dc6d89a5ba39afdcea57fd0ade8f54b6f137c02 "github.com/microsoftgraph/msgraph-sdk-go/applications"
     i9429d7aae2f5c1dabbecc9411e8ad2b733d29338bc0c0436eeccc94605c461b7 "github.com/microsoftgraph/msgraph-sdk-go/print"
     i957076b10ba162b23efec7b94dd26b84c6475d285449c1cbc9c5b85910d36a12 "github.com/microsoftgraph/msgraph-sdk-go/domains"
@@ -57,11 +58,13 @@ import (
     ic5e701d75e87f15ce153687b00984a314f7eeea8cfdc77cd9ad648e5ccbc7fbd "github.com/microsoftgraph/msgraph-sdk-go/invitations"
     ic949a0bb5066d68760e8502a7f9db83f571d9e01e38fad4aadf7268188e52df0 "github.com/microsoftgraph/msgraph-sdk-go/organization"
     icabdee72951e77325f237b36d388a199c87e65f67652b6bb85723aba847d7e83 "github.com/microsoftgraph/msgraph-sdk-go/connections"
+    icb01e23b9e2000c995fe3ccbcce50c962c8a8bcf9515fda13f2213d1263e0e4f "github.com/microsoftgraph/msgraph-sdk-go/applicationswithappid"
     ice10f31b9db59ba91184d2b882172edb754f885050cf0830aa2b7c8ff880556b "github.com/microsoftgraph/msgraph-sdk-go/scopedrolememberships"
     id007bc768abbff1131aab64890cdcd0411159a946e9df27140c5f7cf8f249647 "github.com/microsoftgraph/msgraph-sdk-go/subscribedskus"
     id2ac823944414906187dbe4e6ca3b5e46886b9db738d2c1c27de6df8b1bebd61 "github.com/microsoftgraph/msgraph-sdk-go/groupsettingtemplates"
     id4615a956cb1e7edabf8f5a4bc131d1ceca9a13d0f79ae0e122997452a9a0a4e "github.com/microsoftgraph/msgraph-sdk-go/directoryroles"
     id81f15a01b3ceaefa8b1b55f4ee944912f2179aafc4d873f0a2eaf0853eeccd0 "github.com/microsoftgraph/msgraph-sdk-go/authenticationmethodspolicy"
+    idb79e5240e0d84d911f5352f7868cce57a8a6d96a758044a11abb7f38d0ba995 "github.com/microsoftgraph/msgraph-sdk-go/directoryroleswithroletemplateid"
     idb8230b65f4a369c23b4d9b41ebe568c657c92f8f77fe36d16d64528b3a317a3 "github.com/microsoftgraph/msgraph-sdk-go/subscriptions"
     ie05ac24b652f7d895cca374316c093c4ca40dd2df0f1518c465233d6432b1ef9 "github.com/microsoftgraph/msgraph-sdk-go/teamwork"
     ie3631868038c44f490dbc03525ac7249d0523c29cc45cbb25b2aebcf470d6c0c "github.com/microsoftgraph/msgraph-sdk-go/contracts"
@@ -100,6 +103,10 @@ func (m *GraphBaseServiceClient) AppCatalogs()(*i7d140130aac6882792a019b5ebe51fe
 // Applications provides operations to manage the collection of application entities.
 func (m *GraphBaseServiceClient) Applications()(*i93194122344a685a2f9264205dc6d89a5ba39afdcea57fd0ade8f54b6f137c02.ApplicationsRequestBuilder) {
     return i93194122344a685a2f9264205dc6d89a5ba39afdcea57fd0ade8f54b6f137c02.NewApplicationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ApplicationsWithAppId provides operations to manage the collection of application entities.
+func (m *GraphBaseServiceClient) ApplicationsWithAppId(appId *string)(*icb01e23b9e2000c995fe3ccbcce50c962c8a8bcf9515fda13f2213d1263e0e4f.ApplicationsWithAppIdRequestBuilder) {
+    return icb01e23b9e2000c995fe3ccbcce50c962c8a8bcf9515fda13f2213d1263e0e4f.NewApplicationsWithAppIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, appId)
 }
 // ApplicationTemplates provides operations to manage the collection of applicationTemplate entities.
 func (m *GraphBaseServiceClient) ApplicationTemplates()(*i5310ba7d4cfddbf5de4c1be94a30f9ca8c747c30a87e76587ce88d1cbfff01b4.ApplicationTemplatesRequestBuilder) {
@@ -179,6 +186,10 @@ func (m *GraphBaseServiceClient) DeviceManagement()(*i738daeb889f22c1e163aee5a37
 func (m *GraphBaseServiceClient) Devices()(*i4c91eeb51f03f9d59a342065f7c6ee027ad1fe84ada6b1946b8162c5ae146cfb.DevicesRequestBuilder) {
     return i4c91eeb51f03f9d59a342065f7c6ee027ad1fe84ada6b1946b8162c5ae146cfb.NewDevicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// DevicesWithDeviceId provides operations to manage the collection of device entities.
+func (m *GraphBaseServiceClient) DevicesWithDeviceId(deviceId *string)(*i49531dee6233ce59a870e4c19c3d202ad6358927c073b9d54fc443416439637d.DevicesWithDeviceIdRequestBuilder) {
+    return i49531dee6233ce59a870e4c19c3d202ad6358927c073b9d54fc443416439637d.NewDevicesWithDeviceIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, deviceId)
+}
 // Directory provides operations to manage the directory singleton.
 func (m *GraphBaseServiceClient) Directory()(*ib14d748b564c787931c10f1c7ba6856eeddea29a5b9e5c5c27eb1224ff65e5c4.DirectoryRequestBuilder) {
     return ib14d748b564c787931c10f1c7ba6856eeddea29a5b9e5c5c27eb1224ff65e5c4.NewDirectoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -190,6 +201,10 @@ func (m *GraphBaseServiceClient) DirectoryObjects()(*i185698f71f6301975f0627ee99
 // DirectoryRoles provides operations to manage the collection of directoryRole entities.
 func (m *GraphBaseServiceClient) DirectoryRoles()(*id4615a956cb1e7edabf8f5a4bc131d1ceca9a13d0f79ae0e122997452a9a0a4e.DirectoryRolesRequestBuilder) {
     return id4615a956cb1e7edabf8f5a4bc131d1ceca9a13d0f79ae0e122997452a9a0a4e.NewDirectoryRolesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DirectoryRolesWithRoleTemplateId provides operations to manage the collection of directoryRole entities.
+func (m *GraphBaseServiceClient) DirectoryRolesWithRoleTemplateId(roleTemplateId *string)(*idb79e5240e0d84d911f5352f7868cce57a8a6d96a758044a11abb7f38d0ba995.DirectoryRolesWithRoleTemplateIdRequestBuilder) {
+    return idb79e5240e0d84d911f5352f7868cce57a8a6d96a758044a11abb7f38d0ba995.NewDirectoryRolesWithRoleTemplateIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, roleTemplateId)
 }
 // DirectoryRoleTemplates provides operations to manage the collection of directoryRoleTemplate entities.
 func (m *GraphBaseServiceClient) DirectoryRoleTemplates()(*i2a252d42835bdab6d88bf938595da6cf029001f9ca970d6f599cecf0ca27f8e5.DirectoryRoleTemplatesRequestBuilder) {
@@ -267,10 +282,6 @@ func (m *GraphBaseServiceClient) InformationProtection()(*ib68fa8e66bda853b3a33c
 func (m *GraphBaseServiceClient) Invitations()(*ic5e701d75e87f15ce153687b00984a314f7eeea8cfdc77cd9ad648e5ccbc7fbd.InvitationsRequestBuilder) {
     return ic5e701d75e87f15ce153687b00984a314f7eeea8cfdc77cd9ad648e5ccbc7fbd.NewInvitationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Localizations provides operations to manage the collection of organizationalBrandingLocalization entities.
-func (m *GraphBaseServiceClient) Localizations()(*i61686672307beee899fe5a14188df42982da47730f55a14800b102cd10ab2d72.LocalizationsRequestBuilder) {
-    return i61686672307beee899fe5a14188df42982da47730f55a14800b102cd10ab2d72.NewLocalizationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Oauth2PermissionGrants provides operations to manage the collection of oAuth2PermissionGrant entities.
 func (m *GraphBaseServiceClient) Oauth2PermissionGrants()(*i86cada4d4a5f2f8a9d1e7a85eacd70a661ea7b20d2737008c0719e95b5be3e16.Oauth2PermissionGrantsRequestBuilder) {
     return i86cada4d4a5f2f8a9d1e7a85eacd70a661ea7b20d2737008c0719e95b5be3e16.NewOauth2PermissionGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -330,6 +341,10 @@ func (m *GraphBaseServiceClient) Security()(*i35d7bbcc8f7e8b8e9525ea0ee5b3c51c3a
 // ServicePrincipals provides operations to manage the collection of servicePrincipal entities.
 func (m *GraphBaseServiceClient) ServicePrincipals()(*i009f47bbce65ccdb7303730eed71e6bab3ae2f8e4e918bc9e94341d28624af97.ServicePrincipalsRequestBuilder) {
     return i009f47bbce65ccdb7303730eed71e6bab3ae2f8e4e918bc9e94341d28624af97.NewServicePrincipalsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ServicePrincipalsWithAppId provides operations to manage the collection of servicePrincipal entities.
+func (m *GraphBaseServiceClient) ServicePrincipalsWithAppId(appId *string)(*i8a94e224d4b14a30028778cb54ce1696f016a1e14d193c4593c6569d5c945b82.ServicePrincipalsWithAppIdRequestBuilder) {
+    return i8a94e224d4b14a30028778cb54ce1696f016a1e14d193c4593c6569d5c945b82.NewServicePrincipalsWithAppIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, appId)
 }
 // Shares provides operations to manage the collection of sharedDriveItem entities.
 func (m *GraphBaseServiceClient) Shares()(*i07d47a144340607d6d6dbd93575e531530e4f1cc6091c947ea0766f7951ffd34.SharesRequestBuilder) {

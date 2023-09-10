@@ -8,7 +8,7 @@ import (
 type AccessReviewQueryScope struct {
     AccessReviewScope
 }
-// NewAccessReviewQueryScope instantiates a new AccessReviewQueryScope and sets the default values.
+// NewAccessReviewQueryScope instantiates a new accessReviewQueryScope and sets the default values.
 func NewAccessReviewQueryScope()(*AccessReviewQueryScope) {
     m := &AccessReviewQueryScope{
         AccessReviewScope: *NewAccessReviewScope(),

@@ -8,7 +8,7 @@ import (
 type ApplicationTemplateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewApplicationTemplateCollectionResponse instantiates a new ApplicationTemplateCollectionResponse and sets the default values.
+// NewApplicationTemplateCollectionResponse instantiates a new applicationTemplateCollectionResponse and sets the default values.
 func NewApplicationTemplateCollectionResponse()(*ApplicationTemplateCollectionResponse) {
     m := &ApplicationTemplateCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

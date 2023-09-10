@@ -9,7 +9,7 @@ import (
 type OrgContact struct {
     DirectoryObject
 }
-// NewOrgContact instantiates a new OrgContact and sets the default values.
+// NewOrgContact instantiates a new orgContact and sets the default values.
 func NewOrgContact()(*OrgContact) {
     m := &OrgContact{
         DirectoryObject: *NewDirectoryObject(),

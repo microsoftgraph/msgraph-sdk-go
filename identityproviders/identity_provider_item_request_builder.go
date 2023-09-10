@@ -58,7 +58,7 @@ func NewIdentityProviderItemRequestBuilder(rawUrl string, requestAdapter i2ae418
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identityprovider-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/identityprovider-delete?view=graph-rest-1.0
 func (m *IdentityProviderItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IdentityProviderItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,7 +78,7 @@ func (m *IdentityProviderItemRequestBuilder) Delete(ctx context.Context, request
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identityprovider-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/identityprovider-get?view=graph-rest-1.0
 func (m *IdentityProviderItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentityProviderItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,7 +101,7 @@ func (m *IdentityProviderItemRequestBuilder) Get(ctx context.Context, requestCon
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identityprovider-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/identityprovider-update?view=graph-rest-1.0
 func (m *IdentityProviderItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderable, requestConfiguration *IdentityProviderItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityProviderable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

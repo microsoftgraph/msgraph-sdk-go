@@ -8,7 +8,7 @@ import (
 type TabUpdatedEventMessageDetail struct {
     EventMessageDetail
 }
-// NewTabUpdatedEventMessageDetail instantiates a new TabUpdatedEventMessageDetail and sets the default values.
+// NewTabUpdatedEventMessageDetail instantiates a new tabUpdatedEventMessageDetail and sets the default values.
 func NewTabUpdatedEventMessageDetail()(*TabUpdatedEventMessageDetail) {
     m := &TabUpdatedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),

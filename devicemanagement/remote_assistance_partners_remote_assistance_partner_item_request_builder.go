@@ -61,7 +61,7 @@ func NewRemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder(rawUrl
 // Delete deletes a remoteAssistancePartner.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-delete?view=graph-rest-1.0
 func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -84,7 +84,7 @@ func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) Disc
 // Get read properties and relationships of the remoteAssistancePartner object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-get?view=graph-rest-1.0
 func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -106,7 +106,7 @@ func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) Get(
 // Patch update the properties of a remoteAssistancePartner object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-update?view=graph-rest-1.0
 func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable, requestConfiguration *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

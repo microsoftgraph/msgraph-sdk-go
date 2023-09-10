@@ -8,7 +8,7 @@ import (
 type DeletedTeamCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeletedTeamCollectionResponse instantiates a new DeletedTeamCollectionResponse and sets the default values.
+// NewDeletedTeamCollectionResponse instantiates a new deletedTeamCollectionResponse and sets the default values.
 func NewDeletedTeamCollectionResponse()(*DeletedTeamCollectionResponse) {
     m := &DeletedTeamCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

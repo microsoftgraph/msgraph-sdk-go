@@ -8,7 +8,7 @@ import (
 type WorkbookTableRowCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWorkbookTableRowCollectionResponse instantiates a new WorkbookTableRowCollectionResponse and sets the default values.
+// NewWorkbookTableRowCollectionResponse instantiates a new workbookTableRowCollectionResponse and sets the default values.
 func NewWorkbookTableRowCollectionResponse()(*WorkbookTableRowCollectionResponse) {
     m := &WorkbookTableRowCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

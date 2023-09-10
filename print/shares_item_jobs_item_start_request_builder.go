@@ -31,10 +31,10 @@ func NewSharesItemJobsItemStartRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewSharesItemJobsItemStartRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post submits the print job to the associated printer or printerShare. It will be printed after any existing pending **jobs** are completed, aborted, or canceled.
+// Post submits the print job to the associated printer or printerShare. It will be printed after any existing pending jobs are completed, aborted, or canceled.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/printjob-start?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/printjob-start?view=graph-rest-1.0
 func (m *SharesItemJobsItemStartRequestBuilder) Post(ctx context.Context, requestConfiguration *SharesItemJobsItemStartRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintJobStatusable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +53,7 @@ func (m *SharesItemJobsItemStartRequestBuilder) Post(ctx context.Context, reques
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintJobStatusable), nil
 }
-// ToPostRequestInformation submits the print job to the associated printer or printerShare. It will be printed after any existing pending **jobs** are completed, aborted, or canceled.
+// ToPostRequestInformation submits the print job to the associated printer or printerShare. It will be printed after any existing pending jobs are completed, aborted, or canceled.
 func (m *SharesItemJobsItemStartRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *SharesItemJobsItemStartRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

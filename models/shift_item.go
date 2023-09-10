@@ -8,7 +8,7 @@ import (
 type ShiftItem struct {
     ScheduleEntity
 }
-// NewShiftItem instantiates a new ShiftItem and sets the default values.
+// NewShiftItem instantiates a new shiftItem and sets the default values.
 func NewShiftItem()(*ShiftItem) {
     m := &ShiftItem{
         ScheduleEntity: *NewScheduleEntity(),

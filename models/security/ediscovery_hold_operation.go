@@ -8,7 +8,7 @@ import (
 type EdiscoveryHoldOperation struct {
     CaseOperation
 }
-// NewEdiscoveryHoldOperation instantiates a new EdiscoveryHoldOperation and sets the default values.
+// NewEdiscoveryHoldOperation instantiates a new ediscoveryHoldOperation and sets the default values.
 func NewEdiscoveryHoldOperation()(*EdiscoveryHoldOperation) {
     m := &EdiscoveryHoldOperation{
         CaseOperation: *NewCaseOperation(),

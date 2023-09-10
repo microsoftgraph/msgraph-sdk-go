@@ -18,7 +18,7 @@ type ItemSynchronizationTemplatesItemSchemaRequestBuilderDeleteRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSynchronizationTemplatesItemSchemaRequestBuilderGetQueryParameters get schema from applications
+// ItemSynchronizationTemplatesItemSchemaRequestBuilderGetQueryParameters default synchronization schema for the jobs based on this template.
 type ItemSynchronizationTemplatesItemSchemaRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -82,7 +82,7 @@ func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) FilterOperators()
 func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) Functions()(*ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder) {
     return NewItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get schema from applications
+// Get default synchronization schema for the jobs based on this template.
 func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesItemSchemaRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SynchronizationSchemaable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -136,7 +136,7 @@ func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) ToDeleteRequestIn
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get schema from applications
+// ToGetRequestInformation default synchronization schema for the jobs based on this template.
 func (m *ItemSynchronizationTemplatesItemSchemaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesItemSchemaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

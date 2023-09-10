@@ -8,7 +8,7 @@ import (
 type AttributeRuleMembers struct {
     SubjectSet
 }
-// NewAttributeRuleMembers instantiates a new AttributeRuleMembers and sets the default values.
+// NewAttributeRuleMembers instantiates a new attributeRuleMembers and sets the default values.
 func NewAttributeRuleMembers()(*AttributeRuleMembers) {
     m := &AttributeRuleMembers{
         SubjectSet: *NewSubjectSet(),

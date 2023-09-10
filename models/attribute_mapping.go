@@ -38,7 +38,7 @@ func (m *AttributeMapping) GetAdditionalData()(map[string]any) {
 func (m *AttributeMapping) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDefaultValue gets the defaultValue property value. The defaultValue property
+// GetDefaultValue gets the defaultValue property value. Default value to be used in case the source property was evaluated to null. Optional.
 func (m *AttributeMapping) GetDefaultValue()(*string) {
     val, err := m.GetBackingStore().Get("defaultValue")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *AttributeMapping) GetDefaultValue()(*string) {
     }
     return nil
 }
-// GetExportMissingReferences gets the exportMissingReferences property value. The exportMissingReferences property
+// GetExportMissingReferences gets the exportMissingReferences property value. For internal use only.
 func (m *AttributeMapping) GetExportMissingReferences()(*bool) {
     val, err := m.GetBackingStore().Get("exportMissingReferences")
     if err != nil {
@@ -167,7 +167,7 @@ func (m *AttributeMapping) GetFlowType()(*AttributeFlowType) {
     }
     return nil
 }
-// GetMatchingPriority gets the matchingPriority property value. The matchingPriority property
+// GetMatchingPriority gets the matchingPriority property value. If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.
 func (m *AttributeMapping) GetMatchingPriority()(*int32) {
     val, err := m.GetBackingStore().Get("matchingPriority")
     if err != nil {
@@ -189,7 +189,7 @@ func (m *AttributeMapping) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSource gets the source property value. The source property
+// GetSource gets the source property value. Defines how a value should be extracted (or transformed) from the source object.
 func (m *AttributeMapping) GetSource()(AttributeMappingSourceable) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
@@ -200,7 +200,7 @@ func (m *AttributeMapping) GetSource()(AttributeMappingSourceable) {
     }
     return nil
 }
-// GetTargetAttributeName gets the targetAttributeName property value. The targetAttributeName property
+// GetTargetAttributeName gets the targetAttributeName property value. Name of the attribute on the target object.
 func (m *AttributeMapping) GetTargetAttributeName()(*string) {
     val, err := m.GetBackingStore().Get("targetAttributeName")
     if err != nil {
@@ -282,14 +282,14 @@ func (m *AttributeMapping) SetAdditionalData(value map[string]any)() {
 func (m *AttributeMapping) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDefaultValue sets the defaultValue property value. The defaultValue property
+// SetDefaultValue sets the defaultValue property value. Default value to be used in case the source property was evaluated to null. Optional.
 func (m *AttributeMapping) SetDefaultValue(value *string)() {
     err := m.GetBackingStore().Set("defaultValue", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExportMissingReferences sets the exportMissingReferences property value. The exportMissingReferences property
+// SetExportMissingReferences sets the exportMissingReferences property value. For internal use only.
 func (m *AttributeMapping) SetExportMissingReferences(value *bool)() {
     err := m.GetBackingStore().Set("exportMissingReferences", value)
     if err != nil {
@@ -310,7 +310,7 @@ func (m *AttributeMapping) SetFlowType(value *AttributeFlowType)() {
         panic(err)
     }
 }
-// SetMatchingPriority sets the matchingPriority property value. The matchingPriority property
+// SetMatchingPriority sets the matchingPriority property value. If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.
 func (m *AttributeMapping) SetMatchingPriority(value *int32)() {
     err := m.GetBackingStore().Set("matchingPriority", value)
     if err != nil {
@@ -324,14 +324,14 @@ func (m *AttributeMapping) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSource sets the source property value. The source property
+// SetSource sets the source property value. Defines how a value should be extracted (or transformed) from the source object.
 func (m *AttributeMapping) SetSource(value AttributeMappingSourceable)() {
     err := m.GetBackingStore().Set("source", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTargetAttributeName sets the targetAttributeName property value. The targetAttributeName property
+// SetTargetAttributeName sets the targetAttributeName property value. Name of the attribute on the target object.
 func (m *AttributeMapping) SetTargetAttributeName(value *string)() {
     err := m.GetBackingStore().Set("targetAttributeName", value)
     if err != nil {

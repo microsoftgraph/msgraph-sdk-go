@@ -8,7 +8,7 @@ import (
 type WorkbookFormatProtection struct {
     Entity
 }
-// NewWorkbookFormatProtection instantiates a new WorkbookFormatProtection and sets the default values.
+// NewWorkbookFormatProtection instantiates a new workbookFormatProtection and sets the default values.
 func NewWorkbookFormatProtection()(*WorkbookFormatProtection) {
     m := &WorkbookFormatProtection{
         Entity: *NewEntity(),

@@ -8,7 +8,7 @@ import (
 type AppConsentApprovalRoute struct {
     Entity
 }
-// NewAppConsentApprovalRoute instantiates a new AppConsentApprovalRoute and sets the default values.
+// NewAppConsentApprovalRoute instantiates a new appConsentApprovalRoute and sets the default values.
 func NewAppConsentApprovalRoute()(*AppConsentApprovalRoute) {
     m := &AppConsentApprovalRoute{
         Entity: *NewEntity(),

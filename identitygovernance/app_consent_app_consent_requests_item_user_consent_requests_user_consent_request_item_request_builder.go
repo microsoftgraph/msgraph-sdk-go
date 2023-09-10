@@ -77,7 +77,7 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestIt
 // Get read the properties and relationships of a userConsentRequest object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/userconsentrequest-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/userconsentrequest-get?view=graph-rest-1.0
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserConsentRequestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

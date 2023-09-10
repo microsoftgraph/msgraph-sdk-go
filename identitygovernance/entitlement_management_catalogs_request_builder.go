@@ -77,7 +77,7 @@ func (m *EntitlementManagementCatalogsRequestBuilder) Count()(*EntitlementManage
 // Get retrieve a list of accessPackageCatalog objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/entitlementmanagement-list-catalogs?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/entitlementmanagement-list-catalogs?view=graph-rest-1.0
 func (m *EntitlementManagementCatalogsRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementCatalogsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCatalogCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *EntitlementManagementCatalogsRequestBuilder) Get(ctx context.Context, r
 // Post create a new accessPackageCatalog object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/entitlementmanagement-post-catalogs?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/entitlementmanagement-post-catalogs?view=graph-rest-1.0
 func (m *EntitlementManagementCatalogsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCatalogable, requestConfiguration *EntitlementManagementCatalogsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCatalogable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

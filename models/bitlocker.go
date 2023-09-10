@@ -8,7 +8,7 @@ import (
 type Bitlocker struct {
     Entity
 }
-// NewBitlocker instantiates a new Bitlocker and sets the default values.
+// NewBitlocker instantiates a new bitlocker and sets the default values.
 func NewBitlocker()(*Bitlocker) {
     m := &Bitlocker{
         Entity: *NewEntity(),

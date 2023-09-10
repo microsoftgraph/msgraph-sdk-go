@@ -61,7 +61,7 @@ func NewConnectionsItemItemsExternalItemItemRequestBuilder(rawUrl string, reques
 // Delete delete an externalItem object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-1.0
 func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectionsItemItemsExternalItemItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,7 +80,7 @@ func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) Delete(ctx context.
 // Get read the properties and relationships of an externalItem object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-1.0
 func (m *ConnectionsItemItemsExternalItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectionsItemItemsExternalItemItemRequestBuilderGetRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalItemable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

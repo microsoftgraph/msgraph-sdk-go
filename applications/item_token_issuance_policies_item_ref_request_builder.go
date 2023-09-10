@@ -40,7 +40,7 @@ func NewItemTokenIssuancePoliciesItemRefRequestBuilder(rawUrl string, requestAda
 // Delete remove a tokenIssuancePolicy from an application.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0
 func (m *ItemTokenIssuancePoliciesItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTokenIssuancePoliciesItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Win32LobAppPowerShellScriptRule 
+// Win32LobAppPowerShellScriptRule a complex type to store the PowerShell script rule data for a Win32 LOB app.
 type Win32LobAppPowerShellScriptRule struct {
     Win32LobAppRule
 }
-// NewWin32LobAppPowerShellScriptRule instantiates a new Win32LobAppPowerShellScriptRule and sets the default values.
+// NewWin32LobAppPowerShellScriptRule instantiates a new win32LobAppPowerShellScriptRule and sets the default values.
 func NewWin32LobAppPowerShellScriptRule()(*Win32LobAppPowerShellScriptRule) {
     m := &Win32LobAppPowerShellScriptRule{
         Win32LobAppRule: *NewWin32LobAppRule(),

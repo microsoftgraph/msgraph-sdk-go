@@ -57,7 +57,7 @@ func NewConditionalAccessAuthenticationContextClassReferencesAuthenticationConte
 // Delete delete an authenticationContextClassReference object that's not published or used by a conditional access policy.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/authenticationcontextclassreference-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationcontextclassreference-delete?view=graph-rest-1.0
 func (m *ConditionalAccessAuthenticationContextClassReferencesAuthenticationContextClassReferenceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationContextClassReferencesAuthenticationContextClassReferenceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ConditionalAccessAuthenticationContextClassReferencesAuthenticationCont
 // Get retrieve the properties and relationships of a authenticationContextClassReference object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/authenticationcontextclassreference-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationcontextclassreference-get?view=graph-rest-1.0
 func (m *ConditionalAccessAuthenticationContextClassReferencesAuthenticationContextClassReferenceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationContextClassReferencesAuthenticationContextClassReferenceItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationContextClassReferenceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ConditionalAccessAuthenticationContextClassReferencesAuthenticationCont
 // Patch create an authenticationContextClassReference object, if the ID has not been used. If ID has been used, this call updates the authenticationContextClassReference object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/authenticationcontextclassreference-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationcontextclassreference-update?view=graph-rest-1.0
 func (m *ConditionalAccessAuthenticationContextClassReferencesAuthenticationContextClassReferenceItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationContextClassReferenceable, requestConfiguration *ConditionalAccessAuthenticationContextClassReferencesAuthenticationContextClassReferenceItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationContextClassReferenceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

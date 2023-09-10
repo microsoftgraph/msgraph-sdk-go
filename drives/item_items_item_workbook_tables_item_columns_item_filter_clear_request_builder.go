@@ -33,7 +33,7 @@ func NewItemItemsItemWorkbookTablesItemColumnsItemFilterClearRequestBuilder(rawU
 // Post clear the filter on the given column.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/filter-clear?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/filter-clear?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterClearRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsItemFilterClearRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

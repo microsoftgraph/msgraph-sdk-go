@@ -8,7 +8,7 @@ import (
 type BookingCustomerInformation struct {
     BookingCustomerInformationBase
 }
-// NewBookingCustomerInformation instantiates a new BookingCustomerInformation and sets the default values.
+// NewBookingCustomerInformation instantiates a new bookingCustomerInformation and sets the default values.
 func NewBookingCustomerInformation()(*BookingCustomerInformation) {
     m := &BookingCustomerInformation{
         BookingCustomerInformationBase: *NewBookingCustomerInformationBase(),

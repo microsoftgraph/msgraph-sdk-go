@@ -8,7 +8,7 @@ import (
 type TimeBasedAttributeTrigger struct {
     WorkflowExecutionTrigger
 }
-// NewTimeBasedAttributeTrigger instantiates a new TimeBasedAttributeTrigger and sets the default values.
+// NewTimeBasedAttributeTrigger instantiates a new timeBasedAttributeTrigger and sets the default values.
 func NewTimeBasedAttributeTrigger()(*TimeBasedAttributeTrigger) {
     m := &TimeBasedAttributeTrigger{
         WorkflowExecutionTrigger: *NewWorkflowExecutionTrigger(),

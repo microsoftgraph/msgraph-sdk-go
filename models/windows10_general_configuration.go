@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows10GeneralConfiguration 
+// Windows10GeneralConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the windows10GeneralConfiguration resource.
 type Windows10GeneralConfiguration struct {
     DeviceConfiguration
 }
-// NewWindows10GeneralConfiguration instantiates a new Windows10GeneralConfiguration and sets the default values.
+// NewWindows10GeneralConfiguration instantiates a new windows10GeneralConfiguration and sets the default values.
 func NewWindows10GeneralConfiguration()(*Windows10GeneralConfiguration) {
     m := &Windows10GeneralConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),

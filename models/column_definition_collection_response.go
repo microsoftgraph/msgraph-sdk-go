@@ -8,7 +8,7 @@ import (
 type ColumnDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewColumnDefinitionCollectionResponse instantiates a new ColumnDefinitionCollectionResponse and sets the default values.
+// NewColumnDefinitionCollectionResponse instantiates a new columnDefinitionCollectionResponse and sets the default values.
 func NewColumnDefinitionCollectionResponse()(*ColumnDefinitionCollectionResponse) {
     m := &ColumnDefinitionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

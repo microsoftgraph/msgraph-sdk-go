@@ -63,7 +63,7 @@ func (m *StringKeyObjectValuePair) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetKey gets the key property value. The key property
+// GetKey gets the key property value. Key.
 func (m *StringKeyObjectValuePair) GetKey()(*string) {
     val, err := m.GetBackingStore().Get("key")
     if err != nil {
@@ -118,7 +118,7 @@ func (m *StringKeyObjectValuePair) SetAdditionalData(value map[string]any)() {
 func (m *StringKeyObjectValuePair) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetKey sets the key property value. The key property
+// SetKey sets the key property value. Key.
 func (m *StringKeyObjectValuePair) SetKey(value *string)() {
     err := m.GetBackingStore().Set("key", value)
     if err != nil {

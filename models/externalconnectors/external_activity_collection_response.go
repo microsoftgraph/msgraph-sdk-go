@@ -9,7 +9,7 @@ import (
 type ExternalActivityCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
 }
-// NewExternalActivityCollectionResponse instantiates a new ExternalActivityCollectionResponse and sets the default values.
+// NewExternalActivityCollectionResponse instantiates a new externalActivityCollectionResponse and sets the default values.
 func NewExternalActivityCollectionResponse()(*ExternalActivityCollectionResponse) {
     m := &ExternalActivityCollectionResponse{
         BaseCollectionPaginationCountResponse: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewBaseCollectionPaginationCountResponse(),

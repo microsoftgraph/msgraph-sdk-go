@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AppleDeviceFeaturesConfigurationBase 
+// AppleDeviceFeaturesConfigurationBase apple device features configuration profile.
 type AppleDeviceFeaturesConfigurationBase struct {
     DeviceConfiguration
 }
-// NewAppleDeviceFeaturesConfigurationBase instantiates a new AppleDeviceFeaturesConfigurationBase and sets the default values.
+// NewAppleDeviceFeaturesConfigurationBase instantiates a new appleDeviceFeaturesConfigurationBase and sets the default values.
 func NewAppleDeviceFeaturesConfigurationBase()(*AppleDeviceFeaturesConfigurationBase) {
     m := &AppleDeviceFeaturesConfigurationBase{
         DeviceConfiguration: *NewDeviceConfiguration(),

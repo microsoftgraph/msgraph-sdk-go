@@ -129,6 +129,10 @@ func (m *ItemTeamRequestBuilder) Members()(*ItemTeamMembersRequestBuilder) {
 func (m *ItemTeamRequestBuilder) Operations()(*ItemTeamOperationsRequestBuilder) {
     return NewItemTeamOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// PermissionGrants provides operations to manage the permissionGrants property of the microsoft.graph.team entity.
+func (m *ItemTeamRequestBuilder) PermissionGrants()(*ItemTeamPermissionGrantsRequestBuilder) {
+    return NewItemTeamPermissionGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Photo provides operations to manage the photo property of the microsoft.graph.team entity.
 func (m *ItemTeamRequestBuilder) Photo()(*ItemTeamPhotoRequestBuilder) {
     return NewItemTeamPhotoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

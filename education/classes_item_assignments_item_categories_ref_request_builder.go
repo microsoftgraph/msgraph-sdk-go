@@ -58,7 +58,7 @@ func NewClassesItemAssignmentsItemCategoriesRefRequestBuilder(rawUrl string, req
 // Get list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
 func (m *ClassesItemAssignmentsItemCategoriesRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemAssignmentsItemCategoriesRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,7 +80,7 @@ func (m *ClassesItemAssignmentsItemCategoriesRefRequestBuilder) Get(ctx context.
 // Post add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationassignment-post-categories?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-post-categories?view=graph-rest-1.0
 func (m *ClassesItemAssignmentsItemCategoriesRefRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ClassesItemAssignmentsItemCategoriesRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

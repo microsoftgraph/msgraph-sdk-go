@@ -8,7 +8,7 @@ import (
 type SwapShiftsChangeRequest struct {
     OfferShiftRequest
 }
-// NewSwapShiftsChangeRequest instantiates a new SwapShiftsChangeRequest and sets the default values.
+// NewSwapShiftsChangeRequest instantiates a new swapShiftsChangeRequest and sets the default values.
 func NewSwapShiftsChangeRequest()(*SwapShiftsChangeRequest) {
     m := &SwapShiftsChangeRequest{
         OfferShiftRequest: *NewOfferShiftRequest(),

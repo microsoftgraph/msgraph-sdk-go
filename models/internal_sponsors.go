@@ -8,7 +8,7 @@ import (
 type InternalSponsors struct {
     SubjectSet
 }
-// NewInternalSponsors instantiates a new InternalSponsors and sets the default values.
+// NewInternalSponsors instantiates a new internalSponsors and sets the default values.
 func NewInternalSponsors()(*InternalSponsors) {
     m := &InternalSponsors{
         SubjectSet: *NewSubjectSet(),

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosHomeScreenFolder 
+// IosHomeScreenFolder a folder containing pages of apps and web clips on the Home Screen.
 type IosHomeScreenFolder struct {
     IosHomeScreenItem
 }
-// NewIosHomeScreenFolder instantiates a new IosHomeScreenFolder and sets the default values.
+// NewIosHomeScreenFolder instantiates a new iosHomeScreenFolder and sets the default values.
 func NewIosHomeScreenFolder()(*IosHomeScreenFolder) {
     m := &IosHomeScreenFolder{
         IosHomeScreenItem: *NewIosHomeScreenItem(),

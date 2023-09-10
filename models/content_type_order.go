@@ -38,8 +38,8 @@ func (m *ContentTypeOrder) GetAdditionalData()(map[string]any) {
 func (m *ContentTypeOrder) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDefault gets the default property value. Indicates whether this is the default content type
-func (m *ContentTypeOrder) GetDefault()(*bool) {
+// GetDefaultEscaped gets the default property value. Indicates whether this is the default content type
+func (m *ContentTypeOrder) GetDefaultEscaped()(*bool) {
     val, err := m.GetBackingStore().Get("defaultEscaped")
     if err != nil {
         panic(err)
@@ -58,7 +58,7 @@ func (m *ContentTypeOrder) GetFieldDeserializers()(map[string]func(i878a80d2330e
             return err
         }
         if val != nil {
-            m.SetDefault(val)
+            m.SetDefaultEscaped(val)
         }
         return nil
     }
@@ -109,7 +109,7 @@ func (m *ContentTypeOrder) GetPosition()(*int32) {
 // Serialize serializes information the current object
 func (m *ContentTypeOrder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteBoolValue("default", m.GetDefault())
+        err := writer.WriteBoolValue("default", m.GetDefaultEscaped())
         if err != nil {
             return err
         }
@@ -145,8 +145,8 @@ func (m *ContentTypeOrder) SetAdditionalData(value map[string]any)() {
 func (m *ContentTypeOrder) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDefault sets the default property value. Indicates whether this is the default content type
-func (m *ContentTypeOrder) SetDefault(value *bool)() {
+// SetDefaultEscaped sets the default property value. Indicates whether this is the default content type
+func (m *ContentTypeOrder) SetDefaultEscaped(value *bool)() {
     err := m.GetBackingStore().Set("defaultEscaped", value)
     if err != nil {
         panic(err)
@@ -172,11 +172,11 @@ type ContentTypeOrderable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetDefault()(*bool)
+    GetDefaultEscaped()(*bool)
     GetOdataType()(*string)
     GetPosition()(*int32)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetDefault(value *bool)()
+    SetDefaultEscaped(value *bool)()
     SetOdataType(value *string)()
     SetPosition(value *int32)()
 }

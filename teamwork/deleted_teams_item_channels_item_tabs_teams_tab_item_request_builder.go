@@ -57,7 +57,7 @@ func NewDeletedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilder(rawUrl string
 // Delete removes (unpins) a tab from the specified channel within a team. 
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/channel-delete-tabs?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-delete-tabs?view=graph-rest-1.0
 func (m *DeletedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *DeletedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilder) Delete(ctx 
 // Get retrieve the properties and relationships of the specified tab in a channel within a team. 
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/channel-get-tabs?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-get-tabs?view=graph-rest-1.0
 func (m *DeletedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *DeletedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilder) Get(ctx con
 // Patch update the properties of the specified tab.This can be used to configure the content of the tab.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/channel-patch-tabs?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-patch-tabs?view=graph-rest-1.0
 func (m *DeletedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, requestConfiguration *DeletedTeamsItemChannelsItemTabsTeamsTabItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

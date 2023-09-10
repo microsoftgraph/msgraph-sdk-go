@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsDefenderScanActionResult 
+// WindowsDefenderScanActionResult windows Defender last scan result
 type WindowsDefenderScanActionResult struct {
     DeviceActionResult
 }
-// NewWindowsDefenderScanActionResult instantiates a new WindowsDefenderScanActionResult and sets the default values.
+// NewWindowsDefenderScanActionResult instantiates a new windowsDefenderScanActionResult and sets the default values.
 func NewWindowsDefenderScanActionResult()(*WindowsDefenderScanActionResult) {
     m := &WindowsDefenderScanActionResult{
         DeviceActionResult: *NewDeviceActionResult(),

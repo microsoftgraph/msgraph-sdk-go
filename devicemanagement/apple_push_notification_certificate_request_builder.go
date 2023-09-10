@@ -77,7 +77,7 @@ func (m *ApplePushNotificationCertificateRequestBuilder) DownloadApplePushNotifi
 // Get read properties and relationships of the applePushNotificationCertificate object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-applepushnotificationcertificate-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-applepushnotificationcertificate-get?view=graph-rest-1.0
 func (m *ApplePushNotificationCertificateRequestBuilder) Get(ctx context.Context, requestConfiguration *ApplePushNotificationCertificateRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplePushNotificationCertificateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ApplePushNotificationCertificateRequestBuilder) Get(ctx context.Context
 // Patch update the properties of a applePushNotificationCertificate object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-applepushnotificationcertificate-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-applepushnotificationcertificate-update?view=graph-rest-1.0
 func (m *ApplePushNotificationCertificateRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplePushNotificationCertificateable, requestConfiguration *ApplePushNotificationCertificateRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplePushNotificationCertificateable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -34,7 +34,7 @@ func NewItemAddPasswordRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 // Post add a strong password or secret to a servicePrincipal object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/serviceprincipal-addpassword?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-addpassword?view=graph-rest-1.0
 func (m *ItemAddPasswordRequestBuilder) Post(ctx context.Context, body ItemAddPasswordPostRequestBodyable, requestConfiguration *ItemAddPasswordRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PasswordCredentialable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

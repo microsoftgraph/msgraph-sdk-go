@@ -73,7 +73,7 @@ func (m *ConnectionsItemSchemaRequestBuilder) Delete(ctx context.Context, reques
 // Get read the properties and relationships of a schema object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0
 func (m *ConnectionsItemSchemaRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectionsItemSchemaRequestBuilderGetRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.Schemaable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EnrollmentTroubleshootingEvent 
+// EnrollmentTroubleshootingEvent event representing an enrollment failure.
 type EnrollmentTroubleshootingEvent struct {
     DeviceManagementTroubleshootingEvent
 }
-// NewEnrollmentTroubleshootingEvent instantiates a new EnrollmentTroubleshootingEvent and sets the default values.
+// NewEnrollmentTroubleshootingEvent instantiates a new enrollmentTroubleshootingEvent and sets the default values.
 func NewEnrollmentTroubleshootingEvent()(*EnrollmentTroubleshootingEvent) {
     m := &EnrollmentTroubleshootingEvent{
         DeviceManagementTroubleshootingEvent: *NewDeviceManagementTroubleshootingEvent(),

@@ -8,7 +8,7 @@ import (
 type WorkbookPivotTableCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWorkbookPivotTableCollectionResponse instantiates a new WorkbookPivotTableCollectionResponse and sets the default values.
+// NewWorkbookPivotTableCollectionResponse instantiates a new workbookPivotTableCollectionResponse and sets the default values.
 func NewWorkbookPivotTableCollectionResponse()(*WorkbookPivotTableCollectionResponse) {
     m := &WorkbookPivotTableCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

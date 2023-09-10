@@ -8,7 +8,7 @@ import (
 type AuthoredNoteCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAuthoredNoteCollectionResponse instantiates a new AuthoredNoteCollectionResponse and sets the default values.
+// NewAuthoredNoteCollectionResponse instantiates a new authoredNoteCollectionResponse and sets the default values.
 func NewAuthoredNoteCollectionResponse()(*AuthoredNoteCollectionResponse) {
     m := &AuthoredNoteCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

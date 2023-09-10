@@ -8,7 +8,7 @@ import (
 type AccessReviewNotificationRecipientQueryScope struct {
     AccessReviewNotificationRecipientScope
 }
-// NewAccessReviewNotificationRecipientQueryScope instantiates a new AccessReviewNotificationRecipientQueryScope and sets the default values.
+// NewAccessReviewNotificationRecipientQueryScope instantiates a new accessReviewNotificationRecipientQueryScope and sets the default values.
 func NewAccessReviewNotificationRecipientQueryScope()(*AccessReviewNotificationRecipientQueryScope) {
     m := &AccessReviewNotificationRecipientQueryScope{
         AccessReviewNotificationRecipientScope: *NewAccessReviewNotificationRecipientScope(),

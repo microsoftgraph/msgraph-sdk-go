@@ -33,7 +33,7 @@ func NewItemContentTypesItemAssociateWithHubSitesRequestBuilder(rawUrl string, r
 // Post associate a published [content type][contentType] present in a content type hub with a list of hub sites.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
 func (m *ItemContentTypesItemAssociateWithHubSitesRequestBuilder) Post(ctx context.Context, body ItemContentTypesItemAssociateWithHubSitesPostRequestBodyable, requestConfiguration *ItemContentTypesItemAssociateWithHubSitesRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

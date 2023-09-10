@@ -8,7 +8,7 @@ import (
 type ChannelDescriptionUpdatedEventMessageDetail struct {
     EventMessageDetail
 }
-// NewChannelDescriptionUpdatedEventMessageDetail instantiates a new ChannelDescriptionUpdatedEventMessageDetail and sets the default values.
+// NewChannelDescriptionUpdatedEventMessageDetail instantiates a new channelDescriptionUpdatedEventMessageDetail and sets the default values.
 func NewChannelDescriptionUpdatedEventMessageDetail()(*ChannelDescriptionUpdatedEventMessageDetail) {
     m := &ChannelDescriptionUpdatedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),

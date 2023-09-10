@@ -8,7 +8,7 @@ import (
 type CalendarSharingMessage struct {
     Message
 }
-// NewCalendarSharingMessage instantiates a new CalendarSharingMessage and sets the default values.
+// NewCalendarSharingMessage instantiates a new calendarSharingMessage and sets the default values.
 func NewCalendarSharingMessage()(*CalendarSharingMessage) {
     m := &CalendarSharingMessage{
         Message: *NewMessage(),

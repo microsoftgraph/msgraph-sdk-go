@@ -8,7 +8,7 @@ import (
 type TrendingCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTrendingCollectionResponse instantiates a new TrendingCollectionResponse and sets the default values.
+// NewTrendingCollectionResponse instantiates a new trendingCollectionResponse and sets the default values.
 func NewTrendingCollectionResponse()(*TrendingCollectionResponse) {
     m := &TrendingCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

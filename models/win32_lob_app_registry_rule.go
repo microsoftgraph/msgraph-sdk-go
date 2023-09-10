@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Win32LobAppRegistryRule 
+// Win32LobAppRegistryRule a complex type to store registry rule data for a Win32 LOB app.
 type Win32LobAppRegistryRule struct {
     Win32LobAppRule
 }
-// NewWin32LobAppRegistryRule instantiates a new Win32LobAppRegistryRule and sets the default values.
+// NewWin32LobAppRegistryRule instantiates a new win32LobAppRegistryRule and sets the default values.
 func NewWin32LobAppRegistryRule()(*Win32LobAppRegistryRule) {
     m := &Win32LobAppRegistryRule{
         Win32LobAppRule: *NewWin32LobAppRule(),

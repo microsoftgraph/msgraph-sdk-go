@@ -33,7 +33,7 @@ func NewItemSitesItemListsItemItemsItemDocumentSetVersionsItemRestoreRequestBuil
 // Post restore a document set version.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
 func (m *ItemSitesItemListsItemItemsItemDocumentSetVersionsItemRestoreRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsItemDocumentSetVersionsItemRestoreRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

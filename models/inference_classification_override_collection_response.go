@@ -8,7 +8,7 @@ import (
 type InferenceClassificationOverrideCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewInferenceClassificationOverrideCollectionResponse instantiates a new InferenceClassificationOverrideCollectionResponse and sets the default values.
+// NewInferenceClassificationOverrideCollectionResponse instantiates a new inferenceClassificationOverrideCollectionResponse and sets the default values.
 func NewInferenceClassificationOverrideCollectionResponse()(*InferenceClassificationOverrideCollectionResponse) {
     m := &InferenceClassificationOverrideCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

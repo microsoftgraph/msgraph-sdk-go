@@ -33,7 +33,7 @@ func NewItemSetVerifiedPublisherRequestBuilder(rawUrl string, requestAdapter i2a
 // Post set the verifiedPublisher on an application. For more information, including prerequisites to setting a verified publisher, see Publisher verification.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/application-setverifiedpublisher?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/application-setverifiedpublisher?view=graph-rest-1.0
 func (m *ItemSetVerifiedPublisherRequestBuilder) Post(ctx context.Context, body ItemSetVerifiedPublisherPostRequestBodyable, requestConfiguration *ItemSetVerifiedPublisherRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

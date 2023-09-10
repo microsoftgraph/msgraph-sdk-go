@@ -8,7 +8,7 @@ import (
 type HomeRealmDiscoveryPolicy struct {
     StsPolicy
 }
-// NewHomeRealmDiscoveryPolicy instantiates a new HomeRealmDiscoveryPolicy and sets the default values.
+// NewHomeRealmDiscoveryPolicy instantiates a new homeRealmDiscoveryPolicy and sets the default values.
 func NewHomeRealmDiscoveryPolicy()(*HomeRealmDiscoveryPolicy) {
     m := &HomeRealmDiscoveryPolicy{
         StsPolicy: *NewStsPolicy(),

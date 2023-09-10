@@ -98,7 +98,7 @@ func (m *ItemItemsItemWorkbookFunctionsPpmtPostRequestBody) GetFieldDeserializer
             return err
         }
         if val != nil {
-            m.SetType(val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable))
+            m.SetTypeEscaped(val.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable))
         }
         return nil
     }
@@ -159,8 +159,8 @@ func (m *ItemItemsItemWorkbookFunctionsPpmtPostRequestBody) GetRate()(iadcd81124
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *ItemItemsItemWorkbookFunctionsPpmtPostRequestBody) GetType()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *ItemItemsItemWorkbookFunctionsPpmtPostRequestBody) GetTypeEscaped()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -203,7 +203,7 @@ func (m *ItemItemsItemWorkbookFunctionsPpmtPostRequestBody) Serialize(writer i87
         }
     }
     {
-        err := writer.WriteObjectValue("type", m.GetType())
+        err := writer.WriteObjectValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -262,8 +262,8 @@ func (m *ItemItemsItemWorkbookFunctionsPpmtPostRequestBody) SetRate(value iadcd8
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *ItemItemsItemWorkbookFunctionsPpmtPostRequestBody) SetType(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *ItemItemsItemWorkbookFunctionsPpmtPostRequestBody) SetTypeEscaped(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -280,12 +280,12 @@ type ItemItemsItemWorkbookFunctionsPpmtPostRequestBodyable interface {
     GetPer()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
     GetPv()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
     GetRate()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
-    GetType()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
+    GetTypeEscaped()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetFv(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
     SetNper(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
     SetPer(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
     SetPv(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
     SetRate(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
-    SetType(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
+    SetTypeEscaped(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)()
 }

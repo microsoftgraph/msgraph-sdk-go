@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MicrosoftStoreForBusinessAppAssignmentSettings 
+// MicrosoftStoreForBusinessAppAssignmentSettings contains properties used to assign an Microsoft Store for Business mobile app to a group.
 type MicrosoftStoreForBusinessAppAssignmentSettings struct {
     MobileAppAssignmentSettings
 }
-// NewMicrosoftStoreForBusinessAppAssignmentSettings instantiates a new MicrosoftStoreForBusinessAppAssignmentSettings and sets the default values.
+// NewMicrosoftStoreForBusinessAppAssignmentSettings instantiates a new microsoftStoreForBusinessAppAssignmentSettings and sets the default values.
 func NewMicrosoftStoreForBusinessAppAssignmentSettings()(*MicrosoftStoreForBusinessAppAssignmentSettings) {
     m := &MicrosoftStoreForBusinessAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),

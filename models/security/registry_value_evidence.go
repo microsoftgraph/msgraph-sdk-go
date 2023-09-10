@@ -8,11 +8,13 @@ import (
 type RegistryValueEvidence struct {
     AlertEvidence
 }
-// NewRegistryValueEvidence instantiates a new RegistryValueEvidence and sets the default values.
+// NewRegistryValueEvidence instantiates a new registryValueEvidence and sets the default values.
 func NewRegistryValueEvidence()(*RegistryValueEvidence) {
     m := &RegistryValueEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
+    odataTypeValue := "#microsoft.graph.security.registryValueEvidence"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateRegistryValueEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

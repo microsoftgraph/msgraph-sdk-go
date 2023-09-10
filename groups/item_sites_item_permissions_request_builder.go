@@ -77,7 +77,7 @@ func (m *ItemSitesItemPermissionsRequestBuilder) Count()(*ItemSitesItemPermissio
 // Get get the permission resources from the permissions navigation property on a site.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/site-list-permissions?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-list-permissions?view=graph-rest-1.0
 func (m *ItemSitesItemPermissionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemPermissionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PermissionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemSitesItemPermissionsRequestBuilder) Get(ctx context.Context, reques
 // Post create a new permission object on a site. 
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/site-post-permissions?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-post-permissions?view=graph-rest-1.0
 func (m *ItemSitesItemPermissionsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, requestConfiguration *ItemSitesItemPermissionsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

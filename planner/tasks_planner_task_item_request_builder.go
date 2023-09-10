@@ -65,7 +65,7 @@ func NewTasksPlannerTaskItemRequestBuilder(rawUrl string, requestAdapter i2ae418
 // Delete delete a plannerTask object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/plannertask-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannertask-delete?view=graph-rest-1.0
 func (m *TasksPlannerTaskItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TasksPlannerTaskItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -88,7 +88,7 @@ func (m *TasksPlannerTaskItemRequestBuilder) Details()(*TasksItemDetailsRequestB
 // Get retrieve the properties and relationships of plannerTask object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/plannertask-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannertask-get?view=graph-rest-1.0
 func (m *TasksPlannerTaskItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TasksPlannerTaskItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerTaskable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -110,7 +110,7 @@ func (m *TasksPlannerTaskItemRequestBuilder) Get(ctx context.Context, requestCon
 // Patch update the navigation property tasks in planner
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/plannertask-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannertask-update?view=graph-rest-1.0
 func (m *TasksPlannerTaskItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerTaskable, requestConfiguration *TasksPlannerTaskItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerTaskable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

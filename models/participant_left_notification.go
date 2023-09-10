@@ -8,7 +8,7 @@ import (
 type ParticipantLeftNotification struct {
     Entity
 }
-// NewParticipantLeftNotification instantiates a new ParticipantLeftNotification and sets the default values.
+// NewParticipantLeftNotification instantiates a new participantLeftNotification and sets the default values.
 func NewParticipantLeftNotification()(*ParticipantLeftNotification) {
     m := &ParticipantLeftNotification{
         Entity: *NewEntity(),

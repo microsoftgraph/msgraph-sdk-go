@@ -81,7 +81,7 @@ func (m *Oauth2PermissionGrantsRequestBuilder) Delta()(*DeltaRequestBuilder) {
 // Get retrieve a list of oAuth2PermissionGrant objects, representing delegated permissions which have been granted for client applications to access APIs on behalf of signed-in users.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/oauth2permissiongrant-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/oauth2permissiongrant-list?view=graph-rest-1.0
 func (m *Oauth2PermissionGrantsRequestBuilder) Get(ctx context.Context, requestConfiguration *Oauth2PermissionGrantsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OAuth2PermissionGrantCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -103,7 +103,7 @@ func (m *Oauth2PermissionGrantsRequestBuilder) Get(ctx context.Context, requestC
 // Post create a delegated permission grant represented by an oAuth2PermissionGrant object. A delegated permission grant authorizes a client service principal (representing a client application) to access a resource service principal (representing an API), on behalf of a signed-in user, for the level of access limited by the delegated permissions which were granted.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/oauth2permissiongrant-post?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/oauth2permissiongrant-post?view=graph-rest-1.0
 func (m *Oauth2PermissionGrantsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OAuth2PermissionGrantable, requestConfiguration *Oauth2PermissionGrantsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OAuth2PermissionGrantable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

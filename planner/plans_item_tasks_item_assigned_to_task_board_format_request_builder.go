@@ -18,7 +18,7 @@ type PlansItemTasksItemAssignedToTaskBoardFormatRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PlansItemTasksItemAssignedToTaskBoardFormatRequestBuilderGetQueryParameters retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
+// PlansItemTasksItemAssignedToTaskBoardFormatRequestBuilderGetQueryParameters retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object.
 type PlansItemTasksItemAssignedToTaskBoardFormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,10 +70,10 @@ func (m *PlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder) Delete(ctx c
     }
     return nil
 }
-// Get retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
+// Get retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
 func (m *PlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder) Get(ctx context.Context, requestConfiguration *PlansItemTasksItemAssignedToTaskBoardFormatRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerAssignedToTaskBoardTaskFormatable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *PlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder) Get(ctx cont
 // Patch update the navigation property assignedToTaskBoardFormat in planner
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
 func (m *PlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerAssignedToTaskBoardTaskFormatable, requestConfiguration *PlansItemTasksItemAssignedToTaskBoardFormatRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerAssignedToTaskBoardTaskFormatable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -126,7 +126,7 @@ func (m *PlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder) ToDeleteRequ
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
+// ToGetRequestInformation retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object.
 func (m *PlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PlansItemTasksItemAssignedToTaskBoardFormatRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

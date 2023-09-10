@@ -1,5 +1,5 @@
-github.com/Azure/azure-sdk-for-go/sdk/azcore v1.6.1 h1:SEy2xmstIphdPwNBUi7uhvjyjhVKISfwjfOJmuy7kg4=
-github.com/Azure/azure-sdk-for-go/sdk/azcore v1.6.1/go.mod h1:bjGvMhVMb+EEm3VRNQawDMUyMMjo+S5ewNjflkep/0Q=
+github.com/Azure/azure-sdk-for-go/sdk/azcore v1.7.0 h1:8q4SaHjFsClSvuVne0ID/5Ka8u3fcIHyqkLjcFpNRHQ=
+github.com/Azure/azure-sdk-for-go/sdk/azcore v1.7.0/go.mod h1:bjGvMhVMb+EEm3VRNQawDMUyMMjo+S5ewNjflkep/0Q=
 github.com/Azure/azure-sdk-for-go/sdk/internal v1.3.0 h1:sXr+ck84g/ZlZUOZiNELInmMgOsuGwdjjVkEIde0OtY=
 github.com/Azure/azure-sdk-for-go/sdk/internal v1.3.0/go.mod h1:okt5dMMTOFjX/aovMlrjvvXoPMBVSPzk9185BT0+eZM=
 github.com/cjlapao/common-go v0.0.39 h1:bAAUrj2B9v0kMzbAOhzjSmiyDy+rd56r2sy7oEiQLlA=
@@ -16,8 +16,7 @@ github.com/google/uuid v1.3.1 h1:KjJaJ9iWZ3jOFZIf1Lqf4laDRCasjl0BCmnEGxkdLb4=
 github.com/google/uuid v1.3.1/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 github.com/kr/pretty v0.1.0 h1:L/CwN0zerZDmRFUapSPitk6f+Q3+0za1rQkzVuMiMFI=
 github.com/kr/text v0.2.0 h1:5Nx0Ya0ZqY2ygV366QzturHI13Jq95ApcVaJBhpS+AY=
-github.com/microsoft/kiota-abstractions-go v1.2.1 h1:TnLF7rjy1GfhuGK2ra/a3Vuz6piFXTR1OfdNoqesagA=
-github.com/microsoft/kiota-abstractions-go v1.2.1/go.mod h1:rEeeaytcnal/If3f1tz6/spFz4V+Hiqvz3rxF+oWQFA=
+
 github.com/microsoft/kiota-authentication-azure-go v1.0.0 h1:29FNZZ/4nnCOwFcGWlB/sxPvWz487HA2bXH8jR5k2Rk=
 github.com/microsoft/kiota-authentication-azure-go v1.0.0/go.mod h1:rnx3PRlkGdXDcA/0lZQTbBwyYGmc+3POt7HpE/e4jGw=
 github.com/microsoft/kiota-http-go v1.0.0 h1:F1hd6gMlLeEgH2CkRB7z13ow7LxMKMWEmms/t0VfS+k=

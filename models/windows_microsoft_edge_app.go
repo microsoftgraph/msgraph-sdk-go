@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsMicrosoftEdgeApp 
+// WindowsMicrosoftEdgeApp contains properties and inherited properties for the Microsoft Edge app on Windows.
 type WindowsMicrosoftEdgeApp struct {
     MobileApp
 }
-// NewWindowsMicrosoftEdgeApp instantiates a new WindowsMicrosoftEdgeApp and sets the default values.
+// NewWindowsMicrosoftEdgeApp instantiates a new windowsMicrosoftEdgeApp and sets the default values.
 func NewWindowsMicrosoftEdgeApp()(*WindowsMicrosoftEdgeApp) {
     m := &WindowsMicrosoftEdgeApp{
         MobileApp: *NewMobileApp(),

@@ -8,7 +8,7 @@ import (
 type PostCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPostCollectionResponse instantiates a new PostCollectionResponse and sets the default values.
+// NewPostCollectionResponse instantiates a new postCollectionResponse and sets the default values.
 func NewPostCollectionResponse()(*PostCollectionResponse) {
     m := &PostCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

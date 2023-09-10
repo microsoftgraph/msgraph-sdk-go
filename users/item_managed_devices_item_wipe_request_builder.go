@@ -33,7 +33,7 @@ func NewItemManagedDevicesItemWipeRequestBuilder(rawUrl string, requestAdapter i
 // Post wipe a device
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-wipe?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-wipe?view=graph-rest-1.0
 func (m *ItemManagedDevicesItemWipeRequestBuilder) Post(ctx context.Context, body ItemManagedDevicesItemWipePostRequestBodyable, requestConfiguration *ItemManagedDevicesItemWipeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

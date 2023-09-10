@@ -8,7 +8,7 @@ import (
 type WorkbookFunctionResult struct {
     Entity
 }
-// NewWorkbookFunctionResult instantiates a new WorkbookFunctionResult and sets the default values.
+// NewWorkbookFunctionResult instantiates a new workbookFunctionResult and sets the default values.
 func NewWorkbookFunctionResult()(*WorkbookFunctionResult) {
     m := &WorkbookFunctionResult{
         Entity: *NewEntity(),

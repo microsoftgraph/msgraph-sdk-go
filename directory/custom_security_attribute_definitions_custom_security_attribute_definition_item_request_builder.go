@@ -77,7 +77,7 @@ func (m *CustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItem
 // Get read the properties and relationships of a customSecurityAttributeDefinition object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/customsecurityattributedefinition-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/customsecurityattributedefinition-get?view=graph-rest-1.0
 func (m *CustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomSecurityAttributeDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *CustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItem
 // Patch update the properties of a customSecurityAttributeDefinition object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/customsecurityattributedefinition-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/customsecurityattributedefinition-update?view=graph-rest-1.0
 func (m *CustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomSecurityAttributeDefinitionable, requestConfiguration *CustomSecurityAttributeDefinitionsCustomSecurityAttributeDefinitionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomSecurityAttributeDefinitionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

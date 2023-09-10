@@ -66,7 +66,7 @@ func (m *AudioRoutingGroup) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetReceivers gets the receivers property value. The receivers property
+// GetReceivers gets the receivers property value. List of receiving participant ids.
 func (m *AudioRoutingGroup) GetReceivers()([]string) {
     val, err := m.GetBackingStore().Get("receivers")
     if err != nil {
@@ -88,7 +88,7 @@ func (m *AudioRoutingGroup) GetRoutingMode()(*RoutingMode) {
     }
     return nil
 }
-// GetSources gets the sources property value. The sources property
+// GetSources gets the sources property value. List of source participant ids.
 func (m *AudioRoutingGroup) GetSources()([]string) {
     val, err := m.GetBackingStore().Get("sources")
     if err != nil {
@@ -126,7 +126,7 @@ func (m *AudioRoutingGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetReceivers sets the receivers property value. The receivers property
+// SetReceivers sets the receivers property value. List of receiving participant ids.
 func (m *AudioRoutingGroup) SetReceivers(value []string)() {
     err := m.GetBackingStore().Set("receivers", value)
     if err != nil {
@@ -140,7 +140,7 @@ func (m *AudioRoutingGroup) SetRoutingMode(value *RoutingMode)() {
         panic(err)
     }
 }
-// SetSources sets the sources property value. The sources property
+// SetSources sets the sources property value. List of source participant ids.
 func (m *AudioRoutingGroup) SetSources(value []string)() {
     err := m.GetBackingStore().Set("sources", value)
     if err != nil {

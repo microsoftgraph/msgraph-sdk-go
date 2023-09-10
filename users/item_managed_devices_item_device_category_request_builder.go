@@ -73,7 +73,7 @@ func (m *ItemManagedDevicesItemDeviceCategoryRequestBuilder) Delete(ctx context.
 // Get read properties and relationships of the deviceCategory object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-devicecategory-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-devicecategory-get?view=graph-rest-1.0
 func (m *ItemManagedDevicesItemDeviceCategoryRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemManagedDevicesItemDeviceCategoryRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCategoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *ItemManagedDevicesItemDeviceCategoryRequestBuilder) Get(ctx context.Con
 // Patch update the properties of a deviceCategory object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-devicecategory-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-devicecategory-update?view=graph-rest-1.0
 func (m *ItemManagedDevicesItemDeviceCategoryRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCategoryable, requestConfiguration *ItemManagedDevicesItemDeviceCategoryRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCategoryable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

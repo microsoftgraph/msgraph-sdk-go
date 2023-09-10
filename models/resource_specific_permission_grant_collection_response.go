@@ -8,7 +8,7 @@ import (
 type ResourceSpecificPermissionGrantCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewResourceSpecificPermissionGrantCollectionResponse instantiates a new ResourceSpecificPermissionGrantCollectionResponse and sets the default values.
+// NewResourceSpecificPermissionGrantCollectionResponse instantiates a new resourceSpecificPermissionGrantCollectionResponse and sets the default values.
 func NewResourceSpecificPermissionGrantCollectionResponse()(*ResourceSpecificPermissionGrantCollectionResponse) {
     m := &ResourceSpecificPermissionGrantCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

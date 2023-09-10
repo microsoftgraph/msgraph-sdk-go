@@ -8,7 +8,7 @@ import (
 type CloudAppSecuritySessionControl struct {
     ConditionalAccessSessionControl
 }
-// NewCloudAppSecuritySessionControl instantiates a new CloudAppSecuritySessionControl and sets the default values.
+// NewCloudAppSecuritySessionControl instantiates a new cloudAppSecuritySessionControl and sets the default values.
 func NewCloudAppSecuritySessionControl()(*CloudAppSecuritySessionControl) {
     m := &CloudAppSecuritySessionControl{
         ConditionalAccessSessionControl: *NewConditionalAccessSessionControl(),

@@ -8,7 +8,7 @@ import (
 type IdentitySecurityDefaultsEnforcementPolicy struct {
     PolicyBase
 }
-// NewIdentitySecurityDefaultsEnforcementPolicy instantiates a new IdentitySecurityDefaultsEnforcementPolicy and sets the default values.
+// NewIdentitySecurityDefaultsEnforcementPolicy instantiates a new identitySecurityDefaultsEnforcementPolicy and sets the default values.
 func NewIdentitySecurityDefaultsEnforcementPolicy()(*IdentitySecurityDefaultsEnforcementPolicy) {
     m := &IdentitySecurityDefaultsEnforcementPolicy{
         PolicyBase: *NewPolicyBase(),

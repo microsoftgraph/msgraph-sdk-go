@@ -10,7 +10,7 @@ type AlternativeSecurityId struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAlternativeSecurityId instantiates a new AlternativeSecurityId and sets the default values.
+// NewAlternativeSecurityId instantiates a new alternativeSecurityId and sets the default values.
 func NewAlternativeSecurityId()(*AlternativeSecurityId) {
     m := &AlternativeSecurityId{
     }
@@ -77,7 +77,7 @@ func (m *AlternativeSecurityId) GetFieldDeserializers()(map[string]func(i878a80d
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -116,8 +116,8 @@ func (m *AlternativeSecurityId) GetOdataType()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. For internal use only.
-func (m *AlternativeSecurityId) GetType()(*int32) {
+// GetTypeEscaped gets the type property value. For internal use only.
+func (m *AlternativeSecurityId) GetTypeEscaped()(*int32) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -148,7 +148,7 @@ func (m *AlternativeSecurityId) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
-        err := writer.WriteInt32Value("type", m.GetType())
+        err := writer.WriteInt32Value("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -193,8 +193,8 @@ func (m *AlternativeSecurityId) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. For internal use only.
-func (m *AlternativeSecurityId) SetType(value *int32)() {
+// SetTypeEscaped sets the type property value. For internal use only.
+func (m *AlternativeSecurityId) SetTypeEscaped(value *int32)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -209,10 +209,10 @@ type AlternativeSecurityIdable interface {
     GetIdentityProvider()(*string)
     GetKey()([]byte)
     GetOdataType()(*string)
-    GetType()(*int32)
+    GetTypeEscaped()(*int32)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetIdentityProvider(value *string)()
     SetKey(value []byte)()
     SetOdataType(value *string)()
-    SetType(value *int32)()
+    SetTypeEscaped(value *int32)()
 }

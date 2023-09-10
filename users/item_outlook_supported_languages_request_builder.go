@@ -48,7 +48,7 @@ func NewItemOutlookSupportedLanguagesRequestBuilder(rawUrl string, requestAdapte
 // Get get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language by getting the user's mailbox settings.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-1.0
 func (m *ItemOutlookSupportedLanguagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOutlookSupportedLanguagesRequestBuilderGetRequestConfiguration)(ItemOutlookSupportedLanguagesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

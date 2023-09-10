@@ -57,7 +57,7 @@ func NewAuditEventsAuditEventItemRequestBuilder(rawUrl string, requestAdapter i2
 // Delete deletes a auditEvent.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-auditing-auditevent-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-auditing-auditevent-delete?view=graph-rest-1.0
 func (m *AuditEventsAuditEventItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AuditEventsAuditEventItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *AuditEventsAuditEventItemRequestBuilder) Delete(ctx context.Context, re
 // Get read properties and relationships of the auditEvent object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-auditing-auditevent-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-auditing-auditevent-get?view=graph-rest-1.0
 func (m *AuditEventsAuditEventItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AuditEventsAuditEventItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuditEventable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *AuditEventsAuditEventItemRequestBuilder) Get(ctx context.Context, reque
 // Patch update the properties of a auditEvent object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-auditing-auditevent-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-auditing-auditevent-update?view=graph-rest-1.0
 func (m *AuditEventsAuditEventItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuditEventable, requestConfiguration *AuditEventsAuditEventItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuditEventable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

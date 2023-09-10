@@ -8,7 +8,7 @@ import (
 type Attendee struct {
     AttendeeBase
 }
-// NewAttendee instantiates a new Attendee and sets the default values.
+// NewAttendee instantiates a new attendee and sets the default values.
 func NewAttendee()(*Attendee) {
     m := &Attendee{
         AttendeeBase: *NewAttendeeBase(),

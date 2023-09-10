@@ -33,7 +33,7 @@ func NewItemAddFavoriteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 // Post add the group to the list of the current user's favorite groups. Supported for Microsoft 365 groups only.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/group-addfavorite?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-addfavorite?view=graph-rest-1.0
 func (m *ItemAddFavoriteRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemAddFavoriteRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

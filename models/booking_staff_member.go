@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BookingStaffMember 
+// BookingStaffMember represents a staff member who provides services in a business.
 type BookingStaffMember struct {
     BookingStaffMemberBase
 }
-// NewBookingStaffMember instantiates a new BookingStaffMember and sets the default values.
+// NewBookingStaffMember instantiates a new bookingStaffMember and sets the default values.
 func NewBookingStaffMember()(*BookingStaffMember) {
     m := &BookingStaffMember{
         BookingStaffMemberBase: *NewBookingStaffMemberBase(),

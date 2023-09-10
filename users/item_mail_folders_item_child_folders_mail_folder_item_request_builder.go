@@ -22,6 +22,8 @@ type ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilderDeleteRequestCon
 type ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
+    // Include Hidden Folders
+    IncludeHiddenFolders *string
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -44,7 +46,7 @@ type ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilderPatchRequestConf
 // NewItemMailFoldersItemChildFoldersMailFolderItemRequestBuilderInternal instantiates a new MailFolderItemRequestBuilder and sets the default values.
 func NewItemMailFoldersItemChildFoldersMailFolderItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilder) {
     m := &ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}{?includeHiddenFolders*,%24select,%24expand}", pathParameters),
     }
     return m
 }

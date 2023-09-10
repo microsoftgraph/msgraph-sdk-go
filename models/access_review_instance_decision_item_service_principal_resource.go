@@ -8,7 +8,7 @@ import (
 type AccessReviewInstanceDecisionItemServicePrincipalResource struct {
     AccessReviewInstanceDecisionItemResource
 }
-// NewAccessReviewInstanceDecisionItemServicePrincipalResource instantiates a new AccessReviewInstanceDecisionItemServicePrincipalResource and sets the default values.
+// NewAccessReviewInstanceDecisionItemServicePrincipalResource instantiates a new accessReviewInstanceDecisionItemServicePrincipalResource and sets the default values.
 func NewAccessReviewInstanceDecisionItemServicePrincipalResource()(*AccessReviewInstanceDecisionItemServicePrincipalResource) {
     m := &AccessReviewInstanceDecisionItemServicePrincipalResource{
         AccessReviewInstanceDecisionItemResource: *NewAccessReviewInstanceDecisionItemResource(),

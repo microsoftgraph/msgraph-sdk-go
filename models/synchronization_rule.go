@@ -49,7 +49,7 @@ func (m *SynchronizationRule) GetContainerFilter()(ContainerFilterable) {
     }
     return nil
 }
-// GetEditable gets the editable property value. The editable property
+// GetEditable gets the editable property value. true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
 func (m *SynchronizationRule) GetEditable()(*bool) {
     val, err := m.GetBackingStore().Get("editable")
     if err != nil {
@@ -198,7 +198,7 @@ func (m *SynchronizationRule) GetGroupFilter()(GroupFilterable) {
     }
     return nil
 }
-// GetId gets the id property value. The id property
+// GetId gets the id property value. Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
 func (m *SynchronizationRule) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -209,7 +209,7 @@ func (m *SynchronizationRule) GetId()(*string) {
     }
     return nil
 }
-// GetMetadata gets the metadata property value. The metadata property
+// GetMetadata gets the metadata property value. Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.
 func (m *SynchronizationRule) GetMetadata()([]StringKeyStringValuePairable) {
     val, err := m.GetBackingStore().Get("metadata")
     if err != nil {
@@ -220,7 +220,7 @@ func (m *SynchronizationRule) GetMetadata()([]StringKeyStringValuePairable) {
     }
     return nil
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. Human-readable name of the synchronization rule. Not nullable.
 func (m *SynchronizationRule) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -231,7 +231,7 @@ func (m *SynchronizationRule) GetName()(*string) {
     }
     return nil
 }
-// GetObjectMappings gets the objectMappings property value. The objectMappings property
+// GetObjectMappings gets the objectMappings property value. Collection of object mappings supported by the rule. Tells the synchronization engine which objects should be synchronized.
 func (m *SynchronizationRule) GetObjectMappings()([]ObjectMappingable) {
     val, err := m.GetBackingStore().Get("objectMappings")
     if err != nil {
@@ -253,7 +253,7 @@ func (m *SynchronizationRule) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPriority gets the priority property value. The priority property
+// GetPriority gets the priority property value. Priority relative to other rules in the synchronizationSchema. Rules with the lowest priority number will be processed first.
 func (m *SynchronizationRule) GetPriority()(*int32) {
     val, err := m.GetBackingStore().Get("priority")
     if err != nil {
@@ -264,7 +264,7 @@ func (m *SynchronizationRule) GetPriority()(*int32) {
     }
     return nil
 }
-// GetSourceDirectoryName gets the sourceDirectoryName property value. The sourceDirectoryName property
+// GetSourceDirectoryName gets the sourceDirectoryName property value. Name of the source directory. Must match one of the directory definitions in synchronizationSchema.
 func (m *SynchronizationRule) GetSourceDirectoryName()(*string) {
     val, err := m.GetBackingStore().Get("sourceDirectoryName")
     if err != nil {
@@ -275,7 +275,7 @@ func (m *SynchronizationRule) GetSourceDirectoryName()(*string) {
     }
     return nil
 }
-// GetTargetDirectoryName gets the targetDirectoryName property value. The targetDirectoryName property
+// GetTargetDirectoryName gets the targetDirectoryName property value. Name of the target directory. Must match one of the directory definitions in synchronizationSchema.
 func (m *SynchronizationRule) GetTargetDirectoryName()(*string) {
     val, err := m.GetBackingStore().Get("targetDirectoryName")
     if err != nil {
@@ -392,7 +392,7 @@ func (m *SynchronizationRule) SetContainerFilter(value ContainerFilterable)() {
         panic(err)
     }
 }
-// SetEditable sets the editable property value. The editable property
+// SetEditable sets the editable property value. true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
 func (m *SynchronizationRule) SetEditable(value *bool)() {
     err := m.GetBackingStore().Set("editable", value)
     if err != nil {
@@ -406,28 +406,28 @@ func (m *SynchronizationRule) SetGroupFilter(value GroupFilterable)() {
         panic(err)
     }
 }
-// SetId sets the id property value. The id property
+// SetId sets the id property value. Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
 func (m *SynchronizationRule) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMetadata sets the metadata property value. The metadata property
+// SetMetadata sets the metadata property value. Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.
 func (m *SynchronizationRule) SetMetadata(value []StringKeyStringValuePairable)() {
     err := m.GetBackingStore().Set("metadata", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. Human-readable name of the synchronization rule. Not nullable.
 func (m *SynchronizationRule) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetObjectMappings sets the objectMappings property value. The objectMappings property
+// SetObjectMappings sets the objectMappings property value. Collection of object mappings supported by the rule. Tells the synchronization engine which objects should be synchronized.
 func (m *SynchronizationRule) SetObjectMappings(value []ObjectMappingable)() {
     err := m.GetBackingStore().Set("objectMappings", value)
     if err != nil {
@@ -441,21 +441,21 @@ func (m *SynchronizationRule) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPriority sets the priority property value. The priority property
+// SetPriority sets the priority property value. Priority relative to other rules in the synchronizationSchema. Rules with the lowest priority number will be processed first.
 func (m *SynchronizationRule) SetPriority(value *int32)() {
     err := m.GetBackingStore().Set("priority", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSourceDirectoryName sets the sourceDirectoryName property value. The sourceDirectoryName property
+// SetSourceDirectoryName sets the sourceDirectoryName property value. Name of the source directory. Must match one of the directory definitions in synchronizationSchema.
 func (m *SynchronizationRule) SetSourceDirectoryName(value *string)() {
     err := m.GetBackingStore().Set("sourceDirectoryName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTargetDirectoryName sets the targetDirectoryName property value. The targetDirectoryName property
+// SetTargetDirectoryName sets the targetDirectoryName property value. Name of the target directory. Must match one of the directory definitions in synchronizationSchema.
 func (m *SynchronizationRule) SetTargetDirectoryName(value *string)() {
     err := m.GetBackingStore().Set("targetDirectoryName", value)
     if err != nil {

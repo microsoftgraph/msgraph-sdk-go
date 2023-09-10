@@ -18,7 +18,7 @@ type EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderDeleteReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an accessPackage object.
+// EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderGetQueryParameters retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
 type EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -66,10 +66,10 @@ func NewEntitlementManagementAccessPackagesAccessPackageItemRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAccessPackagesAccessPackageItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an accessPackage object. You cannot delete an access package if it has any **accessPackageAssignment**.
+// Delete delete an accessPackage object. You cannot delete an access package if it has any accessPackageAssignment.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/accesspackage-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-delete?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -85,10 +85,10 @@ func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) Del
     }
     return nil
 }
-// Get retrieve the properties and relationships of an accessPackage object.
+// Get retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/accesspackage-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-list-resourcerolescopes?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -122,7 +122,7 @@ func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) Inc
 // Patch update an existing accessPackage object to change one or more of its properties, such as the display name or description.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/accesspackage-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-update?view=graph-rest-1.0
 func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, requestConfiguration *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -141,7 +141,11 @@ func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) Pat
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageable), nil
 }
-// ToDeleteRequestInformation delete an accessPackage object. You cannot delete an access package if it has any **accessPackageAssignment**.
+// ResourceRoleScopes provides operations to manage the resourceRoleScopes property of the microsoft.graph.accessPackage entity.
+func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) ResourceRoleScopes()(*EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilder) {
+    return NewEntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ToDeleteRequestInformation delete an accessPackage object. You cannot delete an access package if it has any accessPackageAssignment.
 func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -153,7 +157,7 @@ func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) ToD
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an accessPackage object.
+// ToGetRequestInformation retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
 func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -73,7 +73,7 @@ func (m *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) Delete(ctx
 // Get read properties and relationships of the managedAppPolicyDeploymentSummary object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-mam-managedapppolicydeploymentsummary-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-managedapppolicydeploymentsummary-get?view=graph-rest-1.0
 func (m *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) Get(ctx context.Context, requestConfiguration *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppPolicyDeploymentSummaryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,7 @@ func (m *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) Get(ctx co
 // Patch update the properties of a managedAppPolicyDeploymentSummary object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-mam-managedapppolicydeploymentsummary-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-managedapppolicydeploymentsummary-update?view=graph-rest-1.0
 func (m *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppPolicyDeploymentSummaryable, requestConfiguration *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppPolicyDeploymentSummaryable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

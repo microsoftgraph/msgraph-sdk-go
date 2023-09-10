@@ -34,6 +34,17 @@ func (m *ConditionalAccessApplications) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
+// GetApplicationFilter gets the applicationFilter property value. The applicationFilter property
+func (m *ConditionalAccessApplications) GetApplicationFilter()(ConditionalAccessFilterable) {
+    val, err := m.GetBackingStore().Get("applicationFilter")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ConditionalAccessFilterable)
+    }
+    return nil
+}
 // GetBackingStore gets the backingStore property value. Stores model information.
 func (m *ConditionalAccessApplications) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
@@ -52,6 +63,16 @@ func (m *ConditionalAccessApplications) GetExcludeApplications()([]string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConditionalAccessApplications) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["applicationFilter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateConditionalAccessFilterFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetApplicationFilter(val.(ConditionalAccessFilterable))
+        }
+        return nil
+    }
     res["excludeApplications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -174,6 +195,12 @@ func (m *ConditionalAccessApplications) GetOdataType()(*string) {
 }
 // Serialize serializes information the current object
 func (m *ConditionalAccessApplications) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteObjectValue("applicationFilter", m.GetApplicationFilter())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetExcludeApplications() != nil {
         err := writer.WriteCollectionOfStringValues("excludeApplications", m.GetExcludeApplications())
         if err != nil {
@@ -215,6 +242,13 @@ func (m *ConditionalAccessApplications) Serialize(writer i878a80d2330e89d2689638
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessApplications) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetApplicationFilter sets the applicationFilter property value. The applicationFilter property
+func (m *ConditionalAccessApplications) SetApplicationFilter(value ConditionalAccessFilterable)() {
+    err := m.GetBackingStore().Set("applicationFilter", value)
     if err != nil {
         panic(err)
     }
@@ -263,12 +297,14 @@ type ConditionalAccessApplicationsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApplicationFilter()(ConditionalAccessFilterable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetExcludeApplications()([]string)
     GetIncludeApplications()([]string)
     GetIncludeAuthenticationContextClassReferences()([]string)
     GetIncludeUserActions()([]string)
     GetOdataType()(*string)
+    SetApplicationFilter(value ConditionalAccessFilterable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetExcludeApplications(value []string)()
     SetIncludeApplications(value []string)()

@@ -8,7 +8,7 @@ import (
 type ConditionalAccessRoot struct {
     Entity
 }
-// NewConditionalAccessRoot instantiates a new ConditionalAccessRoot and sets the default values.
+// NewConditionalAccessRoot instantiates a new conditionalAccessRoot and sets the default values.
 func NewConditionalAccessRoot()(*ConditionalAccessRoot) {
     m := &ConditionalAccessRoot{
         Entity: *NewEntity(),

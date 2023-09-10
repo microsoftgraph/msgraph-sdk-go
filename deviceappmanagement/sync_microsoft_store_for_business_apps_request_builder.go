@@ -33,7 +33,7 @@ func NewSyncMicrosoftStoreForBusinessAppsRequestBuilder(rawUrl string, requestAd
 // Post syncs Intune account with Microsoft Store For Business
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-onboarding-deviceappmanagement-syncmicrosoftstoreforbusinessapps?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-deviceappmanagement-syncmicrosoftstoreforbusinessapps?view=graph-rest-1.0
 func (m *SyncMicrosoftStoreForBusinessAppsRequestBuilder) Post(ctx context.Context, requestConfiguration *SyncMicrosoftStoreForBusinessAppsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -57,7 +57,7 @@ func NewUsersItemAssignmentsItemRubricRequestBuilder(rawUrl string, requestAdapt
 // Delete remove an educationRubric from an educationAssignment. This method does not delete the rubric itself and can only be performed by teachers.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationassignment-delete-rubric?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-delete-rubric?view=graph-rest-1.0
 func (m *UsersItemAssignmentsItemRubricRequestBuilder) Delete(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemRubricRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *UsersItemAssignmentsItemRubricRequestBuilder) Delete(ctx context.Contex
 // Get get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-1.0
 func (m *UsersItemAssignmentsItemRubricRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemRubricRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *UsersItemAssignmentsItemRubricRequestBuilder) Get(ctx context.Context, 
 // Patch attach an existing educationRubric object to an educationAssignment. Only teachers can perform this operation.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationassignment-put-rubric?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-put-rubric?view=graph-rest-1.0
 func (m *UsersItemAssignmentsItemRubricRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricable, requestConfiguration *UsersItemAssignmentsItemRubricRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

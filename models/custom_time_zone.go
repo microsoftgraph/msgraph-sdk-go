@@ -8,7 +8,7 @@ import (
 type CustomTimeZone struct {
     TimeZoneBase
 }
-// NewCustomTimeZone instantiates a new CustomTimeZone and sets the default values.
+// NewCustomTimeZone instantiates a new customTimeZone and sets the default values.
 func NewCustomTimeZone()(*CustomTimeZone) {
     m := &CustomTimeZone{
         TimeZoneBase: *NewTimeZoneBase(),

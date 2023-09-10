@@ -8,7 +8,7 @@ import (
 type InvitationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewInvitationCollectionResponse instantiates a new InvitationCollectionResponse and sets the default values.
+// NewInvitationCollectionResponse instantiates a new invitationCollectionResponse and sets the default values.
 func NewInvitationCollectionResponse()(*InvitationCollectionResponse) {
     m := &InvitationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

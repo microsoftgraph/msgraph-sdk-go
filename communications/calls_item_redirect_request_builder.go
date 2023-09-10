@@ -33,7 +33,7 @@ func NewCallsItemRedirectRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 // Post redirect an incoming call that hasn't been answered or rejected yet. The terms 'redirecting' and 'forwarding' a call are used interchangeably. The bot is expected to redirect the call before the call times out. The current timeout value is 15 seconds.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/call-redirect?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/call-redirect?view=graph-rest-1.0
 func (m *CallsItemRedirectRequestBuilder) Post(ctx context.Context, body CallsItemRedirectPostRequestBodyable, requestConfiguration *CallsItemRedirectRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

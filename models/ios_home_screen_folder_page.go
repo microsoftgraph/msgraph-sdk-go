@@ -10,7 +10,7 @@ type IosHomeScreenFolderPage struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewIosHomeScreenFolderPage instantiates a new IosHomeScreenFolderPage and sets the default values.
+// NewIosHomeScreenFolderPage instantiates a new iosHomeScreenFolderPage and sets the default values.
 func NewIosHomeScreenFolderPage()(*IosHomeScreenFolderPage) {
     m := &IosHomeScreenFolderPage{
     }

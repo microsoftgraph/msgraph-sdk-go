@@ -57,7 +57,7 @@ func NewItemTeamMembersConversationMemberItemRequestBuilder(rawUrl string, reque
 // Delete remove a conversationMember from a team.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-delete-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-delete-members?view=graph-rest-1.0
 func (m *ItemTeamMembersConversationMemberItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamMembersConversationMemberItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *ItemTeamMembersConversationMemberItemRequestBuilder) Delete(ctx context
 // Get get a conversationMember from a team.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-get-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-get-members?view=graph-rest-1.0
 func (m *ItemTeamMembersConversationMemberItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamMembersConversationMemberItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *ItemTeamMembersConversationMemberItemRequestBuilder) Get(ctx context.Co
 // Patch update the role of a conversationMember in a team.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-update-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-update-members?view=graph-rest-1.0
 func (m *ItemTeamMembersConversationMemberItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, requestConfiguration *ItemTeamMembersConversationMemberItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

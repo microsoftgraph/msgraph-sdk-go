@@ -33,7 +33,7 @@ func NewServiceAnnouncementMessagesFavoriteRequestBuilder(rawUrl string, request
 // Post change the status of a list of serviceUpdateMessages to favorite for the signed in user.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-1.0
 func (m *ServiceAnnouncementMessagesFavoriteRequestBuilder) Post(ctx context.Context, body ServiceAnnouncementMessagesFavoritePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesFavoriteRequestBuilderPostRequestConfiguration)(ServiceAnnouncementMessagesFavoriteResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

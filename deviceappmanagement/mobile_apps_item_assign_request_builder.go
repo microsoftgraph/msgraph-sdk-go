@@ -33,7 +33,7 @@ func NewMobileAppsItemAssignRequestBuilder(rawUrl string, requestAdapter i2ae418
 // Post not yet documented
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-apps-mobileapp-assign?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-mobileapp-assign?view=graph-rest-1.0
 func (m *MobileAppsItemAssignRequestBuilder) Post(ctx context.Context, body MobileAppsItemAssignPostRequestBodyable, requestConfiguration *MobileAppsItemAssignRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -9,7 +9,7 @@ import (
 type RuleBasedSubjectSet struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubjectSet
 }
-// NewRuleBasedSubjectSet instantiates a new RuleBasedSubjectSet and sets the default values.
+// NewRuleBasedSubjectSet instantiates a new ruleBasedSubjectSet and sets the default values.
 func NewRuleBasedSubjectSet()(*RuleBasedSubjectSet) {
     m := &RuleBasedSubjectSet{
         SubjectSet: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewSubjectSet(),

@@ -57,7 +57,7 @@ func NewDeviceCategoriesDeviceCategoryItemRequestBuilder(rawUrl string, requestA
 // Delete deletes a deviceCategory.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-onboarding-devicecategory-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-devicecategory-delete?view=graph-rest-1.0
 func (m *DeviceCategoriesDeviceCategoryItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceCategoriesDeviceCategoryItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *DeviceCategoriesDeviceCategoryItemRequestBuilder) Delete(ctx context.Co
 // Get read properties and relationships of the deviceCategory object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-onboarding-devicecategory-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-devicecategory-get?view=graph-rest-1.0
 func (m *DeviceCategoriesDeviceCategoryItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceCategoriesDeviceCategoryItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCategoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *DeviceCategoriesDeviceCategoryItemRequestBuilder) Get(ctx context.Conte
 // Patch update the properties of a deviceCategory object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-onboarding-devicecategory-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-devicecategory-update?view=graph-rest-1.0
 func (m *DeviceCategoriesDeviceCategoryItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCategoryable, requestConfiguration *DeviceCategoriesDeviceCategoryItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCategoryable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

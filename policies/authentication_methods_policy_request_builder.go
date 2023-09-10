@@ -77,7 +77,7 @@ func (m *AuthenticationMethodsPolicyRequestBuilder) Delete(ctx context.Context, 
 // Get read the properties and relationships of an authenticationMethodsPolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/authenticationmethodspolicy-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationmethodspolicy-get?view=graph-rest-1.0
 func (m *AuthenticationMethodsPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationMethodsPolicyRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodsPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *AuthenticationMethodsPolicyRequestBuilder) Get(ctx context.Context, req
 // Patch update the properties of an authenticationMethodsPolicy object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/authenticationmethodspolicy-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationmethodspolicy-update?view=graph-rest-1.0
 func (m *AuthenticationMethodsPolicyRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodsPolicyable, requestConfiguration *AuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodsPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -8,7 +8,7 @@ import (
 type DriveItemVersion struct {
     BaseItemVersion
 }
-// NewDriveItemVersion instantiates a new DriveItemVersion and sets the default values.
+// NewDriveItemVersion instantiates a new driveItemVersion and sets the default values.
 func NewDriveItemVersion()(*DriveItemVersion) {
     m := &DriveItemVersion{
         BaseItemVersion: *NewBaseItemVersion(),
