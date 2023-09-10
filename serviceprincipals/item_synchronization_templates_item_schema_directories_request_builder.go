@@ -145,3 +145,7 @@ func (m *ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilder) ToPost
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilder) WithUrl(rawUrl string)(*ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilder) {
+    return NewItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -50,3 +50,6 @@ func SerializeBrowserSiteTargetEnvironment(values []BrowserSiteTargetEnvironment
     }
     return result
 }
+func (i BrowserSiteTargetEnvironment) isMultiValue() bool {
+    return false
+}

@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // 
 type ConditionalAccessGuestOrExternalUserTypes int
@@ -17,29 +18,38 @@ const (
 )
 
 func (i ConditionalAccessGuestOrExternalUserTypes) String() string {
-    return []string{"none", "internalGuest", "b2bCollaborationGuest", "b2bCollaborationMember", "b2bDirectConnectUser", "otherExternalUser", "serviceProvider", "unknownFutureValue"}[i]
+    var values []string
+    for p := ConditionalAccessGuestOrExternalUserTypes(1); p <= UNKNOWNFUTUREVALUE_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"none", "internalGuest", "b2bCollaborationGuest", "b2bCollaborationMember", "b2bDirectConnectUser", "otherExternalUser", "serviceProvider", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseConditionalAccessGuestOrExternalUserTypes(v string) (any, error) {
-    result := NONE_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
-    switch v {
-        case "none":
-            result = NONE_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
-        case "internalGuest":
-            result = INTERNALGUEST_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
-        case "b2bCollaborationGuest":
-            result = B2BCOLLABORATIONGUEST_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
-        case "b2bCollaborationMember":
-            result = B2BCOLLABORATIONMEMBER_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
-        case "b2bDirectConnectUser":
-            result = B2BDIRECTCONNECTUSER_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
-        case "otherExternalUser":
-            result = OTHEREXTERNALUSER_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
-        case "serviceProvider":
-            result = SERVICEPROVIDER_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
-        default:
-            return 0, errors.New("Unknown ConditionalAccessGuestOrExternalUserTypes value: " + v)
+    var result ConditionalAccessGuestOrExternalUserTypes
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "none":
+                result |= NONE_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
+            case "internalGuest":
+                result |= INTERNALGUEST_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
+            case "b2bCollaborationGuest":
+                result |= B2BCOLLABORATIONGUEST_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
+            case "b2bCollaborationMember":
+                result |= B2BCOLLABORATIONMEMBER_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
+            case "b2bDirectConnectUser":
+                result |= B2BDIRECTCONNECTUSER_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
+            case "otherExternalUser":
+                result |= OTHEREXTERNALUSER_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
+            case "serviceProvider":
+                result |= SERVICEPROVIDER_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
+            default:
+                return 0, errors.New("Unknown ConditionalAccessGuestOrExternalUserTypes value: " + v)
+        }
     }
     return &result, nil
 }
@@ -49,4 +59,7 @@ func SerializeConditionalAccessGuestOrExternalUserTypes(values []ConditionalAcce
         result[i] = v.String()
     }
     return result
+}
+func (i ConditionalAccessGuestOrExternalUserTypes) isMultiValue() bool {
+    return true
 }

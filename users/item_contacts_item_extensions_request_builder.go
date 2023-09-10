@@ -143,3 +143,7 @@ func (m *ItemContactsItemExtensionsRequestBuilder) ToPostRequestInformation(ctx 
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemContactsItemExtensionsRequestBuilder) WithUrl(rawUrl string)(*ItemContactsItemExtensionsRequestBuilder) {
+    return NewItemContactsItemExtensionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

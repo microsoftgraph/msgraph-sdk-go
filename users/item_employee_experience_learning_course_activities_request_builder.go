@@ -105,3 +105,7 @@ func (m *ItemEmployeeExperienceLearningCourseActivitiesRequestBuilder) ToGetRequ
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemEmployeeExperienceLearningCourseActivitiesRequestBuilder) WithUrl(rawUrl string)(*ItemEmployeeExperienceLearningCourseActivitiesRequestBuilder) {
+    return NewItemEmployeeExperienceLearningCourseActivitiesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

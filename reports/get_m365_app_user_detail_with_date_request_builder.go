@@ -65,3 +65,7 @@ func (m *GetM365AppUserDetailWithDateRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GetM365AppUserDetailWithDateRequestBuilder) WithUrl(rawUrl string)(*GetM365AppUserDetailWithDateRequestBuilder) {
+    return NewGetM365AppUserDetailWithDateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

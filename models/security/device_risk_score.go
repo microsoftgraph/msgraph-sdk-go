@@ -44,3 +44,6 @@ func SerializeDeviceRiskScore(values []DeviceRiskScore) []string {
     }
     return result
 }
+func (i DeviceRiskScore) isMultiValue() bool {
+    return false
+}

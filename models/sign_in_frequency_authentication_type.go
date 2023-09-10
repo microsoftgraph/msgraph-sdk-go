@@ -35,3 +35,6 @@ func SerializeSignInFrequencyAuthenticationType(values []SignInFrequencyAuthenti
     }
     return result
 }
+func (i SignInFrequencyAuthenticationType) isMultiValue() bool {
+    return false
+}

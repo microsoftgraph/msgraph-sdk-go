@@ -34,3 +34,6 @@ func SerializeRunAsAccountType(values []RunAsAccountType) []string {
     }
     return result
 }
+func (i RunAsAccountType) isMultiValue() bool {
+    return false
+}

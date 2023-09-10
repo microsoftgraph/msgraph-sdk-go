@@ -74,3 +74,7 @@ func (m *Alerts_v2CountRequestBuilder) ToGetRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *Alerts_v2CountRequestBuilder) WithUrl(rawUrl string)(*Alerts_v2CountRequestBuilder) {
+    return NewAlerts_v2CountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

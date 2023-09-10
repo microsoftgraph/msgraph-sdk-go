@@ -35,3 +35,6 @@ func SerializeSynchronizationScheduleState(values []SynchronizationScheduleState
     }
     return result
 }
+func (i SynchronizationScheduleState) isMultiValue() bool {
+    return false
+}

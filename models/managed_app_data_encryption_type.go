@@ -42,3 +42,6 @@ func SerializeManagedAppDataEncryptionType(values []ManagedAppDataEncryptionType
     }
     return result
 }
+func (i ManagedAppDataEncryptionType) isMultiValue() bool {
+    return false
+}

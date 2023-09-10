@@ -38,3 +38,6 @@ func SerializeFeatureTargetType(values []FeatureTargetType) []string {
     }
     return result
 }
+func (i FeatureTargetType) isMultiValue() bool {
+    return false
+}

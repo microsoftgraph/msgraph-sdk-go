@@ -143,3 +143,7 @@ func (m *ItemThreadsItemPostsItemExtensionsRequestBuilder) ToPostRequestInformat
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemThreadsItemPostsItemExtensionsRequestBuilder) WithUrl(rawUrl string)(*ItemThreadsItemPostsItemExtensionsRequestBuilder) {
+    return NewItemThreadsItemPostsItemExtensionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

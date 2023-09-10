@@ -155,3 +155,7 @@ func (m *UsersRequestBuilder) ToPostRequestInformation(ctx context.Context, body
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UsersRequestBuilder) WithUrl(rawUrl string)(*UsersRequestBuilder) {
+    return NewUsersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

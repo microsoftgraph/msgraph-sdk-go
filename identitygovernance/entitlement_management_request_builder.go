@@ -201,3 +201,7 @@ func (m *EntitlementManagementRequestBuilder) ToPatchRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EntitlementManagementRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementRequestBuilder) {
+    return NewEntitlementManagementRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

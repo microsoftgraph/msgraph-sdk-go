@@ -30,7 +30,7 @@ func NewItemJoinedTeamsItemPermissionGrantsItemGetMemberGroupsRequestBuilder(raw
     urlParams["request-raw-url"] = rawUrl
     return NewItemJoinedTeamsItemPermissionGrantsItemGetMemberGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.
+// Post return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
@@ -52,7 +52,7 @@ func (m *ItemJoinedTeamsItemPermissionGrantsItemGetMemberGroupsRequestBuilder) P
     }
     return res.(ItemJoinedTeamsItemPermissionGrantsItemGetMemberGroupsResponseable), nil
 }
-// ToPostRequestInformation return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.
+// ToPostRequestInformation return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API.
 func (m *ItemJoinedTeamsItemPermissionGrantsItemGetMemberGroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemJoinedTeamsItemPermissionGrantsItemGetMemberGroupsPostRequestBodyable, requestConfiguration *ItemJoinedTeamsItemPermissionGrantsItemGetMemberGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -68,4 +68,8 @@ func (m *ItemJoinedTeamsItemPermissionGrantsItemGetMemberGroupsRequestBuilder) T
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemJoinedTeamsItemPermissionGrantsItemGetMemberGroupsRequestBuilder) WithUrl(rawUrl string)(*ItemJoinedTeamsItemPermissionGrantsItemGetMemberGroupsRequestBuilder) {
+    return NewItemJoinedTeamsItemPermissionGrantsItemGetMemberGroupsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

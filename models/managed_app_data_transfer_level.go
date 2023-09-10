@@ -38,3 +38,6 @@ func SerializeManagedAppDataTransferLevel(values []ManagedAppDataTransferLevel) 
     }
     return result
 }
+func (i ManagedAppDataTransferLevel) isMultiValue() bool {
+    return false
+}

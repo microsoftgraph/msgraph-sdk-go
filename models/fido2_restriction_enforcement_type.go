@@ -35,3 +35,6 @@ func SerializeFido2RestrictionEnforcementType(values []Fido2RestrictionEnforceme
     }
     return result
 }
+func (i Fido2RestrictionEnforcementType) isMultiValue() bool {
+    return false
+}

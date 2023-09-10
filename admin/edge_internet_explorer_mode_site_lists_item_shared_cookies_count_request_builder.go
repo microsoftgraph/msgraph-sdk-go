@@ -74,3 +74,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSharedCookiesCountRequestBuilder) 
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EdgeInternetExplorerModeSiteListsItemSharedCookiesCountRequestBuilder) WithUrl(rawUrl string)(*EdgeInternetExplorerModeSiteListsItemSharedCookiesCountRequestBuilder) {
+    return NewEdgeInternetExplorerModeSiteListsItemSharedCookiesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

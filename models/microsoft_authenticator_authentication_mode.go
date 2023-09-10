@@ -35,3 +35,6 @@ func SerializeMicrosoftAuthenticatorAuthenticationMode(values []MicrosoftAuthent
     }
     return result
 }
+func (i MicrosoftAuthenticatorAuthenticationMode) isMultiValue() bool {
+    return false
+}

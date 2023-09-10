@@ -54,3 +54,6 @@ func SerializeWin32LobAppPowerShellScriptRuleOperationType(values []Win32LobAppP
     }
     return result
 }
+func (i Win32LobAppPowerShellScriptRuleOperationType) isMultiValue() bool {
+    return false
+}

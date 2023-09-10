@@ -38,3 +38,6 @@ func SerializeExpirationPatternType(values []ExpirationPatternType) []string {
     }
     return result
 }
+func (i ExpirationPatternType) isMultiValue() bool {
+    return false
+}

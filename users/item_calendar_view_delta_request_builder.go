@@ -91,3 +91,7 @@ func (m *ItemCalendarViewDeltaRequestBuilder) ToGetRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCalendarViewDeltaRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarViewDeltaRequestBuilder) {
+    return NewItemCalendarViewDeltaRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

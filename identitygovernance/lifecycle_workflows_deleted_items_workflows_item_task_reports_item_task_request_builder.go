@@ -75,3 +75,7 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemTaskReportsItemTaskRequestBu
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemTaskReportsItemTaskRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsDeletedItemsWorkflowsItemTaskReportsItemTaskRequestBuilder) {
+    return NewLifecycleWorkflowsDeletedItemsWorkflowsItemTaskReportsItemTaskRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

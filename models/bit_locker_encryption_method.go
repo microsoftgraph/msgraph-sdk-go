@@ -42,3 +42,6 @@ func SerializeBitLockerEncryptionMethod(values []BitLockerEncryptionMethod) []st
     }
     return result
 }
+func (i BitLockerEncryptionMethod) isMultiValue() bool {
+    return false
+}

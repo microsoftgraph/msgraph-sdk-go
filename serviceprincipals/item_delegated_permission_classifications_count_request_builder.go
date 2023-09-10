@@ -74,3 +74,7 @@ func (m *ItemDelegatedPermissionClassificationsCountRequestBuilder) ToGetRequest
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemDelegatedPermissionClassificationsCountRequestBuilder) WithUrl(rawUrl string)(*ItemDelegatedPermissionClassificationsCountRequestBuilder) {
+    return NewItemDelegatedPermissionClassificationsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

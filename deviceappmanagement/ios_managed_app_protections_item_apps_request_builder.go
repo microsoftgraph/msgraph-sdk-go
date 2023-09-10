@@ -151,3 +151,7 @@ func (m *IosManagedAppProtectionsItemAppsRequestBuilder) ToPostRequestInformatio
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IosManagedAppProtectionsItemAppsRequestBuilder) WithUrl(rawUrl string)(*IosManagedAppProtectionsItemAppsRequestBuilder) {
+    return NewIosManagedAppProtectionsItemAppsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

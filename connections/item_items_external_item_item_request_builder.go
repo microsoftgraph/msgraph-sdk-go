@@ -167,3 +167,7 @@ func (m *ItemItemsExternalItemItemRequestBuilder) ToPutRequestInformation(ctx co
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsExternalItemItemRequestBuilder) WithUrl(rawUrl string)(*ItemItemsExternalItemItemRequestBuilder) {
+    return NewItemItemsExternalItemItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

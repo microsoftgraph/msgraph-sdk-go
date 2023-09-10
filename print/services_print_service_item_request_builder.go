@@ -160,3 +160,7 @@ func (m *ServicesPrintServiceItemRequestBuilder) ToPatchRequestInformation(ctx c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ServicesPrintServiceItemRequestBuilder) WithUrl(rawUrl string)(*ServicesPrintServiceItemRequestBuilder) {
+    return NewServicesPrintServiceItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

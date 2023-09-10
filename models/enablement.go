@@ -38,3 +38,6 @@ func SerializeEnablement(values []Enablement) []string {
     }
     return result
 }
+func (i Enablement) isMultiValue() bool {
+    return false
+}

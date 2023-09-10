@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // Computer endpoint protection state
 type WindowsDeviceHealthState int
@@ -21,25 +22,34 @@ const (
 )
 
 func (i WindowsDeviceHealthState) String() string {
-    return []string{"clean", "fullScanPending", "rebootPending", "manualStepsPending", "offlineScanPending", "critical"}[i]
+    var values []string
+    for p := WindowsDeviceHealthState(1); p <= CRITICAL_WINDOWSDEVICEHEALTHSTATE; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"clean", "fullScanPending", "rebootPending", "manualStepsPending", "offlineScanPending", "critical"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseWindowsDeviceHealthState(v string) (any, error) {
-    result := CLEAN_WINDOWSDEVICEHEALTHSTATE
-    switch v {
-        case "clean":
-            result = CLEAN_WINDOWSDEVICEHEALTHSTATE
-        case "fullScanPending":
-            result = FULLSCANPENDING_WINDOWSDEVICEHEALTHSTATE
-        case "rebootPending":
-            result = REBOOTPENDING_WINDOWSDEVICEHEALTHSTATE
-        case "manualStepsPending":
-            result = MANUALSTEPSPENDING_WINDOWSDEVICEHEALTHSTATE
-        case "offlineScanPending":
-            result = OFFLINESCANPENDING_WINDOWSDEVICEHEALTHSTATE
-        case "critical":
-            result = CRITICAL_WINDOWSDEVICEHEALTHSTATE
-        default:
-            return 0, errors.New("Unknown WindowsDeviceHealthState value: " + v)
+    var result WindowsDeviceHealthState
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "clean":
+                result |= CLEAN_WINDOWSDEVICEHEALTHSTATE
+            case "fullScanPending":
+                result |= FULLSCANPENDING_WINDOWSDEVICEHEALTHSTATE
+            case "rebootPending":
+                result |= REBOOTPENDING_WINDOWSDEVICEHEALTHSTATE
+            case "manualStepsPending":
+                result |= MANUALSTEPSPENDING_WINDOWSDEVICEHEALTHSTATE
+            case "offlineScanPending":
+                result |= OFFLINESCANPENDING_WINDOWSDEVICEHEALTHSTATE
+            case "critical":
+                result |= CRITICAL_WINDOWSDEVICEHEALTHSTATE
+            default:
+                return 0, errors.New("Unknown WindowsDeviceHealthState value: " + v)
+        }
     }
     return &result, nil
 }
@@ -49,4 +59,7 @@ func SerializeWindowsDeviceHealthState(values []WindowsDeviceHealthState) []stri
         result[i] = v.String()
     }
     return result
+}
+func (i WindowsDeviceHealthState) isMultiValue() bool {
+    return true
 }

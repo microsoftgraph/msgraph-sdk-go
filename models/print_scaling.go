@@ -44,3 +44,6 @@ func SerializePrintScaling(values []PrintScaling) []string {
     }
     return result
 }
+func (i PrintScaling) isMultiValue() bool {
+    return false
+}

@@ -38,3 +38,6 @@ func SerializeCalendarSharingAction(values []CalendarSharingAction) []string {
     }
     return result
 }
+func (i CalendarSharingAction) isMultiValue() bool {
+    return false
+}

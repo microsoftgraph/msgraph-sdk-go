@@ -160,3 +160,7 @@ func (m *ThreatIntelligenceHostCookiesHostCookieItemRequestBuilder) ToPatchReque
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ThreatIntelligenceHostCookiesHostCookieItemRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceHostCookiesHostCookieItemRequestBuilder) {
+    return NewThreatIntelligenceHostCookiesHostCookieItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

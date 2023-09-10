@@ -148,3 +148,7 @@ func (m *AttackSimulationSimulationsRequestBuilder) ToPostRequestInformation(ctx
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AttackSimulationSimulationsRequestBuilder) WithUrl(rawUrl string)(*AttackSimulationSimulationsRequestBuilder) {
+    return NewAttackSimulationSimulationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

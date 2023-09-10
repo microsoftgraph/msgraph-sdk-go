@@ -44,3 +44,6 @@ func SerializeKubernetesServiceType(values []KubernetesServiceType) []string {
     }
     return result
 }
+func (i KubernetesServiceType) isMultiValue() bool {
+    return false
+}

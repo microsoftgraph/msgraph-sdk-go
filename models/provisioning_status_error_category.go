@@ -38,3 +38,6 @@ func SerializeProvisioningStatusErrorCategory(values []ProvisioningStatusErrorCa
     }
     return result
 }
+func (i ProvisioningStatusErrorCategory) isMultiValue() bool {
+    return false
+}

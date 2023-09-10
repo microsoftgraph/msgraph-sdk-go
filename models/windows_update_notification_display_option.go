@@ -46,3 +46,6 @@ func SerializeWindowsUpdateNotificationDisplayOption(values []WindowsUpdateNotif
     }
     return result
 }
+func (i WindowsUpdateNotificationDisplayOption) isMultiValue() bool {
+    return false
+}

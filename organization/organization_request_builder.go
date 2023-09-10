@@ -11,7 +11,7 @@ import (
 type OrganizationRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// OrganizationRequestBuilderGetQueryParameters retrieve a list of organization objects.
+// OrganizationRequestBuilderGetQueryParameters list properties and relationships of the organization objects.
 type OrganizationRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,10 +78,10 @@ func (m *OrganizationRequestBuilder) Count()(*CountRequestBuilder) {
 func (m *OrganizationRequestBuilder) Delta()(*DeltaRequestBuilder) {
     return NewDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of organization objects.
+// Get list properties and relationships of the organization objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/organization-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-organization-list?view=graph-rest-1.0
 func (m *OrganizationRequestBuilder) Get(ctx context.Context, requestConfiguration *OrganizationRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OrganizationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -127,7 +127,7 @@ func (m *OrganizationRequestBuilder) Post(ctx context.Context, body iadcd8112441
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Organizationable), nil
 }
-// ToGetRequestInformation retrieve a list of organization objects.
+// ToGetRequestInformation list properties and relationships of the organization objects.
 func (m *OrganizationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OrganizationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -163,4 +163,8 @@ func (m *OrganizationRequestBuilder) ToPostRequestInformation(ctx context.Contex
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *OrganizationRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
     return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *OrganizationRequestBuilder) WithUrl(rawUrl string)(*OrganizationRequestBuilder) {
+    return NewOrganizationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -53,3 +53,6 @@ func SerializeCaseAction(values []CaseAction) []string {
     }
     return result
 }
+func (i CaseAction) isMultiValue() bool {
+    return false
+}

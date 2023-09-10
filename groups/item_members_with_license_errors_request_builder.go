@@ -126,3 +126,7 @@ func (m *ItemMembersWithLicenseErrorsRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemMembersWithLicenseErrorsRequestBuilder) WithUrl(rawUrl string)(*ItemMembersWithLicenseErrorsRequestBuilder) {
+    return NewItemMembersWithLicenseErrorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

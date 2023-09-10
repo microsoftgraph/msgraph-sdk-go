@@ -42,3 +42,6 @@ func SerializeManagedAppClipboardSharingLevel(values []ManagedAppClipboardSharin
     }
     return result
 }
+func (i ManagedAppClipboardSharingLevel) isMultiValue() bool {
+    return false
+}

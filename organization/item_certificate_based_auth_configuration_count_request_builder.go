@@ -74,3 +74,7 @@ func (m *ItemCertificateBasedAuthConfigurationCountRequestBuilder) ToGetRequestI
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCertificateBasedAuthConfigurationCountRequestBuilder) WithUrl(rawUrl string)(*ItemCertificateBasedAuthConfigurationCountRequestBuilder) {
+    return NewItemCertificateBasedAuthConfigurationCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

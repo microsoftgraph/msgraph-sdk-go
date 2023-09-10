@@ -74,3 +74,6 @@ func SerializeAlertDetermination(values []AlertDetermination) []string {
     }
     return result
 }
+func (i AlertDetermination) isMultiValue() bool {
+    return false
+}

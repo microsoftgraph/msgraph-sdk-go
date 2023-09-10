@@ -32,3 +32,6 @@ func SerializeSelectionLikelihoodInfo(values []SelectionLikelihoodInfo) []string
     }
     return result
 }
+func (i SelectionLikelihoodInfo) isMultiValue() bool {
+    return false
+}

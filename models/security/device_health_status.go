@@ -47,3 +47,6 @@ func SerializeDeviceHealthStatus(values []DeviceHealthStatus) []string {
     }
     return result
 }
+func (i DeviceHealthStatus) isMultiValue() bool {
+    return false
+}

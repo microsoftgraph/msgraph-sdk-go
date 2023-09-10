@@ -34,3 +34,6 @@ func SerializeDeviceManagementExportJobLocalizationType(values []DeviceManagemen
     }
     return result
 }
+func (i DeviceManagementExportJobLocalizationType) isMultiValue() bool {
+    return false
+}

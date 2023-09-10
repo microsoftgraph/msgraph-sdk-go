@@ -32,3 +32,6 @@ func SerializeDelegatedAdminRelationshipOperationType(values []DelegatedAdminRel
     }
     return result
 }
+func (i DelegatedAdminRelationshipOperationType) isMultiValue() bool {
+    return false
+}

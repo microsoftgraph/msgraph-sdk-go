@@ -38,3 +38,6 @@ func SerializePrintQuality(values []PrintQuality) []string {
     }
     return result
 }
+func (i PrintQuality) isMultiValue() bool {
+    return false
+}

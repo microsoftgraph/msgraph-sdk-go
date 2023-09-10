@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // 
 type OnlineMeetingVideoDisabledReason int
@@ -11,17 +12,26 @@ const (
 )
 
 func (i OnlineMeetingVideoDisabledReason) String() string {
-    return []string{"watermarkProtection", "unknownFutureValue"}[i]
+    var values []string
+    for p := OnlineMeetingVideoDisabledReason(1); p <= UNKNOWNFUTUREVALUE_ONLINEMEETINGVIDEODISABLEDREASON; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"watermarkProtection", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseOnlineMeetingVideoDisabledReason(v string) (any, error) {
-    result := WATERMARKPROTECTION_ONLINEMEETINGVIDEODISABLEDREASON
-    switch v {
-        case "watermarkProtection":
-            result = WATERMARKPROTECTION_ONLINEMEETINGVIDEODISABLEDREASON
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_ONLINEMEETINGVIDEODISABLEDREASON
-        default:
-            return 0, errors.New("Unknown OnlineMeetingVideoDisabledReason value: " + v)
+    var result OnlineMeetingVideoDisabledReason
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "watermarkProtection":
+                result |= WATERMARKPROTECTION_ONLINEMEETINGVIDEODISABLEDREASON
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_ONLINEMEETINGVIDEODISABLEDREASON
+            default:
+                return 0, errors.New("Unknown OnlineMeetingVideoDisabledReason value: " + v)
+        }
     }
     return &result, nil
 }
@@ -31,4 +41,7 @@ func SerializeOnlineMeetingVideoDisabledReason(values []OnlineMeetingVideoDisabl
         result[i] = v.String()
     }
     return result
+}
+func (i OnlineMeetingVideoDisabledReason) isMultiValue() bool {
+    return true
 }

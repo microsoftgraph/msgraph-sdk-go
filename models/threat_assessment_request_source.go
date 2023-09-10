@@ -35,3 +35,6 @@ func SerializeThreatAssessmentRequestSource(values []ThreatAssessmentRequestSour
     }
     return result
 }
+func (i ThreatAssessmentRequestSource) isMultiValue() bool {
+    return false
+}

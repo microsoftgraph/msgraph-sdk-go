@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // 
 type SearchContent int
@@ -12,19 +13,28 @@ const (
 )
 
 func (i SearchContent) String() string {
-    return []string{"sharedContent", "privateContent", "unknownFutureValue"}[i]
+    var values []string
+    for p := SearchContent(1); p <= UNKNOWNFUTUREVALUE_SEARCHCONTENT; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"sharedContent", "privateContent", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseSearchContent(v string) (any, error) {
-    result := SHAREDCONTENT_SEARCHCONTENT
-    switch v {
-        case "sharedContent":
-            result = SHAREDCONTENT_SEARCHCONTENT
-        case "privateContent":
-            result = PRIVATECONTENT_SEARCHCONTENT
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_SEARCHCONTENT
-        default:
-            return 0, errors.New("Unknown SearchContent value: " + v)
+    var result SearchContent
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "sharedContent":
+                result |= SHAREDCONTENT_SEARCHCONTENT
+            case "privateContent":
+                result |= PRIVATECONTENT_SEARCHCONTENT
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_SEARCHCONTENT
+            default:
+                return 0, errors.New("Unknown SearchContent value: " + v)
+        }
     }
     return &result, nil
 }
@@ -34,4 +44,7 @@ func SerializeSearchContent(values []SearchContent) []string {
         result[i] = v.String()
     }
     return result
+}
+func (i SearchContent) isMultiValue() bool {
+    return true
 }

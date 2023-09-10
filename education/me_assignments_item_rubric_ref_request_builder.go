@@ -146,3 +146,7 @@ func (m *MeAssignmentsItemRubricRefRequestBuilder) ToPutRequestInformation(ctx c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MeAssignmentsItemRubricRefRequestBuilder) WithUrl(rawUrl string)(*MeAssignmentsItemRubricRefRequestBuilder) {
+    return NewMeAssignmentsItemRubricRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -41,3 +41,6 @@ func SerializeRiskDetectionTimingType(values []RiskDetectionTimingType) []string
     }
     return result
 }
+func (i RiskDetectionTimingType) isMultiValue() bool {
+    return false
+}

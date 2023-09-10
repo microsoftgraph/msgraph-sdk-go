@@ -41,3 +41,6 @@ func SerializeMdmAppConfigKeyType(values []MdmAppConfigKeyType) []string {
     }
     return result
 }
+func (i MdmAppConfigKeyType) isMultiValue() bool {
+    return false
+}

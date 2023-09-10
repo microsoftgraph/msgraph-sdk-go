@@ -32,3 +32,6 @@ func SerializeAttributeFlowBehavior(values []AttributeFlowBehavior) []string {
     }
     return result
 }
+func (i AttributeFlowBehavior) isMultiValue() bool {
+    return false
+}

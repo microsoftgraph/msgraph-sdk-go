@@ -75,3 +75,7 @@ func (m *ItemSitesItemTermStoresItemGroupsItemSetsItemTermsItemChildrenItemRelat
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSitesItemTermStoresItemGroupsItemSetsItemTermsItemChildrenItemRelationsItemSetRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemTermStoresItemGroupsItemSetsItemTermsItemChildrenItemRelationsItemSetRequestBuilder) {
+    return NewItemSitesItemTermStoresItemGroupsItemSetsItemTermsItemChildrenItemRelationsItemSetRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

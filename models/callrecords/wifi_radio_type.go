@@ -50,3 +50,6 @@ func SerializeWifiRadioType(values []WifiRadioType) []string {
     }
     return result
 }
+func (i WifiRadioType) isMultiValue() bool {
+    return false
+}

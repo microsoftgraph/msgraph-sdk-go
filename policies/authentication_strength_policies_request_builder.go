@@ -151,3 +151,7 @@ func (m *AuthenticationStrengthPoliciesRequestBuilder) ToPostRequestInformation(
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AuthenticationStrengthPoliciesRequestBuilder) WithUrl(rawUrl string)(*AuthenticationStrengthPoliciesRequestBuilder) {
+    return NewAuthenticationStrengthPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

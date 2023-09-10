@@ -35,3 +35,6 @@ func SerializeEducationExternalSource(values []EducationExternalSource) []string
     }
     return result
 }
+func (i EducationExternalSource) isMultiValue() bool {
+    return false
+}

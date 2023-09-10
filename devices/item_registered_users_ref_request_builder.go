@@ -128,3 +128,7 @@ func (m *ItemRegisteredUsersRefRequestBuilder) ToPostRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemRegisteredUsersRefRequestBuilder) WithUrl(rawUrl string)(*ItemRegisteredUsersRefRequestBuilder) {
+    return NewItemRegisteredUsersRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -74,3 +74,6 @@ func SerializeEvidenceRole(values []EvidenceRole) []string {
     }
     return result
 }
+func (i EvidenceRole) isMultiValue() bool {
+    return false
+}

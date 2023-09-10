@@ -74,3 +74,7 @@ func (m *PrintersItemJobsCountRequestBuilder) ToGetRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *PrintersItemJobsCountRequestBuilder) WithUrl(rawUrl string)(*PrintersItemJobsCountRequestBuilder) {
+    return NewPrintersItemJobsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

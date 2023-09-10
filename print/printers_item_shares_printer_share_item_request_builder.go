@@ -75,3 +75,7 @@ func (m *PrintersItemSharesPrinterShareItemRequestBuilder) ToGetRequestInformati
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *PrintersItemSharesPrinterShareItemRequestBuilder) WithUrl(rawUrl string)(*PrintersItemSharesPrinterShareItemRequestBuilder) {
+    return NewPrintersItemSharesPrinterShareItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

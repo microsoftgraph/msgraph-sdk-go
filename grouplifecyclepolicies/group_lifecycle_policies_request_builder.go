@@ -151,3 +151,7 @@ func (m *GroupLifecyclePoliciesRequestBuilder) ToPostRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GroupLifecyclePoliciesRequestBuilder) WithUrl(rawUrl string)(*GroupLifecyclePoliciesRequestBuilder) {
+    return NewGroupLifecyclePoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

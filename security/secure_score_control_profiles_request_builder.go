@@ -148,3 +148,7 @@ func (m *SecureScoreControlProfilesRequestBuilder) ToPostRequestInformation(ctx 
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SecureScoreControlProfilesRequestBuilder) WithUrl(rawUrl string)(*SecureScoreControlProfilesRequestBuilder) {
+    return NewSecureScoreControlProfilesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

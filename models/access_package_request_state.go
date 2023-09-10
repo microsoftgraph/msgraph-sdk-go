@@ -56,3 +56,6 @@ func SerializeAccessPackageRequestState(values []AccessPackageRequestState) []st
     }
     return result
 }
+func (i AccessPackageRequestState) isMultiValue() bool {
+    return false
+}

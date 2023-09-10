@@ -74,3 +74,7 @@ func (m *AttackSimulationSimulationAutomationsItemRunsCountRequestBuilder) ToGet
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AttackSimulationSimulationAutomationsItemRunsCountRequestBuilder) WithUrl(rawUrl string)(*AttackSimulationSimulationAutomationsItemRunsCountRequestBuilder) {
+    return NewAttackSimulationSimulationAutomationsItemRunsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

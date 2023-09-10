@@ -46,3 +46,6 @@ func SerializeWindowsUserAccountControlSettings(values []WindowsUserAccountContr
     }
     return result
 }
+func (i WindowsUserAccountControlSettings) isMultiValue() bool {
+    return false
+}

@@ -38,3 +38,6 @@ func SerializeImageTaggingChoice(values []ImageTaggingChoice) []string {
     }
     return result
 }
+func (i ImageTaggingChoice) isMultiValue() bool {
+    return false
+}

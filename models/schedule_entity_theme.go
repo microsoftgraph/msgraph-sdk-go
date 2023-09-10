@@ -65,3 +65,6 @@ func SerializeScheduleEntityTheme(values []ScheduleEntityTheme) []string {
     }
     return result
 }
+func (i ScheduleEntityTheme) isMultiValue() bool {
+    return false
+}

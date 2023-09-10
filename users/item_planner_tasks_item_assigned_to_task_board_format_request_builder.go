@@ -159,3 +159,7 @@ func (m *ItemPlannerTasksItemAssignedToTaskBoardFormatRequestBuilder) ToPatchReq
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemPlannerTasksItemAssignedToTaskBoardFormatRequestBuilder) WithUrl(rawUrl string)(*ItemPlannerTasksItemAssignedToTaskBoardFormatRequestBuilder) {
+    return NewItemPlannerTasksItemAssignedToTaskBoardFormatRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

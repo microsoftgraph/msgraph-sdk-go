@@ -41,3 +41,6 @@ func SerializeProvisioningResult(values []ProvisioningResult) []string {
     }
     return result
 }
+func (i ProvisioningResult) isMultiValue() bool {
+    return false
+}

@@ -41,3 +41,6 @@ func SerializeHostReputationClassification(values []HostReputationClassification
     }
     return result
 }
+func (i HostReputationClassification) isMultiValue() bool {
+    return false
+}

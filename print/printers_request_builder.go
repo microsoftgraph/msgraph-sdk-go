@@ -152,3 +152,7 @@ func (m *PrintersRequestBuilder) ToPostRequestInformation(ctx context.Context, b
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *PrintersRequestBuilder) WithUrl(rawUrl string)(*PrintersRequestBuilder) {
+    return NewPrintersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

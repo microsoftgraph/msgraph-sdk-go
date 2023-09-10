@@ -116,7 +116,7 @@ func (m *PasswordProfile) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPassword gets the password property value. The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.
+// GetPassword gets the password property value. The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user's passwordPolicies property. By default, a strong password is required.
 func (m *PasswordProfile) GetPassword()(*string) {
     val, err := m.GetBackingStore().Get("password")
     if err != nil {
@@ -193,7 +193,7 @@ func (m *PasswordProfile) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPassword sets the password property value. The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.
+// SetPassword sets the password property value. The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user's passwordPolicies property. By default, a strong password is required.
 func (m *PasswordProfile) SetPassword(value *string)() {
     err := m.GetBackingStore().Set("password", value)
     if err != nil {

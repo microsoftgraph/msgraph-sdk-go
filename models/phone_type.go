@@ -56,3 +56,6 @@ func SerializePhoneType(values []PhoneType) []string {
     }
     return result
 }
+func (i PhoneType) isMultiValue() bool {
+    return false
+}

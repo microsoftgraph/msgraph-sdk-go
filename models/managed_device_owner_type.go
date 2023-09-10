@@ -38,3 +38,6 @@ func SerializeManagedDeviceOwnerType(values []ManagedDeviceOwnerType) []string {
     }
     return result
 }
+func (i ManagedDeviceOwnerType) isMultiValue() bool {
+    return false
+}

@@ -153,3 +153,7 @@ func (m *AuthenticationMethodConfigurationsAuthenticationMethodConfigurationItem
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilder) WithUrl(rawUrl string)(*AuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilder) {
+    return NewAuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

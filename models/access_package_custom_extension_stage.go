@@ -47,3 +47,6 @@ func SerializeAccessPackageCustomExtensionStage(values []AccessPackageCustomExte
     }
     return result
 }
+func (i AccessPackageCustomExtensionStage) isMultiValue() bool {
+    return false
+}

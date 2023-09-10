@@ -35,3 +35,6 @@ func SerializeSearchAlterationType(values []SearchAlterationType) []string {
     }
     return result
 }
+func (i SearchAlterationType) isMultiValue() bool {
+    return false
+}

@@ -151,3 +151,7 @@ func (m *GroupSettingsRequestBuilder) ToPostRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GroupSettingsRequestBuilder) WithUrl(rawUrl string)(*GroupSettingsRequestBuilder) {
+    return NewGroupSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

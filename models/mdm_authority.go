@@ -42,3 +42,6 @@ func SerializeMdmAuthority(values []MdmAuthority) []string {
     }
     return result
 }
+func (i MdmAuthority) isMultiValue() bool {
+    return false
+}

@@ -41,3 +41,6 @@ func SerializePrintTaskProcessingState(values []PrintTaskProcessingState) []stri
     }
     return result
 }
+func (i PrintTaskProcessingState) isMultiValue() bool {
+    return false
+}

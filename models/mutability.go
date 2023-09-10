@@ -38,3 +38,6 @@ func SerializeMutability(values []Mutability) []string {
     }
     return result
 }
+func (i Mutability) isMultiValue() bool {
+    return false
+}

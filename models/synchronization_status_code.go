@@ -41,3 +41,6 @@ func SerializeSynchronizationStatusCode(values []SynchronizationStatusCode) []st
     }
     return result
 }
+func (i SynchronizationStatusCode) isMultiValue() bool {
+    return false
+}

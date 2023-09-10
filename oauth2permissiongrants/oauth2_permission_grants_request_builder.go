@@ -155,3 +155,7 @@ func (m *Oauth2PermissionGrantsRequestBuilder) ToPostRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *Oauth2PermissionGrantsRequestBuilder) WithUrl(rawUrl string)(*Oauth2PermissionGrantsRequestBuilder) {
+    return NewOauth2PermissionGrantsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

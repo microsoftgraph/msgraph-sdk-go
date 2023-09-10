@@ -30,7 +30,7 @@ func NewFeatureRolloutPoliciesItemAppliesToGetByIdsRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewFeatureRolloutPoliciesItemAppliesToGetByIdsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post return the directory objects specified in a list of IDs. Some common uses for this function are to:
+// Post return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
@@ -52,7 +52,7 @@ func (m *FeatureRolloutPoliciesItemAppliesToGetByIdsRequestBuilder) Post(ctx con
     }
     return res.(FeatureRolloutPoliciesItemAppliesToGetByIdsResponseable), nil
 }
-// ToPostRequestInformation return the directory objects specified in a list of IDs. Some common uses for this function are to:
+// ToPostRequestInformation return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
 func (m *FeatureRolloutPoliciesItemAppliesToGetByIdsRequestBuilder) ToPostRequestInformation(ctx context.Context, body FeatureRolloutPoliciesItemAppliesToGetByIdsPostRequestBodyable, requestConfiguration *FeatureRolloutPoliciesItemAppliesToGetByIdsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -68,4 +68,8 @@ func (m *FeatureRolloutPoliciesItemAppliesToGetByIdsRequestBuilder) ToPostReques
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *FeatureRolloutPoliciesItemAppliesToGetByIdsRequestBuilder) WithUrl(rawUrl string)(*FeatureRolloutPoliciesItemAppliesToGetByIdsRequestBuilder) {
+    return NewFeatureRolloutPoliciesItemAppliesToGetByIdsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

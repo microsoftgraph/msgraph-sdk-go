@@ -61,3 +61,7 @@ func (m *ItemListSubscriptionsItemReauthorizeRequestBuilder) ToPostRequestInform
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemListSubscriptionsItemReauthorizeRequestBuilder) WithUrl(rawUrl string)(*ItemListSubscriptionsItemReauthorizeRequestBuilder) {
+    return NewItemListSubscriptionsItemReauthorizeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

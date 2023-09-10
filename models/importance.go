@@ -35,3 +35,6 @@ func SerializeImportance(values []Importance) []string {
     }
     return result
 }
+func (i Importance) isMultiValue() bool {
+    return false
+}

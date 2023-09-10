@@ -46,3 +46,6 @@ func SerializeImportedWindowsAutopilotDeviceIdentityImportStatus(values []Import
     }
     return result
 }
+func (i ImportedWindowsAutopilotDeviceIdentityImportStatus) isMultiValue() bool {
+    return false
+}

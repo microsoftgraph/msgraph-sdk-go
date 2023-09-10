@@ -35,3 +35,6 @@ func SerializeConditionalAccessPolicyState(values []ConditionalAccessPolicyState
     }
     return result
 }
+func (i ConditionalAccessPolicyState) isMultiValue() bool {
+    return false
+}

@@ -91,3 +91,7 @@ func (m *ItemRegisteredOwnersGraphAppRoleAssignmentRequestBuilder) ToGetRequestI
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemRegisteredOwnersGraphAppRoleAssignmentRequestBuilder) WithUrl(rawUrl string)(*ItemRegisteredOwnersGraphAppRoleAssignmentRequestBuilder) {
+    return NewItemRegisteredOwnersGraphAppRoleAssignmentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -38,3 +38,6 @@ func SerializeConditionalAccessStatus(values []ConditionalAccessStatus) []string
     }
     return result
 }
+func (i ConditionalAccessStatus) isMultiValue() bool {
+    return false
+}

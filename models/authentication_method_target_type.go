@@ -35,3 +35,6 @@ func SerializeAuthenticationMethodTargetType(values []AuthenticationMethodTarget
     }
     return result
 }
+func (i AuthenticationMethodTargetType) isMultiValue() bool {
+    return false
+}

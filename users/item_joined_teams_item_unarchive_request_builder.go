@@ -61,3 +61,7 @@ func (m *ItemJoinedTeamsItemUnarchiveRequestBuilder) ToPostRequestInformation(ct
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemJoinedTeamsItemUnarchiveRequestBuilder) WithUrl(rawUrl string)(*ItemJoinedTeamsItemUnarchiveRequestBuilder) {
+    return NewItemJoinedTeamsItemUnarchiveRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

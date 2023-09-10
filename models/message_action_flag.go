@@ -59,3 +59,6 @@ func SerializeMessageActionFlag(values []MessageActionFlag) []string {
     }
     return result
 }
+func (i MessageActionFlag) isMultiValue() bool {
+    return false
+}

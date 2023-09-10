@@ -53,3 +53,6 @@ func SerializeSimulationStatus(values []SimulationStatus) []string {
     }
     return result
 }
+func (i SimulationStatus) isMultiValue() bool {
+    return false
+}
