@@ -42,3 +42,6 @@ func SerializeBrowserSiteListStatus(values []BrowserSiteListStatus) []string {
     }
     return result
 }
+func (i BrowserSiteListStatus) isMultiValue() bool {
+    return false
+}

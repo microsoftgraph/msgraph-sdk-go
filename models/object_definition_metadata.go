@@ -47,3 +47,6 @@ func SerializeObjectDefinitionMetadata(values []ObjectDefinitionMetadata) []stri
     }
     return result
 }
+func (i ObjectDefinitionMetadata) isMultiValue() bool {
+    return false
+}

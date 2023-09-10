@@ -35,3 +35,6 @@ func SerializeMediaState(values []MediaState) []string {
     }
     return result
 }
+func (i MediaState) isMultiValue() bool {
+    return false
+}

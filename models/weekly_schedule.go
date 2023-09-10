@@ -62,3 +62,6 @@ func SerializeWeeklySchedule(values []WeeklySchedule) []string {
     }
     return result
 }
+func (i WeeklySchedule) isMultiValue() bool {
+    return false
+}

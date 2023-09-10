@@ -46,3 +46,6 @@ func SerializeDeviceManagementExchangeAccessState(values []DeviceManagementExcha
     }
     return result
 }
+func (i DeviceManagementExchangeAccessState) isMultiValue() bool {
+    return false
+}

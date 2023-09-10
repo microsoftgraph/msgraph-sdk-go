@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // Type of start menu app list visibility.
 type WindowsStartMenuAppListVisibilityType int
@@ -17,21 +18,30 @@ const (
 )
 
 func (i WindowsStartMenuAppListVisibilityType) String() string {
-    return []string{"userDefined", "collapse", "remove", "disableSettingsApp"}[i]
+    var values []string
+    for p := WindowsStartMenuAppListVisibilityType(1); p <= DISABLESETTINGSAPP_WINDOWSSTARTMENUAPPLISTVISIBILITYTYPE; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"userDefined", "collapse", "remove", "disableSettingsApp"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseWindowsStartMenuAppListVisibilityType(v string) (any, error) {
-    result := USERDEFINED_WINDOWSSTARTMENUAPPLISTVISIBILITYTYPE
-    switch v {
-        case "userDefined":
-            result = USERDEFINED_WINDOWSSTARTMENUAPPLISTVISIBILITYTYPE
-        case "collapse":
-            result = COLLAPSE_WINDOWSSTARTMENUAPPLISTVISIBILITYTYPE
-        case "remove":
-            result = REMOVE_WINDOWSSTARTMENUAPPLISTVISIBILITYTYPE
-        case "disableSettingsApp":
-            result = DISABLESETTINGSAPP_WINDOWSSTARTMENUAPPLISTVISIBILITYTYPE
-        default:
-            return 0, errors.New("Unknown WindowsStartMenuAppListVisibilityType value: " + v)
+    var result WindowsStartMenuAppListVisibilityType
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "userDefined":
+                result |= USERDEFINED_WINDOWSSTARTMENUAPPLISTVISIBILITYTYPE
+            case "collapse":
+                result |= COLLAPSE_WINDOWSSTARTMENUAPPLISTVISIBILITYTYPE
+            case "remove":
+                result |= REMOVE_WINDOWSSTARTMENUAPPLISTVISIBILITYTYPE
+            case "disableSettingsApp":
+                result |= DISABLESETTINGSAPP_WINDOWSSTARTMENUAPPLISTVISIBILITYTYPE
+            default:
+                return 0, errors.New("Unknown WindowsStartMenuAppListVisibilityType value: " + v)
+        }
     }
     return &result, nil
 }
@@ -41,4 +51,7 @@ func SerializeWindowsStartMenuAppListVisibilityType(values []WindowsStartMenuApp
         result[i] = v.String()
     }
     return result
+}
+func (i WindowsStartMenuAppListVisibilityType) isMultiValue() bool {
+    return true
 }

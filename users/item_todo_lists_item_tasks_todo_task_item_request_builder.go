@@ -182,3 +182,7 @@ func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) ToPatchRequestInforma
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTodoListsItemTasksTodoTaskItemRequestBuilder) WithUrl(rawUrl string)(*ItemTodoListsItemTasksTodoTaskItemRequestBuilder) {
+    return NewItemTodoListsItemTasksTodoTaskItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

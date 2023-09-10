@@ -41,3 +41,6 @@ func SerializeEducationAddToCalendarOptions(values []EducationAddToCalendarOptio
     }
     return result
 }
+func (i EducationAddToCalendarOptions) isMultiValue() bool {
+    return false
+}

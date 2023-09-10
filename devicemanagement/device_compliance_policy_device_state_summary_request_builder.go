@@ -159,3 +159,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) ToPatchRequestI
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) WithUrl(rawUrl string)(*DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) {
+    return NewDeviceCompliancePolicyDeviceStateSummaryRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

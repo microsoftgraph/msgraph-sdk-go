@@ -35,3 +35,6 @@ func SerializeX509CertificateAuthenticationMode(values []X509CertificateAuthenti
     }
     return result
 }
+func (i X509CertificateAuthenticationMode) isMultiValue() bool {
+    return false
+}

@@ -78,3 +78,6 @@ func SerializeDeviceEnrollmentType(values []DeviceEnrollmentType) []string {
     }
     return result
 }
+func (i DeviceEnrollmentType) isMultiValue() bool {
+    return false
+}

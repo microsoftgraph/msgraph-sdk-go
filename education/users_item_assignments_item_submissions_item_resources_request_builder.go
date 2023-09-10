@@ -151,3 +151,7 @@ func (m *UsersItemAssignmentsItemSubmissionsItemResourcesRequestBuilder) ToPostR
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UsersItemAssignmentsItemSubmissionsItemResourcesRequestBuilder) WithUrl(rawUrl string)(*UsersItemAssignmentsItemSubmissionsItemResourcesRequestBuilder) {
+    return NewUsersItemAssignmentsItemSubmissionsItemResourcesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

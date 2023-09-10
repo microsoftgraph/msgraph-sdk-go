@@ -74,3 +74,7 @@ func (m *ItemOwnersGraphOrgContactCountRequestBuilder) ToGetRequestInformation(c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemOwnersGraphOrgContactCountRequestBuilder) WithUrl(rawUrl string)(*ItemOwnersGraphOrgContactCountRequestBuilder) {
+    return NewItemOwnersGraphOrgContactCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

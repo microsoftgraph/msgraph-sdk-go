@@ -157,3 +157,7 @@ func (m *TermsOfUseAgreementsItemFilesAgreementFileLocalizationItemRequestBuilde
 func (m *TermsOfUseAgreementsItemFilesAgreementFileLocalizationItemRequestBuilder) Versions()(*TermsOfUseAgreementsItemFilesItemVersionsRequestBuilder) {
     return NewTermsOfUseAgreementsItemFilesItemVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TermsOfUseAgreementsItemFilesAgreementFileLocalizationItemRequestBuilder) WithUrl(rawUrl string)(*TermsOfUseAgreementsItemFilesAgreementFileLocalizationItemRequestBuilder) {
+    return NewTermsOfUseAgreementsItemFilesAgreementFileLocalizationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

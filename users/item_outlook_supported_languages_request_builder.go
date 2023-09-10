@@ -10,7 +10,7 @@ import (
 type ItemOutlookSupportedLanguagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOutlookSupportedLanguagesRequestBuilderGetQueryParameters get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language by getting the user's mailbox settings.
+// ItemOutlookSupportedLanguagesRequestBuilderGetQueryParameters get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language bygetting the user's mailbox settings.
 type ItemOutlookSupportedLanguagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -45,7 +45,7 @@ func NewItemOutlookSupportedLanguagesRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewItemOutlookSupportedLanguagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language by getting the user's mailbox settings.
+// Get get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language bygetting the user's mailbox settings.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-1.0
@@ -67,7 +67,7 @@ func (m *ItemOutlookSupportedLanguagesRequestBuilder) Get(ctx context.Context, r
     }
     return res.(ItemOutlookSupportedLanguagesResponseable), nil
 }
-// ToGetRequestInformation get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language by getting the user's mailbox settings.
+// ToGetRequestInformation get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language bygetting the user's mailbox settings.
 func (m *ItemOutlookSupportedLanguagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookSupportedLanguagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -82,4 +82,8 @@ func (m *ItemOutlookSupportedLanguagesRequestBuilder) ToGetRequestInformation(ct
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemOutlookSupportedLanguagesRequestBuilder) WithUrl(rawUrl string)(*ItemOutlookSupportedLanguagesRequestBuilder) {
+    return NewItemOutlookSupportedLanguagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

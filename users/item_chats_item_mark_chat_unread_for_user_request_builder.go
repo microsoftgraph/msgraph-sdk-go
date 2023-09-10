@@ -65,3 +65,7 @@ func (m *ItemChatsItemMarkChatUnreadForUserRequestBuilder) ToPostRequestInformat
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemChatsItemMarkChatUnreadForUserRequestBuilder) WithUrl(rawUrl string)(*ItemChatsItemMarkChatUnreadForUserRequestBuilder) {
+    return NewItemChatsItemMarkChatUnreadForUserRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

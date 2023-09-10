@@ -167,3 +167,7 @@ func (m *GroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, bod
 func (m *GroupsRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
     return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GroupsRequestBuilder) WithUrl(rawUrl string)(*GroupsRequestBuilder) {
+    return NewGroupsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -134,3 +134,7 @@ func (m *SubscribedSkusRequestBuilder) ToPostRequestInformation(ctx context.Cont
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SubscribedSkusRequestBuilder) WithUrl(rawUrl string)(*SubscribedSkusRequestBuilder) {
+    return NewSubscribedSkusRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

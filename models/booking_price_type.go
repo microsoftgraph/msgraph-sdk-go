@@ -61,3 +61,6 @@ func SerializeBookingPriceType(values []BookingPriceType) []string {
     }
     return result
 }
+func (i BookingPriceType) isMultiValue() bool {
+    return false
+}

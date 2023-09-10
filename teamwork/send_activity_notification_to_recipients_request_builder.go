@@ -65,3 +65,7 @@ func (m *SendActivityNotificationToRecipientsRequestBuilder) ToPostRequestInform
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SendActivityNotificationToRecipientsRequestBuilder) WithUrl(rawUrl string)(*SendActivityNotificationToRecipientsRequestBuilder) {
+    return NewSendActivityNotificationToRecipientsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

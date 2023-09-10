@@ -159,3 +159,7 @@ func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) To
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) WithUrl(rawUrl string)(*TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) {
+    return NewTriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -42,3 +42,6 @@ func SerializeFirewallCertificateRevocationListCheckMethodType(values []Firewall
     }
     return result
 }
+func (i FirewallCertificateRevocationListCheckMethodType) isMultiValue() bool {
+    return false
+}

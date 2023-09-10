@@ -145,3 +145,7 @@ func (m *ItemFilesItemVersionsRequestBuilder) ToPostRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemFilesItemVersionsRequestBuilder) WithUrl(rawUrl string)(*ItemFilesItemVersionsRequestBuilder) {
+    return NewItemFilesItemVersionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -162,3 +162,7 @@ func (m *ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) ToPatchRe
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) WithUrl(rawUrl string)(*ReportsExportJobsDeviceManagementExportJobItemRequestBuilder) {
+    return NewReportsExportJobsDeviceManagementExportJobItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

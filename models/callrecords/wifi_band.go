@@ -41,3 +41,6 @@ func SerializeWifiBand(values []WifiBand) []string {
     }
     return result
 }
+func (i WifiBand) isMultiValue() bool {
+    return false
+}

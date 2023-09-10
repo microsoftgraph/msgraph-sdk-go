@@ -64,7 +64,28 @@ func (m *Presence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["statusMessage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePresenceStatusMessageFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStatusMessage(val.(PresenceStatusMessageable))
+        }
+        return nil
+    }
     return res
+}
+// GetStatusMessage gets the statusMessage property value. The statusMessage property
+func (m *Presence) GetStatusMessage()(PresenceStatusMessageable) {
+    val, err := m.GetBackingStore().Get("statusMessage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PresenceStatusMessageable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *Presence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -80,6 +101,12 @@ func (m *Presence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     {
         err = writer.WriteStringValue("availability", m.GetAvailability())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("statusMessage", m.GetStatusMessage())
         if err != nil {
             return err
         }
@@ -100,12 +127,21 @@ func (m *Presence) SetAvailability(value *string)() {
         panic(err)
     }
 }
+// SetStatusMessage sets the statusMessage property value. The statusMessage property
+func (m *Presence) SetStatusMessage(value PresenceStatusMessageable)() {
+    err := m.GetBackingStore().Set("statusMessage", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // Presenceable 
 type Presenceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetActivity()(*string)
     GetAvailability()(*string)
+    GetStatusMessage()(PresenceStatusMessageable)
     SetActivity(value *string)()
     SetAvailability(value *string)()
+    SetStatusMessage(value PresenceStatusMessageable)()
 }

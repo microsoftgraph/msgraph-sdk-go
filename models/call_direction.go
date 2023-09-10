@@ -32,3 +32,6 @@ func SerializeCallDirection(values []CallDirection) []string {
     }
     return result
 }
+func (i CallDirection) isMultiValue() bool {
+    return false
+}

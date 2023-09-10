@@ -41,3 +41,6 @@ func SerializeAllowInvitesFrom(values []AllowInvitesFrom) []string {
     }
     return result
 }
+func (i AllowInvitesFrom) isMultiValue() bool {
+    return false
+}

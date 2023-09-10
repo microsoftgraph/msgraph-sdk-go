@@ -190,3 +190,7 @@ func (m *DomainItemRequestBuilder) VerificationDnsRecords()(*ItemVerificationDns
 func (m *DomainItemRequestBuilder) Verify()(*ItemVerifyRequestBuilder) {
     return NewItemVerifyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DomainItemRequestBuilder) WithUrl(rawUrl string)(*DomainItemRequestBuilder) {
+    return NewDomainItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -75,3 +75,7 @@ func (m *ItemExternalColumnsColumnDefinitionItemRequestBuilder) ToGetRequestInfo
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemExternalColumnsColumnDefinitionItemRequestBuilder) WithUrl(rawUrl string)(*ItemExternalColumnsColumnDefinitionItemRequestBuilder) {
+    return NewItemExternalColumnsColumnDefinitionItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

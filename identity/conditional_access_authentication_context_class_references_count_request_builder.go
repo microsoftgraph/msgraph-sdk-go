@@ -74,3 +74,7 @@ func (m *ConditionalAccessAuthenticationContextClassReferencesCountRequestBuilde
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ConditionalAccessAuthenticationContextClassReferencesCountRequestBuilder) WithUrl(rawUrl string)(*ConditionalAccessAuthenticationContextClassReferencesCountRequestBuilder) {
+    return NewConditionalAccessAuthenticationContextClassReferencesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

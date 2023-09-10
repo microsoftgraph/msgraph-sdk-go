@@ -46,3 +46,6 @@ func SerializeFirewallPacketQueueingMethodType(values []FirewallPacketQueueingMe
     }
     return result
 }
+func (i FirewallPacketQueueingMethodType) isMultiValue() bool {
+    return false
+}

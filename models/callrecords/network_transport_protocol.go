@@ -38,3 +38,6 @@ func SerializeNetworkTransportProtocol(values []NetworkTransportProtocol) []stri
     }
     return result
 }
+func (i NetworkTransportProtocol) isMultiValue() bool {
+    return false
+}

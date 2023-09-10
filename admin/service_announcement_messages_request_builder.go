@@ -172,3 +172,7 @@ func (m *ServiceAnnouncementMessagesRequestBuilder) Unarchive()(*ServiceAnnounce
 func (m *ServiceAnnouncementMessagesRequestBuilder) Unfavorite()(*ServiceAnnouncementMessagesUnfavoriteRequestBuilder) {
     return NewServiceAnnouncementMessagesUnfavoriteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ServiceAnnouncementMessagesRequestBuilder) WithUrl(rawUrl string)(*ServiceAnnouncementMessagesRequestBuilder) {
+    return NewServiceAnnouncementMessagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

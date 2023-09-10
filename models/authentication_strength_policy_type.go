@@ -35,3 +35,6 @@ func SerializeAuthenticationStrengthPolicyType(values []AuthenticationStrengthPo
     }
     return result
 }
+func (i AuthenticationStrengthPolicyType) isMultiValue() bool {
+    return false
+}

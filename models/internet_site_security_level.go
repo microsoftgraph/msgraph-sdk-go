@@ -42,3 +42,6 @@ func SerializeInternetSiteSecurityLevel(values []InternetSiteSecurityLevel) []st
     }
     return result
 }
+func (i InternetSiteSecurityLevel) isMultiValue() bool {
+    return false
+}

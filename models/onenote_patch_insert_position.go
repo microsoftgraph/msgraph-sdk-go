@@ -32,3 +32,6 @@ func SerializeOnenotePatchInsertPosition(values []OnenotePatchInsertPosition) []
     }
     return result
 }
+func (i OnenotePatchInsertPosition) isMultiValue() bool {
+    return false
+}

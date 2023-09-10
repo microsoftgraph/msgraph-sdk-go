@@ -35,3 +35,6 @@ func SerializeX509CertificateRuleType(values []X509CertificateRuleType) []string
     }
     return result
 }
+func (i X509CertificateRuleType) isMultiValue() bool {
+    return false
+}

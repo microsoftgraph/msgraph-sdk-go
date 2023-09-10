@@ -11,7 +11,7 @@ import (
 type ItemChatsItemPermissionGrantsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemChatsItemPermissionGrantsRequestBuilderGetQueryParameters get permissionGrants from users
+// ItemChatsItemPermissionGrantsRequestBuilderGetQueryParameters list all resource-specific permission grants on the chat. This list specifies the Azure AD apps that have access to the chat, along with the corresponding kind of resource-specific access that each app has.
 type ItemChatsItemPermissionGrantsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,10 @@ func (m *ItemChatsItemPermissionGrantsRequestBuilder) Count()(*ItemChatsItemPerm
 func (m *ItemChatsItemPermissionGrantsRequestBuilder) Delta()(*ItemChatsItemPermissionGrantsDeltaRequestBuilder) {
     return NewItemChatsItemPermissionGrantsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get permissionGrants from users
+// Get list all resource-specific permission grants on the chat. This list specifies the Azure AD apps that have access to the chat, along with the corresponding kind of resource-specific access that each app has.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-list-permissiongrants?view=graph-rest-1.0
 func (m *ItemChatsItemPermissionGrantsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChatsItemPermissionGrantsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceSpecificPermissionGrantCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *ItemChatsItemPermissionGrantsRequestBuilder) Post(ctx context.Context, 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceSpecificPermissionGrantable), nil
 }
-// ToGetRequestInformation get permissionGrants from users
+// ToGetRequestInformation list all resource-specific permission grants on the chat. This list specifies the Azure AD apps that have access to the chat, along with the corresponding kind of resource-specific access that each app has.
 func (m *ItemChatsItemPermissionGrantsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemPermissionGrantsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -160,4 +163,8 @@ func (m *ItemChatsItemPermissionGrantsRequestBuilder) ToPostRequestInformation(c
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *ItemChatsItemPermissionGrantsRequestBuilder) ValidateProperties()(*ItemChatsItemPermissionGrantsValidatePropertiesRequestBuilder) {
     return NewItemChatsItemPermissionGrantsValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemChatsItemPermissionGrantsRequestBuilder) WithUrl(rawUrl string)(*ItemChatsItemPermissionGrantsRequestBuilder) {
+    return NewItemChatsItemPermissionGrantsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

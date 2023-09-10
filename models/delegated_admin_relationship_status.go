@@ -59,3 +59,6 @@ func SerializeDelegatedAdminRelationshipStatus(values []DelegatedAdminRelationsh
     }
     return result
 }
+func (i DelegatedAdminRelationshipStatus) isMultiValue() bool {
+    return false
+}

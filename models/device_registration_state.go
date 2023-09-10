@@ -58,3 +58,6 @@ func SerializeDeviceRegistrationState(values []DeviceRegistrationState) []string
     }
     return result
 }
+func (i DeviceRegistrationState) isMultiValue() bool {
+    return false
+}

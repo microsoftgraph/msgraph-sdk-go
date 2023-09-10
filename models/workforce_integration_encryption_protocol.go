@@ -32,3 +32,6 @@ func SerializeWorkforceIntegrationEncryptionProtocol(values []WorkforceIntegrati
     }
     return result
 }
+func (i WorkforceIntegrationEncryptionProtocol) isMultiValue() bool {
+    return false
+}

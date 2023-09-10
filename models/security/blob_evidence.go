@@ -21,7 +21,7 @@ func NewBlobEvidence()(*BlobEvidence) {
 func CreateBlobEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBlobEvidence(), nil
 }
-// GetBlobContainer gets the blobContainer property value. The blobContainer property
+// GetBlobContainer gets the blobContainer property value. The container which the blob belongs to.
 func (m *BlobEvidence) GetBlobContainer()(BlobContainerEvidenceable) {
     val, err := m.GetBackingStore().Get("blobContainer")
     if err != nil {
@@ -32,7 +32,7 @@ func (m *BlobEvidence) GetBlobContainer()(BlobContainerEvidenceable) {
     }
     return nil
 }
-// GetEtag gets the etag property value. The etag property
+// GetEtag gets the etag property value. The Etag associated with this blob.
 func (m *BlobEvidence) GetEtag()(*string) {
     val, err := m.GetBackingStore().Get("etag")
     if err != nil {
@@ -104,7 +104,7 @@ func (m *BlobEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetFileHashes gets the fileHashes property value. The fileHashes property
+// GetFileHashes gets the fileHashes property value. The file hashes associated with this blob.
 func (m *BlobEvidence) GetFileHashes()([]FileHashable) {
     val, err := m.GetBackingStore().Get("fileHashes")
     if err != nil {
@@ -115,7 +115,7 @@ func (m *BlobEvidence) GetFileHashes()([]FileHashable) {
     }
     return nil
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The name of the blob.
 func (m *BlobEvidence) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -126,7 +126,7 @@ func (m *BlobEvidence) GetName()(*string) {
     }
     return nil
 }
-// GetUrl gets the url property value. The url property
+// GetUrl gets the url property value. The full URL representation of the blob.
 func (m *BlobEvidence) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -181,35 +181,35 @@ func (m *BlobEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetBlobContainer sets the blobContainer property value. The blobContainer property
+// SetBlobContainer sets the blobContainer property value. The container which the blob belongs to.
 func (m *BlobEvidence) SetBlobContainer(value BlobContainerEvidenceable)() {
     err := m.GetBackingStore().Set("blobContainer", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEtag sets the etag property value. The etag property
+// SetEtag sets the etag property value. The Etag associated with this blob.
 func (m *BlobEvidence) SetEtag(value *string)() {
     err := m.GetBackingStore().Set("etag", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFileHashes sets the fileHashes property value. The fileHashes property
+// SetFileHashes sets the fileHashes property value. The file hashes associated with this blob.
 func (m *BlobEvidence) SetFileHashes(value []FileHashable)() {
     err := m.GetBackingStore().Set("fileHashes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The name of the blob.
 func (m *BlobEvidence) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUrl sets the url property value. The url property
+// SetUrl sets the url property value. The full URL representation of the blob.
 func (m *BlobEvidence) SetUrl(value *string)() {
     err := m.GetBackingStore().Set("url", value)
     if err != nil {

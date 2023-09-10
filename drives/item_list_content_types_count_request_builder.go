@@ -74,3 +74,7 @@ func (m *ItemListContentTypesCountRequestBuilder) ToGetRequestInformation(ctx co
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemListContentTypesCountRequestBuilder) WithUrl(rawUrl string)(*ItemListContentTypesCountRequestBuilder) {
+    return NewItemListContentTypesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

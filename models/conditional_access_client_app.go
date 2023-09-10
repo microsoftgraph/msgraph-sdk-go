@@ -47,3 +47,6 @@ func SerializeConditionalAccessClientApp(values []ConditionalAccessClientApp) []
     }
     return result
 }
+func (i ConditionalAccessClientApp) isMultiValue() bool {
+    return false
+}

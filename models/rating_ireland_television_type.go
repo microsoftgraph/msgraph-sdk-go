@@ -54,3 +54,6 @@ func SerializeRatingIrelandTelevisionType(values []RatingIrelandTelevisionType) 
     }
     return result
 }
+func (i RatingIrelandTelevisionType) isMultiValue() bool {
+    return false
+}

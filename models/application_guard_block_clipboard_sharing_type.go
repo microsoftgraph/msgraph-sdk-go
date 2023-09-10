@@ -46,3 +46,6 @@ func SerializeApplicationGuardBlockClipboardSharingType(values []ApplicationGuar
     }
     return result
 }
+func (i ApplicationGuardBlockClipboardSharingType) isMultiValue() bool {
+    return false
+}

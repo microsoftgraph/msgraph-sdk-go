@@ -35,3 +35,6 @@ func SerializeAttestationLevel(values []AttestationLevel) []string {
     }
     return result
 }
+func (i AttestationLevel) isMultiValue() bool {
+    return false
+}

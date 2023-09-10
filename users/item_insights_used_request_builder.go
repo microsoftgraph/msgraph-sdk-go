@@ -148,3 +148,7 @@ func (m *ItemInsightsUsedRequestBuilder) ToPostRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemInsightsUsedRequestBuilder) WithUrl(rawUrl string)(*ItemInsightsUsedRequestBuilder) {
+    return NewItemInsightsUsedRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

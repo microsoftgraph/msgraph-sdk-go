@@ -38,3 +38,6 @@ func SerializeAccessReviewExpirationBehavior(values []AccessReviewExpirationBeha
     }
     return result
 }
+func (i AccessReviewExpirationBehavior) isMultiValue() bool {
+    return false
+}

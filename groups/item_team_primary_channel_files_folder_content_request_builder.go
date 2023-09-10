@@ -105,3 +105,7 @@ func (m *ItemTeamPrimaryChannelFilesFolderContentRequestBuilder) ToPutRequestInf
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamPrimaryChannelFilesFolderContentRequestBuilder) WithUrl(rawUrl string)(*ItemTeamPrimaryChannelFilesFolderContentRequestBuilder) {
+    return NewItemTeamPrimaryChannelFilesFolderContentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -44,3 +44,6 @@ func SerializeModality(values []Modality) []string {
     }
     return result
 }
+func (i Modality) isMultiValue() bool {
+    return false
+}

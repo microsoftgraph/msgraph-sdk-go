@@ -32,3 +32,6 @@ func SerializeDelegatedAdminAccessContainerType(values []DelegatedAdminAccessCon
     }
     return result
 }
+func (i DelegatedAdminAccessContainerType) isMultiValue() bool {
+    return false
+}

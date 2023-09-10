@@ -38,3 +38,6 @@ func SerializeChatMessageImportance(values []ChatMessageImportance) []string {
     }
     return result
 }
+func (i ChatMessageImportance) isMultiValue() bool {
+    return false
+}

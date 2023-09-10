@@ -147,3 +147,7 @@ func (m *ItemOutlookMasterCategoriesRequestBuilder) ToPostRequestInformation(ctx
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemOutlookMasterCategoriesRequestBuilder) WithUrl(rawUrl string)(*ItemOutlookMasterCategoriesRequestBuilder) {
+    return NewItemOutlookMasterCategoriesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

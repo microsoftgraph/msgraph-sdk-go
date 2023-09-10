@@ -192,3 +192,7 @@ func (m *SharedDriveItemItemRequestBuilder) ToPatchRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SharedDriveItemItemRequestBuilder) WithUrl(rawUrl string)(*SharedDriveItemItemRequestBuilder) {
+    return NewSharedDriveItemItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

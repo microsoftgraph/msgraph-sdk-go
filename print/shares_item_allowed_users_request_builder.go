@@ -109,3 +109,7 @@ func (m *SharesItemAllowedUsersRequestBuilder) ToGetRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SharesItemAllowedUsersRequestBuilder) WithUrl(rawUrl string)(*SharesItemAllowedUsersRequestBuilder) {
+    return NewSharesItemAllowedUsersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

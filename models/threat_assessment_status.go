@@ -32,3 +32,6 @@ func SerializeThreatAssessmentStatus(values []ThreatAssessmentStatus) []string {
     }
     return result
 }
+func (i ThreatAssessmentStatus) isMultiValue() bool {
+    return false
+}

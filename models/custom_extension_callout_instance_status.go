@@ -44,3 +44,6 @@ func SerializeCustomExtensionCalloutInstanceStatus(values []CustomExtensionCallo
     }
     return result
 }
+func (i CustomExtensionCalloutInstanceStatus) isMultiValue() bool {
+    return false
+}

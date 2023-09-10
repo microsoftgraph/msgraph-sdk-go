@@ -35,3 +35,6 @@ func SerializeConditionalAccessExternalTenantsMembershipKind(values []Conditiona
     }
     return result
 }
+func (i ConditionalAccessExternalTenantsMembershipKind) isMultiValue() bool {
+    return false
+}

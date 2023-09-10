@@ -38,3 +38,6 @@ func SerializeFederatedIdpMfaBehavior(values []FederatedIdpMfaBehavior) []string
     }
     return result
 }
+func (i FederatedIdpMfaBehavior) isMultiValue() bool {
+    return false
+}

@@ -56,7 +56,7 @@ func (m *KubernetesSecretEvidence) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The secret name.
 func (m *KubernetesSecretEvidence) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -67,7 +67,7 @@ func (m *KubernetesSecretEvidence) GetName()(*string) {
     }
     return nil
 }
-// GetNamespace gets the namespace property value. The namespace property
+// GetNamespace gets the namespace property value. The secret namespace.
 func (m *KubernetesSecretEvidence) GetNamespace()(KubernetesNamespaceEvidenceable) {
     val, err := m.GetBackingStore().Get("namespace")
     if err != nil {
@@ -78,7 +78,7 @@ func (m *KubernetesSecretEvidence) GetNamespace()(KubernetesNamespaceEvidenceabl
     }
     return nil
 }
-// GetSecretType gets the secretType property value. The secretType property
+// GetSecretType gets the secretType property value. The secret type can include both built-in types and custom ones. Examples of built-in types are: Opaque, kubernetes.io/service-account-token, kubernetes.io/dockercfg, kubernetes.io/dockerconfigjson, kubernetes.io/basic-auth, kubernetes.io/ssh-auth, kubernetes.io/tls, bootstrap.kubernetes.io/token.
 func (m *KubernetesSecretEvidence) GetSecretType()(*string) {
     val, err := m.GetBackingStore().Get("secretType")
     if err != nil {
@@ -115,21 +115,21 @@ func (m *KubernetesSecretEvidence) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The secret name.
 func (m *KubernetesSecretEvidence) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNamespace sets the namespace property value. The namespace property
+// SetNamespace sets the namespace property value. The secret namespace.
 func (m *KubernetesSecretEvidence) SetNamespace(value KubernetesNamespaceEvidenceable)() {
     err := m.GetBackingStore().Set("namespace", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSecretType sets the secretType property value. The secretType property
+// SetSecretType sets the secretType property value. The secret type can include both built-in types and custom ones. Examples of built-in types are: Opaque, kubernetes.io/service-account-token, kubernetes.io/dockercfg, kubernetes.io/dockerconfigjson, kubernetes.io/basic-auth, kubernetes.io/ssh-auth, kubernetes.io/tls, bootstrap.kubernetes.io/token.
 func (m *KubernetesSecretEvidence) SetSecretType(value *string)() {
     err := m.GetBackingStore().Set("secretType", value)
     if err != nil {

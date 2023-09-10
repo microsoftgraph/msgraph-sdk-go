@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // Scheduled the update installation on the weeks of the month
 type WindowsUpdateForBusinessUpdateWeeks int
@@ -23,27 +24,36 @@ const (
 )
 
 func (i WindowsUpdateForBusinessUpdateWeeks) String() string {
-    return []string{"userDefined", "firstWeek", "secondWeek", "thirdWeek", "fourthWeek", "everyWeek", "unknownFutureValue"}[i]
+    var values []string
+    for p := WindowsUpdateForBusinessUpdateWeeks(1); p <= UNKNOWNFUTUREVALUE_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"userDefined", "firstWeek", "secondWeek", "thirdWeek", "fourthWeek", "everyWeek", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseWindowsUpdateForBusinessUpdateWeeks(v string) (any, error) {
-    result := USERDEFINED_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
-    switch v {
-        case "userDefined":
-            result = USERDEFINED_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
-        case "firstWeek":
-            result = FIRSTWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
-        case "secondWeek":
-            result = SECONDWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
-        case "thirdWeek":
-            result = THIRDWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
-        case "fourthWeek":
-            result = FOURTHWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
-        case "everyWeek":
-            result = EVERYWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
-        default:
-            return 0, errors.New("Unknown WindowsUpdateForBusinessUpdateWeeks value: " + v)
+    var result WindowsUpdateForBusinessUpdateWeeks
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "userDefined":
+                result |= USERDEFINED_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
+            case "firstWeek":
+                result |= FIRSTWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
+            case "secondWeek":
+                result |= SECONDWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
+            case "thirdWeek":
+                result |= THIRDWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
+            case "fourthWeek":
+                result |= FOURTHWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
+            case "everyWeek":
+                result |= EVERYWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
+            default:
+                return 0, errors.New("Unknown WindowsUpdateForBusinessUpdateWeeks value: " + v)
+        }
     }
     return &result, nil
 }
@@ -53,4 +63,7 @@ func SerializeWindowsUpdateForBusinessUpdateWeeks(values []WindowsUpdateForBusin
         result[i] = v.String()
     }
     return result
+}
+func (i WindowsUpdateForBusinessUpdateWeeks) isMultiValue() bool {
+    return true
 }

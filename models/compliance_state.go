@@ -54,3 +54,6 @@ func SerializeComplianceState(values []ComplianceState) []string {
     }
     return result
 }
+func (i ComplianceState) isMultiValue() bool {
+    return false
+}

@@ -38,3 +38,6 @@ func SerializeAuthenticationMethodsPolicyMigrationState(values []AuthenticationM
     }
     return result
 }
+func (i AuthenticationMethodsPolicyMigrationState) isMultiValue() bool {
+    return false
+}

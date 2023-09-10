@@ -44,3 +44,6 @@ func SerializeDelegatedAdminAccessAssignmentStatus(values []DelegatedAdminAccess
     }
     return result
 }
+func (i DelegatedAdminAccessAssignmentStatus) isMultiValue() bool {
+    return false
+}

@@ -128,3 +128,7 @@ func (m *ClassesItemMembersRefRequestBuilder) ToPostRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ClassesItemMembersRefRequestBuilder) WithUrl(rawUrl string)(*ClassesItemMembersRefRequestBuilder) {
+    return NewClassesItemMembersRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

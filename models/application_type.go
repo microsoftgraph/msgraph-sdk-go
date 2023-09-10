@@ -34,3 +34,6 @@ func SerializeApplicationType(values []ApplicationType) []string {
     }
     return result
 }
+func (i ApplicationType) isMultiValue() bool {
+    return false
+}

@@ -44,3 +44,6 @@ func SerializeAuthenticationMethodFeature(values []AuthenticationMethodFeature) 
     }
     return result
 }
+func (i AuthenticationMethodFeature) isMultiValue() bool {
+    return false
+}

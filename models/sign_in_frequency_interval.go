@@ -35,3 +35,6 @@ func SerializeSignInFrequencyInterval(values []SignInFrequencyInterval) []string
     }
     return result
 }
+func (i SignInFrequencyInterval) isMultiValue() bool {
+    return false
+}

@@ -185,3 +185,7 @@ func (m *DeletedItemsRequestBuilder) ToPostRequestInformation(ctx context.Contex
 func (m *DeletedItemsRequestBuilder) ValidateProperties()(*DeletedItemsValidatePropertiesRequestBuilder) {
     return NewDeletedItemsValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeletedItemsRequestBuilder) WithUrl(rawUrl string)(*DeletedItemsRequestBuilder) {
+    return NewDeletedItemsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -151,3 +151,7 @@ func (m *TaskDefinitionsRequestBuilder) ToPostRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TaskDefinitionsRequestBuilder) WithUrl(rawUrl string)(*TaskDefinitionsRequestBuilder) {
+    return NewTaskDefinitionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -146,3 +146,7 @@ func (m *ItemTeamScheduleTimeOffRequestsRequestBuilder) ToPostRequestInformation
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamScheduleTimeOffRequestsRequestBuilder) WithUrl(rawUrl string)(*ItemTeamScheduleTimeOffRequestsRequestBuilder) {
+    return NewItemTeamScheduleTimeOffRequestsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -38,3 +38,6 @@ func SerializeSharingDomainRestrictionMode(values []SharingDomainRestrictionMode
     }
     return result
 }
+func (i SharingDomainRestrictionMode) isMultiValue() bool {
+    return false
+}

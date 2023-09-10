@@ -41,3 +41,6 @@ func SerializeOnlineMeetingPresenters(values []OnlineMeetingPresenters) []string
     }
     return result
 }
+func (i OnlineMeetingPresenters) isMultiValue() bool {
+    return false
+}

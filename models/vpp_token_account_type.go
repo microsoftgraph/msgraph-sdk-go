@@ -34,3 +34,6 @@ func SerializeVppTokenAccountType(values []VppTokenAccountType) []string {
     }
     return result
 }
+func (i VppTokenAccountType) isMultiValue() bool {
+    return false
+}

@@ -151,3 +151,7 @@ func (m *TokenIssuancePoliciesRequestBuilder) ToPostRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TokenIssuancePoliciesRequestBuilder) WithUrl(rawUrl string)(*TokenIssuancePoliciesRequestBuilder) {
+    return NewTokenIssuancePoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

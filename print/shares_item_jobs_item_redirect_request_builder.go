@@ -70,3 +70,7 @@ func (m *SharesItemJobsItemRedirectRequestBuilder) ToPostRequestInformation(ctx 
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SharesItemJobsItemRedirectRequestBuilder) WithUrl(rawUrl string)(*SharesItemJobsItemRedirectRequestBuilder) {
+    return NewSharesItemJobsItemRedirectRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

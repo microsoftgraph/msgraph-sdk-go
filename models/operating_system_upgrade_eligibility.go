@@ -46,3 +46,6 @@ func SerializeOperatingSystemUpgradeEligibility(values []OperatingSystemUpgradeE
     }
     return result
 }
+func (i OperatingSystemUpgradeEligibility) isMultiValue() bool {
+    return false
+}

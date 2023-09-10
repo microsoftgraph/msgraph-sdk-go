@@ -84,3 +84,7 @@ func (m *ItemGetManagedAppPoliciesRequestBuilder) ToGetRequestInformation(ctx co
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemGetManagedAppPoliciesRequestBuilder) WithUrl(rawUrl string)(*ItemGetManagedAppPoliciesRequestBuilder) {
+    return NewItemGetManagedAppPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

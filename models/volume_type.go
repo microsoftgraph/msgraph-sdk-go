@@ -38,3 +38,6 @@ func SerializeVolumeType(values []VolumeType) []string {
     }
     return result
 }
+func (i VolumeType) isMultiValue() bool {
+    return false
+}

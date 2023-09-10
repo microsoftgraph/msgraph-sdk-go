@@ -50,3 +50,6 @@ func SerializeTeamSpecialization(values []TeamSpecialization) []string {
     }
     return result
 }
+func (i TeamSpecialization) isMultiValue() bool {
+    return false
+}

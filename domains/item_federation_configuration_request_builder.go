@@ -148,3 +148,7 @@ func (m *ItemFederationConfigurationRequestBuilder) ToPostRequestInformation(ctx
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemFederationConfigurationRequestBuilder) WithUrl(rawUrl string)(*ItemFederationConfigurationRequestBuilder) {
+    return NewItemFederationConfigurationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

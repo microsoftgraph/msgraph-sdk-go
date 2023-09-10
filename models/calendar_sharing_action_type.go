@@ -29,3 +29,6 @@ func SerializeCalendarSharingActionType(values []CalendarSharingActionType) []st
     }
     return result
 }
+func (i CalendarSharingActionType) isMultiValue() bool {
+    return false
+}

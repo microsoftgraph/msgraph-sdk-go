@@ -148,3 +148,7 @@ func (m *DailyPrintUsageByPrinterRequestBuilder) ToPostRequestInformation(ctx co
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DailyPrintUsageByPrinterRequestBuilder) WithUrl(rawUrl string)(*DailyPrintUsageByPrinterRequestBuilder) {
+    return NewDailyPrintUsageByPrinterRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

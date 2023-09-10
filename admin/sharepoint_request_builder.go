@@ -157,3 +157,7 @@ func (m *SharepointRequestBuilder) ToPatchRequestInformation(ctx context.Context
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SharepointRequestBuilder) WithUrl(rawUrl string)(*SharepointRequestBuilder) {
+    return NewSharepointRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

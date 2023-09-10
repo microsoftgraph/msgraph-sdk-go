@@ -35,3 +35,6 @@ func SerializeAutomaticRepliesStatus(values []AutomaticRepliesStatus) []string {
     }
     return result
 }
+func (i AutomaticRepliesStatus) isMultiValue() bool {
+    return false
+}

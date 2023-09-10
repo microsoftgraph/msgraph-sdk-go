@@ -38,3 +38,6 @@ func SerializeServiceHealthOrigin(values []ServiceHealthOrigin) []string {
     }
     return result
 }
+func (i ServiceHealthOrigin) isMultiValue() bool {
+    return false
+}

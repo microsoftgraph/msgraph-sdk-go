@@ -165,3 +165,7 @@ func (m *ItemInsightsRequestBuilder) Trending()(*ItemInsightsTrendingRequestBuil
 func (m *ItemInsightsRequestBuilder) Used()(*ItemInsightsUsedRequestBuilder) {
     return NewItemInsightsUsedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemInsightsRequestBuilder) WithUrl(rawUrl string)(*ItemInsightsRequestBuilder) {
+    return NewItemInsightsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

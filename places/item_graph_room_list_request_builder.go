@@ -75,3 +75,7 @@ func (m *ItemGraphRoomListRequestBuilder) ToGetRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemGraphRoomListRequestBuilder) WithUrl(rawUrl string)(*ItemGraphRoomListRequestBuilder) {
+    return NewItemGraphRoomListRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -32,3 +32,6 @@ func SerializeScopeOperatorType(values []ScopeOperatorType) []string {
     }
     return result
 }
+func (i ScopeOperatorType) isMultiValue() bool {
+    return false
+}

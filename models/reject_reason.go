@@ -38,3 +38,6 @@ func SerializeRejectReason(values []RejectReason) []string {
     }
     return result
 }
+func (i RejectReason) isMultiValue() bool {
+    return false
+}

@@ -47,3 +47,6 @@ func SerializeLifecycleWorkflowProcessingStatus(values []LifecycleWorkflowProces
     }
     return result
 }
+func (i LifecycleWorkflowProcessingStatus) isMultiValue() bool {
+    return false
+}

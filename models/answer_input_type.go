@@ -35,3 +35,6 @@ func SerializeAnswerInputType(values []AnswerInputType) []string {
     }
     return result
 }
+func (i AnswerInputType) isMultiValue() bool {
+    return false
+}

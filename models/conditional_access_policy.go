@@ -147,6 +147,16 @@ func (m *ConditionalAccessPolicy) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["templateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTemplateId(val)
+        }
+        return nil
+    }
     return res
 }
 // GetGrantControls gets the grantControls property value. Specifies the grant controls that must be fulfilled to pass the policy.
@@ -190,6 +200,17 @@ func (m *ConditionalAccessPolicy) GetState()(*ConditionalAccessPolicyState) {
     }
     if val != nil {
         return val.(*ConditionalAccessPolicyState)
+    }
+    return nil
+}
+// GetTemplateId gets the templateId property value. The templateId property
+func (m *ConditionalAccessPolicy) GetTemplateId()(*string) {
+    val, err := m.GetBackingStore().Get("templateId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -244,6 +265,12 @@ func (m *ConditionalAccessPolicy) Serialize(writer i878a80d2330e89d26896388a3f48
     if m.GetState() != nil {
         cast := (*m.GetState()).String()
         err = writer.WriteStringValue("state", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("templateId", m.GetTemplateId())
         if err != nil {
             return err
         }
@@ -306,6 +333,13 @@ func (m *ConditionalAccessPolicy) SetState(value *ConditionalAccessPolicyState)(
         panic(err)
     }
 }
+// SetTemplateId sets the templateId property value. The templateId property
+func (m *ConditionalAccessPolicy) SetTemplateId(value *string)() {
+    err := m.GetBackingStore().Set("templateId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // ConditionalAccessPolicyable 
 type ConditionalAccessPolicyable interface {
     Entityable
@@ -318,6 +352,7 @@ type ConditionalAccessPolicyable interface {
     GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSessionControls()(ConditionalAccessSessionControlsable)
     GetState()(*ConditionalAccessPolicyState)
+    GetTemplateId()(*string)
     SetConditions(value ConditionalAccessConditionSetable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
@@ -326,4 +361,5 @@ type ConditionalAccessPolicyable interface {
     SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSessionControls(value ConditionalAccessSessionControlsable)()
     SetState(value *ConditionalAccessPolicyState)()
+    SetTemplateId(value *string)()
 }

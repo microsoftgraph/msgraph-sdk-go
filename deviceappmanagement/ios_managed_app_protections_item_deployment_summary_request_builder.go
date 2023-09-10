@@ -159,3 +159,7 @@ func (m *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) ToPatchReq
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) WithUrl(rawUrl string)(*IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) {
+    return NewIosManagedAppProtectionsItemDeploymentSummaryRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

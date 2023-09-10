@@ -151,3 +151,7 @@ func (m *B2xUserFlowsRequestBuilder) ToPostRequestInformation(ctx context.Contex
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *B2xUserFlowsRequestBuilder) WithUrl(rawUrl string)(*B2xUserFlowsRequestBuilder) {
+    return NewB2xUserFlowsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

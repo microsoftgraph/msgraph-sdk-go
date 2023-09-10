@@ -182,3 +182,7 @@ func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequ
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) WithUrl(rawUrl string)(*TargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder) {
+    return NewTargetedManagedAppConfigurationsTargetedManagedAppConfigurationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -50,3 +50,6 @@ func SerializeContactRelationship(values []ContactRelationship) []string {
     }
     return result
 }
+func (i ContactRelationship) isMultiValue() bool {
+    return false
+}

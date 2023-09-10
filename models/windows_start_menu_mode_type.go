@@ -38,3 +38,6 @@ func SerializeWindowsStartMenuModeType(values []WindowsStartMenuModeType) []stri
     }
     return result
 }
+func (i WindowsStartMenuModeType) isMultiValue() bool {
+    return false
+}

@@ -44,3 +44,6 @@ func SerializeConnectionStatus(values []ConnectionStatus) []string {
     }
     return result
 }
+func (i ConnectionStatus) isMultiValue() bool {
+    return false
+}

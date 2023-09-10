@@ -32,3 +32,6 @@ func SerializePstnCallDurationSource(values []PstnCallDurationSource) []string {
     }
     return result
 }
+func (i PstnCallDurationSource) isMultiValue() bool {
+    return false
+}

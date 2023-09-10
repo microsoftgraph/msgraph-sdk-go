@@ -32,3 +32,6 @@ func SerializeOutlierMemberType(values []OutlierMemberType) []string {
     }
     return result
 }
+func (i OutlierMemberType) isMultiValue() bool {
+    return false
+}

@@ -41,3 +41,6 @@ func SerializeUserAccountSecurityType(values []UserAccountSecurityType) []string
     }
     return result
 }
+func (i UserAccountSecurityType) isMultiValue() bool {
+    return false
+}

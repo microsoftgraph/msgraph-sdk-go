@@ -59,3 +59,6 @@ func SerializeServiceSource(values []ServiceSource) []string {
     }
     return result
 }
+func (i ServiceSource) isMultiValue() bool {
+    return false
+}

@@ -46,3 +46,6 @@ func SerializeDiagnosticDataSubmissionMode(values []DiagnosticDataSubmissionMode
     }
     return result
 }
+func (i DiagnosticDataSubmissionMode) isMultiValue() bool {
+    return false
+}

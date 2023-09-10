@@ -151,3 +151,7 @@ func (m *ExchangeConnectorsRequestBuilder) ToPostRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ExchangeConnectorsRequestBuilder) WithUrl(rawUrl string)(*ExchangeConnectorsRequestBuilder) {
+    return NewExchangeConnectorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

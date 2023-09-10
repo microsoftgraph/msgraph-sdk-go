@@ -41,3 +41,6 @@ func SerializeScheduleChangeRequestActor(values []ScheduleChangeRequestActor) []
     }
     return result
 }
+func (i ScheduleChangeRequestActor) isMultiValue() bool {
+    return false
+}

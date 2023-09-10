@@ -83,3 +83,7 @@ func (m *GetEffectivePermissionsWithScopeRequestBuilder) ToGetRequestInformation
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GetEffectivePermissionsWithScopeRequestBuilder) WithUrl(rawUrl string)(*GetEffectivePermissionsWithScopeRequestBuilder) {
+    return NewGetEffectivePermissionsWithScopeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

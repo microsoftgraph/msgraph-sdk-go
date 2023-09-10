@@ -151,3 +151,7 @@ func (m *ItemSitesItemOnenoteNotebooksItemSectionGroupsItemSectionsRequestBuilde
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSitesItemOnenoteNotebooksItemSectionGroupsItemSectionsRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemOnenoteNotebooksItemSectionGroupsItemSectionsRequestBuilder) {
+    return NewItemSitesItemOnenoteNotebooksItemSectionGroupsItemSectionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -145,3 +145,7 @@ func (m *DomainDnsRecordsRequestBuilder) ToPostRequestInformation(ctx context.Co
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DomainDnsRecordsRequestBuilder) WithUrl(rawUrl string)(*DomainDnsRecordsRequestBuilder) {
+    return NewDomainDnsRecordsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

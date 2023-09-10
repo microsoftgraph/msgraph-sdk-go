@@ -83,3 +83,7 @@ func (m *B2xUserFlowsItemApiConnectorConfigurationRequestBuilder) ToGetRequestIn
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *B2xUserFlowsItemApiConnectorConfigurationRequestBuilder) WithUrl(rawUrl string)(*B2xUserFlowsItemApiConnectorConfigurationRequestBuilder) {
+    return NewB2xUserFlowsItemApiConnectorConfigurationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

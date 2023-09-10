@@ -30,7 +30,7 @@ func NewItemPermissionGrantsGetByIdsRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewItemPermissionGrantsGetByIdsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post return the directory objects specified in a list of IDs. Some common uses for this function are to:
+// Post return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
@@ -52,7 +52,7 @@ func (m *ItemPermissionGrantsGetByIdsRequestBuilder) Post(ctx context.Context, b
     }
     return res.(ItemPermissionGrantsGetByIdsResponseable), nil
 }
-// ToPostRequestInformation return the directory objects specified in a list of IDs. Some common uses for this function are to:
+// ToPostRequestInformation return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
 func (m *ItemPermissionGrantsGetByIdsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPermissionGrantsGetByIdsPostRequestBodyable, requestConfiguration *ItemPermissionGrantsGetByIdsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -68,4 +68,8 @@ func (m *ItemPermissionGrantsGetByIdsRequestBuilder) ToPostRequestInformation(ct
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemPermissionGrantsGetByIdsRequestBuilder) WithUrl(rawUrl string)(*ItemPermissionGrantsGetByIdsRequestBuilder) {
+    return NewItemPermissionGrantsGetByIdsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

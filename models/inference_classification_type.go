@@ -32,3 +32,6 @@ func SerializeInferenceClassificationType(values []InferenceClassificationType) 
     }
     return result
 }
+func (i InferenceClassificationType) isMultiValue() bool {
+    return false
+}

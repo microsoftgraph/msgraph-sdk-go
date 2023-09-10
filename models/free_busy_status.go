@@ -44,3 +44,6 @@ func SerializeFreeBusyStatus(values []FreeBusyStatus) []string {
     }
     return result
 }
+func (i FreeBusyStatus) isMultiValue() bool {
+    return false
+}

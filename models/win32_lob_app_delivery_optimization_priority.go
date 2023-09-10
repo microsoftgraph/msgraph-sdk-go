@@ -34,3 +34,6 @@ func SerializeWin32LobAppDeliveryOptimizationPriority(values []Win32LobAppDelive
     }
     return result
 }
+func (i Win32LobAppDeliveryOptimizationPriority) isMultiValue() bool {
+    return false
+}

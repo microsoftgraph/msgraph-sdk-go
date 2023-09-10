@@ -34,3 +34,6 @@ func SerializeManagedAppFlaggedReason(values []ManagedAppFlaggedReason) []string
     }
     return result
 }
+func (i ManagedAppFlaggedReason) isMultiValue() bool {
+    return false
+}

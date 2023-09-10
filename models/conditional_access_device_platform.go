@@ -50,3 +50,6 @@ func SerializeConditionalAccessDevicePlatform(values []ConditionalAccessDevicePl
     }
     return result
 }
+func (i ConditionalAccessDevicePlatform) isMultiValue() bool {
+    return false
+}
