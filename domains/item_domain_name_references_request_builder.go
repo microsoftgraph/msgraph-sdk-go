@@ -70,7 +70,7 @@ func (m *ItemDomainNameReferencesRequestBuilder) Count()(*ItemDomainNameReferenc
 // Get retrieve a list of directoryObject with a reference to the domain. The returned list will contain all directory objects that have a dependency on the domain.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/domain-list-domainnamereferences?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/domain-list-domainnamereferences?view=graph-rest-1.0
 func (m *ItemDomainNameReferencesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDomainNameReferencesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

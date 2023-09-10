@@ -57,7 +57,7 @@ func NewBookingBusinessesItemServicesBookingServiceItemRequestBuilder(rawUrl str
 // Delete delete a bookingService object in the specified bookingBusiness.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingservice-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingservice-delete?view=graph-rest-1.0
 func (m *BookingBusinessesItemServicesBookingServiceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BookingBusinessesItemServicesBookingServiceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *BookingBusinessesItemServicesBookingServiceItemRequestBuilder) Delete(c
 // Get get the properties and relationships of a bookingService object in the specified bookingBusiness.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingservice-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingservice-get?view=graph-rest-1.0
 func (m *BookingBusinessesItemServicesBookingServiceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BookingBusinessesItemServicesBookingServiceItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *BookingBusinessesItemServicesBookingServiceItemRequestBuilder) Get(ctx 
 // Patch update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:- Price- Typical length of an appointment- Reminders- Any time buffer to set up before or finish up after the service- Scheduling policy parameters, such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingservice-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingservice-update?view=graph-rest-1.0
 func (m *BookingBusinessesItemServicesBookingServiceItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceable, requestConfiguration *BookingBusinessesItemServicesBookingServiceItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

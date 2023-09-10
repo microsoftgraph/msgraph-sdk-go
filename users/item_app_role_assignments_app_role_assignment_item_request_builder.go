@@ -57,7 +57,7 @@ func NewItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder(rawUrl string,
 // Delete delete an appRoleAssignment that has been granted to a user.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-delete-approleassignments?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-delete-approleassignments?view=graph-rest-1.0
 func (m *ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

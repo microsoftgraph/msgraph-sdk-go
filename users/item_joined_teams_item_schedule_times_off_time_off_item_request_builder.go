@@ -55,7 +55,7 @@ func NewItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilder(rawUrl stri
 // Delete delete a timeOff instance from a schedule.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/timeoff-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/timeoff-delete?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,7 +74,7 @@ func (m *ItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilder) Delete(ct
 // Get retrieve the properties and relationships of a timeOff object by ID.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/timeoff-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/timeoff-get?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,10 +93,10 @@ func (m *ItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilder) Get(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffable), nil
 }
-// Patch replace an existing timeOff object. If the specified timeOff object doesn't exist, this method returns `404 Not found`.
+// Patch replace an existing timeOff object. If the specified timeOff object doesn't exist, this method returns 404 Not found.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/timeoff-put?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/timeoff-put?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffable, requestConfiguration *ItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -143,7 +143,7 @@ func (m *ItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilder) ToGetRequ
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation replace an existing timeOff object. If the specified timeOff object doesn't exist, this method returns `404 Not found`.
+// ToPatchRequestInformation replace an existing timeOff object. If the specified timeOff object doesn't exist, this method returns 404 Not found.
 func (m *ItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffable, requestConfiguration *ItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

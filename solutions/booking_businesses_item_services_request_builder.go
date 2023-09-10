@@ -77,7 +77,7 @@ func (m *BookingBusinessesItemServicesRequestBuilder) Count()(*BookingBusinesses
 // Get get a list of bookingService objects in the specified bookingBusiness.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingbusiness-list-services?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-list-services?view=graph-rest-1.0
 func (m *BookingBusinessesItemServicesRequestBuilder) Get(ctx context.Context, requestConfiguration *BookingBusinessesItemServicesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *BookingBusinessesItemServicesRequestBuilder) Get(ctx context.Context, r
 // Post create a new bookingService for the specified bookingBusiness.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/bookingbusiness-post-services?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-post-services?view=graph-rest-1.0
 func (m *BookingBusinessesItemServicesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceable, requestConfiguration *BookingBusinessesItemServicesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

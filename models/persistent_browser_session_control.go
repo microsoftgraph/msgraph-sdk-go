@@ -8,7 +8,7 @@ import (
 type PersistentBrowserSessionControl struct {
     ConditionalAccessSessionControl
 }
-// NewPersistentBrowserSessionControl instantiates a new PersistentBrowserSessionControl and sets the default values.
+// NewPersistentBrowserSessionControl instantiates a new persistentBrowserSessionControl and sets the default values.
 func NewPersistentBrowserSessionControl()(*PersistentBrowserSessionControl) {
     m := &PersistentBrowserSessionControl{
         ConditionalAccessSessionControl: *NewConditionalAccessSessionControl(),

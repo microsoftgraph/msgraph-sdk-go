@@ -48,7 +48,7 @@ func NewItemManagerRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 // Delete remove a user's manager.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-delete-manager?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-delete-manager?view=graph-rest-1.0
 func (m *ItemManagerRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemManagerRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -67,7 +67,7 @@ func (m *ItemManagerRefRequestBuilder) Delete(ctx context.Context, requestConfig
 // Get returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
 func (m *ItemManagerRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemManagerRefRequestBuilderGetRequestConfiguration)(*string, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +89,7 @@ func (m *ItemManagerRefRequestBuilder) Get(ctx context.Context, requestConfigura
 // Put assign a user's manager.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/user-post-manager?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-post-manager?view=graph-rest-1.0
 func (m *ItemManagerRefRequestBuilder) Put(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceUpdateable, requestConfiguration *ItemManagerRefRequestBuilderPutRequestConfiguration)(error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

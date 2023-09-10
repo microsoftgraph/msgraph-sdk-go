@@ -65,7 +65,7 @@ func NewDeviceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 // Delete delete a registered device.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/device-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/device-delete?view=graph-rest-1.0
 func (m *DeviceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -88,7 +88,7 @@ func (m *DeviceItemRequestBuilder) Extensions()(*ItemExtensionsRequestBuilder) {
 // Get get the properties and relationships of a device object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/device-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/device-get?view=graph-rest-1.0
 func (m *DeviceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -122,7 +122,7 @@ func (m *DeviceItemRequestBuilder) MemberOf()(*ItemMemberOfRequestBuilder) {
 // Patch update the properties of a registered device. Only certain properties of a device can be updated through approved Mobile Device Managment (MDM) apps.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/device-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/device-update?view=graph-rest-1.0
 func (m *DeviceItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable, requestConfiguration *DeviceItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

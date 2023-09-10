@@ -33,7 +33,7 @@ func NewManagedDevicesItemRetireRequestBuilder(rawUrl string, requestAdapter i2a
 // Post retire a device
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-retire?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-retire?view=graph-rest-1.0
 func (m *ManagedDevicesItemRetireRequestBuilder) Post(ctx context.Context, requestConfiguration *ManagedDevicesItemRetireRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

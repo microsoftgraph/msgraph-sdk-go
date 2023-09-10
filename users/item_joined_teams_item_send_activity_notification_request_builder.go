@@ -33,7 +33,7 @@ func NewItemJoinedTeamsItemSendActivityNotificationRequestBuilder(rawUrl string,
 // Post send an activity feed notification in the scope of a team. For more details about sending notifications and the requirements for doing so, seesending Teams activity notifications.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/team-sendactivitynotification?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-sendactivitynotification?view=graph-rest-1.0
 func (m *ItemJoinedTeamsItemSendActivityNotificationRequestBuilder) Post(ctx context.Context, body ItemJoinedTeamsItemSendActivityNotificationPostRequestBodyable, requestConfiguration *ItemJoinedTeamsItemSendActivityNotificationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

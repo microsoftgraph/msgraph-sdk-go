@@ -73,7 +73,7 @@ func (m *ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) Dele
 // Get retrieve the properties and relationships of a specified threatAssessmentRequest object. A threat assessment request can be one of the following types:
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/threatassessmentrequest-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/threatassessmentrequest-get?view=graph-rest-1.0
 func (m *ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatAssessmentRequestsThreatAssessmentRequestItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ThreatAssessmentRequestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

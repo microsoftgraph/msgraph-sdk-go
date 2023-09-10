@@ -10,7 +10,7 @@ type ExtensionSchemaProperty struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewExtensionSchemaProperty instantiates a new ExtensionSchemaProperty and sets the default values.
+// NewExtensionSchemaProperty instantiates a new extensionSchemaProperty and sets the default values.
 func NewExtensionSchemaProperty()(*ExtensionSchemaProperty) {
     m := &ExtensionSchemaProperty{
     }
@@ -67,7 +67,7 @@ func (m *ExtensionSchemaProperty) GetFieldDeserializers()(map[string]func(i878a8
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -95,8 +95,8 @@ func (m *ExtensionSchemaProperty) GetOdataType()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String. See the table below for more details.
-func (m *ExtensionSchemaProperty) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String. See the table below for more details.
+func (m *ExtensionSchemaProperty) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -121,7 +121,7 @@ func (m *ExtensionSchemaProperty) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -159,8 +159,8 @@ func (m *ExtensionSchemaProperty) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String. See the table below for more details.
-func (m *ExtensionSchemaProperty) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String. See the table below for more details.
+func (m *ExtensionSchemaProperty) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -174,9 +174,9 @@ type ExtensionSchemaPropertyable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetName()(*string)
     GetOdataType()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetName(value *string)()
     SetOdataType(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
 }

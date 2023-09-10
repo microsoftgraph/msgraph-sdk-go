@@ -8,7 +8,7 @@ import (
 type DirectoryRole struct {
     DirectoryObject
 }
-// NewDirectoryRole instantiates a new DirectoryRole and sets the default values.
+// NewDirectoryRole instantiates a new directoryRole and sets the default values.
 func NewDirectoryRole()(*DirectoryRole) {
     m := &DirectoryRole{
         DirectoryObject: *NewDirectoryObject(),

@@ -75,7 +75,7 @@ func (m *ItemTeamScheduleShiftsRequestBuilder) Count()(*ItemTeamScheduleShiftsCo
 // Get get the list of shift instances in a schedule.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/schedule-list-shifts?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/schedule-list-shifts?view=graph-rest-1.0
 func (m *ItemTeamScheduleShiftsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamScheduleShiftsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ShiftCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -97,7 +97,7 @@ func (m *ItemTeamScheduleShiftsRequestBuilder) Get(ctx context.Context, requestC
 // Post create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/schedule-post-shifts?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/schedule-post-shifts?view=graph-rest-1.0
 func (m *ItemTeamScheduleShiftsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Shiftable, requestConfiguration *ItemTeamScheduleShiftsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Shiftable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

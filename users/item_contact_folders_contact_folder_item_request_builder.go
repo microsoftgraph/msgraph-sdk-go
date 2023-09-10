@@ -65,7 +65,7 @@ func (m *ItemContactFoldersContactFolderItemRequestBuilder) Contacts()(*ItemCont
 // Delete delete contactFolder other than the default contactFolder.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/contactfolder-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/contactfolder-delete?view=graph-rest-1.0
 func (m *ItemContactFoldersContactFolderItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemContactFoldersContactFolderItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -84,7 +84,7 @@ func (m *ItemContactFoldersContactFolderItemRequestBuilder) Delete(ctx context.C
 // Get get a contact folder by using the contact folder ID. There are two scenarios where an app can get another user's contact folder:
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/contactfolder-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/contactfolder-get?view=graph-rest-1.0
 func (m *ItemContactFoldersContactFolderItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContactFoldersContactFolderItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -106,7 +106,7 @@ func (m *ItemContactFoldersContactFolderItemRequestBuilder) Get(ctx context.Cont
 // Patch update the properties of contactfolder object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/contactfolder-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/contactfolder-update?view=graph-rest-1.0
 func (m *ItemContactFoldersContactFolderItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable, requestConfiguration *ItemContactFoldersContactFolderItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

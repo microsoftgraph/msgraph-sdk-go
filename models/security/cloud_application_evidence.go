@@ -8,11 +8,13 @@ import (
 type CloudApplicationEvidence struct {
     AlertEvidence
 }
-// NewCloudApplicationEvidence instantiates a new CloudApplicationEvidence and sets the default values.
+// NewCloudApplicationEvidence instantiates a new cloudApplicationEvidence and sets the default values.
 func NewCloudApplicationEvidence()(*CloudApplicationEvidence) {
     m := &CloudApplicationEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
+    odataTypeValue := "#microsoft.graph.security.cloudApplicationEvidence"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCloudApplicationEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

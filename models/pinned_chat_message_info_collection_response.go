@@ -8,7 +8,7 @@ import (
 type PinnedChatMessageInfoCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPinnedChatMessageInfoCollectionResponse instantiates a new PinnedChatMessageInfoCollectionResponse and sets the default values.
+// NewPinnedChatMessageInfoCollectionResponse instantiates a new pinnedChatMessageInfoCollectionResponse and sets the default values.
 func NewPinnedChatMessageInfoCollectionResponse()(*PinnedChatMessageInfoCollectionResponse) {
     m := &PinnedChatMessageInfoCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

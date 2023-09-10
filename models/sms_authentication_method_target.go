@@ -8,7 +8,7 @@ import (
 type SmsAuthenticationMethodTarget struct {
     AuthenticationMethodTarget
 }
-// NewSmsAuthenticationMethodTarget instantiates a new SmsAuthenticationMethodTarget and sets the default values.
+// NewSmsAuthenticationMethodTarget instantiates a new smsAuthenticationMethodTarget and sets the default values.
 func NewSmsAuthenticationMethodTarget()(*SmsAuthenticationMethodTarget) {
     m := &SmsAuthenticationMethodTarget{
         AuthenticationMethodTarget: *NewAuthenticationMethodTarget(),

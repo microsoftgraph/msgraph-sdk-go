@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosVppEBook 
+// IosVppEBook a class containing the properties for iOS Vpp eBook.
 type IosVppEBook struct {
     ManagedEBook
 }
-// NewIosVppEBook instantiates a new IosVppEBook and sets the default values.
+// NewIosVppEBook instantiates a new iosVppEBook and sets the default values.
 func NewIosVppEBook()(*IosVppEBook) {
     m := &IosVppEBook{
         ManagedEBook: *NewManagedEBook(),

@@ -8,7 +8,7 @@ import (
 type SharedDriveItem struct {
     BaseItem
 }
-// NewSharedDriveItem instantiates a new SharedDriveItem and sets the default values.
+// NewSharedDriveItem instantiates a new sharedDriveItem and sets the default values.
 func NewSharedDriveItem()(*SharedDriveItem) {
     m := &SharedDriveItem{
         BaseItem: *NewBaseItem(),

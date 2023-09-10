@@ -77,7 +77,7 @@ func (m *EdgeInternetExplorerModeSiteListsRequestBuilder) Count()(*EdgeInternetE
 // Get get a list of the browserSiteList objects and their properties.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/internetexplorermode-list-sitelists?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/internetexplorermode-list-sitelists?view=graph-rest-1.0
 func (m *EdgeInternetExplorerModeSiteListsRequestBuilder) Get(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeSiteListsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteListCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *EdgeInternetExplorerModeSiteListsRequestBuilder) Get(ctx context.Contex
 // Post create a new browserSiteList object to support Internet Explorer mode.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/internetexplorermode-post-sitelists?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/internetexplorermode-post-sitelists?view=graph-rest-1.0
 func (m *EdgeInternetExplorerModeSiteListsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteListable, requestConfiguration *EdgeInternetExplorerModeSiteListsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteListable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

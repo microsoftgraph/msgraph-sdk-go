@@ -8,7 +8,7 @@ import (
 type AzureCommunicationServicesUserConversationMember struct {
     ConversationMember
 }
-// NewAzureCommunicationServicesUserConversationMember instantiates a new AzureCommunicationServicesUserConversationMember and sets the default values.
+// NewAzureCommunicationServicesUserConversationMember instantiates a new azureCommunicationServicesUserConversationMember and sets the default values.
 func NewAzureCommunicationServicesUserConversationMember()(*AzureCommunicationServicesUserConversationMember) {
     m := &AzureCommunicationServicesUserConversationMember{
         ConversationMember: *NewConversationMember(),

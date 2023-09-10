@@ -8,7 +8,7 @@ import (
 type ChecklistItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewChecklistItemCollectionResponse instantiates a new ChecklistItemCollectionResponse and sets the default values.
+// NewChecklistItemCollectionResponse instantiates a new checklistItemCollectionResponse and sets the default values.
 func NewChecklistItemCollectionResponse()(*ChecklistItemCollectionResponse) {
     m := &ChecklistItemCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

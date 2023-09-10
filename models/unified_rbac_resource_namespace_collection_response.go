@@ -8,7 +8,7 @@ import (
 type UnifiedRbacResourceNamespaceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUnifiedRbacResourceNamespaceCollectionResponse instantiates a new UnifiedRbacResourceNamespaceCollectionResponse and sets the default values.
+// NewUnifiedRbacResourceNamespaceCollectionResponse instantiates a new unifiedRbacResourceNamespaceCollectionResponse and sets the default values.
 func NewUnifiedRbacResourceNamespaceCollectionResponse()(*UnifiedRbacResourceNamespaceCollectionResponse) {
     m := &UnifiedRbacResourceNamespaceCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

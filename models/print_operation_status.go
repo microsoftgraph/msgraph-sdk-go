@@ -10,7 +10,7 @@ type PrintOperationStatus struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPrintOperationStatus instantiates a new PrintOperationStatus and sets the default values.
+// NewPrintOperationStatus instantiates a new printOperationStatus and sets the default values.
 func NewPrintOperationStatus()(*PrintOperationStatus) {
     m := &PrintOperationStatus{
     }

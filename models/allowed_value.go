@@ -8,7 +8,7 @@ import (
 type AllowedValue struct {
     Entity
 }
-// NewAllowedValue instantiates a new AllowedValue and sets the default values.
+// NewAllowedValue instantiates a new allowedValue and sets the default values.
 func NewAllowedValue()(*AllowedValue) {
     m := &AllowedValue{
         Entity: *NewEntity(),

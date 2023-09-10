@@ -8,7 +8,7 @@ import (
 type ChatRenamedEventMessageDetail struct {
     EventMessageDetail
 }
-// NewChatRenamedEventMessageDetail instantiates a new ChatRenamedEventMessageDetail and sets the default values.
+// NewChatRenamedEventMessageDetail instantiates a new chatRenamedEventMessageDetail and sets the default values.
 func NewChatRenamedEventMessageDetail()(*ChatRenamedEventMessageDetail) {
     m := &ChatRenamedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),

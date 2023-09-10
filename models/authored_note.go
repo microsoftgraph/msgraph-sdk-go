@@ -9,7 +9,7 @@ import (
 type AuthoredNote struct {
     Entity
 }
-// NewAuthoredNote instantiates a new AuthoredNote and sets the default values.
+// NewAuthoredNote instantiates a new authoredNote and sets the default values.
 func NewAuthoredNote()(*AuthoredNote) {
     m := &AuthoredNote{
         Entity: *NewEntity(),

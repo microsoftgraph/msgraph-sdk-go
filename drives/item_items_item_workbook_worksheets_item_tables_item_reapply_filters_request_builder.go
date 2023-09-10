@@ -33,7 +33,7 @@ func NewItemItemsItemWorkbookWorksheetsItemTablesItemReapplyFiltersRequestBuilde
 // Post reapplies all the filters currently on the table.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/table-reapplyfilters?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/table-reapplyfilters?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemReapplyFiltersRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemReapplyFiltersRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

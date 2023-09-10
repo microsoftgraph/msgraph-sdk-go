@@ -8,7 +8,7 @@ import (
 type ServiceEndpoint struct {
     Endpoint
 }
-// NewServiceEndpoint instantiates a new ServiceEndpoint and sets the default values.
+// NewServiceEndpoint instantiates a new serviceEndpoint and sets the default values.
 func NewServiceEndpoint()(*ServiceEndpoint) {
     m := &ServiceEndpoint{
         Endpoint: *NewEndpoint(),

@@ -8,7 +8,7 @@ import (
 type ChatMembersNotificationRecipient struct {
     TeamworkNotificationRecipient
 }
-// NewChatMembersNotificationRecipient instantiates a new ChatMembersNotificationRecipient and sets the default values.
+// NewChatMembersNotificationRecipient instantiates a new chatMembersNotificationRecipient and sets the default values.
 func NewChatMembersNotificationRecipient()(*ChatMembersNotificationRecipient) {
     m := &ChatMembersNotificationRecipient{
         TeamworkNotificationRecipient: *NewTeamworkNotificationRecipient(),

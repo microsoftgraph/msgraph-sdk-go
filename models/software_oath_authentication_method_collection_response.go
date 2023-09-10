@@ -8,7 +8,7 @@ import (
 type SoftwareOathAuthenticationMethodCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSoftwareOathAuthenticationMethodCollectionResponse instantiates a new SoftwareOathAuthenticationMethodCollectionResponse and sets the default values.
+// NewSoftwareOathAuthenticationMethodCollectionResponse instantiates a new softwareOathAuthenticationMethodCollectionResponse and sets the default values.
 func NewSoftwareOathAuthenticationMethodCollectionResponse()(*SoftwareOathAuthenticationMethodCollectionResponse) {
     m := &SoftwareOathAuthenticationMethodCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

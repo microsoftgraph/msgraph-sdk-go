@@ -77,7 +77,7 @@ func (m *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesRequestBuilder) Count
 // Get retrieve a list of page objects from the specified section.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
 func (m *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesRequestBuilder) Get(c
 // Post create a new page in the specified section.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
 func (m *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageable, requestConfiguration *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -8,7 +8,7 @@ import (
 type AppCatalogs struct {
     Entity
 }
-// NewAppCatalogs instantiates a new AppCatalogs and sets the default values.
+// NewAppCatalogs instantiates a new appCatalogs and sets the default values.
 func NewAppCatalogs()(*AppCatalogs) {
     m := &AppCatalogs{
         Entity: *NewEntity(),

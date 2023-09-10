@@ -77,7 +77,7 @@ func (m *ResourceOperationsRequestBuilder) Count()(*ResourceOperationsCountReque
 // Get list properties and relationships of the resourceOperation objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-rbac-resourceoperation-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-rbac-resourceoperation-list?view=graph-rest-1.0
 func (m *ResourceOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ResourceOperationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceOperationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *ResourceOperationsRequestBuilder) Get(ctx context.Context, requestConfi
 // Post create a new resourceOperation object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-rbac-resourceoperation-create?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-rbac-resourceoperation-create?view=graph-rest-1.0
 func (m *ResourceOperationsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceOperationable, requestConfiguration *ResourceOperationsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResourceOperationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

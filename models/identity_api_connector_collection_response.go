@@ -8,7 +8,7 @@ import (
 type IdentityApiConnectorCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewIdentityApiConnectorCollectionResponse instantiates a new IdentityApiConnectorCollectionResponse and sets the default values.
+// NewIdentityApiConnectorCollectionResponse instantiates a new identityApiConnectorCollectionResponse and sets the default values.
 func NewIdentityApiConnectorCollectionResponse()(*IdentityApiConnectorCollectionResponse) {
     m := &IdentityApiConnectorCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

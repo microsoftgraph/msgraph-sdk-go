@@ -40,7 +40,7 @@ func NewItemRegisteredUsersItemRefRequestBuilder(rawUrl string, requestAdapter i
 // Delete remove a user as a registered user of the device.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/device-delete-registeredusers?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/device-delete-registeredusers?view=graph-rest-1.0
 func (m *ItemRegisteredUsersItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemRegisteredUsersItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

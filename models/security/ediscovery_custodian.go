@@ -9,7 +9,7 @@ import (
 type EdiscoveryCustodian struct {
     DataSourceContainer
 }
-// NewEdiscoveryCustodian instantiates a new EdiscoveryCustodian and sets the default values.
+// NewEdiscoveryCustodian instantiates a new ediscoveryCustodian and sets the default values.
 func NewEdiscoveryCustodian()(*EdiscoveryCustodian) {
     m := &EdiscoveryCustodian{
         DataSourceContainer: *NewDataSourceContainer(),

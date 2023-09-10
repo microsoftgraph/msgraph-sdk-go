@@ -34,7 +34,7 @@ func (m *AttributeMappingParameterSchema) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAllowMultipleOccurrences gets the allowMultipleOccurrences property value. The allowMultipleOccurrences property
+// GetAllowMultipleOccurrences gets the allowMultipleOccurrences property value. The given parameter can be provided multiple times (for example, multiple input strings in the Concatenate(string,string,...) function).
 func (m *AttributeMappingParameterSchema) GetAllowMultipleOccurrences()(*bool) {
     val, err := m.GetBackingStore().Get("allowMultipleOccurrences")
     if err != nil {
@@ -98,13 +98,13 @@ func (m *AttributeMappingParameterSchema) GetFieldDeserializers()(map[string]fun
             return err
         }
         if val != nil {
-            m.SetType(val.(*AttributeType))
+            m.SetTypeEscaped(val.(*AttributeType))
         }
         return nil
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. Parameter name.
 func (m *AttributeMappingParameterSchema) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -126,7 +126,7 @@ func (m *AttributeMappingParameterSchema) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRequired gets the required property value. The required property
+// GetRequired gets the required property value. true if the parameter is required; otherwise false.
 func (m *AttributeMappingParameterSchema) GetRequired()(*bool) {
     val, err := m.GetBackingStore().Get("required")
     if err != nil {
@@ -137,8 +137,8 @@ func (m *AttributeMappingParameterSchema) GetRequired()(*bool) {
     }
     return nil
 }
-// GetType gets the type property value. The type property
-func (m *AttributeMappingParameterSchema) GetType()(*AttributeType) {
+// GetTypeEscaped gets the type property value. The type property
+func (m *AttributeMappingParameterSchema) GetTypeEscaped()(*AttributeType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -174,8 +174,8 @@ func (m *AttributeMappingParameterSchema) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -196,7 +196,7 @@ func (m *AttributeMappingParameterSchema) SetAdditionalData(value map[string]any
         panic(err)
     }
 }
-// SetAllowMultipleOccurrences sets the allowMultipleOccurrences property value. The allowMultipleOccurrences property
+// SetAllowMultipleOccurrences sets the allowMultipleOccurrences property value. The given parameter can be provided multiple times (for example, multiple input strings in the Concatenate(string,string,...) function).
 func (m *AttributeMappingParameterSchema) SetAllowMultipleOccurrences(value *bool)() {
     err := m.GetBackingStore().Set("allowMultipleOccurrences", value)
     if err != nil {
@@ -207,7 +207,7 @@ func (m *AttributeMappingParameterSchema) SetAllowMultipleOccurrences(value *boo
 func (m *AttributeMappingParameterSchema) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. Parameter name.
 func (m *AttributeMappingParameterSchema) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
@@ -221,15 +221,15 @@ func (m *AttributeMappingParameterSchema) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRequired sets the required property value. The required property
+// SetRequired sets the required property value. true if the parameter is required; otherwise false.
 func (m *AttributeMappingParameterSchema) SetRequired(value *bool)() {
     err := m.GetBackingStore().Set("required", value)
     if err != nil {
         panic(err)
     }
 }
-// SetType sets the type property value. The type property
-func (m *AttributeMappingParameterSchema) SetType(value *AttributeType)() {
+// SetTypeEscaped sets the type property value. The type property
+func (m *AttributeMappingParameterSchema) SetTypeEscaped(value *AttributeType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -245,11 +245,11 @@ type AttributeMappingParameterSchemaable interface {
     GetName()(*string)
     GetOdataType()(*string)
     GetRequired()(*bool)
-    GetType()(*AttributeType)
+    GetTypeEscaped()(*AttributeType)
     SetAllowMultipleOccurrences(value *bool)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetName(value *string)()
     SetOdataType(value *string)()
     SetRequired(value *bool)()
-    SetType(value *AttributeType)()
+    SetTypeEscaped(value *AttributeType)()
 }

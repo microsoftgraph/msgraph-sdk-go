@@ -8,7 +8,7 @@ import (
 type GroupSettingTemplateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewGroupSettingTemplateCollectionResponse instantiates a new GroupSettingTemplateCollectionResponse and sets the default values.
+// NewGroupSettingTemplateCollectionResponse instantiates a new groupSettingTemplateCollectionResponse and sets the default values.
 func NewGroupSettingTemplateCollectionResponse()(*GroupSettingTemplateCollectionResponse) {
     m := &GroupSettingTemplateCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

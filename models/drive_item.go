@@ -253,7 +253,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
             return err
         }
         if val != nil {
-            m.SetPackage(val.(PackageEscapedable))
+            m.SetPackageEscaped(val.(PackageEscapedable))
         }
         return nil
     }
@@ -530,8 +530,8 @@ func (m *DriveItem) GetMalware()(Malwareable) {
     }
     return nil
 }
-// GetPackage gets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
-func (m *DriveItem) GetPackage()(PackageEscapedable) {
+// GetPackageEscaped gets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
+func (m *DriveItem) GetPackageEscaped()(PackageEscapedable) {
     val, err := m.GetBackingStore().Get("packageEscaped")
     if err != nil {
         panic(err)
@@ -825,7 +825,7 @@ func (m *DriveItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
-        err = writer.WriteObjectValue("package", m.GetPackage())
+        err = writer.WriteObjectValue("package", m.GetPackageEscaped())
         if err != nil {
             return err
         }
@@ -1056,8 +1056,8 @@ func (m *DriveItem) SetMalware(value Malwareable)() {
         panic(err)
     }
 }
-// SetPackage sets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
-func (m *DriveItem) SetPackage(value PackageEscapedable)() {
+// SetPackageEscaped sets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
+func (m *DriveItem) SetPackageEscaped(value PackageEscapedable)() {
     err := m.GetBackingStore().Set("packageEscaped", value)
     if err != nil {
         panic(err)
@@ -1200,7 +1200,7 @@ type DriveItemable interface {
     GetListItem()(ListItemable)
     GetLocation()(GeoCoordinatesable)
     GetMalware()(Malwareable)
-    GetPackage()(PackageEscapedable)
+    GetPackageEscaped()(PackageEscapedable)
     GetPendingOperations()(PendingOperationsable)
     GetPermissions()([]Permissionable)
     GetPhoto()(Photoable)
@@ -1232,7 +1232,7 @@ type DriveItemable interface {
     SetListItem(value ListItemable)()
     SetLocation(value GeoCoordinatesable)()
     SetMalware(value Malwareable)()
-    SetPackage(value PackageEscapedable)()
+    SetPackageEscaped(value PackageEscapedable)()
     SetPendingOperations(value PendingOperationsable)()
     SetPermissions(value []Permissionable)()
     SetPhoto(value Photoable)()

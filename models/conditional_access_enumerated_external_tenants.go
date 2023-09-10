@@ -8,7 +8,7 @@ import (
 type ConditionalAccessEnumeratedExternalTenants struct {
     ConditionalAccessExternalTenants
 }
-// NewConditionalAccessEnumeratedExternalTenants instantiates a new ConditionalAccessEnumeratedExternalTenants and sets the default values.
+// NewConditionalAccessEnumeratedExternalTenants instantiates a new conditionalAccessEnumeratedExternalTenants and sets the default values.
 func NewConditionalAccessEnumeratedExternalTenants()(*ConditionalAccessEnumeratedExternalTenants) {
     m := &ConditionalAccessEnumeratedExternalTenants{
         ConditionalAccessExternalTenants: *NewConditionalAccessExternalTenants(),

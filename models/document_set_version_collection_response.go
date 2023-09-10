@@ -8,7 +8,7 @@ import (
 type DocumentSetVersionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDocumentSetVersionCollectionResponse instantiates a new DocumentSetVersionCollectionResponse and sets the default values.
+// NewDocumentSetVersionCollectionResponse instantiates a new documentSetVersionCollectionResponse and sets the default values.
 func NewDocumentSetVersionCollectionResponse()(*DocumentSetVersionCollectionResponse) {
     m := &DocumentSetVersionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type PermissionGrantPolicy struct {
     PolicyBase
 }
-// NewPermissionGrantPolicy instantiates a new PermissionGrantPolicy and sets the default values.
+// NewPermissionGrantPolicy instantiates a new permissionGrantPolicy and sets the default values.
 func NewPermissionGrantPolicy()(*PermissionGrantPolicy) {
     m := &PermissionGrantPolicy{
         PolicyBase: *NewPolicyBase(),

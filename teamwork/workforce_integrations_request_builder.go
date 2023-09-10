@@ -77,7 +77,7 @@ func (m *WorkforceIntegrationsRequestBuilder) Count()(*WorkforceIntegrationsCoun
 // Get retrieve a list of workforceIntegration objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/workforceintegration-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/workforceintegration-list?view=graph-rest-1.0
 func (m *WorkforceIntegrationsRequestBuilder) Get(ctx context.Context, requestConfiguration *WorkforceIntegrationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *WorkforceIntegrationsRequestBuilder) Get(ctx context.Context, requestCo
 // Post create a new workforceIntegration object.You can set up which entities you want to receive Shifts synchronous change notifications on and set entities to configure filtering by WFM rules eligibility for, including swap requests.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/workforceintegration-post?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/workforceintegration-post?view=graph-rest-1.0
 func (m *WorkforceIntegrationsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable, requestConfiguration *WorkforceIntegrationsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

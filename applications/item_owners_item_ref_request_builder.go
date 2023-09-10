@@ -40,7 +40,7 @@ func NewItemOwnersItemRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 // Delete remove an owner from an application. As a recommended best practice, apps should have at least two owners.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/application-delete-owners?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/application-delete-owners?view=graph-rest-1.0
 func (m *ItemOwnersItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOwnersItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

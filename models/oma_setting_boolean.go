@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OmaSettingBoolean 
+// OmaSettingBoolean oMA Settings Boolean definition.
 type OmaSettingBoolean struct {
     OmaSetting
 }
-// NewOmaSettingBoolean instantiates a new OmaSettingBoolean and sets the default values.
+// NewOmaSettingBoolean instantiates a new omaSettingBoolean and sets the default values.
 func NewOmaSettingBoolean()(*OmaSettingBoolean) {
     m := &OmaSettingBoolean{
         OmaSetting: *NewOmaSetting(),

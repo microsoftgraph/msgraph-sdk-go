@@ -8,7 +8,7 @@ import (
 type ItemIdResolver struct {
     UrlToItemResolverBase
 }
-// NewItemIdResolver instantiates a new ItemIdResolver and sets the default values.
+// NewItemIdResolver instantiates a new itemIdResolver and sets the default values.
 func NewItemIdResolver()(*ItemIdResolver) {
     m := &ItemIdResolver{
         UrlToItemResolverBase: *NewUrlToItemResolverBase(),

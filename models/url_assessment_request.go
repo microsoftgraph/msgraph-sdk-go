@@ -8,7 +8,7 @@ import (
 type UrlAssessmentRequest struct {
     ThreatAssessmentRequest
 }
-// NewUrlAssessmentRequest instantiates a new UrlAssessmentRequest and sets the default values.
+// NewUrlAssessmentRequest instantiates a new urlAssessmentRequest and sets the default values.
 func NewUrlAssessmentRequest()(*UrlAssessmentRequest) {
     m := &UrlAssessmentRequest{
         ThreatAssessmentRequest: *NewThreatAssessmentRequest(),

@@ -57,7 +57,7 @@ func NewUserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder(rawUrl str
 // Delete delete an identityUserFlowAttribute. Only custom user flow attributes can be deleted.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identityuserflowattribute-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/identityuserflowattribute-delete?view=graph-rest-1.0
 func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) Delete(c
 // Get retrieve the properties and relationships of a identityUserFlowAttribute object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identityuserflowattribute-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/identityuserflowattribute-get?view=graph-rest-1.0
 func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) Get(ctx context.Context, requestConfiguration *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityUserFlowAttributeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +98,7 @@ func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) Get(ctx 
 // Patch update the properties of a identityUserFlowAttribute object. Only custom user flow attributes can be updated.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identityuserflowattribute-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/identityuserflowattribute-update?view=graph-rest-1.0
 func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityUserFlowAttributeable, requestConfiguration *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityUserFlowAttributeable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

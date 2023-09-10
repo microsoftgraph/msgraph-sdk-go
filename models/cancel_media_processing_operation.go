@@ -8,7 +8,7 @@ import (
 type CancelMediaProcessingOperation struct {
     CommsOperation
 }
-// NewCancelMediaProcessingOperation instantiates a new CancelMediaProcessingOperation and sets the default values.
+// NewCancelMediaProcessingOperation instantiates a new cancelMediaProcessingOperation and sets the default values.
 func NewCancelMediaProcessingOperation()(*CancelMediaProcessingOperation) {
     m := &CancelMediaProcessingOperation{
         CommsOperation: *NewCommsOperation(),

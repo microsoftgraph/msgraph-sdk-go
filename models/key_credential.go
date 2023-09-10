@@ -12,7 +12,7 @@ type KeyCredential struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewKeyCredential instantiates a new KeyCredential and sets the default values.
+// NewKeyCredential instantiates a new keyCredential and sets the default values.
 func NewKeyCredential()(*KeyCredential) {
     m := &KeyCredential{
     }
@@ -152,7 +152,7 @@ func (m *KeyCredential) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -212,8 +212,8 @@ func (m *KeyCredential) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     }
     return nil
 }
-// GetType gets the type property value. The type of key credential; for example, Symmetric, AsymmetricX509Cert.
-func (m *KeyCredential) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The type of key credential; for example, Symmetric, AsymmetricX509Cert.
+func (m *KeyCredential) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -279,7 +279,7 @@ func (m *KeyCredential) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -358,8 +358,8 @@ func (m *KeyCredential) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a
         panic(err)
     }
 }
-// SetType sets the type property value. The type of key credential; for example, Symmetric, AsymmetricX509Cert.
-func (m *KeyCredential) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The type of key credential; for example, Symmetric, AsymmetricX509Cert.
+func (m *KeyCredential) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -385,7 +385,7 @@ type KeyCredentialable interface {
     GetKeyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetOdataType()(*string)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     GetUsage()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCustomKeyIdentifier(value []byte)()
@@ -395,6 +395,6 @@ type KeyCredentialable interface {
     SetKeyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetOdataType(value *string)()
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
     SetUsage(value *string)()
 }

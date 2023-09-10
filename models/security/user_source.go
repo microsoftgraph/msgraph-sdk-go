@@ -8,7 +8,7 @@ import (
 type UserSource struct {
     DataSource
 }
-// NewUserSource instantiates a new UserSource and sets the default values.
+// NewUserSource instantiates a new userSource and sets the default values.
 func NewUserSource()(*UserSource) {
     m := &UserSource{
         DataSource: *NewDataSource(),

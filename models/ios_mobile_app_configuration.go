@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosMobileAppConfiguration 
+// IosMobileAppConfiguration contains properties, inherited properties and actions for iOS mobile app configurations.
 type IosMobileAppConfiguration struct {
     ManagedDeviceMobileAppConfiguration
 }
-// NewIosMobileAppConfiguration instantiates a new IosMobileAppConfiguration and sets the default values.
+// NewIosMobileAppConfiguration instantiates a new iosMobileAppConfiguration and sets the default values.
 func NewIosMobileAppConfiguration()(*IosMobileAppConfiguration) {
     m := &IosMobileAppConfiguration{
         ManagedDeviceMobileAppConfiguration: *NewManagedDeviceMobileAppConfiguration(),

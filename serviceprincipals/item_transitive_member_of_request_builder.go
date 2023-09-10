@@ -70,7 +70,7 @@ func (m *ItemTransitiveMemberOfRequestBuilder) Count()(*ItemTransitiveMemberOfCo
 // Get get transitiveMemberOf from servicePrincipals
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/serviceprincipal-list-transitivememberof?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-list-transitivememberof?view=graph-rest-1.0
 func (m *ItemTransitiveMemberOfRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTransitiveMemberOfRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,6 +92,10 @@ func (m *ItemTransitiveMemberOfRequestBuilder) Get(ctx context.Context, requestC
 // GraphAdministrativeUnit casts the previous resource to administrativeUnit.
 func (m *ItemTransitiveMemberOfRequestBuilder) GraphAdministrativeUnit()(*ItemTransitiveMemberOfGraphAdministrativeUnitRequestBuilder) {
     return NewItemTransitiveMemberOfGraphAdministrativeUnitRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphDirectoryRole casts the previous resource to directoryRole.
+func (m *ItemTransitiveMemberOfRequestBuilder) GraphDirectoryRole()(*ItemTransitiveMemberOfGraphDirectoryRoleRequestBuilder) {
+    return NewItemTransitiveMemberOfGraphDirectoryRoleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphGroup casts the previous resource to group.
 func (m *ItemTransitiveMemberOfRequestBuilder) GraphGroup()(*ItemTransitiveMemberOfGraphGroupRequestBuilder) {

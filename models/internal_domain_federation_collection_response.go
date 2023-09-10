@@ -8,7 +8,7 @@ import (
 type InternalDomainFederationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewInternalDomainFederationCollectionResponse instantiates a new InternalDomainFederationCollectionResponse and sets the default values.
+// NewInternalDomainFederationCollectionResponse instantiates a new internalDomainFederationCollectionResponse and sets the default values.
 func NewInternalDomainFederationCollectionResponse()(*InternalDomainFederationCollectionResponse) {
     m := &InternalDomainFederationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

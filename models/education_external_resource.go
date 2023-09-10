@@ -8,7 +8,7 @@ import (
 type EducationExternalResource struct {
     EducationResource
 }
-// NewEducationExternalResource instantiates a new EducationExternalResource and sets the default values.
+// NewEducationExternalResource instantiates a new educationExternalResource and sets the default values.
 func NewEducationExternalResource()(*EducationExternalResource) {
     m := &EducationExternalResource{
         EducationResource: *NewEducationResource(),

@@ -8,7 +8,7 @@ import (
 type Invitation struct {
     Entity
 }
-// NewInvitation instantiates a new Invitation and sets the default values.
+// NewInvitation instantiates a new invitation and sets the default values.
 func NewInvitation()(*Invitation) {
     m := &Invitation{
         Entity: *NewEntity(),

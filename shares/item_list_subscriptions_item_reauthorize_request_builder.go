@@ -30,10 +30,10 @@ func NewItemListSubscriptionsItemReauthorizeRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewItemListSubscriptionsItemReauthorizeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post reauthorize a subscription when you receive a **reauthorizationRequired** challenge.
+// Post reauthorize a subscription when you receive a reauthorizationRequired challenge.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-1.0
 func (m *ItemListSubscriptionsItemReauthorizeRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemListSubscriptionsItemReauthorizeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +49,7 @@ func (m *ItemListSubscriptionsItemReauthorizeRequestBuilder) Post(ctx context.Co
     }
     return nil
 }
-// ToPostRequestInformation reauthorize a subscription when you receive a **reauthorizationRequired** challenge.
+// ToPostRequestInformation reauthorize a subscription when you receive a reauthorizationRequired challenge.
 func (m *ItemListSubscriptionsItemReauthorizeRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemListSubscriptionsItemReauthorizeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

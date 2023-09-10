@@ -8,7 +8,7 @@ import (
 type AccessReviewHistoryInstanceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAccessReviewHistoryInstanceCollectionResponse instantiates a new AccessReviewHistoryInstanceCollectionResponse and sets the default values.
+// NewAccessReviewHistoryInstanceCollectionResponse instantiates a new accessReviewHistoryInstanceCollectionResponse and sets the default values.
 func NewAccessReviewHistoryInstanceCollectionResponse()(*AccessReviewHistoryInstanceCollectionResponse) {
     m := &AccessReviewHistoryInstanceCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -33,7 +33,7 @@ func NewItemGetMemberGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 // Post return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
 func (m *ItemGetMemberGroupsRequestBuilder) Post(ctx context.Context, body ItemGetMemberGroupsPostRequestBodyable, requestConfiguration *ItemGetMemberGroupsRequestBuilderPostRequestConfiguration)(ItemGetMemberGroupsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

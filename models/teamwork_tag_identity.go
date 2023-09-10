@@ -8,7 +8,7 @@ import (
 type TeamworkTagIdentity struct {
     Identity
 }
-// NewTeamworkTagIdentity instantiates a new TeamworkTagIdentity and sets the default values.
+// NewTeamworkTagIdentity instantiates a new teamworkTagIdentity and sets the default values.
 func NewTeamworkTagIdentity()(*TeamworkTagIdentity) {
     m := &TeamworkTagIdentity{
         Identity: *NewIdentity(),

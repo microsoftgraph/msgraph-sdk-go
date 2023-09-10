@@ -8,7 +8,7 @@ import (
 type DelegatedAdminCustomer struct {
     Entity
 }
-// NewDelegatedAdminCustomer instantiates a new DelegatedAdminCustomer and sets the default values.
+// NewDelegatedAdminCustomer instantiates a new delegatedAdminCustomer and sets the default values.
 func NewDelegatedAdminCustomer()(*DelegatedAdminCustomer) {
     m := &DelegatedAdminCustomer{
         Entity: *NewEntity(),

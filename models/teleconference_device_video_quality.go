@@ -8,7 +8,7 @@ import (
 type TeleconferenceDeviceVideoQuality struct {
     TeleconferenceDeviceMediaQuality
 }
-// NewTeleconferenceDeviceVideoQuality instantiates a new TeleconferenceDeviceVideoQuality and sets the default values.
+// NewTeleconferenceDeviceVideoQuality instantiates a new teleconferenceDeviceVideoQuality and sets the default values.
 func NewTeleconferenceDeviceVideoQuality()(*TeleconferenceDeviceVideoQuality) {
     m := &TeleconferenceDeviceVideoQuality{
         TeleconferenceDeviceMediaQuality: *NewTeleconferenceDeviceMediaQuality(),

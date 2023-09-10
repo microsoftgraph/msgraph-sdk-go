@@ -9,7 +9,7 @@ import (
 type TimeOffRequest struct {
     ScheduleChangeRequest
 }
-// NewTimeOffRequest instantiates a new TimeOffRequest and sets the default values.
+// NewTimeOffRequest instantiates a new timeOffRequest and sets the default values.
 func NewTimeOffRequest()(*TimeOffRequest) {
     m := &TimeOffRequest{
         ScheduleChangeRequest: *NewScheduleChangeRequest(),

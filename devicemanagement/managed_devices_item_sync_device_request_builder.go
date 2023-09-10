@@ -33,7 +33,7 @@ func NewManagedDevicesItemSyncDeviceRequestBuilder(rawUrl string, requestAdapter
 // Post not yet documented
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-syncdevice?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-syncdevice?view=graph-rest-1.0
 func (m *ManagedDevicesItemSyncDeviceRequestBuilder) Post(ctx context.Context, requestConfiguration *ManagedDevicesItemSyncDeviceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -8,7 +8,7 @@ import (
 type IdentityProviderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewIdentityProviderCollectionResponse instantiates a new IdentityProviderCollectionResponse and sets the default values.
+// NewIdentityProviderCollectionResponse instantiates a new identityProviderCollectionResponse and sets the default values.
 func NewIdentityProviderCollectionResponse()(*IdentityProviderCollectionResponse) {
     m := &IdentityProviderCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type OrganizationalBrandingLocalizationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewOrganizationalBrandingLocalizationCollectionResponse instantiates a new OrganizationalBrandingLocalizationCollectionResponse and sets the default values.
+// NewOrganizationalBrandingLocalizationCollectionResponse instantiates a new organizationalBrandingLocalizationCollectionResponse and sets the default values.
 func NewOrganizationalBrandingLocalizationCollectionResponse()(*OrganizationalBrandingLocalizationCollectionResponse) {
     m := &OrganizationalBrandingLocalizationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

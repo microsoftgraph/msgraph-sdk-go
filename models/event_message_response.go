@@ -8,7 +8,7 @@ import (
 type EventMessageResponse struct {
     EventMessage
 }
-// NewEventMessageResponse instantiates a new EventMessageResponse and sets the default values.
+// NewEventMessageResponse instantiates a new eventMessageResponse and sets the default values.
 func NewEventMessageResponse()(*EventMessageResponse) {
     m := &EventMessageResponse{
         EventMessage: *NewEventMessage(),

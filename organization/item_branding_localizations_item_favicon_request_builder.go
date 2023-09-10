@@ -37,10 +37,10 @@ func NewItemBrandingLocalizationsItemFaviconRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewItemBrandingLocalizationsItemFaviconRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get favicon for the navigation property localizations from organization
+// Get a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
 func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemBrandingLocalizationsItemFaviconRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) Get(ctx context.Con
     }
     return res.([]byte), nil
 }
-// Put update favicon for the navigation property localizations in organization
+// Put a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemBrandingLocalizationsItemFaviconRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -78,7 +78,7 @@ func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) Put(ctx context.Con
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation get favicon for the navigation property localizations from organization
+// ToGetRequestInformation a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemBrandingLocalizationsItemFaviconRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -90,7 +90,7 @@ func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) ToGetRequestInforma
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation update favicon for the navigation property localizations in organization
+// ToPutRequestInformation a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemBrandingLocalizationsItemFaviconRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -33,7 +33,7 @@ func NewRiskyUsersConfirmCompromisedRequestBuilder(rawUrl string, requestAdapter
 // Post confirm one or more riskyUser objects as compromised. This action sets the targeted user's risk level to high.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/riskyuser-confirmcompromised?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/riskyuser-confirmcompromised?view=graph-rest-1.0
 func (m *RiskyUsersConfirmCompromisedRequestBuilder) Post(ctx context.Context, body RiskyUsersConfirmCompromisedPostRequestBodyable, requestConfiguration *RiskyUsersConfirmCompromisedRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -9,7 +9,7 @@ import (
 type UnifiedRoleAssignmentScheduleInstance struct {
     UnifiedRoleScheduleInstanceBase
 }
-// NewUnifiedRoleAssignmentScheduleInstance instantiates a new UnifiedRoleAssignmentScheduleInstance and sets the default values.
+// NewUnifiedRoleAssignmentScheduleInstance instantiates a new unifiedRoleAssignmentScheduleInstance and sets the default values.
 func NewUnifiedRoleAssignmentScheduleInstance()(*UnifiedRoleAssignmentScheduleInstance) {
     m := &UnifiedRoleAssignmentScheduleInstance{
         UnifiedRoleScheduleInstanceBase: *NewUnifiedRoleScheduleInstanceBase(),

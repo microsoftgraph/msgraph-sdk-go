@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeleteUserFromSharedAppleDeviceActionResult 
+// DeleteUserFromSharedAppleDeviceActionResult delete user from shared apple device action result
 type DeleteUserFromSharedAppleDeviceActionResult struct {
     DeviceActionResult
 }
-// NewDeleteUserFromSharedAppleDeviceActionResult instantiates a new DeleteUserFromSharedAppleDeviceActionResult and sets the default values.
+// NewDeleteUserFromSharedAppleDeviceActionResult instantiates a new deleteUserFromSharedAppleDeviceActionResult and sets the default values.
 func NewDeleteUserFromSharedAppleDeviceActionResult()(*DeleteUserFromSharedAppleDeviceActionResult) {
     m := &DeleteUserFromSharedAppleDeviceActionResult{
         DeviceActionResult: *NewDeviceActionResult(),

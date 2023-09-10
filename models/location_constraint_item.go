@@ -8,7 +8,7 @@ import (
 type LocationConstraintItem struct {
     Location
 }
-// NewLocationConstraintItem instantiates a new LocationConstraintItem and sets the default values.
+// NewLocationConstraintItem instantiates a new locationConstraintItem and sets the default values.
 func NewLocationConstraintItem()(*LocationConstraintItem) {
     m := &LocationConstraintItem{
         Location: *NewLocation(),

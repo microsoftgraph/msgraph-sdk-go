@@ -85,7 +85,7 @@ func (m *ItemListContentTypesRequestBuilder) Count()(*ItemListContentTypesCountR
 // Get get the collection of [contentType][contentType] resources in a [list][].
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/list-list-contenttypes?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/list-list-contenttypes?view=graph-rest-1.0
 func (m *ItemListContentTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListContentTypesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

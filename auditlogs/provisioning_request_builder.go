@@ -77,7 +77,7 @@ func (m *ProvisioningRequestBuilder) Count()(*ProvisioningCountRequestBuilder) {
 // Get get all provisioning events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/provisioningobjectsummary-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/provisioningobjectsummary-list?view=graph-rest-1.0
 func (m *ProvisioningRequestBuilder) Get(ctx context.Context, requestConfiguration *ProvisioningRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ProvisioningObjectSummaryCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -58,7 +58,7 @@ func NewAdministrativeUnitsItemMembersRefRequestBuilder(rawUrl string, requestAd
 // Get users and groups that are members of this administrative unit. Supports $expand.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/administrativeunit-list-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/administrativeunit-list-members?view=graph-rest-1.0
 func (m *AdministrativeUnitsItemMembersRefRequestBuilder) Get(ctx context.Context, requestConfiguration *AdministrativeUnitsItemMembersRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,7 +80,7 @@ func (m *AdministrativeUnitsItemMembersRefRequestBuilder) Get(ctx context.Contex
 // Post create new navigation property ref to members for directory
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0
 func (m *AdministrativeUnitsItemMembersRefRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *AdministrativeUnitsItemMembersRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -8,7 +8,7 @@ import (
 type B2xIdentityUserFlowCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewB2xIdentityUserFlowCollectionResponse instantiates a new B2xIdentityUserFlowCollectionResponse and sets the default values.
+// NewB2xIdentityUserFlowCollectionResponse instantiates a new b2xIdentityUserFlowCollectionResponse and sets the default values.
 func NewB2xIdentityUserFlowCollectionResponse()(*B2xIdentityUserFlowCollectionResponse) {
     m := &B2xIdentityUserFlowCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

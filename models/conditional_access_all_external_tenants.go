@@ -8,7 +8,7 @@ import (
 type ConditionalAccessAllExternalTenants struct {
     ConditionalAccessExternalTenants
 }
-// NewConditionalAccessAllExternalTenants instantiates a new ConditionalAccessAllExternalTenants and sets the default values.
+// NewConditionalAccessAllExternalTenants instantiates a new conditionalAccessAllExternalTenants and sets the default values.
 func NewConditionalAccessAllExternalTenants()(*ConditionalAccessAllExternalTenants) {
     m := &ConditionalAccessAllExternalTenants{
         ConditionalAccessExternalTenants: *NewConditionalAccessExternalTenants(),

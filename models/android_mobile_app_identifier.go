@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidMobileAppIdentifier 
+// AndroidMobileAppIdentifier the identifier for an Android app.
 type AndroidMobileAppIdentifier struct {
     MobileAppIdentifier
 }
-// NewAndroidMobileAppIdentifier instantiates a new AndroidMobileAppIdentifier and sets the default values.
+// NewAndroidMobileAppIdentifier instantiates a new androidMobileAppIdentifier and sets the default values.
 func NewAndroidMobileAppIdentifier()(*AndroidMobileAppIdentifier) {
     m := &AndroidMobileAppIdentifier{
         MobileAppIdentifier: *NewMobileAppIdentifier(),

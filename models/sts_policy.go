@@ -8,7 +8,7 @@ import (
 type StsPolicy struct {
     PolicyBase
 }
-// NewStsPolicy instantiates a new StsPolicy and sets the default values.
+// NewStsPolicy instantiates a new stsPolicy and sets the default values.
 func NewStsPolicy()(*StsPolicy) {
     m := &StsPolicy{
         PolicyBase: *NewPolicyBase(),

@@ -65,7 +65,7 @@ func NewSharesPrinterShareItemRequestBuilder(rawUrl string, requestAdapter i2ae4
 // Delete delete a printer share (unshare the associated printer). This action cannot be undone. If the printer is shared again in the future, any Windows users who had previously installed the printer will need to discover and reinstall it.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/printershare-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/printershare-delete?view=graph-rest-1.0
 func (m *SharesPrinterShareItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *SharesPrinterShareItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -84,7 +84,7 @@ func (m *SharesPrinterShareItemRequestBuilder) Delete(ctx context.Context, reque
 // Get retrieve the properties and relationships of a printer share.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/printershare-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/printershare-get?view=graph-rest-1.0
 func (m *SharesPrinterShareItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SharesPrinterShareItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrinterShareable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -110,7 +110,7 @@ func (m *SharesPrinterShareItemRequestBuilder) Jobs()(*SharesItemJobsRequestBuil
 // Patch update the properties of a printer share. This method can be used to swap printers. For example, if a physical printer device breaks, an administrator can register a new printer device and update this printerShare to point to the new printer without requiring users to take any action.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/printershare-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/printershare-update?view=graph-rest-1.0
 func (m *SharesPrinterShareItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrinterShareable, requestConfiguration *SharesPrinterShareItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrinterShareable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

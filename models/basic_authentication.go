@@ -8,7 +8,7 @@ import (
 type BasicAuthentication struct {
     ApiAuthenticationConfigurationBase
 }
-// NewBasicAuthentication instantiates a new BasicAuthentication and sets the default values.
+// NewBasicAuthentication instantiates a new basicAuthentication and sets the default values.
 func NewBasicAuthentication()(*BasicAuthentication) {
     m := &BasicAuthentication{
         ApiAuthenticationConfigurationBase: *NewApiAuthenticationConfigurationBase(),

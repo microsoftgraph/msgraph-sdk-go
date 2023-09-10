@@ -8,7 +8,7 @@ import (
 type SectionGroupCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSectionGroupCollectionResponse instantiates a new SectionGroupCollectionResponse and sets the default values.
+// NewSectionGroupCollectionResponse instantiates a new sectionGroupCollectionResponse and sets the default values.
 func NewSectionGroupCollectionResponse()(*SectionGroupCollectionResponse) {
     m := &SectionGroupCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

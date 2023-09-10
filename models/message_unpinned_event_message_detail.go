@@ -9,7 +9,7 @@ import (
 type MessageUnpinnedEventMessageDetail struct {
     EventMessageDetail
 }
-// NewMessageUnpinnedEventMessageDetail instantiates a new MessageUnpinnedEventMessageDetail and sets the default values.
+// NewMessageUnpinnedEventMessageDetail instantiates a new messageUnpinnedEventMessageDetail and sets the default values.
 func NewMessageUnpinnedEventMessageDetail()(*MessageUnpinnedEventMessageDetail) {
     m := &MessageUnpinnedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),

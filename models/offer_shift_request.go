@@ -9,7 +9,7 @@ import (
 type OfferShiftRequest struct {
     ScheduleChangeRequest
 }
-// NewOfferShiftRequest instantiates a new OfferShiftRequest and sets the default values.
+// NewOfferShiftRequest instantiates a new offerShiftRequest and sets the default values.
 func NewOfferShiftRequest()(*OfferShiftRequest) {
     m := &OfferShiftRequest{
         ScheduleChangeRequest: *NewScheduleChangeRequest(),

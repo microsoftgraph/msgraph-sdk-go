@@ -8,7 +8,7 @@ import (
 type OutgoingCallOptions struct {
     CallOptions
 }
-// NewOutgoingCallOptions instantiates a new OutgoingCallOptions and sets the default values.
+// NewOutgoingCallOptions instantiates a new outgoingCallOptions and sets the default values.
 func NewOutgoingCallOptions()(*OutgoingCallOptions) {
     m := &OutgoingCallOptions{
         CallOptions: *NewCallOptions(),

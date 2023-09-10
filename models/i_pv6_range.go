@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IPv6Range 
+// IPv6Range iPv6 Range definition.
 type IPv6Range struct {
     IpRange
 }
-// NewIPv6Range instantiates a new IPv6Range and sets the default values.
+// NewIPv6Range instantiates a new iPv6Range and sets the default values.
 func NewIPv6Range()(*IPv6Range) {
     m := &IPv6Range{
         IpRange: *NewIpRange(),

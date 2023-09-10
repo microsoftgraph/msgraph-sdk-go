@@ -136,6 +136,22 @@ func (m *EntitlementManagementRequestBuilder) Patch(ctx context.Context, body ia
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EntitlementManagementable), nil
 }
+// ResourceEnvironments provides operations to manage the resourceEnvironments property of the microsoft.graph.entitlementManagement entity.
+func (m *EntitlementManagementRequestBuilder) ResourceEnvironments()(*EntitlementManagementResourceEnvironmentsRequestBuilder) {
+    return NewEntitlementManagementResourceEnvironmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ResourceRequests provides operations to manage the resourceRequests property of the microsoft.graph.entitlementManagement entity.
+func (m *EntitlementManagementRequestBuilder) ResourceRequests()(*EntitlementManagementResourceRequestsRequestBuilder) {
+    return NewEntitlementManagementResourceRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ResourceRoleScopes provides operations to manage the resourceRoleScopes property of the microsoft.graph.entitlementManagement entity.
+func (m *EntitlementManagementRequestBuilder) ResourceRoleScopes()(*EntitlementManagementResourceRoleScopesRequestBuilder) {
+    return NewEntitlementManagementResourceRoleScopesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Resources provides operations to manage the resources property of the microsoft.graph.entitlementManagement entity.
+func (m *EntitlementManagementRequestBuilder) Resources()(*EntitlementManagementResourcesRequestBuilder) {
+    return NewEntitlementManagementResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Settings provides operations to manage the settings property of the microsoft.graph.entitlementManagement entity.
 func (m *EntitlementManagementRequestBuilder) Settings()(*EntitlementManagementSettingsRequestBuilder) {
     return NewEntitlementManagementSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

@@ -145,7 +145,7 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(i878a80d2330
             return err
         }
         if val != nil {
-            m.SetType(val.(*RecurrencePatternType))
+            m.SetTypeEscaped(val.(*RecurrencePatternType))
         }
         return nil
     }
@@ -206,8 +206,8 @@ func (m *RecurrencePattern) GetOdataType()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.
-func (m *RecurrencePattern) GetType()(*RecurrencePatternType) {
+// GetTypeEscaped gets the type property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.
+func (m *RecurrencePattern) GetTypeEscaped()(*RecurrencePatternType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -263,8 +263,8 @@ func (m *RecurrencePattern) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -338,8 +338,8 @@ func (m *RecurrencePattern) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.
-func (m *RecurrencePattern) SetType(value *RecurrencePatternType)() {
+// SetTypeEscaped sets the type property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.
+func (m *RecurrencePattern) SetTypeEscaped(value *RecurrencePatternType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -358,7 +358,7 @@ type RecurrencePatternable interface {
     GetInterval()(*int32)
     GetMonth()(*int32)
     GetOdataType()(*string)
-    GetType()(*RecurrencePatternType)
+    GetTypeEscaped()(*RecurrencePatternType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDayOfMonth(value *int32)()
     SetDaysOfWeek(value []DayOfWeek)()
@@ -367,5 +367,5 @@ type RecurrencePatternable interface {
     SetInterval(value *int32)()
     SetMonth(value *int32)()
     SetOdataType(value *string)()
-    SetType(value *RecurrencePatternType)()
+    SetTypeEscaped(value *RecurrencePatternType)()
 }

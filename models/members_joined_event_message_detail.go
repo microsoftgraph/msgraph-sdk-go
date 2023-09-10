@@ -8,7 +8,7 @@ import (
 type MembersJoinedEventMessageDetail struct {
     EventMessageDetail
 }
-// NewMembersJoinedEventMessageDetail instantiates a new MembersJoinedEventMessageDetail and sets the default values.
+// NewMembersJoinedEventMessageDetail instantiates a new membersJoinedEventMessageDetail and sets the default values.
 func NewMembersJoinedEventMessageDetail()(*MembersJoinedEventMessageDetail) {
     m := &MembersJoinedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),

@@ -8,7 +8,7 @@ import (
 type OnenoteOperation struct {
     Operation
 }
-// NewOnenoteOperation instantiates a new OnenoteOperation and sets the default values.
+// NewOnenoteOperation instantiates a new onenoteOperation and sets the default values.
 func NewOnenoteOperation()(*OnenoteOperation) {
     m := &OnenoteOperation{
         Operation: *NewOperation(),

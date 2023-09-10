@@ -8,7 +8,7 @@ import (
 type Security struct {
     Entity
 }
-// NewSecurity instantiates a new Security and sets the default values.
+// NewSecurity instantiates a new security and sets the default values.
 func NewSecurity()(*Security) {
     m := &Security{
         Entity: *NewEntity(),

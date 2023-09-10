@@ -8,7 +8,7 @@ import (
 type ServicePrincipalRiskDetectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewServicePrincipalRiskDetectionCollectionResponse instantiates a new ServicePrincipalRiskDetectionCollectionResponse and sets the default values.
+// NewServicePrincipalRiskDetectionCollectionResponse instantiates a new servicePrincipalRiskDetectionCollectionResponse and sets the default values.
 func NewServicePrincipalRiskDetectionCollectionResponse()(*ServicePrincipalRiskDetectionCollectionResponse) {
     m := &ServicePrincipalRiskDetectionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

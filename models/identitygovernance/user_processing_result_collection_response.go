@@ -9,7 +9,7 @@ import (
 type UserProcessingResultCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
 }
-// NewUserProcessingResultCollectionResponse instantiates a new UserProcessingResultCollectionResponse and sets the default values.
+// NewUserProcessingResultCollectionResponse instantiates a new userProcessingResultCollectionResponse and sets the default values.
 func NewUserProcessingResultCollectionResponse()(*UserProcessingResultCollectionResponse) {
     m := &UserProcessingResultCollectionResponse{
         BaseCollectionPaginationCountResponse: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewBaseCollectionPaginationCountResponse(),

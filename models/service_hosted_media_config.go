@@ -8,7 +8,7 @@ import (
 type ServiceHostedMediaConfig struct {
     MediaConfig
 }
-// NewServiceHostedMediaConfig instantiates a new ServiceHostedMediaConfig and sets the default values.
+// NewServiceHostedMediaConfig instantiates a new serviceHostedMediaConfig and sets the default values.
 func NewServiceHostedMediaConfig()(*ServiceHostedMediaConfig) {
     m := &ServiceHostedMediaConfig{
         MediaConfig: *NewMediaConfig(),

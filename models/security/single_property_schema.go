@@ -10,7 +10,7 @@ type SinglePropertySchema struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSinglePropertySchema instantiates a new SinglePropertySchema and sets the default values.
+// NewSinglePropertySchema instantiates a new singlePropertySchema and sets the default values.
 func NewSinglePropertySchema()(*SinglePropertySchema) {
     m := &SinglePropertySchema{
     }
@@ -67,7 +67,7 @@ func (m *SinglePropertySchema) GetFieldDeserializers()(map[string]func(i878a80d2
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -95,8 +95,8 @@ func (m *SinglePropertySchema) GetOdataType()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The type of the property.
-func (m *SinglePropertySchema) GetType()(*string) {
+// GetTypeEscaped gets the type property value. The type of the property.
+func (m *SinglePropertySchema) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -121,7 +121,7 @@ func (m *SinglePropertySchema) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
         if err != nil {
             return err
         }
@@ -159,8 +159,8 @@ func (m *SinglePropertySchema) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The type of the property.
-func (m *SinglePropertySchema) SetType(value *string)() {
+// SetTypeEscaped sets the type property value. The type of the property.
+func (m *SinglePropertySchema) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -174,9 +174,9 @@ type SinglePropertySchemaable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetName()(*string)
     GetOdataType()(*string)
-    GetType()(*string)
+    GetTypeEscaped()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetName(value *string)()
     SetOdataType(value *string)()
-    SetType(value *string)()
+    SetTypeEscaped(value *string)()
 }

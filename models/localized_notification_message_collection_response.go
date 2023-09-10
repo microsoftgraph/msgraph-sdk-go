@@ -8,7 +8,7 @@ import (
 type LocalizedNotificationMessageCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewLocalizedNotificationMessageCollectionResponse instantiates a new LocalizedNotificationMessageCollectionResponse and sets the default values.
+// NewLocalizedNotificationMessageCollectionResponse instantiates a new localizedNotificationMessageCollectionResponse and sets the default values.
 func NewLocalizedNotificationMessageCollectionResponse()(*LocalizedNotificationMessageCollectionResponse) {
     m := &LocalizedNotificationMessageCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

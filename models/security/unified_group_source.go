@@ -9,7 +9,7 @@ import (
 type UnifiedGroupSource struct {
     DataSource
 }
-// NewUnifiedGroupSource instantiates a new UnifiedGroupSource and sets the default values.
+// NewUnifiedGroupSource instantiates a new unifiedGroupSource and sets the default values.
 func NewUnifiedGroupSource()(*UnifiedGroupSource) {
     m := &UnifiedGroupSource{
         DataSource: *NewDataSource(),

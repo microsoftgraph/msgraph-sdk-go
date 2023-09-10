@@ -8,7 +8,7 @@ import (
 type OnlineMeetingCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewOnlineMeetingCollectionResponse instantiates a new OnlineMeetingCollectionResponse and sets the default values.
+// NewOnlineMeetingCollectionResponse instantiates a new onlineMeetingCollectionResponse and sets the default values.
 func NewOnlineMeetingCollectionResponse()(*OnlineMeetingCollectionResponse) {
     m := &OnlineMeetingCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type EmailAuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
 }
-// NewEmailAuthenticationMethodConfiguration instantiates a new EmailAuthenticationMethodConfiguration and sets the default values.
+// NewEmailAuthenticationMethodConfiguration instantiates a new emailAuthenticationMethodConfiguration and sets the default values.
 func NewEmailAuthenticationMethodConfiguration()(*EmailAuthenticationMethodConfiguration) {
     m := &EmailAuthenticationMethodConfiguration{
         AuthenticationMethodConfiguration: *NewAuthenticationMethodConfiguration(),

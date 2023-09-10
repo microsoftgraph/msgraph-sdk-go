@@ -77,7 +77,7 @@ func (m *UserFlowAttributesRequestBuilder) Count()(*UserFlowAttributesCountReque
 // Get retrieve a list of identityUserFlowAttribute objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identityuserflowattribute-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/identityuserflowattribute-list?view=graph-rest-1.0
 func (m *UserFlowAttributesRequestBuilder) Get(ctx context.Context, requestConfiguration *UserFlowAttributesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityUserFlowAttributeCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *UserFlowAttributesRequestBuilder) Get(ctx context.Context, requestConfi
 // Post create a new identityUserFlowAttribute object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/identityuserflowattribute-post?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/identityuserflowattribute-post?view=graph-rest-1.0
 func (m *UserFlowAttributesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityUserFlowAttributeable, requestConfiguration *UserFlowAttributesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityUserFlowAttributeable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

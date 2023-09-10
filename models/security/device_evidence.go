@@ -9,11 +9,13 @@ import (
 type DeviceEvidence struct {
     AlertEvidence
 }
-// NewDeviceEvidence instantiates a new DeviceEvidence and sets the default values.
+// NewDeviceEvidence instantiates a new deviceEvidence and sets the default values.
 func NewDeviceEvidence()(*DeviceEvidence) {
     m := &DeviceEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
+    odataTypeValue := "#microsoft.graph.security.deviceEvidence"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDeviceEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

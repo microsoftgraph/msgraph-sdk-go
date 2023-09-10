@@ -8,7 +8,7 @@ import (
 type WindowsUpdateActiveHoursInstall struct {
     WindowsUpdateInstallScheduleType
 }
-// NewWindowsUpdateActiveHoursInstall instantiates a new WindowsUpdateActiveHoursInstall and sets the default values.
+// NewWindowsUpdateActiveHoursInstall instantiates a new windowsUpdateActiveHoursInstall and sets the default values.
 func NewWindowsUpdateActiveHoursInstall()(*WindowsUpdateActiveHoursInstall) {
     m := &WindowsUpdateActiveHoursInstall{
         WindowsUpdateInstallScheduleType: *NewWindowsUpdateInstallScheduleType(),

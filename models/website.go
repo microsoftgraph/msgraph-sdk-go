@@ -99,7 +99,7 @@ func (m *Website) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
             return err
         }
         if val != nil {
-            m.SetType(val.(*WebsiteType))
+            m.SetTypeEscaped(val.(*WebsiteType))
         }
         return nil
     }
@@ -116,8 +116,8 @@ func (m *Website) GetOdataType()(*string) {
     }
     return nil
 }
-// GetType gets the type property value. The possible values are: other, home, work, blog, profile.
-func (m *Website) GetType()(*WebsiteType) {
+// GetTypeEscaped gets the type property value. The possible values are: other, home, work, blog, profile.
+func (m *Website) GetTypeEscaped()(*WebsiteType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
@@ -147,8 +147,8 @@ func (m *Website) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
@@ -194,8 +194,8 @@ func (m *Website) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetType sets the type property value. The possible values are: other, home, work, blog, profile.
-func (m *Website) SetType(value *WebsiteType)() {
+// SetTypeEscaped sets the type property value. The possible values are: other, home, work, blog, profile.
+func (m *Website) SetTypeEscaped(value *WebsiteType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -210,10 +210,10 @@ type Websiteable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDisplayName()(*string)
     GetOdataType()(*string)
-    GetType()(*WebsiteType)
+    GetTypeEscaped()(*WebsiteType)
     SetAddress(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDisplayName(value *string)()
     SetOdataType(value *string)()
-    SetType(value *WebsiteType)()
+    SetTypeEscaped(value *WebsiteType)()
 }

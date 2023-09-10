@@ -11,7 +11,7 @@ import (
 type EntitlementManagementAccessPackagesItemCatalogRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackagesItemCatalogRequestBuilderGetQueryParameters get catalog from identityGovernance
+// EntitlementManagementAccessPackagesItemCatalogRequestBuilderGetQueryParameters required when creating the access package. Read-only. Nullable.
 type EntitlementManagementAccessPackagesItemCatalogRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewEntitlementManagementAccessPackagesItemCatalogRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAccessPackagesItemCatalogRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get catalog from identityGovernance
+// Get required when creating the access package. Read-only. Nullable.
 func (m *EntitlementManagementAccessPackagesItemCatalogRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemCatalogRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCatalogable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *EntitlementManagementAccessPackagesItemCatalogRequestBuilder) Get(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCatalogable), nil
 }
-// ToGetRequestInformation get catalog from identityGovernance
+// ToGetRequestInformation required when creating the access package. Read-only. Nullable.
 func (m *EntitlementManagementAccessPackagesItemCatalogRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemCatalogRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

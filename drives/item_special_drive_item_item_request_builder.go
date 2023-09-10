@@ -47,7 +47,7 @@ func (m *ItemSpecialDriveItemItemRequestBuilder) Content()(*ItemSpecialItemConte
 // Get use the special collection to access a special folder by name. Special folders provide simple aliases to access well-known folders in OneDrive without the need to look up the folder by path (which would require localization), or reference the folder with an ID. If a special folder is renamed or moved to another location within the drive, this syntax will continue to find that folder. Special folders are automatically created the first time an application attempts to write to one, if it doesn't already exist. If a user deletes one, it is recreated when written to again.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/drive-get-specialfolder?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/drive-get-specialfolder?view=graph-rest-1.0
 func (m *ItemSpecialDriveItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSpecialDriveItemItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

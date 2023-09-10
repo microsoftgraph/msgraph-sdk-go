@@ -8,7 +8,7 @@ import (
 type Directory struct {
     Entity
 }
-// NewDirectory instantiates a new Directory and sets the default values.
+// NewDirectory instantiates a new directory and sets the default values.
 func NewDirectory()(*Directory) {
     m := &Directory{
         Entity: *NewEntity(),

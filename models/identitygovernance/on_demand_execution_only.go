@@ -8,7 +8,7 @@ import (
 type OnDemandExecutionOnly struct {
     WorkflowExecutionConditions
 }
-// NewOnDemandExecutionOnly instantiates a new OnDemandExecutionOnly and sets the default values.
+// NewOnDemandExecutionOnly instantiates a new onDemandExecutionOnly and sets the default values.
 func NewOnDemandExecutionOnly()(*OnDemandExecutionOnly) {
     m := &OnDemandExecutionOnly{
         WorkflowExecutionConditions: *NewWorkflowExecutionConditions(),

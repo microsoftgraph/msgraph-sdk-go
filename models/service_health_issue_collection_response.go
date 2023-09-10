@@ -8,7 +8,7 @@ import (
 type ServiceHealthIssueCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewServiceHealthIssueCollectionResponse instantiates a new ServiceHealthIssueCollectionResponse and sets the default values.
+// NewServiceHealthIssueCollectionResponse instantiates a new serviceHealthIssueCollectionResponse and sets the default values.
 func NewServiceHealthIssueCollectionResponse()(*ServiceHealthIssueCollectionResponse) {
     m := &ServiceHealthIssueCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type AllowedValueCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAllowedValueCollectionResponse instantiates a new AllowedValueCollectionResponse and sets the default values.
+// NewAllowedValueCollectionResponse instantiates a new allowedValueCollectionResponse and sets the default values.
 func NewAllowedValueCollectionResponse()(*AllowedValueCollectionResponse) {
     m := &AllowedValueCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

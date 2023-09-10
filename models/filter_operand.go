@@ -80,7 +80,7 @@ func (m *FilterOperand) GetOdataType()(*string) {
     }
     return nil
 }
-// GetValues gets the values property value. The values property
+// GetValues gets the values property value. Collection of values.
 func (m *FilterOperand) GetValues()([]string) {
     val, err := m.GetBackingStore().Get("values")
     if err != nil {
@@ -131,7 +131,7 @@ func (m *FilterOperand) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetValues sets the values property value. The values property
+// SetValues sets the values property value. Collection of values.
 func (m *FilterOperand) SetValues(value []string)() {
     err := m.GetBackingStore().Set("values", value)
     if err != nil {

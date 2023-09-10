@@ -9,7 +9,7 @@ import (
 type WorkflowVersionCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
 }
-// NewWorkflowVersionCollectionResponse instantiates a new WorkflowVersionCollectionResponse and sets the default values.
+// NewWorkflowVersionCollectionResponse instantiates a new workflowVersionCollectionResponse and sets the default values.
 func NewWorkflowVersionCollectionResponse()(*WorkflowVersionCollectionResponse) {
     m := &WorkflowVersionCollectionResponse{
         BaseCollectionPaginationCountResponse: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewBaseCollectionPaginationCountResponse(),

@@ -8,7 +8,7 @@ import (
 type SettingStateDeviceSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSettingStateDeviceSummaryCollectionResponse instantiates a new SettingStateDeviceSummaryCollectionResponse and sets the default values.
+// NewSettingStateDeviceSummaryCollectionResponse instantiates a new settingStateDeviceSummaryCollectionResponse and sets the default values.
 func NewSettingStateDeviceSummaryCollectionResponse()(*SettingStateDeviceSummaryCollectionResponse) {
     m := &SettingStateDeviceSummaryCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

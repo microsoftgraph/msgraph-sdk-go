@@ -8,7 +8,7 @@ import (
 type DelegatedAdminCustomerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDelegatedAdminCustomerCollectionResponse instantiates a new DelegatedAdminCustomerCollectionResponse and sets the default values.
+// NewDelegatedAdminCustomerCollectionResponse instantiates a new delegatedAdminCustomerCollectionResponse and sets the default values.
 func NewDelegatedAdminCustomerCollectionResponse()(*DelegatedAdminCustomerCollectionResponse) {
     m := &DelegatedAdminCustomerCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

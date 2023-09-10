@@ -8,7 +8,7 @@ import (
 type SecureScoreCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSecureScoreCollectionResponse instantiates a new SecureScoreCollectionResponse and sets the default values.
+// NewSecureScoreCollectionResponse instantiates a new secureScoreCollectionResponse and sets the default values.
 func NewSecureScoreCollectionResponse()(*SecureScoreCollectionResponse) {
     m := &SecureScoreCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

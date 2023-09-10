@@ -8,7 +8,7 @@ import (
 type SubscribeToToneOperation struct {
     CommsOperation
 }
-// NewSubscribeToToneOperation instantiates a new SubscribeToToneOperation and sets the default values.
+// NewSubscribeToToneOperation instantiates a new subscribeToToneOperation and sets the default values.
 func NewSubscribeToToneOperation()(*SubscribeToToneOperation) {
     m := &SubscribeToToneOperation{
         CommsOperation: *NewCommsOperation(),

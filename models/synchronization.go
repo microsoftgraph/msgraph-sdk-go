@@ -72,7 +72,7 @@ func (m *Synchronization) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetJobs gets the jobs property value. The jobs property
+// GetJobs gets the jobs property value. Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 func (m *Synchronization) GetJobs()([]SynchronizationJobable) {
     val, err := m.GetBackingStore().Get("jobs")
     if err != nil {
@@ -83,7 +83,7 @@ func (m *Synchronization) GetJobs()([]SynchronizationJobable) {
     }
     return nil
 }
-// GetSecrets gets the secrets property value. The secrets property
+// GetSecrets gets the secrets property value. Represents a collection of credentials to access provisioned cloud applications.
 func (m *Synchronization) GetSecrets()([]SynchronizationSecretKeyStringValuePairable) {
     val, err := m.GetBackingStore().Get("secrets")
     if err != nil {
@@ -94,7 +94,7 @@ func (m *Synchronization) GetSecrets()([]SynchronizationSecretKeyStringValuePair
     }
     return nil
 }
-// GetTemplates gets the templates property value. The templates property
+// GetTemplates gets the templates property value. Pre-configured synchronization settings for a particular application.
 func (m *Synchronization) GetTemplates()([]SynchronizationTemplateable) {
     val, err := m.GetBackingStore().Get("templates")
     if err != nil {
@@ -149,21 +149,21 @@ func (m *Synchronization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetJobs sets the jobs property value. The jobs property
+// SetJobs sets the jobs property value. Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 func (m *Synchronization) SetJobs(value []SynchronizationJobable)() {
     err := m.GetBackingStore().Set("jobs", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSecrets sets the secrets property value. The secrets property
+// SetSecrets sets the secrets property value. Represents a collection of credentials to access provisioned cloud applications.
 func (m *Synchronization) SetSecrets(value []SynchronizationSecretKeyStringValuePairable)() {
     err := m.GetBackingStore().Set("secrets", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTemplates sets the templates property value. The templates property
+// SetTemplates sets the templates property value. Pre-configured synchronization settings for a particular application.
 func (m *Synchronization) SetTemplates(value []SynchronizationTemplateable)() {
     err := m.GetBackingStore().Set("templates", value)
     if err != nil {

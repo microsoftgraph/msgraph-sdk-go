@@ -8,7 +8,7 @@ import (
 type AnonymousGuestConversationMember struct {
     ConversationMember
 }
-// NewAnonymousGuestConversationMember instantiates a new AnonymousGuestConversationMember and sets the default values.
+// NewAnonymousGuestConversationMember instantiates a new anonymousGuestConversationMember and sets the default values.
 func NewAnonymousGuestConversationMember()(*AnonymousGuestConversationMember) {
     m := &AnonymousGuestConversationMember{
         ConversationMember: *NewConversationMember(),

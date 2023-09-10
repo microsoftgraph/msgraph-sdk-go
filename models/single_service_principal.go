@@ -8,7 +8,7 @@ import (
 type SingleServicePrincipal struct {
     SubjectSet
 }
-// NewSingleServicePrincipal instantiates a new SingleServicePrincipal and sets the default values.
+// NewSingleServicePrincipal instantiates a new singleServicePrincipal and sets the default values.
 func NewSingleServicePrincipal()(*SingleServicePrincipal) {
     m := &SingleServicePrincipal{
         SubjectSet: *NewSubjectSet(),

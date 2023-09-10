@@ -65,7 +65,7 @@ func NewUsersEducationUserItemRequestBuilder(rawUrl string, requestAdapter i2ae4
 // Delete delete a user.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationuser-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-delete?view=graph-rest-1.0
 func (m *UsersEducationUserItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *UsersEducationUserItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -84,7 +84,7 @@ func (m *UsersEducationUserItemRequestBuilder) Delete(ctx context.Context, reque
 // Get read the properties and relationships of an educationUser object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationuser-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-get?view=graph-rest-1.0
 func (m *UsersEducationUserItemRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersEducationUserItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationUserable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -106,7 +106,7 @@ func (m *UsersEducationUserItemRequestBuilder) Get(ctx context.Context, requestC
 // Patch update the properties of an educationUser object.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/educationuser-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-update?view=graph-rest-1.0
 func (m *UsersEducationUserItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationUserable, requestConfiguration *UsersEducationUserItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationUserable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

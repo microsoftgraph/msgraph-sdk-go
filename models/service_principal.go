@@ -9,7 +9,7 @@ import (
 type ServicePrincipal struct {
     DirectoryObject
 }
-// NewServicePrincipal instantiates a new ServicePrincipal and sets the default values.
+// NewServicePrincipal instantiates a new servicePrincipal and sets the default values.
 func NewServicePrincipal()(*ServicePrincipal) {
     m := &ServicePrincipal{
         DirectoryObject: *NewDirectoryObject(),
@@ -184,6 +184,17 @@ func (m *ServicePrincipal) GetCreatedObjects()([]DirectoryObjectable) {
     }
     if val != nil {
         return val.([]DirectoryObjectable)
+    }
+    return nil
+}
+// GetCustomSecurityAttributes gets the customSecurityAttributes property value. The customSecurityAttributes property
+func (m *ServicePrincipal) GetCustomSecurityAttributes()(CustomSecurityAttributeValueable) {
+    val, err := m.GetBackingStore().Get("customSecurityAttributes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CustomSecurityAttributeValueable)
     }
     return nil
 }
@@ -451,6 +462,16 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
                 }
             }
             m.SetCreatedObjects(res)
+        }
+        return nil
+    }
+    res["customSecurityAttributes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCustomSecurityAttributeValueFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCustomSecurityAttributes(val.(CustomSecurityAttributeValueable))
         }
         return nil
     }
@@ -1140,7 +1161,7 @@ func (m *ServicePrincipal) GetServicePrincipalNames()([]string) {
     }
     return nil
 }
-// GetServicePrincipalType gets the servicePrincipalType property value. Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The servicePrincipalType property can be set to three different values: __Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.__ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.__Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The appId value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.__SocialIdp - For internal use.
+// GetServicePrincipalType gets the servicePrincipalType property value. Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The servicePrincipalType property can be set to three different values: Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The appId value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.SocialIdp - For internal use.
 func (m *ServicePrincipal) GetServicePrincipalType()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalType")
     if err != nil {
@@ -1162,7 +1183,7 @@ func (m *ServicePrincipal) GetSignInAudience()(*string) {
     }
     return nil
 }
-// GetSynchronization gets the synchronization property value. The synchronization property
+// GetSynchronization gets the synchronization property value. Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
 func (m *ServicePrincipal) GetSynchronization()(Synchronizationable) {
     val, err := m.GetBackingStore().Get("synchronization")
     if err != nil {
@@ -1373,6 +1394,12 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             }
         }
         err = writer.WriteCollectionOfObjectValues("createdObjects", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("customSecurityAttributes", m.GetCustomSecurityAttributes())
         if err != nil {
             return err
         }
@@ -1784,6 +1811,13 @@ func (m *ServicePrincipal) SetCreatedObjects(value []DirectoryObjectable)() {
         panic(err)
     }
 }
+// SetCustomSecurityAttributes sets the customSecurityAttributes property value. The customSecurityAttributes property
+func (m *ServicePrincipal) SetCustomSecurityAttributes(value CustomSecurityAttributeValueable)() {
+    err := m.GetBackingStore().Set("customSecurityAttributes", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDelegatedPermissionClassifications sets the delegatedPermissionClassifications property value. The delegatedPermissionClassifications property
 func (m *ServicePrincipal) SetDelegatedPermissionClassifications(value []DelegatedPermissionClassificationable)() {
     err := m.GetBackingStore().Set("delegatedPermissionClassifications", value)
@@ -1966,7 +2000,7 @@ func (m *ServicePrincipal) SetServicePrincipalNames(value []string)() {
         panic(err)
     }
 }
-// SetServicePrincipalType sets the servicePrincipalType property value. Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The servicePrincipalType property can be set to three different values: __Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.__ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.__Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The appId value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.__SocialIdp - For internal use.
+// SetServicePrincipalType sets the servicePrincipalType property value. Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The servicePrincipalType property can be set to three different values: Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The appId value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.SocialIdp - For internal use.
 func (m *ServicePrincipal) SetServicePrincipalType(value *string)() {
     err := m.GetBackingStore().Set("servicePrincipalType", value)
     if err != nil {
@@ -1980,7 +2014,7 @@ func (m *ServicePrincipal) SetSignInAudience(value *string)() {
         panic(err)
     }
 }
-// SetSynchronization sets the synchronization property value. The synchronization property
+// SetSynchronization sets the synchronization property value. Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
 func (m *ServicePrincipal) SetSynchronization(value Synchronizationable)() {
     err := m.GetBackingStore().Set("synchronization", value)
     if err != nil {
@@ -2048,6 +2082,7 @@ type ServicePrincipalable interface {
     GetAppRoles()([]AppRoleable)
     GetClaimsMappingPolicies()([]ClaimsMappingPolicyable)
     GetCreatedObjects()([]DirectoryObjectable)
+    GetCustomSecurityAttributes()(CustomSecurityAttributeValueable)
     GetDelegatedPermissionClassifications()([]DelegatedPermissionClassificationable)
     GetDescription()(*string)
     GetDisabledByMicrosoftStatus()(*string)
@@ -2098,6 +2133,7 @@ type ServicePrincipalable interface {
     SetAppRoles(value []AppRoleable)()
     SetClaimsMappingPolicies(value []ClaimsMappingPolicyable)()
     SetCreatedObjects(value []DirectoryObjectable)()
+    SetCustomSecurityAttributes(value CustomSecurityAttributeValueable)()
     SetDelegatedPermissionClassifications(value []DelegatedPermissionClassificationable)()
     SetDescription(value *string)()
     SetDisabledByMicrosoftStatus(value *string)()

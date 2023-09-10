@@ -8,7 +8,7 @@ import (
 type EducationAssignmentGroupRecipient struct {
     EducationAssignmentRecipient
 }
-// NewEducationAssignmentGroupRecipient instantiates a new EducationAssignmentGroupRecipient and sets the default values.
+// NewEducationAssignmentGroupRecipient instantiates a new educationAssignmentGroupRecipient and sets the default values.
 func NewEducationAssignmentGroupRecipient()(*EducationAssignmentGroupRecipient) {
     m := &EducationAssignmentGroupRecipient{
         EducationAssignmentRecipient: *NewEducationAssignmentRecipient(),

@@ -8,7 +8,7 @@ import (
 type IdentityUserFlowAttributeAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewIdentityUserFlowAttributeAssignmentCollectionResponse instantiates a new IdentityUserFlowAttributeAssignmentCollectionResponse and sets the default values.
+// NewIdentityUserFlowAttributeAssignmentCollectionResponse instantiates a new identityUserFlowAttributeAssignmentCollectionResponse and sets the default values.
 func NewIdentityUserFlowAttributeAssignmentCollectionResponse()(*IdentityUserFlowAttributeAssignmentCollectionResponse) {
     m := &IdentityUserFlowAttributeAssignmentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

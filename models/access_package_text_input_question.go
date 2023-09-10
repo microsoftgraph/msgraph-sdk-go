@@ -8,7 +8,7 @@ import (
 type AccessPackageTextInputQuestion struct {
     AccessPackageQuestion
 }
-// NewAccessPackageTextInputQuestion instantiates a new AccessPackageTextInputQuestion and sets the default values.
+// NewAccessPackageTextInputQuestion instantiates a new accessPackageTextInputQuestion and sets the default values.
 func NewAccessPackageTextInputQuestion()(*AccessPackageTextInputQuestion) {
     m := &AccessPackageTextInputQuestion{
         AccessPackageQuestion: *NewAccessPackageQuestion(),

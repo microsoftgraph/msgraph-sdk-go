@@ -8,7 +8,7 @@ import (
 type OpenShiftChangeRequest struct {
     ScheduleChangeRequest
 }
-// NewOpenShiftChangeRequest instantiates a new OpenShiftChangeRequest and sets the default values.
+// NewOpenShiftChangeRequest instantiates a new openShiftChangeRequest and sets the default values.
 func NewOpenShiftChangeRequest()(*OpenShiftChangeRequest) {
     m := &OpenShiftChangeRequest{
         ScheduleChangeRequest: *NewScheduleChangeRequest(),

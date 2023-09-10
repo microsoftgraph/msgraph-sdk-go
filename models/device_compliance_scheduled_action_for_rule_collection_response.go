@@ -8,7 +8,7 @@ import (
 type DeviceComplianceScheduledActionForRuleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceComplianceScheduledActionForRuleCollectionResponse instantiates a new DeviceComplianceScheduledActionForRuleCollectionResponse and sets the default values.
+// NewDeviceComplianceScheduledActionForRuleCollectionResponse instantiates a new deviceComplianceScheduledActionForRuleCollectionResponse and sets the default values.
 func NewDeviceComplianceScheduledActionForRuleCollectionResponse()(*DeviceComplianceScheduledActionForRuleCollectionResponse) {
     m := &DeviceComplianceScheduledActionForRuleCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

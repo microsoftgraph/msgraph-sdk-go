@@ -8,7 +8,7 @@ import (
 type TemporaryAccessPassAuthenticationMethodCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTemporaryAccessPassAuthenticationMethodCollectionResponse instantiates a new TemporaryAccessPassAuthenticationMethodCollectionResponse and sets the default values.
+// NewTemporaryAccessPassAuthenticationMethodCollectionResponse instantiates a new temporaryAccessPassAuthenticationMethodCollectionResponse and sets the default values.
 func NewTemporaryAccessPassAuthenticationMethodCollectionResponse()(*TemporaryAccessPassAuthenticationMethodCollectionResponse) {
     m := &TemporaryAccessPassAuthenticationMethodCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),

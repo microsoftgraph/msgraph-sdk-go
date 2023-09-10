@@ -8,7 +8,7 @@ import (
 type StopHoldMusicOperation struct {
     CommsOperation
 }
-// NewStopHoldMusicOperation instantiates a new StopHoldMusicOperation and sets the default values.
+// NewStopHoldMusicOperation instantiates a new stopHoldMusicOperation and sets the default values.
 func NewStopHoldMusicOperation()(*StopHoldMusicOperation) {
     m := &StopHoldMusicOperation{
         CommsOperation: *NewCommsOperation(),

@@ -8,7 +8,7 @@ import (
 type PrintService struct {
     Entity
 }
-// NewPrintService instantiates a new PrintService and sets the default values.
+// NewPrintService instantiates a new printService and sets the default values.
 func NewPrintService()(*PrintService) {
     m := &PrintService{
         Entity: *NewEntity(),

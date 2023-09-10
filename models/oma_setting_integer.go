@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OmaSettingInteger 
+// OmaSettingInteger oMA Settings Integer definition.
 type OmaSettingInteger struct {
     OmaSetting
 }
-// NewOmaSettingInteger instantiates a new OmaSettingInteger and sets the default values.
+// NewOmaSettingInteger instantiates a new omaSettingInteger and sets the default values.
 func NewOmaSettingInteger()(*OmaSettingInteger) {
     m := &OmaSettingInteger{
         OmaSetting: *NewOmaSetting(),

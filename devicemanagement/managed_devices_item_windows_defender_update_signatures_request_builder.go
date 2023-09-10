@@ -33,7 +33,7 @@ func NewManagedDevicesItemWindowsDefenderUpdateSignaturesRequestBuilder(rawUrl s
 // Post not yet documented
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-windowsdefenderupdatesignatures?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-windowsdefenderupdatesignatures?view=graph-rest-1.0
 func (m *ManagedDevicesItemWindowsDefenderUpdateSignaturesRequestBuilder) Post(ctx context.Context, requestConfiguration *ManagedDevicesItemWindowsDefenderUpdateSignaturesRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -8,7 +8,7 @@ import (
 type TokenIssuancePolicy struct {
     StsPolicy
 }
-// NewTokenIssuancePolicy instantiates a new TokenIssuancePolicy and sets the default values.
+// NewTokenIssuancePolicy instantiates a new tokenIssuancePolicy and sets the default values.
 func NewTokenIssuancePolicy()(*TokenIssuancePolicy) {
     m := &TokenIssuancePolicy{
         StsPolicy: *NewStsPolicy(),

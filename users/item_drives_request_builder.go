@@ -70,7 +70,7 @@ func (m *ItemDrivesRequestBuilder) Count()(*ItemDrivesCountRequestBuilder) {
 // Get retrieve the list of Drive resources available for a target User, Group, or Site.
 // [Find more info here]
 // 
-// [Find more info here]: https://docs.microsoft.com/graph/api/drive-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/drive-list?view=graph-rest-1.0
 func (m *ItemDrivesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDrivesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
