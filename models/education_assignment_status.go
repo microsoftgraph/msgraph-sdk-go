@@ -38,3 +38,6 @@ func SerializeEducationAssignmentStatus(values []EducationAssignmentStatus) []st
     }
     return result
 }
+func (i EducationAssignmentStatus) isMultiValue() bool {
+    return false
+}

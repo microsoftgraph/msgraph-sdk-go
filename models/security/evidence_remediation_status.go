@@ -44,3 +44,6 @@ func SerializeEvidenceRemediationStatus(values []EvidenceRemediationStatus) []st
     }
     return result
 }
+func (i EvidenceRemediationStatus) isMultiValue() bool {
+    return false
+}

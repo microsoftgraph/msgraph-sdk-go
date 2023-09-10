@@ -155,3 +155,7 @@ func (m *EntitlementManagementRoleAssignmentScheduleRequestsRequestBuilder) ToPo
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EntitlementManagementRoleAssignmentScheduleRequestsRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementRoleAssignmentScheduleRequestsRequestBuilder) {
+    return NewEntitlementManagementRoleAssignmentScheduleRequestsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

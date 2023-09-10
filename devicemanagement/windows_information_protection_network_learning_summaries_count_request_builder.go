@@ -74,3 +74,7 @@ func (m *WindowsInformationProtectionNetworkLearningSummariesCountRequestBuilder
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsInformationProtectionNetworkLearningSummariesCountRequestBuilder) WithUrl(rawUrl string)(*WindowsInformationProtectionNetworkLearningSummariesCountRequestBuilder) {
+    return NewWindowsInformationProtectionNetworkLearningSummariesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

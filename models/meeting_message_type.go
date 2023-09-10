@@ -44,3 +44,6 @@ func SerializeMeetingMessageType(values []MeetingMessageType) []string {
     }
     return result
 }
+func (i MeetingMessageType) isMultiValue() bool {
+    return false
+}

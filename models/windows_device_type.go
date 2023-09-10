@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // Contains properties for Windows device type.
 type WindowsDeviceType int
@@ -19,23 +20,32 @@ const (
 )
 
 func (i WindowsDeviceType) String() string {
-    return []string{"none", "desktop", "mobile", "holographic", "team"}[i]
+    var values []string
+    for p := WindowsDeviceType(1); p <= TEAM_WINDOWSDEVICETYPE; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"none", "desktop", "mobile", "holographic", "team"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseWindowsDeviceType(v string) (any, error) {
-    result := NONE_WINDOWSDEVICETYPE
-    switch v {
-        case "none":
-            result = NONE_WINDOWSDEVICETYPE
-        case "desktop":
-            result = DESKTOP_WINDOWSDEVICETYPE
-        case "mobile":
-            result = MOBILE_WINDOWSDEVICETYPE
-        case "holographic":
-            result = HOLOGRAPHIC_WINDOWSDEVICETYPE
-        case "team":
-            result = TEAM_WINDOWSDEVICETYPE
-        default:
-            return 0, errors.New("Unknown WindowsDeviceType value: " + v)
+    var result WindowsDeviceType
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "none":
+                result |= NONE_WINDOWSDEVICETYPE
+            case "desktop":
+                result |= DESKTOP_WINDOWSDEVICETYPE
+            case "mobile":
+                result |= MOBILE_WINDOWSDEVICETYPE
+            case "holographic":
+                result |= HOLOGRAPHIC_WINDOWSDEVICETYPE
+            case "team":
+                result |= TEAM_WINDOWSDEVICETYPE
+            default:
+                return 0, errors.New("Unknown WindowsDeviceType value: " + v)
+        }
     }
     return &result, nil
 }
@@ -45,4 +55,7 @@ func SerializeWindowsDeviceType(values []WindowsDeviceType) []string {
         result[i] = v.String()
     }
     return result
+}
+func (i WindowsDeviceType) isMultiValue() bool {
+    return true
 }

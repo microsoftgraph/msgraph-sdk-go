@@ -32,3 +32,6 @@ func SerializePrintEvent(values []PrintEvent) []string {
     }
     return result
 }
+func (i PrintEvent) isMultiValue() bool {
+    return false
+}

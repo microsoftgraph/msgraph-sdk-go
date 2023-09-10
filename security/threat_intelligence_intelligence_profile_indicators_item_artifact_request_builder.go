@@ -75,3 +75,7 @@ func (m *ThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuild
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilder) {
+    return NewThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -42,3 +42,6 @@ func SerializeDiskType(values []DiskType) []string {
     }
     return result
 }
+func (i DiskType) isMultiValue() bool {
+    return false
+}

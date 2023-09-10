@@ -32,3 +32,6 @@ func SerializeOutlierContainerType(values []OutlierContainerType) []string {
     }
     return result
 }
+func (i OutlierContainerType) isMultiValue() bool {
+    return false
+}

@@ -44,3 +44,6 @@ func SerializeTokenIssuerType(values []TokenIssuerType) []string {
     }
     return result
 }
+func (i TokenIssuerType) isMultiValue() bool {
+    return false
+}

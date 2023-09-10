@@ -50,3 +50,6 @@ func SerializeConditionalAccessGrantControl(values []ConditionalAccessGrantContr
     }
     return result
 }
+func (i ConditionalAccessGrantControl) isMultiValue() bool {
+    return false
+}

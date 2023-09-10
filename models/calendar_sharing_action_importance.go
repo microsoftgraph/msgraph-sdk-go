@@ -32,3 +32,6 @@ func SerializeCalendarSharingActionImportance(values []CalendarSharingActionImpo
     }
     return result
 }
+func (i CalendarSharingActionImportance) isMultiValue() bool {
+    return false
+}

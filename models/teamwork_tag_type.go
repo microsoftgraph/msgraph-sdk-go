@@ -32,3 +32,6 @@ func SerializeTeamworkTagType(values []TeamworkTagType) []string {
     }
     return result
 }
+func (i TeamworkTagType) isMultiValue() bool {
+    return false
+}

@@ -38,3 +38,6 @@ func SerializeWelcomeScreenMeetingInformation(values []WelcomeScreenMeetingInfor
     }
     return result
 }
+func (i WelcomeScreenMeetingInformation) isMultiValue() bool {
+    return false
+}

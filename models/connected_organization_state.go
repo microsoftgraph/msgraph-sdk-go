@@ -35,3 +35,6 @@ func SerializeConnectedOrganizationState(values []ConnectedOrganizationState) []
     }
     return result
 }
+func (i ConnectedOrganizationState) isMultiValue() bool {
+    return false
+}

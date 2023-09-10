@@ -95,7 +95,7 @@ func (m *FileHash) GetOdataType()(*string) {
     }
     return nil
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. The hash value.
 func (m *FileHash) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -160,7 +160,7 @@ func (m *FileHash) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. The hash value.
 func (m *FileHash) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

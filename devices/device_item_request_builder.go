@@ -202,3 +202,7 @@ func (m *DeviceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context
 func (m *DeviceItemRequestBuilder) TransitiveMemberOf()(*ItemTransitiveMemberOfRequestBuilder) {
     return NewItemTransitiveMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceItemRequestBuilder) WithUrl(rawUrl string)(*DeviceItemRequestBuilder) {
+    return NewDeviceItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

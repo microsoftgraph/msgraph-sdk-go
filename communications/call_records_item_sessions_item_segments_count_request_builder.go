@@ -74,3 +74,7 @@ func (m *CallRecordsItemSessionsItemSegmentsCountRequestBuilder) ToGetRequestInf
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CallRecordsItemSessionsItemSegmentsCountRequestBuilder) WithUrl(rawUrl string)(*CallRecordsItemSessionsItemSegmentsCountRequestBuilder) {
+    return NewCallRecordsItemSessionsItemSegmentsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

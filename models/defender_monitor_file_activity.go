@@ -46,3 +46,6 @@ func SerializeDefenderMonitorFileActivity(values []DefenderMonitorFileActivity) 
     }
     return result
 }
+func (i DefenderMonitorFileActivity) isMultiValue() bool {
+    return false
+}

@@ -41,3 +41,6 @@ func SerializeRecordingStatus(values []RecordingStatus) []string {
     }
     return result
 }
+func (i RecordingStatus) isMultiValue() bool {
+    return false
+}

@@ -171,3 +171,7 @@ func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestB
 func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestBuilder) ValidateProperties()(*EntitlementManagementConnectedOrganizationsItemExternalSponsorsValidatePropertiesRequestBuilder) {
     return NewEntitlementManagementConnectedOrganizationsItemExternalSponsorsValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestBuilder) {
+    return NewEntitlementManagementConnectedOrganizationsItemExternalSponsorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

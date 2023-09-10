@@ -83,3 +83,6 @@ func SerializeColumnTypes(values []ColumnTypes) []string {
     }
     return result
 }
+func (i ColumnTypes) isMultiValue() bool {
+    return false
+}

@@ -50,3 +50,6 @@ func SerializeRatingAppsType(values []RatingAppsType) []string {
     }
     return result
 }
+func (i RatingAppsType) isMultiValue() bool {
+    return false
+}

@@ -75,3 +75,7 @@ func (m *ItemCreatedOnBehalfOfRequestBuilder) ToGetRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCreatedOnBehalfOfRequestBuilder) WithUrl(rawUrl string)(*ItemCreatedOnBehalfOfRequestBuilder) {
+    return NewItemCreatedOnBehalfOfRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -50,3 +50,6 @@ func SerializeInstallState(values []InstallState) []string {
     }
     return result
 }
+func (i InstallState) isMultiValue() bool {
+    return false
+}

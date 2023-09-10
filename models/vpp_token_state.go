@@ -46,3 +46,6 @@ func SerializeVppTokenState(values []VppTokenState) []string {
     }
     return result
 }
+func (i VppTokenState) isMultiValue() bool {
+    return false
+}

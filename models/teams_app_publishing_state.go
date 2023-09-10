@@ -38,3 +38,6 @@ func SerializeTeamsAppPublishingState(values []TeamsAppPublishingState) []string
     }
     return result
 }
+func (i TeamsAppPublishingState) isMultiValue() bool {
+    return false
+}

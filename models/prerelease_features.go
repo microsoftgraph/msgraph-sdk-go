@@ -42,3 +42,6 @@ func SerializePrereleaseFeatures(values []PrereleaseFeatures) []string {
     }
     return result
 }
+func (i PrereleaseFeatures) isMultiValue() bool {
+    return false
+}

@@ -65,3 +65,6 @@ func SerializeEntityType(values []EntityType) []string {
     }
     return result
 }
+func (i EntityType) isMultiValue() bool {
+    return false
+}

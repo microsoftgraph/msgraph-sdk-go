@@ -35,3 +35,6 @@ func SerializeAccessPackageCatalogState(values []AccessPackageCatalogState) []st
     }
     return result
 }
+func (i AccessPackageCatalogState) isMultiValue() bool {
+    return false
+}

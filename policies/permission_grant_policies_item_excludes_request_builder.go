@@ -151,3 +151,7 @@ func (m *PermissionGrantPoliciesItemExcludesRequestBuilder) ToPostRequestInforma
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *PermissionGrantPoliciesItemExcludesRequestBuilder) WithUrl(rawUrl string)(*PermissionGrantPoliciesItemExcludesRequestBuilder) {
+    return NewPermissionGrantPoliciesItemExcludesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -74,3 +74,7 @@ func (m *WindowsInformationProtectionPoliciesItemExemptAppLockerFilesCountReques
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *WindowsInformationProtectionPoliciesItemExemptAppLockerFilesCountRequestBuilder) WithUrl(rawUrl string)(*WindowsInformationProtectionPoliciesItemExemptAppLockerFilesCountRequestBuilder) {
+    return NewWindowsInformationProtectionPoliciesItemExemptAppLockerFilesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

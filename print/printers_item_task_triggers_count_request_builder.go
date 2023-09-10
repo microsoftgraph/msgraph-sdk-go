@@ -74,3 +74,7 @@ func (m *PrintersItemTaskTriggersCountRequestBuilder) ToGetRequestInformation(ct
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *PrintersItemTaskTriggersCountRequestBuilder) WithUrl(rawUrl string)(*PrintersItemTaskTriggersCountRequestBuilder) {
+    return NewPrintersItemTaskTriggersCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

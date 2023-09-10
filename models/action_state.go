@@ -54,3 +54,6 @@ func SerializeActionState(values []ActionState) []string {
     }
     return result
 }
+func (i ActionState) isMultiValue() bool {
+    return false
+}

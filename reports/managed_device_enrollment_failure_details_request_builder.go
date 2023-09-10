@@ -63,3 +63,7 @@ func (m *ManagedDeviceEnrollmentFailureDetailsRequestBuilder) ToGetRequestInform
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedDeviceEnrollmentFailureDetailsRequestBuilder) WithUrl(rawUrl string)(*ManagedDeviceEnrollmentFailureDetailsRequestBuilder) {
+    return NewManagedDeviceEnrollmentFailureDetailsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

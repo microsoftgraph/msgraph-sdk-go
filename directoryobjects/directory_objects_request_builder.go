@@ -161,3 +161,7 @@ func (m *DirectoryObjectsRequestBuilder) ToPostRequestInformation(ctx context.Co
 func (m *DirectoryObjectsRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
     return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DirectoryObjectsRequestBuilder) WithUrl(rawUrl string)(*DirectoryObjectsRequestBuilder) {
+    return NewDirectoryObjectsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

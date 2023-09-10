@@ -61,3 +61,7 @@ func (m *DeviceManagementPartnersItemTerminateRequestBuilder) ToPostRequestInfor
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceManagementPartnersItemTerminateRequestBuilder) WithUrl(rawUrl string)(*DeviceManagementPartnersItemTerminateRequestBuilder) {
+    return NewDeviceManagementPartnersItemTerminateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

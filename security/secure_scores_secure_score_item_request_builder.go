@@ -156,3 +156,7 @@ func (m *SecureScoresSecureScoreItemRequestBuilder) ToPatchRequestInformation(ct
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SecureScoresSecureScoreItemRequestBuilder) WithUrl(rawUrl string)(*SecureScoresSecureScoreItemRequestBuilder) {
+    return NewSecureScoresSecureScoreItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

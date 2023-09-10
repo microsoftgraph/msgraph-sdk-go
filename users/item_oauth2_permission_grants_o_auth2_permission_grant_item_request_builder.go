@@ -75,3 +75,7 @@ func (m *ItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilder) ToGe
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilder) WithUrl(rawUrl string)(*ItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilder) {
+    return NewItemOauth2PermissionGrantsOAuth2PermissionGrantItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

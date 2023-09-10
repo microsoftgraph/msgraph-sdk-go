@@ -38,3 +38,6 @@ func SerializeEmailRole(values []EmailRole) []string {
     }
     return result
 }
+func (i EmailRole) isMultiValue() bool {
+    return false
+}

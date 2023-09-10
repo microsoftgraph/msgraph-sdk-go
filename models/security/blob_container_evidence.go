@@ -56,7 +56,7 @@ func (m *BlobContainerEvidence) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The name of the blob container.
 func (m *BlobContainerEvidence) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -67,7 +67,7 @@ func (m *BlobContainerEvidence) GetName()(*string) {
     }
     return nil
 }
-// GetStorageResource gets the storageResource property value. The storageResource property
+// GetStorageResource gets the storageResource property value. The storage which the blob container belongs to.
 func (m *BlobContainerEvidence) GetStorageResource()(AzureResourceEvidenceable) {
     val, err := m.GetBackingStore().Get("storageResource")
     if err != nil {
@@ -78,7 +78,7 @@ func (m *BlobContainerEvidence) GetStorageResource()(AzureResourceEvidenceable) 
     }
     return nil
 }
-// GetUrl gets the url property value. The url property
+// GetUrl gets the url property value. The full URL representation of the blob container.
 func (m *BlobContainerEvidence) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -115,21 +115,21 @@ func (m *BlobContainerEvidence) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The name of the blob container.
 func (m *BlobContainerEvidence) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStorageResource sets the storageResource property value. The storageResource property
+// SetStorageResource sets the storageResource property value. The storage which the blob container belongs to.
 func (m *BlobContainerEvidence) SetStorageResource(value AzureResourceEvidenceable)() {
     err := m.GetBackingStore().Set("storageResource", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUrl sets the url property value. The url property
+// SetUrl sets the url property value. The full URL representation of the blob container.
 func (m *BlobContainerEvidence) SetUrl(value *string)() {
     err := m.GetBackingStore().Set("url", value)
     if err != nil {

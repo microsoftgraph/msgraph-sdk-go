@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // 
 type AuthenticationStrengthRequirements int
@@ -12,19 +13,28 @@ const (
 )
 
 func (i AuthenticationStrengthRequirements) String() string {
-    return []string{"none", "mfa", "unknownFutureValue"}[i]
+    var values []string
+    for p := AuthenticationStrengthRequirements(1); p <= UNKNOWNFUTUREVALUE_AUTHENTICATIONSTRENGTHREQUIREMENTS; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"none", "mfa", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseAuthenticationStrengthRequirements(v string) (any, error) {
-    result := NONE_AUTHENTICATIONSTRENGTHREQUIREMENTS
-    switch v {
-        case "none":
-            result = NONE_AUTHENTICATIONSTRENGTHREQUIREMENTS
-        case "mfa":
-            result = MFA_AUTHENTICATIONSTRENGTHREQUIREMENTS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_AUTHENTICATIONSTRENGTHREQUIREMENTS
-        default:
-            return 0, errors.New("Unknown AuthenticationStrengthRequirements value: " + v)
+    var result AuthenticationStrengthRequirements
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "none":
+                result |= NONE_AUTHENTICATIONSTRENGTHREQUIREMENTS
+            case "mfa":
+                result |= MFA_AUTHENTICATIONSTRENGTHREQUIREMENTS
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_AUTHENTICATIONSTRENGTHREQUIREMENTS
+            default:
+                return 0, errors.New("Unknown AuthenticationStrengthRequirements value: " + v)
+        }
     }
     return &result, nil
 }
@@ -34,4 +44,7 @@ func SerializeAuthenticationStrengthRequirements(values []AuthenticationStrength
         result[i] = v.String()
     }
     return result
+}
+func (i AuthenticationStrengthRequirements) isMultiValue() bool {
+    return true
 }

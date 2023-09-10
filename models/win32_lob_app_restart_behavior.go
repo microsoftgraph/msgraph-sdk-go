@@ -42,3 +42,6 @@ func SerializeWin32LobAppRestartBehavior(values []Win32LobAppRestartBehavior) []
     }
     return result
 }
+func (i Win32LobAppRestartBehavior) isMultiValue() bool {
+    return false
+}

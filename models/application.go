@@ -607,6 +607,16 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["servicePrincipalLockConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateServicePrincipalLockConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetServicePrincipalLockConfiguration(val.(ServicePrincipalLockConfigurationable))
+        }
+        return nil
+    }
     res["signInAudience"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -838,7 +848,7 @@ func (m *Application) GetOptionalClaims()(OptionalClaimsable) {
     }
     return nil
 }
-// GetOwners gets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+// GetOwners gets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
 func (m *Application) GetOwners()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("owners")
     if err != nil {
@@ -934,6 +944,17 @@ func (m *Application) GetServiceManagementReference()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetServicePrincipalLockConfiguration gets the servicePrincipalLockConfiguration property value. Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
+func (m *Application) GetServicePrincipalLockConfiguration()(ServicePrincipalLockConfigurationable) {
+    val, err := m.GetBackingStore().Get("servicePrincipalLockConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ServicePrincipalLockConfigurationable)
     }
     return nil
 }
@@ -1313,6 +1334,12 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteObjectValue("servicePrincipalLockConfiguration", m.GetServicePrincipalLockConfiguration())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("signInAudience", m.GetSignInAudience())
         if err != nil {
             return err
@@ -1562,7 +1589,7 @@ func (m *Application) SetOptionalClaims(value OptionalClaimsable)() {
         panic(err)
     }
 }
-// SetOwners sets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+// SetOwners sets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
 func (m *Application) SetOwners(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("owners", value)
     if err != nil {
@@ -1621,6 +1648,13 @@ func (m *Application) SetSamlMetadataUrl(value *string)() {
 // SetServiceManagementReference sets the serviceManagementReference property value. References application or service contact information from a Service or Asset Management database. Nullable.
 func (m *Application) SetServiceManagementReference(value *string)() {
     err := m.GetBackingStore().Set("serviceManagementReference", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetServicePrincipalLockConfiguration sets the servicePrincipalLockConfiguration property value. Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
+func (m *Application) SetServicePrincipalLockConfiguration(value ServicePrincipalLockConfigurationable)() {
+    err := m.GetBackingStore().Set("servicePrincipalLockConfiguration", value)
     if err != nil {
         panic(err)
     }
@@ -1727,6 +1761,7 @@ type Applicationable interface {
     GetRequiredResourceAccess()([]RequiredResourceAccessable)
     GetSamlMetadataUrl()(*string)
     GetServiceManagementReference()(*string)
+    GetServicePrincipalLockConfiguration()(ServicePrincipalLockConfigurationable)
     GetSignInAudience()(*string)
     GetSpa()(SpaApplicationable)
     GetSynchronization()(Synchronizationable)
@@ -1771,6 +1806,7 @@ type Applicationable interface {
     SetRequiredResourceAccess(value []RequiredResourceAccessable)()
     SetSamlMetadataUrl(value *string)()
     SetServiceManagementReference(value *string)()
+    SetServicePrincipalLockConfiguration(value ServicePrincipalLockConfigurationable)()
     SetSignInAudience(value *string)()
     SetSpa(value SpaApplicationable)()
     SetSynchronization(value Synchronizationable)()

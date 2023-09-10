@@ -155,3 +155,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) ToPostRequestIn
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) WithUrl(rawUrl string)(*ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) {
+    return NewImportedWindowsAutopilotDeviceIdentitiesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

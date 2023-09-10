@@ -171,3 +171,7 @@ func (m *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) ToPat
 func (m *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) Upgrade()(*ItemChatsItemInstalledAppsItemUpgradeRequestBuilder) {
     return NewItemChatsItemInstalledAppsItemUpgradeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) WithUrl(rawUrl string)(*ItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) {
+    return NewItemChatsItemInstalledAppsTeamsAppInstallationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

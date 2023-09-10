@@ -151,3 +151,7 @@ func (m *NotificationMessageTemplatesRequestBuilder) ToPostRequestInformation(ct
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *NotificationMessageTemplatesRequestBuilder) WithUrl(rawUrl string)(*NotificationMessageTemplatesRequestBuilder) {
+    return NewNotificationMessageTemplatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

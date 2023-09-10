@@ -44,3 +44,6 @@ func SerializeResponseType(values []ResponseType) []string {
     }
     return result
 }
+func (i ResponseType) isMultiValue() bool {
+    return false
+}

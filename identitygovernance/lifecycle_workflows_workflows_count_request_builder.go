@@ -74,3 +74,7 @@ func (m *LifecycleWorkflowsWorkflowsCountRequestBuilder) ToGetRequestInformation
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *LifecycleWorkflowsWorkflowsCountRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsWorkflowsCountRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

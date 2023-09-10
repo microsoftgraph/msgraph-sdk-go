@@ -44,3 +44,6 @@ func SerializeAccessReviewHistoryDecisionFilter(values []AccessReviewHistoryDeci
     }
     return result
 }
+func (i AccessReviewHistoryDecisionFilter) isMultiValue() bool {
+    return false
+}

@@ -50,3 +50,6 @@ func SerializeTeamsAsyncOperationType(values []TeamsAsyncOperationType) []string
     }
     return result
 }
+func (i TeamsAsyncOperationType) isMultiValue() bool {
+    return false
+}

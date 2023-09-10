@@ -161,3 +161,6 @@ func SerializeSynchronizationSecret(values []SynchronizationSecret) []string {
     }
     return result
 }
+func (i SynchronizationSecret) isMultiValue() bool {
+    return false
+}

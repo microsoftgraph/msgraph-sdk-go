@@ -163,3 +163,7 @@ func (m *IncidentsIncidentItemRequestBuilder) ToPatchRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IncidentsIncidentItemRequestBuilder) WithUrl(rawUrl string)(*IncidentsIncidentItemRequestBuilder) {
+    return NewIncidentsIncidentItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

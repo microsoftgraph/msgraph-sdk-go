@@ -66,3 +66,6 @@ func SerializeBrowserSiteCompatibilityMode(values []BrowserSiteCompatibilityMode
     }
     return result
 }
+func (i BrowserSiteCompatibilityMode) isMultiValue() bool {
+    return false
+}

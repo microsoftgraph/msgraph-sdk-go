@@ -74,3 +74,7 @@ func (m *ClassesItemAssignmentCategoriesCountRequestBuilder) ToGetRequestInforma
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ClassesItemAssignmentCategoriesCountRequestBuilder) WithUrl(rawUrl string)(*ClassesItemAssignmentCategoriesCountRequestBuilder) {
+    return NewClassesItemAssignmentCategoriesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -44,3 +44,6 @@ func SerializeAccessPackageAssignmentState(values []AccessPackageAssignmentState
     }
     return result
 }
+func (i AccessPackageAssignmentState) isMultiValue() bool {
+    return false
+}

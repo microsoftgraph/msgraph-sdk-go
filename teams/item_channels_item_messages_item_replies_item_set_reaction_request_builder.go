@@ -62,3 +62,7 @@ func (m *ItemChannelsItemMessagesItemRepliesItemSetReactionRequestBuilder) ToPos
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemChannelsItemMessagesItemRepliesItemSetReactionRequestBuilder) WithUrl(rawUrl string)(*ItemChannelsItemMessagesItemRepliesItemSetReactionRequestBuilder) {
+    return NewItemChannelsItemMessagesItemRepliesItemSetReactionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

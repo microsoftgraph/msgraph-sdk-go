@@ -35,3 +35,6 @@ func SerializeEducationAddedStudentAction(values []EducationAddedStudentAction) 
     }
     return result
 }
+func (i EducationAddedStudentAction) isMultiValue() bool {
+    return false
+}

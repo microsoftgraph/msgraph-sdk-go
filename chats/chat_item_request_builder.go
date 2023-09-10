@@ -207,3 +207,7 @@ func (m *ChatItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
 func (m *ChatItemRequestBuilder) UnhideForUser()(*ItemUnhideForUserRequestBuilder) {
     return NewItemUnhideForUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ChatItemRequestBuilder) WithUrl(rawUrl string)(*ChatItemRequestBuilder) {
+    return NewChatItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

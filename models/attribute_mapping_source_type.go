@@ -35,3 +35,6 @@ func SerializeAttributeMappingSourceType(values []AttributeMappingSourceType) []
     }
     return result
 }
+func (i AttributeMappingSourceType) isMultiValue() bool {
+    return false
+}

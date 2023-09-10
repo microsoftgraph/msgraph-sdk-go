@@ -65,3 +65,7 @@ func (m *DeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilder) ToPo
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilder) WithUrl(rawUrl string)(*DeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilder) {
+    return NewDeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

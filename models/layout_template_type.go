@@ -35,3 +35,6 @@ func SerializeLayoutTemplateType(values []LayoutTemplateType) []string {
     }
     return result
 }
+func (i LayoutTemplateType) isMultiValue() bool {
+    return false
+}

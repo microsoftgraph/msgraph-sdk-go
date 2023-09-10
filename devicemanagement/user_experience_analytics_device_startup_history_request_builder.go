@@ -145,3 +145,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder) ToPostReques
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder) WithUrl(rawUrl string)(*UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder) {
+    return NewUserExperienceAnalyticsDeviceStartupHistoryRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

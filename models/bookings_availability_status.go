@@ -41,3 +41,6 @@ func SerializeBookingsAvailabilityStatus(values []BookingsAvailabilityStatus) []
     }
     return result
 }
+func (i BookingsAvailabilityStatus) isMultiValue() bool {
+    return false
+}

@@ -62,3 +62,6 @@ func SerializeAccessPackageRequestType(values []AccessPackageRequestType) []stri
     }
     return result
 }
+func (i AccessPackageRequestType) isMultiValue() bool {
+    return false
+}

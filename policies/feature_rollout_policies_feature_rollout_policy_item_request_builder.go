@@ -166,3 +166,7 @@ func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) ToPatchRe
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) WithUrl(rawUrl string)(*FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) {
+    return NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

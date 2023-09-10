@@ -50,3 +50,6 @@ func SerializeWindowsUpdateType(values []WindowsUpdateType) []string {
     }
     return result
 }
+func (i WindowsUpdateType) isMultiValue() bool {
+    return false
+}

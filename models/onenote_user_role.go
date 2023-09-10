@@ -38,3 +38,6 @@ func SerializeOnenoteUserRole(values []OnenoteUserRole) []string {
     }
     return result
 }
+func (i OnenoteUserRole) isMultiValue() bool {
+    return false
+}

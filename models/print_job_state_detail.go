@@ -50,3 +50,6 @@ func SerializePrintJobStateDetail(values []PrintJobStateDetail) []string {
     }
     return result
 }
+func (i PrintJobStateDetail) isMultiValue() bool {
+    return false
+}

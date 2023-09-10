@@ -53,3 +53,6 @@ func SerializeDataSubjectType(values []DataSubjectType) []string {
     }
     return result
 }
+func (i DataSubjectType) isMultiValue() bool {
+    return false
+}

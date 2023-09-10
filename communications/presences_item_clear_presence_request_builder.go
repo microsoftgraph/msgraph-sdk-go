@@ -65,3 +65,7 @@ func (m *PresencesItemClearPresenceRequestBuilder) ToPostRequestInformation(ctx 
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *PresencesItemClearPresenceRequestBuilder) WithUrl(rawUrl string)(*PresencesItemClearPresenceRequestBuilder) {
+    return NewPresencesItemClearPresenceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

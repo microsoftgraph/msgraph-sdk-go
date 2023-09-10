@@ -38,3 +38,6 @@ func SerializeAccessPackageSubjectType(values []AccessPackageSubjectType) []stri
     }
     return result
 }
+func (i AccessPackageSubjectType) isMultiValue() bool {
+    return false
+}

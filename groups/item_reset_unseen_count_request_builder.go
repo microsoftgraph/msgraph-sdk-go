@@ -61,3 +61,7 @@ func (m *ItemResetUnseenCountRequestBuilder) ToPostRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemResetUnseenCountRequestBuilder) WithUrl(rawUrl string)(*ItemResetUnseenCountRequestBuilder) {
+    return NewItemResetUnseenCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -35,3 +35,6 @@ func SerializeChildSelectability(values []ChildSelectability) []string {
     }
     return result
 }
+func (i ChildSelectability) isMultiValue() bool {
+    return false
+}

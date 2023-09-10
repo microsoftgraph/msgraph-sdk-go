@@ -78,3 +78,7 @@ func (m *ItemAnalyticsAllTimeRequestBuilder) ToGetRequestInformation(ctx context
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemAnalyticsAllTimeRequestBuilder) WithUrl(rawUrl string)(*ItemAnalyticsAllTimeRequestBuilder) {
+    return NewItemAnalyticsAllTimeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

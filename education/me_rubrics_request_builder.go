@@ -151,3 +151,7 @@ func (m *MeRubricsRequestBuilder) ToPostRequestInformation(ctx context.Context, 
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MeRubricsRequestBuilder) WithUrl(rawUrl string)(*MeRubricsRequestBuilder) {
+    return NewMeRubricsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

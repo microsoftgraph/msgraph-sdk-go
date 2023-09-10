@@ -50,3 +50,6 @@ func SerializeQuarantineReason(values []QuarantineReason) []string {
     }
     return result
 }
+func (i QuarantineReason) isMultiValue() bool {
+    return false
+}

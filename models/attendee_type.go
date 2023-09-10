@@ -35,3 +35,6 @@ func SerializeAttendeeType(values []AttendeeType) []string {
     }
     return result
 }
+func (i AttendeeType) isMultiValue() bool {
+    return false
+}

@@ -44,3 +44,6 @@ func SerializeTeamsAsyncOperationStatus(values []TeamsAsyncOperationStatus) []st
     }
     return result
 }
+func (i TeamsAsyncOperationStatus) isMultiValue() bool {
+    return false
+}

@@ -245,6 +245,10 @@ func (m *GroupItemRequestBuilder) ResetUnseenCount()(*ItemResetUnseenCountReques
 func (m *GroupItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
     return NewItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RetryServiceProvisioning provides operations to call the retryServiceProvisioning method.
+func (m *GroupItemRequestBuilder) RetryServiceProvisioning()(*ItemRetryServiceProvisioningRequestBuilder) {
+    return NewItemRetryServiceProvisioningRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Settings provides operations to manage the settings property of the microsoft.graph.group entity.
 func (m *GroupItemRequestBuilder) Settings()(*ItemSettingsRequestBuilder) {
     return NewItemSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -325,4 +329,8 @@ func (m *GroupItemRequestBuilder) UnsubscribeByMail()(*ItemUnsubscribeByMailRequ
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *GroupItemRequestBuilder) ValidateProperties()(*ItemValidatePropertiesRequestBuilder) {
     return NewItemValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GroupItemRequestBuilder) WithUrl(rawUrl string)(*GroupItemRequestBuilder) {
+    return NewGroupItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -35,3 +35,6 @@ func SerializeDataSourceContainerStatus(values []DataSourceContainerStatus) []st
     }
     return result
 }
+func (i DataSourceContainerStatus) isMultiValue() bool {
+    return false
+}

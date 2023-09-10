@@ -165,3 +165,7 @@ func (m *ItemTermStoresItemSetsItemParentGroupSetsItemChildrenItemRelationsRelat
 func (m *ItemTermStoresItemSetsItemParentGroupSetsItemChildrenItemRelationsRelationItemRequestBuilder) ToTerm()(*ItemTermStoresItemSetsItemParentGroupSetsItemChildrenItemRelationsItemToTermRequestBuilder) {
     return NewItemTermStoresItemSetsItemParentGroupSetsItemChildrenItemRelationsItemToTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTermStoresItemSetsItemParentGroupSetsItemChildrenItemRelationsRelationItemRequestBuilder) WithUrl(rawUrl string)(*ItemTermStoresItemSetsItemParentGroupSetsItemChildrenItemRelationsRelationItemRequestBuilder) {
+    return NewItemTermStoresItemSetsItemParentGroupSetsItemChildrenItemRelationsRelationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

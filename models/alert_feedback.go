@@ -41,3 +41,6 @@ func SerializeAlertFeedback(values []AlertFeedback) []string {
     }
     return result
 }
+func (i AlertFeedback) isMultiValue() bool {
+    return false
+}

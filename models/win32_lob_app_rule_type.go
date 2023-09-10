@@ -34,3 +34,6 @@ func SerializeWin32LobAppRuleType(values []Win32LobAppRuleType) []string {
     }
     return result
 }
+func (i Win32LobAppRuleType) isMultiValue() bool {
+    return false
+}

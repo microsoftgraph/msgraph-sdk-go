@@ -65,3 +65,7 @@ func (m *ItemTeamworkSendActivityNotificationRequestBuilder) ToPostRequestInform
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamworkSendActivityNotificationRequestBuilder) WithUrl(rawUrl string)(*ItemTeamworkSendActivityNotificationRequestBuilder) {
+    return NewItemTeamworkSendActivityNotificationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

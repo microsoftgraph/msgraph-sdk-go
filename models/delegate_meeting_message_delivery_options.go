@@ -35,3 +35,6 @@ func SerializeDelegateMeetingMessageDeliveryOptions(values []DelegateMeetingMess
     }
     return result
 }
+func (i DelegateMeetingMessageDeliveryOptions) isMultiValue() bool {
+    return false
+}

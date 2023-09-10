@@ -42,3 +42,6 @@ func SerializeDefenderScanType(values []DefenderScanType) []string {
     }
     return result
 }
+func (i DefenderScanType) isMultiValue() bool {
+    return false
+}

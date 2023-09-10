@@ -41,3 +41,6 @@ func SerializeAlertClassification(values []AlertClassification) []string {
     }
     return result
 }
+func (i AlertClassification) isMultiValue() bool {
+    return false
+}

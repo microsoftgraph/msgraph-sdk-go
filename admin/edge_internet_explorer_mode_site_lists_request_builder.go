@@ -151,3 +151,7 @@ func (m *EdgeInternetExplorerModeSiteListsRequestBuilder) ToPostRequestInformati
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EdgeInternetExplorerModeSiteListsRequestBuilder) WithUrl(rawUrl string)(*EdgeInternetExplorerModeSiteListsRequestBuilder) {
+    return NewEdgeInternetExplorerModeSiteListsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -56,3 +56,6 @@ func SerializeLocationType(values []LocationType) []string {
     }
     return result
 }
+func (i LocationType) isMultiValue() bool {
+    return false
+}

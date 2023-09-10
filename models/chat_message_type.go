@@ -41,3 +41,6 @@ func SerializeChatMessageType(values []ChatMessageType) []string {
     }
     return result
 }
+func (i ChatMessageType) isMultiValue() bool {
+    return false
+}

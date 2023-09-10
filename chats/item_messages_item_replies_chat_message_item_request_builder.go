@@ -176,3 +176,7 @@ func (m *ItemMessagesItemRepliesChatMessageItemRequestBuilder) UndoSoftDelete()(
 func (m *ItemMessagesItemRepliesChatMessageItemRequestBuilder) UnsetReaction()(*ItemMessagesItemRepliesItemUnsetReactionRequestBuilder) {
     return NewItemMessagesItemRepliesItemUnsetReactionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemMessagesItemRepliesChatMessageItemRequestBuilder) WithUrl(rawUrl string)(*ItemMessagesItemRepliesChatMessageItemRequestBuilder) {
+    return NewItemMessagesItemRepliesChatMessageItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

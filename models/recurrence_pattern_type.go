@@ -44,3 +44,6 @@ func SerializeRecurrencePatternType(values []RecurrencePatternType) []string {
     }
     return result
 }
+func (i RecurrencePatternType) isMultiValue() bool {
+    return false
+}

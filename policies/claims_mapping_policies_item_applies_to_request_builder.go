@@ -102,3 +102,7 @@ func (m *ClaimsMappingPoliciesItemAppliesToRequestBuilder) ToGetRequestInformati
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ClaimsMappingPoliciesItemAppliesToRequestBuilder) WithUrl(rawUrl string)(*ClaimsMappingPoliciesItemAppliesToRequestBuilder) {
+    return NewClaimsMappingPoliciesItemAppliesToRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

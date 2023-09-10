@@ -74,3 +74,7 @@ func (m *ItemAuthenticationWindowsHelloForBusinessMethodsCountRequestBuilder) To
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemAuthenticationWindowsHelloForBusinessMethodsCountRequestBuilder) WithUrl(rawUrl string)(*ItemAuthenticationWindowsHelloForBusinessMethodsCountRequestBuilder) {
+    return NewItemAuthenticationWindowsHelloForBusinessMethodsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

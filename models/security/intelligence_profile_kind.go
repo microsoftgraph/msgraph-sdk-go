@@ -35,3 +35,6 @@ func SerializeIntelligenceProfileKind(values []IntelligenceProfileKind) []string
     }
     return result
 }
+func (i IntelligenceProfileKind) isMultiValue() bool {
+    return false
+}

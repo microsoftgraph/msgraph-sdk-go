@@ -254,7 +254,7 @@ func (m *DeviceEvidence) GetHealthStatus()(*DeviceHealthStatus) {
     }
     return nil
 }
-// GetIpInterfaces gets the ipInterfaces property value. The ipInterfaces property
+// GetIpInterfaces gets the ipInterfaces property value. Ip interfaces of the device during the time of the alert.
 func (m *DeviceEvidence) GetIpInterfaces()([]string) {
     val, err := m.GetBackingStore().Get("ipInterfaces")
     if err != nil {
@@ -524,7 +524,7 @@ func (m *DeviceEvidence) SetHealthStatus(value *DeviceHealthStatus)() {
         panic(err)
     }
 }
-// SetIpInterfaces sets the ipInterfaces property value. The ipInterfaces property
+// SetIpInterfaces sets the ipInterfaces property value. Ip interfaces of the device during the time of the alert.
 func (m *DeviceEvidence) SetIpInterfaces(value []string)() {
     err := m.GetBackingStore().Set("ipInterfaces", value)
     if err != nil {

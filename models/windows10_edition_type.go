@@ -74,3 +74,6 @@ func SerializeWindows10EditionType(values []Windows10EditionType) []string {
     }
     return result
 }
+func (i Windows10EditionType) isMultiValue() bool {
+    return false
+}

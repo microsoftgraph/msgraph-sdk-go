@@ -50,3 +50,6 @@ func SerializeAutomaticUpdateMode(values []AutomaticUpdateMode) []string {
     }
     return result
 }
+func (i AutomaticUpdateMode) isMultiValue() bool {
+    return false
+}

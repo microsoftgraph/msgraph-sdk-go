@@ -35,3 +35,6 @@ func SerializeGroupType(values []GroupType) []string {
     }
     return result
 }
+func (i GroupType) isMultiValue() bool {
+    return false
+}

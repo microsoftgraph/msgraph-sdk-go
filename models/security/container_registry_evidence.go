@@ -36,7 +36,7 @@ func (m *ContainerRegistryEvidence) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetRegistry gets the registry property value. The registry property
+// GetRegistry gets the registry property value. The registry URI.
 func (m *ContainerRegistryEvidence) GetRegistry()(*string) {
     val, err := m.GetBackingStore().Get("registry")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *ContainerRegistryEvidence) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetRegistry sets the registry property value. The registry property
+// SetRegistry sets the registry property value. The registry URI.
 func (m *ContainerRegistryEvidence) SetRegistry(value *string)() {
     err := m.GetBackingStore().Set("registry", value)
     if err != nil {

@@ -74,3 +74,7 @@ func (m *ReportsExportJobsCountRequestBuilder) ToGetRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ReportsExportJobsCountRequestBuilder) WithUrl(rawUrl string)(*ReportsExportJobsCountRequestBuilder) {
+    return NewReportsExportJobsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

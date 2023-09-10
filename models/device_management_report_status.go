@@ -46,3 +46,6 @@ func SerializeDeviceManagementReportStatus(values []DeviceManagementReportStatus
     }
     return result
 }
+func (i DeviceManagementReportStatus) isMultiValue() bool {
+    return false
+}

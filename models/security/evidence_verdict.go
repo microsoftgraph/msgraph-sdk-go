@@ -41,3 +41,6 @@ func SerializeEvidenceVerdict(values []EvidenceVerdict) []string {
     }
     return result
 }
+func (i EvidenceVerdict) isMultiValue() bool {
+    return false
+}

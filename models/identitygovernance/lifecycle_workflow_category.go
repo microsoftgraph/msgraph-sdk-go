@@ -38,3 +38,6 @@ func SerializeLifecycleWorkflowCategory(values []LifecycleWorkflowCategory) []st
     }
     return result
 }
+func (i LifecycleWorkflowCategory) isMultiValue() bool {
+    return false
+}

@@ -35,3 +35,6 @@ func SerializeAssignmentType(values []AssignmentType) []string {
     }
     return result
 }
+func (i AssignmentType) isMultiValue() bool {
+    return false
+}

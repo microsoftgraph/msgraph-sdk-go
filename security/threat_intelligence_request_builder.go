@@ -193,3 +193,7 @@ func (m *ThreatIntelligenceRequestBuilder) ToPatchRequestInformation(ctx context
 func (m *ThreatIntelligenceRequestBuilder) Vulnerabilities()(*ThreatIntelligenceVulnerabilitiesRequestBuilder) {
     return NewThreatIntelligenceVulnerabilitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ThreatIntelligenceRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceRequestBuilder) {
+    return NewThreatIntelligenceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -38,3 +38,6 @@ func SerializeVisibilitySetting(values []VisibilitySetting) []string {
     }
     return result
 }
+func (i VisibilitySetting) isMultiValue() bool {
+    return false
+}

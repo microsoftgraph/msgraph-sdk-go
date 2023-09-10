@@ -308,7 +308,7 @@ func (m *User) GetCreationType()(*string) {
     }
     return nil
 }
-// GetCustomSecurityAttributes gets the customSecurityAttributes property value. The customSecurityAttributes property
+// GetCustomSecurityAttributes gets the customSecurityAttributes property value. An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). Filter value is case sensitive.
 func (m *User) GetCustomSecurityAttributes()(CustomSecurityAttributeValueable) {
     val, err := m.GetBackingStore().Get("customSecurityAttributes")
     if err != nil {
@@ -1880,6 +1880,22 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["serviceProvisioningErrors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateServiceProvisioningErrorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ServiceProvisioningErrorable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ServiceProvisioningErrorable)
+                }
+            }
+            m.SetServiceProvisioningErrors(res)
+        }
+        return nil
+    }
     res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserSettingsFromDiscriminatorValue)
         if err != nil {
@@ -2507,7 +2523,7 @@ func (m *User) GetOwnedDevices()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetOwnedObjects gets the ownedObjects property value. Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
+// GetOwnedObjects gets the ownedObjects property value. Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *User) GetOwnedObjects()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("ownedObjects")
     if err != nil {
@@ -2529,7 +2545,7 @@ func (m *User) GetPasswordPolicies()(*string) {
     }
     return nil
 }
-// GetPasswordProfile gets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
+// GetPasswordProfile gets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
 func (m *User) GetPasswordProfile()(PasswordProfileable) {
     val, err := m.GetBackingStore().Get("passwordProfile")
     if err != nil {
@@ -2735,6 +2751,17 @@ func (m *User) GetSecurityIdentifier()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetServiceProvisioningErrors gets the serviceProvisioningErrors property value. The serviceProvisioningErrors property
+func (m *User) GetServiceProvisioningErrors()([]ServiceProvisioningErrorable) {
+    val, err := m.GetBackingStore().Get("serviceProvisioningErrors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ServiceProvisioningErrorable)
     }
     return nil
 }
@@ -3774,6 +3801,18 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetServiceProvisioningErrors() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServiceProvisioningErrors()))
+        for i, v := range m.GetServiceProvisioningErrors() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("serviceProvisioningErrors", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("settings", m.GetSettings())
         if err != nil {
@@ -4048,7 +4087,7 @@ func (m *User) SetCreationType(value *string)() {
         panic(err)
     }
 }
-// SetCustomSecurityAttributes sets the customSecurityAttributes property value. The customSecurityAttributes property
+// SetCustomSecurityAttributes sets the customSecurityAttributes property value. An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). Filter value is case sensitive.
 func (m *User) SetCustomSecurityAttributes(value CustomSecurityAttributeValueable)() {
     err := m.GetBackingStore().Set("customSecurityAttributes", value)
     if err != nil {
@@ -4482,7 +4521,7 @@ func (m *User) SetOwnedDevices(value []DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetOwnedObjects sets the ownedObjects property value. Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
+// SetOwnedObjects sets the ownedObjects property value. Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *User) SetOwnedObjects(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("ownedObjects", value)
     if err != nil {
@@ -4496,7 +4535,7 @@ func (m *User) SetPasswordPolicies(value *string)() {
         panic(err)
     }
 }
-// SetPasswordProfile sets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
+// SetPasswordProfile sets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
 func (m *User) SetPasswordProfile(value PasswordProfileable)() {
     err := m.GetBackingStore().Set("passwordProfile", value)
     if err != nil {
@@ -4625,6 +4664,13 @@ func (m *User) SetScopedRoleMemberOf(value []ScopedRoleMembershipable)() {
 // SetSecurityIdentifier sets the securityIdentifier property value. Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
 func (m *User) SetSecurityIdentifier(value *string)() {
     err := m.GetBackingStore().Set("securityIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetServiceProvisioningErrors sets the serviceProvisioningErrors property value. The serviceProvisioningErrors property
+func (m *User) SetServiceProvisioningErrors(value []ServiceProvisioningErrorable)() {
+    err := m.GetBackingStore().Set("serviceProvisioningErrors", value)
     if err != nil {
         panic(err)
     }
@@ -4840,6 +4886,7 @@ type Userable interface {
     GetSchools()([]string)
     GetScopedRoleMemberOf()([]ScopedRoleMembershipable)
     GetSecurityIdentifier()(*string)
+    GetServiceProvisioningErrors()([]ServiceProvisioningErrorable)
     GetSettings()(UserSettingsable)
     GetShowInAddressList()(*bool)
     GetSignInActivity()(SignInActivityable)
@@ -4963,6 +5010,7 @@ type Userable interface {
     SetSchools(value []string)()
     SetScopedRoleMemberOf(value []ScopedRoleMembershipable)()
     SetSecurityIdentifier(value *string)()
+    SetServiceProvisioningErrors(value []ServiceProvisioningErrorable)()
     SetSettings(value UserSettingsable)()
     SetShowInAddressList(value *bool)()
     SetSignInActivity(value SignInActivityable)()

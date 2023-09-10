@@ -41,3 +41,6 @@ func SerializePrintColorMode(values []PrintColorMode) []string {
     }
     return result
 }
+func (i PrintColorMode) isMultiValue() bool {
+    return false
+}

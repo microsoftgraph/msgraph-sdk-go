@@ -50,3 +50,6 @@ func SerializeDeviceManagementPartnerTenantState(values []DeviceManagementPartne
     }
     return result
 }
+func (i DeviceManagementPartnerTenantState) isMultiValue() bool {
+    return false
+}

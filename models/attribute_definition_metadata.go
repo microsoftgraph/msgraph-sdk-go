@@ -53,3 +53,6 @@ func SerializeAttributeDefinitionMetadata(values []AttributeDefinitionMetadata) 
     }
     return result
 }
+func (i AttributeDefinitionMetadata) isMultiValue() bool {
+    return false
+}

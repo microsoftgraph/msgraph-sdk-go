@@ -35,3 +35,6 @@ func SerializeAuthenticationMethodKeyStrength(values []AuthenticationMethodKeySt
     }
     return result
 }
+func (i AuthenticationMethodKeyStrength) isMultiValue() bool {
+    return false
+}
