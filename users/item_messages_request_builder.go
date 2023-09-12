@@ -20,7 +20,7 @@ type ItemMessagesRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Include Hidden Messages
-    IncludeHiddenMessages *string
+    IncludeHiddenMessages *string `uriparametername:"includeHiddenMessages"`
     // Order items by property values
     Orderby []string `uriparametername:"%24orderby"`
     // Search items by search phrases

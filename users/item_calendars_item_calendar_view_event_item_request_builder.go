@@ -14,11 +14,11 @@ type ItemCalendarsItemCalendarViewEventItemRequestBuilder struct {
 // ItemCalendarsItemCalendarViewEventItemRequestBuilderGetQueryParameters the calendar view for the calendar. Navigation property. Read-only.
 type ItemCalendarsItemCalendarViewEventItemRequestBuilderGetQueryParameters struct {
     // The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00
-    EndDateTime *string
+    EndDateTime *string `uriparametername:"endDateTime"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00
-    StartDateTime *string
+    StartDateTime *string `uriparametername:"startDateTime"`
 }
 // ItemCalendarsItemCalendarViewEventItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCalendarsItemCalendarViewEventItemRequestBuilderGetRequestConfiguration struct {

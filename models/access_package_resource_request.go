@@ -119,7 +119,7 @@ func (m *AccessPackageResourceRequest) GetResource()(AccessPackageResourceable) 
     }
     return nil
 }
-// GetState gets the state property value. The outcome of whether the service was able to add the resource to the catalog.  The value is delivered if the resource was added or removed. Read-only.
+// GetState gets the state property value. The outcome of whether the service was able to add the resource to the catalog.  The value is delivered if the resource was added or removed, and deliveryFailed if it could not be added or removed. Read-only.
 func (m *AccessPackageResourceRequest) GetState()(*AccessPackageRequestState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -198,7 +198,7 @@ func (m *AccessPackageResourceRequest) SetResource(value AccessPackageResourceab
         panic(err)
     }
 }
-// SetState sets the state property value. The outcome of whether the service was able to add the resource to the catalog.  The value is delivered if the resource was added or removed. Read-only.
+// SetState sets the state property value. The outcome of whether the service was able to add the resource to the catalog.  The value is delivered if the resource was added or removed, and deliveryFailed if it could not be added or removed. Read-only.
 func (m *AccessPackageResourceRequest) SetState(value *AccessPackageRequestState)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {

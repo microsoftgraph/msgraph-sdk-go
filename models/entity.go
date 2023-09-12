@@ -670,6 +670,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMacOSCustomConfiguration(), nil
                     case "#microsoft.graph.macOSDeviceFeaturesConfiguration":
                         return NewMacOSDeviceFeaturesConfiguration(), nil
+                    case "#microsoft.graph.macOSDmgApp":
+                        return NewMacOSDmgApp(), nil
                     case "#microsoft.graph.macOSGeneralDeviceConfiguration":
                         return NewMacOSGeneralDeviceConfiguration(), nil
                     case "#microsoft.graph.macOSLobApp":
@@ -1232,6 +1234,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserExperienceAnalyticsDeviceStartupHistory(), nil
                     case "#microsoft.graph.userExperienceAnalyticsDeviceStartupProcess":
                         return NewUserExperienceAnalyticsDeviceStartupProcess(), nil
+                    case "#microsoft.graph.userExperienceAnalyticsDeviceStartupProcessPerformance":
+                        return NewUserExperienceAnalyticsDeviceStartupProcessPerformance(), nil
                     case "#microsoft.graph.userExperienceAnalyticsMetric":
                         return NewUserExperienceAnalyticsMetric(), nil
                     case "#microsoft.graph.userExperienceAnalyticsMetricHistory":

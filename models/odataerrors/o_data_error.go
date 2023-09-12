@@ -25,6 +25,10 @@ func NewODataError()(*ODataError) {
 func CreateODataErrorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewODataError(), nil
 }
+// Error the primary error message.
+func (m *ODataError) Error()(string) {
+    return *(m.GetErrorEscaped().GetMessage())
+}
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ODataError) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")

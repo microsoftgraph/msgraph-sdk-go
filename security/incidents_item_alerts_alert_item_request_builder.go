@@ -27,6 +27,10 @@ type IncidentsItemAlertsAlertItemRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *IncidentsItemAlertsAlertItemRequestBuilderGetQueryParameters
 }
+// Comments the comments property
+func (m *IncidentsItemAlertsAlertItemRequestBuilder) Comments()(*IncidentsItemAlertsItemCommentsRequestBuilder) {
+    return NewIncidentsItemAlertsItemCommentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewIncidentsItemAlertsAlertItemRequestBuilderInternal instantiates a new AlertItemRequestBuilder and sets the default values.
 func NewIncidentsItemAlertsAlertItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IncidentsItemAlertsAlertItemRequestBuilder) {
     m := &IncidentsItemAlertsAlertItemRequestBuilder{

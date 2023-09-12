@@ -11,7 +11,7 @@ import (
 type ItemCreatedObjectsDirectoryObjectItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCreatedObjectsDirectoryObjectItemRequestBuilderGetQueryParameters directory objects that were created by the user. Read-only. Nullable.
+// ItemCreatedObjectsDirectoryObjectItemRequestBuilderGetQueryParameters directory objects that the user created. Read-only. Nullable.
 type ItemCreatedObjectsDirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewItemCreatedObjectsDirectoryObjectItemRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewItemCreatedObjectsDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get directory objects that were created by the user. Read-only. Nullable.
+// Get directory objects that the user created. Read-only. Nullable.
 func (m *ItemCreatedObjectsDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCreatedObjectsDirectoryObjectItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -63,7 +63,7 @@ func (m *ItemCreatedObjectsDirectoryObjectItemRequestBuilder) Get(ctx context.Co
 func (m *ItemCreatedObjectsDirectoryObjectItemRequestBuilder) GraphServicePrincipal()(*ItemCreatedObjectsItemGraphServicePrincipalRequestBuilder) {
     return NewItemCreatedObjectsItemGraphServicePrincipalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation directory objects that were created by the user. Read-only. Nullable.
+// ToGetRequestInformation directory objects that the user created. Read-only. Nullable.
 func (m *ItemCreatedObjectsDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCreatedObjectsDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

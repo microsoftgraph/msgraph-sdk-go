@@ -910,6 +910,22 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["userExperienceAnalyticsDeviceStartupProcessPerformance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUserExperienceAnalyticsDeviceStartupProcessPerformanceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UserExperienceAnalyticsDeviceStartupProcessPerformanceable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(UserExperienceAnalyticsDeviceStartupProcessPerformanceable)
+                }
+            }
+            m.SetUserExperienceAnalyticsDeviceStartupProcessPerformance(res)
+        }
+        return nil
+    }
     res["userExperienceAnalyticsMetricHistory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserExperienceAnalyticsMetricHistoryFromDiscriminatorValue)
         if err != nil {
@@ -1478,6 +1494,17 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceStartupProcesses()([]
     }
     if val != nil {
         return val.([]UserExperienceAnalyticsDeviceStartupProcessable)
+    }
+    return nil
+}
+// GetUserExperienceAnalyticsDeviceStartupProcessPerformance gets the userExperienceAnalyticsDeviceStartupProcessPerformance property value. User experience analytics device Startup Process Performance
+func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceStartupProcessPerformance()([]UserExperienceAnalyticsDeviceStartupProcessPerformanceable) {
+    val, err := m.GetBackingStore().Get("userExperienceAnalyticsDeviceStartupProcessPerformance")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserExperienceAnalyticsDeviceStartupProcessPerformanceable)
     }
     return nil
 }
@@ -2153,6 +2180,18 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    if m.GetUserExperienceAnalyticsDeviceStartupProcessPerformance() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserExperienceAnalyticsDeviceStartupProcessPerformance()))
+        for i, v := range m.GetUserExperienceAnalyticsDeviceStartupProcessPerformance() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("userExperienceAnalyticsDeviceStartupProcessPerformance", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUserExperienceAnalyticsMetricHistory() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserExperienceAnalyticsMetricHistory()))
         for i, v := range m.GetUserExperienceAnalyticsMetricHistory() {
@@ -2637,6 +2676,13 @@ func (m *DeviceManagement) SetUserExperienceAnalyticsDeviceStartupProcesses(valu
         panic(err)
     }
 }
+// SetUserExperienceAnalyticsDeviceStartupProcessPerformance sets the userExperienceAnalyticsDeviceStartupProcessPerformance property value. User experience analytics device Startup Process Performance
+func (m *DeviceManagement) SetUserExperienceAnalyticsDeviceStartupProcessPerformance(value []UserExperienceAnalyticsDeviceStartupProcessPerformanceable)() {
+    err := m.GetBackingStore().Set("userExperienceAnalyticsDeviceStartupProcessPerformance", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserExperienceAnalyticsMetricHistory sets the userExperienceAnalyticsMetricHistory property value. User experience analytics metric history
 func (m *DeviceManagement) SetUserExperienceAnalyticsMetricHistory(value []UserExperienceAnalyticsMetricHistoryable)() {
     err := m.GetBackingStore().Set("userExperienceAnalyticsMetricHistory", value)
@@ -2782,6 +2828,7 @@ type DeviceManagementable interface {
     GetUserExperienceAnalyticsDeviceScores()([]UserExperienceAnalyticsDeviceScoresable)
     GetUserExperienceAnalyticsDeviceStartupHistory()([]UserExperienceAnalyticsDeviceStartupHistoryable)
     GetUserExperienceAnalyticsDeviceStartupProcesses()([]UserExperienceAnalyticsDeviceStartupProcessable)
+    GetUserExperienceAnalyticsDeviceStartupProcessPerformance()([]UserExperienceAnalyticsDeviceStartupProcessPerformanceable)
     GetUserExperienceAnalyticsMetricHistory()([]UserExperienceAnalyticsMetricHistoryable)
     GetUserExperienceAnalyticsModelScores()([]UserExperienceAnalyticsModelScoresable)
     GetUserExperienceAnalyticsOverview()(UserExperienceAnalyticsOverviewable)
@@ -2845,6 +2892,7 @@ type DeviceManagementable interface {
     SetUserExperienceAnalyticsDeviceScores(value []UserExperienceAnalyticsDeviceScoresable)()
     SetUserExperienceAnalyticsDeviceStartupHistory(value []UserExperienceAnalyticsDeviceStartupHistoryable)()
     SetUserExperienceAnalyticsDeviceStartupProcesses(value []UserExperienceAnalyticsDeviceStartupProcessable)()
+    SetUserExperienceAnalyticsDeviceStartupProcessPerformance(value []UserExperienceAnalyticsDeviceStartupProcessPerformanceable)()
     SetUserExperienceAnalyticsMetricHistory(value []UserExperienceAnalyticsMetricHistoryable)()
     SetUserExperienceAnalyticsModelScores(value []UserExperienceAnalyticsModelScoresable)()
     SetUserExperienceAnalyticsOverview(value UserExperienceAnalyticsOverviewable)()

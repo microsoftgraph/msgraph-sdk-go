@@ -284,7 +284,7 @@ func (m *DelegatedAdminRelationship) GetRequests()([]DelegatedAdminRelationshipR
     }
     return nil
 }
-// GetStatus gets the status property value. The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderBy.
+// GetStatus gets the status property value. The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderby.
 func (m *DelegatedAdminRelationship) GetStatus()(*DelegatedAdminRelationshipStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -471,7 +471,7 @@ func (m *DelegatedAdminRelationship) SetRequests(value []DelegatedAdminRelations
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderBy.
+// SetStatus sets the status property value. The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderby.
 func (m *DelegatedAdminRelationship) SetStatus(value *DelegatedAdminRelationshipStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
