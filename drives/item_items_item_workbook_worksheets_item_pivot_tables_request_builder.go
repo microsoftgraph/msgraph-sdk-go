@@ -46,8 +46,8 @@ type ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilderPostRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByWorkbookPivotTableIdString provides operations to manage the pivotTables property of the microsoft.graph.workbookWorksheet entity.
-func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) ByWorkbookPivotTableIdString(workbookPivotTableId string)(*ItemItemsItemWorkbookWorksheetsItemPivotTablesWorkbookPivotTableItemRequestBuilder) {
+// ByWorkbookPivotTableId provides operations to manage the pivotTables property of the microsoft.graph.workbookWorksheet entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) ByWorkbookPivotTableId(workbookPivotTableId string)(*ItemItemsItemWorkbookWorksheetsItemPivotTablesWorkbookPivotTableItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -151,4 +151,8 @@ func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) ToPostReq
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -46,8 +46,8 @@ type AuthenticationMethodConfigurationsRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAuthenticationMethodConfigurationIdString provides operations to manage the collection of authenticationMethodConfiguration entities.
-func (m *AuthenticationMethodConfigurationsRequestBuilder) ByAuthenticationMethodConfigurationIdString(authenticationMethodConfigurationId string)(*AuthenticationMethodConfigurationItemRequestBuilder) {
+// ByAuthenticationMethodConfigurationId provides operations to manage the collection of authenticationMethodConfiguration entities.
+func (m *AuthenticationMethodConfigurationsRequestBuilder) ByAuthenticationMethodConfigurationId(authenticationMethodConfigurationId string)(*AuthenticationMethodConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *AuthenticationMethodConfigurationsRequestBuilder) ToPostRequestInformat
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AuthenticationMethodConfigurationsRequestBuilder) WithUrl(rawUrl string)(*AuthenticationMethodConfigurationsRequestBuilder) {
+    return NewAuthenticationMethodConfigurationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

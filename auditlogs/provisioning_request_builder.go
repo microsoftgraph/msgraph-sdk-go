@@ -46,8 +46,8 @@ type ProvisioningRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByProvisioningObjectSummaryIdString provides operations to manage the provisioning property of the microsoft.graph.auditLogRoot entity.
-func (m *ProvisioningRequestBuilder) ByProvisioningObjectSummaryIdString(provisioningObjectSummaryId string)(*ProvisioningProvisioningObjectSummaryItemRequestBuilder) {
+// ByProvisioningObjectSummaryId provides operations to manage the provisioning property of the microsoft.graph.auditLogRoot entity.
+func (m *ProvisioningRequestBuilder) ByProvisioningObjectSummaryId(provisioningObjectSummaryId string)(*ProvisioningProvisioningObjectSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ProvisioningRequestBuilder) ToPostRequestInformation(ctx context.Contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ProvisioningRequestBuilder) WithUrl(rawUrl string)(*ProvisioningRequestBuilder) {
+    return NewProvisioningRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

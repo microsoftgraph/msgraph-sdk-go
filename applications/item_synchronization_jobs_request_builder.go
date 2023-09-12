@@ -46,8 +46,8 @@ type ItemSynchronizationJobsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySynchronizationJobIdString provides operations to manage the jobs property of the microsoft.graph.synchronization entity.
-func (m *ItemSynchronizationJobsRequestBuilder) BySynchronizationJobIdString(synchronizationJobId string)(*ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) {
+// BySynchronizationJobId provides operations to manage the jobs property of the microsoft.graph.synchronization entity.
+func (m *ItemSynchronizationJobsRequestBuilder) BySynchronizationJobId(synchronizationJobId string)(*ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -154,4 +154,8 @@ func (m *ItemSynchronizationJobsRequestBuilder) ToPostRequestInformation(ctx con
 // ValidateCredentials provides operations to call the validateCredentials method.
 func (m *ItemSynchronizationJobsRequestBuilder) ValidateCredentials()(*ItemSynchronizationJobsValidateCredentialsRequestBuilder) {
     return NewItemSynchronizationJobsValidateCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSynchronizationJobsRequestBuilder) WithUrl(rawUrl string)(*ItemSynchronizationJobsRequestBuilder) {
+    return NewItemSynchronizationJobsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

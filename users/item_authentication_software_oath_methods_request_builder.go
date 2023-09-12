@@ -39,8 +39,8 @@ type ItemAuthenticationSoftwareOathMethodsRequestBuilderGetRequestConfiguration 
     // Request query parameters
     QueryParameters *ItemAuthenticationSoftwareOathMethodsRequestBuilderGetQueryParameters
 }
-// BySoftwareOathAuthenticationMethodIdString provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.
-func (m *ItemAuthenticationSoftwareOathMethodsRequestBuilder) BySoftwareOathAuthenticationMethodIdString(softwareOathAuthenticationMethodId string)(*ItemAuthenticationSoftwareOathMethodsSoftwareOathAuthenticationMethodItemRequestBuilder) {
+// BySoftwareOathAuthenticationMethodId provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.
+func (m *ItemAuthenticationSoftwareOathMethodsRequestBuilder) BySoftwareOathAuthenticationMethodId(softwareOathAuthenticationMethodId string)(*ItemAuthenticationSoftwareOathMethodsSoftwareOathAuthenticationMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *ItemAuthenticationSoftwareOathMethodsRequestBuilder) ToGetRequestInform
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemAuthenticationSoftwareOathMethodsRequestBuilder) WithUrl(rawUrl string)(*ItemAuthenticationSoftwareOathMethodsRequestBuilder) {
+    return NewItemAuthenticationSoftwareOathMethodsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -46,8 +46,8 @@ type ItemTodoListsItemTasksRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTodoTaskIdString provides operations to manage the tasks property of the microsoft.graph.todoTaskList entity.
-func (m *ItemTodoListsItemTasksRequestBuilder) ByTodoTaskIdString(todoTaskId string)(*ItemTodoListsItemTasksTodoTaskItemRequestBuilder) {
+// ByTodoTaskId provides operations to manage the tasks property of the microsoft.graph.todoTaskList entity.
+func (m *ItemTodoListsItemTasksRequestBuilder) ByTodoTaskId(todoTaskId string)(*ItemTodoListsItemTasksTodoTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -154,4 +154,8 @@ func (m *ItemTodoListsItemTasksRequestBuilder) ToPostRequestInformation(ctx cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTodoListsItemTasksRequestBuilder) WithUrl(rawUrl string)(*ItemTodoListsItemTasksRequestBuilder) {
+    return NewItemTodoListsItemTasksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

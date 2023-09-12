@@ -35,3 +35,6 @@ func SerializeCountryLookupMethodType(values []CountryLookupMethodType) []string
     }
     return result
 }
+func (i CountryLookupMethodType) isMultiValue() bool {
+    return false
+}

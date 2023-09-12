@@ -39,8 +39,8 @@ type ItemTokenLifetimePoliciesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemTokenLifetimePoliciesRequestBuilderGetQueryParameters
 }
-// ByTokenLifetimePolicyIdString provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.servicePrincipal entity.
-func (m *ItemTokenLifetimePoliciesRequestBuilder) ByTokenLifetimePolicyIdString(tokenLifetimePolicyId string)(*ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) {
+// ByTokenLifetimePolicyId provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.servicePrincipal entity.
+func (m *ItemTokenLifetimePoliciesRequestBuilder) ByTokenLifetimePolicyId(tokenLifetimePolicyId string)(*ItemTokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *ItemTokenLifetimePoliciesRequestBuilder) ToGetRequestInformation(ctx co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTokenLifetimePoliciesRequestBuilder) WithUrl(rawUrl string)(*ItemTokenLifetimePoliciesRequestBuilder) {
+    return NewItemTokenLifetimePoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -46,8 +46,8 @@ type CrossTenantAccessPolicyPartnersRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCrossTenantAccessPolicyConfigurationPartnerTenantIdString provides operations to manage the partners property of the microsoft.graph.crossTenantAccessPolicy entity.
-func (m *CrossTenantAccessPolicyPartnersRequestBuilder) ByCrossTenantAccessPolicyConfigurationPartnerTenantIdString(crossTenantAccessPolicyConfigurationPartnerTenantId string)(*CrossTenantAccessPolicyPartnersCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder) {
+// ByCrossTenantAccessPolicyConfigurationPartnerTenantId provides operations to manage the partners property of the microsoft.graph.crossTenantAccessPolicy entity.
+func (m *CrossTenantAccessPolicyPartnersRequestBuilder) ByCrossTenantAccessPolicyConfigurationPartnerTenantId(crossTenantAccessPolicyConfigurationPartnerTenantId string)(*CrossTenantAccessPolicyPartnersCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *CrossTenantAccessPolicyPartnersRequestBuilder) ToPostRequestInformation
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CrossTenantAccessPolicyPartnersRequestBuilder) WithUrl(rawUrl string)(*CrossTenantAccessPolicyPartnersRequestBuilder) {
+    return NewCrossTenantAccessPolicyPartnersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -56,3 +56,6 @@ func SerializeUnifiedRoleScheduleRequestActions(values []UnifiedRoleScheduleRequ
     }
     return result
 }
+func (i UnifiedRoleScheduleRequestActions) isMultiValue() bool {
+    return false
+}

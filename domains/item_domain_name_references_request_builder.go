@@ -39,8 +39,8 @@ type ItemDomainNameReferencesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemDomainNameReferencesRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectIdString provides operations to manage the domainNameReferences property of the microsoft.graph.domain entity.
-func (m *ItemDomainNameReferencesRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemDomainNameReferencesDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectId provides operations to manage the domainNameReferences property of the microsoft.graph.domain entity.
+func (m *ItemDomainNameReferencesRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemDomainNameReferencesDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *ItemDomainNameReferencesRequestBuilder) ToGetRequestInformation(ctx con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemDomainNameReferencesRequestBuilder) WithUrl(rawUrl string)(*ItemDomainNameReferencesRequestBuilder) {
+    return NewItemDomainNameReferencesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

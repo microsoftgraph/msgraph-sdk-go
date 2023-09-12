@@ -38,3 +38,6 @@ func SerializeDetectionStatus(values []DetectionStatus) []string {
     }
     return result
 }
+func (i DetectionStatus) isMultiValue() bool {
+    return false
+}

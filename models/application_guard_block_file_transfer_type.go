@@ -46,3 +46,6 @@ func SerializeApplicationGuardBlockFileTransferType(values []ApplicationGuardBlo
     }
     return result
 }
+func (i ApplicationGuardBlockFileTransferType) isMultiValue() bool {
+    return false
+}

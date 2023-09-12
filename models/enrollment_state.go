@@ -46,3 +46,6 @@ func SerializeEnrollmentState(values []EnrollmentState) []string {
     }
     return result
 }
+func (i EnrollmentState) isMultiValue() bool {
+    return false
+}

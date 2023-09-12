@@ -44,3 +44,6 @@ func SerializeAclType(values []AclType) []string {
     }
     return result
 }
+func (i AclType) isMultiValue() bool {
+    return false
+}

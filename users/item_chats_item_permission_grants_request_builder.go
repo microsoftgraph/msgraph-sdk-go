@@ -46,8 +46,8 @@ type ItemChatsItemPermissionGrantsRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByResourceSpecificPermissionGrantIdString provides operations to manage the permissionGrants property of the microsoft.graph.chat entity.
-func (m *ItemChatsItemPermissionGrantsRequestBuilder) ByResourceSpecificPermissionGrantIdString(resourceSpecificPermissionGrantId string)(*ItemChatsItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) {
+// ByResourceSpecificPermissionGrantId provides operations to manage the permissionGrants property of the microsoft.graph.chat entity.
+func (m *ItemChatsItemPermissionGrantsRequestBuilder) ByResourceSpecificPermissionGrantId(resourceSpecificPermissionGrantId string)(*ItemChatsItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -163,4 +163,8 @@ func (m *ItemChatsItemPermissionGrantsRequestBuilder) ToPostRequestInformation(c
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *ItemChatsItemPermissionGrantsRequestBuilder) ValidateProperties()(*ItemChatsItemPermissionGrantsValidatePropertiesRequestBuilder) {
     return NewItemChatsItemPermissionGrantsValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemChatsItemPermissionGrantsRequestBuilder) WithUrl(rawUrl string)(*ItemChatsItemPermissionGrantsRequestBuilder) {
+    return NewItemChatsItemPermissionGrantsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

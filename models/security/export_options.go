@@ -1,6 +1,7 @@
 package security
 import (
     "errors"
+    "strings"
 )
 // 
 type ExportOptions int
@@ -14,23 +15,32 @@ const (
 )
 
 func (i ExportOptions) String() string {
-    return []string{"originalFiles", "text", "pdfReplacement", "tags", "unknownFutureValue"}[i]
+    var values []string
+    for p := ExportOptions(1); p <= UNKNOWNFUTUREVALUE_EXPORTOPTIONS; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"originalFiles", "text", "pdfReplacement", "tags", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseExportOptions(v string) (any, error) {
-    result := ORIGINALFILES_EXPORTOPTIONS
-    switch v {
-        case "originalFiles":
-            result = ORIGINALFILES_EXPORTOPTIONS
-        case "text":
-            result = TEXT_EXPORTOPTIONS
-        case "pdfReplacement":
-            result = PDFREPLACEMENT_EXPORTOPTIONS
-        case "tags":
-            result = TAGS_EXPORTOPTIONS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_EXPORTOPTIONS
-        default:
-            return 0, errors.New("Unknown ExportOptions value: " + v)
+    var result ExportOptions
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "originalFiles":
+                result |= ORIGINALFILES_EXPORTOPTIONS
+            case "text":
+                result |= TEXT_EXPORTOPTIONS
+            case "pdfReplacement":
+                result |= PDFREPLACEMENT_EXPORTOPTIONS
+            case "tags":
+                result |= TAGS_EXPORTOPTIONS
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_EXPORTOPTIONS
+            default:
+                return 0, errors.New("Unknown ExportOptions value: " + v)
+        }
     }
     return &result, nil
 }
@@ -40,4 +50,7 @@ func SerializeExportOptions(values []ExportOptions) []string {
         result[i] = v.String()
     }
     return result
+}
+func (i ExportOptions) isMultiValue() bool {
+    return true
 }

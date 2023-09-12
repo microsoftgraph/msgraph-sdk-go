@@ -46,8 +46,8 @@ type DeviceCompliancePoliciesItemAssignmentsRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceCompliancePolicyAssignmentIdString provides operations to manage the assignments property of the microsoft.graph.deviceCompliancePolicy entity.
-func (m *DeviceCompliancePoliciesItemAssignmentsRequestBuilder) ByDeviceCompliancePolicyAssignmentIdString(deviceCompliancePolicyAssignmentId string)(*DeviceCompliancePoliciesItemAssignmentsDeviceCompliancePolicyAssignmentItemRequestBuilder) {
+// ByDeviceCompliancePolicyAssignmentId provides operations to manage the assignments property of the microsoft.graph.deviceCompliancePolicy entity.
+func (m *DeviceCompliancePoliciesItemAssignmentsRequestBuilder) ByDeviceCompliancePolicyAssignmentId(deviceCompliancePolicyAssignmentId string)(*DeviceCompliancePoliciesItemAssignmentsDeviceCompliancePolicyAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *DeviceCompliancePoliciesItemAssignmentsRequestBuilder) ToPostRequestInf
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceCompliancePoliciesItemAssignmentsRequestBuilder) WithUrl(rawUrl string)(*DeviceCompliancePoliciesItemAssignmentsRequestBuilder) {
+    return NewDeviceCompliancePoliciesItemAssignmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

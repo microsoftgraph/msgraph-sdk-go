@@ -42,3 +42,6 @@ func SerializeAutoRestartNotificationDismissalMethod(values []AutoRestartNotific
     }
     return result
 }
+func (i AutoRestartNotificationDismissalMethod) isMultiValue() bool {
+    return false
+}

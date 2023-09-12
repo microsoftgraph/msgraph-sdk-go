@@ -34,8 +34,8 @@ type SubscriptionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySubscriptionIdString provides operations to manage the collection of subscription entities.
-func (m *SubscriptionsRequestBuilder) BySubscriptionIdString(subscriptionId string)(*SubscriptionItemRequestBuilder) {
+// BySubscriptionId provides operations to manage the collection of subscription entities.
+func (m *SubscriptionsRequestBuilder) BySubscriptionId(subscriptionId string)(*SubscriptionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -134,4 +134,8 @@ func (m *SubscriptionsRequestBuilder) ToPostRequestInformation(ctx context.Conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SubscriptionsRequestBuilder) WithUrl(rawUrl string)(*SubscriptionsRequestBuilder) {
+    return NewSubscriptionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -40,8 +40,8 @@ type PermissionGrantsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByResourceSpecificPermissionGrantIdString provides operations to manage the collection of resourceSpecificPermissionGrant entities.
-func (m *PermissionGrantsRequestBuilder) ByResourceSpecificPermissionGrantIdString(resourceSpecificPermissionGrantId string)(*ResourceSpecificPermissionGrantItemRequestBuilder) {
+// ByResourceSpecificPermissionGrantId provides operations to manage the collection of resourceSpecificPermissionGrant entities.
+func (m *PermissionGrantsRequestBuilder) ByResourceSpecificPermissionGrantId(resourceSpecificPermissionGrantId string)(*ResourceSpecificPermissionGrantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *PermissionGrantsRequestBuilder) ToPostRequestInformation(ctx context.Co
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *PermissionGrantsRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
     return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *PermissionGrantsRequestBuilder) WithUrl(rawUrl string)(*PermissionGrantsRequestBuilder) {
+    return NewPermissionGrantsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

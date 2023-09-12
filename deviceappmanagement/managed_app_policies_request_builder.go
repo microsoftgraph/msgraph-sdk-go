@@ -11,7 +11,7 @@ import (
 type ManagedAppPoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedAppPoliciesRequestBuilderGetQueryParameters list properties and relationships of the managedAppPolicy objects.
+// ManagedAppPoliciesRequestBuilderGetQueryParameters list properties and relationships of the managedAppConfiguration objects.
 type ManagedAppPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -46,8 +46,8 @@ type ManagedAppPoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagedAppPolicyIdString provides operations to manage the managedAppPolicies property of the microsoft.graph.deviceAppManagement entity.
-func (m *ManagedAppPoliciesRequestBuilder) ByManagedAppPolicyIdString(managedAppPolicyId string)(*ManagedAppPoliciesManagedAppPolicyItemRequestBuilder) {
+// ByManagedAppPolicyId provides operations to manage the managedAppPolicies property of the microsoft.graph.deviceAppManagement entity.
+func (m *ManagedAppPoliciesRequestBuilder) ByManagedAppPolicyId(managedAppPolicyId string)(*ManagedAppPoliciesManagedAppPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -74,10 +74,10 @@ func NewManagedAppPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *ManagedAppPoliciesRequestBuilder) Count()(*ManagedAppPoliciesCountRequestBuilder) {
     return NewManagedAppPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list properties and relationships of the managedAppPolicy objects.
+// Get list properties and relationships of the managedAppConfiguration objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-managedapppolicy-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-managedappconfiguration-list?view=graph-rest-1.0
 func (m *ManagedAppPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedAppPoliciesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppPolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +115,7 @@ func (m *ManagedAppPoliciesRequestBuilder) Post(ctx context.Context, body iadcd8
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAppPolicyable), nil
 }
-// ToGetRequestInformation list properties and relationships of the managedAppPolicy objects.
+// ToGetRequestInformation list properties and relationships of the managedAppConfiguration objects.
 func (m *ManagedAppPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedAppPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -147,4 +147,8 @@ func (m *ManagedAppPoliciesRequestBuilder) ToPostRequestInformation(ctx context.
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedAppPoliciesRequestBuilder) WithUrl(rawUrl string)(*ManagedAppPoliciesRequestBuilder) {
+    return NewManagedAppPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

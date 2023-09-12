@@ -35,3 +35,6 @@ func SerializeWorkflowExecutionType(values []WorkflowExecutionType) []string {
     }
     return result
 }
+func (i WorkflowExecutionType) isMultiValue() bool {
+    return false
+}

@@ -46,8 +46,8 @@ type ItemListsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByListIdString provides operations to manage the lists property of the microsoft.graph.site entity.
-func (m *ItemListsRequestBuilder) ByListIdString(listId string)(*ItemListsListItemRequestBuilder) {
+// ByListId provides operations to manage the lists property of the microsoft.graph.site entity.
+func (m *ItemListsRequestBuilder) ByListId(listId string)(*ItemListsListItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemListsRequestBuilder) ToPostRequestInformation(ctx context.Context, 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemListsRequestBuilder) WithUrl(rawUrl string)(*ItemListsRequestBuilder) {
+    return NewItemListsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

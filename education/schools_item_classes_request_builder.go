@@ -39,8 +39,8 @@ type SchoolsItemClassesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *SchoolsItemClassesRequestBuilderGetQueryParameters
 }
-// ByEducationClassIdString gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.schools.item.classes.item collection
-func (m *SchoolsItemClassesRequestBuilder) ByEducationClassIdString(educationClassId string)(*SchoolsItemClassesEducationClassItemRequestBuilder) {
+// ByEducationClassId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.education.schools.item.classes.item collection
+func (m *SchoolsItemClassesRequestBuilder) ByEducationClassId(educationClassId string)(*SchoolsItemClassesEducationClassItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -108,4 +108,8 @@ func (m *SchoolsItemClassesRequestBuilder) ToGetRequestInformation(ctx context.C
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SchoolsItemClassesRequestBuilder) WithUrl(rawUrl string)(*SchoolsItemClassesRequestBuilder) {
+    return NewSchoolsItemClassesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -35,3 +35,6 @@ func SerializeVmCloudProvider(values []VmCloudProvider) []string {
     }
     return result
 }
+func (i VmCloudProvider) isMultiValue() bool {
+    return false
+}

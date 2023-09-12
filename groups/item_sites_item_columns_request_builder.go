@@ -46,8 +46,8 @@ type ItemSitesItemColumnsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByColumnDefinitionIdString provides operations to manage the columns property of the microsoft.graph.site entity.
-func (m *ItemSitesItemColumnsRequestBuilder) ByColumnDefinitionIdString(columnDefinitionId string)(*ItemSitesItemColumnsColumnDefinitionItemRequestBuilder) {
+// ByColumnDefinitionId provides operations to manage the columns property of the microsoft.graph.site entity.
+func (m *ItemSitesItemColumnsRequestBuilder) ByColumnDefinitionId(columnDefinitionId string)(*ItemSitesItemColumnsColumnDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemSitesItemColumnsRequestBuilder) ToPostRequestInformation(ctx contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSitesItemColumnsRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemColumnsRequestBuilder) {
+    return NewItemSitesItemColumnsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -47,3 +47,6 @@ func SerializeObjectMappingMetadata(values []ObjectMappingMetadata) []string {
     }
     return result
 }
+func (i ObjectMappingMetadata) isMultiValue() bool {
+    return false
+}

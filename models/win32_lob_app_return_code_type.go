@@ -46,3 +46,6 @@ func SerializeWin32LobAppReturnCodeType(values []Win32LobAppReturnCodeType) []st
     }
     return result
 }
+func (i Win32LobAppReturnCodeType) isMultiValue() bool {
+    return false
+}

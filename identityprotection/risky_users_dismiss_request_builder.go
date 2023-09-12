@@ -65,3 +65,7 @@ func (m *RiskyUsersDismissRequestBuilder) ToPostRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *RiskyUsersDismissRequestBuilder) WithUrl(rawUrl string)(*RiskyUsersDismissRequestBuilder) {
+    return NewRiskyUsersDismissRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

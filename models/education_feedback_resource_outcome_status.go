@@ -41,3 +41,6 @@ func SerializeEducationFeedbackResourceOutcomeStatus(values []EducationFeedbackR
     }
     return result
 }
+func (i EducationFeedbackResourceOutcomeStatus) isMultiValue() bool {
+    return false
+}

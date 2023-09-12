@@ -46,8 +46,8 @@ type ItemVerificationDnsRecordsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDomainDnsRecordIdString provides operations to manage the verificationDnsRecords property of the microsoft.graph.domain entity.
-func (m *ItemVerificationDnsRecordsRequestBuilder) ByDomainDnsRecordIdString(domainDnsRecordId string)(*ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilder) {
+// ByDomainDnsRecordId provides operations to manage the verificationDnsRecords property of the microsoft.graph.domain entity.
+func (m *ItemVerificationDnsRecordsRequestBuilder) ByDomainDnsRecordId(domainDnsRecordId string)(*ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ItemVerificationDnsRecordsRequestBuilder) ToPostRequestInformation(ctx 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemVerificationDnsRecordsRequestBuilder) WithUrl(rawUrl string)(*ItemVerificationDnsRecordsRequestBuilder) {
+    return NewItemVerificationDnsRecordsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

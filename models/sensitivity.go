@@ -38,3 +38,6 @@ func SerializeSensitivity(values []Sensitivity) []string {
     }
     return result
 }
+func (i Sensitivity) isMultiValue() bool {
+    return false
+}

@@ -74,3 +74,7 @@ func (m *ServiceAnnouncementMessagesItemAttachmentsCountRequestBuilder) ToGetReq
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ServiceAnnouncementMessagesItemAttachmentsCountRequestBuilder) WithUrl(rawUrl string)(*ServiceAnnouncementMessagesItemAttachmentsCountRequestBuilder) {
+    return NewServiceAnnouncementMessagesItemAttachmentsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

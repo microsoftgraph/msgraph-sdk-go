@@ -79,3 +79,7 @@ func (m *ItemListLastModifiedByUserRequestBuilder) ToGetRequestInformation(ctx c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemListLastModifiedByUserRequestBuilder) WithUrl(rawUrl string)(*ItemListLastModifiedByUserRequestBuilder) {
+    return NewItemListLastModifiedByUserRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

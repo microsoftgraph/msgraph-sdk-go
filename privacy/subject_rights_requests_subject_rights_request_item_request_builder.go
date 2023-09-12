@@ -41,6 +41,14 @@ type SubjectRightsRequestsSubjectRightsRequestItemRequestBuilderPatchRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Approvers provides operations to manage the approvers property of the microsoft.graph.subjectRightsRequest entity.
+func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Approvers()(*SubjectRightsRequestsItemApproversRequestBuilder) {
+    return NewSubjectRightsRequestsItemApproversRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Collaborators provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.
+func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Collaborators()(*SubjectRightsRequestsItemCollaboratorsRequestBuilder) {
+    return NewSubjectRightsRequestsItemCollaboratorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewSubjectRightsRequestsSubjectRightsRequestItemRequestBuilderInternal instantiates a new SubjectRightsRequestItemRequestBuilder and sets the default values.
 func NewSubjectRightsRequestsSubjectRightsRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) {
     m := &SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder{
@@ -55,6 +63,7 @@ func NewSubjectRightsRequestsSubjectRightsRequestItemRequestBuilder(rawUrl strin
     return NewSubjectRightsRequestsSubjectRightsRequestItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property subjectRightsRequests for privacy
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -71,6 +80,7 @@ func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Delete(ctx
     return nil
 }
 // Get read the properties and relationships of a subjectRightsRequest object.
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/subjectrightsrequest-get?view=graph-rest-1.0
@@ -105,6 +115,7 @@ func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Notes()(*S
     return NewSubjectRightsRequestsItemNotesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the properties of a subjectRightsRequest object.
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/subjectrightsrequest-update?view=graph-rest-1.0
@@ -131,6 +142,7 @@ func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) Team()(*Su
     return NewSubjectRightsRequestsItemTeamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property subjectRightsRequests for privacy
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -143,6 +155,7 @@ func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) ToDeleteRe
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a subjectRightsRequest object.
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -159,6 +172,7 @@ func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) ToGetReque
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of a subjectRightsRequest object.
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubjectRightsRequestable, requestConfiguration *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -174,4 +188,9 @@ func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) ToPatchReq
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
+func (m *SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) WithUrl(rawUrl string)(*SubjectRightsRequestsSubjectRightsRequestItemRequestBuilder) {
+    return NewSubjectRightsRequestsSubjectRightsRequestItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

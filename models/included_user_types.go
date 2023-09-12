@@ -38,3 +38,6 @@ func SerializeIncludedUserTypes(values []IncludedUserTypes) []string {
     }
     return result
 }
+func (i IncludedUserTypes) isMultiValue() bool {
+    return false
+}

@@ -46,8 +46,8 @@ type TokenIssuancePoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTokenIssuancePolicyIdString provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.policyRoot entity.
-func (m *TokenIssuancePoliciesRequestBuilder) ByTokenIssuancePolicyIdString(tokenIssuancePolicyId string)(*TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) {
+// ByTokenIssuancePolicyId provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.policyRoot entity.
+func (m *TokenIssuancePoliciesRequestBuilder) ByTokenIssuancePolicyId(tokenIssuancePolicyId string)(*TokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *TokenIssuancePoliciesRequestBuilder) ToPostRequestInformation(ctx conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TokenIssuancePoliciesRequestBuilder) WithUrl(rawUrl string)(*TokenIssuancePoliciesRequestBuilder) {
+    return NewTokenIssuancePoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

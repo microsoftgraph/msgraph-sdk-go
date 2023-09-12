@@ -50,8 +50,8 @@ type FederationConfigurationsRequestBuilderPostRequestConfiguration struct {
 func (m *FederationConfigurationsRequestBuilder) AvailableProviderTypes()(*FederationConfigurationsAvailableProviderTypesRequestBuilder) {
     return NewFederationConfigurationsAvailableProviderTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByIdentityProviderBaseIdString provides operations to manage the federationConfigurations property of the microsoft.graph.directory entity.
-func (m *FederationConfigurationsRequestBuilder) ByIdentityProviderBaseIdString(identityProviderBaseId string)(*FederationConfigurationsIdentityProviderBaseItemRequestBuilder) {
+// ByIdentityProviderBaseId provides operations to manage the federationConfigurations property of the microsoft.graph.directory entity.
+func (m *FederationConfigurationsRequestBuilder) ByIdentityProviderBaseId(identityProviderBaseId string)(*FederationConfigurationsIdentityProviderBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -148,4 +148,8 @@ func (m *FederationConfigurationsRequestBuilder) ToPostRequestInformation(ctx co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *FederationConfigurationsRequestBuilder) WithUrl(rawUrl string)(*FederationConfigurationsRequestBuilder) {
+    return NewFederationConfigurationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

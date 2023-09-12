@@ -46,8 +46,8 @@ type EntitlementManagementCatalogsItemResourceScopesRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessPackageResourceScopeIdString provides operations to manage the resourceScopes property of the microsoft.graph.accessPackageCatalog entity.
-func (m *EntitlementManagementCatalogsItemResourceScopesRequestBuilder) ByAccessPackageResourceScopeIdString(accessPackageResourceScopeId string)(*EntitlementManagementCatalogsItemResourceScopesAccessPackageResourceScopeItemRequestBuilder) {
+// ByAccessPackageResourceScopeId provides operations to manage the resourceScopes property of the microsoft.graph.accessPackageCatalog entity.
+func (m *EntitlementManagementCatalogsItemResourceScopesRequestBuilder) ByAccessPackageResourceScopeId(accessPackageResourceScopeId string)(*EntitlementManagementCatalogsItemResourceScopesAccessPackageResourceScopeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *EntitlementManagementCatalogsItemResourceScopesRequestBuilder) ToPostRe
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EntitlementManagementCatalogsItemResourceScopesRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementCatalogsItemResourceScopesRequestBuilder) {
+    return NewEntitlementManagementCatalogsItemResourceScopesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

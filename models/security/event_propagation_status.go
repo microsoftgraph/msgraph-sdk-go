@@ -41,3 +41,6 @@ func SerializeEventPropagationStatus(values []EventPropagationStatus) []string {
     }
     return result
 }
+func (i EventPropagationStatus) isMultiValue() bool {
+    return false
+}

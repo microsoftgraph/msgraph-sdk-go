@@ -46,8 +46,8 @@ type SharesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPrinterShareIdString provides operations to manage the shares property of the microsoft.graph.print entity.
-func (m *SharesRequestBuilder) ByPrinterShareIdString(printerShareId string)(*SharesPrinterShareItemRequestBuilder) {
+// ByPrinterShareId provides operations to manage the shares property of the microsoft.graph.print entity.
+func (m *SharesRequestBuilder) ByPrinterShareId(printerShareId string)(*SharesPrinterShareItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *SharesRequestBuilder) ToPostRequestInformation(ctx context.Context, bod
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SharesRequestBuilder) WithUrl(rawUrl string)(*SharesRequestBuilder) {
+    return NewSharesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

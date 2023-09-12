@@ -35,3 +35,6 @@ func SerializeSynchronizationTaskExecutionResult(values []SynchronizationTaskExe
     }
     return result
 }
+func (i SynchronizationTaskExecutionResult) isMultiValue() bool {
+    return false
+}

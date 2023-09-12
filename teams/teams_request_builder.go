@@ -46,8 +46,8 @@ type TeamsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTeamIdString provides operations to manage the collection of team entities.
-func (m *TeamsRequestBuilder) ByTeamIdString(teamId string)(*TeamItemRequestBuilder) {
+// ByTeamId provides operations to manage the collection of team entities.
+func (m *TeamsRequestBuilder) ByTeamId(teamId string)(*TeamItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -154,4 +154,8 @@ func (m *TeamsRequestBuilder) ToPostRequestInformation(ctx context.Context, body
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TeamsRequestBuilder) WithUrl(rawUrl string)(*TeamsRequestBuilder) {
+    return NewTeamsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

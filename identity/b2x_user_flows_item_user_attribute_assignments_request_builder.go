@@ -46,8 +46,8 @@ type B2xUserFlowsItemUserAttributeAssignmentsRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByIdentityUserFlowAttributeAssignmentIdString provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2xIdentityUserFlow entity.
-func (m *B2xUserFlowsItemUserAttributeAssignmentsRequestBuilder) ByIdentityUserFlowAttributeAssignmentIdString(identityUserFlowAttributeAssignmentId string)(*B2xUserFlowsItemUserAttributeAssignmentsIdentityUserFlowAttributeAssignmentItemRequestBuilder) {
+// ByIdentityUserFlowAttributeAssignmentId provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2xIdentityUserFlow entity.
+func (m *B2xUserFlowsItemUserAttributeAssignmentsRequestBuilder) ByIdentityUserFlowAttributeAssignmentId(identityUserFlowAttributeAssignmentId string)(*B2xUserFlowsItemUserAttributeAssignmentsIdentityUserFlowAttributeAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -158,4 +158,8 @@ func (m *B2xUserFlowsItemUserAttributeAssignmentsRequestBuilder) ToPostRequestIn
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *B2xUserFlowsItemUserAttributeAssignmentsRequestBuilder) WithUrl(rawUrl string)(*B2xUserFlowsItemUserAttributeAssignmentsRequestBuilder) {
+    return NewB2xUserFlowsItemUserAttributeAssignmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

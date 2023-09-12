@@ -41,3 +41,6 @@ func SerializeOnenotePatchActionType(values []OnenotePatchActionType) []string {
     }
     return result
 }
+func (i OnenotePatchActionType) isMultiValue() bool {
+    return false
+}

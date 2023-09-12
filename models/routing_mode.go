@@ -35,3 +35,6 @@ func SerializeRoutingMode(values []RoutingMode) []string {
     }
     return result
 }
+func (i RoutingMode) isMultiValue() bool {
+    return false
+}

@@ -46,8 +46,8 @@ type PermissionGrantPoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPermissionGrantPolicyIdString provides operations to manage the permissionGrantPolicies property of the microsoft.graph.policyRoot entity.
-func (m *PermissionGrantPoliciesRequestBuilder) ByPermissionGrantPolicyIdString(permissionGrantPolicyId string)(*PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) {
+// ByPermissionGrantPolicyId provides operations to manage the permissionGrantPolicies property of the microsoft.graph.policyRoot entity.
+func (m *PermissionGrantPoliciesRequestBuilder) ByPermissionGrantPolicyId(permissionGrantPolicyId string)(*PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *PermissionGrantPoliciesRequestBuilder) ToPostRequestInformation(ctx con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *PermissionGrantPoliciesRequestBuilder) WithUrl(rawUrl string)(*PermissionGrantPoliciesRequestBuilder) {
+    return NewPermissionGrantPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

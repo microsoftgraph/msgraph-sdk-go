@@ -38,3 +38,6 @@ func SerializeStateManagementSetting(values []StateManagementSetting) []string {
     }
     return result
 }
+func (i StateManagementSetting) isMultiValue() bool {
+    return false
+}

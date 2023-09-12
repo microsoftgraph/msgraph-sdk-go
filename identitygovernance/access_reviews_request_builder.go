@@ -161,3 +161,7 @@ func (m *AccessReviewsRequestBuilder) ToPatchRequestInformation(ctx context.Cont
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AccessReviewsRequestBuilder) WithUrl(rawUrl string)(*AccessReviewsRequestBuilder) {
+    return NewAccessReviewsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

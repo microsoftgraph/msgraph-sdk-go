@@ -44,8 +44,8 @@ type DrivesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDriveIdString provides operations to manage the collection of drive entities.
-func (m *DrivesRequestBuilder) ByDriveIdString(driveId string)(*DriveItemRequestBuilder) {
+// ByDriveId provides operations to manage the collection of drive entities.
+func (m *DrivesRequestBuilder) ByDriveId(driveId string)(*DriveItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -138,4 +138,8 @@ func (m *DrivesRequestBuilder) ToPostRequestInformation(ctx context.Context, bod
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DrivesRequestBuilder) WithUrl(rawUrl string)(*DrivesRequestBuilder) {
+    return NewDrivesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

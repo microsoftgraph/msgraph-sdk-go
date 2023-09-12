@@ -47,3 +47,6 @@ func SerializeProcessIntegrityLevel(values []ProcessIntegrityLevel) []string {
     }
     return result
 }
+func (i ProcessIntegrityLevel) isMultiValue() bool {
+    return false
+}

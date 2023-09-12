@@ -64,3 +64,7 @@ func (m *GetSharePointSiteUsagePagesWithPeriodRequestBuilder) ToGetRequestInform
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GetSharePointSiteUsagePagesWithPeriodRequestBuilder) WithUrl(rawUrl string)(*GetSharePointSiteUsagePagesWithPeriodRequestBuilder) {
+    return NewGetSharePointSiteUsagePagesWithPeriodRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

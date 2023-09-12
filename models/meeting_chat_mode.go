@@ -38,3 +38,6 @@ func SerializeMeetingChatMode(values []MeetingChatMode) []string {
     }
     return result
 }
+func (i MeetingChatMode) isMultiValue() bool {
+    return false
+}

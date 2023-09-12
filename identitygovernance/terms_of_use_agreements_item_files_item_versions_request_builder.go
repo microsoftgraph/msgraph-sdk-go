@@ -46,8 +46,8 @@ type TermsOfUseAgreementsItemFilesItemVersionsRequestBuilderPostRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAgreementFileVersionIdString provides operations to manage the versions property of the microsoft.graph.agreementFileLocalization entity.
-func (m *TermsOfUseAgreementsItemFilesItemVersionsRequestBuilder) ByAgreementFileVersionIdString(agreementFileVersionId string)(*TermsOfUseAgreementsItemFilesItemVersionsAgreementFileVersionItemRequestBuilder) {
+// ByAgreementFileVersionId provides operations to manage the versions property of the microsoft.graph.agreementFileLocalization entity.
+func (m *TermsOfUseAgreementsItemFilesItemVersionsRequestBuilder) ByAgreementFileVersionId(agreementFileVersionId string)(*TermsOfUseAgreementsItemFilesItemVersionsAgreementFileVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *TermsOfUseAgreementsItemFilesItemVersionsRequestBuilder) ToPostRequestI
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TermsOfUseAgreementsItemFilesItemVersionsRequestBuilder) WithUrl(rawUrl string)(*TermsOfUseAgreementsItemFilesItemVersionsRequestBuilder) {
+    return NewTermsOfUseAgreementsItemFilesItemVersionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -162,3 +162,7 @@ func (m *TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequ
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequestBuilder) WithUrl(rawUrl string)(*TelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequestBuilder) {
+    return NewTelecomExpenseManagementPartnersTelecomExpenseManagementPartnerItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

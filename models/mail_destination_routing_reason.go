@@ -74,3 +74,6 @@ func SerializeMailDestinationRoutingReason(values []MailDestinationRoutingReason
     }
     return result
 }
+func (i MailDestinationRoutingReason) isMultiValue() bool {
+    return false
+}

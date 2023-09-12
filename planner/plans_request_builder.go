@@ -46,8 +46,8 @@ type PlansRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPlannerPlanIdString provides operations to manage the plans property of the microsoft.graph.planner entity.
-func (m *PlansRequestBuilder) ByPlannerPlanIdString(plannerPlanId string)(*PlansPlannerPlanItemRequestBuilder) {
+// ByPlannerPlanId provides operations to manage the plans property of the microsoft.graph.planner entity.
+func (m *PlansRequestBuilder) ByPlannerPlanId(plannerPlanId string)(*PlansPlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *PlansRequestBuilder) ToPostRequestInformation(ctx context.Context, body
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *PlansRequestBuilder) WithUrl(rawUrl string)(*PlansRequestBuilder) {
+    return NewPlansRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

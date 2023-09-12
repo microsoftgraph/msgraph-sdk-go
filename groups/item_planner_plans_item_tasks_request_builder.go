@@ -46,8 +46,8 @@ type ItemPlannerPlansItemTasksRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByPlannerTaskIdString provides operations to manage the tasks property of the microsoft.graph.plannerPlan entity.
-func (m *ItemPlannerPlansItemTasksRequestBuilder) ByPlannerTaskIdString(plannerTaskId string)(*ItemPlannerPlansItemTasksPlannerTaskItemRequestBuilder) {
+// ByPlannerTaskId provides operations to manage the tasks property of the microsoft.graph.plannerPlan entity.
+func (m *ItemPlannerPlansItemTasksRequestBuilder) ByPlannerTaskId(plannerTaskId string)(*ItemPlannerPlansItemTasksPlannerTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ItemPlannerPlansItemTasksRequestBuilder) ToPostRequestInformation(ctx c
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemPlannerPlansItemTasksRequestBuilder) WithUrl(rawUrl string)(*ItemPlannerPlansItemTasksRequestBuilder) {
+    return NewItemPlannerPlansItemTasksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

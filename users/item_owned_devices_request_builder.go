@@ -39,8 +39,8 @@ type ItemOwnedDevicesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemOwnedDevicesRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectIdString provides operations to manage the ownedDevices property of the microsoft.graph.user entity.
-func (m *ItemOwnedDevicesRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ItemOwnedDevicesDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectId provides operations to manage the ownedDevices property of the microsoft.graph.user entity.
+func (m *ItemOwnedDevicesRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemOwnedDevicesDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -116,4 +116,8 @@ func (m *ItemOwnedDevicesRequestBuilder) ToGetRequestInformation(ctx context.Con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemOwnedDevicesRequestBuilder) WithUrl(rawUrl string)(*ItemOwnedDevicesRequestBuilder) {
+    return NewItemOwnedDevicesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

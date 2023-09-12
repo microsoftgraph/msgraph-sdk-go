@@ -46,8 +46,8 @@ type BookingCurrenciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByBookingCurrencyIdString provides operations to manage the bookingCurrencies property of the microsoft.graph.solutionsRoot entity.
-func (m *BookingCurrenciesRequestBuilder) ByBookingCurrencyIdString(bookingCurrencyId string)(*BookingCurrenciesBookingCurrencyItemRequestBuilder) {
+// ByBookingCurrencyId provides operations to manage the bookingCurrencies property of the microsoft.graph.solutionsRoot entity.
+func (m *BookingCurrenciesRequestBuilder) ByBookingCurrencyId(bookingCurrencyId string)(*BookingCurrenciesBookingCurrencyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *BookingCurrenciesRequestBuilder) ToPostRequestInformation(ctx context.C
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *BookingCurrenciesRequestBuilder) WithUrl(rawUrl string)(*BookingCurrenciesRequestBuilder) {
+    return NewBookingCurrenciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

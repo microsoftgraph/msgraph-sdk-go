@@ -53,3 +53,6 @@ func SerializeUnifiedRoleManagementPolicyRuleTargetOperations(values []UnifiedRo
     }
     return result
 }
+func (i UnifiedRoleManagementPolicyRuleTargetOperations) isMultiValue() bool {
+    return false
+}

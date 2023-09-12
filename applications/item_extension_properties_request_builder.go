@@ -46,8 +46,8 @@ type ItemExtensionPropertiesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByExtensionPropertyIdString provides operations to manage the extensionProperties property of the microsoft.graph.application entity.
-func (m *ItemExtensionPropertiesRequestBuilder) ByExtensionPropertyIdString(extensionPropertyId string)(*ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) {
+// ByExtensionPropertyId provides operations to manage the extensionProperties property of the microsoft.graph.application entity.
+func (m *ItemExtensionPropertiesRequestBuilder) ByExtensionPropertyId(extensionPropertyId string)(*ItemExtensionPropertiesExtensionPropertyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemExtensionPropertiesRequestBuilder) ToPostRequestInformation(ctx con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemExtensionPropertiesRequestBuilder) WithUrl(rawUrl string)(*ItemExtensionPropertiesRequestBuilder) {
+    return NewItemExtensionPropertiesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

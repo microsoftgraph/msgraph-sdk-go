@@ -46,8 +46,8 @@ type ItemSitesItemListsItemContentTypesItemColumnLinksRequestBuilderPostRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByColumnLinkIdString provides operations to manage the columnLinks property of the microsoft.graph.contentType entity.
-func (m *ItemSitesItemListsItemContentTypesItemColumnLinksRequestBuilder) ByColumnLinkIdString(columnLinkId string)(*ItemSitesItemListsItemContentTypesItemColumnLinksColumnLinkItemRequestBuilder) {
+// ByColumnLinkId provides operations to manage the columnLinks property of the microsoft.graph.contentType entity.
+func (m *ItemSitesItemListsItemContentTypesItemColumnLinksRequestBuilder) ByColumnLinkId(columnLinkId string)(*ItemSitesItemListsItemContentTypesItemColumnLinksColumnLinkItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ItemSitesItemListsItemContentTypesItemColumnLinksRequestBuilder) ToPost
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSitesItemListsItemContentTypesItemColumnLinksRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemListsItemContentTypesItemColumnLinksRequestBuilder) {
+    return NewItemSitesItemListsItemContentTypesItemColumnLinksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

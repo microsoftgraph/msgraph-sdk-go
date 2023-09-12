@@ -46,8 +46,8 @@ type ItemSitesItemOnenoteNotebooksItemSectionsItemPagesRequestBuilderPostRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByOnenotePageIdString provides operations to manage the pages property of the microsoft.graph.onenoteSection entity.
-func (m *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesRequestBuilder) ByOnenotePageIdString(onenotePageId string)(*ItemSitesItemOnenoteNotebooksItemSectionsItemPagesOnenotePageItemRequestBuilder) {
+// ByOnenotePageId provides operations to manage the pages property of the microsoft.graph.onenoteSection entity.
+func (m *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesRequestBuilder) ByOnenotePageId(onenotePageId string)(*ItemSitesItemOnenoteNotebooksItemSectionsItemPagesOnenotePageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesRequestBuilder) ToPos
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemOnenoteNotebooksItemSectionsItemPagesRequestBuilder) {
+    return NewItemSitesItemOnenoteNotebooksItemSectionsItemPagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

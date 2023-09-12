@@ -41,3 +41,6 @@ func SerializeLocationUniqueIdType(values []LocationUniqueIdType) []string {
     }
     return result
 }
+func (i LocationUniqueIdType) isMultiValue() bool {
+    return false
+}

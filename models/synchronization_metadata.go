@@ -53,3 +53,6 @@ func SerializeSynchronizationMetadata(values []SynchronizationMetadata) []string
     }
     return result
 }
+func (i SynchronizationMetadata) isMultiValue() bool {
+    return false
+}

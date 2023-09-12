@@ -41,3 +41,6 @@ func SerializeGoogleCloudLocationType(values []GoogleCloudLocationType) []string
     }
     return result
 }
+func (i GoogleCloudLocationType) isMultiValue() bool {
+    return false
+}

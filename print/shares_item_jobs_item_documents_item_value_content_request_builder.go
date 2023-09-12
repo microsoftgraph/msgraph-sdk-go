@@ -100,3 +100,7 @@ func (m *SharesItemJobsItemDocumentsItemValueContentRequestBuilder) ToPutRequest
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SharesItemJobsItemDocumentsItemValueContentRequestBuilder) WithUrl(rawUrl string)(*SharesItemJobsItemDocumentsItemValueContentRequestBuilder) {
+    return NewSharesItemJobsItemDocumentsItemValueContentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

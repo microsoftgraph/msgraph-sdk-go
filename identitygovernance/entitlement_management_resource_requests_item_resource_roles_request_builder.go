@@ -46,8 +46,8 @@ type EntitlementManagementResourceRequestsItemResourceRolesRequestBuilderPostReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessPackageResourceRoleIdString provides operations to manage the roles property of the microsoft.graph.accessPackageResource entity.
-func (m *EntitlementManagementResourceRequestsItemResourceRolesRequestBuilder) ByAccessPackageResourceRoleIdString(accessPackageResourceRoleId string)(*EntitlementManagementResourceRequestsItemResourceRolesAccessPackageResourceRoleItemRequestBuilder) {
+// ByAccessPackageResourceRoleId provides operations to manage the roles property of the microsoft.graph.accessPackageResource entity.
+func (m *EntitlementManagementResourceRequestsItemResourceRolesRequestBuilder) ByAccessPackageResourceRoleId(accessPackageResourceRoleId string)(*EntitlementManagementResourceRequestsItemResourceRolesAccessPackageResourceRoleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *EntitlementManagementResourceRequestsItemResourceRolesRequestBuilder) T
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EntitlementManagementResourceRequestsItemResourceRolesRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementResourceRequestsItemResourceRolesRequestBuilder) {
+    return NewEntitlementManagementResourceRequestsItemResourceRolesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

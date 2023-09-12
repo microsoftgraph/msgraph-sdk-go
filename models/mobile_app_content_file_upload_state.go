@@ -74,3 +74,6 @@ func SerializeMobileAppContentFileUploadState(values []MobileAppContentFileUploa
     }
     return result
 }
+func (i MobileAppContentFileUploadState) isMultiValue() bool {
+    return false
+}

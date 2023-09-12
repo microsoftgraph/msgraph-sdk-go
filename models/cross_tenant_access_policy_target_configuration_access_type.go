@@ -35,3 +35,6 @@ func SerializeCrossTenantAccessPolicyTargetConfigurationAccessType(values []Cros
     }
     return result
 }
+func (i CrossTenantAccessPolicyTargetConfigurationAccessType) isMultiValue() bool {
+    return false
+}

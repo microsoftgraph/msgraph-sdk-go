@@ -46,8 +46,8 @@ type AuthenticationMethodsPolicyAuthenticationMethodConfigurationsRequestBuilder
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAuthenticationMethodConfigurationIdString provides operations to manage the authenticationMethodConfigurations property of the microsoft.graph.authenticationMethodsPolicy entity.
-func (m *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsRequestBuilder) ByAuthenticationMethodConfigurationIdString(authenticationMethodConfigurationId string)(*AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilder) {
+// ByAuthenticationMethodConfigurationId provides operations to manage the authenticationMethodConfigurations property of the microsoft.graph.authenticationMethodsPolicy entity.
+func (m *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsRequestBuilder) ByAuthenticationMethodConfigurationId(authenticationMethodConfigurationId string)(*AuthenticationMethodsPolicyAuthenticationMethodConfigurationsAuthenticationMethodConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsRequestBui
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsRequestBuilder) WithUrl(rawUrl string)(*AuthenticationMethodsPolicyAuthenticationMethodConfigurationsRequestBuilder) {
+    return NewAuthenticationMethodsPolicyAuthenticationMethodConfigurationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

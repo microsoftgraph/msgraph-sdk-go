@@ -39,8 +39,8 @@ type LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilderGetRequestConfiguratio
     // Request query parameters
     QueryParameters *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilderGetQueryParameters
 }
-// ByWorkflowIdString provides operations to manage the workflows property of the microsoft.graph.deletedItemContainer entity.
-func (m *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) ByWorkflowIdString(workflowId string)(*LifecycleWorkflowsDeletedItemsWorkflowsWorkflowItemRequestBuilder) {
+// ByWorkflowId provides operations to manage the workflows property of the microsoft.graph.deletedItemContainer entity.
+func (m *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) ByWorkflowId(workflowId string)(*LifecycleWorkflowsDeletedItemsWorkflowsWorkflowItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) ToGetRequestInfo
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) {
+    return NewLifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

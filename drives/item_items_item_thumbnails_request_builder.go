@@ -46,8 +46,8 @@ type ItemItemsItemThumbnailsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByThumbnailSetIdString provides operations to manage the thumbnails property of the microsoft.graph.driveItem entity.
-func (m *ItemItemsItemThumbnailsRequestBuilder) ByThumbnailSetIdString(thumbnailSetId string)(*ItemItemsItemThumbnailsThumbnailSetItemRequestBuilder) {
+// ByThumbnailSetId provides operations to manage the thumbnails property of the microsoft.graph.driveItem entity.
+func (m *ItemItemsItemThumbnailsRequestBuilder) ByThumbnailSetId(thumbnailSetId string)(*ItemItemsItemThumbnailsThumbnailSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ItemItemsItemThumbnailsRequestBuilder) ToPostRequestInformation(ctx con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemThumbnailsRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemThumbnailsRequestBuilder) {
+    return NewItemItemsItemThumbnailsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

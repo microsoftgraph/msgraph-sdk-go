@@ -39,8 +39,8 @@ type CasesEdiscoveryCasesItemSearchesItemCustodianSourcesRequestBuilderGetReques
     // Request query parameters
     QueryParameters *CasesEdiscoveryCasesItemSearchesItemCustodianSourcesRequestBuilderGetQueryParameters
 }
-// ByDataSourceIdString provides operations to manage the custodianSources property of the microsoft.graph.security.ediscoverySearch entity.
-func (m *CasesEdiscoveryCasesItemSearchesItemCustodianSourcesRequestBuilder) ByDataSourceIdString(dataSourceId string)(*CasesEdiscoveryCasesItemSearchesItemCustodianSourcesDataSourceItemRequestBuilder) {
+// ByDataSourceId provides operations to manage the custodianSources property of the microsoft.graph.security.ediscoverySearch entity.
+func (m *CasesEdiscoveryCasesItemSearchesItemCustodianSourcesRequestBuilder) ByDataSourceId(dataSourceId string)(*CasesEdiscoveryCasesItemSearchesItemCustodianSourcesDataSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *CasesEdiscoveryCasesItemSearchesItemCustodianSourcesRequestBuilder) ToG
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CasesEdiscoveryCasesItemSearchesItemCustodianSourcesRequestBuilder) WithUrl(rawUrl string)(*CasesEdiscoveryCasesItemSearchesItemCustodianSourcesRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemSearchesItemCustodianSourcesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

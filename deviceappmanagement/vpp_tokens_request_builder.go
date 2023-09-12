@@ -46,8 +46,8 @@ type VppTokensRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByVppTokenIdString provides operations to manage the vppTokens property of the microsoft.graph.deviceAppManagement entity.
-func (m *VppTokensRequestBuilder) ByVppTokenIdString(vppTokenId string)(*VppTokensVppTokenItemRequestBuilder) {
+// ByVppTokenId provides operations to manage the vppTokens property of the microsoft.graph.deviceAppManagement entity.
+func (m *VppTokensRequestBuilder) ByVppTokenId(vppTokenId string)(*VppTokensVppTokenItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *VppTokensRequestBuilder) ToPostRequestInformation(ctx context.Context, 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *VppTokensRequestBuilder) WithUrl(rawUrl string)(*VppTokensRequestBuilder) {
+    return NewVppTokensRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

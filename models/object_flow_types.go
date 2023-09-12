@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "strings"
 )
 // 
 type ObjectFlowTypes int
@@ -13,21 +14,30 @@ const (
 )
 
 func (i ObjectFlowTypes) String() string {
-    return []string{"None", "Add", "Update", "Delete"}[i]
+    var values []string
+    for p := ObjectFlowTypes(1); p <= DELETE_OBJECTFLOWTYPES; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"None", "Add", "Update", "Delete"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParseObjectFlowTypes(v string) (any, error) {
-    result := NONE_OBJECTFLOWTYPES
-    switch v {
-        case "None":
-            result = NONE_OBJECTFLOWTYPES
-        case "Add":
-            result = ADD_OBJECTFLOWTYPES
-        case "Update":
-            result = UPDATE_OBJECTFLOWTYPES
-        case "Delete":
-            result = DELETE_OBJECTFLOWTYPES
-        default:
-            return 0, errors.New("Unknown ObjectFlowTypes value: " + v)
+    var result ObjectFlowTypes
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "None":
+                result |= NONE_OBJECTFLOWTYPES
+            case "Add":
+                result |= ADD_OBJECTFLOWTYPES
+            case "Update":
+                result |= UPDATE_OBJECTFLOWTYPES
+            case "Delete":
+                result |= DELETE_OBJECTFLOWTYPES
+            default:
+                return 0, errors.New("Unknown ObjectFlowTypes value: " + v)
+        }
     }
     return &result, nil
 }
@@ -37,4 +47,7 @@ func SerializeObjectFlowTypes(values []ObjectFlowTypes) []string {
         result[i] = v.String()
     }
     return result
+}
+func (i ObjectFlowTypes) isMultiValue() bool {
+    return true
 }

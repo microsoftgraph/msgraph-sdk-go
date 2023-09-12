@@ -122,3 +122,7 @@ func (m *AuthenticationMethodsPolicyRequestBuilder) ToPatchRequestInformation(ct
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AuthenticationMethodsPolicyRequestBuilder) WithUrl(rawUrl string)(*AuthenticationMethodsPolicyRequestBuilder) {
+    return NewAuthenticationMethodsPolicyRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

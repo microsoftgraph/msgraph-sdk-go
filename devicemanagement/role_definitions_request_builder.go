@@ -11,7 +11,7 @@ import (
 type RoleDefinitionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RoleDefinitionsRequestBuilderGetQueryParameters list properties and relationships of the deviceAndAppManagementRoleDefinition objects.
+// RoleDefinitionsRequestBuilderGetQueryParameters list properties and relationships of the roleDefinition objects.
 type RoleDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -46,8 +46,8 @@ type RoleDefinitionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByRoleDefinitionIdString provides operations to manage the roleDefinitions property of the microsoft.graph.deviceManagement entity.
-func (m *RoleDefinitionsRequestBuilder) ByRoleDefinitionIdString(roleDefinitionId string)(*RoleDefinitionsRoleDefinitionItemRequestBuilder) {
+// ByRoleDefinitionId provides operations to manage the roleDefinitions property of the microsoft.graph.deviceManagement entity.
+func (m *RoleDefinitionsRequestBuilder) ByRoleDefinitionId(roleDefinitionId string)(*RoleDefinitionsRoleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -74,10 +74,10 @@ func NewRoleDefinitionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *RoleDefinitionsRequestBuilder) Count()(*RoleDefinitionsCountRequestBuilder) {
     return NewRoleDefinitionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list properties and relationships of the deviceAndAppManagementRoleDefinition objects.
+// Get list properties and relationships of the roleDefinition objects.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-list?view=graph-rest-1.0
 func (m *RoleDefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleDefinitionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleDefinitionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -118,7 +118,7 @@ func (m *RoleDefinitionsRequestBuilder) Post(ctx context.Context, body iadcd8112
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoleDefinitionable), nil
 }
-// ToGetRequestInformation list properties and relationships of the deviceAndAppManagementRoleDefinition objects.
+// ToGetRequestInformation list properties and relationships of the roleDefinition objects.
 func (m *RoleDefinitionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -150,4 +150,8 @@ func (m *RoleDefinitionsRequestBuilder) ToPostRequestInformation(ctx context.Con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *RoleDefinitionsRequestBuilder) WithUrl(rawUrl string)(*RoleDefinitionsRequestBuilder) {
+    return NewRoleDefinitionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

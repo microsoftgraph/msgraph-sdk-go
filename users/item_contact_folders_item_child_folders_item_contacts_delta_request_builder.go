@@ -87,3 +87,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder) ToGe
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder) WithUrl(rawUrl string)(*ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder) {
+    return NewItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

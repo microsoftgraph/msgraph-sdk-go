@@ -64,3 +64,7 @@ func (m *GetM365AppUserCountsWithPeriodRequestBuilder) ToGetRequestInformation(c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GetM365AppUserCountsWithPeriodRequestBuilder) WithUrl(rawUrl string)(*GetM365AppUserCountsWithPeriodRequestBuilder) {
+    return NewGetM365AppUserCountsWithPeriodRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

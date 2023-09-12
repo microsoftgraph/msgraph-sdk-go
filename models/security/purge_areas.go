@@ -1,6 +1,7 @@
 package security
 import (
     "errors"
+    "strings"
 )
 // 
 type PurgeAreas int
@@ -12,19 +13,28 @@ const (
 )
 
 func (i PurgeAreas) String() string {
-    return []string{"mailboxes", "teamsMessages", "unknownFutureValue"}[i]
+    var values []string
+    for p := PurgeAreas(1); p <= UNKNOWNFUTUREVALUE_PURGEAREAS; p <<= 1 {
+        if i&p == p {
+            values = append(values, []string{"mailboxes", "teamsMessages", "unknownFutureValue"}[p])
+        }
+    }
+    return strings.Join(values, ",")
 }
 func ParsePurgeAreas(v string) (any, error) {
-    result := MAILBOXES_PURGEAREAS
-    switch v {
-        case "mailboxes":
-            result = MAILBOXES_PURGEAREAS
-        case "teamsMessages":
-            result = TEAMSMESSAGES_PURGEAREAS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_PURGEAREAS
-        default:
-            return 0, errors.New("Unknown PurgeAreas value: " + v)
+    var result PurgeAreas
+    values := strings.Split(v, ",")
+    for _, str := range values {
+        switch str {
+            case "mailboxes":
+                result |= MAILBOXES_PURGEAREAS
+            case "teamsMessages":
+                result |= TEAMSMESSAGES_PURGEAREAS
+            case "unknownFutureValue":
+                result |= UNKNOWNFUTUREVALUE_PURGEAREAS
+            default:
+                return 0, errors.New("Unknown PurgeAreas value: " + v)
+        }
     }
     return &result, nil
 }
@@ -34,4 +44,7 @@ func SerializePurgeAreas(values []PurgeAreas) []string {
         result[i] = v.String()
     }
     return result
+}
+func (i PurgeAreas) isMultiValue() bool {
+    return true
 }

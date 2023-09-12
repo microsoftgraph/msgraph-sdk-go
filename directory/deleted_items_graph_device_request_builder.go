@@ -91,3 +91,7 @@ func (m *DeletedItemsGraphDeviceRequestBuilder) ToGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeletedItemsGraphDeviceRequestBuilder) WithUrl(rawUrl string)(*DeletedItemsGraphDeviceRequestBuilder) {
+    return NewDeletedItemsGraphDeviceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

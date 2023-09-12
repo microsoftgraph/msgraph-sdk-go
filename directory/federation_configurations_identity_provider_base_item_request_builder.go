@@ -156,3 +156,7 @@ func (m *FederationConfigurationsIdentityProviderBaseItemRequestBuilder) ToPatch
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *FederationConfigurationsIdentityProviderBaseItemRequestBuilder) WithUrl(rawUrl string)(*FederationConfigurationsIdentityProviderBaseItemRequestBuilder) {
+    return NewFederationConfigurationsIdentityProviderBaseItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

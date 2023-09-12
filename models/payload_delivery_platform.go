@@ -41,3 +41,6 @@ func SerializePayloadDeliveryPlatform(values []PayloadDeliveryPlatform) []string
     }
     return result
 }
+func (i PayloadDeliveryPlatform) isMultiValue() bool {
+    return false
+}

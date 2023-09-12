@@ -38,3 +38,6 @@ func SerializeMediaDirection(values []MediaDirection) []string {
     }
     return result
 }
+func (i MediaDirection) isMultiValue() bool {
+    return false
+}

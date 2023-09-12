@@ -46,8 +46,8 @@ type ItemAcceptancesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAgreementAcceptanceIdString provides operations to manage the acceptances property of the microsoft.graph.agreement entity.
-func (m *ItemAcceptancesRequestBuilder) ByAgreementAcceptanceIdString(agreementAcceptanceId string)(*ItemAcceptancesAgreementAcceptanceItemRequestBuilder) {
+// ByAgreementAcceptanceId provides operations to manage the acceptances property of the microsoft.graph.agreement entity.
+func (m *ItemAcceptancesRequestBuilder) ByAgreementAcceptanceId(agreementAcceptanceId string)(*ItemAcceptancesAgreementAcceptanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ItemAcceptancesRequestBuilder) ToPostRequestInformation(ctx context.Con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemAcceptancesRequestBuilder) WithUrl(rawUrl string)(*ItemAcceptancesRequestBuilder) {
+    return NewItemAcceptancesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

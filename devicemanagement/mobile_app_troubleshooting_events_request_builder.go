@@ -46,8 +46,8 @@ type MobileAppTroubleshootingEventsRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMobileAppTroubleshootingEventIdString provides operations to manage the mobileAppTroubleshootingEvents property of the microsoft.graph.deviceManagement entity.
-func (m *MobileAppTroubleshootingEventsRequestBuilder) ByMobileAppTroubleshootingEventIdString(mobileAppTroubleshootingEventId string)(*MobileAppTroubleshootingEventsMobileAppTroubleshootingEventItemRequestBuilder) {
+// ByMobileAppTroubleshootingEventId provides operations to manage the mobileAppTroubleshootingEvents property of the microsoft.graph.deviceManagement entity.
+func (m *MobileAppTroubleshootingEventsRequestBuilder) ByMobileAppTroubleshootingEventId(mobileAppTroubleshootingEventId string)(*MobileAppTroubleshootingEventsMobileAppTroubleshootingEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *MobileAppTroubleshootingEventsRequestBuilder) ToPostRequestInformation(
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MobileAppTroubleshootingEventsRequestBuilder) WithUrl(rawUrl string)(*MobileAppTroubleshootingEventsRequestBuilder) {
+    return NewMobileAppTroubleshootingEventsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

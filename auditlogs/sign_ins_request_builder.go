@@ -46,8 +46,8 @@ type SignInsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySignInIdString provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
-func (m *SignInsRequestBuilder) BySignInIdString(signInId string)(*SignInsSignInItemRequestBuilder) {
+// BySignInId provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
+func (m *SignInsRequestBuilder) BySignInId(signInId string)(*SignInsSignInItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *SignInsRequestBuilder) ToPostRequestInformation(ctx context.Context, bo
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SignInsRequestBuilder) WithUrl(rawUrl string)(*SignInsRequestBuilder) {
+    return NewSignInsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

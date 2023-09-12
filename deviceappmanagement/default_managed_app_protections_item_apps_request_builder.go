@@ -46,8 +46,8 @@ type DefaultManagedAppProtectionsItemAppsRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagedMobileAppIdString provides operations to manage the apps property of the microsoft.graph.defaultManagedAppProtection entity.
-func (m *DefaultManagedAppProtectionsItemAppsRequestBuilder) ByManagedMobileAppIdString(managedMobileAppId string)(*DefaultManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) {
+// ByManagedMobileAppId provides operations to manage the apps property of the microsoft.graph.defaultManagedAppProtection entity.
+func (m *DefaultManagedAppProtectionsItemAppsRequestBuilder) ByManagedMobileAppId(managedMobileAppId string)(*DefaultManagedAppProtectionsItemAppsManagedMobileAppItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *DefaultManagedAppProtectionsItemAppsRequestBuilder) ToPostRequestInform
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DefaultManagedAppProtectionsItemAppsRequestBuilder) WithUrl(rawUrl string)(*DefaultManagedAppProtectionsItemAppsRequestBuilder) {
+    return NewDefaultManagedAppProtectionsItemAppsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

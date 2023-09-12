@@ -38,3 +38,6 @@ func SerializeWindowsSpotlightEnablementSettings(values []WindowsSpotlightEnable
     }
     return result
 }
+func (i WindowsSpotlightEnablementSettings) isMultiValue() bool {
+    return false
+}

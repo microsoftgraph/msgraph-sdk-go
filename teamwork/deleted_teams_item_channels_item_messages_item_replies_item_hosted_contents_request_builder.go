@@ -46,8 +46,8 @@ type DeletedTeamsItemChannelsItemMessagesItemRepliesItemHostedContentsRequestBui
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByChatMessageHostedContentIdString provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
-func (m *DeletedTeamsItemChannelsItemMessagesItemRepliesItemHostedContentsRequestBuilder) ByChatMessageHostedContentIdString(chatMessageHostedContentId string)(*DeletedTeamsItemChannelsItemMessagesItemRepliesItemHostedContentsChatMessageHostedContentItemRequestBuilder) {
+// ByChatMessageHostedContentId provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
+func (m *DeletedTeamsItemChannelsItemMessagesItemRepliesItemHostedContentsRequestBuilder) ByChatMessageHostedContentId(chatMessageHostedContentId string)(*DeletedTeamsItemChannelsItemMessagesItemRepliesItemHostedContentsChatMessageHostedContentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *DeletedTeamsItemChannelsItemMessagesItemRepliesItemHostedContentsReques
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeletedTeamsItemChannelsItemMessagesItemRepliesItemHostedContentsRequestBuilder) WithUrl(rawUrl string)(*DeletedTeamsItemChannelsItemMessagesItemRepliesItemHostedContentsRequestBuilder) {
+    return NewDeletedTeamsItemChannelsItemMessagesItemRepliesItemHostedContentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

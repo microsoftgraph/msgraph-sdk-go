@@ -74,3 +74,7 @@ func (m *UsersItemRubricsCountRequestBuilder) ToGetRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UsersItemRubricsCountRequestBuilder) WithUrl(rawUrl string)(*UsersItemRubricsCountRequestBuilder) {
+    return NewUsersItemRubricsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

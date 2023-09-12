@@ -71,3 +71,6 @@ func SerializeRiskDetail(values []RiskDetail) []string {
     }
     return result
 }
+func (i RiskDetail) isMultiValue() bool {
+    return false
+}

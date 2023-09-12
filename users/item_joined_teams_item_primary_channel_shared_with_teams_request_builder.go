@@ -46,8 +46,8 @@ type ItemJoinedTeamsItemPrimaryChannelSharedWithTeamsRequestBuilderPostRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySharedWithChannelTeamInfoIdString provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.
-func (m *ItemJoinedTeamsItemPrimaryChannelSharedWithTeamsRequestBuilder) BySharedWithChannelTeamInfoIdString(sharedWithChannelTeamInfoId string)(*ItemJoinedTeamsItemPrimaryChannelSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder) {
+// BySharedWithChannelTeamInfoId provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.
+func (m *ItemJoinedTeamsItemPrimaryChannelSharedWithTeamsRequestBuilder) BySharedWithChannelTeamInfoId(sharedWithChannelTeamInfoId string)(*ItemJoinedTeamsItemPrimaryChannelSharedWithTeamsSharedWithChannelTeamInfoItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ItemJoinedTeamsItemPrimaryChannelSharedWithTeamsRequestBuilder) ToPostR
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemJoinedTeamsItemPrimaryChannelSharedWithTeamsRequestBuilder) WithUrl(rawUrl string)(*ItemJoinedTeamsItemPrimaryChannelSharedWithTeamsRequestBuilder) {
+    return NewItemJoinedTeamsItemPrimaryChannelSharedWithTeamsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

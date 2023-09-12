@@ -46,8 +46,8 @@ type UserExperienceAnalyticsDeviceStartupProcessesRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserExperienceAnalyticsDeviceStartupProcessIdString provides operations to manage the userExperienceAnalyticsDeviceStartupProcesses property of the microsoft.graph.deviceManagement entity.
-func (m *UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder) ByUserExperienceAnalyticsDeviceStartupProcessIdString(userExperienceAnalyticsDeviceStartupProcessId string)(*UserExperienceAnalyticsDeviceStartupProcessesUserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) {
+// ByUserExperienceAnalyticsDeviceStartupProcessId provides operations to manage the userExperienceAnalyticsDeviceStartupProcesses property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder) ByUserExperienceAnalyticsDeviceStartupProcessId(userExperienceAnalyticsDeviceStartupProcessId string)(*UserExperienceAnalyticsDeviceStartupProcessesUserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder) ToPostRequ
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder) WithUrl(rawUrl string)(*UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder) {
+    return NewUserExperienceAnalyticsDeviceStartupProcessesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

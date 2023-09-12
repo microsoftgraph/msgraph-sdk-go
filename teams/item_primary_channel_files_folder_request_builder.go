@@ -82,3 +82,7 @@ func (m *ItemPrimaryChannelFilesFolderRequestBuilder) ToGetRequestInformation(ct
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemPrimaryChannelFilesFolderRequestBuilder) WithUrl(rawUrl string)(*ItemPrimaryChannelFilesFolderRequestBuilder) {
+    return NewItemPrimaryChannelFilesFolderRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

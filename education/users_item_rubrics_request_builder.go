@@ -46,8 +46,8 @@ type UsersItemRubricsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByEducationRubricIdString provides operations to manage the rubrics property of the microsoft.graph.educationUser entity.
-func (m *UsersItemRubricsRequestBuilder) ByEducationRubricIdString(educationRubricId string)(*UsersItemRubricsEducationRubricItemRequestBuilder) {
+// ByEducationRubricId provides operations to manage the rubrics property of the microsoft.graph.educationUser entity.
+func (m *UsersItemRubricsRequestBuilder) ByEducationRubricId(educationRubricId string)(*UsersItemRubricsEducationRubricItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *UsersItemRubricsRequestBuilder) ToPostRequestInformation(ctx context.Co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UsersItemRubricsRequestBuilder) WithUrl(rawUrl string)(*UsersItemRubricsRequestBuilder) {
+    return NewUsersItemRubricsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

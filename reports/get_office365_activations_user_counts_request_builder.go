@@ -61,3 +61,7 @@ func (m *GetOffice365ActivationsUserCountsRequestBuilder) ToGetRequestInformatio
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *GetOffice365ActivationsUserCountsRequestBuilder) WithUrl(rawUrl string)(*GetOffice365ActivationsUserCountsRequestBuilder) {
+    return NewGetOffice365ActivationsUserCountsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

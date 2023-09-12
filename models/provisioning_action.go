@@ -47,3 +47,6 @@ func SerializeProvisioningAction(values []ProvisioningAction) []string {
     }
     return result
 }
+func (i ProvisioningAction) isMultiValue() bool {
+    return false
+}

@@ -38,3 +38,6 @@ func SerializeConnectionDirection(values []ConnectionDirection) []string {
     }
     return result
 }
+func (i ConnectionDirection) isMultiValue() bool {
+    return false
+}

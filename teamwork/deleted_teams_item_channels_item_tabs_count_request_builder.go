@@ -74,3 +74,7 @@ func (m *DeletedTeamsItemChannelsItemTabsCountRequestBuilder) ToGetRequestInform
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeletedTeamsItemChannelsItemTabsCountRequestBuilder) WithUrl(rawUrl string)(*DeletedTeamsItemChannelsItemTabsCountRequestBuilder) {
+    return NewDeletedTeamsItemChannelsItemTabsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -40,8 +40,8 @@ type LifecycleWorkflowsDeletedItemsWorkflowsItemTaskReportsRequestBuilderGetRequ
     // Request query parameters
     QueryParameters *LifecycleWorkflowsDeletedItemsWorkflowsItemTaskReportsRequestBuilderGetQueryParameters
 }
-// ByTaskReportIdString provides operations to manage the taskReports property of the microsoft.graph.identityGovernance.workflow entity.
-func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemTaskReportsRequestBuilder) ByTaskReportIdString(taskReportId string)(*LifecycleWorkflowsDeletedItemsWorkflowsItemTaskReportsTaskReportItemRequestBuilder) {
+// ByTaskReportId provides operations to manage the taskReports property of the microsoft.graph.identityGovernance.workflow entity.
+func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemTaskReportsRequestBuilder) ByTaskReportId(taskReportId string)(*LifecycleWorkflowsDeletedItemsWorkflowsItemTaskReportsTaskReportItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -109,4 +109,8 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemTaskReportsRequestBuilder) T
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemTaskReportsRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsDeletedItemsWorkflowsItemTaskReportsRequestBuilder) {
+    return NewLifecycleWorkflowsDeletedItemsWorkflowsItemTaskReportsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

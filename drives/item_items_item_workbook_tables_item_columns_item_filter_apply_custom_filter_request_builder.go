@@ -62,3 +62,7 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterApplyCustomFilterReques
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemWorkbookTablesItemColumnsItemFilterApplyCustomFilterRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookTablesItemColumnsItemFilterApplyCustomFilterRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemFilterApplyCustomFilterRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

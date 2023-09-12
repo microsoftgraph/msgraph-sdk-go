@@ -38,7 +38,7 @@ func (m *PublicationFacet) GetAdditionalData()(map[string]any) {
 func (m *PublicationFacet) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCheckedOutBy gets the checkedOutBy property value. The checkedOutBy property
+// GetCheckedOutBy gets the checkedOutBy property value. User who has checked out the file.
 func (m *PublicationFacet) GetCheckedOutBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("checkedOutBy")
     if err != nil {
@@ -172,7 +172,7 @@ func (m *PublicationFacet) SetAdditionalData(value map[string]any)() {
 func (m *PublicationFacet) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCheckedOutBy sets the checkedOutBy property value. The checkedOutBy property
+// SetCheckedOutBy sets the checkedOutBy property value. User who has checked out the file.
 func (m *PublicationFacet) SetCheckedOutBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("checkedOutBy", value)
     if err != nil {

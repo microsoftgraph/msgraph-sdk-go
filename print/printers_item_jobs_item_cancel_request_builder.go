@@ -61,3 +61,7 @@ func (m *PrintersItemJobsItemCancelRequestBuilder) ToPostRequestInformation(ctx 
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *PrintersItemJobsItemCancelRequestBuilder) WithUrl(rawUrl string)(*PrintersItemJobsItemCancelRequestBuilder) {
+    return NewPrintersItemJobsItemCancelRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

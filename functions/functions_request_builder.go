@@ -46,8 +46,8 @@ type FunctionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAttributeMappingFunctionSchemaIdString provides operations to manage the collection of attributeMappingFunctionSchema entities.
-func (m *FunctionsRequestBuilder) ByAttributeMappingFunctionSchemaIdString(attributeMappingFunctionSchemaId string)(*AttributeMappingFunctionSchemaItemRequestBuilder) {
+// ByAttributeMappingFunctionSchemaId provides operations to manage the collection of attributeMappingFunctionSchema entities.
+func (m *FunctionsRequestBuilder) ByAttributeMappingFunctionSchemaId(attributeMappingFunctionSchemaId string)(*AttributeMappingFunctionSchemaItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *FunctionsRequestBuilder) ToPostRequestInformation(ctx context.Context, 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *FunctionsRequestBuilder) WithUrl(rawUrl string)(*FunctionsRequestBuilder) {
+    return NewFunctionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

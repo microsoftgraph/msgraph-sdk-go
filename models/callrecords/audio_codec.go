@@ -95,3 +95,6 @@ func SerializeAudioCodec(values []AudioCodec) []string {
     }
     return result
 }
+func (i AudioCodec) isMultiValue() bool {
+    return false
+}

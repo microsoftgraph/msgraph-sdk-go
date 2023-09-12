@@ -38,3 +38,6 @@ func SerializeRemoteAssistanceOnboardingStatus(values []RemoteAssistanceOnboardi
     }
     return result
 }
+func (i RemoteAssistanceOnboardingStatus) isMultiValue() bool {
+    return false
+}

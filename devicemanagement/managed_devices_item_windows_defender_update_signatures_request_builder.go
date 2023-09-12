@@ -61,3 +61,7 @@ func (m *ManagedDevicesItemWindowsDefenderUpdateSignaturesRequestBuilder) ToPost
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedDevicesItemWindowsDefenderUpdateSignaturesRequestBuilder) WithUrl(rawUrl string)(*ManagedDevicesItemWindowsDefenderUpdateSignaturesRequestBuilder) {
+    return NewManagedDevicesItemWindowsDefenderUpdateSignaturesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

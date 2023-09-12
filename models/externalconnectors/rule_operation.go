@@ -50,3 +50,6 @@ func SerializeRuleOperation(values []RuleOperation) []string {
     }
     return result
 }
+func (i RuleOperation) isMultiValue() bool {
+    return false
+}

@@ -38,3 +38,6 @@ func SerializeEventType(values []EventType) []string {
     }
     return result
 }
+func (i EventType) isMultiValue() bool {
+    return false
+}

@@ -42,3 +42,6 @@ func SerializeEdgeCookiePolicy(values []EdgeCookiePolicy) []string {
     }
     return result
 }
+func (i EdgeCookiePolicy) isMultiValue() bool {
+    return false
+}

@@ -41,3 +41,6 @@ func SerializeAttributeFlowType(values []AttributeFlowType) []string {
     }
     return result
 }
+func (i AttributeFlowType) isMultiValue() bool {
+    return false
+}

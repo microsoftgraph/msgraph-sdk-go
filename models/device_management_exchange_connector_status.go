@@ -46,3 +46,6 @@ func SerializeDeviceManagementExchangeConnectorStatus(values []DeviceManagementE
     }
     return result
 }
+func (i DeviceManagementExchangeConnectorStatus) isMultiValue() bool {
+    return false
+}

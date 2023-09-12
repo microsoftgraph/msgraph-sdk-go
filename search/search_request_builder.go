@@ -122,3 +122,7 @@ func (m *SearchRequestBuilder) ToPatchRequestInformation(ctx context.Context, bo
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SearchRequestBuilder) WithUrl(rawUrl string)(*SearchRequestBuilder) {
+    return NewSearchRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

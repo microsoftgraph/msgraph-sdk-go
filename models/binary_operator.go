@@ -32,3 +32,6 @@ func SerializeBinaryOperator(values []BinaryOperator) []string {
     }
     return result
 }
+func (i BinaryOperator) isMultiValue() bool {
+    return false
+}

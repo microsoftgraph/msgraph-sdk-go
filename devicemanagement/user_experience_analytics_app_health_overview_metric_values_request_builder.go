@@ -46,8 +46,8 @@ type UserExperienceAnalyticsAppHealthOverviewMetricValuesRequestBuilderPostReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserExperienceAnalyticsMetricIdString provides operations to manage the metricValues property of the microsoft.graph.userExperienceAnalyticsCategory entity.
-func (m *UserExperienceAnalyticsAppHealthOverviewMetricValuesRequestBuilder) ByUserExperienceAnalyticsMetricIdString(userExperienceAnalyticsMetricId string)(*UserExperienceAnalyticsAppHealthOverviewMetricValuesUserExperienceAnalyticsMetricItemRequestBuilder) {
+// ByUserExperienceAnalyticsMetricId provides operations to manage the metricValues property of the microsoft.graph.userExperienceAnalyticsCategory entity.
+func (m *UserExperienceAnalyticsAppHealthOverviewMetricValuesRequestBuilder) ByUserExperienceAnalyticsMetricId(userExperienceAnalyticsMetricId string)(*UserExperienceAnalyticsAppHealthOverviewMetricValuesUserExperienceAnalyticsMetricItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *UserExperienceAnalyticsAppHealthOverviewMetricValuesRequestBuilder) ToP
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UserExperienceAnalyticsAppHealthOverviewMetricValuesRequestBuilder) WithUrl(rawUrl string)(*UserExperienceAnalyticsAppHealthOverviewMetricValuesRequestBuilder) {
+    return NewUserExperienceAnalyticsAppHealthOverviewMetricValuesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

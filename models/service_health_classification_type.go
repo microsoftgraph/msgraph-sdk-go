@@ -35,3 +35,6 @@ func SerializeServiceHealthClassificationType(values []ServiceHealthClassificati
     }
     return result
 }
+func (i ServiceHealthClassificationType) isMultiValue() bool {
+    return false
+}

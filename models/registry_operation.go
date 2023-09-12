@@ -41,3 +41,6 @@ func SerializeRegistryOperation(values []RegistryOperation) []string {
     }
     return result
 }
+func (i RegistryOperation) isMultiValue() bool {
+    return false
+}

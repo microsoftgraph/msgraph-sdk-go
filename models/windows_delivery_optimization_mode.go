@@ -54,3 +54,6 @@ func SerializeWindowsDeliveryOptimizationMode(values []WindowsDeliveryOptimizati
     }
     return result
 }
+func (i WindowsDeliveryOptimizationMode) isMultiValue() bool {
+    return false
+}

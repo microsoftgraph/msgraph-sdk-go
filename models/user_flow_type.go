@@ -47,3 +47,6 @@ func SerializeUserFlowType(values []UserFlowType) []string {
     }
     return result
 }
+func (i UserFlowType) isMultiValue() bool {
+    return false
+}

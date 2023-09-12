@@ -38,3 +38,6 @@ func SerializeWindowsHelloForBusinessPinUsage(values []WindowsHelloForBusinessPi
     }
     return result
 }
+func (i WindowsHelloForBusinessPinUsage) isMultiValue() bool {
+    return false
+}

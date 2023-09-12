@@ -46,8 +46,8 @@ type AccessReviewsDefinitionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessReviewScheduleDefinitionIdString provides operations to manage the definitions property of the microsoft.graph.accessReviewSet entity.
-func (m *AccessReviewsDefinitionsRequestBuilder) ByAccessReviewScheduleDefinitionIdString(accessReviewScheduleDefinitionId string)(*AccessReviewsDefinitionsAccessReviewScheduleDefinitionItemRequestBuilder) {
+// ByAccessReviewScheduleDefinitionId provides operations to manage the definitions property of the microsoft.graph.accessReviewSet entity.
+func (m *AccessReviewsDefinitionsRequestBuilder) ByAccessReviewScheduleDefinitionId(accessReviewScheduleDefinitionId string)(*AccessReviewsDefinitionsAccessReviewScheduleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -154,4 +154,8 @@ func (m *AccessReviewsDefinitionsRequestBuilder) ToPostRequestInformation(ctx co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AccessReviewsDefinitionsRequestBuilder) WithUrl(rawUrl string)(*AccessReviewsDefinitionsRequestBuilder) {
+    return NewAccessReviewsDefinitionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

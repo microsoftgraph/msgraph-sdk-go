@@ -166,3 +166,7 @@ func (m *MeAssignmentsItemRubricRequestBuilder) ToPatchRequestInformation(ctx co
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MeAssignmentsItemRubricRequestBuilder) WithUrl(rawUrl string)(*MeAssignmentsItemRubricRequestBuilder) {
+    return NewMeAssignmentsItemRubricRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

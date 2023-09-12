@@ -38,3 +38,6 @@ func SerializeExternalEmailOtpState(values []ExternalEmailOtpState) []string {
     }
     return result
 }
+func (i ExternalEmailOtpState) isMultiValue() bool {
+    return false
+}

@@ -35,8 +35,8 @@ type ItemPhotosRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemPhotosRequestBuilderGetQueryParameters
 }
-// ByProfilePhotoIdString provides operations to manage the photos property of the microsoft.graph.group entity.
-func (m *ItemPhotosRequestBuilder) ByProfilePhotoIdString(profilePhotoId string)(*ItemPhotosProfilePhotoItemRequestBuilder) {
+// ByProfilePhotoId provides operations to manage the photos property of the microsoft.graph.group entity.
+func (m *ItemPhotosRequestBuilder) ByProfilePhotoId(profilePhotoId string)(*ItemPhotosProfilePhotoItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -100,4 +100,8 @@ func (m *ItemPhotosRequestBuilder) ToGetRequestInformation(ctx context.Context, 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemPhotosRequestBuilder) WithUrl(rawUrl string)(*ItemPhotosRequestBuilder) {
+    return NewItemPhotosRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -39,8 +39,8 @@ type LifecycleWorkflowsTaskDefinitionsRequestBuilderGetRequestConfiguration stru
     // Request query parameters
     QueryParameters *LifecycleWorkflowsTaskDefinitionsRequestBuilderGetQueryParameters
 }
-// ByTaskDefinitionIdString provides operations to manage the taskDefinitions property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
-func (m *LifecycleWorkflowsTaskDefinitionsRequestBuilder) ByTaskDefinitionIdString(taskDefinitionId string)(*LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilder) {
+// ByTaskDefinitionId provides operations to manage the taskDefinitions property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
+func (m *LifecycleWorkflowsTaskDefinitionsRequestBuilder) ByTaskDefinitionId(taskDefinitionId string)(*LifecycleWorkflowsTaskDefinitionsTaskDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *LifecycleWorkflowsTaskDefinitionsRequestBuilder) ToGetRequestInformatio
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *LifecycleWorkflowsTaskDefinitionsRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsTaskDefinitionsRequestBuilder) {
+    return NewLifecycleWorkflowsTaskDefinitionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

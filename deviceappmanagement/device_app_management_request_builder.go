@@ -58,7 +58,7 @@ func (m *DeviceAppManagementRequestBuilder) DefaultManagedAppProtections()(*Defa
 // Get read properties and relationships of the deviceAppManagement object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-partnerintegration-deviceappmanagement-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-policyset-deviceappmanagement-get?view=graph-rest-1.0
 func (m *DeviceAppManagementRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceAppManagementRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceAppManagementable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +116,7 @@ func (m *DeviceAppManagementRequestBuilder) MobileApps()(*MobileAppsRequestBuild
 // Patch update the properties of a deviceAppManagement object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-deviceappmanagement-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-policyset-deviceappmanagement-update?view=graph-rest-1.0
 func (m *DeviceAppManagementRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceAppManagementable, requestConfiguration *DeviceAppManagementRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceAppManagementable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -183,4 +183,8 @@ func (m *DeviceAppManagementRequestBuilder) VppTokens()(*VppTokensRequestBuilder
 // WindowsInformationProtectionPolicies provides operations to manage the windowsInformationProtectionPolicies property of the microsoft.graph.deviceAppManagement entity.
 func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionPolicies()(*WindowsInformationProtectionPoliciesRequestBuilder) {
     return NewWindowsInformationProtectionPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceAppManagementRequestBuilder) WithUrl(rawUrl string)(*DeviceAppManagementRequestBuilder) {
+    return NewDeviceAppManagementRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

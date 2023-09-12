@@ -39,8 +39,8 @@ type LifecycleWorkflowsDeletedItemsWorkflowsItemExecutionScopeRequestBuilderGetR
     // Request query parameters
     QueryParameters *LifecycleWorkflowsDeletedItemsWorkflowsItemExecutionScopeRequestBuilderGetQueryParameters
 }
-// ByUserProcessingResultIdString provides operations to manage the executionScope property of the microsoft.graph.identityGovernance.workflow entity.
-func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemExecutionScopeRequestBuilder) ByUserProcessingResultIdString(userProcessingResultId string)(*LifecycleWorkflowsDeletedItemsWorkflowsItemExecutionScopeUserProcessingResultItemRequestBuilder) {
+// ByUserProcessingResultId provides operations to manage the executionScope property of the microsoft.graph.identityGovernance.workflow entity.
+func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemExecutionScopeRequestBuilder) ByUserProcessingResultId(userProcessingResultId string)(*LifecycleWorkflowsDeletedItemsWorkflowsItemExecutionScopeUserProcessingResultItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemExecutionScopeRequestBuilder
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemExecutionScopeRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsDeletedItemsWorkflowsItemExecutionScopeRequestBuilder) {
+    return NewLifecycleWorkflowsDeletedItemsWorkflowsItemExecutionScopeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

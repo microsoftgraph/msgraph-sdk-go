@@ -39,8 +39,8 @@ type MobileAppsItemCategoriesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *MobileAppsItemCategoriesRequestBuilderGetQueryParameters
 }
-// ByMobileAppCategoryIdString provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
-func (m *MobileAppsItemCategoriesRequestBuilder) ByMobileAppCategoryIdString(mobileAppCategoryId string)(*MobileAppsItemCategoriesMobileAppCategoryItemRequestBuilder) {
+// ByMobileAppCategoryId provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemCategoriesRequestBuilder) ByMobileAppCategoryId(mobileAppCategoryId string)(*MobileAppsItemCategoriesMobileAppCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *MobileAppsItemCategoriesRequestBuilder) ToGetRequestInformation(ctx con
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *MobileAppsItemCategoriesRequestBuilder) WithUrl(rawUrl string)(*MobileAppsItemCategoriesRequestBuilder) {
+    return NewMobileAppsItemCategoriesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -47,3 +47,6 @@ func SerializeUserPurpose(values []UserPurpose) []string {
     }
     return result
 }
+func (i UserPurpose) isMultiValue() bool {
+    return false
+}

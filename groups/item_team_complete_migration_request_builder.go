@@ -61,3 +61,7 @@ func (m *ItemTeamCompleteMigrationRequestBuilder) ToPostRequestInformation(ctx c
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamCompleteMigrationRequestBuilder) WithUrl(rawUrl string)(*ItemTeamCompleteMigrationRequestBuilder) {
+    return NewItemTeamCompleteMigrationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -50,9 +50,9 @@ type IdentityProvidersRequestBuilderPostRequestConfiguration struct {
 func (m *IdentityProvidersRequestBuilder) AvailableProviderTypes()(*AvailableProviderTypesRequestBuilder) {
     return NewAvailableProviderTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByIdentityProviderIdString provides operations to manage the collection of identityProvider entities.
+// ByIdentityProviderId provides operations to manage the collection of identityProvider entities.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
-func (m *IdentityProvidersRequestBuilder) ByIdentityProviderIdString(identityProviderId string)(*IdentityProviderItemRequestBuilder) {
+func (m *IdentityProvidersRequestBuilder) ByIdentityProviderId(identityProviderId string)(*IdentityProviderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -159,4 +159,9 @@ func (m *IdentityProvidersRequestBuilder) ToPostRequestInformation(ctx context.C
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15
+func (m *IdentityProvidersRequestBuilder) WithUrl(rawUrl string)(*IdentityProvidersRequestBuilder) {
+    return NewIdentityProvidersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

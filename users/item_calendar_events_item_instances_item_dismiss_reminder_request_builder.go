@@ -61,3 +61,7 @@ func (m *ItemCalendarEventsItemInstancesItemDismissReminderRequestBuilder) ToPos
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemCalendarEventsItemInstancesItemDismissReminderRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarEventsItemInstancesItemDismissReminderRequestBuilder) {
+    return NewItemCalendarEventsItemInstancesItemDismissReminderRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

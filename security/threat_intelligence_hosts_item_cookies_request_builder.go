@@ -39,8 +39,8 @@ type ThreatIntelligenceHostsItemCookiesRequestBuilderGetRequestConfiguration str
     // Request query parameters
     QueryParameters *ThreatIntelligenceHostsItemCookiesRequestBuilderGetQueryParameters
 }
-// ByHostCookieIdString provides operations to manage the cookies property of the microsoft.graph.security.host entity.
-func (m *ThreatIntelligenceHostsItemCookiesRequestBuilder) ByHostCookieIdString(hostCookieId string)(*ThreatIntelligenceHostsItemCookiesHostCookieItemRequestBuilder) {
+// ByHostCookieId provides operations to manage the cookies property of the microsoft.graph.security.host entity.
+func (m *ThreatIntelligenceHostsItemCookiesRequestBuilder) ByHostCookieId(hostCookieId string)(*ThreatIntelligenceHostsItemCookiesHostCookieItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *ThreatIntelligenceHostsItemCookiesRequestBuilder) ToGetRequestInformati
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ThreatIntelligenceHostsItemCookiesRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceHostsItemCookiesRequestBuilder) {
+    return NewThreatIntelligenceHostsItemCookiesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

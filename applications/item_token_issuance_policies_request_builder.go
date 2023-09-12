@@ -39,8 +39,8 @@ type ItemTokenIssuancePoliciesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemTokenIssuancePoliciesRequestBuilderGetQueryParameters
 }
-// ByTokenIssuancePolicyIdString gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.tokenIssuancePolicies.item collection
-func (m *ItemTokenIssuancePoliciesRequestBuilder) ByTokenIssuancePolicyIdString(tokenIssuancePolicyId string)(*ItemTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) {
+// ByTokenIssuancePolicyId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.applications.item.tokenIssuancePolicies.item collection
+func (m *ItemTokenIssuancePoliciesRequestBuilder) ByTokenIssuancePolicyId(tokenIssuancePolicyId string)(*ItemTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -108,4 +108,8 @@ func (m *ItemTokenIssuancePoliciesRequestBuilder) ToGetRequestInformation(ctx co
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTokenIssuancePoliciesRequestBuilder) WithUrl(rawUrl string)(*ItemTokenIssuancePoliciesRequestBuilder) {
+    return NewItemTokenIssuancePoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

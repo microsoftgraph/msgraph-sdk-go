@@ -75,3 +75,7 @@ func (m *EntitlementManagementResourcesItemScopesItemResourceRolesItemResourceEn
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EntitlementManagementResourcesItemScopesItemResourceRolesItemResourceEnvironmentRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementResourcesItemScopesItemResourceRolesItemResourceEnvironmentRequestBuilder) {
+    return NewEntitlementManagementResourcesItemScopesItemResourceRolesItemResourceEnvironmentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -171,3 +171,7 @@ func (m *ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) ToPatchRequest
 func (m *ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) Upgrade()(*ItemInstalledAppsItemUpgradeRequestBuilder) {
     return NewItemInstalledAppsItemUpgradeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) WithUrl(rawUrl string)(*ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) {
+    return NewItemInstalledAppsTeamsAppInstallationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -32,3 +32,6 @@ func SerializeSigninFrequencyType(values []SigninFrequencyType) []string {
     }
     return result
 }
+func (i SigninFrequencyType) isMultiValue() bool {
+    return false
+}

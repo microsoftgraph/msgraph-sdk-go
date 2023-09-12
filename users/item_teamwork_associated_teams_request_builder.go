@@ -46,8 +46,8 @@ type ItemTeamworkAssociatedTeamsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAssociatedTeamInfoIdString provides operations to manage the associatedTeams property of the microsoft.graph.userTeamwork entity.
-func (m *ItemTeamworkAssociatedTeamsRequestBuilder) ByAssociatedTeamInfoIdString(associatedTeamInfoId string)(*ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) {
+// ByAssociatedTeamInfoId provides operations to manage the associatedTeams property of the microsoft.graph.userTeamwork entity.
+func (m *ItemTeamworkAssociatedTeamsRequestBuilder) ByAssociatedTeamInfoId(associatedTeamInfoId string)(*ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ItemTeamworkAssociatedTeamsRequestBuilder) ToPostRequestInformation(ctx
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemTeamworkAssociatedTeamsRequestBuilder) WithUrl(rawUrl string)(*ItemTeamworkAssociatedTeamsRequestBuilder) {
+    return NewItemTeamworkAssociatedTeamsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

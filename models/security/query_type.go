@@ -35,3 +35,6 @@ func SerializeQueryType(values []QueryType) []string {
     }
     return result
 }
+func (i QueryType) isMultiValue() bool {
+    return false
+}

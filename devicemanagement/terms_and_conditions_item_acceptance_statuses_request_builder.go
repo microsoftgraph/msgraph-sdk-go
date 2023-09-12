@@ -46,8 +46,8 @@ type TermsAndConditionsItemAcceptanceStatusesRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTermsAndConditionsAcceptanceStatusIdString provides operations to manage the acceptanceStatuses property of the microsoft.graph.termsAndConditions entity.
-func (m *TermsAndConditionsItemAcceptanceStatusesRequestBuilder) ByTermsAndConditionsAcceptanceStatusIdString(termsAndConditionsAcceptanceStatusId string)(*TermsAndConditionsItemAcceptanceStatusesTermsAndConditionsAcceptanceStatusItemRequestBuilder) {
+// ByTermsAndConditionsAcceptanceStatusId provides operations to manage the acceptanceStatuses property of the microsoft.graph.termsAndConditions entity.
+func (m *TermsAndConditionsItemAcceptanceStatusesRequestBuilder) ByTermsAndConditionsAcceptanceStatusId(termsAndConditionsAcceptanceStatusId string)(*TermsAndConditionsItemAcceptanceStatusesTermsAndConditionsAcceptanceStatusItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *TermsAndConditionsItemAcceptanceStatusesRequestBuilder) ToPostRequestIn
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *TermsAndConditionsItemAcceptanceStatusesRequestBuilder) WithUrl(rawUrl string)(*TermsAndConditionsItemAcceptanceStatusesRequestBuilder) {
+    return NewTermsAndConditionsItemAcceptanceStatusesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -84,3 +84,7 @@ func (m *ItemJoinedTeamsItemPermissionGrantsDeltaRequestBuilder) ToGetRequestInf
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemJoinedTeamsItemPermissionGrantsDeltaRequestBuilder) WithUrl(rawUrl string)(*ItemJoinedTeamsItemPermissionGrantsDeltaRequestBuilder) {
+    return NewItemJoinedTeamsItemPermissionGrantsDeltaRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

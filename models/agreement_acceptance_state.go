@@ -35,3 +35,6 @@ func SerializeAgreementAcceptanceState(values []AgreementAcceptanceState) []stri
     }
     return result
 }
+func (i AgreementAcceptanceState) isMultiValue() bool {
+    return false
+}

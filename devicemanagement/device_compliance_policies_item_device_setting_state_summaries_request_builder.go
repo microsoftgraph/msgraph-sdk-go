@@ -46,8 +46,8 @@ type DeviceCompliancePoliciesItemDeviceSettingStateSummariesRequestBuilderPostRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySettingStateDeviceSummaryIdString provides operations to manage the deviceSettingStateSummaries property of the microsoft.graph.deviceCompliancePolicy entity.
-func (m *DeviceCompliancePoliciesItemDeviceSettingStateSummariesRequestBuilder) BySettingStateDeviceSummaryIdString(settingStateDeviceSummaryId string)(*DeviceCompliancePoliciesItemDeviceSettingStateSummariesSettingStateDeviceSummaryItemRequestBuilder) {
+// BySettingStateDeviceSummaryId provides operations to manage the deviceSettingStateSummaries property of the microsoft.graph.deviceCompliancePolicy entity.
+func (m *DeviceCompliancePoliciesItemDeviceSettingStateSummariesRequestBuilder) BySettingStateDeviceSummaryId(settingStateDeviceSummaryId string)(*DeviceCompliancePoliciesItemDeviceSettingStateSummariesSettingStateDeviceSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *DeviceCompliancePoliciesItemDeviceSettingStateSummariesRequestBuilder) 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DeviceCompliancePoliciesItemDeviceSettingStateSummariesRequestBuilder) WithUrl(rawUrl string)(*DeviceCompliancePoliciesItemDeviceSettingStateSummariesRequestBuilder) {
+    return NewDeviceCompliancePoliciesItemDeviceSettingStateSummariesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

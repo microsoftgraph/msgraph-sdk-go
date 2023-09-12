@@ -75,3 +75,7 @@ func (m *ThreatIntelligenceHostsItemPassiveDnsReversePassiveDnsRecordItemRequest
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ThreatIntelligenceHostsItemPassiveDnsReversePassiveDnsRecordItemRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceHostsItemPassiveDnsReversePassiveDnsRecordItemRequestBuilder) {
+    return NewThreatIntelligenceHostsItemPassiveDnsReversePassiveDnsRecordItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

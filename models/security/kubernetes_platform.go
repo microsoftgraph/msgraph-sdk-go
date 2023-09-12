@@ -44,3 +44,6 @@ func SerializeKubernetesPlatform(values []KubernetesPlatform) []string {
     }
     return result
 }
+func (i KubernetesPlatform) isMultiValue() bool {
+    return false
+}

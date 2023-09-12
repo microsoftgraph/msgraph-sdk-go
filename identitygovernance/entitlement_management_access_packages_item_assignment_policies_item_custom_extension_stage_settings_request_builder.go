@@ -46,8 +46,8 @@ type EntitlementManagementAccessPackagesItemAssignmentPoliciesItemCustomExtensio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCustomExtensionStageSettingIdString provides operations to manage the customExtensionStageSettings property of the microsoft.graph.accessPackageAssignmentPolicy entity.
-func (m *EntitlementManagementAccessPackagesItemAssignmentPoliciesItemCustomExtensionStageSettingsRequestBuilder) ByCustomExtensionStageSettingIdString(customExtensionStageSettingId string)(*EntitlementManagementAccessPackagesItemAssignmentPoliciesItemCustomExtensionStageSettingsCustomExtensionStageSettingItemRequestBuilder) {
+// ByCustomExtensionStageSettingId provides operations to manage the customExtensionStageSettings property of the microsoft.graph.accessPackageAssignmentPolicy entity.
+func (m *EntitlementManagementAccessPackagesItemAssignmentPoliciesItemCustomExtensionStageSettingsRequestBuilder) ByCustomExtensionStageSettingId(customExtensionStageSettingId string)(*EntitlementManagementAccessPackagesItemAssignmentPoliciesItemCustomExtensionStageSettingsCustomExtensionStageSettingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *EntitlementManagementAccessPackagesItemAssignmentPoliciesItemCustomExte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EntitlementManagementAccessPackagesItemAssignmentPoliciesItemCustomExtensionStageSettingsRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackagesItemAssignmentPoliciesItemCustomExtensionStageSettingsRequestBuilder) {
+    return NewEntitlementManagementAccessPackagesItemAssignmentPoliciesItemCustomExtensionStageSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

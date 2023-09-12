@@ -38,3 +38,6 @@ func SerializeSensitivityLabelAssignmentMethod(values []SensitivityLabelAssignme
     }
     return result
 }
+func (i SensitivityLabelAssignmentMethod) isMultiValue() bool {
+    return false
+}

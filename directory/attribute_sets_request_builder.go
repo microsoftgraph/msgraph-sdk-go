@@ -46,8 +46,8 @@ type AttributeSetsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAttributeSetIdString provides operations to manage the attributeSets property of the microsoft.graph.directory entity.
-func (m *AttributeSetsRequestBuilder) ByAttributeSetIdString(attributeSetId string)(*AttributeSetsAttributeSetItemRequestBuilder) {
+// ByAttributeSetId provides operations to manage the attributeSets property of the microsoft.graph.directory entity.
+func (m *AttributeSetsRequestBuilder) ByAttributeSetId(attributeSetId string)(*AttributeSetsAttributeSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *AttributeSetsRequestBuilder) ToPostRequestInformation(ctx context.Conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AttributeSetsRequestBuilder) WithUrl(rawUrl string)(*AttributeSetsRequestBuilder) {
+    return NewAttributeSetsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

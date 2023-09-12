@@ -46,8 +46,8 @@ type OrganizationRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByOrganizationIdString provides operations to manage the collection of organization entities.
-func (m *OrganizationRequestBuilder) ByOrganizationIdString(organizationId string)(*OrganizationItemRequestBuilder) {
+// ByOrganizationId provides operations to manage the collection of organization entities.
+func (m *OrganizationRequestBuilder) ByOrganizationId(organizationId string)(*OrganizationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -163,4 +163,8 @@ func (m *OrganizationRequestBuilder) ToPostRequestInformation(ctx context.Contex
 // ValidateProperties provides operations to call the validateProperties method.
 func (m *OrganizationRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
     return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *OrganizationRequestBuilder) WithUrl(rawUrl string)(*OrganizationRequestBuilder) {
+    return NewOrganizationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

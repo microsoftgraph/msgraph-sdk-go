@@ -38,3 +38,6 @@ func SerializeTeamsAppDistributionMethod(values []TeamsAppDistributionMethod) []
     }
     return result
 }
+func (i TeamsAppDistributionMethod) isMultiValue() bool {
+    return false
+}

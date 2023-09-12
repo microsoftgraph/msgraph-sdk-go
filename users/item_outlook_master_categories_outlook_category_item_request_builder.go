@@ -93,7 +93,7 @@ func (m *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) Get(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OutlookCategoryable), nil
 }
-// Patch update the writable property, color, of the specified outlookCategory object. You cannot modify the displayName property once you have created the category.
+// Patch update the writable property, color, of the specified outlookCategory object. You cannot modify the displayName propertyonce you have created the category.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/outlookcategory-update?view=graph-rest-1.0
@@ -143,7 +143,7 @@ func (m *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) ToGetRequ
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the writable property, color, of the specified outlookCategory object. You cannot modify the displayName property once you have created the category.
+// ToPatchRequestInformation update the writable property, color, of the specified outlookCategory object. You cannot modify the displayName propertyonce you have created the category.
 func (m *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OutlookCategoryable, requestConfiguration *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -159,4 +159,8 @@ func (m *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) ToPatchRe
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) WithUrl(rawUrl string)(*ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) {
+    return NewItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

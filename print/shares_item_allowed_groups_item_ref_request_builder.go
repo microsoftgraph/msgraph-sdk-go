@@ -71,3 +71,7 @@ func (m *SharesItemAllowedGroupsItemRefRequestBuilder) ToDeleteRequestInformatio
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SharesItemAllowedGroupsItemRefRequestBuilder) WithUrl(rawUrl string)(*SharesItemAllowedGroupsItemRefRequestBuilder) {
+    return NewSharesItemAllowedGroupsItemRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

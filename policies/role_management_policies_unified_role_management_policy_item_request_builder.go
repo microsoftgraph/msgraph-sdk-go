@@ -164,3 +164,7 @@ func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) To
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) WithUrl(rawUrl string)(*RoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder) {
+    return NewRoleManagementPoliciesUnifiedRoleManagementPolicyItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

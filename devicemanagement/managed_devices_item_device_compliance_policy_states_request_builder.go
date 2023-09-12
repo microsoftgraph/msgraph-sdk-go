@@ -46,8 +46,8 @@ type ManagedDevicesItemDeviceCompliancePolicyStatesRequestBuilderPostRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDeviceCompliancePolicyStateIdString provides operations to manage the deviceCompliancePolicyStates property of the microsoft.graph.managedDevice entity.
-func (m *ManagedDevicesItemDeviceCompliancePolicyStatesRequestBuilder) ByDeviceCompliancePolicyStateIdString(deviceCompliancePolicyStateId string)(*ManagedDevicesItemDeviceCompliancePolicyStatesDeviceCompliancePolicyStateItemRequestBuilder) {
+// ByDeviceCompliancePolicyStateId provides operations to manage the deviceCompliancePolicyStates property of the microsoft.graph.managedDevice entity.
+func (m *ManagedDevicesItemDeviceCompliancePolicyStatesRequestBuilder) ByDeviceCompliancePolicyStateId(deviceCompliancePolicyStateId string)(*ManagedDevicesItemDeviceCompliancePolicyStatesDeviceCompliancePolicyStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ManagedDevicesItemDeviceCompliancePolicyStatesRequestBuilder) ToPostReq
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedDevicesItemDeviceCompliancePolicyStatesRequestBuilder) WithUrl(rawUrl string)(*ManagedDevicesItemDeviceCompliancePolicyStatesRequestBuilder) {
+    return NewManagedDevicesItemDeviceCompliancePolicyStatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

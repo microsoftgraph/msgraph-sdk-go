@@ -46,8 +46,8 @@ type UserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilderPostRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByUserExperienceAnalyticsAppHealthDevicePerformanceIdString provides operations to manage the userExperienceAnalyticsAppHealthDevicePerformance property of the microsoft.graph.deviceManagement entity.
-func (m *UserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilder) ByUserExperienceAnalyticsAppHealthDevicePerformanceIdString(userExperienceAnalyticsAppHealthDevicePerformanceId string)(*UserExperienceAnalyticsAppHealthDevicePerformanceUserExperienceAnalyticsAppHealthDevicePerformanceItemRequestBuilder) {
+// ByUserExperienceAnalyticsAppHealthDevicePerformanceId provides operations to manage the userExperienceAnalyticsAppHealthDevicePerformance property of the microsoft.graph.deviceManagement entity.
+func (m *UserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilder) ByUserExperienceAnalyticsAppHealthDevicePerformanceId(userExperienceAnalyticsAppHealthDevicePerformanceId string)(*UserExperienceAnalyticsAppHealthDevicePerformanceUserExperienceAnalyticsAppHealthDevicePerformanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilder) ToPost
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *UserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilder) WithUrl(rawUrl string)(*UserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilder) {
+    return NewUserExperienceAnalyticsAppHealthDevicePerformanceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

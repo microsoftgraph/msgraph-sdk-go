@@ -47,3 +47,6 @@ func SerializeDefenderAvStatus(values []DefenderAvStatus) []string {
     }
     return result
 }
+func (i DefenderAvStatus) isMultiValue() bool {
+    return false
+}

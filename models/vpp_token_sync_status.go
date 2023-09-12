@@ -42,3 +42,6 @@ func SerializeVppTokenSyncStatus(values []VppTokenSyncStatus) []string {
     }
     return result
 }
+func (i VppTokenSyncStatus) isMultiValue() bool {
+    return false
+}

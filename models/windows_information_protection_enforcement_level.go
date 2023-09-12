@@ -42,3 +42,6 @@ func SerializeWindowsInformationProtectionEnforcementLevel(values []WindowsInfor
     }
     return result
 }
+func (i WindowsInformationProtectionEnforcementLevel) isMultiValue() bool {
+    return false
+}

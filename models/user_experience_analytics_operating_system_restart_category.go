@@ -66,3 +66,6 @@ func SerializeUserExperienceAnalyticsOperatingSystemRestartCategory(values []Use
     }
     return result
 }
+func (i UserExperienceAnalyticsOperatingSystemRestartCategory) isMultiValue() bool {
+    return false
+}

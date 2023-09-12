@@ -38,3 +38,6 @@ func SerializeBroadcastMeetingAudience(values []BroadcastMeetingAudience) []stri
     }
     return result
 }
+func (i BroadcastMeetingAudience) isMultiValue() bool {
+    return false
+}

@@ -42,3 +42,6 @@ func SerializeMicrosoftEdgeChannel(values []MicrosoftEdgeChannel) []string {
     }
     return result
 }
+func (i MicrosoftEdgeChannel) isMultiValue() bool {
+    return false
+}

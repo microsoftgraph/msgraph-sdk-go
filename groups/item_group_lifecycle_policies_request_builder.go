@@ -46,8 +46,8 @@ type ItemGroupLifecyclePoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByGroupLifecyclePolicyIdString provides operations to manage the groupLifecyclePolicies property of the microsoft.graph.group entity.
-func (m *ItemGroupLifecyclePoliciesRequestBuilder) ByGroupLifecyclePolicyIdString(groupLifecyclePolicyId string)(*ItemGroupLifecyclePoliciesGroupLifecyclePolicyItemRequestBuilder) {
+// ByGroupLifecyclePolicyId provides operations to manage the groupLifecyclePolicies property of the microsoft.graph.group entity.
+func (m *ItemGroupLifecyclePoliciesRequestBuilder) ByGroupLifecyclePolicyId(groupLifecyclePolicyId string)(*ItemGroupLifecyclePoliciesGroupLifecyclePolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ItemGroupLifecyclePoliciesRequestBuilder) ToPostRequestInformation(ctx 
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemGroupLifecyclePoliciesRequestBuilder) WithUrl(rawUrl string)(*ItemGroupLifecyclePoliciesRequestBuilder) {
+    return NewItemGroupLifecyclePoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

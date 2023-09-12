@@ -46,8 +46,8 @@ type AttackSimulationSimulationAutomationsRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySimulationAutomationIdString provides operations to manage the simulationAutomations property of the microsoft.graph.attackSimulationRoot entity.
-func (m *AttackSimulationSimulationAutomationsRequestBuilder) BySimulationAutomationIdString(simulationAutomationId string)(*AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilder) {
+// BySimulationAutomationId provides operations to manage the simulationAutomations property of the microsoft.graph.attackSimulationRoot entity.
+func (m *AttackSimulationSimulationAutomationsRequestBuilder) BySimulationAutomationId(simulationAutomationId string)(*AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *AttackSimulationSimulationAutomationsRequestBuilder) ToPostRequestInfor
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AttackSimulationSimulationAutomationsRequestBuilder) WithUrl(rawUrl string)(*AttackSimulationSimulationAutomationsRequestBuilder) {
+    return NewAttackSimulationSimulationAutomationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

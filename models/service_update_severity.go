@@ -38,3 +38,6 @@ func SerializeServiceUpdateSeverity(values []ServiceUpdateSeverity) []string {
     }
     return result
 }
+func (i ServiceUpdateSeverity) isMultiValue() bool {
+    return false
+}

@@ -46,8 +46,8 @@ type DataPolicyOperationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDataPolicyOperationIdString provides operations to manage the collection of dataPolicyOperation entities.
-func (m *DataPolicyOperationsRequestBuilder) ByDataPolicyOperationIdString(dataPolicyOperationId string)(*DataPolicyOperationItemRequestBuilder) {
+// ByDataPolicyOperationId provides operations to manage the collection of dataPolicyOperation entities.
+func (m *DataPolicyOperationsRequestBuilder) ByDataPolicyOperationId(dataPolicyOperationId string)(*DataPolicyOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *DataPolicyOperationsRequestBuilder) ToPostRequestInformation(ctx contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DataPolicyOperationsRequestBuilder) WithUrl(rawUrl string)(*DataPolicyOperationsRequestBuilder) {
+    return NewDataPolicyOperationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

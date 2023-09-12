@@ -71,3 +71,7 @@ func (m *ClassesItemAssignmentsItemCategoriesItemRefRequestBuilder) ToDeleteRequ
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ClassesItemAssignmentsItemCategoriesItemRefRequestBuilder) WithUrl(rawUrl string)(*ClassesItemAssignmentsItemCategoriesItemRefRequestBuilder) {
+    return NewClassesItemAssignmentsItemCategoriesItemRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

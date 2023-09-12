@@ -32,3 +32,6 @@ func SerializeBodyType(values []BodyType) []string {
     }
     return result
 }
+func (i BodyType) isMultiValue() bool {
+    return false
+}

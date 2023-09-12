@@ -74,3 +74,7 @@ func (m *AdministrativeUnitsItemMembersGraphServicePrincipalCountRequestBuilder)
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *AdministrativeUnitsItemMembersGraphServicePrincipalCountRequestBuilder) WithUrl(rawUrl string)(*AdministrativeUnitsItemMembersGraphServicePrincipalCountRequestBuilder) {
+    return NewAdministrativeUnitsItemMembersGraphServicePrincipalCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

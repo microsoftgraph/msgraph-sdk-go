@@ -41,3 +41,6 @@ func SerializePrintOrientation(values []PrintOrientation) []string {
     }
     return result
 }
+func (i PrintOrientation) isMultiValue() bool {
+    return false
+}

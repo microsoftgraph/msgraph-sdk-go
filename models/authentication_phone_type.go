@@ -38,3 +38,6 @@ func SerializeAuthenticationPhoneType(values []AuthenticationPhoneType) []string
     }
     return result
 }
+func (i AuthenticationPhoneType) isMultiValue() bool {
+    return false
+}

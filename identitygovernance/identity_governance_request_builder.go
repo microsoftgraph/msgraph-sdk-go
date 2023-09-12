@@ -138,3 +138,7 @@ func (m *IdentityGovernanceRequestBuilder) ToPatchRequestInformation(ctx context
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *IdentityGovernanceRequestBuilder) WithUrl(rawUrl string)(*IdentityGovernanceRequestBuilder) {
+    return NewIdentityGovernanceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

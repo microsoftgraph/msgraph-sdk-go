@@ -74,3 +74,7 @@ func (m *DirectoryRoleDefinitionsItemInheritsPermissionsFromCountRequestBuilder)
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *DirectoryRoleDefinitionsItemInheritsPermissionsFromCountRequestBuilder) WithUrl(rawUrl string)(*DirectoryRoleDefinitionsItemInheritsPermissionsFromCountRequestBuilder) {
+    return NewDirectoryRoleDefinitionsItemInheritsPermissionsFromCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

@@ -46,8 +46,8 @@ type ItemItemsItemVersionsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDriveItemVersionIdString provides operations to manage the versions property of the microsoft.graph.driveItem entity.
-func (m *ItemItemsItemVersionsRequestBuilder) ByDriveItemVersionIdString(driveItemVersionId string)(*ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) {
+// ByDriveItemVersionId provides operations to manage the versions property of the microsoft.graph.driveItem entity.
+func (m *ItemItemsItemVersionsRequestBuilder) ByDriveItemVersionId(driveItemVersionId string)(*ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *ItemItemsItemVersionsRequestBuilder) ToPostRequestInformation(ctx conte
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemVersionsRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemVersionsRequestBuilder) {
+    return NewItemItemsItemVersionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

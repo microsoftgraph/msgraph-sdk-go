@@ -162,3 +162,7 @@ func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilde
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilder) WithUrl(rawUrl string)(*CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilder) {
+    return NewCrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

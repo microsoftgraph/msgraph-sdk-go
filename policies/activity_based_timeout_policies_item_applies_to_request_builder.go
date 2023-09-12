@@ -39,8 +39,8 @@ type ActivityBasedTimeoutPoliciesItemAppliesToRequestBuilderGetRequestConfigurat
     // Request query parameters
     QueryParameters *ActivityBasedTimeoutPoliciesItemAppliesToRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectIdString provides operations to manage the appliesTo property of the microsoft.graph.stsPolicy entity.
-func (m *ActivityBasedTimeoutPoliciesItemAppliesToRequestBuilder) ByDirectoryObjectIdString(directoryObjectId string)(*ActivityBasedTimeoutPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
+// ByDirectoryObjectId provides operations to manage the appliesTo property of the microsoft.graph.stsPolicy entity.
+func (m *ActivityBasedTimeoutPoliciesItemAppliesToRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ActivityBasedTimeoutPoliciesItemAppliesToDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -101,4 +101,8 @@ func (m *ActivityBasedTimeoutPoliciesItemAppliesToRequestBuilder) ToGetRequestIn
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ActivityBasedTimeoutPoliciesItemAppliesToRequestBuilder) WithUrl(rawUrl string)(*ActivityBasedTimeoutPoliciesItemAppliesToRequestBuilder) {
+    return NewActivityBasedTimeoutPoliciesItemAppliesToRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

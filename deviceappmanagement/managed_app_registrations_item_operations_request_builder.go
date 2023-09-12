@@ -46,8 +46,8 @@ type ManagedAppRegistrationsItemOperationsRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByManagedAppOperationIdString provides operations to manage the operations property of the microsoft.graph.managedAppRegistration entity.
-func (m *ManagedAppRegistrationsItemOperationsRequestBuilder) ByManagedAppOperationIdString(managedAppOperationId string)(*ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilder) {
+// ByManagedAppOperationId provides operations to manage the operations property of the microsoft.graph.managedAppRegistration entity.
+func (m *ManagedAppRegistrationsItemOperationsRequestBuilder) ByManagedAppOperationId(managedAppOperationId string)(*ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ManagedAppRegistrationsItemOperationsRequestBuilder) ToPostRequestInfor
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ManagedAppRegistrationsItemOperationsRequestBuilder) WithUrl(rawUrl string)(*ManagedAppRegistrationsItemOperationsRequestBuilder) {
+    return NewManagedAppRegistrationsItemOperationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

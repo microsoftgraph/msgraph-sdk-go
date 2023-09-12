@@ -46,8 +46,8 @@ type ConnectionsItemItemsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByExternalItemIdString provides operations to manage the items property of the microsoft.graph.externalConnectors.externalConnection entity.
-func (m *ConnectionsItemItemsRequestBuilder) ByExternalItemIdString(externalItemId string)(*ConnectionsItemItemsExternalItemItemRequestBuilder) {
+// ByExternalItemId provides operations to manage the items property of the microsoft.graph.externalConnectors.externalConnection entity.
+func (m *ConnectionsItemItemsRequestBuilder) ByExternalItemId(externalItemId string)(*ConnectionsItemItemsExternalItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -144,4 +144,8 @@ func (m *ConnectionsItemItemsRequestBuilder) ToPostRequestInformation(ctx contex
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ConnectionsItemItemsRequestBuilder) WithUrl(rawUrl string)(*ConnectionsItemItemsRequestBuilder) {
+    return NewConnectionsItemItemsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

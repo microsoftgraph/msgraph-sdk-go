@@ -46,8 +46,8 @@ type ItemOnenoteSectionGroupsItemSectionsRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByOnenoteSectionIdString provides operations to manage the sections property of the microsoft.graph.sectionGroup entity.
-func (m *ItemOnenoteSectionGroupsItemSectionsRequestBuilder) ByOnenoteSectionIdString(onenoteSectionId string)(*ItemOnenoteSectionGroupsItemSectionsOnenoteSectionItemRequestBuilder) {
+// ByOnenoteSectionId provides operations to manage the sections property of the microsoft.graph.sectionGroup entity.
+func (m *ItemOnenoteSectionGroupsItemSectionsRequestBuilder) ByOnenoteSectionId(onenoteSectionId string)(*ItemOnenoteSectionGroupsItemSectionsOnenoteSectionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -150,4 +150,8 @@ func (m *ItemOnenoteSectionGroupsItemSectionsRequestBuilder) ToPostRequestInform
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemOnenoteSectionGroupsItemSectionsRequestBuilder) WithUrl(rawUrl string)(*ItemOnenoteSectionGroupsItemSectionsRequestBuilder) {
+    return NewItemOnenoteSectionGroupsItemSectionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

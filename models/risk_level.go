@@ -44,3 +44,6 @@ func SerializeRiskLevel(values []RiskLevel) []string {
     }
     return result
 }
+func (i RiskLevel) isMultiValue() bool {
+    return false
+}

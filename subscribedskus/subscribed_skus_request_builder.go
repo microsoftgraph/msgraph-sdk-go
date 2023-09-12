@@ -36,8 +36,8 @@ type SubscribedSkusRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BySubscribedSkuIdString provides operations to manage the collection of subscribedSku entities.
-func (m *SubscribedSkusRequestBuilder) BySubscribedSkuIdString(subscribedSkuId string)(*SubscribedSkuItemRequestBuilder) {
+// BySubscribedSkuId provides operations to manage the collection of subscribedSku entities.
+func (m *SubscribedSkusRequestBuilder) BySubscribedSkuId(subscribedSkuId string)(*SubscribedSkuItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -133,4 +133,8 @@ func (m *SubscribedSkusRequestBuilder) ToPostRequestInformation(ctx context.Cont
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *SubscribedSkusRequestBuilder) WithUrl(rawUrl string)(*SubscribedSkusRequestBuilder) {
+    return NewSubscribedSkusRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

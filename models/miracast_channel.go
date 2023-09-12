@@ -110,3 +110,6 @@ func SerializeMiracastChannel(values []MiracastChannel) []string {
     }
     return result
 }
+func (i MiracastChannel) isMultiValue() bool {
+    return false
+}

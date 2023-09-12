@@ -35,3 +35,6 @@ func SerializeTeamsAppResourceSpecificPermissionType(values []TeamsAppResourceSp
     }
     return result
 }
+func (i TeamsAppResourceSpecificPermissionType) isMultiValue() bool {
+    return false
+}

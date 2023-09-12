@@ -58,3 +58,6 @@ func SerializePolicyPlatformType(values []PolicyPlatformType) []string {
     }
     return result
 }
+func (i PolicyPlatformType) isMultiValue() bool {
+    return false
+}

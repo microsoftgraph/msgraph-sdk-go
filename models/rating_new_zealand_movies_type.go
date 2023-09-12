@@ -70,3 +70,6 @@ func SerializeRatingNewZealandMoviesType(values []RatingNewZealandMoviesType) []
     }
     return result
 }
+func (i RatingNewZealandMoviesType) isMultiValue() bool {
+    return false
+}

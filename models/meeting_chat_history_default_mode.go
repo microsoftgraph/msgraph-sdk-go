@@ -35,3 +35,6 @@ func SerializeMeetingChatHistoryDefaultMode(values []MeetingChatHistoryDefaultMo
     }
     return result
 }
+func (i MeetingChatHistoryDefaultMode) isMultiValue() bool {
+    return false
+}

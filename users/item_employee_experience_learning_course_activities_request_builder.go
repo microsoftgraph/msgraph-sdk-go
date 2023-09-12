@@ -39,8 +39,8 @@ type ItemEmployeeExperienceLearningCourseActivitiesRequestBuilderGetRequestConfi
     // Request query parameters
     QueryParameters *ItemEmployeeExperienceLearningCourseActivitiesRequestBuilderGetQueryParameters
 }
-// ByLearningCourseActivityIdString provides operations to manage the learningCourseActivities property of the microsoft.graph.employeeExperienceUser entity.
-func (m *ItemEmployeeExperienceLearningCourseActivitiesRequestBuilder) ByLearningCourseActivityIdString(learningCourseActivityId string)(*ItemEmployeeExperienceLearningCourseActivitiesLearningCourseActivityItemRequestBuilder) {
+// ByLearningCourseActivityId provides operations to manage the learningCourseActivities property of the microsoft.graph.employeeExperienceUser entity.
+func (m *ItemEmployeeExperienceLearningCourseActivitiesRequestBuilder) ByLearningCourseActivityId(learningCourseActivityId string)(*ItemEmployeeExperienceLearningCourseActivitiesLearningCourseActivityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *ItemEmployeeExperienceLearningCourseActivitiesRequestBuilder) ToGetRequ
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemEmployeeExperienceLearningCourseActivitiesRequestBuilder) WithUrl(rawUrl string)(*ItemEmployeeExperienceLearningCourseActivitiesRequestBuilder) {
+    return NewItemEmployeeExperienceLearningCourseActivitiesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

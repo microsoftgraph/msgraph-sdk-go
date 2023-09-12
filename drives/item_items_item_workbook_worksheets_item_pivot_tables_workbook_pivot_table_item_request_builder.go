@@ -160,6 +160,10 @@ func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesWorkbookPivotTableItemReq
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesWorkbookPivotTableItemRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookWorksheetsItemPivotTablesWorkbookPivotTableItemRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemPivotTablesWorkbookPivotTableItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}
 // Worksheet provides operations to manage the worksheet property of the microsoft.graph.workbookPivotTable entity.
 func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesWorkbookPivotTableItemRequestBuilder) Worksheet()(*ItemItemsItemWorkbookWorksheetsItemPivotTablesItemWorksheetRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemPivotTablesItemWorksheetRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

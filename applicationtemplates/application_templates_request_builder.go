@@ -39,8 +39,8 @@ type ApplicationTemplatesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ApplicationTemplatesRequestBuilderGetQueryParameters
 }
-// ByApplicationTemplateIdString provides operations to manage the collection of applicationTemplate entities.
-func (m *ApplicationTemplatesRequestBuilder) ByApplicationTemplateIdString(applicationTemplateId string)(*ApplicationTemplateItemRequestBuilder) {
+// ByApplicationTemplateId provides operations to manage the collection of applicationTemplate entities.
+func (m *ApplicationTemplatesRequestBuilder) ByApplicationTemplateId(applicationTemplateId string)(*ApplicationTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -104,4 +104,8 @@ func (m *ApplicationTemplatesRequestBuilder) ToGetRequestInformation(ctx context
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ApplicationTemplatesRequestBuilder) WithUrl(rawUrl string)(*ApplicationTemplatesRequestBuilder) {
+    return NewApplicationTemplatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -46,8 +46,8 @@ type EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilderPost
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByAccessPackageResourceRoleScopeIdString provides operations to manage the resourceRoleScopes property of the microsoft.graph.accessPackage entity.
-func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilder) ByAccessPackageResourceRoleScopeIdString(accessPackageResourceRoleScopeId string)(*EntitlementManagementAccessPackagesItemResourceRoleScopesAccessPackageResourceRoleScopeItemRequestBuilder) {
+// ByAccessPackageResourceRoleScopeId provides operations to manage the resourceRoleScopes property of the microsoft.graph.accessPackage entity.
+func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilder) ByAccessPackageResourceRoleScopeId(accessPackageResourceRoleScopeId string)(*EntitlementManagementAccessPackagesItemResourceRoleScopesAccessPackageResourceRoleScopeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -147,4 +147,8 @@ func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilder
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilder) {
+    return NewEntitlementManagementAccessPackagesItemResourceRoleScopesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

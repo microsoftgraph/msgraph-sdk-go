@@ -120,3 +120,7 @@ func (m *ItemInferenceClassificationRequestBuilder) ToPatchRequestInformation(ct
     }
     return requestInfo, nil
 }
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+func (m *ItemInferenceClassificationRequestBuilder) WithUrl(rawUrl string)(*ItemInferenceClassificationRequestBuilder) {
+    return NewItemInferenceClassificationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}
