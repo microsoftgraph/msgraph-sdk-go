@@ -20,7 +20,7 @@ func NewPermission()(*Permission) {
 func CreatePermissionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPermission(), nil
 }
-// GetExpirationDateTime gets the expirationDateTime property value. A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
+// GetExpirationDateTime gets the expirationDateTime property value. A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there's no expiration set for this permission. Optional.
 func (m *Permission) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -219,7 +219,7 @@ func (m *Permission) GetHasPassword()(*bool) {
     }
     return nil
 }
-// GetInheritedFrom gets the inheritedFrom property value. Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.
+// GetInheritedFrom gets the inheritedFrom property value. Provides a reference to the ancestor of the current permission, if it's inherited from an ancestor. Read-only.
 func (m *Permission) GetInheritedFrom()(ItemReferenceable) {
     val, err := m.GetBackingStore().Get("inheritedFrom")
     if err != nil {
@@ -241,7 +241,7 @@ func (m *Permission) GetInvitation()(SharingInvitationable) {
     }
     return nil
 }
-// GetLink gets the link property value. Provides the link details of the current permission, if it is a link type permissions. Read-only.
+// GetLink gets the link property value. Provides the link details of the current permission, if it's a link type permission. Read-only.
 func (m *Permission) GetLink()(SharingLinkable) {
     val, err := m.GetBackingStore().Get("link")
     if err != nil {
@@ -360,7 +360,7 @@ func (m *Permission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetExpirationDateTime sets the expirationDateTime property value. A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
+// SetExpirationDateTime sets the expirationDateTime property value. A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there's no expiration set for this permission. Optional.
 func (m *Permission) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {
@@ -402,7 +402,7 @@ func (m *Permission) SetHasPassword(value *bool)() {
         panic(err)
     }
 }
-// SetInheritedFrom sets the inheritedFrom property value. Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.
+// SetInheritedFrom sets the inheritedFrom property value. Provides a reference to the ancestor of the current permission, if it's inherited from an ancestor. Read-only.
 func (m *Permission) SetInheritedFrom(value ItemReferenceable)() {
     err := m.GetBackingStore().Set("inheritedFrom", value)
     if err != nil {
@@ -416,7 +416,7 @@ func (m *Permission) SetInvitation(value SharingInvitationable)() {
         panic(err)
     }
 }
-// SetLink sets the link property value. Provides the link details of the current permission, if it is a link type permissions. Read-only.
+// SetLink sets the link property value. Provides the link details of the current permission, if it's a link type permission. Read-only.
 func (m *Permission) SetLink(value SharingLinkable)() {
     err := m.GetBackingStore().Set("link", value)
     if err != nil {

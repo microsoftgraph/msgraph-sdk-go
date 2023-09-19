@@ -39,7 +39,7 @@ func (m *DirectRoutingLogRow) GetAdditionalData()(map[string]any) {
 func (m *DirectRoutingLogRow) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCalleeNumber gets the calleeNumber property value. Number of the user or bot who received the call. E.164 format, but may include additional data.
+// GetCalleeNumber gets the calleeNumber property value. Number of the user or bot who received the call. E.164 format, but may include other data.
 func (m *DirectRoutingLogRow) GetCalleeNumber()(*string) {
     val, err := m.GetBackingStore().Get("calleeNumber")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *DirectRoutingLogRow) GetCallEndSubReason()(*int32) {
     }
     return nil
 }
-// GetCallerNumber gets the callerNumber property value. Number of the user or bot who made the call. E.164 format, but may include additional data.
+// GetCallerNumber gets the callerNumber property value. Number of the user or bot who made the call. E.164 format, but may include other data.
 func (m *DirectRoutingLogRow) GetCallerNumber()(*string) {
     val, err := m.GetBackingStore().Get("callerNumber")
     if err != nil {
@@ -352,7 +352,7 @@ func (m *DirectRoutingLogRow) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetFinalSipCode gets the finalSipCode property value. The code with which the call ended, RFC 3261.
+// GetFinalSipCode gets the finalSipCode property value. The code with which the call ended, see RFC 3261.
 func (m *DirectRoutingLogRow) GetFinalSipCode()(*int32) {
     val, err := m.GetBackingStore().Get("finalSipCode")
     if err != nil {
@@ -407,7 +407,7 @@ func (m *DirectRoutingLogRow) GetMediaBypassEnabled()(*bool) {
     }
     return nil
 }
-// GetMediaPathLocation gets the mediaPathLocation property value. The datacenter used for media path in non-bypass call.
+// GetMediaPathLocation gets the mediaPathLocation property value. The datacenter used for media path in nonbypass call.
 func (m *DirectRoutingLogRow) GetMediaPathLocation()(*string) {
     val, err := m.GetBackingStore().Get("mediaPathLocation")
     if err != nil {
@@ -429,7 +429,7 @@ func (m *DirectRoutingLogRow) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSignalingLocation gets the signalingLocation property value. The datacenter used for signaling for both bypass and non-bypass calls.
+// GetSignalingLocation gets the signalingLocation property value. The datacenter used for signaling for both bypass and nonbypass calls.
 func (m *DirectRoutingLogRow) GetSignalingLocation()(*string) {
     val, err := m.GetBackingStore().Get("signalingLocation")
     if err != nil {
@@ -659,7 +659,7 @@ func (m *DirectRoutingLogRow) SetAdditionalData(value map[string]any)() {
 func (m *DirectRoutingLogRow) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCalleeNumber sets the calleeNumber property value. Number of the user or bot who received the call. E.164 format, but may include additional data.
+// SetCalleeNumber sets the calleeNumber property value. Number of the user or bot who received the call. E.164 format, but may include other data.
 func (m *DirectRoutingLogRow) SetCalleeNumber(value *string)() {
     err := m.GetBackingStore().Set("calleeNumber", value)
     if err != nil {
@@ -673,7 +673,7 @@ func (m *DirectRoutingLogRow) SetCallEndSubReason(value *int32)() {
         panic(err)
     }
 }
-// SetCallerNumber sets the callerNumber property value. Number of the user or bot who made the call. E.164 format, but may include additional data.
+// SetCallerNumber sets the callerNumber property value. Number of the user or bot who made the call. E.164 format, but may include other data.
 func (m *DirectRoutingLogRow) SetCallerNumber(value *string)() {
     err := m.GetBackingStore().Set("callerNumber", value)
     if err != nil {
@@ -715,7 +715,7 @@ func (m *DirectRoutingLogRow) SetFailureDateTime(value *i336074805fc853987abe6f7
         panic(err)
     }
 }
-// SetFinalSipCode sets the finalSipCode property value. The code with which the call ended, RFC 3261.
+// SetFinalSipCode sets the finalSipCode property value. The code with which the call ended, see RFC 3261.
 func (m *DirectRoutingLogRow) SetFinalSipCode(value *int32)() {
     err := m.GetBackingStore().Set("finalSipCode", value)
     if err != nil {
@@ -750,7 +750,7 @@ func (m *DirectRoutingLogRow) SetMediaBypassEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetMediaPathLocation sets the mediaPathLocation property value. The datacenter used for media path in non-bypass call.
+// SetMediaPathLocation sets the mediaPathLocation property value. The datacenter used for media path in nonbypass call.
 func (m *DirectRoutingLogRow) SetMediaPathLocation(value *string)() {
     err := m.GetBackingStore().Set("mediaPathLocation", value)
     if err != nil {
@@ -764,7 +764,7 @@ func (m *DirectRoutingLogRow) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSignalingLocation sets the signalingLocation property value. The datacenter used for signaling for both bypass and non-bypass calls.
+// SetSignalingLocation sets the signalingLocation property value. The datacenter used for signaling for both bypass and nonbypass calls.
 func (m *DirectRoutingLogRow) SetSignalingLocation(value *string)() {
     err := m.GetBackingStore().Set("signalingLocation", value)
     if err != nil {

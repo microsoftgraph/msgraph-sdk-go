@@ -153,7 +153,7 @@ func (m *BucketAggregationDefinition) GetPrefixFilter()(*string) {
     }
     return nil
 }
-// GetRanges gets the ranges property value. Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.
+// GetRanges gets the ranges property value. Specifies the manual ranges to compute the aggregations. This is only valid for nonstring refiners of date or numeric type. Optional.
 func (m *BucketAggregationDefinition) GetRanges()([]BucketAggregationRangeable) {
     val, err := m.GetBackingStore().Get("ranges")
     if err != nil {
@@ -267,7 +267,7 @@ func (m *BucketAggregationDefinition) SetPrefixFilter(value *string)() {
         panic(err)
     }
 }
-// SetRanges sets the ranges property value. Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.
+// SetRanges sets the ranges property value. Specifies the manual ranges to compute the aggregations. This is only valid for nonstring refiners of date or numeric type. Optional.
 func (m *BucketAggregationDefinition) SetRanges(value []BucketAggregationRangeable)() {
     err := m.GetBackingStore().Set("ranges", value)
     if err != nil {

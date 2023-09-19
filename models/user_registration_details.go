@@ -308,7 +308,7 @@ func (m *UserRegistrationDetails) GetSystemPreferredAuthenticationMethods()([]st
     }
     return nil
 }
-// GetUserDisplayName gets the userDisplayName property value. The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.
+// GetUserDisplayName gets the userDisplayName property value. The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderby.
 func (m *UserRegistrationDetails) GetUserDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("userDisplayName")
     if err != nil {
@@ -330,7 +330,7 @@ func (m *UserRegistrationDetails) GetUserPreferredMethodForSecondaryAuthenticati
     }
     return nil
 }
-// GetUserPrincipalName gets the userPrincipalName property value. The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderby.
 func (m *UserRegistrationDetails) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -529,7 +529,7 @@ func (m *UserRegistrationDetails) SetSystemPreferredAuthenticationMethods(value 
         panic(err)
     }
 }
-// SetUserDisplayName sets the userDisplayName property value. The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.
+// SetUserDisplayName sets the userDisplayName property value. The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderby.
 func (m *UserRegistrationDetails) SetUserDisplayName(value *string)() {
     err := m.GetBackingStore().Set("userDisplayName", value)
     if err != nil {
@@ -543,7 +543,7 @@ func (m *UserRegistrationDetails) SetUserPreferredMethodForSecondaryAuthenticati
         panic(err)
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.
+// SetUserPrincipalName sets the userPrincipalName property value. The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderby.
 func (m *UserRegistrationDetails) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
     if err != nil {

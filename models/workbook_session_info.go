@@ -73,7 +73,7 @@ func (m *WorkbookSessionInfo) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetId gets the id property value. Id of the workbook session.
+// GetId gets the id property value. ID of the workbook session.
 func (m *WorkbookSessionInfo) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -145,7 +145,7 @@ func (m *WorkbookSessionInfo) SetAdditionalData(value map[string]any)() {
 func (m *WorkbookSessionInfo) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetId sets the id property value. Id of the workbook session.
+// SetId sets the id property value. ID of the workbook session.
 func (m *WorkbookSessionInfo) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {

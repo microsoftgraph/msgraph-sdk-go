@@ -122,7 +122,7 @@ func (m *DomainDnsRecord) GetLabel()(*string) {
     }
     return nil
 }
-// GetRecordType gets the recordType property value. Indicates what type of DNS record this entity represents.The value can be one of the following: CName, Mx, Srv, Txt.
+// GetRecordType gets the recordType property value. Indicates what type of DNS record this entity represents. The value can be CName, Mx, Srv, or Txt.
 func (m *DomainDnsRecord) GetRecordType()(*string) {
     val, err := m.GetBackingStore().Get("recordType")
     if err != nil {
@@ -133,7 +133,7 @@ func (m *DomainDnsRecord) GetRecordType()(*string) {
     }
     return nil
 }
-// GetSupportedService gets the supportedService property value. Microsoft Online Service or feature that has a dependency on this DNS record.Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.
+// GetSupportedService gets the supportedService property value. Microsoft Online Service or feature that has a dependency on this DNS record. Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.
 func (m *DomainDnsRecord) GetSupportedService()(*string) {
     val, err := m.GetBackingStore().Get("supportedService")
     if err != nil {
@@ -207,14 +207,14 @@ func (m *DomainDnsRecord) SetLabel(value *string)() {
         panic(err)
     }
 }
-// SetRecordType sets the recordType property value. Indicates what type of DNS record this entity represents.The value can be one of the following: CName, Mx, Srv, Txt.
+// SetRecordType sets the recordType property value. Indicates what type of DNS record this entity represents. The value can be CName, Mx, Srv, or Txt.
 func (m *DomainDnsRecord) SetRecordType(value *string)() {
     err := m.GetBackingStore().Set("recordType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSupportedService sets the supportedService property value. Microsoft Online Service or feature that has a dependency on this DNS record.Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.
+// SetSupportedService sets the supportedService property value. Microsoft Online Service or feature that has a dependency on this DNS record. Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.
 func (m *DomainDnsRecord) SetSupportedService(value *string)() {
     err := m.GetBackingStore().Set("supportedService", value)
     if err != nil {

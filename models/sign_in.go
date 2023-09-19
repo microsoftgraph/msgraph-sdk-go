@@ -20,7 +20,7 @@ func NewSignIn()(*SignIn) {
 func CreateSignInFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSignIn(), nil
 }
-// GetAppDisplayName gets the appDisplayName property value. App name displayed in the Azure Portal.  Supports $filter (eq, startsWith).
+// GetAppDisplayName gets the appDisplayName property value. App name displayed in the Azure portal.  Supports $filter (eq, startsWith).
 func (m *SignIn) GetAppDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("appDisplayName")
     if err != nil {
@@ -449,7 +449,7 @@ func (m *SignIn) GetRiskEventTypesV2()([]string) {
     }
     return nil
 }
-// GetRiskLevelAggregated gets the riskLevelAggregated property value. Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
+// GetRiskLevelAggregated gets the riskLevelAggregated property value. Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Azure AD Identity Protection.  Supports $filter (eq).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) GetRiskLevelAggregated()(*RiskLevel) {
     val, err := m.GetBackingStore().Get("riskLevelAggregated")
     if err != nil {
@@ -460,7 +460,7 @@ func (m *SignIn) GetRiskLevelAggregated()(*RiskLevel) {
     }
     return nil
 }
-// GetRiskLevelDuringSignIn gets the riskLevelDuringSignIn property value. Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
+// GetRiskLevelDuringSignIn gets the riskLevelDuringSignIn property value. Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Azure AD Identity Protection.  Supports $filter (eq).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) GetRiskLevelDuringSignIn()(*RiskLevel) {
     val, err := m.GetBackingStore().Get("riskLevelDuringSignIn")
     if err != nil {
@@ -482,7 +482,7 @@ func (m *SignIn) GetRiskState()(*RiskState) {
     }
     return nil
 }
-// GetStatus gets the status property value. Sign-in status. Includes the error code and description of the error (in case of a sign-in failure).  Supports $filter (eq) on errorCode property.
+// GetStatus gets the status property value. Sign-in status. Includes the error code and description of the error (if there's a sign-in failure).  Supports $filter (eq) on errorCode property.
 func (m *SignIn) GetStatus()(SignInStatusable) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -683,7 +683,7 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     }
     return nil
 }
-// SetAppDisplayName sets the appDisplayName property value. App name displayed in the Azure Portal.  Supports $filter (eq, startsWith).
+// SetAppDisplayName sets the appDisplayName property value. App name displayed in the Azure portal.  Supports $filter (eq, startsWith).
 func (m *SignIn) SetAppDisplayName(value *string)() {
     err := m.GetBackingStore().Set("appDisplayName", value)
     if err != nil {
@@ -795,14 +795,14 @@ func (m *SignIn) SetRiskEventTypesV2(value []string)() {
         panic(err)
     }
 }
-// SetRiskLevelAggregated sets the riskLevelAggregated property value. Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
+// SetRiskLevelAggregated sets the riskLevelAggregated property value. Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Azure AD Identity Protection.  Supports $filter (eq).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) SetRiskLevelAggregated(value *RiskLevel)() {
     err := m.GetBackingStore().Set("riskLevelAggregated", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRiskLevelDuringSignIn sets the riskLevelDuringSignIn property value. Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
+// SetRiskLevelDuringSignIn sets the riskLevelDuringSignIn property value. Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Azure AD Identity Protection.  Supports $filter (eq).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
 func (m *SignIn) SetRiskLevelDuringSignIn(value *RiskLevel)() {
     err := m.GetBackingStore().Set("riskLevelDuringSignIn", value)
     if err != nil {
@@ -816,7 +816,7 @@ func (m *SignIn) SetRiskState(value *RiskState)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Sign-in status. Includes the error code and description of the error (in case of a sign-in failure).  Supports $filter (eq) on errorCode property.
+// SetStatus sets the status property value. Sign-in status. Includes the error code and description of the error (if there's a sign-in failure).  Supports $filter (eq) on errorCode property.
 func (m *SignIn) SetStatus(value SignInStatusable)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

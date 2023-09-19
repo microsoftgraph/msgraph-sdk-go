@@ -40,7 +40,7 @@ func CreateServiceAnnouncementBaseFromDiscriminatorValue(parseNode i878a80d2330e
     }
     return NewServiceAnnouncementBase(), nil
 }
-// GetDetails gets the details property value. Additional details about service event. This property doesn't support filters.
+// GetDetails gets the details property value. More details about service event. This property doesn't support filters.
 func (m *ServiceAnnouncementBase) GetDetails()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("details")
     if err != nil {
@@ -200,7 +200,7 @@ func (m *ServiceAnnouncementBase) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetDetails sets the details property value. Additional details about service event. This property doesn't support filters.
+// SetDetails sets the details property value. More details about service event. This property doesn't support filters.
 func (m *ServiceAnnouncementBase) SetDetails(value []KeyValuePairable)() {
     err := m.GetBackingStore().Set("details", value)
     if err != nil {

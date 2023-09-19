@@ -34,7 +34,7 @@ func (m *TermColumn) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAllowMultipleValues gets the allowMultipleValues property value. Specifies whether the column will allow more than one value.
+// GetAllowMultipleValues gets the allowMultipleValues property value. Specifies whether the column allows more than one value.
 func (m *TermColumn) GetAllowMultipleValues()(*bool) {
     val, err := m.GetBackingStore().Get("allowMultipleValues")
     if err != nil {
@@ -141,7 +141,7 @@ func (m *TermColumn) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAllowMultipleValues sets the allowMultipleValues property value. Specifies whether the column will allow more than one value.
+// SetAllowMultipleValues sets the allowMultipleValues property value. Specifies whether the column allows more than one value.
 func (m *TermColumn) SetAllowMultipleValues(value *bool)() {
     err := m.GetBackingStore().Set("allowMultipleValues", value)
     if err != nil {

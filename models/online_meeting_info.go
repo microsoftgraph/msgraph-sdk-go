@@ -136,7 +136,7 @@ func (m *OnlineMeetingInfo) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetJoinUrl gets the joinUrl property value. The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
+// GetJoinUrl gets the joinUrl property value. The external link that launches the online meeting. This is a URL that clients launch into a browser and will redirect the user to join the meeting.
 func (m *OnlineMeetingInfo) GetJoinUrl()(*string) {
     val, err := m.GetBackingStore().Get("joinUrl")
     if err != nil {
@@ -169,7 +169,7 @@ func (m *OnlineMeetingInfo) GetPhones()([]Phoneable) {
     }
     return nil
 }
-// GetQuickDial gets the quickDial property value. The pre-formatted quickdial for this call.
+// GetQuickDial gets the quickDial property value. The preformatted quick dial for this call.
 func (m *OnlineMeetingInfo) GetQuickDial()(*string) {
     val, err := m.GetBackingStore().Get("quickDial")
     if err != nil {
@@ -278,7 +278,7 @@ func (m *OnlineMeetingInfo) SetConferenceId(value *string)() {
         panic(err)
     }
 }
-// SetJoinUrl sets the joinUrl property value. The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
+// SetJoinUrl sets the joinUrl property value. The external link that launches the online meeting. This is a URL that clients launch into a browser and will redirect the user to join the meeting.
 func (m *OnlineMeetingInfo) SetJoinUrl(value *string)() {
     err := m.GetBackingStore().Set("joinUrl", value)
     if err != nil {
@@ -299,7 +299,7 @@ func (m *OnlineMeetingInfo) SetPhones(value []Phoneable)() {
         panic(err)
     }
 }
-// SetQuickDial sets the quickDial property value. The pre-formatted quickdial for this call.
+// SetQuickDial sets the quickDial property value. The preformatted quick dial for this call.
 func (m *OnlineMeetingInfo) SetQuickDial(value *string)() {
     err := m.GetBackingStore().Set("quickDial", value)
     if err != nil {

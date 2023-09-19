@@ -104,7 +104,7 @@ func (m *LicenseUnitsDetail) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetLockedOut gets the lockedOut property value. The number of units that are locked out because the customer cancelled their subscription of the service SKU.
+// GetLockedOut gets the lockedOut property value. The number of units that are locked out because the customer canceled their subscription of the service SKU.
 func (m *LicenseUnitsDetail) GetLockedOut()(*int32) {
     val, err := m.GetBackingStore().Get("lockedOut")
     if err != nil {
@@ -126,7 +126,7 @@ func (m *LicenseUnitsDetail) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSuspended gets the suspended property value. The number of units that are suspended because the subscription of the service SKU has been cancelled. The units cannot be assigned but can still be reactivated before they are deleted.
+// GetSuspended gets the suspended property value. The number of units that are suspended because the subscription of the service SKU has been canceled. The units can't be assigned but can still be reactivated before they're deleted.
 func (m *LicenseUnitsDetail) GetSuspended()(*int32) {
     val, err := m.GetBackingStore().Get("suspended")
     if err != nil {
@@ -137,7 +137,7 @@ func (m *LicenseUnitsDetail) GetSuspended()(*int32) {
     }
     return nil
 }
-// GetWarning gets the warning property value. The number of units that are in warning status. When the subscription of the service SKU has expired, the customer has a grace period to renew their subscription before it is cancelled (moved to a suspended state).
+// GetWarning gets the warning property value. The number of units that are in warning status. When the subscription of the service SKU has expired, the customer has a grace period to renew their subscription before it's canceled (moved to a suspended state).
 func (m *LicenseUnitsDetail) GetWarning()(*int32) {
     val, err := m.GetBackingStore().Get("warning")
     if err != nil {
@@ -206,7 +206,7 @@ func (m *LicenseUnitsDetail) SetEnabled(value *int32)() {
         panic(err)
     }
 }
-// SetLockedOut sets the lockedOut property value. The number of units that are locked out because the customer cancelled their subscription of the service SKU.
+// SetLockedOut sets the lockedOut property value. The number of units that are locked out because the customer canceled their subscription of the service SKU.
 func (m *LicenseUnitsDetail) SetLockedOut(value *int32)() {
     err := m.GetBackingStore().Set("lockedOut", value)
     if err != nil {
@@ -220,14 +220,14 @@ func (m *LicenseUnitsDetail) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSuspended sets the suspended property value. The number of units that are suspended because the subscription of the service SKU has been cancelled. The units cannot be assigned but can still be reactivated before they are deleted.
+// SetSuspended sets the suspended property value. The number of units that are suspended because the subscription of the service SKU has been canceled. The units can't be assigned but can still be reactivated before they're deleted.
 func (m *LicenseUnitsDetail) SetSuspended(value *int32)() {
     err := m.GetBackingStore().Set("suspended", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWarning sets the warning property value. The number of units that are in warning status. When the subscription of the service SKU has expired, the customer has a grace period to renew their subscription before it is cancelled (moved to a suspended state).
+// SetWarning sets the warning property value. The number of units that are in warning status. When the subscription of the service SKU has expired, the customer has a grace period to renew their subscription before it's canceled (moved to a suspended state).
 func (m *LicenseUnitsDetail) SetWarning(value *int32)() {
     err := m.GetBackingStore().Set("warning", value)
     if err != nil {

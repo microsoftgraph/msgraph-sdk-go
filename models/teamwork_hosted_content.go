@@ -48,7 +48,7 @@ func (m *TeamworkHostedContent) GetContentBytes()([]byte) {
     }
     return nil
 }
-// GetContentType gets the contentType property value. Write only. Content type. sicj as image/png, image/jpg.
+// GetContentType gets the contentType property value. Write only. Content type. such as image/png, image/jpg.
 func (m *TeamworkHostedContent) GetContentType()(*string) {
     val, err := m.GetBackingStore().Get("contentType")
     if err != nil {
@@ -111,7 +111,7 @@ func (m *TeamworkHostedContent) SetContentBytes(value []byte)() {
         panic(err)
     }
 }
-// SetContentType sets the contentType property value. Write only. Content type. sicj as image/png, image/jpg.
+// SetContentType sets the contentType property value. Write only. Content type. such as image/png, image/jpg.
 func (m *TeamworkHostedContent) SetContentType(value *string)() {
     err := m.GetBackingStore().Set("contentType", value)
     if err != nil {

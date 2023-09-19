@@ -19,7 +19,7 @@ func NewEducationSubmissionResource()(*EducationSubmissionResource) {
 func CreateEducationSubmissionResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationSubmissionResource(), nil
 }
-// GetAssignmentResourceUrl gets the assignmentResourceUrl property value. Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
+// GetAssignmentResourceUrl gets the assignmentResourceUrl property value. Pointer to the assignment from which the resource was copied, and if null, the student uploaded the resource.
 func (m *EducationSubmissionResource) GetAssignmentResourceUrl()(*string) {
     val, err := m.GetBackingStore().Get("assignmentResourceUrl")
     if err != nil {
@@ -86,7 +86,7 @@ func (m *EducationSubmissionResource) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetAssignmentResourceUrl sets the assignmentResourceUrl property value. Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
+// SetAssignmentResourceUrl sets the assignmentResourceUrl property value. Pointer to the assignment from which the resource was copied, and if null, the student uploaded the resource.
 func (m *EducationSubmissionResource) SetAssignmentResourceUrl(value *string)() {
     err := m.GetBackingStore().Set("assignmentResourceUrl", value)
     if err != nil {

@@ -132,7 +132,7 @@ func (m *AttributeMappingSource) GetOdataType()(*string) {
     }
     return nil
 }
-// GetParameters gets the parameters property value. If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.
+// GetParameters gets the parameters property value. If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type isn't Function, this property is null/empty array.
 func (m *AttributeMappingSource) GetParameters()([]StringKeyAttributeMappingSourceValuePairable) {
     val, err := m.GetBackingStore().Get("parameters")
     if err != nil {
@@ -233,7 +233,7 @@ func (m *AttributeMappingSource) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetParameters sets the parameters property value. If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.
+// SetParameters sets the parameters property value. If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type isn't Function, this property is null/empty array.
 func (m *AttributeMappingSource) SetParameters(value []StringKeyAttributeMappingSourceValuePairable)() {
     err := m.GetBackingStore().Set("parameters", value)
     if err != nil {

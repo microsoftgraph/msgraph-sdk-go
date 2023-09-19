@@ -38,7 +38,7 @@ func (m *SignInLocation) GetAdditionalData()(map[string]any) {
 func (m *SignInLocation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCity gets the city property value. Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
+// GetCity gets the city property value. Provides the city where the sign-in originated and is determined using latitude/longitude information from the sign-in activity.
 func (m *SignInLocation) GetCity()(*string) {
     val, err := m.GetBackingStore().Get("city")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *SignInLocation) GetCity()(*string) {
     }
     return nil
 }
-// GetCountryOrRegion gets the countryOrRegion property value. Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
+// GetCountryOrRegion gets the countryOrRegion property value. Provides the country code info (two letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
 func (m *SignInLocation) GetCountryOrRegion()(*string) {
     val, err := m.GetBackingStore().Get("countryOrRegion")
     if err != nil {
@@ -199,14 +199,14 @@ func (m *SignInLocation) SetAdditionalData(value map[string]any)() {
 func (m *SignInLocation) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCity sets the city property value. Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
+// SetCity sets the city property value. Provides the city where the sign-in originated and is determined using latitude/longitude information from the sign-in activity.
 func (m *SignInLocation) SetCity(value *string)() {
     err := m.GetBackingStore().Set("city", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCountryOrRegion sets the countryOrRegion property value. Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
+// SetCountryOrRegion sets the countryOrRegion property value. Provides the country code info (two letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
 func (m *SignInLocation) SetCountryOrRegion(value *string)() {
     err := m.GetBackingStore().Set("countryOrRegion", value)
     if err != nil {

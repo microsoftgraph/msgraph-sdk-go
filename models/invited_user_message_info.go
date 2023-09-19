@@ -38,7 +38,7 @@ func (m *InvitedUserMessageInfo) GetAdditionalData()(map[string]any) {
 func (m *InvitedUserMessageInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCcRecipients gets the ccRecipients property value. Additional recipients the invitation message should be sent to. Currently only 1 additional recipient is supported.
+// GetCcRecipients gets the ccRecipients property value. Additional recipients the invitation message should be sent to. Currently only one additional recipient is supported.
 func (m *InvitedUserMessageInfo) GetCcRecipients()([]Recipientable) {
     val, err := m.GetBackingStore().Get("ccRecipients")
     if err != nil {
@@ -184,7 +184,7 @@ func (m *InvitedUserMessageInfo) SetAdditionalData(value map[string]any)() {
 func (m *InvitedUserMessageInfo) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCcRecipients sets the ccRecipients property value. Additional recipients the invitation message should be sent to. Currently only 1 additional recipient is supported.
+// SetCcRecipients sets the ccRecipients property value. Additional recipients the invitation message should be sent to. Currently only one additional recipient is supported.
 func (m *InvitedUserMessageInfo) SetCcRecipients(value []Recipientable)() {
     err := m.GetBackingStore().Set("ccRecipients", value)
     if err != nil {

@@ -120,7 +120,7 @@ func (m *B2xIdentityUserFlow) GetIdentityProviders()([]IdentityProviderable) {
     }
     return nil
 }
-// GetLanguages gets the languages property value. The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
+// GetLanguages gets the languages property value. The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You can't create custom languages in self-service sign-up user flows.
 func (m *B2xIdentityUserFlow) GetLanguages()([]UserFlowLanguageConfigurationable) {
     val, err := m.GetBackingStore().Get("languages")
     if err != nil {
@@ -229,7 +229,7 @@ func (m *B2xIdentityUserFlow) SetIdentityProviders(value []IdentityProviderable)
         panic(err)
     }
 }
-// SetLanguages sets the languages property value. The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
+// SetLanguages sets the languages property value. The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You can't create custom languages in self-service sign-up user flows.
 func (m *B2xIdentityUserFlow) SetLanguages(value []UserFlowLanguageConfigurationable)() {
     err := m.GetBackingStore().Set("languages", value)
     if err != nil {

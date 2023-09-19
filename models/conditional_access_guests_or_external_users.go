@@ -38,7 +38,7 @@ func (m *ConditionalAccessGuestsOrExternalUsers) GetAdditionalData()(map[string]
 func (m *ConditionalAccessGuestsOrExternalUsers) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetExternalTenants gets the externalTenants property value. The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes is not null or an empty String.
+// GetExternalTenants gets the externalTenants property value. The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes isn't null or an empty String.
 func (m *ConditionalAccessGuestsOrExternalUsers) GetExternalTenants()(ConditionalAccessExternalTenantsable) {
     val, err := m.GetBackingStore().Get("externalTenants")
     if err != nil {
@@ -146,7 +146,7 @@ func (m *ConditionalAccessGuestsOrExternalUsers) SetAdditionalData(value map[str
 func (m *ConditionalAccessGuestsOrExternalUsers) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetExternalTenants sets the externalTenants property value. The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes is not null or an empty String.
+// SetExternalTenants sets the externalTenants property value. The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes isn't null or an empty String.
 func (m *ConditionalAccessGuestsOrExternalUsers) SetExternalTenants(value ConditionalAccessExternalTenantsable)() {
     err := m.GetBackingStore().Set("externalTenants", value)
     if err != nil {

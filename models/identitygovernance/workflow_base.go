@@ -268,7 +268,7 @@ func (m *WorkflowBase) GetIsEnabled()(*bool) {
     }
     return nil
 }
-// GetIsSchedulingEnabled gets the isSchedulingEnabled property value. If true, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Cannot be true for a disabled workflow (where isEnabled is false).
+// GetIsSchedulingEnabled gets the isSchedulingEnabled property value. If true, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Can't be true for a disabled workflow (where isEnabled is false).
 func (m *WorkflowBase) GetIsSchedulingEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isSchedulingEnabled")
     if err != nil {
@@ -279,7 +279,7 @@ func (m *WorkflowBase) GetIsSchedulingEnabled()(*bool) {
     }
     return nil
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The unique identifier of the AAD identity that last modified the workflow.
+// GetLastModifiedBy gets the lastModifiedBy property value. The unique identifier of the Azure Active Directory identity that last modified the workflow.
 func (m *WorkflowBase) GetLastModifiedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -472,14 +472,14 @@ func (m *WorkflowBase) SetIsEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetIsSchedulingEnabled sets the isSchedulingEnabled property value. If true, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Cannot be true for a disabled workflow (where isEnabled is false).
+// SetIsSchedulingEnabled sets the isSchedulingEnabled property value. If true, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Can't be true for a disabled workflow (where isEnabled is false).
 func (m *WorkflowBase) SetIsSchedulingEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isSchedulingEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The unique identifier of the AAD identity that last modified the workflow.
+// SetLastModifiedBy sets the lastModifiedBy property value. The unique identifier of the Azure Active Directory identity that last modified the workflow.
 func (m *WorkflowBase) SetLastModifiedBy(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {

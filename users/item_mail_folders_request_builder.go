@@ -20,7 +20,7 @@ type ItemMailFoldersRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Include Hidden Folders
-    IncludeHiddenFolders *string
+    IncludeHiddenFolders *string `uriparametername:"includeHiddenFolders"`
     // Order items by property values
     Orderby []string `uriparametername:"%24orderby"`
     // Select properties to be returned

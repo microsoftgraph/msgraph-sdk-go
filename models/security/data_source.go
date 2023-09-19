@@ -65,7 +65,7 @@ func (m *DataSource) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The display name of the dataSource. This will be the name of the SharePoint site.
+// GetDisplayName gets the displayName property value. The display name of the dataSource and is the name of the SharePoint site.
 func (m *DataSource) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -179,7 +179,7 @@ func (m *DataSource) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The display name of the dataSource. This will be the name of the SharePoint site.
+// SetDisplayName sets the displayName property value. The display name of the dataSource and is the name of the SharePoint site.
 func (m *DataSource) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

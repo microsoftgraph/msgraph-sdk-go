@@ -191,7 +191,7 @@ func (m *TeamsAppDefinition) GetLastModifiedDateTime()(*i336074805fc853987abe6f7
     }
     return nil
 }
-// GetPublishingState gets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
+// GetPublishingState gets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published—The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected—The admin rejected the request to publish the specific version of the Teams app.
 func (m *TeamsAppDefinition) GetPublishingState()(*TeamsAppPublishingState) {
     val, err := m.GetBackingStore().Get("publishingState")
     if err != nil {
@@ -346,7 +346,7 @@ func (m *TeamsAppDefinition) SetLastModifiedDateTime(value *i336074805fc853987ab
         panic(err)
     }
 }
-// SetPublishingState sets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
+// SetPublishingState sets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published—The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected—The admin rejected the request to publish the specific version of the Teams app.
 func (m *TeamsAppDefinition) SetPublishingState(value *TeamsAppPublishingState)() {
     err := m.GetBackingStore().Set("publishingState", value)
     if err != nil {

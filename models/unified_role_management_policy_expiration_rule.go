@@ -57,7 +57,7 @@ func (m *UnifiedRoleManagementPolicyExpirationRule) GetIsExpirationRequired()(*b
     }
     return nil
 }
-// GetMaximumDuration gets the maximumDuration property value. The maximum duration allowed for eligibility or assignment which is not permanent. Required when isExpirationRequired is true.
+// GetMaximumDuration gets the maximumDuration property value. The maximum duration allowed for eligibility or assignment that isn't permanent. Required when isExpirationRequired is true.
 func (m *UnifiedRoleManagementPolicyExpirationRule) GetMaximumDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("maximumDuration")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *UnifiedRoleManagementPolicyExpirationRule) SetIsExpirationRequired(valu
         panic(err)
     }
 }
-// SetMaximumDuration sets the maximumDuration property value. The maximum duration allowed for eligibility or assignment which is not permanent. Required when isExpirationRequired is true.
+// SetMaximumDuration sets the maximumDuration property value. The maximum duration allowed for eligibility or assignment that isn't permanent. Required when isExpirationRequired is true.
 func (m *UnifiedRoleManagementPolicyExpirationRule) SetMaximumDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     err := m.GetBackingStore().Set("maximumDuration", value)
     if err != nil {

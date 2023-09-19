@@ -396,7 +396,7 @@ func (m *NetworkInfo) GetLinkSpeed()(*int64) {
     }
     return nil
 }
-// GetMacAddress gets the macAddress property value. The media access control (MAC) address of the media endpoint's network device.
+// GetMacAddress gets the macAddress property value. The media access control (MAC) address of the media endpoint's network device. This value may be missing or shown as 02:00:00:00:00:00 due to operating system privacy policies.
 func (m *NetworkInfo) GetMacAddress()(*string) {
     val, err := m.GetBackingStore().Get("macAddress")
     if err != nil {
@@ -858,7 +858,7 @@ func (m *NetworkInfo) SetLinkSpeed(value *int64)() {
         panic(err)
     }
 }
-// SetMacAddress sets the macAddress property value. The media access control (MAC) address of the media endpoint's network device.
+// SetMacAddress sets the macAddress property value. The media access control (MAC) address of the media endpoint's network device. This value may be missing or shown as 02:00:00:00:00:00 due to operating system privacy policies.
 func (m *NetworkInfo) SetMacAddress(value *string)() {
     err := m.GetBackingStore().Set("macAddress", value)
     if err != nil {

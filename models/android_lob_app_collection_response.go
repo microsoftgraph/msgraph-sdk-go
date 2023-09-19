@@ -4,34 +4,34 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileLobAppCollectionResponse 
-type MobileLobAppCollectionResponse struct {
+// AndroidLobAppCollectionResponse 
+type AndroidLobAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMobileLobAppCollectionResponse instantiates a new mobileLobAppCollectionResponse and sets the default values.
-func NewMobileLobAppCollectionResponse()(*MobileLobAppCollectionResponse) {
-    m := &MobileLobAppCollectionResponse{
+// NewAndroidLobAppCollectionResponse instantiates a new androidLobAppCollectionResponse and sets the default values.
+func NewAndroidLobAppCollectionResponse()(*AndroidLobAppCollectionResponse) {
+    m := &AndroidLobAppCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
     }
     return m
 }
-// CreateMobileLobAppCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateMobileLobAppCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewMobileLobAppCollectionResponse(), nil
+// CreateAndroidLobAppCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAndroidLobAppCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewAndroidLobAppCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MobileLobAppCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AndroidLobAppCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMobileLobAppFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateAndroidLobAppFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MobileLobAppable, len(val))
+            res := make([]AndroidLobAppable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(MobileLobAppable)
+                    res[i] = v.(AndroidLobAppable)
                 }
             }
             m.SetValue(res)
@@ -41,18 +41,18 @@ func (m *MobileLobAppCollectionResponse) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetValue gets the value property value. The value property
-func (m *MobileLobAppCollectionResponse) GetValue()([]MobileLobAppable) {
+func (m *AndroidLobAppCollectionResponse) GetValue()([]AndroidLobAppable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]MobileLobAppable)
+        return val.([]AndroidLobAppable)
     }
     return nil
 }
 // Serialize serializes information the current object
-func (m *MobileLobAppCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+func (m *AndroidLobAppCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.BaseCollectionPaginationCountResponse.Serialize(writer)
     if err != nil {
         return err
@@ -72,16 +72,16 @@ func (m *MobileLobAppCollectionResponse) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetValue sets the value property value. The value property
-func (m *MobileLobAppCollectionResponse) SetValue(value []MobileLobAppable)() {
+func (m *AndroidLobAppCollectionResponse) SetValue(value []AndroidLobAppable)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {
         panic(err)
     }
 }
-// MobileLobAppCollectionResponseable 
-type MobileLobAppCollectionResponseable interface {
+// AndroidLobAppCollectionResponseable 
+type AndroidLobAppCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetValue()([]MobileLobAppable)
-    SetValue(value []MobileLobAppable)()
+    GetValue()([]AndroidLobAppable)
+    SetValue(value []AndroidLobAppable)()
 }
