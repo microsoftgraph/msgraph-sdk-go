@@ -56,7 +56,7 @@ func (m *PhoneAuthenticationMethod) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetPhoneNumber gets the phoneNumber property value. The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they do not match the required format.
+// GetPhoneNumber gets the phoneNumber property value. The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they don't match the required format.
 func (m *PhoneAuthenticationMethod) GetPhoneNumber()(*string) {
     val, err := m.GetBackingStore().Get("phoneNumber")
     if err != nil {
@@ -117,7 +117,7 @@ func (m *PhoneAuthenticationMethod) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetPhoneNumber sets the phoneNumber property value. The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they do not match the required format.
+// SetPhoneNumber sets the phoneNumber property value. The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they don't match the required format.
 func (m *PhoneAuthenticationMethod) SetPhoneNumber(value *string)() {
     err := m.GetBackingStore().Set("phoneNumber", value)
     if err != nil {

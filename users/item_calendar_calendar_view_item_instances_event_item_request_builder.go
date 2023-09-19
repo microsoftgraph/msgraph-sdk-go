@@ -14,11 +14,11 @@ type ItemCalendarCalendarViewItemInstancesEventItemRequestBuilder struct {
 // ItemCalendarCalendarViewItemInstancesEventItemRequestBuilderGetQueryParameters the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
 type ItemCalendarCalendarViewItemInstancesEventItemRequestBuilderGetQueryParameters struct {
     // The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00
-    EndDateTime *string
+    EndDateTime *string `uriparametername:"endDateTime"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00
-    StartDateTime *string
+    StartDateTime *string `uriparametername:"startDateTime"`
 }
 // ItemCalendarCalendarViewItemInstancesEventItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCalendarCalendarViewItemInstancesEventItemRequestBuilderGetRequestConfiguration struct {

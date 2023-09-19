@@ -137,7 +137,7 @@ func (m *WebApplication) GetImplicitGrantSettings()(ImplicitGrantSettingsable) {
     }
     return nil
 }
-// GetLogoutUrl gets the logoutUrl property value. Specifies the URL that will be used by Microsoft's authorization service to logout an user using front-channel, back-channel or SAML logout protocols.
+// GetLogoutUrl gets the logoutUrl property value. Specifies the URL that is used by Microsoft's authorization service to log out a user using front-channel, back-channel or SAML logout protocols.
 func (m *WebApplication) GetLogoutUrl()(*string) {
     val, err := m.GetBackingStore().Get("logoutUrl")
     if err != nil {
@@ -258,7 +258,7 @@ func (m *WebApplication) SetImplicitGrantSettings(value ImplicitGrantSettingsabl
         panic(err)
     }
 }
-// SetLogoutUrl sets the logoutUrl property value. Specifies the URL that will be used by Microsoft's authorization service to logout an user using front-channel, back-channel or SAML logout protocols.
+// SetLogoutUrl sets the logoutUrl property value. Specifies the URL that is used by Microsoft's authorization service to log out a user using front-channel, back-channel or SAML logout protocols.
 func (m *WebApplication) SetLogoutUrl(value *string)() {
     err := m.GetBackingStore().Set("logoutUrl", value)
     if err != nil {

@@ -209,7 +209,7 @@ func (m *WorkbookTable) GetHighlightLastColumn()(*bool) {
     }
     return nil
 }
-// GetLegacyId gets the legacyId property value. Legacy Id used in older Excle clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and should not be parsed to any other type. Read-only.
+// GetLegacyId gets the legacyId property value. Legacy ID used in older Excel clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and shouldn't be parsed to any other type. Read-only.
 func (m *WorkbookTable) GetLegacyId()(*string) {
     val, err := m.GetBackingStore().Get("legacyId")
     if err != nil {
@@ -308,7 +308,7 @@ func (m *WorkbookTable) GetSort()(WorkbookTableSortable) {
     }
     return nil
 }
-// GetStyle gets the style property value. Constant value that represents the Table style. The possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
+// GetStyle gets the style property value. Constant value that represents the Table style. The possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
 func (m *WorkbookTable) GetStyle()(*string) {
     val, err := m.GetBackingStore().Get("style")
     if err != nil {
@@ -455,7 +455,7 @@ func (m *WorkbookTable) SetHighlightLastColumn(value *bool)() {
         panic(err)
     }
 }
-// SetLegacyId sets the legacyId property value. Legacy Id used in older Excle clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and should not be parsed to any other type. Read-only.
+// SetLegacyId sets the legacyId property value. Legacy ID used in older Excel clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and shouldn't be parsed to any other type. Read-only.
 func (m *WorkbookTable) SetLegacyId(value *string)() {
     err := m.GetBackingStore().Set("legacyId", value)
     if err != nil {
@@ -518,7 +518,7 @@ func (m *WorkbookTable) SetSort(value WorkbookTableSortable)() {
         panic(err)
     }
 }
-// SetStyle sets the style property value. Constant value that represents the Table style. The possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
+// SetStyle sets the style property value. Constant value that represents the Table style. The possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
 func (m *WorkbookTable) SetStyle(value *string)() {
     err := m.GetBackingStore().Set("style", value)
     if err != nil {

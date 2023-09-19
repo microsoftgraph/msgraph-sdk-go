@@ -19,7 +19,7 @@ func NewDelegatedAdminCustomer()(*DelegatedAdminCustomer) {
 func CreateDelegatedAdminCustomerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDelegatedAdminCustomer(), nil
 }
-// GetDisplayName gets the displayName property value. The Azure AD display name of the customer tenant. Read-only. Supports $orderBy.
+// GetDisplayName gets the displayName property value. The Azure AD display name of the customer tenant. Read-only. Supports $orderby.
 func (m *DelegatedAdminCustomer) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -125,7 +125,7 @@ func (m *DelegatedAdminCustomer) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. The Azure AD display name of the customer tenant. Read-only. Supports $orderBy.
+// SetDisplayName sets the displayName property value. The Azure AD display name of the customer tenant. Read-only. Supports $orderby.
 func (m *DelegatedAdminCustomer) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

@@ -34,7 +34,7 @@ func (m *EducationAssignmentSettings) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetSubmissionAnimationDisabled gets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.
+// GetSubmissionAnimationDisabled gets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation is shown. A value of true indicates that the animation isn't shown. Default value is false.
 func (m *EducationAssignmentSettings) GetSubmissionAnimationDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("submissionAnimationDisabled")
     if err != nil {
@@ -59,7 +59,7 @@ func (m *EducationAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetSubmissionAnimationDisabled sets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.
+// SetSubmissionAnimationDisabled sets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation is shown. A value of true indicates that the animation isn't shown. Default value is false.
 func (m *EducationAssignmentSettings) SetSubmissionAnimationDisabled(value *bool)() {
     err := m.GetBackingStore().Set("submissionAnimationDisabled", value)
     if err != nil {

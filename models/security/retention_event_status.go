@@ -39,7 +39,7 @@ func (m *RetentionEventStatus) GetAdditionalData()(map[string]any) {
 func (m *RetentionEventStatus) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetError gets the error property value. The error if the status is not successful.
+// GetError gets the error property value. The error if the status isn't successful.
 func (m *RetentionEventStatus) GetError()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PublicErrorable) {
     val, err := m.GetBackingStore().Get("error")
     if err != nil {
@@ -147,7 +147,7 @@ func (m *RetentionEventStatus) SetAdditionalData(value map[string]any)() {
 func (m *RetentionEventStatus) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetError sets the error property value. The error if the status is not successful.
+// SetError sets the error property value. The error if the status isn't successful.
 func (m *RetentionEventStatus) SetError(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PublicErrorable)() {
     err := m.GetBackingStore().Set("error", value)
     if err != nil {

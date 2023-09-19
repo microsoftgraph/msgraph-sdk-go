@@ -216,6 +216,16 @@ func (m *Site) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["isPersonalSite"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsPersonalSite(val)
+        }
+        return nil
+    }
     res["items"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateBaseItemFromDiscriminatorValue)
         if err != nil {
@@ -337,6 +347,17 @@ func (m *Site) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     return res
+}
+// GetIsPersonalSite gets the isPersonalSite property value. The isPersonalSite property
+func (m *Site) GetIsPersonalSite()(*bool) {
+    val, err := m.GetBackingStore().Get("isPersonalSite")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetItems gets the items property value. Used to address any item contained in this site. This collection can't be enumerated.
 func (m *Site) GetItems()([]BaseItemable) {
@@ -515,6 +536,12 @@ func (m *Site) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("isPersonalSite", m.GetIsPersonalSite())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetItems() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetItems()))
         for i, v := range m.GetItems() {
@@ -657,6 +684,13 @@ func (m *Site) SetExternalColumns(value []ColumnDefinitionable)() {
         panic(err)
     }
 }
+// SetIsPersonalSite sets the isPersonalSite property value. The isPersonalSite property
+func (m *Site) SetIsPersonalSite(value *bool)() {
+    err := m.GetBackingStore().Set("isPersonalSite", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetItems sets the items property value. Used to address any item contained in this site. This collection can't be enumerated.
 func (m *Site) SetItems(value []BaseItemable)() {
     err := m.GetBackingStore().Set("items", value)
@@ -732,6 +766,7 @@ type Siteable interface {
     GetDrives()([]Driveable)
     GetError()(PublicErrorable)
     GetExternalColumns()([]ColumnDefinitionable)
+    GetIsPersonalSite()(*bool)
     GetItems()([]BaseItemable)
     GetLists()([]Listable)
     GetOnenote()(Onenoteable)
@@ -749,6 +784,7 @@ type Siteable interface {
     SetDrives(value []Driveable)()
     SetError(value PublicErrorable)()
     SetExternalColumns(value []ColumnDefinitionable)()
+    SetIsPersonalSite(value *bool)()
     SetItems(value []BaseItemable)()
     SetLists(value []Listable)()
     SetOnenote(value Onenoteable)()

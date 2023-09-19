@@ -18,7 +18,7 @@ type SubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilderDeleteRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilderGetQueryParameters list of notes associcated with the request.
+// SubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilderGetQueryParameters list of notes associated with the request.
 type SubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -71,7 +71,7 @@ func (m *SubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilder) Delete(ct
     }
     return nil
 }
-// Get list of notes associcated with the request.
+// Get list of notes associated with the request.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 func (m *SubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthoredNoteable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -124,7 +124,7 @@ func (m *SubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilder) ToDeleteR
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation list of notes associcated with the request.
+// ToGetRequestInformation list of notes associated with the request.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 func (m *SubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemNotesAuthoredNoteItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

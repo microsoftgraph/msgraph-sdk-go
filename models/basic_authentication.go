@@ -46,7 +46,7 @@ func (m *BasicAuthentication) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetPassword gets the password property value. The password. It is not returned in the responses.
+// GetPassword gets the password property value. The password. It isn't returned in the responses.
 func (m *BasicAuthentication) GetPassword()(*string) {
     val, err := m.GetBackingStore().Get("password")
     if err != nil {
@@ -88,7 +88,7 @@ func (m *BasicAuthentication) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetPassword sets the password property value. The password. It is not returned in the responses.
+// SetPassword sets the password property value. The password. It isn't returned in the responses.
 func (m *BasicAuthentication) SetPassword(value *string)() {
     err := m.GetBackingStore().Set("password", value)
     if err != nil {

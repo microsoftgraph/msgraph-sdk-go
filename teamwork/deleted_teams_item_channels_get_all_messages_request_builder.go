@@ -17,7 +17,7 @@ type DeletedTeamsItemChannelsGetAllMessagesRequestBuilderGetQueryParameters stru
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // The payment model for the API
-    Model *string
+    Model *string `uriparametername:"model"`
     // Order items by property values
     Orderby []string `uriparametername:"%24orderby"`
     // Search items by search phrases

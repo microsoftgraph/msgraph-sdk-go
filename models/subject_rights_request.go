@@ -561,7 +561,7 @@ func (m *SubjectRightsRequest) GetMailboxlocations()(SubjectRightsRequestMailbox
     }
     return nil
 }
-// GetNotes gets the notes property value. List of notes associcated with the request.
+// GetNotes gets the notes property value. List of notes associated with the request.
 func (m *SubjectRightsRequest) GetNotes()([]AuthoredNoteable) {
     val, err := m.GetBackingStore().Get("notes")
     if err != nil {
@@ -583,7 +583,7 @@ func (m *SubjectRightsRequest) GetPauseAfterEstimate()(*bool) {
     }
     return nil
 }
-// GetRegulations gets the regulations property value. List of regulations that this request will fulfill.
+// GetRegulations gets the regulations property value. List of regulations that this request fulfills.
 func (m *SubjectRightsRequest) GetRegulations()([]string) {
     val, err := m.GetBackingStore().Get("regulations")
     if err != nil {
@@ -616,7 +616,7 @@ func (m *SubjectRightsRequest) GetStages()([]SubjectRightsRequestStageDetailable
     }
     return nil
 }
-// GetStatus gets the status property value. The status of the request.. Possible values are: active, closed, unknownFutureValue.
+// GetStatus gets the status property value. The status of the request. Possible values are: active, closed, unknownFutureValue.
 func (m *SubjectRightsRequest) GetStatus()(*SubjectRightsRequestStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -998,7 +998,7 @@ func (m *SubjectRightsRequest) SetMailboxlocations(value SubjectRightsRequestMai
         panic(err)
     }
 }
-// SetNotes sets the notes property value. List of notes associcated with the request.
+// SetNotes sets the notes property value. List of notes associated with the request.
 func (m *SubjectRightsRequest) SetNotes(value []AuthoredNoteable)() {
     err := m.GetBackingStore().Set("notes", value)
     if err != nil {
@@ -1012,7 +1012,7 @@ func (m *SubjectRightsRequest) SetPauseAfterEstimate(value *bool)() {
         panic(err)
     }
 }
-// SetRegulations sets the regulations property value. List of regulations that this request will fulfill.
+// SetRegulations sets the regulations property value. List of regulations that this request fulfills.
 func (m *SubjectRightsRequest) SetRegulations(value []string)() {
     err := m.GetBackingStore().Set("regulations", value)
     if err != nil {
@@ -1033,7 +1033,7 @@ func (m *SubjectRightsRequest) SetStages(value []SubjectRightsRequestStageDetail
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status of the request.. Possible values are: active, closed, unknownFutureValue.
+// SetStatus sets the status property value. The status of the request. Possible values are: active, closed, unknownFutureValue.
 func (m *SubjectRightsRequest) SetStatus(value *SubjectRightsRequestStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

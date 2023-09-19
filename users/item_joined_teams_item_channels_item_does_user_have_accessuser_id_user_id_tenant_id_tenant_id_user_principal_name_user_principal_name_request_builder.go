@@ -13,11 +13,11 @@ type ItemJoinedTeamsItemChannelsItemDoesUserHaveAccessuserIdUserIdTenantIdTenant
 // ItemJoinedTeamsItemChannelsItemDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderGetQueryParameters invoke function doesUserHaveAccess
 type ItemJoinedTeamsItemChannelsItemDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderGetQueryParameters struct {
     // Usage: tenantId='@tenantId'
-    TenantId *string
+    TenantId *string `uriparametername:"tenantId"`
     // Usage: userId='@userId'
-    UserId *string
+    UserId *string `uriparametername:"userId"`
     // Usage: userPrincipalName='@userPrincipalName'
-    UserPrincipalName *string
+    UserPrincipalName *string `uriparametername:"userPrincipalName"`
 }
 // ItemJoinedTeamsItemChannelsItemDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemJoinedTeamsItemChannelsItemDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderGetRequestConfiguration struct {

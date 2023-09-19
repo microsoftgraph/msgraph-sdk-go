@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsUniversalAppX contains properties and inherited properties for Windows Universal AppX Line Of Business apps.
+// WindowsUniversalAppX contains properties and inherited properties for Windows Universal AppX Line Of Business apps. Inherits from `mobileLobApp`.
 type WindowsUniversalAppX struct {
     MobileLobApp
 }
@@ -32,7 +32,7 @@ func (m *WindowsUniversalAppX) GetApplicableArchitectures()(*WindowsArchitecture
     }
     return nil
 }
-// GetApplicableDeviceTypes gets the applicableDeviceTypes property value. Contains properties for Windows device type.
+// GetApplicableDeviceTypes gets the applicableDeviceTypes property value. Contains properties for Windows device type. Multiple values can be selected. Default value is `none`.
 func (m *WindowsUniversalAppX) GetApplicableDeviceTypes()(*WindowsDeviceType) {
     val, err := m.GetBackingStore().Get("applicableDeviceTypes")
     if err != nil {
@@ -298,7 +298,7 @@ func (m *WindowsUniversalAppX) SetApplicableArchitectures(value *WindowsArchitec
         panic(err)
     }
 }
-// SetApplicableDeviceTypes sets the applicableDeviceTypes property value. Contains properties for Windows device type.
+// SetApplicableDeviceTypes sets the applicableDeviceTypes property value. Contains properties for Windows device type. Multiple values can be selected. Default value is `none`.
 func (m *WindowsUniversalAppX) SetApplicableDeviceTypes(value *WindowsDeviceType)() {
     err := m.GetBackingStore().Set("applicableDeviceTypes", value)
     if err != nil {

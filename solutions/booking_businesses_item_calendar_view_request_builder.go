@@ -16,7 +16,7 @@ type BookingBusinessesItemCalendarViewRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
     // The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00
-    End *string
+    End *string `uriparametername:"end"`
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
@@ -30,7 +30,7 @@ type BookingBusinessesItemCalendarViewRequestBuilderGetQueryParameters struct {
     // Skip the first n items
     Skip *int32 `uriparametername:"%24skip"`
     // The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00
-    Start *string
+    Start *string `uriparametername:"start"`
     // Show only the first n items
     Top *int32 `uriparametername:"%24top"`
 }

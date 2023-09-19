@@ -44,7 +44,7 @@ func (m *Contract) GetCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf67
     }
     return nil
 }
-// GetDefaultDomainName gets the defaultDomainName property value. A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's default domain name changes.
+// GetDefaultDomainName gets the defaultDomainName property value. A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It isn't automatically updated if the customer tenant's default domain name changes.
 func (m *Contract) GetDefaultDomainName()(*string) {
     val, err := m.GetBackingStore().Get("defaultDomainName")
     if err != nil {
@@ -157,7 +157,7 @@ func (m *Contract) SetCustomerId(value *i561e97a8befe7661a44c8f54600992b4207a3a0
         panic(err)
     }
 }
-// SetDefaultDomainName sets the defaultDomainName property value. A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's default domain name changes.
+// SetDefaultDomainName sets the defaultDomainName property value. A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It isn't automatically updated if the customer tenant's default domain name changes.
 func (m *Contract) SetDefaultDomainName(value *string)() {
     err := m.GetBackingStore().Set("defaultDomainName", value)
     if err != nil {

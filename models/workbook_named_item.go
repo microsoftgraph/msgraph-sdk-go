@@ -138,7 +138,7 @@ func (m *WorkbookNamedItem) GetTypeEscaped()(*string) {
     }
     return nil
 }
-// GetValue gets the value property value. Represents the formula that the name is defined to refer to. E.g. =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.
+// GetValue gets the value property value. Represents the formula that the name is defined to refer to. for example, =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.
 func (m *WorkbookNamedItem) GetValue()(Jsonable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -249,7 +249,7 @@ func (m *WorkbookNamedItem) SetTypeEscaped(value *string)() {
         panic(err)
     }
 }
-// SetValue sets the value property value. Represents the formula that the name is defined to refer to. E.g. =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.
+// SetValue sets the value property value. Represents the formula that the name is defined to refer to. for example, =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.
 func (m *WorkbookNamedItem) SetValue(value Jsonable)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

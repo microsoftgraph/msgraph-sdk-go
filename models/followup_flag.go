@@ -49,7 +49,7 @@ func (m *FollowupFlag) GetCompletedDateTime()(DateTimeTimeZoneable) {
     }
     return nil
 }
-// GetDueDateTime gets the dueDateTime property value. The date and time that the follow up is to be finished. Note: To set the due date, you must also specify the startDateTime; otherwise, you will get a 400 Bad Request response.
+// GetDueDateTime gets the dueDateTime property value. The date and time that the follow-up is to be finished. Note: To set the due date, you must also specify the startDateTime; otherwise, you get a 400 Bad Request response.
 func (m *FollowupFlag) GetDueDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("dueDateTime")
     if err != nil {
@@ -207,7 +207,7 @@ func (m *FollowupFlag) SetCompletedDateTime(value DateTimeTimeZoneable)() {
         panic(err)
     }
 }
-// SetDueDateTime sets the dueDateTime property value. The date and time that the follow up is to be finished. Note: To set the due date, you must also specify the startDateTime; otherwise, you will get a 400 Bad Request response.
+// SetDueDateTime sets the dueDateTime property value. The date and time that the follow-up is to be finished. Note: To set the due date, you must also specify the startDateTime; otherwise, you get a 400 Bad Request response.
 func (m *FollowupFlag) SetDueDateTime(value DateTimeTimeZoneable)() {
     err := m.GetBackingStore().Set("dueDateTime", value)
     if err != nil {

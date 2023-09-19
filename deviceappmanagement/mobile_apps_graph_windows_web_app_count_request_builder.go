@@ -6,41 +6,41 @@ import (
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
-// MobileAppsGraphMobileLobAppCountRequestBuilder provides operations to count the resources in the collection.
-type MobileAppsGraphMobileLobAppCountRequestBuilder struct {
+// MobileAppsGraphWindowsWebAppCountRequestBuilder provides operations to count the resources in the collection.
+type MobileAppsGraphWindowsWebAppCountRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MobileAppsGraphMobileLobAppCountRequestBuilderGetQueryParameters get the number of the resource
-type MobileAppsGraphMobileLobAppCountRequestBuilderGetQueryParameters struct {
+// MobileAppsGraphWindowsWebAppCountRequestBuilderGetQueryParameters get the number of the resource
+type MobileAppsGraphWindowsWebAppCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
 }
-// MobileAppsGraphMobileLobAppCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type MobileAppsGraphMobileLobAppCountRequestBuilderGetRequestConfiguration struct {
+// MobileAppsGraphWindowsWebAppCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type MobileAppsGraphWindowsWebAppCountRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *MobileAppsGraphMobileLobAppCountRequestBuilderGetQueryParameters
+    QueryParameters *MobileAppsGraphWindowsWebAppCountRequestBuilderGetQueryParameters
 }
-// NewMobileAppsGraphMobileLobAppCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
-func NewMobileAppsGraphMobileLobAppCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsGraphMobileLobAppCountRequestBuilder) {
-    m := &MobileAppsGraphMobileLobAppCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/graph.mobileLobApp/$count{?%24search,%24filter}", pathParameters),
+// NewMobileAppsGraphWindowsWebAppCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+func NewMobileAppsGraphWindowsWebAppCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsGraphWindowsWebAppCountRequestBuilder) {
+    m := &MobileAppsGraphWindowsWebAppCountRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/graph.windowsWebApp/$count{?%24search,%24filter}", pathParameters),
     }
     return m
 }
-// NewMobileAppsGraphMobileLobAppCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
-func NewMobileAppsGraphMobileLobAppCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsGraphMobileLobAppCountRequestBuilder) {
+// NewMobileAppsGraphWindowsWebAppCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+func NewMobileAppsGraphWindowsWebAppCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsGraphWindowsWebAppCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
-    return NewMobileAppsGraphMobileLobAppCountRequestBuilderInternal(urlParams, requestAdapter)
+    return NewMobileAppsGraphWindowsWebAppCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
-func (m *MobileAppsGraphMobileLobAppCountRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsGraphMobileLobAppCountRequestBuilderGetRequestConfiguration)(*int32, error) {
+func (m *MobileAppsGraphWindowsWebAppCountRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsGraphWindowsWebAppCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -59,7 +59,7 @@ func (m *MobileAppsGraphMobileLobAppCountRequestBuilder) Get(ctx context.Context
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
-func (m *MobileAppsGraphMobileLobAppCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsGraphMobileLobAppCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *MobileAppsGraphWindowsWebAppCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsGraphWindowsWebAppCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
@@ -75,6 +75,6 @@ func (m *MobileAppsGraphMobileLobAppCountRequestBuilder) ToGetRequestInformation
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-func (m *MobileAppsGraphMobileLobAppCountRequestBuilder) WithUrl(rawUrl string)(*MobileAppsGraphMobileLobAppCountRequestBuilder) {
-    return NewMobileAppsGraphMobileLobAppCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+func (m *MobileAppsGraphWindowsWebAppCountRequestBuilder) WithUrl(rawUrl string)(*MobileAppsGraphWindowsWebAppCountRequestBuilder) {
+    return NewMobileAppsGraphWindowsWebAppCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

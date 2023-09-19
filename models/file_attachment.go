@@ -43,7 +43,7 @@ func (m *FileAttachment) GetContentId()(*string) {
     }
     return nil
 }
-// GetContentLocation gets the contentLocation property value. Do not use this property as it is not supported.
+// GetContentLocation gets the contentLocation property value. Don't use this property as it isn't supported.
 func (m *FileAttachment) GetContentLocation()(*string) {
     val, err := m.GetBackingStore().Get("contentLocation")
     if err != nil {
@@ -129,7 +129,7 @@ func (m *FileAttachment) SetContentId(value *string)() {
         panic(err)
     }
 }
-// SetContentLocation sets the contentLocation property value. Do not use this property as it is not supported.
+// SetContentLocation sets the contentLocation property value. Don't use this property as it isn't supported.
 func (m *FileAttachment) SetContentLocation(value *string)() {
     err := m.GetBackingStore().Set("contentLocation", value)
     if err != nil {

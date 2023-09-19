@@ -19,7 +19,7 @@ func NewDelegatedPermissionClassification()(*DelegatedPermissionClassification) 
 func CreateDelegatedPermissionClassificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDelegatedPermissionClassification(), nil
 }
-// GetClassification gets the classification property value. The classification value being given. Possible value: low. Does not support $filter.
+// GetClassification gets the classification property value. The classification value being given. Possible value: low. Doesn't support $filter.
 func (m *DelegatedPermissionClassification) GetClassification()(*PermissionClassificationType) {
     val, err := m.GetBackingStore().Get("classification")
     if err != nil {
@@ -65,7 +65,7 @@ func (m *DelegatedPermissionClassification) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetPermissionId gets the permissionId property value. The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
+// GetPermissionId gets the permissionId property value. The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Doesn't support $filter.
 func (m *DelegatedPermissionClassification) GetPermissionId()(*string) {
     val, err := m.GetBackingStore().Get("permissionId")
     if err != nil {
@@ -76,7 +76,7 @@ func (m *DelegatedPermissionClassification) GetPermissionId()(*string) {
     }
     return nil
 }
-// GetPermissionName gets the permissionName property value. The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Does not support $filter.
+// GetPermissionName gets the permissionName property value. The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Doesn't support $filter.
 func (m *DelegatedPermissionClassification) GetPermissionName()(*string) {
     val, err := m.GetBackingStore().Get("permissionName")
     if err != nil {
@@ -114,21 +114,21 @@ func (m *DelegatedPermissionClassification) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetClassification sets the classification property value. The classification value being given. Possible value: low. Does not support $filter.
+// SetClassification sets the classification property value. The classification value being given. Possible value: low. Doesn't support $filter.
 func (m *DelegatedPermissionClassification) SetClassification(value *PermissionClassificationType)() {
     err := m.GetBackingStore().Set("classification", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPermissionId sets the permissionId property value. The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
+// SetPermissionId sets the permissionId property value. The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Doesn't support $filter.
 func (m *DelegatedPermissionClassification) SetPermissionId(value *string)() {
     err := m.GetBackingStore().Set("permissionId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPermissionName sets the permissionName property value. The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Does not support $filter.
+// SetPermissionName sets the permissionName property value. The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Doesn't support $filter.
 func (m *DelegatedPermissionClassification) SetPermissionName(value *string)() {
     err := m.GetBackingStore().Set("permissionName", value)
     if err != nil {

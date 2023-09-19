@@ -41,6 +41,8 @@ func CreateDeviceActionResultFromDiscriminatorValue(parseNode i878a80d2330e89d26
                         return NewRemoteLockActionResult(), nil
                     case "#microsoft.graph.resetPasscodeActionResult":
                         return NewResetPasscodeActionResult(), nil
+                    case "#microsoft.graph.rotateBitLockerKeysDeviceActionResult":
+                        return NewRotateBitLockerKeysDeviceActionResult(), nil
                     case "#microsoft.graph.windowsDefenderScanActionResult":
                         return NewWindowsDefenderScanActionResult(), nil
                 }

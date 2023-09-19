@@ -46,7 +46,7 @@ func (m *Attendee) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetProposedNewTime gets the proposedNewTime property value. An alternate date/time proposed by the attendee for a meeting request to start and end. If the attendee hasn't proposed another time, then this property is not included in a response of a GET event.
+// GetProposedNewTime gets the proposedNewTime property value. An alternate date/time proposed by the attendee for a meeting request to start and end. If the attendee hasn't proposed another time, then this property isn't included in a response of a GET event.
 func (m *Attendee) GetProposedNewTime()(TimeSlotable) {
     val, err := m.GetBackingStore().Get("proposedNewTime")
     if err != nil {
@@ -88,7 +88,7 @@ func (m *Attendee) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetProposedNewTime sets the proposedNewTime property value. An alternate date/time proposed by the attendee for a meeting request to start and end. If the attendee hasn't proposed another time, then this property is not included in a response of a GET event.
+// SetProposedNewTime sets the proposedNewTime property value. An alternate date/time proposed by the attendee for a meeting request to start and end. If the attendee hasn't proposed another time, then this property isn't included in a response of a GET event.
 func (m *Attendee) SetProposedNewTime(value TimeSlotable)() {
     err := m.GetBackingStore().Set("proposedNewTime", value)
     if err != nil {

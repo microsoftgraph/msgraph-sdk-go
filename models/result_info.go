@@ -116,7 +116,7 @@ func (m *ResultInfo) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSubcode gets the subcode property value. The result sub-code.
+// GetSubcode gets the subcode property value. The result subcode.
 func (m *ResultInfo) GetSubcode()(*int32) {
     val, err := m.GetBackingStore().Get("subcode")
     if err != nil {
@@ -193,7 +193,7 @@ func (m *ResultInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSubcode sets the subcode property value. The result sub-code.
+// SetSubcode sets the subcode property value. The result subcode.
 func (m *ResultInfo) SetSubcode(value *int32)() {
     err := m.GetBackingStore().Set("subcode", value)
     if err != nil {

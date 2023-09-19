@@ -127,7 +127,7 @@ func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetObjectId gets the objectId property value. The object identifier of the subject. null if the subject is not yet a user in the tenant.
+// GetObjectId gets the objectId property value. The object identifier of the subject. null if the subject isn't yet a user in the tenant.
 func (m *AccessPackageSubject) GetObjectId()(*string) {
     val, err := m.GetBackingStore().Get("objectId")
     if err != nil {
@@ -138,7 +138,7 @@ func (m *AccessPackageSubject) GetObjectId()(*string) {
     }
     return nil
 }
-// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.
+// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. A string representation of the principal's security identifier, if known, or null if the subject doesn't have a security identifier.
 func (m *AccessPackageSubject) GetOnPremisesSecurityIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesSecurityIdentifier")
     if err != nil {
@@ -243,14 +243,14 @@ func (m *AccessPackageSubject) SetEmail(value *string)() {
         panic(err)
     }
 }
-// SetObjectId sets the objectId property value. The object identifier of the subject. null if the subject is not yet a user in the tenant.
+// SetObjectId sets the objectId property value. The object identifier of the subject. null if the subject isn't yet a user in the tenant.
 func (m *AccessPackageSubject) SetObjectId(value *string)() {
     err := m.GetBackingStore().Set("objectId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.
+// SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. A string representation of the principal's security identifier, if known, or null if the subject doesn't have a security identifier.
 func (m *AccessPackageSubject) SetOnPremisesSecurityIdentifier(value *string)() {
     err := m.GetBackingStore().Set("onPremisesSecurityIdentifier", value)
     if err != nil {

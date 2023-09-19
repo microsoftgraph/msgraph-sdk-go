@@ -23,7 +23,7 @@ type ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilderGetQueryParamete
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
     // Include Hidden Folders
-    IncludeHiddenFolders *string
+    IncludeHiddenFolders *string `uriparametername:"includeHiddenFolders"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }

@@ -18,7 +18,7 @@ type MobileAppsMobileAppItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MobileAppsMobileAppItemRequestBuilderGetQueryParameters read properties and relationships of the iosLobApp object.
+// MobileAppsMobileAppItemRequestBuilderGetQueryParameters read properties and relationships of the webApp object.
 type MobileAppsMobileAppItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -66,10 +66,10 @@ func NewMobileAppsMobileAppItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsMobileAppItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a webApp.
+// Delete deletes a iosiPadOSWebClip.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-webapp-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-iosipadoswebclip-delete?view=graph-rest-1.0
 func (m *MobileAppsMobileAppItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MobileAppsMobileAppItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -85,10 +85,10 @@ func (m *MobileAppsMobileAppItemRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// Get read properties and relationships of the iosLobApp object.
+// Get read properties and relationships of the webApp object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-ioslobapp-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-webapp-get?view=graph-rest-1.0
 func (m *MobileAppsMobileAppItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsMobileAppItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -107,18 +107,74 @@ func (m *MobileAppsMobileAppItemRequestBuilder) Get(ctx context.Context, request
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable), nil
 }
+// GraphAndroidLobApp casts the previous resource to androidLobApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphAndroidLobApp()(*MobileAppsItemGraphAndroidLobAppRequestBuilder) {
+    return NewMobileAppsItemGraphAndroidLobAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphAndroidStoreApp casts the previous resource to androidStoreApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphAndroidStoreApp()(*MobileAppsItemGraphAndroidStoreAppRequestBuilder) {
+    return NewMobileAppsItemGraphAndroidStoreAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphIosLobApp casts the previous resource to iosLobApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphIosLobApp()(*MobileAppsItemGraphIosLobAppRequestBuilder) {
+    return NewMobileAppsItemGraphIosLobAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphIosStoreApp casts the previous resource to iosStoreApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphIosStoreApp()(*MobileAppsItemGraphIosStoreAppRequestBuilder) {
+    return NewMobileAppsItemGraphIosStoreAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphIosVppApp casts the previous resource to iosVppApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphIosVppApp()(*MobileAppsItemGraphIosVppAppRequestBuilder) {
+    return NewMobileAppsItemGraphIosVppAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphMacOSDmgApp casts the previous resource to macOSDmgApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphMacOSDmgApp()(*MobileAppsItemGraphMacOSDmgAppRequestBuilder) {
+    return NewMobileAppsItemGraphMacOSDmgAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphMacOSLobApp casts the previous resource to macOSLobApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphMacOSLobApp()(*MobileAppsItemGraphMacOSLobAppRequestBuilder) {
+    return NewMobileAppsItemGraphMacOSLobAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphManagedAndroidLobApp casts the previous resource to managedAndroidLobApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphManagedAndroidLobApp()(*MobileAppsItemGraphManagedAndroidLobAppRequestBuilder) {
+    return NewMobileAppsItemGraphManagedAndroidLobAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphManagedIOSLobApp casts the previous resource to managedIOSLobApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphManagedIOSLobApp()(*MobileAppsItemGraphManagedIOSLobAppRequestBuilder) {
+    return NewMobileAppsItemGraphManagedIOSLobAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GraphManagedMobileLobApp casts the previous resource to managedMobileLobApp.
 func (m *MobileAppsMobileAppItemRequestBuilder) GraphManagedMobileLobApp()(*MobileAppsItemGraphManagedMobileLobAppRequestBuilder) {
     return NewMobileAppsItemGraphManagedMobileLobAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// GraphMobileLobApp casts the previous resource to mobileLobApp.
-func (m *MobileAppsMobileAppItemRequestBuilder) GraphMobileLobApp()(*MobileAppsItemGraphMobileLobAppRequestBuilder) {
-    return NewMobileAppsItemGraphMobileLobAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// GraphMicrosoftStoreForBusinessApp casts the previous resource to microsoftStoreForBusinessApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphMicrosoftStoreForBusinessApp()(*MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilder) {
+    return NewMobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a windowsAppX object.
+// GraphWin32LobApp casts the previous resource to win32LobApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphWin32LobApp()(*MobileAppsItemGraphWin32LobAppRequestBuilder) {
+    return NewMobileAppsItemGraphWin32LobAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphWindowsAppX casts the previous resource to windowsAppX.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphWindowsAppX()(*MobileAppsItemGraphWindowsAppXRequestBuilder) {
+    return NewMobileAppsItemGraphWindowsAppXRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphWindowsMobileMSI casts the previous resource to windowsMobileMSI.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphWindowsMobileMSI()(*MobileAppsItemGraphWindowsMobileMSIRequestBuilder) {
+    return NewMobileAppsItemGraphWindowsMobileMSIRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphWindowsUniversalAppX casts the previous resource to windowsUniversalAppX.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphWindowsUniversalAppX()(*MobileAppsItemGraphWindowsUniversalAppXRequestBuilder) {
+    return NewMobileAppsItemGraphWindowsUniversalAppXRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GraphWindowsWebApp casts the previous resource to windowsWebApp.
+func (m *MobileAppsMobileAppItemRequestBuilder) GraphWindowsWebApp()(*MobileAppsItemGraphWindowsWebAppRequestBuilder) {
+    return NewMobileAppsItemGraphWindowsWebAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Patch update the properties of a windowsMicrosoftEdgeApp object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-windowsappx-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-windowsmicrosoftedgeapp-update?view=graph-rest-1.0
 func (m *MobileAppsMobileAppItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable, requestConfiguration *MobileAppsMobileAppItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -137,7 +193,7 @@ func (m *MobileAppsMobileAppItemRequestBuilder) Patch(ctx context.Context, body 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable), nil
 }
-// ToDeleteRequestInformation deletes a webApp.
+// ToDeleteRequestInformation deletes a iosiPadOSWebClip.
 func (m *MobileAppsMobileAppItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MobileAppsMobileAppItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -149,7 +205,7 @@ func (m *MobileAppsMobileAppItemRequestBuilder) ToDeleteRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the iosLobApp object.
+// ToGetRequestInformation read properties and relationships of the webApp object.
 func (m *MobileAppsMobileAppItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsMobileAppItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -165,7 +221,7 @@ func (m *MobileAppsMobileAppItemRequestBuilder) ToGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a windowsAppX object.
+// ToPatchRequestInformation update the properties of a windowsMicrosoftEdgeApp object.
 func (m *MobileAppsMobileAppItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable, requestConfiguration *MobileAppsMobileAppItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

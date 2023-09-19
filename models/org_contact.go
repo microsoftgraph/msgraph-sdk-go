@@ -66,7 +66,7 @@ func (m *OrgContact) GetDirectReports()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderBy.
+// GetDisplayName gets the displayName property value. Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderby.
 func (m *OrgContact) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -666,7 +666,7 @@ func (m *OrgContact) SetDirectReports(value []DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderBy.
+// SetDisplayName sets the displayName property value. Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderby.
 func (m *OrgContact) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

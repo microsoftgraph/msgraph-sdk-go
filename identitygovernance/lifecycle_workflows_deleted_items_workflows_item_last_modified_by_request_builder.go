@@ -11,7 +11,7 @@ import (
 type LifecycleWorkflowsDeletedItemsWorkflowsItemLastModifiedByRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsDeletedItemsWorkflowsItemLastModifiedByRequestBuilderGetQueryParameters the unique identifier of the AAD identity that last modified the workflow.
+// LifecycleWorkflowsDeletedItemsWorkflowsItemLastModifiedByRequestBuilderGetQueryParameters the unique identifier of the Azure Active Directory identity that last modified the workflow.
 type LifecycleWorkflowsDeletedItemsWorkflowsItemLastModifiedByRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewLifecycleWorkflowsDeletedItemsWorkflowsItemLastModifiedByRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewLifecycleWorkflowsDeletedItemsWorkflowsItemLastModifiedByRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the unique identifier of the AAD identity that last modified the workflow.
+// Get the unique identifier of the Azure Active Directory identity that last modified the workflow.
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemLastModifiedByRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsDeletedItemsWorkflowsItemLastModifiedByRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -63,7 +63,7 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemLastModifiedByRequestBuilder
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemLastModifiedByRequestBuilder) MailboxSettings()(*LifecycleWorkflowsDeletedItemsWorkflowsItemLastModifiedByMailboxSettingsRequestBuilder) {
     return NewLifecycleWorkflowsDeletedItemsWorkflowsItemLastModifiedByMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation the unique identifier of the AAD identity that last modified the workflow.
+// ToGetRequestInformation the unique identifier of the Azure Active Directory identity that last modified the workflow.
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemLastModifiedByRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsDeletedItemsWorkflowsItemLastModifiedByRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
