@@ -29,3 +29,7 @@ func (m *SharesItemAllowedUsersUserItemRequestBuilder) MailboxSettings()(*Shares
 func (m *SharesItemAllowedUsersUserItemRequestBuilder) Ref()(*SharesItemAllowedUsersItemRefRequestBuilder) {
     return NewSharesItemAllowedUsersItemRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ServiceProvisioningErrors the serviceProvisioningErrors property
+func (m *SharesItemAllowedUsersUserItemRequestBuilder) ServiceProvisioningErrors()(*SharesItemAllowedUsersItemServiceProvisioningErrorsRequestBuilder) {
+    return NewSharesItemAllowedUsersItemServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}

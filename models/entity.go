@@ -926,6 +926,28 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPrintUsageByPrinter(), nil
                     case "#microsoft.graph.printUsageByUser":
                         return NewPrintUsageByUser(), nil
+                    case "#microsoft.graph.privilegedAccessGroup":
+                        return NewPrivilegedAccessGroup(), nil
+                    case "#microsoft.graph.privilegedAccessGroupAssignmentSchedule":
+                        return NewPrivilegedAccessGroupAssignmentSchedule(), nil
+                    case "#microsoft.graph.privilegedAccessGroupAssignmentScheduleInstance":
+                        return NewPrivilegedAccessGroupAssignmentScheduleInstance(), nil
+                    case "#microsoft.graph.privilegedAccessGroupAssignmentScheduleRequest":
+                        return NewPrivilegedAccessGroupAssignmentScheduleRequest(), nil
+                    case "#microsoft.graph.privilegedAccessGroupEligibilitySchedule":
+                        return NewPrivilegedAccessGroupEligibilitySchedule(), nil
+                    case "#microsoft.graph.privilegedAccessGroupEligibilityScheduleInstance":
+                        return NewPrivilegedAccessGroupEligibilityScheduleInstance(), nil
+                    case "#microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest":
+                        return NewPrivilegedAccessGroupEligibilityScheduleRequest(), nil
+                    case "#microsoft.graph.privilegedAccessRoot":
+                        return NewPrivilegedAccessRoot(), nil
+                    case "#microsoft.graph.privilegedAccessSchedule":
+                        return NewPrivilegedAccessSchedule(), nil
+                    case "#microsoft.graph.privilegedAccessScheduleInstance":
+                        return NewPrivilegedAccessScheduleInstance(), nil
+                    case "#microsoft.graph.privilegedAccessScheduleRequest":
+                        return NewPrivilegedAccessScheduleRequest(), nil
                     case "#microsoft.graph.profilePhoto":
                         return NewProfilePhoto(), nil
                     case "#microsoft.graph.provisioningObjectSummary":
@@ -940,6 +962,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewRemoteAssistancePartner(), nil
                     case "#microsoft.graph.request":
                         return NewRequest(), nil
+                    case "#microsoft.graph.resellerDelegatedAdminRelationship":
+                        return NewResellerDelegatedAdminRelationship(), nil
                     case "#microsoft.graph.resourceOperation":
                         return NewResourceOperation(), nil
                     case "#microsoft.graph.resourceSpecificPermissionGrant":

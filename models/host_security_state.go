@@ -209,7 +209,7 @@ func (m *HostSecurityState) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOs gets the os property value. Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).
+// GetOs gets the os property value. Host Operating System. (For example, Windows 10, macOS, RHEL, etc.).
 func (m *HostSecurityState) GetOs()(*string) {
     val, err := m.GetBackingStore().Get("os")
     if err != nil {
@@ -376,7 +376,7 @@ func (m *HostSecurityState) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOs sets the os property value. Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).
+// SetOs sets the os property value. Host Operating System. (For example, Windows 10, macOS, RHEL, etc.).
 func (m *HostSecurityState) SetOs(value *string)() {
     err := m.GetBackingStore().Set("os", value)
     if err != nil {

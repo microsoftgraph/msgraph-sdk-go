@@ -101,6 +101,10 @@ func (m *IdentityGovernanceRequestBuilder) Patch(ctx context.Context, body iadcd
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityGovernanceable), nil
 }
+// PrivilegedAccess provides operations to manage the privilegedAccess property of the microsoft.graph.identityGovernance entity.
+func (m *IdentityGovernanceRequestBuilder) PrivilegedAccess()(*PrivilegedAccessRequestBuilder) {
+    return NewPrivilegedAccessRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // TermsOfUse provides operations to manage the termsOfUse property of the microsoft.graph.identityGovernance entity.
 func (m *IdentityGovernanceRequestBuilder) TermsOfUse()(*TermsOfUseRequestBuilder) {
     return NewTermsOfUseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

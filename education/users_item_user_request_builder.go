@@ -66,6 +66,10 @@ func (m *UsersItemUserRequestBuilder) Get(ctx context.Context, requestConfigurat
 func (m *UsersItemUserRequestBuilder) MailboxSettings()(*UsersItemUserMailboxSettingsRequestBuilder) {
     return NewUsersItemUserMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ServiceProvisioningErrors the serviceProvisioningErrors property
+func (m *UsersItemUserRequestBuilder) ServiceProvisioningErrors()(*UsersItemUserServiceProvisioningErrorsRequestBuilder) {
+    return NewUsersItemUserServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation retrieve the simple directory user that corresponds to this educationUser.
 func (m *UsersItemUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersItemUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

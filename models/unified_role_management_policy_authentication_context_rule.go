@@ -57,7 +57,7 @@ func (m *UnifiedRoleManagementPolicyAuthenticationContextRule) GetFieldDeseriali
     }
     return res
 }
-// GetIsEnabled gets the isEnabled property value. Whether this rule is enabled.
+// GetIsEnabled gets the isEnabled property value. Determines whether this rule is enabled.
 func (m *UnifiedRoleManagementPolicyAuthenticationContextRule) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *UnifiedRoleManagementPolicyAuthenticationContextRule) SetClaimValue(val
         panic(err)
     }
 }
-// SetIsEnabled sets the isEnabled property value. Whether this rule is enabled.
+// SetIsEnabled sets the isEnabled property value. Determines whether this rule is enabled.
 func (m *UnifiedRoleManagementPolicyAuthenticationContextRule) SetIsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEnabled", value)
     if err != nil {

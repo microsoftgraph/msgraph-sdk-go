@@ -18,7 +18,7 @@ type MobileAppsMobileAppItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MobileAppsMobileAppItemRequestBuilderGetQueryParameters read properties and relationships of the webApp object.
+// MobileAppsMobileAppItemRequestBuilderGetQueryParameters read properties and relationships of the windowsUniversalAppX object.
 type MobileAppsMobileAppItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -85,10 +85,10 @@ func (m *MobileAppsMobileAppItemRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// Get read properties and relationships of the webApp object.
+// Get read properties and relationships of the windowsUniversalAppX object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-webapp-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-windowsuniversalappx-get?view=graph-rest-1.0
 func (m *MobileAppsMobileAppItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsMobileAppItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -171,10 +171,10 @@ func (m *MobileAppsMobileAppItemRequestBuilder) GraphWindowsUniversalAppX()(*Mob
 func (m *MobileAppsMobileAppItemRequestBuilder) GraphWindowsWebApp()(*MobileAppsItemGraphWindowsWebAppRequestBuilder) {
     return NewMobileAppsItemGraphWindowsWebAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a windowsMicrosoftEdgeApp object.
+// Patch update the properties of a macOSLobApp object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-windowsmicrosoftedgeapp-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-macoslobapp-update?view=graph-rest-1.0
 func (m *MobileAppsMobileAppItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable, requestConfiguration *MobileAppsMobileAppItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -205,7 +205,7 @@ func (m *MobileAppsMobileAppItemRequestBuilder) ToDeleteRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read properties and relationships of the webApp object.
+// ToGetRequestInformation read properties and relationships of the windowsUniversalAppX object.
 func (m *MobileAppsMobileAppItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsMobileAppItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -221,7 +221,7 @@ func (m *MobileAppsMobileAppItemRequestBuilder) ToGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a windowsMicrosoftEdgeApp object.
+// ToPatchRequestInformation update the properties of a macOSLobApp object.
 func (m *MobileAppsMobileAppItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppable, requestConfiguration *MobileAppsMobileAppItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

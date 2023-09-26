@@ -25,3 +25,7 @@ func NewSharesItemAllowedGroupsGroupItemRequestBuilder(rawUrl string, requestAda
 func (m *SharesItemAllowedGroupsGroupItemRequestBuilder) Ref()(*SharesItemAllowedGroupsItemRefRequestBuilder) {
     return NewSharesItemAllowedGroupsItemRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ServiceProvisioningErrors the serviceProvisioningErrors property
+func (m *SharesItemAllowedGroupsGroupItemRequestBuilder) ServiceProvisioningErrors()(*SharesItemAllowedGroupsItemServiceProvisioningErrorsRequestBuilder) {
+    return NewSharesItemAllowedGroupsItemServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}

@@ -59,6 +59,10 @@ func (m *ItemGraphRoomListRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RoomListable), nil
 }
+// Rooms provides operations to manage the rooms property of the microsoft.graph.roomList entity.
+func (m *ItemGraphRoomListRequestBuilder) Rooms()(*ItemGraphRoomListRoomsRequestBuilder) {
+    return NewItemGraphRoomListRoomsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation get the item of type microsoft.graph.place as microsoft.graph.roomList
 func (m *ItemGraphRoomListRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGraphRoomListRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

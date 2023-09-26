@@ -63,6 +63,10 @@ func (m *SubjectRightsRequestsItemApproversUserItemRequestBuilder) Get(ctx conte
 func (m *SubjectRightsRequestsItemApproversUserItemRequestBuilder) MailboxSettings()(*SubjectRightsRequestsItemApproversItemMailboxSettingsRequestBuilder) {
     return NewSubjectRightsRequestsItemApproversItemMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ServiceProvisioningErrors the serviceProvisioningErrors property
+func (m *SubjectRightsRequestsItemApproversUserItemRequestBuilder) ServiceProvisioningErrors()(*SubjectRightsRequestsItemApproversItemServiceProvisioningErrorsRequestBuilder) {
+    return NewSubjectRightsRequestsItemApproversItemServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation get approvers from security
 func (m *SubjectRightsRequestsItemApproversUserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemApproversUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

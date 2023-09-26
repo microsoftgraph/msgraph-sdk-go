@@ -27,6 +27,14 @@ type MobileAppsItemGraphIosVppAppRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *MobileAppsItemGraphIosVppAppRequestBuilderGetQueryParameters
 }
+// Assignments provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphIosVppAppRequestBuilder) Assignments()(*MobileAppsItemGraphIosVppAppAssignmentsRequestBuilder) {
+    return NewMobileAppsItemGraphIosVppAppAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphIosVppAppRequestBuilder) Categories()(*MobileAppsItemGraphIosVppAppCategoriesRequestBuilder) {
+    return NewMobileAppsItemGraphIosVppAppCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMobileAppsItemGraphIosVppAppRequestBuilderInternal instantiates a new GraphIosVppAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphIosVppAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphIosVppAppRequestBuilder) {
     m := &MobileAppsItemGraphIosVppAppRequestBuilder{

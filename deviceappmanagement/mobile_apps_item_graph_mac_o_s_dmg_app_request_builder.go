@@ -27,6 +27,14 @@ type MobileAppsItemGraphMacOSDmgAppRequestBuilderGetRequestConfiguration struct 
     // Request query parameters
     QueryParameters *MobileAppsItemGraphMacOSDmgAppRequestBuilderGetQueryParameters
 }
+// Assignments provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphMacOSDmgAppRequestBuilder) Assignments()(*MobileAppsItemGraphMacOSDmgAppAssignmentsRequestBuilder) {
+    return NewMobileAppsItemGraphMacOSDmgAppAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphMacOSDmgAppRequestBuilder) Categories()(*MobileAppsItemGraphMacOSDmgAppCategoriesRequestBuilder) {
+    return NewMobileAppsItemGraphMacOSDmgAppCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMobileAppsItemGraphMacOSDmgAppRequestBuilderInternal instantiates a new GraphMacOSDmgAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphMacOSDmgAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphMacOSDmgAppRequestBuilder) {
     m := &MobileAppsItemGraphMacOSDmgAppRequestBuilder{
@@ -39,6 +47,10 @@ func NewMobileAppsItemGraphMacOSDmgAppRequestBuilder(rawUrl string, requestAdapt
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphMacOSDmgAppRequestBuilderInternal(urlParams, requestAdapter)
+}
+// ContentVersions provides operations to manage the contentVersions property of the microsoft.graph.mobileLobApp entity.
+func (m *MobileAppsItemGraphMacOSDmgAppRequestBuilder) ContentVersions()(*MobileAppsItemGraphMacOSDmgAppContentVersionsRequestBuilder) {
+    return NewMobileAppsItemGraphMacOSDmgAppContentVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the item of type microsoft.graph.mobileApp as microsoft.graph.macOSDmgApp
 func (m *MobileAppsItemGraphMacOSDmgAppRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphMacOSDmgAppRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MacOSDmgAppable, error) {

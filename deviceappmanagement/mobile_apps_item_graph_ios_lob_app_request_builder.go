@@ -27,6 +27,14 @@ type MobileAppsItemGraphIosLobAppRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *MobileAppsItemGraphIosLobAppRequestBuilderGetQueryParameters
 }
+// Assignments provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphIosLobAppRequestBuilder) Assignments()(*MobileAppsItemGraphIosLobAppAssignmentsRequestBuilder) {
+    return NewMobileAppsItemGraphIosLobAppAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphIosLobAppRequestBuilder) Categories()(*MobileAppsItemGraphIosLobAppCategoriesRequestBuilder) {
+    return NewMobileAppsItemGraphIosLobAppCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMobileAppsItemGraphIosLobAppRequestBuilderInternal instantiates a new GraphIosLobAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphIosLobAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphIosLobAppRequestBuilder) {
     m := &MobileAppsItemGraphIosLobAppRequestBuilder{
@@ -39,6 +47,10 @@ func NewMobileAppsItemGraphIosLobAppRequestBuilder(rawUrl string, requestAdapter
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphIosLobAppRequestBuilderInternal(urlParams, requestAdapter)
+}
+// ContentVersions provides operations to manage the contentVersions property of the microsoft.graph.mobileLobApp entity.
+func (m *MobileAppsItemGraphIosLobAppRequestBuilder) ContentVersions()(*MobileAppsItemGraphIosLobAppContentVersionsRequestBuilder) {
+    return NewMobileAppsItemGraphIosLobAppContentVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the item of type microsoft.graph.mobileApp as microsoft.graph.iosLobApp
 func (m *MobileAppsItemGraphIosLobAppRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphIosLobAppRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosLobAppable, error) {

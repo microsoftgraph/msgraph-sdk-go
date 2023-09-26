@@ -20,7 +20,7 @@ func NewSignIn()(*SignIn) {
 func CreateSignInFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSignIn(), nil
 }
-// GetAppDisplayName gets the appDisplayName property value. App name displayed in the Azure portal.  Supports $filter (eq, startsWith).
+// GetAppDisplayName gets the appDisplayName property value. App name displayed in the Microsoft Entra admin center.  Supports $filter (eq, startsWith).
 func (m *SignIn) GetAppDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("appDisplayName")
     if err != nil {
@@ -683,7 +683,7 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     }
     return nil
 }
-// SetAppDisplayName sets the appDisplayName property value. App name displayed in the Azure portal.  Supports $filter (eq, startsWith).
+// SetAppDisplayName sets the appDisplayName property value. App name displayed in the Microsoft Entra admin center.  Supports $filter (eq, startsWith).
 func (m *SignIn) SetAppDisplayName(value *string)() {
     err := m.GetBackingStore().Set("appDisplayName", value)
     if err != nil {

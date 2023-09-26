@@ -96,7 +96,7 @@ func (m *UserFlowAttributesRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityUserFlowAttributeCollectionResponseable), nil
 }
-// Post create a new identityUserFlowAttribute object.
+// Post create a new custom identityUserFlowAttribute object.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identityuserflowattribute-post?view=graph-rest-1.0
@@ -134,7 +134,7 @@ func (m *UserFlowAttributesRequestBuilder) ToGetRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new identityUserFlowAttribute object.
+// ToPostRequestInformation create a new custom identityUserFlowAttribute object.
 func (m *UserFlowAttributesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityUserFlowAttributeable, requestConfiguration *UserFlowAttributesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -27,6 +27,14 @@ type MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilderGetRequestConf
     // Request query parameters
     QueryParameters *MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilderGetQueryParameters
 }
+// Assignments provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilder) Assignments()(*MobileAppsItemGraphMicrosoftStoreForBusinessAppAssignmentsRequestBuilder) {
+    return NewMobileAppsItemGraphMicrosoftStoreForBusinessAppAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilder) Categories()(*MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilder) {
+    return NewMobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilderInternal instantiates a new GraphMicrosoftStoreForBusinessAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilder) {
     m := &MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilder{

@@ -93,7 +93,7 @@ func (m *Pkcs12CertificateInformation) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetIsActive gets the isActive property value. Represents whether the certificate is the active certificate to be used for calling the API connector. The active certificate is the most recently uploaded certificate which is not yet expired but whose notBefore time is in the past.
+// GetIsActive gets the isActive property value. Represents whether the certificate is the active certificate to be used for calling the API connector. The active certificate is the most recently uploaded certificate that isn't yet expired but whose notBefore time is in the past.
 func (m *Pkcs12CertificateInformation) GetIsActive()(*bool) {
     val, err := m.GetBackingStore().Get("isActive")
     if err != nil {
@@ -199,7 +199,7 @@ func (m *Pkcs12CertificateInformation) SetAdditionalData(value map[string]any)()
 func (m *Pkcs12CertificateInformation) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsActive sets the isActive property value. Represents whether the certificate is the active certificate to be used for calling the API connector. The active certificate is the most recently uploaded certificate which is not yet expired but whose notBefore time is in the past.
+// SetIsActive sets the isActive property value. Represents whether the certificate is the active certificate to be used for calling the API connector. The active certificate is the most recently uploaded certificate that isn't yet expired but whose notBefore time is in the past.
 func (m *Pkcs12CertificateInformation) SetIsActive(value *bool)() {
     err := m.GetBackingStore().Set("isActive", value)
     if err != nil {
