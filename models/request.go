@@ -30,6 +30,12 @@ func CreateRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.privilegedAccessGroupAssignmentScheduleRequest":
+                        return NewPrivilegedAccessGroupAssignmentScheduleRequest(), nil
+                    case "#microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest":
+                        return NewPrivilegedAccessGroupEligibilityScheduleRequest(), nil
+                    case "#microsoft.graph.privilegedAccessScheduleRequest":
+                        return NewPrivilegedAccessScheduleRequest(), nil
                     case "#microsoft.graph.unifiedRoleAssignmentScheduleRequest":
                         return NewUnifiedRoleAssignmentScheduleRequest(), nil
                     case "#microsoft.graph.unifiedRoleEligibilityScheduleRequest":

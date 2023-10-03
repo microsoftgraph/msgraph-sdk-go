@@ -52,6 +52,7 @@ func NewItemChatsGetAllMessagesRequestBuilder(rawUrl string, requestAdapter i2ae
     return NewItemChatsGetAllMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getAllMessages
+// Deprecated: This method is obsolete. Use GetAsGetAllMessagesGetResponse instead.
 func (m *ItemChatsGetAllMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChatsGetAllMessagesRequestBuilderGetRequestConfiguration)(ItemChatsGetAllMessagesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -69,6 +70,25 @@ func (m *ItemChatsGetAllMessagesRequestBuilder) Get(ctx context.Context, request
         return nil, nil
     }
     return res.(ItemChatsGetAllMessagesResponseable), nil
+}
+// GetAsGetAllMessagesGetResponse invoke function getAllMessages
+func (m *ItemChatsGetAllMessagesRequestBuilder) GetAsGetAllMessagesGetResponse(ctx context.Context, requestConfiguration *ItemChatsGetAllMessagesRequestBuilderGetRequestConfiguration)(ItemChatsGetAllMessagesGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemChatsGetAllMessagesGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemChatsGetAllMessagesGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getAllMessages
 func (m *ItemChatsGetAllMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChatsGetAllMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

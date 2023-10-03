@@ -11,7 +11,7 @@ import (
 type ItemSitesItemListsItemColumnsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemListsItemColumnsRequestBuilderGetQueryParameters get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [list][list].
+// ItemSitesItemListsItemColumnsRequestBuilderGetQueryParameters get the collection of columns represented as columnDefinition][columnDefinition] resources in a [list][list]. This API is supported in the following [national cloud deployments.
 type ItemSitesItemListsItemColumnsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemSitesItemListsItemColumnsRequestBuilder(rawUrl string, requestAdapte
 func (m *ItemSitesItemListsItemColumnsRequestBuilder) Count()(*ItemSitesItemListsItemColumnsCountRequestBuilder) {
     return NewItemSitesItemListsItemColumnsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [list][list].
+// Get get the collection of columns represented as columnDefinition][columnDefinition] resources in a [list][list]. This API is supported in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/list-list-columns?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemSitesItemListsItemColumnsRequestBuilder) Get(ctx context.Context, r
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionCollectionResponseable), nil
 }
-// Post create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+// Post create a column for a list][list] with a request that specifies a [columnDefinition][columnDefinition]. This API is supported in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/list-post-columns?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemSitesItemListsItemColumnsRequestBuilder) Post(ctx context.Context, 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable), nil
 }
-// ToGetRequestInformation get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [list][list].
+// ToGetRequestInformation get the collection of columns represented as columnDefinition][columnDefinition] resources in a [list][list]. This API is supported in the following [national cloud deployments.
 func (m *ItemSitesItemListsItemColumnsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsItemColumnsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemSitesItemListsItemColumnsRequestBuilder) ToGetRequestInformation(ct
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+// ToPostRequestInformation create a column for a list][list] with a request that specifies a [columnDefinition][columnDefinition]. This API is supported in the following [national cloud deployments.
 func (m *ItemSitesItemListsItemColumnsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, requestConfiguration *ItemSitesItemListsItemColumnsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

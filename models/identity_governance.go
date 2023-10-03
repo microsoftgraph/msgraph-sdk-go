@@ -114,6 +114,16 @@ func (m *IdentityGovernance) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["privilegedAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePrivilegedAccessRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPrivilegedAccess(val.(PrivilegedAccessRootable))
+        }
+        return nil
+    }
     res["termsOfUse"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTermsOfUseContainerFromDiscriminatorValue)
         if err != nil {
@@ -134,6 +144,17 @@ func (m *IdentityGovernance) GetOdataType()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetPrivilegedAccess gets the privilegedAccess property value. The privilegedAccess property
+func (m *IdentityGovernance) GetPrivilegedAccess()(PrivilegedAccessRootable) {
+    val, err := m.GetBackingStore().Get("privilegedAccess")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PrivilegedAccessRootable)
     }
     return nil
 }
@@ -170,6 +191,12 @@ func (m *IdentityGovernance) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("privilegedAccess", m.GetPrivilegedAccess())
         if err != nil {
             return err
         }
@@ -227,6 +254,13 @@ func (m *IdentityGovernance) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetPrivilegedAccess sets the privilegedAccess property value. The privilegedAccess property
+func (m *IdentityGovernance) SetPrivilegedAccess(value PrivilegedAccessRootable)() {
+    err := m.GetBackingStore().Set("privilegedAccess", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTermsOfUse sets the termsOfUse property value. The termsOfUse property
 func (m *IdentityGovernance) SetTermsOfUse(value TermsOfUseContainerable)() {
     err := m.GetBackingStore().Set("termsOfUse", value)
@@ -244,11 +278,13 @@ type IdentityGovernanceable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetEntitlementManagement()(EntitlementManagementable)
     GetOdataType()(*string)
+    GetPrivilegedAccess()(PrivilegedAccessRootable)
     GetTermsOfUse()(TermsOfUseContainerable)
     SetAccessReviews(value AccessReviewSetable)()
     SetAppConsent(value AppConsentApprovalRouteable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetEntitlementManagement(value EntitlementManagementable)()
     SetOdataType(value *string)()
+    SetPrivilegedAccess(value PrivilegedAccessRootable)()
     SetTermsOfUse(value TermsOfUseContainerable)()
 }

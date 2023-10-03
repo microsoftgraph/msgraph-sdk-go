@@ -58,7 +58,7 @@ func NewTeamsAppsTeamsAppItemRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewTeamsAppsTeamsAppItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete teamsApp
+// Delete this API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/teamsapp-delete?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *TeamsAppsTeamsAppItemRequestBuilder) Patch(ctx context.Context, body ia
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppable), nil
 }
-// ToDeleteRequestInformation delete teamsApp
+// ToDeleteRequestInformation this API is supported in the following national cloud deployments.
 func (m *TeamsAppsTeamsAppItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TeamsAppsTeamsAppItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

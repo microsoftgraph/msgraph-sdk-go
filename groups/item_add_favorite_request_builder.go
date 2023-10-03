@@ -30,7 +30,7 @@ func NewItemAddFavoriteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewItemAddFavoriteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post add the group to the list of the current user's favorite groups. Supported for Microsoft 365 groups only.
+// Post add the group to the list of the current user's favorite groups. Supported for Microsoft 365 groups only. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/group-addfavorite?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemAddFavoriteRequestBuilder) Post(ctx context.Context, requestConfigu
     }
     return nil
 }
-// ToPostRequestInformation add the group to the list of the current user's favorite groups. Supported for Microsoft 365 groups only.
+// ToPostRequestInformation add the group to the list of the current user's favorite groups. Supported for Microsoft 365 groups only. This API is supported in the following national cloud deployments.
 func (m *ItemAddFavoriteRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemAddFavoriteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

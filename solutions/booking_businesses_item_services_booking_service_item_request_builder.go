@@ -18,7 +18,7 @@ type BookingBusinessesItemServicesBookingServiceItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BookingBusinessesItemServicesBookingServiceItemRequestBuilderGetQueryParameters get the properties and relationships of a bookingService object in the specified bookingBusiness.
+// BookingBusinessesItemServicesBookingServiceItemRequestBuilderGetQueryParameters get the properties and relationships of a bookingService object in the specified bookingBusiness. This API is supported in the following national cloud deployments.
 type BookingBusinessesItemServicesBookingServiceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewBookingBusinessesItemServicesBookingServiceItemRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewBookingBusinessesItemServicesBookingServiceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a bookingService object in the specified bookingBusiness.
+// Delete delete a bookingService object in the specified bookingBusiness. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingservice-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *BookingBusinessesItemServicesBookingServiceItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get get the properties and relationships of a bookingService object in the specified bookingBusiness.
+// Get get the properties and relationships of a bookingService object in the specified bookingBusiness. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingservice-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *BookingBusinessesItemServicesBookingServiceItemRequestBuilder) Get(ctx 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceable), nil
 }
-// Patch update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:- Price- Typical length of an appointment- Reminders- Any time buffer to set up before or finish up after the service- Scheduling policy parameters, such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment.
+// Patch update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:- Price- Typical length of an appointment- Reminders- Any time buffer to set up before or finish up after the service- Scheduling policy parameters, such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingservice-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *BookingBusinessesItemServicesBookingServiceItemRequestBuilder) Patch(ct
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceable), nil
 }
-// ToDeleteRequestInformation delete a bookingService object in the specified bookingBusiness.
+// ToDeleteRequestInformation delete a bookingService object in the specified bookingBusiness. This API is supported in the following national cloud deployments.
 func (m *BookingBusinessesItemServicesBookingServiceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemServicesBookingServiceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *BookingBusinessesItemServicesBookingServiceItemRequestBuilder) ToDelete
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of a bookingService object in the specified bookingBusiness.
+// ToGetRequestInformation get the properties and relationships of a bookingService object in the specified bookingBusiness. This API is supported in the following national cloud deployments.
 func (m *BookingBusinessesItemServicesBookingServiceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemServicesBookingServiceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *BookingBusinessesItemServicesBookingServiceItemRequestBuilder) ToGetReq
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:- Price- Typical length of an appointment- Reminders- Any time buffer to set up before or finish up after the service- Scheduling policy parameters, such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment.
+// ToPatchRequestInformation update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:- Price- Typical length of an appointment- Reminders- Any time buffer to set up before or finish up after the service- Scheduling policy parameters, such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment. This API is supported in the following national cloud deployments.
 func (m *BookingBusinessesItemServicesBookingServiceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceable, requestConfiguration *BookingBusinessesItemServicesBookingServiceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

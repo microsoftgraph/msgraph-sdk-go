@@ -50,6 +50,7 @@ func NewItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder(rawU
     return NewItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getCompatibleHubContentTypes
+// Deprecated: This method is obsolete. Use GetAsGetCompatibleHubContentTypesGetResponse instead.
 func (m *ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilderGetRequestConfiguration)(ItemSitesItemContentTypesGetCompatibleHubContentTypesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -67,6 +68,25 @@ func (m *ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder) Ge
         return nil, nil
     }
     return res.(ItemSitesItemContentTypesGetCompatibleHubContentTypesResponseable), nil
+}
+// GetAsGetCompatibleHubContentTypesGetResponse invoke function getCompatibleHubContentTypes
+func (m *ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder) GetAsGetCompatibleHubContentTypesGetResponse(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilderGetRequestConfiguration)(ItemSitesItemContentTypesGetCompatibleHubContentTypesGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSitesItemContentTypesGetCompatibleHubContentTypesGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemSitesItemContentTypesGetCompatibleHubContentTypesGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getCompatibleHubContentTypes
 func (m *ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

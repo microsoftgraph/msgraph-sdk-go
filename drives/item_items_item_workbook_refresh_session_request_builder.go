@@ -30,7 +30,7 @@ func NewItemItemsItemWorkbookRefreshSessionRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookRefreshSessionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post use this API to refresh an existing workbook session. 
+// Post use this API to refresh an existing workbook session. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/workbook-refreshsession?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemItemsItemWorkbookRefreshSessionRequestBuilder) Post(ctx context.Con
     }
     return nil
 }
-// ToPostRequestInformation use this API to refresh an existing workbook session. 
+// ToPostRequestInformation use this API to refresh an existing workbook session. This API is supported in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookRefreshSessionRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookRefreshSessionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

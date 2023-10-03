@@ -18,7 +18,7 @@ type DailyPrintUsageByUserPrintUsageByUserItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DailyPrintUsageByUserPrintUsageByUserItemRequestBuilderGetQueryParameters retrieve a user's usage summary for a particular time period. For descriptions of each endpoint, see printUsageByUser.
+// DailyPrintUsageByUserPrintUsageByUserItemRequestBuilderGetQueryParameters retrieve a user's usage summary for a particular time period. For descriptions of each endpoint, see printUsageByUser. This API is supported in the following national cloud deployments.
 type DailyPrintUsageByUserPrintUsageByUserItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *DailyPrintUsageByUserPrintUsageByUserItemRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get retrieve a user's usage summary for a particular time period. For descriptions of each endpoint, see printUsageByUser.
+// Get retrieve a user's usage summary for a particular time period. For descriptions of each endpoint, see printUsageByUser. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/printusagebyuser-get?view=graph-rest-1.0
@@ -123,7 +123,7 @@ func (m *DailyPrintUsageByUserPrintUsageByUserItemRequestBuilder) ToDeleteReques
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve a user's usage summary for a particular time period. For descriptions of each endpoint, see printUsageByUser.
+// ToGetRequestInformation retrieve a user's usage summary for a particular time period. For descriptions of each endpoint, see printUsageByUser. This API is supported in the following national cloud deployments.
 func (m *DailyPrintUsageByUserPrintUsageByUserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DailyPrintUsageByUserPrintUsageByUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

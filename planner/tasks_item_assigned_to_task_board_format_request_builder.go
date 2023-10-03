@@ -18,7 +18,7 @@ type TasksItemAssignedToTaskBoardFormatRequestBuilderDeleteRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TasksItemAssignedToTaskBoardFormatRequestBuilderGetQueryParameters retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object.
+// TasksItemAssignedToTaskBoardFormatRequestBuilderGetQueryParameters retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object. This API is supported in the following national cloud deployments.
 type TasksItemAssignedToTaskBoardFormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *TasksItemAssignedToTaskBoardFormatRequestBuilder) Delete(ctx context.Co
     }
     return nil
 }
-// Get retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object.
+// Get retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *TasksItemAssignedToTaskBoardFormatRequestBuilder) ToDeleteRequestInform
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object.
+// ToGetRequestInformation retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object. This API is supported in the following national cloud deployments.
 func (m *TasksItemAssignedToTaskBoardFormatRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TasksItemAssignedToTaskBoardFormatRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

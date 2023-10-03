@@ -11,7 +11,7 @@ import (
 type ItemItemsItemWorkbookNamesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemsItemWorkbookNamesRequestBuilderGetQueryParameters retrieve a list of nameditem objects.
+// ItemItemsItemWorkbookNamesRequestBuilderGetQueryParameters retrieve a list of nameditem objects. This API is supported in the following national cloud deployments.
 type ItemItemsItemWorkbookNamesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -82,10 +82,10 @@ func NewItemItemsItemWorkbookNamesRequestBuilder(rawUrl string, requestAdapter i
 func (m *ItemItemsItemWorkbookNamesRequestBuilder) Count()(*ItemItemsItemWorkbookNamesCountRequestBuilder) {
     return NewItemItemsItemWorkbookNamesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of nameditem objects.
+// Get retrieve a list of nameditem objects. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/nameditem-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/workbook-list-names?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookNamesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookNamesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookNamedItemCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -123,7 +123,7 @@ func (m *ItemItemsItemWorkbookNamesRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookNamedItemable), nil
 }
-// ToGetRequestInformation retrieve a list of nameditem objects.
+// ToGetRequestInformation retrieve a list of nameditem objects. This API is supported in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookNamesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookNamesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

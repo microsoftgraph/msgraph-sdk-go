@@ -11,7 +11,7 @@ import (
 type AuthenticationMethodsUserRegistrationDetailsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AuthenticationMethodsUserRegistrationDetailsRequestBuilderGetQueryParameters get a list of the authentication methods registered for a user as defined in the userRegistrationDetails object.
+// AuthenticationMethodsUserRegistrationDetailsRequestBuilderGetQueryParameters get a list of the authentication methods registered for a user as defined in the userRegistrationDetails object. This API is supported in the following national cloud deployments.
 type AuthenticationMethodsUserRegistrationDetailsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewAuthenticationMethodsUserRegistrationDetailsRequestBuilder(rawUrl string
 func (m *AuthenticationMethodsUserRegistrationDetailsRequestBuilder) Count()(*AuthenticationMethodsUserRegistrationDetailsCountRequestBuilder) {
     return NewAuthenticationMethodsUserRegistrationDetailsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the authentication methods registered for a user as defined in the userRegistrationDetails object.
+// Get get a list of the authentication methods registered for a user as defined in the userRegistrationDetails object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/authenticationmethodsroot-list-userregistrationdetails?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *AuthenticationMethodsUserRegistrationDetailsRequestBuilder) Post(ctx co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserRegistrationDetailsable), nil
 }
-// ToGetRequestInformation get a list of the authentication methods registered for a user as defined in the userRegistrationDetails object.
+// ToGetRequestInformation get a list of the authentication methods registered for a user as defined in the userRegistrationDetails object. This API is supported in the following national cloud deployments.
 func (m *AuthenticationMethodsUserRegistrationDetailsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationMethodsUserRegistrationDetailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

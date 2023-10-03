@@ -18,7 +18,7 @@ type ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderDe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderGetQueryParameters read the properties and relationships of a linkedResource object.
+// ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderGetQueryParameters read the properties and relationships of a linkedResource object. This API is supported in the following national cloud deployments.
 type ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a linkedResource object.
+// Delete deletes a linkedResource object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/linkedresource-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuild
     }
     return nil
 }
-// Get read the properties and relationships of a linkedResource object.
+// Get read the properties and relationships of a linkedResource object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/linkedresource-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LinkedResourceable), nil
 }
-// Patch update the properties of a linkedResource object.
+// Patch update the properties of a linkedResource object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/linkedresource-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LinkedResourceable), nil
 }
-// ToDeleteRequestInformation deletes a linkedResource object.
+// ToDeleteRequestInformation deletes a linkedResource object. This API is supported in the following national cloud deployments.
 func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuild
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a linkedResource object.
+// ToGetRequestInformation read the properties and relationships of a linkedResource object. This API is supported in the following national cloud deployments.
 func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuild
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a linkedResource object.
+// ToPatchRequestInformation update the properties of a linkedResource object. This API is supported in the following national cloud deployments.
 func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LinkedResourceable, requestConfiguration *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

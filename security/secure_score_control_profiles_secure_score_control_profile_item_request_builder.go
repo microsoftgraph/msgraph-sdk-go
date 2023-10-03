@@ -18,7 +18,7 @@ type SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an securescorecontrolprofile object.
+// SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an securescorecontrolprofile object. This API is supported in the following national cloud deployments.
 type SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilder) 
     }
     return nil
 }
-// Get retrieve the properties and relationships of an securescorecontrolprofile object.
+// Get retrieve the properties and relationships of an securescorecontrolprofile object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/securescorecontrolprofile-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilder) 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SecureScoreControlProfileable), nil
 }
-// Patch update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as assignedTo or tenantNote.
+// Patch update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as assignedTo or tenantNote. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/securescorecontrolprofile-update?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an securescorecontrolprofile object.
+// ToGetRequestInformation retrieve the properties and relationships of an securescorecontrolprofile object. This API is supported in the following national cloud deployments.
 func (m *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as assignedTo or tenantNote.
+// ToPatchRequestInformation update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as assignedTo or tenantNote. This API is supported in the following national cloud deployments.
 func (m *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SecureScoreControlProfileable, requestConfiguration *SecureScoreControlProfilesSecureScoreControlProfileItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRequestBuilderGetQueryParameters retrieve the properties and relationships of tablerow object.
+// ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRequestBuilderGetQueryParameters retrieve the properties and relationships of tablerow object. This API is supported in the following national cloud deployments.
 type ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemReq
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes the row from the table.
+// Delete deletes the row from the table. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tablerow-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRe
     }
     return nil
 }
-// Get retrieve the properties and relationships of tablerow object.
+// Get retrieve the properties and relationships of tablerow object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tablerow-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRe
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableRowable), nil
 }
-// Patch update the properties of tablerow object.
+// Patch update the properties of tablerow object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tablerow-update?view=graph-rest-1.0
@@ -121,7 +121,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRe
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRequestBuilder) RangeEscaped()(*ItemItemsItemWorkbookWorksheetsItemTablesItemRowsItemRangeRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemTablesItemRowsItemRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation deletes the row from the table.
+// ToDeleteRequestInformation deletes the row from the table. This API is supported in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -133,7 +133,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of tablerow object.
+// ToGetRequestInformation retrieve the properties and relationships of tablerow object. This API is supported in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -149,7 +149,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRe
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of tablerow object.
+// ToPatchRequestInformation update the properties of tablerow object. This API is supported in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableRowable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsWorkbookTableRowItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

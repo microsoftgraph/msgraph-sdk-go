@@ -38,7 +38,7 @@ func (m *SearchAlterationOptions) GetAdditionalData()(map[string]any) {
 func (m *SearchAlterationOptions) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetEnableModification gets the enableModification property value. Indicates whether spelling modifications are enabled. If enabled, the user will get the search results for the corrected query in case of no results for the original query with typos. The response will also include the spelling modification information in the queryAlterationResponse property. Optional.
+// GetEnableModification gets the enableModification property value. Indicates whether spelling modifications are enabled. If enabled, the user gets the search results for the corrected query if there were no results for the original query with typos. The response will also include the spelling modification information in the queryAlterationResponse property. Optional.
 func (m *SearchAlterationOptions) GetEnableModification()(*bool) {
     val, err := m.GetBackingStore().Get("enableModification")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *SearchAlterationOptions) GetEnableModification()(*bool) {
     }
     return nil
 }
-// GetEnableSuggestion gets the enableSuggestion property value. Indicates whether spelling suggestions are enabled. If enabled, the user will get the search results for the original search query and suggestions for spelling correction in the queryAlterationResponse property of the response for the typos in the query. Optional.
+// GetEnableSuggestion gets the enableSuggestion property value. Indicates whether spelling suggestions are enabled. If enabled, the user gets the search results for the original search query and suggestions for spelling correction in the queryAlterationResponse property of the response for the typos in the query. Optional.
 func (m *SearchAlterationOptions) GetEnableSuggestion()(*bool) {
     val, err := m.GetBackingStore().Get("enableSuggestion")
     if err != nil {
@@ -145,14 +145,14 @@ func (m *SearchAlterationOptions) SetAdditionalData(value map[string]any)() {
 func (m *SearchAlterationOptions) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetEnableModification sets the enableModification property value. Indicates whether spelling modifications are enabled. If enabled, the user will get the search results for the corrected query in case of no results for the original query with typos. The response will also include the spelling modification information in the queryAlterationResponse property. Optional.
+// SetEnableModification sets the enableModification property value. Indicates whether spelling modifications are enabled. If enabled, the user gets the search results for the corrected query if there were no results for the original query with typos. The response will also include the spelling modification information in the queryAlterationResponse property. Optional.
 func (m *SearchAlterationOptions) SetEnableModification(value *bool)() {
     err := m.GetBackingStore().Set("enableModification", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEnableSuggestion sets the enableSuggestion property value. Indicates whether spelling suggestions are enabled. If enabled, the user will get the search results for the original search query and suggestions for spelling correction in the queryAlterationResponse property of the response for the typos in the query. Optional.
+// SetEnableSuggestion sets the enableSuggestion property value. Indicates whether spelling suggestions are enabled. If enabled, the user gets the search results for the original search query and suggestions for spelling correction in the queryAlterationResponse property of the response for the typos in the query. Optional.
 func (m *SearchAlterationOptions) SetEnableSuggestion(value *bool)() {
     err := m.GetBackingStore().Set("enableSuggestion", value)
     if err != nil {

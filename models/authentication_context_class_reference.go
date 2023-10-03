@@ -76,7 +76,7 @@ func (m *AuthenticationContextClassReference) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetIsAvailable gets the isAvailable property value. Indicates whether the authenticationContextClassReference has been published by the security admin and is ready for use by apps. When it is set to false, it should not be shown in authentication context selection UX, or used to protect app resources. It will be shown and available for Conditional Access policy authoring. The default value is false.  Supports $filter (eq).
+// GetIsAvailable gets the isAvailable property value. Indicates whether the authenticationContextClassReference has been published by the security admin and is ready for use by apps. When it's set to false, it shouldn't be shown in authentication context selection UX, or used to protect app resources. It's shown and available for Conditional Access policy authoring. The default value is false.  Supports $filter (eq).
 func (m *AuthenticationContextClassReference) GetIsAvailable()(*bool) {
     val, err := m.GetBackingStore().Get("isAvailable")
     if err != nil {
@@ -127,7 +127,7 @@ func (m *AuthenticationContextClassReference) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetIsAvailable sets the isAvailable property value. Indicates whether the authenticationContextClassReference has been published by the security admin and is ready for use by apps. When it is set to false, it should not be shown in authentication context selection UX, or used to protect app resources. It will be shown and available for Conditional Access policy authoring. The default value is false.  Supports $filter (eq).
+// SetIsAvailable sets the isAvailable property value. Indicates whether the authenticationContextClassReference has been published by the security admin and is ready for use by apps. When it's set to false, it shouldn't be shown in authentication context selection UX, or used to protect app resources. It's shown and available for Conditional Access policy authoring. The default value is false.  Supports $filter (eq).
 func (m *AuthenticationContextClassReference) SetIsAvailable(value *bool)() {
     err := m.GetBackingStore().Set("isAvailable", value)
     if err != nil {

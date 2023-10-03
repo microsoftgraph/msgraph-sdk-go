@@ -31,6 +31,7 @@ func NewRemoveRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewRemoveRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post unfollow a user's site or multiple sites.
+// Deprecated: This method is obsolete. Use PostAsRemovePostResponse instead.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/site-unfollow?view=graph-rest-1.0
@@ -51,6 +52,28 @@ func (m *RemoveRequestBuilder) Post(ctx context.Context, body RemovePostRequestB
         return nil, nil
     }
     return res.(RemoveResponseable), nil
+}
+// PostAsRemovePostResponse unfollow a user's site or multiple sites.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-unfollow?view=graph-rest-1.0
+func (m *RemoveRequestBuilder) PostAsRemovePostResponse(ctx context.Context, body RemovePostRequestBodyable, requestConfiguration *RemoveRequestBuilderPostRequestConfiguration)(RemovePostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateRemovePostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(RemovePostResponseable), nil
 }
 // ToPostRequestInformation unfollow a user's site or multiple sites.
 func (m *RemoveRequestBuilder) ToPostRequestInformation(ctx context.Context, body RemovePostRequestBodyable, requestConfiguration *RemoveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

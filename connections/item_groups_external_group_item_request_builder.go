@@ -18,7 +18,7 @@ type ItemGroupsExternalGroupItemRequestBuilderDeleteRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemGroupsExternalGroupItemRequestBuilderGetQueryParameters get an externalGroup object.
+// ItemGroupsExternalGroupItemRequestBuilderGetQueryParameters get an externalGroup object. This API is supported in the following national cloud deployments.
 type ItemGroupsExternalGroupItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemGroupsExternalGroupItemRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewItemGroupsExternalGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an externalGroup object.
+// Delete delete an externalGroup object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemGroupsExternalGroupItemRequestBuilder) Delete(ctx context.Context, 
     }
     return nil
 }
-// Get get an externalGroup object.
+// Get get an externalGroup object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-get?view=graph-rest-1.0
@@ -99,7 +99,7 @@ func (m *ItemGroupsExternalGroupItemRequestBuilder) Get(ctx context.Context, req
 func (m *ItemGroupsExternalGroupItemRequestBuilder) Members()(*ItemGroupsItemMembersRequestBuilder) {
     return NewItemGroupsItemMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of an externalGroup object.
+// Patch update the properties of an externalGroup object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-update?view=graph-rest-1.0
@@ -121,7 +121,7 @@ func (m *ItemGroupsExternalGroupItemRequestBuilder) Patch(ctx context.Context, b
     }
     return res.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalGroupable), nil
 }
-// ToDeleteRequestInformation delete an externalGroup object.
+// ToDeleteRequestInformation delete an externalGroup object. This API is supported in the following national cloud deployments.
 func (m *ItemGroupsExternalGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemGroupsExternalGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -133,7 +133,7 @@ func (m *ItemGroupsExternalGroupItemRequestBuilder) ToDeleteRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get an externalGroup object.
+// ToGetRequestInformation get an externalGroup object. This API is supported in the following national cloud deployments.
 func (m *ItemGroupsExternalGroupItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGroupsExternalGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -149,7 +149,7 @@ func (m *ItemGroupsExternalGroupItemRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an externalGroup object.
+// ToPatchRequestInformation update the properties of an externalGroup object. This API is supported in the following national cloud deployments.
 func (m *ItemGroupsExternalGroupItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalGroupable, requestConfiguration *ItemGroupsExternalGroupItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

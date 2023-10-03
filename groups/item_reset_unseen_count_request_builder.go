@@ -30,7 +30,7 @@ func NewItemResetUnseenCountRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewItemResetUnseenCountRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post reset the unseenCount of all the posts that the current user has not seen since their last visit. Supported for Microsoft 365 groups only.
+// Post reset the unseenCount of all the posts that the current user hasn't seen since their last visit. Supported for Microsoft 365 groups only. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/group-resetunseencount?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemResetUnseenCountRequestBuilder) Post(ctx context.Context, requestCo
     }
     return nil
 }
-// ToPostRequestInformation reset the unseenCount of all the posts that the current user has not seen since their last visit. Supported for Microsoft 365 groups only.
+// ToPostRequestInformation reset the unseenCount of all the posts that the current user hasn't seen since their last visit. Supported for Microsoft 365 groups only. This API is supported in the following national cloud deployments.
 func (m *ItemResetUnseenCountRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemResetUnseenCountRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

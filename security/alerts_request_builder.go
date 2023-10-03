@@ -11,7 +11,7 @@ import (
 type AlertsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AlertsRequestBuilderGetQueryParameters retrieve a list of alert objects.
+// AlertsRequestBuilderGetQueryParameters retrieve a list of alert objects. This API is supported in the following national cloud deployments.
 type AlertsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewAlertsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *AlertsRequestBuilder) Count()(*AlertsCountRequestBuilder) {
     return NewAlertsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of alert objects.
+// Get retrieve a list of alert objects. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/alert-list?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *AlertsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e6
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Alertable), nil
 }
-// ToGetRequestInformation retrieve a list of alert objects.
+// ToGetRequestInformation retrieve a list of alert objects. This API is supported in the following national cloud deployments.
 func (m *AlertsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AlertsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

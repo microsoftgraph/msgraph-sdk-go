@@ -10,7 +10,7 @@ import (
 type SharesItemAllowedGroupsItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SharesItemAllowedGroupsItemRefRequestBuilderDeleteQueryParameters revoke the specified group's access to submit print jobs to the associated printerShare.
+// SharesItemAllowedGroupsItemRefRequestBuilderDeleteQueryParameters revoke the specified group's access to submit print jobs to the associated printerShare. This API is supported in the following national cloud deployments.
 type SharesItemAllowedGroupsItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,7 @@ func NewSharesItemAllowedGroupsItemRefRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewSharesItemAllowedGroupsItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete revoke the specified group's access to submit print jobs to the associated printerShare.
+// Delete revoke the specified group's access to submit print jobs to the associated printerShare. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/printershare-delete-allowedgroup?view=graph-rest-1.0
@@ -56,7 +56,7 @@ func (m *SharesItemAllowedGroupsItemRefRequestBuilder) Delete(ctx context.Contex
     }
     return nil
 }
-// ToDeleteRequestInformation revoke the specified group's access to submit print jobs to the associated printerShare.
+// ToDeleteRequestInformation revoke the specified group's access to submit print jobs to the associated printerShare. This API is supported in the following national cloud deployments.
 func (m *SharesItemAllowedGroupsItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SharesItemAllowedGroupsItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

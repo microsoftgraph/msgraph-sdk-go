@@ -18,7 +18,7 @@ type ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderGetQueryParameters get the specified permissions object of a user or group calendar that has been shared.
+// ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderGetQueryParameters get the specified permissions object of a user or group calendar that has been shared. This API is supported in the following national cloud deployments.
 type ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -52,7 +52,7 @@ func NewItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete calendarPermission.
+// Delete delete calendarPermission. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/calendarpermission-delete?view=graph-rest-1.0
@@ -71,7 +71,7 @@ func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilde
     }
     return nil
 }
-// Get get the specified permissions object of a user or group calendar that has been shared.
+// Get get the specified permissions object of a user or group calendar that has been shared. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/calendarpermission-get?view=graph-rest-1.0
@@ -93,7 +93,7 @@ func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilde
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarPermissionable), nil
 }
-// Patch update the permissions assigned to an existing sharee or delegate, through the corresponding <b>calendarPermission</b> object for a calendar.
+// Patch update the permissions assigned to an existing share recipient or delegate, through the corresponding <b>calendarPermission</b> object for a calendar. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/calendarpermission-update?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilde
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarPermissionable), nil
 }
-// ToDeleteRequestInformation delete calendarPermission.
+// ToDeleteRequestInformation delete calendarPermission. This API is supported in the following national cloud deployments.
 func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -127,7 +127,7 @@ func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilde
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the specified permissions object of a user or group calendar that has been shared.
+// ToGetRequestInformation get the specified permissions object of a user or group calendar that has been shared. This API is supported in the following national cloud deployments.
 func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -143,7 +143,7 @@ func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilde
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the permissions assigned to an existing sharee or delegate, through the corresponding <b>calendarPermission</b> object for a calendar.
+// ToPatchRequestInformation update the permissions assigned to an existing share recipient or delegate, through the corresponding <b>calendarPermission</b> object for a calendar. This API is supported in the following national cloud deployments.
 func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarPermissionable, requestConfiguration *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

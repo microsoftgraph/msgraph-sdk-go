@@ -30,7 +30,7 @@ func NewPresencesItemSetPresenceRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewPresencesItemSetPresenceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post set the state of a user's presence session as an application.
+// Post set the state of a user's presence session as an application. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/presence-setpresence?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *PresencesItemSetPresenceRequestBuilder) Post(ctx context.Context, body 
     }
     return nil
 }
-// ToPostRequestInformation set the state of a user's presence session as an application.
+// ToPostRequestInformation set the state of a user's presence session as an application. This API is supported in the following national cloud deployments.
 func (m *PresencesItemSetPresenceRequestBuilder) ToPostRequestInformation(ctx context.Context, body PresencesItemSetPresencePostRequestBodyable, requestConfiguration *PresencesItemSetPresenceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

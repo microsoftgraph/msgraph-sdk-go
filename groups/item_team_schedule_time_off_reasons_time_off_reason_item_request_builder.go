@@ -18,7 +18,7 @@ type ItemTeamScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a timeOffReason object by ID.
+// ItemTeamScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a timeOffReason object by ID. This API is supported in the following national cloud deployments.
 type ItemTeamScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -52,7 +52,7 @@ func NewItemTeamScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete mark a timeOffReason as inactive by setting the isActive property. Every team must include at least one timeoff reason. This method does not remove the specified timeOffReason instance. timeOffItem instances that have been assigned this reason remain assigned to this reason.
+// Delete mark a timeOffReason as inactive by setting the isActive property. Every team must include at least one timeoff reason. This method doesn't remove the specified timeOffReason instance. timeOffItem instances that have been assigned this reason remain assigned to this reason. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/timeoffreason-delete?view=graph-rest-1.0
@@ -71,7 +71,7 @@ func (m *ItemTeamScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get retrieve the properties and relationships of a timeOffReason object by ID.
+// Get retrieve the properties and relationships of a timeOffReason object by ID. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/timeoffreason-get?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *ItemTeamScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder) Patch(ct
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffReasonable), nil
 }
-// ToDeleteRequestInformation mark a timeOffReason as inactive by setting the isActive property. Every team must include at least one timeoff reason. This method does not remove the specified timeOffReason instance. timeOffItem instances that have been assigned this reason remain assigned to this reason.
+// ToDeleteRequestInformation mark a timeOffReason as inactive by setting the isActive property. Every team must include at least one timeoff reason. This method doesn't remove the specified timeOffReason instance. timeOffItem instances that have been assigned this reason remain assigned to this reason. This API is supported in the following national cloud deployments.
 func (m *ItemTeamScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -127,7 +127,7 @@ func (m *ItemTeamScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder) ToDelete
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a timeOffReason object by ID.
+// ToGetRequestInformation retrieve the properties and relationships of a timeOffReason object by ID. This API is supported in the following national cloud deployments.
 func (m *ItemTeamScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

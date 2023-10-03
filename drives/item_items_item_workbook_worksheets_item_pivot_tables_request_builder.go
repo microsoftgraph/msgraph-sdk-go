@@ -11,7 +11,7 @@ import (
 type ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilderGetQueryParameters retrieve a list of workbookpivottable objects.
+// ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilderGetQueryParameters retrieve a list of workbookpivottable objects. This API is supported in the following national cloud deployments.
 type ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder(rawUrl stri
 func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) Count()(*ItemItemsItemWorkbookWorksheetsItemPivotTablesCountRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemPivotTablesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of workbookpivottable objects.
+// Get retrieve a list of workbookpivottable objects. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/workbookworksheet-list-pivottables?view=graph-rest-1.0
@@ -119,7 +119,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) Post(ctx 
 func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) RefreshAll()(*ItemItemsItemWorkbookWorksheetsItemPivotTablesRefreshAllRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemPivotTablesRefreshAllRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve a list of workbookpivottable objects.
+// ToGetRequestInformation retrieve a list of workbookpivottable objects. This API is supported in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

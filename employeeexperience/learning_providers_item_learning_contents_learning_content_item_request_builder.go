@@ -18,7 +18,7 @@ type LearningProvidersItemLearningContentsLearningContentItemRequestBuilderDelet
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LearningProvidersItemLearningContentsLearningContentItemRequestBuilderGetQueryParameters get the specified learningContent resource which represents the metadata of the specified provider's ingested content.
+// LearningProvidersItemLearningContentsLearningContentItemRequestBuilderGetQueryParameters get the specified learningContent resource which represents the metadata of the specified provider's ingested content. This API is supported in the following national cloud deployments.
 type LearningProvidersItemLearningContentsLearningContentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder)
     }
     return nil
 }
-// Get get the specified learningContent resource which represents the metadata of the specified provider's ingested content.
+// Get get the specified learningContent resource which represents the metadata of the specified provider's ingested content. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/learningcontent-get?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder)
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the specified learningContent resource which represents the metadata of the specified provider's ingested content.
+// ToGetRequestInformation get the specified learningContent resource which represents the metadata of the specified provider's ingested content. This API is supported in the following national cloud deployments.
 func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LearningProvidersItemLearningContentsLearningContentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

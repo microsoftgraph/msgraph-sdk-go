@@ -11,7 +11,7 @@ import (
 type ClassesItemAssignmentsItemCategoriesRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClassesItemAssignmentsItemCategoriesRefRequestBuilderGetQueryParameters list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+// ClassesItemAssignmentsItemCategoriesRefRequestBuilderGetQueryParameters list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
 type ClassesItemAssignmentsItemCategoriesRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,7 +55,7 @@ func NewClassesItemAssignmentsItemCategoriesRefRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemAssignmentsItemCategoriesRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+// Get list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *ClassesItemAssignmentsItemCategoriesRefRequestBuilder) Get(ctx context.
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
-// Post add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation.
+// Post add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-post-categories?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ClassesItemAssignmentsItemCategoriesRefRequestBuilder) Post(ctx context
     }
     return nil
 }
-// ToGetRequestInformation list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+// ToGetRequestInformation list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
 func (m *ClassesItemAssignmentsItemCategoriesRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentsItemCategoriesRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -112,7 +112,7 @@ func (m *ClassesItemAssignmentsItemCategoriesRefRequestBuilder) ToGetRequestInfo
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation.
+// ToPostRequestInformation add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
 func (m *ClassesItemAssignmentsItemCategoriesRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ClassesItemAssignmentsItemCategoriesRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

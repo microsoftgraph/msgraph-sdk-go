@@ -11,7 +11,7 @@ import (
 type ItemPrimaryChannelFilesFolderRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPrimaryChannelFilesFolderRequestBuilderGetQueryParameters get the metadata for the location where the files of a channel are stored. 
+// ItemPrimaryChannelFilesFolderRequestBuilderGetQueryParameters get the metadata for the location where the files of a channel are stored.  This API is supported in the following national cloud deployments.
 type ItemPrimaryChannelFilesFolderRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -44,7 +44,7 @@ func NewItemPrimaryChannelFilesFolderRequestBuilder(rawUrl string, requestAdapte
 func (m *ItemPrimaryChannelFilesFolderRequestBuilder) Content()(*ItemPrimaryChannelFilesFolderContentRequestBuilder) {
     return NewItemPrimaryChannelFilesFolderContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the metadata for the location where the files of a channel are stored. 
+// Get get the metadata for the location where the files of a channel are stored.  This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
@@ -66,7 +66,7 @@ func (m *ItemPrimaryChannelFilesFolderRequestBuilder) Get(ctx context.Context, r
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable), nil
 }
-// ToGetRequestInformation get the metadata for the location where the files of a channel are stored. 
+// ToGetRequestInformation get the metadata for the location where the files of a channel are stored.  This API is supported in the following national cloud deployments.
 func (m *ItemPrimaryChannelFilesFolderRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPrimaryChannelFilesFolderRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

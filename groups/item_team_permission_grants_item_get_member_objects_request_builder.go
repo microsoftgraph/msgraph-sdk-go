@@ -30,7 +30,8 @@ func NewItemTeamPermissionGrantsItemGetMemberObjectsRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamPermissionGrantsItemGetMemberObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.
+// Post return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles. This API is supported in the following national cloud deployments.
+// Deprecated: This method is obsolete. Use PostAsGetMemberObjectsPostResponse instead.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
@@ -52,7 +53,29 @@ func (m *ItemTeamPermissionGrantsItemGetMemberObjectsRequestBuilder) Post(ctx co
     }
     return res.(ItemTeamPermissionGrantsItemGetMemberObjectsResponseable), nil
 }
-// ToPostRequestInformation return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.
+// PostAsGetMemberObjectsPostResponse return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles. This API is supported in the following national cloud deployments.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
+func (m *ItemTeamPermissionGrantsItemGetMemberObjectsRequestBuilder) PostAsGetMemberObjectsPostResponse(ctx context.Context, body ItemTeamPermissionGrantsItemGetMemberObjectsPostRequestBodyable, requestConfiguration *ItemTeamPermissionGrantsItemGetMemberObjectsRequestBuilderPostRequestConfiguration)(ItemTeamPermissionGrantsItemGetMemberObjectsPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemTeamPermissionGrantsItemGetMemberObjectsPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemTeamPermissionGrantsItemGetMemberObjectsPostResponseable), nil
+}
+// ToPostRequestInformation return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles. This API is supported in the following national cloud deployments.
 func (m *ItemTeamPermissionGrantsItemGetMemberObjectsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemTeamPermissionGrantsItemGetMemberObjectsPostRequestBodyable, requestConfiguration *ItemTeamPermissionGrantsItemGetMemberObjectsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

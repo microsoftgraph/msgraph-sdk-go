@@ -11,7 +11,7 @@ import (
 type ItemScheduleOfferShiftRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemScheduleOfferShiftRequestsRequestBuilderGetQueryParameters retrieve the properties and relationships of all offerShiftRequest objects in a team.
+// ItemScheduleOfferShiftRequestsRequestBuilderGetQueryParameters retrieve the properties and relationships of all offerShiftRequest objects in a team. This API is supported in the following national cloud deployments.
 type ItemScheduleOfferShiftRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemScheduleOfferShiftRequestsRequestBuilder(rawUrl string, requestAdapt
 func (m *ItemScheduleOfferShiftRequestsRequestBuilder) Count()(*ItemScheduleOfferShiftRequestsCountRequestBuilder) {
     return NewItemScheduleOfferShiftRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of all offerShiftRequest objects in a team.
+// Get retrieve the properties and relationships of all offerShiftRequest objects in a team. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/offershiftrequest-list?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemScheduleOfferShiftRequestsRequestBuilder) Get(ctx context.Context, 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OfferShiftRequestCollectionResponseable), nil
 }
-// Post create an instance of an offerShiftRequest.
+// Post create an instance of an offerShiftRequest. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/offershiftrequest-post?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemScheduleOfferShiftRequestsRequestBuilder) Post(ctx context.Context,
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OfferShiftRequestable), nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of all offerShiftRequest objects in a team.
+// ToGetRequestInformation retrieve the properties and relationships of all offerShiftRequest objects in a team. This API is supported in the following national cloud deployments.
 func (m *ItemScheduleOfferShiftRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemScheduleOfferShiftRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemScheduleOfferShiftRequestsRequestBuilder) ToGetRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create an instance of an offerShiftRequest.
+// ToPostRequestInformation create an instance of an offerShiftRequest. This API is supported in the following national cloud deployments.
 func (m *ItemScheduleOfferShiftRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OfferShiftRequestable, requestConfiguration *ItemScheduleOfferShiftRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

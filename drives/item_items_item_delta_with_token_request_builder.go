@@ -53,6 +53,7 @@ func NewItemItemsItemDeltaWithTokenRequestBuilder(rawUrl string, requestAdapter 
     return NewItemItemsItemDeltaWithTokenRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function delta
+// Deprecated: This method is obsolete. Use GetAsDeltaWithTokenGetResponse instead.
 func (m *ItemItemsItemDeltaWithTokenRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemDeltaWithTokenRequestBuilderGetRequestConfiguration)(ItemItemsItemDeltaWithTokenResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,6 +71,25 @@ func (m *ItemItemsItemDeltaWithTokenRequestBuilder) Get(ctx context.Context, req
         return nil, nil
     }
     return res.(ItemItemsItemDeltaWithTokenResponseable), nil
+}
+// GetAsDeltaWithTokenGetResponse invoke function delta
+func (m *ItemItemsItemDeltaWithTokenRequestBuilder) GetAsDeltaWithTokenGetResponse(ctx context.Context, requestConfiguration *ItemItemsItemDeltaWithTokenRequestBuilderGetRequestConfiguration)(ItemItemsItemDeltaWithTokenGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemsItemDeltaWithTokenGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemItemsItemDeltaWithTokenGetResponseable), nil
 }
 // ToGetRequestInformation invoke function delta
 func (m *ItemItemsItemDeltaWithTokenRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemDeltaWithTokenRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

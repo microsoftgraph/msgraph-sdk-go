@@ -49,7 +49,7 @@ func (m *AppIdentity) GetAppId()(*string) {
 func (m *AppIdentity) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisplayName gets the displayName property value. Refers to the Application Name displayed in the Azure Portal.
+// GetDisplayName gets the displayName property value. Refers to the application name displayed in the Microsoft Entra admin center.
 func (m *AppIdentity) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -206,7 +206,7 @@ func (m *AppIdentity) SetAppId(value *string)() {
 func (m *AppIdentity) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisplayName sets the displayName property value. Refers to the Application Name displayed in the Azure Portal.
+// SetDisplayName sets the displayName property value. Refers to the application name displayed in the Microsoft Entra admin center.
 func (m *AppIdentity) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

@@ -49,7 +49,7 @@ func (m *SynchronizationRule) GetContainerFilter()(ContainerFilterable) {
     }
     return nil
 }
-// GetEditable gets the editable property value. true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+// GetEditable gets the editable property value. true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
 func (m *SynchronizationRule) GetEditable()(*bool) {
     val, err := m.GetBackingStore().Get("editable")
     if err != nil {
@@ -209,7 +209,7 @@ func (m *SynchronizationRule) GetId()(*string) {
     }
     return nil
 }
-// GetMetadata gets the metadata property value. Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.
+// GetMetadata gets the metadata property value. Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn't be changed.
 func (m *SynchronizationRule) GetMetadata()([]StringKeyStringValuePairable) {
     val, err := m.GetBackingStore().Get("metadata")
     if err != nil {
@@ -392,7 +392,7 @@ func (m *SynchronizationRule) SetContainerFilter(value ContainerFilterable)() {
         panic(err)
     }
 }
-// SetEditable sets the editable property value. true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+// SetEditable sets the editable property value. true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
 func (m *SynchronizationRule) SetEditable(value *bool)() {
     err := m.GetBackingStore().Set("editable", value)
     if err != nil {
@@ -413,7 +413,7 @@ func (m *SynchronizationRule) SetId(value *string)() {
         panic(err)
     }
 }
-// SetMetadata sets the metadata property value. Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.
+// SetMetadata sets the metadata property value. Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn't be changed.
 func (m *SynchronizationRule) SetMetadata(value []StringKeyStringValuePairable)() {
     err := m.GetBackingStore().Set("metadata", value)
     if err != nil {

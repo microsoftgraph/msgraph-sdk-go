@@ -30,7 +30,8 @@ func NewItemItemsItemInviteRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemInviteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post sends a sharing invitation for a driveItem.A sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][].
+// Post sends a sharing invitation for a driveItem.A sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link][]. This API is supported in the following [national cloud deployments.
+// Deprecated: This method is obsolete. Use PostAsInvitePostResponse instead.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
@@ -52,7 +53,29 @@ func (m *ItemItemsItemInviteRequestBuilder) Post(ctx context.Context, body ItemI
     }
     return res.(ItemItemsItemInviteResponseable), nil
 }
-// ToPostRequestInformation sends a sharing invitation for a driveItem.A sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][].
+// PostAsInvitePostResponse sends a sharing invitation for a driveItem.A sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link][]. This API is supported in the following [national cloud deployments.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
+func (m *ItemItemsItemInviteRequestBuilder) PostAsInvitePostResponse(ctx context.Context, body ItemItemsItemInvitePostRequestBodyable, requestConfiguration *ItemItemsItemInviteRequestBuilderPostRequestConfiguration)(ItemItemsItemInvitePostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemsItemInvitePostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemItemsItemInvitePostResponseable), nil
+}
+// ToPostRequestInformation sends a sharing invitation for a driveItem.A sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link][]. This API is supported in the following [national cloud deployments.
 func (m *ItemItemsItemInviteRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemInvitePostRequestBodyable, requestConfiguration *ItemItemsItemInviteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

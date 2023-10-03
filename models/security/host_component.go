@@ -142,7 +142,7 @@ func (m *HostComponent) GetName()(*string) {
     }
     return nil
 }
-// GetVersion gets the version property value. The component version running on the artifact, for example, v8.5. This should not be assumed to be strictly numerical.
+// GetVersion gets the version property value. The component version running on the artifact, for example, v8.5. This shouldn't be assumed to be strictly numerical.
 func (m *HostComponent) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -232,7 +232,7 @@ func (m *HostComponent) SetName(value *string)() {
         panic(err)
     }
 }
-// SetVersion sets the version property value. The component version running on the artifact, for example, v8.5. This should not be assumed to be strictly numerical.
+// SetVersion sets the version property value. The component version running on the artifact, for example, v8.5. This shouldn't be assumed to be strictly numerical.
 func (m *HostComponent) SetVersion(value *string)() {
     err := m.GetBackingStore().Set("version", value)
     if err != nil {

@@ -105,7 +105,7 @@ func (m *InsightIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetId gets the id property value. The id of the user who shared the item.
+// GetId gets the id property value. The ID of the user who shared the item.
 func (m *InsightIdentity) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -186,7 +186,7 @@ func (m *InsightIdentity) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetId sets the id property value. The id of the user who shared the item.
+// SetId sets the id property value. The ID of the user who shared the item.
 func (m *InsightIdentity) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {

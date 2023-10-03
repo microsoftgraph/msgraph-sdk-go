@@ -11,7 +11,7 @@ import (
 type ItemIncomingChannelsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemIncomingChannelsRequestBuilderGetQueryParameters get the list of incoming channels (channels shared with a team).
+// ItemIncomingChannelsRequestBuilderGetQueryParameters get the list of incoming channels (channels shared with a team). This API is supported in the following national cloud deployments.
 type ItemIncomingChannelsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewItemIncomingChannelsRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *ItemIncomingChannelsRequestBuilder) Count()(*ItemIncomingChannelsCountRequestBuilder) {
     return NewItemIncomingChannelsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of incoming channels (channels shared with a team).
+// Get get the list of incoming channels (channels shared with a team). This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-list-incomingchannels?view=graph-rest-1.0
@@ -89,7 +89,7 @@ func (m *ItemIncomingChannelsRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChannelCollectionResponseable), nil
 }
-// ToGetRequestInformation get the list of incoming channels (channels shared with a team).
+// ToGetRequestInformation get the list of incoming channels (channels shared with a team). This API is supported in the following national cloud deployments.
 func (m *ItemIncomingChannelsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemIncomingChannelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type OnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilde
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// OnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderGetQueryParameters get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.
+// OnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderGetQueryParameters get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session. This API is supported in the following national cloud deployments.
 type OnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *OnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBu
     }
     return nil
 }
-// Get get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.
+// Get get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
@@ -127,7 +127,7 @@ func (m *OnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBu
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.
+// ToGetRequestInformation get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session. This API is supported in the following national cloud deployments.
 func (m *OnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

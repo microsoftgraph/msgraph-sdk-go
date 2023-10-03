@@ -115,7 +115,7 @@ func (m *RubricLevel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetGrading gets the grading property value. Null if this is a no-points rubric; educationAssignmentPointsGradeType if it is a points rubric.
+// GetGrading gets the grading property value. Null if this is a no-points rubric; educationAssignmentPointsGradeType if it's a points rubric.
 func (m *RubricLevel) GetGrading()(EducationAssignmentGradeTypeable) {
     val, err := m.GetBackingStore().Get("grading")
     if err != nil {
@@ -213,7 +213,7 @@ func (m *RubricLevel) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetGrading sets the grading property value. Null if this is a no-points rubric; educationAssignmentPointsGradeType if it is a points rubric.
+// SetGrading sets the grading property value. Null if this is a no-points rubric; educationAssignmentPointsGradeType if it's a points rubric.
 func (m *RubricLevel) SetGrading(value EducationAssignmentGradeTypeable)() {
     err := m.GetBackingStore().Set("grading", value)
     if err != nil {

@@ -11,7 +11,7 @@ import (
 type ItemJoinedTeamsItemTagsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemJoinedTeamsItemTagsRequestBuilderGetQueryParameters get a list of the tag objects and their properties.
+// ItemJoinedTeamsItemTagsRequestBuilderGetQueryParameters get a list of the tag objects and their properties. This API is supported in the following national cloud deployments.
 type ItemJoinedTeamsItemTagsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemJoinedTeamsItemTagsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *ItemJoinedTeamsItemTagsRequestBuilder) Count()(*ItemJoinedTeamsItemTagsCountRequestBuilder) {
     return NewItemJoinedTeamsItemTagsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the tag objects and their properties.
+// Get get a list of the tag objects and their properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/teamworktag-list?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemJoinedTeamsItemTagsRequestBuilder) Get(ctx context.Context, request
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagCollectionResponseable), nil
 }
-// Post create a standard tag for members in a team.
+// Post create a standard tag for members in a team. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/teamworktag-post?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemJoinedTeamsItemTagsRequestBuilder) Post(ctx context.Context, body i
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable), nil
 }
-// ToGetRequestInformation get a list of the tag objects and their properties.
+// ToGetRequestInformation get a list of the tag objects and their properties. This API is supported in the following national cloud deployments.
 func (m *ItemJoinedTeamsItemTagsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemTagsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemJoinedTeamsItemTagsRequestBuilder) ToGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a standard tag for members in a team.
+// ToPostRequestInformation create a standard tag for members in a team. This API is supported in the following national cloud deployments.
 func (m *ItemJoinedTeamsItemTagsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable, requestConfiguration *ItemJoinedTeamsItemTagsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

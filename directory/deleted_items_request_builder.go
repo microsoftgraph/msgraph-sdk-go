@@ -11,7 +11,7 @@ import (
 type DeletedItemsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DeletedItemsRequestBuilderGetQueryParameters retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
+// DeletedItemsRequestBuilderGetQueryParameters retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. This API is supported in the following national cloud deployments.
 type DeletedItemsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -38,13 +38,6 @@ type DeletedItemsRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *DeletedItemsRequestBuilderGetQueryParameters
-}
-// DeletedItemsRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type DeletedItemsRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByDirectoryObjectId provides operations to manage the deletedItems property of the microsoft.graph.directory entity.
 func (m *DeletedItemsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*DeletedItemsDirectoryObjectItemRequestBuilder) {
@@ -74,11 +67,7 @@ func NewDeletedItemsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *DeletedItemsRequestBuilder) Count()(*DeletedItemsCountRequestBuilder) {
     return NewDeletedItemsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delta provides operations to call the delta method.
-func (m *DeletedItemsRequestBuilder) Delta()(*DeletedItemsDeltaRequestBuilder) {
-    return NewDeletedItemsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// Get retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
+// Get retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. This API is supported in the following national cloud deployments.
 func (m *DeletedItemsRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedItemsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,14 +85,6 @@ func (m *DeletedItemsRequestBuilder) Get(ctx context.Context, requestConfigurati
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
-}
-// GetAvailableExtensionProperties provides operations to call the getAvailableExtensionProperties method.
-func (m *DeletedItemsRequestBuilder) GetAvailableExtensionProperties()(*DeletedItemsGetAvailableExtensionPropertiesRequestBuilder) {
-    return NewDeletedItemsGetAvailableExtensionPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// GetByIds provides operations to call the getByIds method.
-func (m *DeletedItemsRequestBuilder) GetByIds()(*DeletedItemsGetByIdsRequestBuilder) {
-    return NewDeletedItemsGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphAdministrativeUnit casts the previous resource to administrativeUnit.
 func (m *DeletedItemsRequestBuilder) GraphAdministrativeUnit()(*DeletedItemsGraphAdministrativeUnitRequestBuilder) {
@@ -129,26 +110,7 @@ func (m *DeletedItemsRequestBuilder) GraphServicePrincipal()(*DeletedItemsGraphS
 func (m *DeletedItemsRequestBuilder) GraphUser()(*DeletedItemsGraphUserRequestBuilder) {
     return NewDeletedItemsGraphUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Post create new navigation property to deletedItems for directory
-func (m *DeletedItemsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, requestConfiguration *DeletedItemsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
-    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDirectoryObjectFromDiscriminatorValue, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
-}
-// ToGetRequestInformation retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
+// ToGetRequestInformation retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. This API is supported in the following national cloud deployments.
 func (m *DeletedItemsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -163,27 +125,6 @@ func (m *DeletedItemsRequestBuilder) ToGetRequestInformation(ctx context.Context
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// ToPostRequestInformation create new navigation property to deletedItems for directory
-func (m *DeletedItemsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, requestConfiguration *DeletedItemsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.Add("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
-    if err != nil {
-        return nil, err
-    }
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
-// ValidateProperties provides operations to call the validateProperties method.
-func (m *DeletedItemsRequestBuilder) ValidateProperties()(*DeletedItemsValidatePropertiesRequestBuilder) {
-    return NewDeletedItemsValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 func (m *DeletedItemsRequestBuilder) WithUrl(rawUrl string)(*DeletedItemsRequestBuilder) {

@@ -101,7 +101,7 @@ func (m *UploadSession) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetNextExpectedRanges gets the nextExpectedRanges property value. A collection of byte ranges that the server is missing for the file. These ranges are zero indexed and of the format 'start-end' (e.g. '0-26' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value '{start}', the location in the file where the next upload should begin.
+// GetNextExpectedRanges gets the nextExpectedRanges property value. A collection of byte ranges that the server is missing for the file. These ranges are zero indexed and of the format 'start-end' (for example '0-26' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value '{start}', the location in the file where the next upload should begin.
 func (m *UploadSession) GetNextExpectedRanges()([]string) {
     val, err := m.GetBackingStore().Get("nextExpectedRanges")
     if err != nil {
@@ -186,7 +186,7 @@ func (m *UploadSession) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3
         panic(err)
     }
 }
-// SetNextExpectedRanges sets the nextExpectedRanges property value. A collection of byte ranges that the server is missing for the file. These ranges are zero indexed and of the format 'start-end' (e.g. '0-26' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value '{start}', the location in the file where the next upload should begin.
+// SetNextExpectedRanges sets the nextExpectedRanges property value. A collection of byte ranges that the server is missing for the file. These ranges are zero indexed and of the format 'start-end' (for example '0-26' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value '{start}', the location in the file where the next upload should begin.
 func (m *UploadSession) SetNextExpectedRanges(value []string)() {
     err := m.GetBackingStore().Set("nextExpectedRanges", value)
     if err != nil {

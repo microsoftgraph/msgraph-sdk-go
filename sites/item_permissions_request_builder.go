@@ -11,7 +11,7 @@ import (
 type ItemPermissionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPermissionsRequestBuilderGetQueryParameters get the permission resources from the permissions navigation property on a site.
+// ItemPermissionsRequestBuilderGetQueryParameters get the permission resources from the permissions navigation property on a site. This API is supported in the following national cloud deployments.
 type ItemPermissionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemPermissionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *ItemPermissionsRequestBuilder) Count()(*ItemPermissionsCountRequestBuilder) {
     return NewItemPermissionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the permission resources from the permissions navigation property on a site.
+// Get get the permission resources from the permissions navigation property on a site. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/site-list-permissions?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemPermissionsRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PermissionCollectionResponseable), nil
 }
-// Post create a new permission object on a site. 
+// Post create a new permission object on a site.  This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/site-post-permissions?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemPermissionsRequestBuilder) Post(ctx context.Context, body iadcd8112
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable), nil
 }
-// ToGetRequestInformation get the permission resources from the permissions navigation property on a site.
+// ToGetRequestInformation get the permission resources from the permissions navigation property on a site. This API is supported in the following national cloud deployments.
 func (m *ItemPermissionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPermissionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemPermissionsRequestBuilder) ToGetRequestInformation(ctx context.Cont
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new permission object on a site. 
+// ToPostRequestInformation create a new permission object on a site.  This API is supported in the following national cloud deployments.
 func (m *ItemPermissionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, requestConfiguration *ItemPermissionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

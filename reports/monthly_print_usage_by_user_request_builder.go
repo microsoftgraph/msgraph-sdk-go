@@ -11,7 +11,7 @@ import (
 type MonthlyPrintUsageByUserRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MonthlyPrintUsageByUserRequestBuilderGetQueryParameters retrieve a list of monthly print usage summaries, grouped by user.
+// MonthlyPrintUsageByUserRequestBuilderGetQueryParameters retrieve a list of monthly print usage summaries, grouped by user. This API is supported in the following national cloud deployments.
 type MonthlyPrintUsageByUserRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewMonthlyPrintUsageByUserRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *MonthlyPrintUsageByUserRequestBuilder) Count()(*MonthlyPrintUsageByUserCountRequestBuilder) {
     return NewMonthlyPrintUsageByUserCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of monthly print usage summaries, grouped by user.
+// Get retrieve a list of monthly print usage summaries, grouped by user. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-list-monthlyprintusagebyuser?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *MonthlyPrintUsageByUserRequestBuilder) Post(ctx context.Context, body i
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintUsageByUserable), nil
 }
-// ToGetRequestInformation retrieve a list of monthly print usage summaries, grouped by user.
+// ToGetRequestInformation retrieve a list of monthly print usage summaries, grouped by user. This API is supported in the following national cloud deployments.
 func (m *MonthlyPrintUsageByUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MonthlyPrintUsageByUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

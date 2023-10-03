@@ -21,7 +21,7 @@ func NewIpEvidence()(*IpEvidence) {
 func CreateIpEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIpEvidence(), nil
 }
-// GetCountryLetterCode gets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).
+// GetCountryLetterCode gets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc.
 func (m *IpEvidence) GetCountryLetterCode()(*string) {
     val, err := m.GetBackingStore().Get("countryLetterCode")
     if err != nil {
@@ -88,7 +88,7 @@ func (m *IpEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetCountryLetterCode sets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).
+// SetCountryLetterCode sets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc.
 func (m *IpEvidence) SetCountryLetterCode(value *string)() {
     err := m.GetBackingStore().Set("countryLetterCode", value)
     if err != nil {

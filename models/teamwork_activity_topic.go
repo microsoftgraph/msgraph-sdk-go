@@ -105,7 +105,7 @@ func (m *TeamworkActivityTopic) GetSource()(*TeamworkActivityTopicSource) {
     }
     return nil
 }
-// GetValue gets the value property value. The topic value. If the value of the source property is entityUrl, this must be a Microsoft Graph URL. If the vaule is text, this must be a plain text value.
+// GetValue gets the value property value. The topic value. If the value of the source property is entityUrl, this must be a Microsoft Graph URL. If the value is text, this must be a plain text value.
 func (m *TeamworkActivityTopic) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -187,7 +187,7 @@ func (m *TeamworkActivityTopic) SetSource(value *TeamworkActivityTopicSource)() 
         panic(err)
     }
 }
-// SetValue sets the value property value. The topic value. If the value of the source property is entityUrl, this must be a Microsoft Graph URL. If the vaule is text, this must be a plain text value.
+// SetValue sets the value property value. The topic value. If the value of the source property is entityUrl, this must be a Microsoft Graph URL. If the value is text, this must be a plain text value.
 func (m *TeamworkActivityTopic) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

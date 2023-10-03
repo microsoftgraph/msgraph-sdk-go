@@ -88,7 +88,7 @@ func (m *AccessPackageAssignmentRequestCallbackData) GetFieldDeserializers()(map
     }
     return res
 }
-// GetStage gets the stage property value. Indicates the stage at which the custom callout extension will be executed. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
+// GetStage gets the stage property value. Indicates the stage at which the custom callout extension is executed. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
 func (m *AccessPackageAssignmentRequestCallbackData) GetStage()(*AccessPackageCustomExtensionStage) {
     val, err := m.GetBackingStore().Get("stage")
     if err != nil {
@@ -157,7 +157,7 @@ func (m *AccessPackageAssignmentRequestCallbackData) SetCustomExtensionStageInst
         panic(err)
     }
 }
-// SetStage sets the stage property value. Indicates the stage at which the custom callout extension will be executed. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
+// SetStage sets the stage property value. Indicates the stage at which the custom callout extension is executed. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
 func (m *AccessPackageAssignmentRequestCallbackData) SetStage(value *AccessPackageCustomExtensionStage)() {
     err := m.GetBackingStore().Set("stage", value)
     if err != nil {

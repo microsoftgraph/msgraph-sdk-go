@@ -96,7 +96,7 @@ func (m *Call) GetContentSharingSessions()([]ContentSharingSessionable) {
     }
     return nil
 }
-// GetDirection gets the direction property value. The direction of the call. The possible value are incoming or outgoing. Read-only.
+// GetDirection gets the direction property value. The direction of the call. The possible values are incoming or outgoing. Read-only.
 func (m *Call) GetDirection()(*CallDirection) {
     val, err := m.GetBackingStore().Get("direction")
     if err != nil {
@@ -482,7 +482,7 @@ func (m *Call) GetRequestedModalities()([]Modality) {
     }
     return nil
 }
-// GetResultInfo gets the resultInfo property value. The result information. For example can hold termination reason. Read-only.
+// GetResultInfo gets the resultInfo property value. The result information. For example, the result can hold termination reason. Read-only.
 func (m *Call) GetResultInfo()(ResultInfoable) {
     val, err := m.GetBackingStore().Get("resultInfo")
     if err != nil {
@@ -809,7 +809,7 @@ func (m *Call) SetContentSharingSessions(value []ContentSharingSessionable)() {
         panic(err)
     }
 }
-// SetDirection sets the direction property value. The direction of the call. The possible value are incoming or outgoing. Read-only.
+// SetDirection sets the direction property value. The direction of the call. The possible values are incoming or outgoing. Read-only.
 func (m *Call) SetDirection(value *CallDirection)() {
     err := m.GetBackingStore().Set("direction", value)
     if err != nil {
@@ -872,7 +872,7 @@ func (m *Call) SetRequestedModalities(value []Modality)() {
         panic(err)
     }
 }
-// SetResultInfo sets the resultInfo property value. The result information. For example can hold termination reason. Read-only.
+// SetResultInfo sets the resultInfo property value. The result information. For example, the result can hold termination reason. Read-only.
 func (m *Call) SetResultInfo(value ResultInfoable)() {
     err := m.GetBackingStore().Set("resultInfo", value)
     if err != nil {

@@ -11,7 +11,7 @@ import (
 type B2xUserFlowsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// B2xUserFlowsRequestBuilderGetQueryParameters retrieve a list of b2xIdentityUserFlow objects.
+// B2xUserFlowsRequestBuilderGetQueryParameters retrieve a list of b2xIdentityUserFlow objects. This API is supported in the following national cloud deployments.
 type B2xUserFlowsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewB2xUserFlowsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *B2xUserFlowsRequestBuilder) Count()(*B2xUserFlowsCountRequestBuilder) {
     return NewB2xUserFlowsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of b2xIdentityUserFlow objects.
+// Get retrieve a list of b2xIdentityUserFlow objects. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identitycontainer-list-b2xuserflows?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *B2xUserFlowsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.B2xIdentityUserFlowCollectionResponseable), nil
 }
-// Post create a new b2xIdentityUserFlow object.
+// Post create a new b2xIdentityUserFlow object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identitycontainer-post-b2xuserflows?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *B2xUserFlowsRequestBuilder) Post(ctx context.Context, body iadcd8112441
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.B2xIdentityUserFlowable), nil
 }
-// ToGetRequestInformation retrieve a list of b2xIdentityUserFlow objects.
+// ToGetRequestInformation retrieve a list of b2xIdentityUserFlow objects. This API is supported in the following national cloud deployments.
 func (m *B2xUserFlowsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2xUserFlowsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *B2xUserFlowsRequestBuilder) ToGetRequestInformation(ctx context.Context
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new b2xIdentityUserFlow object.
+// ToPostRequestInformation create a new b2xIdentityUserFlow object. This API is supported in the following national cloud deployments.
 func (m *B2xUserFlowsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.B2xIdentityUserFlowable, requestConfiguration *B2xUserFlowsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

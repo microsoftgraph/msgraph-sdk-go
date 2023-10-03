@@ -30,7 +30,7 @@ func NewItemListContentTypesItemUnpublishRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewItemListContentTypesItemUnpublishRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post unpublish a [contentType][] from a content type hub site.
+// Post unpublish a contentType][] from a content type hub site. This API is supported in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemListContentTypesItemUnpublishRequestBuilder) Post(ctx context.Conte
     }
     return nil
 }
-// ToPostRequestInformation unpublish a [contentType][] from a content type hub site.
+// ToPostRequestInformation unpublish a contentType][] from a content type hub site. This API is supported in the following [national cloud deployments.
 func (m *ItemListContentTypesItemUnpublishRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemListContentTypesItemUnpublishRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

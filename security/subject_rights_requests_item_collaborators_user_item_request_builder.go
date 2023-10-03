@@ -63,6 +63,10 @@ func (m *SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilder) Get(ctx c
 func (m *SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilder) MailboxSettings()(*SubjectRightsRequestsItemCollaboratorsItemMailboxSettingsRequestBuilder) {
     return NewSubjectRightsRequestsItemCollaboratorsItemMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ServiceProvisioningErrors the serviceProvisioningErrors property
+func (m *SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilder) ServiceProvisioningErrors()(*SubjectRightsRequestsItemCollaboratorsItemServiceProvisioningErrorsRequestBuilder) {
+    return NewSubjectRightsRequestsItemCollaboratorsItemServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation get collaborators from security
 func (m *SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

@@ -18,7 +18,7 @@ type FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderDeleteRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a featureRolloutPolicy object.
+// FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a featureRolloutPolicy object. This API is supported in the following national cloud deployments.
 type FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,7 @@ func NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewFeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a featureRolloutPolicy object.
+// Delete delete a featureRolloutPolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/featurerolloutpolicy-delete?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) Delete(ct
     }
     return nil
 }
-// Get retrieve the properties and relationships of a featureRolloutPolicy object.
+// Get retrieve the properties and relationships of a featureRolloutPolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/featurerolloutpolicy-get?view=graph-rest-1.0
@@ -99,7 +99,7 @@ func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) Get(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FeatureRolloutPolicyable), nil
 }
-// Patch update the properties of featureRolloutPolicy object.
+// Patch update the properties of featureRolloutPolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/featurerolloutpolicy-update?view=graph-rest-1.0
@@ -121,7 +121,7 @@ func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) Patch(ctx
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FeatureRolloutPolicyable), nil
 }
-// ToDeleteRequestInformation delete a featureRolloutPolicy object.
+// ToDeleteRequestInformation delete a featureRolloutPolicy object. This API is supported in the following national cloud deployments.
 func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -133,7 +133,7 @@ func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) ToDeleteR
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a featureRolloutPolicy object.
+// ToGetRequestInformation retrieve the properties and relationships of a featureRolloutPolicy object. This API is supported in the following national cloud deployments.
 func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -149,7 +149,7 @@ func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) ToGetRequ
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of featureRolloutPolicy object.
+// ToPatchRequestInformation update the properties of featureRolloutPolicy object. This API is supported in the following national cloud deployments.
 func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.FeatureRolloutPolicyable, requestConfiguration *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

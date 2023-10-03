@@ -42,7 +42,7 @@ func (m *AccessReviewStage) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     }
     return nil
 }
-// GetFallbackReviewers gets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist.
+// GetFallbackReviewers gets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers are notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner doesn't exist, or manager is specified as reviewer but a user's manager doesn't exist.
 func (m *AccessReviewStage) GetFallbackReviewers()([]AccessReviewReviewerScopeable) {
     val, err := m.GetBackingStore().Get("fallbackReviewers")
     if err != nil {
@@ -245,7 +245,7 @@ func (m *AccessReviewStage) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad9
         panic(err)
     }
 }
-// SetFallbackReviewers sets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist.
+// SetFallbackReviewers sets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers are notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner doesn't exist, or manager is specified as reviewer but a user's manager doesn't exist.
 func (m *AccessReviewStage) SetFallbackReviewers(value []AccessReviewReviewerScopeable)() {
     err := m.GetBackingStore().Set("fallbackReviewers", value)
     if err != nil {

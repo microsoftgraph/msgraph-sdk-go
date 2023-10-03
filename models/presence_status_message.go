@@ -39,7 +39,7 @@ func (m *PresenceStatusMessage) GetAdditionalData()(map[string]any) {
 func (m *PresenceStatusMessage) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetExpiryDateTime gets the expiryDateTime property value. The expiryDateTime property
+// GetExpiryDateTime gets the expiryDateTime property value. Time in which the status message expires.If not provided, the status message does not expire.expiryDateTime.dateTime should not include time zone.expiryDateTime is not available when you request the presence of another user.
 func (m *PresenceStatusMessage) GetExpiryDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("expiryDateTime")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *PresenceStatusMessage) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetMessage gets the message property value. The message property
+// GetMessage gets the message property value. Status message item. The only supported format currently is message.contentType = 'text'.
 func (m *PresenceStatusMessage) GetMessage()(ItemBodyable) {
     val, err := m.GetBackingStore().Get("message")
     if err != nil {
@@ -117,7 +117,7 @@ func (m *PresenceStatusMessage) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPublishedDateTime gets the publishedDateTime property value. The publishedDateTime property
+// GetPublishedDateTime gets the publishedDateTime property value. Time in which the status message was published.Read-only.publishedDateTime is not available when you request the presence of another user.
 func (m *PresenceStatusMessage) GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("publishedDateTime")
     if err != nil {
@@ -173,14 +173,14 @@ func (m *PresenceStatusMessage) SetAdditionalData(value map[string]any)() {
 func (m *PresenceStatusMessage) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetExpiryDateTime sets the expiryDateTime property value. The expiryDateTime property
+// SetExpiryDateTime sets the expiryDateTime property value. Time in which the status message expires.If not provided, the status message does not expire.expiryDateTime.dateTime should not include time zone.expiryDateTime is not available when you request the presence of another user.
 func (m *PresenceStatusMessage) SetExpiryDateTime(value DateTimeTimeZoneable)() {
     err := m.GetBackingStore().Set("expiryDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMessage sets the message property value. The message property
+// SetMessage sets the message property value. Status message item. The only supported format currently is message.contentType = 'text'.
 func (m *PresenceStatusMessage) SetMessage(value ItemBodyable)() {
     err := m.GetBackingStore().Set("message", value)
     if err != nil {
@@ -194,7 +194,7 @@ func (m *PresenceStatusMessage) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPublishedDateTime sets the publishedDateTime property value. The publishedDateTime property
+// SetPublishedDateTime sets the publishedDateTime property value. Time in which the status message was published.Read-only.publishedDateTime is not available when you request the presence of another user.
 func (m *PresenceStatusMessage) SetPublishedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("publishedDateTime", value)
     if err != nil {

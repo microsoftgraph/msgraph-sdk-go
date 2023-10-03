@@ -34,7 +34,7 @@ func (m *AccessPackageAssignmentRequestorSettings) GetAdditionalData()(map[strin
     }
     return val.(map[string]any)
 }
-// GetAllowCustomAssignmentSchedule gets the allowCustomAssignmentSchedule property value. False indicates that the requestor is not permitted to include a schedule in their request.
+// GetAllowCustomAssignmentSchedule gets the allowCustomAssignmentSchedule property value. False indicates that the requestor isn't permitted to include a schedule in their request.
 func (m *AccessPackageAssignmentRequestorSettings) GetAllowCustomAssignmentSchedule()(*bool) {
     val, err := m.GetBackingStore().Get("allowCustomAssignmentSchedule")
     if err != nil {
@@ -315,7 +315,7 @@ func (m *AccessPackageAssignmentRequestorSettings) SetAdditionalData(value map[s
         panic(err)
     }
 }
-// SetAllowCustomAssignmentSchedule sets the allowCustomAssignmentSchedule property value. False indicates that the requestor is not permitted to include a schedule in their request.
+// SetAllowCustomAssignmentSchedule sets the allowCustomAssignmentSchedule property value. False indicates that the requestor isn't permitted to include a schedule in their request.
 func (m *AccessPackageAssignmentRequestorSettings) SetAllowCustomAssignmentSchedule(value *bool)() {
     err := m.GetBackingStore().Set("allowCustomAssignmentSchedule", value)
     if err != nil {

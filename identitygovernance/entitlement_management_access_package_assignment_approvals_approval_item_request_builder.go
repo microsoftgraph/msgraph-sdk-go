@@ -18,7 +18,7 @@ type EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBui
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilderGetQueryParameters in Azure AD entitlement management, retrieve the properties of an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request.
+// EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilderGetQueryParameters in Azure AD entitlement management, retrieve the properties of an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request. This API is supported in the following national cloud deployments.
 type EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemReques
     }
     return nil
 }
-// Get in Azure AD entitlement management, retrieve the properties of an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request.
+// Get in Azure AD entitlement management, retrieve the properties of an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/approval-get?view=graph-rest-1.0
@@ -127,7 +127,7 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemReques
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation in Azure AD entitlement management, retrieve the properties of an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request.
+// ToGetRequestInformation in Azure AD entitlement management, retrieve the properties of an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request. This API is supported in the following national cloud deployments.
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

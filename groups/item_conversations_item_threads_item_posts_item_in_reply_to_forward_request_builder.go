@@ -30,7 +30,7 @@ func NewItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post forward a post to a recipient. You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation. 
+// Post forward a post to a recipient. You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.  This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/post-forward?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilder
     }
     return nil
 }
-// ToPostRequestInformation forward a post to a recipient. You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation. 
+// ToPostRequestInformation forward a post to a recipient. You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.  This API is supported in the following national cloud deployments.
 func (m *ItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemConversationsItemThreadsItemPostsItemInReplyToForwardPostRequestBodyable, requestConfiguration *ItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

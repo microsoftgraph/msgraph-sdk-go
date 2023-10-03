@@ -12,7 +12,7 @@ import (
 type LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilderGetQueryParameters get the userProcessingResult resources for a workflow.
+// LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilderGetQueryParameters get the userProcessingResult resources for a workflow. This API is supported in the following national cloud deployments.
 type LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -68,7 +68,7 @@ func NewLifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilder(rawUr
 func (m *LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilder) Count()(*LifecycleWorkflowsWorkflowsItemUserProcessingResultsCountRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemUserProcessingResultsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the userProcessingResult resources for a workflow.
+// Get get the userProcessingResult resources for a workflow. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-userprocessingresults?view=graph-rest-1.0
@@ -94,7 +94,7 @@ func (m *LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilder) Get
 func (m *LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilder) MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime(endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*LifecycleWorkflowsWorkflowsItemUserProcessingResultsMicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemUserProcessingResultsMicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, endDateTime, startDateTime)
 }
-// ToGetRequestInformation get the userProcessingResult resources for a workflow.
+// ToGetRequestInformation get the userProcessingResult resources for a workflow. This API is supported in the following national cloud deployments.
 func (m *LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemUserProcessingResultsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

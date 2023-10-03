@@ -18,7 +18,7 @@ type SchoolsEducationSchoolItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SchoolsEducationSchoolItemRequestBuilderGetQueryParameters read the properties and relationships of an educationSchool object.
+// SchoolsEducationSchoolItemRequestBuilderGetQueryParameters read the properties and relationships of an educationSchool object. This API is supported in the following national cloud deployments.
 type SchoolsEducationSchoolItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -62,7 +62,7 @@ func NewSchoolsEducationSchoolItemRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewSchoolsEducationSchoolItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a school.
+// Delete delete a school. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-delete?view=graph-rest-1.0
@@ -81,7 +81,7 @@ func (m *SchoolsEducationSchoolItemRequestBuilder) Delete(ctx context.Context, r
     }
     return nil
 }
-// Get read the properties and relationships of an educationSchool object.
+// Get read the properties and relationships of an educationSchool object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-get?view=graph-rest-1.0
@@ -103,7 +103,7 @@ func (m *SchoolsEducationSchoolItemRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationSchoolable), nil
 }
-// Patch update the properties of an educationSchool object.
+// Patch update the properties of an educationSchool object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-update?view=graph-rest-1.0
@@ -125,7 +125,7 @@ func (m *SchoolsEducationSchoolItemRequestBuilder) Patch(ctx context.Context, bo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationSchoolable), nil
 }
-// ToDeleteRequestInformation delete a school.
+// ToDeleteRequestInformation delete a school. This API is supported in the following national cloud deployments.
 func (m *SchoolsEducationSchoolItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SchoolsEducationSchoolItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -137,7 +137,7 @@ func (m *SchoolsEducationSchoolItemRequestBuilder) ToDeleteRequestInformation(ct
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an educationSchool object.
+// ToGetRequestInformation read the properties and relationships of an educationSchool object. This API is supported in the following national cloud deployments.
 func (m *SchoolsEducationSchoolItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SchoolsEducationSchoolItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -153,7 +153,7 @@ func (m *SchoolsEducationSchoolItemRequestBuilder) ToGetRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an educationSchool object.
+// ToPatchRequestInformation update the properties of an educationSchool object. This API is supported in the following national cloud deployments.
 func (m *SchoolsEducationSchoolItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationSchoolable, requestConfiguration *SchoolsEducationSchoolItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

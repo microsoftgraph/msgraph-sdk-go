@@ -76,7 +76,7 @@ func (m *Presence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetStatusMessage gets the statusMessage property value. The statusMessage property
+// GetStatusMessage gets the statusMessage property value. The presence status message of a user.
 func (m *Presence) GetStatusMessage()(PresenceStatusMessageable) {
     val, err := m.GetBackingStore().Get("statusMessage")
     if err != nil {
@@ -127,7 +127,7 @@ func (m *Presence) SetAvailability(value *string)() {
         panic(err)
     }
 }
-// SetStatusMessage sets the statusMessage property value. The statusMessage property
+// SetStatusMessage sets the statusMessage property value. The presence status message of a user.
 func (m *Presence) SetStatusMessage(value PresenceStatusMessageable)() {
     err := m.GetBackingStore().Set("statusMessage", value)
     if err != nil {

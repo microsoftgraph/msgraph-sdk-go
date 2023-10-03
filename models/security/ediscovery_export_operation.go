@@ -41,7 +41,7 @@ func (m *EdiscoveryExportOperation) GetExportFileMetadata()([]ExportFileMetadata
     }
     return nil
 }
-// GetExportOptions gets the exportOptions property value. The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement,  tags.
+// GetExportOptions gets the exportOptions property value. The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement,  tags.
 func (m *EdiscoveryExportOperation) GetExportOptions()(*ExportOptions) {
     val, err := m.GetBackingStore().Get("exportOptions")
     if err != nil {
@@ -52,7 +52,7 @@ func (m *EdiscoveryExportOperation) GetExportOptions()(*ExportOptions) {
     }
     return nil
 }
-// GetExportStructure gets the exportStructure property value. The options provided that specify the structure of the export. For more details, see reviewSet: export. Possible values are: none, directory, pst.
+// GetExportStructure gets the exportStructure property value. The options that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.
 func (m *EdiscoveryExportOperation) GetExportStructure()(*ExportFileStructure) {
     val, err := m.GetBackingStore().Get("exportStructure")
     if err != nil {
@@ -166,7 +166,7 @@ func (m *EdiscoveryExportOperation) GetReviewSet()(EdiscoveryReviewSetable) {
     }
     return nil
 }
-// GetReviewSetQuery gets the reviewSetQuery property value. The review set query which is used to filter the documents for export.
+// GetReviewSetQuery gets the reviewSetQuery property value. The review set query that is used to filter the documents for export.
 func (m *EdiscoveryExportOperation) GetReviewSetQuery()(EdiscoveryReviewSetQueryable) {
     val, err := m.GetBackingStore().Get("reviewSetQuery")
     if err != nil {
@@ -249,14 +249,14 @@ func (m *EdiscoveryExportOperation) SetExportFileMetadata(value []ExportFileMeta
         panic(err)
     }
 }
-// SetExportOptions sets the exportOptions property value. The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement,  tags.
+// SetExportOptions sets the exportOptions property value. The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement,  tags.
 func (m *EdiscoveryExportOperation) SetExportOptions(value *ExportOptions)() {
     err := m.GetBackingStore().Set("exportOptions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExportStructure sets the exportStructure property value. The options provided that specify the structure of the export. For more details, see reviewSet: export. Possible values are: none, directory, pst.
+// SetExportStructure sets the exportStructure property value. The options that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.
 func (m *EdiscoveryExportOperation) SetExportStructure(value *ExportFileStructure)() {
     err := m.GetBackingStore().Set("exportStructure", value)
     if err != nil {
@@ -277,7 +277,7 @@ func (m *EdiscoveryExportOperation) SetReviewSet(value EdiscoveryReviewSetable)(
         panic(err)
     }
 }
-// SetReviewSetQuery sets the reviewSetQuery property value. The review set query which is used to filter the documents for export.
+// SetReviewSetQuery sets the reviewSetQuery property value. The review set query that is used to filter the documents for export.
 func (m *EdiscoveryExportOperation) SetReviewSetQuery(value EdiscoveryReviewSetQueryable)() {
     err := m.GetBackingStore().Set("reviewSetQuery", value)
     if err != nil {

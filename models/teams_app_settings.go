@@ -19,7 +19,7 @@ func NewTeamsAppSettings()(*TeamsAppSettings) {
 func CreateTeamsAppSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamsAppSettings(), nil
 }
-// GetAllowUserRequestsForAppAccess gets the allowUserRequestsForAppAccess property value. The allowUserRequestsForAppAccess property
+// GetAllowUserRequestsForAppAccess gets the allowUserRequestsForAppAccess property value. Indicates whether users are allowed to request access to the unavailable Teams apps.
 func (m *TeamsAppSettings) GetAllowUserRequestsForAppAccess()(*bool) {
     val, err := m.GetBackingStore().Get("allowUserRequestsForAppAccess")
     if err != nil {
@@ -59,7 +59,7 @@ func (m *TeamsAppSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetAllowUserRequestsForAppAccess sets the allowUserRequestsForAppAccess property value. The allowUserRequestsForAppAccess property
+// SetAllowUserRequestsForAppAccess sets the allowUserRequestsForAppAccess property value. Indicates whether users are allowed to request access to the unavailable Teams apps.
 func (m *TeamsAppSettings) SetAllowUserRequestsForAppAccess(value *bool)() {
     err := m.GetBackingStore().Set("allowUserRequestsForAppAccess", value)
     if err != nil {

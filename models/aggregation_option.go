@@ -116,7 +116,7 @@ func (m *AggregationOption) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSize gets the size property value. The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
+// GetSize gets the size property value. The number of searchBucket resources to be returned. This isn't required when the range is provided manually in the search request. Optional.
 func (m *AggregationOption) GetSize()(*int32) {
     val, err := m.GetBackingStore().Get("size")
     if err != nil {
@@ -193,7 +193,7 @@ func (m *AggregationOption) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSize sets the size property value. The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
+// SetSize sets the size property value. The number of searchBucket resources to be returned. This isn't required when the range is provided manually in the search request. Optional.
 func (m *AggregationOption) SetSize(value *int32)() {
     err := m.GetBackingStore().Set("size", value)
     if err != nil {

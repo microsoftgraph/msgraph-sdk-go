@@ -11,7 +11,7 @@ import (
 type ItemOnenoteNotebooksItemSectionGroupsItemSectionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOnenoteNotebooksItemSectionGroupsItemSectionsRequestBuilderGetQueryParameters retrieve a list of onenoteSection objects from the specified section group.
+// ItemOnenoteNotebooksItemSectionGroupsItemSectionsRequestBuilderGetQueryParameters retrieve a list of onenoteSection objects from the specified section group. This API is supported in the following national cloud deployments.
 type ItemOnenoteNotebooksItemSectionGroupsItemSectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemOnenoteNotebooksItemSectionGroupsItemSectionsRequestBuilder(rawUrl s
 func (m *ItemOnenoteNotebooksItemSectionGroupsItemSectionsRequestBuilder) Count()(*ItemOnenoteNotebooksItemSectionGroupsItemSectionsCountRequestBuilder) {
     return NewItemOnenoteNotebooksItemSectionGroupsItemSectionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of onenoteSection objects from the specified section group.
+// Get retrieve a list of onenoteSection objects from the specified section group. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemOnenoteNotebooksItemSectionGroupsItemSectionsRequestBuilder) Get(ct
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionCollectionResponseable), nil
 }
-// Post create a new onenoteSection in the specified section group.
+// Post create a new onenoteSection in the specified section group. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemOnenoteNotebooksItemSectionGroupsItemSectionsRequestBuilder) Post(c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionable), nil
 }
-// ToGetRequestInformation retrieve a list of onenoteSection objects from the specified section group.
+// ToGetRequestInformation retrieve a list of onenoteSection objects from the specified section group. This API is supported in the following national cloud deployments.
 func (m *ItemOnenoteNotebooksItemSectionGroupsItemSectionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteNotebooksItemSectionGroupsItemSectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemOnenoteNotebooksItemSectionGroupsItemSectionsRequestBuilder) ToGetR
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new onenoteSection in the specified section group.
+// ToPostRequestInformation create a new onenoteSection in the specified section group. This API is supported in the following national cloud deployments.
 func (m *ItemOnenoteNotebooksItemSectionGroupsItemSectionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionable, requestConfiguration *ItemOnenoteNotebooksItemSectionGroupsItemSectionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

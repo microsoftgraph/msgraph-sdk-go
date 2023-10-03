@@ -18,7 +18,7 @@ type ItemPrimaryChannelMembersConversationMemberItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemPrimaryChannelMembersConversationMemberItemRequestBuilderGetQueryParameters get a conversationMember from a channel.
+// ItemPrimaryChannelMembersConversationMemberItemRequestBuilderGetQueryParameters get a conversationMember from a channel. This API is supported in the following national cloud deployments.
 type ItemPrimaryChannelMembersConversationMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,10 +54,10 @@ func NewItemPrimaryChannelMembersConversationMemberItemRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewItemPrimaryChannelMembersConversationMemberItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+// Delete delete a conversationMember from a channel. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
 func (m *ItemPrimaryChannelMembersConversationMemberItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemPrimaryChannelMembersConversationMemberItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,7 +73,7 @@ func (m *ItemPrimaryChannelMembersConversationMemberItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get get a conversationMember from a channel.
+// Get get a conversationMember from a channel. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-get-members?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ItemPrimaryChannelMembersConversationMemberItemRequestBuilder) Get(ctx 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable), nil
 }
-// Patch update the role of a conversationMember in a team or channel.
+// Patch update the role of a conversationMember in a team or channel. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *ItemPrimaryChannelMembersConversationMemberItemRequestBuilder) Patch(ct
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable), nil
 }
-// ToDeleteRequestInformation delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+// ToDeleteRequestInformation delete a conversationMember from a channel. This API is supported in the following national cloud deployments.
 func (m *ItemPrimaryChannelMembersConversationMemberItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemPrimaryChannelMembersConversationMemberItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *ItemPrimaryChannelMembersConversationMemberItemRequestBuilder) ToDelete
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get a conversationMember from a channel.
+// ToGetRequestInformation get a conversationMember from a channel. This API is supported in the following national cloud deployments.
 func (m *ItemPrimaryChannelMembersConversationMemberItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPrimaryChannelMembersConversationMemberItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *ItemPrimaryChannelMembersConversationMemberItemRequestBuilder) ToGetReq
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the role of a conversationMember in a team or channel.
+// ToPatchRequestInformation update the role of a conversationMember in a team or channel. This API is supported in the following national cloud deployments.
 func (m *ItemPrimaryChannelMembersConversationMemberItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, requestConfiguration *ItemPrimaryChannelMembersConversationMemberItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

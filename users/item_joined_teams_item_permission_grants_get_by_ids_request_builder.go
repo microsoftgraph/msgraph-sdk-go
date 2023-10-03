@@ -30,7 +30,8 @@ func NewItemJoinedTeamsItemPermissionGrantsGetByIdsRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewItemJoinedTeamsItemPermissionGrantsGetByIdsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
+// Post return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to: This API is supported in the following national cloud deployments.
+// Deprecated: This method is obsolete. Use PostAsGetByIdsPostResponse instead.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
@@ -52,7 +53,29 @@ func (m *ItemJoinedTeamsItemPermissionGrantsGetByIdsRequestBuilder) Post(ctx con
     }
     return res.(ItemJoinedTeamsItemPermissionGrantsGetByIdsResponseable), nil
 }
-// ToPostRequestInformation return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
+// PostAsGetByIdsPostResponse return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to: This API is supported in the following national cloud deployments.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
+func (m *ItemJoinedTeamsItemPermissionGrantsGetByIdsRequestBuilder) PostAsGetByIdsPostResponse(ctx context.Context, body ItemJoinedTeamsItemPermissionGrantsGetByIdsPostRequestBodyable, requestConfiguration *ItemJoinedTeamsItemPermissionGrantsGetByIdsRequestBuilderPostRequestConfiguration)(ItemJoinedTeamsItemPermissionGrantsGetByIdsPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemJoinedTeamsItemPermissionGrantsGetByIdsPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemJoinedTeamsItemPermissionGrantsGetByIdsPostResponseable), nil
+}
+// ToPostRequestInformation return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to: This API is supported in the following national cloud deployments.
 func (m *ItemJoinedTeamsItemPermissionGrantsGetByIdsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemJoinedTeamsItemPermissionGrantsGetByIdsPostRequestBodyable, requestConfiguration *ItemJoinedTeamsItemPermissionGrantsGetByIdsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

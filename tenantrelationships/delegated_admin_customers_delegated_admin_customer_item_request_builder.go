@@ -18,7 +18,7 @@ type DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderGetQueryParameters read the properties of a delegatedAdminCustomer object.
+// DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderGetQueryParameters read the properties of a delegatedAdminCustomer object. This API is supported in the following national cloud deployments.
 type DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) Delete
     }
     return nil
 }
-// Get read the properties of a delegatedAdminCustomer object.
+// Get read the properties of a delegatedAdminCustomer object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/delegatedadmincustomer-get?view=graph-rest-1.0
@@ -127,7 +127,7 @@ func (m *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) ToDele
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties of a delegatedAdminCustomer object.
+// ToGetRequestInformation read the properties of a delegatedAdminCustomer object. This API is supported in the following national cloud deployments.
 func (m *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DelegatedAdminCustomersDelegatedAdminCustomerItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

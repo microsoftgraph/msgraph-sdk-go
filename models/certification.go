@@ -50,7 +50,7 @@ func (m *Certification) GetCertificationDetailsUrl()(*string) {
     }
     return nil
 }
-// GetCertificationExpirationDateTime gets the certificationExpirationDateTime property value. The timestamp when the current certification for the application will expire.
+// GetCertificationExpirationDateTime gets the certificationExpirationDateTime property value. The timestamp when the current certification for the application expires.
 func (m *Certification) GetCertificationExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("certificationExpirationDateTime")
     if err != nil {
@@ -222,7 +222,7 @@ func (m *Certification) SetCertificationDetailsUrl(value *string)() {
         panic(err)
     }
 }
-// SetCertificationExpirationDateTime sets the certificationExpirationDateTime property value. The timestamp when the current certification for the application will expire.
+// SetCertificationExpirationDateTime sets the certificationExpirationDateTime property value. The timestamp when the current certification for the application expires.
 func (m *Certification) SetCertificationExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("certificationExpirationDateTime", value)
     if err != nil {

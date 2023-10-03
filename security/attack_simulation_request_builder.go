@@ -70,6 +70,10 @@ func (m *AttackSimulationRequestBuilder) Delete(ctx context.Context, requestConf
     }
     return nil
 }
+// EndUserNotifications provides operations to manage the endUserNotifications property of the microsoft.graph.attackSimulationRoot entity.
+func (m *AttackSimulationRequestBuilder) EndUserNotifications()(*AttackSimulationEndUserNotificationsRequestBuilder) {
+    return NewAttackSimulationEndUserNotificationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get attackSimulation from security
 func (m *AttackSimulationRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttackSimulationRootable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -89,6 +93,18 @@ func (m *AttackSimulationRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttackSimulationRootable), nil
 }
+// LandingPages provides operations to manage the landingPages property of the microsoft.graph.attackSimulationRoot entity.
+func (m *AttackSimulationRequestBuilder) LandingPages()(*AttackSimulationLandingPagesRequestBuilder) {
+    return NewAttackSimulationLandingPagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// LoginPages provides operations to manage the loginPages property of the microsoft.graph.attackSimulationRoot entity.
+func (m *AttackSimulationRequestBuilder) LoginPages()(*AttackSimulationLoginPagesRequestBuilder) {
+    return NewAttackSimulationLoginPagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Operations provides operations to manage the operations property of the microsoft.graph.attackSimulationRoot entity.
+func (m *AttackSimulationRequestBuilder) Operations()(*AttackSimulationOperationsRequestBuilder) {
+    return NewAttackSimulationOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property attackSimulation in security
 func (m *AttackSimulationRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttackSimulationRootable, requestConfiguration *AttackSimulationRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttackSimulationRootable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -107,6 +123,10 @@ func (m *AttackSimulationRequestBuilder) Patch(ctx context.Context, body iadcd81
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttackSimulationRootable), nil
+}
+// Payloads provides operations to manage the payloads property of the microsoft.graph.attackSimulationRoot entity.
+func (m *AttackSimulationRequestBuilder) Payloads()(*AttackSimulationPayloadsRequestBuilder) {
+    return NewAttackSimulationPayloadsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SimulationAutomations provides operations to manage the simulationAutomations property of the microsoft.graph.attackSimulationRoot entity.
 func (m *AttackSimulationRequestBuilder) SimulationAutomations()(*AttackSimulationSimulationAutomationsRequestBuilder) {
@@ -160,6 +180,10 @@ func (m *AttackSimulationRequestBuilder) ToPatchRequestInformation(ctx context.C
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Trainings provides operations to manage the trainings property of the microsoft.graph.attackSimulationRoot entity.
+func (m *AttackSimulationRequestBuilder) Trainings()(*AttackSimulationTrainingsRequestBuilder) {
+    return NewAttackSimulationTrainingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 func (m *AttackSimulationRequestBuilder) WithUrl(rawUrl string)(*AttackSimulationRequestBuilder) {

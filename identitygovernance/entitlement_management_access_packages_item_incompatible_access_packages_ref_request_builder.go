@@ -11,7 +11,7 @@ import (
 type EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilderGetQueryParameters retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
+// EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilderGetQueryParameters retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.   This API is supported in the following national cloud deployments.
 type EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,7 +55,7 @@ func NewEntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequ
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
+// Get retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.   This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-list-incompatibleaccesspackages?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefReq
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
-// Post add an accessPackage to the list of access packages that have been marked as incompatible on an accessPackage.  
+// Post add an accessPackage to the list of access packages that have been marked as incompatible on an accessPackage.   This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-post-incompatibleaccesspackage?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefReq
     }
     return nil
 }
-// ToGetRequestInformation retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
+// ToGetRequestInformation retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.   This API is supported in the following national cloud deployments.
 func (m *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -112,7 +112,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefReq
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation add an accessPackage to the list of access packages that have been marked as incompatible on an accessPackage.  
+// ToPostRequestInformation add an accessPackage to the list of access packages that have been marked as incompatible on an accessPackage.   This API is supported in the following national cloud deployments.
 func (m *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

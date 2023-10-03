@@ -11,7 +11,7 @@ import (
 type ItemScheduleTimeOffRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemScheduleTimeOffRequestsRequestBuilderGetQueryParameters retrieve a list of timeOffRequest objects in the team.
+// ItemScheduleTimeOffRequestsRequestBuilderGetQueryParameters retrieve a list of timeOffRequest objects in the team. This API is supported in the following national cloud deployments.
 type ItemScheduleTimeOffRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,7 +72,7 @@ func NewItemScheduleTimeOffRequestsRequestBuilder(rawUrl string, requestAdapter 
 func (m *ItemScheduleTimeOffRequestsRequestBuilder) Count()(*ItemScheduleTimeOffRequestsCountRequestBuilder) {
     return NewItemScheduleTimeOffRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of timeOffRequest objects in the team.
+// Get retrieve a list of timeOffRequest objects in the team. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/timeoffrequest-list?view=graph-rest-1.0
@@ -113,7 +113,7 @@ func (m *ItemScheduleTimeOffRequestsRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffRequestable), nil
 }
-// ToGetRequestInformation retrieve a list of timeOffRequest objects in the team.
+// ToGetRequestInformation retrieve a list of timeOffRequest objects in the team. This API is supported in the following national cloud deployments.
 func (m *ItemScheduleTimeOffRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemScheduleTimeOffRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

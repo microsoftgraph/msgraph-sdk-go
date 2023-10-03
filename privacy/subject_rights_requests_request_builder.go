@@ -11,7 +11,7 @@ import (
 type SubjectRightsRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SubjectRightsRequestsRequestBuilderGetQueryParameters get a list of subjectRightsRequest objects and their properties.
+// SubjectRightsRequestsRequestBuilderGetQueryParameters get a list of subjectRightsRequest objects and their properties. This API is supported in the following national cloud deployments.
 type SubjectRightsRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,7 +75,7 @@ func NewSubjectRightsRequestsRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *SubjectRightsRequestsRequestBuilder) Count()(*SubjectRightsRequestsCountRequestBuilder) {
     return NewSubjectRightsRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of subjectRightsRequest objects and their properties.
+// Get get a list of subjectRightsRequest objects and their properties. This API is supported in the following national cloud deployments.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 // [Find more info here]
 // 
@@ -98,7 +98,7 @@ func (m *SubjectRightsRequestsRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubjectRightsRequestCollectionResponseable), nil
 }
-// Post create a new subjectRightsRequest object.
+// Post create a new subjectRightsRequest object. This API is supported in the following national cloud deployments.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 // [Find more info here]
 // 
@@ -121,7 +121,7 @@ func (m *SubjectRightsRequestsRequestBuilder) Post(ctx context.Context, body iad
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubjectRightsRequestable), nil
 }
-// ToGetRequestInformation get a list of subjectRightsRequest objects and their properties.
+// ToGetRequestInformation get a list of subjectRightsRequest objects and their properties. This API is supported in the following national cloud deployments.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 func (m *SubjectRightsRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -138,7 +138,7 @@ func (m *SubjectRightsRequestsRequestBuilder) ToGetRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new subjectRightsRequest object.
+// ToPostRequestInformation create a new subjectRightsRequest object. This API is supported in the following national cloud deployments.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 func (m *SubjectRightsRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubjectRightsRequestable, requestConfiguration *SubjectRightsRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

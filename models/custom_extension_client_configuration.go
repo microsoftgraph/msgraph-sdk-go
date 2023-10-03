@@ -74,7 +74,7 @@ func (m *CustomExtensionClientConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTimeoutInMilliseconds gets the timeoutInMilliseconds property value. The max duration in milliseconds that Azure AD will wait for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
+// GetTimeoutInMilliseconds gets the timeoutInMilliseconds property value. The max duration in milliseconds that Azure AD waits for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
 func (m *CustomExtensionClientConfiguration) GetTimeoutInMilliseconds()(*int32) {
     val, err := m.GetBackingStore().Get("timeoutInMilliseconds")
     if err != nil {
@@ -125,7 +125,7 @@ func (m *CustomExtensionClientConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTimeoutInMilliseconds sets the timeoutInMilliseconds property value. The max duration in milliseconds that Azure AD will wait for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
+// SetTimeoutInMilliseconds sets the timeoutInMilliseconds property value. The max duration in milliseconds that Azure AD waits for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
 func (m *CustomExtensionClientConfiguration) SetTimeoutInMilliseconds(value *int32)() {
     err := m.GetBackingStore().Set("timeoutInMilliseconds", value)
     if err != nil {

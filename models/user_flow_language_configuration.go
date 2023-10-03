@@ -19,7 +19,7 @@ func NewUserFlowLanguageConfiguration()(*UserFlowLanguageConfiguration) {
 func CreateUserFlowLanguageConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserFlowLanguageConfiguration(), nil
 }
-// GetDefaultPages gets the defaultPages property value. Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
+// GetDefaultPages gets the defaultPages property value. Collection of pages with the default content to display in a user flow for a specified language. This collection doesn't allow any kind of modification.
 func (m *UserFlowLanguageConfiguration) GetDefaultPages()([]UserFlowLanguagePageable) {
     val, err := m.GetBackingStore().Get("defaultPages")
     if err != nil {
@@ -109,7 +109,7 @@ func (m *UserFlowLanguageConfiguration) GetIsEnabled()(*bool) {
     }
     return nil
 }
-// GetOverridesPages gets the overridesPages property value. Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
+// GetOverridesPages gets the overridesPages property value. Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows you to modify the content of the page, any other modification isn't allowed (creation or deletion of pages).
 func (m *UserFlowLanguageConfiguration) GetOverridesPages()([]UserFlowLanguagePageable) {
     val, err := m.GetBackingStore().Get("overridesPages")
     if err != nil {
@@ -164,7 +164,7 @@ func (m *UserFlowLanguageConfiguration) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetDefaultPages sets the defaultPages property value. Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
+// SetDefaultPages sets the defaultPages property value. Collection of pages with the default content to display in a user flow for a specified language. This collection doesn't allow any kind of modification.
 func (m *UserFlowLanguageConfiguration) SetDefaultPages(value []UserFlowLanguagePageable)() {
     err := m.GetBackingStore().Set("defaultPages", value)
     if err != nil {
@@ -185,7 +185,7 @@ func (m *UserFlowLanguageConfiguration) SetIsEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetOverridesPages sets the overridesPages property value. Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
+// SetOverridesPages sets the overridesPages property value. Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows you to modify the content of the page, any other modification isn't allowed (creation or deletion of pages).
 func (m *UserFlowLanguageConfiguration) SetOverridesPages(value []UserFlowLanguagePageable)() {
     err := m.GetBackingStore().Set("overridesPages", value)
     if err != nil {

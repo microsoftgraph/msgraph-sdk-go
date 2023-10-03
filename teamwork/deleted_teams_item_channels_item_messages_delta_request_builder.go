@@ -50,6 +50,7 @@ func NewDeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder(rawUrl string, r
     return NewDeletedTeamsItemChannelsItemMessagesDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function delta
+// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 func (m *DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilderGetRequestConfiguration)(DeletedTeamsItemChannelsItemMessagesDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -67,6 +68,25 @@ func (m *DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder) Get(ctx contex
         return nil, nil
     }
     return res.(DeletedTeamsItemChannelsItemMessagesDeltaResponseable), nil
+}
+// GetAsDeltaGetResponse invoke function delta
+func (m *DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilderGetRequestConfiguration)(DeletedTeamsItemChannelsItemMessagesDeltaGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDeletedTeamsItemChannelsItemMessagesDeltaGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(DeletedTeamsItemChannelsItemMessagesDeltaGetResponseable), nil
 }
 // ToGetRequestInformation invoke function delta
 func (m *DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

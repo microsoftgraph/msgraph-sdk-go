@@ -21,7 +21,7 @@ func NewFileAssessmentRequest()(*FileAssessmentRequest) {
 func CreateFileAssessmentRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFileAssessmentRequest(), nil
 }
-// GetContentData gets the contentData property value. Base64 encoded file content. The file content cannot fetch back because it isn't stored.
+// GetContentData gets the contentData property value. Base64 encoded file content. The file content can't fetch back because it isn't stored.
 func (m *FileAssessmentRequest) GetContentData()(*string) {
     val, err := m.GetBackingStore().Get("contentData")
     if err != nil {
@@ -88,7 +88,7 @@ func (m *FileAssessmentRequest) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetContentData sets the contentData property value. Base64 encoded file content. The file content cannot fetch back because it isn't stored.
+// SetContentData sets the contentData property value. Base64 encoded file content. The file content can't fetch back because it isn't stored.
 func (m *FileAssessmentRequest) SetContentData(value *string)() {
     err := m.GetBackingStore().Set("contentData", value)
     if err != nil {

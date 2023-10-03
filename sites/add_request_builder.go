@@ -31,6 +31,7 @@ func NewAddRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c
     return NewAddRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post follow a user's site or multiple sites.
+// Deprecated: This method is obsolete. Use PostAsAddPostResponse instead.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/site-follow?view=graph-rest-1.0
@@ -51,6 +52,28 @@ func (m *AddRequestBuilder) Post(ctx context.Context, body AddPostRequestBodyabl
         return nil, nil
     }
     return res.(AddResponseable), nil
+}
+// PostAsAddPostResponse follow a user's site or multiple sites.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-follow?view=graph-rest-1.0
+func (m *AddRequestBuilder) PostAsAddPostResponse(ctx context.Context, body AddPostRequestBodyable, requestConfiguration *AddRequestBuilderPostRequestConfiguration)(AddPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateAddPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(AddPostResponseable), nil
 }
 // ToPostRequestInformation follow a user's site or multiple sites.
 func (m *AddRequestBuilder) ToPostRequestInformation(ctx context.Context, body AddPostRequestBodyable, requestConfiguration *AddRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

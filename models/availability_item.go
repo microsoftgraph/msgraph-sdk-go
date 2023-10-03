@@ -115,7 +115,7 @@ func (m *AvailabilityItem) GetOdataType()(*string) {
     }
     return nil
 }
-// GetServiceId gets the serviceId property value. Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.
+// GetServiceId gets the serviceId property value. Indicates the service ID for 1:n appointments. If the appointment is of type 1:n, this field is present, otherwise, null.
 func (m *AvailabilityItem) GetServiceId()(*string) {
     val, err := m.GetBackingStore().Get("serviceId")
     if err != nil {
@@ -214,7 +214,7 @@ func (m *AvailabilityItem) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetServiceId sets the serviceId property value. Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.
+// SetServiceId sets the serviceId property value. Indicates the service ID for 1:n appointments. If the appointment is of type 1:n, this field is present, otherwise, null.
 func (m *AvailabilityItem) SetServiceId(value *string)() {
     err := m.GetBackingStore().Set("serviceId", value)
     if err != nil {

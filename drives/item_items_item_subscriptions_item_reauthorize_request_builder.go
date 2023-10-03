@@ -30,7 +30,7 @@ func NewItemItemsItemSubscriptionsItemReauthorizeRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemSubscriptionsItemReauthorizeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post reauthorize a subscription when you receive a reauthorizationRequired challenge.
+// Post reauthorize a subscription when you receive a reauthorizationRequired challenge. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemItemsItemSubscriptionsItemReauthorizeRequestBuilder) Post(ctx conte
     }
     return nil
 }
-// ToPostRequestInformation reauthorize a subscription when you receive a reauthorizationRequired challenge.
+// ToPostRequestInformation reauthorize a subscription when you receive a reauthorizationRequired challenge. This API is supported in the following national cloud deployments.
 func (m *ItemItemsItemSubscriptionsItemReauthorizeRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemSubscriptionsItemReauthorizeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

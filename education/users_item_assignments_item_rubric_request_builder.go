@@ -18,7 +18,7 @@ type UsersItemAssignmentsItemRubricRequestBuilderDeleteRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UsersItemAssignmentsItemRubricRequestBuilderGetQueryParameters get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
+// UsersItemAssignmentsItemRubricRequestBuilderGetQueryParameters get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
 type UsersItemAssignmentsItemRubricRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewUsersItemAssignmentsItemRubricRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewUsersItemAssignmentsItemRubricRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove an educationRubric from an educationAssignment. This method does not delete the rubric itself and can only be performed by teachers.
+// Delete remove an educationRubric from an educationAssignment. This method doesn't delete the rubric itself and can only be performed by teachers. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-delete-rubric?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *UsersItemAssignmentsItemRubricRequestBuilder) Delete(ctx context.Contex
     }
     return nil
 }
-// Get get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
+// Get get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *UsersItemAssignmentsItemRubricRequestBuilder) Get(ctx context.Context, 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricable), nil
 }
-// Patch attach an existing educationRubric object to an educationAssignment. Only teachers can perform this operation.
+// Patch attach an existing educationRubric object to an educationAssignment. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-put-rubric?view=graph-rest-1.0
@@ -121,7 +121,7 @@ func (m *UsersItemAssignmentsItemRubricRequestBuilder) Patch(ctx context.Context
 func (m *UsersItemAssignmentsItemRubricRequestBuilder) Ref()(*UsersItemAssignmentsItemRubricRefRequestBuilder) {
     return NewUsersItemAssignmentsItemRubricRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation remove an educationRubric from an educationAssignment. This method does not delete the rubric itself and can only be performed by teachers.
+// ToDeleteRequestInformation remove an educationRubric from an educationAssignment. This method doesn't delete the rubric itself and can only be performed by teachers. This API is supported in the following national cloud deployments.
 func (m *UsersItemAssignmentsItemRubricRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemRubricRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -133,7 +133,7 @@ func (m *UsersItemAssignmentsItemRubricRequestBuilder) ToDeleteRequestInformatio
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
+// ToGetRequestInformation get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
 func (m *UsersItemAssignmentsItemRubricRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemRubricRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -149,7 +149,7 @@ func (m *UsersItemAssignmentsItemRubricRequestBuilder) ToGetRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation attach an existing educationRubric object to an educationAssignment. Only teachers can perform this operation.
+// ToPatchRequestInformation attach an existing educationRubric object to an educationAssignment. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
 func (m *UsersItemAssignmentsItemRubricRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricable, requestConfiguration *UsersItemAssignmentsItemRubricRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

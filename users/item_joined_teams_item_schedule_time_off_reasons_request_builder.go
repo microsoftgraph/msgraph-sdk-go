@@ -11,7 +11,7 @@ import (
 type ItemJoinedTeamsItemScheduleTimeOffReasonsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemJoinedTeamsItemScheduleTimeOffReasonsRequestBuilderGetQueryParameters get the list of timeOffReasons in a schedule.
+// ItemJoinedTeamsItemScheduleTimeOffReasonsRequestBuilderGetQueryParameters get the list of timeOffReasons in a schedule. This API is supported in the following national cloud deployments.
 type ItemJoinedTeamsItemScheduleTimeOffReasonsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,7 +72,7 @@ func NewItemJoinedTeamsItemScheduleTimeOffReasonsRequestBuilder(rawUrl string, r
 func (m *ItemJoinedTeamsItemScheduleTimeOffReasonsRequestBuilder) Count()(*ItemJoinedTeamsItemScheduleTimeOffReasonsCountRequestBuilder) {
     return NewItemJoinedTeamsItemScheduleTimeOffReasonsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of timeOffReasons in a schedule.
+// Get get the list of timeOffReasons in a schedule. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/schedule-list-timeoffreasons?view=graph-rest-1.0
@@ -94,7 +94,7 @@ func (m *ItemJoinedTeamsItemScheduleTimeOffReasonsRequestBuilder) Get(ctx contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffReasonCollectionResponseable), nil
 }
-// Post create a new timeOffReason.
+// Post create a new timeOffReason. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/schedule-post-timeoffreasons?view=graph-rest-1.0
@@ -116,7 +116,7 @@ func (m *ItemJoinedTeamsItemScheduleTimeOffReasonsRequestBuilder) Post(ctx conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffReasonable), nil
 }
-// ToGetRequestInformation get the list of timeOffReasons in a schedule.
+// ToGetRequestInformation get the list of timeOffReasons in a schedule. This API is supported in the following national cloud deployments.
 func (m *ItemJoinedTeamsItemScheduleTimeOffReasonsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemScheduleTimeOffReasonsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -132,7 +132,7 @@ func (m *ItemJoinedTeamsItemScheduleTimeOffReasonsRequestBuilder) ToGetRequestIn
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new timeOffReason.
+// ToPostRequestInformation create a new timeOffReason. This API is supported in the following national cloud deployments.
 func (m *ItemJoinedTeamsItemScheduleTimeOffReasonsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffReasonable, requestConfiguration *ItemJoinedTeamsItemScheduleTimeOffReasonsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

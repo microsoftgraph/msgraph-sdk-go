@@ -77,7 +77,7 @@ func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetTeamsAppSettings gets the teamsAppSettings property value. The teamsAppSettings property
+// GetTeamsAppSettings gets the teamsAppSettings property value. Represents tenant-wide settings for all Teams apps in the tenant.
 func (m *Teamwork) GetTeamsAppSettings()(TeamsAppSettingsable) {
     val, err := m.GetBackingStore().Get("teamsAppSettings")
     if err != nil {
@@ -144,7 +144,7 @@ func (m *Teamwork) SetDeletedTeams(value []DeletedTeamable)() {
         panic(err)
     }
 }
-// SetTeamsAppSettings sets the teamsAppSettings property value. The teamsAppSettings property
+// SetTeamsAppSettings sets the teamsAppSettings property value. Represents tenant-wide settings for all Teams apps in the tenant.
 func (m *Teamwork) SetTeamsAppSettings(value TeamsAppSettingsable)() {
     err := m.GetBackingStore().Set("teamsAppSettings", value)
     if err != nil {

@@ -50,6 +50,7 @@ func NewEntitlementManagementAssignmentsAdditionalAccessRequestBuilder(rawUrl st
     return NewEntitlementManagementAssignmentsAdditionalAccessRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function additionalAccess
+// Deprecated: This method is obsolete. Use GetAsAdditionalAccessGetResponse instead.
 func (m *EntitlementManagementAssignmentsAdditionalAccessRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentsAdditionalAccessRequestBuilderGetRequestConfiguration)(EntitlementManagementAssignmentsAdditionalAccessResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -67,6 +68,25 @@ func (m *EntitlementManagementAssignmentsAdditionalAccessRequestBuilder) Get(ctx
         return nil, nil
     }
     return res.(EntitlementManagementAssignmentsAdditionalAccessResponseable), nil
+}
+// GetAsAdditionalAccessGetResponse invoke function additionalAccess
+func (m *EntitlementManagementAssignmentsAdditionalAccessRequestBuilder) GetAsAdditionalAccessGetResponse(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentsAdditionalAccessRequestBuilderGetRequestConfiguration)(EntitlementManagementAssignmentsAdditionalAccessGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateEntitlementManagementAssignmentsAdditionalAccessGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(EntitlementManagementAssignmentsAdditionalAccessGetResponseable), nil
 }
 // ToGetRequestInformation invoke function additionalAccess
 func (m *EntitlementManagementAssignmentsAdditionalAccessRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentsAdditionalAccessRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

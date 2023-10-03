@@ -11,7 +11,7 @@ import (
 type ItemTeamChannelsItemTabsItemTeamsAppRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamChannelsItemTabsItemTeamsAppRequestBuilderGetQueryParameters the application that is linked to the tab. This cannot be changed after tab creation.
+// ItemTeamChannelsItemTabsItemTeamsAppRequestBuilderGetQueryParameters the application that is linked to the tab. This can't be changed after tab creation.
 type ItemTeamChannelsItemTabsItemTeamsAppRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewItemTeamChannelsItemTabsItemTeamsAppRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamChannelsItemTabsItemTeamsAppRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the application that is linked to the tab. This cannot be changed after tab creation.
+// Get the application that is linked to the tab. This can't be changed after tab creation.
 func (m *ItemTeamChannelsItemTabsItemTeamsAppRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamChannelsItemTabsItemTeamsAppRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ItemTeamChannelsItemTabsItemTeamsAppRequestBuilder) Get(ctx context.Con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppable), nil
 }
-// ToGetRequestInformation the application that is linked to the tab. This cannot be changed after tab creation.
+// ToGetRequestInformation the application that is linked to the tab. This can't be changed after tab creation.
 func (m *ItemTeamChannelsItemTabsItemTeamsAppRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamChannelsItemTabsItemTeamsAppRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

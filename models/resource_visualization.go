@@ -166,7 +166,7 @@ func (m *ResourceVisualization) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetMediaType gets the mediaType property value. The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
+// GetMediaType gets the mediaType property value. The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Not all Media Mime Types are supported.
 func (m *ResourceVisualization) GetMediaType()(*string) {
     val, err := m.GetBackingStore().Get("mediaType")
     if err != nil {
@@ -221,7 +221,7 @@ func (m *ResourceVisualization) GetTitle()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+// GetTypeEscaped gets the type property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See the section Type property values for supported types.
 func (m *ResourceVisualization) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -328,7 +328,7 @@ func (m *ResourceVisualization) SetContainerWebUrl(value *string)() {
         panic(err)
     }
 }
-// SetMediaType sets the mediaType property value. The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
+// SetMediaType sets the mediaType property value. The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Not all Media Mime Types are supported.
 func (m *ResourceVisualization) SetMediaType(value *string)() {
     err := m.GetBackingStore().Set("mediaType", value)
     if err != nil {
@@ -363,7 +363,7 @@ func (m *ResourceVisualization) SetTitle(value *string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+// SetTypeEscaped sets the type property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See the section Type property values for supported types.
 func (m *ResourceVisualization) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

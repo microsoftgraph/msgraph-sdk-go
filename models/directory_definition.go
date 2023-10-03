@@ -146,7 +146,7 @@ func (m *DirectoryDefinition) GetReadOnly()(*bool) {
     }
     return nil
 }
-// GetVersion gets the version property value. Read only value that indicates version discovered. null if discovery has not yet occurred.
+// GetVersion gets the version property value. Read only value that indicates version discovered. null if discovery hasn't yet occurred.
 func (m *DirectoryDefinition) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -243,7 +243,7 @@ func (m *DirectoryDefinition) SetReadOnly(value *bool)() {
         panic(err)
     }
 }
-// SetVersion sets the version property value. Read only value that indicates version discovered. null if discovery has not yet occurred.
+// SetVersion sets the version property value. Read only value that indicates version discovered. null if discovery hasn't yet occurred.
 func (m *DirectoryDefinition) SetVersion(value *string)() {
     err := m.GetBackingStore().Set("version", value)
     if err != nil {

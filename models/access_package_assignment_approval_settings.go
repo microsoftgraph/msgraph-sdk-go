@@ -89,7 +89,7 @@ func (m *AccessPackageAssignmentApprovalSettings) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetIsApprovalRequiredForAdd gets the isApprovalRequiredForAdd property value. If false, then approval is not required for new requests in this policy.
+// GetIsApprovalRequiredForAdd gets the isApprovalRequiredForAdd property value. If false, then approval isn't required for new requests in this policy.
 func (m *AccessPackageAssignmentApprovalSettings) GetIsApprovalRequiredForAdd()(*bool) {
     val, err := m.GetBackingStore().Get("isApprovalRequiredForAdd")
     if err != nil {
@@ -100,7 +100,7 @@ func (m *AccessPackageAssignmentApprovalSettings) GetIsApprovalRequiredForAdd()(
     }
     return nil
 }
-// GetIsApprovalRequiredForUpdate gets the isApprovalRequiredForUpdate property value. If false, then approval is not required for updates to requests in this policy.
+// GetIsApprovalRequiredForUpdate gets the isApprovalRequiredForUpdate property value. If false, then approval isn't required for updates to requests in this policy.
 func (m *AccessPackageAssignmentApprovalSettings) GetIsApprovalRequiredForUpdate()(*bool) {
     val, err := m.GetBackingStore().Get("isApprovalRequiredForUpdate")
     if err != nil {
@@ -184,14 +184,14 @@ func (m *AccessPackageAssignmentApprovalSettings) SetAdditionalData(value map[st
 func (m *AccessPackageAssignmentApprovalSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsApprovalRequiredForAdd sets the isApprovalRequiredForAdd property value. If false, then approval is not required for new requests in this policy.
+// SetIsApprovalRequiredForAdd sets the isApprovalRequiredForAdd property value. If false, then approval isn't required for new requests in this policy.
 func (m *AccessPackageAssignmentApprovalSettings) SetIsApprovalRequiredForAdd(value *bool)() {
     err := m.GetBackingStore().Set("isApprovalRequiredForAdd", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsApprovalRequiredForUpdate sets the isApprovalRequiredForUpdate property value. If false, then approval is not required for updates to requests in this policy.
+// SetIsApprovalRequiredForUpdate sets the isApprovalRequiredForUpdate property value. If false, then approval isn't required for updates to requests in this policy.
 func (m *AccessPackageAssignmentApprovalSettings) SetIsApprovalRequiredForUpdate(value *bool)() {
     err := m.GetBackingStore().Set("isApprovalRequiredForUpdate", value)
     if err != nil {

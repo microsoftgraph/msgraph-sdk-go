@@ -115,7 +115,7 @@ func (m *AttachmentInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetName gets the name property value. The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
+// GetName gets the name property value. The display name of the attachment. This can be a descriptive string and doesn't have to be the actual file name. Required.
 func (m *AttachmentInfo) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -214,7 +214,7 @@ func (m *AttachmentInfo) SetContentType(value *string)() {
         panic(err)
     }
 }
-// SetName sets the name property value. The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
+// SetName sets the name property value. The display name of the attachment. This can be a descriptive string and doesn't have to be the actual file name. Required.
 func (m *AttachmentInfo) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {

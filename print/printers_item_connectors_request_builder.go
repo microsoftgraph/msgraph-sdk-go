@@ -11,7 +11,7 @@ import (
 type PrintersItemConnectorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrintersItemConnectorsRequestBuilderGetQueryParameters retrieve a list of printConnectors associated with the printer.
+// PrintersItemConnectorsRequestBuilderGetQueryParameters retrieve a list of printConnectors associated with the printer. This API is supported in the following national cloud deployments.
 type PrintersItemConnectorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewPrintersItemConnectorsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *PrintersItemConnectorsRequestBuilder) Count()(*PrintersItemConnectorsCountRequestBuilder) {
     return NewPrintersItemConnectorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of printConnectors associated with the printer.
+// Get retrieve a list of printConnectors associated with the printer. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/printer-list-connectors?view=graph-rest-1.0
@@ -89,7 +89,7 @@ func (m *PrintersItemConnectorsRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintConnectorCollectionResponseable), nil
 }
-// ToGetRequestInformation retrieve a list of printConnectors associated with the printer.
+// ToGetRequestInformation retrieve a list of printConnectors associated with the printer. This API is supported in the following national cloud deployments.
 func (m *PrintersItemConnectorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrintersItemConnectorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

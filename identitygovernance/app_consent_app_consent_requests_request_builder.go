@@ -11,7 +11,7 @@ import (
 type AppConsentAppConsentRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AppConsentAppConsentRequestsRequestBuilderGetQueryParameters retrieve appConsentRequest objects and their properties.
+// AppConsentAppConsentRequestsRequestBuilderGetQueryParameters retrieve appConsentRequest objects and their properties. This API is supported in the following national cloud deployments.
 type AppConsentAppConsentRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *AppConsentAppConsentRequestsRequestBuilder) Count()(*AppConsentAppConse
 func (m *AppConsentAppConsentRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*AppConsentAppConsentRequestsFilterByCurrentUserWithOnRequestBuilder) {
     return NewAppConsentAppConsentRequestsFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get retrieve appConsentRequest objects and their properties.
+// Get retrieve appConsentRequest objects and their properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/appconsentapprovalroute-list-appconsentrequests?view=graph-rest-1.0
@@ -119,7 +119,7 @@ func (m *AppConsentAppConsentRequestsRequestBuilder) Post(ctx context.Context, b
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppConsentRequestable), nil
 }
-// ToGetRequestInformation retrieve appConsentRequest objects and their properties.
+// ToGetRequestInformation retrieve appConsentRequest objects and their properties. This API is supported in the following national cloud deployments.
 func (m *AppConsentAppConsentRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

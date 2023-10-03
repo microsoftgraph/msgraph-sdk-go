@@ -64,6 +64,10 @@ func (m *SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilder) Get(ctx c
 func (m *SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilder) MailboxSettings()(*SubjectRightsRequestsItemCollaboratorsItemMailboxSettingsRequestBuilder) {
     return NewSubjectRightsRequestsItemCollaboratorsItemMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ServiceProvisioningErrors the serviceProvisioningErrors property
+func (m *SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilder) ServiceProvisioningErrors()(*SubjectRightsRequestsItemCollaboratorsItemServiceProvisioningErrorsRequestBuilder) {
+    return NewSubjectRightsRequestsItemCollaboratorsItemServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation get collaborators from privacy
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 func (m *SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemCollaboratorsUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

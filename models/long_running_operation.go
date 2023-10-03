@@ -30,6 +30,8 @@ func CreateLongRunningOperationFromDiscriminatorValue(parseNode i878a80d2330e89d
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.attackSimulationOperation":
+                        return NewAttackSimulationOperation(), nil
                     case "#microsoft.graph.richLongRunningOperation":
                         return NewRichLongRunningOperation(), nil
                 }

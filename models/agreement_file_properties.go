@@ -42,7 +42,7 @@ func CreateAgreementFilePropertiesFromDiscriminatorValue(parseNode i878a80d2330e
     }
     return NewAgreementFileProperties(), nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The date time representing when the file was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetCreatedDateTime gets the createdDateTime property value. The date time representing when the file was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AgreementFileProperties) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -161,7 +161,7 @@ func (m *AgreementFileProperties) GetFileName()(*string) {
     }
     return nil
 }
-// GetIsDefault gets the isDefault property value. If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only.
+// GetIsDefault gets the isDefault property value. If none of the languages matches the client preference, indicates whether this is the default agreement file. If none of the files are marked as default, the first one is treated as the default. Read-only.
 func (m *AgreementFileProperties) GetIsDefault()(*bool) {
     val, err := m.GetBackingStore().Get("isDefault")
     if err != nil {
@@ -244,7 +244,7 @@ func (m *AgreementFileProperties) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetCreatedDateTime sets the createdDateTime property value. The date time representing when the file was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// SetCreatedDateTime sets the createdDateTime property value. The date time representing when the file was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AgreementFileProperties) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
@@ -272,7 +272,7 @@ func (m *AgreementFileProperties) SetFileName(value *string)() {
         panic(err)
     }
 }
-// SetIsDefault sets the isDefault property value. If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only.
+// SetIsDefault sets the isDefault property value. If none of the languages matches the client preference, indicates whether this is the default agreement file. If none of the files are marked as default, the first one is treated as the default. Read-only.
 func (m *AgreementFileProperties) SetIsDefault(value *bool)() {
     err := m.GetBackingStore().Set("isDefault", value)
     if err != nil {

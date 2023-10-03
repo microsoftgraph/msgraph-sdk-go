@@ -11,7 +11,7 @@ import (
 type TriggersRetentionEventsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TriggersRetentionEventsRequestBuilderGetQueryParameters get a list of the retentionEvent objects and their properties.
+// TriggersRetentionEventsRequestBuilderGetQueryParameters get a list of the retentionEvent objects and their properties. This API is supported in the following national cloud deployments.
 type TriggersRetentionEventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewTriggersRetentionEventsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *TriggersRetentionEventsRequestBuilder) Count()(*TriggersRetentionEventsCountRequestBuilder) {
     return NewTriggersRetentionEventsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the retentionEvent objects and their properties.
+// Get get a list of the retentionEvent objects and their properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-retentionevent-list?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *TriggersRetentionEventsRequestBuilder) Get(ctx context.Context, request
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.RetentionEventCollectionResponseable), nil
 }
-// Post create a new retentionEvent object.
+// Post create a new retentionEvent object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-retentionevent-post?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *TriggersRetentionEventsRequestBuilder) Post(ctx context.Context, body i
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.RetentionEventable), nil
 }
-// ToGetRequestInformation get a list of the retentionEvent objects and their properties.
+// ToGetRequestInformation get a list of the retentionEvent objects and their properties. This API is supported in the following national cloud deployments.
 func (m *TriggersRetentionEventsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TriggersRetentionEventsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *TriggersRetentionEventsRequestBuilder) ToGetRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new retentionEvent object.
+// ToPostRequestInformation create a new retentionEvent object. This API is supported in the following national cloud deployments.
 func (m *TriggersRetentionEventsRequestBuilder) ToPostRequestInformation(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.RetentionEventable, requestConfiguration *TriggersRetentionEventsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -30,7 +30,7 @@ func NewItemCalendarEventsItemInstancesItemAcceptRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarEventsItemInstancesItemAcceptRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post accept the specified event in a user calendar.
+// Post accept the specified event in a user calendar. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemCalendarEventsItemInstancesItemAcceptRequestBuilder) Post(ctx conte
     }
     return nil
 }
-// ToPostRequestInformation accept the specified event in a user calendar.
+// ToPostRequestInformation accept the specified event in a user calendar. This API is supported in the following national cloud deployments.
 func (m *ItemCalendarEventsItemInstancesItemAcceptRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCalendarEventsItemInstancesItemAcceptPostRequestBodyable, requestConfiguration *ItemCalendarEventsItemInstancesItemAcceptRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

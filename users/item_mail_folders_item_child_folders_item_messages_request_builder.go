@@ -11,7 +11,7 @@ import (
 type ItemMailFoldersItemChildFoldersItemMessagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemMailFoldersItemChildFoldersItemMessagesRequestBuilderGetQueryParameters get all the messages in the specified user's mailbox, or those messages in a specified folder in the mailbox.
+// ItemMailFoldersItemChildFoldersItemMessagesRequestBuilderGetQueryParameters get all the messages in the specified user's mailbox, or those messages in a specified folder in the mailbox. This API is supported in the following national cloud deployments.
 type ItemMailFoldersItemChildFoldersItemMessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesRequestBuilder) Count()(*Ite
 func (m *ItemMailFoldersItemChildFoldersItemMessagesRequestBuilder) Delta()(*ItemMailFoldersItemChildFoldersItemMessagesDeltaRequestBuilder) {
     return NewItemMailFoldersItemChildFoldersItemMessagesDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get all the messages in the specified user's mailbox, or those messages in a specified folder in the mailbox.
+// Get get all the messages in the specified user's mailbox, or those messages in a specified folder in the mailbox. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
@@ -100,7 +100,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesRequestBuilder) Get(ctx cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MessageCollectionResponseable), nil
 }
-// Post use this API to create a new Message in a mailfolder.
+// Post use this API to create a new Message in a mailfolder. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-1.0
@@ -122,7 +122,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesRequestBuilder) Post(ctx con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable), nil
 }
-// ToGetRequestInformation get all the messages in the specified user's mailbox, or those messages in a specified folder in the mailbox.
+// ToGetRequestInformation get all the messages in the specified user's mailbox, or those messages in a specified folder in the mailbox. This API is supported in the following national cloud deployments.
 func (m *ItemMailFoldersItemChildFoldersItemMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -138,7 +138,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesRequestBuilder) ToGetRequest
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation use this API to create a new Message in a mailfolder.
+// ToPostRequestInformation use this API to create a new Message in a mailfolder. This API is supported in the following national cloud deployments.
 func (m *ItemMailFoldersItemChildFoldersItemMessagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

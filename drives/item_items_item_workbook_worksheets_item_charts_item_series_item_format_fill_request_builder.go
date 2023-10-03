@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemFormatFillRequestBui
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemFormatFillRequestBuilderGetQueryParameters represents the fill format of a chart series, which includes background formating information. Read-only.
+// ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemFormatFillRequestBuilderGetQueryParameters represents the fill format of a chart series, which includes background formatting information. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemFormatFillRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemFormatFillReques
     }
     return nil
 }
-// Get represents the fill format of a chart series, which includes background formating information. Read-only.
+// Get represents the fill format of a chart series, which includes background formatting information. Read-only.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemFormatFillRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemFormatFillRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartFillable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -128,7 +128,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemFormatFillReques
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation represents the fill format of a chart series, which includes background formating information. Read-only.
+// ToGetRequestInformation represents the fill format of a chart series, which includes background formatting information. Read-only.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemFormatFillRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemFormatFillRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

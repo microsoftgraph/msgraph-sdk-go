@@ -18,7 +18,7 @@ type ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an openshift object.
+// ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an openshift object. This API is supported in the following national cloud deployments.
 type ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an openShift object.
+// Delete delete an openShift object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/openshift-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get retrieve the properties and relationships of an openshift object.
+// Get retrieve the properties and relationships of an openshift object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/openshift-get?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilder) Patch(ctx contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OpenShiftable), nil
 }
-// ToDeleteRequestInformation delete an openShift object.
+// ToDeleteRequestInformation delete an openShift object. This API is supported in the following national cloud deployments.
 func (m *ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilder) ToDeleteRequestI
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an openshift object.
+// ToGetRequestInformation retrieve the properties and relationships of an openshift object. This API is supported in the following national cloud deployments.
 func (m *ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

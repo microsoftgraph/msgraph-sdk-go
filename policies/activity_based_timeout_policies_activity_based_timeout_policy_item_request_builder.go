@@ -18,7 +18,7 @@ type ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilderGetQueryParameters get the properties of an activityBasedTimeoutPolicy object.
+// ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilderGetQueryParameters get the properties of an activityBasedTimeoutPolicy object. This API is supported in the following national cloud deployments.
 type ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,7 @@ func NewActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an activityBasedTimeoutPolicy object.
+// Delete delete an activityBasedTimeoutPolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/activitybasedtimeoutpolicy-delete?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilde
     }
     return nil
 }
-// Get get the properties of an activityBasedTimeoutPolicy object.
+// Get get the properties of an activityBasedTimeoutPolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/activitybasedtimeoutpolicy-get?view=graph-rest-1.0
@@ -99,7 +99,7 @@ func (m *ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilde
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActivityBasedTimeoutPolicyable), nil
 }
-// Patch update the properties of an activityBasedTimeoutPolicy object.
+// Patch update the properties of an activityBasedTimeoutPolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/activitybasedtimeoutpolicy-update?view=graph-rest-1.0
@@ -121,7 +121,7 @@ func (m *ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilde
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActivityBasedTimeoutPolicyable), nil
 }
-// ToDeleteRequestInformation delete an activityBasedTimeoutPolicy object.
+// ToDeleteRequestInformation delete an activityBasedTimeoutPolicy object. This API is supported in the following national cloud deployments.
 func (m *ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -133,7 +133,7 @@ func (m *ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilde
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties of an activityBasedTimeoutPolicy object.
+// ToGetRequestInformation get the properties of an activityBasedTimeoutPolicy object. This API is supported in the following national cloud deployments.
 func (m *ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -149,7 +149,7 @@ func (m *ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilde
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an activityBasedTimeoutPolicy object.
+// ToPatchRequestInformation update the properties of an activityBasedTimeoutPolicy object. This API is supported in the following national cloud deployments.
 func (m *ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ActivityBasedTimeoutPolicyable, requestConfiguration *ActivityBasedTimeoutPoliciesActivityBasedTimeoutPolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

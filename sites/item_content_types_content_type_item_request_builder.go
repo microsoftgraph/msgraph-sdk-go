@@ -18,7 +18,7 @@ type ItemContentTypesContentTypeItemRequestBuilderDeleteRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemContentTypesContentTypeItemRequestBuilderGetQueryParameters retrieve the metadata for a [content type][contentType] in a [site][] or a [list][].
+// ItemContentTypesContentTypeItemRequestBuilderGetQueryParameters retrieve the metadata for a content type][contentType] in a [site][] or a [list][]. This API is supported in the following [national cloud deployments.
 type ItemContentTypesContentTypeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -82,7 +82,7 @@ func NewItemContentTypesContentTypeItemRequestBuilder(rawUrl string, requestAdap
 func (m *ItemContentTypesContentTypeItemRequestBuilder) CopyToDefaultContentLocation()(*ItemContentTypesItemCopyToDefaultContentLocationRequestBuilder) {
     return NewItemContentTypesItemCopyToDefaultContentLocationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete remove a [content type][contentType] from a [list][] or a [site][].
+// Delete remove a content type][contentType] from a [list][] or a [site][]. This API is supported in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-delete?view=graph-rest-1.0
@@ -101,7 +101,7 @@ func (m *ItemContentTypesContentTypeItemRequestBuilder) Delete(ctx context.Conte
     }
     return nil
 }
-// Get retrieve the metadata for a [content type][contentType] in a [site][] or a [list][].
+// Get retrieve the metadata for a content type][contentType] in a [site][] or a [list][]. This API is supported in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-get?view=graph-rest-1.0
@@ -127,7 +127,7 @@ func (m *ItemContentTypesContentTypeItemRequestBuilder) Get(ctx context.Context,
 func (m *ItemContentTypesContentTypeItemRequestBuilder) IsPublished()(*ItemContentTypesItemIsPublishedRequestBuilder) {
     return NewItemContentTypesItemIsPublishedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update a [content type][contentType].
+// Patch update a content type][contentType]. This API is supported in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-update?view=graph-rest-1.0
@@ -153,7 +153,7 @@ func (m *ItemContentTypesContentTypeItemRequestBuilder) Patch(ctx context.Contex
 func (m *ItemContentTypesContentTypeItemRequestBuilder) Publish()(*ItemContentTypesItemPublishRequestBuilder) {
     return NewItemContentTypesItemPublishRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation remove a [content type][contentType] from a [list][] or a [site][].
+// ToDeleteRequestInformation remove a content type][contentType] from a [list][] or a [site][]. This API is supported in the following [national cloud deployments.
 func (m *ItemContentTypesContentTypeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemContentTypesContentTypeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -165,7 +165,7 @@ func (m *ItemContentTypesContentTypeItemRequestBuilder) ToDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the metadata for a [content type][contentType] in a [site][] or a [list][].
+// ToGetRequestInformation retrieve the metadata for a content type][contentType] in a [site][] or a [list][]. This API is supported in the following [national cloud deployments.
 func (m *ItemContentTypesContentTypeItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContentTypesContentTypeItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -181,7 +181,7 @@ func (m *ItemContentTypesContentTypeItemRequestBuilder) ToGetRequestInformation(
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update a [content type][contentType].
+// ToPatchRequestInformation update a content type][contentType]. This API is supported in the following [national cloud deployments.
 func (m *ItemContentTypesContentTypeItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable, requestConfiguration *ItemContentTypesContentTypeItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

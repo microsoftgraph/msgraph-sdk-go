@@ -11,7 +11,7 @@ import (
 type ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilderGetQueryParameters retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
+// ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilderGetQueryParameters retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list. This API is supported in the following national cloud deployments.
 type ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func NewItemJoinedTeamsItemPrimaryChannelMembersRequestBuilder(rawUrl string, re
 func (m *ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilder) Count()(*ItemJoinedTeamsItemPrimaryChannelMembersCountRequestBuilder) {
     return NewItemJoinedTeamsItemPrimaryChannelMembersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
+// Get retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
@@ -100,7 +100,7 @@ func (m *ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilder) Get(ctx context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberCollectionResponseable), nil
 }
-// Post add a conversationMember to a channel.
+// Post add a conversationMember to a channel. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
@@ -122,7 +122,7 @@ func (m *ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilder) Post(ctx contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable), nil
 }
-// ToGetRequestInformation retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
+// ToGetRequestInformation retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list. This API is supported in the following national cloud deployments.
 func (m *ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -138,7 +138,7 @@ func (m *ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilder) ToGetRequestInf
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation add a conversationMember to a channel.
+// ToPostRequestInformation add a conversationMember to a channel. This API is supported in the following national cloud deployments.
 func (m *ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable, requestConfiguration *ItemJoinedTeamsItemPrimaryChannelMembersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

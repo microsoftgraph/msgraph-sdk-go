@@ -18,7 +18,7 @@ type CasesEdiscoveryCasesItemSettingsRequestBuilderDeleteRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CasesEdiscoveryCasesItemSettingsRequestBuilderGetQueryParameters read the properties and relationships of an ediscoveryCaseSettings object.
+// CasesEdiscoveryCasesItemSettingsRequestBuilderGetQueryParameters read the properties and relationships of an ediscoveryCaseSettings object. This API is supported in the following national cloud deployments.
 type CasesEdiscoveryCasesItemSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) Delete(ctx context.Cont
     }
     return nil
 }
-// Get read the properties and relationships of an ediscoveryCaseSettings object.
+// Get read the properties and relationships of an ediscoveryCaseSettings object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycasesettings-get?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) Get(ctx context.Context
 func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) MicrosoftGraphSecurityResetToDefault()(*CasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilder) {
     return NewCasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of an ediscoveryCaseSettings object.
+// Patch update the properties of an ediscoveryCaseSettings object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycasesettings-update?view=graph-rest-1.0
@@ -130,7 +130,7 @@ func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) ToDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an ediscoveryCaseSettings object.
+// ToGetRequestInformation read the properties and relationships of an ediscoveryCaseSettings object. This API is supported in the following national cloud deployments.
 func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -146,7 +146,7 @@ func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) ToGetRequestInformation
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an ediscoveryCaseSettings object.
+// ToPatchRequestInformation update the properties of an ediscoveryCaseSettings object. This API is supported in the following national cloud deployments.
 func (m *CasesEdiscoveryCasesItemSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCaseSettingsable, requestConfiguration *CasesEdiscoveryCasesItemSettingsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

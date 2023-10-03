@@ -11,7 +11,7 @@ import (
 type ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an authenticationMethod object.
+// ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an authenticationMethod object. This API is supported in the following national cloud deployments.
 type ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,7 +47,7 @@ func NewItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve the properties and relationships of an authenticationMethod object.
+// Get retrieve the properties and relationships of an authenticationMethod object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/authenticationmethod-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) Patch(
 func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) ResetPassword()(*ItemAuthenticationMethodsItemResetPasswordRequestBuilder) {
     return NewItemAuthenticationMethodsItemResetPasswordRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve the properties and relationships of an authenticationMethod object.
+// ToGetRequestInformation retrieve the properties and relationships of an authenticationMethod object. This API is supported in the following national cloud deployments.
 func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

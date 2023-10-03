@@ -30,7 +30,7 @@ func (m *WorkbookRangeFormat) GetBorders()([]WorkbookRangeBorderable) {
     }
     return nil
 }
-// GetColumnWidth gets the columnWidth property value. Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.
+// GetColumnWidth gets the columnWidth property value. Gets or sets the width of all columns within the range. If the column widths aren't uniform, null will be returned.
 func (m *WorkbookRangeFormat) GetColumnWidth()(*float64) {
     val, err := m.GetBackingStore().Get("columnWidth")
     if err != nil {
@@ -186,7 +186,7 @@ func (m *WorkbookRangeFormat) GetProtection()(WorkbookFormatProtectionable) {
     }
     return nil
 }
-// GetRowHeight gets the rowHeight property value. Gets or sets the height of all rows in the range. If the row heights are not uniform null will be returned.
+// GetRowHeight gets the rowHeight property value. Gets or sets the height of all rows in the range. If the row heights aren't uniform null will be returned.
 func (m *WorkbookRangeFormat) GetRowHeight()(*float64) {
     val, err := m.GetBackingStore().Get("rowHeight")
     if err != nil {
@@ -294,7 +294,7 @@ func (m *WorkbookRangeFormat) SetBorders(value []WorkbookRangeBorderable)() {
         panic(err)
     }
 }
-// SetColumnWidth sets the columnWidth property value. Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.
+// SetColumnWidth sets the columnWidth property value. Gets or sets the width of all columns within the range. If the column widths aren't uniform, null will be returned.
 func (m *WorkbookRangeFormat) SetColumnWidth(value *float64)() {
     err := m.GetBackingStore().Set("columnWidth", value)
     if err != nil {
@@ -329,7 +329,7 @@ func (m *WorkbookRangeFormat) SetProtection(value WorkbookFormatProtectionable)(
         panic(err)
     }
 }
-// SetRowHeight sets the rowHeight property value. Gets or sets the height of all rows in the range. If the row heights are not uniform null will be returned.
+// SetRowHeight sets the rowHeight property value. Gets or sets the height of all rows in the range. If the row heights aren't uniform null will be returned.
 func (m *WorkbookRangeFormat) SetRowHeight(value *float64)() {
     err := m.GetBackingStore().Set("rowHeight", value)
     if err != nil {

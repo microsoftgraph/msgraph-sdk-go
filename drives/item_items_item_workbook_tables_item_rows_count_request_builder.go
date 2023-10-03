@@ -31,6 +31,7 @@ func NewItemItemsItemWorkbookTablesItemRowsCountRequestBuilder(rawUrl string, re
     return NewItemItemsItemWorkbookTablesItemRowsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function count
+// Deprecated: This method is obsolete. Use GetAsCountGetResponse instead.
 func (m *ItemItemsItemWorkbookTablesItemRowsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemRowsCountRequestBuilderGetRequestConfiguration)(ItemItemsItemWorkbookTablesItemRowsCountResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -48,6 +49,25 @@ func (m *ItemItemsItemWorkbookTablesItemRowsCountRequestBuilder) Get(ctx context
         return nil, nil
     }
     return res.(ItemItemsItemWorkbookTablesItemRowsCountResponseable), nil
+}
+// GetAsCountGetResponse invoke function count
+func (m *ItemItemsItemWorkbookTablesItemRowsCountRequestBuilder) GetAsCountGetResponse(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemRowsCountRequestBuilderGetRequestConfiguration)(ItemItemsItemWorkbookTablesItemRowsCountGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemsItemWorkbookTablesItemRowsCountGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemItemsItemWorkbookTablesItemRowsCountGetResponseable), nil
 }
 // ToGetRequestInformation invoke function count
 func (m *ItemItemsItemWorkbookTablesItemRowsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemRowsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

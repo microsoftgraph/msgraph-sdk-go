@@ -53,6 +53,7 @@ func NewItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilder(ra
     return NewItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getApplicableContentTypesForList
+// Deprecated: This method is obsolete. Use GetAsGetApplicableContentTypesForListWithListIdGetResponse instead.
 func (m *ItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilderGetRequestConfiguration)(ItemSitesItemGetApplicableContentTypesForListWithListIdResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,6 +71,25 @@ func (m *ItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilder) 
         return nil, nil
     }
     return res.(ItemSitesItemGetApplicableContentTypesForListWithListIdResponseable), nil
+}
+// GetAsGetApplicableContentTypesForListWithListIdGetResponse invoke function getApplicableContentTypesForList
+func (m *ItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilder) GetAsGetApplicableContentTypesForListWithListIdGetResponse(ctx context.Context, requestConfiguration *ItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilderGetRequestConfiguration)(ItemSitesItemGetApplicableContentTypesForListWithListIdGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSitesItemGetApplicableContentTypesForListWithListIdGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemSitesItemGetApplicableContentTypesForListWithListIdGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getApplicableContentTypesForList
 func (m *ItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

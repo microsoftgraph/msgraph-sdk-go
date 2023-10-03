@@ -11,7 +11,7 @@ import (
 type ApplicationTemplateItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ApplicationTemplateItemRequestBuilderGetQueryParameters retrieve the properties of an applicationTemplate object.
+// ApplicationTemplateItemRequestBuilderGetQueryParameters retrieve the properties of an applicationTemplate object. This API is supported in the following national cloud deployments.
 type ApplicationTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewApplicationTemplateItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewApplicationTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve the properties of an applicationTemplate object.
+// Get retrieve the properties of an applicationTemplate object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/applicationtemplate-get?view=graph-rest-1.0
@@ -66,7 +66,7 @@ func (m *ApplicationTemplateItemRequestBuilder) Get(ctx context.Context, request
 func (m *ApplicationTemplateItemRequestBuilder) Instantiate()(*ItemInstantiateRequestBuilder) {
     return NewItemInstantiateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve the properties of an applicationTemplate object.
+// ToGetRequestInformation retrieve the properties of an applicationTemplate object. This API is supported in the following national cloud deployments.
 func (m *ApplicationTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApplicationTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

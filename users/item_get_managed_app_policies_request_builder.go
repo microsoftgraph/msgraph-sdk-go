@@ -50,6 +50,7 @@ func NewItemGetManagedAppPoliciesRequestBuilder(rawUrl string, requestAdapter i2
     return NewItemGetManagedAppPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get gets app restrictions for a given user.
+// Deprecated: This method is obsolete. Use GetAsGetManagedAppPoliciesGetResponse instead.
 func (m *ItemGetManagedAppPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGetManagedAppPoliciesRequestBuilderGetRequestConfiguration)(ItemGetManagedAppPoliciesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -67,6 +68,25 @@ func (m *ItemGetManagedAppPoliciesRequestBuilder) Get(ctx context.Context, reque
         return nil, nil
     }
     return res.(ItemGetManagedAppPoliciesResponseable), nil
+}
+// GetAsGetManagedAppPoliciesGetResponse gets app restrictions for a given user.
+func (m *ItemGetManagedAppPoliciesRequestBuilder) GetAsGetManagedAppPoliciesGetResponse(ctx context.Context, requestConfiguration *ItemGetManagedAppPoliciesRequestBuilderGetRequestConfiguration)(ItemGetManagedAppPoliciesGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemGetManagedAppPoliciesGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemGetManagedAppPoliciesGetResponseable), nil
 }
 // ToGetRequestInformation gets app restrictions for a given user.
 func (m *ItemGetManagedAppPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGetManagedAppPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

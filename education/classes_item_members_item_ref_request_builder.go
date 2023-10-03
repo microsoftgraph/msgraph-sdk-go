@@ -10,7 +10,7 @@ import (
 type ClassesItemMembersItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClassesItemMembersItemRefRequestBuilderDeleteQueryParameters remove an educationUser from an educationClass.
+// ClassesItemMembersItemRefRequestBuilderDeleteQueryParameters remove an educationUser from an educationClass. This API is supported in the following national cloud deployments.
 type ClassesItemMembersItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,7 @@ func NewClassesItemMembersItemRefRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemMembersItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove an educationUser from an educationClass.
+// Delete remove an educationUser from an educationClass. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-delete-members?view=graph-rest-1.0
@@ -56,7 +56,7 @@ func (m *ClassesItemMembersItemRefRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// ToDeleteRequestInformation remove an educationUser from an educationClass.
+// ToDeleteRequestInformation remove an educationUser from an educationClass. This API is supported in the following national cloud deployments.
 func (m *ClassesItemMembersItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ClassesItemMembersItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

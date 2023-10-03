@@ -50,6 +50,7 @@ func NewItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder(rawUrl st
     return NewItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function filterOperators
+// Deprecated: This method is obsolete. Use GetAsFilterOperatorsGetResponse instead.
 func (m *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderGetRequestConfiguration)(ItemSynchronizationJobsItemSchemaFilterOperatorsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -67,6 +68,25 @@ func (m *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) Get(ctx
         return nil, nil
     }
     return res.(ItemSynchronizationJobsItemSchemaFilterOperatorsResponseable), nil
+}
+// GetAsFilterOperatorsGetResponse invoke function filterOperators
+func (m *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) GetAsFilterOperatorsGetResponse(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderGetRequestConfiguration)(ItemSynchronizationJobsItemSchemaFilterOperatorsGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSynchronizationJobsItemSchemaFilterOperatorsGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemSynchronizationJobsItemSchemaFilterOperatorsGetResponseable), nil
 }
 // ToGetRequestInformation invoke function filterOperators
 func (m *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -18,7 +18,7 @@ type ApiConnectorsIdentityApiConnectorItemRequestBuilderDeleteRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApiConnectorsIdentityApiConnectorItemRequestBuilderGetQueryParameters read the properties of an identityApiConnector object.
+// ApiConnectorsIdentityApiConnectorItemRequestBuilderGetQueryParameters read the properties of an identityApiConnector object. This API is supported in the following national cloud deployments.
 type ApiConnectorsIdentityApiConnectorItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewApiConnectorsIdentityApiConnectorItemRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewApiConnectorsIdentityApiConnectorItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an identityApiConnector object.
+// Delete delete an identityApiConnector object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identityapiconnector-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// Get read the properties of an identityApiConnector object.
+// Get read the properties of an identityApiConnector object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identityapiconnector-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) Get(ctx context.Co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable), nil
 }
-// Patch update the properties of an identityApiConnector object.
+// Patch update the properties of an identityApiConnector object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identityapiconnector-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) Patch(ctx context.
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable), nil
 }
-// ToDeleteRequestInformation delete an identityApiConnector object.
+// ToDeleteRequestInformation delete an identityApiConnector object. This API is supported in the following national cloud deployments.
 func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ApiConnectorsIdentityApiConnectorItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) ToDeleteRequestInf
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties of an identityApiConnector object.
+// ToGetRequestInformation read the properties of an identityApiConnector object. This API is supported in the following national cloud deployments.
 func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApiConnectorsIdentityApiConnectorItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) ToGetRequestInform
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an identityApiConnector object.
+// ToPatchRequestInformation update the properties of an identityApiConnector object. This API is supported in the following national cloud deployments.
 func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable, requestConfiguration *ApiConnectorsIdentityApiConnectorItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

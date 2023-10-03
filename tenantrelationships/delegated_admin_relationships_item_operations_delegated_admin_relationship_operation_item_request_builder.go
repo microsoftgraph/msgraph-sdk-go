@@ -18,7 +18,7 @@ type DelegatedAdminRelationshipsItemOperationsDelegatedAdminRelationshipOperatio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DelegatedAdminRelationshipsItemOperationsDelegatedAdminRelationshipOperationItemRequestBuilderGetQueryParameters read the properties of a delegatedAdminRelationshipOperation object.
+// DelegatedAdminRelationshipsItemOperationsDelegatedAdminRelationshipOperationItemRequestBuilderGetQueryParameters read the properties of a delegatedAdminRelationshipOperation object. This API is supported in the following national cloud deployments.
 type DelegatedAdminRelationshipsItemOperationsDelegatedAdminRelationshipOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *DelegatedAdminRelationshipsItemOperationsDelegatedAdminRelationshipOper
     }
     return nil
 }
-// Get read the properties of a delegatedAdminRelationshipOperation object.
+// Get read the properties of a delegatedAdminRelationshipOperation object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/delegatedadminrelationshipoperation-get?view=graph-rest-1.0
@@ -123,7 +123,7 @@ func (m *DelegatedAdminRelationshipsItemOperationsDelegatedAdminRelationshipOper
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties of a delegatedAdminRelationshipOperation object.
+// ToGetRequestInformation read the properties of a delegatedAdminRelationshipOperation object. This API is supported in the following national cloud deployments.
 func (m *DelegatedAdminRelationshipsItemOperationsDelegatedAdminRelationshipOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DelegatedAdminRelationshipsItemOperationsDelegatedAdminRelationshipOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

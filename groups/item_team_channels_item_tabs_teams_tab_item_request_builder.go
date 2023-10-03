@@ -18,7 +18,7 @@ type ItemTeamChannelsItemTabsTeamsTabItemRequestBuilderDeleteRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamChannelsItemTabsTeamsTabItemRequestBuilderGetQueryParameters retrieve the properties and relationships of the specified tab in a channel within a team. 
+// ItemTeamChannelsItemTabsTeamsTabItemRequestBuilderGetQueryParameters retrieve the properties and relationships of the specified tab in a channel within a team.  This API is supported in the following national cloud deployments.
 type ItemTeamChannelsItemTabsTeamsTabItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemTeamChannelsItemTabsTeamsTabItemRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamChannelsItemTabsTeamsTabItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete removes (unpins) a tab from the specified channel within a team. 
+// Delete removes (unpins) a tab from the specified channel within a team.  This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-delete-tabs?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemTeamChannelsItemTabsTeamsTabItemRequestBuilder) Delete(ctx context.
     }
     return nil
 }
-// Get retrieve the properties and relationships of the specified tab in a channel within a team. 
+// Get retrieve the properties and relationships of the specified tab in a channel within a team.  This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-get-tabs?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ItemTeamChannelsItemTabsTeamsTabItemRequestBuilder) Get(ctx context.Con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable), nil
 }
-// Patch update the properties of the specified tab.This can be used to configure the content of the tab.
+// Patch update the properties of the specified tab.This can be used to configure the content of the tab. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-patch-tabs?view=graph-rest-1.0
@@ -121,7 +121,7 @@ func (m *ItemTeamChannelsItemTabsTeamsTabItemRequestBuilder) Patch(ctx context.C
 func (m *ItemTeamChannelsItemTabsTeamsTabItemRequestBuilder) TeamsApp()(*ItemTeamChannelsItemTabsItemTeamsAppRequestBuilder) {
     return NewItemTeamChannelsItemTabsItemTeamsAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation removes (unpins) a tab from the specified channel within a team. 
+// ToDeleteRequestInformation removes (unpins) a tab from the specified channel within a team.  This API is supported in the following national cloud deployments.
 func (m *ItemTeamChannelsItemTabsTeamsTabItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamChannelsItemTabsTeamsTabItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -133,7 +133,7 @@ func (m *ItemTeamChannelsItemTabsTeamsTabItemRequestBuilder) ToDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of the specified tab in a channel within a team. 
+// ToGetRequestInformation retrieve the properties and relationships of the specified tab in a channel within a team.  This API is supported in the following national cloud deployments.
 func (m *ItemTeamChannelsItemTabsTeamsTabItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamChannelsItemTabsTeamsTabItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -149,7 +149,7 @@ func (m *ItemTeamChannelsItemTabsTeamsTabItemRequestBuilder) ToGetRequestInforma
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of the specified tab.This can be used to configure the content of the tab.
+// ToPatchRequestInformation update the properties of the specified tab.This can be used to configure the content of the tab. This API is supported in the following national cloud deployments.
 func (m *ItemTeamChannelsItemTabsTeamsTabItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, requestConfiguration *ItemTeamChannelsItemTabsTeamsTabItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

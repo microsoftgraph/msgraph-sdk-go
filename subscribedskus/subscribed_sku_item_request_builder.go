@@ -18,7 +18,7 @@ type SubscribedSkuItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SubscribedSkuItemRequestBuilderGetQueryParameters get a specific commercial subscription that an organization has acquired.
+// SubscribedSkuItemRequestBuilderGetQueryParameters get a specific commercial subscription that an organization has acquired. This API is supported in the following national cloud deployments.
 type SubscribedSkuItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -68,7 +68,7 @@ func (m *SubscribedSkuItemRequestBuilder) Delete(ctx context.Context, requestCon
     }
     return nil
 }
-// Get get a specific commercial subscription that an organization has acquired.
+// Get get a specific commercial subscription that an organization has acquired. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/subscribedsku-get?view=graph-rest-1.0
@@ -121,7 +121,7 @@ func (m *SubscribedSkuItemRequestBuilder) ToDeleteRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get a specific commercial subscription that an organization has acquired.
+// ToGetRequestInformation get a specific commercial subscription that an organization has acquired. This API is supported in the following national cloud deployments.
 func (m *SubscribedSkuItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubscribedSkuItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

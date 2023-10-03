@@ -18,7 +18,7 @@ type LearningProvidersLearningProviderItemRequestBuilderDeleteRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LearningProvidersLearningProviderItemRequestBuilderGetQueryParameters read the properties and relationships of a learningProvider object.
+// LearningProvidersLearningProviderItemRequestBuilderGetQueryParameters read the properties and relationships of a learningProvider object. This API is supported in the following national cloud deployments.
 type LearningProvidersLearningProviderItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *LearningProvidersLearningProviderItemRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// Get read the properties and relationships of a learningProvider object.
+// Get read the properties and relationships of a learningProvider object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/learningprovider-get?view=graph-rest-1.0
@@ -103,7 +103,7 @@ func (m *LearningProvidersLearningProviderItemRequestBuilder) LearningContents()
 func (m *LearningProvidersLearningProviderItemRequestBuilder) LearningCourseActivities()(*LearningProvidersItemLearningCourseActivitiesRequestBuilder) {
     return NewLearningProvidersItemLearningCourseActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a learningProvider object.
+// Patch update the properties of a learningProvider object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/learningprovider-update?view=graph-rest-1.0
@@ -137,7 +137,7 @@ func (m *LearningProvidersLearningProviderItemRequestBuilder) ToDeleteRequestInf
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a learningProvider object.
+// ToGetRequestInformation read the properties and relationships of a learningProvider object. This API is supported in the following national cloud deployments.
 func (m *LearningProvidersLearningProviderItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LearningProvidersLearningProviderItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -153,7 +153,7 @@ func (m *LearningProvidersLearningProviderItemRequestBuilder) ToGetRequestInform
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a learningProvider object.
+// ToPatchRequestInformation update the properties of a learningProvider object. This API is supported in the following national cloud deployments.
 func (m *LearningProvidersLearningProviderItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LearningProviderable, requestConfiguration *LearningProvidersLearningProviderItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

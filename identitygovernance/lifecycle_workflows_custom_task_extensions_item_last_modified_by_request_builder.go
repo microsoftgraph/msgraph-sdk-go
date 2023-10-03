@@ -63,6 +63,10 @@ func (m *LifecycleWorkflowsCustomTaskExtensionsItemLastModifiedByRequestBuilder)
 func (m *LifecycleWorkflowsCustomTaskExtensionsItemLastModifiedByRequestBuilder) MailboxSettings()(*LifecycleWorkflowsCustomTaskExtensionsItemLastModifiedByMailboxSettingsRequestBuilder) {
     return NewLifecycleWorkflowsCustomTaskExtensionsItemLastModifiedByMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ServiceProvisioningErrors the serviceProvisioningErrors property
+func (m *LifecycleWorkflowsCustomTaskExtensionsItemLastModifiedByRequestBuilder) ServiceProvisioningErrors()(*LifecycleWorkflowsCustomTaskExtensionsItemLastModifiedByServiceProvisioningErrorsRequestBuilder) {
+    return NewLifecycleWorkflowsCustomTaskExtensionsItemLastModifiedByServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation the unique identifier of the Azure AD user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.
 func (m *LifecycleWorkflowsCustomTaskExtensionsItemLastModifiedByRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsCustomTaskExtensionsItemLastModifiedByRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

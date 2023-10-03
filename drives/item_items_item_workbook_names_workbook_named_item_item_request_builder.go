@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilderGetQueryParameters retrieve the properties and relationships of nameditem object.
+// ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilderGetQueryParameters retrieve the properties and relationships of nameditem object. This API is supported in the following national cloud deployments.
 type ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get retrieve the properties and relationships of nameditem object.
+// Get retrieve the properties and relationships of nameditem object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/nameditem-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilder) Get(ctx 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookNamedItemable), nil
 }
-// Patch update the properties of nameditem object.
+// Patch update the properties of nameditem object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/nameditem-update?view=graph-rest-1.0
@@ -130,7 +130,7 @@ func (m *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilder) ToDelete
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of nameditem object.
+// ToGetRequestInformation retrieve the properties and relationships of nameditem object. This API is supported in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -146,7 +146,7 @@ func (m *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilder) ToGetReq
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of nameditem object.
+// ToPatchRequestInformation update the properties of nameditem object. This API is supported in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookNamedItemable, requestConfiguration *ItemItemsItemWorkbookNamesWorkbookNamedItemItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

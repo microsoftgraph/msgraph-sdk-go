@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceHostsItemComponentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceHostsItemComponentsRequestBuilderGetQueryParameters get a list of hostComponent resources.
+// ThreatIntelligenceHostsItemComponentsRequestBuilderGetQueryParameters get a list of hostComponent resources. This API is supported in the following national cloud deployments.
 type ThreatIntelligenceHostsItemComponentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewThreatIntelligenceHostsItemComponentsRequestBuilder(rawUrl string, reque
 func (m *ThreatIntelligenceHostsItemComponentsRequestBuilder) Count()(*ThreatIntelligenceHostsItemComponentsCountRequestBuilder) {
     return NewThreatIntelligenceHostsItemComponentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of hostComponent resources.
+// Get get a list of hostComponent resources. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-host-list-components?view=graph-rest-1.0
@@ -89,7 +89,7 @@ func (m *ThreatIntelligenceHostsItemComponentsRequestBuilder) Get(ctx context.Co
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HostComponentCollectionResponseable), nil
 }
-// ToGetRequestInformation get a list of hostComponent resources.
+// ToGetRequestInformation get a list of hostComponent resources. This API is supported in the following national cloud deployments.
 func (m *ThreatIntelligenceHostsItemComponentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemComponentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
