@@ -149,7 +149,7 @@ func (m *SearchHitsContainer) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTotal gets the total property value. The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.
+// GetTotal gets the total property value. The total number of results. Note this isn't the number of results on the page, but the total number of results satisfying the query.
 func (m *SearchHitsContainer) GetTotal()(*int32) {
     val, err := m.GetBackingStore().Get("total")
     if err != nil {
@@ -251,7 +251,7 @@ func (m *SearchHitsContainer) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTotal sets the total property value. The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.
+// SetTotal sets the total property value. The total number of results. Note this isn't the number of results on the page, but the total number of results satisfying the query.
 func (m *SearchHitsContainer) SetTotal(value *int32)() {
     err := m.GetBackingStore().Set("total", value)
     if err != nil {

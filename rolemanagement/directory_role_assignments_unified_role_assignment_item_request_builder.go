@@ -18,7 +18,7 @@ type DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a unifiedRoleAssignment object.
+// DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a unifiedRoleAssignment object. This API is supported in the following national cloud deployments.
 type DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,7 @@ func NewDirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a unifiedRoleAssignment object.
+// Delete delete a unifiedRoleAssignment object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/unifiedroleassignment-delete?view=graph-rest-1.0
@@ -81,7 +81,7 @@ func (m *DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) Delete
 func (m *DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) DirectoryScope()(*DirectoryRoleAssignmentsItemDirectoryScopeRequestBuilder) {
     return NewDirectoryRoleAssignmentsItemDirectoryScopeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of a unifiedRoleAssignment object.
+// Get retrieve the properties and relationships of a unifiedRoleAssignment object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/unifiedroleassignment-get?view=graph-rest-1.0
@@ -130,7 +130,7 @@ func (m *DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) Princi
 func (m *DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) RoleDefinition()(*DirectoryRoleAssignmentsItemRoleDefinitionRequestBuilder) {
     return NewDirectoryRoleAssignmentsItemRoleDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a unifiedRoleAssignment object.
+// ToDeleteRequestInformation delete a unifiedRoleAssignment object. This API is supported in the following national cloud deployments.
 func (m *DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) ToDele
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a unifiedRoleAssignment object.
+// ToGetRequestInformation retrieve the properties and relationships of a unifiedRoleAssignment object. This API is supported in the following national cloud deployments.
 func (m *DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

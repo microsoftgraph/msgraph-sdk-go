@@ -50,6 +50,7 @@ func NewItemJoinedTeamsItemPermissionGrantsDeltaRequestBuilder(rawUrl string, re
     return NewItemJoinedTeamsItemPermissionGrantsDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function delta
+// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 func (m *ItemJoinedTeamsItemPermissionGrantsDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemPermissionGrantsDeltaRequestBuilderGetRequestConfiguration)(ItemJoinedTeamsItemPermissionGrantsDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -67,6 +68,25 @@ func (m *ItemJoinedTeamsItemPermissionGrantsDeltaRequestBuilder) Get(ctx context
         return nil, nil
     }
     return res.(ItemJoinedTeamsItemPermissionGrantsDeltaResponseable), nil
+}
+// GetAsDeltaGetResponse invoke function delta
+func (m *ItemJoinedTeamsItemPermissionGrantsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemPermissionGrantsDeltaRequestBuilderGetRequestConfiguration)(ItemJoinedTeamsItemPermissionGrantsDeltaGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemJoinedTeamsItemPermissionGrantsDeltaGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemJoinedTeamsItemPermissionGrantsDeltaGetResponseable), nil
 }
 // ToGetRequestInformation invoke function delta
 func (m *ItemJoinedTeamsItemPermissionGrantsDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemPermissionGrantsDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

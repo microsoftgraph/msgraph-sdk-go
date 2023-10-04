@@ -30,7 +30,7 @@ func NewCasesEdiscoveryCasesItemMicrosoftGraphSecurityReopenRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemMicrosoftGraphSecurityReopenRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post reopen an eDiscovery case that was closed. For details, see Reopen a closed case.
+// Post reopen an eDiscovery case that was closed. For details, see Reopen a closed case. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycase-reopen?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *CasesEdiscoveryCasesItemMicrosoftGraphSecurityReopenRequestBuilder) Pos
     }
     return nil
 }
-// ToPostRequestInformation reopen an eDiscovery case that was closed. For details, see Reopen a closed case.
+// ToPostRequestInformation reopen an eDiscovery case that was closed. For details, see Reopen a closed case. This API is supported in the following national cloud deployments.
 func (m *CasesEdiscoveryCasesItemMicrosoftGraphSecurityReopenRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemMicrosoftGraphSecurityReopenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

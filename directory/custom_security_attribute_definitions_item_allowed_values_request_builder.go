@@ -11,7 +11,7 @@ import (
 type CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilderGetQueryParameters get a list of the allowedValue objects and their properties.
+// CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilderGetQueryParameters get a list of the allowedValue objects and their properties. This API is supported in the following national cloud deployments.
 type CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewCustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilder(rawUrl
 func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilder) Count()(*CustomSecurityAttributeDefinitionsItemAllowedValuesCountRequestBuilder) {
     return NewCustomSecurityAttributeDefinitionsItemAllowedValuesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the allowedValue objects and their properties.
+// Get get a list of the allowedValue objects and their properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/customsecurityattributedefinition-list-allowedvalues?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilder) Get(
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AllowedValueCollectionResponseable), nil
 }
-// Post create a new allowedValue object.
+// Post create a new allowedValue object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/customsecurityattributedefinition-post-allowedvalues?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilder) Post
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AllowedValueable), nil
 }
-// ToGetRequestInformation get a list of the allowedValue objects and their properties.
+// ToGetRequestInformation get a list of the allowedValue objects and their properties. This API is supported in the following national cloud deployments.
 func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilder) ToGe
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new allowedValue object.
+// ToPostRequestInformation create a new allowedValue object. This API is supported in the following national cloud deployments.
 func (m *CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AllowedValueable, requestConfiguration *CustomSecurityAttributeDefinitionsItemAllowedValuesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

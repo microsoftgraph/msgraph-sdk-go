@@ -271,7 +271,7 @@ func (m *AlertEvidence) GetRemediationStatusDetails()(*string) {
     }
     return nil
 }
-// GetRoles gets the roles property value. The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role Attacker.
+// GetRoles gets the roles property value. The role/s that an evidence entity represents in an alert, for example, an IP address that is associated with an attacker has the evidence role Attacker.
 func (m *AlertEvidence) GetRoles()([]EvidenceRole) {
     val, err := m.GetBackingStore().Get("roles")
     if err != nil {
@@ -410,7 +410,7 @@ func (m *AlertEvidence) SetRemediationStatusDetails(value *string)() {
         panic(err)
     }
 }
-// SetRoles sets the roles property value. The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role Attacker.
+// SetRoles sets the roles property value. The role/s that an evidence entity represents in an alert, for example, an IP address that is associated with an attacker has the evidence role Attacker.
 func (m *AlertEvidence) SetRoles(value []EvidenceRole)() {
     err := m.GetBackingStore().Set("roles", value)
     if err != nil {

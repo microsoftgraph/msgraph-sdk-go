@@ -34,7 +34,7 @@ func (m *ProvisioningErrorInfo) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAdditionalDetails gets the additionalDetails property value. Additional details in case of error.
+// GetAdditionalDetails gets the additionalDetails property value. Additional details if there's error.
 func (m *ProvisioningErrorInfo) GetAdditionalDetails()(*string) {
     val, err := m.GetBackingStore().Get("additionalDetails")
     if err != nil {
@@ -223,7 +223,7 @@ func (m *ProvisioningErrorInfo) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAdditionalDetails sets the additionalDetails property value. Additional details in case of error.
+// SetAdditionalDetails sets the additionalDetails property value. Additional details if there's error.
 func (m *ProvisioningErrorInfo) SetAdditionalDetails(value *string)() {
     err := m.GetBackingStore().Set("additionalDetails", value)
     if err != nil {

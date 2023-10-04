@@ -54,7 +54,7 @@ func NewUsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemReque
     urlParams["request-raw-url"] = rawUrl
     return NewUsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a feedback resource from a submission. This can only be done by a teacher.
+// Delete delete a feedback resource from a submission. This can only be done by a teacher. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationfeedbackresourceoutcome-delete?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *UsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequ
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationOutcomeable), nil
 }
-// Patch update the properties of an educationOutcome object. Only teachers can perform this operation.
+// Patch update the properties of an educationOutcome object. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationoutcome-update?view=graph-rest-1.0
@@ -114,7 +114,7 @@ func (m *UsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequ
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationOutcomeable), nil
 }
-// ToDeleteRequestInformation delete a feedback resource from a submission. This can only be done by a teacher.
+// ToDeleteRequestInformation delete a feedback resource from a submission. This can only be done by a teacher. This API is supported in the following national cloud deployments.
 func (m *UsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *UsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequ
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an educationOutcome object. Only teachers can perform this operation.
+// ToPatchRequestInformation update the properties of an educationOutcome object. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
 func (m *UsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationOutcomeable, requestConfiguration *UsersItemAssignmentsItemSubmissionsItemOutcomesEducationOutcomeItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

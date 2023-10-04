@@ -11,7 +11,7 @@ import (
 type MeUserRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MeUserRequestBuilderGetQueryParameters retrieve the simple directory user that corresponds to this educationUser.
+// MeUserRequestBuilderGetQueryParameters retrieve the simple directory user that corresponds to this educationUser. This API is supported in the following national cloud deployments.
 type MeUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewMeUserRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewMeUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve the simple directory user that corresponds to this educationUser.
+// Get retrieve the simple directory user that corresponds to this educationUser. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-get-user?view=graph-rest-1.0
@@ -66,7 +66,11 @@ func (m *MeUserRequestBuilder) Get(ctx context.Context, requestConfiguration *Me
 func (m *MeUserRequestBuilder) MailboxSettings()(*MeUserMailboxSettingsRequestBuilder) {
     return NewMeUserMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve the simple directory user that corresponds to this educationUser.
+// ServiceProvisioningErrors the serviceProvisioningErrors property
+func (m *MeUserRequestBuilder) ServiceProvisioningErrors()(*MeUserServiceProvisioningErrorsRequestBuilder) {
+    return NewMeUserServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ToGetRequestInformation retrieve the simple directory user that corresponds to this educationUser. This API is supported in the following national cloud deployments.
 func (m *MeUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MeUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

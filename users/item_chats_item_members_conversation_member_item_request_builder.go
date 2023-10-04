@@ -18,7 +18,7 @@ type ItemChatsItemMembersConversationMemberItemRequestBuilderDeleteRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemChatsItemMembersConversationMemberItemRequestBuilderGetQueryParameters retrieve a conversationMember from a chat or channel.
+// ItemChatsItemMembersConversationMemberItemRequestBuilderGetQueryParameters retrieve a conversationMember from a chat or channel. This API is supported in the following national cloud deployments.
 type ItemChatsItemMembersConversationMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemChatsItemMembersConversationMemberItemRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewItemChatsItemMembersConversationMemberItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a conversationMember from a chat.
+// Delete remove a conversationMember from a chat. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chat-delete-members?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemChatsItemMembersConversationMemberItemRequestBuilder) Delete(ctx co
     }
     return nil
 }
-// Get retrieve a conversationMember from a chat or channel.
+// Get retrieve a conversationMember from a chat or channel. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0
@@ -114,7 +114,7 @@ func (m *ItemChatsItemMembersConversationMemberItemRequestBuilder) Patch(ctx con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberable), nil
 }
-// ToDeleteRequestInformation remove a conversationMember from a chat.
+// ToDeleteRequestInformation remove a conversationMember from a chat. This API is supported in the following national cloud deployments.
 func (m *ItemChatsItemMembersConversationMemberItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemMembersConversationMemberItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -126,7 +126,7 @@ func (m *ItemChatsItemMembersConversationMemberItemRequestBuilder) ToDeleteReque
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve a conversationMember from a chat or channel.
+// ToGetRequestInformation retrieve a conversationMember from a chat or channel. This API is supported in the following national cloud deployments.
 func (m *ItemChatsItemMembersConversationMemberItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemMembersConversationMemberItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

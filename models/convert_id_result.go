@@ -38,7 +38,7 @@ func (m *ConvertIdResult) GetAdditionalData()(map[string]any) {
 func (m *ConvertIdResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetErrorDetails gets the errorDetails property value. An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.
+// GetErrorDetails gets the errorDetails property value. An error object indicating the reason for the conversion failure. This value isn't present if the conversion succeeded.
 func (m *ConvertIdResult) GetErrorDetails()(GenericErrorable) {
     val, err := m.GetBackingStore().Get("errorDetails")
     if err != nil {
@@ -116,7 +116,7 @@ func (m *ConvertIdResult) GetSourceId()(*string) {
     }
     return nil
 }
-// GetTargetId gets the targetId property value. The converted identifier. This value is not present if the conversion failed.
+// GetTargetId gets the targetId property value. The converted identifier. This value isn't present if the conversion failed.
 func (m *ConvertIdResult) GetTargetId()(*string) {
     val, err := m.GetBackingStore().Get("targetId")
     if err != nil {
@@ -172,7 +172,7 @@ func (m *ConvertIdResult) SetAdditionalData(value map[string]any)() {
 func (m *ConvertIdResult) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetErrorDetails sets the errorDetails property value. An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.
+// SetErrorDetails sets the errorDetails property value. An error object indicating the reason for the conversion failure. This value isn't present if the conversion succeeded.
 func (m *ConvertIdResult) SetErrorDetails(value GenericErrorable)() {
     err := m.GetBackingStore().Set("errorDetails", value)
     if err != nil {
@@ -193,7 +193,7 @@ func (m *ConvertIdResult) SetSourceId(value *string)() {
         panic(err)
     }
 }
-// SetTargetId sets the targetId property value. The converted identifier. This value is not present if the conversion failed.
+// SetTargetId sets the targetId property value. The converted identifier. This value isn't present if the conversion failed.
 func (m *ConvertIdResult) SetTargetId(value *string)() {
     err := m.GetBackingStore().Set("targetId", value)
     if err != nil {

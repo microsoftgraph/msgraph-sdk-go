@@ -44,7 +44,7 @@ func CreateOnenoteEntityHierarchyModelFromDiscriminatorValue(parseNode i878a80d2
     }
     return NewOnenoteEntityHierarchyModel(), nil
 }
-// GetCreatedBy gets the createdBy property value. Identity of the user, device, and application which created the item. Read-only.
+// GetCreatedBy gets the createdBy property value. Identity of the user, device, and application that created the item. Read-only.
 func (m *OnenoteEntityHierarchyModel) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -111,7 +111,7 @@ func (m *OnenoteEntityHierarchyModel) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user, device, and application which created the item. Read-only.
+// GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user, device, and application that created the item. Read-only.
 func (m *OnenoteEntityHierarchyModel) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -165,7 +165,7 @@ func (m *OnenoteEntityHierarchyModel) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetCreatedBy sets the createdBy property value. Identity of the user, device, and application which created the item. Read-only.
+// SetCreatedBy sets the createdBy property value. Identity of the user, device, and application that created the item. Read-only.
 func (m *OnenoteEntityHierarchyModel) SetCreatedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("createdBy", value)
     if err != nil {
@@ -179,7 +179,7 @@ func (m *OnenoteEntityHierarchyModel) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user, device, and application which created the item. Read-only.
+// SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user, device, and application that created the item. Read-only.
 func (m *OnenoteEntityHierarchyModel) SetLastModifiedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {

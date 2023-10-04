@@ -105,7 +105,7 @@ func (m *AttachmentBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3a
     }
     return nil
 }
-// GetName gets the name property value. The display name of the attachment. This does not need to be the actual file name.
+// GetName gets the name property value. The display name of the attachment. This doesn't need to be the actual file name.
 func (m *AttachmentBase) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -173,7 +173,7 @@ func (m *AttachmentBase) SetLastModifiedDateTime(value *i336074805fc853987abe6f7
         panic(err)
     }
 }
-// SetName sets the name property value. The display name of the attachment. This does not need to be the actual file name.
+// SetName sets the name property value. The display name of the attachment. This doesn't need to be the actual file name.
 func (m *AttachmentBase) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {

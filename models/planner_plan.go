@@ -31,7 +31,7 @@ func (m *PlannerPlan) GetBuckets()([]PlannerBucketable) {
     }
     return nil
 }
-// GetContainer gets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
+// GetContainer gets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it's set, this property can’t be updated. Required.
 func (m *PlannerPlan) GetContainer()(PlannerPlanContainerable) {
     val, err := m.GetBackingStore().Get("container")
     if err != nil {
@@ -64,7 +64,7 @@ func (m *PlannerPlan) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     }
     return nil
 }
-// GetDetails gets the details property value. Read-only. Nullable. Additional details about the plan.
+// GetDetails gets the details property value. Read-only. Nullable. Extra details about the plan.
 func (m *PlannerPlan) GetDetails()(PlannerPlanDetailsable) {
     val, err := m.GetBackingStore().Get("details")
     if err != nil {
@@ -280,7 +280,7 @@ func (m *PlannerPlan) SetBuckets(value []PlannerBucketable)() {
         panic(err)
     }
 }
-// SetContainer sets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
+// SetContainer sets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it's set, this property can’t be updated. Required.
 func (m *PlannerPlan) SetContainer(value PlannerPlanContainerable)() {
     err := m.GetBackingStore().Set("container", value)
     if err != nil {
@@ -301,7 +301,7 @@ func (m *PlannerPlan) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a
         panic(err)
     }
 }
-// SetDetails sets the details property value. Read-only. Nullable. Additional details about the plan.
+// SetDetails sets the details property value. Read-only. Nullable. Extra details about the plan.
 func (m *PlannerPlan) SetDetails(value PlannerPlanDetailsable)() {
     err := m.GetBackingStore().Set("details", value)
     if err != nil {

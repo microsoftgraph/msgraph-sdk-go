@@ -31,7 +31,7 @@ func NewItemSynchronizationTemplatesItemSchemaDirectoriesItemDiscoverRequestBuil
     urlParams["request-raw-url"] = rawUrl
     return NewItemSynchronizationTemplatesItemSchemaDirectoriesItemDiscoverRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post discover the latest schema definition for provisioning to an application. 
+// Post discover the latest schema definition for provisioning to an application.  This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
@@ -53,7 +53,7 @@ func (m *ItemSynchronizationTemplatesItemSchemaDirectoriesItemDiscoverRequestBui
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryDefinitionable), nil
 }
-// ToPostRequestInformation discover the latest schema definition for provisioning to an application. 
+// ToPostRequestInformation discover the latest schema definition for provisioning to an application.  This API is supported in the following national cloud deployments.
 func (m *ItemSynchronizationTemplatesItemSchemaDirectoriesItemDiscoverRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesItemSchemaDirectoriesItemDiscoverRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -30,7 +30,7 @@ func NewCasesEdiscoveryCasesItemNoncustodialDataSourcesItemMicrosoftGraphSecurit
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemNoncustodialDataSourcesItemMicrosoftGraphSecurityReleaseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post release the non-custodial data source from the case.
+// Post release the non-custodial data source from the case. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-release?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *CasesEdiscoveryCasesItemNoncustodialDataSourcesItemMicrosoftGraphSecuri
     }
     return nil
 }
-// ToPostRequestInformation release the non-custodial data source from the case.
+// ToPostRequestInformation release the non-custodial data source from the case. This API is supported in the following national cloud deployments.
 func (m *CasesEdiscoveryCasesItemNoncustodialDataSourcesItemMicrosoftGraphSecurityReleaseRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemNoncustodialDataSourcesItemMicrosoftGraphSecurityReleaseRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -31,6 +31,7 @@ func NewDeviceCompliancePoliciesItemAssignRequestBuilder(rawUrl string, requestA
     return NewDeviceCompliancePoliciesItemAssignRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post not yet documented
+// Deprecated: This method is obsolete. Use PostAsAssignPostResponse instead.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicy-assign?view=graph-rest-1.0
@@ -51,6 +52,28 @@ func (m *DeviceCompliancePoliciesItemAssignRequestBuilder) Post(ctx context.Cont
         return nil, nil
     }
     return res.(DeviceCompliancePoliciesItemAssignResponseable), nil
+}
+// PostAsAssignPostResponse not yet documented
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicy-assign?view=graph-rest-1.0
+func (m *DeviceCompliancePoliciesItemAssignRequestBuilder) PostAsAssignPostResponse(ctx context.Context, body DeviceCompliancePoliciesItemAssignPostRequestBodyable, requestConfiguration *DeviceCompliancePoliciesItemAssignRequestBuilderPostRequestConfiguration)(DeviceCompliancePoliciesItemAssignPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDeviceCompliancePoliciesItemAssignPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(DeviceCompliancePoliciesItemAssignPostResponseable), nil
 }
 // ToPostRequestInformation not yet documented
 func (m *DeviceCompliancePoliciesItemAssignRequestBuilder) ToPostRequestInformation(ctx context.Context, body DeviceCompliancePoliciesItemAssignPostRequestBodyable, requestConfiguration *DeviceCompliancePoliciesItemAssignRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

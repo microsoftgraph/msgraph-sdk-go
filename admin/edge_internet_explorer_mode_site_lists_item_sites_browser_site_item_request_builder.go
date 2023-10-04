@@ -18,7 +18,7 @@ type EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderDele
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderGetQueryParameters get a browserSite that resides on a browserSiteList.
+// EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderGetQueryParameters get a browserSite that resides on a browserSiteList. This API is supported in the following national cloud deployments.
 type EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewEdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewEdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a browserSite from a browserSiteList.
+// Delete delete a browserSite from a browserSiteList. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/browsersitelist-delete-sites?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder
     }
     return nil
 }
-// Get get a browserSite that resides on a browserSiteList.
+// Get get a browserSite that resides on a browserSiteList. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/browsersite-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteable), nil
 }
-// Patch update the properties of a browserSite object.
+// Patch update the properties of a browserSite object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/browsersite-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteable), nil
 }
-// ToDeleteRequestInformation delete a browserSite from a browserSiteList.
+// ToDeleteRequestInformation delete a browserSite from a browserSiteList. This API is supported in the following national cloud deployments.
 func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get a browserSite that resides on a browserSiteList.
+// ToGetRequestInformation get a browserSite that resides on a browserSiteList. This API is supported in the following national cloud deployments.
 func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a browserSite object.
+// ToPatchRequestInformation update the properties of a browserSite object. This API is supported in the following national cloud deployments.
 func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteable, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

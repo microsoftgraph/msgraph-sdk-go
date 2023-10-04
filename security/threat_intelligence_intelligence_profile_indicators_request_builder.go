@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilderGetQueryParameters read the properties and relationships of a intelligenceProfileIndicator object.
+// ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilderGetQueryParameters read the properties and relationships of a intelligenceProfileIndicator object. This API is supported in the following national cloud deployments.
 type ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilder(rawUrl str
 func (m *ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilder) Count()(*ThreatIntelligenceIntelligenceProfileIndicatorsCountRequestBuilder) {
     return NewThreatIntelligenceIntelligenceProfileIndicatorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a intelligenceProfileIndicator object.
+// Get read the properties and relationships of a intelligenceProfileIndicator object. This API is supported in the following national cloud deployments.
 func (m *ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.IntelligenceProfileIndicatorCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilder) Post(ctx
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.IntelligenceProfileIndicatorable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a intelligenceProfileIndicator object.
+// ToGetRequestInformation read the properties and relationships of a intelligenceProfileIndicator object. This API is supported in the following national cloud deployments.
 func (m *ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceIntelligenceProfileIndicatorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

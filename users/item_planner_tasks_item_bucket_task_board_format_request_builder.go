@@ -18,7 +18,7 @@ type ItemPlannerTasksItemBucketTaskBoardFormatRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemPlannerTasksItemBucketTaskBoardFormatRequestBuilderGetQueryParameters retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
+// ItemPlannerTasksItemBucketTaskBoardFormatRequestBuilderGetQueryParameters retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object. This API is supported in the following national cloud deployments.
 type ItemPlannerTasksItemBucketTaskBoardFormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemPlannerTasksItemBucketTaskBoardFormatRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
+// Get retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *ItemPlannerTasksItemBucketTaskBoardFormatRequestBuilder) ToDeleteReques
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
+// ToGetRequestInformation retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object. This API is supported in the following national cloud deployments.
 func (m *ItemPlannerTasksItemBucketTaskBoardFormatRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerTasksItemBucketTaskBoardFormatRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

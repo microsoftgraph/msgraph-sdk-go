@@ -31,6 +31,7 @@ func NewItemSitesRemoveRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewItemSitesRemoveRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post unfollow a user's site or multiple sites.
+// Deprecated: This method is obsolete. Use PostAsRemovePostResponse instead.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/site-unfollow?view=graph-rest-1.0
@@ -51,6 +52,28 @@ func (m *ItemSitesRemoveRequestBuilder) Post(ctx context.Context, body ItemSites
         return nil, nil
     }
     return res.(ItemSitesRemoveResponseable), nil
+}
+// PostAsRemovePostResponse unfollow a user's site or multiple sites.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-unfollow?view=graph-rest-1.0
+func (m *ItemSitesRemoveRequestBuilder) PostAsRemovePostResponse(ctx context.Context, body ItemSitesRemovePostRequestBodyable, requestConfiguration *ItemSitesRemoveRequestBuilderPostRequestConfiguration)(ItemSitesRemovePostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSitesRemovePostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemSitesRemovePostResponseable), nil
 }
 // ToPostRequestInformation unfollow a user's site or multiple sites.
 func (m *ItemSitesRemoveRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSitesRemovePostRequestBodyable, requestConfiguration *ItemSitesRemoveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

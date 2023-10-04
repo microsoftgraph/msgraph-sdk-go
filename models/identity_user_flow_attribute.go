@@ -61,7 +61,7 @@ func (m *IdentityUserFlowAttribute) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The display name of the user flow attribute.
+// GetDisplayName gets the displayName property value. The display name of the user flow attribute.  Supports $filter (eq, ne).
 func (m *IdentityUserFlowAttribute) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -176,7 +176,7 @@ func (m *IdentityUserFlowAttribute) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The display name of the user flow attribute.
+// SetDisplayName sets the displayName property value. The display name of the user flow attribute.  Supports $filter (eq, ne).
 func (m *IdentityUserFlowAttribute) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

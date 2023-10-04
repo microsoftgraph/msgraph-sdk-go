@@ -11,7 +11,7 @@ import (
 type ItemCalendarGroupsItemCalendarsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCalendarGroupsItemCalendarsRequestBuilderGetQueryParameters retrieve a list of calendars belonging to a calendar group.
+// ItemCalendarGroupsItemCalendarsRequestBuilderGetQueryParameters retrieve a list of calendars belonging to a calendar group. This API is supported in the following national cloud deployments.
 type ItemCalendarGroupsItemCalendarsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -70,7 +70,7 @@ func NewItemCalendarGroupsItemCalendarsRequestBuilder(rawUrl string, requestAdap
 func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) Count()(*ItemCalendarGroupsItemCalendarsCountRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of calendars belonging to a calendar group.
+// Get retrieve a list of calendars belonging to a calendar group. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/calendargroup-list-calendars?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) Get(ctx context.Context,
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarCollectionResponseable), nil
 }
-// Post use this API to create a new calendar in a calendar group for a user.
+// Post use this API to create a new calendar in a calendar group for a user. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/calendargroup-post-calendars?view=graph-rest-1.0
@@ -114,7 +114,7 @@ func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) Post(ctx context.Context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Calendarable), nil
 }
-// ToGetRequestInformation retrieve a list of calendars belonging to a calendar group.
+// ToGetRequestInformation retrieve a list of calendars belonging to a calendar group. This API is supported in the following national cloud deployments.
 func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -130,7 +130,7 @@ func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) ToGetRequestInformation(
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation use this API to create a new calendar in a calendar group for a user.
+// ToPostRequestInformation use this API to create a new calendar in a calendar group for a user. This API is supported in the following national cloud deployments.
 func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Calendarable, requestConfiguration *ItemCalendarGroupsItemCalendarsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

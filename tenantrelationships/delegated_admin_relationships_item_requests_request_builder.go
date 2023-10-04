@@ -11,7 +11,7 @@ import (
 type DelegatedAdminRelationshipsItemRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DelegatedAdminRelationshipsItemRequestsRequestBuilderGetQueryParameters get a list of the delegatedAdminRelationshipRequest objects and their properties.
+// DelegatedAdminRelationshipsItemRequestsRequestBuilderGetQueryParameters get a list of the delegatedAdminRelationshipRequest objects and their properties. This API is supported in the following national cloud deployments.
 type DelegatedAdminRelationshipsItemRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewDelegatedAdminRelationshipsItemRequestsRequestBuilder(rawUrl string, req
 func (m *DelegatedAdminRelationshipsItemRequestsRequestBuilder) Count()(*DelegatedAdminRelationshipsItemRequestsCountRequestBuilder) {
     return NewDelegatedAdminRelationshipsItemRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the delegatedAdminRelationshipRequest objects and their properties.
+// Get get a list of the delegatedAdminRelationshipRequest objects and their properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-requests?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *DelegatedAdminRelationshipsItemRequestsRequestBuilder) Get(ctx context.
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedAdminRelationshipRequestCollectionResponseable), nil
 }
-// Post create a new delegatedAdminRelationshipRequest object.
+// Post create a new delegatedAdminRelationshipRequest object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/delegatedadminrelationship-post-requests?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *DelegatedAdminRelationshipsItemRequestsRequestBuilder) Post(ctx context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedAdminRelationshipRequestable), nil
 }
-// ToGetRequestInformation get a list of the delegatedAdminRelationshipRequest objects and their properties.
+// ToGetRequestInformation get a list of the delegatedAdminRelationshipRequest objects and their properties. This API is supported in the following national cloud deployments.
 func (m *DelegatedAdminRelationshipsItemRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DelegatedAdminRelationshipsItemRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *DelegatedAdminRelationshipsItemRequestsRequestBuilder) ToGetRequestInfo
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new delegatedAdminRelationshipRequest object.
+// ToPostRequestInformation create a new delegatedAdminRelationshipRequest object. This API is supported in the following national cloud deployments.
 func (m *DelegatedAdminRelationshipsItemRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedAdminRelationshipRequestable, requestConfiguration *DelegatedAdminRelationshipsItemRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

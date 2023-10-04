@@ -18,7 +18,7 @@ type EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderGetQueryParameters in Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object.
+// EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderGetQueryParameters in Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object. This API is supported in the following national cloud deployments.
 type EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -66,7 +66,7 @@ func NewEntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItem
 func (m *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) CustomExtensionStageSettings()(*EntitlementManagementAssignmentPoliciesItemCustomExtensionStageSettingsRequestBuilder) {
     return NewEntitlementManagementAssignmentPoliciesItemCustomExtensionStageSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete in Azure AD entitlement management, delete an accessPackageAssignmentPolicy.
+// Delete in Azure AD entitlement management, delete an accessPackageAssignmentPolicy. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accesspackageassignmentpolicy-delete?view=graph-rest-1.0
@@ -85,7 +85,7 @@ func (m *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyIte
     }
     return nil
 }
-// Get in Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object.
+// Get in Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accesspackageassignmentpolicy-get?view=graph-rest-1.0
@@ -130,7 +130,7 @@ func (m *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyIte
 func (m *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) Questions()(*EntitlementManagementAssignmentPoliciesItemQuestionsRequestBuilder) {
     return NewEntitlementManagementAssignmentPoliciesItemQuestionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation in Azure AD entitlement management, delete an accessPackageAssignmentPolicy.
+// ToDeleteRequestInformation in Azure AD entitlement management, delete an accessPackageAssignmentPolicy. This API is supported in the following national cloud deployments.
 func (m *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyIte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation in Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object.
+// ToGetRequestInformation in Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object. This API is supported in the following national cloud deployments.
 func (m *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentPoliciesAccessPackageAssignmentPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

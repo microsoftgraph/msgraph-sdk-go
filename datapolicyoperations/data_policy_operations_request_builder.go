@@ -11,7 +11,7 @@ import (
 type DataPolicyOperationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DataPolicyOperationsRequestBuilderGetQueryParameters retrieve the properties of a dataPolicyOperation object.
+// DataPolicyOperationsRequestBuilderGetQueryParameters retrieve the properties of a dataPolicyOperation object. This API is supported in the following national cloud deployments.
 type DataPolicyOperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewDataPolicyOperationsRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *DataPolicyOperationsRequestBuilder) Count()(*CountRequestBuilder) {
     return NewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties of a dataPolicyOperation object.
+// Get retrieve the properties of a dataPolicyOperation object. This API is supported in the following national cloud deployments.
 func (m *DataPolicyOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *DataPolicyOperationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *DataPolicyOperationsRequestBuilder) Post(ctx context.Context, body iadc
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DataPolicyOperationable), nil
 }
-// ToGetRequestInformation retrieve the properties of a dataPolicyOperation object.
+// ToGetRequestInformation retrieve the properties of a dataPolicyOperation object. This API is supported in the following national cloud deployments.
 func (m *DataPolicyOperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DataPolicyOperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

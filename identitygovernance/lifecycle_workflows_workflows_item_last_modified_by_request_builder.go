@@ -63,6 +63,10 @@ func (m *LifecycleWorkflowsWorkflowsItemLastModifiedByRequestBuilder) Get(ctx co
 func (m *LifecycleWorkflowsWorkflowsItemLastModifiedByRequestBuilder) MailboxSettings()(*LifecycleWorkflowsWorkflowsItemLastModifiedByMailboxSettingsRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemLastModifiedByMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ServiceProvisioningErrors the serviceProvisioningErrors property
+func (m *LifecycleWorkflowsWorkflowsItemLastModifiedByRequestBuilder) ServiceProvisioningErrors()(*LifecycleWorkflowsWorkflowsItemLastModifiedByServiceProvisioningErrorsRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsItemLastModifiedByServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation the unique identifier of the Azure Active Directory identity that last modified the workflow.
 func (m *LifecycleWorkflowsWorkflowsItemLastModifiedByRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemLastModifiedByRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

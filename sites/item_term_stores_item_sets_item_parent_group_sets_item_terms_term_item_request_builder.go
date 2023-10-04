@@ -18,7 +18,7 @@ type ItemTermStoresItemSetsItemParentGroupSetsItemTermsTermItemRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTermStoresItemSetsItemParentGroupSetsItemTermsTermItemRequestBuilderGetQueryParameters read the properties and relationships of a term object.
+// ItemTermStoresItemSetsItemParentGroupSetsItemTermsTermItemRequestBuilderGetQueryParameters read the properties and relationships of a term object. This API is supported in the following national cloud deployments.
 type ItemTermStoresItemSetsItemParentGroupSetsItemTermsTermItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,7 @@ func NewItemTermStoresItemSetsItemParentGroupSetsItemTermsTermItemRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewItemTermStoresItemSetsItemParentGroupSetsItemTermsTermItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a term object.
+// Delete delete a term object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/termstore-term-delete?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *ItemTermStoresItemSetsItemParentGroupSetsItemTermsTermItemRequestBuilde
     }
     return nil
 }
-// Get read the properties and relationships of a term object.
+// Get read the properties and relationships of a term object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/termstore-term-get?view=graph-rest-1.0
@@ -99,7 +99,7 @@ func (m *ItemTermStoresItemSetsItemParentGroupSetsItemTermsTermItemRequestBuilde
     }
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable), nil
 }
-// Patch update the properties of a term object.
+// Patch update the properties of a term object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/termstore-term-update?view=graph-rest-1.0
@@ -129,7 +129,7 @@ func (m *ItemTermStoresItemSetsItemParentGroupSetsItemTermsTermItemRequestBuilde
 func (m *ItemTermStoresItemSetsItemParentGroupSetsItemTermsTermItemRequestBuilder) Set()(*ItemTermStoresItemSetsItemParentGroupSetsItemTermsItemSetRequestBuilder) {
     return NewItemTermStoresItemSetsItemParentGroupSetsItemTermsItemSetRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a term object.
+// ToDeleteRequestInformation delete a term object. This API is supported in the following national cloud deployments.
 func (m *ItemTermStoresItemSetsItemParentGroupSetsItemTermsTermItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTermStoresItemSetsItemParentGroupSetsItemTermsTermItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -141,7 +141,7 @@ func (m *ItemTermStoresItemSetsItemParentGroupSetsItemTermsTermItemRequestBuilde
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a term object.
+// ToGetRequestInformation read the properties and relationships of a term object. This API is supported in the following national cloud deployments.
 func (m *ItemTermStoresItemSetsItemParentGroupSetsItemTermsTermItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTermStoresItemSetsItemParentGroupSetsItemTermsTermItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -157,7 +157,7 @@ func (m *ItemTermStoresItemSetsItemParentGroupSetsItemTermsTermItemRequestBuilde
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a term object.
+// ToPatchRequestInformation update the properties of a term object. This API is supported in the following national cloud deployments.
 func (m *ItemTermStoresItemSetsItemParentGroupSetsItemTermsTermItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable, requestConfiguration *ItemTermStoresItemSetsItemParentGroupSetsItemTermsTermItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

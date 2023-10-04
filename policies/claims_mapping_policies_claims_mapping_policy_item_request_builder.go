@@ -18,7 +18,7 @@ type ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a claimsMappingPolicy object.
+// ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a claimsMappingPolicy object. This API is supported in the following national cloud deployments.
 type ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,7 @@ func NewClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a claimsMappingPolicy object.
+// Delete delete a claimsMappingPolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/claimsmappingpolicy-delete?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) Delete(ctx 
     }
     return nil
 }
-// Get retrieve the properties and relationships of a claimsMappingPolicy object.
+// Get retrieve the properties and relationships of a claimsMappingPolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/claimsmappingpolicy-get?view=graph-rest-1.0
@@ -99,7 +99,7 @@ func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) Get(ctx con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ClaimsMappingPolicyable), nil
 }
-// Patch update the properties of a claimsMappingPolicy object.
+// Patch update the properties of a claimsMappingPolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/claimsmappingpolicy-update?view=graph-rest-1.0
@@ -121,7 +121,7 @@ func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) Patch(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ClaimsMappingPolicyable), nil
 }
-// ToDeleteRequestInformation delete a claimsMappingPolicy object.
+// ToDeleteRequestInformation delete a claimsMappingPolicy object. This API is supported in the following national cloud deployments.
 func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -133,7 +133,7 @@ func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) ToDeleteReq
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a claimsMappingPolicy object.
+// ToGetRequestInformation retrieve the properties and relationships of a claimsMappingPolicy object. This API is supported in the following national cloud deployments.
 func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -149,7 +149,7 @@ func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) ToGetReques
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a claimsMappingPolicy object.
+// ToPatchRequestInformation update the properties of a claimsMappingPolicy object. This API is supported in the following national cloud deployments.
 func (m *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ClaimsMappingPolicyable, requestConfiguration *ClaimsMappingPoliciesClaimsMappingPolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

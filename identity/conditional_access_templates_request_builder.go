@@ -11,7 +11,7 @@ import (
 type ConditionalAccessTemplatesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConditionalAccessTemplatesRequestBuilderGetQueryParameters get a list of the conditionalAccessTemplate objects and their properties.
+// ConditionalAccessTemplatesRequestBuilderGetQueryParameters get a list of the conditionalAccessTemplate objects and their properties. This API is supported in the following national cloud deployments.
 type ConditionalAccessTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewConditionalAccessTemplatesRequestBuilder(rawUrl string, requestAdapter i
 func (m *ConditionalAccessTemplatesRequestBuilder) Count()(*ConditionalAccessTemplatesCountRequestBuilder) {
     return NewConditionalAccessTemplatesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the conditionalAccessTemplate objects and their properties.
+// Get get a list of the conditionalAccessTemplate objects and their properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/conditionalaccessroot-list-templates?view=graph-rest-1.0
@@ -89,7 +89,7 @@ func (m *ConditionalAccessTemplatesRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConditionalAccessTemplateCollectionResponseable), nil
 }
-// ToGetRequestInformation get a list of the conditionalAccessTemplate objects and their properties.
+// ToGetRequestInformation get a list of the conditionalAccessTemplate objects and their properties. This API is supported in the following national cloud deployments.
 func (m *ConditionalAccessTemplatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderDeleteRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an accessPackageCatalog object.
+// EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an accessPackageCatalog object. This API is supported in the following national cloud deployments.
 type EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -62,7 +62,7 @@ func NewEntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder(rawU
 func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) CustomWorkflowExtensions()(*EntitlementManagementCatalogsItemCustomWorkflowExtensionsRequestBuilder) {
     return NewEntitlementManagementCatalogsItemCustomWorkflowExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete an accessPackageCatalog.
+// Delete delete an accessPackageCatalog. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accesspackagecatalog-delete?view=graph-rest-1.0
@@ -81,7 +81,7 @@ func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) De
     }
     return nil
 }
-// Get retrieve the properties and relationships of an accessPackageCatalog object.
+// Get retrieve the properties and relationships of an accessPackageCatalog object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accesspackagecatalog-get?view=graph-rest-1.0
@@ -103,7 +103,7 @@ func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) Ge
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCatalogable), nil
 }
-// Patch update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
+// Patch update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accesspackagecatalog-update?view=graph-rest-1.0
@@ -137,7 +137,7 @@ func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) Re
 func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) ResourceScopes()(*EntitlementManagementCatalogsItemResourceScopesRequestBuilder) {
     return NewEntitlementManagementCatalogsItemResourceScopesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete an accessPackageCatalog.
+// ToDeleteRequestInformation delete an accessPackageCatalog. This API is supported in the following national cloud deployments.
 func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -149,7 +149,7 @@ func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) To
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an accessPackageCatalog object.
+// ToGetRequestInformation retrieve the properties and relationships of an accessPackageCatalog object. This API is supported in the following national cloud deployments.
 func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -165,7 +165,7 @@ func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) To
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
+// ToPatchRequestInformation update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description. This API is supported in the following national cloud deployments.
 func (m *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCatalogable, requestConfiguration *EntitlementManagementCatalogsAccessPackageCatalogItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

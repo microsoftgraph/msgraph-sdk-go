@@ -224,7 +224,7 @@ func (m *AccessPackageAssignmentRequest) GetRequestor()(AccessPackageSubjectable
     }
     return nil
 }
-// GetRequestType gets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. A request from the user themselves would have requestType of userAdd, userUpdate or userRemove. This property cannot be changed once set.
+// GetRequestType gets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. A request from the user themselves would have requestType of userAdd, userUpdate or userRemove. This property can't be changed once set.
 func (m *AccessPackageAssignmentRequest) GetRequestType()(*AccessPackageRequestType) {
     val, err := m.GetBackingStore().Get("requestType")
     if err != nil {
@@ -235,7 +235,7 @@ func (m *AccessPackageAssignmentRequest) GetRequestType()(*AccessPackageRequestT
     }
     return nil
 }
-// GetSchedule gets the schedule property value. The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.
+// GetSchedule gets the schedule property value. The range of dates that access is to be assigned to the requestor. This property can't be changed once set.
 func (m *AccessPackageAssignmentRequest) GetSchedule()(EntitlementManagementScheduleable) {
     val, err := m.GetBackingStore().Get("schedule")
     if err != nil {
@@ -405,14 +405,14 @@ func (m *AccessPackageAssignmentRequest) SetRequestor(value AccessPackageSubject
         panic(err)
     }
 }
-// SetRequestType sets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. A request from the user themselves would have requestType of userAdd, userUpdate or userRemove. This property cannot be changed once set.
+// SetRequestType sets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. A request from the user themselves would have requestType of userAdd, userUpdate or userRemove. This property can't be changed once set.
 func (m *AccessPackageAssignmentRequest) SetRequestType(value *AccessPackageRequestType)() {
     err := m.GetBackingStore().Set("requestType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSchedule sets the schedule property value. The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.
+// SetSchedule sets the schedule property value. The range of dates that access is to be assigned to the requestor. This property can't be changed once set.
 func (m *AccessPackageAssignmentRequest) SetSchedule(value EntitlementManagementScheduleable)() {
     err := m.GetBackingStore().Set("schedule", value)
     if err != nil {

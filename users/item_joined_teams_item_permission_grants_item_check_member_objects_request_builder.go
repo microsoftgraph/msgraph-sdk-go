@@ -31,6 +31,7 @@ func NewItemJoinedTeamsItemPermissionGrantsItemCheckMemberObjectsRequestBuilder(
     return NewItemJoinedTeamsItemPermissionGrantsItemCheckMemberObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action checkMemberObjects
+// Deprecated: This method is obsolete. Use PostAsCheckMemberObjectsPostResponse instead.
 func (m *ItemJoinedTeamsItemPermissionGrantsItemCheckMemberObjectsRequestBuilder) Post(ctx context.Context, body ItemJoinedTeamsItemPermissionGrantsItemCheckMemberObjectsPostRequestBodyable, requestConfiguration *ItemJoinedTeamsItemPermissionGrantsItemCheckMemberObjectsRequestBuilderPostRequestConfiguration)(ItemJoinedTeamsItemPermissionGrantsItemCheckMemberObjectsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -48,6 +49,25 @@ func (m *ItemJoinedTeamsItemPermissionGrantsItemCheckMemberObjectsRequestBuilder
         return nil, nil
     }
     return res.(ItemJoinedTeamsItemPermissionGrantsItemCheckMemberObjectsResponseable), nil
+}
+// PostAsCheckMemberObjectsPostResponse invoke action checkMemberObjects
+func (m *ItemJoinedTeamsItemPermissionGrantsItemCheckMemberObjectsRequestBuilder) PostAsCheckMemberObjectsPostResponse(ctx context.Context, body ItemJoinedTeamsItemPermissionGrantsItemCheckMemberObjectsPostRequestBodyable, requestConfiguration *ItemJoinedTeamsItemPermissionGrantsItemCheckMemberObjectsRequestBuilderPostRequestConfiguration)(ItemJoinedTeamsItemPermissionGrantsItemCheckMemberObjectsPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemJoinedTeamsItemPermissionGrantsItemCheckMemberObjectsPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemJoinedTeamsItemPermissionGrantsItemCheckMemberObjectsPostResponseable), nil
 }
 // ToPostRequestInformation invoke action checkMemberObjects
 func (m *ItemJoinedTeamsItemPermissionGrantsItemCheckMemberObjectsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemJoinedTeamsItemPermissionGrantsItemCheckMemberObjectsPostRequestBodyable, requestConfiguration *ItemJoinedTeamsItemPermissionGrantsItemCheckMemberObjectsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

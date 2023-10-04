@@ -49,7 +49,7 @@ func (m *AttachmentItem) GetAttachmentType()(*AttachmentType) {
 func (m *AttachmentItem) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetContentId gets the contentId property value. The CID or Content-Id of the attachment for referencing in case of in-line attachments using <img src='cid:contentId'> tag in HTML messages. Optional.
+// GetContentId gets the contentId property value. The CID or Content-Id of the attachment for referencing for the in-line attachments using the <img src='cid:contentId'> tag in HTML messages. Optional.
 func (m *AttachmentItem) GetContentId()(*string) {
     val, err := m.GetBackingStore().Get("contentId")
     if err != nil {
@@ -157,7 +157,7 @@ func (m *AttachmentItem) GetIsInline()(*bool) {
     }
     return nil
 }
-// GetName gets the name property value. The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
+// GetName gets the name property value. The display name of the attachment. This can be a descriptive string and doesn't have to be the actual file name. Required.
 func (m *AttachmentItem) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -261,7 +261,7 @@ func (m *AttachmentItem) SetAttachmentType(value *AttachmentType)() {
 func (m *AttachmentItem) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetContentId sets the contentId property value. The CID or Content-Id of the attachment for referencing in case of in-line attachments using <img src='cid:contentId'> tag in HTML messages. Optional.
+// SetContentId sets the contentId property value. The CID or Content-Id of the attachment for referencing for the in-line attachments using the <img src='cid:contentId'> tag in HTML messages. Optional.
 func (m *AttachmentItem) SetContentId(value *string)() {
     err := m.GetBackingStore().Set("contentId", value)
     if err != nil {
@@ -282,7 +282,7 @@ func (m *AttachmentItem) SetIsInline(value *bool)() {
         panic(err)
     }
 }
-// SetName sets the name property value. The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
+// SetName sets the name property value. The display name of the attachment. This can be a descriptive string and doesn't have to be the actual file name. Required.
 func (m *AttachmentItem) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {

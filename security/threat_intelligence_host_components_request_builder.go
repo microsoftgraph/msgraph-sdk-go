@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceHostComponentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceHostComponentsRequestBuilderGetQueryParameters read the properties and relationships of a hostComponent object.
+// ThreatIntelligenceHostComponentsRequestBuilderGetQueryParameters read the properties and relationships of a hostComponent object. This API is supported in the following national cloud deployments.
 type ThreatIntelligenceHostComponentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewThreatIntelligenceHostComponentsRequestBuilder(rawUrl string, requestAda
 func (m *ThreatIntelligenceHostComponentsRequestBuilder) Count()(*ThreatIntelligenceHostComponentsCountRequestBuilder) {
     return NewThreatIntelligenceHostComponentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a hostComponent object.
+// Get read the properties and relationships of a hostComponent object. This API is supported in the following national cloud deployments.
 func (m *ThreatIntelligenceHostComponentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostComponentsRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HostComponentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ThreatIntelligenceHostComponentsRequestBuilder) Post(ctx context.Contex
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HostComponentable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a hostComponent object.
+// ToGetRequestInformation read the properties and relationships of a hostComponent object. This API is supported in the following national cloud deployments.
 func (m *ThreatIntelligenceHostComponentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostComponentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

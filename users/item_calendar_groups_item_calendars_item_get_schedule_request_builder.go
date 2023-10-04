@@ -30,7 +30,8 @@ func NewItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
+// Post get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period. This API is supported in the following national cloud deployments.
+// Deprecated: This method is obsolete. Use PostAsGetSchedulePostResponse instead.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0
@@ -52,7 +53,29 @@ func (m *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder) Post(ctx 
     }
     return res.(ItemCalendarGroupsItemCalendarsItemGetScheduleResponseable), nil
 }
-// ToPostRequestInformation get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
+// PostAsGetSchedulePostResponse get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period. This API is supported in the following national cloud deployments.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0
+func (m *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder) PostAsGetSchedulePostResponse(ctx context.Context, body ItemCalendarGroupsItemCalendarsItemGetSchedulePostRequestBodyable, requestConfiguration *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilderPostRequestConfiguration)(ItemCalendarGroupsItemCalendarsItemGetSchedulePostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemCalendarGroupsItemCalendarsItemGetSchedulePostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemCalendarGroupsItemCalendarsItemGetSchedulePostResponseable), nil
+}
+// ToPostRequestInformation get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period. This API is supported in the following national cloud deployments.
 func (m *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCalendarGroupsItemCalendarsItemGetSchedulePostRequestBodyable, requestConfiguration *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

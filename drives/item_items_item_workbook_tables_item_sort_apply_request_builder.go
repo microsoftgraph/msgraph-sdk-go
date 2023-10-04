@@ -30,7 +30,7 @@ func NewItemItemsItemWorkbookTablesItemSortApplyRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookTablesItemSortApplyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post perform a sort operation.
+// Post perform a sort operation. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tablesort-apply?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemItemsItemWorkbookTablesItemSortApplyRequestBuilder) Post(ctx contex
     }
     return nil
 }
-// ToPostRequestInformation perform a sort operation.
+// ToPostRequestInformation perform a sort operation. This API is supported in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookTablesItemSortApplyRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemWorkbookTablesItemSortApplyPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookTablesItemSortApplyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

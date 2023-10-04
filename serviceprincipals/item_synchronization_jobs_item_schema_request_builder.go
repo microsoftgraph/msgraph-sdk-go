@@ -18,7 +18,7 @@ type ItemSynchronizationJobsItemSchemaRequestBuilderDeleteRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSynchronizationJobsItemSchemaRequestBuilderGetQueryParameters retrieve the schema for a given synchronization job or template.
+// ItemSynchronizationJobsItemSchemaRequestBuilderGetQueryParameters retrieve the schema for a given synchronization job or template. This API is supported in the following national cloud deployments.
 type ItemSynchronizationJobsItemSchemaRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -82,7 +82,7 @@ func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) FilterOperators()(*Ite
 func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) Functions()(*ItemSynchronizationJobsItemSchemaFunctionsRequestBuilder) {
     return NewItemSynchronizationJobsItemSchemaFunctionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the schema for a given synchronization job or template.
+// Get retrieve the schema for a given synchronization job or template. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0
@@ -142,7 +142,7 @@ func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) ToDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the schema for a given synchronization job or template.
+// ToGetRequestInformation retrieve the schema for a given synchronization job or template. This API is supported in the following national cloud deployments.
 func (m *ItemSynchronizationJobsItemSchemaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

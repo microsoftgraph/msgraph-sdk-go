@@ -30,7 +30,8 @@ func NewQueryRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewQueryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post runs the query specified in the request body. Search results are provided in the response.
+// Post runs the query specified in the request body. Search results are provided in the response. This API is supported in the following national cloud deployments.
+// Deprecated: This method is obsolete. Use PostAsQueryPostResponse instead.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/search-query?view=graph-rest-1.0
@@ -52,7 +53,29 @@ func (m *QueryRequestBuilder) Post(ctx context.Context, body QueryPostRequestBod
     }
     return res.(QueryResponseable), nil
 }
-// ToPostRequestInformation runs the query specified in the request body. Search results are provided in the response.
+// PostAsQueryPostResponse runs the query specified in the request body. Search results are provided in the response. This API is supported in the following national cloud deployments.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-query?view=graph-rest-1.0
+func (m *QueryRequestBuilder) PostAsQueryPostResponse(ctx context.Context, body QueryPostRequestBodyable, requestConfiguration *QueryRequestBuilderPostRequestConfiguration)(QueryPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateQueryPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(QueryPostResponseable), nil
+}
+// ToPostRequestInformation runs the query specified in the request body. Search results are provided in the response. This API is supported in the following national cloud deployments.
 func (m *QueryRequestBuilder) ToPostRequestInformation(ctx context.Context, body QueryPostRequestBodyable, requestConfiguration *QueryRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

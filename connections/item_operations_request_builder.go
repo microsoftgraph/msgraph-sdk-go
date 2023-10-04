@@ -11,7 +11,7 @@ import (
 type ItemOperationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOperationsRequestBuilderGetQueryParameters read the properties and relationships of a connectionOperation object.
+// ItemOperationsRequestBuilderGetQueryParameters read the properties and relationships of a connectionOperation object. This API is supported in the following national cloud deployments.
 type ItemOperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemOperationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *ItemOperationsRequestBuilder) Count()(*ItemOperationsCountRequestBuilder) {
     return NewItemOperationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a connectionOperation object.
+// Get read the properties and relationships of a connectionOperation object. This API is supported in the following national cloud deployments.
 func (m *ItemOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOperationsRequestBuilderGetRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ConnectionOperationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ItemOperationsRequestBuilder) Post(ctx context.Context, body i648e92ed2
     }
     return res.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ConnectionOperationable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a connectionOperation object.
+// ToGetRequestInformation read the properties and relationships of a connectionOperation object. This API is supported in the following national cloud deployments.
 func (m *ItemOperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

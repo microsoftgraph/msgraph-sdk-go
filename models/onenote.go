@@ -131,7 +131,7 @@ func (m *Onenote) GetNotebooks()([]Notebookable) {
     }
     return nil
 }
-// GetOperations gets the operations property value. The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
+// GetOperations gets the operations property value. The status of OneNote operations. Getting an operations collection isn't supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
 func (m *Onenote) GetOperations()([]OnenoteOperationable) {
     val, err := m.GetBackingStore().Get("operations")
     if err != nil {
@@ -153,7 +153,7 @@ func (m *Onenote) GetPages()([]OnenotePageable) {
     }
     return nil
 }
-// GetResources gets the resources property value. The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
+// GetResources gets the resources property value. The image and other file resources in OneNote pages. Getting a resources collection isn't supported, but you can get the binary content of a specific resource. Read-only. Nullable.
 func (m *Onenote) GetResources()([]OnenoteResourceable) {
     val, err := m.GetBackingStore().Get("resources")
     if err != nil {
@@ -273,7 +273,7 @@ func (m *Onenote) SetNotebooks(value []Notebookable)() {
         panic(err)
     }
 }
-// SetOperations sets the operations property value. The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
+// SetOperations sets the operations property value. The status of OneNote operations. Getting an operations collection isn't supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
 func (m *Onenote) SetOperations(value []OnenoteOperationable)() {
     err := m.GetBackingStore().Set("operations", value)
     if err != nil {
@@ -287,7 +287,7 @@ func (m *Onenote) SetPages(value []OnenotePageable)() {
         panic(err)
     }
 }
-// SetResources sets the resources property value. The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
+// SetResources sets the resources property value. The image and other file resources in OneNote pages. Getting a resources collection isn't supported, but you can get the binary content of a specific resource. Read-only. Nullable.
 func (m *Onenote) SetResources(value []OnenoteResourceable)() {
     err := m.GetBackingStore().Set("resources", value)
     if err != nil {

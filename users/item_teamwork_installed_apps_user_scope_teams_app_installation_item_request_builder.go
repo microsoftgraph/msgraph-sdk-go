@@ -18,7 +18,7 @@ type ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderGetQueryParameters retrieve the app installed in the personal scope of the specified user.
+// ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderGetQueryParameters retrieve the app installed in the personal scope of the specified user. This API is supported in the following national cloud deployments.
 type ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,7 @@ func NewItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete uninstall an app from the personal scope of the specified user.
+// Delete uninstall an app from the personal scope of the specified user. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/userteamwork-delete-installedapps?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilde
     }
     return nil
 }
-// Get retrieve the app installed in the personal scope of the specified user.
+// Get retrieve the app installed in the personal scope of the specified user. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/userteamwork-get-installedapps?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilde
 func (m *ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder) TeamsAppDefinition()(*ItemTeamworkInstalledAppsItemTeamsAppDefinitionRequestBuilder) {
     return NewItemTeamworkInstalledAppsItemTeamsAppDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation uninstall an app from the personal scope of the specified user.
+// ToDeleteRequestInformation uninstall an app from the personal scope of the specified user. This API is supported in the following national cloud deployments.
 func (m *ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -138,7 +138,7 @@ func (m *ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilde
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the app installed in the personal scope of the specified user.
+// ToGetRequestInformation retrieve the app installed in the personal scope of the specified user. This API is supported in the following national cloud deployments.
 func (m *ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

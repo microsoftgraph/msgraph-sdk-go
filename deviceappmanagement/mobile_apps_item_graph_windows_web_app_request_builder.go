@@ -27,6 +27,14 @@ type MobileAppsItemGraphWindowsWebAppRequestBuilderGetRequestConfiguration struc
     // Request query parameters
     QueryParameters *MobileAppsItemGraphWindowsWebAppRequestBuilderGetQueryParameters
 }
+// Assignments provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphWindowsWebAppRequestBuilder) Assignments()(*MobileAppsItemGraphWindowsWebAppAssignmentsRequestBuilder) {
+    return NewMobileAppsItemGraphWindowsWebAppAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphWindowsWebAppRequestBuilder) Categories()(*MobileAppsItemGraphWindowsWebAppCategoriesRequestBuilder) {
+    return NewMobileAppsItemGraphWindowsWebAppCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMobileAppsItemGraphWindowsWebAppRequestBuilderInternal instantiates a new GraphWindowsWebAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWindowsWebAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWindowsWebAppRequestBuilder) {
     m := &MobileAppsItemGraphWindowsWebAppRequestBuilder{

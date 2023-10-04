@@ -31,7 +31,7 @@ func NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsAddRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsAddRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post adds a new column to the table.
+// Post adds a new column to the table. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tablecolumncollection-add?view=graph-rest-1.0
@@ -53,7 +53,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsAddRequestBuilder) 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableColumnable), nil
 }
-// ToPostRequestInformation adds a new column to the table.
+// ToPostRequestInformation adds a new column to the table. This API is supported in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsAddRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsAddPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsAddRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

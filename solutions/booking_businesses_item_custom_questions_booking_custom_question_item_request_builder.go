@@ -18,7 +18,7 @@ type BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilder
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilderGetQueryParameters read the properties and relationships of a bookingCustomQuestion object.
+// BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilderGetQueryParameters read the properties and relationships of a bookingCustomQuestion object. This API is supported in the following national cloud deployments.
 type BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewBookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuil
     urlParams["request-raw-url"] = rawUrl
     return NewBookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a bookingCustomQuestion object.
+// Delete delete a bookingCustomQuestion object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingcustomquestion-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBui
     }
     return nil
 }
-// Get read the properties and relationships of a bookingCustomQuestion object.
+// Get read the properties and relationships of a bookingCustomQuestion object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingcustomquestion-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBui
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCustomQuestionable), nil
 }
-// Patch update the properties of a bookingCustomQuestion object.
+// Patch update the properties of a bookingCustomQuestion object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingcustomquestion-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBui
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCustomQuestionable), nil
 }
-// ToDeleteRequestInformation delete a bookingCustomQuestion object.
+// ToDeleteRequestInformation delete a bookingCustomQuestion object. This API is supported in the following national cloud deployments.
 func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBui
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a bookingCustomQuestion object.
+// ToGetRequestInformation read the properties and relationships of a bookingCustomQuestion object. This API is supported in the following national cloud deployments.
 func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBui
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a bookingCustomQuestion object.
+// ToPatchRequestInformation update the properties of a bookingCustomQuestion object. This API is supported in the following national cloud deployments.
 func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCustomQuestionable, requestConfiguration *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

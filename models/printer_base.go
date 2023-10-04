@@ -173,7 +173,7 @@ func (m *PrinterBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetIsAcceptingJobs gets the isAcceptingJobs property value. Whether the printer/printerShare is currently accepting new print jobs.
+// GetIsAcceptingJobs gets the isAcceptingJobs property value. Specifies whether the printer/printerShare is currently accepting new print jobs.
 func (m *PrinterBase) GetIsAcceptingJobs()(*bool) {
     val, err := m.GetBackingStore().Get("isAcceptingJobs")
     if err != nil {
@@ -328,7 +328,7 @@ func (m *PrinterBase) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetIsAcceptingJobs sets the isAcceptingJobs property value. Whether the printer/printerShare is currently accepting new print jobs.
+// SetIsAcceptingJobs sets the isAcceptingJobs property value. Specifies whether the printer/printerShare is currently accepting new print jobs.
 func (m *PrinterBase) SetIsAcceptingJobs(value *bool)() {
     err := m.GetBackingStore().Set("isAcceptingJobs", value)
     if err != nil {

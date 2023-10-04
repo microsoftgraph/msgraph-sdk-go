@@ -11,7 +11,7 @@ import (
 type CasesEdiscoveryCasesItemSearchesItemLastEstimateStatisticsOperationRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CasesEdiscoveryCasesItemSearchesItemLastEstimateStatisticsOperationRequestBuilderGetQueryParameters get the last  ediscoveryEstimateOperation objects and their properties.
+// CasesEdiscoveryCasesItemSearchesItemLastEstimateStatisticsOperationRequestBuilderGetQueryParameters get the last  ediscoveryEstimateOperation objects and their properties. This API is supported in the following national cloud deployments.
 type CasesEdiscoveryCasesItemSearchesItemLastEstimateStatisticsOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewCasesEdiscoveryCasesItemSearchesItemLastEstimateStatisticsOperationReque
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemSearchesItemLastEstimateStatisticsOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get the last  ediscoveryEstimateOperation objects and their properties.
+// Get get the last  ediscoveryEstimateOperation objects and their properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverysearch-list-lastestimatestatisticsoperation?view=graph-rest-1.0
@@ -62,7 +62,7 @@ func (m *CasesEdiscoveryCasesItemSearchesItemLastEstimateStatisticsOperationRequ
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryEstimateOperationable), nil
 }
-// ToGetRequestInformation get the last  ediscoveryEstimateOperation objects and their properties.
+// ToGetRequestInformation get the last  ediscoveryEstimateOperation objects and their properties. This API is supported in the following national cloud deployments.
 func (m *CasesEdiscoveryCasesItemSearchesItemLastEstimateStatisticsOperationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemSearchesItemLastEstimateStatisticsOperationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

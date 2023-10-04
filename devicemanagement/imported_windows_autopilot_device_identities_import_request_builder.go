@@ -31,6 +31,7 @@ func NewImportedWindowsAutopilotDeviceIdentitiesImportRequestBuilder(rawUrl stri
     return NewImportedWindowsAutopilotDeviceIdentitiesImportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post not yet documented
+// Deprecated: This method is obsolete. Use PostAsImportPostResponse instead.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-enrollment-importedwindowsautopilotdeviceidentity-import?view=graph-rest-1.0
@@ -51,6 +52,28 @@ func (m *ImportedWindowsAutopilotDeviceIdentitiesImportRequestBuilder) Post(ctx 
         return nil, nil
     }
     return res.(ImportedWindowsAutopilotDeviceIdentitiesImportResponseable), nil
+}
+// PostAsImportPostResponse not yet documented
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-enrollment-importedwindowsautopilotdeviceidentity-import?view=graph-rest-1.0
+func (m *ImportedWindowsAutopilotDeviceIdentitiesImportRequestBuilder) PostAsImportPostResponse(ctx context.Context, body ImportedWindowsAutopilotDeviceIdentitiesImportPostRequestBodyable, requestConfiguration *ImportedWindowsAutopilotDeviceIdentitiesImportRequestBuilderPostRequestConfiguration)(ImportedWindowsAutopilotDeviceIdentitiesImportPostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateImportedWindowsAutopilotDeviceIdentitiesImportPostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ImportedWindowsAutopilotDeviceIdentitiesImportPostResponseable), nil
 }
 // ToPostRequestInformation not yet documented
 func (m *ImportedWindowsAutopilotDeviceIdentitiesImportRequestBuilder) ToPostRequestInformation(ctx context.Context, body ImportedWindowsAutopilotDeviceIdentitiesImportPostRequestBodyable, requestConfiguration *ImportedWindowsAutopilotDeviceIdentitiesImportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

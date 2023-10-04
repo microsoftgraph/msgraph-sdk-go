@@ -11,7 +11,7 @@ import (
 type DelegatedAdminCustomersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DelegatedAdminCustomersRequestBuilderGetQueryParameters get a list of the delegatedAdminCustomer objects and their properties.
+// DelegatedAdminCustomersRequestBuilderGetQueryParameters get a list of the delegatedAdminCustomer objects and their properties. This API is supported in the following national cloud deployments.
 type DelegatedAdminCustomersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewDelegatedAdminCustomersRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *DelegatedAdminCustomersRequestBuilder) Count()(*DelegatedAdminCustomersCountRequestBuilder) {
     return NewDelegatedAdminCustomersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the delegatedAdminCustomer objects and their properties.
+// Get get a list of the delegatedAdminCustomer objects and their properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tenantrelationship-list-delegatedadmincustomers?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *DelegatedAdminCustomersRequestBuilder) Post(ctx context.Context, body i
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedAdminCustomerable), nil
 }
-// ToGetRequestInformation get a list of the delegatedAdminCustomer objects and their properties.
+// ToGetRequestInformation get a list of the delegatedAdminCustomer objects and their properties. This API is supported in the following national cloud deployments.
 func (m *DelegatedAdminCustomersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DelegatedAdminCustomersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

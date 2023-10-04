@@ -11,7 +11,7 @@ import (
 type ItemContactFoldersItemChildFoldersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemContactFoldersItemChildFoldersRequestBuilderGetQueryParameters get a collection of child folders under the specified contact folder.
+// ItemContactFoldersItemChildFoldersRequestBuilderGetQueryParameters get a collection of child folders under the specified contact folder. This API is supported in the following national cloud deployments.
 type ItemContactFoldersItemChildFoldersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func (m *ItemContactFoldersItemChildFoldersRequestBuilder) Count()(*ItemContactF
 func (m *ItemContactFoldersItemChildFoldersRequestBuilder) Delta()(*ItemContactFoldersItemChildFoldersDeltaRequestBuilder) {
     return NewItemContactFoldersItemChildFoldersDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a collection of child folders under the specified contact folder.
+// Get get a collection of child folders under the specified contact folder. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contactfolder-list-childfolders?view=graph-rest-1.0
@@ -98,7 +98,7 @@ func (m *ItemContactFoldersItemChildFoldersRequestBuilder) Get(ctx context.Conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderCollectionResponseable), nil
 }
-// Post create a new contactFolder as a child of a specified folder.  You can also create a new contactFolder under the user's default contact folder.
+// Post create a new contactFolder as a child of a specified folder.  You can also create a new contactFolder under the user's default contact folder. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contactfolder-post-childfolders?view=graph-rest-1.0
@@ -120,7 +120,7 @@ func (m *ItemContactFoldersItemChildFoldersRequestBuilder) Post(ctx context.Cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable), nil
 }
-// ToGetRequestInformation get a collection of child folders under the specified contact folder.
+// ToGetRequestInformation get a collection of child folders under the specified contact folder. This API is supported in the following national cloud deployments.
 func (m *ItemContactFoldersItemChildFoldersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -136,7 +136,7 @@ func (m *ItemContactFoldersItemChildFoldersRequestBuilder) ToGetRequestInformati
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new contactFolder as a child of a specified folder.  You can also create a new contactFolder under the user's default contact folder.
+// ToPostRequestInformation create a new contactFolder as a child of a specified folder.  You can also create a new contactFolder under the user's default contact folder. This API is supported in the following national cloud deployments.
 func (m *ItemContactFoldersItemChildFoldersRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable, requestConfiguration *ItemContactFoldersItemChildFoldersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

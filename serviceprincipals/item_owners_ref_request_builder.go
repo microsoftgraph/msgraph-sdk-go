@@ -77,7 +77,7 @@ func (m *ItemOwnersRefRequestBuilder) Get(ctx context.Context, requestConfigurat
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
-// Post use this API to add an owner for the servicePrincipal. Service principal owners can be users, the service principal itself, or other service principals.
+// Post use this API to add an owner for the servicePrincipal. Service principal owners can be users, the service principal itself, or other service principals. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-post-owners?view=graph-rest-1.0
@@ -112,7 +112,7 @@ func (m *ItemOwnersRefRequestBuilder) ToGetRequestInformation(ctx context.Contex
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation use this API to add an owner for the servicePrincipal. Service principal owners can be users, the service principal itself, or other service principals.
+// ToPostRequestInformation use this API to add an owner for the servicePrincipal. Service principal owners can be users, the service principal itself, or other service principals. This API is supported in the following national cloud deployments.
 func (m *ItemOwnersRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ItemOwnersRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ConnectionsItemItemsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConnectionsItemItemsRequestBuilderGetQueryParameters read the properties and relationships of an externalItem object.
+// ConnectionsItemItemsRequestBuilderGetQueryParameters read the properties and relationships of an externalItem object. This API is supported in the following national cloud deployments.
 type ConnectionsItemItemsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewConnectionsItemItemsRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *ConnectionsItemItemsRequestBuilder) Count()(*ConnectionsItemItemsCountRequestBuilder) {
     return NewConnectionsItemItemsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of an externalItem object.
+// Get read the properties and relationships of an externalItem object. This API is supported in the following national cloud deployments.
 func (m *ConnectionsItemItemsRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectionsItemItemsRequestBuilderGetRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalItemCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ConnectionsItemItemsRequestBuilder) Post(ctx context.Context, body i648
     }
     return res.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalItemable), nil
 }
-// ToGetRequestInformation read the properties and relationships of an externalItem object.
+// ToGetRequestInformation read the properties and relationships of an externalItem object. This API is supported in the following national cloud deployments.
 func (m *ConnectionsItemItemsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectionsItemItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

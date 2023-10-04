@@ -433,6 +433,22 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["transcripts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCallTranscriptFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CallTranscriptable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CallTranscriptable)
+                }
+            }
+            m.SetTranscripts(res)
+        }
+        return nil
+    }
     res["videoTeleconferenceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -573,6 +589,17 @@ func (m *OnlineMeeting) GetSubject()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetTranscripts gets the transcripts property value. The transcripts property
+func (m *OnlineMeeting) GetTranscripts()([]CallTranscriptable) {
+    val, err := m.GetBackingStore().Get("transcripts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CallTranscriptable)
     }
     return nil
 }
@@ -759,6 +786,18 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err = writer.WriteStringValue("subject", m.GetSubject())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetTranscripts() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTranscripts()))
+        for i, v := range m.GetTranscripts() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("transcripts", cast)
         if err != nil {
             return err
         }
@@ -952,6 +991,13 @@ func (m *OnlineMeeting) SetSubject(value *string)() {
         panic(err)
     }
 }
+// SetTranscripts sets the transcripts property value. The transcripts property
+func (m *OnlineMeeting) SetTranscripts(value []CallTranscriptable)() {
+    err := m.GetBackingStore().Set("transcripts", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetVideoTeleconferenceId sets the videoTeleconferenceId property value. The video teleconferencing ID. Read-only.
 func (m *OnlineMeeting) SetVideoTeleconferenceId(value *string)() {
     err := m.GetBackingStore().Set("videoTeleconferenceId", value)
@@ -995,6 +1041,7 @@ type OnlineMeetingable interface {
     GetShareMeetingChatHistoryDefault()(*MeetingChatHistoryDefaultMode)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSubject()(*string)
+    GetTranscripts()([]CallTranscriptable)
     GetVideoTeleconferenceId()(*string)
     GetWatermarkProtection()(WatermarkProtectionValuesable)
     SetAllowAttendeeToEnableCamera(value *bool)()
@@ -1022,6 +1069,7 @@ type OnlineMeetingable interface {
     SetShareMeetingChatHistoryDefault(value *MeetingChatHistoryDefaultMode)()
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSubject(value *string)()
+    SetTranscripts(value []CallTranscriptable)()
     SetVideoTeleconferenceId(value *string)()
     SetWatermarkProtection(value WatermarkProtectionValuesable)()
 }

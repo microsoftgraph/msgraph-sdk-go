@@ -42,7 +42,7 @@ func (m *Subscription) GetChangeType()(*string) {
     }
     return nil
 }
-// GetClientState gets the clientState property value. Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+// GetClientState gets the clientState property value. Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
 func (m *Subscription) GetClientState()(*string) {
     val, err := m.GetBackingStore().Get("clientState")
     if err != nil {
@@ -425,7 +425,7 @@ func (m *Subscription) SetChangeType(value *string)() {
         panic(err)
     }
 }
-// SetClientState sets the clientState property value. Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+// SetClientState sets the clientState property value. Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
 func (m *Subscription) SetClientState(value *string)() {
     err := m.GetBackingStore().Set("clientState", value)
     if err != nil {

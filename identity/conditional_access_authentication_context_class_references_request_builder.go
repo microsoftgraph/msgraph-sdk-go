@@ -11,7 +11,7 @@ import (
 type ConditionalAccessAuthenticationContextClassReferencesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConditionalAccessAuthenticationContextClassReferencesRequestBuilderGetQueryParameters retrieve a list of authenticationContextClassReference objects.
+// ConditionalAccessAuthenticationContextClassReferencesRequestBuilderGetQueryParameters retrieve a list of authenticationContextClassReference objects. This API is supported in the following national cloud deployments.
 type ConditionalAccessAuthenticationContextClassReferencesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewConditionalAccessAuthenticationContextClassReferencesRequestBuilder(rawU
 func (m *ConditionalAccessAuthenticationContextClassReferencesRequestBuilder) Count()(*ConditionalAccessAuthenticationContextClassReferencesCountRequestBuilder) {
     return NewConditionalAccessAuthenticationContextClassReferencesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of authenticationContextClassReference objects.
+// Get retrieve a list of authenticationContextClassReference objects. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/conditionalaccessroot-list-authenticationcontextclassreferences?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *ConditionalAccessAuthenticationContextClassReferencesRequestBuilder) Po
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationContextClassReferenceable), nil
 }
-// ToGetRequestInformation retrieve a list of authenticationContextClassReference objects.
+// ToGetRequestInformation retrieve a list of authenticationContextClassReference objects. This API is supported in the following national cloud deployments.
 func (m *ConditionalAccessAuthenticationContextClassReferencesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationContextClassReferencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

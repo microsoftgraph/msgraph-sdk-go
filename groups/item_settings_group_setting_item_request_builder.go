@@ -18,7 +18,7 @@ type ItemSettingsGroupSettingItemRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSettingsGroupSettingItemRequestBuilderGetQueryParameters retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
+// ItemSettingsGroupSettingItemRequestBuilderGetQueryParameters retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting. This API is supported in the following national cloud deployments.
 type ItemSettingsGroupSettingItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemSettingsGroupSettingItemRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
+// Get retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/groupsetting-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *ItemSettingsGroupSettingItemRequestBuilder) Get(ctx context.Context, re
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingable), nil
 }
-// Patch update the properties of a groupSetting object for tenant-wide group settings or a specific group setting.
+// Patch update the properties of a groupSetting object for tenant-wide group settings or a specific group setting. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/groupsetting-update?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *ItemSettingsGroupSettingItemRequestBuilder) ToDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
+// ToGetRequestInformation retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting. This API is supported in the following national cloud deployments.
 func (m *ItemSettingsGroupSettingItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsGroupSettingItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *ItemSettingsGroupSettingItemRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a groupSetting object for tenant-wide group settings or a specific group setting.
+// ToPatchRequestInformation update the properties of a groupSetting object for tenant-wide group settings or a specific group setting. This API is supported in the following national cloud deployments.
 func (m *ItemSettingsGroupSettingItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingable, requestConfiguration *ItemSettingsGroupSettingItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

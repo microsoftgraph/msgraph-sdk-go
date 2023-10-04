@@ -11,7 +11,7 @@ import (
 type ItemContentTypesItemColumnsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemContentTypesItemColumnsRequestBuilderGetQueryParameters get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [content type][contentType].
+// ItemContentTypesItemColumnsRequestBuilderGetQueryParameters get the collection of columns represented as columnDefinition][columnDefinition] resources in a [content type][contentType]. This API is supported in the following [national cloud deployments.
 type ItemContentTypesItemColumnsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemContentTypesItemColumnsRequestBuilder(rawUrl string, requestAdapter 
 func (m *ItemContentTypesItemColumnsRequestBuilder) Count()(*ItemContentTypesItemColumnsCountRequestBuilder) {
     return NewItemContentTypesItemColumnsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [content type][contentType].
+// Get get the collection of columns represented as columnDefinition][columnDefinition] resources in a [content type][contentType]. This API is supported in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-list-columns?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemContentTypesItemColumnsRequestBuilder) Get(ctx context.Context, req
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionCollectionResponseable), nil
 }
-// Post add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
+// Post add a column to a content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition]. This API is supported in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-post-columns?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemContentTypesItemColumnsRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable), nil
 }
-// ToGetRequestInformation get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [content type][contentType].
+// ToGetRequestInformation get the collection of columns represented as columnDefinition][columnDefinition] resources in a [content type][contentType]. This API is supported in the following [national cloud deployments.
 func (m *ItemContentTypesItemColumnsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContentTypesItemColumnsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemContentTypesItemColumnsRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
+// ToPostRequestInformation add a column to a content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition]. This API is supported in the following [national cloud deployments.
 func (m *ItemContentTypesItemColumnsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, requestConfiguration *ItemContentTypesItemColumnsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

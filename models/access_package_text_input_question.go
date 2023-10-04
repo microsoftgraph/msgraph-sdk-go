@@ -57,7 +57,7 @@ func (m *AccessPackageTextInputQuestion) GetIsSingleLineQuestion()(*bool) {
     }
     return nil
 }
-// GetRegexPattern gets the regexPattern property value. The regular expression pattern which any answer to this question must match.
+// GetRegexPattern gets the regexPattern property value. The regular expression pattern that any answer to this question must match.
 func (m *AccessPackageTextInputQuestion) GetRegexPattern()(*string) {
     val, err := m.GetBackingStore().Get("regexPattern")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *AccessPackageTextInputQuestion) SetIsSingleLineQuestion(value *bool)() 
         panic(err)
     }
 }
-// SetRegexPattern sets the regexPattern property value. The regular expression pattern which any answer to this question must match.
+// SetRegexPattern sets the regexPattern property value. The regular expression pattern that any answer to this question must match.
 func (m *AccessPackageTextInputQuestion) SetRegexPattern(value *string)() {
     err := m.GetBackingStore().Set("regexPattern", value)
     if err != nil {

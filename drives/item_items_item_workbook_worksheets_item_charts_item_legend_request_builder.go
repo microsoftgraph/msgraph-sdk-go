@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemLegendRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookWorksheetsItemChartsItemLegendRequestBuilderGetQueryParameters retrieve the properties and relationships of chartlegend object.
+// ItemItemsItemWorkbookWorksheetsItemChartsItemLegendRequestBuilderGetQueryParameters retrieve the properties and relationships of chartlegend object. This API is supported in the following national cloud deployments.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemLegendRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemLegendRequestBuilder) Dele
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemLegendRequestBuilder) Format()(*ItemItemsItemWorkbookWorksheetsItemChartsItemLegendFormatRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemLegendFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of chartlegend object.
+// Get retrieve the properties and relationships of chartlegend object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chartlegend-get?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemLegendRequestBuilder) Get(
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartLegendable), nil
 }
-// Patch update the properties of chartlegend object.
+// Patch update the properties of chartlegend object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chartlegend-update?view=graph-rest-1.0
@@ -130,7 +130,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemLegendRequestBuilder) ToDe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of chartlegend object.
+// ToGetRequestInformation retrieve the properties and relationships of chartlegend object. This API is supported in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemLegendRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemLegendRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -146,7 +146,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemLegendRequestBuilder) ToGe
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of chartlegend object.
+// ToPatchRequestInformation update the properties of chartlegend object. This API is supported in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemLegendRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartLegendable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemLegendRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

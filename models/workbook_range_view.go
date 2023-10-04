@@ -249,7 +249,7 @@ func (m *WorkbookRangeView) GetRows()([]WorkbookRangeViewable) {
     }
     return nil
 }
-// GetText gets the text property value. Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.
+// GetText gets the text property value. Text values of the specified range. The Text value won't depend on the cell width. The # sign substitution that happens in Excel UI won't affect the text value returned by the API. Read-only.
 func (m *WorkbookRangeView) GetText()(Jsonable) {
     val, err := m.GetBackingStore().Get("text")
     if err != nil {
@@ -260,7 +260,7 @@ func (m *WorkbookRangeView) GetText()(Jsonable) {
     }
     return nil
 }
-// GetValues gets the values property value. Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
+// GetValues gets the values property value. Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contains an error returns the error string.
 func (m *WorkbookRangeView) GetValues()(Jsonable) {
     val, err := m.GetBackingStore().Get("values")
     if err != nil {
@@ -431,14 +431,14 @@ func (m *WorkbookRangeView) SetRows(value []WorkbookRangeViewable)() {
         panic(err)
     }
 }
-// SetText sets the text property value. Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.
+// SetText sets the text property value. Text values of the specified range. The Text value won't depend on the cell width. The # sign substitution that happens in Excel UI won't affect the text value returned by the API. Read-only.
 func (m *WorkbookRangeView) SetText(value Jsonable)() {
     err := m.GetBackingStore().Set("text", value)
     if err != nil {
         panic(err)
     }
 }
-// SetValues sets the values property value. Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
+// SetValues sets the values property value. Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contains an error returns the error string.
 func (m *WorkbookRangeView) SetValues(value Jsonable)() {
     err := m.GetBackingStore().Set("values", value)
     if err != nil {

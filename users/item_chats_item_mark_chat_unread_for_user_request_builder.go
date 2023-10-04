@@ -30,7 +30,7 @@ func NewItemChatsItemMarkChatUnreadForUserRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewItemChatsItemMarkChatUnreadForUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post mark a chat as unread for a user.
+// Post mark a chat as unread for a user. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chat-markchatunreadforuser?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemChatsItemMarkChatUnreadForUserRequestBuilder) Post(ctx context.Cont
     }
     return nil
 }
-// ToPostRequestInformation mark a chat as unread for a user.
+// ToPostRequestInformation mark a chat as unread for a user. This API is supported in the following national cloud deployments.
 func (m *ItemChatsItemMarkChatUnreadForUserRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemChatsItemMarkChatUnreadForUserPostRequestBodyable, requestConfiguration *ItemChatsItemMarkChatUnreadForUserRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -50,6 +50,7 @@ func NewItemJoinedTeamsItemPrimaryChannelMessagesDeltaRequestBuilder(rawUrl stri
     return NewItemJoinedTeamsItemPrimaryChannelMessagesDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function delta
+// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 func (m *ItemJoinedTeamsItemPrimaryChannelMessagesDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemPrimaryChannelMessagesDeltaRequestBuilderGetRequestConfiguration)(ItemJoinedTeamsItemPrimaryChannelMessagesDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -67,6 +68,25 @@ func (m *ItemJoinedTeamsItemPrimaryChannelMessagesDeltaRequestBuilder) Get(ctx c
         return nil, nil
     }
     return res.(ItemJoinedTeamsItemPrimaryChannelMessagesDeltaResponseable), nil
+}
+// GetAsDeltaGetResponse invoke function delta
+func (m *ItemJoinedTeamsItemPrimaryChannelMessagesDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemPrimaryChannelMessagesDeltaRequestBuilderGetRequestConfiguration)(ItemJoinedTeamsItemPrimaryChannelMessagesDeltaGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemJoinedTeamsItemPrimaryChannelMessagesDeltaGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemJoinedTeamsItemPrimaryChannelMessagesDeltaGetResponseable), nil
 }
 // ToGetRequestInformation invoke function delta
 func (m *ItemJoinedTeamsItemPrimaryChannelMessagesDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemPrimaryChannelMessagesDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -50,6 +50,7 @@ func NewItemSitesGetAllSitesRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewItemSitesGetAllSitesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getAllSites
+// Deprecated: This method is obsolete. Use GetAsGetAllSitesGetResponse instead.
 func (m *ItemSitesGetAllSitesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesGetAllSitesRequestBuilderGetRequestConfiguration)(ItemSitesGetAllSitesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -67,6 +68,25 @@ func (m *ItemSitesGetAllSitesRequestBuilder) Get(ctx context.Context, requestCon
         return nil, nil
     }
     return res.(ItemSitesGetAllSitesResponseable), nil
+}
+// GetAsGetAllSitesGetResponse invoke function getAllSites
+func (m *ItemSitesGetAllSitesRequestBuilder) GetAsGetAllSitesGetResponse(ctx context.Context, requestConfiguration *ItemSitesGetAllSitesRequestBuilderGetRequestConfiguration)(ItemSitesGetAllSitesGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSitesGetAllSitesGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemSitesGetAllSitesGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getAllSites
 func (m *ItemSitesGetAllSitesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesGetAllSitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

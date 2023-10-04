@@ -34,7 +34,7 @@ func (m *DefaultUserRolePermissions) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAllowedToCreateApps gets the allowedToCreateApps property value. Indicates whether the default user role can create applications. This setting corresponds to the Users can register applications setting in the User settings menu in the Azure portal.
+// GetAllowedToCreateApps gets the allowedToCreateApps property value. Indicates whether the default user role can create applications. This setting corresponds to the Users can register applications setting in the User settings menu in the Microsoft Entra admin center.
 func (m *DefaultUserRolePermissions) GetAllowedToCreateApps()(*bool) {
     val, err := m.GetBackingStore().Get("allowedToCreateApps")
     if err != nil {
@@ -45,7 +45,7 @@ func (m *DefaultUserRolePermissions) GetAllowedToCreateApps()(*bool) {
     }
     return nil
 }
-// GetAllowedToCreateSecurityGroups gets the allowedToCreateSecurityGroups property value. Indicates whether the default user role can create security groups. This setting corresponds to the following menus in the Azure portal:  The Users can create security groups in Azure portals, API or PowerShell setting in the Group settings menu.  Users can create security groups setting in the User settings menu.
+// GetAllowedToCreateSecurityGroups gets the allowedToCreateSecurityGroups property value. Indicates whether the default user role can create security groups. This setting corresponds to the following menus in the Microsoft Entra admin center:  The Users can create security groups in Microsoft Entra admin centers, API or PowerShell setting in the Group settings menu.  Users can create security groups setting in the User settings menu.
 func (m *DefaultUserRolePermissions) GetAllowedToCreateSecurityGroups()(*bool) {
     val, err := m.GetBackingStore().Get("allowedToCreateSecurityGroups")
     if err != nil {
@@ -56,7 +56,7 @@ func (m *DefaultUserRolePermissions) GetAllowedToCreateSecurityGroups()(*bool) {
     }
     return nil
 }
-// GetAllowedToCreateTenants gets the allowedToCreateTenants property value. Indicates whether the default user role can create tenants. This setting corresponds to the Restrict non-admin users from creating tenants setting in the User settings menu in the Azure portal.  When this setting is false, users assigned the Tenant Creator role can still create tenants.
+// GetAllowedToCreateTenants gets the allowedToCreateTenants property value. Indicates whether the default user role can create tenants. This setting corresponds to the Restrict non-admin users from creating tenants setting in the User settings menu in the Microsoft Entra admin center.  When this setting is false, users assigned the Tenant Creator role can still create tenants.
 func (m *DefaultUserRolePermissions) GetAllowedToCreateTenants()(*bool) {
     val, err := m.GetBackingStore().Get("allowedToCreateTenants")
     if err != nil {
@@ -255,21 +255,21 @@ func (m *DefaultUserRolePermissions) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAllowedToCreateApps sets the allowedToCreateApps property value. Indicates whether the default user role can create applications. This setting corresponds to the Users can register applications setting in the User settings menu in the Azure portal.
+// SetAllowedToCreateApps sets the allowedToCreateApps property value. Indicates whether the default user role can create applications. This setting corresponds to the Users can register applications setting in the User settings menu in the Microsoft Entra admin center.
 func (m *DefaultUserRolePermissions) SetAllowedToCreateApps(value *bool)() {
     err := m.GetBackingStore().Set("allowedToCreateApps", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowedToCreateSecurityGroups sets the allowedToCreateSecurityGroups property value. Indicates whether the default user role can create security groups. This setting corresponds to the following menus in the Azure portal:  The Users can create security groups in Azure portals, API or PowerShell setting in the Group settings menu.  Users can create security groups setting in the User settings menu.
+// SetAllowedToCreateSecurityGroups sets the allowedToCreateSecurityGroups property value. Indicates whether the default user role can create security groups. This setting corresponds to the following menus in the Microsoft Entra admin center:  The Users can create security groups in Microsoft Entra admin centers, API or PowerShell setting in the Group settings menu.  Users can create security groups setting in the User settings menu.
 func (m *DefaultUserRolePermissions) SetAllowedToCreateSecurityGroups(value *bool)() {
     err := m.GetBackingStore().Set("allowedToCreateSecurityGroups", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowedToCreateTenants sets the allowedToCreateTenants property value. Indicates whether the default user role can create tenants. This setting corresponds to the Restrict non-admin users from creating tenants setting in the User settings menu in the Azure portal.  When this setting is false, users assigned the Tenant Creator role can still create tenants.
+// SetAllowedToCreateTenants sets the allowedToCreateTenants property value. Indicates whether the default user role can create tenants. This setting corresponds to the Restrict non-admin users from creating tenants setting in the User settings menu in the Microsoft Entra admin center.  When this setting is false, users assigned the Tenant Creator role can still create tenants.
 func (m *DefaultUserRolePermissions) SetAllowedToCreateTenants(value *bool)() {
     err := m.GetBackingStore().Set("allowedToCreateTenants", value)
     if err != nil {

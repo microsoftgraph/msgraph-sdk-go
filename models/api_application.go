@@ -166,7 +166,7 @@ func (m *ApiApplication) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPreAuthorizedApplications gets the preAuthorizedApplications property value. Lists the client applications that are pre-authorized with the specified delegated permissions to access this application's APIs. Users are not required to consent to any pre-authorized application (for the permissions specified). However, any additional permissions not listed in preAuthorizedApplications (requested through incremental consent for example) will require user consent.
+// GetPreAuthorizedApplications gets the preAuthorizedApplications property value. Lists the client applications that are preauthorized with the specified delegated permissions to access this application's APIs. Users aren't required to consent to any preauthorized application (for the permissions specified). However, any other permissions not listed in preAuthorizedApplications (requested through incremental consent for example) will require user consent.
 func (m *ApiApplication) GetPreAuthorizedApplications()([]PreAuthorizedApplicationable) {
     val, err := m.GetBackingStore().Get("preAuthorizedApplications")
     if err != nil {
@@ -285,7 +285,7 @@ func (m *ApiApplication) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPreAuthorizedApplications sets the preAuthorizedApplications property value. Lists the client applications that are pre-authorized with the specified delegated permissions to access this application's APIs. Users are not required to consent to any pre-authorized application (for the permissions specified). However, any additional permissions not listed in preAuthorizedApplications (requested through incremental consent for example) will require user consent.
+// SetPreAuthorizedApplications sets the preAuthorizedApplications property value. Lists the client applications that are preauthorized with the specified delegated permissions to access this application's APIs. Users aren't required to consent to any preauthorized application (for the permissions specified). However, any other permissions not listed in preAuthorizedApplications (requested through incremental consent for example) will require user consent.
 func (m *ApiApplication) SetPreAuthorizedApplications(value []PreAuthorizedApplicationable)() {
     err := m.GetBackingStore().Set("preAuthorizedApplications", value)
     if err != nil {

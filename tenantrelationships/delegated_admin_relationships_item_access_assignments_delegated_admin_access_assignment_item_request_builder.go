@@ -18,7 +18,7 @@ type DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignm
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignmentItemRequestBuilderGetQueryParameters read the properties of a delegatedAdminAccessAssignment object.
+// DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignmentItemRequestBuilderGetQueryParameters read the properties of a delegatedAdminAccessAssignment object. This API is supported in the following national cloud deployments.
 type DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewDelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssi
     urlParams["request-raw-url"] = rawUrl
     return NewDelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a delegatedAdminAccessAssignment object.
+// Delete delete a delegatedAdminAccessAssignment object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAss
     }
     return nil
 }
-// Get read the properties of a delegatedAdminAccessAssignment object.
+// Get read the properties of a delegatedAdminAccessAssignment object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAss
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedAdminAccessAssignmentable), nil
 }
-// Patch update the properties of a delegatedAdminAccessAssignment object.
+// Patch update the properties of a delegatedAdminAccessAssignment object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAss
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedAdminAccessAssignmentable), nil
 }
-// ToDeleteRequestInformation delete a delegatedAdminAccessAssignment object.
+// ToDeleteRequestInformation delete a delegatedAdminAccessAssignment object. This API is supported in the following national cloud deployments.
 func (m *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAss
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties of a delegatedAdminAccessAssignment object.
+// ToGetRequestInformation read the properties of a delegatedAdminAccessAssignment object. This API is supported in the following national cloud deployments.
 func (m *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAss
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a delegatedAdminAccessAssignment object.
+// ToPatchRequestInformation update the properties of a delegatedAdminAccessAssignment object. This API is supported in the following national cloud deployments.
 func (m *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignmentItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedAdminAccessAssignmentable, requestConfiguration *DelegatedAdminRelationshipsItemAccessAssignmentsDelegatedAdminAccessAssignmentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

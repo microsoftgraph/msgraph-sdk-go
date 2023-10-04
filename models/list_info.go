@@ -94,7 +94,7 @@ func (m *ListInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetHidden gets the hidden property value. If true, indicates that the list is not normally visible in the SharePoint user experience.
+// GetHidden gets the hidden property value. If true, indicates that the list isn't normally visible in the SharePoint user experience.
 func (m *ListInfo) GetHidden()(*bool) {
     val, err := m.GetBackingStore().Get("hidden")
     if err != nil {
@@ -179,7 +179,7 @@ func (m *ListInfo) SetContentTypesEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetHidden sets the hidden property value. If true, indicates that the list is not normally visible in the SharePoint user experience.
+// SetHidden sets the hidden property value. If true, indicates that the list isn't normally visible in the SharePoint user experience.
 func (m *ListInfo) SetHidden(value *bool)() {
     err := m.GetBackingStore().Set("hidden", value)
     if err != nil {

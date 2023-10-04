@@ -89,7 +89,7 @@ func (m *LocationConstraint) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetIsRequired gets the isRequired property value. The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
+// GetIsRequired gets the isRequired property value. The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes won't return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
 func (m *LocationConstraint) GetIsRequired()(*bool) {
     val, err := m.GetBackingStore().Get("isRequired")
     if err != nil {
@@ -184,7 +184,7 @@ func (m *LocationConstraint) SetAdditionalData(value map[string]any)() {
 func (m *LocationConstraint) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsRequired sets the isRequired property value. The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes will not return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
+// SetIsRequired sets the isRequired property value. The client requests the service to include in the response a meeting location for the meeting. If this is true and all the resources are busy, findMeetingTimes won't return any meeting time suggestions. If this is false and all the resources are busy, findMeetingTimes would still look for meeting times without locations.
 func (m *LocationConstraint) SetIsRequired(value *bool)() {
     err := m.GetBackingStore().Set("isRequired", value)
     if err != nil {

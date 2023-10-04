@@ -11,7 +11,7 @@ import (
 type ItemTeamworkInstalledAppsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamworkInstalledAppsRequestBuilderGetQueryParameters retrieve the list of apps installed in the personal scope of the specified user.
+// ItemTeamworkInstalledAppsRequestBuilderGetQueryParameters retrieve the list of apps installed in the personal scope of the specified user. This API is supported in the following national cloud deployments.
 type ItemTeamworkInstalledAppsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemTeamworkInstalledAppsRequestBuilder(rawUrl string, requestAdapter i2
 func (m *ItemTeamworkInstalledAppsRequestBuilder) Count()(*ItemTeamworkInstalledAppsCountRequestBuilder) {
     return NewItemTeamworkInstalledAppsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the list of apps installed in the personal scope of the specified user.
+// Get retrieve the list of apps installed in the personal scope of the specified user. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/userteamwork-list-installedapps?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemTeamworkInstalledAppsRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationCollectionResponseable), nil
 }
-// Post install an app in the personal scope of the specified user.
+// Post install an app in the personal scope of the specified user. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/userteamwork-post-installedapps?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemTeamworkInstalledAppsRequestBuilder) Post(ctx context.Context, body
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationable), nil
 }
-// ToGetRequestInformation retrieve the list of apps installed in the personal scope of the specified user.
+// ToGetRequestInformation retrieve the list of apps installed in the personal scope of the specified user. This API is supported in the following national cloud deployments.
 func (m *ItemTeamworkInstalledAppsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamworkInstalledAppsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemTeamworkInstalledAppsRequestBuilder) ToGetRequestInformation(ctx co
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation install an app in the personal scope of the specified user.
+// ToPostRequestInformation install an app in the personal scope of the specified user. This API is supported in the following national cloud deployments.
 func (m *ItemTeamworkInstalledAppsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserScopeTeamsAppInstallationable, requestConfiguration *ItemTeamworkInstalledAppsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

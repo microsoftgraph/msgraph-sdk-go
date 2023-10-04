@@ -10,7 +10,7 @@ import (
 type ItemRegisteredUsersItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemRegisteredUsersItemRefRequestBuilderDeleteQueryParameters remove a user as a registered user of the device.
+// ItemRegisteredUsersItemRefRequestBuilderDeleteQueryParameters remove a user as a registered user of the device. This API is supported in the following national cloud deployments.
 type ItemRegisteredUsersItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,7 @@ func NewItemRegisteredUsersItemRefRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewItemRegisteredUsersItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a user as a registered user of the device.
+// Delete remove a user as a registered user of the device. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/device-delete-registeredusers?view=graph-rest-1.0
@@ -56,7 +56,7 @@ func (m *ItemRegisteredUsersItemRefRequestBuilder) Delete(ctx context.Context, r
     }
     return nil
 }
-// ToDeleteRequestInformation remove a user as a registered user of the device.
+// ToDeleteRequestInformation remove a user as a registered user of the device. This API is supported in the following national cloud deployments.
 func (m *ItemRegisteredUsersItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemRegisteredUsersItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

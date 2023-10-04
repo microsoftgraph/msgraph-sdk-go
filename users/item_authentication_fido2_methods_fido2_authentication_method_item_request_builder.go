@@ -18,7 +18,7 @@ type ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilderDe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilderGetQueryParameters retrieve a user's single FIDO2 Security Key Authentication Method object.
+// ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilderGetQueryParameters retrieve a user's single FIDO2 Security Key Authentication Method object. This API is supported in the following national cloud deployments.
 type ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,7 +47,7 @@ func NewItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a user's FIDO2 Security Key Authentication Method object.
+// Delete deletes a user's FIDO2 Security Key Authentication Method object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/fido2authenticationmethod-delete?view=graph-rest-1.0
@@ -66,7 +66,7 @@ func (m *ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuild
     }
     return nil
 }
-// Get retrieve a user's single FIDO2 Security Key Authentication Method object.
+// Get retrieve a user's single FIDO2 Security Key Authentication Method object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/fido2authenticationmethod-get?view=graph-rest-1.0
@@ -88,7 +88,7 @@ func (m *ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Fido2AuthenticationMethodable), nil
 }
-// ToDeleteRequestInformation deletes a user's FIDO2 Security Key Authentication Method object.
+// ToDeleteRequestInformation deletes a user's FIDO2 Security Key Authentication Method object. This API is supported in the following national cloud deployments.
 func (m *ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -100,7 +100,7 @@ func (m *ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuild
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve a user's single FIDO2 Security Key Authentication Method object.
+// ToGetRequestInformation retrieve a user's single FIDO2 Security Key Authentication Method object. This API is supported in the following national cloud deployments.
 func (m *ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

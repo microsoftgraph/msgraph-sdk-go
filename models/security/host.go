@@ -42,6 +42,17 @@ func CreateHostFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
     }
     return NewHost(), nil
 }
+// GetChildHostPairs gets the childHostPairs property value. The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
+func (m *Host) GetChildHostPairs()([]HostPairable) {
+    val, err := m.GetBackingStore().Get("childHostPairs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]HostPairable)
+    }
+    return nil
+}
 // GetComponents gets the components property value. The hostComponents that are associated with this host.
 func (m *Host) GetComponents()([]HostComponentable) {
     val, err := m.GetBackingStore().Get("components")
@@ -67,6 +78,22 @@ func (m *Host) GetCookies()([]HostCookieable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Host) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Artifact.GetFieldDeserializers()
+    res["childHostPairs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateHostPairFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]HostPairable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(HostPairable)
+                }
+            }
+            m.SetChildHostPairs(res)
+        }
+        return nil
+    }
     res["components"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateHostComponentFromDiscriminatorValue)
         if err != nil {
@@ -109,6 +136,22 @@ func (m *Host) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["hostPairs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateHostPairFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]HostPairable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(HostPairable)
+                }
+            }
+            m.SetHostPairs(res)
+        }
+        return nil
+    }
     res["lastSeenDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -116,6 +159,22 @@ func (m *Host) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         if val != nil {
             m.SetLastSeenDateTime(val)
+        }
+        return nil
+    }
+    res["parentHostPairs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateHostPairFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]HostPairable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(HostPairable)
+                }
+            }
+            m.SetParentHostPairs(res)
         }
         return nil
     }
@@ -161,6 +220,38 @@ func (m *Host) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["sslCertificates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateHostSslCertificateFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]HostSslCertificateable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(HostSslCertificateable)
+                }
+            }
+            m.SetSslCertificates(res)
+        }
+        return nil
+    }
+    res["subdomains"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSubdomainFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Subdomainable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(Subdomainable)
+                }
+            }
+            m.SetSubdomains(res)
+        }
+        return nil
+    }
     res["trackers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateHostTrackerFromDiscriminatorValue)
         if err != nil {
@@ -177,9 +268,19 @@ func (m *Host) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["whois"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWhoisRecordFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWhois(val.(WhoisRecordable))
+        }
+        return nil
+    }
     return res
 }
-// GetFirstSeenDateTime gets the firstSeenDateTime property value. The first date and time this host was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
+// GetFirstSeenDateTime gets the firstSeenDateTime property value. The first date and time when this host was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *Host) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstSeenDateTime")
     if err != nil {
@@ -190,7 +291,18 @@ func (m *Host) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a
     }
     return nil
 }
-// GetLastSeenDateTime gets the lastSeenDateTime property value. The most recent date and time when this host was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
+// GetHostPairs gets the hostPairs property value. The hostPairs that are associated with this host, where this host is either the parentHost or childHost.
+func (m *Host) GetHostPairs()([]HostPairable) {
+    val, err := m.GetBackingStore().Get("hostPairs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]HostPairable)
+    }
+    return nil
+}
+// GetLastSeenDateTime gets the lastSeenDateTime property value. The most recent date and time when this host was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *Host) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSeenDateTime")
     if err != nil {
@@ -198,6 +310,17 @@ func (m *Host) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a1
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetParentHostPairs gets the parentHostPairs property value. The hostPairs that are associated with a host, where that host is the childHost and has an incoming pairing with a parentHost.
+func (m *Host) GetParentHostPairs()([]HostPairable) {
+    val, err := m.GetBackingStore().Get("parentHostPairs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]HostPairable)
     }
     return nil
 }
@@ -234,6 +357,28 @@ func (m *Host) GetReputation()(HostReputationable) {
     }
     return nil
 }
+// GetSslCertificates gets the sslCertificates property value. The hostSslCertificates that are associated with this host.
+func (m *Host) GetSslCertificates()([]HostSslCertificateable) {
+    val, err := m.GetBackingStore().Get("sslCertificates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]HostSslCertificateable)
+    }
+    return nil
+}
+// GetSubdomains gets the subdomains property value. The subdomains that are associated with this host.
+func (m *Host) GetSubdomains()([]Subdomainable) {
+    val, err := m.GetBackingStore().Get("subdomains")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Subdomainable)
+    }
+    return nil
+}
 // GetTrackers gets the trackers property value. The hostTrackers that are associated with this host.
 func (m *Host) GetTrackers()([]HostTrackerable) {
     val, err := m.GetBackingStore().Get("trackers")
@@ -245,11 +390,34 @@ func (m *Host) GetTrackers()([]HostTrackerable) {
     }
     return nil
 }
+// GetWhois gets the whois property value. The most recent whoisRecord for this host.
+func (m *Host) GetWhois()(WhoisRecordable) {
+    val, err := m.GetBackingStore().Get("whois")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WhoisRecordable)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *Host) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Artifact.Serialize(writer)
     if err != nil {
         return err
+    }
+    if m.GetChildHostPairs() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetChildHostPairs()))
+        for i, v := range m.GetChildHostPairs() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("childHostPairs", cast)
+        if err != nil {
+            return err
+        }
     }
     if m.GetComponents() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetComponents()))
@@ -281,8 +449,32 @@ func (m *Host) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetHostPairs() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHostPairs()))
+        for i, v := range m.GetHostPairs() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("hostPairs", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteTimeValue("lastSeenDateTime", m.GetLastSeenDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetParentHostPairs() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetParentHostPairs()))
+        for i, v := range m.GetParentHostPairs() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("parentHostPairs", cast)
         if err != nil {
             return err
         }
@@ -317,6 +509,30 @@ func (m *Host) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetSslCertificates() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSslCertificates()))
+        for i, v := range m.GetSslCertificates() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("sslCertificates", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetSubdomains() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSubdomains()))
+        for i, v := range m.GetSubdomains() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("subdomains", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTrackers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTrackers()))
         for i, v := range m.GetTrackers() {
@@ -329,7 +545,20 @@ func (m *Host) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("whois", m.GetWhois())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetChildHostPairs sets the childHostPairs property value. The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
+func (m *Host) SetChildHostPairs(value []HostPairable)() {
+    err := m.GetBackingStore().Set("childHostPairs", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetComponents sets the components property value. The hostComponents that are associated with this host.
 func (m *Host) SetComponents(value []HostComponentable)() {
@@ -345,16 +574,30 @@ func (m *Host) SetCookies(value []HostCookieable)() {
         panic(err)
     }
 }
-// SetFirstSeenDateTime sets the firstSeenDateTime property value. The first date and time this host was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
+// SetFirstSeenDateTime sets the firstSeenDateTime property value. The first date and time when this host was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *Host) SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("firstSeenDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastSeenDateTime sets the lastSeenDateTime property value. The most recent date and time when this host was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
+// SetHostPairs sets the hostPairs property value. The hostPairs that are associated with this host, where this host is either the parentHost or childHost.
+func (m *Host) SetHostPairs(value []HostPairable)() {
+    err := m.GetBackingStore().Set("hostPairs", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLastSeenDateTime sets the lastSeenDateTime property value. The most recent date and time when this host was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *Host) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastSeenDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetParentHostPairs sets the parentHostPairs property value. The hostPairs that are associated with a host, where that host is the childHost and has an incoming pairing with a parentHost.
+func (m *Host) SetParentHostPairs(value []HostPairable)() {
+    err := m.GetBackingStore().Set("parentHostPairs", value)
     if err != nil {
         panic(err)
     }
@@ -380,9 +623,30 @@ func (m *Host) SetReputation(value HostReputationable)() {
         panic(err)
     }
 }
+// SetSslCertificates sets the sslCertificates property value. The hostSslCertificates that are associated with this host.
+func (m *Host) SetSslCertificates(value []HostSslCertificateable)() {
+    err := m.GetBackingStore().Set("sslCertificates", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSubdomains sets the subdomains property value. The subdomains that are associated with this host.
+func (m *Host) SetSubdomains(value []Subdomainable)() {
+    err := m.GetBackingStore().Set("subdomains", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTrackers sets the trackers property value. The hostTrackers that are associated with this host.
 func (m *Host) SetTrackers(value []HostTrackerable)() {
     err := m.GetBackingStore().Set("trackers", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetWhois sets the whois property value. The most recent whoisRecord for this host.
+func (m *Host) SetWhois(value WhoisRecordable)() {
+    err := m.GetBackingStore().Set("whois", value)
     if err != nil {
         panic(err)
     }
@@ -391,20 +655,32 @@ func (m *Host) SetTrackers(value []HostTrackerable)() {
 type Hostable interface {
     Artifactable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetChildHostPairs()([]HostPairable)
     GetComponents()([]HostComponentable)
     GetCookies()([]HostCookieable)
     GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetHostPairs()([]HostPairable)
     GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetParentHostPairs()([]HostPairable)
     GetPassiveDns()([]PassiveDnsRecordable)
     GetPassiveDnsReverse()([]PassiveDnsRecordable)
     GetReputation()(HostReputationable)
+    GetSslCertificates()([]HostSslCertificateable)
+    GetSubdomains()([]Subdomainable)
     GetTrackers()([]HostTrackerable)
+    GetWhois()(WhoisRecordable)
+    SetChildHostPairs(value []HostPairable)()
     SetComponents(value []HostComponentable)()
     SetCookies(value []HostCookieable)()
     SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetHostPairs(value []HostPairable)()
     SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetParentHostPairs(value []HostPairable)()
     SetPassiveDns(value []PassiveDnsRecordable)()
     SetPassiveDnsReverse(value []PassiveDnsRecordable)()
     SetReputation(value HostReputationable)()
+    SetSslCertificates(value []HostSslCertificateable)()
+    SetSubdomains(value []Subdomainable)()
     SetTrackers(value []HostTrackerable)()
+    SetWhois(value WhoisRecordable)()
 }

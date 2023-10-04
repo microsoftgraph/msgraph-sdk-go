@@ -11,7 +11,7 @@ import (
 type ItemHomeRealmDiscoveryPoliciesRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemHomeRealmDiscoveryPoliciesRefRequestBuilderGetQueryParameters list the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+// ItemHomeRealmDiscoveryPoliciesRefRequestBuilderGetQueryParameters list the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal. This API is supported in the following national cloud deployments.
 type ItemHomeRealmDiscoveryPoliciesRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,7 +55,7 @@ func NewItemHomeRealmDiscoveryPoliciesRefRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewItemHomeRealmDiscoveryPoliciesRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get list the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+// Get list the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *ItemHomeRealmDiscoveryPoliciesRefRequestBuilder) Get(ctx context.Contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
-// Post assign a homeRealmDiscoveryPolicy to a servicePrincipal.
+// Post assign a homeRealmDiscoveryPolicy to a servicePrincipal. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-post-homerealmdiscoverypolicies?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemHomeRealmDiscoveryPoliciesRefRequestBuilder) Post(ctx context.Conte
     }
     return nil
 }
-// ToGetRequestInformation list the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+// ToGetRequestInformation list the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal. This API is supported in the following national cloud deployments.
 func (m *ItemHomeRealmDiscoveryPoliciesRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemHomeRealmDiscoveryPoliciesRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -112,7 +112,7 @@ func (m *ItemHomeRealmDiscoveryPoliciesRefRequestBuilder) ToGetRequestInformatio
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation assign a homeRealmDiscoveryPolicy to a servicePrincipal.
+// ToPostRequestInformation assign a homeRealmDiscoveryPolicy to a servicePrincipal. This API is supported in the following national cloud deployments.
 func (m *ItemHomeRealmDiscoveryPoliciesRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ItemHomeRealmDiscoveryPoliciesRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

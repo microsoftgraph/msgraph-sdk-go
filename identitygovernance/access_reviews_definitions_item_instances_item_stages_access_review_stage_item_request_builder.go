@@ -18,7 +18,7 @@ type AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an accessReviewStage object.
+// AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an accessReviewStage object. This API is supported in the following national cloud deployments.
 type AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemReq
     }
     return nil
 }
-// Get retrieve the properties and relationships of an accessReviewStage object.
+// Get retrieve the properties and relationships of an accessReviewStage object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewstage-get?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemReq
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewStageable), nil
 }
-// Patch update the properties of an accessReviewStage object. Only the reviewers and fallbackReviewers properties can be updated. You can only add reviewers to the fallbackReviewers property but can't remove existing fallbackReviewers. To update an accessReviewStage, its status must be NotStarted, Initializing, or InProgress.
+// Patch update the properties of an accessReviewStage object. Only the reviewers and fallbackReviewers properties can be updated. You can only add reviewers to the fallbackReviewers property but can't remove existing fallbackReviewers. To update an accessReviewStage, its status must be NotStarted, Initializing, or InProgress. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewstage-update?view=graph-rest-1.0
@@ -134,7 +134,7 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemReq
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an accessReviewStage object.
+// ToGetRequestInformation retrieve the properties and relationships of an accessReviewStage object. This API is supported in the following national cloud deployments.
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -150,7 +150,7 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemReq
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an accessReviewStage object. Only the reviewers and fallbackReviewers properties can be updated. You can only add reviewers to the fallbackReviewers property but can't remove existing fallbackReviewers. To update an accessReviewStage, its status must be NotStarted, Initializing, or InProgress.
+// ToPatchRequestInformation update the properties of an accessReviewStage object. Only the reviewers and fallbackReviewers properties can be updated. You can only add reviewers to the fallbackReviewers property but can't remove existing fallbackReviewers. To update an accessReviewStage, its status must be NotStarted, Initializing, or InProgress. This API is supported in the following national cloud deployments.
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessReviewStageable, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

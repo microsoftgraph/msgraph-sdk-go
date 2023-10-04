@@ -50,6 +50,7 @@ func NewSchoolsDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewSchoolsDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function delta
+// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 func (m *SchoolsDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *SchoolsDeltaRequestBuilderGetRequestConfiguration)(SchoolsDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -67,6 +68,25 @@ func (m *SchoolsDeltaRequestBuilder) Get(ctx context.Context, requestConfigurati
         return nil, nil
     }
     return res.(SchoolsDeltaResponseable), nil
+}
+// GetAsDeltaGetResponse invoke function delta
+func (m *SchoolsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *SchoolsDeltaRequestBuilderGetRequestConfiguration)(SchoolsDeltaGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateSchoolsDeltaGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(SchoolsDeltaGetResponseable), nil
 }
 // ToGetRequestInformation invoke function delta
 func (m *SchoolsDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SchoolsDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

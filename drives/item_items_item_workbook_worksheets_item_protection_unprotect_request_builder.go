@@ -30,7 +30,7 @@ func NewItemItemsItemWorkbookWorksheetsItemProtectionUnprotectRequestBuilder(raw
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemProtectionUnprotectRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post unprotect a worksheet
+// Post unprotect a worksheet This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/worksheetprotection-unprotect?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemProtectionUnprotectRequestBuilder) P
     }
     return nil
 }
-// ToPostRequestInformation unprotect a worksheet
+// ToPostRequestInformation unprotect a worksheet This API is supported in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookWorksheetsItemProtectionUnprotectRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemProtectionUnprotectRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

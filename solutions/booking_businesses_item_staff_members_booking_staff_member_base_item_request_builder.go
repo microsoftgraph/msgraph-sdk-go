@@ -18,7 +18,7 @@ type BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderDe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderGetQueryParameters get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.
+// BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderGetQueryParameters get the properties and relationships of a bookingStaffMember in the specified bookingBusiness. This API is supported in the following national cloud deployments.
 type BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewBookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewBookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a bookingStaffMember in the specified bookingBusiness.
+// Delete delete a bookingStaffMember in the specified bookingBusiness. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingstaffmember-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuild
     }
     return nil
 }
-// Get get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.
+// Get get the properties and relationships of a bookingStaffMember in the specified bookingBusiness. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingstaffmember-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingStaffMemberBaseable), nil
 }
-// Patch update the properties of a bookingStaffMember in the specified bookingBusiness.
+// Patch update the properties of a bookingStaffMember in the specified bookingBusiness. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingstaffmember-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuild
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingStaffMemberBaseable), nil
 }
-// ToDeleteRequestInformation delete a bookingStaffMember in the specified bookingBusiness.
+// ToDeleteRequestInformation delete a bookingStaffMember in the specified bookingBusiness. This API is supported in the following national cloud deployments.
 func (m *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuild
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.
+// ToGetRequestInformation get the properties and relationships of a bookingStaffMember in the specified bookingBusiness. This API is supported in the following national cloud deployments.
 func (m *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuild
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a bookingStaffMember in the specified bookingBusiness.
+// ToPatchRequestInformation update the properties of a bookingStaffMember in the specified bookingBusiness. This API is supported in the following national cloud deployments.
 func (m *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingStaffMemberBaseable, requestConfiguration *BookingBusinessesItemStaffMembersBookingStaffMemberBaseItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

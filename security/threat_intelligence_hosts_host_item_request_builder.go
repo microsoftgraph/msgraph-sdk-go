@@ -18,7 +18,7 @@ type ThreatIntelligenceHostsHostItemRequestBuilderDeleteRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ThreatIntelligenceHostsHostItemRequestBuilderGetQueryParameters read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types:
+// ThreatIntelligenceHostsHostItemRequestBuilderGetQueryParameters read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types: This API is supported in the following national cloud deployments.
 type ThreatIntelligenceHostsHostItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,6 +40,10 @@ type ThreatIntelligenceHostsHostItemRequestBuilderPatchRequestConfiguration stru
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// ChildHostPairs provides operations to manage the childHostPairs property of the microsoft.graph.security.host entity.
+func (m *ThreatIntelligenceHostsHostItemRequestBuilder) ChildHostPairs()(*ThreatIntelligenceHostsItemChildHostPairsRequestBuilder) {
+    return NewThreatIntelligenceHostsItemChildHostPairsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Components provides operations to manage the components property of the microsoft.graph.security.host entity.
 func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Components()(*ThreatIntelligenceHostsItemComponentsRequestBuilder) {
@@ -78,7 +82,7 @@ func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Delete(ctx context.Conte
     }
     return nil
 }
-// Get read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types:
+// Get read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types: This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-host-get?view=graph-rest-1.0
@@ -99,6 +103,14 @@ func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Get(ctx context.Context,
         return nil, nil
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.Hostable), nil
+}
+// HostPairs provides operations to manage the hostPairs property of the microsoft.graph.security.host entity.
+func (m *ThreatIntelligenceHostsHostItemRequestBuilder) HostPairs()(*ThreatIntelligenceHostsItemHostPairsRequestBuilder) {
+    return NewThreatIntelligenceHostsItemHostPairsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ParentHostPairs provides operations to manage the parentHostPairs property of the microsoft.graph.security.host entity.
+func (m *ThreatIntelligenceHostsHostItemRequestBuilder) ParentHostPairs()(*ThreatIntelligenceHostsItemParentHostPairsRequestBuilder) {
+    return NewThreatIntelligenceHostsItemParentHostPairsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PassiveDns provides operations to manage the passiveDns property of the microsoft.graph.security.host entity.
 func (m *ThreatIntelligenceHostsHostItemRequestBuilder) PassiveDns()(*ThreatIntelligenceHostsItemPassiveDnsRequestBuilder) {
@@ -131,6 +143,14 @@ func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Patch(ctx context.Contex
 func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Reputation()(*ThreatIntelligenceHostsItemReputationRequestBuilder) {
     return NewThreatIntelligenceHostsItemReputationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// SslCertificates provides operations to manage the sslCertificates property of the microsoft.graph.security.host entity.
+func (m *ThreatIntelligenceHostsHostItemRequestBuilder) SslCertificates()(*ThreatIntelligenceHostsItemSslCertificatesRequestBuilder) {
+    return NewThreatIntelligenceHostsItemSslCertificatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Subdomains provides operations to manage the subdomains property of the microsoft.graph.security.host entity.
+func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Subdomains()(*ThreatIntelligenceHostsItemSubdomainsRequestBuilder) {
+    return NewThreatIntelligenceHostsItemSubdomainsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property hosts for security
 func (m *ThreatIntelligenceHostsHostItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsHostItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -143,7 +163,7 @@ func (m *ThreatIntelligenceHostsHostItemRequestBuilder) ToDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types:
+// ToGetRequestInformation read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types: This API is supported in the following national cloud deployments.
 func (m *ThreatIntelligenceHostsHostItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsHostItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -179,6 +199,10 @@ func (m *ThreatIntelligenceHostsHostItemRequestBuilder) ToPatchRequestInformatio
 // Trackers provides operations to manage the trackers property of the microsoft.graph.security.host entity.
 func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Trackers()(*ThreatIntelligenceHostsItemTrackersRequestBuilder) {
     return NewThreatIntelligenceHostsItemTrackersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Whois provides operations to manage the whois property of the microsoft.graph.security.host entity.
+func (m *ThreatIntelligenceHostsHostItemRequestBuilder) Whois()(*ThreatIntelligenceHostsItemWhoisRequestBuilder) {
+    return NewThreatIntelligenceHostsItemWhoisRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 func (m *ThreatIntelligenceHostsHostItemRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceHostsHostItemRequestBuilder) {

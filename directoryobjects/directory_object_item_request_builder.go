@@ -18,7 +18,7 @@ type DirectoryObjectItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DirectoryObjectItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a directoryObject object.
+// DirectoryObjectItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a directoryObject object. This API is supported in the following national cloud deployments.
 type DirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -62,7 +62,7 @@ func NewDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a directory object, for example, a group, user, application, or service principal.
+// Delete delete a directory object, for example, a group, user, application, or service principal. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-delete?view=graph-rest-1.0
@@ -81,7 +81,7 @@ func (m *DirectoryObjectItemRequestBuilder) Delete(ctx context.Context, requestC
     }
     return nil
 }
-// Get retrieve the properties and relationships of a directoryObject object.
+// Get retrieve the properties and relationships of a directoryObject object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-get?view=graph-rest-1.0
@@ -134,7 +134,7 @@ func (m *DirectoryObjectItemRequestBuilder) Patch(ctx context.Context, body iadc
 func (m *DirectoryObjectItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
     return NewItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a directory object, for example, a group, user, application, or service principal.
+// ToDeleteRequestInformation delete a directory object, for example, a group, user, application, or service principal. This API is supported in the following national cloud deployments.
 func (m *DirectoryObjectItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DirectoryObjectItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -146,7 +146,7 @@ func (m *DirectoryObjectItemRequestBuilder) ToDeleteRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a directoryObject object.
+// ToGetRequestInformation retrieve the properties and relationships of a directoryObject object. This API is supported in the following national cloud deployments.
 func (m *DirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

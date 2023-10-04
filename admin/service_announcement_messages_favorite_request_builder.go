@@ -30,7 +30,8 @@ func NewServiceAnnouncementMessagesFavoriteRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewServiceAnnouncementMessagesFavoriteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post change the status of a list of serviceUpdateMessages to favorite for the signed in user.
+// Post change the status of a list of serviceUpdateMessages to favorite for the signed in user. This API is supported in the following national cloud deployments.
+// Deprecated: This method is obsolete. Use PostAsFavoritePostResponse instead.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-1.0
@@ -52,7 +53,29 @@ func (m *ServiceAnnouncementMessagesFavoriteRequestBuilder) Post(ctx context.Con
     }
     return res.(ServiceAnnouncementMessagesFavoriteResponseable), nil
 }
-// ToPostRequestInformation change the status of a list of serviceUpdateMessages to favorite for the signed in user.
+// PostAsFavoritePostResponse change the status of a list of serviceUpdateMessages to favorite for the signed in user. This API is supported in the following national cloud deployments.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-1.0
+func (m *ServiceAnnouncementMessagesFavoriteRequestBuilder) PostAsFavoritePostResponse(ctx context.Context, body ServiceAnnouncementMessagesFavoritePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesFavoriteRequestBuilderPostRequestConfiguration)(ServiceAnnouncementMessagesFavoritePostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateServiceAnnouncementMessagesFavoritePostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ServiceAnnouncementMessagesFavoritePostResponseable), nil
+}
+// ToPostRequestInformation change the status of a list of serviceUpdateMessages to favorite for the signed in user. This API is supported in the following national cloud deployments.
 func (m *ServiceAnnouncementMessagesFavoriteRequestBuilder) ToPostRequestInformation(ctx context.Context, body ServiceAnnouncementMessagesFavoritePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesFavoriteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

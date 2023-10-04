@@ -32,7 +32,7 @@ func (m *IpAddress) GetAutonomousSystem()(AutonomousSystemable) {
     }
     return nil
 }
-// GetCountryOrRegion gets the countryOrRegion property value. The country or region for this IP address.
+// GetCountryOrRegion gets the countryOrRegion property value. The country/region for this IP address.
 func (m *IpAddress) GetCountryOrRegion()(*string) {
     val, err := m.GetBackingStore().Get("countryOrRegion")
     if err != nil {
@@ -149,7 +149,7 @@ func (m *IpAddress) SetAutonomousSystem(value AutonomousSystemable)() {
         panic(err)
     }
 }
-// SetCountryOrRegion sets the countryOrRegion property value. The country or region for this IP address.
+// SetCountryOrRegion sets the countryOrRegion property value. The country/region for this IP address.
 func (m *IpAddress) SetCountryOrRegion(value *string)() {
     err := m.GetBackingStore().Set("countryOrRegion", value)
     if err != nil {

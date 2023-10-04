@@ -18,7 +18,7 @@ type TasksItemBucketTaskBoardFormatRequestBuilderDeleteRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TasksItemBucketTaskBoardFormatRequestBuilderGetQueryParameters retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
+// TasksItemBucketTaskBoardFormatRequestBuilderGetQueryParameters retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object. This API is supported in the following national cloud deployments.
 type TasksItemBucketTaskBoardFormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *TasksItemBucketTaskBoardFormatRequestBuilder) Delete(ctx context.Contex
     }
     return nil
 }
-// Get retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
+// Get retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *TasksItemBucketTaskBoardFormatRequestBuilder) ToDeleteRequestInformatio
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
+// ToGetRequestInformation retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object. This API is supported in the following national cloud deployments.
 func (m *TasksItemBucketTaskBoardFormatRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TasksItemBucketTaskBoardFormatRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

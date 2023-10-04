@@ -18,7 +18,7 @@ type AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilderGetQueryParameters read the properties and relationships of a userConsentRequest object.
+// AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilderGetQueryParameters read the properties and relationships of a userConsentRequest object. This API is supported in the following national cloud deployments.
 type AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestIt
     }
     return nil
 }
-// Get read the properties and relationships of a userConsentRequest object.
+// Get read the properties and relationships of a userConsentRequest object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/userconsentrequest-get?view=graph-rest-1.0
@@ -127,7 +127,7 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestIt
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a userConsentRequest object.
+// ToGetRequestInformation read the properties and relationships of a userConsentRequest object. This API is supported in the following national cloud deployments.
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

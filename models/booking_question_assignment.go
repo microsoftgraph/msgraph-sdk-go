@@ -95,7 +95,7 @@ func (m *BookingQuestionAssignment) GetOdataType()(*string) {
     }
     return nil
 }
-// GetQuestionId gets the questionId property value. Indicates whether it is mandatory to answer the custom question.
+// GetQuestionId gets the questionId property value. Indicates whether it's mandatory to answer the custom question.
 func (m *BookingQuestionAssignment) GetQuestionId()(*string) {
     val, err := m.GetBackingStore().Get("questionId")
     if err != nil {
@@ -159,7 +159,7 @@ func (m *BookingQuestionAssignment) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetQuestionId sets the questionId property value. Indicates whether it is mandatory to answer the custom question.
+// SetQuestionId sets the questionId property value. Indicates whether it's mandatory to answer the custom question.
 func (m *BookingQuestionAssignment) SetQuestionId(value *string)() {
     err := m.GetBackingStore().Set("questionId", value)
     if err != nil {

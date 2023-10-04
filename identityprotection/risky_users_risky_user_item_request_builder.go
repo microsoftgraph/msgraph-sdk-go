@@ -18,7 +18,7 @@ type RiskyUsersRiskyUserItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RiskyUsersRiskyUserItemRequestBuilderGetQueryParameters read the properties and relationships of a riskyUser object.
+// RiskyUsersRiskyUserItemRequestBuilderGetQueryParameters read the properties and relationships of a riskyUser object. This API is supported in the following national cloud deployments.
 type RiskyUsersRiskyUserItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *RiskyUsersRiskyUserItemRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// Get read the properties and relationships of a riskyUser object.
+// Get read the properties and relationships of a riskyUser object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/riskyuser-get?view=graph-rest-1.0
@@ -127,7 +127,7 @@ func (m *RiskyUsersRiskyUserItemRequestBuilder) ToDeleteRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a riskyUser object.
+// ToGetRequestInformation read the properties and relationships of a riskyUser object. This API is supported in the following national cloud deployments.
 func (m *RiskyUsersRiskyUserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RiskyUsersRiskyUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

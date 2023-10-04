@@ -30,7 +30,8 @@ func NewServiceAnnouncementMessagesUnarchiveRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewServiceAnnouncementMessagesUnarchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post unarchive a list of serviceUpdateMessages for the signed in user.
+// Post unarchive a list of serviceUpdateMessages for the signed in user. This API is supported in the following national cloud deployments.
+// Deprecated: This method is obsolete. Use PostAsUnarchivePostResponse instead.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-1.0
@@ -52,7 +53,29 @@ func (m *ServiceAnnouncementMessagesUnarchiveRequestBuilder) Post(ctx context.Co
     }
     return res.(ServiceAnnouncementMessagesUnarchiveResponseable), nil
 }
-// ToPostRequestInformation unarchive a list of serviceUpdateMessages for the signed in user.
+// PostAsUnarchivePostResponse unarchive a list of serviceUpdateMessages for the signed in user. This API is supported in the following national cloud deployments.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-1.0
+func (m *ServiceAnnouncementMessagesUnarchiveRequestBuilder) PostAsUnarchivePostResponse(ctx context.Context, body ServiceAnnouncementMessagesUnarchivePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesUnarchiveRequestBuilderPostRequestConfiguration)(ServiceAnnouncementMessagesUnarchivePostResponseable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateServiceAnnouncementMessagesUnarchivePostResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ServiceAnnouncementMessagesUnarchivePostResponseable), nil
+}
+// ToPostRequestInformation unarchive a list of serviceUpdateMessages for the signed in user. This API is supported in the following national cloud deployments.
 func (m *ServiceAnnouncementMessagesUnarchiveRequestBuilder) ToPostRequestInformation(ctx context.Context, body ServiceAnnouncementMessagesUnarchivePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesUnarchiveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

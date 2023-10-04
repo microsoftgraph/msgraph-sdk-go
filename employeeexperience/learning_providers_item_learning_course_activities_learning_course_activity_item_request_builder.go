@@ -54,7 +54,7 @@ func NewLearningProvidersItemLearningCourseActivitiesLearningCourseActivityItemR
     urlParams["request-raw-url"] = rawUrl
     return NewLearningProvidersItemLearningCourseActivitiesLearningCourseActivityItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a learningCourseActivity object by using the course activity ID of either an assignment or a self-initiated activity.
+// Delete delete a learningCourseActivity object by using the course activity ID of either an assignment or a self-initiated activity. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/learningcourseactivity-delete?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *LearningProvidersItemLearningCourseActivitiesLearningCourseActivityItem
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LearningCourseActivityable), nil
 }
-// Patch update the properties of a learningCourseActivity object. 
+// Patch update the properties of a learningCourseActivity object.  This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/learningcourseactivity-update?view=graph-rest-1.0
@@ -114,7 +114,7 @@ func (m *LearningProvidersItemLearningCourseActivitiesLearningCourseActivityItem
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LearningCourseActivityable), nil
 }
-// ToDeleteRequestInformation delete a learningCourseActivity object by using the course activity ID of either an assignment or a self-initiated activity.
+// ToDeleteRequestInformation delete a learningCourseActivity object by using the course activity ID of either an assignment or a self-initiated activity. This API is supported in the following national cloud deployments.
 func (m *LearningProvidersItemLearningCourseActivitiesLearningCourseActivityItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LearningProvidersItemLearningCourseActivitiesLearningCourseActivityItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *LearningProvidersItemLearningCourseActivitiesLearningCourseActivityItem
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a learningCourseActivity object. 
+// ToPatchRequestInformation update the properties of a learningCourseActivity object.  This API is supported in the following national cloud deployments.
 func (m *LearningProvidersItemLearningCourseActivitiesLearningCourseActivityItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LearningCourseActivityable, requestConfiguration *LearningProvidersItemLearningCourseActivitiesLearningCourseActivityItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

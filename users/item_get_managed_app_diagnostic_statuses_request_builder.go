@@ -46,6 +46,7 @@ func NewItemGetManagedAppDiagnosticStatusesRequestBuilder(rawUrl string, request
     return NewItemGetManagedAppDiagnosticStatusesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get gets diagnostics validation status for a given user.
+// Deprecated: This method is obsolete. Use GetAsGetManagedAppDiagnosticStatusesGetResponse instead.
 func (m *ItemGetManagedAppDiagnosticStatusesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGetManagedAppDiagnosticStatusesRequestBuilderGetRequestConfiguration)(ItemGetManagedAppDiagnosticStatusesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -63,6 +64,25 @@ func (m *ItemGetManagedAppDiagnosticStatusesRequestBuilder) Get(ctx context.Cont
         return nil, nil
     }
     return res.(ItemGetManagedAppDiagnosticStatusesResponseable), nil
+}
+// GetAsGetManagedAppDiagnosticStatusesGetResponse gets diagnostics validation status for a given user.
+func (m *ItemGetManagedAppDiagnosticStatusesRequestBuilder) GetAsGetManagedAppDiagnosticStatusesGetResponse(ctx context.Context, requestConfiguration *ItemGetManagedAppDiagnosticStatusesRequestBuilderGetRequestConfiguration)(ItemGetManagedAppDiagnosticStatusesGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemGetManagedAppDiagnosticStatusesGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemGetManagedAppDiagnosticStatusesGetResponseable), nil
 }
 // ToGetRequestInformation gets diagnostics validation status for a given user.
 func (m *ItemGetManagedAppDiagnosticStatusesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGetManagedAppDiagnosticStatusesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

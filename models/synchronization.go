@@ -94,7 +94,7 @@ func (m *Synchronization) GetSecrets()([]SynchronizationSecretKeyStringValuePair
     }
     return nil
 }
-// GetTemplates gets the templates property value. Pre-configured synchronization settings for a particular application.
+// GetTemplates gets the templates property value. Preconfigured synchronization settings for a particular application.
 func (m *Synchronization) GetTemplates()([]SynchronizationTemplateable) {
     val, err := m.GetBackingStore().Get("templates")
     if err != nil {
@@ -163,7 +163,7 @@ func (m *Synchronization) SetSecrets(value []SynchronizationSecretKeyStringValue
         panic(err)
     }
 }
-// SetTemplates sets the templates property value. Pre-configured synchronization settings for a particular application.
+// SetTemplates sets the templates property value. Preconfigured synchronization settings for a particular application.
 func (m *Synchronization) SetTemplates(value []SynchronizationTemplateable)() {
     err := m.GetBackingStore().Set("templates", value)
     if err != nil {

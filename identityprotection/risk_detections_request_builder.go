@@ -11,7 +11,7 @@ import (
 type RiskDetectionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RiskDetectionsRequestBuilderGetQueryParameters get a list of the riskDetection objects and their properties.
+// RiskDetectionsRequestBuilderGetQueryParameters get a list of the riskDetection objects and their properties. This API is supported in the following national cloud deployments.
 type RiskDetectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewRiskDetectionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *RiskDetectionsRequestBuilder) Count()(*RiskDetectionsCountRequestBuilder) {
     return NewRiskDetectionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the riskDetection objects and their properties.
+// Get get a list of the riskDetection objects and their properties. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/riskdetection-list?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *RiskDetectionsRequestBuilder) Post(ctx context.Context, body iadcd81124
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RiskDetectionable), nil
 }
-// ToGetRequestInformation get a list of the riskDetection objects and their properties.
+// ToGetRequestInformation get a list of the riskDetection objects and their properties. This API is supported in the following national cloud deployments.
 func (m *RiskDetectionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RiskDetectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type PresencesPresenceItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PresencesPresenceItemRequestBuilderGetQueryParameters get a user's presence information.
+// PresencesPresenceItemRequestBuilderGetQueryParameters get a user's presence information. This API is supported in the following national cloud deployments.
 type PresencesPresenceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,7 +78,7 @@ func (m *PresencesPresenceItemRequestBuilder) Delete(ctx context.Context, reques
     }
     return nil
 }
-// Get get a user's presence information.
+// Get get a user's presence information. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
@@ -143,7 +143,7 @@ func (m *PresencesPresenceItemRequestBuilder) ToDeleteRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get a user's presence information.
+// ToGetRequestInformation get a user's presence information. This API is supported in the following national cloud deployments.
 func (m *PresencesPresenceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PresencesPresenceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

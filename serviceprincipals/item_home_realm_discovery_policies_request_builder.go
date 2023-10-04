@@ -11,7 +11,7 @@ import (
 type ItemHomeRealmDiscoveryPoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemHomeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters list the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+// ItemHomeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters list the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal. This API is supported in the following national cloud deployments.
 type ItemHomeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewItemHomeRealmDiscoveryPoliciesRequestBuilder(rawUrl string, requestAdapt
 func (m *ItemHomeRealmDiscoveryPoliciesRequestBuilder) Count()(*ItemHomeRealmDiscoveryPoliciesCountRequestBuilder) {
     return NewItemHomeRealmDiscoveryPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+// Get list the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0
@@ -93,7 +93,7 @@ func (m *ItemHomeRealmDiscoveryPoliciesRequestBuilder) Get(ctx context.Context, 
 func (m *ItemHomeRealmDiscoveryPoliciesRequestBuilder) Ref()(*ItemHomeRealmDiscoveryPoliciesRefRequestBuilder) {
     return NewItemHomeRealmDiscoveryPoliciesRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation list the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+// ToGetRequestInformation list the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal. This API is supported in the following national cloud deployments.
 func (m *ItemHomeRealmDiscoveryPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemHomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

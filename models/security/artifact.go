@@ -38,12 +38,16 @@ func CreateArtifactFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
                         return NewHostCookie(), nil
                     case "#microsoft.graph.security.hostname":
                         return NewHostname(), nil
+                    case "#microsoft.graph.security.hostSslCertificate":
+                        return NewHostSslCertificate(), nil
                     case "#microsoft.graph.security.hostTracker":
                         return NewHostTracker(), nil
                     case "#microsoft.graph.security.ipAddress":
                         return NewIpAddress(), nil
                     case "#microsoft.graph.security.passiveDnsRecord":
                         return NewPassiveDnsRecord(), nil
+                    case "#microsoft.graph.security.sslCertificate":
+                        return NewSslCertificate(), nil
                     case "#microsoft.graph.security.unclassifiedArtifact":
                         return NewUnclassifiedArtifact(), nil
                 }

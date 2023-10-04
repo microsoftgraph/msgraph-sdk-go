@@ -18,7 +18,7 @@ type ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilderGetQueryParameters read the properties and relationships of a passiveDnsRecord object.
+// ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilderGetQueryParameters read the properties and relationships of a passiveDnsRecord object. This API is supported in the following national cloud deployments.
 type ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilder) 
     }
     return nil
 }
-// Get read the properties and relationships of a passiveDnsRecord object.
+// Get read the properties and relationships of a passiveDnsRecord object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-passivednsrecord-get?view=graph-rest-1.0
@@ -131,7 +131,7 @@ func (m *ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a passiveDnsRecord object.
+// ToGetRequestInformation read the properties and relationships of a passiveDnsRecord object. This API is supported in the following national cloud deployments.
 func (m *ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligencePassiveDnsRecordsPassiveDnsRecordItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

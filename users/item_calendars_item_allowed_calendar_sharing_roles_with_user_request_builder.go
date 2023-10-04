@@ -49,6 +49,7 @@ func NewItemCalendarsItemAllowedCalendarSharingRolesWithUserRequestBuilder(rawUr
     return NewItemCalendarsItemAllowedCalendarSharingRolesWithUserRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function allowedCalendarSharingRoles
+// Deprecated: This method is obsolete. Use GetAsAllowedCalendarSharingRolesWithUserGetResponse instead.
 func (m *ItemCalendarsItemAllowedCalendarSharingRolesWithUserRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarsItemAllowedCalendarSharingRolesWithUserRequestBuilderGetRequestConfiguration)(ItemCalendarsItemAllowedCalendarSharingRolesWithUserResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -66,6 +67,25 @@ func (m *ItemCalendarsItemAllowedCalendarSharingRolesWithUserRequestBuilder) Get
         return nil, nil
     }
     return res.(ItemCalendarsItemAllowedCalendarSharingRolesWithUserResponseable), nil
+}
+// GetAsAllowedCalendarSharingRolesWithUserGetResponse invoke function allowedCalendarSharingRoles
+func (m *ItemCalendarsItemAllowedCalendarSharingRolesWithUserRequestBuilder) GetAsAllowedCalendarSharingRolesWithUserGetResponse(ctx context.Context, requestConfiguration *ItemCalendarsItemAllowedCalendarSharingRolesWithUserRequestBuilderGetRequestConfiguration)(ItemCalendarsItemAllowedCalendarSharingRolesWithUserGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemCalendarsItemAllowedCalendarSharingRolesWithUserGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemCalendarsItemAllowedCalendarSharingRolesWithUserGetResponseable), nil
 }
 // ToGetRequestInformation invoke function allowedCalendarSharingRoles
 func (m *ItemCalendarsItemAllowedCalendarSharingRolesWithUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarsItemAllowedCalendarSharingRolesWithUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

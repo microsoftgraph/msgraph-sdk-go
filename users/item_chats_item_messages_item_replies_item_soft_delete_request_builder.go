@@ -30,7 +30,7 @@ func NewItemChatsItemMessagesItemRepliesItemSoftDeleteRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewItemChatsItemMessagesItemRepliesItemSoftDeleteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post delete a single chatMessage or a chat message reply in a channel or a chat.
+// Post delete a single chatMessage or a chat message reply in a channel or a chat. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemChatsItemMessagesItemRepliesItemSoftDeleteRequestBuilder) Post(ctx 
     }
     return nil
 }
-// ToPostRequestInformation delete a single chatMessage or a chat message reply in a channel or a chat.
+// ToPostRequestInformation delete a single chatMessage or a chat message reply in a channel or a chat. This API is supported in the following national cloud deployments.
 func (m *ItemChatsItemMessagesItemRepliesItemSoftDeleteRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemMessagesItemRepliesItemSoftDeleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

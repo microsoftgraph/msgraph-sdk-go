@@ -41,7 +41,7 @@ func (m *BookingAppointment) GetAnonymousJoinWebUrl()(*string) {
     }
     return nil
 }
-// GetCustomers gets the customers property value. A collection of customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+// GetCustomers gets the customers property value. A collection of customer properties for an appointment. An appointment contains a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
 func (m *BookingAppointment) GetCustomers()([]BookingCustomerInformationBaseable) {
     val, err := m.GetBackingStore().Get("customers")
     if err != nil {
@@ -392,7 +392,7 @@ func (m *BookingAppointment) GetMaximumAttendeesCount()(*int32) {
     }
     return nil
 }
-// GetOptOutOfCustomerEmail gets the optOutOfCustomerEmail property value. If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+// GetOptOutOfCustomerEmail gets the optOutOfCustomerEmail property value. If true indicates that the bookingCustomer for this appointment doesn't wish to receive a confirmation for this appointment.
 func (m *BookingAppointment) GetOptOutOfCustomerEmail()(*bool) {
     val, err := m.GetBackingStore().Get("optOutOfCustomerEmail")
     if err != nil {
@@ -491,7 +491,7 @@ func (m *BookingAppointment) GetServiceLocation()(Locationable) {
     }
     return nil
 }
-// GetServiceName gets the serviceName property value. The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.
+// GetServiceName gets the serviceName property value. The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it's computed from the service associated with the appointment by the serviceId property.
 func (m *BookingAppointment) GetServiceName()(*string) {
     val, err := m.GetBackingStore().Get("serviceName")
     if err != nil {
@@ -713,7 +713,7 @@ func (m *BookingAppointment) SetAnonymousJoinWebUrl(value *string)() {
         panic(err)
     }
 }
-// SetCustomers sets the customers property value. A collection of customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+// SetCustomers sets the customers property value. A collection of customer properties for an appointment. An appointment contains a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
 func (m *BookingAppointment) SetCustomers(value []BookingCustomerInformationBaseable)() {
     err := m.GetBackingStore().Set("customers", value)
     if err != nil {
@@ -769,7 +769,7 @@ func (m *BookingAppointment) SetMaximumAttendeesCount(value *int32)() {
         panic(err)
     }
 }
-// SetOptOutOfCustomerEmail sets the optOutOfCustomerEmail property value. If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+// SetOptOutOfCustomerEmail sets the optOutOfCustomerEmail property value. If true indicates that the bookingCustomer for this appointment doesn't wish to receive a confirmation for this appointment.
 func (m *BookingAppointment) SetOptOutOfCustomerEmail(value *bool)() {
     err := m.GetBackingStore().Set("optOutOfCustomerEmail", value)
     if err != nil {
@@ -832,7 +832,7 @@ func (m *BookingAppointment) SetServiceLocation(value Locationable)() {
         panic(err)
     }
 }
-// SetServiceName sets the serviceName property value. The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.
+// SetServiceName sets the serviceName property value. The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it's computed from the service associated with the appointment by the serviceId property.
 func (m *BookingAppointment) SetServiceName(value *string)() {
     err := m.GetBackingStore().Set("serviceName", value)
     if err != nil {

@@ -30,7 +30,7 @@ func NewCrossTenantAccessPolicyDefaultResetToSystemDefaultRequestBuilder(rawUrl 
     urlParams["request-raw-url"] = rawUrl
     return NewCrossTenantAccessPolicyDefaultResetToSystemDefaultRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
+// Post reset any changes made to the default configuration in a cross-tenant access policy back to the system default. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-resettosystemdefault?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *CrossTenantAccessPolicyDefaultResetToSystemDefaultRequestBuilder) Post(
     }
     return nil
 }
-// ToPostRequestInformation reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
+// ToPostRequestInformation reset any changes made to the default configuration in a cross-tenant access policy back to the system default. This API is supported in the following national cloud deployments.
 func (m *CrossTenantAccessPolicyDefaultResetToSystemDefaultRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *CrossTenantAccessPolicyDefaultResetToSystemDefaultRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -41,7 +41,7 @@ func (m *PermissionGrantConditionSet) GetClientApplicationPublisherIds()([]strin
     }
     return nil
 }
-// GetClientApplicationsFromVerifiedPublisherOnly gets the clientApplicationsFromVerifiedPublisherOnly property value. Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it does not have a verified publisher. Default is false.
+// GetClientApplicationsFromVerifiedPublisherOnly gets the clientApplicationsFromVerifiedPublisherOnly property value. Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it doesn't have a verified publisher. Default is false.
 func (m *PermissionGrantConditionSet) GetClientApplicationsFromVerifiedPublisherOnly()(*bool) {
     val, err := m.GetBackingStore().Get("clientApplicationsFromVerifiedPublisherOnly")
     if err != nil {
@@ -172,7 +172,7 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetPermissionClassification gets the permissionClassification property value. The permission classification for the permission being granted, or all to match with any permission classification (including permissions which are not classified). Default is all.
+// GetPermissionClassification gets the permissionClassification property value. The permission classification for the permission being granted, or all to match with any permission classification (including permissions that aren't classified). Default is all.
 func (m *PermissionGrantConditionSet) GetPermissionClassification()(*string) {
     val, err := m.GetBackingStore().Get("permissionClassification")
     if err != nil {
@@ -194,7 +194,7 @@ func (m *PermissionGrantConditionSet) GetPermissions()([]string) {
     }
     return nil
 }
-// GetPermissionType gets the permissionType property value. The permission type of the permission being granted. Possible values: application for application permissions (e.g. app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions which have not been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but cannot be used in custom permission grant policies. Required.
+// GetPermissionType gets the permissionType property value. The permission type of the permission being granted. Possible values: application for application permissions (for example app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions that haven't been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but can't be used in custom permission grant policies. Required.
 func (m *PermissionGrantConditionSet) GetPermissionType()(*PermissionType) {
     val, err := m.GetBackingStore().Get("permissionType")
     if err != nil {
@@ -205,7 +205,7 @@ func (m *PermissionGrantConditionSet) GetPermissionType()(*PermissionType) {
     }
     return nil
 }
-// GetResourceApplication gets the resourceApplication property value. The appId of the resource application (e.g. the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.
+// GetResourceApplication gets the resourceApplication property value. The appId of the resource application (for example the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.
 func (m *PermissionGrantConditionSet) GetResourceApplication()(*string) {
     val, err := m.GetBackingStore().Get("resourceApplication")
     if err != nil {
@@ -287,7 +287,7 @@ func (m *PermissionGrantConditionSet) SetClientApplicationPublisherIds(value []s
         panic(err)
     }
 }
-// SetClientApplicationsFromVerifiedPublisherOnly sets the clientApplicationsFromVerifiedPublisherOnly property value. Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it does not have a verified publisher. Default is false.
+// SetClientApplicationsFromVerifiedPublisherOnly sets the clientApplicationsFromVerifiedPublisherOnly property value. Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it doesn't have a verified publisher. Default is false.
 func (m *PermissionGrantConditionSet) SetClientApplicationsFromVerifiedPublisherOnly(value *bool)() {
     err := m.GetBackingStore().Set("clientApplicationsFromVerifiedPublisherOnly", value)
     if err != nil {
@@ -301,7 +301,7 @@ func (m *PermissionGrantConditionSet) SetClientApplicationTenantIds(value []stri
         panic(err)
     }
 }
-// SetPermissionClassification sets the permissionClassification property value. The permission classification for the permission being granted, or all to match with any permission classification (including permissions which are not classified). Default is all.
+// SetPermissionClassification sets the permissionClassification property value. The permission classification for the permission being granted, or all to match with any permission classification (including permissions that aren't classified). Default is all.
 func (m *PermissionGrantConditionSet) SetPermissionClassification(value *string)() {
     err := m.GetBackingStore().Set("permissionClassification", value)
     if err != nil {
@@ -315,14 +315,14 @@ func (m *PermissionGrantConditionSet) SetPermissions(value []string)() {
         panic(err)
     }
 }
-// SetPermissionType sets the permissionType property value. The permission type of the permission being granted. Possible values: application for application permissions (e.g. app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions which have not been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but cannot be used in custom permission grant policies. Required.
+// SetPermissionType sets the permissionType property value. The permission type of the permission being granted. Possible values: application for application permissions (for example app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions that haven't been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but can't be used in custom permission grant policies. Required.
 func (m *PermissionGrantConditionSet) SetPermissionType(value *PermissionType)() {
     err := m.GetBackingStore().Set("permissionType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResourceApplication sets the resourceApplication property value. The appId of the resource application (e.g. the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.
+// SetResourceApplication sets the resourceApplication property value. The appId of the resource application (for example the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.
 func (m *PermissionGrantConditionSet) SetResourceApplication(value *string)() {
     err := m.GetBackingStore().Set("resourceApplication", value)
     if err != nil {

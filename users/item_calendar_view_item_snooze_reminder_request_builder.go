@@ -30,7 +30,7 @@ func NewItemCalendarViewItemSnoozeReminderRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarViewItemSnoozeReminderRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post postpone a reminder for an event in a user calendar until a new time.
+// Post postpone a reminder for an event in a user calendar until a new time. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemCalendarViewItemSnoozeReminderRequestBuilder) Post(ctx context.Cont
     }
     return nil
 }
-// ToPostRequestInformation postpone a reminder for an event in a user calendar until a new time.
+// ToPostRequestInformation postpone a reminder for an event in a user calendar until a new time. This API is supported in the following national cloud deployments.
 func (m *ItemCalendarViewItemSnoozeReminderRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCalendarViewItemSnoozeReminderPostRequestBodyable, requestConfiguration *ItemCalendarViewItemSnoozeReminderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

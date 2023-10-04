@@ -27,6 +27,14 @@ type MobileAppsItemGraphManagedAndroidLobAppRequestBuilderGetRequestConfiguratio
     // Request query parameters
     QueryParameters *MobileAppsItemGraphManagedAndroidLobAppRequestBuilderGetQueryParameters
 }
+// Assignments provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphManagedAndroidLobAppRequestBuilder) Assignments()(*MobileAppsItemGraphManagedAndroidLobAppAssignmentsRequestBuilder) {
+    return NewMobileAppsItemGraphManagedAndroidLobAppAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+func (m *MobileAppsItemGraphManagedAndroidLobAppRequestBuilder) Categories()(*MobileAppsItemGraphManagedAndroidLobAppCategoriesRequestBuilder) {
+    return NewMobileAppsItemGraphManagedAndroidLobAppCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewMobileAppsItemGraphManagedAndroidLobAppRequestBuilderInternal instantiates a new GraphManagedAndroidLobAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphManagedAndroidLobAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphManagedAndroidLobAppRequestBuilder) {
     m := &MobileAppsItemGraphManagedAndroidLobAppRequestBuilder{
@@ -39,6 +47,10 @@ func NewMobileAppsItemGraphManagedAndroidLobAppRequestBuilder(rawUrl string, req
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphManagedAndroidLobAppRequestBuilderInternal(urlParams, requestAdapter)
+}
+// ContentVersions provides operations to manage the contentVersions property of the microsoft.graph.managedMobileLobApp entity.
+func (m *MobileAppsItemGraphManagedAndroidLobAppRequestBuilder) ContentVersions()(*MobileAppsItemGraphManagedAndroidLobAppContentVersionsRequestBuilder) {
+    return NewMobileAppsItemGraphManagedAndroidLobAppContentVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the item of type microsoft.graph.mobileApp as microsoft.graph.managedAndroidLobApp
 func (m *MobileAppsItemGraphManagedAndroidLobAppRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphManagedAndroidLobAppRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedAndroidLobAppable, error) {

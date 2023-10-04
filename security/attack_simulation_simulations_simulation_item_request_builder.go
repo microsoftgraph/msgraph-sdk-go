@@ -18,7 +18,7 @@ type AttackSimulationSimulationsSimulationItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AttackSimulationSimulationsSimulationItemRequestBuilderGetQueryParameters get an attack simulation campaign for a tenant.
+// AttackSimulationSimulationsSimulationItemRequestBuilderGetQueryParameters get an attack simulation campaign for a tenant. This API is supported in the following national cloud deployments.
 type AttackSimulationSimulationsSimulationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get get an attack simulation campaign for a tenant.
+// Get get an attack simulation campaign for a tenant. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/simulation-get?view=graph-rest-1.0
@@ -92,6 +92,14 @@ func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) Get(ctx contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Simulationable), nil
 }
+// LandingPage provides operations to manage the landingPage property of the microsoft.graph.simulation entity.
+func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) LandingPage()(*AttackSimulationSimulationsItemLandingPageRequestBuilder) {
+    return NewAttackSimulationSimulationsItemLandingPageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// LoginPage provides operations to manage the loginPage property of the microsoft.graph.simulation entity.
+func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) LoginPage()(*AttackSimulationSimulationsItemLoginPageRequestBuilder) {
+    return NewAttackSimulationSimulationsItemLoginPageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property simulations in security
 func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Simulationable, requestConfiguration *AttackSimulationSimulationsSimulationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Simulationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
@@ -111,6 +119,10 @@ func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) Patch(ctx cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Simulationable), nil
 }
+// Payload provides operations to manage the payload property of the microsoft.graph.simulation entity.
+func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) Payload()(*AttackSimulationSimulationsItemPayloadRequestBuilder) {
+    return NewAttackSimulationSimulationsItemPayloadRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property simulations for security
 func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationSimulationsSimulationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -123,7 +135,7 @@ func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) ToDeleteReques
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get an attack simulation campaign for a tenant.
+// ToGetRequestInformation get an attack simulation campaign for a tenant. This API is supported in the following national cloud deployments.
 func (m *AttackSimulationSimulationsSimulationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationSimulationsSimulationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

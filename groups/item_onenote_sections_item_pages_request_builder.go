@@ -11,7 +11,7 @@ import (
 type ItemOnenoteSectionsItemPagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOnenoteSectionsItemPagesRequestBuilderGetQueryParameters retrieve a list of page objects from the specified section.
+// ItemOnenoteSectionsItemPagesRequestBuilderGetQueryParameters retrieve a list of page objects from the specified section. This API is supported in the following national cloud deployments.
 type ItemOnenoteSectionsItemPagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemOnenoteSectionsItemPagesRequestBuilder(rawUrl string, requestAdapter
 func (m *ItemOnenoteSectionsItemPagesRequestBuilder) Count()(*ItemOnenoteSectionsItemPagesCountRequestBuilder) {
     return NewItemOnenoteSectionsItemPagesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of page objects from the specified section.
+// Get retrieve a list of page objects from the specified section. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemOnenoteSectionsItemPagesRequestBuilder) Get(ctx context.Context, re
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageCollectionResponseable), nil
 }
-// Post create a new page in the specified section.
+// Post create a new page in the specified section. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemOnenoteSectionsItemPagesRequestBuilder) Post(ctx context.Context, b
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageable), nil
 }
-// ToGetRequestInformation retrieve a list of page objects from the specified section.
+// ToGetRequestInformation retrieve a list of page objects from the specified section. This API is supported in the following national cloud deployments.
 func (m *ItemOnenoteSectionsItemPagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteSectionsItemPagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemOnenoteSectionsItemPagesRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new page in the specified section.
+// ToPostRequestInformation create a new page in the specified section. This API is supported in the following national cloud deployments.
 func (m *ItemOnenoteSectionsItemPagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenotePageable, requestConfiguration *ItemOnenoteSectionsItemPagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

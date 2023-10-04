@@ -36,7 +36,7 @@ func (m *IdentitySecurityDefaultsEnforcementPolicy) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetIsEnabled gets the isEnabled property value. If set to true, Azure Active Directory security defaults is enabled for the tenant.
+// GetIsEnabled gets the isEnabled property value. If set to true, Azure Active Directory security defaults are enabled for the tenant.
 func (m *IdentitySecurityDefaultsEnforcementPolicy) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *IdentitySecurityDefaultsEnforcementPolicy) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetIsEnabled sets the isEnabled property value. If set to true, Azure Active Directory security defaults is enabled for the tenant.
+// SetIsEnabled sets the isEnabled property value. If set to true, Azure Active Directory security defaults are enabled for the tenant.
 func (m *IdentitySecurityDefaultsEnforcementPolicy) SetIsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEnabled", value)
     if err != nil {

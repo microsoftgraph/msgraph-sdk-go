@@ -11,7 +11,7 @@ import (
 type ItemSynchronizationTemplatesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSynchronizationTemplatesRequestBuilderGetQueryParameters list the synchronization templates associated with a given application or service principal.
+// ItemSynchronizationTemplatesRequestBuilderGetQueryParameters list the synchronization templates associated with a given application or service principal. This API is supported in the following national cloud deployments.
 type ItemSynchronizationTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemSynchronizationTemplatesRequestBuilder(rawUrl string, requestAdapter
 func (m *ItemSynchronizationTemplatesRequestBuilder) Count()(*ItemSynchronizationTemplatesCountRequestBuilder) {
     return NewItemSynchronizationTemplatesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list the synchronization templates associated with a given application or service principal.
+// Get list the synchronization templates associated with a given application or service principal. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *ItemSynchronizationTemplatesRequestBuilder) Post(ctx context.Context, b
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SynchronizationTemplateable), nil
 }
-// ToGetRequestInformation list the synchronization templates associated with a given application or service principal.
+// ToGetRequestInformation list the synchronization templates associated with a given application or service principal. This API is supported in the following national cloud deployments.
 func (m *ItemSynchronizationTemplatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

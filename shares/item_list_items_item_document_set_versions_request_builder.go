@@ -11,7 +11,7 @@ import (
 type ItemListItemsItemDocumentSetVersionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemListItemsItemDocumentSetVersionsRequestBuilderGetQueryParameters get a list of the versions of a document set item in a list.
+// ItemListItemsItemDocumentSetVersionsRequestBuilderGetQueryParameters get a list of the versions of a document set item in a list. This API is supported in the following national cloud deployments.
 type ItemListItemsItemDocumentSetVersionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemListItemsItemDocumentSetVersionsRequestBuilder(rawUrl string, reques
 func (m *ItemListItemsItemDocumentSetVersionsRequestBuilder) Count()(*ItemListItemsItemDocumentSetVersionsCountRequestBuilder) {
     return NewItemListItemsItemDocumentSetVersionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the versions of a document set item in a list.
+// Get get a list of the versions of a document set item in a list. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/listitem-list-documentsetversions?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemListItemsItemDocumentSetVersionsRequestBuilder) Get(ctx context.Con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DocumentSetVersionCollectionResponseable), nil
 }
-// Post create a new version of a document set item in a list.
+// Post create a new version of a document set item in a list. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/listitem-post-documentsetversions?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemListItemsItemDocumentSetVersionsRequestBuilder) Post(ctx context.Co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DocumentSetVersionable), nil
 }
-// ToGetRequestInformation get a list of the versions of a document set item in a list.
+// ToGetRequestInformation get a list of the versions of a document set item in a list. This API is supported in the following national cloud deployments.
 func (m *ItemListItemsItemDocumentSetVersionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListItemsItemDocumentSetVersionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemListItemsItemDocumentSetVersionsRequestBuilder) ToGetRequestInforma
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new version of a document set item in a list.
+// ToPostRequestInformation create a new version of a document set item in a list. This API is supported in the following national cloud deployments.
 func (m *ItemListItemsItemDocumentSetVersionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DocumentSetVersionable, requestConfiguration *ItemListItemsItemDocumentSetVersionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

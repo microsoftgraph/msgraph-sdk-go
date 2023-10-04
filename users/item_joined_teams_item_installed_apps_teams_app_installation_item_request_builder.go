@@ -18,7 +18,7 @@ type ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilderDelet
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilderGetQueryParameters retrieve the app installed in the specified team.
+// ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilderGetQueryParameters retrieve the app installed in the specified team. This API is supported in the following national cloud deployments.
 type ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilder(r
     urlParams["request-raw-url"] = rawUrl
     return NewItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete uninstalls an app from the specified team.
+// Delete uninstalls an app from the specified team. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-delete-installedapps?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilder)
     }
     return nil
 }
-// Get retrieve the app installed in the specified team.
+// Get retrieve the app installed in the specified team. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-get-installedapps?view=graph-rest-1.0
@@ -122,7 +122,7 @@ func (m *ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilder)
 func (m *ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) TeamsAppDefinition()(*ItemJoinedTeamsItemInstalledAppsItemTeamsAppDefinitionRequestBuilder) {
     return NewItemJoinedTeamsItemInstalledAppsItemTeamsAppDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation uninstalls an app from the specified team.
+// ToDeleteRequestInformation uninstalls an app from the specified team. This API is supported in the following national cloud deployments.
 func (m *ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilder)
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the app installed in the specified team.
+// ToGetRequestInformation retrieve the app installed in the specified team. This API is supported in the following national cloud deployments.
 func (m *ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

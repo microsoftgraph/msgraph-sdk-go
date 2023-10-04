@@ -31,6 +31,7 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsItemImageRequestBuilder(rawUrl 
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemImageRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function image
+// Deprecated: This method is obsolete. Use GetAsImageGetResponse instead.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemImageRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemImageRequestBuilderGetRequestConfiguration)(ItemItemsItemWorkbookWorksheetsItemChartsItemImageResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -48,6 +49,25 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemImageRequestBuilder) Get(c
         return nil, nil
     }
     return res.(ItemItemsItemWorkbookWorksheetsItemChartsItemImageResponseable), nil
+}
+// GetAsImageGetResponse invoke function image
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemImageRequestBuilder) GetAsImageGetResponse(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemImageRequestBuilderGetRequestConfiguration)(ItemItemsItemWorkbookWorksheetsItemChartsItemImageGetResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemsItemWorkbookWorksheetsItemChartsItemImageGetResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemItemsItemWorkbookWorksheetsItemChartsItemImageGetResponseable), nil
 }
 // ToGetRequestInformation invoke function image
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemImageRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemImageRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

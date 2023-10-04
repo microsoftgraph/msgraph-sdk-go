@@ -10,7 +10,7 @@ import (
 type EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesItemRefRequestBuilderDeleteQueryParameters remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.  
+// EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesItemRefRequestBuilderDeleteQueryParameters remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.   This API is supported in the following national cloud deployments.
 type EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,7 @@ func NewEntitlementManagementAccessPackagesItemIncompatibleAccessPackagesItemRef
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAccessPackagesItemIncompatibleAccessPackagesItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.  
+// Delete remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.   This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-delete-incompatibleaccesspackage?view=graph-rest-1.0
@@ -56,7 +56,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesItemRe
     }
     return nil
 }
-// ToDeleteRequestInformation remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.  
+// ToDeleteRequestInformation remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.   This API is supported in the following national cloud deployments.
 func (m *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleAccessPackagesItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

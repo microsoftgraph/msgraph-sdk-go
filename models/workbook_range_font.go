@@ -30,7 +30,7 @@ func (m *WorkbookRangeFont) GetBold()(*bool) {
     }
     return nil
 }
-// GetColor gets the color property value. HTML color code representation of the text color. E.g. #FF0000 represents Red.
+// GetColor gets the color property value. HTML color code representation of the text color. for example #FF0000 represents Red.
 func (m *WorkbookRangeFont) GetColor()(*string) {
     val, err := m.GetBackingStore().Get("color")
     if err != nil {
@@ -117,7 +117,7 @@ func (m *WorkbookRangeFont) GetItalic()(*bool) {
     }
     return nil
 }
-// GetName gets the name property value. Font name (e.g. 'Calibri')
+// GetName gets the name property value. Font name (for example 'Calibri')
 func (m *WorkbookRangeFont) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -201,7 +201,7 @@ func (m *WorkbookRangeFont) SetBold(value *bool)() {
         panic(err)
     }
 }
-// SetColor sets the color property value. HTML color code representation of the text color. E.g. #FF0000 represents Red.
+// SetColor sets the color property value. HTML color code representation of the text color. for example #FF0000 represents Red.
 func (m *WorkbookRangeFont) SetColor(value *string)() {
     err := m.GetBackingStore().Set("color", value)
     if err != nil {
@@ -215,7 +215,7 @@ func (m *WorkbookRangeFont) SetItalic(value *bool)() {
         panic(err)
     }
 }
-// SetName sets the name property value. Font name (e.g. 'Calibri')
+// SetName sets the name property value. Font name (for example 'Calibri')
 func (m *WorkbookRangeFont) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {

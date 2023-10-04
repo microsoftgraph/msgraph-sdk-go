@@ -87,6 +87,17 @@ func (m *Incident) GetCustomTags()([]string) {
     }
     return nil
 }
+// GetDescription gets the description property value. The description property
+func (m *Incident) GetDescription()(*string) {
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetDetermination gets the determination property value. Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
 func (m *Incident) GetDetermination()(*AlertDetermination) {
     val, err := m.GetBackingStore().Get("determination")
@@ -190,6 +201,16 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDescription(val)
+        }
+        return nil
+    }
     res["determination"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAlertDetermination)
         if err != nil {
@@ -267,6 +288,22 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         if val != nil {
             m.SetStatus(val.(*IncidentStatus))
+        }
+        return nil
+    }
+    res["systemTags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetSystemTags(res)
         }
         return nil
     }
@@ -348,6 +385,17 @@ func (m *Incident) GetStatus()(*IncidentStatus) {
     }
     return nil
 }
+// GetSystemTags gets the systemTags property value. The systemTags property
+func (m *Incident) GetSystemTags()([]string) {
+    val, err := m.GetBackingStore().Get("systemTags")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
+}
 // GetTenantId gets the tenantId property value. The Azure Active Directory tenant in which the alert was created.
 func (m *Incident) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
@@ -414,6 +462,12 @@ func (m *Incident) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("description", m.GetDescription())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetDetermination() != nil {
         cast := (*m.GetDetermination()).String()
         err = writer.WriteStringValue("determination", &cast)
@@ -465,6 +519,12 @@ func (m *Incident) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    if m.GetSystemTags() != nil {
+        err = writer.WriteCollectionOfStringValues("systemTags", m.GetSystemTags())
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("tenantId", m.GetTenantId())
         if err != nil {
@@ -511,6 +571,13 @@ func (m *Incident) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6
 // SetCustomTags sets the customTags property value. Array of custom tags associated with an incident.
 func (m *Incident) SetCustomTags(value []string)() {
     err := m.GetBackingStore().Set("customTags", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDescription sets the description property value. The description property
+func (m *Incident) SetDescription(value *string)() {
+    err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
@@ -571,6 +638,13 @@ func (m *Incident) SetStatus(value *IncidentStatus)() {
         panic(err)
     }
 }
+// SetSystemTags sets the systemTags property value. The systemTags property
+func (m *Incident) SetSystemTags(value []string)() {
+    err := m.GetBackingStore().Set("systemTags", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTenantId sets the tenantId property value. The Azure Active Directory tenant in which the alert was created.
 func (m *Incident) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
@@ -588,6 +662,7 @@ type Incidentable interface {
     GetComments()([]AlertCommentable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCustomTags()([]string)
+    GetDescription()(*string)
     GetDetermination()(*AlertDetermination)
     GetDisplayName()(*string)
     GetIncidentWebUrl()(*string)
@@ -596,6 +671,7 @@ type Incidentable interface {
     GetRedirectIncidentId()(*string)
     GetSeverity()(*AlertSeverity)
     GetStatus()(*IncidentStatus)
+    GetSystemTags()([]string)
     GetTenantId()(*string)
     SetAlerts(value []Alertable)()
     SetAssignedTo(value *string)()
@@ -603,6 +679,7 @@ type Incidentable interface {
     SetComments(value []AlertCommentable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCustomTags(value []string)()
+    SetDescription(value *string)()
     SetDetermination(value *AlertDetermination)()
     SetDisplayName(value *string)()
     SetIncidentWebUrl(value *string)()
@@ -611,5 +688,6 @@ type Incidentable interface {
     SetRedirectIncidentId(value *string)()
     SetSeverity(value *AlertSeverity)()
     SetStatus(value *IncidentStatus)()
+    SetSystemTags(value []string)()
     SetTenantId(value *string)()
 }

@@ -18,7 +18,7 @@ type ItemItemsItemVersionsDriveItemVersionItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemVersionsDriveItemVersionItemRequestBuilderGetQueryParameters retrieve the metadata for a specific version of a DriveItem.
+// ItemItemsItemVersionsDriveItemVersionItemRequestBuilderGetQueryParameters retrieve the metadata for a specific version of a DriveItem. This API is supported in the following national cloud deployments.
 type ItemItemsItemVersionsDriveItemVersionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get retrieve the metadata for a specific version of a DriveItem.
+// Get retrieve the metadata for a specific version of a DriveItem. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/driveitemversion-get?view=graph-rest-1.0
@@ -131,7 +131,7 @@ func (m *ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) ToDeleteReques
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the metadata for a specific version of a DriveItem.
+// ToGetRequestInformation retrieve the metadata for a specific version of a DriveItem. This API is supported in the following national cloud deployments.
 func (m *ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemVersionsDriveItemVersionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

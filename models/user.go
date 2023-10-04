@@ -2699,7 +2699,7 @@ func (m *User) GetProxyAddresses()([]string) {
     }
     return nil
 }
-// GetRegisteredDevices gets the registeredDevices property value. Devices that are registered for the user. Read-only. Nullable. Supports $expand.
+// GetRegisteredDevices gets the registeredDevices property value. Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
 func (m *User) GetRegisteredDevices()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("registeredDevices")
     if err != nil {
@@ -4633,7 +4633,7 @@ func (m *User) SetProxyAddresses(value []string)() {
         panic(err)
     }
 }
-// SetRegisteredDevices sets the registeredDevices property value. Devices that are registered for the user. Read-only. Nullable. Supports $expand.
+// SetRegisteredDevices sets the registeredDevices property value. Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
 func (m *User) SetRegisteredDevices(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("registeredDevices", value)
     if err != nil {

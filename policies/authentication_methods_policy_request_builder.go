@@ -18,7 +18,7 @@ type AuthenticationMethodsPolicyRequestBuilderDeleteRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AuthenticationMethodsPolicyRequestBuilderGetQueryParameters read the properties and relationships of an authenticationMethodsPolicy object.
+// AuthenticationMethodsPolicyRequestBuilderGetQueryParameters read the properties and relationships of an authenticationMethodsPolicy object. This API is supported in the following national cloud deployments.
 type AuthenticationMethodsPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *AuthenticationMethodsPolicyRequestBuilder) Delete(ctx context.Context, 
     }
     return nil
 }
-// Get read the properties and relationships of an authenticationMethodsPolicy object.
+// Get read the properties and relationships of an authenticationMethodsPolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/authenticationmethodspolicy-get?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *AuthenticationMethodsPolicyRequestBuilder) Get(ctx context.Context, req
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodsPolicyable), nil
 }
-// Patch update the properties of an authenticationMethodsPolicy object.
+// Patch update the properties of an authenticationMethodsPolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/authenticationmethodspolicy-update?view=graph-rest-1.0
@@ -130,7 +130,7 @@ func (m *AuthenticationMethodsPolicyRequestBuilder) ToDeleteRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an authenticationMethodsPolicy object.
+// ToGetRequestInformation read the properties and relationships of an authenticationMethodsPolicy object. This API is supported in the following national cloud deployments.
 func (m *AuthenticationMethodsPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationMethodsPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -146,7 +146,7 @@ func (m *AuthenticationMethodsPolicyRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an authenticationMethodsPolicy object.
+// ToPatchRequestInformation update the properties of an authenticationMethodsPolicy object. This API is supported in the following national cloud deployments.
 func (m *AuthenticationMethodsPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationMethodsPolicyable, requestConfiguration *AuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

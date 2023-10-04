@@ -30,7 +30,7 @@ func (m *WorkbookChartFont) GetBold()(*bool) {
     }
     return nil
 }
-// GetColor gets the color property value. HTML color code representation of the text color. E.g. #FF0000 represents Red.
+// GetColor gets the color property value. HTML color code representation of the text color. for example #FF0000 represents Red.
 func (m *WorkbookChartFont) GetColor()(*string) {
     val, err := m.GetBackingStore().Get("color")
     if err != nil {
@@ -117,7 +117,7 @@ func (m *WorkbookChartFont) GetItalic()(*bool) {
     }
     return nil
 }
-// GetName gets the name property value. Font name (e.g. 'Calibri')
+// GetName gets the name property value. Font name (for example 'Calibri')
 func (m *WorkbookChartFont) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -128,7 +128,7 @@ func (m *WorkbookChartFont) GetName()(*string) {
     }
     return nil
 }
-// GetSize gets the size property value. Size of the font (e.g. 11)
+// GetSize gets the size property value. Size of the font (for example 11)
 func (m *WorkbookChartFont) GetSize()(*float64) {
     val, err := m.GetBackingStore().Get("size")
     if err != nil {
@@ -201,7 +201,7 @@ func (m *WorkbookChartFont) SetBold(value *bool)() {
         panic(err)
     }
 }
-// SetColor sets the color property value. HTML color code representation of the text color. E.g. #FF0000 represents Red.
+// SetColor sets the color property value. HTML color code representation of the text color. for example #FF0000 represents Red.
 func (m *WorkbookChartFont) SetColor(value *string)() {
     err := m.GetBackingStore().Set("color", value)
     if err != nil {
@@ -215,14 +215,14 @@ func (m *WorkbookChartFont) SetItalic(value *bool)() {
         panic(err)
     }
 }
-// SetName sets the name property value. Font name (e.g. 'Calibri')
+// SetName sets the name property value. Font name (for example 'Calibri')
 func (m *WorkbookChartFont) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSize sets the size property value. Size of the font (e.g. 11)
+// SetSize sets the size property value. Size of the font (for example 11)
 func (m *WorkbookChartFont) SetSize(value *float64)() {
     err := m.GetBackingStore().Set("size", value)
     if err != nil {

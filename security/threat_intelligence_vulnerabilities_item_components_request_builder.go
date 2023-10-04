@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilderGetQueryParameters get a list of the microsoft.graph.security.vulnerabilityComponent objects and their properties.
+// ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilderGetQueryParameters get a list of vulnerabilityComponent objects related to a known vulnerability. This API is supported in the following national cloud deployments.
 type ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder(rawUrl str
 func (m *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder) Count()(*ThreatIntelligenceVulnerabilitiesItemComponentsCountRequestBuilder) {
     return NewThreatIntelligenceVulnerabilitiesItemComponentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the microsoft.graph.security.vulnerabilityComponent objects and their properties.
+// Get get a list of vulnerabilityComponent objects related to a known vulnerability. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-vulnerability-list-components?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder) Post(ctx
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.VulnerabilityComponentable), nil
 }
-// ToGetRequestInformation get a list of the microsoft.graph.security.vulnerabilityComponent objects and their properties.
+// ToGetRequestInformation get a list of vulnerabilityComponent objects related to a known vulnerability. This API is supported in the following national cloud deployments.
 func (m *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

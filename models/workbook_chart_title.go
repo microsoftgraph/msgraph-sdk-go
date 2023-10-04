@@ -97,7 +97,7 @@ func (m *WorkbookChartTitle) GetText()(*string) {
     }
     return nil
 }
-// GetVisible gets the visible property value. A boolean value the represents the visibility of a chart title object.
+// GetVisible gets the visible property value. A boolean value that represents the visibility of a chart title object.
 func (m *WorkbookChartTitle) GetVisible()(*bool) {
     val, err := m.GetBackingStore().Get("visible")
     if err != nil {
@@ -161,7 +161,7 @@ func (m *WorkbookChartTitle) SetText(value *string)() {
         panic(err)
     }
 }
-// SetVisible sets the visible property value. A boolean value the represents the visibility of a chart title object.
+// SetVisible sets the visible property value. A boolean value that represents the visibility of a chart title object.
 func (m *WorkbookChartTitle) SetVisible(value *bool)() {
     err := m.GetBackingStore().Set("visible", value)
     if err != nil {

@@ -18,7 +18,7 @@ type ItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilderDeleteRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a timeOff object by ID.
+// ItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a timeOff object by ID. This API is supported in the following national cloud deployments.
 type ItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -52,7 +52,7 @@ func NewItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a timeOff instance from a schedule.
+// Delete delete a timeOff instance from a schedule. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/timeoff-delete?view=graph-rest-1.0
@@ -71,7 +71,7 @@ func (m *ItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilder) Delete(ct
     }
     return nil
 }
-// Get retrieve the properties and relationships of a timeOff object by ID.
+// Get retrieve the properties and relationships of a timeOff object by ID. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/timeoff-get?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *ItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilder) Patch(ctx
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffable), nil
 }
-// ToDeleteRequestInformation delete a timeOff instance from a schedule.
+// ToDeleteRequestInformation delete a timeOff instance from a schedule. This API is supported in the following national cloud deployments.
 func (m *ItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -127,7 +127,7 @@ func (m *ItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilder) ToDeleteR
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a timeOff object by ID.
+// ToGetRequestInformation retrieve the properties and relationships of a timeOff object by ID. This API is supported in the following national cloud deployments.
 func (m *ItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemScheduleTimesOffTimeOffItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

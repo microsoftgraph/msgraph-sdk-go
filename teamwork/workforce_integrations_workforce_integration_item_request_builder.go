@@ -18,7 +18,7 @@ type WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a workforceIntegration object.
+// WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a workforceIntegration object. This API is supported in the following national cloud deployments.
 type WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewWorkforceIntegrationsWorkforceIntegrationItemRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewWorkforceIntegrationsWorkforceIntegrationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an instance of a workforceIntegration.
+// Delete delete an instance of a workforceIntegration. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/workforceintegration-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get retrieve the properties and relationships of a workforceIntegration object.
+// Get retrieve the properties and relationships of a workforceIntegration object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/workforceintegration-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) Get(ctx co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable), nil
 }
-// Patch update the properties of a workforceIntegration object.
+// Patch update the properties of a workforceIntegration object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/workforceintegration-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) Patch(ctx 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable), nil
 }
-// ToDeleteRequestInformation delete an instance of a workforceIntegration.
+// ToDeleteRequestInformation delete an instance of a workforceIntegration. This API is supported in the following national cloud deployments.
 func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) ToDeleteRe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a workforceIntegration object.
+// ToGetRequestInformation retrieve the properties and relationships of a workforceIntegration object. This API is supported in the following national cloud deployments.
 func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) ToGetReque
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a workforceIntegration object.
+// ToPatchRequestInformation update the properties of a workforceIntegration object. This API is supported in the following national cloud deployments.
 func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable, requestConfiguration *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

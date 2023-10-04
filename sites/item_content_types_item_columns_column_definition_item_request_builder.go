@@ -18,7 +18,7 @@ type ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderGetQueryParameters retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
+// ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderGetQueryParameters retrieve the metadata for a site][], a [list][], or a [contentType][] [column][columnDefinition]. This API is supported in the following [national cloud deployments.
 type ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a [column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
+// Delete remove a column][columndefinition] from a [site][], a [list][], or a [content type][contentType]. This API is supported in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
+// Get retrieve the metadata for a site][], a [list][], or a [contentType][] [column][columnDefinition]. This API is supported in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/columndefinition-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) Get(ctx 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable), nil
 }
-// Patch update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
+// Patch update a site][], a [list][], or a [content type][contentType] [column][columnDefinition]. This API is supported in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/columndefinition-update?view=graph-rest-1.0
@@ -121,7 +121,7 @@ func (m *ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) Patch(ct
 func (m *ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) SourceColumn()(*ItemContentTypesItemColumnsItemSourceColumnRequestBuilder) {
     return NewItemContentTypesItemColumnsItemSourceColumnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation remove a [column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
+// ToDeleteRequestInformation remove a column][columndefinition] from a [site][], a [list][], or a [content type][contentType]. This API is supported in the following [national cloud deployments.
 func (m *ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -133,7 +133,7 @@ func (m *ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) ToDelete
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
+// ToGetRequestInformation retrieve the metadata for a site][], a [list][], or a [contentType][] [column][columnDefinition]. This API is supported in the following [national cloud deployments.
 func (m *ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -149,7 +149,7 @@ func (m *ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) ToGetReq
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
+// ToPatchRequestInformation update a site][], a [list][], or a [content type][contentType] [column][columnDefinition]. This API is supported in the following [national cloud deployments.
 func (m *ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, requestConfiguration *ItemContentTypesItemColumnsColumnDefinitionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

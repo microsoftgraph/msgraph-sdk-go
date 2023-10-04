@@ -18,7 +18,7 @@ type ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant.
+// ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant. This API is supported in the following national cloud deployments.
 type ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) Dele
     }
     return nil
 }
-// Get retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant.
+// Get retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/servicehealth-get?view=graph-rest-1.0
@@ -127,7 +127,7 @@ func (m *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) ToDe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant.
+// ToGetRequestInformation retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant. This API is supported in the following national cloud deployments.
 func (m *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ServiceAnnouncementHealthOverviewsServiceHealthItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

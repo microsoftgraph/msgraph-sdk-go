@@ -18,7 +18,7 @@ type DefaultAppManagementPolicyRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DefaultAppManagementPolicyRequestBuilderGetQueryParameters read the properties of a tenantAppManagementPolicy object.
+// DefaultAppManagementPolicyRequestBuilderGetQueryParameters read the properties of a tenantAppManagementPolicy object. This API is supported in the following national cloud deployments.
 type DefaultAppManagementPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *DefaultAppManagementPolicyRequestBuilder) Delete(ctx context.Context, r
     }
     return nil
 }
-// Get read the properties of a tenantAppManagementPolicy object.
+// Get read the properties of a tenantAppManagementPolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tenantappmanagementpolicy-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *DefaultAppManagementPolicyRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantAppManagementPolicyable), nil
 }
-// Patch update the properties of a tenantAppManagementPolicy object.
+// Patch update the properties of a tenantAppManagementPolicy object. This API is supported in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tenantappmanagementpolicy-update?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *DefaultAppManagementPolicyRequestBuilder) ToDeleteRequestInformation(ct
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties of a tenantAppManagementPolicy object.
+// ToGetRequestInformation read the properties of a tenantAppManagementPolicy object. This API is supported in the following national cloud deployments.
 func (m *DefaultAppManagementPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DefaultAppManagementPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *DefaultAppManagementPolicyRequestBuilder) ToGetRequestInformation(ctx c
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a tenantAppManagementPolicy object.
+// ToPatchRequestInformation update the properties of a tenantAppManagementPolicy object. This API is supported in the following national cloud deployments.
 func (m *DefaultAppManagementPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TenantAppManagementPolicyable, requestConfiguration *DefaultAppManagementPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -95,7 +95,7 @@ func (m *AccessReviewHistoryScheduleSettings) GetRecurrence()(PatternedRecurrenc
     }
     return nil
 }
-// GetReportRange gets the reportRange property value. A duration string in ISO 8601 duration format specifying the lookback period of the generated review history data. For example, if a history definition is scheduled to run on the 1st of every month, the reportRange is P1M. In this case, on the first of every month, access review history data will be collected containing only the previous month's review data. Note: Only years, months, and days ISO 8601 properties are supported. Required.
+// GetReportRange gets the reportRange property value. A duration string in ISO 8601 duration format specifying the lookback period of the generated review history data. For example, if a history definition is scheduled to run on the first of every month, the reportRange is P1M. In this case, on the first of every month, access review history data is collected containing only the previous month's review data. Note: Only years, months, and days ISO 8601 properties are supported. Required.
 func (m *AccessReviewHistoryScheduleSettings) GetReportRange()(*string) {
     val, err := m.GetBackingStore().Get("reportRange")
     if err != nil {
@@ -159,7 +159,7 @@ func (m *AccessReviewHistoryScheduleSettings) SetRecurrence(value PatternedRecur
         panic(err)
     }
 }
-// SetReportRange sets the reportRange property value. A duration string in ISO 8601 duration format specifying the lookback period of the generated review history data. For example, if a history definition is scheduled to run on the 1st of every month, the reportRange is P1M. In this case, on the first of every month, access review history data will be collected containing only the previous month's review data. Note: Only years, months, and days ISO 8601 properties are supported. Required.
+// SetReportRange sets the reportRange property value. A duration string in ISO 8601 duration format specifying the lookback period of the generated review history data. For example, if a history definition is scheduled to run on the first of every month, the reportRange is P1M. In this case, on the first of every month, access review history data is collected containing only the previous month's review data. Note: Only years, months, and days ISO 8601 properties are supported. Required.
 func (m *AccessReviewHistoryScheduleSettings) SetReportRange(value *string)() {
     err := m.GetBackingStore().Set("reportRange", value)
     if err != nil {

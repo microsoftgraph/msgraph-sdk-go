@@ -21,7 +21,7 @@ func NewEmailFileAssessmentRequest()(*EmailFileAssessmentRequest) {
 func CreateEmailFileAssessmentRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEmailFileAssessmentRequest(), nil
 }
-// GetContentData gets the contentData property value. Base64 encoded .eml email file content. The file content cannot fetch back because it isn't stored.
+// GetContentData gets the contentData property value. Base64 encoded .eml email file content. The file content can't fetch back because it isn't stored.
 func (m *EmailFileAssessmentRequest) GetContentData()(*string) {
     val, err := m.GetBackingStore().Get("contentData")
     if err != nil {
@@ -116,7 +116,7 @@ func (m *EmailFileAssessmentRequest) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetContentData sets the contentData property value. Base64 encoded .eml email file content. The file content cannot fetch back because it isn't stored.
+// SetContentData sets the contentData property value. Base64 encoded .eml email file content. The file content can't fetch back because it isn't stored.
 func (m *EmailFileAssessmentRequest) SetContentData(value *string)() {
     err := m.GetBackingStore().Set("contentData", value)
     if err != nil {
