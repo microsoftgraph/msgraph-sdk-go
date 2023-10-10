@@ -30,7 +30,7 @@ func NewItemSynchronizationJobsItemValidateCredentialsRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewItemSynchronizationJobsItemValidateCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post validate that the credentials are valid in the tenant. This API is supported in the following national cloud deployments.
+// Post validate that the credentials are valid in the tenant. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemSynchronizationJobsItemValidateCredentialsRequestBuilder) Post(ctx 
     }
     return nil
 }
-// ToPostRequestInformation validate that the credentials are valid in the tenant. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation validate that the credentials are valid in the tenant. This API is available in the following national cloud deployments.
 func (m *ItemSynchronizationJobsItemValidateCredentialsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSynchronizationJobsItemValidateCredentialsPostRequestBodyable, requestConfiguration *ItemSynchronizationJobsItemValidateCredentialsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

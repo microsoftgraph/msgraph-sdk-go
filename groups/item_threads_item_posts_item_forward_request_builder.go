@@ -30,7 +30,7 @@ func NewItemThreadsItemPostsItemForwardRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewItemThreadsItemPostsItemForwardRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post forward a post to a recipient. You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.  This API is supported in the following national cloud deployments.
+// Post forward a post to a recipient. You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.  This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/post-forward?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemThreadsItemPostsItemForwardRequestBuilder) Post(ctx context.Context
     }
     return nil
 }
-// ToPostRequestInformation forward a post to a recipient. You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.  This API is supported in the following national cloud deployments.
+// ToPostRequestInformation forward a post to a recipient. You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.  This API is available in the following national cloud deployments.
 func (m *ItemThreadsItemPostsItemForwardRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemThreadsItemPostsItemForwardPostRequestBodyable, requestConfiguration *ItemThreadsItemPostsItemForwardRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

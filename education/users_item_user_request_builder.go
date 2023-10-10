@@ -11,7 +11,7 @@ import (
 type UsersItemUserRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// UsersItemUserRequestBuilderGetQueryParameters retrieve the simple directory user that corresponds to this educationUser. This API is supported in the following national cloud deployments.
+// UsersItemUserRequestBuilderGetQueryParameters retrieve the simple directory user that corresponds to this educationUser. This API is available in the following national cloud deployments.
 type UsersItemUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewUsersItemUserRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewUsersItemUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve the simple directory user that corresponds to this educationUser. This API is supported in the following national cloud deployments.
+// Get retrieve the simple directory user that corresponds to this educationUser. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-get-user?view=graph-rest-1.0
@@ -70,7 +70,7 @@ func (m *UsersItemUserRequestBuilder) MailboxSettings()(*UsersItemUserMailboxSet
 func (m *UsersItemUserRequestBuilder) ServiceProvisioningErrors()(*UsersItemUserServiceProvisioningErrorsRequestBuilder) {
     return NewUsersItemUserServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve the simple directory user that corresponds to this educationUser. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the simple directory user that corresponds to this educationUser. This API is available in the following national cloud deployments.
 func (m *UsersItemUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersItemUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

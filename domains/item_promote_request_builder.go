@@ -30,7 +30,7 @@ func NewItemPromoteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewItemPromoteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true. This API is supported in the following national cloud deployments.
+// Post promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true. This API is available in the following national cloud deployments.
 // Deprecated: This method is obsolete. Use PostAsPromotePostResponse instead.
 // [Find more info here]
 // 
@@ -53,7 +53,7 @@ func (m *ItemPromoteRequestBuilder) Post(ctx context.Context, requestConfigurati
     }
     return res.(ItemPromoteResponseable), nil
 }
-// PostAsPromotePostResponse promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true. This API is supported in the following national cloud deployments.
+// PostAsPromotePostResponse promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/domain-promote?view=graph-rest-1.0
@@ -75,7 +75,7 @@ func (m *ItemPromoteRequestBuilder) PostAsPromotePostResponse(ctx context.Contex
     }
     return res.(ItemPromotePostResponseable), nil
 }
-// ToPostRequestInformation promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true. This API is available in the following national cloud deployments.
 func (m *ItemPromoteRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemPromoteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

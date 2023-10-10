@@ -11,7 +11,7 @@ import (
 type GroupLifecyclePoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// GroupLifecyclePoliciesRequestBuilderGetQueryParameters list all the groupLifecyclePolicies. This API is supported in the following national cloud deployments.
+// GroupLifecyclePoliciesRequestBuilderGetQueryParameters list all the groupLifecyclePolicies. This API is available in the following national cloud deployments.
 type GroupLifecyclePoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewGroupLifecyclePoliciesRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *GroupLifecyclePoliciesRequestBuilder) Count()(*CountRequestBuilder) {
     return NewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list all the groupLifecyclePolicies. This API is supported in the following national cloud deployments.
+// Get list all the groupLifecyclePolicies. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-list?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *GroupLifecyclePoliciesRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupLifecyclePolicyCollectionResponseable), nil
 }
-// Post creates a new groupLifecyclePolicy. This API is supported in the following national cloud deployments.
+// Post creates a new groupLifecyclePolicy. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-post-grouplifecyclepolicies?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *GroupLifecyclePoliciesRequestBuilder) Post(ctx context.Context, body ia
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupLifecyclePolicyable), nil
 }
-// ToGetRequestInformation list all the groupLifecyclePolicies. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation list all the groupLifecyclePolicies. This API is available in the following national cloud deployments.
 func (m *GroupLifecyclePoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GroupLifecyclePoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *GroupLifecyclePoliciesRequestBuilder) ToGetRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation creates a new groupLifecyclePolicy. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation creates a new groupLifecyclePolicy. This API is available in the following national cloud deployments.
 func (m *GroupLifecyclePoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupLifecyclePolicyable, requestConfiguration *GroupLifecyclePoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

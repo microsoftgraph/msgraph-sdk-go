@@ -18,7 +18,7 @@ type ItemConversationsConversationItemRequestBuilderDeleteRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemConversationsConversationItemRequestBuilderGetQueryParameters this API is supported in the following national cloud deployments.
+// ItemConversationsConversationItemRequestBuilderGetQueryParameters this API is available in the following national cloud deployments.
 type ItemConversationsConversationItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -45,7 +45,7 @@ func NewItemConversationsConversationItemRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewItemConversationsConversationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete this API is supported in the following national cloud deployments.
+// Delete this API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/group-delete-conversation?view=graph-rest-1.0
@@ -64,7 +64,7 @@ func (m *ItemConversationsConversationItemRequestBuilder) Delete(ctx context.Con
     }
     return nil
 }
-// Get this API is supported in the following national cloud deployments.
+// Get this API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/group-get-conversation?view=graph-rest-1.0
@@ -90,7 +90,7 @@ func (m *ItemConversationsConversationItemRequestBuilder) Get(ctx context.Contex
 func (m *ItemConversationsConversationItemRequestBuilder) Threads()(*ItemConversationsItemThreadsRequestBuilder) {
     return NewItemConversationsItemThreadsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation this API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation this API is available in the following national cloud deployments.
 func (m *ItemConversationsConversationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemConversationsConversationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -102,7 +102,7 @@ func (m *ItemConversationsConversationItemRequestBuilder) ToDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation this API is supported in the following national cloud deployments.
+// ToGetRequestInformation this API is available in the following national cloud deployments.
 func (m *ItemConversationsConversationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemConversationsConversationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

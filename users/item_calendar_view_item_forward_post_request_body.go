@@ -23,7 +23,7 @@ func NewItemCalendarViewItemForwardPostRequestBody()(*ItemCalendarViewItemForwar
 func CreateItemCalendarViewItemForwardPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemCalendarViewItemForwardPostRequestBody(), nil
 }
-// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemCalendarViewItemForwardPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,11 +35,11 @@ func (m *ItemCalendarViewItemForwardPostRequestBody) GetAdditionalData()(map[str
     }
     return val.(map[string]any)
 }
-// GetBackingStore gets the backingStore property value. Stores model information.
+// GetBackingStore gets the BackingStore property value. Stores model information.
 func (m *ItemCalendarViewItemForwardPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetComment gets the comment property value. The Comment property
+// GetComment gets the Comment property value. The Comment property
 func (m *ItemCalendarViewItemForwardPostRequestBody) GetComment()(*string) {
     val, err := m.GetBackingStore().Get("comment")
     if err != nil {
@@ -53,7 +53,7 @@ func (m *ItemCalendarViewItemForwardPostRequestBody) GetComment()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemCalendarViewItemForwardPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["comment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["Comment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *ItemCalendarViewItemForwardPostRequestBody) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["toRecipients"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ToRecipients"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *ItemCalendarViewItemForwardPostRequestBody) GetFieldDeserializers()(map
     }
     return res
 }
-// GetToRecipients gets the toRecipients property value. The ToRecipients property
+// GetToRecipients gets the ToRecipients property value. The ToRecipients property
 func (m *ItemCalendarViewItemForwardPostRequestBody) GetToRecipients()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Recipientable) {
     val, err := m.GetBackingStore().Get("toRecipients")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *ItemCalendarViewItemForwardPostRequestBody) GetToRecipients()([]iadcd81
 // Serialize serializes information the current object
 func (m *ItemCalendarViewItemForwardPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("comment", m.GetComment())
+        err := writer.WriteStringValue("Comment", m.GetComment())
         if err != nil {
             return err
         }
@@ -107,7 +107,7 @@ func (m *ItemCalendarViewItemForwardPostRequestBody) Serialize(writer i878a80d23
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err := writer.WriteCollectionOfObjectValues("toRecipients", cast)
+        err := writer.WriteCollectionOfObjectValues("ToRecipients", cast)
         if err != nil {
             return err
         }
@@ -120,25 +120,25 @@ func (m *ItemCalendarViewItemForwardPostRequestBody) Serialize(writer i878a80d23
     }
     return nil
 }
-// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemCalendarViewItemForwardPostRequestBody) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBackingStore sets the backingStore property value. Stores model information.
+// SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *ItemCalendarViewItemForwardPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetComment sets the comment property value. The Comment property
+// SetComment sets the Comment property value. The Comment property
 func (m *ItemCalendarViewItemForwardPostRequestBody) SetComment(value *string)() {
     err := m.GetBackingStore().Set("comment", value)
     if err != nil {
         panic(err)
     }
 }
-// SetToRecipients sets the toRecipients property value. The ToRecipients property
+// SetToRecipients sets the ToRecipients property value. The ToRecipients property
 func (m *ItemCalendarViewItemForwardPostRequestBody) SetToRecipients(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Recipientable)() {
     err := m.GetBackingStore().Set("toRecipients", value)
     if err != nil {

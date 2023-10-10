@@ -11,7 +11,7 @@ import (
 type DirectoryRoleAssignmentSchedulesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DirectoryRoleAssignmentSchedulesRequestBuilderGetQueryParameters get the schedules for active role assignment operations. This API is supported in the following national cloud deployments.
+// DirectoryRoleAssignmentSchedulesRequestBuilderGetQueryParameters get the schedules for active role assignment operations. This API is available in the following national cloud deployments.
 type DirectoryRoleAssignmentSchedulesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *DirectoryRoleAssignmentSchedulesRequestBuilder) Count()(*DirectoryRoleA
 func (m *DirectoryRoleAssignmentSchedulesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*DirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilder) {
     return NewDirectoryRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get get the schedules for active role assignment operations. This API is supported in the following national cloud deployments.
+// Get get the schedules for active role assignment operations. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedules?view=graph-rest-1.0
@@ -119,7 +119,7 @@ func (m *DirectoryRoleAssignmentSchedulesRequestBuilder) Post(ctx context.Contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleAssignmentScheduleable), nil
 }
-// ToGetRequestInformation get the schedules for active role assignment operations. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the schedules for active role assignment operations. This API is available in the following national cloud deployments.
 func (m *DirectoryRoleAssignmentSchedulesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentSchedulesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

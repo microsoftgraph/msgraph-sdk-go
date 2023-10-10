@@ -30,7 +30,7 @@ func NewCallsItemTransferRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewCallsItemTransferRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post transfer an active peer-to-peer call or group call. A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made. This is opposed to transfering the call directly. This API is supported in the following national cloud deployments.
+// Post transfer an active peer-to-peer call or group call. A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made. This is opposed to transfering the call directly. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/call-transfer?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *CallsItemTransferRequestBuilder) Post(ctx context.Context, body CallsIt
     }
     return nil
 }
-// ToPostRequestInformation transfer an active peer-to-peer call or group call. A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made. This is opposed to transfering the call directly. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation transfer an active peer-to-peer call or group call. A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made. This is opposed to transfering the call directly. This API is available in the following national cloud deployments.
 func (m *CallsItemTransferRequestBuilder) ToPostRequestInformation(ctx context.Context, body CallsItemTransferPostRequestBodyable, requestConfiguration *CallsItemTransferRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -10,7 +10,7 @@ import (
 type ItemTokenLifetimePoliciesItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTokenLifetimePoliciesItemRefRequestBuilderDeleteQueryParameters remove a tokenLifetimePolicy from an application. This API is supported in the following national cloud deployments.
+// ItemTokenLifetimePoliciesItemRefRequestBuilderDeleteQueryParameters remove a tokenLifetimePolicy from an application. This API is available in the following national cloud deployments.
 type ItemTokenLifetimePoliciesItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,7 @@ func NewItemTokenLifetimePoliciesItemRefRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewItemTokenLifetimePoliciesItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a tokenLifetimePolicy from an application. This API is supported in the following national cloud deployments.
+// Delete remove a tokenLifetimePolicy from an application. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/application-delete-tokenlifetimepolicies?view=graph-rest-1.0
@@ -56,7 +56,7 @@ func (m *ItemTokenLifetimePoliciesItemRefRequestBuilder) Delete(ctx context.Cont
     }
     return nil
 }
-// ToDeleteRequestInformation remove a tokenLifetimePolicy from an application. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation remove a tokenLifetimePolicy from an application. This API is available in the following national cloud deployments.
 func (m *ItemTokenLifetimePoliciesItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTokenLifetimePoliciesItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -10,7 +10,7 @@ import (
 type ItemHomeRealmDiscoveryPoliciesItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemHomeRealmDiscoveryPoliciesItemRefRequestBuilderDeleteQueryParameters remove a homeRealmDiscoveryPolicy from a servicePrincipal. This API is supported in the following national cloud deployments.
+// ItemHomeRealmDiscoveryPoliciesItemRefRequestBuilderDeleteQueryParameters remove a homeRealmDiscoveryPolicy from a servicePrincipal. This API is available in the following national cloud deployments.
 type ItemHomeRealmDiscoveryPoliciesItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,7 @@ func NewItemHomeRealmDiscoveryPoliciesItemRefRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewItemHomeRealmDiscoveryPoliciesItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a homeRealmDiscoveryPolicy from a servicePrincipal. This API is supported in the following national cloud deployments.
+// Delete remove a homeRealmDiscoveryPolicy from a servicePrincipal. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-delete-homerealmdiscoverypolicies?view=graph-rest-1.0
@@ -56,7 +56,7 @@ func (m *ItemHomeRealmDiscoveryPoliciesItemRefRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// ToDeleteRequestInformation remove a homeRealmDiscoveryPolicy from a servicePrincipal. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation remove a homeRealmDiscoveryPolicy from a servicePrincipal. This API is available in the following national cloud deployments.
 func (m *ItemHomeRealmDiscoveryPoliciesItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemHomeRealmDiscoveryPoliciesItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

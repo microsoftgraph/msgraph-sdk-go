@@ -11,7 +11,7 @@ import (
 type ItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsRequestBuilderGetQueryParameters retrieve a list of section groups from the specified section group. This API is supported in the following national cloud deployments.
+// ItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsRequestBuilderGetQueryParameters retrieve a list of section groups from the specified section group. This API is available in the following national cloud deployments.
 type ItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsRequestBuilder(raw
 func (m *ItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsRequestBuilder) Count()(*ItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsCountRequestBuilder) {
     return NewItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of section groups from the specified section group. This API is supported in the following national cloud deployments.
+// Get retrieve a list of section groups from the specified section group. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
@@ -89,7 +89,7 @@ func (m *ItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsRequestBuilder) G
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SectionGroupCollectionResponseable), nil
 }
-// ToGetRequestInformation retrieve a list of section groups from the specified section group. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of section groups from the specified section group. This API is available in the following national cloud deployments.
 func (m *ItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteNotebooksItemSectionGroupsItemSectionGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

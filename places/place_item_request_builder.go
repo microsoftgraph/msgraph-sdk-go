@@ -62,7 +62,7 @@ func (m *PlaceItemRequestBuilder) GraphRoom()(*ItemGraphRoomRequestBuilder) {
 func (m *PlaceItemRequestBuilder) GraphRoomList()(*ItemGraphRoomListRequestBuilder) {
     return NewItemGraphRoomListRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of place object, which can be a room or roomList. You can identify the room or roomList by specifying the id or emailAddress property. This API is supported in the following national cloud deployments.
+// Patch update the properties of place object, which can be a room or roomList. You can identify the room or roomList by specifying the id or emailAddress property. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/place-update?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *PlaceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of place object, which can be a room or roomList. You can identify the room or roomList by specifying the id or emailAddress property. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of place object, which can be a room or roomList. You can identify the room or roomList by specifying the id or emailAddress property. This API is available in the following national cloud deployments.
 func (m *PlaceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Placeable, requestConfiguration *PlaceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

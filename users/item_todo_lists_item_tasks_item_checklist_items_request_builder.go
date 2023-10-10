@@ -11,7 +11,7 @@ import (
 type ItemTodoListsItemTasksItemChecklistItemsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTodoListsItemTasksItemChecklistItemsRequestBuilderGetQueryParameters get the checklistItem resources associated to a todoTask from the checklistItems navigation property. This API is supported in the following national cloud deployments.
+// ItemTodoListsItemTasksItemChecklistItemsRequestBuilderGetQueryParameters get the checklistItem resources associated to a todoTask from the checklistItems navigation property. This API is available in the following national cloud deployments.
 type ItemTodoListsItemTasksItemChecklistItemsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemTodoListsItemTasksItemChecklistItemsRequestBuilder(rawUrl string, re
 func (m *ItemTodoListsItemTasksItemChecklistItemsRequestBuilder) Count()(*ItemTodoListsItemTasksItemChecklistItemsCountRequestBuilder) {
     return NewItemTodoListsItemTasksItemChecklistItemsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the checklistItem resources associated to a todoTask from the checklistItems navigation property. This API is supported in the following national cloud deployments.
+// Get get the checklistItem resources associated to a todoTask from the checklistItems navigation property. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/todotask-list-checklistitems?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemTodoListsItemTasksItemChecklistItemsRequestBuilder) Get(ctx context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChecklistItemCollectionResponseable), nil
 }
-// Post create a new checklistItem object. This API is supported in the following national cloud deployments.
+// Post create a new checklistItem object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/todotask-post-checklistitems?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemTodoListsItemTasksItemChecklistItemsRequestBuilder) Post(ctx contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChecklistItemable), nil
 }
-// ToGetRequestInformation get the checklistItem resources associated to a todoTask from the checklistItems navigation property. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the checklistItem resources associated to a todoTask from the checklistItems navigation property. This API is available in the following national cloud deployments.
 func (m *ItemTodoListsItemTasksItemChecklistItemsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemChecklistItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemTodoListsItemTasksItemChecklistItemsRequestBuilder) ToGetRequestInf
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new checklistItem object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new checklistItem object. This API is available in the following national cloud deployments.
 func (m *ItemTodoListsItemTasksItemChecklistItemsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChecklistItemable, requestConfiguration *ItemTodoListsItemTasksItemChecklistItemsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

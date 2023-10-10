@@ -11,7 +11,7 @@ import (
 type CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilderGetQueryParameters get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian. This API is supported in the following national cloud deployments.
+// CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilderGetQueryParameters get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian. This API is available in the following national cloud deployments.
 type CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewCasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder(
 func (m *CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder) Count()(*CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesCountRequestBuilder) {
     return NewCasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian. This API is supported in the following national cloud deployments.
+// Get get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-list-unifiedgroupsources?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.UnifiedGroupSourceCollectionResponseable), nil
 }
-// Post create a new unifiedGroupSource object associated with an eDiscovery custodian. This API is supported in the following national cloud deployments.
+// Post create a new unifiedGroupSource object associated with an eDiscovery custodian. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-post-unifiedgroupsources?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.UnifiedGroupSourceable), nil
 }
-// ToGetRequestInformation get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian. This API is available in the following national cloud deployments.
 func (m *CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new unifiedGroupSource object associated with an eDiscovery custodian. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new unifiedGroupSource object associated with an eDiscovery custodian. This API is available in the following national cloud deployments.
 func (m *CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder) ToPostRequestInformation(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.UnifiedGroupSourceable, requestConfiguration *CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

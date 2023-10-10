@@ -30,7 +30,7 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsItemSetPositionRequestBuilder(r
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemSetPositionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post positions the chart relative to cells on the worksheet. This API is supported in the following national cloud deployments.
+// Post positions the chart relative to cells on the worksheet. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chart-setposition?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSetPositionRequestBuilder)
     }
     return nil
 }
-// ToPostRequestInformation positions the chart relative to cells on the worksheet. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation positions the chart relative to cells on the worksheet. This API is available in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSetPositionRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemWorkbookWorksheetsItemChartsItemSetPositionPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemSetPositionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

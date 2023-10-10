@@ -23,7 +23,7 @@ func NewItemMessagesItemCreateForwardPostRequestBody()(*ItemMessagesItemCreateFo
 func CreateItemMessagesItemCreateForwardPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemMessagesItemCreateForwardPostRequestBody(), nil
 }
-// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemMessagesItemCreateForwardPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,11 +35,11 @@ func (m *ItemMessagesItemCreateForwardPostRequestBody) GetAdditionalData()(map[s
     }
     return val.(map[string]any)
 }
-// GetBackingStore gets the backingStore property value. Stores model information.
+// GetBackingStore gets the BackingStore property value. Stores model information.
 func (m *ItemMessagesItemCreateForwardPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetComment gets the comment property value. The Comment property
+// GetComment gets the Comment property value. The Comment property
 func (m *ItemMessagesItemCreateForwardPostRequestBody) GetComment()(*string) {
     val, err := m.GetBackingStore().Get("comment")
     if err != nil {
@@ -53,7 +53,7 @@ func (m *ItemMessagesItemCreateForwardPostRequestBody) GetComment()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemMessagesItemCreateForwardPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["comment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["Comment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *ItemMessagesItemCreateForwardPostRequestBody) GetFieldDeserializers()(m
         }
         return nil
     }
-    res["message"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["Message"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateMessageFromDiscriminatorValue)
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *ItemMessagesItemCreateForwardPostRequestBody) GetFieldDeserializers()(m
         }
         return nil
     }
-    res["toRecipients"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ToRecipients"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
@@ -91,7 +91,7 @@ func (m *ItemMessagesItemCreateForwardPostRequestBody) GetFieldDeserializers()(m
     }
     return res
 }
-// GetMessage gets the message property value. The Message property
+// GetMessage gets the Message property value. The Message property
 func (m *ItemMessagesItemCreateForwardPostRequestBody) GetMessage()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable) {
     val, err := m.GetBackingStore().Get("message")
     if err != nil {
@@ -102,7 +102,7 @@ func (m *ItemMessagesItemCreateForwardPostRequestBody) GetMessage()(iadcd8112441
     }
     return nil
 }
-// GetToRecipients gets the toRecipients property value. The ToRecipients property
+// GetToRecipients gets the ToRecipients property value. The ToRecipients property
 func (m *ItemMessagesItemCreateForwardPostRequestBody) GetToRecipients()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Recipientable) {
     val, err := m.GetBackingStore().Get("toRecipients")
     if err != nil {
@@ -116,13 +116,13 @@ func (m *ItemMessagesItemCreateForwardPostRequestBody) GetToRecipients()([]iadcd
 // Serialize serializes information the current object
 func (m *ItemMessagesItemCreateForwardPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("comment", m.GetComment())
+        err := writer.WriteStringValue("Comment", m.GetComment())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteObjectValue("message", m.GetMessage())
+        err := writer.WriteObjectValue("Message", m.GetMessage())
         if err != nil {
             return err
         }
@@ -134,7 +134,7 @@ func (m *ItemMessagesItemCreateForwardPostRequestBody) Serialize(writer i878a80d
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err := writer.WriteCollectionOfObjectValues("toRecipients", cast)
+        err := writer.WriteCollectionOfObjectValues("ToRecipients", cast)
         if err != nil {
             return err
         }
@@ -147,32 +147,32 @@ func (m *ItemMessagesItemCreateForwardPostRequestBody) Serialize(writer i878a80d
     }
     return nil
 }
-// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemMessagesItemCreateForwardPostRequestBody) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBackingStore sets the backingStore property value. Stores model information.
+// SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *ItemMessagesItemCreateForwardPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetComment sets the comment property value. The Comment property
+// SetComment sets the Comment property value. The Comment property
 func (m *ItemMessagesItemCreateForwardPostRequestBody) SetComment(value *string)() {
     err := m.GetBackingStore().Set("comment", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMessage sets the message property value. The Message property
+// SetMessage sets the Message property value. The Message property
 func (m *ItemMessagesItemCreateForwardPostRequestBody) SetMessage(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable)() {
     err := m.GetBackingStore().Set("message", value)
     if err != nil {
         panic(err)
     }
 }
-// SetToRecipients sets the toRecipients property value. The ToRecipients property
+// SetToRecipients sets the ToRecipients property value. The ToRecipients property
 func (m *ItemMessagesItemCreateForwardPostRequestBody) SetToRecipients(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Recipientable)() {
     err := m.GetBackingStore().Set("toRecipients", value)
     if err != nil {

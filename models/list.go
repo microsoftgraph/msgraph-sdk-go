@@ -54,7 +54,7 @@ func (m *List) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetDrive gets the drive property value. Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+// GetDrive gets the drive property value. Allows access to the list as a drive resource with driveItems. Only present on document libraries.
 func (m *List) GetDrive()(Driveable) {
     val, err := m.GetBackingStore().Get("drive")
     if err != nil {
@@ -211,7 +211,7 @@ func (m *List) GetItems()([]ListItemable) {
     }
     return nil
 }
-// GetList gets the list property value. Provides additional details about the list.
+// GetList gets the list property value. Contains more details about the list.
 func (m *List) GetList()(ListInfoable) {
     val, err := m.GetBackingStore().Get("list")
     if err != nil {
@@ -255,7 +255,7 @@ func (m *List) GetSubscriptions()([]Subscriptionable) {
     }
     return nil
 }
-// GetSystem gets the system property value. If present, indicates that this is a system-managed list. Read-only.
+// GetSystem gets the system property value. If present, indicates that the list is system-managed. Read-only.
 func (m *List) GetSystem()(SystemFacetable) {
     val, err := m.GetBackingStore().Get("system")
     if err != nil {
@@ -385,7 +385,7 @@ func (m *List) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetDrive sets the drive property value. Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+// SetDrive sets the drive property value. Allows access to the list as a drive resource with driveItems. Only present on document libraries.
 func (m *List) SetDrive(value Driveable)() {
     err := m.GetBackingStore().Set("drive", value)
     if err != nil {
@@ -399,7 +399,7 @@ func (m *List) SetItems(value []ListItemable)() {
         panic(err)
     }
 }
-// SetList sets the list property value. Provides additional details about the list.
+// SetList sets the list property value. Contains more details about the list.
 func (m *List) SetList(value ListInfoable)() {
     err := m.GetBackingStore().Set("list", value)
     if err != nil {
@@ -427,7 +427,7 @@ func (m *List) SetSubscriptions(value []Subscriptionable)() {
         panic(err)
     }
 }
-// SetSystem sets the system property value. If present, indicates that this is a system-managed list. Read-only.
+// SetSystem sets the system property value. If present, indicates that the list is system-managed. Read-only.
 func (m *List) SetSystem(value SystemFacetable)() {
     err := m.GetBackingStore().Set("system", value)
     if err != nil {

@@ -11,7 +11,7 @@ import (
 type ItemCreatedObjectsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCreatedObjectsRequestBuilderGetQueryParameters get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn't in any administrator role; otherwise, it returns an empty object. This API is supported in the following national cloud deployments.
+// ItemCreatedObjectsRequestBuilderGetQueryParameters get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn't in any administrator role; otherwise, it returns an empty object. This API is available in the following national cloud deployments.
 type ItemCreatedObjectsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewItemCreatedObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *ItemCreatedObjectsRequestBuilder) Count()(*ItemCreatedObjectsCountRequestBuilder) {
     return NewItemCreatedObjectsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn't in any administrator role; otherwise, it returns an empty object. This API is supported in the following national cloud deployments.
+// Get get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn't in any administrator role; otherwise, it returns an empty object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/user-list-createdobjects?view=graph-rest-1.0
@@ -93,7 +93,7 @@ func (m *ItemCreatedObjectsRequestBuilder) Get(ctx context.Context, requestConfi
 func (m *ItemCreatedObjectsRequestBuilder) GraphServicePrincipal()(*ItemCreatedObjectsGraphServicePrincipalRequestBuilder) {
     return NewItemCreatedObjectsGraphServicePrincipalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn't in any administrator role; otherwise, it returns an empty object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn't in any administrator role; otherwise, it returns an empty object. This API is available in the following national cloud deployments.
 func (m *ItemCreatedObjectsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCreatedObjectsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

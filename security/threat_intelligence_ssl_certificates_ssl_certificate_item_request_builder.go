@@ -18,7 +18,7 @@ type ThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilderGetQueryParameters get the properties and relationships of an sslCertificate object.
+// ThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilderGetQueryParameters get the properties and relationships of an sslCertificate object. This API is available in the following national cloud deployments.
 type ThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilder) Dele
     }
     return nil
 }
-// Get get the properties and relationships of an sslCertificate object.
+// Get get the properties and relationships of an sslCertificate object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-sslcertificate-get?view=graph-rest-1.0
@@ -127,7 +127,7 @@ func (m *ThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilder) ToDe
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of an sslCertificate object.
+// ToGetRequestInformation get the properties and relationships of an sslCertificate object. This API is available in the following national cloud deployments.
 func (m *ThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceSslCertificatesSslCertificateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

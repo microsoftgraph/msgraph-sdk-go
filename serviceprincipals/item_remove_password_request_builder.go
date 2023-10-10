@@ -30,7 +30,7 @@ func NewItemRemovePasswordRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewItemRemovePasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post remove a password from a servicePrincipal object. This API is supported in the following national cloud deployments.
+// Post remove a password from a servicePrincipal object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-removepassword?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemRemovePasswordRequestBuilder) Post(ctx context.Context, body ItemRe
     }
     return nil
 }
-// ToPostRequestInformation remove a password from a servicePrincipal object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation remove a password from a servicePrincipal object. This API is available in the following national cloud deployments.
 func (m *ItemRemovePasswordRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemRemovePasswordPostRequestBodyable, requestConfiguration *ItemRemovePasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

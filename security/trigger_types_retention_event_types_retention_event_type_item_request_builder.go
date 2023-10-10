@@ -18,7 +18,7 @@ type TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderDeleteRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderGetQueryParameters read the properties and relationships of a retentionEventType object. This API is supported in the following national cloud deployments.
+// TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderGetQueryParameters read the properties and relationships of a retentionEventType object. This API is available in the following national cloud deployments.
 type TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) De
     }
     return nil
 }
-// Get read the properties and relationships of a retentionEventType object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a retentionEventType object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-retentioneventtype-get?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) To
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a retentionEventType object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a retentionEventType object. This API is available in the following national cloud deployments.
 func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

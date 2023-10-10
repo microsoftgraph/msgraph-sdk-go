@@ -18,7 +18,7 @@ type ConditionalAccessAuthenticationContextClassReferencesAuthenticationContextC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConditionalAccessAuthenticationContextClassReferencesAuthenticationContextClassReferenceItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a authenticationContextClassReference object. This API is supported in the following national cloud deployments.
+// ConditionalAccessAuthenticationContextClassReferencesAuthenticationContextClassReferenceItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a authenticationContextClassReference object. This API is available in the following national cloud deployments.
 type ConditionalAccessAuthenticationContextClassReferencesAuthenticationContextClassReferenceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewConditionalAccessAuthenticationContextClassReferencesAuthenticationConte
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessAuthenticationContextClassReferencesAuthenticationContextClassReferenceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an authenticationContextClassReference object that's not published or used by a conditional access policy. This API is supported in the following national cloud deployments.
+// Delete delete an authenticationContextClassReference object that's not published or used by a conditional access policy. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/authenticationcontextclassreference-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ConditionalAccessAuthenticationContextClassReferencesAuthenticationCont
     }
     return nil
 }
-// Get retrieve the properties and relationships of a authenticationContextClassReference object. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of a authenticationContextClassReference object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/authenticationcontextclassreference-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ConditionalAccessAuthenticationContextClassReferencesAuthenticationCont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationContextClassReferenceable), nil
 }
-// Patch create an authenticationContextClassReference object, if the ID has not been used. If ID has been used, this call updates the authenticationContextClassReference object. This API is supported in the following national cloud deployments.
+// Patch create an authenticationContextClassReference object, if the ID has not been used. If ID has been used, this call updates the authenticationContextClassReference object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/authenticationcontextclassreference-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *ConditionalAccessAuthenticationContextClassReferencesAuthenticationCont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationContextClassReferenceable), nil
 }
-// ToDeleteRequestInformation delete an authenticationContextClassReference object that's not published or used by a conditional access policy. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete an authenticationContextClassReference object that's not published or used by a conditional access policy. This API is available in the following national cloud deployments.
 func (m *ConditionalAccessAuthenticationContextClassReferencesAuthenticationContextClassReferenceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationContextClassReferencesAuthenticationContextClassReferenceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *ConditionalAccessAuthenticationContextClassReferencesAuthenticationCont
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a authenticationContextClassReference object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a authenticationContextClassReference object. This API is available in the following national cloud deployments.
 func (m *ConditionalAccessAuthenticationContextClassReferencesAuthenticationContextClassReferenceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationContextClassReferencesAuthenticationContextClassReferenceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *ConditionalAccessAuthenticationContextClassReferencesAuthenticationCont
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation create an authenticationContextClassReference object, if the ID has not been used. If ID has been used, this call updates the authenticationContextClassReference object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation create an authenticationContextClassReference object, if the ID has not been used. If ID has been used, this call updates the authenticationContextClassReference object. This API is available in the following national cloud deployments.
 func (m *ConditionalAccessAuthenticationContextClassReferencesAuthenticationContextClassReferenceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationContextClassReferenceable, requestConfiguration *ConditionalAccessAuthenticationContextClassReferencesAuthenticationContextClassReferenceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

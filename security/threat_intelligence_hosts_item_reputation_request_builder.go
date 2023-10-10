@@ -18,7 +18,7 @@ type ThreatIntelligenceHostsItemReputationRequestBuilderDeleteRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ThreatIntelligenceHostsItemReputationRequestBuilderGetQueryParameters get the properties and relationships of a hostReputation object. This API is supported in the following national cloud deployments.
+// ThreatIntelligenceHostsItemReputationRequestBuilderGetQueryParameters get the properties and relationships of a hostReputation object. This API is available in the following national cloud deployments.
 type ThreatIntelligenceHostsItemReputationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ThreatIntelligenceHostsItemReputationRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// Get get the properties and relationships of a hostReputation object. This API is supported in the following national cloud deployments.
+// Get get the properties and relationships of a hostReputation object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-host-get-reputation?view=graph-rest-1.0
@@ -123,7 +123,7 @@ func (m *ThreatIntelligenceHostsItemReputationRequestBuilder) ToDeleteRequestInf
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of a hostReputation object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the properties and relationships of a hostReputation object. This API is available in the following national cloud deployments.
 func (m *ThreatIntelligenceHostsItemReputationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemReputationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

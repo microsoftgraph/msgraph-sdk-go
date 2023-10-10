@@ -11,7 +11,7 @@ import (
 type RoleManagementPoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RoleManagementPoliciesRequestBuilderGetQueryParameters get role management policies and their details. This API is supported in the following national cloud deployments.
+// RoleManagementPoliciesRequestBuilderGetQueryParameters get role management policies and their details. This API is available in the following national cloud deployments.
 type RoleManagementPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewRoleManagementPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *RoleManagementPoliciesRequestBuilder) Count()(*RoleManagementPoliciesCountRequestBuilder) {
     return NewRoleManagementPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get role management policies and their details. This API is supported in the following national cloud deployments.
+// Get get role management policies and their details. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/policyroot-list-rolemanagementpolicies?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *RoleManagementPoliciesRequestBuilder) Post(ctx context.Context, body ia
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleManagementPolicyable), nil
 }
-// ToGetRequestInformation get role management policies and their details. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get role management policies and their details. This API is available in the following national cloud deployments.
 func (m *RoleManagementPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleManagementPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

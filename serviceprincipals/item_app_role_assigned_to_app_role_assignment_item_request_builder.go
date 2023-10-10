@@ -54,7 +54,7 @@ func NewItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal. This API is supported in the following national cloud deployments.
+// Delete deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-delete-approleassignedto?view=graph-rest-1.0
@@ -111,7 +111,7 @@ func (m *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder) Patch(ctx con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AppRoleAssignmentable), nil
 }
-// ToDeleteRequestInformation deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal. This API is available in the following national cloud deployments.
 func (m *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

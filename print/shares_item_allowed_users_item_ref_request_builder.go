@@ -10,7 +10,7 @@ import (
 type SharesItemAllowedUsersItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SharesItemAllowedUsersItemRefRequestBuilderDeleteQueryParameters revoke the specified user's access to submit print jobs to the associated printerShare. This API is supported in the following national cloud deployments.
+// SharesItemAllowedUsersItemRefRequestBuilderDeleteQueryParameters revoke the specified user's access to submit print jobs to the associated printerShare. This API is available in the following national cloud deployments.
 type SharesItemAllowedUsersItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,7 @@ func NewSharesItemAllowedUsersItemRefRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewSharesItemAllowedUsersItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete revoke the specified user's access to submit print jobs to the associated printerShare. This API is supported in the following national cloud deployments.
+// Delete revoke the specified user's access to submit print jobs to the associated printerShare. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/printershare-delete-alloweduser?view=graph-rest-1.0
@@ -56,7 +56,7 @@ func (m *SharesItemAllowedUsersItemRefRequestBuilder) Delete(ctx context.Context
     }
     return nil
 }
-// ToDeleteRequestInformation revoke the specified user's access to submit print jobs to the associated printerShare. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation revoke the specified user's access to submit print jobs to the associated printerShare. This API is available in the following national cloud deployments.
 func (m *SharesItemAllowedUsersItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SharesItemAllowedUsersItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

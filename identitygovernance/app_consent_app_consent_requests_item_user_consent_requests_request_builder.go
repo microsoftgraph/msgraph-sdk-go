@@ -11,7 +11,7 @@ import (
 type AppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilderGetQueryParameters retrieve a collection of userConsentRequest objects and their properties. This API is supported in the following national cloud deployments.
+// AppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilderGetQueryParameters retrieve a collection of userConsentRequest objects and their properties. This API is available in the following national cloud deployments.
 type AppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilder) Coun
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*AppConsentAppConsentRequestsItemUserConsentRequestsFilterByCurrentUserWithOnRequestBuilder) {
     return NewAppConsentAppConsentRequestsItemUserConsentRequestsFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get retrieve a collection of userConsentRequest objects and their properties. This API is supported in the following national cloud deployments.
+// Get retrieve a collection of userConsentRequest objects and their properties. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/appconsentrequest-list-userconsentrequests?view=graph-rest-1.0
@@ -119,7 +119,7 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilder) Post
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserConsentRequestable), nil
 }
-// ToGetRequestInformation retrieve a collection of userConsentRequest objects and their properties. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a collection of userConsentRequest objects and their properties. This API is available in the following national cloud deployments.
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsItemUserConsentRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilderGetQueryParameters retrieve a list of tablecolumn objects. This API is supported in the following national cloud deployments.
+// ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilderGetQueryParameters retrieve a list of tablecolumn objects. This API is available in the following national cloud deployments.
 type ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder(rawUr
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) Count()(*ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsCountRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of tablecolumn objects. This API is supported in the following national cloud deployments.
+// Get retrieve a list of tablecolumn objects. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tablecolumn-list?view=graph-rest-1.0
@@ -104,7 +104,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) Get
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) ItemAtWithIndex(index *int32)(*ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemAtWithIndexRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemTablesItemColumnsItemAtWithIndexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, index)
 }
-// Post use this API to create a new TableColumn. This API is supported in the following national cloud deployments.
+// Post use this API to create a new TableColumn. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/table-post-columns?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) Pos
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableColumnable), nil
 }
-// ToGetRequestInformation retrieve a list of tablecolumn objects. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of tablecolumn objects. This API is available in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) ToG
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation use this API to create a new TableColumn. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation use this API to create a new TableColumn. This API is available in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableColumnable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemColumnsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -97,7 +97,7 @@ func (m *OnlineMeeting) GetAttendanceReports()([]MeetingAttendanceReportable) {
     }
     return nil
 }
-// GetAttendeeReport gets the attendeeReport property value. The content stream of the attendee report of a Microsoft Teams live event. Read-only.
+// GetAttendeeReport gets the attendeeReport property value. The attendeeReport property
 func (m *OnlineMeeting) GetAttendeeReport()([]byte) {
     val, err := m.GetBackingStore().Get("attendeeReport")
     if err != nil {
@@ -119,7 +119,7 @@ func (m *OnlineMeeting) GetAudioConferencing()(AudioConferencingable) {
     }
     return nil
 }
-// GetBroadcastSettings gets the broadcastSettings property value. Settings related to a live event.
+// GetBroadcastSettings gets the broadcastSettings property value. The broadcastSettings property
 func (m *OnlineMeeting) GetBroadcastSettings()(BroadcastMeetingSettingsable) {
     val, err := m.GetBackingStore().Get("broadcastSettings")
     if err != nil {
@@ -471,7 +471,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetIsBroadcast gets the isBroadcast property value. Indicates if this is a Teams live event.
+// GetIsBroadcast gets the isBroadcast property value. The isBroadcast property
 func (m *OnlineMeeting) GetIsBroadcast()(*bool) {
     val, err := m.GetBackingStore().Get("isBroadcast")
     if err != nil {
@@ -592,7 +592,7 @@ func (m *OnlineMeeting) GetSubject()(*string) {
     }
     return nil
 }
-// GetTranscripts gets the transcripts property value. The transcripts property
+// GetTranscripts gets the transcripts property value. The transcripts of an online meeting. Read-only.
 func (m *OnlineMeeting) GetTranscripts()([]CallTranscriptable) {
     val, err := m.GetBackingStore().Get("transcripts")
     if err != nil {
@@ -865,7 +865,7 @@ func (m *OnlineMeeting) SetAttendanceReports(value []MeetingAttendanceReportable
         panic(err)
     }
 }
-// SetAttendeeReport sets the attendeeReport property value. The content stream of the attendee report of a Microsoft Teams live event. Read-only.
+// SetAttendeeReport sets the attendeeReport property value. The attendeeReport property
 func (m *OnlineMeeting) SetAttendeeReport(value []byte)() {
     err := m.GetBackingStore().Set("attendeeReport", value)
     if err != nil {
@@ -879,7 +879,7 @@ func (m *OnlineMeeting) SetAudioConferencing(value AudioConferencingable)() {
         panic(err)
     }
 }
-// SetBroadcastSettings sets the broadcastSettings property value. Settings related to a live event.
+// SetBroadcastSettings sets the broadcastSettings property value. The broadcastSettings property
 func (m *OnlineMeeting) SetBroadcastSettings(value BroadcastMeetingSettingsable)() {
     err := m.GetBackingStore().Set("broadcastSettings", value)
     if err != nil {
@@ -914,7 +914,7 @@ func (m *OnlineMeeting) SetExternalId(value *string)() {
         panic(err)
     }
 }
-// SetIsBroadcast sets the isBroadcast property value. Indicates if this is a Teams live event.
+// SetIsBroadcast sets the isBroadcast property value. The isBroadcast property
 func (m *OnlineMeeting) SetIsBroadcast(value *bool)() {
     err := m.GetBackingStore().Set("isBroadcast", value)
     if err != nil {
@@ -991,7 +991,7 @@ func (m *OnlineMeeting) SetSubject(value *string)() {
         panic(err)
     }
 }
-// SetTranscripts sets the transcripts property value. The transcripts property
+// SetTranscripts sets the transcripts property value. The transcripts of an online meeting. Read-only.
 func (m *OnlineMeeting) SetTranscripts(value []CallTranscriptable)() {
     err := m.GetBackingStore().Set("transcripts", value)
     if err != nil {

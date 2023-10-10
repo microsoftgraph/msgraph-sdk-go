@@ -18,7 +18,7 @@ type ItemContactFoldersContactFolderItemRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemContactFoldersContactFolderItemRequestBuilderGetQueryParameters get a contact folder by using the contact folder ID. There are two scenarios where an app can get another user's contact folder: This API is supported in the following national cloud deployments.
+// ItemContactFoldersContactFolderItemRequestBuilderGetQueryParameters get a contact folder by using the contact folder ID. There are two scenarios where an app can get another user's contact folder: This API is available in the following national cloud deployments.
 type ItemContactFoldersContactFolderItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -62,7 +62,7 @@ func NewItemContactFoldersContactFolderItemRequestBuilder(rawUrl string, request
 func (m *ItemContactFoldersContactFolderItemRequestBuilder) Contacts()(*ItemContactFoldersItemContactsRequestBuilder) {
     return NewItemContactFoldersItemContactsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete contactFolder other than the default contactFolder. This API is supported in the following national cloud deployments.
+// Delete delete contactFolder other than the default contactFolder. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contactfolder-delete?view=graph-rest-1.0
@@ -81,7 +81,7 @@ func (m *ItemContactFoldersContactFolderItemRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// Get get a contact folder by using the contact folder ID. There are two scenarios where an app can get another user's contact folder: This API is supported in the following national cloud deployments.
+// Get get a contact folder by using the contact folder ID. There are two scenarios where an app can get another user's contact folder: This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contactfolder-get?view=graph-rest-1.0
@@ -103,7 +103,7 @@ func (m *ItemContactFoldersContactFolderItemRequestBuilder) Get(ctx context.Cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable), nil
 }
-// Patch update the properties of contactfolder object. This API is supported in the following national cloud deployments.
+// Patch update the properties of contactfolder object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contactfolder-update?view=graph-rest-1.0
@@ -125,7 +125,7 @@ func (m *ItemContactFoldersContactFolderItemRequestBuilder) Patch(ctx context.Co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable), nil
 }
-// ToDeleteRequestInformation delete contactFolder other than the default contactFolder. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete contactFolder other than the default contactFolder. This API is available in the following national cloud deployments.
 func (m *ItemContactFoldersContactFolderItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersContactFolderItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -137,7 +137,7 @@ func (m *ItemContactFoldersContactFolderItemRequestBuilder) ToDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get a contact folder by using the contact folder ID. There are two scenarios where an app can get another user's contact folder: This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a contact folder by using the contact folder ID. There are two scenarios where an app can get another user's contact folder: This API is available in the following national cloud deployments.
 func (m *ItemContactFoldersContactFolderItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersContactFolderItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -153,7 +153,7 @@ func (m *ItemContactFoldersContactFolderItemRequestBuilder) ToGetRequestInformat
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of contactfolder object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of contactfolder object. This API is available in the following national cloud deployments.
 func (m *ItemContactFoldersContactFolderItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable, requestConfiguration *ItemContactFoldersContactFolderItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

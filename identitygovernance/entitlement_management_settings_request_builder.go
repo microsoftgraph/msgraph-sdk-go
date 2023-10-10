@@ -18,7 +18,7 @@ type EntitlementManagementSettingsRequestBuilderDeleteRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementSettingsRequestBuilderGetQueryParameters retrieve the properties of an entitlementManagementSettings object. This API is supported in the following national cloud deployments.
+// EntitlementManagementSettingsRequestBuilderGetQueryParameters retrieve the properties of an entitlementManagementSettings object. This API is available in the following national cloud deployments.
 type EntitlementManagementSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *EntitlementManagementSettingsRequestBuilder) Delete(ctx context.Context
     }
     return nil
 }
-// Get retrieve the properties of an entitlementManagementSettings object. This API is supported in the following national cloud deployments.
+// Get retrieve the properties of an entitlementManagementSettings object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/entitlementmanagementsettings-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *EntitlementManagementSettingsRequestBuilder) Get(ctx context.Context, r
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EntitlementManagementSettingsable), nil
 }
-// Patch update an existing entitlementManagementSettings object to change one or more of its properties. This API is supported in the following national cloud deployments.
+// Patch update an existing entitlementManagementSettings object to change one or more of its properties. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/entitlementmanagementsettings-update?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *EntitlementManagementSettingsRequestBuilder) ToDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties of an entitlementManagementSettings object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties of an entitlementManagementSettings object. This API is available in the following national cloud deployments.
 func (m *EntitlementManagementSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *EntitlementManagementSettingsRequestBuilder) ToGetRequestInformation(ct
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update an existing entitlementManagementSettings object to change one or more of its properties. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update an existing entitlementManagementSettings object to change one or more of its properties. This API is available in the following national cloud deployments.
 func (m *EntitlementManagementSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EntitlementManagementSettingsable, requestConfiguration *EntitlementManagementSettingsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ItemOnenoteSectionGroupsItemSectionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOnenoteSectionGroupsItemSectionsRequestBuilderGetQueryParameters retrieve a list of onenoteSection objects from the specified section group. This API is supported in the following national cloud deployments.
+// ItemOnenoteSectionGroupsItemSectionsRequestBuilderGetQueryParameters retrieve a list of onenoteSection objects from the specified section group. This API is available in the following national cloud deployments.
 type ItemOnenoteSectionGroupsItemSectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemOnenoteSectionGroupsItemSectionsRequestBuilder(rawUrl string, reques
 func (m *ItemOnenoteSectionGroupsItemSectionsRequestBuilder) Count()(*ItemOnenoteSectionGroupsItemSectionsCountRequestBuilder) {
     return NewItemOnenoteSectionGroupsItemSectionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of onenoteSection objects from the specified section group. This API is supported in the following national cloud deployments.
+// Get retrieve a list of onenoteSection objects from the specified section group. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemOnenoteSectionGroupsItemSectionsRequestBuilder) Get(ctx context.Con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionCollectionResponseable), nil
 }
-// Post create a new onenoteSection in the specified section group. This API is supported in the following national cloud deployments.
+// Post create a new onenoteSection in the specified section group. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemOnenoteSectionGroupsItemSectionsRequestBuilder) Post(ctx context.Co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionable), nil
 }
-// ToGetRequestInformation retrieve a list of onenoteSection objects from the specified section group. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of onenoteSection objects from the specified section group. This API is available in the following national cloud deployments.
 func (m *ItemOnenoteSectionGroupsItemSectionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteSectionGroupsItemSectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemOnenoteSectionGroupsItemSectionsRequestBuilder) ToGetRequestInforma
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new onenoteSection in the specified section group. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new onenoteSection in the specified section group. This API is available in the following national cloud deployments.
 func (m *ItemOnenoteSectionGroupsItemSectionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionable, requestConfiguration *ItemOnenoteSectionGroupsItemSectionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

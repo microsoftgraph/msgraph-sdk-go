@@ -18,7 +18,7 @@ type ItemOperationsRichLongRunningOperationItemRequestBuilderDeleteRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemOperationsRichLongRunningOperationItemRequestBuilderGetQueryParameters get the status of a rich long-running operation on a site or a list. This API is supported in the following national cloud deployments.
+// ItemOperationsRichLongRunningOperationItemRequestBuilderGetQueryParameters get the status of a rich long-running operation on a site or a list. This API is available in the following national cloud deployments.
 type ItemOperationsRichLongRunningOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemOperationsRichLongRunningOperationItemRequestBuilder) Delete(ctx co
     }
     return nil
 }
-// Get get the status of a rich long-running operation on a site or a list. This API is supported in the following national cloud deployments.
+// Get get the status of a rich long-running operation on a site or a list. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/richlongrunningoperation-get?view=graph-rest-1.0
@@ -123,7 +123,7 @@ func (m *ItemOperationsRichLongRunningOperationItemRequestBuilder) ToDeleteReque
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the status of a rich long-running operation on a site or a list. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the status of a rich long-running operation on a site or a list. This API is available in the following national cloud deployments.
 func (m *ItemOperationsRichLongRunningOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOperationsRichLongRunningOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

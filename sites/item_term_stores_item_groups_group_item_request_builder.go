@@ -18,7 +18,7 @@ type ItemTermStoresItemGroupsGroupItemRequestBuilderDeleteRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTermStoresItemGroupsGroupItemRequestBuilderGetQueryParameters read the properties and relationships of a term store group object. This API is supported in the following national cloud deployments.
+// ItemTermStoresItemGroupsGroupItemRequestBuilderGetQueryParameters read the properties and relationships of a term store group object. This API is available in the following national cloud deployments.
 type ItemTermStoresItemGroupsGroupItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemTermStoresItemGroupsGroupItemRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewItemTermStoresItemGroupsGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a group object in a term store]. This API is supported in the following [national cloud deployments.
+// Delete delete a group object in a term store]. This API is available in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/termstore-group-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemTermStoresItemGroupsGroupItemRequestBuilder) Delete(ctx context.Con
     }
     return nil
 }
-// Get read the properties and relationships of a term store group object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a term store group object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/termstore-group-get?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemTermStoresItemGroupsGroupItemRequestBuilder) Patch(ctx context.Cont
 func (m *ItemTermStoresItemGroupsGroupItemRequestBuilder) Sets()(*ItemTermStoresItemGroupsItemSetsRequestBuilder) {
     return NewItemTermStoresItemGroupsItemSetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a group object in a term store]. This API is supported in the following [national cloud deployments.
+// ToDeleteRequestInformation delete a group object in a term store]. This API is available in the following [national cloud deployments.
 func (m *ItemTermStoresItemGroupsGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTermStoresItemGroupsGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -130,7 +130,7 @@ func (m *ItemTermStoresItemGroupsGroupItemRequestBuilder) ToDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a term store group object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a term store group object. This API is available in the following national cloud deployments.
 func (m *ItemTermStoresItemGroupsGroupItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTermStoresItemGroupsGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

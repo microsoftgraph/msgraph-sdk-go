@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceSubdomainsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceSubdomainsRequestBuilderGetQueryParameters read the properties and relationships of a subdomain object.
+// ThreatIntelligenceSubdomainsRequestBuilderGetQueryParameters read the properties and relationships of a subdomain object. This API is available in the following national cloud deployments.
 type ThreatIntelligenceSubdomainsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewThreatIntelligenceSubdomainsRequestBuilder(rawUrl string, requestAdapter
 func (m *ThreatIntelligenceSubdomainsRequestBuilder) Count()(*ThreatIntelligenceSubdomainsCountRequestBuilder) {
     return NewThreatIntelligenceSubdomainsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a subdomain object.
+// Get read the properties and relationships of a subdomain object. This API is available in the following national cloud deployments.
 func (m *ThreatIntelligenceSubdomainsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceSubdomainsRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.SubdomainCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ThreatIntelligenceSubdomainsRequestBuilder) Post(ctx context.Context, b
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.Subdomainable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a subdomain object.
+// ToGetRequestInformation read the properties and relationships of a subdomain object. This API is available in the following national cloud deployments.
 func (m *ThreatIntelligenceSubdomainsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceSubdomainsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

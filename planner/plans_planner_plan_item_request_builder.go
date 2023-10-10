@@ -18,7 +18,7 @@ type PlansPlannerPlanItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PlansPlannerPlanItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a plannerplan object. This API is supported in the following national cloud deployments.
+// PlansPlannerPlanItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a plannerplan object. This API is available in the following national cloud deployments.
 type PlansPlannerPlanItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -58,7 +58,7 @@ func NewPlansPlannerPlanItemRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewPlansPlannerPlanItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a plannerPlan object. This API is supported in the following national cloud deployments.
+// Delete delete a plannerPlan object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerplan-delete?view=graph-rest-1.0
@@ -81,7 +81,7 @@ func (m *PlansPlannerPlanItemRequestBuilder) Delete(ctx context.Context, request
 func (m *PlansPlannerPlanItemRequestBuilder) Details()(*PlansItemDetailsRequestBuilder) {
     return NewPlansItemDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of a plannerplan object. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of a plannerplan object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerplan-get?view=graph-rest-1.0
@@ -103,7 +103,7 @@ func (m *PlansPlannerPlanItemRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerPlanable), nil
 }
-// Patch update the properties of a plannerPlan object. This API is supported in the following national cloud deployments.
+// Patch update the properties of a plannerPlan object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerplan-update?view=graph-rest-1.0
@@ -129,7 +129,7 @@ func (m *PlansPlannerPlanItemRequestBuilder) Patch(ctx context.Context, body iad
 func (m *PlansPlannerPlanItemRequestBuilder) Tasks()(*PlansItemTasksRequestBuilder) {
     return NewPlansItemTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a plannerPlan object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a plannerPlan object. This API is available in the following national cloud deployments.
 func (m *PlansPlannerPlanItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PlansPlannerPlanItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -141,7 +141,7 @@ func (m *PlansPlannerPlanItemRequestBuilder) ToDeleteRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a plannerplan object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a plannerplan object. This API is available in the following national cloud deployments.
 func (m *PlansPlannerPlanItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PlansPlannerPlanItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -157,7 +157,7 @@ func (m *PlansPlannerPlanItemRequestBuilder) ToGetRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a plannerPlan object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a plannerPlan object. This API is available in the following national cloud deployments.
 func (m *PlansPlannerPlanItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerPlanable, requestConfiguration *PlansPlannerPlanItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

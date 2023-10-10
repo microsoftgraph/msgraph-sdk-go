@@ -11,7 +11,7 @@ import (
 type LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsRequestBuilderGetQueryParameters get the task processing result resources from the taskReport. This API is supported in the following national cloud deployments.
+// LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsRequestBuilderGetQueryParameters get the task processing result resources from the taskReport. This API is available in the following national cloud deployments.
 type LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewLifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsReque
 func (m *LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsRequestBuilder) Count()(*LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsCountRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the task processing result resources from the taskReport. This API is supported in the following national cloud deployments.
+// Get get the task processing result resources from the taskReport. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-taskreport-list-taskprocessingresults?view=graph-rest-1.0
@@ -89,7 +89,7 @@ func (m *LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsRequ
     }
     return res.(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.TaskProcessingResultCollectionResponseable), nil
 }
-// ToGetRequestInformation get the task processing result resources from the taskReport. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the task processing result resources from the taskReport. This API is available in the following national cloud deployments.
 func (m *LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskProcessingResultsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type ItemMessagesItemRepliesChatMessageItemRequestBuilderDeleteRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemMessagesItemRepliesChatMessageItemRequestBuilderGetQueryParameters retrieve a single message or a message reply in a channel or a chat. This API is supported in the following national cloud deployments.
+// ItemMessagesItemRepliesChatMessageItemRequestBuilderGetQueryParameters retrieve a single message or a message reply in a channel or a chat. This API is available in the following national cloud deployments.
 type ItemMessagesItemRepliesChatMessageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemMessagesItemRepliesChatMessageItemRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// Get retrieve a single message or a message reply in a channel or a chat. This API is supported in the following national cloud deployments.
+// Get retrieve a single message or a message reply in a channel or a chat. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
@@ -135,7 +135,7 @@ func (m *ItemMessagesItemRepliesChatMessageItemRequestBuilder) ToDeleteRequestIn
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve a single message or a message reply in a channel or a chat. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a single message or a message reply in a channel or a chat. This API is available in the following national cloud deployments.
 func (m *ItemMessagesItemRepliesChatMessageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMessagesItemRepliesChatMessageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

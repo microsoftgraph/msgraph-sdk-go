@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceArticlesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceArticlesRequestBuilderGetQueryParameters get a list of article objects, including their properties and relationships. This API is supported in the following national cloud deployments.
+// ThreatIntelligenceArticlesRequestBuilderGetQueryParameters get a list of article objects, including their properties and relationships. This API is available in the following national cloud deployments.
 type ThreatIntelligenceArticlesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,10 +74,10 @@ func NewThreatIntelligenceArticlesRequestBuilder(rawUrl string, requestAdapter i
 func (m *ThreatIntelligenceArticlesRequestBuilder) Count()(*ThreatIntelligenceArticlesCountRequestBuilder) {
     return NewThreatIntelligenceArticlesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of article objects, including their properties and relationships. This API is supported in the following national cloud deployments.
+// Get get a list of article objects, including their properties and relationships. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-article-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-threatintelligence-list-articles?view=graph-rest-1.0
 func (m *ThreatIntelligenceArticlesRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceArticlesRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.ArticleCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +115,7 @@ func (m *ThreatIntelligenceArticlesRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.Articleable), nil
 }
-// ToGetRequestInformation get a list of article objects, including their properties and relationships. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of article objects, including their properties and relationships. This API is available in the following national cloud deployments.
 func (m *ThreatIntelligenceArticlesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceArticlesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

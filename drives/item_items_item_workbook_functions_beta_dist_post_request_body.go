@@ -23,7 +23,7 @@ func NewItemItemsItemWorkbookFunctionsBeta_DistPostRequestBody()(*ItemItemsItemW
 func CreateItemItemsItemWorkbookFunctionsBeta_DistPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemsItemWorkbookFunctionsBeta_DistPostRequestBody(), nil
 }
-// GetA gets the a property value. The A property
+// GetA gets the A property value. The A property
 func (m *ItemItemsItemWorkbookFunctionsBeta_DistPostRequestBody) GetA()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("a")
     if err != nil {
@@ -34,7 +34,7 @@ func (m *ItemItemsItemWorkbookFunctionsBeta_DistPostRequestBody) GetA()(iadcd811
     }
     return nil
 }
-// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookFunctionsBeta_DistPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -57,7 +57,7 @@ func (m *ItemItemsItemWorkbookFunctionsBeta_DistPostRequestBody) GetAlpha()(iadc
     }
     return nil
 }
-// GetB gets the b property value. The B property
+// GetB gets the B property value. The B property
 func (m *ItemItemsItemWorkbookFunctionsBeta_DistPostRequestBody) GetB()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("b")
     if err != nil {
@@ -68,7 +68,7 @@ func (m *ItemItemsItemWorkbookFunctionsBeta_DistPostRequestBody) GetB()(iadcd811
     }
     return nil
 }
-// GetBackingStore gets the backingStore property value. Stores model information.
+// GetBackingStore gets the BackingStore property value. Stores model information.
 func (m *ItemItemsItemWorkbookFunctionsBeta_DistPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
@@ -97,7 +97,7 @@ func (m *ItemItemsItemWorkbookFunctionsBeta_DistPostRequestBody) GetCumulative()
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemsItemWorkbookFunctionsBeta_DistPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["a"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["A"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateJsonFromDiscriminatorValue)
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *ItemItemsItemWorkbookFunctionsBeta_DistPostRequestBody) GetFieldDeseria
         }
         return nil
     }
-    res["b"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["B"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateJsonFromDiscriminatorValue)
         if err != nil {
             return err
@@ -173,7 +173,7 @@ func (m *ItemItemsItemWorkbookFunctionsBeta_DistPostRequestBody) GetX()(iadcd811
 // Serialize serializes information the current object
 func (m *ItemItemsItemWorkbookFunctionsBeta_DistPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteObjectValue("a", m.GetA())
+        err := writer.WriteObjectValue("A", m.GetA())
         if err != nil {
             return err
         }
@@ -185,7 +185,7 @@ func (m *ItemItemsItemWorkbookFunctionsBeta_DistPostRequestBody) Serialize(write
         }
     }
     {
-        err := writer.WriteObjectValue("b", m.GetB())
+        err := writer.WriteObjectValue("B", m.GetB())
         if err != nil {
             return err
         }
@@ -216,14 +216,14 @@ func (m *ItemItemsItemWorkbookFunctionsBeta_DistPostRequestBody) Serialize(write
     }
     return nil
 }
-// SetA sets the a property value. The A property
+// SetA sets the A property value. The A property
 func (m *ItemItemsItemWorkbookFunctionsBeta_DistPostRequestBody) SetA(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
     err := m.GetBackingStore().Set("a", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemItemsItemWorkbookFunctionsBeta_DistPostRequestBody) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
     if err != nil {
@@ -237,14 +237,14 @@ func (m *ItemItemsItemWorkbookFunctionsBeta_DistPostRequestBody) SetAlpha(value 
         panic(err)
     }
 }
-// SetB sets the b property value. The B property
+// SetB sets the B property value. The B property
 func (m *ItemItemsItemWorkbookFunctionsBeta_DistPostRequestBody) SetB(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable)() {
     err := m.GetBackingStore().Set("b", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBackingStore sets the backingStore property value. Stores model information.
+// SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *ItemItemsItemWorkbookFunctionsBeta_DistPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }

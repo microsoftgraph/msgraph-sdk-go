@@ -12,7 +12,7 @@ import (
 type LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilderGetQueryParameters get a list of the taskReport objects and their properties. This API is supported in the following national cloud deployments.
+// LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilderGetQueryParameters get a list of the taskReport objects and their properties. This API is available in the following national cloud deployments.
 type LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -68,7 +68,7 @@ func NewLifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilder(rawUrl string, 
 func (m *LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilder) Count()(*LifecycleWorkflowsWorkflowsItemTaskReportsCountRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemTaskReportsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the taskReport objects and their properties. This API is supported in the following national cloud deployments.
+// Get get a list of the taskReport objects and their properties. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-taskreports?view=graph-rest-1.0
@@ -94,7 +94,7 @@ func (m *LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilder) Get(ctx conte
 func (m *LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilder) MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime(endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*LifecycleWorkflowsWorkflowsItemTaskReportsMicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemTaskReportsMicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, endDateTime, startDateTime)
 }
-// ToGetRequestInformation get a list of the taskReport objects and their properties. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of the taskReport objects and their properties. This API is available in the following national cloud deployments.
 func (m *LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemTaskReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

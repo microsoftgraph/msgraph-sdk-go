@@ -30,7 +30,7 @@ func NewItemSitesItemListsItemItemsItemVersionsItemRestoreVersionRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemListsItemItemsItemVersionsItemRestoreVersionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item. This API is supported in the following national cloud deployments.
+// Post restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemSitesItemListsItemItemsItemVersionsItemRestoreVersionRequestBuilder
     }
     return nil
 }
-// ToPostRequestInformation restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item. This API is available in the following national cloud deployments.
 func (m *ItemSitesItemListsItemItemsItemVersionsItemRestoreVersionRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsItemVersionsItemRestoreVersionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

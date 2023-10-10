@@ -30,7 +30,7 @@ func NewItemAuthenticationPhoneMethodsItemEnableSmsSignInRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationPhoneMethodsItemEnableSmsSignInRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post enable SMS sign-in for an existing mobile phone number registered to a user. To be successfully enabled: This API is supported in the following national cloud deployments.
+// Post enable SMS sign-in for an existing mobile phone number registered to a user. To be successfully enabled: This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/phoneauthenticationmethod-enablesmssignin?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemAuthenticationPhoneMethodsItemEnableSmsSignInRequestBuilder) Post(c
     }
     return nil
 }
-// ToPostRequestInformation enable SMS sign-in for an existing mobile phone number registered to a user. To be successfully enabled: This API is supported in the following national cloud deployments.
+// ToPostRequestInformation enable SMS sign-in for an existing mobile phone number registered to a user. To be successfully enabled: This API is available in the following national cloud deployments.
 func (m *ItemAuthenticationPhoneMethodsItemEnableSmsSignInRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationPhoneMethodsItemEnableSmsSignInRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

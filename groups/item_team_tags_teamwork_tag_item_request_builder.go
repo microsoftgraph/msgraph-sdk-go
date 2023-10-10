@@ -18,7 +18,7 @@ type ItemTeamTagsTeamworkTagItemRequestBuilderDeleteRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamTagsTeamworkTagItemRequestBuilderGetQueryParameters read the properties and relationships of a tag object. This API is supported in the following national cloud deployments.
+// ItemTeamTagsTeamworkTagItemRequestBuilderGetQueryParameters read the properties and relationships of a tag object. This API is available in the following national cloud deployments.
 type ItemTeamTagsTeamworkTagItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemTeamTagsTeamworkTagItemRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamTagsTeamworkTagItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a tag object permanently. This API is supported in the following national cloud deployments.
+// Delete delete a tag object permanently. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/teamworktag-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemTeamTagsTeamworkTagItemRequestBuilder) Delete(ctx context.Context, 
     }
     return nil
 }
-// Get read the properties and relationships of a tag object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a tag object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/teamworktag-get?view=graph-rest-1.0
@@ -99,7 +99,7 @@ func (m *ItemTeamTagsTeamworkTagItemRequestBuilder) Get(ctx context.Context, req
 func (m *ItemTeamTagsTeamworkTagItemRequestBuilder) Members()(*ItemTeamTagsItemMembersRequestBuilder) {
     return NewItemTeamTagsItemMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a tag object. This API is supported in the following national cloud deployments.
+// Patch update the properties of a tag object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/teamworktag-update?view=graph-rest-1.0
@@ -121,7 +121,7 @@ func (m *ItemTeamTagsTeamworkTagItemRequestBuilder) Patch(ctx context.Context, b
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable), nil
 }
-// ToDeleteRequestInformation delete a tag object permanently. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a tag object permanently. This API is available in the following national cloud deployments.
 func (m *ItemTeamTagsTeamworkTagItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamTagsTeamworkTagItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -133,7 +133,7 @@ func (m *ItemTeamTagsTeamworkTagItemRequestBuilder) ToDeleteRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a tag object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a tag object. This API is available in the following national cloud deployments.
 func (m *ItemTeamTagsTeamworkTagItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamTagsTeamworkTagItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -149,7 +149,7 @@ func (m *ItemTeamTagsTeamworkTagItemRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a tag object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a tag object. This API is available in the following national cloud deployments.
 func (m *ItemTeamTagsTeamworkTagItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamworkTagable, requestConfiguration *ItemTeamTagsTeamworkTagItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

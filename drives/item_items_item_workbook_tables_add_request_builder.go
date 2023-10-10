@@ -31,7 +31,7 @@ func NewItemItemsItemWorkbookTablesAddRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookTablesAddRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post create a new table. The range source address determines the worksheet under which the table will be added. If the table can't be added (for example, because the address is invalid, or the table would overlap with another table), an error is generated. This API is supported in the following national cloud deployments.
+// Post create a new table. The range source address determines the worksheet under which the table will be added. If the table can't be added (for example, because the address is invalid, or the table would overlap with another table), an error is generated. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tablecollection-add?view=graph-rest-1.0
@@ -53,7 +53,7 @@ func (m *ItemItemsItemWorkbookTablesAddRequestBuilder) Post(ctx context.Context,
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableable), nil
 }
-// ToPostRequestInformation create a new table. The range source address determines the worksheet under which the table will be added. If the table can't be added (for example, because the address is invalid, or the table would overlap with another table), an error is generated. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new table. The range source address determines the worksheet under which the table will be added. If the table can't be added (for example, because the address is invalid, or the table would overlap with another table), an error is generated. This API is available in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookTablesAddRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemWorkbookTablesAddPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookTablesAddRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

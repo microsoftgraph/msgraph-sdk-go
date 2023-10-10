@@ -30,7 +30,7 @@ func NewItemJoinedTeamsItemPrimaryChannelMembersAddRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewItemJoinedTeamsItemPrimaryChannelMembersAddRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created. This API is supported in the following national cloud deployments.
+// Post add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created. This API is available in the following national cloud deployments.
 // Deprecated: This method is obsolete. Use PostAsAddPostResponse instead.
 // [Find more info here]
 // 
@@ -53,7 +53,7 @@ func (m *ItemJoinedTeamsItemPrimaryChannelMembersAddRequestBuilder) Post(ctx con
     }
     return res.(ItemJoinedTeamsItemPrimaryChannelMembersAddResponseable), nil
 }
-// PostAsAddPostResponse add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created. This API is supported in the following national cloud deployments.
+// PostAsAddPostResponse add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
@@ -75,7 +75,7 @@ func (m *ItemJoinedTeamsItemPrimaryChannelMembersAddRequestBuilder) PostAsAddPos
     }
     return res.(ItemJoinedTeamsItemPrimaryChannelMembersAddPostResponseable), nil
 }
-// ToPostRequestInformation add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created. This API is available in the following national cloud deployments.
 func (m *ItemJoinedTeamsItemPrimaryChannelMembersAddRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemJoinedTeamsItemPrimaryChannelMembersAddPostRequestBodyable, requestConfiguration *ItemJoinedTeamsItemPrimaryChannelMembersAddRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

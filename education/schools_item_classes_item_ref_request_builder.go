@@ -10,7 +10,7 @@ import (
 type SchoolsItemClassesItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SchoolsItemClassesItemRefRequestBuilderDeleteQueryParameters delete a class from a school. This API is supported in the following national cloud deployments.
+// SchoolsItemClassesItemRefRequestBuilderDeleteQueryParameters delete a class from a school. This API is available in the following national cloud deployments.
 type SchoolsItemClassesItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,7 @@ func NewSchoolsItemClassesItemRefRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewSchoolsItemClassesItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a class from a school. This API is supported in the following national cloud deployments.
+// Delete delete a class from a school. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-delete-classes?view=graph-rest-1.0
@@ -56,7 +56,7 @@ func (m *SchoolsItemClassesItemRefRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// ToDeleteRequestInformation delete a class from a school. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a class from a school. This API is available in the following national cloud deployments.
 func (m *SchoolsItemClassesItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SchoolsItemClassesItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

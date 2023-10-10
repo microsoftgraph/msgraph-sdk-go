@@ -18,7 +18,7 @@ type ServicesPrintServiceItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ServicesPrintServiceItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a print service. This API is supported in the following national cloud deployments.
+// ServicesPrintServiceItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a print service. This API is available in the following national cloud deployments.
 type ServicesPrintServiceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *ServicesPrintServiceItemRequestBuilder) Delete(ctx context.Context, req
 func (m *ServicesPrintServiceItemRequestBuilder) Endpoints()(*ServicesItemEndpointsRequestBuilder) {
     return NewServicesItemEndpointsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of a print service. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of a print service. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/printservice-get?view=graph-rest-1.0
@@ -127,7 +127,7 @@ func (m *ServicesPrintServiceItemRequestBuilder) ToDeleteRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a print service. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a print service. This API is available in the following national cloud deployments.
 func (m *ServicesPrintServiceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ServicesPrintServiceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

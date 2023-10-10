@@ -11,7 +11,7 @@ import (
 type ContractsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ContractsRequestBuilderGetQueryParameters retrieve a list of contract objects associated to a partner tenant. This API is supported in the following national cloud deployments.
+// ContractsRequestBuilderGetQueryParameters retrieve a list of contract objects associated to a partner tenant. This API is available in the following national cloud deployments.
 type ContractsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *ContractsRequestBuilder) Count()(*CountRequestBuilder) {
 func (m *ContractsRequestBuilder) Delta()(*DeltaRequestBuilder) {
     return NewDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of contract objects associated to a partner tenant. This API is supported in the following national cloud deployments.
+// Get retrieve a list of contract objects associated to a partner tenant. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contract-list?view=graph-rest-1.0
@@ -127,7 +127,7 @@ func (m *ContractsRequestBuilder) Post(ctx context.Context, body iadcd81124412c6
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contractable), nil
 }
-// ToGetRequestInformation retrieve a list of contract objects associated to a partner tenant. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of contract objects associated to a partner tenant. This API is available in the following national cloud deployments.
 func (m *ContractsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ContractsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

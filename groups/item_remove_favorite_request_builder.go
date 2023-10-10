@@ -30,7 +30,7 @@ func NewItemRemoveFavoriteRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewItemRemoveFavoriteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post remove the group from the list of the current user's favorite groups. Supported for Microsoft 365 groups only. This API is supported in the following national cloud deployments.
+// Post remove the group from the list of the current user's favorite groups. Supported for Microsoft 365 groups only. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/group-removefavorite?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemRemoveFavoriteRequestBuilder) Post(ctx context.Context, requestConf
     }
     return nil
 }
-// ToPostRequestInformation remove the group from the list of the current user's favorite groups. Supported for Microsoft 365 groups only. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation remove the group from the list of the current user's favorite groups. Supported for Microsoft 365 groups only. This API is available in the following national cloud deployments.
 func (m *ItemRemoveFavoriteRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemRemoveFavoriteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

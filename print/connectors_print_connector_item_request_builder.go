@@ -18,7 +18,7 @@ type ConnectorsPrintConnectorItemRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectorsPrintConnectorItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a printConnector object. This API is supported in the following national cloud deployments.
+// ConnectorsPrintConnectorItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a printConnector object. This API is available in the following national cloud deployments.
 type ConnectorsPrintConnectorItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewConnectorsPrintConnectorItemRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewConnectorsPrintConnectorItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete (unregister) a printConnector. This API is supported in the following national cloud deployments.
+// Delete delete (unregister) a printConnector. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/printconnector-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ConnectorsPrintConnectorItemRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get retrieve the properties and relationships of a printConnector object. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of a printConnector object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/printconnector-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ConnectorsPrintConnectorItemRequestBuilder) Get(ctx context.Context, re
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintConnectorable), nil
 }
-// Patch update the properties of a printConnector object. This API is supported in the following national cloud deployments.
+// Patch update the properties of a printConnector object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/printconnector-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *ConnectorsPrintConnectorItemRequestBuilder) Patch(ctx context.Context, 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintConnectorable), nil
 }
-// ToDeleteRequestInformation delete (unregister) a printConnector. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete (unregister) a printConnector. This API is available in the following national cloud deployments.
 func (m *ConnectorsPrintConnectorItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectorsPrintConnectorItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *ConnectorsPrintConnectorItemRequestBuilder) ToDeleteRequestInformation(
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a printConnector object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a printConnector object. This API is available in the following national cloud deployments.
 func (m *ConnectorsPrintConnectorItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectorsPrintConnectorItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *ConnectorsPrintConnectorItemRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a printConnector object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a printConnector object. This API is available in the following national cloud deployments.
 func (m *ConnectorsPrintConnectorItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintConnectorable, requestConfiguration *ConnectorsPrintConnectorItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

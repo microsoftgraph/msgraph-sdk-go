@@ -30,7 +30,7 @@ func NewItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post removes a group from a lifecycle policy. This API is supported in the following national cloud deployments.
+// Post removes a group from a lifecycle policy. This API is available in the following national cloud deployments.
 // Deprecated: This method is obsolete. Use PostAsRemoveGroupPostResponse instead.
 // [Find more info here]
 // 
@@ -53,7 +53,7 @@ func (m *ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder) Post(ctx conte
     }
     return res.(ItemGroupLifecyclePoliciesItemRemoveGroupResponseable), nil
 }
-// PostAsRemoveGroupPostResponse removes a group from a lifecycle policy. This API is supported in the following national cloud deployments.
+// PostAsRemoveGroupPostResponse removes a group from a lifecycle policy. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-removegroup?view=graph-rest-1.0
@@ -75,7 +75,7 @@ func (m *ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder) PostAsRemoveGr
     }
     return res.(ItemGroupLifecyclePoliciesItemRemoveGroupPostResponseable), nil
 }
-// ToPostRequestInformation removes a group from a lifecycle policy. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation removes a group from a lifecycle policy. This API is available in the following national cloud deployments.
 func (m *ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemGroupLifecyclePoliciesItemRemoveGroupPostRequestBodyable, requestConfiguration *ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ItemEmployeeExperienceLearningCourseActivitiesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemEmployeeExperienceLearningCourseActivitiesRequestBuilderGetQueryParameters get a list of the learningCourseActivity objects (assigned or self-initiated) for a user. This API is supported in the following national cloud deployments.
+// ItemEmployeeExperienceLearningCourseActivitiesRequestBuilderGetQueryParameters get a list of the learningCourseActivity objects (assigned or self-initiated) for a user. This API is available in the following national cloud deployments.
 type ItemEmployeeExperienceLearningCourseActivitiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewItemEmployeeExperienceLearningCourseActivitiesRequestBuilder(rawUrl stri
 func (m *ItemEmployeeExperienceLearningCourseActivitiesRequestBuilder) Count()(*ItemEmployeeExperienceLearningCourseActivitiesCountRequestBuilder) {
     return NewItemEmployeeExperienceLearningCourseActivitiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the learningCourseActivity objects (assigned or self-initiated) for a user. This API is supported in the following national cloud deployments.
+// Get get a list of the learningCourseActivity objects (assigned or self-initiated) for a user. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/learningcourseactivity-list?view=graph-rest-1.0
@@ -89,7 +89,7 @@ func (m *ItemEmployeeExperienceLearningCourseActivitiesRequestBuilder) Get(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LearningCourseActivityCollectionResponseable), nil
 }
-// ToGetRequestInformation get a list of the learningCourseActivity objects (assigned or self-initiated) for a user. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of the learningCourseActivity objects (assigned or self-initiated) for a user. This API is available in the following national cloud deployments.
 func (m *ItemEmployeeExperienceLearningCourseActivitiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemEmployeeExperienceLearningCourseActivitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

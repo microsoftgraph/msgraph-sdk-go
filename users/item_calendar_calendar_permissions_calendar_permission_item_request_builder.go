@@ -18,7 +18,7 @@ type ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderDeleteRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderGetQueryParameters get the specified permissions object of a user or group calendar that has been shared. This API is supported in the following national cloud deployments.
+// ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderGetQueryParameters get the specified permissions object of a user or group calendar that has been shared. This API is available in the following national cloud deployments.
 type ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -52,7 +52,7 @@ func NewItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete calendarPermission. This API is supported in the following national cloud deployments.
+// Delete delete calendarPermission. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/calendarpermission-delete?view=graph-rest-1.0
@@ -71,7 +71,7 @@ func (m *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) De
     }
     return nil
 }
-// Get get the specified permissions object of a user or group calendar that has been shared. This API is supported in the following national cloud deployments.
+// Get get the specified permissions object of a user or group calendar that has been shared. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/calendarpermission-get?view=graph-rest-1.0
@@ -93,7 +93,7 @@ func (m *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) Ge
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarPermissionable), nil
 }
-// Patch update the permissions assigned to an existing share recipient or delegate, through the corresponding <b>calendarPermission</b> object for a calendar. This API is supported in the following national cloud deployments.
+// Patch update the permissions assigned to an existing share recipient or delegate, through the corresponding <b>calendarPermission</b> object for a calendar. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/calendarpermission-update?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) Pa
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarPermissionable), nil
 }
-// ToDeleteRequestInformation delete calendarPermission. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete calendarPermission. This API is available in the following national cloud deployments.
 func (m *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -127,7 +127,7 @@ func (m *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) To
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the specified permissions object of a user or group calendar that has been shared. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the specified permissions object of a user or group calendar that has been shared. This API is available in the following national cloud deployments.
 func (m *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -143,7 +143,7 @@ func (m *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) To
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the permissions assigned to an existing share recipient or delegate, through the corresponding <b>calendarPermission</b> object for a calendar. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the permissions assigned to an existing share recipient or delegate, through the corresponding <b>calendarPermission</b> object for a calendar. This API is available in the following national cloud deployments.
 func (m *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarPermissionable, requestConfiguration *ItemCalendarCalendarPermissionsCalendarPermissionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

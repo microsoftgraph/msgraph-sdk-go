@@ -23,7 +23,7 @@ func NewItemTranslateExchangeIdsPostRequestBody()(*ItemTranslateExchangeIdsPostR
 func CreateItemTranslateExchangeIdsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemTranslateExchangeIdsPostRequestBody(), nil
 }
-// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemTranslateExchangeIdsPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,14 +35,14 @@ func (m *ItemTranslateExchangeIdsPostRequestBody) GetAdditionalData()(map[string
     }
     return val.(map[string]any)
 }
-// GetBackingStore gets the backingStore property value. Stores model information.
+// GetBackingStore gets the BackingStore property value. Stores model information.
 func (m *ItemTranslateExchangeIdsPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemTranslateExchangeIdsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["inputIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["InputIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -58,7 +58,7 @@ func (m *ItemTranslateExchangeIdsPostRequestBody) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["sourceIdType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["SourceIdType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ParseExchangeIdFormat)
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *ItemTranslateExchangeIdsPostRequestBody) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["targetIdType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["TargetIdType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ParseExchangeIdFormat)
         if err != nil {
             return err
@@ -80,7 +80,7 @@ func (m *ItemTranslateExchangeIdsPostRequestBody) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetInputIds gets the inputIds property value. The InputIds property
+// GetInputIds gets the InputIds property value. The InputIds property
 func (m *ItemTranslateExchangeIdsPostRequestBody) GetInputIds()([]string) {
     val, err := m.GetBackingStore().Get("inputIds")
     if err != nil {
@@ -91,7 +91,7 @@ func (m *ItemTranslateExchangeIdsPostRequestBody) GetInputIds()([]string) {
     }
     return nil
 }
-// GetSourceIdType gets the sourceIdType property value. The SourceIdType property
+// GetSourceIdType gets the SourceIdType property value. The SourceIdType property
 func (m *ItemTranslateExchangeIdsPostRequestBody) GetSourceIdType()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExchangeIdFormat) {
     val, err := m.GetBackingStore().Get("sourceIdType")
     if err != nil {
@@ -102,7 +102,7 @@ func (m *ItemTranslateExchangeIdsPostRequestBody) GetSourceIdType()(*iadcd811244
     }
     return nil
 }
-// GetTargetIdType gets the targetIdType property value. The TargetIdType property
+// GetTargetIdType gets the TargetIdType property value. The TargetIdType property
 func (m *ItemTranslateExchangeIdsPostRequestBody) GetTargetIdType()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExchangeIdFormat) {
     val, err := m.GetBackingStore().Get("targetIdType")
     if err != nil {
@@ -116,21 +116,21 @@ func (m *ItemTranslateExchangeIdsPostRequestBody) GetTargetIdType()(*iadcd811244
 // Serialize serializes information the current object
 func (m *ItemTranslateExchangeIdsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetInputIds() != nil {
-        err := writer.WriteCollectionOfStringValues("inputIds", m.GetInputIds())
+        err := writer.WriteCollectionOfStringValues("InputIds", m.GetInputIds())
         if err != nil {
             return err
         }
     }
     if m.GetSourceIdType() != nil {
         cast := (*m.GetSourceIdType()).String()
-        err := writer.WriteStringValue("sourceIdType", &cast)
+        err := writer.WriteStringValue("SourceIdType", &cast)
         if err != nil {
             return err
         }
     }
     if m.GetTargetIdType() != nil {
         cast := (*m.GetTargetIdType()).String()
-        err := writer.WriteStringValue("targetIdType", &cast)
+        err := writer.WriteStringValue("TargetIdType", &cast)
         if err != nil {
             return err
         }
@@ -143,32 +143,32 @@ func (m *ItemTranslateExchangeIdsPostRequestBody) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemTranslateExchangeIdsPostRequestBody) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBackingStore sets the backingStore property value. Stores model information.
+// SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *ItemTranslateExchangeIdsPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetInputIds sets the inputIds property value. The InputIds property
+// SetInputIds sets the InputIds property value. The InputIds property
 func (m *ItemTranslateExchangeIdsPostRequestBody) SetInputIds(value []string)() {
     err := m.GetBackingStore().Set("inputIds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSourceIdType sets the sourceIdType property value. The SourceIdType property
+// SetSourceIdType sets the SourceIdType property value. The SourceIdType property
 func (m *ItemTranslateExchangeIdsPostRequestBody) SetSourceIdType(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExchangeIdFormat)() {
     err := m.GetBackingStore().Set("sourceIdType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTargetIdType sets the targetIdType property value. The TargetIdType property
+// SetTargetIdType sets the TargetIdType property value. The TargetIdType property
 func (m *ItemTranslateExchangeIdsPostRequestBody) SetTargetIdType(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExchangeIdFormat)() {
     err := m.GetBackingStore().Set("targetIdType", value)
     if err != nil {

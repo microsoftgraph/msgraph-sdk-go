@@ -30,7 +30,7 @@ func NewRiskyServicePrincipalsConfirmCompromisedRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewRiskyServicePrincipalsConfirmCompromisedRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account's risk level to high. This API is supported in the following national cloud deployments.
+// Post confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account's risk level to high. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/riskyserviceprincipal-confirmcompromised?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *RiskyServicePrincipalsConfirmCompromisedRequestBuilder) Post(ctx contex
     }
     return nil
 }
-// ToPostRequestInformation confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account's risk level to high. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account's risk level to high. This API is available in the following national cloud deployments.
 func (m *RiskyServicePrincipalsConfirmCompromisedRequestBuilder) ToPostRequestInformation(ctx context.Context, body RiskyServicePrincipalsConfirmCompromisedPostRequestBodyable, requestConfiguration *RiskyServicePrincipalsConfirmCompromisedRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

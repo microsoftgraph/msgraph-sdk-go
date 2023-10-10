@@ -11,7 +11,7 @@ import (
 type ConnectionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConnectionsRequestBuilderGetQueryParameters get a list of the externalConnection objects and their properties. This API is supported in the following national cloud deployments.
+// ConnectionsRequestBuilderGetQueryParameters get a list of the externalConnection objects and their properties. This API is available in the following national cloud deployments.
 type ConnectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewConnectionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *ConnectionsRequestBuilder) Count()(*ConnectionsCountRequestBuilder) {
     return NewConnectionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the externalConnection objects and their properties. This API is supported in the following national cloud deployments.
+// Get get a list of the externalConnection objects and their properties. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ConnectionsRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalConnectionCollectionResponseable), nil
 }
-// Post create a new externalConnection object. This API is supported in the following national cloud deployments.
+// Post create a new externalConnection object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ConnectionsRequestBuilder) Post(ctx context.Context, body i648e92ed2299
     }
     return res.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalConnectionable), nil
 }
-// ToGetRequestInformation get a list of the externalConnection objects and their properties. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of the externalConnection objects and their properties. This API is available in the following national cloud deployments.
 func (m *ConnectionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ConnectionsRequestBuilder) ToGetRequestInformation(ctx context.Context,
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new externalConnection object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new externalConnection object. This API is available in the following national cloud deployments.
 func (m *ConnectionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalConnectionable, requestConfiguration *ConnectionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

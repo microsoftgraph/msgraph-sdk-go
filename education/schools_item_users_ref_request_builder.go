@@ -11,7 +11,7 @@ import (
 type SchoolsItemUsersRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SchoolsItemUsersRefRequestBuilderGetQueryParameters get the educationUser resources associated with an educationSchool. This API is supported in the following national cloud deployments.
+// SchoolsItemUsersRefRequestBuilderGetQueryParameters get the educationUser resources associated with an educationSchool. This API is available in the following national cloud deployments.
 type SchoolsItemUsersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,7 +55,7 @@ func NewSchoolsItemUsersRefRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewSchoolsItemUsersRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get the educationUser resources associated with an educationSchool. This API is supported in the following national cloud deployments.
+// Get get the educationUser resources associated with an educationSchool. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-list-users?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *SchoolsItemUsersRefRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
-// Post add a user to a school. This API is supported in the following national cloud deployments.
+// Post add a user to a school. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-post-users?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *SchoolsItemUsersRefRequestBuilder) Post(ctx context.Context, body iadcd
     }
     return nil
 }
-// ToGetRequestInformation get the educationUser resources associated with an educationSchool. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the educationUser resources associated with an educationSchool. This API is available in the following national cloud deployments.
 func (m *SchoolsItemUsersRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SchoolsItemUsersRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -112,7 +112,7 @@ func (m *SchoolsItemUsersRefRequestBuilder) ToGetRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation add a user to a school. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation add a user to a school. This API is available in the following national cloud deployments.
 func (m *SchoolsItemUsersRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *SchoolsItemUsersRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

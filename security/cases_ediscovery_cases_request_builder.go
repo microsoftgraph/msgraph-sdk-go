@@ -11,7 +11,7 @@ import (
 type CasesEdiscoveryCasesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CasesEdiscoveryCasesRequestBuilderGetQueryParameters get a list of the ediscoveryCase objects and their properties. This API is supported in the following national cloud deployments.
+// CasesEdiscoveryCasesRequestBuilderGetQueryParameters get a list of the ediscoveryCase objects and their properties. This API is available in the following national cloud deployments.
 type CasesEdiscoveryCasesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewCasesEdiscoveryCasesRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *CasesEdiscoveryCasesRequestBuilder) Count()(*CasesEdiscoveryCasesCountRequestBuilder) {
     return NewCasesEdiscoveryCasesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the ediscoveryCase objects and their properties. This API is supported in the following national cloud deployments.
+// Get get a list of the ediscoveryCase objects and their properties. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-casesroot-list-ediscoverycases?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *CasesEdiscoveryCasesRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCaseCollectionResponseable), nil
 }
-// Post create a new ediscoveryCase object. This API is supported in the following national cloud deployments.
+// Post create a new ediscoveryCase object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-casesroot-post-ediscoverycases?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *CasesEdiscoveryCasesRequestBuilder) Post(ctx context.Context, body idd6
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCaseable), nil
 }
-// ToGetRequestInformation get a list of the ediscoveryCase objects and their properties. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of the ediscoveryCase objects and their properties. This API is available in the following national cloud deployments.
 func (m *CasesEdiscoveryCasesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *CasesEdiscoveryCasesRequestBuilder) ToGetRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new ediscoveryCase object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new ediscoveryCase object. This API is available in the following national cloud deployments.
 func (m *CasesEdiscoveryCasesRequestBuilder) ToPostRequestInformation(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCaseable, requestConfiguration *CasesEdiscoveryCasesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

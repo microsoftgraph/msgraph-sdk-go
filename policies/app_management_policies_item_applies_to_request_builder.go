@@ -11,7 +11,7 @@ import (
 type AppManagementPoliciesItemAppliesToRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AppManagementPoliciesItemAppliesToRequestBuilderGetQueryParameters list application and service principal objects that are assigned an appManagementPolicy policy object. This API is supported in the following national cloud deployments.
+// AppManagementPoliciesItemAppliesToRequestBuilderGetQueryParameters list application and service principal objects that are assigned an appManagementPolicy policy object. This API is available in the following national cloud deployments.
 type AppManagementPoliciesItemAppliesToRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewAppManagementPoliciesItemAppliesToRequestBuilder(rawUrl string, requestA
 func (m *AppManagementPoliciesItemAppliesToRequestBuilder) Count()(*AppManagementPoliciesItemAppliesToCountRequestBuilder) {
     return NewAppManagementPoliciesItemAppliesToCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list application and service principal objects that are assigned an appManagementPolicy policy object. This API is supported in the following national cloud deployments.
+// Get list application and service principal objects that are assigned an appManagementPolicy policy object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/appmanagementpolicy-list-appliesto?view=graph-rest-1.0
@@ -89,7 +89,7 @@ func (m *AppManagementPoliciesItemAppliesToRequestBuilder) Get(ctx context.Conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
-// ToGetRequestInformation list application and service principal objects that are assigned an appManagementPolicy policy object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation list application and service principal objects that are assigned an appManagementPolicy policy object. This API is available in the following national cloud deployments.
 func (m *AppManagementPoliciesItemAppliesToRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppManagementPoliciesItemAppliesToRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ItemJoinedTeamsItemChannelsItemTabsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemJoinedTeamsItemChannelsItemTabsRequestBuilderGetQueryParameters retrieve the list of tabs in the specified channel within a team.  This API is supported in the following national cloud deployments.
+// ItemJoinedTeamsItemChannelsItemTabsRequestBuilderGetQueryParameters retrieve the list of tabs in the specified channel within a team.  This API is available in the following national cloud deployments.
 type ItemJoinedTeamsItemChannelsItemTabsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemJoinedTeamsItemChannelsItemTabsRequestBuilder(rawUrl string, request
 func (m *ItemJoinedTeamsItemChannelsItemTabsRequestBuilder) Count()(*ItemJoinedTeamsItemChannelsItemTabsCountRequestBuilder) {
     return NewItemJoinedTeamsItemChannelsItemTabsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the list of tabs in the specified channel within a team.  This API is supported in the following national cloud deployments.
+// Get retrieve the list of tabs in the specified channel within a team.  This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemJoinedTeamsItemChannelsItemTabsRequestBuilder) Get(ctx context.Cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabCollectionResponseable), nil
 }
-// Post adds (pins) a tab to the specified channel within a team. The corresponding app must already be installed in the team. This API is supported in the following national cloud deployments.
+// Post adds (pins) a tab to the specified channel within a team. The corresponding app must already be installed in the team. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-post-tabs?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemJoinedTeamsItemChannelsItemTabsRequestBuilder) Post(ctx context.Con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable), nil
 }
-// ToGetRequestInformation retrieve the list of tabs in the specified channel within a team.  This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the list of tabs in the specified channel within a team.  This API is available in the following national cloud deployments.
 func (m *ItemJoinedTeamsItemChannelsItemTabsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemChannelsItemTabsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemJoinedTeamsItemChannelsItemTabsRequestBuilder) ToGetRequestInformat
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation adds (pins) a tab to the specified channel within a team. The corresponding app must already be installed in the team. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation adds (pins) a tab to the specified channel within a team. The corresponding app must already be installed in the team. This API is available in the following national cloud deployments.
 func (m *ItemJoinedTeamsItemChannelsItemTabsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, requestConfiguration *ItemJoinedTeamsItemChannelsItemTabsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

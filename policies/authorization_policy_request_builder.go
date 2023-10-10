@@ -18,7 +18,7 @@ type AuthorizationPolicyRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AuthorizationPolicyRequestBuilderGetQueryParameters retrieve the properties of an authorizationPolicy object. This API is supported in the following national cloud deployments.
+// AuthorizationPolicyRequestBuilderGetQueryParameters retrieve the properties of an authorizationPolicy object. This API is available in the following national cloud deployments.
 type AuthorizationPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *AuthorizationPolicyRequestBuilder) Delete(ctx context.Context, requestC
     }
     return nil
 }
-// Get retrieve the properties of an authorizationPolicy object. This API is supported in the following national cloud deployments.
+// Get retrieve the properties of an authorizationPolicy object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/authorizationpolicy-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *AuthorizationPolicyRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthorizationPolicyable), nil
 }
-// Patch update the properties of an authorizationPolicy object. This API is supported in the following national cloud deployments.
+// Patch update the properties of an authorizationPolicy object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/authorizationpolicy-update?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *AuthorizationPolicyRequestBuilder) ToDeleteRequestInformation(ctx conte
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties of an authorizationPolicy object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties of an authorizationPolicy object. This API is available in the following national cloud deployments.
 func (m *AuthorizationPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthorizationPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *AuthorizationPolicyRequestBuilder) ToGetRequestInformation(ctx context.
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an authorizationPolicy object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of an authorizationPolicy object. This API is available in the following national cloud deployments.
 func (m *AuthorizationPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthorizationPolicyable, requestConfiguration *AuthorizationPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

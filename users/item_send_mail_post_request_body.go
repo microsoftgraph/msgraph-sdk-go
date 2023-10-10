@@ -23,7 +23,7 @@ func NewItemSendMailPostRequestBody()(*ItemSendMailPostRequestBody) {
 func CreateItemSendMailPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemSendMailPostRequestBody(), nil
 }
-// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemSendMailPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,14 +35,14 @@ func (m *ItemSendMailPostRequestBody) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetBackingStore gets the backingStore property value. Stores model information.
+// GetBackingStore gets the BackingStore property value. Stores model information.
 func (m *ItemSendMailPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemSendMailPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["message"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["Message"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateMessageFromDiscriminatorValue)
         if err != nil {
             return err
@@ -52,7 +52,7 @@ func (m *ItemSendMailPostRequestBody) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
-    res["saveToSentItems"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["SaveToSentItems"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *ItemSendMailPostRequestBody) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetMessage gets the message property value. The Message property
+// GetMessage gets the Message property value. The Message property
 func (m *ItemSendMailPostRequestBody) GetMessage()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable) {
     val, err := m.GetBackingStore().Get("message")
     if err != nil {
@@ -75,7 +75,7 @@ func (m *ItemSendMailPostRequestBody) GetMessage()(iadcd81124412c61e647227ecfc44
     }
     return nil
 }
-// GetSaveToSentItems gets the saveToSentItems property value. The SaveToSentItems property
+// GetSaveToSentItems gets the SaveToSentItems property value. The SaveToSentItems property
 func (m *ItemSendMailPostRequestBody) GetSaveToSentItems()(*bool) {
     val, err := m.GetBackingStore().Get("saveToSentItems")
     if err != nil {
@@ -89,13 +89,13 @@ func (m *ItemSendMailPostRequestBody) GetSaveToSentItems()(*bool) {
 // Serialize serializes information the current object
 func (m *ItemSendMailPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteObjectValue("message", m.GetMessage())
+        err := writer.WriteObjectValue("Message", m.GetMessage())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteBoolValue("saveToSentItems", m.GetSaveToSentItems())
+        err := writer.WriteBoolValue("SaveToSentItems", m.GetSaveToSentItems())
         if err != nil {
             return err
         }
@@ -108,25 +108,25 @@ func (m *ItemSendMailPostRequestBody) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemSendMailPostRequestBody) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBackingStore sets the backingStore property value. Stores model information.
+// SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *ItemSendMailPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetMessage sets the message property value. The Message property
+// SetMessage sets the Message property value. The Message property
 func (m *ItemSendMailPostRequestBody) SetMessage(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable)() {
     err := m.GetBackingStore().Set("message", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSaveToSentItems sets the saveToSentItems property value. The SaveToSentItems property
+// SetSaveToSentItems sets the SaveToSentItems property value. The SaveToSentItems property
 func (m *ItemSendMailPostRequestBody) SetSaveToSentItems(value *bool)() {
     err := m.GetBackingStore().Set("saveToSentItems", value)
     if err != nil {

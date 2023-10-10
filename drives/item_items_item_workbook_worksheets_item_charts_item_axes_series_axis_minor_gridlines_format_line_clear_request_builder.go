@@ -30,7 +30,7 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisMinorGridline
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisMinorGridlinesFormatLineClearRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post clear the line format of a chart element. This API is supported in the following national cloud deployments.
+// Post clear the line format of a chart element. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chartlineformat-clear?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisMinorGridlin
     }
     return nil
 }
-// ToPostRequestInformation clear the line format of a chart element. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation clear the line format of a chart element. This API is available in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisMinorGridlinesFormatLineClearRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesSeriesAxisMinorGridlinesFormatLineClearRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

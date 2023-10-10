@@ -18,7 +18,7 @@ type ThreatIntelligenceSubdomainsSubdomainItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ThreatIntelligenceSubdomainsSubdomainItemRequestBuilderGetQueryParameters read the properties and relationships of a subdomain object.
+// ThreatIntelligenceSubdomainsSubdomainItemRequestBuilderGetQueryParameters read the properties and relationships of a subdomain object. This API is available in the following national cloud deployments.
 type ThreatIntelligenceSubdomainsSubdomainItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ThreatIntelligenceSubdomainsSubdomainItemRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get read the properties and relationships of a subdomain object.
+// Get read the properties and relationships of a subdomain object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-subdomain-get?view=graph-rest-1.0
@@ -127,7 +127,7 @@ func (m *ThreatIntelligenceSubdomainsSubdomainItemRequestBuilder) ToDeleteReques
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a subdomain object.
+// ToGetRequestInformation read the properties and relationships of a subdomain object. This API is available in the following national cloud deployments.
 func (m *ThreatIntelligenceSubdomainsSubdomainItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceSubdomainsSubdomainItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

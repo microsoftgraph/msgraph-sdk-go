@@ -18,7 +18,7 @@ type TriggersRetentionEventsRetentionEventItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TriggersRetentionEventsRetentionEventItemRequestBuilderGetQueryParameters read the properties and relationships of a retentionEvent object. This API is supported in the following national cloud deployments.
+// TriggersRetentionEventsRetentionEventItemRequestBuilderGetQueryParameters read the properties and relationships of a retentionEvent object. This API is available in the following national cloud deployments.
 type TriggersRetentionEventsRetentionEventItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewTriggersRetentionEventsRetentionEventItemRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewTriggersRetentionEventsRetentionEventItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a retentionEvent object. This API is supported in the following national cloud deployments.
+// Delete delete a retentionEvent object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-retentionevent-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *TriggersRetentionEventsRetentionEventItemRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get read the properties and relationships of a retentionEvent object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a retentionEvent object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-retentionevent-get?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *TriggersRetentionEventsRetentionEventItemRequestBuilder) Patch(ctx cont
 func (m *TriggersRetentionEventsRetentionEventItemRequestBuilder) RetentionEventType()(*TriggersRetentionEventsItemRetentionEventTypeRequestBuilder) {
     return NewTriggersRetentionEventsItemRetentionEventTypeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a retentionEvent object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a retentionEvent object. This API is available in the following national cloud deployments.
 func (m *TriggersRetentionEventsRetentionEventItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TriggersRetentionEventsRetentionEventItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -130,7 +130,7 @@ func (m *TriggersRetentionEventsRetentionEventItemRequestBuilder) ToDeleteReques
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a retentionEvent object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a retentionEvent object. This API is available in the following national cloud deployments.
 func (m *TriggersRetentionEventsRetentionEventItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TriggersRetentionEventsRetentionEventItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

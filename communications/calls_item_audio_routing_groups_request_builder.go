@@ -11,7 +11,7 @@ import (
 type CallsItemAudioRoutingGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CallsItemAudioRoutingGroupsRequestBuilderGetQueryParameters retrieve a list of audioRoutingGroup objects. This API is supported in the following national cloud deployments.
+// CallsItemAudioRoutingGroupsRequestBuilderGetQueryParameters retrieve a list of audioRoutingGroup objects. This API is available in the following national cloud deployments.
 type CallsItemAudioRoutingGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewCallsItemAudioRoutingGroupsRequestBuilder(rawUrl string, requestAdapter 
 func (m *CallsItemAudioRoutingGroupsRequestBuilder) Count()(*CallsItemAudioRoutingGroupsCountRequestBuilder) {
     return NewCallsItemAudioRoutingGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of audioRoutingGroup objects. This API is supported in the following national cloud deployments.
+// Get retrieve a list of audioRoutingGroup objects. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/call-list-audioroutinggroups?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *CallsItemAudioRoutingGroupsRequestBuilder) Get(ctx context.Context, req
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AudioRoutingGroupCollectionResponseable), nil
 }
-// Post create a new audioRoutingGroup. This API is supported in the following national cloud deployments.
+// Post create a new audioRoutingGroup. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/call-post-audioroutinggroups?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *CallsItemAudioRoutingGroupsRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AudioRoutingGroupable), nil
 }
-// ToGetRequestInformation retrieve a list of audioRoutingGroup objects. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of audioRoutingGroup objects. This API is available in the following national cloud deployments.
 func (m *CallsItemAudioRoutingGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CallsItemAudioRoutingGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *CallsItemAudioRoutingGroupsRequestBuilder) ToGetRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new audioRoutingGroup. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new audioRoutingGroup. This API is available in the following national cloud deployments.
 func (m *CallsItemAudioRoutingGroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AudioRoutingGroupable, requestConfiguration *CallsItemAudioRoutingGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

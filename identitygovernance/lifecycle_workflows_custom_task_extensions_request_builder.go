@@ -11,7 +11,7 @@ import (
 type LifecycleWorkflowsCustomTaskExtensionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsCustomTaskExtensionsRequestBuilderGetQueryParameters get a list of the customTaskExtension objects and their properties. This API is supported in the following national cloud deployments.
+// LifecycleWorkflowsCustomTaskExtensionsRequestBuilderGetQueryParameters get a list of the customTaskExtension objects and their properties. This API is available in the following national cloud deployments.
 type LifecycleWorkflowsCustomTaskExtensionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewLifecycleWorkflowsCustomTaskExtensionsRequestBuilder(rawUrl string, requ
 func (m *LifecycleWorkflowsCustomTaskExtensionsRequestBuilder) Count()(*LifecycleWorkflowsCustomTaskExtensionsCountRequestBuilder) {
     return NewLifecycleWorkflowsCustomTaskExtensionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the customTaskExtension objects and their properties. This API is supported in the following national cloud deployments.
+// Get get a list of the customTaskExtension objects and their properties. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-customtaskextensions?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *LifecycleWorkflowsCustomTaskExtensionsRequestBuilder) Get(ctx context.C
     }
     return res.(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.CustomTaskExtensionCollectionResponseable), nil
 }
-// Post create a new customTaskExtension object. This API is supported in the following national cloud deployments.
+// Post create a new customTaskExtension object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-post-customtaskextensions?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *LifecycleWorkflowsCustomTaskExtensionsRequestBuilder) Post(ctx context.
     }
     return res.(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.CustomTaskExtensionable), nil
 }
-// ToGetRequestInformation get a list of the customTaskExtension objects and their properties. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of the customTaskExtension objects and their properties. This API is available in the following national cloud deployments.
 func (m *LifecycleWorkflowsCustomTaskExtensionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsCustomTaskExtensionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *LifecycleWorkflowsCustomTaskExtensionsRequestBuilder) ToGetRequestInfor
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new customTaskExtension object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new customTaskExtension object. This API is available in the following national cloud deployments.
 func (m *LifecycleWorkflowsCustomTaskExtensionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.CustomTaskExtensionable, requestConfiguration *LifecycleWorkflowsCustomTaskExtensionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

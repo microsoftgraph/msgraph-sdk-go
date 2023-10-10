@@ -11,7 +11,7 @@ import (
 type ItemOnenoteSectionGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOnenoteSectionGroupsRequestBuilderGetQueryParameters retrieve a list of sectionGroup objects. This API is supported in the following national cloud deployments.
+// ItemOnenoteSectionGroupsRequestBuilderGetQueryParameters retrieve a list of sectionGroup objects. This API is available in the following national cloud deployments.
 type ItemOnenoteSectionGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemOnenoteSectionGroupsRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *ItemOnenoteSectionGroupsRequestBuilder) Count()(*ItemOnenoteSectionGroupsCountRequestBuilder) {
     return NewItemOnenoteSectionGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of sectionGroup objects. This API is supported in the following national cloud deployments.
+// Get retrieve a list of sectionGroup objects. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/onenote-list-sectiongroups?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *ItemOnenoteSectionGroupsRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SectionGroupable), nil
 }
-// ToGetRequestInformation retrieve a list of sectionGroup objects. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of sectionGroup objects. This API is available in the following national cloud deployments.
 func (m *ItemOnenoteSectionGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteSectionGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
