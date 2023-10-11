@@ -11,7 +11,7 @@ import (
 type SchoolsItemClassesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SchoolsItemClassesRequestBuilderGetQueryParameters get the educationClass resources owned by an educationSchool. This API is supported in the following national cloud deployments.
+// SchoolsItemClassesRequestBuilderGetQueryParameters get the educationClass resources owned by an educationSchool. This API is available in the following national cloud deployments.
 type SchoolsItemClassesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewSchoolsItemClassesRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *SchoolsItemClassesRequestBuilder) Count()(*SchoolsItemClassesCountRequestBuilder) {
     return NewSchoolsItemClassesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the educationClass resources owned by an educationSchool. This API is supported in the following national cloud deployments.
+// Get get the educationClass resources owned by an educationSchool. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-list-classes?view=graph-rest-1.0
@@ -93,7 +93,7 @@ func (m *SchoolsItemClassesRequestBuilder) Get(ctx context.Context, requestConfi
 func (m *SchoolsItemClassesRequestBuilder) Ref()(*SchoolsItemClassesRefRequestBuilder) {
     return NewSchoolsItemClassesRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get the educationClass resources owned by an educationSchool. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the educationClass resources owned by an educationSchool. This API is available in the following national cloud deployments.
 func (m *SchoolsItemClassesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SchoolsItemClassesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

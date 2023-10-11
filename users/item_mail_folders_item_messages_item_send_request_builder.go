@@ -30,7 +30,7 @@ func NewItemMailFoldersItemMessagesItemSendRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewItemMailFoldersItemMessagesItemSendRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post send an existing draft message. The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft. This method saves the message in the Sent Items folder. Alternatively, send a new message in a single operation. This API is supported in the following national cloud deployments.
+// Post send an existing draft message. The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft. This method saves the message in the Sent Items folder. Alternatively, send a new message in a single operation. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/message-send?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemMailFoldersItemMessagesItemSendRequestBuilder) Post(ctx context.Con
     }
     return nil
 }
-// ToPostRequestInformation send an existing draft message. The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft. This method saves the message in the Sent Items folder. Alternatively, send a new message in a single operation. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation send an existing draft message. The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft. This method saves the message in the Sent Items folder. Alternatively, send a new message in a single operation. This API is available in the following national cloud deployments.
 func (m *ItemMailFoldersItemMessagesItemSendRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemMessagesItemSendRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

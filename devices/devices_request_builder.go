@@ -11,7 +11,7 @@ import (
 type DevicesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DevicesRequestBuilderGetQueryParameters retrieve a list of device objects registered in the organization. This API is supported in the following national cloud deployments.
+// DevicesRequestBuilderGetQueryParameters retrieve a list of device objects registered in the organization. This API is available in the following national cloud deployments.
 type DevicesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *DevicesRequestBuilder) Count()(*CountRequestBuilder) {
 func (m *DevicesRequestBuilder) Delta()(*DeltaRequestBuilder) {
     return NewDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of device objects registered in the organization. This API is supported in the following national cloud deployments.
+// Get retrieve a list of device objects registered in the organization. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/device-list?view=graph-rest-1.0
@@ -108,7 +108,7 @@ func (m *DevicesRequestBuilder) GetAvailableExtensionProperties()(*GetAvailableE
 func (m *DevicesRequestBuilder) GetByIds()(*GetByIdsRequestBuilder) {
     return NewGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Post create and register a new device in the organization. This API is supported in the following national cloud deployments.
+// Post create and register a new device in the organization. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/device-post-devices?view=graph-rest-1.0
@@ -130,7 +130,7 @@ func (m *DevicesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable), nil
 }
-// ToGetRequestInformation retrieve a list of device objects registered in the organization. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of device objects registered in the organization. This API is available in the following national cloud deployments.
 func (m *DevicesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DevicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -146,7 +146,7 @@ func (m *DevicesRequestBuilder) ToGetRequestInformation(ctx context.Context, req
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create and register a new device in the organization. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create and register a new device in the organization. This API is available in the following national cloud deployments.
 func (m *DevicesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable, requestConfiguration *DevicesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

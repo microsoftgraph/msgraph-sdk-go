@@ -11,7 +11,7 @@ import (
 type BookingBusinessesItemStaffMembersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BookingBusinessesItemStaffMembersRequestBuilderGetQueryParameters get a list of bookingStaffMember objects in the specified bookingBusiness. This API is supported in the following national cloud deployments.
+// BookingBusinessesItemStaffMembersRequestBuilderGetQueryParameters get a list of bookingStaffMember objects in the specified bookingBusiness. This API is available in the following national cloud deployments.
 type BookingBusinessesItemStaffMembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewBookingBusinessesItemStaffMembersRequestBuilder(rawUrl string, requestAd
 func (m *BookingBusinessesItemStaffMembersRequestBuilder) Count()(*BookingBusinessesItemStaffMembersCountRequestBuilder) {
     return NewBookingBusinessesItemStaffMembersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of bookingStaffMember objects in the specified bookingBusiness. This API is supported in the following national cloud deployments.
+// Get get a list of bookingStaffMember objects in the specified bookingBusiness. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-list-staffmembers?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *BookingBusinessesItemStaffMembersRequestBuilder) Get(ctx context.Contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingStaffMemberBaseCollectionResponseable), nil
 }
-// Post create a new bookingStaffMember in the specified bookingBusiness. This API is supported in the following national cloud deployments.
+// Post create a new bookingStaffMember in the specified bookingBusiness. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-post-staffmembers?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *BookingBusinessesItemStaffMembersRequestBuilder) Post(ctx context.Conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingStaffMemberBaseable), nil
 }
-// ToGetRequestInformation get a list of bookingStaffMember objects in the specified bookingBusiness. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of bookingStaffMember objects in the specified bookingBusiness. This API is available in the following national cloud deployments.
 func (m *BookingBusinessesItemStaffMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemStaffMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *BookingBusinessesItemStaffMembersRequestBuilder) ToGetRequestInformatio
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new bookingStaffMember in the specified bookingBusiness. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new bookingStaffMember in the specified bookingBusiness. This API is available in the following national cloud deployments.
 func (m *BookingBusinessesItemStaffMembersRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingStaffMemberBaseable, requestConfiguration *BookingBusinessesItemStaffMembersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

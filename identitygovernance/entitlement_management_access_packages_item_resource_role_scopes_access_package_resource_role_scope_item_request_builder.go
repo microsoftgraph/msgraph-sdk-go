@@ -54,7 +54,7 @@ func NewEntitlementManagementAccessPackagesItemResourceRoleScopesAccessPackageRe
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAccessPackagesItemResourceRoleScopesAccessPackageResourceRoleScopeItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a accessPackageResourceRoleScope from an accessPackage list of resource role scopes. This API is supported in the following national cloud deployments.
+// Delete remove a accessPackageResourceRoleScope from an accessPackage list of resource role scopes. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-delete-resourcerolescopes?view=graph-rest-1.0
@@ -119,7 +119,7 @@ func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesAccessPackageR
 func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesAccessPackageResourceRoleScopeItemRequestBuilder) Scope()(*EntitlementManagementAccessPackagesItemResourceRoleScopesItemScopeRequestBuilder) {
     return NewEntitlementManagementAccessPackagesItemResourceRoleScopesItemScopeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation remove a accessPackageResourceRoleScope from an accessPackage list of resource role scopes. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation remove a accessPackageResourceRoleScope from an accessPackage list of resource role scopes. This API is available in the following national cloud deployments.
 func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesAccessPackageResourceRoleScopeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemResourceRoleScopesAccessPackageResourceRoleScopeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

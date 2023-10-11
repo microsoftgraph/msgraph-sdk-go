@@ -11,7 +11,7 @@ import (
 type ItemScheduleTimesOffRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemScheduleTimesOffRequestBuilderGetQueryParameters get the list of timeOff instances in a schedule. This API is supported in the following national cloud deployments.
+// ItemScheduleTimesOffRequestBuilderGetQueryParameters get the list of timeOff instances in a schedule. This API is available in the following national cloud deployments.
 type ItemScheduleTimesOffRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,7 +72,7 @@ func NewItemScheduleTimesOffRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *ItemScheduleTimesOffRequestBuilder) Count()(*ItemScheduleTimesOffCountRequestBuilder) {
     return NewItemScheduleTimesOffCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of timeOff instances in a schedule. This API is supported in the following national cloud deployments.
+// Get get the list of timeOff instances in a schedule. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/schedule-list-timesoff?view=graph-rest-1.0
@@ -94,7 +94,7 @@ func (m *ItemScheduleTimesOffRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffCollectionResponseable), nil
 }
-// Post create a new timeOff instance in a schedule. This API is supported in the following national cloud deployments.
+// Post create a new timeOff instance in a schedule. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/schedule-post-timesoff?view=graph-rest-1.0
@@ -116,7 +116,7 @@ func (m *ItemScheduleTimesOffRequestBuilder) Post(ctx context.Context, body iadc
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffable), nil
 }
-// ToGetRequestInformation get the list of timeOff instances in a schedule. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the list of timeOff instances in a schedule. This API is available in the following national cloud deployments.
 func (m *ItemScheduleTimesOffRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemScheduleTimesOffRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -132,7 +132,7 @@ func (m *ItemScheduleTimesOffRequestBuilder) ToGetRequestInformation(ctx context
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new timeOff instance in a schedule. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new timeOff instance in a schedule. This API is available in the following national cloud deployments.
 func (m *ItemScheduleTimesOffRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffable, requestConfiguration *ItemScheduleTimesOffRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

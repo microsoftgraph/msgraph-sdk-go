@@ -18,7 +18,7 @@ type ItemOnenotePagesOnenotePageItemRequestBuilderDeleteRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemOnenotePagesOnenotePageItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a page object. Getting page information Access a page's metadata by page identifier: Getting page content You can use the page's content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages. This API is supported in the following national cloud deployments.
+// ItemOnenotePagesOnenotePageItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a page object. Getting page information Access a page's metadata by page identifier: Getting page content You can use the page's content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages. This API is available in the following national cloud deployments.
 type ItemOnenotePagesOnenotePageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -62,7 +62,7 @@ func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) Content()(*ItemOnenotePa
 func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) CopyToSection()(*ItemOnenotePagesItemCopyToSectionRequestBuilder) {
     return NewItemOnenotePagesItemCopyToSectionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete a OneNote page. This API is supported in the following national cloud deployments.
+// Delete delete a OneNote page. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/page-delete?view=graph-rest-1.0
@@ -81,7 +81,7 @@ func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) Delete(ctx context.Conte
     }
     return nil
 }
-// Get retrieve the properties and relationships of a page object. Getting page information Access a page's metadata by page identifier: Getting page content You can use the page's content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of a page object. Getting page information Access a page's metadata by page identifier: Getting page content You can use the page's content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/page-get?view=graph-rest-1.0
@@ -138,7 +138,7 @@ func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) Patch(ctx context.Contex
 func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) Preview()(*ItemOnenotePagesItemPreviewRequestBuilder) {
     return NewItemOnenotePagesItemPreviewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a OneNote page. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a OneNote page. This API is available in the following national cloud deployments.
 func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOnenotePagesOnenotePageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -150,7 +150,7 @@ func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) ToDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a page object. Getting page information Access a page's metadata by page identifier: Getting page content You can use the page's content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a page object. Getting page information Access a page's metadata by page identifier: Getting page content You can use the page's content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages. This API is available in the following national cloud deployments.
 func (m *ItemOnenotePagesOnenotePageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnenotePagesOnenotePageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

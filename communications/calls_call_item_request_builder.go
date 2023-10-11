@@ -18,7 +18,7 @@ type CallsCallItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CallsCallItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a call object. This API is supported in the following national cloud deployments.
+// CallsCallItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a call object. This API is available in the following national cloud deployments.
 type CallsCallItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,7 +78,7 @@ func NewCallsCallItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *CallsCallItemRequestBuilder) ContentSharingSessions()(*CallsItemContentSharingSessionsRequestBuilder) {
     return NewCallsItemContentSharingSessionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete or hang up an active call. For group calls, this will only delete your call leg and the underlying group call will still continue. This API is supported in the following national cloud deployments.
+// Delete delete or hang up an active call. For group calls, this will only delete your call leg and the underlying group call will still continue. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/call-delete?view=graph-rest-1.0
@@ -97,7 +97,7 @@ func (m *CallsCallItemRequestBuilder) Delete(ctx context.Context, requestConfigu
     }
     return nil
 }
-// Get retrieve the properties and relationships of a call object. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of a call object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/call-get?view=graph-rest-1.0
@@ -174,7 +174,7 @@ func (m *CallsCallItemRequestBuilder) Reject()(*CallsItemRejectRequestBuilder) {
 func (m *CallsCallItemRequestBuilder) SubscribeToTone()(*CallsItemSubscribeToToneRequestBuilder) {
     return NewCallsItemSubscribeToToneRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete or hang up an active call. For group calls, this will only delete your call leg and the underlying group call will still continue. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete or hang up an active call. For group calls, this will only delete your call leg and the underlying group call will still continue. This API is available in the following national cloud deployments.
 func (m *CallsCallItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CallsCallItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -186,7 +186,7 @@ func (m *CallsCallItemRequestBuilder) ToDeleteRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a call object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a call object. This API is available in the following national cloud deployments.
 func (m *CallsCallItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CallsCallItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

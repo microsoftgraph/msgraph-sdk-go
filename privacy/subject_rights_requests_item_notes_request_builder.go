@@ -11,7 +11,7 @@ import (
 type SubjectRightsRequestsItemNotesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SubjectRightsRequestsItemNotesRequestBuilderGetQueryParameters get the list of authored notes assoicated with a subject rights request.  This API is supported in the following national cloud deployments.
+// SubjectRightsRequestsItemNotesRequestBuilderGetQueryParameters get the list of authored notes assoicated with a subject rights request.  This API is available in the following national cloud deployments.
 type SubjectRightsRequestsItemNotesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,7 +75,7 @@ func NewSubjectRightsRequestsItemNotesRequestBuilder(rawUrl string, requestAdapt
 func (m *SubjectRightsRequestsItemNotesRequestBuilder) Count()(*SubjectRightsRequestsItemNotesCountRequestBuilder) {
     return NewSubjectRightsRequestsItemNotesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of authored notes assoicated with a subject rights request.  This API is supported in the following national cloud deployments.
+// Get get the list of authored notes assoicated with a subject rights request.  This API is available in the following national cloud deployments.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 // [Find more info here]
 // 
@@ -98,7 +98,7 @@ func (m *SubjectRightsRequestsItemNotesRequestBuilder) Get(ctx context.Context, 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthoredNoteCollectionResponseable), nil
 }
-// Post create a new authoredNote object. This API is supported in the following national cloud deployments.
+// Post create a new authoredNote object. This API is available in the following national cloud deployments.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 // [Find more info here]
 // 
@@ -121,7 +121,7 @@ func (m *SubjectRightsRequestsItemNotesRequestBuilder) Post(ctx context.Context,
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthoredNoteable), nil
 }
-// ToGetRequestInformation get the list of authored notes assoicated with a subject rights request.  This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the list of authored notes assoicated with a subject rights request.  This API is available in the following national cloud deployments.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 func (m *SubjectRightsRequestsItemNotesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemNotesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
@@ -138,7 +138,7 @@ func (m *SubjectRightsRequestsItemNotesRequestBuilder) ToGetRequestInformation(c
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new authoredNote object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new authoredNote object. This API is available in the following national cloud deployments.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
 func (m *SubjectRightsRequestsItemNotesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthoredNoteable, requestConfiguration *SubjectRightsRequestsItemNotesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()

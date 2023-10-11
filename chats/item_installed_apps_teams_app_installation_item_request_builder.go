@@ -18,7 +18,7 @@ type ItemInstalledAppsTeamsAppInstallationItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemInstalledAppsTeamsAppInstallationItemRequestBuilderGetQueryParameters get an app installed in a chat. This API is supported in the following national cloud deployments.
+// ItemInstalledAppsTeamsAppInstallationItemRequestBuilderGetQueryParameters get an app installed in a chat. This API is available in the following national cloud deployments.
 type ItemInstalledAppsTeamsAppInstallationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemInstalledAppsTeamsAppInstallationItemRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewItemInstalledAppsTeamsAppInstallationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete uninstall an app installed within a chat. This API is supported in the following national cloud deployments.
+// Delete uninstall an app installed within a chat. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chat-delete-installedapps?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get get an app installed in a chat. This API is supported in the following national cloud deployments.
+// Get get an app installed in a chat. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chat-get-installedapps?view=graph-rest-1.0
@@ -122,7 +122,7 @@ func (m *ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) TeamsApp()(*It
 func (m *ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) TeamsAppDefinition()(*ItemInstalledAppsItemTeamsAppDefinitionRequestBuilder) {
     return NewItemInstalledAppsItemTeamsAppDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation uninstall an app installed within a chat. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation uninstall an app installed within a chat. This API is available in the following national cloud deployments.
 func (m *ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemInstalledAppsTeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) ToDeleteReques
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get an app installed in a chat. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get an app installed in a chat. This API is available in the following national cloud deployments.
 func (m *ItemInstalledAppsTeamsAppInstallationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInstalledAppsTeamsAppInstallationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

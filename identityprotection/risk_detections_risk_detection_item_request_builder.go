@@ -18,7 +18,7 @@ type RiskDetectionsRiskDetectionItemRequestBuilderDeleteRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RiskDetectionsRiskDetectionItemRequestBuilderGetQueryParameters read the properties and relationships of a riskDetection object. This API is supported in the following national cloud deployments.
+// RiskDetectionsRiskDetectionItemRequestBuilderGetQueryParameters read the properties and relationships of a riskDetection object. This API is available in the following national cloud deployments.
 type RiskDetectionsRiskDetectionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *RiskDetectionsRiskDetectionItemRequestBuilder) Delete(ctx context.Conte
     }
     return nil
 }
-// Get read the properties and relationships of a riskDetection object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a riskDetection object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/riskdetection-get?view=graph-rest-1.0
@@ -123,7 +123,7 @@ func (m *RiskDetectionsRiskDetectionItemRequestBuilder) ToDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a riskDetection object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a riskDetection object. This API is available in the following national cloud deployments.
 func (m *RiskDetectionsRiskDetectionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RiskDetectionsRiskDetectionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

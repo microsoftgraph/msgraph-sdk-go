@@ -11,7 +11,7 @@ import (
 type ItemClaimsMappingPoliciesRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemClaimsMappingPoliciesRefRequestBuilderGetQueryParameters list the claimsMappingPolicy objects that are assigned to a servicePrincipal. This API is supported in the following national cloud deployments.
+// ItemClaimsMappingPoliciesRefRequestBuilderGetQueryParameters list the claimsMappingPolicy objects that are assigned to a servicePrincipal. This API is available in the following national cloud deployments.
 type ItemClaimsMappingPoliciesRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,7 +55,7 @@ func NewItemClaimsMappingPoliciesRefRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewItemClaimsMappingPoliciesRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get list the claimsMappingPolicy objects that are assigned to a servicePrincipal. This API is supported in the following national cloud deployments.
+// Get list the claimsMappingPolicy objects that are assigned to a servicePrincipal. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *ItemClaimsMappingPoliciesRefRequestBuilder) Get(ctx context.Context, re
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
-// Post assign a claimsMappingPolicy to a servicePrincipal. This API is supported in the following national cloud deployments.
+// Post assign a claimsMappingPolicy to a servicePrincipal. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-post-claimsmappingpolicies?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemClaimsMappingPoliciesRefRequestBuilder) Post(ctx context.Context, b
     }
     return nil
 }
-// ToGetRequestInformation list the claimsMappingPolicy objects that are assigned to a servicePrincipal. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation list the claimsMappingPolicy objects that are assigned to a servicePrincipal. This API is available in the following national cloud deployments.
 func (m *ItemClaimsMappingPoliciesRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemClaimsMappingPoliciesRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -112,7 +112,7 @@ func (m *ItemClaimsMappingPoliciesRefRequestBuilder) ToGetRequestInformation(ctx
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation assign a claimsMappingPolicy to a servicePrincipal. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation assign a claimsMappingPolicy to a servicePrincipal. This API is available in the following national cloud deployments.
 func (m *ItemClaimsMappingPoliciesRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *ItemClaimsMappingPoliciesRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -18,7 +18,7 @@ type TasksPlannerTaskItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TasksPlannerTaskItemRequestBuilderGetQueryParameters retrieve the properties and relationships of plannerTask object. This API is supported in the following national cloud deployments.
+// TasksPlannerTaskItemRequestBuilderGetQueryParameters retrieve the properties and relationships of plannerTask object. This API is available in the following national cloud deployments.
 type TasksPlannerTaskItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -62,7 +62,7 @@ func NewTasksPlannerTaskItemRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewTasksPlannerTaskItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a plannerTask object. This API is supported in the following national cloud deployments.
+// Delete delete a plannerTask object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannertask-delete?view=graph-rest-1.0
@@ -85,7 +85,7 @@ func (m *TasksPlannerTaskItemRequestBuilder) Delete(ctx context.Context, request
 func (m *TasksPlannerTaskItemRequestBuilder) Details()(*TasksItemDetailsRequestBuilder) {
     return NewTasksItemDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of plannerTask object. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of plannerTask object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannertask-get?view=graph-rest-1.0
@@ -133,7 +133,7 @@ func (m *TasksPlannerTaskItemRequestBuilder) Patch(ctx context.Context, body iad
 func (m *TasksPlannerTaskItemRequestBuilder) ProgressTaskBoardFormat()(*TasksItemProgressTaskBoardFormatRequestBuilder) {
     return NewTasksItemProgressTaskBoardFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a plannerTask object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a plannerTask object. This API is available in the following national cloud deployments.
 func (m *TasksPlannerTaskItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TasksPlannerTaskItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *TasksPlannerTaskItemRequestBuilder) ToDeleteRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of plannerTask object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of plannerTask object. This API is available in the following national cloud deployments.
 func (m *TasksPlannerTaskItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TasksPlannerTaskItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

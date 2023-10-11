@@ -10,7 +10,7 @@ import (
 type UsersItemAssignmentsItemCategoriesItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// UsersItemAssignmentsItemCategoriesItemRefRequestBuilderDeleteQueryParameters remove an educationCategory from an educationAssignment. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
+// UsersItemAssignmentsItemCategoriesItemRefRequestBuilderDeleteQueryParameters remove an educationCategory from an educationAssignment. Only teachers can perform this operation. This API is available in the following national cloud deployments.
 type UsersItemAssignmentsItemCategoriesItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,7 @@ func NewUsersItemAssignmentsItemCategoriesItemRefRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewUsersItemAssignmentsItemCategoriesItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove an educationCategory from an educationAssignment. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
+// Delete remove an educationCategory from an educationAssignment. Only teachers can perform this operation. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-remove-category?view=graph-rest-1.0
@@ -56,7 +56,7 @@ func (m *UsersItemAssignmentsItemCategoriesItemRefRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// ToDeleteRequestInformation remove an educationCategory from an educationAssignment. Only teachers can perform this operation. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation remove an educationCategory from an educationAssignment. Only teachers can perform this operation. This API is available in the following national cloud deployments.
 func (m *UsersItemAssignmentsItemCategoriesItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemCategoriesItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

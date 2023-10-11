@@ -11,7 +11,7 @@ import (
 type ItemGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemGroupsRequestBuilderGetQueryParameters get an externalGroup object. This API is supported in the following national cloud deployments.
+// ItemGroupsRequestBuilderGetQueryParameters get an externalGroup object. This API is available in the following national cloud deployments.
 type ItemGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *ItemGroupsRequestBuilder) Count()(*ItemGroupsCountRequestBuilder) {
     return NewItemGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get an externalGroup object. This API is supported in the following national cloud deployments.
+// Get get an externalGroup object. This API is available in the following national cloud deployments.
 func (m *ItemGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGroupsRequestBuilderGetRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalGroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +93,7 @@ func (m *ItemGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalGroupCollectionResponseable), nil
 }
-// Post create a new externalGroup object. This API is supported in the following national cloud deployments.
+// Post create a new externalGroup object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *ItemGroupsRequestBuilder) Post(ctx context.Context, body i648e92ed22999
     }
     return res.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalGroupable), nil
 }
-// ToGetRequestInformation get an externalGroup object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get an externalGroup object. This API is available in the following national cloud deployments.
 func (m *ItemGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -131,7 +131,7 @@ func (m *ItemGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, 
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new externalGroup object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new externalGroup object. This API is available in the following national cloud deployments.
 func (m *ItemGroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalGroupable, requestConfiguration *ItemGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

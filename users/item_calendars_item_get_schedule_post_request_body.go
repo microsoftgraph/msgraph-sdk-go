@@ -23,7 +23,7 @@ func NewItemCalendarsItemGetSchedulePostRequestBody()(*ItemCalendarsItemGetSched
 func CreateItemCalendarsItemGetSchedulePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemCalendarsItemGetSchedulePostRequestBody(), nil
 }
-// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemCalendarsItemGetSchedulePostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,7 +35,7 @@ func (m *ItemCalendarsItemGetSchedulePostRequestBody) GetAdditionalData()(map[st
     }
     return val.(map[string]any)
 }
-// GetAvailabilityViewInterval gets the availabilityViewInterval property value. The AvailabilityViewInterval property
+// GetAvailabilityViewInterval gets the AvailabilityViewInterval property value. The AvailabilityViewInterval property
 func (m *ItemCalendarsItemGetSchedulePostRequestBody) GetAvailabilityViewInterval()(*int32) {
     val, err := m.GetBackingStore().Get("availabilityViewInterval")
     if err != nil {
@@ -46,11 +46,11 @@ func (m *ItemCalendarsItemGetSchedulePostRequestBody) GetAvailabilityViewInterva
     }
     return nil
 }
-// GetBackingStore gets the backingStore property value. Stores model information.
+// GetBackingStore gets the BackingStore property value. Stores model information.
 func (m *ItemCalendarsItemGetSchedulePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetEndTime gets the endTime property value. The EndTime property
+// GetEndTime gets the EndTime property value. The EndTime property
 func (m *ItemCalendarsItemGetSchedulePostRequestBody) GetEndTime()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("endTime")
     if err != nil {
@@ -64,7 +64,7 @@ func (m *ItemCalendarsItemGetSchedulePostRequestBody) GetEndTime()(iadcd81124412
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemCalendarsItemGetSchedulePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["availabilityViewInterval"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["AvailabilityViewInterval"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *ItemCalendarsItemGetSchedulePostRequestBody) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["endTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["EndTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *ItemCalendarsItemGetSchedulePostRequestBody) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["schedules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["Schedules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *ItemCalendarsItemGetSchedulePostRequestBody) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["startTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["StartTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *ItemCalendarsItemGetSchedulePostRequestBody) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetSchedules gets the schedules property value. The Schedules property
+// GetSchedules gets the Schedules property value. The Schedules property
 func (m *ItemCalendarsItemGetSchedulePostRequestBody) GetSchedules()([]string) {
     val, err := m.GetBackingStore().Get("schedules")
     if err != nil {
@@ -123,7 +123,7 @@ func (m *ItemCalendarsItemGetSchedulePostRequestBody) GetSchedules()([]string) {
     }
     return nil
 }
-// GetStartTime gets the startTime property value. The StartTime property
+// GetStartTime gets the StartTime property value. The StartTime property
 func (m *ItemCalendarsItemGetSchedulePostRequestBody) GetStartTime()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("startTime")
     if err != nil {
@@ -137,25 +137,25 @@ func (m *ItemCalendarsItemGetSchedulePostRequestBody) GetStartTime()(iadcd811244
 // Serialize serializes information the current object
 func (m *ItemCalendarsItemGetSchedulePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteInt32Value("availabilityViewInterval", m.GetAvailabilityViewInterval())
+        err := writer.WriteInt32Value("AvailabilityViewInterval", m.GetAvailabilityViewInterval())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteObjectValue("endTime", m.GetEndTime())
+        err := writer.WriteObjectValue("EndTime", m.GetEndTime())
         if err != nil {
             return err
         }
     }
     if m.GetSchedules() != nil {
-        err := writer.WriteCollectionOfStringValues("schedules", m.GetSchedules())
+        err := writer.WriteCollectionOfStringValues("Schedules", m.GetSchedules())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteObjectValue("startTime", m.GetStartTime())
+        err := writer.WriteObjectValue("StartTime", m.GetStartTime())
         if err != nil {
             return err
         }
@@ -168,39 +168,39 @@ func (m *ItemCalendarsItemGetSchedulePostRequestBody) Serialize(writer i878a80d2
     }
     return nil
 }
-// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemCalendarsItemGetSchedulePostRequestBody) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAvailabilityViewInterval sets the availabilityViewInterval property value. The AvailabilityViewInterval property
+// SetAvailabilityViewInterval sets the AvailabilityViewInterval property value. The AvailabilityViewInterval property
 func (m *ItemCalendarsItemGetSchedulePostRequestBody) SetAvailabilityViewInterval(value *int32)() {
     err := m.GetBackingStore().Set("availabilityViewInterval", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBackingStore sets the backingStore property value. Stores model information.
+// SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *ItemCalendarsItemGetSchedulePostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetEndTime sets the endTime property value. The EndTime property
+// SetEndTime sets the EndTime property value. The EndTime property
 func (m *ItemCalendarsItemGetSchedulePostRequestBody) SetEndTime(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DateTimeTimeZoneable)() {
     err := m.GetBackingStore().Set("endTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSchedules sets the schedules property value. The Schedules property
+// SetSchedules sets the Schedules property value. The Schedules property
 func (m *ItemCalendarsItemGetSchedulePostRequestBody) SetSchedules(value []string)() {
     err := m.GetBackingStore().Set("schedules", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStartTime sets the startTime property value. The StartTime property
+// SetStartTime sets the StartTime property value. The StartTime property
 func (m *ItemCalendarsItemGetSchedulePostRequestBody) SetStartTime(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DateTimeTimeZoneable)() {
     err := m.GetBackingStore().Set("startTime", value)
     if err != nil {

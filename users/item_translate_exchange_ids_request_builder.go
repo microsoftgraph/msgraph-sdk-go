@@ -30,7 +30,7 @@ func NewItemTranslateExchangeIdsRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewItemTranslateExchangeIdsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post translate identifiers of Outlook-related resources between formats. This API is supported in the following national cloud deployments.
+// Post translate identifiers of Outlook-related resources between formats. This API is available in the following national cloud deployments.
 // Deprecated: This method is obsolete. Use PostAsTranslateExchangeIdsPostResponse instead.
 // [Find more info here]
 // 
@@ -53,7 +53,7 @@ func (m *ItemTranslateExchangeIdsRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(ItemTranslateExchangeIdsResponseable), nil
 }
-// PostAsTranslateExchangeIdsPostResponse translate identifiers of Outlook-related resources between formats. This API is supported in the following national cloud deployments.
+// PostAsTranslateExchangeIdsPostResponse translate identifiers of Outlook-related resources between formats. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0
@@ -75,7 +75,7 @@ func (m *ItemTranslateExchangeIdsRequestBuilder) PostAsTranslateExchangeIdsPostR
     }
     return res.(ItemTranslateExchangeIdsPostResponseable), nil
 }
-// ToPostRequestInformation translate identifiers of Outlook-related resources between formats. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation translate identifiers of Outlook-related resources between formats. This API is available in the following national cloud deployments.
 func (m *ItemTranslateExchangeIdsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemTranslateExchangeIdsPostRequestBodyable, requestConfiguration *ItemTranslateExchangeIdsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

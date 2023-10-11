@@ -38,7 +38,10 @@ func NewOnlineMeetingsItemTranscriptsItemContentRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewOnlineMeetingsItemTranscriptsItemContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get content for the navigation property transcripts from communications
+// Get the content of the transcript. Read-only.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
 func (m *OnlineMeetingsItemTranscriptsItemContentRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemTranscriptsItemContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -57,7 +60,7 @@ func (m *OnlineMeetingsItemTranscriptsItemContentRequestBuilder) Get(ctx context
     }
     return res.([]byte), nil
 }
-// Put update content for the navigation property transcripts in communications
+// Put the content of the transcript. Read-only.
 func (m *OnlineMeetingsItemTranscriptsItemContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *OnlineMeetingsItemTranscriptsItemContentRequestBuilderPutRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CallTranscriptable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -76,7 +79,7 @@ func (m *OnlineMeetingsItemTranscriptsItemContentRequestBuilder) Put(ctx context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CallTranscriptable), nil
 }
-// ToGetRequestInformation get content for the navigation property transcripts from communications
+// ToGetRequestInformation the content of the transcript. Read-only.
 func (m *OnlineMeetingsItemTranscriptsItemContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemTranscriptsItemContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -88,7 +91,7 @@ func (m *OnlineMeetingsItemTranscriptsItemContentRequestBuilder) ToGetRequestInf
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation update content for the navigation property transcripts in communications
+// ToPutRequestInformation the content of the transcript. Read-only.
 func (m *OnlineMeetingsItemTranscriptsItemContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *OnlineMeetingsItemTranscriptsItemContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -30,7 +30,7 @@ func NewItemSitesItemPermissionsItemGrantRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemPermissionsItemGrantRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post grant users access to a link represented by a permission][]. This API is supported in the following [national cloud deployments.
+// Post grant users access to a link represented by a permission][]. This API is available in the following [national cloud deployments.
 // Deprecated: This method is obsolete. Use PostAsGrantPostResponse instead.
 // [Find more info here]
 // 
@@ -53,7 +53,7 @@ func (m *ItemSitesItemPermissionsItemGrantRequestBuilder) Post(ctx context.Conte
     }
     return res.(ItemSitesItemPermissionsItemGrantResponseable), nil
 }
-// PostAsGrantPostResponse grant users access to a link represented by a permission][]. This API is supported in the following [national cloud deployments.
+// PostAsGrantPostResponse grant users access to a link represented by a permission][]. This API is available in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
@@ -75,7 +75,7 @@ func (m *ItemSitesItemPermissionsItemGrantRequestBuilder) PostAsGrantPostRespons
     }
     return res.(ItemSitesItemPermissionsItemGrantPostResponseable), nil
 }
-// ToPostRequestInformation grant users access to a link represented by a permission][]. This API is supported in the following [national cloud deployments.
+// ToPostRequestInformation grant users access to a link represented by a permission][]. This API is available in the following [national cloud deployments.
 func (m *ItemSitesItemPermissionsItemGrantRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSitesItemPermissionsItemGrantPostRequestBodyable, requestConfiguration *ItemSitesItemPermissionsItemGrantRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

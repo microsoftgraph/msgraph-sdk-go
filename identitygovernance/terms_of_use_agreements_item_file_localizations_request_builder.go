@@ -11,7 +11,7 @@ import (
 type TermsOfUseAgreementsItemFileLocalizationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TermsOfUseAgreementsItemFileLocalizationsRequestBuilderGetQueryParameters get a list of the default and localized agreement files. This API is supported in the following national cloud deployments.
+// TermsOfUseAgreementsItemFileLocalizationsRequestBuilderGetQueryParameters get a list of the default and localized agreement files. This API is available in the following national cloud deployments.
 type TermsOfUseAgreementsItemFileLocalizationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewTermsOfUseAgreementsItemFileLocalizationsRequestBuilder(rawUrl string, r
 func (m *TermsOfUseAgreementsItemFileLocalizationsRequestBuilder) Count()(*TermsOfUseAgreementsItemFileLocalizationsCountRequestBuilder) {
     return NewTermsOfUseAgreementsItemFileLocalizationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the default and localized agreement files. This API is supported in the following national cloud deployments.
+// Get get a list of the default and localized agreement files. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/agreementfile-list-localizations?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *TermsOfUseAgreementsItemFileLocalizationsRequestBuilder) Post(ctx conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AgreementFileLocalizationable), nil
 }
-// ToGetRequestInformation get a list of the default and localized agreement files. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of the default and localized agreement files. This API is available in the following national cloud deployments.
 func (m *TermsOfUseAgreementsItemFileLocalizationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TermsOfUseAgreementsItemFileLocalizationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

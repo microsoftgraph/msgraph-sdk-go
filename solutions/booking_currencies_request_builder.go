@@ -11,7 +11,7 @@ import (
 type BookingCurrenciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BookingCurrenciesRequestBuilderGetQueryParameters get a list of bookingCurrency objects available to a Microsoft Bookings business. This API is supported in the following national cloud deployments.
+// BookingCurrenciesRequestBuilderGetQueryParameters get a list of bookingCurrency objects available to a Microsoft Bookings business. This API is available in the following national cloud deployments.
 type BookingCurrenciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewBookingCurrenciesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *BookingCurrenciesRequestBuilder) Count()(*BookingCurrenciesCountRequestBuilder) {
     return NewBookingCurrenciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of bookingCurrency objects available to a Microsoft Bookings business. This API is supported in the following national cloud deployments.
+// Get get a list of bookingCurrency objects available to a Microsoft Bookings business. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingcurrency-list?view=graph-rest-1.0
@@ -115,7 +115,7 @@ func (m *BookingCurrenciesRequestBuilder) Post(ctx context.Context, body iadcd81
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCurrencyable), nil
 }
-// ToGetRequestInformation get a list of bookingCurrency objects available to a Microsoft Bookings business. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of bookingCurrency objects available to a Microsoft Bookings business. This API is available in the following national cloud deployments.
 func (m *BookingCurrenciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookingCurrenciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

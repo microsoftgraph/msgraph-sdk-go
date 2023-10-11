@@ -18,7 +18,7 @@ type ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderDeleteReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a conditionalAccessPolicy object. This API is supported in the following national cloud deployments.
+// ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a conditionalAccessPolicy object. This API is available in the following national cloud deployments.
 type ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a conditionalAccessPolicy object. This API is supported in the following national cloud deployments.
+// Delete delete a conditionalAccessPolicy object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/conditionalaccesspolicy-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) Del
     }
     return nil
 }
-// Get retrieve the properties and relationships of a conditionalAccessPolicy object. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of a conditionalAccessPolicy object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/conditionalaccesspolicy-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) Get
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConditionalAccessPolicyable), nil
 }
-// Patch update the properties of a conditionalAccessPolicy object. This API is supported in the following national cloud deployments.
+// Patch update the properties of a conditionalAccessPolicy object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/conditionalaccesspolicy-update?view=graph-rest-1.0
@@ -117,7 +117,7 @@ func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) Pat
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConditionalAccessPolicyable), nil
 }
-// ToDeleteRequestInformation delete a conditionalAccessPolicy object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a conditionalAccessPolicy object. This API is available in the following national cloud deployments.
 func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -129,7 +129,7 @@ func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) ToD
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a conditionalAccessPolicy object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a conditionalAccessPolicy object. This API is available in the following national cloud deployments.
 func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -145,7 +145,7 @@ func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) ToG
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a conditionalAccessPolicy object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a conditionalAccessPolicy object. This API is available in the following national cloud deployments.
 func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConditionalAccessPolicyable, requestConfiguration *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

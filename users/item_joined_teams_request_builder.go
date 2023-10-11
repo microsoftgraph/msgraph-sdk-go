@@ -11,7 +11,7 @@ import (
 type ItemJoinedTeamsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemJoinedTeamsRequestBuilderGetQueryParameters get the teams in Microsoft Teams that the user is a direct member of. This API is supported in the following national cloud deployments.
+// ItemJoinedTeamsRequestBuilderGetQueryParameters get the teams in Microsoft Teams that the user is a direct member of. This API is available in the following national cloud deployments.
 type ItemJoinedTeamsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemJoinedTeamsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *ItemJoinedTeamsRequestBuilder) Count()(*ItemJoinedTeamsCountRequestBuilder) {
     return NewItemJoinedTeamsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the teams in Microsoft Teams that the user is a direct member of. This API is supported in the following national cloud deployments.
+// Get get the teams in Microsoft Teams that the user is a direct member of. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/user-list-joinedteams?view=graph-rest-1.0
@@ -119,7 +119,7 @@ func (m *ItemJoinedTeamsRequestBuilder) Post(ctx context.Context, body iadcd8112
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable), nil
 }
-// ToGetRequestInformation get the teams in Microsoft Teams that the user is a direct member of. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the teams in Microsoft Teams that the user is a direct member of. This API is available in the following national cloud deployments.
 func (m *ItemJoinedTeamsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceHostsItemTrackersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceHostsItemTrackersRequestBuilderGetQueryParameters get a list of hostTracker resources. This API is supported in the following national cloud deployments.
+// ThreatIntelligenceHostsItemTrackersRequestBuilderGetQueryParameters get a list of hostTracker resources. This API is available in the following national cloud deployments.
 type ThreatIntelligenceHostsItemTrackersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewThreatIntelligenceHostsItemTrackersRequestBuilder(rawUrl string, request
 func (m *ThreatIntelligenceHostsItemTrackersRequestBuilder) Count()(*ThreatIntelligenceHostsItemTrackersCountRequestBuilder) {
     return NewThreatIntelligenceHostsItemTrackersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of hostTracker resources. This API is supported in the following national cloud deployments.
+// Get get a list of hostTracker resources. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-host-list-trackers?view=graph-rest-1.0
@@ -89,7 +89,7 @@ func (m *ThreatIntelligenceHostsItemTrackersRequestBuilder) Get(ctx context.Cont
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HostTrackerCollectionResponseable), nil
 }
-// ToGetRequestInformation get a list of hostTracker resources. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of hostTracker resources. This API is available in the following national cloud deployments.
 func (m *ThreatIntelligenceHostsItemTrackersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemTrackersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

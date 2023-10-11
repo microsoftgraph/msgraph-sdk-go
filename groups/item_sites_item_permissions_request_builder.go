@@ -11,7 +11,7 @@ import (
 type ItemSitesItemPermissionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemPermissionsRequestBuilderGetQueryParameters get the permission resources from the permissions navigation property on a site. This API is supported in the following national cloud deployments.
+// ItemSitesItemPermissionsRequestBuilderGetQueryParameters get the permission resources from the permissions navigation property on a site. This API is available in the following national cloud deployments.
 type ItemSitesItemPermissionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemSitesItemPermissionsRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *ItemSitesItemPermissionsRequestBuilder) Count()(*ItemSitesItemPermissionsCountRequestBuilder) {
     return NewItemSitesItemPermissionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the permission resources from the permissions navigation property on a site. This API is supported in the following national cloud deployments.
+// Get get the permission resources from the permissions navigation property on a site. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/site-list-permissions?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemSitesItemPermissionsRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PermissionCollectionResponseable), nil
 }
-// Post create a new permission object on a site.  This API is supported in the following national cloud deployments.
+// Post create a new permission object on a site.  This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/site-post-permissions?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemSitesItemPermissionsRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable), nil
 }
-// ToGetRequestInformation get the permission resources from the permissions navigation property on a site. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the permission resources from the permissions navigation property on a site. This API is available in the following national cloud deployments.
 func (m *ItemSitesItemPermissionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemPermissionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemSitesItemPermissionsRequestBuilder) ToGetRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new permission object on a site.  This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new permission object on a site.  This API is available in the following national cloud deployments.
 func (m *ItemSitesItemPermissionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Permissionable, requestConfiguration *ItemSitesItemPermissionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

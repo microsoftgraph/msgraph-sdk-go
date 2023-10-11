@@ -30,10 +30,10 @@ func NewItemConversationsItemThreadsItemPostsItemInReplyToReplyRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewItemConversationsItemThreadsItemPostsItemInReplyToReplyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation. This API is supported in the following national cloud deployments.
+// Post create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
 func (m *ItemConversationsItemThreadsItemPostsItemInReplyToReplyRequestBuilder) Post(ctx context.Context, body ItemConversationsItemThreadsItemPostsItemInReplyToReplyPostRequestBodyable, requestConfiguration *ItemConversationsItemThreadsItemPostsItemInReplyToReplyRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +49,7 @@ func (m *ItemConversationsItemThreadsItemPostsItemInReplyToReplyRequestBuilder) 
     }
     return nil
 }
-// ToPostRequestInformation reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.
 func (m *ItemConversationsItemThreadsItemPostsItemInReplyToReplyRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemConversationsItemThreadsItemPostsItemInReplyToReplyPostRequestBodyable, requestConfiguration *ItemConversationsItemThreadsItemPostsItemInReplyToReplyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

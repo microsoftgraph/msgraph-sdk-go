@@ -11,7 +11,7 @@ import (
 type ApiConnectorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ApiConnectorsRequestBuilderGetQueryParameters read the properties of an identityApiConnector object. This API is supported in the following national cloud deployments.
+// ApiConnectorsRequestBuilderGetQueryParameters read the properties of an identityApiConnector object. This API is available in the following national cloud deployments.
 type ApiConnectorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewApiConnectorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *ApiConnectorsRequestBuilder) Count()(*ApiConnectorsCountRequestBuilder) {
     return NewApiConnectorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties of an identityApiConnector object. This API is supported in the following national cloud deployments.
+// Get read the properties of an identityApiConnector object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identityapiconnector-list?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ApiConnectorsRequestBuilder) Get(ctx context.Context, requestConfigurat
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorCollectionResponseable), nil
 }
-// Post create a new identityApiConnector object. This API is supported in the following national cloud deployments.
+// Post create a new identityApiConnector object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identityapiconnector-create?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ApiConnectorsRequestBuilder) Post(ctx context.Context, body iadcd811244
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable), nil
 }
-// ToGetRequestInformation read the properties of an identityApiConnector object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties of an identityApiConnector object. This API is available in the following national cloud deployments.
 func (m *ApiConnectorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApiConnectorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ApiConnectorsRequestBuilder) ToGetRequestInformation(ctx context.Contex
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new identityApiConnector object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new identityApiConnector object. This API is available in the following national cloud deployments.
 func (m *ApiConnectorsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable, requestConfiguration *ApiConnectorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

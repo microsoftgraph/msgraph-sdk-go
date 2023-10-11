@@ -18,7 +18,7 @@ type ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderGetQueryParameters get the properties of a certificateBasedAuthConfiguration object. This API is supported in the following national cloud deployments.
+// ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderGetQueryParameters get the properties of a certificateBasedAuthConfiguration object. This API is available in the following national cloud deployments.
 type ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,7 +47,7 @@ func NewItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationIt
     urlParams["request-raw-url"] = rawUrl
     return NewItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a certificateBasedAuthConfiguration object. This API is supported in the following national cloud deployments.
+// Delete delete a certificateBasedAuthConfiguration object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/certificatebasedauthconfiguration-delete?view=graph-rest-1.0
@@ -66,7 +66,7 @@ func (m *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationI
     }
     return nil
 }
-// Get get the properties of a certificateBasedAuthConfiguration object. This API is supported in the following national cloud deployments.
+// Get get the properties of a certificateBasedAuthConfiguration object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/certificatebasedauthconfiguration-get?view=graph-rest-1.0
@@ -88,7 +88,7 @@ func (m *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationI
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CertificateBasedAuthConfigurationable), nil
 }
-// ToDeleteRequestInformation delete a certificateBasedAuthConfiguration object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a certificateBasedAuthConfiguration object. This API is available in the following national cloud deployments.
 func (m *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -100,7 +100,7 @@ func (m *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationI
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties of a certificateBasedAuthConfiguration object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the properties of a certificateBasedAuthConfiguration object. This API is available in the following national cloud deployments.
 func (m *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCertificateBasedAuthConfigurationCertificateBasedAuthConfigurationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

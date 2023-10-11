@@ -30,7 +30,7 @@ func NewServiceAnnouncementMessagesUnarchiveRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewServiceAnnouncementMessagesUnarchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post unarchive a list of serviceUpdateMessages for the signed in user. This API is supported in the following national cloud deployments.
+// Post unarchive a list of serviceUpdateMessages for the signed in user. This API is available in the following national cloud deployments.
 // Deprecated: This method is obsolete. Use PostAsUnarchivePostResponse instead.
 // [Find more info here]
 // 
@@ -53,7 +53,7 @@ func (m *ServiceAnnouncementMessagesUnarchiveRequestBuilder) Post(ctx context.Co
     }
     return res.(ServiceAnnouncementMessagesUnarchiveResponseable), nil
 }
-// PostAsUnarchivePostResponse unarchive a list of serviceUpdateMessages for the signed in user. This API is supported in the following national cloud deployments.
+// PostAsUnarchivePostResponse unarchive a list of serviceUpdateMessages for the signed in user. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-1.0
@@ -75,7 +75,7 @@ func (m *ServiceAnnouncementMessagesUnarchiveRequestBuilder) PostAsUnarchivePost
     }
     return res.(ServiceAnnouncementMessagesUnarchivePostResponseable), nil
 }
-// ToPostRequestInformation unarchive a list of serviceUpdateMessages for the signed in user. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation unarchive a list of serviceUpdateMessages for the signed in user. This API is available in the following national cloud deployments.
 func (m *ServiceAnnouncementMessagesUnarchiveRequestBuilder) ToPostRequestInformation(ctx context.Context, body ServiceAnnouncementMessagesUnarchivePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesUnarchiveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

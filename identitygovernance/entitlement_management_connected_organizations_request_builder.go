@@ -11,7 +11,7 @@ import (
 type EntitlementManagementConnectedOrganizationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementConnectedOrganizationsRequestBuilderGetQueryParameters retrieve a list of connectedOrganization objects. This API is supported in the following national cloud deployments.
+// EntitlementManagementConnectedOrganizationsRequestBuilderGetQueryParameters retrieve a list of connectedOrganization objects. This API is available in the following national cloud deployments.
 type EntitlementManagementConnectedOrganizationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewEntitlementManagementConnectedOrganizationsRequestBuilder(rawUrl string,
 func (m *EntitlementManagementConnectedOrganizationsRequestBuilder) Count()(*EntitlementManagementConnectedOrganizationsCountRequestBuilder) {
     return NewEntitlementManagementConnectedOrganizationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of connectedOrganization objects. This API is supported in the following national cloud deployments.
+// Get retrieve a list of connectedOrganization objects. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/entitlementmanagement-list-connectedorganizations?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *EntitlementManagementConnectedOrganizationsRequestBuilder) Get(ctx cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConnectedOrganizationCollectionResponseable), nil
 }
-// Post create a new connectedOrganization object. This API is supported in the following national cloud deployments.
+// Post create a new connectedOrganization object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/entitlementmanagement-post-connectedorganizations?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *EntitlementManagementConnectedOrganizationsRequestBuilder) Post(ctx con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConnectedOrganizationable), nil
 }
-// ToGetRequestInformation retrieve a list of connectedOrganization objects. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of connectedOrganization objects. This API is available in the following national cloud deployments.
 func (m *EntitlementManagementConnectedOrganizationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementConnectedOrganizationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *EntitlementManagementConnectedOrganizationsRequestBuilder) ToGetRequest
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new connectedOrganization object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new connectedOrganization object. This API is available in the following national cloud deployments.
 func (m *EntitlementManagementConnectedOrganizationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConnectedOrganizationable, requestConfiguration *EntitlementManagementConnectedOrganizationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

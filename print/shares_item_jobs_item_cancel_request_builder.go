@@ -30,7 +30,7 @@ func NewSharesItemJobsItemCancelRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewSharesItemJobsItemCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions. This API is supported in the following national cloud deployments.
+// Post cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/printjob-cancel?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *SharesItemJobsItemCancelRequestBuilder) Post(ctx context.Context, reque
     }
     return nil
 }
-// ToPostRequestInformation cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions. This API is available in the following national cloud deployments.
 func (m *SharesItemJobsItemCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *SharesItemJobsItemCancelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

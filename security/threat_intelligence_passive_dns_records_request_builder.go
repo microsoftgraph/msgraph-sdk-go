@@ -11,7 +11,7 @@ import (
 type ThreatIntelligencePassiveDnsRecordsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligencePassiveDnsRecordsRequestBuilderGetQueryParameters read the properties and relationships of a passiveDnsRecord object. This API is supported in the following national cloud deployments.
+// ThreatIntelligencePassiveDnsRecordsRequestBuilderGetQueryParameters read the properties and relationships of a passiveDnsRecord object. This API is available in the following national cloud deployments.
 type ThreatIntelligencePassiveDnsRecordsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewThreatIntelligencePassiveDnsRecordsRequestBuilder(rawUrl string, request
 func (m *ThreatIntelligencePassiveDnsRecordsRequestBuilder) Count()(*ThreatIntelligencePassiveDnsRecordsCountRequestBuilder) {
     return NewThreatIntelligencePassiveDnsRecordsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a passiveDnsRecord object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a passiveDnsRecord object. This API is available in the following national cloud deployments.
 func (m *ThreatIntelligencePassiveDnsRecordsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligencePassiveDnsRecordsRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.PassiveDnsRecordCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ThreatIntelligencePassiveDnsRecordsRequestBuilder) Post(ctx context.Con
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.PassiveDnsRecordable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a passiveDnsRecord object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a passiveDnsRecord object. This API is available in the following national cloud deployments.
 func (m *ThreatIntelligencePassiveDnsRecordsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligencePassiveDnsRecordsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

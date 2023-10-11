@@ -11,7 +11,7 @@ import (
 type OperationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// OperationsRequestBuilderGetQueryParameters retrieve the properties and relationships of a printOperation object. This API is supported in the following national cloud deployments.
+// OperationsRequestBuilderGetQueryParameters retrieve the properties and relationships of a printOperation object. This API is available in the following national cloud deployments.
 type OperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewOperationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *OperationsRequestBuilder) Count()(*OperationsCountRequestBuilder) {
     return NewOperationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of a printOperation object. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of a printOperation object. This API is available in the following national cloud deployments.
 func (m *OperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *OperationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintOperationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *OperationsRequestBuilder) Post(ctx context.Context, body iadcd81124412c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintOperationable), nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a printOperation object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a printOperation object. This API is available in the following national cloud deployments.
 func (m *OperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

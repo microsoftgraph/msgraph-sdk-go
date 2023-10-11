@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilderGetQueryParameters get the intelligenceProfileIndicator resources from the indicators navigation property of an intelligenceProfile. This API is supported in the following national cloud deployments.
+// ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilderGetQueryParameters get the intelligenceProfileIndicator resources from the indicators navigation property of an intelligenceProfile. This API is available in the following national cloud deployments.
 type ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder(rawUrl strin
 func (m *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) Count()(*ThreatIntelligenceIntelProfilesItemIndicatorsCountRequestBuilder) {
     return NewThreatIntelligenceIntelProfilesItemIndicatorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the intelligenceProfileIndicator resources from the indicators navigation property of an intelligenceProfile. This API is supported in the following national cloud deployments.
+// Get get the intelligenceProfileIndicator resources from the indicators navigation property of an intelligenceProfile. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-intelligenceprofile-list-indicators?view=graph-rest-1.0
@@ -89,7 +89,7 @@ func (m *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) Get(ctx co
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.IntelligenceProfileIndicatorCollectionResponseable), nil
 }
-// ToGetRequestInformation get the intelligenceProfileIndicator resources from the indicators navigation property of an intelligenceProfile. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the intelligenceProfileIndicator resources from the indicators navigation property of an intelligenceProfile. This API is available in the following national cloud deployments.
 func (m *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

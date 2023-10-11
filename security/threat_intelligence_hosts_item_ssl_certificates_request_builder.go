@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceHostsItemSslCertificatesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceHostsItemSslCertificatesRequestBuilderGetQueryParameters get a list of hostSslCertificate objects from the host navigation property.
+// ThreatIntelligenceHostsItemSslCertificatesRequestBuilderGetQueryParameters get a list of hostSslCertificate objects from the host navigation property. This API is available in the following national cloud deployments.
 type ThreatIntelligenceHostsItemSslCertificatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,10 +67,10 @@ func NewThreatIntelligenceHostsItemSslCertificatesRequestBuilder(rawUrl string, 
 func (m *ThreatIntelligenceHostsItemSslCertificatesRequestBuilder) Count()(*ThreatIntelligenceHostsItemSslCertificatesCountRequestBuilder) {
     return NewThreatIntelligenceHostsItemSslCertificatesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of hostSslCertificate objects from the host navigation property.
+// Get get a list of hostSslCertificate objects from the host navigation property. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-hostsslcertificate-list-host?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-host-list-sslcertificates?view=graph-rest-1.0
 func (m *ThreatIntelligenceHostsItemSslCertificatesRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemSslCertificatesRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HostSslCertificateCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +89,7 @@ func (m *ThreatIntelligenceHostsItemSslCertificatesRequestBuilder) Get(ctx conte
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HostSslCertificateCollectionResponseable), nil
 }
-// ToGetRequestInformation get a list of hostSslCertificate objects from the host navigation property.
+// ToGetRequestInformation get a list of hostSslCertificate objects from the host navigation property. This API is available in the following national cloud deployments.
 func (m *ThreatIntelligenceHostsItemSslCertificatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemSslCertificatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

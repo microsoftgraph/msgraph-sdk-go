@@ -11,7 +11,7 @@ import (
 type ClassesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClassesRequestBuilderGetQueryParameters get a list of the educationClass objects and their properties. This API is supported in the following national cloud deployments.
+// ClassesRequestBuilderGetQueryParameters get a list of the educationClass objects and their properties. This API is available in the following national cloud deployments.
 type ClassesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *ClassesRequestBuilder) Count()(*ClassesCountRequestBuilder) {
 func (m *ClassesRequestBuilder) Delta()(*ClassesDeltaRequestBuilder) {
     return NewClassesDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the educationClass objects and their properties. This API is supported in the following national cloud deployments.
+// Get get a list of the educationClass objects and their properties. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-list?view=graph-rest-1.0
@@ -100,7 +100,7 @@ func (m *ClassesRequestBuilder) Get(ctx context.Context, requestConfiguration *C
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassCollectionResponseable), nil
 }
-// Post create a new educationClass object. This API is supported in the following national cloud deployments.
+// Post create a new educationClass object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-post?view=graph-rest-1.0
@@ -122,7 +122,7 @@ func (m *ClassesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassable), nil
 }
-// ToGetRequestInformation get a list of the educationClass objects and their properties. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get a list of the educationClass objects and their properties. This API is available in the following national cloud deployments.
 func (m *ClassesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -138,7 +138,7 @@ func (m *ClassesRequestBuilder) ToGetRequestInformation(ctx context.Context, req
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new educationClass object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new educationClass object. This API is available in the following national cloud deployments.
 func (m *ClassesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassable, requestConfiguration *ClassesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

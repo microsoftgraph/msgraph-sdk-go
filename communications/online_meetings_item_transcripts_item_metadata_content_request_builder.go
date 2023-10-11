@@ -37,7 +37,10 @@ func NewOnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewOnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get metadataContent for the navigation property transcripts from communications
+// Get the time-aligned metadata of the utterances in the transcript. Read-only.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
 func (m *OnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -56,7 +59,7 @@ func (m *OnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilder) Get(ctx
     }
     return res.([]byte), nil
 }
-// Put update metadataContent for the navigation property transcripts in communications
+// Put the time-aligned metadata of the utterances in the transcript. Read-only.
 func (m *OnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *OnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -75,7 +78,7 @@ func (m *OnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilder) Put(ctx
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation get metadataContent for the navigation property transcripts from communications
+// ToGetRequestInformation the time-aligned metadata of the utterances in the transcript. Read-only.
 func (m *OnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -87,7 +90,7 @@ func (m *OnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilder) ToGetRe
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation update metadataContent for the navigation property transcripts in communications
+// ToPutRequestInformation the time-aligned metadata of the utterances in the transcript. Read-only.
 func (m *OnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *OnlineMeetingsItemTranscriptsItemMetadataContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

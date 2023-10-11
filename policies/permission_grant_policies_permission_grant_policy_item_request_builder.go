@@ -18,7 +18,7 @@ type PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderDeleteRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderGetQueryParameters retrieve a single permissionGrantPolicy object. This API is supported in the following national cloud deployments.
+// PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderGetQueryParameters retrieve a single permissionGrantPolicy object. This API is available in the following national cloud deployments.
 type PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewPermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewPermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a permissionGrantPolicy object. This API is supported in the following national cloud deployments.
+// Delete delete a permissionGrantPolicy object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/permissiongrantpolicy-delete?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Delete(
 func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Excludes()(*PermissionGrantPoliciesItemExcludesRequestBuilder) {
     return NewPermissionGrantPoliciesItemExcludesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a single permissionGrantPolicy object. This API is supported in the following national cloud deployments.
+// Get retrieve a single permissionGrantPolicy object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/permissiongrantpolicy-get?view=graph-rest-1.0
@@ -103,7 +103,7 @@ func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Get(ctx
 func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Includes()(*PermissionGrantPoliciesItemIncludesRequestBuilder) {
     return NewPermissionGrantPoliciesItemIncludesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update properties of a  permissionGrantPolicy. This API is supported in the following national cloud deployments.
+// Patch update properties of a  permissionGrantPolicy. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/permissiongrantpolicy-update?view=graph-rest-1.0
@@ -125,7 +125,7 @@ func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) Patch(c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PermissionGrantPolicyable), nil
 }
-// ToDeleteRequestInformation delete a permissionGrantPolicy object. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a permissionGrantPolicy object. This API is available in the following national cloud deployments.
 func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -137,7 +137,7 @@ func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) ToDelet
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve a single permissionGrantPolicy object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a single permissionGrantPolicy object. This API is available in the following national cloud deployments.
 func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -153,7 +153,7 @@ func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) ToGetRe
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update properties of a  permissionGrantPolicy. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update properties of a  permissionGrantPolicy. This API is available in the following national cloud deployments.
 func (m *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PermissionGrantPolicyable, requestConfiguration *PermissionGrantPoliciesPermissionGrantPolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

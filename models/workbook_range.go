@@ -400,7 +400,7 @@ func (m *WorkbookRange) GetSort()(WorkbookRangeSortable) {
     }
     return nil
 }
-// GetText gets the text property value. Text values of the specified range. The Text value won't depend on the cell width. The # sign substitution that happens in Excel UI won't affect the text value returned by the API. Read-only.
+// GetText gets the text property value. Text values of the specified range. The Text value doesn't depend on the cell width. The # sign substitution that happens in Excel UI doesn't affect the text value returned by the API. Read-only.
 func (m *WorkbookRange) GetText()(Jsonable) {
     val, err := m.GetBackingStore().Get("text")
     if err != nil {
@@ -684,7 +684,7 @@ func (m *WorkbookRange) SetSort(value WorkbookRangeSortable)() {
         panic(err)
     }
 }
-// SetText sets the text property value. Text values of the specified range. The Text value won't depend on the cell width. The # sign substitution that happens in Excel UI won't affect the text value returned by the API. Read-only.
+// SetText sets the text property value. Text values of the specified range. The Text value doesn't depend on the cell width. The # sign substitution that happens in Excel UI doesn't affect the text value returned by the API. Read-only.
 func (m *WorkbookRange) SetText(value Jsonable)() {
     err := m.GetBackingStore().Set("text", value)
     if err != nil {

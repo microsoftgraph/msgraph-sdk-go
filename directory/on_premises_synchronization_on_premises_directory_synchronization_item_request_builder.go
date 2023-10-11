@@ -18,7 +18,7 @@ type OnPremisesSynchronizationOnPremisesDirectorySynchronizationItemRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// OnPremisesSynchronizationOnPremisesDirectorySynchronizationItemRequestBuilderGetQueryParameters read the properties and relationships of an onPremisesDirectorySynchronization object. This API is supported in the following national cloud deployments.
+// OnPremisesSynchronizationOnPremisesDirectorySynchronizationItemRequestBuilderGetQueryParameters read the properties and relationships of an onPremisesDirectorySynchronization object. This API is available in the following national cloud deployments.
 type OnPremisesSynchronizationOnPremisesDirectorySynchronizationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *OnPremisesSynchronizationOnPremisesDirectorySynchronizationItemRequestB
     }
     return nil
 }
-// Get read the properties and relationships of an onPremisesDirectorySynchronization object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of an onPremisesDirectorySynchronization object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/onpremisesdirectorysynchronization-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *OnPremisesSynchronizationOnPremisesDirectorySynchronizationItemRequestB
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnPremisesDirectorySynchronizationable), nil
 }
-// Patch update the properties of an onPremisesDirectorySynchronization object. This API is supported in the following national cloud deployments.
+// Patch update the properties of an onPremisesDirectorySynchronization object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/onpremisesdirectorysynchronization-update?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *OnPremisesSynchronizationOnPremisesDirectorySynchronizationItemRequestB
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an onPremisesDirectorySynchronization object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of an onPremisesDirectorySynchronization object. This API is available in the following national cloud deployments.
 func (m *OnPremisesSynchronizationOnPremisesDirectorySynchronizationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnPremisesSynchronizationOnPremisesDirectorySynchronizationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *OnPremisesSynchronizationOnPremisesDirectorySynchronizationItemRequestB
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an onPremisesDirectorySynchronization object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of an onPremisesDirectorySynchronization object. This API is available in the following national cloud deployments.
 func (m *OnPremisesSynchronizationOnPremisesDirectorySynchronizationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnPremisesDirectorySynchronizationable, requestConfiguration *OnPremisesSynchronizationOnPremisesDirectorySynchronizationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

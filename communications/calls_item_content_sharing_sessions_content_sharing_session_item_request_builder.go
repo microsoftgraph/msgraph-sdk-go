@@ -18,7 +18,7 @@ type CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilderDelet
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilderGetQueryParameters retrieve the properties of a contentSharingSession object in a call. This API is supported in the following national cloud deployments.
+// CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilderGetQueryParameters retrieve the properties of a contentSharingSession object in a call. This API is available in the following national cloud deployments.
 type CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilder)
     }
     return nil
 }
-// Get retrieve the properties of a contentSharingSession object in a call. This API is supported in the following national cloud deployments.
+// Get retrieve the properties of a contentSharingSession object in a call. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contentsharingsession-get?view=graph-rest-1.0
@@ -123,7 +123,7 @@ func (m *CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilder)
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties of a contentSharingSession object in a call. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties of a contentSharingSession object in a call. This API is available in the following national cloud deployments.
 func (m *CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

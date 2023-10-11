@@ -18,7 +18,7 @@ type AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilder
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilderGetQueryParameters get an attack simulation automation for a tenant. This API is supported in the following national cloud deployments.
+// AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilderGetQueryParameters get an attack simulation automation for a tenant. This API is available in the following national cloud deployments.
 type AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBui
     }
     return nil
 }
-// Get get an attack simulation automation for a tenant. This API is supported in the following national cloud deployments.
+// Get get an attack simulation automation for a tenant. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/simulationautomation-get?view=graph-rest-1.0
@@ -127,7 +127,7 @@ func (m *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBui
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get an attack simulation automation for a tenant. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get an attack simulation automation for a tenant. This API is available in the following national cloud deployments.
 func (m *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationSimulationAutomationsSimulationAutomationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

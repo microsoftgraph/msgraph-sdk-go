@@ -22,7 +22,7 @@ func NewItemMessagesItemMovePostRequestBody()(*ItemMessagesItemMovePostRequestBo
 func CreateItemMessagesItemMovePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemMessagesItemMovePostRequestBody(), nil
 }
-// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemMessagesItemMovePostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -34,11 +34,11 @@ func (m *ItemMessagesItemMovePostRequestBody) GetAdditionalData()(map[string]any
     }
     return val.(map[string]any)
 }
-// GetBackingStore gets the backingStore property value. Stores model information.
+// GetBackingStore gets the BackingStore property value. Stores model information.
 func (m *ItemMessagesItemMovePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDestinationId gets the destinationId property value. The DestinationId property
+// GetDestinationId gets the DestinationId property value. The DestinationId property
 func (m *ItemMessagesItemMovePostRequestBody) GetDestinationId()(*string) {
     val, err := m.GetBackingStore().Get("destinationId")
     if err != nil {
@@ -52,7 +52,7 @@ func (m *ItemMessagesItemMovePostRequestBody) GetDestinationId()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemMessagesItemMovePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["destinationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["DestinationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *ItemMessagesItemMovePostRequestBody) GetFieldDeserializers()(map[string
 // Serialize serializes information the current object
 func (m *ItemMessagesItemMovePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("destinationId", m.GetDestinationId())
+        err := writer.WriteStringValue("DestinationId", m.GetDestinationId())
         if err != nil {
             return err
         }
@@ -80,18 +80,18 @@ func (m *ItemMessagesItemMovePostRequestBody) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemMessagesItemMovePostRequestBody) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBackingStore sets the backingStore property value. Stores model information.
+// SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *ItemMessagesItemMovePostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDestinationId sets the destinationId property value. The DestinationId property
+// SetDestinationId sets the DestinationId property value. The DestinationId property
 func (m *ItemMessagesItemMovePostRequestBody) SetDestinationId(value *string)() {
     err := m.GetBackingStore().Set("destinationId", value)
     if err != nil {

@@ -11,7 +11,7 @@ import (
 type ItemItemsItemWorkbookCommentsItemRepliesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemsItemWorkbookCommentsItemRepliesRequestBuilderGetQueryParameters retrieve the properties and relationships of workbookCommentReply object. This API is supported in the following national cloud deployments.
+// ItemItemsItemWorkbookCommentsItemRepliesRequestBuilderGetQueryParameters retrieve the properties and relationships of workbookCommentReply object. This API is available in the following national cloud deployments.
 type ItemItemsItemWorkbookCommentsItemRepliesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemItemsItemWorkbookCommentsItemRepliesRequestBuilder(rawUrl string, re
 func (m *ItemItemsItemWorkbookCommentsItemRepliesRequestBuilder) Count()(*ItemItemsItemWorkbookCommentsItemRepliesCountRequestBuilder) {
     return NewItemItemsItemWorkbookCommentsItemRepliesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of workbookCommentReply object. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of workbookCommentReply object. This API is available in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookCommentsItemRepliesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookCommentsItemRepliesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookCommentReplyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ItemItemsItemWorkbookCommentsItemRepliesRequestBuilder) Post(ctx contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookCommentReplyable), nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of workbookCommentReply object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of workbookCommentReply object. This API is available in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookCommentsItemRepliesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookCommentsItemRepliesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

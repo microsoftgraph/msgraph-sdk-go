@@ -18,7 +18,7 @@ type ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderGetQueryParameters read the properties and relationships of a documentSetVersion object. This API is supported in the following national cloud deployments.
+// ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderGetQueryParameters read the properties and relationships of a documentSetVersion object. This API is available in the following national cloud deployments.
 type ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBu
     urlParams["request-raw-url"] = rawUrl
     return NewItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a version of a document set in a list. This API is supported in the following national cloud deployments.
+// Delete delete a version of a document set in a list. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/documentsetversion-delete?view=graph-rest-1.0
@@ -77,7 +77,7 @@ func (m *ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestB
 func (m *ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) Fields()(*ItemListsItemItemsItemDocumentSetVersionsItemFieldsRequestBuilder) {
     return NewItemListsItemItemsItemDocumentSetVersionsItemFieldsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a documentSetVersion object. This API is supported in the following national cloud deployments.
+// Get read the properties and relationships of a documentSetVersion object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/documentsetversion-get?view=graph-rest-1.0
@@ -122,7 +122,7 @@ func (m *ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestB
 func (m *ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) Restore()(*ItemListsItemItemsItemDocumentSetVersionsItemRestoreRequestBuilder) {
     return NewItemListsItemItemsItemDocumentSetVersionsItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a version of a document set in a list. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete a version of a document set in a list. This API is available in the following national cloud deployments.
 func (m *ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestB
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a documentSetVersion object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a documentSetVersion object. This API is available in the following national cloud deployments.
 func (m *ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

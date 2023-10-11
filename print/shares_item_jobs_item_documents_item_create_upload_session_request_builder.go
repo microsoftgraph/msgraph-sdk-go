@@ -31,7 +31,7 @@ func NewSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder(rawUrl 
     urlParams["request-raw-url"] = rawUrl
     return NewSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries. Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  This API is supported in the following national cloud deployments.
+// Post create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries. Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/printdocument-createuploadsession?view=graph-rest-1.0
@@ -53,7 +53,7 @@ func (m *SharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder) Post(
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UploadSessionable), nil
 }
-// ToPostRequestInformation create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries. Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries. Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  This API is available in the following national cloud deployments.
 func (m *SharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder) ToPostRequestInformation(ctx context.Context, body SharesItemJobsItemDocumentsItemCreateUploadSessionPostRequestBodyable, requestConfiguration *SharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

@@ -11,7 +11,7 @@ import (
 type ItemSitesItemListsItemContentTypesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemListsItemContentTypesRequestBuilderGetQueryParameters get the collection of contentType][contentType] resources in a [list][]. This API is supported in the following [national cloud deployments.
+// ItemSitesItemListsItemContentTypesRequestBuilderGetQueryParameters get the collection of contentType][contentType] resources in a [list][]. This API is available in the following [national cloud deployments.
 type ItemSitesItemListsItemContentTypesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -82,7 +82,7 @@ func NewItemSitesItemListsItemContentTypesRequestBuilder(rawUrl string, requestA
 func (m *ItemSitesItemListsItemContentTypesRequestBuilder) Count()(*ItemSitesItemListsItemContentTypesCountRequestBuilder) {
     return NewItemSitesItemListsItemContentTypesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the collection of contentType][contentType] resources in a [list][]. This API is supported in the following [national cloud deployments.
+// Get get the collection of contentType][contentType] resources in a [list][]. This API is available in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/list-list-contenttypes?view=graph-rest-1.0
@@ -127,7 +127,7 @@ func (m *ItemSitesItemListsItemContentTypesRequestBuilder) Post(ctx context.Cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable), nil
 }
-// ToGetRequestInformation get the collection of contentType][contentType] resources in a [list][]. This API is supported in the following [national cloud deployments.
+// ToGetRequestInformation get the collection of contentType][contentType] resources in a [list][]. This API is available in the following [national cloud deployments.
 func (m *ItemSitesItemListsItemContentTypesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsItemContentTypesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

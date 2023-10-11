@@ -30,7 +30,7 @@ func NewItemListContentTypesItemAssociateWithHubSitesRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewItemListContentTypesItemAssociateWithHubSitesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post associate a published content type][contentType] present in a content type hub with a list of hub sites. This API is supported in the following [national cloud deployments.
+// Post associate a published content type][contentType] present in a content type hub with a list of hub sites. This API is available in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemListContentTypesItemAssociateWithHubSitesRequestBuilder) Post(ctx c
     }
     return nil
 }
-// ToPostRequestInformation associate a published content type][contentType] present in a content type hub with a list of hub sites. This API is supported in the following [national cloud deployments.
+// ToPostRequestInformation associate a published content type][contentType] present in a content type hub with a list of hub sites. This API is available in the following [national cloud deployments.
 func (m *ItemListContentTypesItemAssociateWithHubSitesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemListContentTypesItemAssociateWithHubSitesPostRequestBodyable, requestConfiguration *ItemListContentTypesItemAssociateWithHubSitesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

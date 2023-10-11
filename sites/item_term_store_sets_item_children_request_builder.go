@@ -11,7 +11,7 @@ import (
 type ItemTermStoreSetsItemChildrenRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTermStoreSetsItemChildrenRequestBuilderGetQueryParameters get the first level children of a set] or [term] resource using the children navigation property. This API is supported in the following [national cloud deployments.
+// ItemTermStoreSetsItemChildrenRequestBuilderGetQueryParameters get the first level children of a set] or [term] resource using the children navigation property. This API is available in the following [national cloud deployments.
 type ItemTermStoreSetsItemChildrenRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemTermStoreSetsItemChildrenRequestBuilder(rawUrl string, requestAdapte
 func (m *ItemTermStoreSetsItemChildrenRequestBuilder) Count()(*ItemTermStoreSetsItemChildrenCountRequestBuilder) {
     return NewItemTermStoreSetsItemChildrenCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the first level children of a set] or [term] resource using the children navigation property. This API is supported in the following [national cloud deployments.
+// Get get the first level children of a set] or [term] resource using the children navigation property. This API is available in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/termstore-term-list-children?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemTermStoreSetsItemChildrenRequestBuilder) Get(ctx context.Context, r
     }
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.TermCollectionResponseable), nil
 }
-// Post create a new term object. This API is supported in the following national cloud deployments.
+// Post create a new term object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/termstore-term-post?view=graph-rest-1.0
@@ -118,7 +118,7 @@ func (m *ItemTermStoreSetsItemChildrenRequestBuilder) Post(ctx context.Context, 
     }
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable), nil
 }
-// ToGetRequestInformation get the first level children of a set] or [term] resource using the children navigation property. This API is supported in the following [national cloud deployments.
+// ToGetRequestInformation get the first level children of a set] or [term] resource using the children navigation property. This API is available in the following [national cloud deployments.
 func (m *ItemTermStoreSetsItemChildrenRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTermStoreSetsItemChildrenRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -134,7 +134,7 @@ func (m *ItemTermStoreSetsItemChildrenRequestBuilder) ToGetRequestInformation(ct
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new term object. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation create a new term object. This API is available in the following national cloud deployments.
 func (m *ItemTermStoreSetsItemChildrenRequestBuilder) ToPostRequestInformation(ctx context.Context, body ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable, requestConfiguration *ItemTermStoreSetsItemChildrenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

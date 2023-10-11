@@ -30,7 +30,7 @@ func NewItemMarkChatReadForUserRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewItemMarkChatReadForUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post mark a chat as read for a user. This API is supported in the following national cloud deployments.
+// Post mark a chat as read for a user. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chat-markchatreadforuser?view=graph-rest-1.0
@@ -49,7 +49,7 @@ func (m *ItemMarkChatReadForUserRequestBuilder) Post(ctx context.Context, body I
     }
     return nil
 }
-// ToPostRequestInformation mark a chat as read for a user. This API is supported in the following national cloud deployments.
+// ToPostRequestInformation mark a chat as read for a user. This API is available in the following national cloud deployments.
 func (m *ItemMarkChatReadForUserRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemMarkChatReadForUserPostRequestBodyable, requestConfiguration *ItemMarkChatReadForUserRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

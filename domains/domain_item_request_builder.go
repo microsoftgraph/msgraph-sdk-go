@@ -18,7 +18,7 @@ type DomainItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DomainItemRequestBuilderGetQueryParameters retrieve the properties and relationships of domain object. This API is supported in the following national cloud deployments.
+// DomainItemRequestBuilderGetQueryParameters retrieve the properties and relationships of domain object. This API is available in the following national cloud deployments.
 type DomainItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewDomainItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewDomainItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a domain from a tenant. This API is supported in the following national cloud deployments.
+// Delete deletes a domain from a tenant. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/domain-delete?view=graph-rest-1.0
@@ -85,7 +85,7 @@ func (m *DomainItemRequestBuilder) FederationConfiguration()(*ItemFederationConf
 func (m *DomainItemRequestBuilder) ForceDelete()(*ItemForceDeleteRequestBuilder) {
     return NewItemForceDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of domain object. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of domain object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/domain-get?view=graph-rest-1.0
@@ -107,7 +107,7 @@ func (m *DomainItemRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Domainable), nil
 }
-// Patch update the properties of domain object. This API is supported in the following national cloud deployments.
+// Patch update the properties of domain object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/domain-update?view=graph-rest-1.0
@@ -137,7 +137,7 @@ func (m *DomainItemRequestBuilder) Promote()(*ItemPromoteRequestBuilder) {
 func (m *DomainItemRequestBuilder) ServiceConfigurationRecords()(*ItemServiceConfigurationRecordsRequestBuilder) {
     return NewItemServiceConfigurationRecordsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation deletes a domain from a tenant. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation deletes a domain from a tenant. This API is available in the following national cloud deployments.
 func (m *DomainItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DomainItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -149,7 +149,7 @@ func (m *DomainItemRequestBuilder) ToDeleteRequestInformation(ctx context.Contex
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of domain object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of domain object. This API is available in the following national cloud deployments.
 func (m *DomainItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DomainItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -165,7 +165,7 @@ func (m *DomainItemRequestBuilder) ToGetRequestInformation(ctx context.Context, 
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of domain object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of domain object. This API is available in the following national cloud deployments.
 func (m *DomainItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Domainable, requestConfiguration *DomainItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

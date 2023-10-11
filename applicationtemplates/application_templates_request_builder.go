@@ -11,7 +11,7 @@ import (
 type ApplicationTemplatesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ApplicationTemplatesRequestBuilderGetQueryParameters retrieve a list of applicationTemplate objects from the Azure AD application gallery. This API is supported in the following national cloud deployments.
+// ApplicationTemplatesRequestBuilderGetQueryParameters retrieve a list of applicationTemplate objects from the Azure AD application gallery. This API is available in the following national cloud deployments.
 type ApplicationTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewApplicationTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *ApplicationTemplatesRequestBuilder) Count()(*CountRequestBuilder) {
     return NewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of applicationTemplate objects from the Azure AD application gallery. This API is supported in the following national cloud deployments.
+// Get retrieve a list of applicationTemplate objects from the Azure AD application gallery. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/applicationtemplate-list?view=graph-rest-1.0
@@ -89,7 +89,7 @@ func (m *ApplicationTemplatesRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApplicationTemplateCollectionResponseable), nil
 }
-// ToGetRequestInformation retrieve a list of applicationTemplate objects from the Azure AD application gallery. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of applicationTemplate objects from the Azure AD application gallery. This API is available in the following national cloud deployments.
 func (m *ApplicationTemplatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApplicationTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

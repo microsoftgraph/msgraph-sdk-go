@@ -18,7 +18,7 @@ type ApplicationsWithAppIdRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApplicationsWithAppIdRequestBuilderGetQueryParameters get the properties and relationships of an application object. This API is supported in the following national cloud deployments.
+// ApplicationsWithAppIdRequestBuilderGetQueryParameters get the properties and relationships of an application object. This API is available in the following national cloud deployments.
 type ApplicationsWithAppIdRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,7 +57,7 @@ func NewApplicationsWithAppIdRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewApplicationsWithAppIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Delete delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API is supported in the following national cloud deployments.
+// Delete delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/application-delete?view=graph-rest-1.0
@@ -76,7 +76,7 @@ func (m *ApplicationsWithAppIdRequestBuilder) Delete(ctx context.Context, reques
     }
     return nil
 }
-// Get get the properties and relationships of an application object. This API is supported in the following national cloud deployments.
+// Get get the properties and relationships of an application object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/application-get?view=graph-rest-1.0
@@ -98,7 +98,7 @@ func (m *ApplicationsWithAppIdRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable), nil
 }
-// Patch update the properties of an application object. This API is supported in the following national cloud deployments.
+// Patch update the properties of an application object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/application-update?view=graph-rest-1.0
@@ -120,7 +120,7 @@ func (m *ApplicationsWithAppIdRequestBuilder) Patch(ctx context.Context, body ia
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable), nil
 }
-// ToDeleteRequestInformation delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API is available in the following national cloud deployments.
 func (m *ApplicationsWithAppIdRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ApplicationsWithAppIdRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -132,7 +132,7 @@ func (m *ApplicationsWithAppIdRequestBuilder) ToDeleteRequestInformation(ctx con
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of an application object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation get the properties and relationships of an application object. This API is available in the following national cloud deployments.
 func (m *ApplicationsWithAppIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApplicationsWithAppIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -148,7 +148,7 @@ func (m *ApplicationsWithAppIdRequestBuilder) ToGetRequestInformation(ctx contex
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an application object. This API is supported in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of an application object. This API is available in the following national cloud deployments.
 func (m *ApplicationsWithAppIdRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable, requestConfiguration *ApplicationsWithAppIdRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

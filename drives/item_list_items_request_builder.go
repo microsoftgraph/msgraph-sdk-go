@@ -11,7 +11,7 @@ import (
 type ItemListItemsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemListItemsRequestBuilderGetQueryParameters get the collection of items][item] in a [list][]. This API is supported in the following [national cloud deployments.
+// ItemListItemsRequestBuilderGetQueryParameters get the collection of items][item] in a [list][]. This API is available in the following [national cloud deployments.
 type ItemListItemsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -72,7 +72,7 @@ func NewItemListItemsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *ItemListItemsRequestBuilder) Count()(*ItemListItemsCountRequestBuilder) {
     return NewItemListItemsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the collection of items][item] in a [list][]. This API is supported in the following [national cloud deployments.
+// Get get the collection of items][item] in a [list][]. This API is available in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/listitem-list?view=graph-rest-1.0
@@ -94,7 +94,7 @@ func (m *ItemListItemsRequestBuilder) Get(ctx context.Context, requestConfigurat
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemCollectionResponseable), nil
 }
-// Post create a new listItem][] in a [list][]. This API is supported in the following [national cloud deployments.
+// Post create a new listItem][] in a [list][]. This API is available in the following [national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/listitem-create?view=graph-rest-1.0
@@ -116,7 +116,7 @@ func (m *ItemListItemsRequestBuilder) Post(ctx context.Context, body iadcd811244
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemable), nil
 }
-// ToGetRequestInformation get the collection of items][item] in a [list][]. This API is supported in the following [national cloud deployments.
+// ToGetRequestInformation get the collection of items][item] in a [list][]. This API is available in the following [national cloud deployments.
 func (m *ItemListItemsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -132,7 +132,7 @@ func (m *ItemListItemsRequestBuilder) ToGetRequestInformation(ctx context.Contex
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new listItem][] in a [list][]. This API is supported in the following [national cloud deployments.
+// ToPostRequestInformation create a new listItem][] in a [list][]. This API is available in the following [national cloud deployments.
 func (m *ItemListItemsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemable, requestConfiguration *ItemListItemsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

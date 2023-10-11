@@ -18,7 +18,7 @@ type BucketsPlannerBucketItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BucketsPlannerBucketItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a plannerBucket object. This API is supported in the following national cloud deployments.
+// BucketsPlannerBucketItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a plannerBucket object. This API is available in the following national cloud deployments.
 type BucketsPlannerBucketItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewBucketsPlannerBucketItemRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewBucketsPlannerBucketItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete plannerBucket. This API is supported in the following national cloud deployments.
+// Delete delete plannerBucket. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerbucket-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *BucketsPlannerBucketItemRequestBuilder) Delete(ctx context.Context, req
     }
     return nil
 }
-// Get retrieve the properties and relationships of a plannerBucket object. This API is supported in the following national cloud deployments.
+// Get retrieve the properties and relationships of a plannerBucket object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerbucket-get?view=graph-rest-1.0
@@ -121,7 +121,7 @@ func (m *BucketsPlannerBucketItemRequestBuilder) Patch(ctx context.Context, body
 func (m *BucketsPlannerBucketItemRequestBuilder) Tasks()(*BucketsItemTasksRequestBuilder) {
     return NewBucketsItemTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete plannerBucket. This API is supported in the following national cloud deployments.
+// ToDeleteRequestInformation delete plannerBucket. This API is available in the following national cloud deployments.
 func (m *BucketsPlannerBucketItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BucketsPlannerBucketItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -133,7 +133,7 @@ func (m *BucketsPlannerBucketItemRequestBuilder) ToDeleteRequestInformation(ctx 
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a plannerBucket object. This API is supported in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a plannerBucket object. This API is available in the following national cloud deployments.
 func (m *BucketsPlannerBucketItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BucketsPlannerBucketItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
