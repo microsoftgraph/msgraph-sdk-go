@@ -34,7 +34,7 @@ func (m *PrivilegedAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetGroup gets the group property value. The group property
+// GetGroup gets the group property value. A group that's governed through Privileged Identity Management (PIM).
 func (m *PrivilegedAccessRoot) GetGroup()(PrivilegedAccessGroupable) {
     val, err := m.GetBackingStore().Get("group")
     if err != nil {
@@ -59,7 +59,7 @@ func (m *PrivilegedAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetGroup sets the group property value. The group property
+// SetGroup sets the group property value. A group that's governed through Privileged Identity Management (PIM).
 func (m *PrivilegedAccessRoot) SetGroup(value PrivilegedAccessGroupable)() {
     err := m.GetBackingStore().Set("group", value)
     if err != nil {

@@ -215,7 +215,7 @@ func (m *UnifiedRoleManagementPolicy) GetScopeId()(*string) {
     }
     return nil
 }
-// GetScopeType gets the scopeType property value. The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.
+// GetScopeType gets the scopeType property value. The type of the scope where the policy is created. One of Directory, DirectoryRole, Group. Required.
 func (m *UnifiedRoleManagementPolicy) GetScopeType()(*string) {
     val, err := m.GetBackingStore().Get("scopeType")
     if err != nil {
@@ -356,7 +356,7 @@ func (m *UnifiedRoleManagementPolicy) SetScopeId(value *string)() {
         panic(err)
     }
 }
-// SetScopeType sets the scopeType property value. The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.
+// SetScopeType sets the scopeType property value. The type of the scope where the policy is created. One of Directory, DirectoryRole, Group. Required.
 func (m *UnifiedRoleManagementPolicy) SetScopeType(value *string)() {
     err := m.GetBackingStore().Set("scopeType", value)
     if err != nil {

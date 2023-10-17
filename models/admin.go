@@ -72,6 +72,16 @@ func (m *Admin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["people"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePeopleAdminSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPeople(val.(PeopleAdminSettingsable))
+        }
+        return nil
+    }
     res["serviceAnnouncement"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateServiceAnnouncementFromDiscriminatorValue)
         if err != nil {
@@ -102,6 +112,17 @@ func (m *Admin) GetOdataType()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetPeople gets the people property value. The people property
+func (m *Admin) GetPeople()(PeopleAdminSettingsable) {
+    val, err := m.GetBackingStore().Get("people")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PeopleAdminSettingsable)
     }
     return nil
 }
@@ -137,6 +158,12 @@ func (m *Admin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("people", m.GetPeople())
         if err != nil {
             return err
         }
@@ -186,6 +213,13 @@ func (m *Admin) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetPeople sets the people property value. The people property
+func (m *Admin) SetPeople(value PeopleAdminSettingsable)() {
+    err := m.GetBackingStore().Set("people", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetServiceAnnouncement sets the serviceAnnouncement property value. A container for service communications resources. Read-only.
 func (m *Admin) SetServiceAnnouncement(value ServiceAnnouncementable)() {
     err := m.GetBackingStore().Set("serviceAnnouncement", value)
@@ -208,11 +242,13 @@ type Adminable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetEdge()(Edgeable)
     GetOdataType()(*string)
+    GetPeople()(PeopleAdminSettingsable)
     GetServiceAnnouncement()(ServiceAnnouncementable)
     GetSharepoint()(Sharepointable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetEdge(value Edgeable)()
     SetOdataType(value *string)()
+    SetPeople(value PeopleAdminSettingsable)()
     SetServiceAnnouncement(value ServiceAnnouncementable)()
     SetSharepoint(value Sharepointable)()
 }

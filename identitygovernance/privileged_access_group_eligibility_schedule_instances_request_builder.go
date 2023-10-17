@@ -11,7 +11,7 @@ import (
 type PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilderGetQueryParameters get eligibilityScheduleInstances from identityGovernance
+// PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilderGetQueryParameters get a list of the privilegedAccessGroupEligibilityScheduleInstance objects and their properties.
 type PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,10 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilder) Count(
 func (m *PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*PrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilder) {
     return NewPrivilegedAccessGroupEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get get eligibilityScheduleInstances from identityGovernance
+// Get get a list of the privilegedAccessGroupEligibilityScheduleInstance objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-eligibilityscheduleinstances?view=graph-rest-1.0
 func (m *PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrivilegedAccessGroupEligibilityScheduleInstanceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilder) Post(c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrivilegedAccessGroupEligibilityScheduleInstanceable), nil
 }
-// ToGetRequestInformation get eligibilityScheduleInstances from identityGovernance
+// ToGetRequestInformation get a list of the privilegedAccessGroupEligibilityScheduleInstance objects and their properties.
 func (m *PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleInstancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

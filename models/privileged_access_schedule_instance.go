@@ -40,7 +40,7 @@ func CreatePrivilegedAccessScheduleInstanceFromDiscriminatorValue(parseNode i878
     }
     return NewPrivilegedAccessScheduleInstance(), nil
 }
-// GetEndDateTime gets the endDateTime property value. The endDateTime property
+// GetEndDateTime gets the endDateTime property value. When the schedule instance ends. Required.
 func (m *PrivilegedAccessScheduleInstance) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -76,7 +76,7 @@ func (m *PrivilegedAccessScheduleInstance) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetStartDateTime gets the startDateTime property value. The startDateTime property
+// GetStartDateTime gets the startDateTime property value. When this instance starts. Required.
 func (m *PrivilegedAccessScheduleInstance) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -107,14 +107,14 @@ func (m *PrivilegedAccessScheduleInstance) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetEndDateTime sets the endDateTime property value. The endDateTime property
+// SetEndDateTime sets the endDateTime property value. When the schedule instance ends. Required.
 func (m *PrivilegedAccessScheduleInstance) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("endDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStartDateTime sets the startDateTime property value. The startDateTime property
+// SetStartDateTime sets the startDateTime property value. When this instance starts. Required.
 func (m *PrivilegedAccessScheduleInstance) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startDateTime", value)
     if err != nil {

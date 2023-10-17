@@ -20,7 +20,7 @@ func NewSubjectRightsRequest()(*SubjectRightsRequest) {
 func CreateSubjectRightsRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSubjectRightsRequest(), nil
 }
-// GetApprovers gets the approvers property value. The approvers property
+// GetApprovers gets the approvers property value. Collection of users who can approve the request. Currently only supported for requests of type delete.
 func (m *SubjectRightsRequest) GetApprovers()([]Userable) {
     val, err := m.GetBackingStore().Get("approvers")
     if err != nil {
@@ -42,7 +42,7 @@ func (m *SubjectRightsRequest) GetAssignedTo()(Identityable) {
     }
     return nil
 }
-// GetClosedDateTime gets the closedDateTime property value. The date and time when the request was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetClosedDateTime gets the closedDateTime property value. The date and time when the request was closed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SubjectRightsRequest) GetClosedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("closedDateTime")
     if err != nil {
@@ -53,7 +53,7 @@ func (m *SubjectRightsRequest) GetClosedDateTime()(*i336074805fc853987abe6f7fe3a
     }
     return nil
 }
-// GetCollaborators gets the collaborators property value. The collaborators property
+// GetCollaborators gets the collaborators property value. Collection of users who can collaborate on the request.
 func (m *SubjectRightsRequest) GetCollaborators()([]Userable) {
     val, err := m.GetBackingStore().Get("collaborators")
     if err != nil {
@@ -64,7 +64,7 @@ func (m *SubjectRightsRequest) GetCollaborators()([]Userable) {
     }
     return nil
 }
-// GetContentQuery gets the contentQuery property value. The contentQuery property
+// GetContentQuery gets the contentQuery property value. KQL based content query that should be used for search. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) GetContentQuery()(*string) {
     val, err := m.GetBackingStore().Get("contentQuery")
     if err != nil {
@@ -86,7 +86,7 @@ func (m *SubjectRightsRequest) GetCreatedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The date and time when the request was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the request was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SubjectRightsRequest) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -141,7 +141,7 @@ func (m *SubjectRightsRequest) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetExternalId gets the externalId property value. The externalId property
+// GetExternalId gets the externalId property value. The external ID for the request that is immutable after creation and is used for tracking the request for the external system. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -484,7 +484,7 @@ func (m *SubjectRightsRequest) GetHistory()([]SubjectRightsRequestHistoryable) {
     }
     return nil
 }
-// GetIncludeAllVersions gets the includeAllVersions property value. The includeAllVersions property
+// GetIncludeAllVersions gets the includeAllVersions property value. Include all versions of the documents. By default, the current copies of the documents are returned. If SharePoint sites have versioning enabled, including all versions includes the historical copies of the documents. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) GetIncludeAllVersions()(*bool) {
     val, err := m.GetBackingStore().Get("includeAllVersions")
     if err != nil {
@@ -495,7 +495,7 @@ func (m *SubjectRightsRequest) GetIncludeAllVersions()(*bool) {
     }
     return nil
 }
-// GetIncludeAuthoredContent gets the includeAuthoredContent property value. The includeAuthoredContent property
+// GetIncludeAuthoredContent gets the includeAuthoredContent property value. Include content authored by the data subject. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) GetIncludeAuthoredContent()(*bool) {
     val, err := m.GetBackingStore().Get("includeAuthoredContent")
     if err != nil {
@@ -517,7 +517,7 @@ func (m *SubjectRightsRequest) GetInsight()(SubjectRightsRequestDetailable) {
     }
     return nil
 }
-// GetInternalDueDateTime gets the internalDueDateTime property value. The date and time when the request is internally due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetInternalDueDateTime gets the internalDueDateTime property value. The date and time when the request is internally due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SubjectRightsRequest) GetInternalDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("internalDueDateTime")
     if err != nil {
@@ -539,7 +539,7 @@ func (m *SubjectRightsRequest) GetLastModifiedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the request was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the request was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SubjectRightsRequest) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -550,7 +550,7 @@ func (m *SubjectRightsRequest) GetLastModifiedDateTime()(*i336074805fc853987abe6
     }
     return nil
 }
-// GetMailboxLocations gets the mailboxLocations property value. The mailboxLocations property
+// GetMailboxLocations gets the mailboxLocations property value. The mailbox locations that should be searched. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) GetMailboxLocations()(SubjectRightsRequestMailboxLocationable) {
     val, err := m.GetBackingStore().Get("mailboxLocations")
     if err != nil {
@@ -572,7 +572,7 @@ func (m *SubjectRightsRequest) GetNotes()([]AuthoredNoteable) {
     }
     return nil
 }
-// GetPauseAfterEstimate gets the pauseAfterEstimate property value. The pauseAfterEstimate property
+// GetPauseAfterEstimate gets the pauseAfterEstimate property value. Pause the request after estimate has finished. By default, the data estimate runs and then pauses, allowing you to preview results and then select the option to retrieve data in the UI. You can set this property to false if you want it to perform the estimate and then automatically begin with the retrieval of the content. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) GetPauseAfterEstimate()(*bool) {
     val, err := m.GetBackingStore().Get("pauseAfterEstimate")
     if err != nil {
@@ -583,7 +583,7 @@ func (m *SubjectRightsRequest) GetPauseAfterEstimate()(*bool) {
     }
     return nil
 }
-// GetRegulations gets the regulations property value. List of regulations that this request fulfills.
+// GetRegulations gets the regulations property value. List of regulations that this request fulfill.
 func (m *SubjectRightsRequest) GetRegulations()([]string) {
     val, err := m.GetBackingStore().Get("regulations")
     if err != nil {
@@ -594,7 +594,7 @@ func (m *SubjectRightsRequest) GetRegulations()([]string) {
     }
     return nil
 }
-// GetSiteLocations gets the siteLocations property value. The siteLocations property
+// GetSiteLocations gets the siteLocations property value. The SharePoint and OneDrive site locations that should be searched. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) GetSiteLocations()(SubjectRightsRequestSiteLocationable) {
     val, err := m.GetBackingStore().Get("siteLocations")
     if err != nil {
@@ -638,7 +638,7 @@ func (m *SubjectRightsRequest) GetTeam()(Teamable) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type of the request. Possible values are: export, delete,  access, tagForAction, unknownFutureValue.
+// GetTypeEscaped gets the type property value. The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
 func (m *SubjectRightsRequest) GetTypeEscaped()(*SubjectRightsRequestType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -858,7 +858,7 @@ func (m *SubjectRightsRequest) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetApprovers sets the approvers property value. The approvers property
+// SetApprovers sets the approvers property value. Collection of users who can approve the request. Currently only supported for requests of type delete.
 func (m *SubjectRightsRequest) SetApprovers(value []Userable)() {
     err := m.GetBackingStore().Set("approvers", value)
     if err != nil {
@@ -872,21 +872,21 @@ func (m *SubjectRightsRequest) SetAssignedTo(value Identityable)() {
         panic(err)
     }
 }
-// SetClosedDateTime sets the closedDateTime property value. The date and time when the request was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// SetClosedDateTime sets the closedDateTime property value. The date and time when the request was closed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SubjectRightsRequest) SetClosedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("closedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCollaborators sets the collaborators property value. The collaborators property
+// SetCollaborators sets the collaborators property value. Collection of users who can collaborate on the request.
 func (m *SubjectRightsRequest) SetCollaborators(value []Userable)() {
     err := m.GetBackingStore().Set("collaborators", value)
     if err != nil {
         panic(err)
     }
 }
-// SetContentQuery sets the contentQuery property value. The contentQuery property
+// SetContentQuery sets the contentQuery property value. KQL based content query that should be used for search. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) SetContentQuery(value *string)() {
     err := m.GetBackingStore().Set("contentQuery", value)
     if err != nil {
@@ -900,7 +900,7 @@ func (m *SubjectRightsRequest) SetCreatedBy(value IdentitySetable)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The date and time when the request was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the request was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SubjectRightsRequest) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
@@ -935,7 +935,7 @@ func (m *SubjectRightsRequest) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetExternalId sets the externalId property value. The externalId property
+// SetExternalId sets the externalId property value. The external ID for the request that is immutable after creation and is used for tracking the request for the external system. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) SetExternalId(value *string)() {
     err := m.GetBackingStore().Set("externalId", value)
     if err != nil {
@@ -949,14 +949,14 @@ func (m *SubjectRightsRequest) SetHistory(value []SubjectRightsRequestHistoryabl
         panic(err)
     }
 }
-// SetIncludeAllVersions sets the includeAllVersions property value. The includeAllVersions property
+// SetIncludeAllVersions sets the includeAllVersions property value. Include all versions of the documents. By default, the current copies of the documents are returned. If SharePoint sites have versioning enabled, including all versions includes the historical copies of the documents. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) SetIncludeAllVersions(value *bool)() {
     err := m.GetBackingStore().Set("includeAllVersions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIncludeAuthoredContent sets the includeAuthoredContent property value. The includeAuthoredContent property
+// SetIncludeAuthoredContent sets the includeAuthoredContent property value. Include content authored by the data subject. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) SetIncludeAuthoredContent(value *bool)() {
     err := m.GetBackingStore().Set("includeAuthoredContent", value)
     if err != nil {
@@ -970,7 +970,7 @@ func (m *SubjectRightsRequest) SetInsight(value SubjectRightsRequestDetailable)(
         panic(err)
     }
 }
-// SetInternalDueDateTime sets the internalDueDateTime property value. The date and time when the request is internally due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// SetInternalDueDateTime sets the internalDueDateTime property value. The date and time when the request is internally due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SubjectRightsRequest) SetInternalDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("internalDueDateTime", value)
     if err != nil {
@@ -984,14 +984,14 @@ func (m *SubjectRightsRequest) SetLastModifiedBy(value IdentitySetable)() {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the request was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the request was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SubjectRightsRequest) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMailboxLocations sets the mailboxLocations property value. The mailboxLocations property
+// SetMailboxLocations sets the mailboxLocations property value. The mailbox locations that should be searched. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) SetMailboxLocations(value SubjectRightsRequestMailboxLocationable)() {
     err := m.GetBackingStore().Set("mailboxLocations", value)
     if err != nil {
@@ -1005,21 +1005,21 @@ func (m *SubjectRightsRequest) SetNotes(value []AuthoredNoteable)() {
         panic(err)
     }
 }
-// SetPauseAfterEstimate sets the pauseAfterEstimate property value. The pauseAfterEstimate property
+// SetPauseAfterEstimate sets the pauseAfterEstimate property value. Pause the request after estimate has finished. By default, the data estimate runs and then pauses, allowing you to preview results and then select the option to retrieve data in the UI. You can set this property to false if you want it to perform the estimate and then automatically begin with the retrieval of the content. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) SetPauseAfterEstimate(value *bool)() {
     err := m.GetBackingStore().Set("pauseAfterEstimate", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRegulations sets the regulations property value. List of regulations that this request fulfills.
+// SetRegulations sets the regulations property value. List of regulations that this request fulfill.
 func (m *SubjectRightsRequest) SetRegulations(value []string)() {
     err := m.GetBackingStore().Set("regulations", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSiteLocations sets the siteLocations property value. The siteLocations property
+// SetSiteLocations sets the siteLocations property value. The SharePoint and OneDrive site locations that should be searched. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) SetSiteLocations(value SubjectRightsRequestSiteLocationable)() {
     err := m.GetBackingStore().Set("siteLocations", value)
     if err != nil {
@@ -1047,7 +1047,7 @@ func (m *SubjectRightsRequest) SetTeam(value Teamable)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type of the request. Possible values are: export, delete,  access, tagForAction, unknownFutureValue.
+// SetTypeEscaped sets the type property value. The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
 func (m *SubjectRightsRequest) SetTypeEscaped(value *SubjectRightsRequestType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
