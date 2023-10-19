@@ -64,7 +64,7 @@ func (m *Alert) GetAzureSubscriptionId()(*string) {
     }
     return nil
 }
-// GetAzureTenantId gets the azureTenantId property value. Azure Active Directory tenant ID. Required.
+// GetAzureTenantId gets the azureTenantId property value. Microsoft Entra tenant ID. Required.
 func (m *Alert) GetAzureTenantId()(*string) {
     val, err := m.GetBackingStore().Get("azureTenantId")
     if err != nil {
@@ -1345,7 +1345,7 @@ func (m *Alert) SetAzureSubscriptionId(value *string)() {
         panic(err)
     }
 }
-// SetAzureTenantId sets the azureTenantId property value. Azure Active Directory tenant ID. Required.
+// SetAzureTenantId sets the azureTenantId property value. Microsoft Entra tenant ID. Required.
 func (m *Alert) SetAzureTenantId(value *string)() {
     err := m.GetBackingStore().Set("azureTenantId", value)
     if err != nil {

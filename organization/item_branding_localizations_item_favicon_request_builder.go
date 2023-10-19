@@ -37,7 +37,7 @@ func NewItemBrandingLocalizationsItemFaviconRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewItemBrandingLocalizationsItemFaviconRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+// Get a custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
@@ -59,7 +59,7 @@ func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) Get(ctx context.Con
     }
     return res.([]byte), nil
 }
-// Put a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+// Put a custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
 func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemBrandingLocalizationsItemFaviconRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -78,29 +78,29 @@ func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) Put(ctx context.Con
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+// ToGetRequestInformation a custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
 func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemBrandingLocalizationsItemFaviconRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     return requestInfo, nil
 }
-// ToPutRequestInformation a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+// ToPutRequestInformation a custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
 func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemBrandingLocalizationsItemFaviconRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
     requestInfo.SetStreamContent(body)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

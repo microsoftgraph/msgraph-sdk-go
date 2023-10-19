@@ -45,7 +45,7 @@ func (m *UserAccount) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAzureAdUserId gets the azureAdUserId property value. The user object identifier in Azure Active Directory (Azure AD).
+// GetAzureAdUserId gets the azureAdUserId property value. The user object identifier in Microsoft Entra ID.
 func (m *UserAccount) GetAzureAdUserId()(*string) {
     val, err := m.GetBackingStore().Get("azureAdUserId")
     if err != nil {
@@ -60,7 +60,7 @@ func (m *UserAccount) GetAzureAdUserId()(*string) {
 func (m *UserAccount) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisplayName gets the displayName property value. The user display name in Azure AD.
+// GetDisplayName gets the displayName property value. The user display name in Microsoft Entra ID.
 func (m *UserAccount) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -168,7 +168,7 @@ func (m *UserAccount) GetOdataType()(*string) {
     }
     return nil
 }
-// GetUserPrincipalName gets the userPrincipalName property value. The user principal name of the account in Azure AD.
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name of the account in Microsoft Entra ID.
 func (m *UserAccount) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -256,7 +256,7 @@ func (m *UserAccount) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAzureAdUserId sets the azureAdUserId property value. The user object identifier in Azure Active Directory (Azure AD).
+// SetAzureAdUserId sets the azureAdUserId property value. The user object identifier in Microsoft Entra ID.
 func (m *UserAccount) SetAzureAdUserId(value *string)() {
     err := m.GetBackingStore().Set("azureAdUserId", value)
     if err != nil {
@@ -267,7 +267,7 @@ func (m *UserAccount) SetAzureAdUserId(value *string)() {
 func (m *UserAccount) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisplayName sets the displayName property value. The user display name in Azure AD.
+// SetDisplayName sets the displayName property value. The user display name in Microsoft Entra ID.
 func (m *UserAccount) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -288,7 +288,7 @@ func (m *UserAccount) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. The user principal name of the account in Azure AD.
+// SetUserPrincipalName sets the userPrincipalName property value. The user principal name of the account in Microsoft Entra ID.
 func (m *UserAccount) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
     if err != nil {

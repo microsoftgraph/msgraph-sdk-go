@@ -864,6 +864,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPasswordAuthenticationMethod(), nil
                     case "#microsoft.graph.payload":
                         return NewPayload(), nil
+                    case "#microsoft.graph.peopleAdminSettings":
+                        return NewPeopleAdminSettings(), nil
                     case "#microsoft.graph.permission":
                         return NewPermission(), nil
                     case "#microsoft.graph.permissionGrantConditionSet":
@@ -964,6 +966,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPrivilegedAccessScheduleInstance(), nil
                     case "#microsoft.graph.privilegedAccessScheduleRequest":
                         return NewPrivilegedAccessScheduleRequest(), nil
+                    case "#microsoft.graph.profileCardProperty":
+                        return NewProfileCardProperty(), nil
                     case "#microsoft.graph.profilePhoto":
                         return NewProfilePhoto(), nil
                     case "#microsoft.graph.provisioningObjectSummary":

@@ -30,7 +30,7 @@ func (m *PrivilegedAccessGroup) GetAssignmentApprovals()([]Approvalable) {
     }
     return nil
 }
-// GetAssignmentScheduleInstances gets the assignmentScheduleInstances property value. The assignmentScheduleInstances property
+// GetAssignmentScheduleInstances gets the assignmentScheduleInstances property value. The instances of assignment schedules to activate a just-in-time access.
 func (m *PrivilegedAccessGroup) GetAssignmentScheduleInstances()([]PrivilegedAccessGroupAssignmentScheduleInstanceable) {
     val, err := m.GetBackingStore().Get("assignmentScheduleInstances")
     if err != nil {
@@ -41,7 +41,7 @@ func (m *PrivilegedAccessGroup) GetAssignmentScheduleInstances()([]PrivilegedAcc
     }
     return nil
 }
-// GetAssignmentScheduleRequests gets the assignmentScheduleRequests property value. The assignmentScheduleRequests property
+// GetAssignmentScheduleRequests gets the assignmentScheduleRequests property value. The schedule requests for operations to create, update, delete, extend, and renew an assignment.
 func (m *PrivilegedAccessGroup) GetAssignmentScheduleRequests()([]PrivilegedAccessGroupAssignmentScheduleRequestable) {
     val, err := m.GetBackingStore().Get("assignmentScheduleRequests")
     if err != nil {
@@ -52,7 +52,7 @@ func (m *PrivilegedAccessGroup) GetAssignmentScheduleRequests()([]PrivilegedAcce
     }
     return nil
 }
-// GetAssignmentSchedules gets the assignmentSchedules property value. The assignmentSchedules property
+// GetAssignmentSchedules gets the assignmentSchedules property value. The assignment schedules to activate a just-in-time access.
 func (m *PrivilegedAccessGroup) GetAssignmentSchedules()([]PrivilegedAccessGroupAssignmentScheduleable) {
     val, err := m.GetBackingStore().Get("assignmentSchedules")
     if err != nil {
@@ -63,7 +63,7 @@ func (m *PrivilegedAccessGroup) GetAssignmentSchedules()([]PrivilegedAccessGroup
     }
     return nil
 }
-// GetEligibilityScheduleInstances gets the eligibilityScheduleInstances property value. The eligibilityScheduleInstances property
+// GetEligibilityScheduleInstances gets the eligibilityScheduleInstances property value. The instances of eligibility schedules to activate a just-in-time access.
 func (m *PrivilegedAccessGroup) GetEligibilityScheduleInstances()([]PrivilegedAccessGroupEligibilityScheduleInstanceable) {
     val, err := m.GetBackingStore().Get("eligibilityScheduleInstances")
     if err != nil {
@@ -74,7 +74,7 @@ func (m *PrivilegedAccessGroup) GetEligibilityScheduleInstances()([]PrivilegedAc
     }
     return nil
 }
-// GetEligibilityScheduleRequests gets the eligibilityScheduleRequests property value. The eligibilityScheduleRequests property
+// GetEligibilityScheduleRequests gets the eligibilityScheduleRequests property value. The schedule requests for operations to create, update, delete, extend, and renew an eligibility.
 func (m *PrivilegedAccessGroup) GetEligibilityScheduleRequests()([]PrivilegedAccessGroupEligibilityScheduleRequestable) {
     val, err := m.GetBackingStore().Get("eligibilityScheduleRequests")
     if err != nil {
@@ -85,7 +85,7 @@ func (m *PrivilegedAccessGroup) GetEligibilityScheduleRequests()([]PrivilegedAcc
     }
     return nil
 }
-// GetEligibilitySchedules gets the eligibilitySchedules property value. The eligibilitySchedules property
+// GetEligibilitySchedules gets the eligibilitySchedules property value. The eligibility schedules to activate a just-in-time access.
 func (m *PrivilegedAccessGroup) GetEligibilitySchedules()([]PrivilegedAccessGroupEligibilityScheduleable) {
     val, err := m.GetBackingStore().Get("eligibilitySchedules")
     if err != nil {
@@ -312,42 +312,42 @@ func (m *PrivilegedAccessGroup) SetAssignmentApprovals(value []Approvalable)() {
         panic(err)
     }
 }
-// SetAssignmentScheduleInstances sets the assignmentScheduleInstances property value. The assignmentScheduleInstances property
+// SetAssignmentScheduleInstances sets the assignmentScheduleInstances property value. The instances of assignment schedules to activate a just-in-time access.
 func (m *PrivilegedAccessGroup) SetAssignmentScheduleInstances(value []PrivilegedAccessGroupAssignmentScheduleInstanceable)() {
     err := m.GetBackingStore().Set("assignmentScheduleInstances", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAssignmentScheduleRequests sets the assignmentScheduleRequests property value. The assignmentScheduleRequests property
+// SetAssignmentScheduleRequests sets the assignmentScheduleRequests property value. The schedule requests for operations to create, update, delete, extend, and renew an assignment.
 func (m *PrivilegedAccessGroup) SetAssignmentScheduleRequests(value []PrivilegedAccessGroupAssignmentScheduleRequestable)() {
     err := m.GetBackingStore().Set("assignmentScheduleRequests", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAssignmentSchedules sets the assignmentSchedules property value. The assignmentSchedules property
+// SetAssignmentSchedules sets the assignmentSchedules property value. The assignment schedules to activate a just-in-time access.
 func (m *PrivilegedAccessGroup) SetAssignmentSchedules(value []PrivilegedAccessGroupAssignmentScheduleable)() {
     err := m.GetBackingStore().Set("assignmentSchedules", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEligibilityScheduleInstances sets the eligibilityScheduleInstances property value. The eligibilityScheduleInstances property
+// SetEligibilityScheduleInstances sets the eligibilityScheduleInstances property value. The instances of eligibility schedules to activate a just-in-time access.
 func (m *PrivilegedAccessGroup) SetEligibilityScheduleInstances(value []PrivilegedAccessGroupEligibilityScheduleInstanceable)() {
     err := m.GetBackingStore().Set("eligibilityScheduleInstances", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEligibilityScheduleRequests sets the eligibilityScheduleRequests property value. The eligibilityScheduleRequests property
+// SetEligibilityScheduleRequests sets the eligibilityScheduleRequests property value. The schedule requests for operations to create, update, delete, extend, and renew an eligibility.
 func (m *PrivilegedAccessGroup) SetEligibilityScheduleRequests(value []PrivilegedAccessGroupEligibilityScheduleRequestable)() {
     err := m.GetBackingStore().Set("eligibilityScheduleRequests", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEligibilitySchedules sets the eligibilitySchedules property value. The eligibilitySchedules property
+// SetEligibilitySchedules sets the eligibilitySchedules property value. The eligibility schedules to activate a just-in-time access.
 func (m *PrivilegedAccessGroup) SetEligibilitySchedules(value []PrivilegedAccessGroupEligibilityScheduleable)() {
     err := m.GetBackingStore().Set("eligibilitySchedules", value)
     if err != nil {

@@ -171,7 +171,7 @@ func (m *RiskyServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetHistory gets the history property value. Represents the risk history of Azure AD service principals.
+// GetHistory gets the history property value. Represents the risk history of Microsoft Entra service principals.
 func (m *RiskyServicePrincipal) GetHistory()([]RiskyServicePrincipalHistoryItemable) {
     val, err := m.GetBackingStore().Get("history")
     if err != nil {
@@ -193,7 +193,7 @@ func (m *RiskyServicePrincipal) GetIsEnabled()(*bool) {
     }
     return nil
 }
-// GetIsProcessing gets the isProcessing property value. Indicates whether Azure AD is currently processing the service principal's risky state.
+// GetIsProcessing gets the isProcessing property value. Indicates whether Microsoft Entra ID is currently processing the service principal's risky state.
 func (m *RiskyServicePrincipal) GetIsProcessing()(*bool) {
     val, err := m.GetBackingStore().Get("isProcessing")
     if err != nil {
@@ -248,7 +248,7 @@ func (m *RiskyServicePrincipal) GetRiskState()(*RiskState) {
     }
     return nil
 }
-// GetServicePrincipalType gets the servicePrincipalType property value. Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Azure AD internally and is inherited from servicePrincipal.
+// GetServicePrincipalType gets the servicePrincipalType property value. Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Microsoft Entra ID internally and is inherited from servicePrincipal.
 func (m *RiskyServicePrincipal) GetServicePrincipalType()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalType")
     if err != nil {
@@ -350,7 +350,7 @@ func (m *RiskyServicePrincipal) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetHistory sets the history property value. Represents the risk history of Azure AD service principals.
+// SetHistory sets the history property value. Represents the risk history of Microsoft Entra service principals.
 func (m *RiskyServicePrincipal) SetHistory(value []RiskyServicePrincipalHistoryItemable)() {
     err := m.GetBackingStore().Set("history", value)
     if err != nil {
@@ -364,7 +364,7 @@ func (m *RiskyServicePrincipal) SetIsEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetIsProcessing sets the isProcessing property value. Indicates whether Azure AD is currently processing the service principal's risky state.
+// SetIsProcessing sets the isProcessing property value. Indicates whether Microsoft Entra ID is currently processing the service principal's risky state.
 func (m *RiskyServicePrincipal) SetIsProcessing(value *bool)() {
     err := m.GetBackingStore().Set("isProcessing", value)
     if err != nil {
@@ -399,7 +399,7 @@ func (m *RiskyServicePrincipal) SetRiskState(value *RiskState)() {
         panic(err)
     }
 }
-// SetServicePrincipalType sets the servicePrincipalType property value. Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Azure AD internally and is inherited from servicePrincipal.
+// SetServicePrincipalType sets the servicePrincipalType property value. Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Microsoft Entra ID internally and is inherited from servicePrincipal.
 func (m *RiskyServicePrincipal) SetServicePrincipalType(value *string)() {
     err := m.GetBackingStore().Set("servicePrincipalType", value)
     if err != nil {

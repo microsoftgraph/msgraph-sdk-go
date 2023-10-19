@@ -42,7 +42,7 @@ func (m *SubjectRightsRequestEnumeratedSiteLocation) GetFieldDeserializers()(map
     }
     return res
 }
-// GetUrls gets the urls property value. The urls property
+// GetUrls gets the urls property value. Collection of site URLs that should be included. Includes the URL of each site, for example, https://www.contoso.com/site1.
 func (m *SubjectRightsRequestEnumeratedSiteLocation) GetUrls()([]string) {
     val, err := m.GetBackingStore().Get("urls")
     if err != nil {
@@ -67,7 +67,7 @@ func (m *SubjectRightsRequestEnumeratedSiteLocation) Serialize(writer i878a80d23
     }
     return nil
 }
-// SetUrls sets the urls property value. The urls property
+// SetUrls sets the urls property value. Collection of site URLs that should be included. Includes the URL of each site, for example, https://www.contoso.com/site1.
 func (m *SubjectRightsRequestEnumeratedSiteLocation) SetUrls(value []string)() {
     err := m.GetBackingStore().Set("urls", value)
     if err != nil {

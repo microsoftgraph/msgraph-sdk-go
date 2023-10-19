@@ -609,7 +609,7 @@ func (m *Alert) GetStatus()(*AlertStatus) {
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. The Azure Active Directory tenant the alert was created in.
+// GetTenantId gets the tenantId property value. The Microsoft Entra tenant the alert was created in.
 func (m *Alert) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -1028,7 +1028,7 @@ func (m *Alert) SetStatus(value *AlertStatus)() {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The Azure Active Directory tenant the alert was created in.
+// SetTenantId sets the tenantId property value. The Microsoft Entra tenant the alert was created in.
 func (m *Alert) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

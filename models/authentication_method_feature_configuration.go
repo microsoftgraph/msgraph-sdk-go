@@ -116,7 +116,7 @@ func (m *AuthenticationMethodFeatureConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetState gets the state property value. Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn't been explicitly set and uses the default behavior of Azure AD for the setting. The default value is disabled.
+// GetState gets the state property value. Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn't been explicitly set and uses the default behavior of Microsoft Entra ID for the setting. The default value is disabled.
 func (m *AuthenticationMethodFeatureConfiguration) GetState()(*AdvancedConfigState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -194,7 +194,7 @@ func (m *AuthenticationMethodFeatureConfiguration) SetOdataType(value *string)()
         panic(err)
     }
 }
-// SetState sets the state property value. Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn't been explicitly set and uses the default behavior of Azure AD for the setting. The default value is disabled.
+// SetState sets the state property value. Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn't been explicitly set and uses the default behavior of Microsoft Entra ID for the setting. The default value is disabled.
 func (m *AuthenticationMethodFeatureConfiguration) SetState(value *AdvancedConfigState)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {

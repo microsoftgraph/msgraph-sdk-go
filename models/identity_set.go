@@ -38,6 +38,8 @@ func CreateIdentitySetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
                         return NewChatMessageMentionedIdentitySet(), nil
                     case "#microsoft.graph.chatMessageReactionIdentitySet":
                         return NewChatMessageReactionIdentitySet(), nil
+                    case "#microsoft.graph.communicationsIdentitySet":
+                        return NewCommunicationsIdentitySet(), nil
                     case "#microsoft.graph.sharePointIdentitySet":
                         return NewSharePointIdentitySet(), nil
                 }
