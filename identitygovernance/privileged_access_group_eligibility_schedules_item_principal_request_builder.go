@@ -11,7 +11,7 @@ import (
 type PrivilegedAccessGroupEligibilitySchedulesItemPrincipalRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrivilegedAccessGroupEligibilitySchedulesItemPrincipalRequestBuilderGetQueryParameters get principal from identityGovernance
+// PrivilegedAccessGroupEligibilitySchedulesItemPrincipalRequestBuilderGetQueryParameters references the principal that's in the scope of this membership or ownership eligibility request to the group that's governed by PIM. Supports $expand.
 type PrivilegedAccessGroupEligibilitySchedulesItemPrincipalRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewPrivilegedAccessGroupEligibilitySchedulesItemPrincipalRequestBuilder(raw
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedAccessGroupEligibilitySchedulesItemPrincipalRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get principal from identityGovernance
+// Get references the principal that's in the scope of this membership or ownership eligibility request to the group that's governed by PIM. Supports $expand.
 func (m *PrivilegedAccessGroupEligibilitySchedulesItemPrincipalRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilitySchedulesItemPrincipalRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *PrivilegedAccessGroupEligibilitySchedulesItemPrincipalRequestBuilder) G
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
 }
-// ToGetRequestInformation get principal from identityGovernance
+// ToGetRequestInformation references the principal that's in the scope of this membership or ownership eligibility request to the group that's governed by PIM. Supports $expand.
 func (m *PrivilegedAccessGroupEligibilitySchedulesItemPrincipalRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilitySchedulesItemPrincipalRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

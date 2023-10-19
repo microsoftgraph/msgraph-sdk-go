@@ -21,7 +21,7 @@ func NewPrivilegedAccessGroupAssignmentSchedule()(*PrivilegedAccessGroupAssignme
 func CreatePrivilegedAccessGroupAssignmentScheduleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivilegedAccessGroupAssignmentSchedule(), nil
 }
-// GetAccessId gets the accessId property value. The accessId property
+// GetAccessId gets the accessId property value. The identifier of the membership or ownership assignment to the group that is governed by PIM. Required. The possible values are: owner, member, unknownFutureValue. Supports $filter (eq).
 func (m *PrivilegedAccessGroupAssignmentSchedule) GetAccessId()(*PrivilegedAccessGroupRelationships) {
     val, err := m.GetBackingStore().Get("accessId")
     if err != nil {
@@ -32,7 +32,7 @@ func (m *PrivilegedAccessGroupAssignmentSchedule) GetAccessId()(*PrivilegedAcces
     }
     return nil
 }
-// GetActivatedUsing gets the activatedUsing property value. The activatedUsing property
+// GetActivatedUsing gets the activatedUsing property value. When the request activates an ownership or membership assignment in PIM for groups, this object represents the eligibility relationship. Otherwise, it is null. Supports $expand.
 func (m *PrivilegedAccessGroupAssignmentSchedule) GetActivatedUsing()(PrivilegedAccessGroupEligibilityScheduleable) {
     val, err := m.GetBackingStore().Get("activatedUsing")
     if err != nil {
@@ -43,7 +43,7 @@ func (m *PrivilegedAccessGroupAssignmentSchedule) GetActivatedUsing()(Privileged
     }
     return nil
 }
-// GetAssignmentType gets the assignmentType property value. The assignmentType property
+// GetAssignmentType gets the assignmentType property value. Indicates whether the membership or ownership assignment for the principal is granted through activation or direct assignment. Required. The possible values are: assigned, activated, unknownFutureValue. Supports $filter (eq).
 func (m *PrivilegedAccessGroupAssignmentSchedule) GetAssignmentType()(*PrivilegedAccessGroupAssignmentType) {
     val, err := m.GetBackingStore().Get("assignmentType")
     if err != nil {
@@ -139,7 +139,7 @@ func (m *PrivilegedAccessGroupAssignmentSchedule) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetGroup gets the group property value. The group property
+// GetGroup gets the group property value. References the group that is the scope of the membership or ownership assignment through PIM for groups. Supports $expand.
 func (m *PrivilegedAccessGroupAssignmentSchedule) GetGroup()(Groupable) {
     val, err := m.GetBackingStore().Get("group")
     if err != nil {
@@ -150,7 +150,7 @@ func (m *PrivilegedAccessGroupAssignmentSchedule) GetGroup()(Groupable) {
     }
     return nil
 }
-// GetGroupId gets the groupId property value. The groupId property
+// GetGroupId gets the groupId property value. The identifier of the group representing the scope of the membership or ownership assignment through PIM for groups. Required. Supports $filter (eq).
 func (m *PrivilegedAccessGroupAssignmentSchedule) GetGroupId()(*string) {
     val, err := m.GetBackingStore().Get("groupId")
     if err != nil {
@@ -161,7 +161,7 @@ func (m *PrivilegedAccessGroupAssignmentSchedule) GetGroupId()(*string) {
     }
     return nil
 }
-// GetMemberType gets the memberType property value. The memberType property
+// GetMemberType gets the memberType property value. Indicates whether the assignment is derived from a direct group assignment or through a transitive assignment. The possible values are: direct, group, unknownFutureValue. Supports $filter (eq).
 func (m *PrivilegedAccessGroupAssignmentSchedule) GetMemberType()(*PrivilegedAccessGroupMemberType) {
     val, err := m.GetBackingStore().Get("memberType")
     if err != nil {
@@ -172,7 +172,7 @@ func (m *PrivilegedAccessGroupAssignmentSchedule) GetMemberType()(*PrivilegedAcc
     }
     return nil
 }
-// GetPrincipal gets the principal property value. The principal property
+// GetPrincipal gets the principal property value. References the principal that's in the scope of this membership or ownership assignment request to the group that's governed by PIM. Supports $expand.
 func (m *PrivilegedAccessGroupAssignmentSchedule) GetPrincipal()(DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("principal")
     if err != nil {
@@ -183,7 +183,7 @@ func (m *PrivilegedAccessGroupAssignmentSchedule) GetPrincipal()(DirectoryObject
     }
     return nil
 }
-// GetPrincipalId gets the principalId property value. The principalId property
+// GetPrincipalId gets the principalId property value. The identifier of the principal whose membership or ownership assignment is granted through PIM for groups. Required. Supports $filter (eq).
 func (m *PrivilegedAccessGroupAssignmentSchedule) GetPrincipalId()(*string) {
     val, err := m.GetBackingStore().Get("principalId")
     if err != nil {
@@ -253,56 +253,56 @@ func (m *PrivilegedAccessGroupAssignmentSchedule) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetAccessId sets the accessId property value. The accessId property
+// SetAccessId sets the accessId property value. The identifier of the membership or ownership assignment to the group that is governed by PIM. Required. The possible values are: owner, member, unknownFutureValue. Supports $filter (eq).
 func (m *PrivilegedAccessGroupAssignmentSchedule) SetAccessId(value *PrivilegedAccessGroupRelationships)() {
     err := m.GetBackingStore().Set("accessId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetActivatedUsing sets the activatedUsing property value. The activatedUsing property
+// SetActivatedUsing sets the activatedUsing property value. When the request activates an ownership or membership assignment in PIM for groups, this object represents the eligibility relationship. Otherwise, it is null. Supports $expand.
 func (m *PrivilegedAccessGroupAssignmentSchedule) SetActivatedUsing(value PrivilegedAccessGroupEligibilityScheduleable)() {
     err := m.GetBackingStore().Set("activatedUsing", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAssignmentType sets the assignmentType property value. The assignmentType property
+// SetAssignmentType sets the assignmentType property value. Indicates whether the membership or ownership assignment for the principal is granted through activation or direct assignment. Required. The possible values are: assigned, activated, unknownFutureValue. Supports $filter (eq).
 func (m *PrivilegedAccessGroupAssignmentSchedule) SetAssignmentType(value *PrivilegedAccessGroupAssignmentType)() {
     err := m.GetBackingStore().Set("assignmentType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetGroup sets the group property value. The group property
+// SetGroup sets the group property value. References the group that is the scope of the membership or ownership assignment through PIM for groups. Supports $expand.
 func (m *PrivilegedAccessGroupAssignmentSchedule) SetGroup(value Groupable)() {
     err := m.GetBackingStore().Set("group", value)
     if err != nil {
         panic(err)
     }
 }
-// SetGroupId sets the groupId property value. The groupId property
+// SetGroupId sets the groupId property value. The identifier of the group representing the scope of the membership or ownership assignment through PIM for groups. Required. Supports $filter (eq).
 func (m *PrivilegedAccessGroupAssignmentSchedule) SetGroupId(value *string)() {
     err := m.GetBackingStore().Set("groupId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMemberType sets the memberType property value. The memberType property
+// SetMemberType sets the memberType property value. Indicates whether the assignment is derived from a direct group assignment or through a transitive assignment. The possible values are: direct, group, unknownFutureValue. Supports $filter (eq).
 func (m *PrivilegedAccessGroupAssignmentSchedule) SetMemberType(value *PrivilegedAccessGroupMemberType)() {
     err := m.GetBackingStore().Set("memberType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPrincipal sets the principal property value. The principal property
+// SetPrincipal sets the principal property value. References the principal that's in the scope of this membership or ownership assignment request to the group that's governed by PIM. Supports $expand.
 func (m *PrivilegedAccessGroupAssignmentSchedule) SetPrincipal(value DirectoryObjectable)() {
     err := m.GetBackingStore().Set("principal", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPrincipalId sets the principalId property value. The principalId property
+// SetPrincipalId sets the principalId property value. The identifier of the principal whose membership or ownership assignment is granted through PIM for groups. Required. Supports $filter (eq).
 func (m *PrivilegedAccessGroupAssignmentSchedule) SetPrincipalId(value *string)() {
     err := m.GetBackingStore().Set("principalId", value)
     if err != nil {

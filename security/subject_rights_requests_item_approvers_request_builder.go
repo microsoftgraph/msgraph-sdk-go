@@ -11,7 +11,7 @@ import (
 type SubjectRightsRequestsItemApproversRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SubjectRightsRequestsItemApproversRequestBuilderGetQueryParameters get approvers from security
+// SubjectRightsRequestsItemApproversRequestBuilderGetQueryParameters collection of users who can approve the request. Currently only supported for requests of type delete.
 type SubjectRightsRequestsItemApproversRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewSubjectRightsRequestsItemApproversRequestBuilder(rawUrl string, requestA
 func (m *SubjectRightsRequestsItemApproversRequestBuilder) Count()(*SubjectRightsRequestsItemApproversCountRequestBuilder) {
     return NewSubjectRightsRequestsItemApproversCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get approvers from security
+// Get collection of users who can approve the request. Currently only supported for requests of type delete.
 func (m *SubjectRightsRequestsItemApproversRequestBuilder) Get(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemApproversRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +86,7 @@ func (m *SubjectRightsRequestsItemApproversRequestBuilder) Get(ctx context.Conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserCollectionResponseable), nil
 }
-// ToGetRequestInformation get approvers from security
+// ToGetRequestInformation collection of users who can approve the request. Currently only supported for requests of type delete.
 func (m *SubjectRightsRequestsItemApproversRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemApproversRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

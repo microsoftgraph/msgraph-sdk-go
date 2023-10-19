@@ -18,7 +18,7 @@ type PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestB
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestBuilderGetQueryParameters in Azure AD entitlement management, retrieve the properties of an approvalStage object. An approval stage is contained within an approval object. This API is available in the following national cloud deployments.
+// PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestBuilderGetQueryParameters retrieve the properties of an approvalStage object. An approval stage is contained within an approval object. This API is available in the following national cloud deployments.
 type PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequ
     }
     return nil
 }
-// Get in Azure AD entitlement management, retrieve the properties of an approvalStage object. An approval stage is contained within an approval object. This API is available in the following national cloud deployments.
+// Get retrieve the properties of an approvalStage object. An approval stage is contained within an approval object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/approvalstage-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequ
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApprovalStageable), nil
 }
-// Patch in Azure AD entitlement management, approve or deny an approvalStage object in an approval. This API is available in the following national cloud deployments.
+// Patch approve or deny an approvalStage object in an approval. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/approvalstage-update?view=graph-rest-1.0
@@ -126,7 +126,7 @@ func (m *PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequ
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation in Azure AD entitlement management, retrieve the properties of an approvalStage object. An approval stage is contained within an approval object. This API is available in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties of an approvalStage object. An approval stage is contained within an approval object. This API is available in the following national cloud deployments.
 func (m *PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -142,7 +142,7 @@ func (m *PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequ
     }
     return requestInfo, nil
 }
-// ToPatchRequestInformation in Azure AD entitlement management, approve or deny an approvalStage object in an approval. This API is available in the following national cloud deployments.
+// ToPatchRequestInformation approve or deny an approvalStage object in an approval. This API is available in the following national cloud deployments.
 func (m *PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ApprovalStageable, requestConfiguration *PrivilegedAccessGroupAssignmentApprovalsItemStagesApprovalStageItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

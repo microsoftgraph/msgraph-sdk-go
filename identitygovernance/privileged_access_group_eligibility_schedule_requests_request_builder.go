@@ -11,7 +11,7 @@ import (
 type PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilderGetQueryParameters get eligibilityScheduleRequests from identityGovernance
+// PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilderGetQueryParameters get a list of the privilegedAccessGroupEligibilityScheduleRequest objects and their properties.
 type PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,10 @@ func (m *PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilder) Count()
 func (m *PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*PrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilder) {
     return NewPrivilegedAccessGroupEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get get eligibilityScheduleRequests from identityGovernance
+// Get get a list of the privilegedAccessGroupEligibilityScheduleRequest objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-eligibilityschedulerequests?view=graph-rest-1.0
 func (m *PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrivilegedAccessGroupEligibilityScheduleRequestCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -97,7 +100,10 @@ func (m *PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilder) Get(ctx
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrivilegedAccessGroupEligibilityScheduleRequestCollectionResponseable), nil
 }
-// Post create new navigation property to eligibilityScheduleRequests for identityGovernance
+// Post create a new privilegedAccessGroupEligibilityScheduleRequest object.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/privilegedaccessgroup-post-eligibilityschedulerequests?view=graph-rest-1.0
 func (m *PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrivilegedAccessGroupEligibilityScheduleRequestable, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrivilegedAccessGroupEligibilityScheduleRequestable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilder) Post(ct
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrivilegedAccessGroupEligibilityScheduleRequestable), nil
 }
-// ToGetRequestInformation get eligibilityScheduleRequests from identityGovernance
+// ToGetRequestInformation get a list of the privilegedAccessGroupEligibilityScheduleRequest objects and their properties.
 func (m *PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
@@ -132,7 +138,7 @@ func (m *PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilder) ToGetRe
     }
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to eligibilityScheduleRequests for identityGovernance
+// ToPostRequestInformation create a new privilegedAccessGroupEligibilityScheduleRequest object.
 func (m *PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrivilegedAccessGroupEligibilityScheduleRequestable, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

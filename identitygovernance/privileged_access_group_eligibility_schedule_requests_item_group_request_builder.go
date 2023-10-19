@@ -11,7 +11,7 @@ import (
 type PrivilegedAccessGroupEligibilityScheduleRequestsItemGroupRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrivilegedAccessGroupEligibilityScheduleRequestsItemGroupRequestBuilderGetQueryParameters get group from identityGovernance
+// PrivilegedAccessGroupEligibilityScheduleRequestsItemGroupRequestBuilderGetQueryParameters references the group that is the scope of the membership or ownership eligibility request through PIM for groups. Supports $expand.
 type PrivilegedAccessGroupEligibilityScheduleRequestsItemGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewPrivilegedAccessGroupEligibilityScheduleRequestsItemGroupRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedAccessGroupEligibilityScheduleRequestsItemGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get group from identityGovernance
+// Get references the group that is the scope of the membership or ownership eligibility request through PIM for groups. Supports $expand.
 func (m *PrivilegedAccessGroupEligibilityScheduleRequestsItemGroupRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleRequestsItemGroupRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -63,7 +63,7 @@ func (m *PrivilegedAccessGroupEligibilityScheduleRequestsItemGroupRequestBuilder
 func (m *PrivilegedAccessGroupEligibilityScheduleRequestsItemGroupRequestBuilder) ServiceProvisioningErrors()(*PrivilegedAccessGroupEligibilityScheduleRequestsItemGroupServiceProvisioningErrorsRequestBuilder) {
     return NewPrivilegedAccessGroupEligibilityScheduleRequestsItemGroupServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get group from identityGovernance
+// ToGetRequestInformation references the group that is the scope of the membership or ownership eligibility request through PIM for groups. Supports $expand.
 func (m *PrivilegedAccessGroupEligibilityScheduleRequestsItemGroupRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleRequestsItemGroupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

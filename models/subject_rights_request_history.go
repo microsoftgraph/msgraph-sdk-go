@@ -137,7 +137,7 @@ func (m *SubjectRightsRequestHistory) GetOdataType()(*string) {
     }
     return nil
 }
-// GetStage gets the stage property value. The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
+// GetStage gets the stage property value. The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue, approval. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: approval.
 func (m *SubjectRightsRequestHistory) GetStage()(*SubjectRightsRequestStage) {
     val, err := m.GetBackingStore().Get("stage")
     if err != nil {
@@ -250,7 +250,7 @@ func (m *SubjectRightsRequestHistory) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetStage sets the stage property value. The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
+// SetStage sets the stage property value. The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue, approval. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: approval.
 func (m *SubjectRightsRequestHistory) SetStage(value *SubjectRightsRequestStage)() {
     err := m.GetBackingStore().Set("stage", value)
     if err != nil {

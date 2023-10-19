@@ -39,7 +39,7 @@ func CreatePrivilegedAccessScheduleRequestFromDiscriminatorValue(parseNode i878a
     }
     return NewPrivilegedAccessScheduleRequest(), nil
 }
-// GetAction gets the action property value. The action property
+// GetAction gets the action property value. Represents the type of operation on the group membership or ownership assignment request. The possible values are: adminAssign, adminUpdate, adminRemove, selfActivate, selfDeactivate, adminExtend, adminRenew. adminAssign: For administrators to assign group membership or ownership to principals.adminRemove: For administrators to remove principals from group membership or ownership. adminUpdate: For administrators to change existing group membership or ownership assignments.adminExtend: For administrators to extend expiring assignments.adminRenew: For administrators to renew expired assignments.selfActivate: For principals to activate their assignments.selfDeactivate: For principals to deactivate their active assignments.
 func (m *PrivilegedAccessScheduleRequest) GetAction()(*ScheduleRequestActions) {
     val, err := m.GetBackingStore().Get("action")
     if err != nil {
@@ -105,7 +105,7 @@ func (m *PrivilegedAccessScheduleRequest) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetIsValidationOnly gets the isValidationOnly property value. The isValidationOnly property
+// GetIsValidationOnly gets the isValidationOnly property value. Determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.
 func (m *PrivilegedAccessScheduleRequest) GetIsValidationOnly()(*bool) {
     val, err := m.GetBackingStore().Get("isValidationOnly")
     if err != nil {
@@ -116,7 +116,7 @@ func (m *PrivilegedAccessScheduleRequest) GetIsValidationOnly()(*bool) {
     }
     return nil
 }
-// GetJustification gets the justification property value. The justification property
+// GetJustification gets the justification property value. A message provided by users and administrators when create they create the privilegedAccessGroupAssignmentScheduleRequest object.
 func (m *PrivilegedAccessScheduleRequest) GetJustification()(*string) {
     val, err := m.GetBackingStore().Get("justification")
     if err != nil {
@@ -127,7 +127,7 @@ func (m *PrivilegedAccessScheduleRequest) GetJustification()(*string) {
     }
     return nil
 }
-// GetScheduleInfo gets the scheduleInfo property value. The scheduleInfo property
+// GetScheduleInfo gets the scheduleInfo property value. The period of the group membership or ownership assignment. Recurring schedules are currently unsupported.
 func (m *PrivilegedAccessScheduleRequest) GetScheduleInfo()(RequestScheduleable) {
     val, err := m.GetBackingStore().Get("scheduleInfo")
     if err != nil {
@@ -138,7 +138,7 @@ func (m *PrivilegedAccessScheduleRequest) GetScheduleInfo()(RequestScheduleable)
     }
     return nil
 }
-// GetTicketInfo gets the ticketInfo property value. The ticketInfo property
+// GetTicketInfo gets the ticketInfo property value. Ticket details linked to the group membership or ownership assignment request including details of the ticket number and ticket system.
 func (m *PrivilegedAccessScheduleRequest) GetTicketInfo()(TicketInfoable) {
     val, err := m.GetBackingStore().Get("ticketInfo")
     if err != nil {
@@ -188,35 +188,35 @@ func (m *PrivilegedAccessScheduleRequest) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetAction sets the action property value. The action property
+// SetAction sets the action property value. Represents the type of operation on the group membership or ownership assignment request. The possible values are: adminAssign, adminUpdate, adminRemove, selfActivate, selfDeactivate, adminExtend, adminRenew. adminAssign: For administrators to assign group membership or ownership to principals.adminRemove: For administrators to remove principals from group membership or ownership. adminUpdate: For administrators to change existing group membership or ownership assignments.adminExtend: For administrators to extend expiring assignments.adminRenew: For administrators to renew expired assignments.selfActivate: For principals to activate their assignments.selfDeactivate: For principals to deactivate their active assignments.
 func (m *PrivilegedAccessScheduleRequest) SetAction(value *ScheduleRequestActions)() {
     err := m.GetBackingStore().Set("action", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsValidationOnly sets the isValidationOnly property value. The isValidationOnly property
+// SetIsValidationOnly sets the isValidationOnly property value. Determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.
 func (m *PrivilegedAccessScheduleRequest) SetIsValidationOnly(value *bool)() {
     err := m.GetBackingStore().Set("isValidationOnly", value)
     if err != nil {
         panic(err)
     }
 }
-// SetJustification sets the justification property value. The justification property
+// SetJustification sets the justification property value. A message provided by users and administrators when create they create the privilegedAccessGroupAssignmentScheduleRequest object.
 func (m *PrivilegedAccessScheduleRequest) SetJustification(value *string)() {
     err := m.GetBackingStore().Set("justification", value)
     if err != nil {
         panic(err)
     }
 }
-// SetScheduleInfo sets the scheduleInfo property value. The scheduleInfo property
+// SetScheduleInfo sets the scheduleInfo property value. The period of the group membership or ownership assignment. Recurring schedules are currently unsupported.
 func (m *PrivilegedAccessScheduleRequest) SetScheduleInfo(value RequestScheduleable)() {
     err := m.GetBackingStore().Set("scheduleInfo", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTicketInfo sets the ticketInfo property value. The ticketInfo property
+// SetTicketInfo sets the ticketInfo property value. Ticket details linked to the group membership or ownership assignment request including details of the ticket number and ticket system.
 func (m *PrivilegedAccessScheduleRequest) SetTicketInfo(value TicketInfoable)() {
     err := m.GetBackingStore().Set("ticketInfo", value)
     if err != nil {

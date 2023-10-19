@@ -11,7 +11,7 @@ import (
 type SubjectRightsRequestsItemApproversUserItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SubjectRightsRequestsItemApproversUserItemRequestBuilderGetQueryParameters get approvers from security
+// SubjectRightsRequestsItemApproversUserItemRequestBuilderGetQueryParameters collection of users who can approve the request. Currently only supported for requests of type delete.
 type SubjectRightsRequestsItemApproversUserItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewSubjectRightsRequestsItemApproversUserItemRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewSubjectRightsRequestsItemApproversUserItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get approvers from security
+// Get collection of users who can approve the request. Currently only supported for requests of type delete.
 func (m *SubjectRightsRequestsItemApproversUserItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemApproversUserItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -67,7 +67,7 @@ func (m *SubjectRightsRequestsItemApproversUserItemRequestBuilder) MailboxSettin
 func (m *SubjectRightsRequestsItemApproversUserItemRequestBuilder) ServiceProvisioningErrors()(*SubjectRightsRequestsItemApproversItemServiceProvisioningErrorsRequestBuilder) {
     return NewSubjectRightsRequestsItemApproversItemServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get approvers from security
+// ToGetRequestInformation collection of users who can approve the request. Currently only supported for requests of type delete.
 func (m *SubjectRightsRequestsItemApproversUserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemApproversUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

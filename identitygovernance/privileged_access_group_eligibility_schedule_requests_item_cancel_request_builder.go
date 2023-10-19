@@ -30,7 +30,10 @@ func NewPrivilegedAccessGroupEligibilityScheduleRequestsItemCancelRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedAccessGroupEligibilityScheduleRequestsItemCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action cancel
+// Post cancel an eligibility assignment request to a group whose membership and ownership are governed by PIM.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedulerequest-cancel?view=graph-rest-1.0
 func (m *PrivilegedAccessGroupEligibilityScheduleRequestsItemCancelRequestBuilder) Post(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleRequestsItemCancelRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *PrivilegedAccessGroupEligibilityScheduleRequestsItemCancelRequestBuilde
     }
     return nil
 }
-// ToPostRequestInformation invoke action cancel
+// ToPostRequestInformation cancel an eligibility assignment request to a group whose membership and ownership are governed by PIM.
 func (m *PrivilegedAccessGroupEligibilityScheduleRequestsItemCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleRequestsItemCancelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate

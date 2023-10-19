@@ -46,7 +46,7 @@ func (m *AccessPackageTextInputQuestion) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetIsSingleLineQuestion gets the isSingleLineQuestion property value. Indicates whether the answer will be in single or multiple line format.
+// GetIsSingleLineQuestion gets the isSingleLineQuestion property value. Indicates whether the answer is in single or multiple line format.
 func (m *AccessPackageTextInputQuestion) GetIsSingleLineQuestion()(*bool) {
     val, err := m.GetBackingStore().Get("isSingleLineQuestion")
     if err != nil {
@@ -88,7 +88,7 @@ func (m *AccessPackageTextInputQuestion) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetIsSingleLineQuestion sets the isSingleLineQuestion property value. Indicates whether the answer will be in single or multiple line format.
+// SetIsSingleLineQuestion sets the isSingleLineQuestion property value. Indicates whether the answer is in single or multiple line format.
 func (m *AccessPackageTextInputQuestion) SetIsSingleLineQuestion(value *bool)() {
     err := m.GetBackingStore().Set("isSingleLineQuestion", value)
     if err != nil {

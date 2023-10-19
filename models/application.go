@@ -45,7 +45,7 @@ func (m *Application) GetApi()(ApiApplicationable) {
     }
     return nil
 }
-// GetAppId gets the appId property value. The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only. Supports $filter (eq).
+// GetAppId gets the appId property value. The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only. Alternate key. Supports $filter (eq).
 func (m *Application) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -1421,7 +1421,7 @@ func (m *Application) SetApi(value ApiApplicationable)() {
         panic(err)
     }
 }
-// SetAppId sets the appId property value. The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only. Supports $filter (eq).
+// SetAppId sets the appId property value. The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only. Alternate key. Supports $filter (eq).
 func (m *Application) SetAppId(value *string)() {
     err := m.GetBackingStore().Set("appId", value)
     if err != nil {

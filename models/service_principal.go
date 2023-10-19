@@ -77,7 +77,7 @@ func (m *ServicePrincipal) GetAppDisplayName()(*string) {
     }
     return nil
 }
-// GetAppId gets the appId property value. The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
+// GetAppId gets the appId property value. The unique identifier for the associated application (its appId property). Alternate key. Supports $filter (eq, ne, not, in, startsWith).
 func (m *ServicePrincipal) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -1741,7 +1741,7 @@ func (m *ServicePrincipal) SetAppDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetAppId sets the appId property value. The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
+// SetAppId sets the appId property value. The unique identifier for the associated application (its appId property). Alternate key. Supports $filter (eq, ne, not, in, startsWith).
 func (m *ServicePrincipal) SetAppId(value *string)() {
     err := m.GetBackingStore().Set("appId", value)
     if err != nil {
