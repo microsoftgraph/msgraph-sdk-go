@@ -20,7 +20,7 @@ func NewBitlockerRecoveryKey()(*BitlockerRecoveryKey) {
 func CreateBitlockerRecoveryKeyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBitlockerRecoveryKey(), nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the key was originally backed up to Microsoft Entra ID. Not nullable.
 func (m *BitlockerRecoveryKey) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -142,7 +142,7 @@ func (m *BitlockerRecoveryKey) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetCreatedDateTime sets the createdDateTime property value. The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the key was originally backed up to Microsoft Entra ID. Not nullable.
 func (m *BitlockerRecoveryKey) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {

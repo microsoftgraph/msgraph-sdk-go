@@ -376,7 +376,7 @@ func (m *SecureScoreControlProfile) GetRemediationImpact()(*string) {
     }
     return nil
 }
-// GetService gets the service property value. Service that owns the control (Exchange, Sharepoint, Azure AD).
+// GetService gets the service property value. Service that owns the control (Exchange, Sharepoint, Microsoft Entra ID).
 func (m *SecureScoreControlProfile) GetService()(*string) {
     val, err := m.GetBackingStore().Get("service")
     if err != nil {
@@ -667,7 +667,7 @@ func (m *SecureScoreControlProfile) SetRemediationImpact(value *string)() {
         panic(err)
     }
 }
-// SetService sets the service property value. Service that owns the control (Exchange, Sharepoint, Azure AD).
+// SetService sets the service property value. Service that owns the control (Exchange, Sharepoint, Microsoft Entra ID).
 func (m *SecureScoreControlProfile) SetService(value *string)() {
     err := m.GetBackingStore().Set("service", value)
     if err != nil {

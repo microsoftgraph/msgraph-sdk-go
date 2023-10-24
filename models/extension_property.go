@@ -104,7 +104,7 @@ func (m *ExtensionProperty) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetIsSyncedFromOnPremises gets the isSyncedFromOnPremises property value. Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
+// GetIsSyncedFromOnPremises gets the isSyncedFromOnPremises property value. Indicates if this extension property was synced from on-premises active directory using Microsoft Entra Connect. Read-only.
 func (m *ExtensionProperty) GetIsSyncedFromOnPremises()(*bool) {
     val, err := m.GetBackingStore().Get("isSyncedFromOnPremises")
     if err != nil {
@@ -189,7 +189,7 @@ func (m *ExtensionProperty) SetDataType(value *string)() {
         panic(err)
     }
 }
-// SetIsSyncedFromOnPremises sets the isSyncedFromOnPremises property value. Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
+// SetIsSyncedFromOnPremises sets the isSyncedFromOnPremises property value. Indicates if this extension property was synced from on-premises active directory using Microsoft Entra Connect. Read-only.
 func (m *ExtensionProperty) SetIsSyncedFromOnPremises(value *bool)() {
     err := m.GetBackingStore().Set("isSyncedFromOnPremises", value)
     if err != nil {

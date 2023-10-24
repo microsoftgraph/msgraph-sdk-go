@@ -663,7 +663,7 @@ func (m *EducationUser) GetOfficeLocation()(*string) {
     }
     return nil
 }
-// GetOnPremisesInfo gets the onPremisesInfo property value. Additional information used to associate the Azure Active Directory user with its Active Directory counterpart.
+// GetOnPremisesInfo gets the onPremisesInfo property value. Additional information used to associate the Microsoft Entra user with its Active Directory counterpart.
 func (m *EducationUser) GetOnPremisesInfo()(EducationOnPremisesInfoable) {
     val, err := m.GetBackingStore().Get("onPremisesInfo")
     if err != nil {
@@ -1301,7 +1301,7 @@ func (m *EducationUser) SetOfficeLocation(value *string)() {
         panic(err)
     }
 }
-// SetOnPremisesInfo sets the onPremisesInfo property value. Additional information used to associate the Azure Active Directory user with its Active Directory counterpart.
+// SetOnPremisesInfo sets the onPremisesInfo property value. Additional information used to associate the Microsoft Entra user with its Active Directory counterpart.
 func (m *EducationUser) SetOnPremisesInfo(value EducationOnPremisesInfoable)() {
     err := m.GetBackingStore().Set("onPremisesInfo", value)
     if err != nil {

@@ -34,7 +34,7 @@ func (m *CustomTaskExtension) GetCallbackConfiguration()(iadcd81124412c61e647227
     }
     return nil
 }
-// GetCreatedBy gets the createdBy property value. The unique identifier of the Azure AD user that created the custom task extension.Supports $filter(eq, ne) and $expand.
+// GetCreatedBy gets the createdBy property value. The unique identifier of the Microsoft Entra user that created the custom task extension.Supports $filter(eq, ne) and $expand.
 func (m *CustomTaskExtension) GetCreatedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -111,7 +111,7 @@ func (m *CustomTaskExtension) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The unique identifier of the Azure AD user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.
+// GetLastModifiedBy gets the lastModifiedBy property value. The unique identifier of the Microsoft Entra user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.
 func (m *CustomTaskExtension) GetLastModifiedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -178,7 +178,7 @@ func (m *CustomTaskExtension) SetCallbackConfiguration(value iadcd81124412c61e64
         panic(err)
     }
 }
-// SetCreatedBy sets the createdBy property value. The unique identifier of the Azure AD user that created the custom task extension.Supports $filter(eq, ne) and $expand.
+// SetCreatedBy sets the createdBy property value. The unique identifier of the Microsoft Entra user that created the custom task extension.Supports $filter(eq, ne) and $expand.
 func (m *CustomTaskExtension) SetCreatedBy(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable)() {
     err := m.GetBackingStore().Set("createdBy", value)
     if err != nil {
@@ -192,7 +192,7 @@ func (m *CustomTaskExtension) SetCreatedDateTime(value *i336074805fc853987abe6f7
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The unique identifier of the Azure AD user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.
+// SetLastModifiedBy sets the lastModifiedBy property value. The unique identifier of the Microsoft Entra user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.
 func (m *CustomTaskExtension) SetLastModifiedBy(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {

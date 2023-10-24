@@ -73,7 +73,7 @@ func (m *ExcludeTarget) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetId gets the id property value. The object identifier of an Azure Active Directory user or group.
+// GetId gets the id property value. The object identifier of a Microsoft Entra user or group.
 func (m *ExcludeTarget) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -146,7 +146,7 @@ func (m *ExcludeTarget) SetAdditionalData(value map[string]any)() {
 func (m *ExcludeTarget) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetId sets the id property value. The object identifier of an Azure Active Directory user or group.
+// SetId sets the id property value. The object identifier of a Microsoft Entra user or group.
 func (m *ExcludeTarget) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {

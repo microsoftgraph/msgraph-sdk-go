@@ -32,7 +32,7 @@ func (m *CrossCloudAzureActiveDirectoryTenant) GetCloudInstance()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The name of the Azure Active Directory tenant. Read only.
+// GetDisplayName gets the displayName property value. The name of the Microsoft Entra tenant. Read only.
 func (m *CrossCloudAzureActiveDirectoryTenant) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -78,7 +78,7 @@ func (m *CrossCloudAzureActiveDirectoryTenant) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetTenantId gets the tenantId property value. The ID of the Azure Active Directory tenant. Read only.
+// GetTenantId gets the tenantId property value. The ID of the Microsoft Entra tenant. Read only.
 func (m *CrossCloudAzureActiveDirectoryTenant) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -122,14 +122,14 @@ func (m *CrossCloudAzureActiveDirectoryTenant) SetCloudInstance(value *string)()
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The name of the Azure Active Directory tenant. Read only.
+// SetDisplayName sets the displayName property value. The name of the Microsoft Entra tenant. Read only.
 func (m *CrossCloudAzureActiveDirectoryTenant) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The ID of the Azure Active Directory tenant. Read only.
+// SetTenantId sets the tenantId property value. The ID of the Microsoft Entra tenant. Read only.
 func (m *CrossCloudAzureActiveDirectoryTenant) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

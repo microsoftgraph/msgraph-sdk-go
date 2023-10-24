@@ -21,7 +21,7 @@ func NewGroupMembers()(*GroupMembers) {
 func CreateGroupMembersFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupMembers(), nil
 }
-// GetDescription gets the description property value. The name of the group in Azure AD. Read only.
+// GetDescription gets the description property value. The name of the group in Microsoft Entra ID. Read only.
 func (m *GroupMembers) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -57,7 +57,7 @@ func (m *GroupMembers) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetGroupId gets the groupId property value. The ID of the group in Azure AD.
+// GetGroupId gets the groupId property value. The ID of the group in Microsoft Entra ID.
 func (m *GroupMembers) GetGroupId()(*string) {
     val, err := m.GetBackingStore().Get("groupId")
     if err != nil {
@@ -88,14 +88,14 @@ func (m *GroupMembers) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetDescription sets the description property value. The name of the group in Azure AD. Read only.
+// SetDescription sets the description property value. The name of the group in Microsoft Entra ID. Read only.
 func (m *GroupMembers) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetGroupId sets the groupId property value. The ID of the group in Azure AD.
+// SetGroupId sets the groupId property value. The ID of the group in Microsoft Entra ID.
 func (m *GroupMembers) SetGroupId(value *string)() {
     err := m.GetBackingStore().Set("groupId", value)
     if err != nil {

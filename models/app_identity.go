@@ -34,7 +34,7 @@ func (m *AppIdentity) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAppId gets the appId property value. Refers to the Unique GUID representing Application Id in the Azure Active Directory.
+// GetAppId gets the appId property value. Refers to the unique ID representing application in Microsoft Entra ID.
 func (m *AppIdentity) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -126,7 +126,7 @@ func (m *AppIdentity) GetOdataType()(*string) {
     }
     return nil
 }
-// GetServicePrincipalId gets the servicePrincipalId property value. Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
+// GetServicePrincipalId gets the servicePrincipalId property value. Refers to the unique ID for the service principal in Microsoft Entra ID.
 func (m *AppIdentity) GetServicePrincipalId()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalId")
     if err != nil {
@@ -195,7 +195,7 @@ func (m *AppIdentity) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAppId sets the appId property value. Refers to the Unique GUID representing Application Id in the Azure Active Directory.
+// SetAppId sets the appId property value. Refers to the unique ID representing application in Microsoft Entra ID.
 func (m *AppIdentity) SetAppId(value *string)() {
     err := m.GetBackingStore().Set("appId", value)
     if err != nil {
@@ -220,7 +220,7 @@ func (m *AppIdentity) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetServicePrincipalId sets the servicePrincipalId property value. Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
+// SetServicePrincipalId sets the servicePrincipalId property value. Refers to the unique ID for the service principal in Microsoft Entra ID.
 func (m *AppIdentity) SetServicePrincipalId(value *string)() {
     err := m.GetBackingStore().Set("servicePrincipalId", value)
     if err != nil {

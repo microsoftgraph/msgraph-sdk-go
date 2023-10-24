@@ -96,7 +96,7 @@ func (m *UnifiedRoleManagementPolicyAssignment) GetPolicyId()(*string) {
     }
     return nil
 }
-// GetRoleDefinitionId gets the roleDefinitionId property value. For Azure AD roles policy, it's the identifier of the role definition object where the policy applies. For PIM for groups membership and ownership, it's either member or owner. Supports $filter (eq).
+// GetRoleDefinitionId gets the roleDefinitionId property value. For Microsoft Entra roles policy, it's the identifier of the role definition object where the policy applies. For PIM for groups membership and ownership, it's either member or owner. Supports $filter (eq).
 func (m *UnifiedRoleManagementPolicyAssignment) GetRoleDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("roleDefinitionId")
     if err != nil {
@@ -181,7 +181,7 @@ func (m *UnifiedRoleManagementPolicyAssignment) SetPolicyId(value *string)() {
         panic(err)
     }
 }
-// SetRoleDefinitionId sets the roleDefinitionId property value. For Azure AD roles policy, it's the identifier of the role definition object where the policy applies. For PIM for groups membership and ownership, it's either member or owner. Supports $filter (eq).
+// SetRoleDefinitionId sets the roleDefinitionId property value. For Microsoft Entra roles policy, it's the identifier of the role definition object where the policy applies. For PIM for groups membership and ownership, it's either member or owner. Supports $filter (eq).
 func (m *UnifiedRoleManagementPolicyAssignment) SetRoleDefinitionId(value *string)() {
     err := m.GetBackingStore().Set("roleDefinitionId", value)
     if err != nil {

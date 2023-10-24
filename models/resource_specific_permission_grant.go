@@ -21,7 +21,7 @@ func NewResourceSpecificPermissionGrant()(*ResourceSpecificPermissionGrant) {
 func CreateResourceSpecificPermissionGrantFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewResourceSpecificPermissionGrant(), nil
 }
-// GetClientAppId gets the clientAppId property value. ID of the service principal of the Azure AD app that has been granted access. Read-only.
+// GetClientAppId gets the clientAppId property value. ID of the service principal of the Microsoft Entra app that has been granted access. Read-only.
 func (m *ResourceSpecificPermissionGrant) GetClientAppId()(*string) {
     val, err := m.GetBackingStore().Get("clientAppId")
     if err != nil {
@@ -32,7 +32,7 @@ func (m *ResourceSpecificPermissionGrant) GetClientAppId()(*string) {
     }
     return nil
 }
-// GetClientId gets the clientId property value. ID of the Azure AD app that has been granted access. Read-only.
+// GetClientId gets the clientId property value. ID of the Microsoft Entra app that has been granted access. Read-only.
 func (m *ResourceSpecificPermissionGrant) GetClientId()(*string) {
     val, err := m.GetBackingStore().Get("clientId")
     if err != nil {
@@ -120,7 +120,7 @@ func (m *ResourceSpecificPermissionGrant) GetPermissionType()(*string) {
     }
     return nil
 }
-// GetResourceAppId gets the resourceAppId property value. ID of the Azure AD app that is hosting the resource. Read-only.
+// GetResourceAppId gets the resourceAppId property value. ID of the Microsoft Entra app that is hosting the resource. Read-only.
 func (m *ResourceSpecificPermissionGrant) GetResourceAppId()(*string) {
     val, err := m.GetBackingStore().Get("resourceAppId")
     if err != nil {
@@ -169,14 +169,14 @@ func (m *ResourceSpecificPermissionGrant) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetClientAppId sets the clientAppId property value. ID of the service principal of the Azure AD app that has been granted access. Read-only.
+// SetClientAppId sets the clientAppId property value. ID of the service principal of the Microsoft Entra app that has been granted access. Read-only.
 func (m *ResourceSpecificPermissionGrant) SetClientAppId(value *string)() {
     err := m.GetBackingStore().Set("clientAppId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetClientId sets the clientId property value. ID of the Azure AD app that has been granted access. Read-only.
+// SetClientId sets the clientId property value. ID of the Microsoft Entra app that has been granted access. Read-only.
 func (m *ResourceSpecificPermissionGrant) SetClientId(value *string)() {
     err := m.GetBackingStore().Set("clientId", value)
     if err != nil {
@@ -197,7 +197,7 @@ func (m *ResourceSpecificPermissionGrant) SetPermissionType(value *string)() {
         panic(err)
     }
 }
-// SetResourceAppId sets the resourceAppId property value. ID of the Azure AD app that is hosting the resource. Read-only.
+// SetResourceAppId sets the resourceAppId property value. ID of the Microsoft Entra app that is hosting the resource. Read-only.
 func (m *ResourceSpecificPermissionGrant) SetResourceAppId(value *string)() {
     err := m.GetBackingStore().Set("resourceAppId", value)
     if err != nil {

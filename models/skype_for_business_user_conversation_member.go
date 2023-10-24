@@ -57,7 +57,7 @@ func (m *SkypeForBusinessUserConversationMember) GetTenantId()(*string) {
     }
     return nil
 }
-// GetUserId gets the userId property value. Azure Active Directory ID of the user.
+// GetUserId gets the userId property value. Microsoft Entra ID of the user.
 func (m *SkypeForBusinessUserConversationMember) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *SkypeForBusinessUserConversationMember) SetTenantId(value *string)() {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. Azure Active Directory ID of the user.
+// SetUserId sets the userId property value. Microsoft Entra ID of the user.
 func (m *SkypeForBusinessUserConversationMember) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {

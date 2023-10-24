@@ -300,7 +300,7 @@ func (m *Channel) GetTabs()([]TeamsTabable) {
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. The ID of the Azure Active Directory tenant.
+// GetTenantId gets the tenantId property value. The ID of the Microsoft Entra tenant.
 func (m *Channel) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -510,7 +510,7 @@ func (m *Channel) SetTabs(value []TeamsTabable)() {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The ID of the Azure Active Directory tenant.
+// SetTenantId sets the tenantId property value. The ID of the Microsoft Entra tenant.
 func (m *Channel) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

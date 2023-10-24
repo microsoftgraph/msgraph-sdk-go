@@ -95,7 +95,7 @@ func (m *ConditionalAccessFilter) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRule gets the rule property value. Rule syntax is similar to that used for membership rules for groups in Azure Active Directory (Azure AD). For details, see rules with multiple expressions
+// GetRule gets the rule property value. Rule syntax is similar to that used for membership rules for groups in Microsoft Entra ID. For details, see rules with multiple expressions
 func (m *ConditionalAccessFilter) GetRule()(*string) {
     val, err := m.GetBackingStore().Get("rule")
     if err != nil {
@@ -160,7 +160,7 @@ func (m *ConditionalAccessFilter) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRule sets the rule property value. Rule syntax is similar to that used for membership rules for groups in Azure Active Directory (Azure AD). For details, see rules with multiple expressions
+// SetRule sets the rule property value. Rule syntax is similar to that used for membership rules for groups in Microsoft Entra ID. For details, see rules with multiple expressions
 func (m *ConditionalAccessFilter) SetRule(value *string)() {
     err := m.GetBackingStore().Set("rule", value)
     if err != nil {

@@ -71,6 +71,17 @@ func (m *DelegatedAdminRelationship) GetActivatedDateTime()(*i336074805fc853987a
     }
     return nil
 }
+// GetAutoExtendDuration gets the autoExtendDuration property value. The autoExtendDuration property
+func (m *DelegatedAdminRelationship) GetAutoExtendDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
+    val, err := m.GetBackingStore().Get("autoExtendDuration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    }
+    return nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. The date and time in ISO 8601 format and in UTC time when the relationship was created. Read-only.
 func (m *DelegatedAdminRelationship) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -162,6 +173,16 @@ func (m *DelegatedAdminRelationship) GetFieldDeserializers()(map[string]func(i87
         }
         if val != nil {
             m.SetActivatedDateTime(val)
+        }
+        return nil
+    }
+    res["autoExtendDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetISODurationValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAutoExtendDuration(val)
         }
         return nil
     }
@@ -344,6 +365,12 @@ func (m *DelegatedAdminRelationship) Serialize(writer i878a80d2330e89d26896388a3
         }
     }
     {
+        err = writer.WriteISODurationValue("autoExtendDuration", m.GetAutoExtendDuration())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
         if err != nil {
             return err
@@ -433,6 +460,13 @@ func (m *DelegatedAdminRelationship) SetActivatedDateTime(value *i336074805fc853
         panic(err)
     }
 }
+// SetAutoExtendDuration sets the autoExtendDuration property value. The autoExtendDuration property
+func (m *DelegatedAdminRelationship) SetAutoExtendDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
+    err := m.GetBackingStore().Set("autoExtendDuration", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCreatedDateTime sets the createdDateTime property value. The date and time in ISO 8601 format and in UTC time when the relationship was created. Read-only.
 func (m *DelegatedAdminRelationship) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
@@ -503,6 +537,7 @@ type DelegatedAdminRelationshipable interface {
     GetAccessAssignments()([]DelegatedAdminAccessAssignmentable)
     GetAccessDetails()(DelegatedAdminAccessDetailsable)
     GetActivatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetAutoExtendDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCustomer()(DelegatedAdminRelationshipCustomerParticipantable)
     GetDisplayName()(*string)
@@ -515,6 +550,7 @@ type DelegatedAdminRelationshipable interface {
     SetAccessAssignments(value []DelegatedAdminAccessAssignmentable)()
     SetAccessDetails(value DelegatedAdminAccessDetailsable)()
     SetActivatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetAutoExtendDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCustomer(value DelegatedAdminRelationshipCustomerParticipantable)()
     SetDisplayName(value *string)()

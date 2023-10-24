@@ -60,7 +60,7 @@ func (m *ConditionalAccessSessionControls) GetCloudAppSecurity()(CloudAppSecurit
     }
     return nil
 }
-// GetDisableResilienceDefaults gets the disableResilienceDefaults property value. Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
+// GetDisableResilienceDefaults gets the disableResilienceDefaults property value. Session control that determines whether it is acceptable for Microsoft Entra ID to extend existing sessions based on information collected prior to an outage or not.
 func (m *ConditionalAccessSessionControls) GetDisableResilienceDefaults()(*bool) {
     val, err := m.GetBackingStore().Get("disableResilienceDefaults")
     if err != nil {
@@ -240,7 +240,7 @@ func (m *ConditionalAccessSessionControls) SetCloudAppSecurity(value CloudAppSec
         panic(err)
     }
 }
-// SetDisableResilienceDefaults sets the disableResilienceDefaults property value. Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
+// SetDisableResilienceDefaults sets the disableResilienceDefaults property value. Session control that determines whether it is acceptable for Microsoft Entra ID to extend existing sessions based on information collected prior to an outage or not.
 func (m *ConditionalAccessSessionControls) SetDisableResilienceDefaults(value *bool)() {
     err := m.GetBackingStore().Set("disableResilienceDefaults", value)
     if err != nil {

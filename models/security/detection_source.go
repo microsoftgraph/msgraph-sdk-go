@@ -25,10 +25,15 @@ const (
     APPGOVERNANCEDETECTION_DETECTIONSOURCE
     UNKNOWNFUTUREVALUE_DETECTIONSOURCE
     MICROSOFTDEFENDERFORCLOUD_DETECTIONSOURCE
+    NRTALERTS_DETECTIONSOURCE
+    SCHEDULEDALERTS_DETECTIONSOURCE
+    MICROSOFTDEFENDERTHREATINTELLIGENCEANALYTICS_DETECTIONSOURCE
+    BUILTINML_DETECTIONSOURCE
+    MICROSOFTSENTINEL_DETECTIONSOURCE
 )
 
 func (i DetectionSource) String() string {
-    return []string{"unknown", "microsoftDefenderForEndpoint", "antivirus", "smartScreen", "customTi", "microsoftDefenderForOffice365", "automatedInvestigation", "microsoftThreatExperts", "customDetection", "microsoftDefenderForIdentity", "cloudAppSecurity", "microsoft365Defender", "azureAdIdentityProtection", "manual", "microsoftDataLossPrevention", "appGovernancePolicy", "appGovernanceDetection", "unknownFutureValue", "microsoftDefenderForCloud"}[i]
+    return []string{"unknown", "microsoftDefenderForEndpoint", "antivirus", "smartScreen", "customTi", "microsoftDefenderForOffice365", "automatedInvestigation", "microsoftThreatExperts", "customDetection", "microsoftDefenderForIdentity", "cloudAppSecurity", "microsoft365Defender", "azureAdIdentityProtection", "manual", "microsoftDataLossPrevention", "appGovernancePolicy", "appGovernanceDetection", "unknownFutureValue", "microsoftDefenderForCloud", "nrtAlerts", "scheduledAlerts", "microsoftDefenderThreatIntelligenceAnalytics", "builtInMl", "microsoftSentinel"}[i]
 }
 func ParseDetectionSource(v string) (any, error) {
     result := UNKNOWN_DETECTIONSOURCE
@@ -71,6 +76,16 @@ func ParseDetectionSource(v string) (any, error) {
             result = UNKNOWNFUTUREVALUE_DETECTIONSOURCE
         case "microsoftDefenderForCloud":
             result = MICROSOFTDEFENDERFORCLOUD_DETECTIONSOURCE
+        case "nrtAlerts":
+            result = NRTALERTS_DETECTIONSOURCE
+        case "scheduledAlerts":
+            result = SCHEDULEDALERTS_DETECTIONSOURCE
+        case "microsoftDefenderThreatIntelligenceAnalytics":
+            result = MICROSOFTDEFENDERTHREATINTELLIGENCEANALYTICS_DETECTIONSOURCE
+        case "builtInMl":
+            result = BUILTINML_DETECTIONSOURCE
+        case "microsoftSentinel":
+            result = MICROSOFTSENTINEL_DETECTIONSOURCE
         default:
             return 0, errors.New("Unknown DetectionSource value: " + v)
     }

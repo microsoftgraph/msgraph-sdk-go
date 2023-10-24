@@ -83,7 +83,7 @@ func (m *CrossTenantAccessPolicyInboundTrust) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetIsCompliantDeviceAccepted gets the isCompliantDeviceAccepted property value. Specifies whether compliant devices from external Azure AD organizations are trusted.
+// GetIsCompliantDeviceAccepted gets the isCompliantDeviceAccepted property value. Specifies whether compliant devices from external Microsoft Entra organizations are trusted.
 func (m *CrossTenantAccessPolicyInboundTrust) GetIsCompliantDeviceAccepted()(*bool) {
     val, err := m.GetBackingStore().Get("isCompliantDeviceAccepted")
     if err != nil {
@@ -94,7 +94,7 @@ func (m *CrossTenantAccessPolicyInboundTrust) GetIsCompliantDeviceAccepted()(*bo
     }
     return nil
 }
-// GetIsHybridAzureADJoinedDeviceAccepted gets the isHybridAzureADJoinedDeviceAccepted property value. Specifies whether hybrid Azure AD joined devices from external Azure AD organizations are trusted.
+// GetIsHybridAzureADJoinedDeviceAccepted gets the isHybridAzureADJoinedDeviceAccepted property value. Specifies whether Microsoft Entra hybrid joined devices from external Microsoft Entra organizations are trusted.
 func (m *CrossTenantAccessPolicyInboundTrust) GetIsHybridAzureADJoinedDeviceAccepted()(*bool) {
     val, err := m.GetBackingStore().Get("isHybridAzureADJoinedDeviceAccepted")
     if err != nil {
@@ -105,7 +105,7 @@ func (m *CrossTenantAccessPolicyInboundTrust) GetIsHybridAzureADJoinedDeviceAcce
     }
     return nil
 }
-// GetIsMfaAccepted gets the isMfaAccepted property value. Specifies whether MFA from external Azure AD organizations is trusted.
+// GetIsMfaAccepted gets the isMfaAccepted property value. Specifies whether MFA from external Microsoft Entra organizations is trusted.
 func (m *CrossTenantAccessPolicyInboundTrust) GetIsMfaAccepted()(*bool) {
     val, err := m.GetBackingStore().Get("isMfaAccepted")
     if err != nil {
@@ -172,21 +172,21 @@ func (m *CrossTenantAccessPolicyInboundTrust) SetAdditionalData(value map[string
 func (m *CrossTenantAccessPolicyInboundTrust) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsCompliantDeviceAccepted sets the isCompliantDeviceAccepted property value. Specifies whether compliant devices from external Azure AD organizations are trusted.
+// SetIsCompliantDeviceAccepted sets the isCompliantDeviceAccepted property value. Specifies whether compliant devices from external Microsoft Entra organizations are trusted.
 func (m *CrossTenantAccessPolicyInboundTrust) SetIsCompliantDeviceAccepted(value *bool)() {
     err := m.GetBackingStore().Set("isCompliantDeviceAccepted", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsHybridAzureADJoinedDeviceAccepted sets the isHybridAzureADJoinedDeviceAccepted property value. Specifies whether hybrid Azure AD joined devices from external Azure AD organizations are trusted.
+// SetIsHybridAzureADJoinedDeviceAccepted sets the isHybridAzureADJoinedDeviceAccepted property value. Specifies whether Microsoft Entra hybrid joined devices from external Microsoft Entra organizations are trusted.
 func (m *CrossTenantAccessPolicyInboundTrust) SetIsHybridAzureADJoinedDeviceAccepted(value *bool)() {
     err := m.GetBackingStore().Set("isHybridAzureADJoinedDeviceAccepted", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsMfaAccepted sets the isMfaAccepted property value. Specifies whether MFA from external Azure AD organizations is trusted.
+// SetIsMfaAccepted sets the isMfaAccepted property value. Specifies whether MFA from external Microsoft Entra organizations is trusted.
 func (m *CrossTenantAccessPolicyInboundTrust) SetIsMfaAccepted(value *bool)() {
     err := m.GetBackingStore().Set("isMfaAccepted", value)
     if err != nil {

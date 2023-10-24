@@ -279,7 +279,7 @@ func (m *WorkflowBase) GetIsSchedulingEnabled()(*bool) {
     }
     return nil
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The unique identifier of the Azure Active Directory identity that last modified the workflow.
+// GetLastModifiedBy gets the lastModifiedBy property value. The unique identifier of the Microsoft Entra identity that last modified the workflow.
 func (m *WorkflowBase) GetLastModifiedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -479,7 +479,7 @@ func (m *WorkflowBase) SetIsSchedulingEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The unique identifier of the Azure Active Directory identity that last modified the workflow.
+// SetLastModifiedBy sets the lastModifiedBy property value. The unique identifier of the Microsoft Entra identity that last modified the workflow.
 func (m *WorkflowBase) SetLastModifiedBy(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {
