@@ -628,7 +628,7 @@ func (m *Team) GetTemplate()(TeamsTemplateable) {
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. The ID of the Azure Active Directory tenant.
+// GetTenantId gets the tenantId property value. The ID of the Microsoft Entra tenant.
 func (m *Team) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -1062,7 +1062,7 @@ func (m *Team) SetTemplate(value TeamsTemplateable)() {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The ID of the Azure Active Directory tenant.
+// SetTenantId sets the tenantId property value. The ID of the Microsoft Entra tenant.
 func (m *Team) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

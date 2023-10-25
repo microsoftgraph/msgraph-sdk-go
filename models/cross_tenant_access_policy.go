@@ -32,7 +32,7 @@ func (m *CrossTenantAccessPolicy) GetAllowedCloudEndpoints()([]string) {
     }
     return nil
 }
-// GetDefaultEscaped gets the default property value. Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
+// GetDefaultEscaped gets the default property value. Defines the default configuration for how your organization interacts with external Microsoft Entra organizations.
 func (m *CrossTenantAccessPolicy) GetDefaultEscaped()(CrossTenantAccessPolicyConfigurationDefaultable) {
     val, err := m.GetBackingStore().Get("defaultEscaped")
     if err != nil {
@@ -90,7 +90,7 @@ func (m *CrossTenantAccessPolicy) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetPartners gets the partners property value. Defines partner-specific configurations for external Azure Active Directory organizations.
+// GetPartners gets the partners property value. Defines partner-specific configurations for external Microsoft Entra organizations.
 func (m *CrossTenantAccessPolicy) GetPartners()([]CrossTenantAccessPolicyConfigurationPartnerable) {
     val, err := m.GetBackingStore().Get("partners")
     if err != nil {
@@ -140,14 +140,14 @@ func (m *CrossTenantAccessPolicy) SetAllowedCloudEndpoints(value []string)() {
         panic(err)
     }
 }
-// SetDefaultEscaped sets the default property value. Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
+// SetDefaultEscaped sets the default property value. Defines the default configuration for how your organization interacts with external Microsoft Entra organizations.
 func (m *CrossTenantAccessPolicy) SetDefaultEscaped(value CrossTenantAccessPolicyConfigurationDefaultable)() {
     err := m.GetBackingStore().Set("defaultEscaped", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPartners sets the partners property value. Defines partner-specific configurations for external Azure Active Directory organizations.
+// SetPartners sets the partners property value. Defines partner-specific configurations for external Microsoft Entra organizations.
 func (m *CrossTenantAccessPolicy) SetPartners(value []CrossTenantAccessPolicyConfigurationPartnerable)() {
     err := m.GetBackingStore().Set("partners", value)
     if err != nil {

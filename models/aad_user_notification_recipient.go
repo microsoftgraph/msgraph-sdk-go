@@ -36,7 +36,7 @@ func (m *AadUserNotificationRecipient) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetUserId gets the userId property value. Azure AD user identifier. Use the List users method to get this ID.
+// GetUserId gets the userId property value. Microsoft Entra user identifier. Use the List users method to get this ID.
 func (m *AadUserNotificationRecipient) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *AadUserNotificationRecipient) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetUserId sets the userId property value. Azure AD user identifier. Use the List users method to get this ID.
+// SetUserId sets the userId property value. Microsoft Entra user identifier. Use the List users method to get this ID.
 func (m *AadUserNotificationRecipient) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {

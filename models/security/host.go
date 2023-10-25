@@ -42,7 +42,7 @@ func CreateHostFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
     }
     return NewHost(), nil
 }
-// GetChildHostPairs gets the childHostPairs property value. The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
+// GetChildHostPairs gets the childHostPairs property value. The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
 func (m *Host) GetChildHostPairs()([]HostPairable) {
     val, err := m.GetBackingStore().Get("childHostPairs")
     if err != nil {
@@ -553,7 +553,7 @@ func (m *Host) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     return nil
 }
-// SetChildHostPairs sets the childHostPairs property value. The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
+// SetChildHostPairs sets the childHostPairs property value. The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
 func (m *Host) SetChildHostPairs(value []HostPairable)() {
     err := m.GetBackingStore().Set("childHostPairs", value)
     if err != nil {

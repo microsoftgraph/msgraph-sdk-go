@@ -63,7 +63,7 @@ func (m *PasswordResetResponse) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetNewPassword gets the newPassword property value. The Azure AD-generated password.
+// GetNewPassword gets the newPassword property value. The Microsoft Entra ID-generated password.
 func (m *PasswordResetResponse) GetNewPassword()(*string) {
     val, err := m.GetBackingStore().Get("newPassword")
     if err != nil {
@@ -118,7 +118,7 @@ func (m *PasswordResetResponse) SetAdditionalData(value map[string]any)() {
 func (m *PasswordResetResponse) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetNewPassword sets the newPassword property value. The Azure AD-generated password.
+// SetNewPassword sets the newPassword property value. The Microsoft Entra ID-generated password.
 func (m *PasswordResetResponse) SetNewPassword(value *string)() {
     err := m.GetBackingStore().Set("newPassword", value)
     if err != nil {

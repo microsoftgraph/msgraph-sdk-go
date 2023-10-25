@@ -77,7 +77,7 @@ func (m *AadUserConversationMember) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetTenantId gets the tenantId property value. TenantId which the Azure AD user belongs to.
+// GetTenantId gets the tenantId property value. TenantId which the Microsoft Entra user belongs to.
 func (m *AadUserConversationMember) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -149,7 +149,7 @@ func (m *AadUserConversationMember) SetEmail(value *string)() {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. TenantId which the Azure AD user belongs to.
+// SetTenantId sets the tenantId property value. TenantId which the Microsoft Entra user belongs to.
 func (m *AadUserConversationMember) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

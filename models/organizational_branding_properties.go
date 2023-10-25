@@ -226,7 +226,7 @@ func (m *OrganizationalBrandingProperties) GetCustomTermsOfUseUrl()(*string) {
     }
     return nil
 }
-// GetFavicon gets the favicon property value. A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+// GetFavicon gets the favicon property value. A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
 func (m *OrganizationalBrandingProperties) GetFavicon()([]byte) {
     val, err := m.GetBackingStore().Get("favicon")
     if err != nil {
@@ -987,7 +987,7 @@ func (m *OrganizationalBrandingProperties) SetCustomTermsOfUseUrl(value *string)
         panic(err)
     }
 }
-// SetFavicon sets the favicon property value. A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+// SetFavicon sets the favicon property value. A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
 func (m *OrganizationalBrandingProperties) SetFavicon(value []byte)() {
     err := m.GetBackingStore().Set("favicon", value)
     if err != nil {

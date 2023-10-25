@@ -40,7 +40,7 @@ func (m *AgreementFileLocalization) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetVersions gets the versions property value. Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
+// GetVersions gets the versions property value. Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
 func (m *AgreementFileLocalization) GetVersions()([]AgreementFileVersionable) {
     val, err := m.GetBackingStore().Get("versions")
     if err != nil {
@@ -71,7 +71,7 @@ func (m *AgreementFileLocalization) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetVersions sets the versions property value. Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
+// SetVersions sets the versions property value. Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
 func (m *AgreementFileLocalization) SetVersions(value []AgreementFileVersionable)() {
     err := m.GetBackingStore().Set("versions", value)
     if err != nil {

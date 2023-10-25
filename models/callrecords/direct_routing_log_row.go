@@ -39,7 +39,7 @@ func (m *DirectRoutingLogRow) GetAdditionalData()(map[string]any) {
 func (m *DirectRoutingLogRow) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCalleeNumber gets the calleeNumber property value. Number of the user or bot who received the call. E.164 format, but may include other data.
+// GetCalleeNumber gets the calleeNumber property value. Number of the user or bot who received the call. E.164 format, but might include other data.
 func (m *DirectRoutingLogRow) GetCalleeNumber()(*string) {
     val, err := m.GetBackingStore().Get("calleeNumber")
     if err != nil {
@@ -50,7 +50,7 @@ func (m *DirectRoutingLogRow) GetCalleeNumber()(*string) {
     }
     return nil
 }
-// GetCallEndSubReason gets the callEndSubReason property value. In addition to the SIP codes, Microsoft has own subcodes that indicate the specific issue.
+// GetCallEndSubReason gets the callEndSubReason property value. In addition to the SIP codes, Microsoft has subcodes that indicate the specific issue.
 func (m *DirectRoutingLogRow) GetCallEndSubReason()(*int32) {
     val, err := m.GetBackingStore().Get("callEndSubReason")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *DirectRoutingLogRow) GetCallEndSubReason()(*int32) {
     }
     return nil
 }
-// GetCallerNumber gets the callerNumber property value. Number of the user or bot who made the call. E.164 format, but may include other data.
+// GetCallerNumber gets the callerNumber property value. Number of the user or bot who made the call. E.164 format, but might include other data.
 func (m *DirectRoutingLogRow) GetCallerNumber()(*string) {
     val, err := m.GetBackingStore().Get("callerNumber")
     if err != nil {
@@ -352,7 +352,7 @@ func (m *DirectRoutingLogRow) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetFinalSipCode gets the finalSipCode property value. The code with which the call ended, see RFC 3261.
+// GetFinalSipCode gets the finalSipCode property value. The code with which the call ended. For more information, see RFC 3261.
 func (m *DirectRoutingLogRow) GetFinalSipCode()(*int32) {
     val, err := m.GetBackingStore().Get("finalSipCode")
     if err != nil {
@@ -396,7 +396,7 @@ func (m *DirectRoutingLogRow) GetInviteDateTime()(*i336074805fc853987abe6f7fe3ad
     }
     return nil
 }
-// GetMediaBypassEnabled gets the mediaBypassEnabled property value. Indicates if the trunk was enabled for media bypass or not.
+// GetMediaBypassEnabled gets the mediaBypassEnabled property value. Indicates whether the trunk was enabled for media bypass.
 func (m *DirectRoutingLogRow) GetMediaBypassEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("mediaBypassEnabled")
     if err != nil {
@@ -407,7 +407,7 @@ func (m *DirectRoutingLogRow) GetMediaBypassEnabled()(*bool) {
     }
     return nil
 }
-// GetMediaPathLocation gets the mediaPathLocation property value. The datacenter used for media path in nonbypass call.
+// GetMediaPathLocation gets the mediaPathLocation property value. The datacenter used for media path in a nonbypass call.
 func (m *DirectRoutingLogRow) GetMediaPathLocation()(*string) {
     val, err := m.GetBackingStore().Get("mediaPathLocation")
     if err != nil {
@@ -440,7 +440,7 @@ func (m *DirectRoutingLogRow) GetSignalingLocation()(*string) {
     }
     return nil
 }
-// GetStartDateTime gets the startDateTime property value. Call start time.For failed and unanswered calls, this can be equal to invite or failure time.
+// GetStartDateTime gets the startDateTime property value. Call start time.For failed and unanswered calls, this can be equal to the invite or failure time.
 func (m *DirectRoutingLogRow) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -484,7 +484,7 @@ func (m *DirectRoutingLogRow) GetUserDisplayName()(*string) {
     }
     return nil
 }
-// GetUserId gets the userId property value. Calling user's ID in Graph. This and other user info will be null/empty for bot call types. GUID.
+// GetUserId gets the userId property value. Calling user's ID in Microsoft Graph. This and other user information is null/empty for bot call types. GUID.
 func (m *DirectRoutingLogRow) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -495,7 +495,7 @@ func (m *DirectRoutingLogRow) GetUserId()(*string) {
     }
     return nil
 }
-// GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName (sign-in name) in Azure Active Directory. This is usually the same as user's SIP Address, and can be same as user's e-mail address.
+// GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP Address, and can be the same as the user's email address.
 func (m *DirectRoutingLogRow) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -659,21 +659,21 @@ func (m *DirectRoutingLogRow) SetAdditionalData(value map[string]any)() {
 func (m *DirectRoutingLogRow) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCalleeNumber sets the calleeNumber property value. Number of the user or bot who received the call. E.164 format, but may include other data.
+// SetCalleeNumber sets the calleeNumber property value. Number of the user or bot who received the call. E.164 format, but might include other data.
 func (m *DirectRoutingLogRow) SetCalleeNumber(value *string)() {
     err := m.GetBackingStore().Set("calleeNumber", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCallEndSubReason sets the callEndSubReason property value. In addition to the SIP codes, Microsoft has own subcodes that indicate the specific issue.
+// SetCallEndSubReason sets the callEndSubReason property value. In addition to the SIP codes, Microsoft has subcodes that indicate the specific issue.
 func (m *DirectRoutingLogRow) SetCallEndSubReason(value *int32)() {
     err := m.GetBackingStore().Set("callEndSubReason", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCallerNumber sets the callerNumber property value. Number of the user or bot who made the call. E.164 format, but may include other data.
+// SetCallerNumber sets the callerNumber property value. Number of the user or bot who made the call. E.164 format, but might include other data.
 func (m *DirectRoutingLogRow) SetCallerNumber(value *string)() {
     err := m.GetBackingStore().Set("callerNumber", value)
     if err != nil {
@@ -715,7 +715,7 @@ func (m *DirectRoutingLogRow) SetFailureDateTime(value *i336074805fc853987abe6f7
         panic(err)
     }
 }
-// SetFinalSipCode sets the finalSipCode property value. The code with which the call ended, see RFC 3261.
+// SetFinalSipCode sets the finalSipCode property value. The code with which the call ended. For more information, see RFC 3261.
 func (m *DirectRoutingLogRow) SetFinalSipCode(value *int32)() {
     err := m.GetBackingStore().Set("finalSipCode", value)
     if err != nil {
@@ -743,14 +743,14 @@ func (m *DirectRoutingLogRow) SetInviteDateTime(value *i336074805fc853987abe6f7f
         panic(err)
     }
 }
-// SetMediaBypassEnabled sets the mediaBypassEnabled property value. Indicates if the trunk was enabled for media bypass or not.
+// SetMediaBypassEnabled sets the mediaBypassEnabled property value. Indicates whether the trunk was enabled for media bypass.
 func (m *DirectRoutingLogRow) SetMediaBypassEnabled(value *bool)() {
     err := m.GetBackingStore().Set("mediaBypassEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMediaPathLocation sets the mediaPathLocation property value. The datacenter used for media path in nonbypass call.
+// SetMediaPathLocation sets the mediaPathLocation property value. The datacenter used for media path in a nonbypass call.
 func (m *DirectRoutingLogRow) SetMediaPathLocation(value *string)() {
     err := m.GetBackingStore().Set("mediaPathLocation", value)
     if err != nil {
@@ -771,7 +771,7 @@ func (m *DirectRoutingLogRow) SetSignalingLocation(value *string)() {
         panic(err)
     }
 }
-// SetStartDateTime sets the startDateTime property value. Call start time.For failed and unanswered calls, this can be equal to invite or failure time.
+// SetStartDateTime sets the startDateTime property value. Call start time.For failed and unanswered calls, this can be equal to the invite or failure time.
 func (m *DirectRoutingLogRow) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startDateTime", value)
     if err != nil {
@@ -799,14 +799,14 @@ func (m *DirectRoutingLogRow) SetUserDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. Calling user's ID in Graph. This and other user info will be null/empty for bot call types. GUID.
+// SetUserId sets the userId property value. Calling user's ID in Microsoft Graph. This and other user information is null/empty for bot call types. GUID.
 func (m *DirectRoutingLogRow) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. UserPrincipalName (sign-in name) in Azure Active Directory. This is usually the same as user's SIP Address, and can be same as user's e-mail address.
+// SetUserPrincipalName sets the userPrincipalName property value. UserPrincipalName (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP Address, and can be the same as the user's email address.
 func (m *DirectRoutingLogRow) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
     if err != nil {

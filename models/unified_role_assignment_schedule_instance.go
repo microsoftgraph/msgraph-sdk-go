@@ -139,7 +139,7 @@ func (m *UnifiedRoleAssignmentScheduleInstance) GetMemberType()(*string) {
     }
     return nil
 }
-// GetRoleAssignmentOriginId gets the roleAssignmentOriginId property value. The identifier of the role assignment in Azure AD. Supports $filter (eq, ne).
+// GetRoleAssignmentOriginId gets the roleAssignmentOriginId property value. The identifier of the role assignment in Microsoft Entra. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentScheduleInstance) GetRoleAssignmentOriginId()(*string) {
     val, err := m.GetBackingStore().Get("roleAssignmentOriginId")
     if err != nil {
@@ -250,7 +250,7 @@ func (m *UnifiedRoleAssignmentScheduleInstance) SetMemberType(value *string)() {
         panic(err)
     }
 }
-// SetRoleAssignmentOriginId sets the roleAssignmentOriginId property value. The identifier of the role assignment in Azure AD. Supports $filter (eq, ne).
+// SetRoleAssignmentOriginId sets the roleAssignmentOriginId property value. The identifier of the role assignment in Microsoft Entra. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentScheduleInstance) SetRoleAssignmentOriginId(value *string)() {
     err := m.GetBackingStore().Set("roleAssignmentOriginId", value)
     if err != nil {

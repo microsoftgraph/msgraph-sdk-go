@@ -980,6 +980,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewReferenceAttachment(), nil
                     case "#microsoft.graph.remoteAssistancePartner":
                         return NewRemoteAssistancePartner(), nil
+                    case "#microsoft.graph.remoteDesktopSecurityConfiguration":
+                        return NewRemoteDesktopSecurityConfiguration(), nil
                     case "#microsoft.graph.request":
                         return NewRequest(), nil
                     case "#microsoft.graph.resellerDelegatedAdminRelationship":
@@ -1120,6 +1122,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSynchronizationSchema(), nil
                     case "#microsoft.graph.synchronizationTemplate":
                         return NewSynchronizationTemplate(), nil
+                    case "#microsoft.graph.targetDeviceGroup":
+                        return NewTargetDeviceGroup(), nil
                     case "#microsoft.graph.targetedManagedAppConfiguration":
                         return NewTargetedManagedAppConfiguration(), nil
                     case "#microsoft.graph.targetedManagedAppPolicyAssignment":

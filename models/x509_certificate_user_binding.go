@@ -94,7 +94,7 @@ func (m *X509CertificateUserBinding) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPriority gets the priority property value. The priority of the binding. Azure AD uses the binding with the highest priority. This value must be a non-negative integer and unique in the collection of objects in the certificateUserBindings property of an x509CertificateAuthenticationMethodConfiguration object. Required
+// GetPriority gets the priority property value. The priority of the binding. Microsoft Entra ID uses the binding with the highest priority. This value must be a non-negative integer and unique in the collection of objects in the certificateUserBindings property of an x509CertificateAuthenticationMethodConfiguration object. Required
 func (m *X509CertificateUserBinding) GetPriority()(*int32) {
     val, err := m.GetBackingStore().Get("priority")
     if err != nil {
@@ -105,7 +105,7 @@ func (m *X509CertificateUserBinding) GetPriority()(*int32) {
     }
     return nil
 }
-// GetUserProperty gets the userProperty property value. Defines the Azure AD user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, certificateUserIds. Required.
+// GetUserProperty gets the userProperty property value. Defines the Microsoft Entra user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, certificateUserIds. Required.
 func (m *X509CertificateUserBinding) GetUserProperty()(*string) {
     val, err := m.GetBackingStore().Get("userProperty")
     if err != nil {
@@ -179,14 +179,14 @@ func (m *X509CertificateUserBinding) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPriority sets the priority property value. The priority of the binding. Azure AD uses the binding with the highest priority. This value must be a non-negative integer and unique in the collection of objects in the certificateUserBindings property of an x509CertificateAuthenticationMethodConfiguration object. Required
+// SetPriority sets the priority property value. The priority of the binding. Microsoft Entra ID uses the binding with the highest priority. This value must be a non-negative integer and unique in the collection of objects in the certificateUserBindings property of an x509CertificateAuthenticationMethodConfiguration object. Required
 func (m *X509CertificateUserBinding) SetPriority(value *int32)() {
     err := m.GetBackingStore().Set("priority", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserProperty sets the userProperty property value. Defines the Azure AD user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, certificateUserIds. Required.
+// SetUserProperty sets the userProperty property value. Defines the Microsoft Entra user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, certificateUserIds. Required.
 func (m *X509CertificateUserBinding) SetUserProperty(value *string)() {
     err := m.GetBackingStore().Set("userProperty", value)
     if err != nil {

@@ -77,7 +77,7 @@ func (m *AuthorizationPolicy) GetAllowUserConsentForRiskyApps()(*bool) {
     }
     return nil
 }
-// GetBlockMsolPowerShell gets the blockMsolPowerShell property value. To disable the use of MSOL PowerShell, set this property to true. This also disables user-based access to the legacy service endpoint used by MSOL PowerShell. This doesn't affect Azure Active Directory Connect or Microsoft Graph.
+// GetBlockMsolPowerShell gets the blockMsolPowerShell property value. To disable the use of MSOL PowerShell, set this property to true. This also disables user-based access to the legacy service endpoint used by MSOL PowerShell. This doesn't affect Microsoft Entra Connect or Microsoft Graph.
 func (m *AuthorizationPolicy) GetBlockMsolPowerShell()(*bool) {
     val, err := m.GetBackingStore().Get("blockMsolPowerShell")
     if err != nil {
@@ -287,7 +287,7 @@ func (m *AuthorizationPolicy) SetAllowUserConsentForRiskyApps(value *bool)() {
         panic(err)
     }
 }
-// SetBlockMsolPowerShell sets the blockMsolPowerShell property value. To disable the use of MSOL PowerShell, set this property to true. This also disables user-based access to the legacy service endpoint used by MSOL PowerShell. This doesn't affect Azure Active Directory Connect or Microsoft Graph.
+// SetBlockMsolPowerShell sets the blockMsolPowerShell property value. To disable the use of MSOL PowerShell, set this property to true. This also disables user-based access to the legacy service endpoint used by MSOL PowerShell. This doesn't affect Microsoft Entra Connect or Microsoft Graph.
 func (m *AuthorizationPolicy) SetBlockMsolPowerShell(value *bool)() {
     err := m.GetBackingStore().Set("blockMsolPowerShell", value)
     if err != nil {
