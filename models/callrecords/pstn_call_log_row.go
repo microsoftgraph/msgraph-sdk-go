@@ -39,7 +39,7 @@ func (m *PstnCallLogRow) GetAdditionalData()(map[string]any) {
 func (m *PstnCallLogRow) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCallDurationSource gets the callDurationSource property value. The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
+// GetCallDurationSource gets the callDurationSource property value. The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator can provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
 func (m *PstnCallLogRow) GetCallDurationSource()(*PstnCallDurationSource) {
     val, err := m.GetBackingStore().Get("callDurationSource")
     if err != nil {
@@ -83,7 +83,7 @@ func (m *PstnCallLogRow) GetCallId()(*string) {
     }
     return nil
 }
-// GetCallType gets the callType property value. Whether the call was a PSTN outbound or inbound call and the type of call such as a call placed by a user or an audio conference.
+// GetCallType gets the callType property value. Indicates whether the call was a PSTN outbound or inbound call and the type of call, such as a call placed by a user or an audio conference.
 func (m *PstnCallLogRow) GetCallType()(*string) {
     val, err := m.GetBackingStore().Get("callType")
     if err != nil {
@@ -138,7 +138,7 @@ func (m *PstnCallLogRow) GetCurrency()(*string) {
     }
     return nil
 }
-// GetDestinationContext gets the destinationContext property value. Whether the call was domestic (within a country or region) or international (outside a country or region) based on the user's location.
+// GetDestinationContext gets the destinationContext property value. Whether the call was domestic (within a country or region) or international (outside a country or region), based on the user's location.
 func (m *PstnCallLogRow) GetDestinationContext()(*string) {
     val, err := m.GetBackingStore().Get("destinationContext")
     if err != nil {
@@ -471,7 +471,7 @@ func (m *PstnCallLogRow) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOperator gets the operator property value. The telecommunications operator which provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
+// GetOperator gets the operator property value. The telecommunications operator which provided PSTN services for this call. This might be Microsoft, or it might be a third-party operator via the Operator Connect Program.
 func (m *PstnCallLogRow) GetOperator()(*string) {
     val, err := m.GetBackingStore().Get("operator")
     if err != nil {
@@ -526,7 +526,7 @@ func (m *PstnCallLogRow) GetUserDisplayName()(*string) {
     }
     return nil
 }
-// GetUserId gets the userId property value. Calling user's ID in Graph. GUID. This and other user info will be null/empty for bot call types (ucapin, ucapout).
+// GetUserId gets the userId property value. Calling user's ID in Microsoft Graph. GUID. This and other user info will be null/empty for bot call types (ucapin, ucapout).
 func (m *PstnCallLogRow) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -537,7 +537,7 @@ func (m *PstnCallLogRow) GetUserId()(*string) {
     }
     return nil
 }
-// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP address, and can be the same as the user's email address.
 func (m *PstnCallLogRow) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -714,7 +714,7 @@ func (m *PstnCallLogRow) SetAdditionalData(value map[string]any)() {
 func (m *PstnCallLogRow) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCallDurationSource sets the callDurationSource property value. The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
+// SetCallDurationSource sets the callDurationSource property value. The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator can provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
 func (m *PstnCallLogRow) SetCallDurationSource(value *PstnCallDurationSource)() {
     err := m.GetBackingStore().Set("callDurationSource", value)
     if err != nil {
@@ -742,7 +742,7 @@ func (m *PstnCallLogRow) SetCallId(value *string)() {
         panic(err)
     }
 }
-// SetCallType sets the callType property value. Whether the call was a PSTN outbound or inbound call and the type of call such as a call placed by a user or an audio conference.
+// SetCallType sets the callType property value. Indicates whether the call was a PSTN outbound or inbound call and the type of call, such as a call placed by a user or an audio conference.
 func (m *PstnCallLogRow) SetCallType(value *string)() {
     err := m.GetBackingStore().Set("callType", value)
     if err != nil {
@@ -777,7 +777,7 @@ func (m *PstnCallLogRow) SetCurrency(value *string)() {
         panic(err)
     }
 }
-// SetDestinationContext sets the destinationContext property value. Whether the call was domestic (within a country or region) or international (outside a country or region) based on the user's location.
+// SetDestinationContext sets the destinationContext property value. Whether the call was domestic (within a country or region) or international (outside a country or region), based on the user's location.
 func (m *PstnCallLogRow) SetDestinationContext(value *string)() {
     err := m.GetBackingStore().Set("destinationContext", value)
     if err != nil {
@@ -833,7 +833,7 @@ func (m *PstnCallLogRow) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOperator sets the operator property value. The telecommunications operator which provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
+// SetOperator sets the operator property value. The telecommunications operator which provided PSTN services for this call. This might be Microsoft, or it might be a third-party operator via the Operator Connect Program.
 func (m *PstnCallLogRow) SetOperator(value *string)() {
     err := m.GetBackingStore().Set("operator", value)
     if err != nil {
@@ -868,14 +868,14 @@ func (m *PstnCallLogRow) SetUserDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. Calling user's ID in Graph. GUID. This and other user info will be null/empty for bot call types (ucapin, ucapout).
+// SetUserId sets the userId property value. Calling user's ID in Microsoft Graph. GUID. This and other user info will be null/empty for bot call types (ucapin, ucapout).
 func (m *PstnCallLogRow) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
+// SetUserPrincipalName sets the userPrincipalName property value. The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP address, and can be the same as the user's email address.
 func (m *PstnCallLogRow) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
     if err != nil {

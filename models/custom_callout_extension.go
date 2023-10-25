@@ -50,7 +50,7 @@ func (m *CustomCalloutExtension) GetAuthenticationConfiguration()(CustomExtensio
     }
     return nil
 }
-// GetClientConfiguration gets the clientConfiguration property value. HTTP connection settings that define how long Azure AD can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.
+// GetClientConfiguration gets the clientConfiguration property value. HTTP connection settings that define how long Microsoft Entra ID can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.
 func (m *CustomCalloutExtension) GetClientConfiguration()(CustomExtensionClientConfigurationable) {
     val, err := m.GetBackingStore().Get("clientConfiguration")
     if err != nil {
@@ -194,7 +194,7 @@ func (m *CustomCalloutExtension) SetAuthenticationConfiguration(value CustomExte
         panic(err)
     }
 }
-// SetClientConfiguration sets the clientConfiguration property value. HTTP connection settings that define how long Azure AD can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.
+// SetClientConfiguration sets the clientConfiguration property value. HTTP connection settings that define how long Microsoft Entra ID can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.
 func (m *CustomCalloutExtension) SetClientConfiguration(value CustomExtensionClientConfigurationable)() {
     err := m.GetBackingStore().Set("clientConfiguration", value)
     if err != nil {

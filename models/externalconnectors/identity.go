@@ -35,7 +35,7 @@ func (m *Identity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetTypeEscaped gets the type property value. The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.
+// GetTypeEscaped gets the type property value. The type of identity. Possible values are: user or group for Microsoft Entra identities and externalgroup for groups in an external system.
 func (m *Identity) GetTypeEscaped()(*IdentityType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *Identity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetTypeEscaped sets the type property value. The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.
+// SetTypeEscaped sets the type property value. The type of identity. Possible values are: user or group for Microsoft Entra identities and externalgroup for groups in an external system.
 func (m *Identity) SetTypeEscaped(value *IdentityType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

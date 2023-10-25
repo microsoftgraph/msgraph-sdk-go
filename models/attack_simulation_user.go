@@ -116,7 +116,7 @@ func (m *AttackSimulationUser) GetOdataType()(*string) {
     }
     return nil
 }
-// GetUserId gets the userId property value. This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.
+// GetUserId gets the userId property value. This is the id property value of the user resource that represents the user in the Microsoft Entra tenant.
 func (m *AttackSimulationUser) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -193,7 +193,7 @@ func (m *AttackSimulationUser) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.
+// SetUserId sets the userId property value. This is the id property value of the user resource that represents the user in the Microsoft Entra tenant.
 func (m *AttackSimulationUser) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {

@@ -52,7 +52,7 @@ func (m *PermissionGrantConditionSet) GetClientApplicationsFromVerifiedPublisher
     }
     return nil
 }
-// GetClientApplicationTenantIds gets the clientApplicationTenantIds property value. A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
+// GetClientApplicationTenantIds gets the clientApplicationTenantIds property value. A list of Microsoft Entra tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
 func (m *PermissionGrantConditionSet) GetClientApplicationTenantIds()([]string) {
     val, err := m.GetBackingStore().Get("clientApplicationTenantIds")
     if err != nil {
@@ -294,7 +294,7 @@ func (m *PermissionGrantConditionSet) SetClientApplicationsFromVerifiedPublisher
         panic(err)
     }
 }
-// SetClientApplicationTenantIds sets the clientApplicationTenantIds property value. A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
+// SetClientApplicationTenantIds sets the clientApplicationTenantIds property value. A list of Microsoft Entra tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
 func (m *PermissionGrantConditionSet) SetClientApplicationTenantIds(value []string)() {
     err := m.GetBackingStore().Set("clientApplicationTenantIds", value)
     if err != nil {

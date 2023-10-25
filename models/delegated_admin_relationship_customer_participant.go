@@ -38,7 +38,7 @@ func (m *DelegatedAdminRelationshipCustomerParticipant) GetAdditionalData()(map[
 func (m *DelegatedAdminRelationshipCustomerParticipant) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisplayName gets the displayName property value. The display name of the customer tenant as set by Azure AD. Read-only
+// GetDisplayName gets the displayName property value. The display name of the customer tenant as set by Microsoft Entra ID. Read-only
 func (m *DelegatedAdminRelationshipCustomerParticipant) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *DelegatedAdminRelationshipCustomerParticipant) GetOdataType()(*string) 
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. The Azure AD-assigned tenant ID of the customer tenant.
+// GetTenantId gets the tenantId property value. The Microsoft Entra ID-assigned tenant ID of the customer tenant.
 func (m *DelegatedAdminRelationshipCustomerParticipant) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -145,7 +145,7 @@ func (m *DelegatedAdminRelationshipCustomerParticipant) SetAdditionalData(value 
 func (m *DelegatedAdminRelationshipCustomerParticipant) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisplayName sets the displayName property value. The display name of the customer tenant as set by Azure AD. Read-only
+// SetDisplayName sets the displayName property value. The display name of the customer tenant as set by Microsoft Entra ID. Read-only
 func (m *DelegatedAdminRelationshipCustomerParticipant) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -159,7 +159,7 @@ func (m *DelegatedAdminRelationshipCustomerParticipant) SetOdataType(value *stri
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The Azure AD-assigned tenant ID of the customer tenant.
+// SetTenantId sets the tenantId property value. The Microsoft Entra ID-assigned tenant ID of the customer tenant.
 func (m *DelegatedAdminRelationshipCustomerParticipant) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

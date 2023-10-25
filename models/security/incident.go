@@ -396,7 +396,7 @@ func (m *Incident) GetSystemTags()([]string) {
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. The Azure Active Directory tenant in which the alert was created.
+// GetTenantId gets the tenantId property value. The Microsoft Entra tenant in which the alert was created.
 func (m *Incident) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -645,7 +645,7 @@ func (m *Incident) SetSystemTags(value []string)() {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The Azure Active Directory tenant in which the alert was created.
+// SetTenantId sets the tenantId property value. The Microsoft Entra tenant in which the alert was created.
 func (m *Incident) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

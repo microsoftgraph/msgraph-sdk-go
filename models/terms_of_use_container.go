@@ -30,7 +30,7 @@ func (m *TermsOfUseContainer) GetAgreementAcceptances()([]AgreementAcceptanceabl
     }
     return nil
 }
-// GetAgreements gets the agreements property value. Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
+// GetAgreements gets the agreements property value. Represents a tenant's customizable terms of use agreement that's created and managed with Microsoft Entra ID Governance.
 func (m *TermsOfUseContainer) GetAgreements()([]Agreementable) {
     val, err := m.GetBackingStore().Get("agreements")
     if err != nil {
@@ -117,7 +117,7 @@ func (m *TermsOfUseContainer) SetAgreementAcceptances(value []AgreementAcceptanc
         panic(err)
     }
 }
-// SetAgreements sets the agreements property value. Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
+// SetAgreements sets the agreements property value. Represents a tenant's customizable terms of use agreement that's created and managed with Microsoft Entra ID Governance.
 func (m *TermsOfUseContainer) SetAgreements(value []Agreementable)() {
     err := m.GetBackingStore().Set("agreements", value)
     if err != nil {

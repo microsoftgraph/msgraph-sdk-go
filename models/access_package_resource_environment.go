@@ -144,7 +144,7 @@ func (m *AccessPackageResourceEnvironment) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetIsDefaultEnvironment gets the isDefaultEnvironment property value. Determines whether this is default environment or not. It is set to true for all static origin systems, such as Azure AD groups and Azure AD Applications.
+// GetIsDefaultEnvironment gets the isDefaultEnvironment property value. Determines whether this is default environment or not. It is set to true for all static origin systems, such as Microsoft Entra groups and Microsoft Entra Applications.
 func (m *AccessPackageResourceEnvironment) GetIsDefaultEnvironment()(*bool) {
     val, err := m.GetBackingStore().Get("isDefaultEnvironment")
     if err != nil {
@@ -282,7 +282,7 @@ func (m *AccessPackageResourceEnvironment) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetIsDefaultEnvironment sets the isDefaultEnvironment property value. Determines whether this is default environment or not. It is set to true for all static origin systems, such as Azure AD groups and Azure AD Applications.
+// SetIsDefaultEnvironment sets the isDefaultEnvironment property value. Determines whether this is default environment or not. It is set to true for all static origin systems, such as Microsoft Entra groups and Microsoft Entra Applications.
 func (m *AccessPackageResourceEnvironment) SetIsDefaultEnvironment(value *bool)() {
     err := m.GetBackingStore().Set("isDefaultEnvironment", value)
     if err != nil {

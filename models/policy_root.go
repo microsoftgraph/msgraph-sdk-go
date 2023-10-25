@@ -63,7 +63,7 @@ func (m *PolicyRoot) GetAuthenticationFlowsPolicy()(AuthenticationFlowsPolicyabl
     }
     return nil
 }
-// GetAuthenticationMethodsPolicy gets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).
+// GetAuthenticationMethodsPolicy gets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Microsoft Entra ID.
 func (m *PolicyRoot) GetAuthenticationMethodsPolicy()(AuthenticationMethodsPolicyable) {
     val, err := m.GetBackingStore().Get("authenticationMethodsPolicy")
     if err != nil {
@@ -74,7 +74,7 @@ func (m *PolicyRoot) GetAuthenticationMethodsPolicy()(AuthenticationMethodsPolic
     }
     return nil
 }
-// GetAuthenticationStrengthPolicies gets the authenticationStrengthPolicies property value. The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
+// GetAuthenticationStrengthPolicies gets the authenticationStrengthPolicies property value. The authentication method combinations that are to be used in scenarios defined by Microsoft Entra Conditional Access.
 func (m *PolicyRoot) GetAuthenticationStrengthPolicies()([]AuthenticationStrengthPolicyable) {
     val, err := m.GetBackingStore().Get("authenticationStrengthPolicies")
     if err != nil {
@@ -85,7 +85,7 @@ func (m *PolicyRoot) GetAuthenticationStrengthPolicies()([]AuthenticationStrengt
     }
     return nil
 }
-// GetAuthorizationPolicy gets the authorizationPolicy property value. The policy that controls Azure AD authorization settings.
+// GetAuthorizationPolicy gets the authorizationPolicy property value. The policy that controls Microsoft Entra authorization settings.
 func (m *PolicyRoot) GetAuthorizationPolicy()(AuthorizationPolicyable) {
     val, err := m.GetBackingStore().Get("authorizationPolicy")
     if err != nil {
@@ -118,7 +118,7 @@ func (m *PolicyRoot) GetConditionalAccessPolicies()([]ConditionalAccessPolicyabl
     }
     return nil
 }
-// GetCrossTenantAccessPolicy gets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Azure AD tenants.
+// GetCrossTenantAccessPolicy gets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Microsoft Entra tenants.
 func (m *PolicyRoot) GetCrossTenantAccessPolicy()(CrossTenantAccessPolicyable) {
     val, err := m.GetBackingStore().Get("crossTenantAccessPolicy")
     if err != nil {
@@ -418,7 +418,7 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetHomeRealmDiscoveryPolicies gets the homeRealmDiscoveryPolicies property value. The policy to control Azure AD authentication behavior for federated users.
+// GetHomeRealmDiscoveryPolicies gets the homeRealmDiscoveryPolicies property value. The policy to control Microsoft Entra authentication behavior for federated users.
 func (m *PolicyRoot) GetHomeRealmDiscoveryPolicies()([]HomeRealmDiscoveryPolicyable) {
     val, err := m.GetBackingStore().Get("homeRealmDiscoveryPolicies")
     if err != nil {
@@ -473,7 +473,7 @@ func (m *PolicyRoot) GetRoleManagementPolicyAssignments()([]UnifiedRoleManagemen
     }
     return nil
 }
-// GetTokenIssuancePolicies gets the tokenIssuancePolicies property value. The policy that specifies the characteristics of SAML tokens issued by Azure AD.
+// GetTokenIssuancePolicies gets the tokenIssuancePolicies property value. The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
 func (m *PolicyRoot) GetTokenIssuancePolicies()([]TokenIssuancePolicyable) {
     val, err := m.GetBackingStore().Get("tokenIssuancePolicies")
     if err != nil {
@@ -484,7 +484,7 @@ func (m *PolicyRoot) GetTokenIssuancePolicies()([]TokenIssuancePolicyable) {
     }
     return nil
 }
-// GetTokenLifetimePolicies gets the tokenLifetimePolicies property value. The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
+// GetTokenLifetimePolicies gets the tokenLifetimePolicies property value. The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Microsoft Entra ID.
 func (m *PolicyRoot) GetTokenLifetimePolicies()([]TokenLifetimePolicyable) {
     val, err := m.GetBackingStore().Get("tokenLifetimePolicies")
     if err != nil {
@@ -717,21 +717,21 @@ func (m *PolicyRoot) SetAuthenticationFlowsPolicy(value AuthenticationFlowsPolic
         panic(err)
     }
 }
-// SetAuthenticationMethodsPolicy sets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).
+// SetAuthenticationMethodsPolicy sets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Microsoft Entra ID.
 func (m *PolicyRoot) SetAuthenticationMethodsPolicy(value AuthenticationMethodsPolicyable)() {
     err := m.GetBackingStore().Set("authenticationMethodsPolicy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAuthenticationStrengthPolicies sets the authenticationStrengthPolicies property value. The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
+// SetAuthenticationStrengthPolicies sets the authenticationStrengthPolicies property value. The authentication method combinations that are to be used in scenarios defined by Microsoft Entra Conditional Access.
 func (m *PolicyRoot) SetAuthenticationStrengthPolicies(value []AuthenticationStrengthPolicyable)() {
     err := m.GetBackingStore().Set("authenticationStrengthPolicies", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAuthorizationPolicy sets the authorizationPolicy property value. The policy that controls Azure AD authorization settings.
+// SetAuthorizationPolicy sets the authorizationPolicy property value. The policy that controls Microsoft Entra authorization settings.
 func (m *PolicyRoot) SetAuthorizationPolicy(value AuthorizationPolicyable)() {
     err := m.GetBackingStore().Set("authorizationPolicy", value)
     if err != nil {
@@ -752,7 +752,7 @@ func (m *PolicyRoot) SetConditionalAccessPolicies(value []ConditionalAccessPolic
         panic(err)
     }
 }
-// SetCrossTenantAccessPolicy sets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Azure AD tenants.
+// SetCrossTenantAccessPolicy sets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Microsoft Entra tenants.
 func (m *PolicyRoot) SetCrossTenantAccessPolicy(value CrossTenantAccessPolicyable)() {
     err := m.GetBackingStore().Set("crossTenantAccessPolicy", value)
     if err != nil {
@@ -773,7 +773,7 @@ func (m *PolicyRoot) SetFeatureRolloutPolicies(value []FeatureRolloutPolicyable)
         panic(err)
     }
 }
-// SetHomeRealmDiscoveryPolicies sets the homeRealmDiscoveryPolicies property value. The policy to control Azure AD authentication behavior for federated users.
+// SetHomeRealmDiscoveryPolicies sets the homeRealmDiscoveryPolicies property value. The policy to control Microsoft Entra authentication behavior for federated users.
 func (m *PolicyRoot) SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicyable)() {
     err := m.GetBackingStore().Set("homeRealmDiscoveryPolicies", value)
     if err != nil {
@@ -808,14 +808,14 @@ func (m *PolicyRoot) SetRoleManagementPolicyAssignments(value []UnifiedRoleManag
         panic(err)
     }
 }
-// SetTokenIssuancePolicies sets the tokenIssuancePolicies property value. The policy that specifies the characteristics of SAML tokens issued by Azure AD.
+// SetTokenIssuancePolicies sets the tokenIssuancePolicies property value. The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
 func (m *PolicyRoot) SetTokenIssuancePolicies(value []TokenIssuancePolicyable)() {
     err := m.GetBackingStore().Set("tokenIssuancePolicies", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTokenLifetimePolicies sets the tokenLifetimePolicies property value. The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
+// SetTokenLifetimePolicies sets the tokenLifetimePolicies property value. The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Microsoft Entra ID.
 func (m *PolicyRoot) SetTokenLifetimePolicies(value []TokenLifetimePolicyable)() {
     err := m.GetBackingStore().Set("tokenLifetimePolicies", value)
     if err != nil {

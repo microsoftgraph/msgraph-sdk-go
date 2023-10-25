@@ -22,7 +22,7 @@ func NewDelegatedAdminAccessContainer()(*DelegatedAdminAccessContainer) {
 func CreateDelegatedAdminAccessContainerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDelegatedAdminAccessContainer(), nil
 }
-// GetAccessContainerId gets the accessContainerId property value. The identifier of the access container (for example, a security group). For 'securityGroup' access containers, this must be a valid ID of an Azure AD security group in the Microsoft partner's tenant.
+// GetAccessContainerId gets the accessContainerId property value. The identifier of the access container (for example, a security group). For 'securityGroup' access containers, this must be a valid ID of a Microsoft Entra security group in the Microsoft partner's tenant.
 func (m *DelegatedAdminAccessContainer) GetAccessContainerId()(*string) {
     val, err := m.GetBackingStore().Get("accessContainerId")
     if err != nil {
@@ -135,7 +135,7 @@ func (m *DelegatedAdminAccessContainer) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetAccessContainerId sets the accessContainerId property value. The identifier of the access container (for example, a security group). For 'securityGroup' access containers, this must be a valid ID of an Azure AD security group in the Microsoft partner's tenant.
+// SetAccessContainerId sets the accessContainerId property value. The identifier of the access container (for example, a security group). For 'securityGroup' access containers, this must be a valid ID of a Microsoft Entra security group in the Microsoft partner's tenant.
 func (m *DelegatedAdminAccessContainer) SetAccessContainerId(value *string)() {
     err := m.GetBackingStore().Set("accessContainerId", value)
     if err != nil {

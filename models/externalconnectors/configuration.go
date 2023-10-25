@@ -34,7 +34,7 @@ func (m *Configuration) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAuthorizedAppIds gets the authorizedAppIds property value. A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
+// GetAuthorizedAppIds gets the authorizedAppIds property value. A collection of application IDs for registered Microsoft Entra apps that are allowed to manage the externalConnection and to index content in the externalConnection.
 func (m *Configuration) GetAuthorizedAppIds()([]string) {
     val, err := m.GetBackingStore().Get("authorizedAppIds")
     if err != nil {
@@ -120,7 +120,7 @@ func (m *Configuration) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAuthorizedAppIds sets the authorizedAppIds property value. A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
+// SetAuthorizedAppIds sets the authorizedAppIds property value. A collection of application IDs for registered Microsoft Entra apps that are allowed to manage the externalConnection and to index content in the externalConnection.
 func (m *Configuration) SetAuthorizedAppIds(value []string)() {
     err := m.GetBackingStore().Set("authorizedAppIds", value)
     if err != nil {

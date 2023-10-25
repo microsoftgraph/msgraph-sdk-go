@@ -38,7 +38,7 @@ func (m *CrossTenantIdentitySyncPolicyPartner) GetAdditionalData()(map[string]an
 func (m *CrossTenantIdentitySyncPolicyPartner) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisplayName gets the displayName property value. Display name for the cross-tenant user synchronization policy. Use the name of the partner Azure AD (Azure Active Directory) tenant to easily identify the policy. Optional.
+// GetDisplayName gets the displayName property value. Display name for the cross-tenant user synchronization policy. Use the name of the partner Microsoft Entra tenant to easily identify the policy. Optional.
 func (m *CrossTenantIdentitySyncPolicyPartner) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -105,7 +105,7 @@ func (m *CrossTenantIdentitySyncPolicyPartner) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. Tenant identifier for the partner Azure AD organization. Read-only.
+// GetTenantId gets the tenantId property value. Tenant identifier for the partner Microsoft Entra organization. Read-only.
 func (m *CrossTenantIdentitySyncPolicyPartner) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -172,7 +172,7 @@ func (m *CrossTenantIdentitySyncPolicyPartner) SetAdditionalData(value map[strin
 func (m *CrossTenantIdentitySyncPolicyPartner) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisplayName sets the displayName property value. Display name for the cross-tenant user synchronization policy. Use the name of the partner Azure AD (Azure Active Directory) tenant to easily identify the policy. Optional.
+// SetDisplayName sets the displayName property value. Display name for the cross-tenant user synchronization policy. Use the name of the partner Microsoft Entra tenant to easily identify the policy. Optional.
 func (m *CrossTenantIdentitySyncPolicyPartner) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -186,7 +186,7 @@ func (m *CrossTenantIdentitySyncPolicyPartner) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. Tenant identifier for the partner Azure AD organization. Read-only.
+// SetTenantId sets the tenantId property value. Tenant identifier for the partner Microsoft Entra organization. Read-only.
 func (m *CrossTenantIdentitySyncPolicyPartner) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

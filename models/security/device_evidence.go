@@ -22,7 +22,7 @@ func NewDeviceEvidence()(*DeviceEvidence) {
 func CreateDeviceEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceEvidence(), nil
 }
-// GetAzureAdDeviceId gets the azureAdDeviceId property value. A unique identifier assigned to a device by Azure Active Directory (Azure AD) when device is Azure AD-joined.
+// GetAzureAdDeviceId gets the azureAdDeviceId property value. A unique identifier assigned to a device by Microsoft Entra ID when device is Microsoft Entra joined.
 func (m *DeviceEvidence) GetAzureAdDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("azureAdDeviceId")
     if err != nil {
@@ -489,7 +489,7 @@ func (m *DeviceEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetAzureAdDeviceId sets the azureAdDeviceId property value. A unique identifier assigned to a device by Azure Active Directory (Azure AD) when device is Azure AD-joined.
+// SetAzureAdDeviceId sets the azureAdDeviceId property value. A unique identifier assigned to a device by Microsoft Entra ID when device is Microsoft Entra joined.
 func (m *DeviceEvidence) SetAzureAdDeviceId(value *string)() {
     err := m.GetBackingStore().Set("azureAdDeviceId", value)
     if err != nil {

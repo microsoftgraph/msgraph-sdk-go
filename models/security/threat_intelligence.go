@@ -125,6 +125,22 @@ func (m *ThreatIntelligence) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["hostPorts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateHostPortFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]HostPortable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(HostPortable)
+                }
+            }
+            m.SetHostPorts(res)
+        }
+        return nil
+    }
     res["hosts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateHostFromDiscriminatorValue)
         if err != nil {
@@ -336,6 +352,17 @@ func (m *ThreatIntelligence) GetHostPairs()([]HostPairable) {
     }
     return nil
 }
+// GetHostPorts gets the hostPorts property value. Retrieve details about hostPort objects.Note: List retrieval is not yet supported.
+func (m *ThreatIntelligence) GetHostPorts()([]HostPortable) {
+    val, err := m.GetBackingStore().Get("hostPorts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]HostPortable)
+    }
+    return nil
+}
 // GetHosts gets the hosts property value. Refers to host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) GetHosts()([]Hostable) {
     val, err := m.GetBackingStore().Get("hosts")
@@ -523,6 +550,18 @@ func (m *ThreatIntelligence) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    if m.GetHostPorts() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHostPorts()))
+        for i, v := range m.GetHostPorts() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("hostPorts", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetHosts() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHosts()))
         for i, v := range m.GetHosts() {
@@ -692,6 +731,13 @@ func (m *ThreatIntelligence) SetHostPairs(value []HostPairable)() {
         panic(err)
     }
 }
+// SetHostPorts sets the hostPorts property value. Retrieve details about hostPort objects.Note: List retrieval is not yet supported.
+func (m *ThreatIntelligence) SetHostPorts(value []HostPortable)() {
+    err := m.GetBackingStore().Set("hostPorts", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetHosts sets the hosts property value. Refers to host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.
 func (m *ThreatIntelligence) SetHosts(value []Hostable)() {
     err := m.GetBackingStore().Set("hosts", value)
@@ -778,6 +824,7 @@ type ThreatIntelligenceable interface {
     GetHostComponents()([]HostComponentable)
     GetHostCookies()([]HostCookieable)
     GetHostPairs()([]HostPairable)
+    GetHostPorts()([]HostPortable)
     GetHosts()([]Hostable)
     GetHostSslCertificates()([]HostSslCertificateable)
     GetHostTrackers()([]HostTrackerable)
@@ -794,6 +841,7 @@ type ThreatIntelligenceable interface {
     SetHostComponents(value []HostComponentable)()
     SetHostCookies(value []HostCookieable)()
     SetHostPairs(value []HostPairable)()
+    SetHostPorts(value []HostPortable)()
     SetHosts(value []Hostable)()
     SetHostSslCertificates(value []HostSslCertificateable)()
     SetHostTrackers(value []HostTrackerable)()

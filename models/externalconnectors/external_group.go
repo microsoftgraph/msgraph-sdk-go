@@ -83,7 +83,7 @@ func (m *ExternalGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetMembers gets the members property value. A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
+// GetMembers gets the members property value. A member added to an externalGroup. You can add Microsoft Entra users, Microsoft Entra groups, or an externalGroup as members.
 func (m *ExternalGroup) GetMembers()([]Identityable) {
     val, err := m.GetBackingStore().Get("members")
     if err != nil {
@@ -140,7 +140,7 @@ func (m *ExternalGroup) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetMembers sets the members property value. A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
+// SetMembers sets the members property value. A member added to an externalGroup. You can add Microsoft Entra users, Microsoft Entra groups, or an externalGroup as members.
 func (m *ExternalGroup) SetMembers(value []Identityable)() {
     err := m.GetBackingStore().Set("members", value)
     if err != nil {

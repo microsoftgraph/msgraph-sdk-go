@@ -21,7 +21,7 @@ func NewClientUserAgent()(*ClientUserAgent) {
 func CreateClientUserAgentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewClientUserAgent(), nil
 }
-// GetAzureADAppId gets the azureADAppId property value. The unique identifier of the Azure AD application used by this endpoint.
+// GetAzureADAppId gets the azureADAppId property value. The unique identifier of the Microsoft Entra application used by this endpoint.
 func (m *ClientUserAgent) GetAzureADAppId()(*string) {
     val, err := m.GetBackingStore().Get("azureADAppId")
     if err != nil {
@@ -144,7 +144,7 @@ func (m *ClientUserAgent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetAzureADAppId sets the azureADAppId property value. The unique identifier of the Azure AD application used by this endpoint.
+// SetAzureADAppId sets the azureADAppId property value. The unique identifier of the Microsoft Entra application used by this endpoint.
 func (m *ClientUserAgent) SetAzureADAppId(value *string)() {
     err := m.GetBackingStore().Set("azureADAppId", value)
     if err != nil {

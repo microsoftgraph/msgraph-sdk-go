@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceHostsItemChildHostPairsHostPairItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceHostsItemChildHostPairsHostPairItemRequestBuilderGetQueryParameters the hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
+// ThreatIntelligenceHostsItemChildHostPairsHostPairItemRequestBuilderGetQueryParameters the hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
 type ThreatIntelligenceHostsItemChildHostPairsHostPairItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewThreatIntelligenceHostsItemChildHostPairsHostPairItemRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewThreatIntelligenceHostsItemChildHostPairsHostPairItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
+// Get the hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
 func (m *ThreatIntelligenceHostsItemChildHostPairsHostPairItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemChildHostPairsHostPairItemRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HostPairable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,13 +59,9 @@ func (m *ThreatIntelligenceHostsItemChildHostPairsHostPairItemRequestBuilder) Ge
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HostPairable), nil
 }
-// ToGetRequestInformation the hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
+// ToGetRequestInformation the hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
 func (m *ThreatIntelligenceHostsItemChildHostPairsHostPairItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemChildHostPairsHostPairItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.Add("Accept", "application/json")
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -73,6 +69,10 @@ func (m *ThreatIntelligenceHostsItemChildHostPairsHostPairItemRequestBuilder) To
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
+    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

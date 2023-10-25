@@ -274,7 +274,7 @@ func (m *ProvisioningObjectSummary) GetModifiedProperties()([]ModifiedPropertyab
     }
     return nil
 }
-// GetProvisioningAction gets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list. Supports $filter (eq, contains).
+// GetProvisioningAction gets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Microsoft Entra activity list. Supports $filter (eq, contains).
 func (m *ProvisioningObjectSummary) GetProvisioningAction()(*ProvisioningAction) {
     val, err := m.GetBackingStore().Get("provisioningAction")
     if err != nil {
@@ -362,7 +362,7 @@ func (m *ProvisioningObjectSummary) GetTargetSystem()(ProvisioningSystemable) {
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. Unique Azure AD tenant ID. Supports $filter (eq, contains).
+// GetTenantId gets the tenantId property value. Unique Microsoft Entra tenant ID. Supports $filter (eq, contains).
 func (m *ProvisioningObjectSummary) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -539,7 +539,7 @@ func (m *ProvisioningObjectSummary) SetModifiedProperties(value []ModifiedProper
         panic(err)
     }
 }
-// SetProvisioningAction sets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list. Supports $filter (eq, contains).
+// SetProvisioningAction sets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Microsoft Entra activity list. Supports $filter (eq, contains).
 func (m *ProvisioningObjectSummary) SetProvisioningAction(value *ProvisioningAction)() {
     err := m.GetBackingStore().Set("provisioningAction", value)
     if err != nil {
@@ -595,7 +595,7 @@ func (m *ProvisioningObjectSummary) SetTargetSystem(value ProvisioningSystemable
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. Unique Azure AD tenant ID. Supports $filter (eq, contains).
+// SetTenantId sets the tenantId property value. Unique Microsoft Entra tenant ID. Supports $filter (eq, contains).
 func (m *ProvisioningObjectSummary) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

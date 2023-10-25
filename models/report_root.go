@@ -34,7 +34,7 @@ func (m *ReportRoot) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAuthenticationMethods gets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
+// GetAuthenticationMethods gets the authenticationMethods property value. Container for navigation properties for Microsoft Entra authentication methods resources.
 func (m *ReportRoot) GetAuthenticationMethods()(AuthenticationMethodsRootable) {
     val, err := m.GetBackingStore().Get("authenticationMethods")
     if err != nil {
@@ -297,7 +297,7 @@ func (m *ReportRoot) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAuthenticationMethods sets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
+// SetAuthenticationMethods sets the authenticationMethods property value. Container for navigation properties for Microsoft Entra authentication methods resources.
 func (m *ReportRoot) SetAuthenticationMethods(value AuthenticationMethodsRootable)() {
     err := m.GetBackingStore().Set("authenticationMethods", value)
     if err != nil {

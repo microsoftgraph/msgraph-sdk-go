@@ -128,7 +128,7 @@ func (m *IdentityProtectionRoot) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRiskDetections gets the riskDetections property value. Risk detection in Azure AD Identity Protection and the associated information about the detection.
+// GetRiskDetections gets the riskDetections property value. Risk detection in Microsoft Entra ID Protection and the associated information about the detection.
 func (m *IdentityProtectionRoot) GetRiskDetections()([]RiskDetectionable) {
     val, err := m.GetBackingStore().Get("riskDetections")
     if err != nil {
@@ -139,7 +139,7 @@ func (m *IdentityProtectionRoot) GetRiskDetections()([]RiskDetectionable) {
     }
     return nil
 }
-// GetRiskyServicePrincipals gets the riskyServicePrincipals property value. Azure AD service principals that are at risk.
+// GetRiskyServicePrincipals gets the riskyServicePrincipals property value. Microsoft Entra service principals that are at risk.
 func (m *IdentityProtectionRoot) GetRiskyServicePrincipals()([]RiskyServicePrincipalable) {
     val, err := m.GetBackingStore().Get("riskyServicePrincipals")
     if err != nil {
@@ -150,7 +150,7 @@ func (m *IdentityProtectionRoot) GetRiskyServicePrincipals()([]RiskyServicePrinc
     }
     return nil
 }
-// GetRiskyUsers gets the riskyUsers property value. Users that are flagged as at-risk by Azure AD Identity Protection.
+// GetRiskyUsers gets the riskyUsers property value. Users that are flagged as at-risk by Microsoft Entra ID Protection.
 func (m *IdentityProtectionRoot) GetRiskyUsers()([]RiskyUserable) {
     val, err := m.GetBackingStore().Get("riskyUsers")
     if err != nil {
@@ -161,7 +161,7 @@ func (m *IdentityProtectionRoot) GetRiskyUsers()([]RiskyUserable) {
     }
     return nil
 }
-// GetServicePrincipalRiskDetections gets the servicePrincipalRiskDetections property value. Represents information about detected at-risk service principals in an Azure AD tenant.
+// GetServicePrincipalRiskDetections gets the servicePrincipalRiskDetections property value. Represents information about detected at-risk service principals in a Microsoft Entra tenant.
 func (m *IdentityProtectionRoot) GetServicePrincipalRiskDetections()([]ServicePrincipalRiskDetectionable) {
     val, err := m.GetBackingStore().Get("servicePrincipalRiskDetections")
     if err != nil {
@@ -254,28 +254,28 @@ func (m *IdentityProtectionRoot) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRiskDetections sets the riskDetections property value. Risk detection in Azure AD Identity Protection and the associated information about the detection.
+// SetRiskDetections sets the riskDetections property value. Risk detection in Microsoft Entra ID Protection and the associated information about the detection.
 func (m *IdentityProtectionRoot) SetRiskDetections(value []RiskDetectionable)() {
     err := m.GetBackingStore().Set("riskDetections", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRiskyServicePrincipals sets the riskyServicePrincipals property value. Azure AD service principals that are at risk.
+// SetRiskyServicePrincipals sets the riskyServicePrincipals property value. Microsoft Entra service principals that are at risk.
 func (m *IdentityProtectionRoot) SetRiskyServicePrincipals(value []RiskyServicePrincipalable)() {
     err := m.GetBackingStore().Set("riskyServicePrincipals", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRiskyUsers sets the riskyUsers property value. Users that are flagged as at-risk by Azure AD Identity Protection.
+// SetRiskyUsers sets the riskyUsers property value. Users that are flagged as at-risk by Microsoft Entra ID Protection.
 func (m *IdentityProtectionRoot) SetRiskyUsers(value []RiskyUserable)() {
     err := m.GetBackingStore().Set("riskyUsers", value)
     if err != nil {
         panic(err)
     }
 }
-// SetServicePrincipalRiskDetections sets the servicePrincipalRiskDetections property value. Represents information about detected at-risk service principals in an Azure AD tenant.
+// SetServicePrincipalRiskDetections sets the servicePrincipalRiskDetections property value. Represents information about detected at-risk service principals in a Microsoft Entra tenant.
 func (m *IdentityProtectionRoot) SetServicePrincipalRiskDetections(value []ServicePrincipalRiskDetectionable)() {
     err := m.GetBackingStore().Set("servicePrincipalRiskDetections", value)
     if err != nil {

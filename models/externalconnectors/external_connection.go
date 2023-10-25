@@ -42,6 +42,17 @@ func (m *ExternalConnection) GetConfiguration()(Configurationable) {
     }
     return nil
 }
+// GetConnectorId gets the connectorId property value. The Teams app ID. Optional.
+func (m *ExternalConnection) GetConnectorId()(*string) {
+    val, err := m.GetBackingStore().Get("connectorId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetDescription gets the description property value. Description of the connection displayed in the Microsoft 365 admin center. Optional.
 func (m *ExternalConnection) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -73,6 +84,16 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetConfiguration(val.(Configurationable))
+        }
+        return nil
+    }
+    res["connectorId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetConnectorId(val)
         }
         return nil
     }
@@ -272,6 +293,12 @@ func (m *ExternalConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteStringValue("connectorId", m.GetConnectorId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
             return err
@@ -347,6 +374,13 @@ func (m *ExternalConnection) SetConfiguration(value Configurationable)() {
         panic(err)
     }
 }
+// SetConnectorId sets the connectorId property value. The Teams app ID. Optional.
+func (m *ExternalConnection) SetConnectorId(value *string)() {
+    err := m.GetBackingStore().Set("connectorId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDescription sets the description property value. Description of the connection displayed in the Microsoft 365 admin center. Optional.
 func (m *ExternalConnection) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
@@ -409,6 +443,7 @@ type ExternalConnectionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetActivitySettings()(ActivitySettingsable)
     GetConfiguration()(Configurationable)
+    GetConnectorId()(*string)
     GetDescription()(*string)
     GetGroups()([]ExternalGroupable)
     GetItems()([]ExternalItemable)
@@ -419,6 +454,7 @@ type ExternalConnectionable interface {
     GetState()(*ConnectionState)
     SetActivitySettings(value ActivitySettingsable)()
     SetConfiguration(value Configurationable)()
+    SetConnectorId(value *string)()
     SetDescription(value *string)()
     SetGroups(value []ExternalGroupable)()
     SetItems(value []ExternalItemable)()

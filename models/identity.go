@@ -32,6 +32,20 @@ func CreateIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.azureCommunicationServicesUserIdentity":
+                        return NewAzureCommunicationServicesUserIdentity(), nil
+                    case "#microsoft.graph.communicationsApplicationIdentity":
+                        return NewCommunicationsApplicationIdentity(), nil
+                    case "#microsoft.graph.communicationsApplicationInstanceIdentity":
+                        return NewCommunicationsApplicationInstanceIdentity(), nil
+                    case "#microsoft.graph.communicationsEncryptedIdentity":
+                        return NewCommunicationsEncryptedIdentity(), nil
+                    case "#microsoft.graph.communicationsGuestIdentity":
+                        return NewCommunicationsGuestIdentity(), nil
+                    case "#microsoft.graph.communicationsPhoneIdentity":
+                        return NewCommunicationsPhoneIdentity(), nil
+                    case "#microsoft.graph.communicationsUserIdentity":
+                        return NewCommunicationsUserIdentity(), nil
                     case "#microsoft.graph.emailIdentity":
                         return NewEmailIdentity(), nil
                     case "#microsoft.graph.initiator":

@@ -118,7 +118,7 @@ func (m *SamlOrWsFedProvider) GetMetadataExchangeUri()(*string) {
     }
     return nil
 }
-// GetPassiveSignInUri gets the passiveSignInUri property value. URI that web-based clients are directed to when signing in to Azure Active Directory (Azure AD) services.
+// GetPassiveSignInUri gets the passiveSignInUri property value. URI that web-based clients are directed to when signing in to Microsoft Entra services.
 func (m *SamlOrWsFedProvider) GetPassiveSignInUri()(*string) {
     val, err := m.GetBackingStore().Get("passiveSignInUri")
     if err != nil {
@@ -140,7 +140,7 @@ func (m *SamlOrWsFedProvider) GetPreferredAuthenticationProtocol()(*Authenticati
     }
     return nil
 }
-// GetSigningCertificate gets the signingCertificate property value. Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.   Azure AD updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Azure AD monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.
+// GetSigningCertificate gets the signingCertificate property value. Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.   Microsoft Entra ID updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Microsoft Entra ID monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.
 func (m *SamlOrWsFedProvider) GetSigningCertificate()(*string) {
     val, err := m.GetBackingStore().Get("signingCertificate")
     if err != nil {
@@ -204,7 +204,7 @@ func (m *SamlOrWsFedProvider) SetMetadataExchangeUri(value *string)() {
         panic(err)
     }
 }
-// SetPassiveSignInUri sets the passiveSignInUri property value. URI that web-based clients are directed to when signing in to Azure Active Directory (Azure AD) services.
+// SetPassiveSignInUri sets the passiveSignInUri property value. URI that web-based clients are directed to when signing in to Microsoft Entra services.
 func (m *SamlOrWsFedProvider) SetPassiveSignInUri(value *string)() {
     err := m.GetBackingStore().Set("passiveSignInUri", value)
     if err != nil {
@@ -218,7 +218,7 @@ func (m *SamlOrWsFedProvider) SetPreferredAuthenticationProtocol(value *Authenti
         panic(err)
     }
 }
-// SetSigningCertificate sets the signingCertificate property value. Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.   Azure AD updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Azure AD monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.
+// SetSigningCertificate sets the signingCertificate property value. Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.   Microsoft Entra ID updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Microsoft Entra ID monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.
 func (m *SamlOrWsFedProvider) SetSigningCertificate(value *string)() {
     err := m.GetBackingStore().Set("signingCertificate", value)
     if err != nil {
