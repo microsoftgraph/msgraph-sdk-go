@@ -50,7 +50,7 @@ func (m *RemoteDesktopSecurityConfiguration) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetIsRemoteDesktopProtocolEnabled gets the isRemoteDesktopProtocolEnabled property value. The isRemoteDesktopProtocolEnabled property
+// GetIsRemoteDesktopProtocolEnabled gets the isRemoteDesktopProtocolEnabled property value. Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.
 func (m *RemoteDesktopSecurityConfiguration) GetIsRemoteDesktopProtocolEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isRemoteDesktopProtocolEnabled")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *RemoteDesktopSecurityConfiguration) GetIsRemoteDesktopProtocolEnabled()
     }
     return nil
 }
-// GetTargetDeviceGroups gets the targetDeviceGroups property value. The targetDeviceGroups property
+// GetTargetDeviceGroups gets the targetDeviceGroups property value. The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
 func (m *RemoteDesktopSecurityConfiguration) GetTargetDeviceGroups()([]TargetDeviceGroupable) {
     val, err := m.GetBackingStore().Get("targetDeviceGroups")
     if err != nil {
@@ -98,14 +98,14 @@ func (m *RemoteDesktopSecurityConfiguration) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetIsRemoteDesktopProtocolEnabled sets the isRemoteDesktopProtocolEnabled property value. The isRemoteDesktopProtocolEnabled property
+// SetIsRemoteDesktopProtocolEnabled sets the isRemoteDesktopProtocolEnabled property value. Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.
 func (m *RemoteDesktopSecurityConfiguration) SetIsRemoteDesktopProtocolEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isRemoteDesktopProtocolEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTargetDeviceGroups sets the targetDeviceGroups property value. The targetDeviceGroups property
+// SetTargetDeviceGroups sets the targetDeviceGroups property value. The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
 func (m *RemoteDesktopSecurityConfiguration) SetTargetDeviceGroups(value []TargetDeviceGroupable)() {
     err := m.GetBackingStore().Set("targetDeviceGroups", value)
     if err != nil {

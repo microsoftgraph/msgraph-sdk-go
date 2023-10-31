@@ -63,6 +63,17 @@ func (m *Directory) GetDeletedItems()([]DirectoryObjectable) {
     }
     return nil
 }
+// GetDeviceLocalCredentials gets the deviceLocalCredentials property value. The credentials of the device's local administrator account backed up to Microsoft Entra ID.
+func (m *Directory) GetDeviceLocalCredentials()([]DeviceLocalCredentialInfoable) {
+    val, err := m.GetBackingStore().Get("deviceLocalCredentials")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceLocalCredentialInfoable)
+    }
+    return nil
+}
 // GetFederationConfigurations gets the federationConfigurations property value. Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
 func (m *Directory) GetFederationConfigurations()([]IdentityProviderBaseable) {
     val, err := m.GetBackingStore().Get("federationConfigurations")
@@ -138,6 +149,22 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
                 }
             }
             m.SetDeletedItems(res)
+        }
+        return nil
+    }
+    res["deviceLocalCredentials"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceLocalCredentialInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DeviceLocalCredentialInfoable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(DeviceLocalCredentialInfoable)
+                }
+            }
+            m.SetDeviceLocalCredentials(res)
         }
         return nil
     }
@@ -240,6 +267,18 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    if m.GetDeviceLocalCredentials() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceLocalCredentials()))
+        for i, v := range m.GetDeviceLocalCredentials() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("deviceLocalCredentials", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetFederationConfigurations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFederationConfigurations()))
         for i, v := range m.GetFederationConfigurations() {
@@ -294,6 +333,13 @@ func (m *Directory) SetDeletedItems(value []DirectoryObjectable)() {
         panic(err)
     }
 }
+// SetDeviceLocalCredentials sets the deviceLocalCredentials property value. The credentials of the device's local administrator account backed up to Microsoft Entra ID.
+func (m *Directory) SetDeviceLocalCredentials(value []DeviceLocalCredentialInfoable)() {
+    err := m.GetBackingStore().Set("deviceLocalCredentials", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetFederationConfigurations sets the federationConfigurations property value. Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
 func (m *Directory) SetFederationConfigurations(value []IdentityProviderBaseable)() {
     err := m.GetBackingStore().Set("federationConfigurations", value)
@@ -316,12 +362,14 @@ type Directoryable interface {
     GetAttributeSets()([]AttributeSetable)
     GetCustomSecurityAttributeDefinitions()([]CustomSecurityAttributeDefinitionable)
     GetDeletedItems()([]DirectoryObjectable)
+    GetDeviceLocalCredentials()([]DeviceLocalCredentialInfoable)
     GetFederationConfigurations()([]IdentityProviderBaseable)
     GetOnPremisesSynchronization()([]OnPremisesDirectorySynchronizationable)
     SetAdministrativeUnits(value []AdministrativeUnitable)()
     SetAttributeSets(value []AttributeSetable)()
     SetCustomSecurityAttributeDefinitions(value []CustomSecurityAttributeDefinitionable)()
     SetDeletedItems(value []DirectoryObjectable)()
+    SetDeviceLocalCredentials(value []DeviceLocalCredentialInfoable)()
     SetFederationConfigurations(value []IdentityProviderBaseable)()
     SetOnPremisesSynchronization(value []OnPremisesDirectorySynchronizationable)()
 }

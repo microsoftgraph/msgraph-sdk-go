@@ -11,7 +11,7 @@ import (
 type AttackSimulationLandingPagesItemDetailsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AttackSimulationLandingPagesItemDetailsRequestBuilderGetQueryParameters get details from security
+// AttackSimulationLandingPagesItemDetailsRequestBuilderGetQueryParameters the detail information for a landing page associated with a simulation during its creation.
 type AttackSimulationLandingPagesItemDetailsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewAttackSimulationLandingPagesItemDetailsRequestBuilder(rawUrl string, req
 func (m *AttackSimulationLandingPagesItemDetailsRequestBuilder) Count()(*AttackSimulationLandingPagesItemDetailsCountRequestBuilder) {
     return NewAttackSimulationLandingPagesItemDetailsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get details from security
+// Get the detail information for a landing page associated with a simulation during its creation.
 func (m *AttackSimulationLandingPagesItemDetailsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationLandingPagesItemDetailsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LandingPageDetailCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *AttackSimulationLandingPagesItemDetailsRequestBuilder) Post(ctx context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LandingPageDetailable), nil
 }
-// ToGetRequestInformation get details from security
+// ToGetRequestInformation the detail information for a landing page associated with a simulation during its creation.
 func (m *AttackSimulationLandingPagesItemDetailsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationLandingPagesItemDetailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

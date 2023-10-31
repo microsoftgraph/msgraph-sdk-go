@@ -34,7 +34,7 @@ func (m *OAuthConsentAppDetail) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAppScope gets the appScope property value. The appScope property
+// GetAppScope gets the appScope property value. App scope. Possible values are: unknown, readCalendar, readContact, readMail, readAllChat, readAllFile, readAndWriteMail, sendMail, unknownFutureValue.
 func (m *OAuthConsentAppDetail) GetAppScope()(*OAuthAppScope) {
     val, err := m.GetBackingStore().Get("appScope")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *OAuthConsentAppDetail) GetAppScope()(*OAuthAppScope) {
 func (m *OAuthConsentAppDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisplayLogo gets the displayLogo property value. The displayLogo property
+// GetDisplayLogo gets the displayLogo property value. App display logo.
 func (m *OAuthConsentAppDetail) GetDisplayLogo()(*string) {
     val, err := m.GetBackingStore().Get("displayLogo")
     if err != nil {
@@ -60,7 +60,7 @@ func (m *OAuthConsentAppDetail) GetDisplayLogo()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. App name.
 func (m *OAuthConsentAppDetail) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -169,7 +169,7 @@ func (m *OAuthConsentAppDetail) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAppScope sets the appScope property value. The appScope property
+// SetAppScope sets the appScope property value. App scope. Possible values are: unknown, readCalendar, readContact, readMail, readAllChat, readAllFile, readAndWriteMail, sendMail, unknownFutureValue.
 func (m *OAuthConsentAppDetail) SetAppScope(value *OAuthAppScope)() {
     err := m.GetBackingStore().Set("appScope", value)
     if err != nil {
@@ -180,14 +180,14 @@ func (m *OAuthConsentAppDetail) SetAppScope(value *OAuthAppScope)() {
 func (m *OAuthConsentAppDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisplayLogo sets the displayLogo property value. The displayLogo property
+// SetDisplayLogo sets the displayLogo property value. App display logo.
 func (m *OAuthConsentAppDetail) SetDisplayLogo(value *string)() {
     err := m.GetBackingStore().Set("displayLogo", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. App name.
 func (m *OAuthConsentAppDetail) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

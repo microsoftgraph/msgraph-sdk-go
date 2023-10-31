@@ -19,7 +19,7 @@ func NewEndUserNotificationDetail()(*EndUserNotificationDetail) {
 func CreateEndUserNotificationDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEndUserNotificationDetail(), nil
 }
-// GetEmailContent gets the emailContent property value. The emailContent property
+// GetEmailContent gets the emailContent property value. Email HTML content.
 func (m *EndUserNotificationDetail) GetEmailContent()(*string) {
     val, err := m.GetBackingStore().Get("emailContent")
     if err != nil {
@@ -95,7 +95,7 @@ func (m *EndUserNotificationDetail) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetIsDefaultLangauge gets the isDefaultLangauge property value. The isDefaultLangauge property
+// GetIsDefaultLangauge gets the isDefaultLangauge property value. Indicates whether this language is default.
 func (m *EndUserNotificationDetail) GetIsDefaultLangauge()(*bool) {
     val, err := m.GetBackingStore().Get("isDefaultLangauge")
     if err != nil {
@@ -106,7 +106,7 @@ func (m *EndUserNotificationDetail) GetIsDefaultLangauge()(*bool) {
     }
     return nil
 }
-// GetLanguage gets the language property value. The language property
+// GetLanguage gets the language property value. Notification language.
 func (m *EndUserNotificationDetail) GetLanguage()(*string) {
     val, err := m.GetBackingStore().Get("language")
     if err != nil {
@@ -117,7 +117,7 @@ func (m *EndUserNotificationDetail) GetLanguage()(*string) {
     }
     return nil
 }
-// GetLocale gets the locale property value. The locale property
+// GetLocale gets the locale property value. Notification locale.
 func (m *EndUserNotificationDetail) GetLocale()(*string) {
     val, err := m.GetBackingStore().Get("locale")
     if err != nil {
@@ -139,7 +139,7 @@ func (m *EndUserNotificationDetail) GetSentFrom()(EmailIdentityable) {
     }
     return nil
 }
-// GetSubject gets the subject property value. The subject property
+// GetSubject gets the subject property value. Mail subject.
 func (m *EndUserNotificationDetail) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
     if err != nil {
@@ -194,28 +194,28 @@ func (m *EndUserNotificationDetail) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetEmailContent sets the emailContent property value. The emailContent property
+// SetEmailContent sets the emailContent property value. Email HTML content.
 func (m *EndUserNotificationDetail) SetEmailContent(value *string)() {
     err := m.GetBackingStore().Set("emailContent", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsDefaultLangauge sets the isDefaultLangauge property value. The isDefaultLangauge property
+// SetIsDefaultLangauge sets the isDefaultLangauge property value. Indicates whether this language is default.
 func (m *EndUserNotificationDetail) SetIsDefaultLangauge(value *bool)() {
     err := m.GetBackingStore().Set("isDefaultLangauge", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLanguage sets the language property value. The language property
+// SetLanguage sets the language property value. Notification language.
 func (m *EndUserNotificationDetail) SetLanguage(value *string)() {
     err := m.GetBackingStore().Set("language", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLocale sets the locale property value. The locale property
+// SetLocale sets the locale property value. Notification locale.
 func (m *EndUserNotificationDetail) SetLocale(value *string)() {
     err := m.GetBackingStore().Set("locale", value)
     if err != nil {
@@ -229,7 +229,7 @@ func (m *EndUserNotificationDetail) SetSentFrom(value EmailIdentityable)() {
         panic(err)
     }
 }
-// SetSubject sets the subject property value. The subject property
+// SetSubject sets the subject property value. Mail subject.
 func (m *EndUserNotificationDetail) SetSubject(value *string)() {
     err := m.GetBackingStore().Set("subject", value)
     if err != nil {

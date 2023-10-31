@@ -19,7 +19,7 @@ func NewAttackSimulationRoot()(*AttackSimulationRoot) {
 func CreateAttackSimulationRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAttackSimulationRoot(), nil
 }
-// GetEndUserNotifications gets the endUserNotifications property value. The endUserNotifications property
+// GetEndUserNotifications gets the endUserNotifications property value. Represents an end user's notification for an attack simulation training.
 func (m *AttackSimulationRoot) GetEndUserNotifications()([]EndUserNotificationable) {
     val, err := m.GetBackingStore().Get("endUserNotifications")
     if err != nil {
@@ -163,7 +163,7 @@ func (m *AttackSimulationRoot) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetLandingPages gets the landingPages property value. The landingPages property
+// GetLandingPages gets the landingPages property value. Represents an attack simulation training landing page.
 func (m *AttackSimulationRoot) GetLandingPages()([]LandingPageable) {
     val, err := m.GetBackingStore().Get("landingPages")
     if err != nil {
@@ -174,7 +174,7 @@ func (m *AttackSimulationRoot) GetLandingPages()([]LandingPageable) {
     }
     return nil
 }
-// GetLoginPages gets the loginPages property value. The loginPages property
+// GetLoginPages gets the loginPages property value. Represents an attack simulation training login page.
 func (m *AttackSimulationRoot) GetLoginPages()([]LoginPageable) {
     val, err := m.GetBackingStore().Get("loginPages")
     if err != nil {
@@ -185,7 +185,7 @@ func (m *AttackSimulationRoot) GetLoginPages()([]LoginPageable) {
     }
     return nil
 }
-// GetOperations gets the operations property value. The operations property
+// GetOperations gets the operations property value. Represents an attack simulation training operation.
 func (m *AttackSimulationRoot) GetOperations()([]AttackSimulationOperationable) {
     val, err := m.GetBackingStore().Get("operations")
     if err != nil {
@@ -196,7 +196,7 @@ func (m *AttackSimulationRoot) GetOperations()([]AttackSimulationOperationable) 
     }
     return nil
 }
-// GetPayloads gets the payloads property value. The payloads property
+// GetPayloads gets the payloads property value. Represents an attack simulation training campaign payload in a tenant.
 func (m *AttackSimulationRoot) GetPayloads()([]Payloadable) {
     val, err := m.GetBackingStore().Get("payloads")
     if err != nil {
@@ -229,7 +229,7 @@ func (m *AttackSimulationRoot) GetSimulations()([]Simulationable) {
     }
     return nil
 }
-// GetTrainings gets the trainings property value. The trainings property
+// GetTrainings gets the trainings property value. Represents details about attack simulation trainings.
 func (m *AttackSimulationRoot) GetTrainings()([]Trainingable) {
     val, err := m.GetBackingStore().Get("trainings")
     if err != nil {
@@ -344,35 +344,35 @@ func (m *AttackSimulationRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetEndUserNotifications sets the endUserNotifications property value. The endUserNotifications property
+// SetEndUserNotifications sets the endUserNotifications property value. Represents an end user's notification for an attack simulation training.
 func (m *AttackSimulationRoot) SetEndUserNotifications(value []EndUserNotificationable)() {
     err := m.GetBackingStore().Set("endUserNotifications", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLandingPages sets the landingPages property value. The landingPages property
+// SetLandingPages sets the landingPages property value. Represents an attack simulation training landing page.
 func (m *AttackSimulationRoot) SetLandingPages(value []LandingPageable)() {
     err := m.GetBackingStore().Set("landingPages", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLoginPages sets the loginPages property value. The loginPages property
+// SetLoginPages sets the loginPages property value. Represents an attack simulation training login page.
 func (m *AttackSimulationRoot) SetLoginPages(value []LoginPageable)() {
     err := m.GetBackingStore().Set("loginPages", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOperations sets the operations property value. The operations property
+// SetOperations sets the operations property value. Represents an attack simulation training operation.
 func (m *AttackSimulationRoot) SetOperations(value []AttackSimulationOperationable)() {
     err := m.GetBackingStore().Set("operations", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPayloads sets the payloads property value. The payloads property
+// SetPayloads sets the payloads property value. Represents an attack simulation training campaign payload in a tenant.
 func (m *AttackSimulationRoot) SetPayloads(value []Payloadable)() {
     err := m.GetBackingStore().Set("payloads", value)
     if err != nil {
@@ -393,7 +393,7 @@ func (m *AttackSimulationRoot) SetSimulations(value []Simulationable)() {
         panic(err)
     }
 }
-// SetTrainings sets the trainings property value. The trainings property
+// SetTrainings sets the trainings property value. Represents details about attack simulation trainings.
 func (m *AttackSimulationRoot) SetTrainings(value []Trainingable)() {
     err := m.GetBackingStore().Set("trainings", value)
     if err != nil {

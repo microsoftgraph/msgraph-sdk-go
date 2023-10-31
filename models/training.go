@@ -20,7 +20,7 @@ func NewTraining()(*Training) {
 func CreateTrainingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTraining(), nil
 }
-// GetAvailabilityStatus gets the availabilityStatus property value. The availabilityStatus property
+// GetAvailabilityStatus gets the availabilityStatus property value. Training availability status. Possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.
 func (m *Training) GetAvailabilityStatus()(*TrainingAvailabilityStatus) {
     val, err := m.GetBackingStore().Get("availabilityStatus")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *Training) GetAvailabilityStatus()(*TrainingAvailabilityStatus) {
     }
     return nil
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. Identity of the user who created the training.
 func (m *Training) GetCreatedBy()(EmailIdentityable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -42,7 +42,7 @@ func (m *Training) GetCreatedBy()(EmailIdentityable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Date and time when the training was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *Training) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -53,7 +53,7 @@ func (m *Training) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The description for the training.
 func (m *Training) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -64,7 +64,7 @@ func (m *Training) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name for the training.
 func (m *Training) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -75,7 +75,7 @@ func (m *Training) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetDurationInMinutes gets the durationInMinutes property value. The durationInMinutes property
+// GetDurationInMinutes gets the durationInMinutes property value. Training duration.
 func (m *Training) GetDurationInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("durationInMinutes")
     if err != nil {
@@ -249,7 +249,7 @@ func (m *Training) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetHasEvaluation gets the hasEvaluation property value. The hasEvaluation property
+// GetHasEvaluation gets the hasEvaluation property value. Indicates whether the training has any evaluation.
 func (m *Training) GetHasEvaluation()(*bool) {
     val, err := m.GetBackingStore().Get("hasEvaluation")
     if err != nil {
@@ -260,7 +260,7 @@ func (m *Training) GetHasEvaluation()(*bool) {
     }
     return nil
 }
-// GetLanguageDetails gets the languageDetails property value. The languageDetails property
+// GetLanguageDetails gets the languageDetails property value. Language specific details on a training.
 func (m *Training) GetLanguageDetails()([]TrainingLanguageDetailable) {
     val, err := m.GetBackingStore().Get("languageDetails")
     if err != nil {
@@ -271,7 +271,7 @@ func (m *Training) GetLanguageDetails()([]TrainingLanguageDetailable) {
     }
     return nil
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who last modified the training.
 func (m *Training) GetLastModifiedBy()(EmailIdentityable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -282,7 +282,7 @@ func (m *Training) GetLastModifiedBy()(EmailIdentityable) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time when the training was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *Training) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -293,7 +293,7 @@ func (m *Training) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     }
     return nil
 }
-// GetSource gets the source property value. The source property
+// GetSource gets the source property value. Training content source. Possible values are: unknown, global, tenant, unknownFutureValue.
 func (m *Training) GetSource()(*SimulationContentSource) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
@@ -304,7 +304,7 @@ func (m *Training) GetSource()(*SimulationContentSource) {
     }
     return nil
 }
-// GetSupportedLocales gets the supportedLocales property value. The supportedLocales property
+// GetSupportedLocales gets the supportedLocales property value. Supported locales for content for the associated training.
 func (m *Training) GetSupportedLocales()([]string) {
     val, err := m.GetBackingStore().Get("supportedLocales")
     if err != nil {
@@ -315,7 +315,7 @@ func (m *Training) GetSupportedLocales()([]string) {
     }
     return nil
 }
-// GetTags gets the tags property value. The tags property
+// GetTags gets the tags property value. Training tags.
 func (m *Training) GetTags()([]string) {
     val, err := m.GetBackingStore().Get("tags")
     if err != nil {
@@ -326,7 +326,7 @@ func (m *Training) GetTags()([]string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type property
+// GetTypeEscaped gets the type property value. The type of training. Possible values are: unknown, phishing, unknownFutureValue.
 func (m *Training) GetTypeEscaped()(*TrainingType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -438,98 +438,98 @@ func (m *Training) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetAvailabilityStatus sets the availabilityStatus property value. The availabilityStatus property
+// SetAvailabilityStatus sets the availabilityStatus property value. Training availability status. Possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.
 func (m *Training) SetAvailabilityStatus(value *TrainingAvailabilityStatus)() {
     err := m.GetBackingStore().Set("availabilityStatus", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. Identity of the user who created the training.
 func (m *Training) SetCreatedBy(value EmailIdentityable)() {
     err := m.GetBackingStore().Set("createdBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Date and time when the training was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *Training) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The description for the training.
 func (m *Training) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name for the training.
 func (m *Training) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDurationInMinutes sets the durationInMinutes property value. The durationInMinutes property
+// SetDurationInMinutes sets the durationInMinutes property value. Training duration.
 func (m *Training) SetDurationInMinutes(value *int32)() {
     err := m.GetBackingStore().Set("durationInMinutes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHasEvaluation sets the hasEvaluation property value. The hasEvaluation property
+// SetHasEvaluation sets the hasEvaluation property value. Indicates whether the training has any evaluation.
 func (m *Training) SetHasEvaluation(value *bool)() {
     err := m.GetBackingStore().Set("hasEvaluation", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLanguageDetails sets the languageDetails property value. The languageDetails property
+// SetLanguageDetails sets the languageDetails property value. Language specific details on a training.
 func (m *Training) SetLanguageDetails(value []TrainingLanguageDetailable)() {
     err := m.GetBackingStore().Set("languageDetails", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user who last modified the training.
 func (m *Training) SetLastModifiedBy(value EmailIdentityable)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date and time when the training was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *Training) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSource sets the source property value. The source property
+// SetSource sets the source property value. Training content source. Possible values are: unknown, global, tenant, unknownFutureValue.
 func (m *Training) SetSource(value *SimulationContentSource)() {
     err := m.GetBackingStore().Set("source", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSupportedLocales sets the supportedLocales property value. The supportedLocales property
+// SetSupportedLocales sets the supportedLocales property value. Supported locales for content for the associated training.
 func (m *Training) SetSupportedLocales(value []string)() {
     err := m.GetBackingStore().Set("supportedLocales", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTags sets the tags property value. The tags property
+// SetTags sets the tags property value. Training tags.
 func (m *Training) SetTags(value []string)() {
     err := m.GetBackingStore().Set("tags", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type property
+// SetTypeEscaped sets the type property value. The type of training. Possible values are: unknown, phishing, unknownFutureValue.
 func (m *Training) SetTypeEscaped(value *TrainingType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

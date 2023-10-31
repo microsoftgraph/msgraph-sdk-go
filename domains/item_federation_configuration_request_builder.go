@@ -11,7 +11,7 @@ import (
 type ItemFederationConfigurationRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemFederationConfigurationRequestBuilderGetQueryParameters read the properties and relationships of an internalDomainFederation object. This API is available in the following national cloud deployments.
+// ItemFederationConfigurationRequestBuilderGetQueryParameters read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection. This API is available in the following national cloud deployments.
 type ItemFederationConfigurationRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewItemFederationConfigurationRequestBuilder(rawUrl string, requestAdapter 
 func (m *ItemFederationConfigurationRequestBuilder) Count()(*ItemFederationConfigurationCountRequestBuilder) {
     return NewItemFederationConfigurationCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of an internalDomainFederation object. This API is available in the following national cloud deployments.
+// Get read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection. This API is available in the following national cloud deployments.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/domain-list-federationconfiguration?view=graph-rest-1.0
 func (m *ItemFederationConfigurationRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemFederationConfigurationRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -115,7 +118,7 @@ func (m *ItemFederationConfigurationRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable), nil
 }
-// ToGetRequestInformation read the properties and relationships of an internalDomainFederation object. This API is available in the following national cloud deployments.
+// ToGetRequestInformation read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection. This API is available in the following national cloud deployments.
 func (m *ItemFederationConfigurationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemFederationConfigurationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

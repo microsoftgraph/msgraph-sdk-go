@@ -18,7 +18,7 @@ type AttackSimulationPayloadsPayloadItemRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AttackSimulationPayloadsPayloadItemRequestBuilderGetQueryParameters get payloads from security
+// AttackSimulationPayloadsPayloadItemRequestBuilderGetQueryParameters represents an attack simulation training campaign payload in a tenant.
 type AttackSimulationPayloadsPayloadItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *AttackSimulationPayloadsPayloadItemRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// Get get payloads from security
+// Get represents an attack simulation training campaign payload in a tenant.
 func (m *AttackSimulationPayloadsPayloadItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationPayloadsPayloadItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Payloadable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +121,7 @@ func (m *AttackSimulationPayloadsPayloadItemRequestBuilder) ToDeleteRequestInfor
     requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get payloads from security
+// ToGetRequestInformation represents an attack simulation training campaign payload in a tenant.
 func (m *AttackSimulationPayloadsPayloadItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationPayloadsPayloadItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

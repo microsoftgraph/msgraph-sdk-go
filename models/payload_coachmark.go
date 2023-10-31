@@ -38,7 +38,7 @@ func (m *PayloadCoachmark) GetAdditionalData()(map[string]any) {
 func (m *PayloadCoachmark) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCoachmarkLocation gets the coachmarkLocation property value. The coachmarkLocation property
+// GetCoachmarkLocation gets the coachmarkLocation property value. The coachmark location.
 func (m *PayloadCoachmark) GetCoachmarkLocation()(CoachmarkLocationable) {
     val, err := m.GetBackingStore().Get("coachmarkLocation")
     if err != nil {
@@ -49,7 +49,7 @@ func (m *PayloadCoachmark) GetCoachmarkLocation()(CoachmarkLocationable) {
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The description about the coachmark.
 func (m *PayloadCoachmark) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -135,7 +135,7 @@ func (m *PayloadCoachmark) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetIndicator gets the indicator property value. The indicator property
+// GetIndicator gets the indicator property value. The coachmark indicator.
 func (m *PayloadCoachmark) GetIndicator()(*string) {
     val, err := m.GetBackingStore().Get("indicator")
     if err != nil {
@@ -146,7 +146,7 @@ func (m *PayloadCoachmark) GetIndicator()(*string) {
     }
     return nil
 }
-// GetIsValid gets the isValid property value. The isValid property
+// GetIsValid gets the isValid property value. Indicates whether the coachmark is valid or not.
 func (m *PayloadCoachmark) GetIsValid()(*bool) {
     val, err := m.GetBackingStore().Get("isValid")
     if err != nil {
@@ -157,7 +157,7 @@ func (m *PayloadCoachmark) GetIsValid()(*bool) {
     }
     return nil
 }
-// GetLanguage gets the language property value. The language property
+// GetLanguage gets the language property value. The coachmark language.
 func (m *PayloadCoachmark) GetLanguage()(*string) {
     val, err := m.GetBackingStore().Get("language")
     if err != nil {
@@ -179,7 +179,7 @@ func (m *PayloadCoachmark) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOrder gets the order property value. The order property
+// GetOrder gets the order property value. The coachmark order.
 func (m *PayloadCoachmark) GetOrder()(*string) {
     val, err := m.GetBackingStore().Get("order")
     if err != nil {
@@ -253,35 +253,35 @@ func (m *PayloadCoachmark) SetAdditionalData(value map[string]any)() {
 func (m *PayloadCoachmark) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCoachmarkLocation sets the coachmarkLocation property value. The coachmarkLocation property
+// SetCoachmarkLocation sets the coachmarkLocation property value. The coachmark location.
 func (m *PayloadCoachmark) SetCoachmarkLocation(value CoachmarkLocationable)() {
     err := m.GetBackingStore().Set("coachmarkLocation", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The description about the coachmark.
 func (m *PayloadCoachmark) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIndicator sets the indicator property value. The indicator property
+// SetIndicator sets the indicator property value. The coachmark indicator.
 func (m *PayloadCoachmark) SetIndicator(value *string)() {
     err := m.GetBackingStore().Set("indicator", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsValid sets the isValid property value. The isValid property
+// SetIsValid sets the isValid property value. Indicates whether the coachmark is valid or not.
 func (m *PayloadCoachmark) SetIsValid(value *bool)() {
     err := m.GetBackingStore().Set("isValid", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLanguage sets the language property value. The language property
+// SetLanguage sets the language property value. The coachmark language.
 func (m *PayloadCoachmark) SetLanguage(value *string)() {
     err := m.GetBackingStore().Set("language", value)
     if err != nil {
@@ -295,7 +295,7 @@ func (m *PayloadCoachmark) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOrder sets the order property value. The order property
+// SetOrder sets the order property value. The coachmark order.
 func (m *PayloadCoachmark) SetOrder(value *string)() {
     err := m.GetBackingStore().Set("order", value)
     if err != nil {

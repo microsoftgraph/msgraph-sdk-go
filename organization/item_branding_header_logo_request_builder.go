@@ -60,8 +60,8 @@ func (m *ItemBrandingHeaderLogoRequestBuilder) Get(ctx context.Context, requestC
     return res.([]byte), nil
 }
 // Put a company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
-func (m *ItemBrandingHeaderLogoRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemBrandingHeaderLogoRequestBuilderPutRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
+func (m *ItemBrandingHeaderLogoRequestBuilder) Put(ctx context.Context, body []byte, contentType string, requestConfiguration *ItemBrandingHeaderLogoRequestBuilderPutRequestConfiguration)([]byte, error) {
+    requestInfo, err := m.ToPutRequestInformation(ctx, body, contentType, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -88,11 +88,11 @@ func (m *ItemBrandingHeaderLogoRequestBuilder) ToGetRequestInformation(ctx conte
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "image/bmp, image/jpg, image/jpeg, image/gif, image/vnd.microsoft.icon, image/png, image/tiff, application/json, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation a company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
-func (m *ItemBrandingHeaderLogoRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemBrandingHeaderLogoRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemBrandingHeaderLogoRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, contentType string, requestConfiguration *ItemBrandingHeaderLogoRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -102,7 +102,7 @@ func (m *ItemBrandingHeaderLogoRequestBuilder) ToPutRequestInformation(ctx conte
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
     requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
-    requestInfo.SetStreamContentAndContentType(body, "application/octet-stream")
+    requestInfo.SetStreamContentAndContentType(body, contentType)
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

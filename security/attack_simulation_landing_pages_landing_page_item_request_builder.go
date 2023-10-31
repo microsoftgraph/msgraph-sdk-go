@@ -18,7 +18,7 @@ type AttackSimulationLandingPagesLandingPageItemRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AttackSimulationLandingPagesLandingPageItemRequestBuilderGetQueryParameters get landingPages from security
+// AttackSimulationLandingPagesLandingPageItemRequestBuilderGetQueryParameters represents an attack simulation training landing page.
 type AttackSimulationLandingPagesLandingPageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *AttackSimulationLandingPagesLandingPageItemRequestBuilder) Delete(ctx c
 func (m *AttackSimulationLandingPagesLandingPageItemRequestBuilder) Details()(*AttackSimulationLandingPagesItemDetailsRequestBuilder) {
     return NewAttackSimulationLandingPagesItemDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get landingPages from security
+// Get represents an attack simulation training landing page.
 func (m *AttackSimulationLandingPagesLandingPageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationLandingPagesLandingPageItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LandingPageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *AttackSimulationLandingPagesLandingPageItemRequestBuilder) ToDeleteRequ
     requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get landingPages from security
+// ToGetRequestInformation represents an attack simulation training landing page.
 func (m *AttackSimulationLandingPagesLandingPageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationLandingPagesLandingPageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

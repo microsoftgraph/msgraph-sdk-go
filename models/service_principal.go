@@ -1127,7 +1127,7 @@ func (m *ServicePrincipal) GetPreferredTokenSigningKeyThumbprint()(*string) {
     }
     return nil
 }
-// GetRemoteDesktopSecurityConfiguration gets the remoteDesktopSecurityConfiguration property value. The remoteDesktopSecurityConfiguration property
+// GetRemoteDesktopSecurityConfiguration gets the remoteDesktopSecurityConfiguration property value. The remoteDesktopSecurityConfiguration object applied to this service principal. Supports $filter (eq) for isRemoteDesktopProtocolEnabled property.
 func (m *ServicePrincipal) GetRemoteDesktopSecurityConfiguration()(RemoteDesktopSecurityConfigurationable) {
     val, err := m.GetBackingStore().Get("remoteDesktopSecurityConfiguration")
     if err != nil {
@@ -1999,7 +1999,7 @@ func (m *ServicePrincipal) SetPreferredTokenSigningKeyThumbprint(value *string)(
         panic(err)
     }
 }
-// SetRemoteDesktopSecurityConfiguration sets the remoteDesktopSecurityConfiguration property value. The remoteDesktopSecurityConfiguration property
+// SetRemoteDesktopSecurityConfiguration sets the remoteDesktopSecurityConfiguration property value. The remoteDesktopSecurityConfiguration object applied to this service principal. Supports $filter (eq) for isRemoteDesktopProtocolEnabled property.
 func (m *ServicePrincipal) SetRemoteDesktopSecurityConfiguration(value RemoteDesktopSecurityConfigurationable)() {
     err := m.GetBackingStore().Set("remoteDesktopSecurityConfiguration", value)
     if err != nil {

@@ -56,7 +56,7 @@ func (m *PayloadDetail) GetAdditionalData()(map[string]any) {
 func (m *PayloadDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCoachmarks gets the coachmarks property value. The coachmarks property
+// GetCoachmarks gets the coachmarks property value. Payload coachmark details.
 func (m *PayloadDetail) GetCoachmarks()([]PayloadCoachmarkable) {
     val, err := m.GetBackingStore().Get("coachmarks")
     if err != nil {
@@ -67,7 +67,7 @@ func (m *PayloadDetail) GetCoachmarks()([]PayloadCoachmarkable) {
     }
     return nil
 }
-// GetContent gets the content property value. The content property
+// GetContent gets the content property value. Payload content details.
 func (m *PayloadDetail) GetContent()(*string) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -140,7 +140,7 @@ func (m *PayloadDetail) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPhishingUrl gets the phishingUrl property value. The phishingUrl property
+// GetPhishingUrl gets the phishingUrl property value. The phishing URL used to target a user.
 func (m *PayloadDetail) GetPhishingUrl()(*string) {
     val, err := m.GetBackingStore().Get("phishingUrl")
     if err != nil {
@@ -202,14 +202,14 @@ func (m *PayloadDetail) SetAdditionalData(value map[string]any)() {
 func (m *PayloadDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCoachmarks sets the coachmarks property value. The coachmarks property
+// SetCoachmarks sets the coachmarks property value. Payload coachmark details.
 func (m *PayloadDetail) SetCoachmarks(value []PayloadCoachmarkable)() {
     err := m.GetBackingStore().Set("coachmarks", value)
     if err != nil {
         panic(err)
     }
 }
-// SetContent sets the content property value. The content property
+// SetContent sets the content property value. Payload content details.
 func (m *PayloadDetail) SetContent(value *string)() {
     err := m.GetBackingStore().Set("content", value)
     if err != nil {
@@ -223,7 +223,7 @@ func (m *PayloadDetail) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPhishingUrl sets the phishingUrl property value. The phishingUrl property
+// SetPhishingUrl sets the phishingUrl property value. The phishing URL used to target a user.
 func (m *PayloadDetail) SetPhishingUrl(value *string)() {
     err := m.GetBackingStore().Set("phishingUrl", value)
     if err != nil {

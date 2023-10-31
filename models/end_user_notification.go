@@ -20,7 +20,7 @@ func NewEndUserNotification()(*EndUserNotification) {
 func CreateEndUserNotificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEndUserNotification(), nil
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. Identity of the user who created the notification.
 func (m *EndUserNotification) GetCreatedBy()(EmailIdentityable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *EndUserNotification) GetCreatedBy()(EmailIdentityable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Date and time when the notification was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *EndUserNotification) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -42,7 +42,7 @@ func (m *EndUserNotification) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. Description of the notification as defined by the user.
 func (m *EndUserNotification) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -64,7 +64,7 @@ func (m *EndUserNotification) GetDetails()([]EndUserNotificationDetailable) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Name of the notification as defined by the user.
 func (m *EndUserNotification) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -202,7 +202,7 @@ func (m *EndUserNotification) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who last modified the notification.
 func (m *EndUserNotification) GetLastModifiedBy()(EmailIdentityable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -213,7 +213,7 @@ func (m *EndUserNotification) GetLastModifiedBy()(EmailIdentityable) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time when the notification was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *EndUserNotification) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -224,7 +224,7 @@ func (m *EndUserNotification) GetLastModifiedDateTime()(*i336074805fc853987abe6f
     }
     return nil
 }
-// GetNotificationType gets the notificationType property value. The notificationType property
+// GetNotificationType gets the notificationType property value. Type of notification. Possible values are: unknown, positiveReinforcement, noTraining, trainingAssignment, trainingReminder, unknownFutureValue.
 func (m *EndUserNotification) GetNotificationType()(*EndUserNotificationType) {
     val, err := m.GetBackingStore().Get("notificationType")
     if err != nil {
@@ -235,7 +235,7 @@ func (m *EndUserNotification) GetNotificationType()(*EndUserNotificationType) {
     }
     return nil
 }
-// GetSource gets the source property value. The source property
+// GetSource gets the source property value. The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
 func (m *EndUserNotification) GetSource()(*SimulationContentSource) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
@@ -246,7 +246,7 @@ func (m *EndUserNotification) GetSource()(*SimulationContentSource) {
     }
     return nil
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. The status of the notification. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
 func (m *EndUserNotification) GetStatus()(*SimulationContentStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -257,7 +257,7 @@ func (m *EndUserNotification) GetStatus()(*SimulationContentStatus) {
     }
     return nil
 }
-// GetSupportedLocales gets the supportedLocales property value. The supportedLocales property
+// GetSupportedLocales gets the supportedLocales property value. Supported locales for endUserNotification content.
 func (m *EndUserNotification) GetSupportedLocales()([]string) {
     val, err := m.GetBackingStore().Get("supportedLocales")
     if err != nil {
@@ -351,21 +351,21 @@ func (m *EndUserNotification) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. Identity of the user who created the notification.
 func (m *EndUserNotification) SetCreatedBy(value EmailIdentityable)() {
     err := m.GetBackingStore().Set("createdBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Date and time when the notification was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *EndUserNotification) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. Description of the notification as defined by the user.
 func (m *EndUserNotification) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
@@ -379,49 +379,49 @@ func (m *EndUserNotification) SetDetails(value []EndUserNotificationDetailable)(
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Name of the notification as defined by the user.
 func (m *EndUserNotification) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user who last modified the notification.
 func (m *EndUserNotification) SetLastModifiedBy(value EmailIdentityable)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date and time when the notification was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *EndUserNotification) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNotificationType sets the notificationType property value. The notificationType property
+// SetNotificationType sets the notificationType property value. Type of notification. Possible values are: unknown, positiveReinforcement, noTraining, trainingAssignment, trainingReminder, unknownFutureValue.
 func (m *EndUserNotification) SetNotificationType(value *EndUserNotificationType)() {
     err := m.GetBackingStore().Set("notificationType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSource sets the source property value. The source property
+// SetSource sets the source property value. The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
 func (m *EndUserNotification) SetSource(value *SimulationContentSource)() {
     err := m.GetBackingStore().Set("source", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. The status of the notification. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
 func (m *EndUserNotification) SetStatus(value *SimulationContentStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSupportedLocales sets the supportedLocales property value. The supportedLocales property
+// SetSupportedLocales sets the supportedLocales property value. Supported locales for endUserNotification content.
 func (m *EndUserNotification) SetSupportedLocales(value []string)() {
     err := m.GetBackingStore().Set("supportedLocales", value)
     if err != nil {

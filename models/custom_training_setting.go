@@ -21,7 +21,7 @@ func NewCustomTrainingSetting()(*CustomTrainingSetting) {
 func CreateCustomTrainingSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomTrainingSetting(), nil
 }
-// GetAssignedTo gets the assignedTo property value. The assignedTo property
+// GetAssignedTo gets the assignedTo property value. A user collection that specifies to whom the training should be assigned. Possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.
 func (m *CustomTrainingSetting) GetAssignedTo()([]TrainingAssignedTo) {
     val, err := m.GetBackingStore().Get("assignedTo")
     if err != nil {
@@ -32,7 +32,7 @@ func (m *CustomTrainingSetting) GetAssignedTo()([]TrainingAssignedTo) {
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The description of the custom training setting.
 func (m *CustomTrainingSetting) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -43,7 +43,7 @@ func (m *CustomTrainingSetting) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the custom training setting.
 func (m *CustomTrainingSetting) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -54,7 +54,7 @@ func (m *CustomTrainingSetting) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetDurationInMinutes gets the durationInMinutes property value. The durationInMinutes property
+// GetDurationInMinutes gets the durationInMinutes property value. Training duration.
 func (m *CustomTrainingSetting) GetDurationInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("durationInMinutes")
     if err != nil {
@@ -126,7 +126,7 @@ func (m *CustomTrainingSetting) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetUrl gets the url property value. The url property
+// GetUrl gets the url property value. The training URL.
 func (m *CustomTrainingSetting) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -175,35 +175,35 @@ func (m *CustomTrainingSetting) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetAssignedTo sets the assignedTo property value. The assignedTo property
+// SetAssignedTo sets the assignedTo property value. A user collection that specifies to whom the training should be assigned. Possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.
 func (m *CustomTrainingSetting) SetAssignedTo(value []TrainingAssignedTo)() {
     err := m.GetBackingStore().Set("assignedTo", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The description of the custom training setting.
 func (m *CustomTrainingSetting) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the custom training setting.
 func (m *CustomTrainingSetting) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDurationInMinutes sets the durationInMinutes property value. The durationInMinutes property
+// SetDurationInMinutes sets the durationInMinutes property value. Training duration.
 func (m *CustomTrainingSetting) SetDurationInMinutes(value *int32)() {
     err := m.GetBackingStore().Set("durationInMinutes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUrl sets the url property value. The url property
+// SetUrl sets the url property value. The training URL.
 func (m *CustomTrainingSetting) SetUrl(value *string)() {
     err := m.GetBackingStore().Set("url", value)
     if err != nil {

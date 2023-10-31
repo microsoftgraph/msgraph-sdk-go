@@ -25,6 +25,17 @@ const (
     APPGOVERNANCEDETECTION_DETECTIONSOURCE
     UNKNOWNFUTUREVALUE_DETECTIONSOURCE
     MICROSOFTDEFENDERFORCLOUD_DETECTIONSOURCE
+    MICROSOFTDEFENDERFORIOT_DETECTIONSOURCE
+    MICROSOFTDEFENDERFORSERVERS_DETECTIONSOURCE
+    MICROSOFTDEFENDERFORSTORAGE_DETECTIONSOURCE
+    MICROSOFTDEFENDERFORDNS_DETECTIONSOURCE
+    MICROSOFTDEFENDERFORDATABASES_DETECTIONSOURCE
+    MICROSOFTDEFENDERFORCONTAINERS_DETECTIONSOURCE
+    MICROSOFTDEFENDERFORNETWORK_DETECTIONSOURCE
+    MICROSOFTDEFENDERFORAPPSERVICE_DETECTIONSOURCE
+    MICROSOFTDEFENDERFORKEYVAULT_DETECTIONSOURCE
+    MICROSOFTDEFENDERFORRESOURCEMANAGER_DETECTIONSOURCE
+    MICROSOFTDEFENDERFORAPIMANAGEMENT_DETECTIONSOURCE
     NRTALERTS_DETECTIONSOURCE
     SCHEDULEDALERTS_DETECTIONSOURCE
     MICROSOFTDEFENDERTHREATINTELLIGENCEANALYTICS_DETECTIONSOURCE
@@ -33,7 +44,7 @@ const (
 )
 
 func (i DetectionSource) String() string {
-    return []string{"unknown", "microsoftDefenderForEndpoint", "antivirus", "smartScreen", "customTi", "microsoftDefenderForOffice365", "automatedInvestigation", "microsoftThreatExperts", "customDetection", "microsoftDefenderForIdentity", "cloudAppSecurity", "microsoft365Defender", "azureAdIdentityProtection", "manual", "microsoftDataLossPrevention", "appGovernancePolicy", "appGovernanceDetection", "unknownFutureValue", "microsoftDefenderForCloud", "nrtAlerts", "scheduledAlerts", "microsoftDefenderThreatIntelligenceAnalytics", "builtInMl", "microsoftSentinel"}[i]
+    return []string{"unknown", "microsoftDefenderForEndpoint", "antivirus", "smartScreen", "customTi", "microsoftDefenderForOffice365", "automatedInvestigation", "microsoftThreatExperts", "customDetection", "microsoftDefenderForIdentity", "cloudAppSecurity", "microsoft365Defender", "azureAdIdentityProtection", "manual", "microsoftDataLossPrevention", "appGovernancePolicy", "appGovernanceDetection", "unknownFutureValue", "microsoftDefenderForCloud", "microsoftDefenderForIoT", "microsoftDefenderForServers", "microsoftDefenderForStorage", "microsoftDefenderForDNS", "microsoftDefenderForDatabases", "microsoftDefenderForContainers", "microsoftDefenderForNetwork", "microsoftDefenderForAppService", "microsoftDefenderForKeyVault", "microsoftDefenderForResourceManager", "microsoftDefenderForApiManagement", "nrtAlerts", "scheduledAlerts", "microsoftDefenderThreatIntelligenceAnalytics", "builtInMl", "microsoftSentinel"}[i]
 }
 func ParseDetectionSource(v string) (any, error) {
     result := UNKNOWN_DETECTIONSOURCE
@@ -76,6 +87,28 @@ func ParseDetectionSource(v string) (any, error) {
             result = UNKNOWNFUTUREVALUE_DETECTIONSOURCE
         case "microsoftDefenderForCloud":
             result = MICROSOFTDEFENDERFORCLOUD_DETECTIONSOURCE
+        case "microsoftDefenderForIoT":
+            result = MICROSOFTDEFENDERFORIOT_DETECTIONSOURCE
+        case "microsoftDefenderForServers":
+            result = MICROSOFTDEFENDERFORSERVERS_DETECTIONSOURCE
+        case "microsoftDefenderForStorage":
+            result = MICROSOFTDEFENDERFORSTORAGE_DETECTIONSOURCE
+        case "microsoftDefenderForDNS":
+            result = MICROSOFTDEFENDERFORDNS_DETECTIONSOURCE
+        case "microsoftDefenderForDatabases":
+            result = MICROSOFTDEFENDERFORDATABASES_DETECTIONSOURCE
+        case "microsoftDefenderForContainers":
+            result = MICROSOFTDEFENDERFORCONTAINERS_DETECTIONSOURCE
+        case "microsoftDefenderForNetwork":
+            result = MICROSOFTDEFENDERFORNETWORK_DETECTIONSOURCE
+        case "microsoftDefenderForAppService":
+            result = MICROSOFTDEFENDERFORAPPSERVICE_DETECTIONSOURCE
+        case "microsoftDefenderForKeyVault":
+            result = MICROSOFTDEFENDERFORKEYVAULT_DETECTIONSOURCE
+        case "microsoftDefenderForResourceManager":
+            result = MICROSOFTDEFENDERFORRESOURCEMANAGER_DETECTIONSOURCE
+        case "microsoftDefenderForApiManagement":
+            result = MICROSOFTDEFENDERFORAPIMANAGEMENT_DETECTIONSOURCE
         case "nrtAlerts":
             result = NRTALERTS_DETECTIONSOURCE
         case "scheduledAlerts":

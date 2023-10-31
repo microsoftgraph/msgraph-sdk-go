@@ -20,7 +20,7 @@ func NewTrainingLanguageDetail()(*TrainingLanguageDetail) {
 func CreateTrainingLanguageDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTrainingLanguageDetail(), nil
 }
-// GetContent gets the content property value. The content property
+// GetContent gets the content property value. Language specific content for the training.
 func (m *TrainingLanguageDetail) GetContent()(*string) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *TrainingLanguageDetail) GetContent()(*string) {
     }
     return nil
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. Identity of the user who created the language details.
 func (m *TrainingLanguageDetail) GetCreatedBy()(EmailIdentityable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -42,7 +42,7 @@ func (m *TrainingLanguageDetail) GetCreatedBy()(EmailIdentityable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Date and time when the language details were created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *TrainingLanguageDetail) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -53,7 +53,7 @@ func (m *TrainingLanguageDetail) GetCreatedDateTime()(*i336074805fc853987abe6f7f
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. Description as defined by the user.
 func (m *TrainingLanguageDetail) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -64,7 +64,7 @@ func (m *TrainingLanguageDetail) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Display name as defined by the user.
 func (m *TrainingLanguageDetail) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -170,7 +170,7 @@ func (m *TrainingLanguageDetail) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetIsDefaultLangauge gets the isDefaultLangauge property value. The isDefaultLangauge property
+// GetIsDefaultLangauge gets the isDefaultLangauge property value. Indicates whether the training has a default language.
 func (m *TrainingLanguageDetail) GetIsDefaultLangauge()(*bool) {
     val, err := m.GetBackingStore().Get("isDefaultLangauge")
     if err != nil {
@@ -181,7 +181,7 @@ func (m *TrainingLanguageDetail) GetIsDefaultLangauge()(*bool) {
     }
     return nil
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who last modified the details.
 func (m *TrainingLanguageDetail) GetLastModifiedBy()(EmailIdentityable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -192,7 +192,7 @@ func (m *TrainingLanguageDetail) GetLastModifiedBy()(EmailIdentityable) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time when the trainingLanguageDetail was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *TrainingLanguageDetail) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -203,7 +203,7 @@ func (m *TrainingLanguageDetail) GetLastModifiedDateTime()(*i336074805fc853987ab
     }
     return nil
 }
-// GetLocale gets the locale property value. The locale property
+// GetLocale gets the locale property value. Content locale for the training detail.
 func (m *TrainingLanguageDetail) GetLocale()(*string) {
     val, err := m.GetBackingStore().Get("locale")
     if err != nil {
@@ -276,63 +276,63 @@ func (m *TrainingLanguageDetail) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetContent sets the content property value. The content property
+// SetContent sets the content property value. Language specific content for the training.
 func (m *TrainingLanguageDetail) SetContent(value *string)() {
     err := m.GetBackingStore().Set("content", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. Identity of the user who created the language details.
 func (m *TrainingLanguageDetail) SetCreatedBy(value EmailIdentityable)() {
     err := m.GetBackingStore().Set("createdBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Date and time when the language details were created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *TrainingLanguageDetail) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. Description as defined by the user.
 func (m *TrainingLanguageDetail) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Display name as defined by the user.
 func (m *TrainingLanguageDetail) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsDefaultLangauge sets the isDefaultLangauge property value. The isDefaultLangauge property
+// SetIsDefaultLangauge sets the isDefaultLangauge property value. Indicates whether the training has a default language.
 func (m *TrainingLanguageDetail) SetIsDefaultLangauge(value *bool)() {
     err := m.GetBackingStore().Set("isDefaultLangauge", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user who last modified the details.
 func (m *TrainingLanguageDetail) SetLastModifiedBy(value EmailIdentityable)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date and time when the trainingLanguageDetail was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *TrainingLanguageDetail) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLocale sets the locale property value. The locale property
+// SetLocale sets the locale property value. Content locale for the training detail.
 func (m *TrainingLanguageDetail) SetLocale(value *string)() {
     err := m.GetBackingStore().Set("locale", value)
     if err != nil {

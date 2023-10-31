@@ -36,7 +36,7 @@ func (m *SimulationNotification) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetTargettedUserType gets the targettedUserType property value. The targettedUserType property
+// GetTargettedUserType gets the targettedUserType property value. Target user type. Possible values are: unknown, clicked, compromised, allUsers, unknownFutureValue.
 func (m *SimulationNotification) GetTargettedUserType()(*TargettedUserType) {
     val, err := m.GetBackingStore().Get("targettedUserType")
     if err != nil {
@@ -62,7 +62,7 @@ func (m *SimulationNotification) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetTargettedUserType sets the targettedUserType property value. The targettedUserType property
+// SetTargettedUserType sets the targettedUserType property value. Target user type. Possible values are: unknown, clicked, compromised, allUsers, unknownFutureValue.
 func (m *SimulationNotification) SetTargettedUserType(value *TargettedUserType)() {
     err := m.GetBackingStore().Set("targettedUserType", value)
     if err != nil {

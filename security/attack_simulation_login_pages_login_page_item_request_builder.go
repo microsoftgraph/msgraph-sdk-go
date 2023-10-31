@@ -18,7 +18,7 @@ type AttackSimulationLoginPagesLoginPageItemRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AttackSimulationLoginPagesLoginPageItemRequestBuilderGetQueryParameters get loginPages from security
+// AttackSimulationLoginPagesLoginPageItemRequestBuilderGetQueryParameters represents an attack simulation training login page.
 type AttackSimulationLoginPagesLoginPageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *AttackSimulationLoginPagesLoginPageItemRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get get loginPages from security
+// Get represents an attack simulation training login page.
 func (m *AttackSimulationLoginPagesLoginPageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationLoginPagesLoginPageItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LoginPageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +121,7 @@ func (m *AttackSimulationLoginPagesLoginPageItemRequestBuilder) ToDeleteRequestI
     requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get loginPages from security
+// ToGetRequestInformation represents an attack simulation training login page.
 func (m *AttackSimulationLoginPagesLoginPageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationLoginPagesLoginPageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

@@ -60,8 +60,8 @@ func (m *ItemBrandingBackgroundImageRequestBuilder) Get(ctx context.Context, req
     return res.([]byte), nil
 }
 // Put image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
-func (m *ItemBrandingBackgroundImageRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemBrandingBackgroundImageRequestBuilderPutRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
+func (m *ItemBrandingBackgroundImageRequestBuilder) Put(ctx context.Context, body []byte, contentType string, requestConfiguration *ItemBrandingBackgroundImageRequestBuilderPutRequestConfiguration)([]byte, error) {
+    requestInfo, err := m.ToPutRequestInformation(ctx, body, contentType, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -88,11 +88,11 @@ func (m *ItemBrandingBackgroundImageRequestBuilder) ToGetRequestInformation(ctx 
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "image/bmp, image/jpg, image/jpeg, image/gif, image/vnd.microsoft.icon, image/png, image/tiff, application/json, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
-func (m *ItemBrandingBackgroundImageRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemBrandingBackgroundImageRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemBrandingBackgroundImageRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, contentType string, requestConfiguration *ItemBrandingBackgroundImageRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -102,7 +102,7 @@ func (m *ItemBrandingBackgroundImageRequestBuilder) ToPutRequestInformation(ctx 
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
     requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
-    requestInfo.SetStreamContentAndContentType(body, "application/octet-stream")
+    requestInfo.SetStreamContentAndContentType(body, contentType)
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

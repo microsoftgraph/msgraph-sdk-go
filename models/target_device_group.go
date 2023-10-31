@@ -19,7 +19,7 @@ func NewTargetDeviceGroup()(*TargetDeviceGroup) {
 func CreateTargetDeviceGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTargetDeviceGroup(), nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Display name for the target device group.
 func (m *TargetDeviceGroup) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -59,7 +59,7 @@ func (m *TargetDeviceGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Display name for the target device group.
 func (m *TargetDeviceGroup) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
