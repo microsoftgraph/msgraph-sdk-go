@@ -61,7 +61,7 @@ func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) Get(ctx context.Con
 }
 // Put a custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
 func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) Put(ctx context.Context, body []byte, contentType string, requestConfiguration *ItemBrandingLocalizationsItemFaviconRequestBuilderPutRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPutRequestInformation(ctx, body, contentType, requestConfiguration);
     if err != nil {
         return nil, err
     }

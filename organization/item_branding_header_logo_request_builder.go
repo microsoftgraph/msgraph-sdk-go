@@ -61,7 +61,7 @@ func (m *ItemBrandingHeaderLogoRequestBuilder) Get(ctx context.Context, requestC
 }
 // Put a company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
 func (m *ItemBrandingHeaderLogoRequestBuilder) Put(ctx context.Context, body []byte, contentType string, requestConfiguration *ItemBrandingHeaderLogoRequestBuilderPutRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPutRequestInformation(ctx, body, contentType, requestConfiguration);
     if err != nil {
         return nil, err
     }

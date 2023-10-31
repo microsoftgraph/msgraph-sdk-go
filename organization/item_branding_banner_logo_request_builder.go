@@ -61,7 +61,7 @@ func (m *ItemBrandingBannerLogoRequestBuilder) Get(ctx context.Context, requestC
 }
 // Put a banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
 func (m *ItemBrandingBannerLogoRequestBuilder) Put(ctx context.Context, body []byte, contentType string, requestConfiguration *ItemBrandingBannerLogoRequestBuilderPutRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPutRequestInformation(ctx, body, contentType, requestConfiguration);
     if err != nil {
         return nil, err
     }

@@ -61,7 +61,7 @@ func (m *ItemBrandingBackgroundImageRequestBuilder) Get(ctx context.Context, req
 }
 // Put image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
 func (m *ItemBrandingBackgroundImageRequestBuilder) Put(ctx context.Context, body []byte, contentType string, requestConfiguration *ItemBrandingBackgroundImageRequestBuilderPutRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPutRequestInformation(ctx, body, contentType, requestConfiguration);
     if err != nil {
         return nil, err
     }

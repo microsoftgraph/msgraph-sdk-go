@@ -61,7 +61,7 @@ func (m *ItemBrandingCustomCSSRequestBuilder) Get(ctx context.Context, requestCo
 }
 // Put cSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
 func (m *ItemBrandingCustomCSSRequestBuilder) Put(ctx context.Context, body []byte, contentType string, requestConfiguration *ItemBrandingCustomCSSRequestBuilderPutRequestConfiguration)([]byte, error) {
-    requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
+    requestInfo, err := m.ToPutRequestInformation(ctx, body, contentType, requestConfiguration);
     if err != nil {
         return nil, err
     }
