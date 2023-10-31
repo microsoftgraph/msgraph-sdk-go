@@ -22,7 +22,7 @@ func NewMicrosoftManagedTrainingSetting()(*MicrosoftManagedTrainingSetting) {
 func CreateMicrosoftManagedTrainingSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMicrosoftManagedTrainingSetting(), nil
 }
-// GetCompletionDateTime gets the completionDateTime property value. The completionDateTime property
+// GetCompletionDateTime gets the completionDateTime property value. The completion date for the training. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *MicrosoftManagedTrainingSetting) GetCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("completionDateTime")
     if err != nil {
@@ -58,7 +58,7 @@ func (m *MicrosoftManagedTrainingSetting) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetTrainingCompletionDuration gets the trainingCompletionDuration property value. The trainingCompletionDuration property
+// GetTrainingCompletionDuration gets the trainingCompletionDuration property value. The training completion duration that needs to be provided before scheduling the training. The possible values are: week, fortnite, month, unknownFutureValue.
 func (m *MicrosoftManagedTrainingSetting) GetTrainingCompletionDuration()(*TrainingCompletionDuration) {
     val, err := m.GetBackingStore().Get("trainingCompletionDuration")
     if err != nil {
@@ -90,14 +90,14 @@ func (m *MicrosoftManagedTrainingSetting) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetCompletionDateTime sets the completionDateTime property value. The completionDateTime property
+// SetCompletionDateTime sets the completionDateTime property value. The completion date for the training. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *MicrosoftManagedTrainingSetting) SetCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("completionDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTrainingCompletionDuration sets the trainingCompletionDuration property value. The trainingCompletionDuration property
+// SetTrainingCompletionDuration sets the trainingCompletionDuration property value. The training completion duration that needs to be provided before scheduling the training. The possible values are: week, fortnite, month, unknownFutureValue.
 func (m *MicrosoftManagedTrainingSetting) SetTrainingCompletionDuration(value *TrainingCompletionDuration)() {
     err := m.GetBackingStore().Set("trainingCompletionDuration", value)
     if err != nil {

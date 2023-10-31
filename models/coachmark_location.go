@@ -83,7 +83,7 @@ func (m *CoachmarkLocation) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetLength gets the length property value. The length property
+// GetLength gets the length property value. Length of coachmark.
 func (m *CoachmarkLocation) GetLength()(*int32) {
     val, err := m.GetBackingStore().Get("length")
     if err != nil {
@@ -105,7 +105,7 @@ func (m *CoachmarkLocation) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOffset gets the offset property value. The offset property
+// GetOffset gets the offset property value. Offset of coachmark.
 func (m *CoachmarkLocation) GetOffset()(*int32) {
     val, err := m.GetBackingStore().Get("offset")
     if err != nil {
@@ -116,7 +116,7 @@ func (m *CoachmarkLocation) GetOffset()(*int32) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type property
+// GetTypeEscaped gets the type property value. Type of coachmark location. The possible values are: unknown, fromEmail, subject, externalTag, displayName, messageBody, unknownFutureValue.
 func (m *CoachmarkLocation) GetTypeEscaped()(*CoachmarkLocationType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -173,7 +173,7 @@ func (m *CoachmarkLocation) SetAdditionalData(value map[string]any)() {
 func (m *CoachmarkLocation) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetLength sets the length property value. The length property
+// SetLength sets the length property value. Length of coachmark.
 func (m *CoachmarkLocation) SetLength(value *int32)() {
     err := m.GetBackingStore().Set("length", value)
     if err != nil {
@@ -187,14 +187,14 @@ func (m *CoachmarkLocation) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOffset sets the offset property value. The offset property
+// SetOffset sets the offset property value. Offset of coachmark.
 func (m *CoachmarkLocation) SetOffset(value *int32)() {
     err := m.GetBackingStore().Set("offset", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type property
+// SetTypeEscaped sets the type property value. Type of coachmark location. The possible values are: unknown, fromEmail, subject, externalTag, displayName, messageBody, unknownFutureValue.
 func (m *CoachmarkLocation) SetTypeEscaped(value *CoachmarkLocationType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

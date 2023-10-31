@@ -18,7 +18,7 @@ type AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilderGetQueryParameters get languageDetails from security
+// AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilderGetQueryParameters language specific details on a training.
 type AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemR
     }
     return nil
 }
-// Get get languageDetails from security
+// Get language specific details on a training.
 func (m *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TrainingLanguageDetailable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +121,7 @@ func (m *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemR
     requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get languageDetails from security
+// ToGetRequestInformation language specific details on a training.
 func (m *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

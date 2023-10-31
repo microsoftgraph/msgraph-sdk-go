@@ -21,7 +21,7 @@ func NewAddressBookAccountTargetContent()(*AddressBookAccountTargetContent) {
 func CreateAddressBookAccountTargetContentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAddressBookAccountTargetContent(), nil
 }
-// GetAccountTargetEmails gets the accountTargetEmails property value. The accountTargetEmails property
+// GetAccountTargetEmails gets the accountTargetEmails property value. List of user emails targeted for an attack simulation training campaign.
 func (m *AddressBookAccountTargetContent) GetAccountTargetEmails()([]string) {
     val, err := m.GetBackingStore().Get("accountTargetEmails")
     if err != nil {
@@ -67,7 +67,7 @@ func (m *AddressBookAccountTargetContent) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetAccountTargetEmails sets the accountTargetEmails property value. The accountTargetEmails property
+// SetAccountTargetEmails sets the accountTargetEmails property value. List of user emails targeted for an attack simulation training campaign.
 func (m *AddressBookAccountTargetContent) SetAccountTargetEmails(value []string)() {
     err := m.GetBackingStore().Set("accountTargetEmails", value)
     if err != nil {

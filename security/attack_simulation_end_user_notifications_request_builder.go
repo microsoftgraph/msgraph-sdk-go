@@ -11,7 +11,7 @@ import (
 type AttackSimulationEndUserNotificationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AttackSimulationEndUserNotificationsRequestBuilderGetQueryParameters get endUserNotifications from security
+// AttackSimulationEndUserNotificationsRequestBuilderGetQueryParameters get a list of endUserNotification objects and their properties.
 type AttackSimulationEndUserNotificationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewAttackSimulationEndUserNotificationsRequestBuilder(rawUrl string, reques
 func (m *AttackSimulationEndUserNotificationsRequestBuilder) Count()(*AttackSimulationEndUserNotificationsCountRequestBuilder) {
     return NewAttackSimulationEndUserNotificationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get endUserNotifications from security
+// Get get a list of endUserNotification objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/attacksimulationroot-list-endusernotifications?view=graph-rest-1.0
 func (m *AttackSimulationEndUserNotificationsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationEndUserNotificationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EndUserNotificationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *AttackSimulationEndUserNotificationsRequestBuilder) Post(ctx context.Co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EndUserNotificationable), nil
 }
-// ToGetRequestInformation get endUserNotifications from security
+// ToGetRequestInformation get a list of endUserNotification objects and their properties.
 func (m *AttackSimulationEndUserNotificationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationEndUserNotificationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

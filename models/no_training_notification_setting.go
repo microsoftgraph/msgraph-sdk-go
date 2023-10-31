@@ -36,7 +36,7 @@ func (m *NoTrainingNotificationSetting) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetSimulationNotification gets the simulationNotification property value. The simulationNotification property
+// GetSimulationNotification gets the simulationNotification property value. The notification for the user who is part of the simulation.
 func (m *NoTrainingNotificationSetting) GetSimulationNotification()(SimulationNotificationable) {
     val, err := m.GetBackingStore().Get("simulationNotification")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *NoTrainingNotificationSetting) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetSimulationNotification sets the simulationNotification property value. The simulationNotification property
+// SetSimulationNotification sets the simulationNotification property value. The notification for the user who is part of the simulation.
 func (m *NoTrainingNotificationSetting) SetSimulationNotification(value SimulationNotificationable)() {
     err := m.GetBackingStore().Set("simulationNotification", value)
     if err != nil {

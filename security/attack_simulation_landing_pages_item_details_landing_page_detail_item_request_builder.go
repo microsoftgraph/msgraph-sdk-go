@@ -18,7 +18,7 @@ type AttackSimulationLandingPagesItemDetailsLandingPageDetailItemRequestBuilderD
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AttackSimulationLandingPagesItemDetailsLandingPageDetailItemRequestBuilderGetQueryParameters get details from security
+// AttackSimulationLandingPagesItemDetailsLandingPageDetailItemRequestBuilderGetQueryParameters the detail information for a landing page associated with a simulation during its creation.
 type AttackSimulationLandingPagesItemDetailsLandingPageDetailItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *AttackSimulationLandingPagesItemDetailsLandingPageDetailItemRequestBuil
     }
     return nil
 }
-// Get get details from security
+// Get the detail information for a landing page associated with a simulation during its creation.
 func (m *AttackSimulationLandingPagesItemDetailsLandingPageDetailItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationLandingPagesItemDetailsLandingPageDetailItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LandingPageDetailable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +121,7 @@ func (m *AttackSimulationLandingPagesItemDetailsLandingPageDetailItemRequestBuil
     requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get details from security
+// ToGetRequestInformation the detail information for a landing page associated with a simulation during its creation.
 func (m *AttackSimulationLandingPagesItemDetailsLandingPageDetailItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationLandingPagesItemDetailsLandingPageDetailItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

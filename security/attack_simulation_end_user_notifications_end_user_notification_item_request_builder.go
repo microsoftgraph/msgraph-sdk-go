@@ -18,7 +18,7 @@ type AttackSimulationEndUserNotificationsEndUserNotificationItemRequestBuilderDe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AttackSimulationEndUserNotificationsEndUserNotificationItemRequestBuilderGetQueryParameters get endUserNotifications from security
+// AttackSimulationEndUserNotificationsEndUserNotificationItemRequestBuilderGetQueryParameters represents an end user's notification for an attack simulation training.
 type AttackSimulationEndUserNotificationsEndUserNotificationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *AttackSimulationEndUserNotificationsEndUserNotificationItemRequestBuild
 func (m *AttackSimulationEndUserNotificationsEndUserNotificationItemRequestBuilder) Details()(*AttackSimulationEndUserNotificationsItemDetailsRequestBuilder) {
     return NewAttackSimulationEndUserNotificationsItemDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get endUserNotifications from security
+// Get represents an end user's notification for an attack simulation training.
 func (m *AttackSimulationEndUserNotificationsEndUserNotificationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationEndUserNotificationsEndUserNotificationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EndUserNotificationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *AttackSimulationEndUserNotificationsEndUserNotificationItemRequestBuild
     requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get endUserNotifications from security
+// ToGetRequestInformation represents an end user's notification for an attack simulation training.
 func (m *AttackSimulationEndUserNotificationsEndUserNotificationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationEndUserNotificationsEndUserNotificationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

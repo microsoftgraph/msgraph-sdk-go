@@ -11,7 +11,7 @@ import (
 type AttackSimulationLandingPagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AttackSimulationLandingPagesRequestBuilderGetQueryParameters get landingPages from security
+// AttackSimulationLandingPagesRequestBuilderGetQueryParameters get a list of the landingPage objects and their properties.
 type AttackSimulationLandingPagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,10 @@ func NewAttackSimulationLandingPagesRequestBuilder(rawUrl string, requestAdapter
 func (m *AttackSimulationLandingPagesRequestBuilder) Count()(*AttackSimulationLandingPagesCountRequestBuilder) {
     return NewAttackSimulationLandingPagesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get landingPages from security
+// Get get a list of the landingPage objects and their properties.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/attacksimulationroot-list-landingpage?view=graph-rest-1.0
 func (m *AttackSimulationLandingPagesRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationLandingPagesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LandingPageCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +115,7 @@ func (m *AttackSimulationLandingPagesRequestBuilder) Post(ctx context.Context, b
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LandingPageable), nil
 }
-// ToGetRequestInformation get landingPages from security
+// ToGetRequestInformation get a list of the landingPage objects and their properties.
 func (m *AttackSimulationLandingPagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationLandingPagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

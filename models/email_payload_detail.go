@@ -66,7 +66,7 @@ func (m *EmailPayloadDetail) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetFromEmail gets the fromEmail property value. The fromEmail property
+// GetFromEmail gets the fromEmail property value. Email address of the user.
 func (m *EmailPayloadDetail) GetFromEmail()(*string) {
     val, err := m.GetBackingStore().Get("fromEmail")
     if err != nil {
@@ -77,7 +77,7 @@ func (m *EmailPayloadDetail) GetFromEmail()(*string) {
     }
     return nil
 }
-// GetFromName gets the fromName property value. The fromName property
+// GetFromName gets the fromName property value. Display name of the user.
 func (m *EmailPayloadDetail) GetFromName()(*string) {
     val, err := m.GetBackingStore().Get("fromName")
     if err != nil {
@@ -88,7 +88,7 @@ func (m *EmailPayloadDetail) GetFromName()(*string) {
     }
     return nil
 }
-// GetIsExternalSender gets the isExternalSender property value. The isExternalSender property
+// GetIsExternalSender gets the isExternalSender property value. Indicates whether the sender isn't from the user's organization.
 func (m *EmailPayloadDetail) GetIsExternalSender()(*bool) {
     val, err := m.GetBackingStore().Get("isExternalSender")
     if err != nil {
@@ -99,7 +99,7 @@ func (m *EmailPayloadDetail) GetIsExternalSender()(*bool) {
     }
     return nil
 }
-// GetSubject gets the subject property value. The subject property
+// GetSubject gets the subject property value. The subject of the email address sent to the user.
 func (m *EmailPayloadDetail) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
     if err != nil {
@@ -142,28 +142,28 @@ func (m *EmailPayloadDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetFromEmail sets the fromEmail property value. The fromEmail property
+// SetFromEmail sets the fromEmail property value. Email address of the user.
 func (m *EmailPayloadDetail) SetFromEmail(value *string)() {
     err := m.GetBackingStore().Set("fromEmail", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFromName sets the fromName property value. The fromName property
+// SetFromName sets the fromName property value. Display name of the user.
 func (m *EmailPayloadDetail) SetFromName(value *string)() {
     err := m.GetBackingStore().Set("fromName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsExternalSender sets the isExternalSender property value. The isExternalSender property
+// SetIsExternalSender sets the isExternalSender property value. Indicates whether the sender isn't from the user's organization.
 func (m *EmailPayloadDetail) SetIsExternalSender(value *bool)() {
     err := m.GetBackingStore().Set("isExternalSender", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSubject sets the subject property value. The subject property
+// SetSubject sets the subject property value. The subject of the email address sent to the user.
 func (m *EmailPayloadDetail) SetSubject(value *string)() {
     err := m.GetBackingStore().Set("subject", value)
     if err != nil {

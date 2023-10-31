@@ -185,6 +185,16 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["summary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateChannelSummaryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSummary(val.(ChannelSummaryable))
+        }
+        return nil
+    }
     res["tabs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTeamsTabFromDiscriminatorValue)
         if err != nil {
@@ -286,6 +296,17 @@ func (m *Channel) GetSharedWithTeams()([]SharedWithChannelTeamInfoable) {
     }
     if val != nil {
         return val.([]SharedWithChannelTeamInfoable)
+    }
+    return nil
+}
+// GetSummary gets the summary property value. Contains summary information about the channel, including number of owners, members, guests, and an indicator for members from other tenants. The summary property will only be returned if it is specified in the $select clause of the Get channel method.
+func (m *Channel) GetSummary()(ChannelSummaryable) {
+    val, err := m.GetBackingStore().Get("summary")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ChannelSummaryable)
     }
     return nil
 }
@@ -407,6 +428,12 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("summary", m.GetSummary())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTabs() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTabs()))
         for i, v := range m.GetTabs() {
@@ -503,6 +530,13 @@ func (m *Channel) SetSharedWithTeams(value []SharedWithChannelTeamInfoable)() {
         panic(err)
     }
 }
+// SetSummary sets the summary property value. Contains summary information about the channel, including number of owners, members, guests, and an indicator for members from other tenants. The summary property will only be returned if it is specified in the $select clause of the Get channel method.
+func (m *Channel) SetSummary(value ChannelSummaryable)() {
+    err := m.GetBackingStore().Set("summary", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTabs sets the tabs property value. A collection of all the tabs in the channel. A navigation property.
 func (m *Channel) SetTabs(value []TeamsTabable)() {
     err := m.GetBackingStore().Set("tabs", value)
@@ -538,6 +572,7 @@ type Channelable interface {
     GetMembershipType()(*ChannelMembershipType)
     GetMessages()([]ChatMessageable)
     GetSharedWithTeams()([]SharedWithChannelTeamInfoable)
+    GetSummary()(ChannelSummaryable)
     GetTabs()([]TeamsTabable)
     GetTenantId()(*string)
     GetWebUrl()(*string)
@@ -551,6 +586,7 @@ type Channelable interface {
     SetMembershipType(value *ChannelMembershipType)()
     SetMessages(value []ChatMessageable)()
     SetSharedWithTeams(value []SharedWithChannelTeamInfoable)()
+    SetSummary(value ChannelSummaryable)()
     SetTabs(value []TeamsTabable)()
     SetTenantId(value *string)()
     SetWebUrl(value *string)()

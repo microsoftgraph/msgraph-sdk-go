@@ -11,7 +11,7 @@ import (
 type AttackSimulationSimulationsItemLoginPageRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AttackSimulationSimulationsItemLoginPageRequestBuilderGetQueryParameters get loginPage from security
+// AttackSimulationSimulationsItemLoginPageRequestBuilderGetQueryParameters the login page associated with a simulation during its creation.
 type AttackSimulationSimulationsItemLoginPageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewAttackSimulationSimulationsItemLoginPageRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewAttackSimulationSimulationsItemLoginPageRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get loginPage from security
+// Get the login page associated with a simulation during its creation.
 func (m *AttackSimulationSimulationsItemLoginPageRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationSimulationsItemLoginPageRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LoginPageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *AttackSimulationSimulationsItemLoginPageRequestBuilder) Get(ctx context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LoginPageable), nil
 }
-// ToGetRequestInformation get loginPage from security
+// ToGetRequestInformation the login page associated with a simulation during its creation.
 func (m *AttackSimulationSimulationsItemLoginPageRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationSimulationsItemLoginPageRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

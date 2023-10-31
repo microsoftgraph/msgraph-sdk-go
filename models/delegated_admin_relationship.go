@@ -71,7 +71,7 @@ func (m *DelegatedAdminRelationship) GetActivatedDateTime()(*i336074805fc853987a
     }
     return nil
 }
-// GetAutoExtendDuration gets the autoExtendDuration property value. The autoExtendDuration property
+// GetAutoExtendDuration gets the autoExtendDuration property value. The duration by which the validity of the relationship is automatically extended, denoted in ISO 8601 format. Supported values are: P0D, PT0S, P180D. The default value is PT0S. PT0S indicates that the relationship expires when the endDateTime is reached and it isn't automatically extended.
 func (m *DelegatedAdminRelationship) GetAutoExtendDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("autoExtendDuration")
     if err != nil {
@@ -460,7 +460,7 @@ func (m *DelegatedAdminRelationship) SetActivatedDateTime(value *i336074805fc853
         panic(err)
     }
 }
-// SetAutoExtendDuration sets the autoExtendDuration property value. The autoExtendDuration property
+// SetAutoExtendDuration sets the autoExtendDuration property value. The duration by which the validity of the relationship is automatically extended, denoted in ISO 8601 format. Supported values are: P0D, PT0S, P180D. The default value is PT0S. PT0S indicates that the relationship expires when the endDateTime is reached and it isn't automatically extended.
 func (m *DelegatedAdminRelationship) SetAutoExtendDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     err := m.GetBackingStore().Set("autoExtendDuration", value)
     if err != nil {

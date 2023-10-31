@@ -410,6 +410,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDeviceEnrollmentWindowsHelloForBusinessConfiguration(), nil
                     case "#microsoft.graph.deviceInstallState":
                         return NewDeviceInstallState(), nil
+                    case "#microsoft.graph.deviceLocalCredentialInfo":
+                        return NewDeviceLocalCredentialInfo(), nil
                     case "#microsoft.graph.deviceLogCollectionResponse":
                         return NewDeviceLogCollectionResponse(), nil
                     case "#microsoft.graph.deviceManagement":

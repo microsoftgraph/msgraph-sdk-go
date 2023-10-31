@@ -54,7 +54,7 @@ func (m *AttackSimulationOperation) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetPercentageCompleted gets the percentageCompleted property value. The percentageCompleted property
+// GetPercentageCompleted gets the percentageCompleted property value. Percentage of completion of the respective operation.
 func (m *AttackSimulationOperation) GetPercentageCompleted()(*int32) {
     val, err := m.GetBackingStore().Get("percentageCompleted")
     if err != nil {
@@ -65,7 +65,7 @@ func (m *AttackSimulationOperation) GetPercentageCompleted()(*int32) {
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. The tenantId property
+// GetTenantId gets the tenantId property value. Tenant identifier.
 func (m *AttackSimulationOperation) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -76,7 +76,7 @@ func (m *AttackSimulationOperation) GetTenantId()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type property
+// GetTypeEscaped gets the type property value. The attack simulation operation type. Possible values are: createSimulation, updateSimulation, unknownFutureValue.
 func (m *AttackSimulationOperation) GetTypeEscaped()(*AttackSimulationOperationType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -114,21 +114,21 @@ func (m *AttackSimulationOperation) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetPercentageCompleted sets the percentageCompleted property value. The percentageCompleted property
+// SetPercentageCompleted sets the percentageCompleted property value. Percentage of completion of the respective operation.
 func (m *AttackSimulationOperation) SetPercentageCompleted(value *int32)() {
     err := m.GetBackingStore().Set("percentageCompleted", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The tenantId property
+// SetTenantId sets the tenantId property value. Tenant identifier.
 func (m *AttackSimulationOperation) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type property
+// SetTypeEscaped sets the type property value. The attack simulation operation type. Possible values are: createSimulation, updateSimulation, unknownFutureValue.
 func (m *AttackSimulationOperation) SetTypeEscaped(value *AttackSimulationOperationType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

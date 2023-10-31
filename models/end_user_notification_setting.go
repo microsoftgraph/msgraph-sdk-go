@@ -103,7 +103,7 @@ func (m *EndUserNotificationSetting) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetNotificationPreference gets the notificationPreference property value. The notificationPreference property
+// GetNotificationPreference gets the notificationPreference property value. Notification preference. Possible values are: unknown, microsoft, custom, unknownFutureValue.
 func (m *EndUserNotificationSetting) GetNotificationPreference()(*EndUserNotificationPreference) {
     val, err := m.GetBackingStore().Get("notificationPreference")
     if err != nil {
@@ -125,7 +125,7 @@ func (m *EndUserNotificationSetting) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPositiveReinforcement gets the positiveReinforcement property value. The positiveReinforcement property
+// GetPositiveReinforcement gets the positiveReinforcement property value. Positive reinforcement detail.
 func (m *EndUserNotificationSetting) GetPositiveReinforcement()(PositiveReinforcementNotificationable) {
     val, err := m.GetBackingStore().Get("positiveReinforcement")
     if err != nil {
@@ -136,7 +136,7 @@ func (m *EndUserNotificationSetting) GetPositiveReinforcement()(PositiveReinforc
     }
     return nil
 }
-// GetSettingType gets the settingType property value. The settingType property
+// GetSettingType gets the settingType property value. End user notification type. Possible values are: unknown, noTraining, trainingSelected, noNotification, unknownFutureValue.
 func (m *EndUserNotificationSetting) GetSettingType()(*EndUserNotificationSettingType) {
     val, err := m.GetBackingStore().Get("settingType")
     if err != nil {
@@ -194,7 +194,7 @@ func (m *EndUserNotificationSetting) SetAdditionalData(value map[string]any)() {
 func (m *EndUserNotificationSetting) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetNotificationPreference sets the notificationPreference property value. The notificationPreference property
+// SetNotificationPreference sets the notificationPreference property value. Notification preference. Possible values are: unknown, microsoft, custom, unknownFutureValue.
 func (m *EndUserNotificationSetting) SetNotificationPreference(value *EndUserNotificationPreference)() {
     err := m.GetBackingStore().Set("notificationPreference", value)
     if err != nil {
@@ -208,14 +208,14 @@ func (m *EndUserNotificationSetting) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPositiveReinforcement sets the positiveReinforcement property value. The positiveReinforcement property
+// SetPositiveReinforcement sets the positiveReinforcement property value. Positive reinforcement detail.
 func (m *EndUserNotificationSetting) SetPositiveReinforcement(value PositiveReinforcementNotificationable)() {
     err := m.GetBackingStore().Set("positiveReinforcement", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSettingType sets the settingType property value. The settingType property
+// SetSettingType sets the settingType property value. End user notification type. Possible values are: unknown, noTraining, trainingSelected, noNotification, unknownFutureValue.
 func (m *EndUserNotificationSetting) SetSettingType(value *EndUserNotificationSettingType)() {
     err := m.GetBackingStore().Set("settingType", value)
     if err != nil {
