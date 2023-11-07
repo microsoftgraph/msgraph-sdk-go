@@ -403,6 +403,22 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["recordings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCallRecordingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CallRecordingable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CallRecordingable)
+                }
+            }
+            m.SetRecordings(res)
+        }
+        return nil
+    }
     res["shareMeetingChatHistoryDefault"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMeetingChatHistoryDefaultMode)
         if err != nil {
@@ -556,6 +572,17 @@ func (m *OnlineMeeting) GetRecordAutomatically()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetRecordings gets the recordings property value. The recordings property
+func (m *OnlineMeeting) GetRecordings()([]CallRecordingable) {
+    val, err := m.GetBackingStore().Get("recordings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CallRecordingable)
     }
     return nil
 }
@@ -771,6 +798,18 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    if m.GetRecordings() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRecordings()))
+        for i, v := range m.GetRecordings() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("recordings", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetShareMeetingChatHistoryDefault() != nil {
         cast := (*m.GetShareMeetingChatHistoryDefault()).String()
         err = writer.WriteStringValue("shareMeetingChatHistoryDefault", &cast)
@@ -970,6 +1009,13 @@ func (m *OnlineMeeting) SetRecordAutomatically(value *bool)() {
         panic(err)
     }
 }
+// SetRecordings sets the recordings property value. The recordings property
+func (m *OnlineMeeting) SetRecordings(value []CallRecordingable)() {
+    err := m.GetBackingStore().Set("recordings", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetShareMeetingChatHistoryDefault sets the shareMeetingChatHistoryDefault property value. Specifies whether meeting chat history is shared with participants. Possible values are: all, none, unknownFutureValue.
 func (m *OnlineMeeting) SetShareMeetingChatHistoryDefault(value *MeetingChatHistoryDefaultMode)() {
     err := m.GetBackingStore().Set("shareMeetingChatHistoryDefault", value)
@@ -1038,6 +1084,7 @@ type OnlineMeetingable interface {
     GetLobbyBypassSettings()(LobbyBypassSettingsable)
     GetParticipants()(MeetingParticipantsable)
     GetRecordAutomatically()(*bool)
+    GetRecordings()([]CallRecordingable)
     GetShareMeetingChatHistoryDefault()(*MeetingChatHistoryDefaultMode)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSubject()(*string)
@@ -1066,6 +1113,7 @@ type OnlineMeetingable interface {
     SetLobbyBypassSettings(value LobbyBypassSettingsable)()
     SetParticipants(value MeetingParticipantsable)()
     SetRecordAutomatically(value *bool)()
+    SetRecordings(value []CallRecordingable)()
     SetShareMeetingChatHistoryDefault(value *MeetingChatHistoryDefaultMode)()
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSubject(value *string)()

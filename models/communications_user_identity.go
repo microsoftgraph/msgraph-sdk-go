@@ -36,7 +36,7 @@ func (m *CommunicationsUserIdentity) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetTenantId gets the tenantId property value. The tenantId property
+// GetTenantId gets the tenantId property value. The user's tenant ID.
 func (m *CommunicationsUserIdentity) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *CommunicationsUserIdentity) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetTenantId sets the tenantId property value. The tenantId property
+// SetTenantId sets the tenantId property value. The user's tenant ID.
 func (m *CommunicationsUserIdentity) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {
