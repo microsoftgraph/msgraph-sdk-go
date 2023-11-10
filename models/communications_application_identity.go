@@ -21,7 +21,7 @@ func NewCommunicationsApplicationIdentity()(*CommunicationsApplicationIdentity) 
 func CreateCommunicationsApplicationIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCommunicationsApplicationIdentity(), nil
 }
-// GetApplicationType gets the applicationType property value. The applicationType property
+// GetApplicationType gets the applicationType property value. First-party Microsoft application that presents this identity.
 func (m *CommunicationsApplicationIdentity) GetApplicationType()(*string) {
     val, err := m.GetBackingStore().Get("applicationType")
     if err != nil {
@@ -57,7 +57,7 @@ func (m *CommunicationsApplicationIdentity) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetHidden gets the hidden property value. The hidden property
+// GetHidden gets the hidden property value. True if the participant shouldn't be shown in other participants' rosters.
 func (m *CommunicationsApplicationIdentity) GetHidden()(*bool) {
     val, err := m.GetBackingStore().Get("hidden")
     if err != nil {
@@ -88,14 +88,14 @@ func (m *CommunicationsApplicationIdentity) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetApplicationType sets the applicationType property value. The applicationType property
+// SetApplicationType sets the applicationType property value. First-party Microsoft application that presents this identity.
 func (m *CommunicationsApplicationIdentity) SetApplicationType(value *string)() {
     err := m.GetBackingStore().Set("applicationType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHidden sets the hidden property value. The hidden property
+// SetHidden sets the hidden property value. True if the participant shouldn't be shown in other participants' rosters.
 func (m *CommunicationsApplicationIdentity) SetHidden(value *bool)() {
     err := m.GetBackingStore().Set("hidden", value)
     if err != nil {

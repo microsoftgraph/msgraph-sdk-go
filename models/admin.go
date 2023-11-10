@@ -115,7 +115,7 @@ func (m *Admin) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPeople gets the people property value. The people property
+// GetPeople gets the people property value. Represents a setting to control people-related admin settings in the tenant.
 func (m *Admin) GetPeople()(PeopleAdminSettingsable) {
     val, err := m.GetBackingStore().Get("people")
     if err != nil {
@@ -213,7 +213,7 @@ func (m *Admin) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPeople sets the people property value. The people property
+// SetPeople sets the people property value. Represents a setting to control people-related admin settings in the tenant.
 func (m *Admin) SetPeople(value PeopleAdminSettingsable)() {
     err := m.GetBackingStore().Set("people", value)
     if err != nil {

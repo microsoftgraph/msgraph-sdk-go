@@ -76,7 +76,7 @@ func (m *DriveItem) GetContent()([]byte) {
     }
     return nil
 }
-// GetCTag gets the cTag property value. An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
+// GetCTag gets the cTag property value. An eTag for the content of the item. This eTag isn't changed if only the metadata is changed. Note This property isn't returned if the item is a folder. Read-only.
 func (m *DriveItem) GetCTag()(*string) {
     val, err := m.GetBackingStore().Get("cTag")
     if err != nil {
@@ -574,7 +574,7 @@ func (m *DriveItem) GetPhoto()(Photoable) {
     }
     return nil
 }
-// GetPublication gets the publication property value. Provides information about the published or checked-out state of an item, in locations that support such actions. This property is not returned by default. Read-only.
+// GetPublication gets the publication property value. Provides information about the published or checked-out state of an item, in locations that support such actions. This property isn't returned by default. Read-only.
 func (m *DriveItem) GetPublication()(PublicationFacetable) {
     val, err := m.GetBackingStore().Get("publication")
     if err != nil {
@@ -618,7 +618,7 @@ func (m *DriveItem) GetSearchResult()(SearchResultable) {
     }
     return nil
 }
-// GetShared gets the shared property value. Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
+// GetShared gets the shared property value. Indicates that the item was shared with others and provides information about the shared state of the item. Read-only.
 func (m *DriveItem) GetShared()(Sharedable) {
     val, err := m.GetBackingStore().Get("shared")
     if err != nil {
@@ -673,7 +673,7 @@ func (m *DriveItem) GetSubscriptions()([]Subscriptionable) {
     }
     return nil
 }
-// GetThumbnails gets the thumbnails property value. Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
+// GetThumbnails gets the thumbnails property value. Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.
 func (m *DriveItem) GetThumbnails()([]ThumbnailSetable) {
     val, err := m.GetBackingStore().Get("thumbnails")
     if err != nil {
@@ -717,7 +717,7 @@ func (m *DriveItem) GetWebDavUrl()(*string) {
     }
     return nil
 }
-// GetWorkbook gets the workbook property value. For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
+// GetWorkbook gets the workbook property value. For files that are Excel spreadsheets, access to the workbook API to work with the spreadsheet's contents. Nullable.
 func (m *DriveItem) GetWorkbook()(Workbookable) {
     val, err := m.GetBackingStore().Get("workbook")
     if err != nil {
@@ -993,7 +993,7 @@ func (m *DriveItem) SetContent(value []byte)() {
         panic(err)
     }
 }
-// SetCTag sets the cTag property value. An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
+// SetCTag sets the cTag property value. An eTag for the content of the item. This eTag isn't changed if only the metadata is changed. Note This property isn't returned if the item is a folder. Read-only.
 func (m *DriveItem) SetCTag(value *string)() {
     err := m.GetBackingStore().Set("cTag", value)
     if err != nil {
@@ -1084,7 +1084,7 @@ func (m *DriveItem) SetPhoto(value Photoable)() {
         panic(err)
     }
 }
-// SetPublication sets the publication property value. Provides information about the published or checked-out state of an item, in locations that support such actions. This property is not returned by default. Read-only.
+// SetPublication sets the publication property value. Provides information about the published or checked-out state of an item, in locations that support such actions. This property isn't returned by default. Read-only.
 func (m *DriveItem) SetPublication(value PublicationFacetable)() {
     err := m.GetBackingStore().Set("publication", value)
     if err != nil {
@@ -1112,7 +1112,7 @@ func (m *DriveItem) SetSearchResult(value SearchResultable)() {
         panic(err)
     }
 }
-// SetShared sets the shared property value. Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
+// SetShared sets the shared property value. Indicates that the item was shared with others and provides information about the shared state of the item. Read-only.
 func (m *DriveItem) SetShared(value Sharedable)() {
     err := m.GetBackingStore().Set("shared", value)
     if err != nil {
@@ -1147,7 +1147,7 @@ func (m *DriveItem) SetSubscriptions(value []Subscriptionable)() {
         panic(err)
     }
 }
-// SetThumbnails sets the thumbnails property value. Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
+// SetThumbnails sets the thumbnails property value. Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.
 func (m *DriveItem) SetThumbnails(value []ThumbnailSetable)() {
     err := m.GetBackingStore().Set("thumbnails", value)
     if err != nil {
@@ -1175,7 +1175,7 @@ func (m *DriveItem) SetWebDavUrl(value *string)() {
         panic(err)
     }
 }
-// SetWorkbook sets the workbook property value. For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
+// SetWorkbook sets the workbook property value. For files that are Excel spreadsheets, access to the workbook API to work with the spreadsheet's contents. Nullable.
 func (m *DriveItem) SetWorkbook(value Workbookable)() {
     err := m.GetBackingStore().Set("workbook", value)
     if err != nil {

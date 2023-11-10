@@ -19,7 +19,7 @@ func NewProfileCardProperty()(*ProfileCardProperty) {
 func CreateProfileCardPropertyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProfileCardProperty(), nil
 }
-// GetAnnotations gets the annotations property value. The annotations property
+// GetAnnotations gets the annotations property value. Allows an administrator to set a custom display label for the directory property and localize it for the users in their tenant.
 func (m *ProfileCardProperty) GetAnnotations()([]ProfileCardAnnotationable) {
     val, err := m.GetBackingStore().Get("annotations")
     if err != nil {
@@ -30,7 +30,7 @@ func (m *ProfileCardProperty) GetAnnotations()([]ProfileCardAnnotationable) {
     }
     return nil
 }
-// GetDirectoryPropertyName gets the directoryPropertyName property value. The directoryPropertyName property
+// GetDirectoryPropertyName gets the directoryPropertyName property value. Identifies a profileCardProperty resource in Get, Update, or Delete operations. Allows an administrator to surface hidden Microsoft Entra ID properties on the Microsoft 365 profile card within their tenant. When present, the Microsoft Entra ID field referenced in this property is visible to all users in your tenant on the contact pane of the profile card. Allowed values for this field are: UserPrincipalName, Fax, StreetAddress, PostalCode, StateOrProvince, Alias, CustomAttribute1,  CustomAttribute2, CustomAttribute3, CustomAttribute4, CustomAttribute5, CustomAttribute6, CustomAttribute7, CustomAttribute8, CustomAttribute9, CustomAttribute10, CustomAttribute11, CustomAttribute12, CustomAttribute13, CustomAttribute14, CustomAttribute15.
 func (m *ProfileCardProperty) GetDirectoryPropertyName()(*string) {
     val, err := m.GetBackingStore().Get("directoryPropertyName")
     if err != nil {
@@ -98,14 +98,14 @@ func (m *ProfileCardProperty) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetAnnotations sets the annotations property value. The annotations property
+// SetAnnotations sets the annotations property value. Allows an administrator to set a custom display label for the directory property and localize it for the users in their tenant.
 func (m *ProfileCardProperty) SetAnnotations(value []ProfileCardAnnotationable)() {
     err := m.GetBackingStore().Set("annotations", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDirectoryPropertyName sets the directoryPropertyName property value. The directoryPropertyName property
+// SetDirectoryPropertyName sets the directoryPropertyName property value. Identifies a profileCardProperty resource in Get, Update, or Delete operations. Allows an administrator to surface hidden Microsoft Entra ID properties on the Microsoft 365 profile card within their tenant. When present, the Microsoft Entra ID field referenced in this property is visible to all users in your tenant on the contact pane of the profile card. Allowed values for this field are: UserPrincipalName, Fax, StreetAddress, PostalCode, StateOrProvince, Alias, CustomAttribute1,  CustomAttribute2, CustomAttribute3, CustomAttribute4, CustomAttribute5, CustomAttribute6, CustomAttribute7, CustomAttribute8, CustomAttribute9, CustomAttribute10, CustomAttribute11, CustomAttribute12, CustomAttribute13, CustomAttribute14, CustomAttribute15.
 func (m *ProfileCardProperty) SetDirectoryPropertyName(value *string)() {
     err := m.GetBackingStore().Set("directoryPropertyName", value)
     if err != nil {

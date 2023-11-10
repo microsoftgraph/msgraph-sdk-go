@@ -2589,7 +2589,7 @@ func (m *User) GetPhoto()(ProfilePhotoable) {
     }
     return nil
 }
-// GetPhotos gets the photos property value. The photos property
+// GetPhotos gets the photos property value. The collection of the user's profile photos in different sizes. Read-only.
 func (m *User) GetPhotos()([]ProfilePhotoable) {
     val, err := m.GetBackingStore().Get("photos")
     if err != nil {
@@ -4563,7 +4563,7 @@ func (m *User) SetPhoto(value ProfilePhotoable)() {
         panic(err)
     }
 }
-// SetPhotos sets the photos property value. The photos property
+// SetPhotos sets the photos property value. The collection of the user's profile photos in different sizes. Read-only.
 func (m *User) SetPhotos(value []ProfilePhotoable)() {
     err := m.GetBackingStore().Set("photos", value)
     if err != nil {

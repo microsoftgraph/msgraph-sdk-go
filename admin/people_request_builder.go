@@ -11,7 +11,7 @@ import (
 type PeopleRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PeopleRequestBuilderGetQueryParameters get people from admin
+// PeopleRequestBuilderGetQueryParameters retrieve the properties and relationships of a peopleAdminSettings object.
 type PeopleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,7 +47,10 @@ func NewPeopleRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewPeopleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get people from admin
+// Get retrieve the properties and relationships of a peopleAdminSettings object.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/peopleadminsettings-get?view=graph-rest-1.0
 func (m *PeopleRequestBuilder) Get(ctx context.Context, requestConfiguration *PeopleRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PeopleAdminSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,7 @@ func (m *PeopleRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e
 func (m *PeopleRequestBuilder) ProfileCardProperties()(*PeopleProfileCardPropertiesRequestBuilder) {
     return NewPeopleProfileCardPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get people from admin
+// ToGetRequestInformation retrieve the properties and relationships of a peopleAdminSettings object.
 func (m *PeopleRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PeopleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

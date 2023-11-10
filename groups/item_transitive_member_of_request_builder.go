@@ -11,7 +11,7 @@ import (
 type ItemTransitiveMemberOfRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTransitiveMemberOfRequestBuilderGetQueryParameters the groups that a group is a member of, either directly and through nested membership. Nullable.
+// ItemTransitiveMemberOfRequestBuilderGetQueryParameters the groups that a group is a member of, either directly or through nested membership. Nullable.
 type ItemTransitiveMemberOfRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewItemTransitiveMemberOfRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ItemTransitiveMemberOfRequestBuilder) Count()(*ItemTransitiveMemberOfCountRequestBuilder) {
     return NewItemTransitiveMemberOfCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the groups that a group is a member of, either directly and through nested membership. Nullable.
+// Get the groups that a group is a member of, either directly or through nested membership. Nullable.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/group-list-transitivememberof?view=graph-rest-1.0
@@ -97,7 +97,7 @@ func (m *ItemTransitiveMemberOfRequestBuilder) GraphAdministrativeUnit()(*ItemTr
 func (m *ItemTransitiveMemberOfRequestBuilder) GraphGroup()(*ItemTransitiveMemberOfGraphGroupRequestBuilder) {
     return NewItemTransitiveMemberOfGraphGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation the groups that a group is a member of, either directly and through nested membership. Nullable.
+// ToGetRequestInformation the groups that a group is a member of, either directly or through nested membership. Nullable.
 func (m *ItemTransitiveMemberOfRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTransitiveMemberOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

@@ -40,7 +40,7 @@ func (m *PeopleAdminSettings) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetProfileCardProperties gets the profileCardProperties property value. The profileCardProperties property
+// GetProfileCardProperties gets the profileCardProperties property value. Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
 func (m *PeopleAdminSettings) GetProfileCardProperties()([]ProfileCardPropertyable) {
     val, err := m.GetBackingStore().Get("profileCardProperties")
     if err != nil {
@@ -71,7 +71,7 @@ func (m *PeopleAdminSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetProfileCardProperties sets the profileCardProperties property value. The profileCardProperties property
+// SetProfileCardProperties sets the profileCardProperties property value. Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
 func (m *PeopleAdminSettings) SetProfileCardProperties(value []ProfileCardPropertyable)() {
     err := m.GetBackingStore().Set("profileCardProperties", value)
     if err != nil {
