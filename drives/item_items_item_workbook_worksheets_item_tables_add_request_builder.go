@@ -31,10 +31,10 @@ func NewItemItemsItemWorkbookWorksheetsItemTablesAddRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemTablesAddRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post use this API to create a new Table. This API is available in the following national cloud deployments.
+// Post create a new table. The range source address determines the worksheet under which the table will be added. If the table can't be added (for example, because the address is invalid, or the table would overlap with another table), an error is generated. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/workbook-post-tables?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/tablecollection-add?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesAddRequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookWorksheetsItemTablesAddPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesAddRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -53,7 +53,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesAddRequestBuilder) Post(ctx co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableable), nil
 }
-// ToPostRequestInformation use this API to create a new Table. This API is available in the following national cloud deployments.
+// ToPostRequestInformation create a new table. The range source address determines the worksheet under which the table will be added. If the table can't be added (for example, because the address is invalid, or the table would overlap with another table), an error is generated. This API is available in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesAddRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemWorkbookWorksheetsItemTablesAddPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesAddRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {
@@ -63,7 +63,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesAddRequestBuilder) ToPostReque
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

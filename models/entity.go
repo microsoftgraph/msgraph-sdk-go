@@ -652,6 +652,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewItemAnalytics(), nil
                     case "#microsoft.graph.itemAttachment":
                         return NewItemAttachment(), nil
+                    case "#microsoft.graph.itemRetentionLabel":
+                        return NewItemRetentionLabel(), nil
                     case "#microsoft.graph.landingPage":
                         return NewLandingPage(), nil
                     case "#microsoft.graph.landingPageDetail":
@@ -830,6 +832,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOnenoteSection(), nil
                     case "#microsoft.graph.onlineMeeting":
                         return NewOnlineMeeting(), nil
+                    case "#microsoft.graph.onlineMeetingBase":
+                        return NewOnlineMeetingBase(), nil
                     case "#microsoft.graph.onPremisesConditionalAccessSettings":
                         return NewOnPremisesConditionalAccessSettings(), nil
                     case "#microsoft.graph.onPremisesDirectorySynchronization":
@@ -1326,6 +1330,16 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserSignInInsight(), nil
                     case "#microsoft.graph.userTeamwork":
                         return NewUserTeamwork(), nil
+                    case "#microsoft.graph.virtualEvent":
+                        return NewVirtualEvent(), nil
+                    case "#microsoft.graph.virtualEventRegistration":
+                        return NewVirtualEventRegistration(), nil
+                    case "#microsoft.graph.virtualEventSession":
+                        return NewVirtualEventSession(), nil
+                    case "#microsoft.graph.virtualEventsRoot":
+                        return NewVirtualEventsRoot(), nil
+                    case "#microsoft.graph.virtualEventWebinar":
+                        return NewVirtualEventWebinar(), nil
                     case "#microsoft.graph.voiceAuthenticationMethodConfiguration":
                         return NewVoiceAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.vppToken":

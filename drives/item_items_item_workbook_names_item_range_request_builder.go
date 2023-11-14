@@ -31,10 +31,10 @@ func NewItemItemsItemWorkbookNamesItemRangeRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookNamesItemRangeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get returns the range object that is associated with the name. Throws an exception if the named item's type is not a range. This API is available in the following national cloud deployments.
+// Get retrieve the properties and relationships of range object. This API is available in the following national cloud deployments.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/nameditem-range?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/range-get?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookNamesItemRangeRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookNamesItemRangeRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookRangeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +53,7 @@ func (m *ItemItemsItemWorkbookNamesItemRangeRequestBuilder) Get(ctx context.Cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookRangeable), nil
 }
-// ToGetRequestInformation returns the range object that is associated with the name. Throws an exception if the named item's type is not a range. This API is available in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of range object. This API is available in the following national cloud deployments.
 func (m *ItemItemsItemWorkbookNamesItemRangeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookNamesItemRangeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {
@@ -63,7 +63,7 @@ func (m *ItemItemsItemWorkbookNamesItemRangeRequestBuilder) ToGetRequestInformat
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

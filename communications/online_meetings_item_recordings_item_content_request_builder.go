@@ -38,7 +38,7 @@ func NewOnlineMeetingsItemRecordingsItemContentRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewOnlineMeetingsItemRecordingsItemContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get content for the navigation property recordings from communications
+// Get the content of the recording. Read-only.
 func (m *OnlineMeetingsItemRecordingsItemContentRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemRecordingsItemContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -57,7 +57,7 @@ func (m *OnlineMeetingsItemRecordingsItemContentRequestBuilder) Get(ctx context.
     }
     return res.([]byte), nil
 }
-// Put update content for the navigation property recordings in communications
+// Put the content of the recording. Read-only.
 func (m *OnlineMeetingsItemRecordingsItemContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *OnlineMeetingsItemRecordingsItemContentRequestBuilderPutRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CallRecordingable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *OnlineMeetingsItemRecordingsItemContentRequestBuilder) Put(ctx context.
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CallRecordingable), nil
 }
-// ToGetRequestInformation get content for the navigation property recordings from communications
+// ToGetRequestInformation the content of the recording. Read-only.
 func (m *OnlineMeetingsItemRecordingsItemContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemRecordingsItemContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {
@@ -86,10 +86,10 @@ func (m *OnlineMeetingsItemRecordingsItemContentRequestBuilder) ToGetRequestInfo
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation update content for the navigation property recordings in communications
+// ToPutRequestInformation the content of the recording. Read-only.
 func (m *OnlineMeetingsItemRecordingsItemContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *OnlineMeetingsItemRecordingsItemContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {
@@ -99,7 +99,7 @@ func (m *OnlineMeetingsItemRecordingsItemContentRequestBuilder) ToPutRequestInfo
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     requestInfo.SetStreamContentAndContentType(body, "application/octet-stream")
     return requestInfo, nil
 }
