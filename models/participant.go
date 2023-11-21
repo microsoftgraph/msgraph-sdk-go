@@ -88,6 +88,16 @@ func (m *Participant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["removedState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateRemovedStateFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRemovedState(val.(RemovedStateable))
+        }
+        return nil
+    }
     res["restrictedExperience"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateOnlineMeetingRestrictedFromDiscriminatorValue)
         if err != nil {
@@ -95,6 +105,16 @@ func (m *Participant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetRestrictedExperience(val.(OnlineMeetingRestrictedable))
+        }
+        return nil
+    }
+    res["rosterSequenceNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRosterSequenceNumber(val)
         }
         return nil
     }
@@ -166,6 +186,17 @@ func (m *Participant) GetRecordingInfo()(RecordingInfoable) {
     }
     return nil
 }
+// GetRemovedState gets the removedState property value. The removedState property
+func (m *Participant) GetRemovedState()(RemovedStateable) {
+    val, err := m.GetBackingStore().Get("removedState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RemovedStateable)
+    }
+    return nil
+}
 // GetRestrictedExperience gets the restrictedExperience property value. Indicates the reason or reasons media content from this participant is restricted.
 func (m *Participant) GetRestrictedExperience()(OnlineMeetingRestrictedable) {
     val, err := m.GetBackingStore().Get("restrictedExperience")
@@ -174,6 +205,17 @@ func (m *Participant) GetRestrictedExperience()(OnlineMeetingRestrictedable) {
     }
     if val != nil {
         return val.(OnlineMeetingRestrictedable)
+    }
+    return nil
+}
+// GetRosterSequenceNumber gets the rosterSequenceNumber property value. The rosterSequenceNumber property
+func (m *Participant) GetRosterSequenceNumber()(*int64) {
+    val, err := m.GetBackingStore().Get("rosterSequenceNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
     }
     return nil
 }
@@ -226,7 +268,19 @@ func (m *Participant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteObjectValue("removedState", m.GetRemovedState())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("restrictedExperience", m.GetRestrictedExperience())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt64Value("rosterSequenceNumber", m.GetRosterSequenceNumber())
         if err != nil {
             return err
         }
@@ -275,9 +329,23 @@ func (m *Participant) SetRecordingInfo(value RecordingInfoable)() {
         panic(err)
     }
 }
+// SetRemovedState sets the removedState property value. The removedState property
+func (m *Participant) SetRemovedState(value RemovedStateable)() {
+    err := m.GetBackingStore().Set("removedState", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRestrictedExperience sets the restrictedExperience property value. Indicates the reason or reasons media content from this participant is restricted.
 func (m *Participant) SetRestrictedExperience(value OnlineMeetingRestrictedable)() {
     err := m.GetBackingStore().Set("restrictedExperience", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetRosterSequenceNumber sets the rosterSequenceNumber property value. The rosterSequenceNumber property
+func (m *Participant) SetRosterSequenceNumber(value *int64)() {
+    err := m.GetBackingStore().Set("rosterSequenceNumber", value)
     if err != nil {
         panic(err)
     }
@@ -292,12 +360,16 @@ type Participantable interface {
     GetMediaStreams()([]MediaStreamable)
     GetMetadata()(*string)
     GetRecordingInfo()(RecordingInfoable)
+    GetRemovedState()(RemovedStateable)
     GetRestrictedExperience()(OnlineMeetingRestrictedable)
+    GetRosterSequenceNumber()(*int64)
     SetInfo(value ParticipantInfoable)()
     SetIsInLobby(value *bool)()
     SetIsMuted(value *bool)()
     SetMediaStreams(value []MediaStreamable)()
     SetMetadata(value *string)()
     SetRecordingInfo(value RecordingInfoable)()
+    SetRemovedState(value RemovedStateable)()
     SetRestrictedExperience(value OnlineMeetingRestrictedable)()
+    SetRosterSequenceNumber(value *int64)()
 }
