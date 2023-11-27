@@ -10,7 +10,7 @@ require (
 	github.com/microsoft/kiota-serialization-json-go v1.0.4
 	github.com/microsoft/kiota-serialization-multipart-go v1.0.0
 	github.com/microsoft/kiota-serialization-text-go v1.0.0
-	github.com/microsoftgraph/msgraph-sdk-go-core v1.0.0
+	github.com/microsoftgraph/msgraph-sdk-go-core v1.0.1
 	github.com/stretchr/testify v1.8.4
 )
 
@@ -20,8 +20,8 @@ require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/go-logr/logr v1.3.0 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
-	github.com/microsoft/kiota-authentication-azure-go v1.0.0 // indirect
-	github.com/microsoft/kiota-http-go v1.1.0 // indirect
+	github.com/microsoft/kiota-authentication-azure-go v1.0.1 // indirect
+	github.com/microsoft/kiota-http-go v1.1.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/std-uritemplate/std-uritemplate/go v0.0.47 // indirect
 	go.opentelemetry.io/otel v1.21.0 // indirect
