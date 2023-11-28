@@ -30,7 +30,7 @@ func NewItemRemoveFavoriteRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewItemRemoveFavoriteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post remove the group from the list of the current user's favorite groups. Supported for Microsoft 365 groups only. This API is available in the following national cloud deployments.
+// Post remove the group from the list of the current user's favorite groups. Supported for Microsoft 365 groups only.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/group-removefavorite?view=graph-rest-1.0
@@ -49,17 +49,14 @@ func (m *ItemRemoveFavoriteRequestBuilder) Post(ctx context.Context, requestConf
     }
     return nil
 }
-// ToPostRequestInformation remove the group from the list of the current user's favorite groups. Supported for Microsoft 365 groups only. This API is available in the following national cloud deployments.
+// ToPostRequestInformation remove the group from the list of the current user's favorite groups. Supported for Microsoft 365 groups only.
 func (m *ItemRemoveFavoriteRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemRemoveFavoriteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

@@ -18,7 +18,7 @@ type ItemSettingsShiftPreferencesRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSettingsShiftPreferencesRequestBuilderGetQueryParameters retrieve the properties and relationships of a shiftPreferences object by ID. This API is available in the following national cloud deployments.
+// ItemSettingsShiftPreferencesRequestBuilderGetQueryParameters retrieve the properties and relationships of a shiftPreferences object by ID.
 type ItemSettingsShiftPreferencesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemSettingsShiftPreferencesRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get retrieve the properties and relationships of a shiftPreferences object by ID. This API is available in the following national cloud deployments.
+// Get retrieve the properties and relationships of a shiftPreferences object by ID.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/shiftpreferences-get?view=graph-rest-1.0
@@ -92,7 +92,7 @@ func (m *ItemSettingsShiftPreferencesRequestBuilder) Get(ctx context.Context, re
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ShiftPreferencesable), nil
 }
-// Patch update the properties and relationships of a shiftPreferences object. This API is available in the following national cloud deployments.
+// Patch update the properties and relationships of a shiftPreferences object.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/shiftpreferences-put?view=graph-rest-1.0
@@ -116,20 +116,17 @@ func (m *ItemSettingsShiftPreferencesRequestBuilder) Patch(ctx context.Context, 
 }
 // ToDeleteRequestInformation delete navigation property shiftPreferences for users
 func (m *ItemSettingsShiftPreferencesRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsShiftPreferencesRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a shiftPreferences object by ID. This API is available in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a shiftPreferences object by ID.
 func (m *ItemSettingsShiftPreferencesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsShiftPreferencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -137,23 +134,17 @@ func (m *ItemSettingsShiftPreferencesRequestBuilder) ToGetRequestInformation(ctx
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties and relationships of a shiftPreferences object. This API is available in the following national cloud deployments.
+// ToPatchRequestInformation update the properties and relationships of a shiftPreferences object.
 func (m *ItemSettingsShiftPreferencesRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ShiftPreferencesable, requestConfiguration *ItemSettingsShiftPreferencesRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

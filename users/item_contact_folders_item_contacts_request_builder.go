@@ -11,7 +11,7 @@ import (
 type ItemContactFoldersItemContactsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemContactFoldersItemContactsRequestBuilderGetQueryParameters get a contact collection from the default Contacts folder of the signed-in user (.../me/contacts), or from the specified contact folder. This API is available in the following national cloud deployments.
+// ItemContactFoldersItemContactsRequestBuilderGetQueryParameters get a contact collection from the default Contacts folder of the signed-in user (.../me/contacts), or from the specified contact folder.
 type ItemContactFoldersItemContactsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func (m *ItemContactFoldersItemContactsRequestBuilder) Count()(*ItemContactFolde
 func (m *ItemContactFoldersItemContactsRequestBuilder) Delta()(*ItemContactFoldersItemContactsDeltaRequestBuilder) {
     return NewItemContactFoldersItemContactsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a contact collection from the default Contacts folder of the signed-in user (.../me/contacts), or from the specified contact folder. This API is available in the following national cloud deployments.
+// Get get a contact collection from the default Contacts folder of the signed-in user (.../me/contacts), or from the specified contact folder.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
@@ -98,7 +98,7 @@ func (m *ItemContactFoldersItemContactsRequestBuilder) Get(ctx context.Context, 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactCollectionResponseable), nil
 }
-// Post add a contact to the root Contacts folder or to the contacts endpoint of another contact folder. This API is available in the following national cloud deployments.
+// Post add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
@@ -120,9 +120,9 @@ func (m *ItemContactFoldersItemContactsRequestBuilder) Post(ctx context.Context,
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable), nil
 }
-// ToGetRequestInformation get a contact collection from the default Contacts folder of the signed-in user (.../me/contacts), or from the specified contact folder. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get a contact collection from the default Contacts folder of the signed-in user (.../me/contacts), or from the specified contact folder.
 func (m *ItemContactFoldersItemContactsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersItemContactsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -130,23 +130,17 @@ func (m *ItemContactFoldersItemContactsRequestBuilder) ToGetRequestInformation(c
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation add a contact to the root Contacts folder or to the contacts endpoint of another contact folder. This API is available in the following national cloud deployments.
+// ToPostRequestInformation add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
 func (m *ItemContactFoldersItemContactsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Contactable, requestConfiguration *ItemContactFoldersItemContactsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

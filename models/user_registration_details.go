@@ -286,7 +286,7 @@ func (m *UserRegistrationDetails) GetLastUpdatedDateTime()(*i336074805fc853987ab
     }
     return nil
 }
-// GetMethodsRegistered gets the methodsRegistered property value. Collection of authentication methods registered, such as mobilePhone, email, fido2. Supports $filter (any with eq).
+// GetMethodsRegistered gets the methodsRegistered property value. Collection of authentication methods registered, such as mobilePhone, email, passKeyDeviceBound. Supports $filter (any with eq).
 func (m *UserRegistrationDetails) GetMethodsRegistered()([]string) {
     val, err := m.GetBackingStore().Get("methodsRegistered")
     if err != nil {
@@ -515,7 +515,7 @@ func (m *UserRegistrationDetails) SetLastUpdatedDateTime(value *i336074805fc8539
         panic(err)
     }
 }
-// SetMethodsRegistered sets the methodsRegistered property value. Collection of authentication methods registered, such as mobilePhone, email, fido2. Supports $filter (any with eq).
+// SetMethodsRegistered sets the methodsRegistered property value. Collection of authentication methods registered, such as mobilePhone, email, passKeyDeviceBound. Supports $filter (any with eq).
 func (m *UserRegistrationDetails) SetMethodsRegistered(value []string)() {
     err := m.GetBackingStore().Set("methodsRegistered", value)
     if err != nil {

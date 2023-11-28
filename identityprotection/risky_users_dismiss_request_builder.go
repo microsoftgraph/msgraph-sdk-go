@@ -30,7 +30,7 @@ func NewRiskyUsersDismissRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewRiskyUsersDismissRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post dismiss the risk of one or more riskyUser objects. This action sets the targeted user's risk level to none. This API is available in the following national cloud deployments.
+// Post dismiss the risk of one or more riskyUser objects. This action sets the targeted user's risk level to none.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/riskyuser-dismiss?view=graph-rest-1.0
@@ -49,17 +49,14 @@ func (m *RiskyUsersDismissRequestBuilder) Post(ctx context.Context, body RiskyUs
     }
     return nil
 }
-// ToPostRequestInformation dismiss the risk of one or more riskyUser objects. This action sets the targeted user's risk level to none. This API is available in the following national cloud deployments.
+// ToPostRequestInformation dismiss the risk of one or more riskyUser objects. This action sets the targeted user's risk level to none.
 func (m *RiskyUsersDismissRequestBuilder) ToPostRequestInformation(ctx context.Context, body RiskyUsersDismissPostRequestBodyable, requestConfiguration *RiskyUsersDismissRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

@@ -18,7 +18,7 @@ type WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a workforceIntegration object. This API is available in the following national cloud deployments.
+// WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a workforceIntegration object.
 type WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewWorkforceIntegrationsWorkforceIntegrationItemRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewWorkforceIntegrationsWorkforceIntegrationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an instance of a workforceIntegration. This API is available in the following national cloud deployments.
+// Delete delete an instance of a workforceIntegration.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/workforceintegration-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get retrieve the properties and relationships of a workforceIntegration object. This API is available in the following national cloud deployments.
+// Get retrieve the properties and relationships of a workforceIntegration object.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/workforceintegration-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) Get(ctx co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable), nil
 }
-// Patch update the properties of a workforceIntegration object. This API is available in the following national cloud deployments.
+// Patch update the properties of a workforceIntegration object.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/workforceintegration-update?view=graph-rest-1.0
@@ -117,22 +117,19 @@ func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) Patch(ctx 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable), nil
 }
-// ToDeleteRequestInformation delete an instance of a workforceIntegration. This API is available in the following national cloud deployments.
+// ToDeleteRequestInformation delete an instance of a workforceIntegration.
 func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a workforceIntegration object. This API is available in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a workforceIntegration object.
 func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -140,23 +137,17 @@ func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) ToGetReque
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a workforceIntegration object. This API is available in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a workforceIntegration object.
 func (m *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkforceIntegrationable, requestConfiguration *WorkforceIntegrationsWorkforceIntegrationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

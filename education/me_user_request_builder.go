@@ -11,7 +11,7 @@ import (
 type MeUserRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MeUserRequestBuilderGetQueryParameters retrieve the simple directory user that corresponds to this educationUser. This API is available in the following national cloud deployments.
+// MeUserRequestBuilderGetQueryParameters retrieve the simple directory user that corresponds to this educationUser.
 type MeUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewMeUserRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewMeUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve the simple directory user that corresponds to this educationUser. This API is available in the following national cloud deployments.
+// Get retrieve the simple directory user that corresponds to this educationUser.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-get-user?view=graph-rest-1.0
@@ -70,9 +70,9 @@ func (m *MeUserRequestBuilder) MailboxSettings()(*MeUserMailboxSettingsRequestBu
 func (m *MeUserRequestBuilder) ServiceProvisioningErrors()(*MeUserServiceProvisioningErrorsRequestBuilder) {
     return NewMeUserServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve the simple directory user that corresponds to this educationUser. This API is available in the following national cloud deployments.
+// ToGetRequestInformation retrieve the simple directory user that corresponds to this educationUser.
 func (m *MeUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MeUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -80,10 +80,7 @@ func (m *MeUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requ
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

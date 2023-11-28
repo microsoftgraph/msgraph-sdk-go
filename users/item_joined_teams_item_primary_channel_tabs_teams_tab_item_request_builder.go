@@ -18,7 +18,7 @@ type ItemJoinedTeamsItemPrimaryChannelTabsTeamsTabItemRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemJoinedTeamsItemPrimaryChannelTabsTeamsTabItemRequestBuilderGetQueryParameters retrieve the properties and relationships of the specified tab in a channel within a team.  This API is available in the following national cloud deployments.
+// ItemJoinedTeamsItemPrimaryChannelTabsTeamsTabItemRequestBuilderGetQueryParameters retrieve the properties and relationships of the specified tab in a channel within a team. 
 type ItemJoinedTeamsItemPrimaryChannelTabsTeamsTabItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemJoinedTeamsItemPrimaryChannelTabsTeamsTabItemRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewItemJoinedTeamsItemPrimaryChannelTabsTeamsTabItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete removes (unpins) a tab from the specified channel within a team.  This API is available in the following national cloud deployments.
+// Delete removes (unpins) a tab from the specified channel within a team. 
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-delete-tabs?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemJoinedTeamsItemPrimaryChannelTabsTeamsTabItemRequestBuilder) Delete
     }
     return nil
 }
-// Get retrieve the properties and relationships of the specified tab in a channel within a team.  This API is available in the following national cloud deployments.
+// Get retrieve the properties and relationships of the specified tab in a channel within a team. 
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-get-tabs?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *ItemJoinedTeamsItemPrimaryChannelTabsTeamsTabItemRequestBuilder) Get(ct
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable), nil
 }
-// Patch update the properties of the specified tab.This can be used to configure the content of the tab. This API is available in the following national cloud deployments.
+// Patch update the properties of the specified tab.This can be used to configure the content of the tab.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-patch-tabs?view=graph-rest-1.0
@@ -121,22 +121,19 @@ func (m *ItemJoinedTeamsItemPrimaryChannelTabsTeamsTabItemRequestBuilder) Patch(
 func (m *ItemJoinedTeamsItemPrimaryChannelTabsTeamsTabItemRequestBuilder) TeamsApp()(*ItemJoinedTeamsItemPrimaryChannelTabsItemTeamsAppRequestBuilder) {
     return NewItemJoinedTeamsItemPrimaryChannelTabsItemTeamsAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation removes (unpins) a tab from the specified channel within a team.  This API is available in the following national cloud deployments.
+// ToDeleteRequestInformation removes (unpins) a tab from the specified channel within a team. 
 func (m *ItemJoinedTeamsItemPrimaryChannelTabsTeamsTabItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemPrimaryChannelTabsTeamsTabItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of the specified tab in a channel within a team.  This API is available in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of the specified tab in a channel within a team. 
 func (m *ItemJoinedTeamsItemPrimaryChannelTabsTeamsTabItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemPrimaryChannelTabsTeamsTabItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -144,23 +141,17 @@ func (m *ItemJoinedTeamsItemPrimaryChannelTabsTeamsTabItemRequestBuilder) ToGetR
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of the specified tab.This can be used to configure the content of the tab. This API is available in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of the specified tab.This can be used to configure the content of the tab.
 func (m *ItemJoinedTeamsItemPrimaryChannelTabsTeamsTabItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, requestConfiguration *ItemJoinedTeamsItemPrimaryChannelTabsTeamsTabItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

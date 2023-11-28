@@ -10,7 +10,7 @@ import (
 type SharesItemAllowedGroupsItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SharesItemAllowedGroupsItemRefRequestBuilderDeleteQueryParameters revoke the specified group's access to submit print jobs to the associated printerShare. This API is available in the following national cloud deployments.
+// SharesItemAllowedGroupsItemRefRequestBuilderDeleteQueryParameters revoke the specified group's access to submit print jobs to the associated printerShare.
 type SharesItemAllowedGroupsItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,7 @@ func NewSharesItemAllowedGroupsItemRefRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewSharesItemAllowedGroupsItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete revoke the specified group's access to submit print jobs to the associated printerShare. This API is available in the following national cloud deployments.
+// Delete revoke the specified group's access to submit print jobs to the associated printerShare.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/printershare-delete-allowedgroup?view=graph-rest-1.0
@@ -56,9 +56,9 @@ func (m *SharesItemAllowedGroupsItemRefRequestBuilder) Delete(ctx context.Contex
     }
     return nil
 }
-// ToDeleteRequestInformation revoke the specified group's access to submit print jobs to the associated printerShare. This API is available in the following national cloud deployments.
+// ToDeleteRequestInformation revoke the specified group's access to submit print jobs to the associated printerShare.
 func (m *SharesItemAllowedGroupsItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SharesItemAllowedGroupsItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -66,10 +66,7 @@ func (m *SharesItemAllowedGroupsItemRefRequestBuilder) ToDeleteRequestInformatio
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

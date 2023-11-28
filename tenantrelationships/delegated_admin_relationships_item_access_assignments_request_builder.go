@@ -11,7 +11,7 @@ import (
 type DelegatedAdminRelationshipsItemAccessAssignmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DelegatedAdminRelationshipsItemAccessAssignmentsRequestBuilderGetQueryParameters get a list of the delegatedAdminAccessAssignment objects and their properties. This API is available in the following national cloud deployments.
+// DelegatedAdminRelationshipsItemAccessAssignmentsRequestBuilderGetQueryParameters get a list of the delegatedAdminAccessAssignment objects and their properties.
 type DelegatedAdminRelationshipsItemAccessAssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewDelegatedAdminRelationshipsItemAccessAssignmentsRequestBuilder(rawUrl st
 func (m *DelegatedAdminRelationshipsItemAccessAssignmentsRequestBuilder) Count()(*DelegatedAdminRelationshipsItemAccessAssignmentsCountRequestBuilder) {
     return NewDelegatedAdminRelationshipsItemAccessAssignmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the delegatedAdminAccessAssignment objects and their properties. This API is available in the following national cloud deployments.
+// Get get a list of the delegatedAdminAccessAssignment objects and their properties.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-accessassignments?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *DelegatedAdminRelationshipsItemAccessAssignmentsRequestBuilder) Get(ctx
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedAdminAccessAssignmentCollectionResponseable), nil
 }
-// Post create a new delegatedAdminAccessAssignment object. This API is available in the following national cloud deployments.
+// Post create a new delegatedAdminAccessAssignment object.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/delegatedadminrelationship-post-accessassignments?view=graph-rest-1.0
@@ -118,9 +118,9 @@ func (m *DelegatedAdminRelationshipsItemAccessAssignmentsRequestBuilder) Post(ct
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedAdminAccessAssignmentable), nil
 }
-// ToGetRequestInformation get a list of the delegatedAdminAccessAssignment objects and their properties. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get a list of the delegatedAdminAccessAssignment objects and their properties.
 func (m *DelegatedAdminRelationshipsItemAccessAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DelegatedAdminRelationshipsItemAccessAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -128,23 +128,17 @@ func (m *DelegatedAdminRelationshipsItemAccessAssignmentsRequestBuilder) ToGetRe
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new delegatedAdminAccessAssignment object. This API is available in the following national cloud deployments.
+// ToPostRequestInformation create a new delegatedAdminAccessAssignment object.
 func (m *DelegatedAdminRelationshipsItemAccessAssignmentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DelegatedAdminAccessAssignmentable, requestConfiguration *DelegatedAdminRelationshipsItemAccessAssignmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

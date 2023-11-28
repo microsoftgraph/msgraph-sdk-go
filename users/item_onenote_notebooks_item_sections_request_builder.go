@@ -11,7 +11,7 @@ import (
 type ItemOnenoteNotebooksItemSectionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOnenoteNotebooksItemSectionsRequestBuilderGetQueryParameters retrieve a list of onenoteSection objects from the specified notebook. This API is available in the following national cloud deployments.
+// ItemOnenoteNotebooksItemSectionsRequestBuilderGetQueryParameters retrieve a list of onenoteSection objects from the specified notebook.
 type ItemOnenoteNotebooksItemSectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemOnenoteNotebooksItemSectionsRequestBuilder(rawUrl string, requestAda
 func (m *ItemOnenoteNotebooksItemSectionsRequestBuilder) Count()(*ItemOnenoteNotebooksItemSectionsCountRequestBuilder) {
     return NewItemOnenoteNotebooksItemSectionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of onenoteSection objects from the specified notebook. This API is available in the following national cloud deployments.
+// Get retrieve a list of onenoteSection objects from the specified notebook.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/notebook-list-sections?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemOnenoteNotebooksItemSectionsRequestBuilder) Get(ctx context.Context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionCollectionResponseable), nil
 }
-// Post create a new onenoteSection in the specified notebook. This API is available in the following national cloud deployments.
+// Post create a new onenoteSection in the specified notebook.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/notebook-post-sections?view=graph-rest-1.0
@@ -118,9 +118,9 @@ func (m *ItemOnenoteNotebooksItemSectionsRequestBuilder) Post(ctx context.Contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionable), nil
 }
-// ToGetRequestInformation retrieve a list of onenoteSection objects from the specified notebook. This API is available in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of onenoteSection objects from the specified notebook.
 func (m *ItemOnenoteNotebooksItemSectionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteNotebooksItemSectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -128,23 +128,17 @@ func (m *ItemOnenoteNotebooksItemSectionsRequestBuilder) ToGetRequestInformation
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new onenoteSection in the specified notebook. This API is available in the following national cloud deployments.
+// ToPostRequestInformation create a new onenoteSection in the specified notebook.
 func (m *ItemOnenoteNotebooksItemSectionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteSectionable, requestConfiguration *ItemOnenoteNotebooksItemSectionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

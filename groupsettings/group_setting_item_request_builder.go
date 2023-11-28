@@ -18,7 +18,7 @@ type GroupSettingItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// GroupSettingItemRequestBuilderGetQueryParameters retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting. This API is available in the following national cloud deployments.
+// GroupSettingItemRequestBuilderGetQueryParameters retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
 type GroupSettingItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewGroupSettingItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewGroupSettingItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a tenant-level or group-specific groupSetting object. This API is available in the following national cloud deployments.
+// Delete delete a tenant-level or group-specific groupSetting object.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/groupsetting-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *GroupSettingItemRequestBuilder) Delete(ctx context.Context, requestConf
     }
     return nil
 }
-// Get retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting. This API is available in the following national cloud deployments.
+// Get retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/groupsetting-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *GroupSettingItemRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingable), nil
 }
-// Patch update the properties of a groupSetting object for tenant-wide group settings or a specific group setting. This API is available in the following national cloud deployments.
+// Patch update the properties of a groupSetting object for tenant-wide group settings or a specific group setting.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/groupsetting-update?view=graph-rest-1.0
@@ -117,22 +117,19 @@ func (m *GroupSettingItemRequestBuilder) Patch(ctx context.Context, body iadcd81
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingable), nil
 }
-// ToDeleteRequestInformation delete a tenant-level or group-specific groupSetting object. This API is available in the following national cloud deployments.
+// ToDeleteRequestInformation delete a tenant-level or group-specific groupSetting object.
 func (m *GroupSettingItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *GroupSettingItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting. This API is available in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
 func (m *GroupSettingItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GroupSettingItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -140,23 +137,17 @@ func (m *GroupSettingItemRequestBuilder) ToGetRequestInformation(ctx context.Con
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a groupSetting object for tenant-wide group settings or a specific group setting. This API is available in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a groupSetting object for tenant-wide group settings or a specific group setting.
 func (m *GroupSettingItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupSettingable, requestConfiguration *GroupSettingItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

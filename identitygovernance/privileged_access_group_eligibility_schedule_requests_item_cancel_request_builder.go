@@ -30,7 +30,7 @@ func NewPrivilegedAccessGroupEligibilityScheduleRequestsItemCancelRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedAccessGroupEligibilityScheduleRequestsItemCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post cancel an eligibility assignment request to a group whose membership and ownership are governed by PIM. This API is available in the following national cloud deployments.
+// Post cancel an eligibility assignment request to a group whose membership and ownership are governed by PIM.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedulerequest-cancel?view=graph-rest-1.0
@@ -49,17 +49,14 @@ func (m *PrivilegedAccessGroupEligibilityScheduleRequestsItemCancelRequestBuilde
     }
     return nil
 }
-// ToPostRequestInformation cancel an eligibility assignment request to a group whose membership and ownership are governed by PIM. This API is available in the following national cloud deployments.
+// ToPostRequestInformation cancel an eligibility assignment request to a group whose membership and ownership are governed by PIM.
 func (m *PrivilegedAccessGroupEligibilityScheduleRequestsItemCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleRequestsItemCancelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
