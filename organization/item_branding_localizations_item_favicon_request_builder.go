@@ -60,7 +60,7 @@ func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) Get(ctx context.Con
     return res.([]byte), nil
 }
 // Put a custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
-func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) Put(ctx context.Context, body []byte, contentType string, requestConfiguration *ItemBrandingLocalizationsItemFaviconRequestBuilderPutRequestConfiguration)([]byte, error) {
+func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) Put(ctx context.Context, body []byte, contentType *string, requestConfiguration *ItemBrandingLocalizationsItemFaviconRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, contentType, requestConfiguration);
     if err != nil {
         return nil, err
@@ -80,29 +80,23 @@ func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) Put(ctx context.Con
 }
 // ToGetRequestInformation a custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
 func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemBrandingLocalizationsItemFaviconRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "image/bmp, image/jpg, image/jpeg, image/gif, image/vnd.microsoft.icon, image/png, image/tiff, application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "image/bmp, image/jpg, image/jpeg, image/gif, image/vnd.microsoft.icon, image/png, image/tiff, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation a custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
-func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, contentType string, requestConfiguration *ItemBrandingLocalizationsItemFaviconRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, contentType *string, requestConfiguration *ItemBrandingLocalizationsItemFaviconRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
-    requestInfo.SetStreamContentAndContentType(body, contentType)
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    requestInfo.SetStreamContentAndContentType(body, *contentType)
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

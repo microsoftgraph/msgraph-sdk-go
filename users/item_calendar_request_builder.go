@@ -11,7 +11,7 @@ import (
 type ItemCalendarRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCalendarRequestBuilderGetQueryParameters get the properties and relationships of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. There are two scenarios where an app can get another user's calendar: This API is available in the following national cloud deployments.
+// ItemCalendarRequestBuilderGetQueryParameters get the properties and relationships of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. There are two scenarios where an app can get another user's calendar:
 type ItemCalendarRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -61,7 +61,7 @@ func NewItemCalendarRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *ItemCalendarRequestBuilder) Events()(*ItemCalendarEventsRequestBuilder) {
     return NewItemCalendarEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the properties and relationships of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. There are two scenarios where an app can get another user's calendar: This API is available in the following national cloud deployments.
+// Get get the properties and relationships of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. There are two scenarios where an app can get another user's calendar:
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/calendar-get?view=graph-rest-1.0
@@ -87,7 +87,7 @@ func (m *ItemCalendarRequestBuilder) Get(ctx context.Context, requestConfigurati
 func (m *ItemCalendarRequestBuilder) GetSchedule()(*ItemCalendarGetScheduleRequestBuilder) {
     return NewItemCalendarGetScheduleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. This API is available in the following national cloud deployments.
+// Patch update the properties of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/calendar-update?view=graph-rest-1.0
@@ -109,9 +109,9 @@ func (m *ItemCalendarRequestBuilder) Patch(ctx context.Context, body iadcd811244
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Calendarable), nil
 }
-// ToGetRequestInformation get the properties and relationships of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. There are two scenarios where an app can get another user's calendar: This API is available in the following national cloud deployments.
+// ToGetRequestInformation get the properties and relationships of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. There are two scenarios where an app can get another user's calendar:
 func (m *ItemCalendarRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -119,23 +119,17 @@ func (m *ItemCalendarRequestBuilder) ToGetRequestInformation(ctx context.Context
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. This API is available in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
 func (m *ItemCalendarRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Calendarable, requestConfiguration *ItemCalendarRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

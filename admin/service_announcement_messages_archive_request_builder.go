@@ -30,7 +30,7 @@ func NewServiceAnnouncementMessagesArchiveRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewServiceAnnouncementMessagesArchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post archive a list of serviceUpdateMessages for the signed in user. This API is available in the following national cloud deployments.
+// Post archive a list of serviceUpdateMessages for the signed in user.
 // Deprecated: This method is obsolete. Use PostAsArchivePostResponse instead.
 // [Find more info here]
 // 
@@ -53,7 +53,7 @@ func (m *ServiceAnnouncementMessagesArchiveRequestBuilder) Post(ctx context.Cont
     }
     return res.(ServiceAnnouncementMessagesArchiveResponseable), nil
 }
-// PostAsArchivePostResponse archive a list of serviceUpdateMessages for the signed in user. This API is available in the following national cloud deployments.
+// PostAsArchivePostResponse archive a list of serviceUpdateMessages for the signed in user.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0
@@ -75,17 +75,14 @@ func (m *ServiceAnnouncementMessagesArchiveRequestBuilder) PostAsArchivePostResp
     }
     return res.(ServiceAnnouncementMessagesArchivePostResponseable), nil
 }
-// ToPostRequestInformation archive a list of serviceUpdateMessages for the signed in user. This API is available in the following national cloud deployments.
+// ToPostRequestInformation archive a list of serviceUpdateMessages for the signed in user.
 func (m *ServiceAnnouncementMessagesArchiveRequestBuilder) ToPostRequestInformation(ctx context.Context, body ServiceAnnouncementMessagesArchivePostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesArchiveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

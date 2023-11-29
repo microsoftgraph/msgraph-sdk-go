@@ -18,7 +18,7 @@ type ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilderDelet
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilderGetQueryParameters retrieve the app installed in the specified team. This API is available in the following national cloud deployments.
+// ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilderGetQueryParameters retrieve the app installed in the specified team.
 type ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilder(r
     urlParams["request-raw-url"] = rawUrl
     return NewItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete uninstalls an app from the specified team. This API is available in the following national cloud deployments.
+// Delete uninstalls an app from the specified team.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-delete-installedapps?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilder)
     }
     return nil
 }
-// Get retrieve the app installed in the specified team. This API is available in the following national cloud deployments.
+// Get retrieve the app installed in the specified team.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-get-installedapps?view=graph-rest-1.0
@@ -122,22 +122,19 @@ func (m *ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilder)
 func (m *ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) TeamsAppDefinition()(*ItemJoinedTeamsItemInstalledAppsItemTeamsAppDefinitionRequestBuilder) {
     return NewItemJoinedTeamsItemInstalledAppsItemTeamsAppDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation uninstalls an app from the specified team. This API is available in the following national cloud deployments.
+// ToDeleteRequestInformation uninstalls an app from the specified team.
 func (m *ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the app installed in the specified team. This API is available in the following national cloud deployments.
+// ToGetRequestInformation retrieve the app installed in the specified team.
 func (m *ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -145,23 +142,17 @@ func (m *ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilder)
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property installedApps in users
 func (m *ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsAppInstallationable, requestConfiguration *ItemJoinedTeamsItemInstalledAppsTeamsAppInstallationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

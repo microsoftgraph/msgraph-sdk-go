@@ -18,7 +18,7 @@ type MeAssignmentsItemRubricRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MeAssignmentsItemRubricRequestBuilderGetQueryParameters get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation. This API is available in the following national cloud deployments.
+// MeAssignmentsItemRubricRequestBuilderGetQueryParameters get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
 type MeAssignmentsItemRubricRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewMeAssignmentsItemRubricRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewMeAssignmentsItemRubricRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove an educationRubric from an educationAssignment. This method doesn't delete the rubric itself and can only be performed by teachers. This API is available in the following national cloud deployments.
+// Delete remove an educationRubric from an educationAssignment. This method doesn't delete the rubric itself and can only be performed by teachers.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-delete-rubric?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *MeAssignmentsItemRubricRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// Get get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation. This API is available in the following national cloud deployments.
+// Get get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *MeAssignmentsItemRubricRequestBuilder) Get(ctx context.Context, request
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricable), nil
 }
-// Patch attach an existing educationRubric object to an educationAssignment. Only teachers can perform this operation. This API is available in the following national cloud deployments.
+// Patch attach an existing educationRubric object to an educationAssignment. Only teachers can perform this operation.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-put-rubric?view=graph-rest-1.0
@@ -121,22 +121,19 @@ func (m *MeAssignmentsItemRubricRequestBuilder) Patch(ctx context.Context, body 
 func (m *MeAssignmentsItemRubricRequestBuilder) Ref()(*MeAssignmentsItemRubricRefRequestBuilder) {
     return NewMeAssignmentsItemRubricRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation remove an educationRubric from an educationAssignment. This method doesn't delete the rubric itself and can only be performed by teachers. This API is available in the following national cloud deployments.
+// ToDeleteRequestInformation remove an educationRubric from an educationAssignment. This method doesn't delete the rubric itself and can only be performed by teachers.
 func (m *MeAssignmentsItemRubricRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MeAssignmentsItemRubricRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
 func (m *MeAssignmentsItemRubricRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MeAssignmentsItemRubricRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -144,23 +141,17 @@ func (m *MeAssignmentsItemRubricRequestBuilder) ToGetRequestInformation(ctx cont
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation attach an existing educationRubric object to an educationAssignment. Only teachers can perform this operation. This API is available in the following national cloud deployments.
+// ToPatchRequestInformation attach an existing educationRubric object to an educationAssignment. Only teachers can perform this operation.
 func (m *MeAssignmentsItemRubricRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationRubricable, requestConfiguration *MeAssignmentsItemRubricRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

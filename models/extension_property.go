@@ -114,7 +114,7 @@ func (m *ExtensionProperty) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetIsMultiValued gets the isMultiValued property value. The isMultiValued property
+// GetIsMultiValued gets the isMultiValued property value. Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false. Supports $filter (eq).
 func (m *ExtensionProperty) GetIsMultiValued()(*bool) {
     val, err := m.GetBackingStore().Get("isMultiValued")
     if err != nil {
@@ -216,7 +216,7 @@ func (m *ExtensionProperty) SetDataType(value *string)() {
         panic(err)
     }
 }
-// SetIsMultiValued sets the isMultiValued property value. The isMultiValued property
+// SetIsMultiValued sets the isMultiValued property value. Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false. Supports $filter (eq).
 func (m *ExtensionProperty) SetIsMultiValued(value *bool)() {
     err := m.GetBackingStore().Set("isMultiValued", value)
     if err != nil {

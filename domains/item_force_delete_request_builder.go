@@ -30,7 +30,7 @@ func NewItemForceDeleteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewItemForceDeleteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post deletes a domain using an asynchronous long-running operation. Prior to calling forceDelete, you must update or remove any references to Exchange as the provisioning service. The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain will return an HTTP 404 status code. To verify deletion of a domain, you can perform a get domain operation. This API is available in the following national cloud deployments.
+// Post deletes a domain using an asynchronous long-running operation. Prior to calling forceDelete, you must update or remove any references to Exchange as the provisioning service. The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain will return an HTTP 404 status code. To verify deletion of a domain, you can perform a get domain operation.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/domain-forcedelete?view=graph-rest-1.0
@@ -49,17 +49,14 @@ func (m *ItemForceDeleteRequestBuilder) Post(ctx context.Context, body ItemForce
     }
     return nil
 }
-// ToPostRequestInformation deletes a domain using an asynchronous long-running operation. Prior to calling forceDelete, you must update or remove any references to Exchange as the provisioning service. The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain will return an HTTP 404 status code. To verify deletion of a domain, you can perform a get domain operation. This API is available in the following national cloud deployments.
+// ToPostRequestInformation deletes a domain using an asynchronous long-running operation. Prior to calling forceDelete, you must update or remove any references to Exchange as the provisioning service. The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain will return an HTTP 404 status code. To verify deletion of a domain, you can perform a get domain operation.
 func (m *ItemForceDeleteRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemForceDeletePostRequestBodyable, requestConfiguration *ItemForceDeleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

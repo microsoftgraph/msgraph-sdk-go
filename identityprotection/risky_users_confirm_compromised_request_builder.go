@@ -30,7 +30,7 @@ func NewRiskyUsersConfirmCompromisedRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewRiskyUsersConfirmCompromisedRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post confirm one or more riskyUser objects as compromised. This action sets the targeted user's risk level to high. This API is available in the following national cloud deployments.
+// Post confirm one or more riskyUser objects as compromised. This action sets the targeted user's risk level to high.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/riskyuser-confirmcompromised?view=graph-rest-1.0
@@ -49,17 +49,14 @@ func (m *RiskyUsersConfirmCompromisedRequestBuilder) Post(ctx context.Context, b
     }
     return nil
 }
-// ToPostRequestInformation confirm one or more riskyUser objects as compromised. This action sets the targeted user's risk level to high. This API is available in the following national cloud deployments.
+// ToPostRequestInformation confirm one or more riskyUser objects as compromised. This action sets the targeted user's risk level to high.
 func (m *RiskyUsersConfirmCompromisedRequestBuilder) ToPostRequestInformation(ctx context.Context, body RiskyUsersConfirmCompromisedPostRequestBodyable, requestConfiguration *RiskyUsersConfirmCompromisedRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

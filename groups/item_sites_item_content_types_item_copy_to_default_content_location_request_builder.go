@@ -30,7 +30,7 @@ func NewItemSitesItemContentTypesItemCopyToDefaultContentLocationRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemContentTypesItemCopyToDefaultContentLocationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post copy a file to a default content location in a content type][contentType]. The file can then be added as a default file or template via a POST operation. This API is available in the following [national cloud deployments.
+// Post copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
@@ -49,17 +49,14 @@ func (m *ItemSitesItemContentTypesItemCopyToDefaultContentLocationRequestBuilder
     }
     return nil
 }
-// ToPostRequestInformation copy a file to a default content location in a content type][contentType]. The file can then be added as a default file or template via a POST operation. This API is available in the following [national cloud deployments.
+// ToPostRequestInformation copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.
 func (m *ItemSitesItemContentTypesItemCopyToDefaultContentLocationRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSitesItemContentTypesItemCopyToDefaultContentLocationPostRequestBodyable, requestConfiguration *ItemSitesItemContentTypesItemCopyToDefaultContentLocationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

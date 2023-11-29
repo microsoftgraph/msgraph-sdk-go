@@ -11,7 +11,7 @@ import (
 type LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilderGetQueryParameters read the properties and relationships of a run object. This API is available in the following national cloud deployments.
+// LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilderGetQueryParameters read the properties and relationships of a run object.
 type LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewLifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewLifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get read the properties and relationships of a run object. This API is available in the following national cloud deployments.
+// Get read the properties and relationships of a run object.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-run-get?view=graph-rest-1.0
@@ -66,9 +66,9 @@ func (m *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) Get(ctx conte
 func (m *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) TaskProcessingResults()(*LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation read the properties and relationships of a run object. This API is available in the following national cloud deployments.
+// ToGetRequestInformation read the properties and relationships of a run object.
 func (m *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -76,10 +76,7 @@ func (m *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) ToGetRequestI
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // UserProcessingResults provides operations to manage the userProcessingResults property of the microsoft.graph.identityGovernance.run entity.

@@ -18,7 +18,7 @@ type ItemCalendarGroupsCalendarGroupItemRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemCalendarGroupsCalendarGroupItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a calendar group object. This API is available in the following national cloud deployments.
+// ItemCalendarGroupsCalendarGroupItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a calendar group object.
 type ItemCalendarGroupsCalendarGroupItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -56,7 +56,7 @@ func NewItemCalendarGroupsCalendarGroupItemRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarGroupsCalendarGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a calendar group other than the default calendar group. This API is available in the following national cloud deployments.
+// Delete delete a calendar group other than the default calendar group.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/calendargroup-delete?view=graph-rest-1.0
@@ -75,7 +75,7 @@ func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// Get retrieve the properties and relationships of a calendar group object. This API is available in the following national cloud deployments.
+// Get retrieve the properties and relationships of a calendar group object.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/calendargroup-get?view=graph-rest-1.0
@@ -97,7 +97,7 @@ func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) Get(ctx context.Cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarGroupable), nil
 }
-// Patch update the properties of calendargroup object. This API is available in the following national cloud deployments.
+// Patch update the properties of calendargroup object.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/calendargroup-update?view=graph-rest-1.0
@@ -119,22 +119,19 @@ func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) Patch(ctx context.Co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarGroupable), nil
 }
-// ToDeleteRequestInformation delete a calendar group other than the default calendar group. This API is available in the following national cloud deployments.
+// ToDeleteRequestInformation delete a calendar group other than the default calendar group.
 func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarGroupsCalendarGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a calendar group object. This API is available in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a calendar group object.
 func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarGroupsCalendarGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -142,23 +139,17 @@ func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) ToGetRequestInformat
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of calendargroup object. This API is available in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of calendargroup object.
 func (m *ItemCalendarGroupsCalendarGroupItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CalendarGroupable, requestConfiguration *ItemCalendarGroupsCalendarGroupItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

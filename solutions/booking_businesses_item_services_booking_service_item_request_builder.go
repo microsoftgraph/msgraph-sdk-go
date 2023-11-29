@@ -18,7 +18,7 @@ type BookingBusinessesItemServicesBookingServiceItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BookingBusinessesItemServicesBookingServiceItemRequestBuilderGetQueryParameters get the properties and relationships of a bookingService object in the specified bookingBusiness. This API is available in the following national cloud deployments.
+// BookingBusinessesItemServicesBookingServiceItemRequestBuilderGetQueryParameters get the properties and relationships of a bookingService object in the specified bookingBusiness.
 type BookingBusinessesItemServicesBookingServiceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewBookingBusinessesItemServicesBookingServiceItemRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewBookingBusinessesItemServicesBookingServiceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a bookingService object in the specified bookingBusiness. This API is available in the following national cloud deployments.
+// Delete delete a bookingService object in the specified bookingBusiness.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingservice-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *BookingBusinessesItemServicesBookingServiceItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get get the properties and relationships of a bookingService object in the specified bookingBusiness. This API is available in the following national cloud deployments.
+// Get get the properties and relationships of a bookingService object in the specified bookingBusiness.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingservice-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *BookingBusinessesItemServicesBookingServiceItemRequestBuilder) Get(ctx 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceable), nil
 }
-// Patch update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:- Price- Typical length of an appointment- Reminders- Any time buffer to set up before or finish up after the service- Scheduling policy parameters, such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment. This API is available in the following national cloud deployments.
+// Patch update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:- Price- Typical length of an appointment- Reminders- Any time buffer to set up before or finish up after the service- Scheduling policy parameters, such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingservice-update?view=graph-rest-1.0
@@ -117,22 +117,19 @@ func (m *BookingBusinessesItemServicesBookingServiceItemRequestBuilder) Patch(ct
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceable), nil
 }
-// ToDeleteRequestInformation delete a bookingService object in the specified bookingBusiness. This API is available in the following national cloud deployments.
+// ToDeleteRequestInformation delete a bookingService object in the specified bookingBusiness.
 func (m *BookingBusinessesItemServicesBookingServiceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemServicesBookingServiceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of a bookingService object in the specified bookingBusiness. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get the properties and relationships of a bookingService object in the specified bookingBusiness.
 func (m *BookingBusinessesItemServicesBookingServiceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemServicesBookingServiceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -140,23 +137,17 @@ func (m *BookingBusinessesItemServicesBookingServiceItemRequestBuilder) ToGetReq
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:- Price- Typical length of an appointment- Reminders- Any time buffer to set up before or finish up after the service- Scheduling policy parameters, such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment. This API is available in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:- Price- Typical length of an appointment- Reminders- Any time buffer to set up before or finish up after the service- Scheduling policy parameters, such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment.
 func (m *BookingBusinessesItemServicesBookingServiceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingServiceable, requestConfiguration *BookingBusinessesItemServicesBookingServiceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

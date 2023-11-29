@@ -11,7 +11,7 @@ import (
 type ItemTabsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTabsRequestBuilderGetQueryParameters retrieve the list of tabs in the specified chat. This API is available in the following national cloud deployments.
+// ItemTabsRequestBuilderGetQueryParameters retrieve the list of tabs in the specified chat.
 type ItemTabsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemTabsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *ItemTabsRequestBuilder) Count()(*ItemTabsCountRequestBuilder) {
     return NewItemTabsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the list of tabs in the specified chat. This API is available in the following national cloud deployments.
+// Get retrieve the list of tabs in the specified chat.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chat-list-tabs?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemTabsRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabCollectionResponseable), nil
 }
-// Post add (pin) a tab to the specified chat. The corresponding app must already be installed in the chat. This API is available in the following national cloud deployments.
+// Post add (pin) a tab to the specified chat. The corresponding app must already be installed in the chat.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chat-post-tabs?view=graph-rest-1.0
@@ -118,9 +118,9 @@ func (m *ItemTabsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable), nil
 }
-// ToGetRequestInformation retrieve the list of tabs in the specified chat. This API is available in the following national cloud deployments.
+// ToGetRequestInformation retrieve the list of tabs in the specified chat.
 func (m *ItemTabsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTabsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -128,23 +128,17 @@ func (m *ItemTabsRequestBuilder) ToGetRequestInformation(ctx context.Context, re
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation add (pin) a tab to the specified chat. The corresponding app must already be installed in the chat. This API is available in the following national cloud deployments.
+// ToPostRequestInformation add (pin) a tab to the specified chat. The corresponding app must already be installed in the chat.
 func (m *ItemTabsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, requestConfiguration *ItemTabsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

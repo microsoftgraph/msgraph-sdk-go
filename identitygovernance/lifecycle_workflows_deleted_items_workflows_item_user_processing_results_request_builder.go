@@ -12,7 +12,7 @@ import (
 type LifecycleWorkflowsDeletedItemsWorkflowsItemUserProcessingResultsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsDeletedItemsWorkflowsItemUserProcessingResultsRequestBuilderGetQueryParameters get the userProcessingResult resources for a workflow. This API is available in the following national cloud deployments.
+// LifecycleWorkflowsDeletedItemsWorkflowsItemUserProcessingResultsRequestBuilderGetQueryParameters get the userProcessingResult resources for a workflow.
 type LifecycleWorkflowsDeletedItemsWorkflowsItemUserProcessingResultsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -68,7 +68,7 @@ func NewLifecycleWorkflowsDeletedItemsWorkflowsItemUserProcessingResultsRequestB
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemUserProcessingResultsRequestBuilder) Count()(*LifecycleWorkflowsDeletedItemsWorkflowsItemUserProcessingResultsCountRequestBuilder) {
     return NewLifecycleWorkflowsDeletedItemsWorkflowsItemUserProcessingResultsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the userProcessingResult resources for a workflow. This API is available in the following national cloud deployments.
+// Get get the userProcessingResult resources for a workflow.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-userprocessingresults?view=graph-rest-1.0
@@ -94,9 +94,9 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemUserProcessingResultsRequest
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemUserProcessingResultsRequestBuilder) MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime(endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*LifecycleWorkflowsDeletedItemsWorkflowsItemUserProcessingResultsMicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder) {
     return NewLifecycleWorkflowsDeletedItemsWorkflowsItemUserProcessingResultsMicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, endDateTime, startDateTime)
 }
-// ToGetRequestInformation get the userProcessingResult resources for a workflow. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get the userProcessingResult resources for a workflow.
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemUserProcessingResultsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsDeletedItemsWorkflowsItemUserProcessingResultsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -104,10 +104,7 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemUserProcessingResultsRequest
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

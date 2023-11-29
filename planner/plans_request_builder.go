@@ -11,7 +11,7 @@ import (
 type PlansRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PlansRequestBuilderGetQueryParameters get a list of plannerPlan objects. This API is available in the following national cloud deployments.
+// PlansRequestBuilderGetQueryParameters get a list of plannerPlan objects.
 type PlansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewPlansRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *PlansRequestBuilder) Count()(*PlansCountRequestBuilder) {
     return NewPlansCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of plannerPlan objects. This API is available in the following national cloud deployments.
+// Get get a list of plannerPlan objects.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/planner-list-plans?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *PlansRequestBuilder) Get(ctx context.Context, requestConfiguration *Pla
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerPlanCollectionResponseable), nil
 }
-// Post use this API to create a new plannerPlan. This API is available in the following national cloud deployments.
+// Post use this API to create a new plannerPlan.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/planner-post-plans?view=graph-rest-1.0
@@ -118,9 +118,9 @@ func (m *PlansRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e64
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerPlanable), nil
 }
-// ToGetRequestInformation get a list of plannerPlan objects. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get a list of plannerPlan objects.
 func (m *PlansRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PlansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -128,23 +128,17 @@ func (m *PlansRequestBuilder) ToGetRequestInformation(ctx context.Context, reque
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation use this API to create a new plannerPlan. This API is available in the following national cloud deployments.
+// ToPostRequestInformation use this API to create a new plannerPlan.
 func (m *PlansRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerPlanable, requestConfiguration *PlansRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

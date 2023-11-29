@@ -11,7 +11,7 @@ import (
 type CasesEdiscoveryCasesItemSearchesItemLastEstimateStatisticsOperationRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CasesEdiscoveryCasesItemSearchesItemLastEstimateStatisticsOperationRequestBuilderGetQueryParameters get the last  ediscoveryEstimateOperation objects and their properties. This API is available in the following national cloud deployments.
+// CasesEdiscoveryCasesItemSearchesItemLastEstimateStatisticsOperationRequestBuilderGetQueryParameters get the last  ediscoveryEstimateOperation objects and their properties.
 type CasesEdiscoveryCasesItemSearchesItemLastEstimateStatisticsOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewCasesEdiscoveryCasesItemSearchesItemLastEstimateStatisticsOperationReque
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemSearchesItemLastEstimateStatisticsOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get the last  ediscoveryEstimateOperation objects and their properties. This API is available in the following national cloud deployments.
+// Get get the last  ediscoveryEstimateOperation objects and their properties.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverysearch-list-lastestimatestatisticsoperation?view=graph-rest-1.0
@@ -62,9 +62,9 @@ func (m *CasesEdiscoveryCasesItemSearchesItemLastEstimateStatisticsOperationRequ
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryEstimateOperationable), nil
 }
-// ToGetRequestInformation get the last  ediscoveryEstimateOperation objects and their properties. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get the last  ediscoveryEstimateOperation objects and their properties.
 func (m *CasesEdiscoveryCasesItemSearchesItemLastEstimateStatisticsOperationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemSearchesItemLastEstimateStatisticsOperationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -72,10 +72,7 @@ func (m *CasesEdiscoveryCasesItemSearchesItemLastEstimateStatisticsOperationRequ
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

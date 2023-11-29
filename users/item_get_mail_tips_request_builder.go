@@ -30,7 +30,7 @@ func NewItemGetMailTipsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewItemGetMailTipsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips tobe returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection. This API is available in the following national cloud deployments.
+// Post get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips tobe returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection.
 // Deprecated: This method is obsolete. Use PostAsGetMailTipsPostResponse instead.
 // [Find more info here]
 // 
@@ -53,7 +53,7 @@ func (m *ItemGetMailTipsRequestBuilder) Post(ctx context.Context, body ItemGetMa
     }
     return res.(ItemGetMailTipsResponseable), nil
 }
-// PostAsGetMailTipsPostResponse get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips tobe returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection. This API is available in the following national cloud deployments.
+// PostAsGetMailTipsPostResponse get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips tobe returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/user-getmailtips?view=graph-rest-1.0
@@ -75,17 +75,14 @@ func (m *ItemGetMailTipsRequestBuilder) PostAsGetMailTipsPostResponse(ctx contex
     }
     return res.(ItemGetMailTipsPostResponseable), nil
 }
-// ToPostRequestInformation get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips tobe returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection. This API is available in the following national cloud deployments.
+// ToPostRequestInformation get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips tobe returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection.
 func (m *ItemGetMailTipsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemGetMailTipsPostRequestBodyable, requestConfiguration *ItemGetMailTipsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

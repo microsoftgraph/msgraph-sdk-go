@@ -11,7 +11,7 @@ import (
 type ItemTeamScheduleShiftsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamScheduleShiftsRequestBuilderGetQueryParameters get the list of shift instances in a schedule. This API is available in the following national cloud deployments.
+// ItemTeamScheduleShiftsRequestBuilderGetQueryParameters get the list of shift instances in a schedule.
 type ItemTeamScheduleShiftsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,7 +72,7 @@ func NewItemTeamScheduleShiftsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ItemTeamScheduleShiftsRequestBuilder) Count()(*ItemTeamScheduleShiftsCountRequestBuilder) {
     return NewItemTeamScheduleShiftsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of shift instances in a schedule. This API is available in the following national cloud deployments.
+// Get get the list of shift instances in a schedule.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/schedule-list-shifts?view=graph-rest-1.0
@@ -94,7 +94,7 @@ func (m *ItemTeamScheduleShiftsRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ShiftCollectionResponseable), nil
 }
-// Post create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours. This API is available in the following national cloud deployments.
+// Post create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/schedule-post-shifts?view=graph-rest-1.0
@@ -116,9 +116,9 @@ func (m *ItemTeamScheduleShiftsRequestBuilder) Post(ctx context.Context, body ia
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Shiftable), nil
 }
-// ToGetRequestInformation get the list of shift instances in a schedule. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get the list of shift instances in a schedule.
 func (m *ItemTeamScheduleShiftsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamScheduleShiftsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -126,23 +126,17 @@ func (m *ItemTeamScheduleShiftsRequestBuilder) ToGetRequestInformation(ctx conte
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours. This API is available in the following national cloud deployments.
+// ToPostRequestInformation create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
 func (m *ItemTeamScheduleShiftsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Shiftable, requestConfiguration *ItemTeamScheduleShiftsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

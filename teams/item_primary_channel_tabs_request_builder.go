@@ -11,7 +11,7 @@ import (
 type ItemPrimaryChannelTabsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPrimaryChannelTabsRequestBuilderGetQueryParameters retrieve the list of tabs in the specified channel within a team.  This API is available in the following national cloud deployments.
+// ItemPrimaryChannelTabsRequestBuilderGetQueryParameters retrieve the list of tabs in the specified channel within a team. 
 type ItemPrimaryChannelTabsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemPrimaryChannelTabsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ItemPrimaryChannelTabsRequestBuilder) Count()(*ItemPrimaryChannelTabsCountRequestBuilder) {
     return NewItemPrimaryChannelTabsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the list of tabs in the specified channel within a team.  This API is available in the following national cloud deployments.
+// Get retrieve the list of tabs in the specified channel within a team. 
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemPrimaryChannelTabsRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabCollectionResponseable), nil
 }
-// Post adds (pins) a tab to the specified channel within a team. The corresponding app must already be installed in the team. This API is available in the following national cloud deployments.
+// Post add (pin) a tab to the specified channel within a team. The app must be preinstalled in the team and have the configurableTabs property defined in the app manifest.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-post-tabs?view=graph-rest-1.0
@@ -118,9 +118,9 @@ func (m *ItemPrimaryChannelTabsRequestBuilder) Post(ctx context.Context, body ia
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable), nil
 }
-// ToGetRequestInformation retrieve the list of tabs in the specified channel within a team.  This API is available in the following national cloud deployments.
+// ToGetRequestInformation retrieve the list of tabs in the specified channel within a team. 
 func (m *ItemPrimaryChannelTabsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPrimaryChannelTabsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -128,23 +128,17 @@ func (m *ItemPrimaryChannelTabsRequestBuilder) ToGetRequestInformation(ctx conte
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation adds (pins) a tab to the specified channel within a team. The corresponding app must already be installed in the team. This API is available in the following national cloud deployments.
+// ToPostRequestInformation add (pin) a tab to the specified channel within a team. The app must be preinstalled in the team and have the configurableTabs property defined in the app manifest.
 func (m *ItemPrimaryChannelTabsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, requestConfiguration *ItemPrimaryChannelTabsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

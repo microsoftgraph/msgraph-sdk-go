@@ -11,7 +11,7 @@ import (
 type DevicesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DevicesRequestBuilderGetQueryParameters retrieve a list of device objects registered in the organization. This API is available in the following national cloud deployments.
+// DevicesRequestBuilderGetQueryParameters retrieve a list of device objects registered in the organization.
 type DevicesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,7 +78,7 @@ func (m *DevicesRequestBuilder) Count()(*CountRequestBuilder) {
 func (m *DevicesRequestBuilder) Delta()(*DeltaRequestBuilder) {
     return NewDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of device objects registered in the organization. This API is available in the following national cloud deployments.
+// Get retrieve a list of device objects registered in the organization.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/device-list?view=graph-rest-1.0
@@ -108,7 +108,7 @@ func (m *DevicesRequestBuilder) GetAvailableExtensionProperties()(*GetAvailableE
 func (m *DevicesRequestBuilder) GetByIds()(*GetByIdsRequestBuilder) {
     return NewGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Post create and register a new device in the organization. This API is available in the following national cloud deployments.
+// Post create and register a new device in the organization.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/device-post-devices?view=graph-rest-1.0
@@ -130,9 +130,9 @@ func (m *DevicesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable), nil
 }
-// ToGetRequestInformation retrieve a list of device objects registered in the organization. This API is available in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of device objects registered in the organization.
 func (m *DevicesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DevicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -140,23 +140,17 @@ func (m *DevicesRequestBuilder) ToGetRequestInformation(ctx context.Context, req
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create and register a new device in the organization. This API is available in the following national cloud deployments.
+// ToPostRequestInformation create and register a new device in the organization.
 func (m *DevicesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable, requestConfiguration *DevicesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

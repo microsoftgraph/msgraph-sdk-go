@@ -11,7 +11,7 @@ import (
 type CasesEdiscoveryCasesItemTagsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CasesEdiscoveryCasesItemTagsRequestBuilderGetQueryParameters get a list of eDiscoveryReviewTag objects and their properties. This API is available in the following national cloud deployments.
+// CasesEdiscoveryCasesItemTagsRequestBuilderGetQueryParameters get a list of eDiscoveryReviewTag objects and their properties.
 type CasesEdiscoveryCasesItemTagsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewCasesEdiscoveryCasesItemTagsRequestBuilder(rawUrl string, requestAdapter
 func (m *CasesEdiscoveryCasesItemTagsRequestBuilder) Count()(*CasesEdiscoveryCasesItemTagsCountRequestBuilder) {
     return NewCasesEdiscoveryCasesItemTagsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of eDiscoveryReviewTag objects and their properties. This API is available in the following national cloud deployments.
+// Get get a list of eDiscoveryReviewTag objects and their properties.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycase-list-tags?view=graph-rest-1.0
@@ -100,7 +100,7 @@ func (m *CasesEdiscoveryCasesItemTagsRequestBuilder) Get(ctx context.Context, re
 func (m *CasesEdiscoveryCasesItemTagsRequestBuilder) MicrosoftGraphSecurityAsHierarchy()(*CasesEdiscoveryCasesItemTagsMicrosoftGraphSecurityAsHierarchyRequestBuilder) {
     return NewCasesEdiscoveryCasesItemTagsMicrosoftGraphSecurityAsHierarchyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Post create a new ediscoveryReviewTag object. This API is available in the following national cloud deployments.
+// Post create a new ediscoveryReviewTag object.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycase-post-tags?view=graph-rest-1.0
@@ -122,9 +122,9 @@ func (m *CasesEdiscoveryCasesItemTagsRequestBuilder) Post(ctx context.Context, b
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable), nil
 }
-// ToGetRequestInformation get a list of eDiscoveryReviewTag objects and their properties. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get a list of eDiscoveryReviewTag objects and their properties.
 func (m *CasesEdiscoveryCasesItemTagsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemTagsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -132,23 +132,17 @@ func (m *CasesEdiscoveryCasesItemTagsRequestBuilder) ToGetRequestInformation(ctx
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new ediscoveryReviewTag object. This API is available in the following national cloud deployments.
+// ToPostRequestInformation create a new ediscoveryReviewTag object.
 func (m *CasesEdiscoveryCasesItemTagsRequestBuilder) ToPostRequestInformation(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable, requestConfiguration *CasesEdiscoveryCasesItemTagsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

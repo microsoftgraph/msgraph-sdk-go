@@ -18,7 +18,7 @@ type DeviceItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DeviceItemRequestBuilderGetQueryParameters get the properties and relationships of a device object. This API is available in the following national cloud deployments.
+// DeviceItemRequestBuilderGetQueryParameters get the properties and relationships of a device object.
 type DeviceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -62,7 +62,7 @@ func NewDeviceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a registered device. This API is available in the following national cloud deployments.
+// Delete delete a registered device.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/device-delete?view=graph-rest-1.0
@@ -85,7 +85,7 @@ func (m *DeviceItemRequestBuilder) Delete(ctx context.Context, requestConfigurat
 func (m *DeviceItemRequestBuilder) Extensions()(*ItemExtensionsRequestBuilder) {
     return NewItemExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the properties and relationships of a device object. This API is available in the following national cloud deployments.
+// Get get the properties and relationships of a device object.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/device-get?view=graph-rest-1.0
@@ -119,7 +119,7 @@ func (m *DeviceItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsReque
 func (m *DeviceItemRequestBuilder) MemberOf()(*ItemMemberOfRequestBuilder) {
     return NewItemMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a registered device. Only certain properties of a device can be updated through approved Mobile Device Managment (MDM) apps. This API is available in the following national cloud deployments.
+// Patch update the properties of a registered device. Only certain properties of a device can be updated through approved Mobile Device Managment (MDM) apps.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/device-update?view=graph-rest-1.0
@@ -153,22 +153,19 @@ func (m *DeviceItemRequestBuilder) RegisteredUsers()(*ItemRegisteredUsersRequest
 func (m *DeviceItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
     return NewItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a registered device. This API is available in the following national cloud deployments.
+// ToDeleteRequestInformation delete a registered device.
 func (m *DeviceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeviceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of a device object. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get the properties and relationships of a device object.
 func (m *DeviceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -176,23 +173,17 @@ func (m *DeviceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, 
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a registered device. Only certain properties of a device can be updated through approved Mobile Device Managment (MDM) apps. This API is available in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a registered device. Only certain properties of a device can be updated through approved Mobile Device Managment (MDM) apps.
 func (m *DeviceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable, requestConfiguration *DeviceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

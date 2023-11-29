@@ -30,7 +30,7 @@ func NewItemJoinedTeamsItemChannelsItemMembersAddRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewItemJoinedTeamsItemChannelsItemMembersAddRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created. This API is available in the following national cloud deployments.
+// Post add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
 // Deprecated: This method is obsolete. Use PostAsAddPostResponse instead.
 // [Find more info here]
 // 
@@ -53,7 +53,7 @@ func (m *ItemJoinedTeamsItemChannelsItemMembersAddRequestBuilder) Post(ctx conte
     }
     return res.(ItemJoinedTeamsItemChannelsItemMembersAddResponseable), nil
 }
-// PostAsAddPostResponse add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created. This API is available in the following national cloud deployments.
+// PostAsAddPostResponse add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
@@ -75,17 +75,14 @@ func (m *ItemJoinedTeamsItemChannelsItemMembersAddRequestBuilder) PostAsAddPostR
     }
     return res.(ItemJoinedTeamsItemChannelsItemMembersAddPostResponseable), nil
 }
-// ToPostRequestInformation add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created. This API is available in the following national cloud deployments.
+// ToPostRequestInformation add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
 func (m *ItemJoinedTeamsItemChannelsItemMembersAddRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemJoinedTeamsItemChannelsItemMembersAddPostRequestBodyable, requestConfiguration *ItemJoinedTeamsItemChannelsItemMembersAddRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

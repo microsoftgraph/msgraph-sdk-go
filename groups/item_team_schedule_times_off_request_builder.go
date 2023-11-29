@@ -11,7 +11,7 @@ import (
 type ItemTeamScheduleTimesOffRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamScheduleTimesOffRequestBuilderGetQueryParameters get the list of timeOff instances in a schedule. This API is available in the following national cloud deployments.
+// ItemTeamScheduleTimesOffRequestBuilderGetQueryParameters get the list of timeOff instances in a schedule.
 type ItemTeamScheduleTimesOffRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,7 +72,7 @@ func NewItemTeamScheduleTimesOffRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *ItemTeamScheduleTimesOffRequestBuilder) Count()(*ItemTeamScheduleTimesOffCountRequestBuilder) {
     return NewItemTeamScheduleTimesOffCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of timeOff instances in a schedule. This API is available in the following national cloud deployments.
+// Get get the list of timeOff instances in a schedule.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/schedule-list-timesoff?view=graph-rest-1.0
@@ -94,7 +94,7 @@ func (m *ItemTeamScheduleTimesOffRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffCollectionResponseable), nil
 }
-// Post create a new timeOff instance in a schedule. This API is available in the following national cloud deployments.
+// Post create a new timeOff instance in a schedule.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/schedule-post-timesoff?view=graph-rest-1.0
@@ -116,9 +116,9 @@ func (m *ItemTeamScheduleTimesOffRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffable), nil
 }
-// ToGetRequestInformation get the list of timeOff instances in a schedule. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get the list of timeOff instances in a schedule.
 func (m *ItemTeamScheduleTimesOffRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamScheduleTimesOffRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -126,23 +126,17 @@ func (m *ItemTeamScheduleTimesOffRequestBuilder) ToGetRequestInformation(ctx con
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new timeOff instance in a schedule. This API is available in the following national cloud deployments.
+// ToPostRequestInformation create a new timeOff instance in a schedule.
 func (m *ItemTeamScheduleTimesOffRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffable, requestConfiguration *ItemTeamScheduleTimesOffRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

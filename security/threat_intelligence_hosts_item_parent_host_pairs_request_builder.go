@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceHostsItemParentHostPairsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceHostsItemParentHostPairsRequestBuilderGetQueryParameters get the list of hostPair resources associated with a host, where that host is the *child* and has an incoming pairing with a *parent*. This API is available in the following national cloud deployments.
+// ThreatIntelligenceHostsItemParentHostPairsRequestBuilderGetQueryParameters get the list of hostPair resources associated with a host, where that host is the *child* and has an incoming pairing with a *parent*.
 type ThreatIntelligenceHostsItemParentHostPairsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewThreatIntelligenceHostsItemParentHostPairsRequestBuilder(rawUrl string, 
 func (m *ThreatIntelligenceHostsItemParentHostPairsRequestBuilder) Count()(*ThreatIntelligenceHostsItemParentHostPairsCountRequestBuilder) {
     return NewThreatIntelligenceHostsItemParentHostPairsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of hostPair resources associated with a host, where that host is the *child* and has an incoming pairing with a *parent*. This API is available in the following national cloud deployments.
+// Get get the list of hostPair resources associated with a host, where that host is the *child* and has an incoming pairing with a *parent*.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-host-list-parenthostpairs?view=graph-rest-1.0
@@ -89,9 +89,9 @@ func (m *ThreatIntelligenceHostsItemParentHostPairsRequestBuilder) Get(ctx conte
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HostPairCollectionResponseable), nil
 }
-// ToGetRequestInformation get the list of hostPair resources associated with a host, where that host is the *child* and has an incoming pairing with a *parent*. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get the list of hostPair resources associated with a host, where that host is the *child* and has an incoming pairing with a *parent*.
 func (m *ThreatIntelligenceHostsItemParentHostPairsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemParentHostPairsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -99,10 +99,7 @@ func (m *ThreatIntelligenceHostsItemParentHostPairsRequestBuilder) ToGetRequestI
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

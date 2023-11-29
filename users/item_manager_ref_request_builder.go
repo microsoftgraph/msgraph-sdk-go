@@ -45,7 +45,7 @@ func NewItemManagerRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewItemManagerRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a user's manager. This API is available in the following national cloud deployments.
+// Delete remove a user's manager.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/user-delete-manager?view=graph-rest-1.0
@@ -64,7 +64,7 @@ func (m *ItemManagerRefRequestBuilder) Delete(ctx context.Context, requestConfig
     }
     return nil
 }
-// Get returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node. This API is available in the following national cloud deployments.
+// Get returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
@@ -86,7 +86,7 @@ func (m *ItemManagerRefRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(*string), nil
 }
-// Put assign a user's manager. This API is available in the following national cloud deployments.
+// Put assign a user's manager.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/user-post-manager?view=graph-rest-1.0
@@ -105,43 +105,34 @@ func (m *ItemManagerRefRequestBuilder) Put(ctx context.Context, body iadcd811244
     }
     return nil
 }
-// ToDeleteRequestInformation remove a user's manager. This API is available in the following national cloud deployments.
+// ToDeleteRequestInformation remove a user's manager.
 func (m *ItemManagerRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemManagerRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node. This API is available in the following national cloud deployments.
+// ToGetRequestInformation returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
 func (m *ItemManagerRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemManagerRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation assign a user's manager. This API is available in the following national cloud deployments.
+// ToPutRequestInformation assign a user's manager.
 func (m *ItemManagerRefRequestBuilder) ToPutRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceUpdateable, requestConfiguration *ItemManagerRefRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

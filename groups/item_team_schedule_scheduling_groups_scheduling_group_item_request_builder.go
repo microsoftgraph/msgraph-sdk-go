@@ -18,7 +18,7 @@ type ItemTeamScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a schedulingGroup by ID. This API is available in the following national cloud deployments.
+// ItemTeamScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a schedulingGroup by ID.
 type ItemTeamScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -52,7 +52,7 @@ func NewItemTeamScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete mark a schedulingGroup as inactive by setting its isActive property.This method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group. This API is available in the following national cloud deployments.
+// Delete mark a schedulingGroup as inactive by setting its isActive property.This method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/schedulinggroup-delete?view=graph-rest-1.0
@@ -71,7 +71,7 @@ func (m *ItemTeamScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) Dele
     }
     return nil
 }
-// Get retrieve the properties and relationships of a schedulingGroup by ID. This API is available in the following national cloud deployments.
+// Get retrieve the properties and relationships of a schedulingGroup by ID.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/schedulinggroup-get?view=graph-rest-1.0
@@ -115,22 +115,19 @@ func (m *ItemTeamScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) Patc
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SchedulingGroupable), nil
 }
-// ToDeleteRequestInformation mark a schedulingGroup as inactive by setting its isActive property.This method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group. This API is available in the following national cloud deployments.
+// ToDeleteRequestInformation mark a schedulingGroup as inactive by setting its isActive property.This method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group.
 func (m *ItemTeamScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a schedulingGroup by ID. This API is available in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a schedulingGroup by ID.
 func (m *ItemTeamScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -138,23 +135,17 @@ func (m *ItemTeamScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) ToGe
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPatchRequestInformation replace an existing schedulingGroup. If the specified schedulingGroup doesn't exist, this method returns 404 Not found.
 func (m *ItemTeamScheduleSchedulingGroupsSchedulingGroupItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SchedulingGroupable, requestConfiguration *ItemTeamScheduleSchedulingGroupsSchedulingGroupItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

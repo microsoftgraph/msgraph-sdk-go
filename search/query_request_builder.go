@@ -30,7 +30,7 @@ func NewQueryRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewQueryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post runs the query specified in the request body. Search results are provided in the response. This API is available in the following national cloud deployments.
+// Post runs the query specified in the request body. Search results are provided in the response.
 // Deprecated: This method is obsolete. Use PostAsQueryPostResponse instead.
 // [Find more info here]
 // 
@@ -53,7 +53,7 @@ func (m *QueryRequestBuilder) Post(ctx context.Context, body QueryPostRequestBod
     }
     return res.(QueryResponseable), nil
 }
-// PostAsQueryPostResponse runs the query specified in the request body. Search results are provided in the response. This API is available in the following national cloud deployments.
+// PostAsQueryPostResponse runs the query specified in the request body. Search results are provided in the response.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/search-query?view=graph-rest-1.0
@@ -75,17 +75,14 @@ func (m *QueryRequestBuilder) PostAsQueryPostResponse(ctx context.Context, body 
     }
     return res.(QueryPostResponseable), nil
 }
-// ToPostRequestInformation runs the query specified in the request body. Search results are provided in the response. This API is available in the following national cloud deployments.
+// ToPostRequestInformation runs the query specified in the request body. Search results are provided in the response.
 func (m *QueryRequestBuilder) ToPostRequestInformation(ctx context.Context, body QueryPostRequestBodyable, requestConfiguration *QueryRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

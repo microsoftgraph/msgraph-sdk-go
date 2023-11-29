@@ -18,7 +18,7 @@ type ItemTeamScheduleTimesOffTimeOffItemRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamScheduleTimesOffTimeOffItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a timeOff object by ID. This API is available in the following national cloud deployments.
+// ItemTeamScheduleTimesOffTimeOffItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a timeOff object by ID.
 type ItemTeamScheduleTimesOffTimeOffItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -52,7 +52,7 @@ func NewItemTeamScheduleTimesOffTimeOffItemRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamScheduleTimesOffTimeOffItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a timeOff instance from a schedule. This API is available in the following national cloud deployments.
+// Delete delete a timeOff instance from a schedule.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/timeoff-delete?view=graph-rest-1.0
@@ -71,7 +71,7 @@ func (m *ItemTeamScheduleTimesOffTimeOffItemRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// Get retrieve the properties and relationships of a timeOff object by ID. This API is available in the following national cloud deployments.
+// Get retrieve the properties and relationships of a timeOff object by ID.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/timeoff-get?view=graph-rest-1.0
@@ -115,22 +115,19 @@ func (m *ItemTeamScheduleTimesOffTimeOffItemRequestBuilder) Patch(ctx context.Co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffable), nil
 }
-// ToDeleteRequestInformation delete a timeOff instance from a schedule. This API is available in the following national cloud deployments.
+// ToDeleteRequestInformation delete a timeOff instance from a schedule.
 func (m *ItemTeamScheduleTimesOffTimeOffItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamScheduleTimesOffTimeOffItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a timeOff object by ID. This API is available in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties and relationships of a timeOff object by ID.
 func (m *ItemTeamScheduleTimesOffTimeOffItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamScheduleTimesOffTimeOffItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -138,23 +135,17 @@ func (m *ItemTeamScheduleTimesOffTimeOffItemRequestBuilder) ToGetRequestInformat
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPatchRequestInformation replace an existing timeOff object. If the specified timeOff object doesn't exist, this method returns 404 Not found.
 func (m *ItemTeamScheduleTimesOffTimeOffItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffable, requestConfiguration *ItemTeamScheduleTimesOffTimeOffItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

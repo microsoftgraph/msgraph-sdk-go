@@ -11,7 +11,7 @@ import (
 type ItemFederationConfigurationRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemFederationConfigurationRequestBuilderGetQueryParameters read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection. This API is available in the following national cloud deployments.
+// ItemFederationConfigurationRequestBuilderGetQueryParameters read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection.
 type ItemFederationConfigurationRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemFederationConfigurationRequestBuilder(rawUrl string, requestAdapter 
 func (m *ItemFederationConfigurationRequestBuilder) Count()(*ItemFederationConfigurationCountRequestBuilder) {
     return NewItemFederationConfigurationCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection. This API is available in the following national cloud deployments.
+// Get read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/domain-list-federationconfiguration?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *ItemFederationConfigurationRequestBuilder) Get(ctx context.Context, req
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationCollectionResponseable), nil
 }
-// Post create a new internalDomainFederation object. This API is available in the following national cloud deployments.
+// Post create a new internalDomainFederation object.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/domain-post-federationconfiguration?view=graph-rest-1.0
@@ -118,9 +118,9 @@ func (m *ItemFederationConfigurationRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable), nil
 }
-// ToGetRequestInformation read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection. This API is available in the following national cloud deployments.
+// ToGetRequestInformation read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection.
 func (m *ItemFederationConfigurationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemFederationConfigurationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -128,23 +128,17 @@ func (m *ItemFederationConfigurationRequestBuilder) ToGetRequestInformation(ctx 
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new internalDomainFederation object. This API is available in the following national cloud deployments.
+// ToPostRequestInformation create a new internalDomainFederation object.
 func (m *ItemFederationConfigurationRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable, requestConfiguration *ItemFederationConfigurationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

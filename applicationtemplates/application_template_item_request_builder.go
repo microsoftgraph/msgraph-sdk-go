@@ -11,7 +11,7 @@ import (
 type ApplicationTemplateItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ApplicationTemplateItemRequestBuilderGetQueryParameters retrieve the properties of an applicationTemplate object. This API is available in the following national cloud deployments.
+// ApplicationTemplateItemRequestBuilderGetQueryParameters retrieve the properties of an applicationTemplate object.
 type ApplicationTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewApplicationTemplateItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewApplicationTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve the properties of an applicationTemplate object. This API is available in the following national cloud deployments.
+// Get retrieve the properties of an applicationTemplate object.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/applicationtemplate-get?view=graph-rest-1.0
@@ -66,9 +66,9 @@ func (m *ApplicationTemplateItemRequestBuilder) Get(ctx context.Context, request
 func (m *ApplicationTemplateItemRequestBuilder) Instantiate()(*ItemInstantiateRequestBuilder) {
     return NewItemInstantiateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve the properties of an applicationTemplate object. This API is available in the following national cloud deployments.
+// ToGetRequestInformation retrieve the properties of an applicationTemplate object.
 func (m *ApplicationTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApplicationTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -76,10 +76,7 @@ func (m *ApplicationTemplateItemRequestBuilder) ToGetRequestInformation(ctx cont
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

@@ -18,7 +18,7 @@ type ItemGroupsExternalGroupItemRequestBuilderDeleteRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemGroupsExternalGroupItemRequestBuilderGetQueryParameters get an externalGroup object. This API is available in the following national cloud deployments.
+// ItemGroupsExternalGroupItemRequestBuilderGetQueryParameters get an externalGroup object.
 type ItemGroupsExternalGroupItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemGroupsExternalGroupItemRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewItemGroupsExternalGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an externalGroup object. This API is available in the following national cloud deployments.
+// Delete delete an externalGroup object.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *ItemGroupsExternalGroupItemRequestBuilder) Delete(ctx context.Context, 
     }
     return nil
 }
-// Get get an externalGroup object. This API is available in the following national cloud deployments.
+// Get get an externalGroup object.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-get?view=graph-rest-1.0
@@ -99,7 +99,7 @@ func (m *ItemGroupsExternalGroupItemRequestBuilder) Get(ctx context.Context, req
 func (m *ItemGroupsExternalGroupItemRequestBuilder) Members()(*ItemGroupsItemMembersRequestBuilder) {
     return NewItemGroupsItemMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of an externalGroup object. This API is available in the following national cloud deployments.
+// Patch update the properties of an externalGroup object.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-update?view=graph-rest-1.0
@@ -121,22 +121,19 @@ func (m *ItemGroupsExternalGroupItemRequestBuilder) Patch(ctx context.Context, b
     }
     return res.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalGroupable), nil
 }
-// ToDeleteRequestInformation delete an externalGroup object. This API is available in the following national cloud deployments.
+// ToDeleteRequestInformation delete an externalGroup object.
 func (m *ItemGroupsExternalGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemGroupsExternalGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get an externalGroup object. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get an externalGroup object.
 func (m *ItemGroupsExternalGroupItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGroupsExternalGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -144,23 +141,17 @@ func (m *ItemGroupsExternalGroupItemRequestBuilder) ToGetRequestInformation(ctx 
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an externalGroup object. This API is available in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of an externalGroup object.
 func (m *ItemGroupsExternalGroupItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalGroupable, requestConfiguration *ItemGroupsExternalGroupItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

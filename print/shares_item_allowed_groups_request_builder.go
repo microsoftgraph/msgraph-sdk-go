@@ -11,7 +11,7 @@ import (
 type SharesItemAllowedGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SharesItemAllowedGroupsRequestBuilderGetQueryParameters retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare. This API is available in the following national cloud deployments.
+// SharesItemAllowedGroupsRequestBuilderGetQueryParameters retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
 type SharesItemAllowedGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewSharesItemAllowedGroupsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *SharesItemAllowedGroupsRequestBuilder) Count()(*SharesItemAllowedGroupsCountRequestBuilder) {
     return NewSharesItemAllowedGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare. This API is available in the following national cloud deployments.
+// Get retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0
@@ -93,9 +93,9 @@ func (m *SharesItemAllowedGroupsRequestBuilder) Get(ctx context.Context, request
 func (m *SharesItemAllowedGroupsRequestBuilder) Ref()(*SharesItemAllowedGroupsRefRequestBuilder) {
     return NewSharesItemAllowedGroupsRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare. This API is available in the following national cloud deployments.
+// ToGetRequestInformation retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
 func (m *SharesItemAllowedGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SharesItemAllowedGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -103,10 +103,7 @@ func (m *SharesItemAllowedGroupsRequestBuilder) ToGetRequestInformation(ctx cont
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

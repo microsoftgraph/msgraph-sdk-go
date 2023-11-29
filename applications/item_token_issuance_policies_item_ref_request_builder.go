@@ -10,7 +10,7 @@ import (
 type ItemTokenIssuancePoliciesItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTokenIssuancePoliciesItemRefRequestBuilderDeleteQueryParameters remove a tokenIssuancePolicy from an application. This API is available in the following national cloud deployments.
+// ItemTokenIssuancePoliciesItemRefRequestBuilderDeleteQueryParameters remove a tokenIssuancePolicy from an application.
 type ItemTokenIssuancePoliciesItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,7 @@ func NewItemTokenIssuancePoliciesItemRefRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewItemTokenIssuancePoliciesItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a tokenIssuancePolicy from an application. This API is available in the following national cloud deployments.
+// Delete remove a tokenIssuancePolicy from an application.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0
@@ -56,9 +56,9 @@ func (m *ItemTokenIssuancePoliciesItemRefRequestBuilder) Delete(ctx context.Cont
     }
     return nil
 }
-// ToDeleteRequestInformation remove a tokenIssuancePolicy from an application. This API is available in the following national cloud deployments.
+// ToDeleteRequestInformation remove a tokenIssuancePolicy from an application.
 func (m *ItemTokenIssuancePoliciesItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTokenIssuancePoliciesItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -66,10 +66,7 @@ func (m *ItemTokenIssuancePoliciesItemRefRequestBuilder) ToDeleteRequestInformat
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

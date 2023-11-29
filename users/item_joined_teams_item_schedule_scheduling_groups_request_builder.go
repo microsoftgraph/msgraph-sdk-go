@@ -11,7 +11,7 @@ import (
 type ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilderGetQueryParameters get the list of schedulingGroups in this schedule. This API is available in the following national cloud deployments.
+// ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilderGetQueryParameters get the list of schedulingGroups in this schedule.
 type ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,7 +72,7 @@ func NewItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilder(rawUrl string,
 func (m *ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilder) Count()(*ItemJoinedTeamsItemScheduleSchedulingGroupsCountRequestBuilder) {
     return NewItemJoinedTeamsItemScheduleSchedulingGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of schedulingGroups in this schedule. This API is available in the following national cloud deployments.
+// Get get the list of schedulingGroups in this schedule.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/schedule-list-schedulinggroups?view=graph-rest-1.0
@@ -94,7 +94,7 @@ func (m *ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilder) Get(ctx cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SchedulingGroupCollectionResponseable), nil
 }
-// Post create a new schedulingGroup. This API is available in the following national cloud deployments.
+// Post create a new schedulingGroup.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/schedule-post-schedulinggroups?view=graph-rest-1.0
@@ -116,9 +116,9 @@ func (m *ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilder) Post(ctx con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SchedulingGroupable), nil
 }
-// ToGetRequestInformation get the list of schedulingGroups in this schedule. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get the list of schedulingGroups in this schedule.
 func (m *ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -126,23 +126,17 @@ func (m *ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilder) ToGetRequest
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new schedulingGroup. This API is available in the following national cloud deployments.
+// ToPostRequestInformation create a new schedulingGroup.
 func (m *ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SchedulingGroupable, requestConfiguration *ItemJoinedTeamsItemScheduleSchedulingGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

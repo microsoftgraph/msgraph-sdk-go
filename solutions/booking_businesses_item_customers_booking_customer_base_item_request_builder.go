@@ -18,7 +18,7 @@ type BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilderDeleteRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilderGetQueryParameters get the properties and relationships of a bookingCustomer object. This API is available in the following national cloud deployments.
+// BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilderGetQueryParameters get the properties and relationships of a bookingCustomer object.
 type BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewBookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewBookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete the specified bookingCustomer object. This API is available in the following national cloud deployments.
+// Delete delete the specified bookingCustomer object.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingcustomer-delete?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder) De
     }
     return nil
 }
-// Get get the properties and relationships of a bookingCustomer object. This API is available in the following national cloud deployments.
+// Get get the properties and relationships of a bookingCustomer object.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingcustomer-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder) Ge
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCustomerBaseable), nil
 }
-// Patch update the properties of a bookingCustomer object. This API is available in the following national cloud deployments.
+// Patch update the properties of a bookingCustomer object.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingcustomer-update?view=graph-rest-1.0
@@ -117,22 +117,19 @@ func (m *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder) Pa
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCustomerBaseable), nil
 }
-// ToDeleteRequestInformation delete the specified bookingCustomer object. This API is available in the following national cloud deployments.
+// ToDeleteRequestInformation delete the specified bookingCustomer object.
 func (m *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of a bookingCustomer object. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get the properties and relationships of a bookingCustomer object.
 func (m *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -140,23 +137,17 @@ func (m *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder) To
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a bookingCustomer object. This API is available in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a bookingCustomer object.
 func (m *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BookingCustomerBaseable, requestConfiguration *BookingBusinessesItemCustomersBookingCustomerBaseItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

@@ -18,7 +18,7 @@ type ItemThreadsConversationThreadItemRequestBuilderDeleteRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemThreadsConversationThreadItemRequestBuilderGetQueryParameters get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation.  This API is available in the following national cloud deployments.
+// ItemThreadsConversationThreadItemRequestBuilderGetQueryParameters get a thread object.
 type ItemThreadsConversationThreadItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -52,10 +52,10 @@ func NewItemThreadsConversationThreadItemRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewItemThreadsConversationThreadItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete this API is available in the following national cloud deployments.
+// Delete delete conversationThread.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0
 func (m *ItemThreadsConversationThreadItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemThreadsConversationThreadItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -71,10 +71,10 @@ func (m *ItemThreadsConversationThreadItemRequestBuilder) Delete(ctx context.Con
     }
     return nil
 }
-// Get get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation.  This API is available in the following national cloud deployments.
+// Get get a thread object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-get-thread?view=graph-rest-1.0
 func (m *ItemThreadsConversationThreadItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemThreadsConversationThreadItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationThreadable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +93,7 @@ func (m *ItemThreadsConversationThreadItemRequestBuilder) Get(ctx context.Contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationThreadable), nil
 }
-// Patch this API is available in the following national cloud deployments.
+// Patch update conversation thread
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/group-update-thread?view=graph-rest-1.0
@@ -123,22 +123,19 @@ func (m *ItemThreadsConversationThreadItemRequestBuilder) Posts()(*ItemThreadsIt
 func (m *ItemThreadsConversationThreadItemRequestBuilder) Reply()(*ItemThreadsItemReplyRequestBuilder) {
     return NewItemThreadsItemReplyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation this API is available in the following national cloud deployments.
+// ToDeleteRequestInformation delete conversationThread.
 func (m *ItemThreadsConversationThreadItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemThreadsConversationThreadItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation.  This API is available in the following national cloud deployments.
+// ToGetRequestInformation get a thread object.
 func (m *ItemThreadsConversationThreadItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemThreadsConversationThreadItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -146,23 +143,17 @@ func (m *ItemThreadsConversationThreadItemRequestBuilder) ToGetRequestInformatio
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation this API is available in the following national cloud deployments.
+// ToPatchRequestInformation update conversation thread
 func (m *ItemThreadsConversationThreadItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationThreadable, requestConfiguration *ItemThreadsConversationThreadItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

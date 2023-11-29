@@ -11,7 +11,7 @@ import (
 type SchoolsItemUsersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SchoolsItemUsersRequestBuilderGetQueryParameters get the educationUser resources associated with an educationSchool. This API is available in the following national cloud deployments.
+// SchoolsItemUsersRequestBuilderGetQueryParameters get the educationUser resources associated with an educationSchool.
 type SchoolsItemUsersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,7 +67,7 @@ func NewSchoolsItemUsersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *SchoolsItemUsersRequestBuilder) Count()(*SchoolsItemUsersCountRequestBuilder) {
     return NewSchoolsItemUsersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the educationUser resources associated with an educationSchool. This API is available in the following national cloud deployments.
+// Get get the educationUser resources associated with an educationSchool.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-list-users?view=graph-rest-1.0
@@ -93,9 +93,9 @@ func (m *SchoolsItemUsersRequestBuilder) Get(ctx context.Context, requestConfigu
 func (m *SchoolsItemUsersRequestBuilder) Ref()(*SchoolsItemUsersRefRequestBuilder) {
     return NewSchoolsItemUsersRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get the educationUser resources associated with an educationSchool. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get the educationUser resources associated with an educationSchool.
 func (m *SchoolsItemUsersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SchoolsItemUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -103,10 +103,7 @@ func (m *SchoolsItemUsersRequestBuilder) ToGetRequestInformation(ctx context.Con
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

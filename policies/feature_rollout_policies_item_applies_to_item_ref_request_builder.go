@@ -10,7 +10,7 @@ import (
 type FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilderDeleteQueryParameters remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout. This API is available in the following national cloud deployments.
+// FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilderDeleteQueryParameters remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
 type FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilderDeleteQueryParameters struct {
     // Delete Uri
     Id *string `uriparametername:"%40id"`
@@ -37,7 +37,7 @@ func NewFeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewFeatureRolloutPoliciesItemAppliesToItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout. This API is available in the following national cloud deployments.
+// Delete remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/featurerolloutpolicy-delete-appliesto?view=graph-rest-1.0
@@ -56,9 +56,9 @@ func (m *FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder) Delete(ctx co
     }
     return nil
 }
-// ToDeleteRequestInformation remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout. This API is available in the following national cloud deployments.
+// ToDeleteRequestInformation remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
 func (m *FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -66,10 +66,7 @@ func (m *FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder) ToDeleteReque
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

@@ -11,7 +11,7 @@ import (
 type AuthenticationStrengthPoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AuthenticationStrengthPoliciesRequestBuilderGetQueryParameters get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies. This API is available in the following national cloud deployments.
+// AuthenticationStrengthPoliciesRequestBuilderGetQueryParameters get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
 type AuthenticationStrengthPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewAuthenticationStrengthPoliciesRequestBuilder(rawUrl string, requestAdapt
 func (m *AuthenticationStrengthPoliciesRequestBuilder) Count()(*AuthenticationStrengthPoliciesCountRequestBuilder) {
     return NewAuthenticationStrengthPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies. This API is available in the following national cloud deployments.
+// Get get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/authenticationstrengthroot-list-policies?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *AuthenticationStrengthPoliciesRequestBuilder) Get(ctx context.Context, 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationStrengthPolicyCollectionResponseable), nil
 }
-// Post create a new custom authenticationStrengthPolicy object. This API is available in the following national cloud deployments.
+// Post create a new custom authenticationStrengthPolicy object.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/authenticationstrengthroot-post-policies?view=graph-rest-1.0
@@ -118,9 +118,9 @@ func (m *AuthenticationStrengthPoliciesRequestBuilder) Post(ctx context.Context,
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationStrengthPolicyable), nil
 }
-// ToGetRequestInformation get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
 func (m *AuthenticationStrengthPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationStrengthPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -128,23 +128,17 @@ func (m *AuthenticationStrengthPoliciesRequestBuilder) ToGetRequestInformation(c
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new custom authenticationStrengthPolicy object. This API is available in the following national cloud deployments.
+// ToPostRequestInformation create a new custom authenticationStrengthPolicy object.
 func (m *AuthenticationStrengthPoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationStrengthPolicyable, requestConfiguration *AuthenticationStrengthPoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

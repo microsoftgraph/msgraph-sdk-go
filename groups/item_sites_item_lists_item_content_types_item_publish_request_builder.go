@@ -30,7 +30,7 @@ func NewItemSitesItemListsItemContentTypesItemPublishRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemListsItemContentTypesItemPublishRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post publishes a contentType][] present in the content type hub site. This API is available in the following [national cloud deployments.
+// Post publishes a [contentType][] present in the content type hub site.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
@@ -49,17 +49,14 @@ func (m *ItemSitesItemListsItemContentTypesItemPublishRequestBuilder) Post(ctx c
     }
     return nil
 }
-// ToPostRequestInformation publishes a contentType][] present in the content type hub site. This API is available in the following [national cloud deployments.
+// ToPostRequestInformation publishes a [contentType][] present in the content type hub site.
 func (m *ItemSitesItemListsItemContentTypesItemPublishRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsItemContentTypesItemPublishRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

@@ -118,7 +118,7 @@ func (m *InternalDomainFederation) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetIsSignedAuthenticationRequestRequired gets the isSignedAuthenticationRequestRequired property value. If true, when SAML authentication requests are sent to the federated SAML IdP, Microsoft Entra ID will sign those requests using the OrgID signing key. If false (default), the SAML authentication requests sent to the federated IdP are not signed.
+// GetIsSignedAuthenticationRequestRequired gets the isSignedAuthenticationRequestRequired property value. If true, when SAML authentication requests are sent to the federated SAML IdP, Microsoft Entra ID will sign those requests using the OrgID signing key. If false (default), the SAML authentication requests sent to the federated IdP aren't signed.
 func (m *InternalDomainFederation) GetIsSignedAuthenticationRequestRequired()(*bool) {
     val, err := m.GetBackingStore().Get("isSignedAuthenticationRequestRequired")
     if err != nil {
@@ -129,7 +129,7 @@ func (m *InternalDomainFederation) GetIsSignedAuthenticationRequestRequired()(*b
     }
     return nil
 }
-// GetNextSigningCertificate gets the nextSigningCertificate property value. Fallback token signing certificate that is used to sign tokens when the primary signing certificate expires. Formatted as Base64 encoded strings of the public portion of the federated IdP's token signing certificate. Needs to be compatible with the X509Certificate2 class. Much like the signingCertificate, the nextSigningCertificate property is used if a rollover is required outside of the auto-rollover update, a new federation service is being set up, or if the new token signing certificate is not present in the federation properties after the federation service certificate has been updated.
+// GetNextSigningCertificate gets the nextSigningCertificate property value. Fallback token signing certificate that can also be used to sign tokens, for example when the primary signing certificate expires. Formatted as Base64 encoded strings of the public portion of the federated IdP's token signing certificate. Needs to be compatible with the X509Certificate2 class. Much like the signingCertificate, the nextSigningCertificate property is used if a rollover is required outside of the auto-rollover update, a new federation service is being set up, or if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.
 func (m *InternalDomainFederation) GetNextSigningCertificate()(*string) {
     val, err := m.GetBackingStore().Get("nextSigningCertificate")
     if err != nil {
@@ -239,14 +239,14 @@ func (m *InternalDomainFederation) SetFederatedIdpMfaBehavior(value *FederatedId
         panic(err)
     }
 }
-// SetIsSignedAuthenticationRequestRequired sets the isSignedAuthenticationRequestRequired property value. If true, when SAML authentication requests are sent to the federated SAML IdP, Microsoft Entra ID will sign those requests using the OrgID signing key. If false (default), the SAML authentication requests sent to the federated IdP are not signed.
+// SetIsSignedAuthenticationRequestRequired sets the isSignedAuthenticationRequestRequired property value. If true, when SAML authentication requests are sent to the federated SAML IdP, Microsoft Entra ID will sign those requests using the OrgID signing key. If false (default), the SAML authentication requests sent to the federated IdP aren't signed.
 func (m *InternalDomainFederation) SetIsSignedAuthenticationRequestRequired(value *bool)() {
     err := m.GetBackingStore().Set("isSignedAuthenticationRequestRequired", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNextSigningCertificate sets the nextSigningCertificate property value. Fallback token signing certificate that is used to sign tokens when the primary signing certificate expires. Formatted as Base64 encoded strings of the public portion of the federated IdP's token signing certificate. Needs to be compatible with the X509Certificate2 class. Much like the signingCertificate, the nextSigningCertificate property is used if a rollover is required outside of the auto-rollover update, a new federation service is being set up, or if the new token signing certificate is not present in the federation properties after the federation service certificate has been updated.
+// SetNextSigningCertificate sets the nextSigningCertificate property value. Fallback token signing certificate that can also be used to sign tokens, for example when the primary signing certificate expires. Formatted as Base64 encoded strings of the public portion of the federated IdP's token signing certificate. Needs to be compatible with the X509Certificate2 class. Much like the signingCertificate, the nextSigningCertificate property is used if a rollover is required outside of the auto-rollover update, a new federation service is being set up, or if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.
 func (m *InternalDomainFederation) SetNextSigningCertificate(value *string)() {
     err := m.GetBackingStore().Set("nextSigningCertificate", value)
     if err != nil {

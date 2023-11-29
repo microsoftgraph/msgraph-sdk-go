@@ -18,7 +18,7 @@ type EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilderDeleteReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilderGetQueryParameters get a browserSiteList that contains browserSite and browserSharedCookie resources. This API is available in the following national cloud deployments.
+// EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilderGetQueryParameters get a browserSiteList that contains browserSite and browserSharedCookie resources.
 type EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewEdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewEdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a browserSiteList object. This API is available in the following national cloud deployments.
+// Delete delete a browserSiteList object.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/internetexplorermode-delete-sitelists?view=graph-rest-1.0
@@ -73,7 +73,7 @@ func (m *EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilder) Del
     }
     return nil
 }
-// Get get a browserSiteList that contains browserSite and browserSharedCookie resources. This API is available in the following national cloud deployments.
+// Get get a browserSiteList that contains browserSite and browserSharedCookie resources.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/browsersitelist-get?view=graph-rest-1.0
@@ -95,7 +95,7 @@ func (m *EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilder) Get
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteListable), nil
 }
-// Patch update the properties of a browserSiteList object. This API is available in the following national cloud deployments.
+// Patch update the properties of a browserSiteList object.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/browsersitelist-update?view=graph-rest-1.0
@@ -129,22 +129,19 @@ func (m *EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilder) Sha
 func (m *EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilder) Sites()(*EdgeInternetExplorerModeSiteListsItemSitesRequestBuilder) {
     return NewEdgeInternetExplorerModeSiteListsItemSitesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a browserSiteList object. This API is available in the following national cloud deployments.
+// ToDeleteRequestInformation delete a browserSiteList object.
 func (m *EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get a browserSiteList that contains browserSite and browserSharedCookie resources. This API is available in the following national cloud deployments.
+// ToGetRequestInformation get a browserSiteList that contains browserSite and browserSharedCookie resources.
 func (m *EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -152,23 +149,17 @@ func (m *EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilder) ToG
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a browserSiteList object. This API is available in the following national cloud deployments.
+// ToPatchRequestInformation update the properties of a browserSiteList object.
 func (m *EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteListable, requestConfiguration *EdgeInternetExplorerModeSiteListsBrowserSiteListItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

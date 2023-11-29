@@ -11,7 +11,7 @@ import (
 type DeletedTeamsItemChannelsItemTabsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DeletedTeamsItemChannelsItemTabsRequestBuilderGetQueryParameters retrieve the list of tabs in the specified channel within a team.  This API is available in the following national cloud deployments.
+// DeletedTeamsItemChannelsItemTabsRequestBuilderGetQueryParameters retrieve the list of tabs in the specified channel within a team. 
 type DeletedTeamsItemChannelsItemTabsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewDeletedTeamsItemChannelsItemTabsRequestBuilder(rawUrl string, requestAda
 func (m *DeletedTeamsItemChannelsItemTabsRequestBuilder) Count()(*DeletedTeamsItemChannelsItemTabsCountRequestBuilder) {
     return NewDeletedTeamsItemChannelsItemTabsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the list of tabs in the specified channel within a team.  This API is available in the following national cloud deployments.
+// Get retrieve the list of tabs in the specified channel within a team. 
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-1.0
@@ -96,7 +96,7 @@ func (m *DeletedTeamsItemChannelsItemTabsRequestBuilder) Get(ctx context.Context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabCollectionResponseable), nil
 }
-// Post adds (pins) a tab to the specified channel within a team. The corresponding app must already be installed in the team. This API is available in the following national cloud deployments.
+// Post add (pin) a tab to the specified channel within a team. The app must be preinstalled in the team and have the configurableTabs property defined in the app manifest.
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-post-tabs?view=graph-rest-1.0
@@ -118,9 +118,9 @@ func (m *DeletedTeamsItemChannelsItemTabsRequestBuilder) Post(ctx context.Contex
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable), nil
 }
-// ToGetRequestInformation retrieve the list of tabs in the specified channel within a team.  This API is available in the following national cloud deployments.
+// ToGetRequestInformation retrieve the list of tabs in the specified channel within a team. 
 func (m *DeletedTeamsItemChannelsItemTabsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemTabsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -128,23 +128,17 @@ func (m *DeletedTeamsItemChannelsItemTabsRequestBuilder) ToGetRequestInformation
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation adds (pins) a tab to the specified channel within a team. The corresponding app must already be installed in the team. This API is available in the following national cloud deployments.
+// ToPostRequestInformation add (pin) a tab to the specified channel within a team. The app must be preinstalled in the team and have the configurableTabs property defined in the app manifest.
 func (m *DeletedTeamsItemChannelsItemTabsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, requestConfiguration *DeletedTeamsItemChannelsItemTabsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
