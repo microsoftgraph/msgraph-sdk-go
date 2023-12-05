@@ -167,7 +167,7 @@ func (m *ConnectedOrganization) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetIdentitySources gets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation or crossCloudAzureActiveDirectoryTenant. Nullable.
+// GetIdentitySources gets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation, or socialIdentitySource. Nullable.
 func (m *ConnectedOrganization) GetIdentitySources()([]IdentitySourceable) {
     val, err := m.GetBackingStore().Get("identitySources")
     if err != nil {
@@ -314,7 +314,7 @@ func (m *ConnectedOrganization) SetExternalSponsors(value []DirectoryObjectable)
         panic(err)
     }
 }
-// SetIdentitySources sets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation or crossCloudAzureActiveDirectoryTenant. Nullable.
+// SetIdentitySources sets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation, or socialIdentitySource. Nullable.
 func (m *ConnectedOrganization) SetIdentitySources(value []IdentitySourceable)() {
     err := m.GetBackingStore().Set("identitySources", value)
     if err != nil {
