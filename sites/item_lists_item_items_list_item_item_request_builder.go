@@ -62,6 +62,10 @@ func NewItemListsItemItemsListItemItemRequestBuilder(rawUrl string, requestAdapt
 func (m *ItemListsItemItemsListItemItemRequestBuilder) CreatedByUser()(*ItemListsItemItemsItemCreatedByUserRequestBuilder) {
     return NewItemListsItemItemsItemCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// CreateLink provides operations to call the createLink method.
+func (m *ItemListsItemItemsListItemItemRequestBuilder) CreateLink()(*ItemListsItemItemsItemCreateLinkRequestBuilder) {
+    return NewItemListsItemItemsItemCreateLinkRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete removes an item from a [list][].
 // [Find more info here]
 // 
