@@ -11,7 +11,7 @@ import (
 type DirectoryRoleAssignmentsItemRoleDefinitionRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DirectoryRoleAssignmentsItemRoleDefinitionRequestBuilderGetQueryParameters the roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+// DirectoryRoleAssignmentsItemRoleDefinitionRequestBuilderGetQueryParameters the roleDefinition the assignment is for.  Supports $expand.
 type DirectoryRoleAssignmentsItemRoleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewDirectoryRoleAssignmentsItemRoleDefinitionRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryRoleAssignmentsItemRoleDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+// Get the roleDefinition the assignment is for.  Supports $expand.
 func (m *DirectoryRoleAssignmentsItemRoleDefinitionRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentsItemRoleDefinitionRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *DirectoryRoleAssignmentsItemRoleDefinitionRequestBuilder) Get(ctx conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleDefinitionable), nil
 }
-// ToGetRequestInformation the roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+// ToGetRequestInformation the roleDefinition the assignment is for.  Supports $expand.
 func (m *DirectoryRoleAssignmentsItemRoleDefinitionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentsItemRoleDefinitionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

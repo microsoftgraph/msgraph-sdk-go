@@ -1036,6 +1036,16 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["virtualEndpoint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateVirtualEndpointFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVirtualEndpoint(val.(VirtualEndpointable))
+        }
+        return nil
+    }
     res["windowsAutopilotDeviceIdentities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsAutopilotDeviceIdentityFromDiscriminatorValue)
         if err != nil {
@@ -1593,6 +1603,17 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsWorkFromAnywhereModelPerfor
     }
     if val != nil {
         return val.([]UserExperienceAnalyticsWorkFromAnywhereModelPerformanceable)
+    }
+    return nil
+}
+// GetVirtualEndpoint gets the virtualEndpoint property value. The virtualEndpoint property
+func (m *DeviceManagement) GetVirtualEndpoint()(VirtualEndpointable) {
+    val, err := m.GetBackingStore().Get("virtualEndpoint")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(VirtualEndpointable)
     }
     return nil
 }
@@ -2270,6 +2291,12 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("virtualEndpoint", m.GetVirtualEndpoint())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetWindowsAutopilotDeviceIdentities() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWindowsAutopilotDeviceIdentities()))
         for i, v := range m.GetWindowsAutopilotDeviceIdentities() {
@@ -2739,6 +2766,13 @@ func (m *DeviceManagement) SetUserExperienceAnalyticsWorkFromAnywhereModelPerfor
         panic(err)
     }
 }
+// SetVirtualEndpoint sets the virtualEndpoint property value. The virtualEndpoint property
+func (m *DeviceManagement) SetVirtualEndpoint(value VirtualEndpointable)() {
+    err := m.GetBackingStore().Set("virtualEndpoint", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetWindowsAutopilotDeviceIdentities sets the windowsAutopilotDeviceIdentities property value. The Windows autopilot device identities contained collection.
 func (m *DeviceManagement) SetWindowsAutopilotDeviceIdentities(value []WindowsAutopilotDeviceIdentityable)() {
     err := m.GetBackingStore().Set("windowsAutopilotDeviceIdentities", value)
@@ -2837,6 +2871,7 @@ type DeviceManagementable interface {
     GetUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric()(UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricable)
     GetUserExperienceAnalyticsWorkFromAnywhereMetrics()([]UserExperienceAnalyticsWorkFromAnywhereMetricable)
     GetUserExperienceAnalyticsWorkFromAnywhereModelPerformance()([]UserExperienceAnalyticsWorkFromAnywhereModelPerformanceable)
+    GetVirtualEndpoint()(VirtualEndpointable)
     GetWindowsAutopilotDeviceIdentities()([]WindowsAutopilotDeviceIdentityable)
     GetWindowsInformationProtectionAppLearningSummaries()([]WindowsInformationProtectionAppLearningSummaryable)
     GetWindowsInformationProtectionNetworkLearningSummaries()([]WindowsInformationProtectionNetworkLearningSummaryable)
@@ -2901,6 +2936,7 @@ type DeviceManagementable interface {
     SetUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric(value UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricable)()
     SetUserExperienceAnalyticsWorkFromAnywhereMetrics(value []UserExperienceAnalyticsWorkFromAnywhereMetricable)()
     SetUserExperienceAnalyticsWorkFromAnywhereModelPerformance(value []UserExperienceAnalyticsWorkFromAnywhereModelPerformanceable)()
+    SetVirtualEndpoint(value VirtualEndpointable)()
     SetWindowsAutopilotDeviceIdentities(value []WindowsAutopilotDeviceIdentityable)()
     SetWindowsInformationProtectionAppLearningSummaries(value []WindowsInformationProtectionAppLearningSummaryable)()
     SetWindowsInformationProtectionNetworkLearningSummaries(value []WindowsInformationProtectionNetworkLearningSummaryable)()

@@ -106,7 +106,7 @@ func (m *DeviceManagementRequestBuilder) ExchangeConnectors()(*ExchangeConnector
 // Get read properties and relationships of the deviceManagement object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-rbac-devicemanagement-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-auditing-devicemanagement-get?view=graph-rest-1.0
 func (m *DeviceManagementRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceManagementRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -160,7 +160,7 @@ func (m *DeviceManagementRequestBuilder) NotificationMessageTemplates()(*Notific
 // Patch update the properties of a deviceManagement object.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-gpanalyticsservice-devicemanagement-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-companyterms-devicemanagement-update?view=graph-rest-1.0
 func (m *DeviceManagementRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementable, requestConfiguration *DeviceManagementRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceManagementable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -341,6 +341,10 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsWorkFromAnywhere
 // VerifyWindowsEnrollmentAutoDiscoveryWithDomainName provides operations to call the verifyWindowsEnrollmentAutoDiscovery method.
 func (m *DeviceManagementRequestBuilder) VerifyWindowsEnrollmentAutoDiscoveryWithDomainName(domainName *string)(*VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) {
     return NewVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, domainName)
+}
+// VirtualEndpoint provides operations to manage the virtualEndpoint property of the microsoft.graph.deviceManagement entity.
+func (m *DeviceManagementRequestBuilder) VirtualEndpoint()(*VirtualEndpointRequestBuilder) {
+    return NewVirtualEndpointRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WindowsAutopilotDeviceIdentities provides operations to manage the windowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
 func (m *DeviceManagementRequestBuilder) WindowsAutopilotDeviceIdentities()(*WindowsAutopilotDeviceIdentitiesRequestBuilder) {

@@ -980,6 +980,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewProfileCardProperty(), nil
                     case "#microsoft.graph.profilePhoto":
                         return NewProfilePhoto(), nil
+                    case "#microsoft.graph.pronounsSettings":
+                        return NewPronounsSettings(), nil
                     case "#microsoft.graph.provisioningObjectSummary":
                         return NewProvisioningObjectSummary(), nil
                     case "#microsoft.graph.rbacApplication":
@@ -1332,6 +1334,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserSignInInsight(), nil
                     case "#microsoft.graph.userTeamwork":
                         return NewUserTeamwork(), nil
+                    case "#microsoft.graph.virtualEndpoint":
+                        return NewVirtualEndpoint(), nil
                     case "#microsoft.graph.virtualEvent":
                         return NewVirtualEvent(), nil
                     case "#microsoft.graph.virtualEventRegistration":

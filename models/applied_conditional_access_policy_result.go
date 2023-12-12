@@ -12,10 +12,14 @@ const (
     NOTENABLED_APPLIEDCONDITIONALACCESSPOLICYRESULT
     UNKNOWN_APPLIEDCONDITIONALACCESSPOLICYRESULT
     UNKNOWNFUTUREVALUE_APPLIEDCONDITIONALACCESSPOLICYRESULT
+    REPORTONLYSUCCESS_APPLIEDCONDITIONALACCESSPOLICYRESULT
+    REPORTONLYFAILURE_APPLIEDCONDITIONALACCESSPOLICYRESULT
+    REPORTONLYNOTAPPLIED_APPLIEDCONDITIONALACCESSPOLICYRESULT
+    REPORTONLYINTERRUPTED_APPLIEDCONDITIONALACCESSPOLICYRESULT
 )
 
 func (i AppliedConditionalAccessPolicyResult) String() string {
-    return []string{"success", "failure", "notApplied", "notEnabled", "unknown", "unknownFutureValue"}[i]
+    return []string{"success", "failure", "notApplied", "notEnabled", "unknown", "unknownFutureValue", "reportOnlySuccess", "reportOnlyFailure", "reportOnlyNotApplied", "reportOnlyInterrupted"}[i]
 }
 func ParseAppliedConditionalAccessPolicyResult(v string) (any, error) {
     result := SUCCESS_APPLIEDCONDITIONALACCESSPOLICYRESULT
@@ -32,6 +36,14 @@ func ParseAppliedConditionalAccessPolicyResult(v string) (any, error) {
             result = UNKNOWN_APPLIEDCONDITIONALACCESSPOLICYRESULT
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_APPLIEDCONDITIONALACCESSPOLICYRESULT
+        case "reportOnlySuccess":
+            result = REPORTONLYSUCCESS_APPLIEDCONDITIONALACCESSPOLICYRESULT
+        case "reportOnlyFailure":
+            result = REPORTONLYFAILURE_APPLIEDCONDITIONALACCESSPOLICYRESULT
+        case "reportOnlyNotApplied":
+            result = REPORTONLYNOTAPPLIED_APPLIEDCONDITIONALACCESSPOLICYRESULT
+        case "reportOnlyInterrupted":
+            result = REPORTONLYINTERRUPTED_APPLIEDCONDITIONALACCESSPOLICYRESULT
         default:
             return 0, errors.New("Unknown AppliedConditionalAccessPolicyResult value: " + v)
     }

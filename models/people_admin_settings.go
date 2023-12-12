@@ -38,6 +38,16 @@ func (m *PeopleAdminSettings) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["pronouns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePronounsSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPronouns(val.(PronounsSettingsable))
+        }
+        return nil
+    }
     return res
 }
 // GetProfileCardProperties gets the profileCardProperties property value. Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
@@ -48,6 +58,17 @@ func (m *PeopleAdminSettings) GetProfileCardProperties()([]ProfileCardPropertyab
     }
     if val != nil {
         return val.([]ProfileCardPropertyable)
+    }
+    return nil
+}
+// GetPronouns gets the pronouns property value. Represents administrator settings that manage the support of pronouns in an organization.
+func (m *PeopleAdminSettings) GetPronouns()(PronounsSettingsable) {
+    val, err := m.GetBackingStore().Get("pronouns")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PronounsSettingsable)
     }
     return nil
 }
@@ -69,6 +90,12 @@ func (m *PeopleAdminSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("pronouns", m.GetPronouns())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetProfileCardProperties sets the profileCardProperties property value. Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
@@ -78,10 +105,19 @@ func (m *PeopleAdminSettings) SetProfileCardProperties(value []ProfileCardProper
         panic(err)
     }
 }
+// SetPronouns sets the pronouns property value. Represents administrator settings that manage the support of pronouns in an organization.
+func (m *PeopleAdminSettings) SetPronouns(value PronounsSettingsable)() {
+    err := m.GetBackingStore().Set("pronouns", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // PeopleAdminSettingsable 
 type PeopleAdminSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetProfileCardProperties()([]ProfileCardPropertyable)
+    GetPronouns()(PronounsSettingsable)
     SetProfileCardProperties(value []ProfileCardPropertyable)()
+    SetPronouns(value PronounsSettingsable)()
 }
