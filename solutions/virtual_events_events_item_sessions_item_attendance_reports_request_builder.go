@@ -11,7 +11,7 @@ import (
 type VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilderGetQueryParameters get attendanceReports from solutions
+// VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilderGetQueryParameters the attendance reports of an online meeting. Read-only.
 type VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewVirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder(rawUr
 func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) Count()(*VirtualEventsEventsItemSessionsItemAttendanceReportsCountRequestBuilder) {
     return NewVirtualEventsEventsItemSessionsItemAttendanceReportsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get attendanceReports from solutions
+// Get the attendance reports of an online meeting. Read-only.
 func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MeetingAttendanceReportCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) Pos
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MeetingAttendanceReportable), nil
 }
-// ToGetRequestInformation get attendanceReports from solutions
+// ToGetRequestInformation the attendance reports of an online meeting. Read-only.
 func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

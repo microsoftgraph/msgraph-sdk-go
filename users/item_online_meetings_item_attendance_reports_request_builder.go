@@ -11,7 +11,7 @@ import (
 type ItemOnlineMeetingsItemAttendanceReportsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOnlineMeetingsItemAttendanceReportsRequestBuilderGetQueryParameters get attendanceReports from users
+// ItemOnlineMeetingsItemAttendanceReportsRequestBuilderGetQueryParameters the attendance reports of an online meeting. Read-only.
 type ItemOnlineMeetingsItemAttendanceReportsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemOnlineMeetingsItemAttendanceReportsRequestBuilder(rawUrl string, req
 func (m *ItemOnlineMeetingsItemAttendanceReportsRequestBuilder) Count()(*ItemOnlineMeetingsItemAttendanceReportsCountRequestBuilder) {
     return NewItemOnlineMeetingsItemAttendanceReportsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get attendanceReports from users
+// Get the attendance reports of an online meeting. Read-only.
 func (m *ItemOnlineMeetingsItemAttendanceReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemAttendanceReportsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MeetingAttendanceReportCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ItemOnlineMeetingsItemAttendanceReportsRequestBuilder) Post(ctx context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MeetingAttendanceReportable), nil
 }
-// ToGetRequestInformation get attendanceReports from users
+// ToGetRequestInformation the attendance reports of an online meeting. Read-only.
 func (m *ItemOnlineMeetingsItemAttendanceReportsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemAttendanceReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

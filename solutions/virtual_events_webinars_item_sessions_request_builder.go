@@ -11,7 +11,7 @@ import (
 type VirtualEventsWebinarsItemSessionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEventsWebinarsItemSessionsRequestBuilderGetQueryParameters get sessions from solutions
+// VirtualEventsWebinarsItemSessionsRequestBuilderGetQueryParameters sessions for the virtual event.
 type VirtualEventsWebinarsItemSessionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewVirtualEventsWebinarsItemSessionsRequestBuilder(rawUrl string, requestAd
 func (m *VirtualEventsWebinarsItemSessionsRequestBuilder) Count()(*VirtualEventsWebinarsItemSessionsCountRequestBuilder) {
     return NewVirtualEventsWebinarsItemSessionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get sessions from solutions
+// Get sessions for the virtual event.
 func (m *VirtualEventsWebinarsItemSessionsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemSessionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventSessionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *VirtualEventsWebinarsItemSessionsRequestBuilder) Post(ctx context.Conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEventSessionable), nil
 }
-// ToGetRequestInformation get sessions from solutions
+// ToGetRequestInformation sessions for the virtual event.
 func (m *VirtualEventsWebinarsItemSessionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemSessionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
