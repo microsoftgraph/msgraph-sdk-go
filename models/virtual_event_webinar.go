@@ -19,7 +19,7 @@ func NewVirtualEventWebinar()(*VirtualEventWebinar) {
 func CreateVirtualEventWebinarFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVirtualEventWebinar(), nil
 }
-// GetAudience gets the audience property value. The audience property
+// GetAudience gets the audience property value. To whom the webinar is visible.
 func (m *VirtualEventWebinar) GetAudience()(*MeetingAudience) {
     val, err := m.GetBackingStore().Get("audience")
     if err != nil {
@@ -30,7 +30,7 @@ func (m *VirtualEventWebinar) GetAudience()(*MeetingAudience) {
     }
     return nil
 }
-// GetCoOrganizers gets the coOrganizers property value. The coOrganizers property
+// GetCoOrganizers gets the coOrganizers property value. Identity information of coorganizers of the webinar.
 func (m *VirtualEventWebinar) GetCoOrganizers()([]CommunicationsUserIdentityable) {
     val, err := m.GetBackingStore().Get("coOrganizers")
     if err != nil {
@@ -88,7 +88,7 @@ func (m *VirtualEventWebinar) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetRegistrations gets the registrations property value. The registrations property
+// GetRegistrations gets the registrations property value. Registration records of the webinar.
 func (m *VirtualEventWebinar) GetRegistrations()([]VirtualEventRegistrationable) {
     val, err := m.GetBackingStore().Get("registrations")
     if err != nil {
@@ -138,21 +138,21 @@ func (m *VirtualEventWebinar) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetAudience sets the audience property value. The audience property
+// SetAudience sets the audience property value. To whom the webinar is visible.
 func (m *VirtualEventWebinar) SetAudience(value *MeetingAudience)() {
     err := m.GetBackingStore().Set("audience", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCoOrganizers sets the coOrganizers property value. The coOrganizers property
+// SetCoOrganizers sets the coOrganizers property value. Identity information of coorganizers of the webinar.
 func (m *VirtualEventWebinar) SetCoOrganizers(value []CommunicationsUserIdentityable)() {
     err := m.GetBackingStore().Set("coOrganizers", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRegistrations sets the registrations property value. The registrations property
+// SetRegistrations sets the registrations property value. Registration records of the webinar.
 func (m *VirtualEventWebinar) SetRegistrations(value []VirtualEventRegistrationable)() {
     err := m.GetBackingStore().Set("registrations", value)
     if err != nil {

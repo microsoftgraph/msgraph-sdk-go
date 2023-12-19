@@ -170,6 +170,10 @@ func (m *CallsCallItemRequestBuilder) Redirect()(*CallsItemRedirectRequestBuilde
 func (m *CallsCallItemRequestBuilder) Reject()(*CallsItemRejectRequestBuilder) {
     return NewCallsItemRejectRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// SendDtmfTones provides operations to call the sendDtmfTones method.
+func (m *CallsCallItemRequestBuilder) SendDtmfTones()(*CallsItemSendDtmfTonesRequestBuilder) {
+    return NewCallsItemSendDtmfTonesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // SubscribeToTone provides operations to call the subscribeToTone method.
 func (m *CallsCallItemRequestBuilder) SubscribeToTone()(*CallsItemSubscribeToToneRequestBuilder) {
     return NewCallsItemSubscribeToToneRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

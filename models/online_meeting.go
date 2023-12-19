@@ -205,7 +205,7 @@ func (m *OnlineMeeting) GetIsBroadcast()(*bool) {
     }
     return nil
 }
-// GetParticipants gets the participants property value. The participants associated with the online meeting.  This includes the organizer and the attendees.
+// GetParticipants gets the participants property value. The participants associated with the online meeting, including the organizer and the attendees.
 func (m *OnlineMeeting) GetParticipants()(MeetingParticipantsable) {
     val, err := m.GetBackingStore().Get("participants")
     if err != nil {
@@ -371,7 +371,7 @@ func (m *OnlineMeeting) SetIsBroadcast(value *bool)() {
         panic(err)
     }
 }
-// SetParticipants sets the participants property value. The participants associated with the online meeting.  This includes the organizer and the attendees.
+// SetParticipants sets the participants property value. The participants associated with the online meeting, including the organizer and the attendees.
 func (m *OnlineMeeting) SetParticipants(value MeetingParticipantsable)() {
     err := m.GetBackingStore().Set("participants", value)
     if err != nil {
