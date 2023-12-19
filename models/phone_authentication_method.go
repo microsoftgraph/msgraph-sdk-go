@@ -35,22 +35,22 @@ func (m *PhoneAuthenticationMethod) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     res["phoneType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAuthenticationPhoneType)
+        val, err := n.GetEnumValue(ParsePhoneAuthenticationMethod_phoneType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPhoneType(val.(*AuthenticationPhoneType))
+            m.SetPhoneType(val.(*PhoneAuthenticationMethod_phoneType))
         }
         return nil
     }
     res["smsSignInState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAuthenticationMethodSignInState)
+        val, err := n.GetEnumValue(ParsePhoneAuthenticationMethod_smsSignInState)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSmsSignInState(val.(*AuthenticationMethodSignInState))
+            m.SetSmsSignInState(val.(*PhoneAuthenticationMethod_smsSignInState))
         }
         return nil
     }
@@ -68,24 +68,24 @@ func (m *PhoneAuthenticationMethod) GetPhoneNumber()(*string) {
     return nil
 }
 // GetPhoneType gets the phoneType property value. The type of this phone. Possible values are: mobile, alternateMobile, or office.
-func (m *PhoneAuthenticationMethod) GetPhoneType()(*AuthenticationPhoneType) {
+func (m *PhoneAuthenticationMethod) GetPhoneType()(*PhoneAuthenticationMethod_phoneType) {
     val, err := m.GetBackingStore().Get("phoneType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AuthenticationPhoneType)
+        return val.(*PhoneAuthenticationMethod_phoneType)
     }
     return nil
 }
 // GetSmsSignInState gets the smsSignInState property value. Whether a phone is ready to be used for SMS sign-in or not. Possible values are: notSupported, notAllowedByPolicy, notEnabled, phoneNumberNotUnique, ready, or notConfigured, unknownFutureValue.
-func (m *PhoneAuthenticationMethod) GetSmsSignInState()(*AuthenticationMethodSignInState) {
+func (m *PhoneAuthenticationMethod) GetSmsSignInState()(*PhoneAuthenticationMethod_smsSignInState) {
     val, err := m.GetBackingStore().Get("smsSignInState")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AuthenticationMethodSignInState)
+        return val.(*PhoneAuthenticationMethod_smsSignInState)
     }
     return nil
 }
@@ -125,14 +125,14 @@ func (m *PhoneAuthenticationMethod) SetPhoneNumber(value *string)() {
     }
 }
 // SetPhoneType sets the phoneType property value. The type of this phone. Possible values are: mobile, alternateMobile, or office.
-func (m *PhoneAuthenticationMethod) SetPhoneType(value *AuthenticationPhoneType)() {
+func (m *PhoneAuthenticationMethod) SetPhoneType(value *PhoneAuthenticationMethod_phoneType)() {
     err := m.GetBackingStore().Set("phoneType", value)
     if err != nil {
         panic(err)
     }
 }
 // SetSmsSignInState sets the smsSignInState property value. Whether a phone is ready to be used for SMS sign-in or not. Possible values are: notSupported, notAllowedByPolicy, notEnabled, phoneNumberNotUnique, ready, or notConfigured, unknownFutureValue.
-func (m *PhoneAuthenticationMethod) SetSmsSignInState(value *AuthenticationMethodSignInState)() {
+func (m *PhoneAuthenticationMethod) SetSmsSignInState(value *PhoneAuthenticationMethod_smsSignInState)() {
     err := m.GetBackingStore().Set("smsSignInState", value)
     if err != nil {
         panic(err)
@@ -143,9 +143,9 @@ type PhoneAuthenticationMethodable interface {
     AuthenticationMethodable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetPhoneNumber()(*string)
-    GetPhoneType()(*AuthenticationPhoneType)
-    GetSmsSignInState()(*AuthenticationMethodSignInState)
+    GetPhoneType()(*PhoneAuthenticationMethod_phoneType)
+    GetSmsSignInState()(*PhoneAuthenticationMethod_smsSignInState)
     SetPhoneNumber(value *string)()
-    SetPhoneType(value *AuthenticationPhoneType)()
-    SetSmsSignInState(value *AuthenticationMethodSignInState)()
+    SetPhoneType(value *PhoneAuthenticationMethod_phoneType)()
+    SetSmsSignInState(value *PhoneAuthenticationMethod_smsSignInState)()
 }

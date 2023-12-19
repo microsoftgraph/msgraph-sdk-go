@@ -73,12 +73,12 @@ func (m *ProvisioningStatusInfo) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseProvisioningResult)
+        val, err := n.GetEnumValue(ParseProvisioningStatusInfo_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*ProvisioningResult))
+            m.SetStatus(val.(*ProvisioningStatusInfo_status))
         }
         return nil
     }
@@ -96,13 +96,13 @@ func (m *ProvisioningStatusInfo) GetOdataType()(*string) {
     return nil
 }
 // GetStatus gets the status property value. Possible values are: success, warning, failure, skipped, unknownFutureValue.
-func (m *ProvisioningStatusInfo) GetStatus()(*ProvisioningResult) {
+func (m *ProvisioningStatusInfo) GetStatus()(*ProvisioningStatusInfo_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ProvisioningResult)
+        return val.(*ProvisioningStatusInfo_status)
     }
     return nil
 }
@@ -161,7 +161,7 @@ func (m *ProvisioningStatusInfo) SetOdataType(value *string)() {
     }
 }
 // SetStatus sets the status property value. Possible values are: success, warning, failure, skipped, unknownFutureValue.
-func (m *ProvisioningStatusInfo) SetStatus(value *ProvisioningResult)() {
+func (m *ProvisioningStatusInfo) SetStatus(value *ProvisioningStatusInfo_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -175,9 +175,9 @@ type ProvisioningStatusInfoable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetErrorInformation()(ProvisioningErrorInfoable)
     GetOdataType()(*string)
-    GetStatus()(*ProvisioningResult)
+    GetStatus()(*ProvisioningStatusInfo_status)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetErrorInformation(value ProvisioningErrorInfoable)()
     SetOdataType(value *string)()
-    SetStatus(value *ProvisioningResult)()
+    SetStatus(value *ProvisioningStatusInfo_status)()
 }

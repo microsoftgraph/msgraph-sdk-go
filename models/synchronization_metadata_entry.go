@@ -42,12 +42,12 @@ func (m *SynchronizationMetadataEntry) GetBackingStore()(ie8677ce2c7e1b4c22e9c38
 func (m *SynchronizationMetadataEntry) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["key"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSynchronizationMetadata)
+        val, err := n.GetEnumValue(ParseSynchronizationMetadataEntry_key)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetKey(val.(*SynchronizationMetadata))
+            m.SetKey(val.(*SynchronizationMetadataEntry_key))
         }
         return nil
     }
@@ -74,13 +74,13 @@ func (m *SynchronizationMetadataEntry) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetKey gets the key property value. Possible values are: GalleryApplicationIdentifier, GalleryApplicationKey, IsOAuthEnabled, IsSynchronizationAgentAssignmentRequired, IsSynchronizationAgentRequired, IsSynchronizationInPreview, OAuthSettings, SynchronizationLearnMoreIbizaFwLink, ConfigurationFields.
-func (m *SynchronizationMetadataEntry) GetKey()(*SynchronizationMetadata) {
+func (m *SynchronizationMetadataEntry) GetKey()(*SynchronizationMetadataEntry_key) {
     val, err := m.GetBackingStore().Get("key")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SynchronizationMetadata)
+        return val.(*SynchronizationMetadataEntry_key)
     }
     return nil
 }
@@ -147,7 +147,7 @@ func (m *SynchronizationMetadataEntry) SetBackingStore(value ie8677ce2c7e1b4c22e
     m.backingStore = value
 }
 // SetKey sets the key property value. Possible values are: GalleryApplicationIdentifier, GalleryApplicationKey, IsOAuthEnabled, IsSynchronizationAgentAssignmentRequired, IsSynchronizationAgentRequired, IsSynchronizationInPreview, OAuthSettings, SynchronizationLearnMoreIbizaFwLink, ConfigurationFields.
-func (m *SynchronizationMetadataEntry) SetKey(value *SynchronizationMetadata)() {
+func (m *SynchronizationMetadataEntry) SetKey(value *SynchronizationMetadataEntry_key)() {
     err := m.GetBackingStore().Set("key", value)
     if err != nil {
         panic(err)
@@ -173,11 +173,11 @@ type SynchronizationMetadataEntryable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetKey()(*SynchronizationMetadata)
+    GetKey()(*SynchronizationMetadataEntry_key)
     GetOdataType()(*string)
     GetValue()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetKey(value *SynchronizationMetadata)()
+    SetKey(value *SynchronizationMetadataEntry_key)()
     SetOdataType(value *string)()
     SetValue(value *string)()
 }

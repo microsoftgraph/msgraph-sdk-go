@@ -95,12 +95,12 @@ func (m *ServiceHealthIssuePost) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["postType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePostType)
+        val, err := n.GetEnumValue(ParseServiceHealthIssuePost_postType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPostType(val.(*PostType))
+            m.SetPostType(val.(*ServiceHealthIssuePost_postType))
         }
         return nil
     }
@@ -118,13 +118,13 @@ func (m *ServiceHealthIssuePost) GetOdataType()(*string) {
     return nil
 }
 // GetPostType gets the postType property value. The post type of the service issue historical post. Possible values are: regular, quick, strategic, unknownFutureValue.
-func (m *ServiceHealthIssuePost) GetPostType()(*PostType) {
+func (m *ServiceHealthIssuePost) GetPostType()(*ServiceHealthIssuePost_postType) {
     val, err := m.GetBackingStore().Get("postType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PostType)
+        return val.(*ServiceHealthIssuePost_postType)
     }
     return nil
 }
@@ -196,7 +196,7 @@ func (m *ServiceHealthIssuePost) SetOdataType(value *string)() {
     }
 }
 // SetPostType sets the postType property value. The post type of the service issue historical post. Possible values are: regular, quick, strategic, unknownFutureValue.
-func (m *ServiceHealthIssuePost) SetPostType(value *PostType)() {
+func (m *ServiceHealthIssuePost) SetPostType(value *ServiceHealthIssuePost_postType)() {
     err := m.GetBackingStore().Set("postType", value)
     if err != nil {
         panic(err)
@@ -211,10 +211,10 @@ type ServiceHealthIssuePostable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDescription()(ItemBodyable)
     GetOdataType()(*string)
-    GetPostType()(*PostType)
+    GetPostType()(*ServiceHealthIssuePost_postType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value ItemBodyable)()
     SetOdataType(value *string)()
-    SetPostType(value *PostType)()
+    SetPostType(value *ServiceHealthIssuePost_postType)()
 }

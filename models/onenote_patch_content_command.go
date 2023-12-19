@@ -94,12 +94,12 @@ func (m *OnenotePatchContentCommand) GetFieldDeserializers()(map[string]func(i87
         return nil
     }
     res["position"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOnenotePatchInsertPosition)
+        val, err := n.GetEnumValue(ParseOnenotePatchContentCommand_position)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPosition(val.(*OnenotePatchInsertPosition))
+            m.SetPosition(val.(*OnenotePatchContentCommand_position))
         }
         return nil
     }
@@ -127,13 +127,13 @@ func (m *OnenotePatchContentCommand) GetOdataType()(*string) {
     return nil
 }
 // GetPosition gets the position property value. The location to add the supplied content, relative to the target element. The possible values are: after (default) or before.
-func (m *OnenotePatchContentCommand) GetPosition()(*OnenotePatchInsertPosition) {
+func (m *OnenotePatchContentCommand) GetPosition()(*OnenotePatchContentCommand_position) {
     val, err := m.GetBackingStore().Get("position")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*OnenotePatchInsertPosition)
+        return val.(*OnenotePatchContentCommand_position)
     }
     return nil
 }
@@ -223,7 +223,7 @@ func (m *OnenotePatchContentCommand) SetOdataType(value *string)() {
     }
 }
 // SetPosition sets the position property value. The location to add the supplied content, relative to the target element. The possible values are: after (default) or before.
-func (m *OnenotePatchContentCommand) SetPosition(value *OnenotePatchInsertPosition)() {
+func (m *OnenotePatchContentCommand) SetPosition(value *OnenotePatchContentCommand_position)() {
     err := m.GetBackingStore().Set("position", value)
     if err != nil {
         panic(err)
@@ -245,12 +245,12 @@ type OnenotePatchContentCommandable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetContent()(*string)
     GetOdataType()(*string)
-    GetPosition()(*OnenotePatchInsertPosition)
+    GetPosition()(*OnenotePatchContentCommand_position)
     GetTarget()(*string)
     SetAction(value *OnenotePatchActionType)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetContent(value *string)()
     SetOdataType(value *string)()
-    SetPosition(value *OnenotePatchInsertPosition)()
+    SetPosition(value *OnenotePatchContentCommand_position)()
     SetTarget(value *string)()
 }

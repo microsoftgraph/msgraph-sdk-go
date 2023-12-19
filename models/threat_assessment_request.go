@@ -56,13 +56,13 @@ func (m *ThreatAssessmentRequest) GetCategory()(*ThreatCategory) {
     return nil
 }
 // GetContentType gets the contentType property value. The content type of threat assessment. Possible values are: mail, url, file.
-func (m *ThreatAssessmentRequest) GetContentType()(*ThreatAssessmentContentType) {
+func (m *ThreatAssessmentRequest) GetContentType()(*ThreatAssessmentRequest_contentType) {
     val, err := m.GetBackingStore().Get("contentType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ThreatAssessmentContentType)
+        return val.(*ThreatAssessmentRequest_contentType)
     }
     return nil
 }
@@ -113,12 +113,12 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     res["contentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseThreatAssessmentContentType)
+        val, err := n.GetEnumValue(ParseThreatAssessmentRequest_contentType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetContentType(val.(*ThreatAssessmentContentType))
+            m.SetContentType(val.(*ThreatAssessmentRequest_contentType))
         }
         return nil
     }
@@ -153,12 +153,12 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     res["requestSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseThreatAssessmentRequestSource)
+        val, err := n.GetEnumValue(ParseThreatAssessmentRequest_requestSource)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRequestSource(val.(*ThreatAssessmentRequestSource))
+            m.SetRequestSource(val.(*ThreatAssessmentRequest_requestSource))
         }
         return nil
     }
@@ -179,25 +179,25 @@ func (m *ThreatAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseThreatAssessmentStatus)
+        val, err := n.GetEnumValue(ParseThreatAssessmentRequest_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*ThreatAssessmentStatus))
+            m.SetStatus(val.(*ThreatAssessmentRequest_status))
         }
         return nil
     }
     return res
 }
 // GetRequestSource gets the requestSource property value. The source of the threat assessment request. Possible values are: administrator.
-func (m *ThreatAssessmentRequest) GetRequestSource()(*ThreatAssessmentRequestSource) {
+func (m *ThreatAssessmentRequest) GetRequestSource()(*ThreatAssessmentRequest_requestSource) {
     val, err := m.GetBackingStore().Get("requestSource")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ThreatAssessmentRequestSource)
+        return val.(*ThreatAssessmentRequest_requestSource)
     }
     return nil
 }
@@ -213,13 +213,13 @@ func (m *ThreatAssessmentRequest) GetResults()([]ThreatAssessmentResultable) {
     return nil
 }
 // GetStatus gets the status property value. The assessment process status. Possible values are: pending, completed.
-func (m *ThreatAssessmentRequest) GetStatus()(*ThreatAssessmentStatus) {
+func (m *ThreatAssessmentRequest) GetStatus()(*ThreatAssessmentRequest_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ThreatAssessmentStatus)
+        return val.(*ThreatAssessmentRequest_status)
     }
     return nil
 }
@@ -298,7 +298,7 @@ func (m *ThreatAssessmentRequest) SetCategory(value *ThreatCategory)() {
     }
 }
 // SetContentType sets the contentType property value. The content type of threat assessment. Possible values are: mail, url, file.
-func (m *ThreatAssessmentRequest) SetContentType(value *ThreatAssessmentContentType)() {
+func (m *ThreatAssessmentRequest) SetContentType(value *ThreatAssessmentRequest_contentType)() {
     err := m.GetBackingStore().Set("contentType", value)
     if err != nil {
         panic(err)
@@ -326,7 +326,7 @@ func (m *ThreatAssessmentRequest) SetExpectedAssessment(value *ThreatExpectedAss
     }
 }
 // SetRequestSource sets the requestSource property value. The source of the threat assessment request. Possible values are: administrator.
-func (m *ThreatAssessmentRequest) SetRequestSource(value *ThreatAssessmentRequestSource)() {
+func (m *ThreatAssessmentRequest) SetRequestSource(value *ThreatAssessmentRequest_requestSource)() {
     err := m.GetBackingStore().Set("requestSource", value)
     if err != nil {
         panic(err)
@@ -340,7 +340,7 @@ func (m *ThreatAssessmentRequest) SetResults(value []ThreatAssessmentResultable)
     }
 }
 // SetStatus sets the status property value. The assessment process status. Possible values are: pending, completed.
-func (m *ThreatAssessmentRequest) SetStatus(value *ThreatAssessmentStatus)() {
+func (m *ThreatAssessmentRequest) SetStatus(value *ThreatAssessmentRequest_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -351,19 +351,19 @@ type ThreatAssessmentRequestable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCategory()(*ThreatCategory)
-    GetContentType()(*ThreatAssessmentContentType)
+    GetContentType()(*ThreatAssessmentRequest_contentType)
     GetCreatedBy()(IdentitySetable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetExpectedAssessment()(*ThreatExpectedAssessment)
-    GetRequestSource()(*ThreatAssessmentRequestSource)
+    GetRequestSource()(*ThreatAssessmentRequest_requestSource)
     GetResults()([]ThreatAssessmentResultable)
-    GetStatus()(*ThreatAssessmentStatus)
+    GetStatus()(*ThreatAssessmentRequest_status)
     SetCategory(value *ThreatCategory)()
-    SetContentType(value *ThreatAssessmentContentType)()
+    SetContentType(value *ThreatAssessmentRequest_contentType)()
     SetCreatedBy(value IdentitySetable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetExpectedAssessment(value *ThreatExpectedAssessment)()
-    SetRequestSource(value *ThreatAssessmentRequestSource)()
+    SetRequestSource(value *ThreatAssessmentRequest_requestSource)()
     SetResults(value []ThreatAssessmentResultable)()
-    SetStatus(value *ThreatAssessmentStatus)()
+    SetStatus(value *ThreatAssessmentRequest_status)()
 }

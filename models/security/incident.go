@@ -44,13 +44,13 @@ func (m *Incident) GetAssignedTo()(*string) {
     return nil
 }
 // GetClassification gets the classification property value. The specification for the incident. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
-func (m *Incident) GetClassification()(*AlertClassification) {
+func (m *Incident) GetClassification()(*Incident_classification) {
     val, err := m.GetBackingStore().Get("classification")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AlertClassification)
+        return val.(*Incident_classification)
     }
     return nil
 }
@@ -99,13 +99,13 @@ func (m *Incident) GetDescription()(*string) {
     return nil
 }
 // GetDetermination gets the determination property value. Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
-func (m *Incident) GetDetermination()(*AlertDetermination) {
+func (m *Incident) GetDetermination()(*Incident_determination) {
     val, err := m.GetBackingStore().Get("determination")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AlertDetermination)
+        return val.(*Incident_determination)
     }
     return nil
 }
@@ -150,12 +150,12 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["classification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAlertClassification)
+        val, err := n.GetEnumValue(ParseIncident_classification)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetClassification(val.(*AlertClassification))
+            m.SetClassification(val.(*Incident_classification))
         }
         return nil
     }
@@ -212,12 +212,12 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["determination"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAlertDetermination)
+        val, err := n.GetEnumValue(ParseIncident_determination)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDetermination(val.(*AlertDetermination))
+            m.SetDetermination(val.(*Incident_determination))
         }
         return nil
     }
@@ -548,7 +548,7 @@ func (m *Incident) SetAssignedTo(value *string)() {
     }
 }
 // SetClassification sets the classification property value. The specification for the incident. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
-func (m *Incident) SetClassification(value *AlertClassification)() {
+func (m *Incident) SetClassification(value *Incident_classification)() {
     err := m.GetBackingStore().Set("classification", value)
     if err != nil {
         panic(err)
@@ -583,7 +583,7 @@ func (m *Incident) SetDescription(value *string)() {
     }
 }
 // SetDetermination sets the determination property value. Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
-func (m *Incident) SetDetermination(value *AlertDetermination)() {
+func (m *Incident) SetDetermination(value *Incident_determination)() {
     err := m.GetBackingStore().Set("determination", value)
     if err != nil {
         panic(err)
@@ -658,12 +658,12 @@ type Incidentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAlerts()([]Alertable)
     GetAssignedTo()(*string)
-    GetClassification()(*AlertClassification)
+    GetClassification()(*Incident_classification)
     GetComments()([]AlertCommentable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCustomTags()([]string)
     GetDescription()(*string)
-    GetDetermination()(*AlertDetermination)
+    GetDetermination()(*Incident_determination)
     GetDisplayName()(*string)
     GetIncidentWebUrl()(*string)
     GetLastModifiedBy()(*string)
@@ -675,12 +675,12 @@ type Incidentable interface {
     GetTenantId()(*string)
     SetAlerts(value []Alertable)()
     SetAssignedTo(value *string)()
-    SetClassification(value *AlertClassification)()
+    SetClassification(value *Incident_classification)()
     SetComments(value []AlertCommentable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCustomTags(value []string)()
     SetDescription(value *string)()
-    SetDetermination(value *AlertDetermination)()
+    SetDetermination(value *Incident_determination)()
     SetDisplayName(value *string)()
     SetIncidentWebUrl(value *string)()
     SetLastModifiedBy(value *string)()

@@ -22,13 +22,13 @@ func CreateCallStartedEventMessageDetailFromDiscriminatorValue(parseNode i878a80
     return NewCallStartedEventMessageDetail(), nil
 }
 // GetCallEventType gets the callEventType property value. Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.
-func (m *CallStartedEventMessageDetail) GetCallEventType()(*TeamworkCallEventType) {
+func (m *CallStartedEventMessageDetail) GetCallEventType()(*CallStartedEventMessageDetail_callEventType) {
     val, err := m.GetBackingStore().Get("callEventType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TeamworkCallEventType)
+        return val.(*CallStartedEventMessageDetail_callEventType)
     }
     return nil
 }
@@ -47,12 +47,12 @@ func (m *CallStartedEventMessageDetail) GetCallId()(*string) {
 func (m *CallStartedEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EventMessageDetail.GetFieldDeserializers()
     res["callEventType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTeamworkCallEventType)
+        val, err := n.GetEnumValue(ParseCallStartedEventMessageDetail_callEventType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCallEventType(val.(*TeamworkCallEventType))
+            m.SetCallEventType(val.(*CallStartedEventMessageDetail_callEventType))
         }
         return nil
     }
@@ -117,7 +117,7 @@ func (m *CallStartedEventMessageDetail) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetCallEventType sets the callEventType property value. Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.
-func (m *CallStartedEventMessageDetail) SetCallEventType(value *TeamworkCallEventType)() {
+func (m *CallStartedEventMessageDetail) SetCallEventType(value *CallStartedEventMessageDetail_callEventType)() {
     err := m.GetBackingStore().Set("callEventType", value)
     if err != nil {
         panic(err)
@@ -141,10 +141,10 @@ func (m *CallStartedEventMessageDetail) SetInitiator(value IdentitySetable)() {
 type CallStartedEventMessageDetailable interface {
     EventMessageDetailable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCallEventType()(*TeamworkCallEventType)
+    GetCallEventType()(*CallStartedEventMessageDetail_callEventType)
     GetCallId()(*string)
     GetInitiator()(IdentitySetable)
-    SetCallEventType(value *TeamworkCallEventType)()
+    SetCallEventType(value *CallStartedEventMessageDetail_callEventType)()
     SetCallId(value *string)()
     SetInitiator(value IdentitySetable)()
 }

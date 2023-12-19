@@ -40,13 +40,13 @@ func (m *PstnCallLogRow) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185
     return m.backingStore
 }
 // GetCallDurationSource gets the callDurationSource property value. The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator can provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
-func (m *PstnCallLogRow) GetCallDurationSource()(*PstnCallDurationSource) {
+func (m *PstnCallLogRow) GetCallDurationSource()(*PstnCallLogRow_callDurationSource) {
     val, err := m.GetBackingStore().Get("callDurationSource")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PstnCallDurationSource)
+        return val.(*PstnCallLogRow_callDurationSource)
     }
     return nil
 }
@@ -186,12 +186,12 @@ func (m *PstnCallLogRow) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
 func (m *PstnCallLogRow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["callDurationSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePstnCallDurationSource)
+        val, err := n.GetEnumValue(ParsePstnCallLogRow_callDurationSource)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCallDurationSource(val.(*PstnCallDurationSource))
+            m.SetCallDurationSource(val.(*PstnCallLogRow_callDurationSource))
         }
         return nil
     }
@@ -715,7 +715,7 @@ func (m *PstnCallLogRow) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d4
     m.backingStore = value
 }
 // SetCallDurationSource sets the callDurationSource property value. The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator can provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
-func (m *PstnCallLogRow) SetCallDurationSource(value *PstnCallDurationSource)() {
+func (m *PstnCallLogRow) SetCallDurationSource(value *PstnCallLogRow_callDurationSource)() {
     err := m.GetBackingStore().Set("callDurationSource", value)
     if err != nil {
         panic(err)
@@ -888,7 +888,7 @@ type PstnCallLogRowable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetCallDurationSource()(*PstnCallDurationSource)
+    GetCallDurationSource()(*PstnCallLogRow_callDurationSource)
     GetCalleeNumber()(*string)
     GetCallerNumber()(*string)
     GetCallId()(*string)
@@ -913,7 +913,7 @@ type PstnCallLogRowable interface {
     GetUserId()(*string)
     GetUserPrincipalName()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetCallDurationSource(value *PstnCallDurationSource)()
+    SetCallDurationSource(value *PstnCallLogRow_callDurationSource)()
     SetCalleeNumber(value *string)()
     SetCallerNumber(value *string)()
     SetCallId(value *string)()

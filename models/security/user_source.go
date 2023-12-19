@@ -46,12 +46,12 @@ func (m *UserSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     res["includedSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSourceType)
+        val, err := n.GetEnumValue(ParseUserSource_includedSources)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetIncludedSources(val.(*SourceType))
+            m.SetIncludedSources(val.(*UserSource_includedSources))
         }
         return nil
     }
@@ -68,13 +68,13 @@ func (m *UserSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetIncludedSources gets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
-func (m *UserSource) GetIncludedSources()(*SourceType) {
+func (m *UserSource) GetIncludedSources()(*UserSource_includedSources) {
     val, err := m.GetBackingStore().Get("includedSources")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SourceType)
+        return val.(*UserSource_includedSources)
     }
     return nil
 }
@@ -124,7 +124,7 @@ func (m *UserSource) SetEmail(value *string)() {
     }
 }
 // SetIncludedSources sets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
-func (m *UserSource) SetIncludedSources(value *SourceType)() {
+func (m *UserSource) SetIncludedSources(value *UserSource_includedSources)() {
     err := m.GetBackingStore().Set("includedSources", value)
     if err != nil {
         panic(err)
@@ -142,9 +142,9 @@ type UserSourceable interface {
     DataSourceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEmail()(*string)
-    GetIncludedSources()(*SourceType)
+    GetIncludedSources()(*UserSource_includedSources)
     GetSiteWebUrl()(*string)
     SetEmail(value *string)()
-    SetIncludedSources(value *SourceType)()
+    SetIncludedSources(value *UserSource_includedSources)()
     SetSiteWebUrl(value *string)()
 }

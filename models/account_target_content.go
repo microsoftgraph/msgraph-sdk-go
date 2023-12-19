@@ -72,12 +72,12 @@ func (m *AccountTargetContent) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAccountTargetContentType)
+        val, err := n.GetEnumValue(ParseAccountTargetContent_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*AccountTargetContentType))
+            m.SetTypeEscaped(val.(*AccountTargetContent_type))
         }
         return nil
     }
@@ -95,13 +95,13 @@ func (m *AccountTargetContent) GetOdataType()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type of account target content. Possible values are: unknown, includeAll, addressBook, unknownFutureValue.
-func (m *AccountTargetContent) GetTypeEscaped()(*AccountTargetContentType) {
+func (m *AccountTargetContent) GetTypeEscaped()(*AccountTargetContent_type) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AccountTargetContentType)
+        return val.(*AccountTargetContent_type)
     }
     return nil
 }
@@ -147,7 +147,7 @@ func (m *AccountTargetContent) SetOdataType(value *string)() {
     }
 }
 // SetTypeEscaped sets the type property value. The type of account target content. Possible values are: unknown, includeAll, addressBook, unknownFutureValue.
-func (m *AccountTargetContent) SetTypeEscaped(value *AccountTargetContentType)() {
+func (m *AccountTargetContent) SetTypeEscaped(value *AccountTargetContent_type)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -160,8 +160,8 @@ type AccountTargetContentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
-    GetTypeEscaped()(*AccountTargetContentType)
+    GetTypeEscaped()(*AccountTargetContent_type)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
-    SetTypeEscaped(value *AccountTargetContentType)()
+    SetTypeEscaped(value *AccountTargetContent_type)()
 }

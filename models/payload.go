@@ -21,24 +21,24 @@ func CreatePayloadFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
     return NewPayload(), nil
 }
 // GetBrand gets the brand property value. The branch of a payload. Possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, sendGrid, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.
-func (m *Payload) GetBrand()(*PayloadBrand) {
+func (m *Payload) GetBrand()(*Payload_brand) {
     val, err := m.GetBackingStore().Get("brand")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PayloadBrand)
+        return val.(*Payload_brand)
     }
     return nil
 }
 // GetComplexity gets the complexity property value. The complexity of a payload. Possible values are: unknown, low, medium, high, unknownFutureValue.
-func (m *Payload) GetComplexity()(*PayloadComplexity) {
+func (m *Payload) GetComplexity()(*Payload_complexity) {
     val, err := m.GetBackingStore().Get("complexity")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PayloadComplexity)
+        return val.(*Payload_complexity)
     }
     return nil
 }
@@ -101,22 +101,22 @@ func (m *Payload) GetDisplayName()(*string) {
 func (m *Payload) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["brand"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePayloadBrand)
+        val, err := n.GetEnumValue(ParsePayload_brand)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBrand(val.(*PayloadBrand))
+            m.SetBrand(val.(*Payload_brand))
         }
         return nil
     }
     res["complexity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePayloadComplexity)
+        val, err := n.GetEnumValue(ParsePayload_complexity)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetComplexity(val.(*PayloadComplexity))
+            m.SetComplexity(val.(*Payload_complexity))
         }
         return nil
     }
@@ -171,12 +171,12 @@ func (m *Payload) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     res["industry"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePayloadIndustry)
+        val, err := n.GetEnumValue(ParsePayload_industry)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetIndustry(val.(*PayloadIndustry))
+            m.SetIndustry(val.(*Payload_industry))
         }
         return nil
     }
@@ -257,12 +257,12 @@ func (m *Payload) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     res["platform"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePayloadDeliveryPlatform)
+        val, err := n.GetEnumValue(ParsePayload_platform)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPlatform(val.(*PayloadDeliveryPlatform))
+            m.SetPlatform(val.(*Payload_platform))
         }
         return nil
     }
@@ -277,12 +277,12 @@ func (m *Payload) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     res["simulationAttackType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSimulationAttackType)
+        val, err := n.GetEnumValue(ParsePayload_simulationAttackType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSimulationAttackType(val.(*SimulationAttackType))
+            m.SetSimulationAttackType(val.(*Payload_simulationAttackType))
         }
         return nil
     }
@@ -297,45 +297,45 @@ func (m *Payload) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSimulationContentStatus)
+        val, err := n.GetEnumValue(ParsePayload_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*SimulationContentStatus))
+            m.SetStatus(val.(*Payload_status))
         }
         return nil
     }
     res["technique"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSimulationAttackTechnique)
+        val, err := n.GetEnumValue(ParsePayload_technique)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTechnique(val.(*SimulationAttackTechnique))
+            m.SetTechnique(val.(*Payload_technique))
         }
         return nil
     }
     res["theme"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePayloadTheme)
+        val, err := n.GetEnumValue(ParsePayload_theme)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTheme(val.(*PayloadTheme))
+            m.SetTheme(val.(*Payload_theme))
         }
         return nil
     }
     return res
 }
 // GetIndustry gets the industry property value. Industry of a payload. Possible values are: unknown, other, banking, businessServices, consumerServices, education, energy, construction, consulting, financialServices, government, hospitality, insurance, legal, courierServices, IT, healthcare, manufacturing, retail, telecom, realEstate, unknownFutureValue.
-func (m *Payload) GetIndustry()(*PayloadIndustry) {
+func (m *Payload) GetIndustry()(*Payload_industry) {
     val, err := m.GetBackingStore().Get("industry")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PayloadIndustry)
+        return val.(*Payload_industry)
     }
     return nil
 }
@@ -417,13 +417,13 @@ func (m *Payload) GetPayloadTags()([]string) {
     return nil
 }
 // GetPlatform gets the platform property value. The payload delivery platform for a simulation. Possible values are: unknown, sms, email, teams, unknownFutureValue.
-func (m *Payload) GetPlatform()(*PayloadDeliveryPlatform) {
+func (m *Payload) GetPlatform()(*Payload_platform) {
     val, err := m.GetBackingStore().Get("platform")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PayloadDeliveryPlatform)
+        return val.(*Payload_platform)
     }
     return nil
 }
@@ -439,13 +439,13 @@ func (m *Payload) GetPredictedCompromiseRate()(*float64) {
     return nil
 }
 // GetSimulationAttackType gets the simulationAttackType property value. Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.
-func (m *Payload) GetSimulationAttackType()(*SimulationAttackType) {
+func (m *Payload) GetSimulationAttackType()(*Payload_simulationAttackType) {
     val, err := m.GetBackingStore().Get("simulationAttackType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SimulationAttackType)
+        return val.(*Payload_simulationAttackType)
     }
     return nil
 }
@@ -461,35 +461,35 @@ func (m *Payload) GetSource()(*SimulationContentSource) {
     return nil
 }
 // GetStatus gets the status property value. Simulation content status. Supports $filter and $orderby. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
-func (m *Payload) GetStatus()(*SimulationContentStatus) {
+func (m *Payload) GetStatus()(*Payload_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SimulationContentStatus)
+        return val.(*Payload_status)
     }
     return nil
 }
 // GetTechnique gets the technique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.
-func (m *Payload) GetTechnique()(*SimulationAttackTechnique) {
+func (m *Payload) GetTechnique()(*Payload_technique) {
     val, err := m.GetBackingStore().Get("technique")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SimulationAttackTechnique)
+        return val.(*Payload_technique)
     }
     return nil
 }
 // GetTheme gets the theme property value. The theme of a payload. Possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, fax, financeReport, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.
-func (m *Payload) GetTheme()(*PayloadTheme) {
+func (m *Payload) GetTheme()(*Payload_theme) {
     val, err := m.GetBackingStore().Get("theme")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PayloadTheme)
+        return val.(*Payload_theme)
     }
     return nil
 }
@@ -643,14 +643,14 @@ func (m *Payload) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     return nil
 }
 // SetBrand sets the brand property value. The branch of a payload. Possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, sendGrid, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.
-func (m *Payload) SetBrand(value *PayloadBrand)() {
+func (m *Payload) SetBrand(value *Payload_brand)() {
     err := m.GetBackingStore().Set("brand", value)
     if err != nil {
         panic(err)
     }
 }
 // SetComplexity sets the complexity property value. The complexity of a payload. Possible values are: unknown, low, medium, high, unknownFutureValue.
-func (m *Payload) SetComplexity(value *PayloadComplexity)() {
+func (m *Payload) SetComplexity(value *Payload_complexity)() {
     err := m.GetBackingStore().Set("complexity", value)
     if err != nil {
         panic(err)
@@ -692,7 +692,7 @@ func (m *Payload) SetDisplayName(value *string)() {
     }
 }
 // SetIndustry sets the industry property value. Industry of a payload. Possible values are: unknown, other, banking, businessServices, consumerServices, education, energy, construction, consulting, financialServices, government, hospitality, insurance, legal, courierServices, IT, healthcare, manufacturing, retail, telecom, realEstate, unknownFutureValue.
-func (m *Payload) SetIndustry(value *PayloadIndustry)() {
+func (m *Payload) SetIndustry(value *Payload_industry)() {
     err := m.GetBackingStore().Set("industry", value)
     if err != nil {
         panic(err)
@@ -748,7 +748,7 @@ func (m *Payload) SetPayloadTags(value []string)() {
     }
 }
 // SetPlatform sets the platform property value. The payload delivery platform for a simulation. Possible values are: unknown, sms, email, teams, unknownFutureValue.
-func (m *Payload) SetPlatform(value *PayloadDeliveryPlatform)() {
+func (m *Payload) SetPlatform(value *Payload_platform)() {
     err := m.GetBackingStore().Set("platform", value)
     if err != nil {
         panic(err)
@@ -762,7 +762,7 @@ func (m *Payload) SetPredictedCompromiseRate(value *float64)() {
     }
 }
 // SetSimulationAttackType sets the simulationAttackType property value. Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.
-func (m *Payload) SetSimulationAttackType(value *SimulationAttackType)() {
+func (m *Payload) SetSimulationAttackType(value *Payload_simulationAttackType)() {
     err := m.GetBackingStore().Set("simulationAttackType", value)
     if err != nil {
         panic(err)
@@ -776,21 +776,21 @@ func (m *Payload) SetSource(value *SimulationContentSource)() {
     }
 }
 // SetStatus sets the status property value. Simulation content status. Supports $filter and $orderby. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
-func (m *Payload) SetStatus(value *SimulationContentStatus)() {
+func (m *Payload) SetStatus(value *Payload_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
     }
 }
 // SetTechnique sets the technique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.
-func (m *Payload) SetTechnique(value *SimulationAttackTechnique)() {
+func (m *Payload) SetTechnique(value *Payload_technique)() {
     err := m.GetBackingStore().Set("technique", value)
     if err != nil {
         panic(err)
     }
 }
 // SetTheme sets the theme property value. The theme of a payload. Possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, fax, financeReport, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.
-func (m *Payload) SetTheme(value *PayloadTheme)() {
+func (m *Payload) SetTheme(value *Payload_theme)() {
     err := m.GetBackingStore().Set("theme", value)
     if err != nil {
         panic(err)
@@ -800,14 +800,14 @@ func (m *Payload) SetTheme(value *PayloadTheme)() {
 type Payloadable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetBrand()(*PayloadBrand)
-    GetComplexity()(*PayloadComplexity)
+    GetBrand()(*Payload_brand)
+    GetComplexity()(*Payload_complexity)
     GetCreatedBy()(EmailIdentityable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDescription()(*string)
     GetDetail()(PayloadDetailable)
     GetDisplayName()(*string)
-    GetIndustry()(*PayloadIndustry)
+    GetIndustry()(*Payload_industry)
     GetIsAutomated()(*bool)
     GetIsControversial()(*bool)
     GetIsCurrentEvent()(*bool)
@@ -815,21 +815,21 @@ type Payloadable interface {
     GetLastModifiedBy()(EmailIdentityable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetPayloadTags()([]string)
-    GetPlatform()(*PayloadDeliveryPlatform)
+    GetPlatform()(*Payload_platform)
     GetPredictedCompromiseRate()(*float64)
-    GetSimulationAttackType()(*SimulationAttackType)
+    GetSimulationAttackType()(*Payload_simulationAttackType)
     GetSource()(*SimulationContentSource)
-    GetStatus()(*SimulationContentStatus)
-    GetTechnique()(*SimulationAttackTechnique)
-    GetTheme()(*PayloadTheme)
-    SetBrand(value *PayloadBrand)()
-    SetComplexity(value *PayloadComplexity)()
+    GetStatus()(*Payload_status)
+    GetTechnique()(*Payload_technique)
+    GetTheme()(*Payload_theme)
+    SetBrand(value *Payload_brand)()
+    SetComplexity(value *Payload_complexity)()
     SetCreatedBy(value EmailIdentityable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
     SetDetail(value PayloadDetailable)()
     SetDisplayName(value *string)()
-    SetIndustry(value *PayloadIndustry)()
+    SetIndustry(value *Payload_industry)()
     SetIsAutomated(value *bool)()
     SetIsControversial(value *bool)()
     SetIsCurrentEvent(value *bool)()
@@ -837,11 +837,11 @@ type Payloadable interface {
     SetLastModifiedBy(value EmailIdentityable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetPayloadTags(value []string)()
-    SetPlatform(value *PayloadDeliveryPlatform)()
+    SetPlatform(value *Payload_platform)()
     SetPredictedCompromiseRate(value *float64)()
-    SetSimulationAttackType(value *SimulationAttackType)()
+    SetSimulationAttackType(value *Payload_simulationAttackType)()
     SetSource(value *SimulationContentSource)()
-    SetStatus(value *SimulationContentStatus)()
-    SetTechnique(value *SimulationAttackTechnique)()
-    SetTheme(value *PayloadTheme)()
+    SetStatus(value *Payload_status)()
+    SetTechnique(value *Payload_technique)()
+    SetTheme(value *Payload_theme)()
 }

@@ -62,12 +62,12 @@ func (m *SecurityResource) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["resourceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSecurityResourceType)
+        val, err := n.GetEnumValue(ParseSecurityResource_resourceType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetResourceType(val.(*SecurityResourceType))
+            m.SetResourceType(val.(*SecurityResource_resourceType))
         }
         return nil
     }
@@ -96,13 +96,13 @@ func (m *SecurityResource) GetResource()(*string) {
     return nil
 }
 // GetResourceType gets the resourceType property value. Represents type of security resources related to an alert. Possible values are: attacked, related.
-func (m *SecurityResource) GetResourceType()(*SecurityResourceType) {
+func (m *SecurityResource) GetResourceType()(*SecurityResource_resourceType) {
     val, err := m.GetBackingStore().Get("resourceType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SecurityResourceType)
+        return val.(*SecurityResource_resourceType)
     }
     return nil
 }
@@ -161,7 +161,7 @@ func (m *SecurityResource) SetResource(value *string)() {
     }
 }
 // SetResourceType sets the resourceType property value. Represents type of security resources related to an alert. Possible values are: attacked, related.
-func (m *SecurityResource) SetResourceType(value *SecurityResourceType)() {
+func (m *SecurityResource) SetResourceType(value *SecurityResource_resourceType)() {
     err := m.GetBackingStore().Set("resourceType", value)
     if err != nil {
         panic(err)
@@ -175,9 +175,9 @@ type SecurityResourceable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetResource()(*string)
-    GetResourceType()(*SecurityResourceType)
+    GetResourceType()(*SecurityResource_resourceType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetResource(value *string)()
-    SetResourceType(value *SecurityResourceType)()
+    SetResourceType(value *SecurityResource_resourceType)()
 }

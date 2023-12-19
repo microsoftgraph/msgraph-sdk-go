@@ -38,9 +38,30 @@ func (m *RetentionLabelSettings) GetAdditionalData()(map[string]any) {
 func (m *RetentionLabelSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetBehaviorDuringRetentionPeriod gets the behaviorDuringRetentionPeriod property value. Describes the item behavior during retention period. Possible values are: doNotRetain, retain, retainAsRecord, retainAsRegulatoryRecord, unknownFutureValue. Read-only.
+func (m *RetentionLabelSettings) GetBehaviorDuringRetentionPeriod()(*RetentionLabelSettings_behaviorDuringRetentionPeriod) {
+    val, err := m.GetBackingStore().Get("behaviorDuringRetentionPeriod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RetentionLabelSettings_behaviorDuringRetentionPeriod)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RetentionLabelSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["behaviorDuringRetentionPeriod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseRetentionLabelSettings_behaviorDuringRetentionPeriod)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBehaviorDuringRetentionPeriod(val.(*RetentionLabelSettings_behaviorDuringRetentionPeriod))
+        }
+        return nil
+    }
     res["isContentUpdateAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -171,6 +192,13 @@ func (m *RetentionLabelSettings) GetOdataType()(*string) {
 }
 // Serialize serializes information the current object
 func (m *RetentionLabelSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetBehaviorDuringRetentionPeriod() != nil {
+        cast := (*m.GetBehaviorDuringRetentionPeriod()).String()
+        err := writer.WriteStringValue("behaviorDuringRetentionPeriod", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteBoolValue("isContentUpdateAllowed", m.GetIsContentUpdateAllowed())
         if err != nil {
@@ -226,6 +254,13 @@ func (m *RetentionLabelSettings) SetAdditionalData(value map[string]any)() {
 func (m *RetentionLabelSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetBehaviorDuringRetentionPeriod sets the behaviorDuringRetentionPeriod property value. Describes the item behavior during retention period. Possible values are: doNotRetain, retain, retainAsRecord, retainAsRegulatoryRecord, unknownFutureValue. Read-only.
+func (m *RetentionLabelSettings) SetBehaviorDuringRetentionPeriod(value *RetentionLabelSettings_behaviorDuringRetentionPeriod)() {
+    err := m.GetBackingStore().Set("behaviorDuringRetentionPeriod", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsContentUpdateAllowed sets the isContentUpdateAllowed property value. Specifies whether updates to document content are allowed. Read-only.
 func (m *RetentionLabelSettings) SetIsContentUpdateAllowed(value *bool)() {
     err := m.GetBackingStore().Set("isContentUpdateAllowed", value)
@@ -274,6 +309,7 @@ type RetentionLabelSettingsable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetBehaviorDuringRetentionPeriod()(*RetentionLabelSettings_behaviorDuringRetentionPeriod)
     GetIsContentUpdateAllowed()(*bool)
     GetIsDeleteAllowed()(*bool)
     GetIsLabelUpdateAllowed()(*bool)
@@ -281,6 +317,7 @@ type RetentionLabelSettingsable interface {
     GetIsRecordLocked()(*bool)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetBehaviorDuringRetentionPeriod(value *RetentionLabelSettings_behaviorDuringRetentionPeriod)()
     SetIsContentUpdateAllowed(value *bool)()
     SetIsDeleteAllowed(value *bool)()
     SetIsLabelUpdateAllowed(value *bool)()

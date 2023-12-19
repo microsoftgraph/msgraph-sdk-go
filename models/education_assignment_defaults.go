@@ -20,24 +20,24 @@ func CreateEducationAssignmentDefaultsFromDiscriminatorValue(parseNode i878a80d2
     return NewEducationAssignmentDefaults(), nil
 }
 // GetAddedStudentAction gets the addedStudentAction property value. Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
-func (m *EducationAssignmentDefaults) GetAddedStudentAction()(*EducationAddedStudentAction) {
+func (m *EducationAssignmentDefaults) GetAddedStudentAction()(*EducationAssignmentDefaults_addedStudentAction) {
     val, err := m.GetBackingStore().Get("addedStudentAction")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EducationAddedStudentAction)
+        return val.(*EducationAssignmentDefaults_addedStudentAction)
     }
     return nil
 }
 // GetAddToCalendarAction gets the addToCalendarAction property value. Optional field to control adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
-func (m *EducationAssignmentDefaults) GetAddToCalendarAction()(*EducationAddToCalendarOptions) {
+func (m *EducationAssignmentDefaults) GetAddToCalendarAction()(*EducationAssignmentDefaults_addToCalendarAction) {
     val, err := m.GetBackingStore().Get("addToCalendarAction")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EducationAddToCalendarOptions)
+        return val.(*EducationAssignmentDefaults_addToCalendarAction)
     }
     return nil
 }
@@ -56,22 +56,22 @@ func (m *EducationAssignmentDefaults) GetDueTime()(*i878a80d2330e89d26896388a3f4
 func (m *EducationAssignmentDefaults) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["addedStudentAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEducationAddedStudentAction)
+        val, err := n.GetEnumValue(ParseEducationAssignmentDefaults_addedStudentAction)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAddedStudentAction(val.(*EducationAddedStudentAction))
+            m.SetAddedStudentAction(val.(*EducationAssignmentDefaults_addedStudentAction))
         }
         return nil
     }
     res["addToCalendarAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEducationAddToCalendarOptions)
+        val, err := n.GetEnumValue(ParseEducationAssignmentDefaults_addToCalendarAction)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAddToCalendarAction(val.(*EducationAddToCalendarOptions))
+            m.SetAddToCalendarAction(val.(*EducationAssignmentDefaults_addToCalendarAction))
         }
         return nil
     }
@@ -143,14 +143,14 @@ func (m *EducationAssignmentDefaults) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetAddedStudentAction sets the addedStudentAction property value. Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
-func (m *EducationAssignmentDefaults) SetAddedStudentAction(value *EducationAddedStudentAction)() {
+func (m *EducationAssignmentDefaults) SetAddedStudentAction(value *EducationAssignmentDefaults_addedStudentAction)() {
     err := m.GetBackingStore().Set("addedStudentAction", value)
     if err != nil {
         panic(err)
     }
 }
 // SetAddToCalendarAction sets the addToCalendarAction property value. Optional field to control adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
-func (m *EducationAssignmentDefaults) SetAddToCalendarAction(value *EducationAddToCalendarOptions)() {
+func (m *EducationAssignmentDefaults) SetAddToCalendarAction(value *EducationAssignmentDefaults_addToCalendarAction)() {
     err := m.GetBackingStore().Set("addToCalendarAction", value)
     if err != nil {
         panic(err)
@@ -174,12 +174,12 @@ func (m *EducationAssignmentDefaults) SetNotificationChannelUrl(value *string)()
 type EducationAssignmentDefaultsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAddedStudentAction()(*EducationAddedStudentAction)
-    GetAddToCalendarAction()(*EducationAddToCalendarOptions)
+    GetAddedStudentAction()(*EducationAssignmentDefaults_addedStudentAction)
+    GetAddToCalendarAction()(*EducationAssignmentDefaults_addToCalendarAction)
     GetDueTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
     GetNotificationChannelUrl()(*string)
-    SetAddedStudentAction(value *EducationAddedStudentAction)()
-    SetAddToCalendarAction(value *EducationAddToCalendarOptions)()
+    SetAddedStudentAction(value *EducationAssignmentDefaults_addedStudentAction)()
+    SetAddToCalendarAction(value *EducationAssignmentDefaults_addToCalendarAction)()
     SetDueTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()
     SetNotificationChannelUrl(value *string)()
 }

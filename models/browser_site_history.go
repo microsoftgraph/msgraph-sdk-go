@@ -62,13 +62,13 @@ func (m *BrowserSiteHistory) GetComment()(*string) {
     return nil
 }
 // GetCompatibilityMode gets the compatibilityMode property value. Controls what compatibility setting is used for specific sites or domains. The possible values are: default, internetExplorer8Enterprise, internetExplorer7Enterprise, internetExplorer11, internetExplorer10, internetExplorer9, internetExplorer8, internetExplorer7, internetExplorer5, unknownFutureValue.
-func (m *BrowserSiteHistory) GetCompatibilityMode()(*BrowserSiteCompatibilityMode) {
+func (m *BrowserSiteHistory) GetCompatibilityMode()(*BrowserSiteHistory_compatibilityMode) {
     val, err := m.GetBackingStore().Get("compatibilityMode")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*BrowserSiteCompatibilityMode)
+        return val.(*BrowserSiteHistory_compatibilityMode)
     }
     return nil
 }
@@ -96,12 +96,12 @@ func (m *BrowserSiteHistory) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["compatibilityMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseBrowserSiteCompatibilityMode)
+        val, err := n.GetEnumValue(ParseBrowserSiteHistory_compatibilityMode)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCompatibilityMode(val.(*BrowserSiteCompatibilityMode))
+            m.SetCompatibilityMode(val.(*BrowserSiteHistory_compatibilityMode))
         }
         return nil
     }
@@ -116,12 +116,12 @@ func (m *BrowserSiteHistory) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["mergeType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseBrowserSiteMergeType)
+        val, err := n.GetEnumValue(ParseBrowserSiteHistory_mergeType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMergeType(val.(*BrowserSiteMergeType))
+            m.SetMergeType(val.(*BrowserSiteHistory_mergeType))
         }
         return nil
     }
@@ -146,12 +146,12 @@ func (m *BrowserSiteHistory) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["targetEnvironment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseBrowserSiteTargetEnvironment)
+        val, err := n.GetEnumValue(ParseBrowserSiteHistory_targetEnvironment)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTargetEnvironment(val.(*BrowserSiteTargetEnvironment))
+            m.SetTargetEnvironment(val.(*BrowserSiteHistory_targetEnvironment))
         }
         return nil
     }
@@ -169,13 +169,13 @@ func (m *BrowserSiteHistory) GetLastModifiedBy()(IdentitySetable) {
     return nil
 }
 // GetMergeType gets the mergeType property value. The merge type of the site. The possible values are: noMerge, default, unknownFutureValue.
-func (m *BrowserSiteHistory) GetMergeType()(*BrowserSiteMergeType) {
+func (m *BrowserSiteHistory) GetMergeType()(*BrowserSiteHistory_mergeType) {
     val, err := m.GetBackingStore().Get("mergeType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*BrowserSiteMergeType)
+        return val.(*BrowserSiteHistory_mergeType)
     }
     return nil
 }
@@ -202,13 +202,13 @@ func (m *BrowserSiteHistory) GetPublishedDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetTargetEnvironment gets the targetEnvironment property value. The target environment that the site should open in. The possible values are: internetExplorerMode, internetExplorer11, microsoftEdge, configurable, none, unknownFutureValue.Prior to June 15, 2022, the internetExplorer11 option would allow opening a site in the Internet Explorer 11 (IE11) desktop application. Following the retirement of IE11 on June 15, 2022, the internetExplorer11 option will no longer open an IE11 window and will instead behave the same as the internetExplorerMode option.
-func (m *BrowserSiteHistory) GetTargetEnvironment()(*BrowserSiteTargetEnvironment) {
+func (m *BrowserSiteHistory) GetTargetEnvironment()(*BrowserSiteHistory_targetEnvironment) {
     val, err := m.GetBackingStore().Get("targetEnvironment")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*BrowserSiteTargetEnvironment)
+        return val.(*BrowserSiteHistory_targetEnvironment)
     }
     return nil
 }
@@ -299,7 +299,7 @@ func (m *BrowserSiteHistory) SetComment(value *string)() {
     }
 }
 // SetCompatibilityMode sets the compatibilityMode property value. Controls what compatibility setting is used for specific sites or domains. The possible values are: default, internetExplorer8Enterprise, internetExplorer7Enterprise, internetExplorer11, internetExplorer10, internetExplorer9, internetExplorer8, internetExplorer7, internetExplorer5, unknownFutureValue.
-func (m *BrowserSiteHistory) SetCompatibilityMode(value *BrowserSiteCompatibilityMode)() {
+func (m *BrowserSiteHistory) SetCompatibilityMode(value *BrowserSiteHistory_compatibilityMode)() {
     err := m.GetBackingStore().Set("compatibilityMode", value)
     if err != nil {
         panic(err)
@@ -313,7 +313,7 @@ func (m *BrowserSiteHistory) SetLastModifiedBy(value IdentitySetable)() {
     }
 }
 // SetMergeType sets the mergeType property value. The merge type of the site. The possible values are: noMerge, default, unknownFutureValue.
-func (m *BrowserSiteHistory) SetMergeType(value *BrowserSiteMergeType)() {
+func (m *BrowserSiteHistory) SetMergeType(value *BrowserSiteHistory_mergeType)() {
     err := m.GetBackingStore().Set("mergeType", value)
     if err != nil {
         panic(err)
@@ -334,7 +334,7 @@ func (m *BrowserSiteHistory) SetPublishedDateTime(value *i336074805fc853987abe6f
     }
 }
 // SetTargetEnvironment sets the targetEnvironment property value. The target environment that the site should open in. The possible values are: internetExplorerMode, internetExplorer11, microsoftEdge, configurable, none, unknownFutureValue.Prior to June 15, 2022, the internetExplorer11 option would allow opening a site in the Internet Explorer 11 (IE11) desktop application. Following the retirement of IE11 on June 15, 2022, the internetExplorer11 option will no longer open an IE11 window and will instead behave the same as the internetExplorerMode option.
-func (m *BrowserSiteHistory) SetTargetEnvironment(value *BrowserSiteTargetEnvironment)() {
+func (m *BrowserSiteHistory) SetTargetEnvironment(value *BrowserSiteHistory_targetEnvironment)() {
     err := m.GetBackingStore().Set("targetEnvironment", value)
     if err != nil {
         panic(err)
@@ -348,19 +348,19 @@ type BrowserSiteHistoryable interface {
     GetAllowRedirect()(*bool)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetComment()(*string)
-    GetCompatibilityMode()(*BrowserSiteCompatibilityMode)
+    GetCompatibilityMode()(*BrowserSiteHistory_compatibilityMode)
     GetLastModifiedBy()(IdentitySetable)
-    GetMergeType()(*BrowserSiteMergeType)
+    GetMergeType()(*BrowserSiteHistory_mergeType)
     GetOdataType()(*string)
     GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetTargetEnvironment()(*BrowserSiteTargetEnvironment)
+    GetTargetEnvironment()(*BrowserSiteHistory_targetEnvironment)
     SetAllowRedirect(value *bool)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetComment(value *string)()
-    SetCompatibilityMode(value *BrowserSiteCompatibilityMode)()
+    SetCompatibilityMode(value *BrowserSiteHistory_compatibilityMode)()
     SetLastModifiedBy(value IdentitySetable)()
-    SetMergeType(value *BrowserSiteMergeType)()
+    SetMergeType(value *BrowserSiteHistory_mergeType)()
     SetOdataType(value *string)()
     SetPublishedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetTargetEnvironment(value *BrowserSiteTargetEnvironment)()
+    SetTargetEnvironment(value *BrowserSiteHistory_targetEnvironment)()
 }

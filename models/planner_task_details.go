@@ -65,12 +65,12 @@ func (m *PlannerTaskDetails) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["previewType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePlannerPreviewType)
+        val, err := n.GetEnumValue(ParsePlannerTaskDetails_previewType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPreviewType(val.(*PlannerPreviewType))
+            m.SetPreviewType(val.(*PlannerTaskDetails_previewType))
         }
         return nil
     }
@@ -87,13 +87,13 @@ func (m *PlannerTaskDetails) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetPreviewType gets the previewType property value. This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
-func (m *PlannerTaskDetails) GetPreviewType()(*PlannerPreviewType) {
+func (m *PlannerTaskDetails) GetPreviewType()(*PlannerTaskDetails_previewType) {
     val, err := m.GetBackingStore().Get("previewType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PlannerPreviewType)
+        return val.(*PlannerTaskDetails_previewType)
     }
     return nil
 }
@@ -156,7 +156,7 @@ func (m *PlannerTaskDetails) SetDescription(value *string)() {
     }
 }
 // SetPreviewType sets the previewType property value. This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
-func (m *PlannerTaskDetails) SetPreviewType(value *PlannerPreviewType)() {
+func (m *PlannerTaskDetails) SetPreviewType(value *PlannerTaskDetails_previewType)() {
     err := m.GetBackingStore().Set("previewType", value)
     if err != nil {
         panic(err)
@@ -175,10 +175,10 @@ type PlannerTaskDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetChecklist()(PlannerChecklistItemsable)
     GetDescription()(*string)
-    GetPreviewType()(*PlannerPreviewType)
+    GetPreviewType()(*PlannerTaskDetails_previewType)
     GetReferences()(PlannerExternalReferencesable)
     SetChecklist(value PlannerChecklistItemsable)()
     SetDescription(value *string)()
-    SetPreviewType(value *PlannerPreviewType)()
+    SetPreviewType(value *PlannerTaskDetails_previewType)()
     SetReferences(value PlannerExternalReferencesable)()
 }

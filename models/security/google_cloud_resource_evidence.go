@@ -35,12 +35,12 @@ func (m *GoogleCloudResourceEvidence) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     res["locationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseGoogleCloudLocationType)
+        val, err := n.GetEnumValue(ParseGoogleCloudResourceEvidence_locationType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLocationType(val.(*GoogleCloudLocationType))
+            m.SetLocationType(val.(*GoogleCloudResourceEvidence_locationType))
         }
         return nil
     }
@@ -98,13 +98,13 @@ func (m *GoogleCloudResourceEvidence) GetLocation()(*string) {
     return nil
 }
 // GetLocationType gets the locationType property value. The type of location. Possible values are: unknown, regional, zonal, global, unknownFutureValue.
-func (m *GoogleCloudResourceEvidence) GetLocationType()(*GoogleCloudLocationType) {
+func (m *GoogleCloudResourceEvidence) GetLocationType()(*GoogleCloudResourceEvidence_locationType) {
     val, err := m.GetBackingStore().Get("locationType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*GoogleCloudLocationType)
+        return val.(*GoogleCloudResourceEvidence_locationType)
     }
     return nil
 }
@@ -205,7 +205,7 @@ func (m *GoogleCloudResourceEvidence) SetLocation(value *string)() {
     }
 }
 // SetLocationType sets the locationType property value. The type of location. Possible values are: unknown, regional, zonal, global, unknownFutureValue.
-func (m *GoogleCloudResourceEvidence) SetLocationType(value *GoogleCloudLocationType)() {
+func (m *GoogleCloudResourceEvidence) SetLocationType(value *GoogleCloudResourceEvidence_locationType)() {
     err := m.GetBackingStore().Set("locationType", value)
     if err != nil {
         panic(err)
@@ -244,13 +244,13 @@ type GoogleCloudResourceEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetLocation()(*string)
-    GetLocationType()(*GoogleCloudLocationType)
+    GetLocationType()(*GoogleCloudResourceEvidence_locationType)
     GetProjectId()(*string)
     GetProjectNumber()(*int64)
     GetResourceName()(*string)
     GetResourceType()(*string)
     SetLocation(value *string)()
-    SetLocationType(value *GoogleCloudLocationType)()
+    SetLocationType(value *GoogleCloudResourceEvidence_locationType)()
     SetProjectId(value *string)()
     SetProjectNumber(value *int64)()
     SetResourceName(value *string)()

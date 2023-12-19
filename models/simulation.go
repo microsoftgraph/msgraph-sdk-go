@@ -21,24 +21,24 @@ func CreateSimulationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewSimulation(), nil
 }
 // GetAttackTechnique gets the attackTechnique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.
-func (m *Simulation) GetAttackTechnique()(*SimulationAttackTechnique) {
+func (m *Simulation) GetAttackTechnique()(*Simulation_attackTechnique) {
     val, err := m.GetBackingStore().Get("attackTechnique")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SimulationAttackTechnique)
+        return val.(*Simulation_attackTechnique)
     }
     return nil
 }
 // GetAttackType gets the attackType property value. Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.
-func (m *Simulation) GetAttackType()(*SimulationAttackType) {
+func (m *Simulation) GetAttackType()(*Simulation_attackType) {
     val, err := m.GetBackingStore().Get("attackType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SimulationAttackType)
+        return val.(*Simulation_attackType)
     }
     return nil
 }
@@ -145,22 +145,22 @@ func (m *Simulation) GetExcludedAccountTarget()(AccountTargetContentable) {
 func (m *Simulation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["attackTechnique"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSimulationAttackTechnique)
+        val, err := n.GetEnumValue(ParseSimulation_attackTechnique)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAttackTechnique(val.(*SimulationAttackTechnique))
+            m.SetAttackTechnique(val.(*Simulation_attackTechnique))
         }
         return nil
     }
     res["attackType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSimulationAttackType)
+        val, err := n.GetEnumValue(ParseSimulation_attackType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAttackType(val.(*SimulationAttackType))
+            m.SetAttackType(val.(*Simulation_attackType))
         }
         return nil
     }
@@ -345,12 +345,12 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     res["payloadDeliveryPlatform"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePayloadDeliveryPlatform)
+        val, err := n.GetEnumValue(ParseSimulation_payloadDeliveryPlatform)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPayloadDeliveryPlatform(val.(*PayloadDeliveryPlatform))
+            m.SetPayloadDeliveryPlatform(val.(*Simulation_payloadDeliveryPlatform))
         }
         return nil
     }
@@ -365,12 +365,12 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSimulationStatus)
+        val, err := n.GetEnumValue(ParseSimulation_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*SimulationStatus))
+            m.SetStatus(val.(*Simulation_status))
         }
         return nil
     }
@@ -486,13 +486,13 @@ func (m *Simulation) GetPayload()(Payloadable) {
     return nil
 }
 // GetPayloadDeliveryPlatform gets the payloadDeliveryPlatform property value. Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.
-func (m *Simulation) GetPayloadDeliveryPlatform()(*PayloadDeliveryPlatform) {
+func (m *Simulation) GetPayloadDeliveryPlatform()(*Simulation_payloadDeliveryPlatform) {
     val, err := m.GetBackingStore().Get("payloadDeliveryPlatform")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PayloadDeliveryPlatform)
+        return val.(*Simulation_payloadDeliveryPlatform)
     }
     return nil
 }
@@ -508,13 +508,13 @@ func (m *Simulation) GetReport()(SimulationReportable) {
     return nil
 }
 // GetStatus gets the status property value. Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, running, scheduled, succeeded, failed, cancelled, excluded, unknownFutureValue.
-func (m *Simulation) GetStatus()(*SimulationStatus) {
+func (m *Simulation) GetStatus()(*Simulation_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SimulationStatus)
+        return val.(*Simulation_status)
     }
     return nil
 }
@@ -686,14 +686,14 @@ func (m *Simulation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     return nil
 }
 // SetAttackTechnique sets the attackTechnique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.
-func (m *Simulation) SetAttackTechnique(value *SimulationAttackTechnique)() {
+func (m *Simulation) SetAttackTechnique(value *Simulation_attackTechnique)() {
     err := m.GetBackingStore().Set("attackTechnique", value)
     if err != nil {
         panic(err)
     }
 }
 // SetAttackType sets the attackType property value. Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.
-func (m *Simulation) SetAttackType(value *SimulationAttackType)() {
+func (m *Simulation) SetAttackType(value *Simulation_attackType)() {
     err := m.GetBackingStore().Set("attackType", value)
     if err != nil {
         panic(err)
@@ -826,7 +826,7 @@ func (m *Simulation) SetPayload(value Payloadable)() {
     }
 }
 // SetPayloadDeliveryPlatform sets the payloadDeliveryPlatform property value. Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.
-func (m *Simulation) SetPayloadDeliveryPlatform(value *PayloadDeliveryPlatform)() {
+func (m *Simulation) SetPayloadDeliveryPlatform(value *Simulation_payloadDeliveryPlatform)() {
     err := m.GetBackingStore().Set("payloadDeliveryPlatform", value)
     if err != nil {
         panic(err)
@@ -840,7 +840,7 @@ func (m *Simulation) SetReport(value SimulationReportable)() {
     }
 }
 // SetStatus sets the status property value. Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, running, scheduled, succeeded, failed, cancelled, excluded, unknownFutureValue.
-func (m *Simulation) SetStatus(value *SimulationStatus)() {
+func (m *Simulation) SetStatus(value *Simulation_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -857,8 +857,8 @@ func (m *Simulation) SetTrainingSetting(value TrainingSettingable)() {
 type Simulationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAttackTechnique()(*SimulationAttackTechnique)
-    GetAttackType()(*SimulationAttackType)
+    GetAttackTechnique()(*Simulation_attackTechnique)
+    GetAttackType()(*Simulation_attackType)
     GetAutomationId()(*string)
     GetCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCreatedBy()(EmailIdentityable)
@@ -877,12 +877,12 @@ type Simulationable interface {
     GetLoginPage()(LoginPageable)
     GetOAuthConsentAppDetail()(OAuthConsentAppDetailable)
     GetPayload()(Payloadable)
-    GetPayloadDeliveryPlatform()(*PayloadDeliveryPlatform)
+    GetPayloadDeliveryPlatform()(*Simulation_payloadDeliveryPlatform)
     GetReport()(SimulationReportable)
-    GetStatus()(*SimulationStatus)
+    GetStatus()(*Simulation_status)
     GetTrainingSetting()(TrainingSettingable)
-    SetAttackTechnique(value *SimulationAttackTechnique)()
-    SetAttackType(value *SimulationAttackType)()
+    SetAttackTechnique(value *Simulation_attackTechnique)()
+    SetAttackType(value *Simulation_attackType)()
     SetAutomationId(value *string)()
     SetCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCreatedBy(value EmailIdentityable)()
@@ -901,8 +901,8 @@ type Simulationable interface {
     SetLoginPage(value LoginPageable)()
     SetOAuthConsentAppDetail(value OAuthConsentAppDetailable)()
     SetPayload(value Payloadable)()
-    SetPayloadDeliveryPlatform(value *PayloadDeliveryPlatform)()
+    SetPayloadDeliveryPlatform(value *Simulation_payloadDeliveryPlatform)()
     SetReport(value SimulationReportable)()
-    SetStatus(value *SimulationStatus)()
+    SetStatus(value *Simulation_status)()
     SetTrainingSetting(value TrainingSettingable)()
 }

@@ -118,12 +118,12 @@ func (m *Win32LobAppPowerShellScriptRule) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["runAsAccount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRunAsAccountType)
+        val, err := n.GetEnumValue(ParseWin32LobAppPowerShellScriptRule_runAsAccount)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRunAsAccount(val.(*RunAsAccountType))
+            m.SetRunAsAccount(val.(*Win32LobAppPowerShellScriptRule_runAsAccount))
         }
         return nil
     }
@@ -173,13 +173,13 @@ func (m *Win32LobAppPowerShellScriptRule) GetRunAs32Bit()(*bool) {
     return nil
 }
 // GetRunAsAccount gets the runAsAccount property value. The execution context of the script. Do not specify this value if the rule is used for detection. Script detection rules will run in the same context as the associated app install context. Possible values are: system, user.
-func (m *Win32LobAppPowerShellScriptRule) GetRunAsAccount()(*RunAsAccountType) {
+func (m *Win32LobAppPowerShellScriptRule) GetRunAsAccount()(*Win32LobAppPowerShellScriptRule_runAsAccount) {
     val, err := m.GetBackingStore().Get("runAsAccount")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RunAsAccountType)
+        return val.(*Win32LobAppPowerShellScriptRule_runAsAccount)
     }
     return nil
 }
@@ -296,7 +296,7 @@ func (m *Win32LobAppPowerShellScriptRule) SetRunAs32Bit(value *bool)() {
     }
 }
 // SetRunAsAccount sets the runAsAccount property value. The execution context of the script. Do not specify this value if the rule is used for detection. Script detection rules will run in the same context as the associated app install context. Possible values are: system, user.
-func (m *Win32LobAppPowerShellScriptRule) SetRunAsAccount(value *RunAsAccountType)() {
+func (m *Win32LobAppPowerShellScriptRule) SetRunAsAccount(value *Win32LobAppPowerShellScriptRule_runAsAccount)() {
     err := m.GetBackingStore().Set("runAsAccount", value)
     if err != nil {
         panic(err)
@@ -319,7 +319,7 @@ type Win32LobAppPowerShellScriptRuleable interface {
     GetOperationType()(*Win32LobAppPowerShellScriptRuleOperationType)
     GetOperator()(*Win32LobAppRuleOperator)
     GetRunAs32Bit()(*bool)
-    GetRunAsAccount()(*RunAsAccountType)
+    GetRunAsAccount()(*Win32LobAppPowerShellScriptRule_runAsAccount)
     GetScriptContent()(*string)
     SetComparisonValue(value *string)()
     SetDisplayName(value *string)()
@@ -327,6 +327,6 @@ type Win32LobAppPowerShellScriptRuleable interface {
     SetOperationType(value *Win32LobAppPowerShellScriptRuleOperationType)()
     SetOperator(value *Win32LobAppRuleOperator)()
     SetRunAs32Bit(value *bool)()
-    SetRunAsAccount(value *RunAsAccountType)()
+    SetRunAsAccount(value *Win32LobAppPowerShellScriptRule_runAsAccount)()
     SetScriptContent(value *string)()
 }

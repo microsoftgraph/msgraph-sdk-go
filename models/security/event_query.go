@@ -62,12 +62,12 @@ func (m *EventQuery) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     res["queryType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseQueryType)
+        val, err := n.GetEnumValue(ParseEventQuery_queryType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetQueryType(val.(*QueryType))
+            m.SetQueryType(val.(*EventQuery_queryType))
         }
         return nil
     }
@@ -96,13 +96,13 @@ func (m *EventQuery) GetQuery()(*string) {
     return nil
 }
 // GetQueryType gets the queryType property value. Represents the type of query associated with an event. 'files' for SPO and ODB and 'messages' for EXO.The possible values are: files, messages, unknownFutureValue.
-func (m *EventQuery) GetQueryType()(*QueryType) {
+func (m *EventQuery) GetQueryType()(*EventQuery_queryType) {
     val, err := m.GetBackingStore().Get("queryType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*QueryType)
+        return val.(*EventQuery_queryType)
     }
     return nil
 }
@@ -161,7 +161,7 @@ func (m *EventQuery) SetQuery(value *string)() {
     }
 }
 // SetQueryType sets the queryType property value. Represents the type of query associated with an event. 'files' for SPO and ODB and 'messages' for EXO.The possible values are: files, messages, unknownFutureValue.
-func (m *EventQuery) SetQueryType(value *QueryType)() {
+func (m *EventQuery) SetQueryType(value *EventQuery_queryType)() {
     err := m.GetBackingStore().Set("queryType", value)
     if err != nil {
         panic(err)
@@ -175,9 +175,9 @@ type EventQueryable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetQuery()(*string)
-    GetQueryType()(*QueryType)
+    GetQueryType()(*EventQuery_queryType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetQuery(value *string)()
-    SetQueryType(value *QueryType)()
+    SetQueryType(value *EventQuery_queryType)()
 }

@@ -136,12 +136,12 @@ func (m *SharepointSettings) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["imageTaggingOption"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseImageTaggingChoice)
+        val, err := n.GetEnumValue(ParseSharepointSettings_imageTaggingOption)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetImageTaggingOption(val.(*ImageTaggingChoice))
+            m.SetImageTaggingOption(val.(*SharepointSettings_imageTaggingOption))
         }
         return nil
     }
@@ -338,22 +338,22 @@ func (m *SharepointSettings) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["sharingCapability"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSharingCapabilities)
+        val, err := n.GetEnumValue(ParseSharepointSettings_sharingCapability)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSharingCapability(val.(*SharingCapabilities))
+            m.SetSharingCapability(val.(*SharepointSettings_sharingCapability))
         }
         return nil
     }
     res["sharingDomainRestrictionMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSharingDomainRestrictionMode)
+        val, err := n.GetEnumValue(ParseSharepointSettings_sharingDomainRestrictionMode)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSharingDomainRestrictionMode(val.(*SharingDomainRestrictionMode))
+            m.SetSharingDomainRestrictionMode(val.(*SharepointSettings_sharingDomainRestrictionMode))
         }
         return nil
     }
@@ -401,13 +401,13 @@ func (m *SharepointSettings) GetIdleSessionSignOut()(IdleSessionSignOutable) {
     return nil
 }
 // GetImageTaggingOption gets the imageTaggingOption property value. Specifies the image tagging option for the tenant. Possible values are: disabled, basic, enhanced.
-func (m *SharepointSettings) GetImageTaggingOption()(*ImageTaggingChoice) {
+func (m *SharepointSettings) GetImageTaggingOption()(*SharepointSettings_imageTaggingOption) {
     val, err := m.GetBackingStore().Get("imageTaggingOption")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ImageTaggingChoice)
+        return val.(*SharepointSettings_imageTaggingOption)
     }
     return nil
 }
@@ -610,24 +610,24 @@ func (m *SharepointSettings) GetSharingBlockedDomainList()([]string) {
     return nil
 }
 // GetSharingCapability gets the sharingCapability property value. Sharing capability for the tenant. Possible values are: disabled, externalUserSharingOnly, externalUserAndGuestSharing, existingExternalUserSharingOnly.
-func (m *SharepointSettings) GetSharingCapability()(*SharingCapabilities) {
+func (m *SharepointSettings) GetSharingCapability()(*SharepointSettings_sharingCapability) {
     val, err := m.GetBackingStore().Get("sharingCapability")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SharingCapabilities)
+        return val.(*SharepointSettings_sharingCapability)
     }
     return nil
 }
 // GetSharingDomainRestrictionMode gets the sharingDomainRestrictionMode property value. Specifies the external sharing mode for domains. Possible values are: none, allowList, blockList.
-func (m *SharepointSettings) GetSharingDomainRestrictionMode()(*SharingDomainRestrictionMode) {
+func (m *SharepointSettings) GetSharingDomainRestrictionMode()(*SharepointSettings_sharingDomainRestrictionMode) {
     val, err := m.GetBackingStore().Get("sharingDomainRestrictionMode")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SharingDomainRestrictionMode)
+        return val.(*SharepointSettings_sharingDomainRestrictionMode)
     }
     return nil
 }
@@ -885,7 +885,7 @@ func (m *SharepointSettings) SetIdleSessionSignOut(value IdleSessionSignOutable)
     }
 }
 // SetImageTaggingOption sets the imageTaggingOption property value. Specifies the image tagging option for the tenant. Possible values are: disabled, basic, enhanced.
-func (m *SharepointSettings) SetImageTaggingOption(value *ImageTaggingChoice)() {
+func (m *SharepointSettings) SetImageTaggingOption(value *SharepointSettings_imageTaggingOption)() {
     err := m.GetBackingStore().Set("imageTaggingOption", value)
     if err != nil {
         panic(err)
@@ -1018,14 +1018,14 @@ func (m *SharepointSettings) SetSharingBlockedDomainList(value []string)() {
     }
 }
 // SetSharingCapability sets the sharingCapability property value. Sharing capability for the tenant. Possible values are: disabled, externalUserSharingOnly, externalUserAndGuestSharing, existingExternalUserSharingOnly.
-func (m *SharepointSettings) SetSharingCapability(value *SharingCapabilities)() {
+func (m *SharepointSettings) SetSharingCapability(value *SharepointSettings_sharingCapability)() {
     err := m.GetBackingStore().Set("sharingCapability", value)
     if err != nil {
         panic(err)
     }
 }
 // SetSharingDomainRestrictionMode sets the sharingDomainRestrictionMode property value. Specifies the external sharing mode for domains. Possible values are: none, allowList, blockList.
-func (m *SharepointSettings) SetSharingDomainRestrictionMode(value *SharingDomainRestrictionMode)() {
+func (m *SharepointSettings) SetSharingDomainRestrictionMode(value *SharepointSettings_sharingDomainRestrictionMode)() {
     err := m.GetBackingStore().Set("sharingDomainRestrictionMode", value)
     if err != nil {
         panic(err)
@@ -1061,7 +1061,7 @@ type SharepointSettingsable interface {
     GetDeletedUserPersonalSiteRetentionPeriodInDays()(*int32)
     GetExcludedFileExtensionsForSyncApp()([]string)
     GetIdleSessionSignOut()(IdleSessionSignOutable)
-    GetImageTaggingOption()(*ImageTaggingChoice)
+    GetImageTaggingOption()(*SharepointSettings_imageTaggingOption)
     GetIsCommentingOnSitePagesEnabled()(*bool)
     GetIsFileActivityNotificationEnabled()(*bool)
     GetIsLegacyAuthProtocolsEnabled()(*bool)
@@ -1080,8 +1080,8 @@ type SharepointSettingsable interface {
     GetPersonalSiteDefaultStorageLimitInMB()(*int64)
     GetSharingAllowedDomainList()([]string)
     GetSharingBlockedDomainList()([]string)
-    GetSharingCapability()(*SharingCapabilities)
-    GetSharingDomainRestrictionMode()(*SharingDomainRestrictionMode)
+    GetSharingCapability()(*SharepointSettings_sharingCapability)
+    GetSharingDomainRestrictionMode()(*SharepointSettings_sharingDomainRestrictionMode)
     GetSiteCreationDefaultManagedPath()(*string)
     GetSiteCreationDefaultStorageLimitInMB()(*int32)
     GetTenantDefaultTimezone()(*string)
@@ -1090,7 +1090,7 @@ type SharepointSettingsable interface {
     SetDeletedUserPersonalSiteRetentionPeriodInDays(value *int32)()
     SetExcludedFileExtensionsForSyncApp(value []string)()
     SetIdleSessionSignOut(value IdleSessionSignOutable)()
-    SetImageTaggingOption(value *ImageTaggingChoice)()
+    SetImageTaggingOption(value *SharepointSettings_imageTaggingOption)()
     SetIsCommentingOnSitePagesEnabled(value *bool)()
     SetIsFileActivityNotificationEnabled(value *bool)()
     SetIsLegacyAuthProtocolsEnabled(value *bool)()
@@ -1109,8 +1109,8 @@ type SharepointSettingsable interface {
     SetPersonalSiteDefaultStorageLimitInMB(value *int64)()
     SetSharingAllowedDomainList(value []string)()
     SetSharingBlockedDomainList(value []string)()
-    SetSharingCapability(value *SharingCapabilities)()
-    SetSharingDomainRestrictionMode(value *SharingDomainRestrictionMode)()
+    SetSharingCapability(value *SharepointSettings_sharingCapability)()
+    SetSharingDomainRestrictionMode(value *SharepointSettings_sharingDomainRestrictionMode)()
     SetSiteCreationDefaultManagedPath(value *string)()
     SetSiteCreationDefaultStorageLimitInMB(value *int32)()
     SetTenantDefaultTimezone(value *string)()

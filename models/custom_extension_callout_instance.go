@@ -125,12 +125,12 @@ func (m *CustomExtensionCalloutInstance) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCustomExtensionCalloutInstanceStatus)
+        val, err := n.GetEnumValue(ParseCustomExtensionCalloutInstance_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*CustomExtensionCalloutInstanceStatus))
+            m.SetStatus(val.(*CustomExtensionCalloutInstance_status))
         }
         return nil
     }
@@ -159,13 +159,13 @@ func (m *CustomExtensionCalloutInstance) GetOdataType()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The status of the request to the custom extension. The possible values are: calloutSent, callbackReceived, calloutFailed, callbackTimedOut, waitingForCallback, unknownFutureValue.
-func (m *CustomExtensionCalloutInstance) GetStatus()(*CustomExtensionCalloutInstanceStatus) {
+func (m *CustomExtensionCalloutInstance) GetStatus()(*CustomExtensionCalloutInstance_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CustomExtensionCalloutInstanceStatus)
+        return val.(*CustomExtensionCalloutInstance_status)
     }
     return nil
 }
@@ -263,7 +263,7 @@ func (m *CustomExtensionCalloutInstance) SetOdataType(value *string)() {
     }
 }
 // SetStatus sets the status property value. The status of the request to the custom extension. The possible values are: calloutSent, callbackReceived, calloutFailed, callbackTimedOut, waitingForCallback, unknownFutureValue.
-func (m *CustomExtensionCalloutInstance) SetStatus(value *CustomExtensionCalloutInstanceStatus)() {
+func (m *CustomExtensionCalloutInstance) SetStatus(value *CustomExtensionCalloutInstance_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -280,12 +280,12 @@ type CustomExtensionCalloutInstanceable interface {
     GetExternalCorrelationId()(*string)
     GetId()(*string)
     GetOdataType()(*string)
-    GetStatus()(*CustomExtensionCalloutInstanceStatus)
+    GetStatus()(*CustomExtensionCalloutInstance_status)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCustomExtensionId(value *string)()
     SetDetail(value *string)()
     SetExternalCorrelationId(value *string)()
     SetId(value *string)()
     SetOdataType(value *string)()
-    SetStatus(value *CustomExtensionCalloutInstanceStatus)()
+    SetStatus(value *CustomExtensionCalloutInstance_status)()
 }

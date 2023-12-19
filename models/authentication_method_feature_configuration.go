@@ -83,12 +83,12 @@ func (m *AuthenticationMethodFeatureConfiguration) GetFieldDeserializers()(map[s
         return nil
     }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAdvancedConfigState)
+        val, err := n.GetEnumValue(ParseAuthenticationMethodFeatureConfiguration_state)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetState(val.(*AdvancedConfigState))
+            m.SetState(val.(*AuthenticationMethodFeatureConfiguration_state))
         }
         return nil
     }
@@ -117,13 +117,13 @@ func (m *AuthenticationMethodFeatureConfiguration) GetOdataType()(*string) {
     return nil
 }
 // GetState gets the state property value. Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn't been explicitly set and uses the default behavior of Microsoft Entra ID for the setting. The default value is disabled.
-func (m *AuthenticationMethodFeatureConfiguration) GetState()(*AdvancedConfigState) {
+func (m *AuthenticationMethodFeatureConfiguration) GetState()(*AuthenticationMethodFeatureConfiguration_state) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AdvancedConfigState)
+        return val.(*AuthenticationMethodFeatureConfiguration_state)
     }
     return nil
 }
@@ -195,7 +195,7 @@ func (m *AuthenticationMethodFeatureConfiguration) SetOdataType(value *string)()
     }
 }
 // SetState sets the state property value. Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn't been explicitly set and uses the default behavior of Microsoft Entra ID for the setting. The default value is disabled.
-func (m *AuthenticationMethodFeatureConfiguration) SetState(value *AdvancedConfigState)() {
+func (m *AuthenticationMethodFeatureConfiguration) SetState(value *AuthenticationMethodFeatureConfiguration_state)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {
         panic(err)
@@ -210,10 +210,10 @@ type AuthenticationMethodFeatureConfigurationable interface {
     GetExcludeTarget()(FeatureTargetable)
     GetIncludeTarget()(FeatureTargetable)
     GetOdataType()(*string)
-    GetState()(*AdvancedConfigState)
+    GetState()(*AuthenticationMethodFeatureConfiguration_state)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetExcludeTarget(value FeatureTargetable)()
     SetIncludeTarget(value FeatureTargetable)()
     SetOdataType(value *string)()
-    SetState(value *AdvancedConfigState)()
+    SetState(value *AuthenticationMethodFeatureConfiguration_state)()
 }

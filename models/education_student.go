@@ -84,12 +84,12 @@ func (m *EducationStudent) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["gender"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEducationGender)
+        val, err := n.GetEnumValue(ParseEducationStudent_gender)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetGender(val.(*EducationGender))
+            m.SetGender(val.(*EducationStudent_gender))
         }
         return nil
     }
@@ -136,13 +136,13 @@ func (m *EducationStudent) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetGender gets the gender property value. The possible values are: female, male, other, unknownFutureValue.
-func (m *EducationStudent) GetGender()(*EducationGender) {
+func (m *EducationStudent) GetGender()(*EducationStudent_gender) {
     val, err := m.GetBackingStore().Get("gender")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EducationGender)
+        return val.(*EducationStudent_gender)
     }
     return nil
 }
@@ -269,7 +269,7 @@ func (m *EducationStudent) SetExternalId(value *string)() {
     }
 }
 // SetGender sets the gender property value. The possible values are: female, male, other, unknownFutureValue.
-func (m *EducationStudent) SetGender(value *EducationGender)() {
+func (m *EducationStudent) SetGender(value *EducationStudent_gender)() {
     err := m.GetBackingStore().Set("gender", value)
     if err != nil {
         panic(err)
@@ -311,7 +311,7 @@ type EducationStudentable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetBirthDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetExternalId()(*string)
-    GetGender()(*EducationGender)
+    GetGender()(*EducationStudent_gender)
     GetGrade()(*string)
     GetGraduationYear()(*string)
     GetOdataType()(*string)
@@ -319,7 +319,7 @@ type EducationStudentable interface {
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetBirthDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetExternalId(value *string)()
-    SetGender(value *EducationGender)()
+    SetGender(value *EducationStudent_gender)()
     SetGrade(value *string)()
     SetGraduationYear(value *string)()
     SetOdataType(value *string)()

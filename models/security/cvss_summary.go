@@ -62,12 +62,12 @@ func (m *CvssSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["severity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVulnerabilitySeverity)
+        val, err := n.GetEnumValue(ParseCvssSummary_severity)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSeverity(val.(*VulnerabilitySeverity))
+            m.SetSeverity(val.(*CvssSummary_severity))
         }
         return nil
     }
@@ -106,13 +106,13 @@ func (m *CvssSummary) GetScore()(*float64) {
     return nil
 }
 // GetSeverity gets the severity property value. The CVSS severity rating for this vulnerability. The possible values are: none, low, medium, high, critical, unknownFutureValue.
-func (m *CvssSummary) GetSeverity()(*VulnerabilitySeverity) {
+func (m *CvssSummary) GetSeverity()(*CvssSummary_severity) {
     val, err := m.GetBackingStore().Get("severity")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*VulnerabilitySeverity)
+        return val.(*CvssSummary_severity)
     }
     return nil
 }
@@ -188,7 +188,7 @@ func (m *CvssSummary) SetScore(value *float64)() {
     }
 }
 // SetSeverity sets the severity property value. The CVSS severity rating for this vulnerability. The possible values are: none, low, medium, high, critical, unknownFutureValue.
-func (m *CvssSummary) SetSeverity(value *VulnerabilitySeverity)() {
+func (m *CvssSummary) SetSeverity(value *CvssSummary_severity)() {
     err := m.GetBackingStore().Set("severity", value)
     if err != nil {
         panic(err)
@@ -209,11 +209,11 @@ type CvssSummaryable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetScore()(*float64)
-    GetSeverity()(*VulnerabilitySeverity)
+    GetSeverity()(*CvssSummary_severity)
     GetVectorString()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetScore(value *float64)()
-    SetSeverity(value *VulnerabilitySeverity)()
+    SetSeverity(value *CvssSummary_severity)()
     SetVectorString(value *string)()
 }

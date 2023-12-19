@@ -73,12 +73,12 @@ func (m *PasswordCredentialConfiguration) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["restrictionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAppCredentialRestrictionType)
+        val, err := n.GetEnumValue(ParsePasswordCredentialConfiguration_restrictionType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRestrictionType(val.(*AppCredentialRestrictionType))
+            m.SetRestrictionType(val.(*PasswordCredentialConfiguration_restrictionType))
         }
         return nil
     }
@@ -118,13 +118,13 @@ func (m *PasswordCredentialConfiguration) GetRestrictForAppsCreatedAfterDateTime
     return nil
 }
 // GetRestrictionType gets the restrictionType property value. The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime,customPasswordAddition, unknownFutureValue. Each value of restrictionType can be used only once per policy.
-func (m *PasswordCredentialConfiguration) GetRestrictionType()(*AppCredentialRestrictionType) {
+func (m *PasswordCredentialConfiguration) GetRestrictionType()(*PasswordCredentialConfiguration_restrictionType) {
     val, err := m.GetBackingStore().Get("restrictionType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AppCredentialRestrictionType)
+        return val.(*PasswordCredentialConfiguration_restrictionType)
     }
     return nil
 }
@@ -196,7 +196,7 @@ func (m *PasswordCredentialConfiguration) SetRestrictForAppsCreatedAfterDateTime
     }
 }
 // SetRestrictionType sets the restrictionType property value. The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime,customPasswordAddition, unknownFutureValue. Each value of restrictionType can be used only once per policy.
-func (m *PasswordCredentialConfiguration) SetRestrictionType(value *AppCredentialRestrictionType)() {
+func (m *PasswordCredentialConfiguration) SetRestrictionType(value *PasswordCredentialConfiguration_restrictionType)() {
     err := m.GetBackingStore().Set("restrictionType", value)
     if err != nil {
         panic(err)
@@ -211,10 +211,10 @@ type PasswordCredentialConfigurationable interface {
     GetMaxLifetime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetOdataType()(*string)
     GetRestrictForAppsCreatedAfterDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetRestrictionType()(*AppCredentialRestrictionType)
+    GetRestrictionType()(*PasswordCredentialConfiguration_restrictionType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetMaxLifetime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetOdataType(value *string)()
     SetRestrictForAppsCreatedAfterDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetRestrictionType(value *AppCredentialRestrictionType)()
+    SetRestrictionType(value *PasswordCredentialConfiguration_restrictionType)()
 }

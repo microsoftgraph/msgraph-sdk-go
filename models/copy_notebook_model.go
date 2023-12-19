@@ -226,12 +226,12 @@ func (m *CopyNotebookModel) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["userRole"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOnenoteUserRole)
+        val, err := n.GetEnumValue(ParseCopyNotebookModel_userRole)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserRole(val.(*OnenoteUserRole))
+            m.SetUserRole(val.(*CopyNotebookModel_userRole))
         }
         return nil
     }
@@ -370,13 +370,13 @@ func (m *CopyNotebookModel) GetSelf()(*string) {
     return nil
 }
 // GetUserRole gets the userRole property value. The userRole property
-func (m *CopyNotebookModel) GetUserRole()(*OnenoteUserRole) {
+func (m *CopyNotebookModel) GetUserRole()(*CopyNotebookModel_userRole) {
     val, err := m.GetBackingStore().Get("userRole")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*OnenoteUserRole)
+        return val.(*CopyNotebookModel_userRole)
     }
     return nil
 }
@@ -604,7 +604,7 @@ func (m *CopyNotebookModel) SetSelf(value *string)() {
     }
 }
 // SetUserRole sets the userRole property value. The userRole property
-func (m *CopyNotebookModel) SetUserRole(value *OnenoteUserRole)() {
+func (m *CopyNotebookModel) SetUserRole(value *CopyNotebookModel_userRole)() {
     err := m.GetBackingStore().Set("userRole", value)
     if err != nil {
         panic(err)
@@ -631,7 +631,7 @@ type CopyNotebookModelable interface {
     GetSectionGroupsUrl()(*string)
     GetSectionsUrl()(*string)
     GetSelf()(*string)
-    GetUserRole()(*OnenoteUserRole)
+    GetUserRole()(*CopyNotebookModel_userRole)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCreatedBy(value *string)()
     SetCreatedByIdentity(value IdentitySetable)()
@@ -648,5 +648,5 @@ type CopyNotebookModelable interface {
     SetSectionGroupsUrl(value *string)()
     SetSectionsUrl(value *string)()
     SetSelf(value *string)()
-    SetUserRole(value *OnenoteUserRole)()
+    SetUserRole(value *CopyNotebookModel_userRole)()
 }

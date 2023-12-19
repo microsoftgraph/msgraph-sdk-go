@@ -46,25 +46,25 @@ func (m *EducationFeedbackResourceOutcome) GetFieldDeserializers()(map[string]fu
         return nil
     }
     res["resourceStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEducationFeedbackResourceOutcomeStatus)
+        val, err := n.GetEnumValue(ParseEducationFeedbackResourceOutcome_resourceStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetResourceStatus(val.(*EducationFeedbackResourceOutcomeStatus))
+            m.SetResourceStatus(val.(*EducationFeedbackResourceOutcome_resourceStatus))
         }
         return nil
     }
     return res
 }
 // GetResourceStatus gets the resourceStatus property value. The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, unknownFutureValue.
-func (m *EducationFeedbackResourceOutcome) GetResourceStatus()(*EducationFeedbackResourceOutcomeStatus) {
+func (m *EducationFeedbackResourceOutcome) GetResourceStatus()(*EducationFeedbackResourceOutcome_resourceStatus) {
     val, err := m.GetBackingStore().Get("resourceStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EducationFeedbackResourceOutcomeStatus)
+        return val.(*EducationFeedbackResourceOutcome_resourceStatus)
     }
     return nil
 }
@@ -97,7 +97,7 @@ func (m *EducationFeedbackResourceOutcome) SetFeedbackResource(value EducationRe
     }
 }
 // SetResourceStatus sets the resourceStatus property value. The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, unknownFutureValue.
-func (m *EducationFeedbackResourceOutcome) SetResourceStatus(value *EducationFeedbackResourceOutcomeStatus)() {
+func (m *EducationFeedbackResourceOutcome) SetResourceStatus(value *EducationFeedbackResourceOutcome_resourceStatus)() {
     err := m.GetBackingStore().Set("resourceStatus", value)
     if err != nil {
         panic(err)
@@ -108,7 +108,7 @@ type EducationFeedbackResourceOutcomeable interface {
     EducationOutcomeable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetFeedbackResource()(EducationResourceable)
-    GetResourceStatus()(*EducationFeedbackResourceOutcomeStatus)
+    GetResourceStatus()(*EducationFeedbackResourceOutcome_resourceStatus)
     SetFeedbackResource(value EducationResourceable)()
-    SetResourceStatus(value *EducationFeedbackResourceOutcomeStatus)()
+    SetResourceStatus(value *EducationFeedbackResourceOutcome_resourceStatus)()
 }

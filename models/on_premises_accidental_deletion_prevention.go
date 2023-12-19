@@ -73,12 +73,12 @@ func (m *OnPremisesAccidentalDeletionPrevention) GetFieldDeserializers()(map[str
         return nil
     }
     res["synchronizationPreventionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOnPremisesDirectorySynchronizationDeletionPreventionType)
+        val, err := n.GetEnumValue(ParseOnPremisesAccidentalDeletionPrevention_synchronizationPreventionType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSynchronizationPreventionType(val.(*OnPremisesDirectorySynchronizationDeletionPreventionType))
+            m.SetSynchronizationPreventionType(val.(*OnPremisesAccidentalDeletionPrevention_synchronizationPreventionType))
         }
         return nil
     }
@@ -96,13 +96,13 @@ func (m *OnPremisesAccidentalDeletionPrevention) GetOdataType()(*string) {
     return nil
 }
 // GetSynchronizationPreventionType gets the synchronizationPreventionType property value. The status of the accidental deletion prevention feature. The possible values are: disabled, enabledForCount, enabledForPercentage, unknownFutureValue.
-func (m *OnPremisesAccidentalDeletionPrevention) GetSynchronizationPreventionType()(*OnPremisesDirectorySynchronizationDeletionPreventionType) {
+func (m *OnPremisesAccidentalDeletionPrevention) GetSynchronizationPreventionType()(*OnPremisesAccidentalDeletionPrevention_synchronizationPreventionType) {
     val, err := m.GetBackingStore().Get("synchronizationPreventionType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*OnPremisesDirectorySynchronizationDeletionPreventionType)
+        return val.(*OnPremisesAccidentalDeletionPrevention_synchronizationPreventionType)
     }
     return nil
 }
@@ -161,7 +161,7 @@ func (m *OnPremisesAccidentalDeletionPrevention) SetOdataType(value *string)() {
     }
 }
 // SetSynchronizationPreventionType sets the synchronizationPreventionType property value. The status of the accidental deletion prevention feature. The possible values are: disabled, enabledForCount, enabledForPercentage, unknownFutureValue.
-func (m *OnPremisesAccidentalDeletionPrevention) SetSynchronizationPreventionType(value *OnPremisesDirectorySynchronizationDeletionPreventionType)() {
+func (m *OnPremisesAccidentalDeletionPrevention) SetSynchronizationPreventionType(value *OnPremisesAccidentalDeletionPrevention_synchronizationPreventionType)() {
     err := m.GetBackingStore().Set("synchronizationPreventionType", value)
     if err != nil {
         panic(err)
@@ -175,9 +175,9 @@ type OnPremisesAccidentalDeletionPreventionable interface {
     GetAlertThreshold()(*int32)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
-    GetSynchronizationPreventionType()(*OnPremisesDirectorySynchronizationDeletionPreventionType)
+    GetSynchronizationPreventionType()(*OnPremisesAccidentalDeletionPrevention_synchronizationPreventionType)
     SetAlertThreshold(value *int32)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
-    SetSynchronizationPreventionType(value *OnPremisesDirectorySynchronizationDeletionPreventionType)()
+    SetSynchronizationPreventionType(value *OnPremisesAccidentalDeletionPrevention_synchronizationPreventionType)()
 }

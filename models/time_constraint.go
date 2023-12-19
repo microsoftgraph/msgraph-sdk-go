@@ -23,13 +23,13 @@ func CreateTimeConstraintFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewTimeConstraint(), nil
 }
 // GetActivityDomain gets the activityDomain property value. The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.
-func (m *TimeConstraint) GetActivityDomain()(*ActivityDomain) {
+func (m *TimeConstraint) GetActivityDomain()(*TimeConstraint_activityDomain) {
     val, err := m.GetBackingStore().Get("activityDomain")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ActivityDomain)
+        return val.(*TimeConstraint_activityDomain)
     }
     return nil
 }
@@ -53,12 +53,12 @@ func (m *TimeConstraint) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185
 func (m *TimeConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["activityDomain"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseActivityDomain)
+        val, err := n.GetEnumValue(ParseTimeConstraint_activityDomain)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetActivityDomain(val.(*ActivityDomain))
+            m.SetActivityDomain(val.(*TimeConstraint_activityDomain))
         }
         return nil
     }
@@ -148,7 +148,7 @@ func (m *TimeConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // SetActivityDomain sets the activityDomain property value. The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.
-func (m *TimeConstraint) SetActivityDomain(value *ActivityDomain)() {
+func (m *TimeConstraint) SetActivityDomain(value *TimeConstraint_activityDomain)() {
     err := m.GetBackingStore().Set("activityDomain", value)
     if err != nil {
         panic(err)
@@ -184,11 +184,11 @@ type TimeConstraintable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetActivityDomain()(*ActivityDomain)
+    GetActivityDomain()(*TimeConstraint_activityDomain)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetTimeSlots()([]TimeSlotable)
-    SetActivityDomain(value *ActivityDomain)()
+    SetActivityDomain(value *TimeConstraint_activityDomain)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetTimeSlots(value []TimeSlotable)()

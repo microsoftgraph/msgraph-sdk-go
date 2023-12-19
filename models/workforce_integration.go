@@ -98,12 +98,12 @@ func (m *WorkforceIntegration) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["supportedEntities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWorkforceIntegrationSupportedEntities)
+        val, err := n.GetEnumValue(ParseWorkforceIntegration_supportedEntities)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSupportedEntities(val.(*WorkforceIntegrationSupportedEntities))
+            m.SetSupportedEntities(val.(*WorkforceIntegration_supportedEntities))
         }
         return nil
     }
@@ -131,13 +131,13 @@ func (m *WorkforceIntegration) GetIsActive()(*bool) {
     return nil
 }
 // GetSupportedEntities gets the supportedEntities property value. The Shifts entities supported for synchronous change notifications. Shifts will make a call back to the url provided on client changes on those entities added here. By default, no entities are supported for change notifications. Possible values are: none, shift, swapRequest, userShiftPreferences, openshift, openShiftRequest, offerShiftRequest, unknownFutureValue.
-func (m *WorkforceIntegration) GetSupportedEntities()(*WorkforceIntegrationSupportedEntities) {
+func (m *WorkforceIntegration) GetSupportedEntities()(*WorkforceIntegration_supportedEntities) {
     val, err := m.GetBackingStore().Get("supportedEntities")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*WorkforceIntegrationSupportedEntities)
+        return val.(*WorkforceIntegration_supportedEntities)
     }
     return nil
 }
@@ -226,7 +226,7 @@ func (m *WorkforceIntegration) SetIsActive(value *bool)() {
     }
 }
 // SetSupportedEntities sets the supportedEntities property value. The Shifts entities supported for synchronous change notifications. Shifts will make a call back to the url provided on client changes on those entities added here. By default, no entities are supported for change notifications. Possible values are: none, shift, swapRequest, userShiftPreferences, openshift, openShiftRequest, offerShiftRequest, unknownFutureValue.
-func (m *WorkforceIntegration) SetSupportedEntities(value *WorkforceIntegrationSupportedEntities)() {
+func (m *WorkforceIntegration) SetSupportedEntities(value *WorkforceIntegration_supportedEntities)() {
     err := m.GetBackingStore().Set("supportedEntities", value)
     if err != nil {
         panic(err)
@@ -247,12 +247,12 @@ type WorkforceIntegrationable interface {
     GetDisplayName()(*string)
     GetEncryption()(WorkforceIntegrationEncryptionable)
     GetIsActive()(*bool)
-    GetSupportedEntities()(*WorkforceIntegrationSupportedEntities)
+    GetSupportedEntities()(*WorkforceIntegration_supportedEntities)
     GetUrl()(*string)
     SetApiVersion(value *int32)()
     SetDisplayName(value *string)()
     SetEncryption(value WorkforceIntegrationEncryptionable)()
     SetIsActive(value *bool)()
-    SetSupportedEntities(value *WorkforceIntegrationSupportedEntities)()
+    SetSupportedEntities(value *WorkforceIntegration_supportedEntities)()
     SetUrl(value *string)()
 }

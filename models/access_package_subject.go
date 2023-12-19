@@ -116,12 +116,12 @@ func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["subjectType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAccessPackageSubjectType)
+        val, err := n.GetEnumValue(ParseAccessPackageSubject_subjectType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSubjectType(val.(*AccessPackageSubjectType))
+            m.SetSubjectType(val.(*AccessPackageSubject_subjectType))
         }
         return nil
     }
@@ -161,13 +161,13 @@ func (m *AccessPackageSubject) GetPrincipalName()(*string) {
     return nil
 }
 // GetSubjectType gets the subjectType property value. The resource type of the subject. The possible values are: notSpecified, user, servicePrincipal, unknownFutureValue.
-func (m *AccessPackageSubject) GetSubjectType()(*AccessPackageSubjectType) {
+func (m *AccessPackageSubject) GetSubjectType()(*AccessPackageSubject_subjectType) {
     val, err := m.GetBackingStore().Get("subjectType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AccessPackageSubjectType)
+        return val.(*AccessPackageSubject_subjectType)
     }
     return nil
 }
@@ -265,7 +265,7 @@ func (m *AccessPackageSubject) SetPrincipalName(value *string)() {
     }
 }
 // SetSubjectType sets the subjectType property value. The resource type of the subject. The possible values are: notSpecified, user, servicePrincipal, unknownFutureValue.
-func (m *AccessPackageSubject) SetSubjectType(value *AccessPackageSubjectType)() {
+func (m *AccessPackageSubject) SetSubjectType(value *AccessPackageSubject_subjectType)() {
     err := m.GetBackingStore().Set("subjectType", value)
     if err != nil {
         panic(err)
@@ -281,12 +281,12 @@ type AccessPackageSubjectable interface {
     GetObjectId()(*string)
     GetOnPremisesSecurityIdentifier()(*string)
     GetPrincipalName()(*string)
-    GetSubjectType()(*AccessPackageSubjectType)
+    GetSubjectType()(*AccessPackageSubject_subjectType)
     SetConnectedOrganization(value ConnectedOrganizationable)()
     SetDisplayName(value *string)()
     SetEmail(value *string)()
     SetObjectId(value *string)()
     SetOnPremisesSecurityIdentifier(value *string)()
     SetPrincipalName(value *string)()
-    SetSubjectType(value *AccessPackageSubjectType)()
+    SetSubjectType(value *AccessPackageSubject_subjectType)()
 }

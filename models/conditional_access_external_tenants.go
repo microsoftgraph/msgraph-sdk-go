@@ -62,12 +62,12 @@ func (m *ConditionalAccessExternalTenants) GetBackingStore()(ie8677ce2c7e1b4c22e
 func (m *ConditionalAccessExternalTenants) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["membershipKind"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseConditionalAccessExternalTenantsMembershipKind)
+        val, err := n.GetEnumValue(ParseConditionalAccessExternalTenants_membershipKind)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMembershipKind(val.(*ConditionalAccessExternalTenantsMembershipKind))
+            m.SetMembershipKind(val.(*ConditionalAccessExternalTenants_membershipKind))
         }
         return nil
     }
@@ -84,13 +84,13 @@ func (m *ConditionalAccessExternalTenants) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetMembershipKind gets the membershipKind property value. The membership kind. Possible values are: all, enumerated, unknownFutureValue. The enumerated member references an conditionalAccessEnumeratedExternalTenants object.
-func (m *ConditionalAccessExternalTenants) GetMembershipKind()(*ConditionalAccessExternalTenantsMembershipKind) {
+func (m *ConditionalAccessExternalTenants) GetMembershipKind()(*ConditionalAccessExternalTenants_membershipKind) {
     val, err := m.GetBackingStore().Get("membershipKind")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ConditionalAccessExternalTenantsMembershipKind)
+        return val.(*ConditionalAccessExternalTenants_membershipKind)
     }
     return nil
 }
@@ -140,7 +140,7 @@ func (m *ConditionalAccessExternalTenants) SetBackingStore(value ie8677ce2c7e1b4
     m.backingStore = value
 }
 // SetMembershipKind sets the membershipKind property value. The membership kind. Possible values are: all, enumerated, unknownFutureValue. The enumerated member references an conditionalAccessEnumeratedExternalTenants object.
-func (m *ConditionalAccessExternalTenants) SetMembershipKind(value *ConditionalAccessExternalTenantsMembershipKind)() {
+func (m *ConditionalAccessExternalTenants) SetMembershipKind(value *ConditionalAccessExternalTenants_membershipKind)() {
     err := m.GetBackingStore().Set("membershipKind", value)
     if err != nil {
         panic(err)
@@ -159,9 +159,9 @@ type ConditionalAccessExternalTenantsable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetMembershipKind()(*ConditionalAccessExternalTenantsMembershipKind)
+    GetMembershipKind()(*ConditionalAccessExternalTenants_membershipKind)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetMembershipKind(value *ConditionalAccessExternalTenantsMembershipKind)()
+    SetMembershipKind(value *ConditionalAccessExternalTenants_membershipKind)()
     SetOdataType(value *string)()
 }

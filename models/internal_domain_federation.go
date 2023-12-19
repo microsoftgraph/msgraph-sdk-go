@@ -33,13 +33,13 @@ func (m *InternalDomainFederation) GetActiveSignInUri()(*string) {
     return nil
 }
 // GetFederatedIdpMfaBehavior gets the federatedIdpMfaBehavior property value. Determines whether Microsoft Entra ID accepts the MFA performed by the federated IdP when a federated user accesses an application that is governed by a conditional access policy that requires MFA. The possible values are: acceptIfMfaDoneByFederatedIdp, enforceMfaByFederatedIdp, rejectMfaByFederatedIdp, unknownFutureValue. For more information, see federatedIdpMfaBehavior values.
-func (m *InternalDomainFederation) GetFederatedIdpMfaBehavior()(*FederatedIdpMfaBehavior) {
+func (m *InternalDomainFederation) GetFederatedIdpMfaBehavior()(*InternalDomainFederation_federatedIdpMfaBehavior) {
     val, err := m.GetBackingStore().Get("federatedIdpMfaBehavior")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*FederatedIdpMfaBehavior)
+        return val.(*InternalDomainFederation_federatedIdpMfaBehavior)
     }
     return nil
 }
@@ -57,12 +57,12 @@ func (m *InternalDomainFederation) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     res["federatedIdpMfaBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseFederatedIdpMfaBehavior)
+        val, err := n.GetEnumValue(ParseInternalDomainFederation_federatedIdpMfaBehavior)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFederatedIdpMfaBehavior(val.(*FederatedIdpMfaBehavior))
+            m.SetFederatedIdpMfaBehavior(val.(*InternalDomainFederation_federatedIdpMfaBehavior))
         }
         return nil
     }
@@ -87,12 +87,12 @@ func (m *InternalDomainFederation) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     res["promptLoginBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePromptLoginBehavior)
+        val, err := n.GetEnumValue(ParseInternalDomainFederation_promptLoginBehavior)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPromptLoginBehavior(val.(*PromptLoginBehavior))
+            m.SetPromptLoginBehavior(val.(*InternalDomainFederation_promptLoginBehavior))
         }
         return nil
     }
@@ -141,13 +141,13 @@ func (m *InternalDomainFederation) GetNextSigningCertificate()(*string) {
     return nil
 }
 // GetPromptLoginBehavior gets the promptLoginBehavior property value. Sets the preferred behavior for the sign-in prompt. The possible values are: translateToFreshPasswordAuthentication, nativeSupport, disabled, unknownFutureValue.
-func (m *InternalDomainFederation) GetPromptLoginBehavior()(*PromptLoginBehavior) {
+func (m *InternalDomainFederation) GetPromptLoginBehavior()(*InternalDomainFederation_promptLoginBehavior) {
     val, err := m.GetBackingStore().Get("promptLoginBehavior")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PromptLoginBehavior)
+        return val.(*InternalDomainFederation_promptLoginBehavior)
     }
     return nil
 }
@@ -233,7 +233,7 @@ func (m *InternalDomainFederation) SetActiveSignInUri(value *string)() {
     }
 }
 // SetFederatedIdpMfaBehavior sets the federatedIdpMfaBehavior property value. Determines whether Microsoft Entra ID accepts the MFA performed by the federated IdP when a federated user accesses an application that is governed by a conditional access policy that requires MFA. The possible values are: acceptIfMfaDoneByFederatedIdp, enforceMfaByFederatedIdp, rejectMfaByFederatedIdp, unknownFutureValue. For more information, see federatedIdpMfaBehavior values.
-func (m *InternalDomainFederation) SetFederatedIdpMfaBehavior(value *FederatedIdpMfaBehavior)() {
+func (m *InternalDomainFederation) SetFederatedIdpMfaBehavior(value *InternalDomainFederation_federatedIdpMfaBehavior)() {
     err := m.GetBackingStore().Set("federatedIdpMfaBehavior", value)
     if err != nil {
         panic(err)
@@ -254,7 +254,7 @@ func (m *InternalDomainFederation) SetNextSigningCertificate(value *string)() {
     }
 }
 // SetPromptLoginBehavior sets the promptLoginBehavior property value. Sets the preferred behavior for the sign-in prompt. The possible values are: translateToFreshPasswordAuthentication, nativeSupport, disabled, unknownFutureValue.
-func (m *InternalDomainFederation) SetPromptLoginBehavior(value *PromptLoginBehavior)() {
+func (m *InternalDomainFederation) SetPromptLoginBehavior(value *InternalDomainFederation_promptLoginBehavior)() {
     err := m.GetBackingStore().Set("promptLoginBehavior", value)
     if err != nil {
         panic(err)
@@ -279,17 +279,17 @@ type InternalDomainFederationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     SamlOrWsFedProviderable
     GetActiveSignInUri()(*string)
-    GetFederatedIdpMfaBehavior()(*FederatedIdpMfaBehavior)
+    GetFederatedIdpMfaBehavior()(*InternalDomainFederation_federatedIdpMfaBehavior)
     GetIsSignedAuthenticationRequestRequired()(*bool)
     GetNextSigningCertificate()(*string)
-    GetPromptLoginBehavior()(*PromptLoginBehavior)
+    GetPromptLoginBehavior()(*InternalDomainFederation_promptLoginBehavior)
     GetSigningCertificateUpdateStatus()(SigningCertificateUpdateStatusable)
     GetSignOutUri()(*string)
     SetActiveSignInUri(value *string)()
-    SetFederatedIdpMfaBehavior(value *FederatedIdpMfaBehavior)()
+    SetFederatedIdpMfaBehavior(value *InternalDomainFederation_federatedIdpMfaBehavior)()
     SetIsSignedAuthenticationRequestRequired(value *bool)()
     SetNextSigningCertificate(value *string)()
-    SetPromptLoginBehavior(value *PromptLoginBehavior)()
+    SetPromptLoginBehavior(value *InternalDomainFederation_promptLoginBehavior)()
     SetSigningCertificateUpdateStatus(value SigningCertificateUpdateStatusable)()
     SetSignOutUri(value *string)()
 }

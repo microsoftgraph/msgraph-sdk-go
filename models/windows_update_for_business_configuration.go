@@ -565,12 +565,12 @@ func (m *WindowsUpdateForBusinessConfiguration) GetFieldDeserializers()(map[stri
         return nil
     }
     res["updateWeeks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWindowsUpdateForBusinessUpdateWeeks)
+        val, err := n.GetEnumValue(ParseWindowsUpdateForBusinessConfiguration_updateWeeks)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUpdateWeeks(val.(*WindowsUpdateForBusinessUpdateWeeks))
+            m.SetUpdateWeeks(val.(*WindowsUpdateForBusinessConfiguration_updateWeeks))
         }
         return nil
     }
@@ -751,13 +751,13 @@ func (m *WindowsUpdateForBusinessConfiguration) GetUpdateNotificationLevel()(*Wi
     return nil
 }
 // GetUpdateWeeks gets the updateWeeks property value. Schedule the update installation on the weeks of the month. Possible values are: UserDefined, FirstWeek, SecondWeek, ThirdWeek, FourthWeek, EveryWeek. Returned by default. Query parameters are not supported. Possible values are: userDefined, firstWeek, secondWeek, thirdWeek, fourthWeek, everyWeek, unknownFutureValue.
-func (m *WindowsUpdateForBusinessConfiguration) GetUpdateWeeks()(*WindowsUpdateForBusinessUpdateWeeks) {
+func (m *WindowsUpdateForBusinessConfiguration) GetUpdateWeeks()(*WindowsUpdateForBusinessConfiguration_updateWeeks) {
     val, err := m.GetBackingStore().Get("updateWeeks")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*WindowsUpdateForBusinessUpdateWeeks)
+        return val.(*WindowsUpdateForBusinessConfiguration_updateWeeks)
     }
     return nil
 }
@@ -1236,7 +1236,7 @@ func (m *WindowsUpdateForBusinessConfiguration) SetUpdateNotificationLevel(value
     }
 }
 // SetUpdateWeeks sets the updateWeeks property value. Schedule the update installation on the weeks of the month. Possible values are: UserDefined, FirstWeek, SecondWeek, ThirdWeek, FourthWeek, EveryWeek. Returned by default. Query parameters are not supported. Possible values are: userDefined, firstWeek, secondWeek, thirdWeek, fourthWeek, everyWeek, unknownFutureValue.
-func (m *WindowsUpdateForBusinessConfiguration) SetUpdateWeeks(value *WindowsUpdateForBusinessUpdateWeeks)() {
+func (m *WindowsUpdateForBusinessConfiguration) SetUpdateWeeks(value *WindowsUpdateForBusinessConfiguration_updateWeeks)() {
     err := m.GetBackingStore().Set("updateWeeks", value)
     if err != nil {
         panic(err)
@@ -1293,7 +1293,7 @@ type WindowsUpdateForBusinessConfigurationable interface {
     GetScheduleRestartWarningInHours()(*int32)
     GetSkipChecksBeforeRestart()(*bool)
     GetUpdateNotificationLevel()(*WindowsUpdateNotificationDisplayOption)
-    GetUpdateWeeks()(*WindowsUpdateForBusinessUpdateWeeks)
+    GetUpdateWeeks()(*WindowsUpdateForBusinessConfiguration_updateWeeks)
     GetUserPauseAccess()(*Enablement)
     GetUserWindowsUpdateScanAccess()(*Enablement)
     SetAllowWindows11Upgrade(value *bool)()
@@ -1329,7 +1329,7 @@ type WindowsUpdateForBusinessConfigurationable interface {
     SetScheduleRestartWarningInHours(value *int32)()
     SetSkipChecksBeforeRestart(value *bool)()
     SetUpdateNotificationLevel(value *WindowsUpdateNotificationDisplayOption)()
-    SetUpdateWeeks(value *WindowsUpdateForBusinessUpdateWeeks)()
+    SetUpdateWeeks(value *WindowsUpdateForBusinessConfiguration_updateWeeks)()
     SetUserPauseAccess(value *Enablement)()
     SetUserWindowsUpdateScanAccess(value *Enablement)()
 }

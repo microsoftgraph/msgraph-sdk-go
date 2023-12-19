@@ -93,12 +93,12 @@ func (m *ScoredEmailAddress) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["selectionLikelihood"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSelectionLikelihoodInfo)
+        val, err := n.GetEnumValue(ParseScoredEmailAddress_selectionLikelihood)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSelectionLikelihood(val.(*SelectionLikelihoodInfo))
+            m.SetSelectionLikelihood(val.(*ScoredEmailAddress_selectionLikelihood))
         }
         return nil
     }
@@ -138,13 +138,13 @@ func (m *ScoredEmailAddress) GetRelevanceScore()(*float64) {
     return nil
 }
 // GetSelectionLikelihood gets the selectionLikelihood property value. The selectionLikelihood property
-func (m *ScoredEmailAddress) GetSelectionLikelihood()(*SelectionLikelihoodInfo) {
+func (m *ScoredEmailAddress) GetSelectionLikelihood()(*ScoredEmailAddress_selectionLikelihood) {
     val, err := m.GetBackingStore().Get("selectionLikelihood")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SelectionLikelihoodInfo)
+        return val.(*ScoredEmailAddress_selectionLikelihood)
     }
     return nil
 }
@@ -229,7 +229,7 @@ func (m *ScoredEmailAddress) SetRelevanceScore(value *float64)() {
     }
 }
 // SetSelectionLikelihood sets the selectionLikelihood property value. The selectionLikelihood property
-func (m *ScoredEmailAddress) SetSelectionLikelihood(value *SelectionLikelihoodInfo)() {
+func (m *ScoredEmailAddress) SetSelectionLikelihood(value *ScoredEmailAddress_selectionLikelihood)() {
     err := m.GetBackingStore().Set("selectionLikelihood", value)
     if err != nil {
         panic(err)
@@ -245,11 +245,11 @@ type ScoredEmailAddressable interface {
     GetItemId()(*string)
     GetOdataType()(*string)
     GetRelevanceScore()(*float64)
-    GetSelectionLikelihood()(*SelectionLikelihoodInfo)
+    GetSelectionLikelihood()(*ScoredEmailAddress_selectionLikelihood)
     SetAddress(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetItemId(value *string)()
     SetOdataType(value *string)()
     SetRelevanceScore(value *float64)()
-    SetSelectionLikelihood(value *SelectionLikelihoodInfo)()
+    SetSelectionLikelihood(value *ScoredEmailAddress_selectionLikelihood)()
 }

@@ -63,12 +63,12 @@ func (m *TargetResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["groupType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseGroupType)
+        val, err := n.GetEnumValue(ParseTargetResource_groupType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetGroupType(val.(*GroupType))
+            m.SetGroupType(val.(*TargetResource_groupType))
         }
         return nil
     }
@@ -131,13 +131,13 @@ func (m *TargetResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetGroupType gets the groupType property value. When type is set to Group, this indicates the group type. Possible values are: unifiedGroups, azureAD, and unknownFutureValue
-func (m *TargetResource) GetGroupType()(*GroupType) {
+func (m *TargetResource) GetGroupType()(*TargetResource_groupType) {
     val, err := m.GetBackingStore().Get("groupType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*GroupType)
+        return val.(*TargetResource_groupType)
     }
     return nil
 }
@@ -274,7 +274,7 @@ func (m *TargetResource) SetDisplayName(value *string)() {
     }
 }
 // SetGroupType sets the groupType property value. When type is set to Group, this indicates the group type. Possible values are: unifiedGroups, azureAD, and unknownFutureValue
-func (m *TargetResource) SetGroupType(value *GroupType)() {
+func (m *TargetResource) SetGroupType(value *TargetResource_groupType)() {
     err := m.GetBackingStore().Set("groupType", value)
     if err != nil {
         panic(err)
@@ -322,7 +322,7 @@ type TargetResourceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDisplayName()(*string)
-    GetGroupType()(*GroupType)
+    GetGroupType()(*TargetResource_groupType)
     GetId()(*string)
     GetModifiedProperties()([]ModifiedPropertyable)
     GetOdataType()(*string)
@@ -330,7 +330,7 @@ type TargetResourceable interface {
     GetUserPrincipalName()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDisplayName(value *string)()
-    SetGroupType(value *GroupType)()
+    SetGroupType(value *TargetResource_groupType)()
     SetId(value *string)()
     SetModifiedProperties(value []ModifiedPropertyable)()
     SetOdataType(value *string)()

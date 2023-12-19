@@ -50,13 +50,13 @@ func (m *ParticipantInfo) GetCountryCode()(*string) {
     return nil
 }
 // GetEndpointType gets the endpointType property value. The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.
-func (m *ParticipantInfo) GetEndpointType()(*EndpointType) {
+func (m *ParticipantInfo) GetEndpointType()(*ParticipantInfo_endpointType) {
     val, err := m.GetBackingStore().Get("endpointType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EndpointType)
+        return val.(*ParticipantInfo_endpointType)
     }
     return nil
 }
@@ -74,12 +74,12 @@ func (m *ParticipantInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["endpointType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEndpointType)
+        val, err := n.GetEnumValue(ParseParticipantInfo_endpointType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEndpointType(val.(*EndpointType))
+            m.SetEndpointType(val.(*ParticipantInfo_endpointType))
         }
         return nil
     }
@@ -262,7 +262,7 @@ func (m *ParticipantInfo) SetCountryCode(value *string)() {
     }
 }
 // SetEndpointType sets the endpointType property value. The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.
-func (m *ParticipantInfo) SetEndpointType(value *EndpointType)() {
+func (m *ParticipantInfo) SetEndpointType(value *ParticipantInfo_endpointType)() {
     err := m.GetBackingStore().Set("endpointType", value)
     if err != nil {
         panic(err)
@@ -310,7 +310,7 @@ type ParticipantInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCountryCode()(*string)
-    GetEndpointType()(*EndpointType)
+    GetEndpointType()(*ParticipantInfo_endpointType)
     GetIdentity()(IdentitySetable)
     GetLanguageId()(*string)
     GetOdataType()(*string)
@@ -318,7 +318,7 @@ type ParticipantInfoable interface {
     GetRegion()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCountryCode(value *string)()
-    SetEndpointType(value *EndpointType)()
+    SetEndpointType(value *ParticipantInfo_endpointType)()
     SetIdentity(value IdentitySetable)()
     SetLanguageId(value *string)()
     SetOdataType(value *string)()

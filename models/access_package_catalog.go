@@ -32,13 +32,13 @@ func (m *AccessPackageCatalog) GetAccessPackages()([]AccessPackageable) {
     return nil
 }
 // GetCatalogType gets the catalogType property value. Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
-func (m *AccessPackageCatalog) GetCatalogType()(*AccessPackageCatalogType) {
+func (m *AccessPackageCatalog) GetCatalogType()(*AccessPackageCatalog_catalogType) {
     val, err := m.GetBackingStore().Get("catalogType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AccessPackageCatalogType)
+        return val.(*AccessPackageCatalog_catalogType)
     }
     return nil
 }
@@ -106,12 +106,12 @@ func (m *AccessPackageCatalog) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["catalogType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAccessPackageCatalogType)
+        val, err := n.GetEnumValue(ParseAccessPackageCatalog_catalogType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCatalogType(val.(*AccessPackageCatalogType))
+            m.SetCatalogType(val.(*AccessPackageCatalog_catalogType))
         }
         return nil
     }
@@ -230,12 +230,12 @@ func (m *AccessPackageCatalog) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAccessPackageCatalogState)
+        val, err := n.GetEnumValue(ParseAccessPackageCatalog_state)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetState(val.(*AccessPackageCatalogState))
+            m.SetState(val.(*AccessPackageCatalog_state))
         }
         return nil
     }
@@ -297,13 +297,13 @@ func (m *AccessPackageCatalog) GetResourceScopes()([]AccessPackageResourceScopea
     return nil
 }
 // GetState gets the state property value. Has the value published if the access packages are available for management. The possible values are: unpublished, published, unknownFutureValue.
-func (m *AccessPackageCatalog) GetState()(*AccessPackageCatalogState) {
+func (m *AccessPackageCatalog) GetState()(*AccessPackageCatalog_state) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AccessPackageCatalogState)
+        return val.(*AccessPackageCatalog_state)
     }
     return nil
 }
@@ -427,7 +427,7 @@ func (m *AccessPackageCatalog) SetAccessPackages(value []AccessPackageable)() {
     }
 }
 // SetCatalogType sets the catalogType property value. Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
-func (m *AccessPackageCatalog) SetCatalogType(value *AccessPackageCatalogType)() {
+func (m *AccessPackageCatalog) SetCatalogType(value *AccessPackageCatalog_catalogType)() {
     err := m.GetBackingStore().Set("catalogType", value)
     if err != nil {
         panic(err)
@@ -497,7 +497,7 @@ func (m *AccessPackageCatalog) SetResourceScopes(value []AccessPackageResourceSc
     }
 }
 // SetState sets the state property value. Has the value published if the access packages are available for management. The possible values are: unpublished, published, unknownFutureValue.
-func (m *AccessPackageCatalog) SetState(value *AccessPackageCatalogState)() {
+func (m *AccessPackageCatalog) SetState(value *AccessPackageCatalog_state)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {
         panic(err)
@@ -508,7 +508,7 @@ type AccessPackageCatalogable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAccessPackages()([]AccessPackageable)
-    GetCatalogType()(*AccessPackageCatalogType)
+    GetCatalogType()(*AccessPackageCatalog_catalogType)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCustomWorkflowExtensions()([]CustomCalloutExtensionable)
     GetDescription()(*string)
@@ -518,9 +518,9 @@ type AccessPackageCatalogable interface {
     GetResourceRoles()([]AccessPackageResourceRoleable)
     GetResources()([]AccessPackageResourceable)
     GetResourceScopes()([]AccessPackageResourceScopeable)
-    GetState()(*AccessPackageCatalogState)
+    GetState()(*AccessPackageCatalog_state)
     SetAccessPackages(value []AccessPackageable)()
-    SetCatalogType(value *AccessPackageCatalogType)()
+    SetCatalogType(value *AccessPackageCatalog_catalogType)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCustomWorkflowExtensions(value []CustomCalloutExtensionable)()
     SetDescription(value *string)()
@@ -530,5 +530,5 @@ type AccessPackageCatalogable interface {
     SetResourceRoles(value []AccessPackageResourceRoleable)()
     SetResources(value []AccessPackageResourceable)()
     SetResourceScopes(value []AccessPackageResourceScopeable)()
-    SetState(value *AccessPackageCatalogState)()
+    SetState(value *AccessPackageCatalog_state)()
 }

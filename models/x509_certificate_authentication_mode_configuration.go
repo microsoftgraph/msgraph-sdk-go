@@ -68,12 +68,12 @@ func (m *X509CertificateAuthenticationModeConfiguration) GetFieldDeserializers()
         return nil
     }
     res["x509CertificateAuthenticationDefaultMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseX509CertificateAuthenticationMode)
+        val, err := n.GetEnumValue(ParseX509CertificateAuthenticationModeConfiguration_x509CertificateAuthenticationDefaultMode)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetX509CertificateAuthenticationDefaultMode(val.(*X509CertificateAuthenticationMode))
+            m.SetX509CertificateAuthenticationDefaultMode(val.(*X509CertificateAuthenticationModeConfiguration_x509CertificateAuthenticationDefaultMode))
         }
         return nil
     }
@@ -102,13 +102,13 @@ func (m *X509CertificateAuthenticationModeConfiguration) GetRules()([]X509Certif
     return nil
 }
 // GetX509CertificateAuthenticationDefaultMode gets the x509CertificateAuthenticationDefaultMode property value. The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue.
-func (m *X509CertificateAuthenticationModeConfiguration) GetX509CertificateAuthenticationDefaultMode()(*X509CertificateAuthenticationMode) {
+func (m *X509CertificateAuthenticationModeConfiguration) GetX509CertificateAuthenticationDefaultMode()(*X509CertificateAuthenticationModeConfiguration_x509CertificateAuthenticationDefaultMode) {
     val, err := m.GetBackingStore().Get("x509CertificateAuthenticationDefaultMode")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*X509CertificateAuthenticationMode)
+        return val.(*X509CertificateAuthenticationModeConfiguration_x509CertificateAuthenticationDefaultMode)
     }
     return nil
 }
@@ -173,7 +173,7 @@ func (m *X509CertificateAuthenticationModeConfiguration) SetRules(value []X509Ce
     }
 }
 // SetX509CertificateAuthenticationDefaultMode sets the x509CertificateAuthenticationDefaultMode property value. The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue.
-func (m *X509CertificateAuthenticationModeConfiguration) SetX509CertificateAuthenticationDefaultMode(value *X509CertificateAuthenticationMode)() {
+func (m *X509CertificateAuthenticationModeConfiguration) SetX509CertificateAuthenticationDefaultMode(value *X509CertificateAuthenticationModeConfiguration_x509CertificateAuthenticationDefaultMode)() {
     err := m.GetBackingStore().Set("x509CertificateAuthenticationDefaultMode", value)
     if err != nil {
         panic(err)
@@ -187,9 +187,9 @@ type X509CertificateAuthenticationModeConfigurationable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetRules()([]X509CertificateRuleable)
-    GetX509CertificateAuthenticationDefaultMode()(*X509CertificateAuthenticationMode)
+    GetX509CertificateAuthenticationDefaultMode()(*X509CertificateAuthenticationModeConfiguration_x509CertificateAuthenticationDefaultMode)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetRules(value []X509CertificateRuleable)()
-    SetX509CertificateAuthenticationDefaultMode(value *X509CertificateAuthenticationMode)()
+    SetX509CertificateAuthenticationDefaultMode(value *X509CertificateAuthenticationModeConfiguration_x509CertificateAuthenticationDefaultMode)()
 }

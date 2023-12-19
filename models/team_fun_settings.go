@@ -105,12 +105,12 @@ func (m *TeamFunSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["giphyContentRating"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseGiphyRatingType)
+        val, err := n.GetEnumValue(ParseTeamFunSettings_giphyContentRating)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetGiphyContentRating(val.(*GiphyRatingType))
+            m.SetGiphyContentRating(val.(*TeamFunSettings_giphyContentRating))
         }
         return nil
     }
@@ -127,13 +127,13 @@ func (m *TeamFunSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetGiphyContentRating gets the giphyContentRating property value. Giphy content rating. Possible values are: moderate, strict.
-func (m *TeamFunSettings) GetGiphyContentRating()(*GiphyRatingType) {
+func (m *TeamFunSettings) GetGiphyContentRating()(*TeamFunSettings_giphyContentRating) {
     val, err := m.GetBackingStore().Get("giphyContentRating")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*GiphyRatingType)
+        return val.(*TeamFunSettings_giphyContentRating)
     }
     return nil
 }
@@ -222,7 +222,7 @@ func (m *TeamFunSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d
     m.backingStore = value
 }
 // SetGiphyContentRating sets the giphyContentRating property value. Giphy content rating. Possible values are: moderate, strict.
-func (m *TeamFunSettings) SetGiphyContentRating(value *GiphyRatingType)() {
+func (m *TeamFunSettings) SetGiphyContentRating(value *TeamFunSettings_giphyContentRating)() {
     err := m.GetBackingStore().Set("giphyContentRating", value)
     if err != nil {
         panic(err)
@@ -244,12 +244,12 @@ type TeamFunSettingsable interface {
     GetAllowGiphy()(*bool)
     GetAllowStickersAndMemes()(*bool)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetGiphyContentRating()(*GiphyRatingType)
+    GetGiphyContentRating()(*TeamFunSettings_giphyContentRating)
     GetOdataType()(*string)
     SetAllowCustomMemes(value *bool)()
     SetAllowGiphy(value *bool)()
     SetAllowStickersAndMemes(value *bool)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetGiphyContentRating(value *GiphyRatingType)()
+    SetGiphyContentRating(value *TeamFunSettings_giphyContentRating)()
     SetOdataType(value *string)()
 }

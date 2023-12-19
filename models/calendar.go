@@ -20,13 +20,13 @@ func CreateCalendarFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
     return NewCalendar(), nil
 }
 // GetAllowedOnlineMeetingProviders gets the allowedOnlineMeetingProviders property value. Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
-func (m *Calendar) GetAllowedOnlineMeetingProviders()([]OnlineMeetingProviderType) {
+func (m *Calendar) GetAllowedOnlineMeetingProviders()([]Calendar_allowedOnlineMeetingProviders) {
     val, err := m.GetBackingStore().Get("allowedOnlineMeetingProviders")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]OnlineMeetingProviderType)
+        return val.([]Calendar_allowedOnlineMeetingProviders)
     }
     return nil
 }
@@ -97,24 +97,24 @@ func (m *Calendar) GetChangeKey()(*string) {
     return nil
 }
 // GetColor gets the color property value. Specifies the color theme to distinguish the calendar from other calendars in a UI. The property values are: auto, lightBlue, lightGreen, lightOrange, lightGray, lightYellow, lightTeal, lightPink, lightBrown, lightRed, maxColor.
-func (m *Calendar) GetColor()(*CalendarColor) {
+func (m *Calendar) GetColor()(*Calendar_color) {
     val, err := m.GetBackingStore().Get("color")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CalendarColor)
+        return val.(*Calendar_color)
     }
     return nil
 }
 // GetDefaultOnlineMeetingProvider gets the defaultOnlineMeetingProvider property value. The default online meeting provider for meetings sent from this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
-func (m *Calendar) GetDefaultOnlineMeetingProvider()(*OnlineMeetingProviderType) {
+func (m *Calendar) GetDefaultOnlineMeetingProvider()(*Calendar_defaultOnlineMeetingProvider) {
     val, err := m.GetBackingStore().Get("defaultOnlineMeetingProvider")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*OnlineMeetingProviderType)
+        return val.(*Calendar_defaultOnlineMeetingProvider)
     }
     return nil
 }
@@ -133,15 +133,15 @@ func (m *Calendar) GetEvents()([]Eventable) {
 func (m *Calendar) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["allowedOnlineMeetingProviders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseOnlineMeetingProviderType)
+        val, err := n.GetCollectionOfEnumValues(ParseCalendar_allowedOnlineMeetingProviders)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]OnlineMeetingProviderType, len(val))
+            res := make([]Calendar_allowedOnlineMeetingProviders, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*OnlineMeetingProviderType))
+                    res[i] = *(v.(*Calendar_allowedOnlineMeetingProviders))
                 }
             }
             m.SetAllowedOnlineMeetingProviders(res)
@@ -221,22 +221,22 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["color"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCalendarColor)
+        val, err := n.GetEnumValue(ParseCalendar_color)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetColor(val.(*CalendarColor))
+            m.SetColor(val.(*Calendar_color))
         }
         return nil
     }
     res["defaultOnlineMeetingProvider"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOnlineMeetingProviderType)
+        val, err := n.GetEnumValue(ParseCalendar_defaultOnlineMeetingProvider)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefaultOnlineMeetingProvider(val.(*OnlineMeetingProviderType))
+            m.SetDefaultOnlineMeetingProvider(val.(*Calendar_defaultOnlineMeetingProvider))
         }
         return nil
     }
@@ -445,7 +445,7 @@ func (m *Calendar) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         return err
     }
     if m.GetAllowedOnlineMeetingProviders() != nil {
-        err = writer.WriteCollectionOfStringValues("allowedOnlineMeetingProviders", SerializeOnlineMeetingProviderType(m.GetAllowedOnlineMeetingProviders()))
+        err = writer.WriteCollectionOfStringValues("allowedOnlineMeetingProviders", SerializeCalendar_allowedOnlineMeetingProviders(m.GetAllowedOnlineMeetingProviders()))
         if err != nil {
             return err
         }
@@ -587,7 +587,7 @@ func (m *Calendar) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     return nil
 }
 // SetAllowedOnlineMeetingProviders sets the allowedOnlineMeetingProviders property value. Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
-func (m *Calendar) SetAllowedOnlineMeetingProviders(value []OnlineMeetingProviderType)() {
+func (m *Calendar) SetAllowedOnlineMeetingProviders(value []Calendar_allowedOnlineMeetingProviders)() {
     err := m.GetBackingStore().Set("allowedOnlineMeetingProviders", value)
     if err != nil {
         panic(err)
@@ -636,14 +636,14 @@ func (m *Calendar) SetChangeKey(value *string)() {
     }
 }
 // SetColor sets the color property value. Specifies the color theme to distinguish the calendar from other calendars in a UI. The property values are: auto, lightBlue, lightGreen, lightOrange, lightGray, lightYellow, lightTeal, lightPink, lightBrown, lightRed, maxColor.
-func (m *Calendar) SetColor(value *CalendarColor)() {
+func (m *Calendar) SetColor(value *Calendar_color)() {
     err := m.GetBackingStore().Set("color", value)
     if err != nil {
         panic(err)
     }
 }
 // SetDefaultOnlineMeetingProvider sets the defaultOnlineMeetingProvider property value. The default online meeting provider for meetings sent from this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
-func (m *Calendar) SetDefaultOnlineMeetingProvider(value *OnlineMeetingProviderType)() {
+func (m *Calendar) SetDefaultOnlineMeetingProvider(value *Calendar_defaultOnlineMeetingProvider)() {
     err := m.GetBackingStore().Set("defaultOnlineMeetingProvider", value)
     if err != nil {
         panic(err)
@@ -716,15 +716,15 @@ func (m *Calendar) SetSingleValueExtendedProperties(value []SingleValueLegacyExt
 type Calendarable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAllowedOnlineMeetingProviders()([]OnlineMeetingProviderType)
+    GetAllowedOnlineMeetingProviders()([]Calendar_allowedOnlineMeetingProviders)
     GetCalendarPermissions()([]CalendarPermissionable)
     GetCalendarView()([]Eventable)
     GetCanEdit()(*bool)
     GetCanShare()(*bool)
     GetCanViewPrivateItems()(*bool)
     GetChangeKey()(*string)
-    GetColor()(*CalendarColor)
-    GetDefaultOnlineMeetingProvider()(*OnlineMeetingProviderType)
+    GetColor()(*Calendar_color)
+    GetDefaultOnlineMeetingProvider()(*Calendar_defaultOnlineMeetingProvider)
     GetEvents()([]Eventable)
     GetHexColor()(*string)
     GetIsDefaultCalendar()(*bool)
@@ -734,15 +734,15 @@ type Calendarable interface {
     GetName()(*string)
     GetOwner()(EmailAddressable)
     GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable)
-    SetAllowedOnlineMeetingProviders(value []OnlineMeetingProviderType)()
+    SetAllowedOnlineMeetingProviders(value []Calendar_allowedOnlineMeetingProviders)()
     SetCalendarPermissions(value []CalendarPermissionable)()
     SetCalendarView(value []Eventable)()
     SetCanEdit(value *bool)()
     SetCanShare(value *bool)()
     SetCanViewPrivateItems(value *bool)()
     SetChangeKey(value *string)()
-    SetColor(value *CalendarColor)()
-    SetDefaultOnlineMeetingProvider(value *OnlineMeetingProviderType)()
+    SetColor(value *Calendar_color)()
+    SetDefaultOnlineMeetingProvider(value *Calendar_defaultOnlineMeetingProvider)()
     SetEvents(value []Eventable)()
     SetHexColor(value *string)()
     SetIsDefaultCalendar(value *bool)()

@@ -139,12 +139,12 @@ func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["publishingState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTeamsAppPublishingState)
+        val, err := n.GetEnumValue(ParseTeamsAppDefinition_publishingState)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPublishingState(val.(*TeamsAppPublishingState))
+            m.SetPublishingState(val.(*TeamsAppDefinition_publishingState))
         }
         return nil
     }
@@ -192,13 +192,13 @@ func (m *TeamsAppDefinition) GetLastModifiedDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetPublishingState gets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published—The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected—The admin rejected the request to publish the specific version of the Teams app.
-func (m *TeamsAppDefinition) GetPublishingState()(*TeamsAppPublishingState) {
+func (m *TeamsAppDefinition) GetPublishingState()(*TeamsAppDefinition_publishingState) {
     val, err := m.GetBackingStore().Get("publishingState")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TeamsAppPublishingState)
+        return val.(*TeamsAppDefinition_publishingState)
     }
     return nil
 }
@@ -347,7 +347,7 @@ func (m *TeamsAppDefinition) SetLastModifiedDateTime(value *i336074805fc853987ab
     }
 }
 // SetPublishingState sets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published—The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected—The admin rejected the request to publish the specific version of the Teams app.
-func (m *TeamsAppDefinition) SetPublishingState(value *TeamsAppPublishingState)() {
+func (m *TeamsAppDefinition) SetPublishingState(value *TeamsAppDefinition_publishingState)() {
     err := m.GetBackingStore().Set("publishingState", value)
     if err != nil {
         panic(err)
@@ -384,7 +384,7 @@ type TeamsAppDefinitionable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetPublishingState()(*TeamsAppPublishingState)
+    GetPublishingState()(*TeamsAppDefinition_publishingState)
     GetShortDescription()(*string)
     GetTeamsAppId()(*string)
     GetVersion()(*string)
@@ -394,7 +394,7 @@ type TeamsAppDefinitionable interface {
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetPublishingState(value *TeamsAppPublishingState)()
+    SetPublishingState(value *TeamsAppDefinition_publishingState)()
     SetShortDescription(value *string)()
     SetTeamsAppId(value *string)()
     SetVersion(value *string)()

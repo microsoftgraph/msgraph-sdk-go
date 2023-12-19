@@ -62,12 +62,12 @@ func (m *EndUserNotificationSetting) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827
 func (m *EndUserNotificationSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["notificationPreference"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEndUserNotificationPreference)
+        val, err := n.GetEnumValue(ParseEndUserNotificationSetting_notificationPreference)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetNotificationPreference(val.(*EndUserNotificationPreference))
+            m.SetNotificationPreference(val.(*EndUserNotificationSetting_notificationPreference))
         }
         return nil
     }
@@ -92,25 +92,25 @@ func (m *EndUserNotificationSetting) GetFieldDeserializers()(map[string]func(i87
         return nil
     }
     res["settingType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEndUserNotificationSettingType)
+        val, err := n.GetEnumValue(ParseEndUserNotificationSetting_settingType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSettingType(val.(*EndUserNotificationSettingType))
+            m.SetSettingType(val.(*EndUserNotificationSetting_settingType))
         }
         return nil
     }
     return res
 }
 // GetNotificationPreference gets the notificationPreference property value. Notification preference. Possible values are: unknown, microsoft, custom, unknownFutureValue.
-func (m *EndUserNotificationSetting) GetNotificationPreference()(*EndUserNotificationPreference) {
+func (m *EndUserNotificationSetting) GetNotificationPreference()(*EndUserNotificationSetting_notificationPreference) {
     val, err := m.GetBackingStore().Get("notificationPreference")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EndUserNotificationPreference)
+        return val.(*EndUserNotificationSetting_notificationPreference)
     }
     return nil
 }
@@ -137,13 +137,13 @@ func (m *EndUserNotificationSetting) GetPositiveReinforcement()(PositiveReinforc
     return nil
 }
 // GetSettingType gets the settingType property value. End user notification type. Possible values are: unknown, noTraining, trainingSelected, noNotification, unknownFutureValue.
-func (m *EndUserNotificationSetting) GetSettingType()(*EndUserNotificationSettingType) {
+func (m *EndUserNotificationSetting) GetSettingType()(*EndUserNotificationSetting_settingType) {
     val, err := m.GetBackingStore().Get("settingType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EndUserNotificationSettingType)
+        return val.(*EndUserNotificationSetting_settingType)
     }
     return nil
 }
@@ -195,7 +195,7 @@ func (m *EndUserNotificationSetting) SetBackingStore(value ie8677ce2c7e1b4c22e9c
     m.backingStore = value
 }
 // SetNotificationPreference sets the notificationPreference property value. Notification preference. Possible values are: unknown, microsoft, custom, unknownFutureValue.
-func (m *EndUserNotificationSetting) SetNotificationPreference(value *EndUserNotificationPreference)() {
+func (m *EndUserNotificationSetting) SetNotificationPreference(value *EndUserNotificationSetting_notificationPreference)() {
     err := m.GetBackingStore().Set("notificationPreference", value)
     if err != nil {
         panic(err)
@@ -216,7 +216,7 @@ func (m *EndUserNotificationSetting) SetPositiveReinforcement(value PositiveRein
     }
 }
 // SetSettingType sets the settingType property value. End user notification type. Possible values are: unknown, noTraining, trainingSelected, noNotification, unknownFutureValue.
-func (m *EndUserNotificationSetting) SetSettingType(value *EndUserNotificationSettingType)() {
+func (m *EndUserNotificationSetting) SetSettingType(value *EndUserNotificationSetting_settingType)() {
     err := m.GetBackingStore().Set("settingType", value)
     if err != nil {
         panic(err)
@@ -228,13 +228,13 @@ type EndUserNotificationSettingable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetNotificationPreference()(*EndUserNotificationPreference)
+    GetNotificationPreference()(*EndUserNotificationSetting_notificationPreference)
     GetOdataType()(*string)
     GetPositiveReinforcement()(PositiveReinforcementNotificationable)
-    GetSettingType()(*EndUserNotificationSettingType)
+    GetSettingType()(*EndUserNotificationSetting_settingType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetNotificationPreference(value *EndUserNotificationPreference)()
+    SetNotificationPreference(value *EndUserNotificationSetting_notificationPreference)()
     SetOdataType(value *string)()
     SetPositiveReinforcement(value PositiveReinforcementNotificationable)()
-    SetSettingType(value *EndUserNotificationSettingType)()
+    SetSettingType(value *EndUserNotificationSetting_settingType)()
 }

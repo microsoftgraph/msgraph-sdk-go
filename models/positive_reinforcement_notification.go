@@ -22,13 +22,13 @@ func CreatePositiveReinforcementNotificationFromDiscriminatorValue(parseNode i87
     return NewPositiveReinforcementNotification(), nil
 }
 // GetDeliveryPreference gets the deliveryPreference property value. Delivery preference. Possible values are: unknown, deliverImmedietly, deliverAfterCampaignEnd, unknownFutureValue.
-func (m *PositiveReinforcementNotification) GetDeliveryPreference()(*NotificationDeliveryPreference) {
+func (m *PositiveReinforcementNotification) GetDeliveryPreference()(*PositiveReinforcementNotification_deliveryPreference) {
     val, err := m.GetBackingStore().Get("deliveryPreference")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*NotificationDeliveryPreference)
+        return val.(*PositiveReinforcementNotification_deliveryPreference)
     }
     return nil
 }
@@ -36,12 +36,12 @@ func (m *PositiveReinforcementNotification) GetDeliveryPreference()(*Notificatio
 func (m *PositiveReinforcementNotification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseEndUserNotification.GetFieldDeserializers()
     res["deliveryPreference"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseNotificationDeliveryPreference)
+        val, err := n.GetEnumValue(ParsePositiveReinforcementNotification_deliveryPreference)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeliveryPreference(val.(*NotificationDeliveryPreference))
+            m.SetDeliveryPreference(val.(*PositiveReinforcementNotification_deliveryPreference))
         }
         return nil
     }
@@ -63,7 +63,7 @@ func (m *PositiveReinforcementNotification) Serialize(writer i878a80d2330e89d268
     return nil
 }
 // SetDeliveryPreference sets the deliveryPreference property value. Delivery preference. Possible values are: unknown, deliverImmedietly, deliverAfterCampaignEnd, unknownFutureValue.
-func (m *PositiveReinforcementNotification) SetDeliveryPreference(value *NotificationDeliveryPreference)() {
+func (m *PositiveReinforcementNotification) SetDeliveryPreference(value *PositiveReinforcementNotification_deliveryPreference)() {
     err := m.GetBackingStore().Set("deliveryPreference", value)
     if err != nil {
         panic(err)
@@ -73,6 +73,6 @@ func (m *PositiveReinforcementNotification) SetDeliveryPreference(value *Notific
 type PositiveReinforcementNotificationable interface {
     BaseEndUserNotificationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetDeliveryPreference()(*NotificationDeliveryPreference)
-    SetDeliveryPreference(value *NotificationDeliveryPreference)()
+    GetDeliveryPreference()(*PositiveReinforcementNotification_deliveryPreference)
+    SetDeliveryPreference(value *PositiveReinforcementNotification_deliveryPreference)()
 }

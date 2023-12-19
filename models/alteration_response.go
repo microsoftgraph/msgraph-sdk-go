@@ -72,12 +72,12 @@ func (m *AlterationResponse) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["queryAlterationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSearchAlterationType)
+        val, err := n.GetEnumValue(ParseAlterationResponse_queryAlterationType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetQueryAlterationType(val.(*SearchAlterationType))
+            m.SetQueryAlterationType(val.(*AlterationResponse_queryAlterationType))
         }
         return nil
     }
@@ -117,13 +117,13 @@ func (m *AlterationResponse) GetQueryAlteration()(SearchAlterationable) {
     return nil
 }
 // GetQueryAlterationType gets the queryAlterationType property value. Defines the type of the spelling correction. Possible values are: suggestion, modification.
-func (m *AlterationResponse) GetQueryAlterationType()(*SearchAlterationType) {
+func (m *AlterationResponse) GetQueryAlterationType()(*AlterationResponse_queryAlterationType) {
     val, err := m.GetBackingStore().Get("queryAlterationType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SearchAlterationType)
+        return val.(*AlterationResponse_queryAlterationType)
     }
     return nil
 }
@@ -195,7 +195,7 @@ func (m *AlterationResponse) SetQueryAlteration(value SearchAlterationable)() {
     }
 }
 // SetQueryAlterationType sets the queryAlterationType property value. Defines the type of the spelling correction. Possible values are: suggestion, modification.
-func (m *AlterationResponse) SetQueryAlterationType(value *SearchAlterationType)() {
+func (m *AlterationResponse) SetQueryAlterationType(value *AlterationResponse_queryAlterationType)() {
     err := m.GetBackingStore().Set("queryAlterationType", value)
     if err != nil {
         panic(err)
@@ -210,10 +210,10 @@ type AlterationResponseable interface {
     GetOdataType()(*string)
     GetOriginalQueryString()(*string)
     GetQueryAlteration()(SearchAlterationable)
-    GetQueryAlterationType()(*SearchAlterationType)
+    GetQueryAlterationType()(*AlterationResponse_queryAlterationType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetOriginalQueryString(value *string)()
     SetQueryAlteration(value SearchAlterationable)()
-    SetQueryAlterationType(value *SearchAlterationType)()
+    SetQueryAlterationType(value *AlterationResponse_queryAlterationType)()
 }

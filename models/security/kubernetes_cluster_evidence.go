@@ -77,12 +77,12 @@ func (m *KubernetesClusterEvidence) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     res["platform"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseKubernetesPlatform)
+        val, err := n.GetEnumValue(ParseKubernetesClusterEvidence_platform)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPlatform(val.(*KubernetesPlatform))
+            m.SetPlatform(val.(*KubernetesClusterEvidence_platform))
         }
         return nil
     }
@@ -110,13 +110,13 @@ func (m *KubernetesClusterEvidence) GetName()(*string) {
     return nil
 }
 // GetPlatform gets the platform property value. The platform the cluster runs on. Possible values are: unknown, aks, eks, gke, arc, unknownFutureValue.
-func (m *KubernetesClusterEvidence) GetPlatform()(*KubernetesPlatform) {
+func (m *KubernetesClusterEvidence) GetPlatform()(*KubernetesClusterEvidence_platform) {
     val, err := m.GetBackingStore().Get("platform")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*KubernetesPlatform)
+        return val.(*KubernetesClusterEvidence_platform)
     }
     return nil
 }
@@ -192,7 +192,7 @@ func (m *KubernetesClusterEvidence) SetName(value *string)() {
     }
 }
 // SetPlatform sets the platform property value. The platform the cluster runs on. Possible values are: unknown, aks, eks, gke, arc, unknownFutureValue.
-func (m *KubernetesClusterEvidence) SetPlatform(value *KubernetesPlatform)() {
+func (m *KubernetesClusterEvidence) SetPlatform(value *KubernetesClusterEvidence_platform)() {
     err := m.GetBackingStore().Set("platform", value)
     if err != nil {
         panic(err)
@@ -212,11 +212,11 @@ type KubernetesClusterEvidenceable interface {
     GetCloudResource()(AlertEvidenceable)
     GetDistribution()(*string)
     GetName()(*string)
-    GetPlatform()(*KubernetesPlatform)
+    GetPlatform()(*KubernetesClusterEvidence_platform)
     GetVersion()(*string)
     SetCloudResource(value AlertEvidenceable)()
     SetDistribution(value *string)()
     SetName(value *string)()
-    SetPlatform(value *KubernetesPlatform)()
+    SetPlatform(value *KubernetesClusterEvidence_platform)()
     SetVersion(value *string)()
 }

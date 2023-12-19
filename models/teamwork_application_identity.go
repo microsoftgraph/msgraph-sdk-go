@@ -22,13 +22,13 @@ func CreateTeamworkApplicationIdentityFromDiscriminatorValue(parseNode i878a80d2
     return NewTeamworkApplicationIdentity(), nil
 }
 // GetApplicationIdentityType gets the applicationIdentityType property value. Type of application that is referenced. Possible values are: aadApplication, bot, tenantBot, office365Connector, outgoingWebhook, and unknownFutureValue.
-func (m *TeamworkApplicationIdentity) GetApplicationIdentityType()(*TeamworkApplicationIdentityType) {
+func (m *TeamworkApplicationIdentity) GetApplicationIdentityType()(*TeamworkApplicationIdentity_applicationIdentityType) {
     val, err := m.GetBackingStore().Get("applicationIdentityType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TeamworkApplicationIdentityType)
+        return val.(*TeamworkApplicationIdentity_applicationIdentityType)
     }
     return nil
 }
@@ -36,12 +36,12 @@ func (m *TeamworkApplicationIdentity) GetApplicationIdentityType()(*TeamworkAppl
 func (m *TeamworkApplicationIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Identity.GetFieldDeserializers()
     res["applicationIdentityType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTeamworkApplicationIdentityType)
+        val, err := n.GetEnumValue(ParseTeamworkApplicationIdentity_applicationIdentityType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetApplicationIdentityType(val.(*TeamworkApplicationIdentityType))
+            m.SetApplicationIdentityType(val.(*TeamworkApplicationIdentity_applicationIdentityType))
         }
         return nil
     }
@@ -63,7 +63,7 @@ func (m *TeamworkApplicationIdentity) Serialize(writer i878a80d2330e89d26896388a
     return nil
 }
 // SetApplicationIdentityType sets the applicationIdentityType property value. Type of application that is referenced. Possible values are: aadApplication, bot, tenantBot, office365Connector, outgoingWebhook, and unknownFutureValue.
-func (m *TeamworkApplicationIdentity) SetApplicationIdentityType(value *TeamworkApplicationIdentityType)() {
+func (m *TeamworkApplicationIdentity) SetApplicationIdentityType(value *TeamworkApplicationIdentity_applicationIdentityType)() {
     err := m.GetBackingStore().Set("applicationIdentityType", value)
     if err != nil {
         panic(err)
@@ -73,6 +73,6 @@ func (m *TeamworkApplicationIdentity) SetApplicationIdentityType(value *Teamwork
 type TeamworkApplicationIdentityable interface {
     Identityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetApplicationIdentityType()(*TeamworkApplicationIdentityType)
-    SetApplicationIdentityType(value *TeamworkApplicationIdentityType)()
+    GetApplicationIdentityType()(*TeamworkApplicationIdentity_applicationIdentityType)
+    SetApplicationIdentityType(value *TeamworkApplicationIdentity_applicationIdentityType)()
 }

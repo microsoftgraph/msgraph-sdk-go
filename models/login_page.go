@@ -159,22 +159,22 @@ func (m *LoginPage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         return nil
     }
     res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSimulationContentSource)
+        val, err := n.GetEnumValue(ParseLoginPage_source)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSource(val.(*SimulationContentSource))
+            m.SetSource(val.(*LoginPage_source))
         }
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSimulationContentStatus)
+        val, err := n.GetEnumValue(ParseLoginPage_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*SimulationContentStatus))
+            m.SetStatus(val.(*LoginPage_status))
         }
         return nil
     }
@@ -214,24 +214,24 @@ func (m *LoginPage) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetSource gets the source property value. The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
-func (m *LoginPage) GetSource()(*SimulationContentSource) {
+func (m *LoginPage) GetSource()(*LoginPage_source) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SimulationContentSource)
+        return val.(*LoginPage_source)
     }
     return nil
 }
 // GetStatus gets the status property value. The login page status. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
-func (m *LoginPage) GetStatus()(*SimulationContentStatus) {
+func (m *LoginPage) GetStatus()(*LoginPage_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SimulationContentStatus)
+        return val.(*LoginPage_status)
     }
     return nil
 }
@@ -362,14 +362,14 @@ func (m *LoginPage) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad
     }
 }
 // SetSource sets the source property value. The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
-func (m *LoginPage) SetSource(value *SimulationContentSource)() {
+func (m *LoginPage) SetSource(value *LoginPage_source)() {
     err := m.GetBackingStore().Set("source", value)
     if err != nil {
         panic(err)
     }
 }
 // SetStatus sets the status property value. The login page status. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
-func (m *LoginPage) SetStatus(value *SimulationContentStatus)() {
+func (m *LoginPage) SetStatus(value *LoginPage_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -387,8 +387,8 @@ type LoginPageable interface {
     GetLanguage()(*string)
     GetLastModifiedBy()(EmailIdentityable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetSource()(*SimulationContentSource)
-    GetStatus()(*SimulationContentStatus)
+    GetSource()(*LoginPage_source)
+    GetStatus()(*LoginPage_status)
     SetContent(value *string)()
     SetCreatedBy(value EmailIdentityable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -397,6 +397,6 @@ type LoginPageable interface {
     SetLanguage(value *string)()
     SetLastModifiedBy(value EmailIdentityable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetSource(value *SimulationContentSource)()
-    SetStatus(value *SimulationContentStatus)()
+    SetSource(value *LoginPage_source)()
+    SetStatus(value *LoginPage_status)()
 }

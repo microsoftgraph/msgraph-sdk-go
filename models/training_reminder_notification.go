@@ -22,13 +22,13 @@ func CreateTrainingReminderNotificationFromDiscriminatorValue(parseNode i878a80d
     return NewTrainingReminderNotification(), nil
 }
 // GetDeliveryFrequency gets the deliveryFrequency property value. Configurable frequency for the reminder email introduced during simulation creation. Possible values are: unknown, weekly, biWeekly, unknownFutureValue.
-func (m *TrainingReminderNotification) GetDeliveryFrequency()(*NotificationDeliveryFrequency) {
+func (m *TrainingReminderNotification) GetDeliveryFrequency()(*TrainingReminderNotification_deliveryFrequency) {
     val, err := m.GetBackingStore().Get("deliveryFrequency")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*NotificationDeliveryFrequency)
+        return val.(*TrainingReminderNotification_deliveryFrequency)
     }
     return nil
 }
@@ -36,12 +36,12 @@ func (m *TrainingReminderNotification) GetDeliveryFrequency()(*NotificationDeliv
 func (m *TrainingReminderNotification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseEndUserNotification.GetFieldDeserializers()
     res["deliveryFrequency"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseNotificationDeliveryFrequency)
+        val, err := n.GetEnumValue(ParseTrainingReminderNotification_deliveryFrequency)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeliveryFrequency(val.(*NotificationDeliveryFrequency))
+            m.SetDeliveryFrequency(val.(*TrainingReminderNotification_deliveryFrequency))
         }
         return nil
     }
@@ -63,7 +63,7 @@ func (m *TrainingReminderNotification) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetDeliveryFrequency sets the deliveryFrequency property value. Configurable frequency for the reminder email introduced during simulation creation. Possible values are: unknown, weekly, biWeekly, unknownFutureValue.
-func (m *TrainingReminderNotification) SetDeliveryFrequency(value *NotificationDeliveryFrequency)() {
+func (m *TrainingReminderNotification) SetDeliveryFrequency(value *TrainingReminderNotification_deliveryFrequency)() {
     err := m.GetBackingStore().Set("deliveryFrequency", value)
     if err != nil {
         panic(err)
@@ -73,6 +73,6 @@ func (m *TrainingReminderNotification) SetDeliveryFrequency(value *NotificationD
 type TrainingReminderNotificationable interface {
     BaseEndUserNotificationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetDeliveryFrequency()(*NotificationDeliveryFrequency)
-    SetDeliveryFrequency(value *NotificationDeliveryFrequency)()
+    GetDeliveryFrequency()(*TrainingReminderNotification_deliveryFrequency)
+    SetDeliveryFrequency(value *TrainingReminderNotification_deliveryFrequency)()
 }

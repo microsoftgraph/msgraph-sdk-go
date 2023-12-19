@@ -78,12 +78,12 @@ func (m *TrainingSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["settingType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTrainingSettingType)
+        val, err := n.GetEnumValue(ParseTrainingSetting_settingType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSettingType(val.(*TrainingSettingType))
+            m.SetSettingType(val.(*TrainingSetting_settingType))
         }
         return nil
     }
@@ -101,13 +101,13 @@ func (m *TrainingSetting) GetOdataType()(*string) {
     return nil
 }
 // GetSettingType gets the settingType property value. Type of setting. Possible values are: microsoftCustom, microsoftManaged, noTraining, custom, unknownFutureValue.
-func (m *TrainingSetting) GetSettingType()(*TrainingSettingType) {
+func (m *TrainingSetting) GetSettingType()(*TrainingSetting_settingType) {
     val, err := m.GetBackingStore().Get("settingType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TrainingSettingType)
+        return val.(*TrainingSetting_settingType)
     }
     return nil
 }
@@ -153,7 +153,7 @@ func (m *TrainingSetting) SetOdataType(value *string)() {
     }
 }
 // SetSettingType sets the settingType property value. Type of setting. Possible values are: microsoftCustom, microsoftManaged, noTraining, custom, unknownFutureValue.
-func (m *TrainingSetting) SetSettingType(value *TrainingSettingType)() {
+func (m *TrainingSetting) SetSettingType(value *TrainingSetting_settingType)() {
     err := m.GetBackingStore().Set("settingType", value)
     if err != nil {
         panic(err)
@@ -166,8 +166,8 @@ type TrainingSettingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
-    GetSettingType()(*TrainingSettingType)
+    GetSettingType()(*TrainingSetting_settingType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
-    SetSettingType(value *TrainingSettingType)()
+    SetSettingType(value *TrainingSetting_settingType)()
 }

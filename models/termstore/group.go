@@ -98,12 +98,12 @@ func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         return nil
     }
     res["scope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTermGroupScope)
+        val, err := n.GetEnumValue(ParseGroup_scope)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetScope(val.(*TermGroupScope))
+            m.SetScope(val.(*Group_scope))
         }
         return nil
     }
@@ -137,13 +137,13 @@ func (m *Group) GetParentSiteId()(*string) {
     return nil
 }
 // GetScope gets the scope property value. Returns the type of the group. Possible values are: global, system, and siteCollection.
-func (m *Group) GetScope()(*TermGroupScope) {
+func (m *Group) GetScope()(*Group_scope) {
     val, err := m.GetBackingStore().Get("scope")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TermGroupScope)
+        return val.(*Group_scope)
     }
     return nil
 }
@@ -238,7 +238,7 @@ func (m *Group) SetParentSiteId(value *string)() {
     }
 }
 // SetScope sets the scope property value. Returns the type of the group. Possible values are: global, system, and siteCollection.
-func (m *Group) SetScope(value *TermGroupScope)() {
+func (m *Group) SetScope(value *Group_scope)() {
     err := m.GetBackingStore().Set("scope", value)
     if err != nil {
         panic(err)
@@ -259,12 +259,12 @@ type Groupable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetParentSiteId()(*string)
-    GetScope()(*TermGroupScope)
+    GetScope()(*Group_scope)
     GetSets()([]Setable)
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetParentSiteId(value *string)()
-    SetScope(value *TermGroupScope)()
+    SetScope(value *Group_scope)()
     SetSets(value []Setable)()
 }

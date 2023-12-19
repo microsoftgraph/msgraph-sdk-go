@@ -133,12 +133,12 @@ func (m *Location) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["locationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseLocationType)
+        val, err := n.GetEnumValue(ParseLocation_locationType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLocationType(val.(*LocationType))
+            m.SetLocationType(val.(*Location_locationType))
         }
         return nil
     }
@@ -173,12 +173,12 @@ func (m *Location) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["uniqueIdType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseLocationUniqueIdType)
+        val, err := n.GetEnumValue(ParseLocation_uniqueIdType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUniqueIdType(val.(*LocationUniqueIdType))
+            m.SetUniqueIdType(val.(*Location_uniqueIdType))
         }
         return nil
     }
@@ -196,13 +196,13 @@ func (m *Location) GetLocationEmailAddress()(*string) {
     return nil
 }
 // GetLocationType gets the locationType property value. The type of location. The possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
-func (m *Location) GetLocationType()(*LocationType) {
+func (m *Location) GetLocationType()(*Location_locationType) {
     val, err := m.GetBackingStore().Get("locationType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*LocationType)
+        return val.(*Location_locationType)
     }
     return nil
 }
@@ -240,13 +240,13 @@ func (m *Location) GetUniqueId()(*string) {
     return nil
 }
 // GetUniqueIdType gets the uniqueIdType property value. For internal use only.
-func (m *Location) GetUniqueIdType()(*LocationUniqueIdType) {
+func (m *Location) GetUniqueIdType()(*Location_uniqueIdType) {
     val, err := m.GetBackingStore().Get("uniqueIdType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*LocationUniqueIdType)
+        return val.(*Location_uniqueIdType)
     }
     return nil
 }
@@ -356,7 +356,7 @@ func (m *Location) SetLocationEmailAddress(value *string)() {
     }
 }
 // SetLocationType sets the locationType property value. The type of location. The possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
-func (m *Location) SetLocationType(value *LocationType)() {
+func (m *Location) SetLocationType(value *Location_locationType)() {
     err := m.GetBackingStore().Set("locationType", value)
     if err != nil {
         panic(err)
@@ -384,7 +384,7 @@ func (m *Location) SetUniqueId(value *string)() {
     }
 }
 // SetUniqueIdType sets the uniqueIdType property value. For internal use only.
-func (m *Location) SetUniqueIdType(value *LocationUniqueIdType)() {
+func (m *Location) SetUniqueIdType(value *Location_uniqueIdType)() {
     err := m.GetBackingStore().Set("uniqueIdType", value)
     if err != nil {
         panic(err)
@@ -400,19 +400,19 @@ type Locationable interface {
     GetCoordinates()(OutlookGeoCoordinatesable)
     GetDisplayName()(*string)
     GetLocationEmailAddress()(*string)
-    GetLocationType()(*LocationType)
+    GetLocationType()(*Location_locationType)
     GetLocationUri()(*string)
     GetOdataType()(*string)
     GetUniqueId()(*string)
-    GetUniqueIdType()(*LocationUniqueIdType)
+    GetUniqueIdType()(*Location_uniqueIdType)
     SetAddress(value PhysicalAddressable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCoordinates(value OutlookGeoCoordinatesable)()
     SetDisplayName(value *string)()
     SetLocationEmailAddress(value *string)()
-    SetLocationType(value *LocationType)()
+    SetLocationType(value *Location_locationType)()
     SetLocationUri(value *string)()
     SetOdataType(value *string)()
     SetUniqueId(value *string)()
-    SetUniqueIdType(value *LocationUniqueIdType)()
+    SetUniqueIdType(value *Location_uniqueIdType)()
 }

@@ -120,13 +120,13 @@ func (m *EducationUser) GetDisplayName()(*string) {
     return nil
 }
 // GetExternalSource gets the externalSource property value. Where this user was created from. Possible values are: sis, manual.
-func (m *EducationUser) GetExternalSource()(*EducationExternalSource) {
+func (m *EducationUser) GetExternalSource()(*EducationUser_externalSource) {
     val, err := m.GetBackingStore().Get("externalSource")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EducationExternalSource)
+        return val.(*EducationUser_externalSource)
     }
     return nil
 }
@@ -265,12 +265,12 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["externalSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEducationExternalSource)
+        val, err := n.GetEnumValue(ParseEducationUser_externalSource)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetExternalSource(val.(*EducationExternalSource))
+            m.SetExternalSource(val.(*EducationUser_externalSource))
         }
         return nil
     }
@@ -1239,7 +1239,7 @@ func (m *EducationUser) SetDisplayName(value *string)() {
     }
 }
 // SetExternalSource sets the externalSource property value. Where this user was created from. Possible values are: sis, manual.
-func (m *EducationUser) SetExternalSource(value *EducationExternalSource)() {
+func (m *EducationUser) SetExternalSource(value *EducationUser_externalSource)() {
     err := m.GetBackingStore().Set("externalSource", value)
     if err != nil {
         panic(err)
@@ -1454,7 +1454,7 @@ type EducationUserable interface {
     GetCreatedBy()(IdentitySetable)
     GetDepartment()(*string)
     GetDisplayName()(*string)
-    GetExternalSource()(*EducationExternalSource)
+    GetExternalSource()(*EducationUser_externalSource)
     GetExternalSourceDetail()(*string)
     GetGivenName()(*string)
     GetMail()(*string)
@@ -1492,7 +1492,7 @@ type EducationUserable interface {
     SetCreatedBy(value IdentitySetable)()
     SetDepartment(value *string)()
     SetDisplayName(value *string)()
-    SetExternalSource(value *EducationExternalSource)()
+    SetExternalSource(value *EducationUser_externalSource)()
     SetExternalSourceDetail(value *string)()
     SetGivenName(value *string)()
     SetMail(value *string)()

@@ -35,17 +35,6 @@ func (m *TargetedManagedAppConfigurationsItemTargetAppsPostRequestBody) GetAddit
     }
     return val.(map[string]any)
 }
-// GetAppGroupType gets the appGroupType property value. The appGroupType property
-func (m *TargetedManagedAppConfigurationsItemTargetAppsPostRequestBody) GetAppGroupType()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TargetedManagedAppGroupType) {
-    val, err := m.GetBackingStore().Get("appGroupType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TargetedManagedAppGroupType)
-    }
-    return nil
-}
 // GetApps gets the apps property value. The apps property
 func (m *TargetedManagedAppConfigurationsItemTargetAppsPostRequestBody) GetApps()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable) {
     val, err := m.GetBackingStore().Get("apps")
@@ -64,16 +53,6 @@ func (m *TargetedManagedAppConfigurationsItemTargetAppsPostRequestBody) GetBacki
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TargetedManagedAppConfigurationsItemTargetAppsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["appGroupType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ParseTargetedManagedAppGroupType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAppGroupType(val.(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TargetedManagedAppGroupType))
-        }
-        return nil
-    }
     res["apps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateManagedMobileAppFromDiscriminatorValue)
         if err != nil {
@@ -94,13 +73,6 @@ func (m *TargetedManagedAppConfigurationsItemTargetAppsPostRequestBody) GetField
 }
 // Serialize serializes information the current object
 func (m *TargetedManagedAppConfigurationsItemTargetAppsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    if m.GetAppGroupType() != nil {
-        cast := (*m.GetAppGroupType()).String()
-        err := writer.WriteStringValue("appGroupType", &cast)
-        if err != nil {
-            return err
-        }
-    }
     if m.GetApps() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetApps()))
         for i, v := range m.GetApps() {
@@ -128,13 +100,6 @@ func (m *TargetedManagedAppConfigurationsItemTargetAppsPostRequestBody) SetAddit
         panic(err)
     }
 }
-// SetAppGroupType sets the appGroupType property value. The appGroupType property
-func (m *TargetedManagedAppConfigurationsItemTargetAppsPostRequestBody) SetAppGroupType(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TargetedManagedAppGroupType)() {
-    err := m.GetBackingStore().Set("appGroupType", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetApps sets the apps property value. The apps property
 func (m *TargetedManagedAppConfigurationsItemTargetAppsPostRequestBody) SetApps(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable)() {
     err := m.GetBackingStore().Set("apps", value)
@@ -151,10 +116,8 @@ type TargetedManagedAppConfigurationsItemTargetAppsPostRequestBodyable interface
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAppGroupType()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TargetedManagedAppGroupType)
     GetApps()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    SetAppGroupType(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TargetedManagedAppGroupType)()
     SetApps(value []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedMobileAppable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
 }

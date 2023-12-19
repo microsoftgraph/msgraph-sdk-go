@@ -46,12 +46,12 @@ func (m *EventMessageRequest) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["meetingRequestType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMeetingRequestType)
+        val, err := n.GetEnumValue(ParseEventMessageRequest_meetingRequestType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMeetingRequestType(val.(*MeetingRequestType))
+            m.SetMeetingRequestType(val.(*EventMessageRequest_meetingRequestType))
         }
         return nil
     }
@@ -98,13 +98,13 @@ func (m *EventMessageRequest) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetMeetingRequestType gets the meetingRequestType property value. The meetingRequestType property
-func (m *EventMessageRequest) GetMeetingRequestType()(*MeetingRequestType) {
+func (m *EventMessageRequest) GetMeetingRequestType()(*EventMessageRequest_meetingRequestType) {
     val, err := m.GetBackingStore().Get("meetingRequestType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MeetingRequestType)
+        return val.(*EventMessageRequest_meetingRequestType)
     }
     return nil
 }
@@ -205,7 +205,7 @@ func (m *EventMessageRequest) SetAllowNewTimeProposals(value *bool)() {
     }
 }
 // SetMeetingRequestType sets the meetingRequestType property value. The meetingRequestType property
-func (m *EventMessageRequest) SetMeetingRequestType(value *MeetingRequestType)() {
+func (m *EventMessageRequest) SetMeetingRequestType(value *EventMessageRequest_meetingRequestType)() {
     err := m.GetBackingStore().Set("meetingRequestType", value)
     if err != nil {
         panic(err)
@@ -244,13 +244,13 @@ type EventMessageRequestable interface {
     EventMessageable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllowNewTimeProposals()(*bool)
-    GetMeetingRequestType()(*MeetingRequestType)
+    GetMeetingRequestType()(*EventMessageRequest_meetingRequestType)
     GetPreviousEndDateTime()(DateTimeTimeZoneable)
     GetPreviousLocation()(Locationable)
     GetPreviousStartDateTime()(DateTimeTimeZoneable)
     GetResponseRequested()(*bool)
     SetAllowNewTimeProposals(value *bool)()
-    SetMeetingRequestType(value *MeetingRequestType)()
+    SetMeetingRequestType(value *EventMessageRequest_meetingRequestType)()
     SetPreviousEndDateTime(value DateTimeTimeZoneable)()
     SetPreviousLocation(value Locationable)()
     SetPreviousStartDateTime(value DateTimeTimeZoneable)()

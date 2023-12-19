@@ -91,12 +91,12 @@ func (m *TeamworkTag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["tagType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTeamworkTagType)
+        val, err := n.GetEnumValue(ParseTeamworkTag_tagType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTagType(val.(*TeamworkTagType))
+            m.SetTagType(val.(*TeamworkTag_tagType))
         }
         return nil
     }
@@ -135,13 +135,13 @@ func (m *TeamworkTag) GetMembers()([]TeamworkTagMemberable) {
     return nil
 }
 // GetTagType gets the tagType property value. The type of the tag. Default is standard.
-func (m *TeamworkTag) GetTagType()(*TeamworkTagType) {
+func (m *TeamworkTag) GetTagType()(*TeamworkTag_tagType) {
     val, err := m.GetBackingStore().Get("tagType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TeamworkTagType)
+        return val.(*TeamworkTag_tagType)
     }
     return nil
 }
@@ -236,7 +236,7 @@ func (m *TeamworkTag) SetMembers(value []TeamworkTagMemberable)() {
     }
 }
 // SetTagType sets the tagType property value. The type of the tag. Default is standard.
-func (m *TeamworkTag) SetTagType(value *TeamworkTagType)() {
+func (m *TeamworkTag) SetTagType(value *TeamworkTag_tagType)() {
     err := m.GetBackingStore().Set("tagType", value)
     if err != nil {
         panic(err)
@@ -257,12 +257,12 @@ type TeamworkTagable interface {
     GetDisplayName()(*string)
     GetMemberCount()(*int32)
     GetMembers()([]TeamworkTagMemberable)
-    GetTagType()(*TeamworkTagType)
+    GetTagType()(*TeamworkTag_tagType)
     GetTeamId()(*string)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetMemberCount(value *int32)()
     SetMembers(value []TeamworkTagMemberable)()
-    SetTagType(value *TeamworkTagType)()
+    SetTagType(value *TeamworkTag_tagType)()
     SetTeamId(value *string)()
 }

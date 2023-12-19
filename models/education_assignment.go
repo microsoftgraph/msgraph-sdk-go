@@ -21,24 +21,24 @@ func CreateEducationAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewEducationAssignment(), nil
 }
 // GetAddedStudentAction gets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment should not be assigned to new students.
-func (m *EducationAssignment) GetAddedStudentAction()(*EducationAddedStudentAction) {
+func (m *EducationAssignment) GetAddedStudentAction()(*EducationAssignment_addedStudentAction) {
     val, err := m.GetBackingStore().Get("addedStudentAction")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EducationAddedStudentAction)
+        return val.(*EducationAssignment_addedStudentAction)
     }
     return nil
 }
 // GetAddToCalendarAction gets the addToCalendarAction property value. Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
-func (m *EducationAssignment) GetAddToCalendarAction()(*EducationAddToCalendarOptions) {
+func (m *EducationAssignment) GetAddToCalendarAction()(*EducationAssignment_addToCalendarAction) {
     val, err := m.GetBackingStore().Get("addToCalendarAction")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EducationAddToCalendarOptions)
+        return val.(*EducationAssignment_addToCalendarAction)
     }
     return nil
 }
@@ -189,22 +189,22 @@ func (m *EducationAssignment) GetFeedbackResourcesFolderUrl()(*string) {
 func (m *EducationAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["addedStudentAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEducationAddedStudentAction)
+        val, err := n.GetEnumValue(ParseEducationAssignment_addedStudentAction)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAddedStudentAction(val.(*EducationAddedStudentAction))
+            m.SetAddedStudentAction(val.(*EducationAssignment_addedStudentAction))
         }
         return nil
     }
     res["addToCalendarAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEducationAddToCalendarOptions)
+        val, err := n.GetEnumValue(ParseEducationAssignment_addToCalendarAction)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAddToCalendarAction(val.(*EducationAddToCalendarOptions))
+            m.SetAddToCalendarAction(val.(*EducationAssignment_addToCalendarAction))
         }
         return nil
     }
@@ -431,12 +431,12 @@ func (m *EducationAssignment) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEducationAssignmentStatus)
+        val, err := n.GetEnumValue(ParseEducationAssignment_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*EducationAssignmentStatus))
+            m.SetStatus(val.(*EducationAssignment_status))
         }
         return nil
     }
@@ -557,13 +557,13 @@ func (m *EducationAssignment) GetRubric()(EducationRubricable) {
     return nil
 }
 // GetStatus gets the status property value. Status of the Assignment.  You can't PATCH this value.  Possible values are: draft, scheduled, published, assigned.
-func (m *EducationAssignment) GetStatus()(*EducationAssignmentStatus) {
+func (m *EducationAssignment) GetStatus()(*EducationAssignment_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EducationAssignmentStatus)
+        return val.(*EducationAssignment_status)
     }
     return nil
 }
@@ -714,14 +714,14 @@ func (m *EducationAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetAddedStudentAction sets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment should not be assigned to new students.
-func (m *EducationAssignment) SetAddedStudentAction(value *EducationAddedStudentAction)() {
+func (m *EducationAssignment) SetAddedStudentAction(value *EducationAssignment_addedStudentAction)() {
     err := m.GetBackingStore().Set("addedStudentAction", value)
     if err != nil {
         panic(err)
     }
 }
 // SetAddToCalendarAction sets the addToCalendarAction property value. Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
-func (m *EducationAssignment) SetAddToCalendarAction(value *EducationAddToCalendarOptions)() {
+func (m *EducationAssignment) SetAddToCalendarAction(value *EducationAssignment_addToCalendarAction)() {
     err := m.GetBackingStore().Set("addToCalendarAction", value)
     if err != nil {
         panic(err)
@@ -875,7 +875,7 @@ func (m *EducationAssignment) SetRubric(value EducationRubricable)() {
     }
 }
 // SetStatus sets the status property value. Status of the Assignment.  You can't PATCH this value.  Possible values are: draft, scheduled, published, assigned.
-func (m *EducationAssignment) SetStatus(value *EducationAssignmentStatus)() {
+func (m *EducationAssignment) SetStatus(value *EducationAssignment_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -899,8 +899,8 @@ func (m *EducationAssignment) SetWebUrl(value *string)() {
 type EducationAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAddedStudentAction()(*EducationAddedStudentAction)
-    GetAddToCalendarAction()(*EducationAddToCalendarOptions)
+    GetAddedStudentAction()(*EducationAssignment_addedStudentAction)
+    GetAddToCalendarAction()(*EducationAssignment_addToCalendarAction)
     GetAllowLateSubmissions()(*bool)
     GetAllowStudentsToAddResourcesToSubmission()(*bool)
     GetAssignDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -922,11 +922,11 @@ type EducationAssignmentable interface {
     GetResources()([]EducationAssignmentResourceable)
     GetResourcesFolderUrl()(*string)
     GetRubric()(EducationRubricable)
-    GetStatus()(*EducationAssignmentStatus)
+    GetStatus()(*EducationAssignment_status)
     GetSubmissions()([]EducationSubmissionable)
     GetWebUrl()(*string)
-    SetAddedStudentAction(value *EducationAddedStudentAction)()
-    SetAddToCalendarAction(value *EducationAddToCalendarOptions)()
+    SetAddedStudentAction(value *EducationAssignment_addedStudentAction)()
+    SetAddToCalendarAction(value *EducationAssignment_addToCalendarAction)()
     SetAllowLateSubmissions(value *bool)()
     SetAllowStudentsToAddResourcesToSubmission(value *bool)()
     SetAssignDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -948,7 +948,7 @@ type EducationAssignmentable interface {
     SetResources(value []EducationAssignmentResourceable)()
     SetResourcesFolderUrl(value *string)()
     SetRubric(value EducationRubricable)()
-    SetStatus(value *EducationAssignmentStatus)()
+    SetStatus(value *EducationAssignment_status)()
     SetSubmissions(value []EducationSubmissionable)()
     SetWebUrl(value *string)()
 }

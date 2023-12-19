@@ -20,13 +20,13 @@ func CreateInferenceClassificationOverrideFromDiscriminatorValue(parseNode i878a
     return NewInferenceClassificationOverride(), nil
 }
 // GetClassifyAs gets the classifyAs property value. Specifies how incoming messages from a specific sender should always be classified as. The possible values are: focused, other.
-func (m *InferenceClassificationOverride) GetClassifyAs()(*InferenceClassificationType) {
+func (m *InferenceClassificationOverride) GetClassifyAs()(*InferenceClassificationOverride_classifyAs) {
     val, err := m.GetBackingStore().Get("classifyAs")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*InferenceClassificationType)
+        return val.(*InferenceClassificationOverride_classifyAs)
     }
     return nil
 }
@@ -34,12 +34,12 @@ func (m *InferenceClassificationOverride) GetClassifyAs()(*InferenceClassificati
 func (m *InferenceClassificationOverride) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["classifyAs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseInferenceClassificationType)
+        val, err := n.GetEnumValue(ParseInferenceClassificationOverride_classifyAs)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetClassifyAs(val.(*InferenceClassificationType))
+            m.SetClassifyAs(val.(*InferenceClassificationOverride_classifyAs))
         }
         return nil
     }
@@ -88,7 +88,7 @@ func (m *InferenceClassificationOverride) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetClassifyAs sets the classifyAs property value. Specifies how incoming messages from a specific sender should always be classified as. The possible values are: focused, other.
-func (m *InferenceClassificationOverride) SetClassifyAs(value *InferenceClassificationType)() {
+func (m *InferenceClassificationOverride) SetClassifyAs(value *InferenceClassificationOverride_classifyAs)() {
     err := m.GetBackingStore().Set("classifyAs", value)
     if err != nil {
         panic(err)
@@ -105,8 +105,8 @@ func (m *InferenceClassificationOverride) SetSenderEmailAddress(value EmailAddre
 type InferenceClassificationOverrideable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetClassifyAs()(*InferenceClassificationType)
+    GetClassifyAs()(*InferenceClassificationOverride_classifyAs)
     GetSenderEmailAddress()(EmailAddressable)
-    SetClassifyAs(value *InferenceClassificationType)()
+    SetClassifyAs(value *InferenceClassificationOverride_classifyAs)()
     SetSenderEmailAddress(value EmailAddressable)()
 }

@@ -35,12 +35,12 @@ func (m *UserLastSignInRecommendationInsightSetting) GetFieldDeserializers()(map
         return nil
     }
     res["signInScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseUserSignInRecommendationScope)
+        val, err := n.GetEnumValue(ParseUserLastSignInRecommendationInsightSetting_signInScope)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSignInScope(val.(*UserSignInRecommendationScope))
+            m.SetSignInScope(val.(*UserLastSignInRecommendationInsightSetting_signInScope))
         }
         return nil
     }
@@ -58,13 +58,13 @@ func (m *UserLastSignInRecommendationInsightSetting) GetRecommendationLookBackDu
     return nil
 }
 // GetSignInScope gets the signInScope property value. Indicates whether inactivity is calculated based on the user's inactivity in the tenant or in the application. The possible values are tenant, application, unknownFutureValue. application is only relevant when the access review is a review of an assignment to an application.
-func (m *UserLastSignInRecommendationInsightSetting) GetSignInScope()(*UserSignInRecommendationScope) {
+func (m *UserLastSignInRecommendationInsightSetting) GetSignInScope()(*UserLastSignInRecommendationInsightSetting_signInScope) {
     val, err := m.GetBackingStore().Get("signInScope")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*UserSignInRecommendationScope)
+        return val.(*UserLastSignInRecommendationInsightSetting_signInScope)
     }
     return nil
 }
@@ -97,7 +97,7 @@ func (m *UserLastSignInRecommendationInsightSetting) SetRecommendationLookBackDu
     }
 }
 // SetSignInScope sets the signInScope property value. Indicates whether inactivity is calculated based on the user's inactivity in the tenant or in the application. The possible values are tenant, application, unknownFutureValue. application is only relevant when the access review is a review of an assignment to an application.
-func (m *UserLastSignInRecommendationInsightSetting) SetSignInScope(value *UserSignInRecommendationScope)() {
+func (m *UserLastSignInRecommendationInsightSetting) SetSignInScope(value *UserLastSignInRecommendationInsightSetting_signInScope)() {
     err := m.GetBackingStore().Set("signInScope", value)
     if err != nil {
         panic(err)
@@ -108,7 +108,7 @@ type UserLastSignInRecommendationInsightSettingable interface {
     AccessReviewRecommendationInsightSettingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetRecommendationLookBackDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
-    GetSignInScope()(*UserSignInRecommendationScope)
+    GetSignInScope()(*UserLastSignInRecommendationInsightSetting_signInScope)
     SetRecommendationLookBackDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
-    SetSignInScope(value *UserSignInRecommendationScope)()
+    SetSignInScope(value *UserLastSignInRecommendationInsightSetting_signInScope)()
 }

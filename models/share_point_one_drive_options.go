@@ -42,12 +42,12 @@ func (m *SharePointOneDriveOptions) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827e
 func (m *SharePointOneDriveOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["includeContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSearchContent)
+        val, err := n.GetEnumValue(ParseSharePointOneDriveOptions_includeContent)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetIncludeContent(val.(*SearchContent))
+            m.SetIncludeContent(val.(*SharePointOneDriveOptions_includeContent))
         }
         return nil
     }
@@ -64,13 +64,13 @@ func (m *SharePointOneDriveOptions) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetIncludeContent gets the includeContent property value. The type of search content. The possible values are: sharedContent, privateContent, unknownFutureValue. Read-only.
-func (m *SharePointOneDriveOptions) GetIncludeContent()(*SearchContent) {
+func (m *SharePointOneDriveOptions) GetIncludeContent()(*SharePointOneDriveOptions_includeContent) {
     val, err := m.GetBackingStore().Get("includeContent")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SearchContent)
+        return val.(*SharePointOneDriveOptions_includeContent)
     }
     return nil
 }
@@ -120,7 +120,7 @@ func (m *SharePointOneDriveOptions) SetBackingStore(value ie8677ce2c7e1b4c22e9c3
     m.backingStore = value
 }
 // SetIncludeContent sets the includeContent property value. The type of search content. The possible values are: sharedContent, privateContent, unknownFutureValue. Read-only.
-func (m *SharePointOneDriveOptions) SetIncludeContent(value *SearchContent)() {
+func (m *SharePointOneDriveOptions) SetIncludeContent(value *SharePointOneDriveOptions_includeContent)() {
     err := m.GetBackingStore().Set("includeContent", value)
     if err != nil {
         panic(err)
@@ -139,9 +139,9 @@ type SharePointOneDriveOptionsable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetIncludeContent()(*SearchContent)
+    GetIncludeContent()(*SharePointOneDriveOptions_includeContent)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetIncludeContent(value *SearchContent)()
+    SetIncludeContent(value *SharePointOneDriveOptions_includeContent)()
     SetOdataType(value *string)()
 }

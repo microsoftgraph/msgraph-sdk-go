@@ -66,12 +66,12 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["requestType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAccessPackageRequestType)
+        val, err := n.GetEnumValue(ParseAccessPackageResourceRequest_requestType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRequestType(val.(*AccessPackageRequestType))
+            m.SetRequestType(val.(*AccessPackageResourceRequest_requestType))
         }
         return nil
     }
@@ -86,25 +86,25 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAccessPackageRequestState)
+        val, err := n.GetEnumValue(ParseAccessPackageResourceRequest_state)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetState(val.(*AccessPackageRequestState))
+            m.SetState(val.(*AccessPackageResourceRequest_state))
         }
         return nil
     }
     return res
 }
 // GetRequestType gets the requestType property value. The type of the request. Use adminAdd to add a resource, if the caller is an administrator or resource owner, adminUpdate to update a resource, or adminRemove to remove a resource.
-func (m *AccessPackageResourceRequest) GetRequestType()(*AccessPackageRequestType) {
+func (m *AccessPackageResourceRequest) GetRequestType()(*AccessPackageResourceRequest_requestType) {
     val, err := m.GetBackingStore().Get("requestType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AccessPackageRequestType)
+        return val.(*AccessPackageResourceRequest_requestType)
     }
     return nil
 }
@@ -120,13 +120,13 @@ func (m *AccessPackageResourceRequest) GetResource()(AccessPackageResourceable) 
     return nil
 }
 // GetState gets the state property value. The outcome of whether the service was able to add the resource to the catalog.  The value is delivered if the resource was added or removed, and deliveryFailed if it could not be added or removed. Read-only.
-func (m *AccessPackageResourceRequest) GetState()(*AccessPackageRequestState) {
+func (m *AccessPackageResourceRequest) GetState()(*AccessPackageResourceRequest_state) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AccessPackageRequestState)
+        return val.(*AccessPackageResourceRequest_state)
     }
     return nil
 }
@@ -185,7 +185,7 @@ func (m *AccessPackageResourceRequest) SetCreatedDateTime(value *i336074805fc853
     }
 }
 // SetRequestType sets the requestType property value. The type of the request. Use adminAdd to add a resource, if the caller is an administrator or resource owner, adminUpdate to update a resource, or adminRemove to remove a resource.
-func (m *AccessPackageResourceRequest) SetRequestType(value *AccessPackageRequestType)() {
+func (m *AccessPackageResourceRequest) SetRequestType(value *AccessPackageResourceRequest_requestType)() {
     err := m.GetBackingStore().Set("requestType", value)
     if err != nil {
         panic(err)
@@ -199,7 +199,7 @@ func (m *AccessPackageResourceRequest) SetResource(value AccessPackageResourceab
     }
 }
 // SetState sets the state property value. The outcome of whether the service was able to add the resource to the catalog.  The value is delivered if the resource was added or removed, and deliveryFailed if it could not be added or removed. Read-only.
-func (m *AccessPackageResourceRequest) SetState(value *AccessPackageRequestState)() {
+func (m *AccessPackageResourceRequest) SetState(value *AccessPackageResourceRequest_state)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {
         panic(err)
@@ -211,12 +211,12 @@ type AccessPackageResourceRequestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCatalog()(AccessPackageCatalogable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetRequestType()(*AccessPackageRequestType)
+    GetRequestType()(*AccessPackageResourceRequest_requestType)
     GetResource()(AccessPackageResourceable)
-    GetState()(*AccessPackageRequestState)
+    GetState()(*AccessPackageResourceRequest_state)
     SetCatalog(value AccessPackageCatalogable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetRequestType(value *AccessPackageRequestType)()
+    SetRequestType(value *AccessPackageResourceRequest_requestType)()
     SetResource(value AccessPackageResourceable)()
-    SetState(value *AccessPackageRequestState)()
+    SetState(value *AccessPackageResourceRequest_state)()
 }

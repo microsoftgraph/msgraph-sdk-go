@@ -112,12 +112,12 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["provisionStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOperationStatus)
+        val, err := n.GetEnumValue(ParseSchedule_provisionStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProvisionStatus(val.(*OperationStatus))
+            m.SetProvisionStatus(val.(*Schedule_provisionStatus))
         }
         return nil
     }
@@ -341,13 +341,13 @@ func (m *Schedule) GetOpenShiftsEnabled()(*bool) {
     return nil
 }
 // GetProvisionStatus gets the provisionStatus property value. The status of the schedule provisioning. The possible values are notStarted, running, completed, failed.
-func (m *Schedule) GetProvisionStatus()(*OperationStatus) {
+func (m *Schedule) GetProvisionStatus()(*Schedule_provisionStatus) {
     val, err := m.GetBackingStore().Get("provisionStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*OperationStatus)
+        return val.(*Schedule_provisionStatus)
     }
     return nil
 }
@@ -690,7 +690,7 @@ func (m *Schedule) SetOpenShiftsEnabled(value *bool)() {
     }
 }
 // SetProvisionStatus sets the provisionStatus property value. The status of the schedule provisioning. The possible values are notStarted, running, completed, failed.
-func (m *Schedule) SetProvisionStatus(value *OperationStatus)() {
+func (m *Schedule) SetProvisionStatus(value *Schedule_provisionStatus)() {
     err := m.GetBackingStore().Set("provisionStatus", value)
     if err != nil {
         panic(err)
@@ -790,7 +790,7 @@ type Scheduleable interface {
     GetOpenShiftChangeRequests()([]OpenShiftChangeRequestable)
     GetOpenShifts()([]OpenShiftable)
     GetOpenShiftsEnabled()(*bool)
-    GetProvisionStatus()(*OperationStatus)
+    GetProvisionStatus()(*Schedule_provisionStatus)
     GetProvisionStatusCode()(*string)
     GetSchedulingGroups()([]SchedulingGroupable)
     GetShifts()([]Shiftable)
@@ -809,7 +809,7 @@ type Scheduleable interface {
     SetOpenShiftChangeRequests(value []OpenShiftChangeRequestable)()
     SetOpenShifts(value []OpenShiftable)()
     SetOpenShiftsEnabled(value *bool)()
-    SetProvisionStatus(value *OperationStatus)()
+    SetProvisionStatus(value *Schedule_provisionStatus)()
     SetProvisionStatusCode(value *string)()
     SetSchedulingGroups(value []SchedulingGroupable)()
     SetShifts(value []Shiftable)()

@@ -93,12 +93,12 @@ func (m *AvailabilityItem) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseBookingsAvailabilityStatus)
+        val, err := n.GetEnumValue(ParseAvailabilityItem_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*BookingsAvailabilityStatus))
+            m.SetStatus(val.(*AvailabilityItem_status))
         }
         return nil
     }
@@ -138,13 +138,13 @@ func (m *AvailabilityItem) GetStartDateTime()(DateTimeTimeZoneable) {
     return nil
 }
 // GetStatus gets the status property value. The status of the staff member. Possible values are: available, busy, slotsAvailable, outOfOffice, unknownFutureValue.
-func (m *AvailabilityItem) GetStatus()(*BookingsAvailabilityStatus) {
+func (m *AvailabilityItem) GetStatus()(*AvailabilityItem_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*BookingsAvailabilityStatus)
+        return val.(*AvailabilityItem_status)
     }
     return nil
 }
@@ -229,7 +229,7 @@ func (m *AvailabilityItem) SetStartDateTime(value DateTimeTimeZoneable)() {
     }
 }
 // SetStatus sets the status property value. The status of the staff member. Possible values are: available, busy, slotsAvailable, outOfOffice, unknownFutureValue.
-func (m *AvailabilityItem) SetStatus(value *BookingsAvailabilityStatus)() {
+func (m *AvailabilityItem) SetStatus(value *AvailabilityItem_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -245,11 +245,11 @@ type AvailabilityItemable interface {
     GetOdataType()(*string)
     GetServiceId()(*string)
     GetStartDateTime()(DateTimeTimeZoneable)
-    GetStatus()(*BookingsAvailabilityStatus)
+    GetStatus()(*AvailabilityItem_status)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetEndDateTime(value DateTimeTimeZoneable)()
     SetOdataType(value *string)()
     SetServiceId(value *string)()
     SetStartDateTime(value DateTimeTimeZoneable)()
-    SetStatus(value *BookingsAvailabilityStatus)()
+    SetStatus(value *AvailabilityItem_status)()
 }

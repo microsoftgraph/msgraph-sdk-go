@@ -33,13 +33,13 @@ func (m *CallEndedEventMessageDetail) GetCallDuration()(*i878a80d2330e89d2689638
     return nil
 }
 // GetCallEventType gets the callEventType property value. Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.
-func (m *CallEndedEventMessageDetail) GetCallEventType()(*TeamworkCallEventType) {
+func (m *CallEndedEventMessageDetail) GetCallEventType()(*CallEndedEventMessageDetail_callEventType) {
     val, err := m.GetBackingStore().Get("callEventType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TeamworkCallEventType)
+        return val.(*CallEndedEventMessageDetail_callEventType)
     }
     return nil
 }
@@ -79,12 +79,12 @@ func (m *CallEndedEventMessageDetail) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     res["callEventType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTeamworkCallEventType)
+        val, err := n.GetEnumValue(ParseCallEndedEventMessageDetail_callEventType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCallEventType(val.(*TeamworkCallEventType))
+            m.SetCallEventType(val.(*CallEndedEventMessageDetail_callEventType))
         }
         return nil
     }
@@ -190,7 +190,7 @@ func (m *CallEndedEventMessageDetail) SetCallDuration(value *i878a80d2330e89d268
     }
 }
 // SetCallEventType sets the callEventType property value. Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.
-func (m *CallEndedEventMessageDetail) SetCallEventType(value *TeamworkCallEventType)() {
+func (m *CallEndedEventMessageDetail) SetCallEventType(value *CallEndedEventMessageDetail_callEventType)() {
     err := m.GetBackingStore().Set("callEventType", value)
     if err != nil {
         panic(err)
@@ -222,12 +222,12 @@ type CallEndedEventMessageDetailable interface {
     EventMessageDetailable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCallDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
-    GetCallEventType()(*TeamworkCallEventType)
+    GetCallEventType()(*CallEndedEventMessageDetail_callEventType)
     GetCallId()(*string)
     GetCallParticipants()([]CallParticipantInfoable)
     GetInitiator()(IdentitySetable)
     SetCallDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
-    SetCallEventType(value *TeamworkCallEventType)()
+    SetCallEventType(value *CallEndedEventMessageDetail_callEventType)()
     SetCallId(value *string)()
     SetCallParticipants(value []CallParticipantInfoable)()
     SetInitiator(value IdentitySetable)()

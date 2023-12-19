@@ -52,12 +52,12 @@ func (m *SynchronizationJobRestartCriteria) GetFieldDeserializers()(map[string]f
         return nil
     }
     res["resetScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSynchronizationJobRestartScope)
+        val, err := n.GetEnumValue(ParseSynchronizationJobRestartCriteria_resetScope)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetResetScope(val.(*SynchronizationJobRestartScope))
+            m.SetResetScope(val.(*SynchronizationJobRestartCriteria_resetScope))
         }
         return nil
     }
@@ -75,13 +75,13 @@ func (m *SynchronizationJobRestartCriteria) GetOdataType()(*string) {
     return nil
 }
 // GetResetScope gets the resetScope property value. Comma-separated combination of the following values: None, ConnectorDataStore, Escrows, Watermark, QuarantineState, Full, ForceDeletes. The property can also be empty.   None: Starts a paused or quarantined provisioning job. DO NOT USE. Use the Start synchronizationJob API instead.ConnectorDataStore - Clears the underlying cache for all users. DO NOT USE. Contact Microsoft Support for guidance.Escrows - Provisioning failures are marked as escrows and retried. Clearing escrows will stop the service from retrying failures.Watermark - Removing the watermark causes the service to reevaluate all the users again, rather than just processing changes.QuarantineState - Temporarily lifts the quarantine.Use Full if you want all of the options.ForceDeletes - Forces the system to delete the pending deleted users when using the accidental deletions prevention feature and the deletion threshold is exceeded. Leaving this property empty emulates the Restart provisioning option in the Microsoft Entra admin center. It is similar to setting the resetScope to include QuarantineState, Watermark, and Escrows. This option meets most customer needs.
-func (m *SynchronizationJobRestartCriteria) GetResetScope()(*SynchronizationJobRestartScope) {
+func (m *SynchronizationJobRestartCriteria) GetResetScope()(*SynchronizationJobRestartCriteria_resetScope) {
     val, err := m.GetBackingStore().Get("resetScope")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SynchronizationJobRestartScope)
+        return val.(*SynchronizationJobRestartCriteria_resetScope)
     }
     return nil
 }
@@ -127,7 +127,7 @@ func (m *SynchronizationJobRestartCriteria) SetOdataType(value *string)() {
     }
 }
 // SetResetScope sets the resetScope property value. Comma-separated combination of the following values: None, ConnectorDataStore, Escrows, Watermark, QuarantineState, Full, ForceDeletes. The property can also be empty.   None: Starts a paused or quarantined provisioning job. DO NOT USE. Use the Start synchronizationJob API instead.ConnectorDataStore - Clears the underlying cache for all users. DO NOT USE. Contact Microsoft Support for guidance.Escrows - Provisioning failures are marked as escrows and retried. Clearing escrows will stop the service from retrying failures.Watermark - Removing the watermark causes the service to reevaluate all the users again, rather than just processing changes.QuarantineState - Temporarily lifts the quarantine.Use Full if you want all of the options.ForceDeletes - Forces the system to delete the pending deleted users when using the accidental deletions prevention feature and the deletion threshold is exceeded. Leaving this property empty emulates the Restart provisioning option in the Microsoft Entra admin center. It is similar to setting the resetScope to include QuarantineState, Watermark, and Escrows. This option meets most customer needs.
-func (m *SynchronizationJobRestartCriteria) SetResetScope(value *SynchronizationJobRestartScope)() {
+func (m *SynchronizationJobRestartCriteria) SetResetScope(value *SynchronizationJobRestartCriteria_resetScope)() {
     err := m.GetBackingStore().Set("resetScope", value)
     if err != nil {
         panic(err)
@@ -140,8 +140,8 @@ type SynchronizationJobRestartCriteriaable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
-    GetResetScope()(*SynchronizationJobRestartScope)
+    GetResetScope()(*SynchronizationJobRestartCriteria_resetScope)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
-    SetResetScope(value *SynchronizationJobRestartScope)()
+    SetResetScope(value *SynchronizationJobRestartCriteria_resetScope)()
 }

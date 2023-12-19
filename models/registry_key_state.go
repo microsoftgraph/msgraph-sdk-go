@@ -42,12 +42,12 @@ func (m *RegistryKeyState) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d411
 func (m *RegistryKeyState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["hive"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRegistryHive)
+        val, err := n.GetEnumValue(ParseRegistryKeyState_hive)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetHive(val.(*RegistryHive))
+            m.SetHive(val.(*RegistryKeyState_hive))
         }
         return nil
     }
@@ -102,12 +102,12 @@ func (m *RegistryKeyState) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["operation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRegistryOperation)
+        val, err := n.GetEnumValue(ParseRegistryKeyState_operation)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOperation(val.(*RegistryOperation))
+            m.SetOperation(val.(*RegistryKeyState_operation))
         }
         return nil
     }
@@ -142,25 +142,25 @@ func (m *RegistryKeyState) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["valueType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRegistryValueType)
+        val, err := n.GetEnumValue(ParseRegistryKeyState_valueType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetValueType(val.(*RegistryValueType))
+            m.SetValueType(val.(*RegistryKeyState_valueType))
         }
         return nil
     }
     return res
 }
 // GetHive gets the hive property value. A Windows registry hive : HKEYCURRENTCONFIG HKEYCURRENTUSER HKEYLOCALMACHINE/SAM HKEYLOCALMACHINE/Security HKEYLOCALMACHINE/Software HKEYLOCALMACHINE/System HKEY_USERS/.Default. Possible values are: unknown, currentConfig, currentUser, localMachineSam, localMachineSecurity, localMachineSoftware, localMachineSystem, usersDefault.
-func (m *RegistryKeyState) GetHive()(*RegistryHive) {
+func (m *RegistryKeyState) GetHive()(*RegistryKeyState_hive) {
     val, err := m.GetBackingStore().Get("hive")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RegistryHive)
+        return val.(*RegistryKeyState_hive)
     }
     return nil
 }
@@ -220,13 +220,13 @@ func (m *RegistryKeyState) GetOldValueName()(*string) {
     return nil
 }
 // GetOperation gets the operation property value. Operation that changed the registry key name and/or value. Possible values are: unknown, create, modify, delete.
-func (m *RegistryKeyState) GetOperation()(*RegistryOperation) {
+func (m *RegistryKeyState) GetOperation()(*RegistryKeyState_operation) {
     val, err := m.GetBackingStore().Get("operation")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RegistryOperation)
+        return val.(*RegistryKeyState_operation)
     }
     return nil
 }
@@ -264,13 +264,13 @@ func (m *RegistryKeyState) GetValueName()(*string) {
     return nil
 }
 // GetValueType gets the valueType property value. Registry key value type REGBINARY REGDWORD REGDWORDLITTLEENDIAN REGDWORDBIGENDIANREGEXPANDSZ REGLINK REGMULTISZ REGNONE REGQWORD REGQWORDLITTLEENDIAN REG_SZ Possible values are: unknown, binary, dword, dwordLittleEndian, dwordBigEndian, expandSz, link, multiSz, none, qword, qwordlittleEndian, sz.
-func (m *RegistryKeyState) GetValueType()(*RegistryValueType) {
+func (m *RegistryKeyState) GetValueType()(*RegistryKeyState_valueType) {
     val, err := m.GetBackingStore().Get("valueType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RegistryValueType)
+        return val.(*RegistryKeyState_valueType)
     }
     return nil
 }
@@ -365,7 +365,7 @@ func (m *RegistryKeyState) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078
     m.backingStore = value
 }
 // SetHive sets the hive property value. A Windows registry hive : HKEYCURRENTCONFIG HKEYCURRENTUSER HKEYLOCALMACHINE/SAM HKEYLOCALMACHINE/Security HKEYLOCALMACHINE/Software HKEYLOCALMACHINE/System HKEY_USERS/.Default. Possible values are: unknown, currentConfig, currentUser, localMachineSam, localMachineSecurity, localMachineSoftware, localMachineSystem, usersDefault.
-func (m *RegistryKeyState) SetHive(value *RegistryHive)() {
+func (m *RegistryKeyState) SetHive(value *RegistryKeyState_hive)() {
     err := m.GetBackingStore().Set("hive", value)
     if err != nil {
         panic(err)
@@ -407,7 +407,7 @@ func (m *RegistryKeyState) SetOldValueName(value *string)() {
     }
 }
 // SetOperation sets the operation property value. Operation that changed the registry key name and/or value. Possible values are: unknown, create, modify, delete.
-func (m *RegistryKeyState) SetOperation(value *RegistryOperation)() {
+func (m *RegistryKeyState) SetOperation(value *RegistryKeyState_operation)() {
     err := m.GetBackingStore().Set("operation", value)
     if err != nil {
         panic(err)
@@ -435,7 +435,7 @@ func (m *RegistryKeyState) SetValueName(value *string)() {
     }
 }
 // SetValueType sets the valueType property value. Registry key value type REGBINARY REGDWORD REGDWORDLITTLEENDIAN REGDWORDBIGENDIANREGEXPANDSZ REGLINK REGMULTISZ REGNONE REGQWORD REGQWORDLITTLEENDIAN REG_SZ Possible values are: unknown, binary, dword, dwordLittleEndian, dwordBigEndian, expandSz, link, multiSz, none, qword, qwordlittleEndian, sz.
-func (m *RegistryKeyState) SetValueType(value *RegistryValueType)() {
+func (m *RegistryKeyState) SetValueType(value *RegistryKeyState_valueType)() {
     err := m.GetBackingStore().Set("valueType", value)
     if err != nil {
         panic(err)
@@ -447,27 +447,27 @@ type RegistryKeyStateable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetHive()(*RegistryHive)
+    GetHive()(*RegistryKeyState_hive)
     GetKey()(*string)
     GetOdataType()(*string)
     GetOldKey()(*string)
     GetOldValueData()(*string)
     GetOldValueName()(*string)
-    GetOperation()(*RegistryOperation)
+    GetOperation()(*RegistryKeyState_operation)
     GetProcessId()(*int32)
     GetValueData()(*string)
     GetValueName()(*string)
-    GetValueType()(*RegistryValueType)
+    GetValueType()(*RegistryKeyState_valueType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetHive(value *RegistryHive)()
+    SetHive(value *RegistryKeyState_hive)()
     SetKey(value *string)()
     SetOdataType(value *string)()
     SetOldKey(value *string)()
     SetOldValueData(value *string)()
     SetOldValueName(value *string)()
-    SetOperation(value *RegistryOperation)()
+    SetOperation(value *RegistryKeyState_operation)()
     SetProcessId(value *int32)()
     SetValueData(value *string)()
     SetValueName(value *string)()
-    SetValueType(value *RegistryValueType)()
+    SetValueType(value *RegistryKeyState_valueType)()
 }

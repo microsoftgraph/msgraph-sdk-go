@@ -116,12 +116,12 @@ func (m *Process) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     res["integrityLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseProcessIntegrityLevel)
+        val, err := n.GetEnumValue(ParseProcess_integrityLevel)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetIntegrityLevel(val.(*ProcessIntegrityLevel))
+            m.SetIntegrityLevel(val.(*Process_integrityLevel))
         }
         return nil
     }
@@ -219,13 +219,13 @@ func (m *Process) GetFileHash()(FileHashable) {
     return nil
 }
 // GetIntegrityLevel gets the integrityLevel property value. The integrity level of the process. Possible values are: unknown, untrusted, low, medium, high, system.
-func (m *Process) GetIntegrityLevel()(*ProcessIntegrityLevel) {
+func (m *Process) GetIntegrityLevel()(*Process_integrityLevel) {
     val, err := m.GetBackingStore().Get("integrityLevel")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ProcessIntegrityLevel)
+        return val.(*Process_integrityLevel)
     }
     return nil
 }
@@ -446,7 +446,7 @@ func (m *Process) SetFileHash(value FileHashable)() {
     }
 }
 // SetIntegrityLevel sets the integrityLevel property value. The integrity level of the process. Possible values are: unknown, untrusted, low, medium, high, system.
-func (m *Process) SetIntegrityLevel(value *ProcessIntegrityLevel)() {
+func (m *Process) SetIntegrityLevel(value *Process_integrityLevel)() {
     err := m.GetBackingStore().Set("integrityLevel", value)
     if err != nil {
         panic(err)
@@ -518,7 +518,7 @@ type Processable interface {
     GetCommandLine()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetFileHash()(FileHashable)
-    GetIntegrityLevel()(*ProcessIntegrityLevel)
+    GetIntegrityLevel()(*Process_integrityLevel)
     GetIsElevated()(*bool)
     GetName()(*string)
     GetOdataType()(*string)
@@ -532,7 +532,7 @@ type Processable interface {
     SetCommandLine(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetFileHash(value FileHashable)()
-    SetIntegrityLevel(value *ProcessIntegrityLevel)()
+    SetIntegrityLevel(value *Process_integrityLevel)()
     SetIsElevated(value *bool)()
     SetName(value *string)()
     SetOdataType(value *string)()

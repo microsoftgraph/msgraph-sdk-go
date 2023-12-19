@@ -32,13 +32,13 @@ func (m *AccessPackageAssignmentPolicy) GetAccessPackage()(AccessPackageable) {
     return nil
 }
 // GetAllowedTargetScope gets the allowedTargetScope property value. Principals that can be assigned the access package through this policy. The possible values are: notSpecified, specificDirectoryUsers, specificConnectedOrganizationUsers, specificDirectoryServicePrincipals, allMemberUsers, allDirectoryUsers, allDirectoryServicePrincipals, allConfiguredConnectedOrganizationUsers, allExternalUsers, unknownFutureValue.
-func (m *AccessPackageAssignmentPolicy) GetAllowedTargetScope()(*AllowedTargetScope) {
+func (m *AccessPackageAssignmentPolicy) GetAllowedTargetScope()(*AccessPackageAssignmentPolicy_allowedTargetScope) {
     val, err := m.GetBackingStore().Get("allowedTargetScope")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AllowedTargetScope)
+        return val.(*AccessPackageAssignmentPolicy_allowedTargetScope)
     }
     return nil
 }
@@ -133,12 +133,12 @@ func (m *AccessPackageAssignmentPolicy) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["allowedTargetScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAllowedTargetScope)
+        val, err := n.GetEnumValue(ParseAccessPackageAssignmentPolicy_allowedTargetScope)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAllowedTargetScope(val.(*AllowedTargetScope))
+            m.SetAllowedTargetScope(val.(*AccessPackageAssignmentPolicy_allowedTargetScope))
         }
         return nil
     }
@@ -483,7 +483,7 @@ func (m *AccessPackageAssignmentPolicy) SetAccessPackage(value AccessPackageable
     }
 }
 // SetAllowedTargetScope sets the allowedTargetScope property value. Principals that can be assigned the access package through this policy. The possible values are: notSpecified, specificDirectoryUsers, specificConnectedOrganizationUsers, specificDirectoryServicePrincipals, allMemberUsers, allDirectoryUsers, allDirectoryServicePrincipals, allConfiguredConnectedOrganizationUsers, allExternalUsers, unknownFutureValue.
-func (m *AccessPackageAssignmentPolicy) SetAllowedTargetScope(value *AllowedTargetScope)() {
+func (m *AccessPackageAssignmentPolicy) SetAllowedTargetScope(value *AccessPackageAssignmentPolicy_allowedTargetScope)() {
     err := m.GetBackingStore().Set("allowedTargetScope", value)
     if err != nil {
         panic(err)
@@ -585,7 +585,7 @@ type AccessPackageAssignmentPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAccessPackage()(AccessPackageable)
-    GetAllowedTargetScope()(*AllowedTargetScope)
+    GetAllowedTargetScope()(*AccessPackageAssignmentPolicy_allowedTargetScope)
     GetAutomaticRequestSettings()(AccessPackageAutomaticRequestSettingsable)
     GetCatalog()(AccessPackageCatalogable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -600,7 +600,7 @@ type AccessPackageAssignmentPolicyable interface {
     GetReviewSettings()(AccessPackageAssignmentReviewSettingsable)
     GetSpecificAllowedTargets()([]SubjectSetable)
     SetAccessPackage(value AccessPackageable)()
-    SetAllowedTargetScope(value *AllowedTargetScope)()
+    SetAllowedTargetScope(value *AccessPackageAssignmentPolicy_allowedTargetScope)()
     SetAutomaticRequestSettings(value AccessPackageAutomaticRequestSettingsable)()
     SetCatalog(value AccessPackageCatalogable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

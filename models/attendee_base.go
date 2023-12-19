@@ -43,25 +43,25 @@ func CreateAttendeeBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 func (m *AttendeeBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Recipient.GetFieldDeserializers()
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAttendeeType)
+        val, err := n.GetEnumValue(ParseAttendeeBase_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*AttendeeType))
+            m.SetTypeEscaped(val.(*AttendeeBase_type))
         }
         return nil
     }
     return res
 }
 // GetTypeEscaped gets the type property value. The type of attendee. The possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
-func (m *AttendeeBase) GetTypeEscaped()(*AttendeeType) {
+func (m *AttendeeBase) GetTypeEscaped()(*AttendeeBase_type) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AttendeeType)
+        return val.(*AttendeeBase_type)
     }
     return nil
 }
@@ -81,7 +81,7 @@ func (m *AttendeeBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetTypeEscaped sets the type property value. The type of attendee. The possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
-func (m *AttendeeBase) SetTypeEscaped(value *AttendeeType)() {
+func (m *AttendeeBase) SetTypeEscaped(value *AttendeeBase_type)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -91,6 +91,6 @@ func (m *AttendeeBase) SetTypeEscaped(value *AttendeeType)() {
 type AttendeeBaseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Recipientable
-    GetTypeEscaped()(*AttendeeType)
-    SetTypeEscaped(value *AttendeeType)()
+    GetTypeEscaped()(*AttendeeBase_type)
+    SetTypeEscaped(value *AttendeeBase_type)()
 }

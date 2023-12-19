@@ -42,12 +42,12 @@ func (m *FileHash) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9
 func (m *FileHash) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["hashType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseFileHashType)
+        val, err := n.GetEnumValue(ParseFileHash_hashType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetHashType(val.(*FileHashType))
+            m.SetHashType(val.(*FileHash_hashType))
         }
         return nil
     }
@@ -74,13 +74,13 @@ func (m *FileHash) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetHashType gets the hashType property value. File hash type. Possible values are: unknown, sha1, sha256, md5, authenticodeHash256, lsHash, ctph, peSha1, peSha256.
-func (m *FileHash) GetHashType()(*FileHashType) {
+func (m *FileHash) GetHashType()(*FileHash_hashType) {
     val, err := m.GetBackingStore().Get("hashType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*FileHashType)
+        return val.(*FileHash_hashType)
     }
     return nil
 }
@@ -147,7 +147,7 @@ func (m *FileHash) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d4118542
     m.backingStore = value
 }
 // SetHashType sets the hashType property value. File hash type. Possible values are: unknown, sha1, sha256, md5, authenticodeHash256, lsHash, ctph, peSha1, peSha256.
-func (m *FileHash) SetHashType(value *FileHashType)() {
+func (m *FileHash) SetHashType(value *FileHash_hashType)() {
     err := m.GetBackingStore().Set("hashType", value)
     if err != nil {
         panic(err)
@@ -173,11 +173,11 @@ type FileHashable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetHashType()(*FileHashType)
+    GetHashType()(*FileHash_hashType)
     GetHashValue()(*string)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetHashType(value *FileHashType)()
+    SetHashType(value *FileHash_hashType)()
     SetHashValue(value *string)()
     SetOdataType(value *string)()
 }

@@ -41,6 +41,8 @@ func CreateCommsOperationFromDiscriminatorValue(parseNode i878a80d2330e89d268963
                         return NewPlayPromptOperation(), nil
                     case "#microsoft.graph.recordOperation":
                         return NewRecordOperation(), nil
+                    case "#microsoft.graph.sendDtmfTonesOperation":
+                        return NewSendDtmfTonesOperation(), nil
                     case "#microsoft.graph.startHoldMusicOperation":
                         return NewStartHoldMusicOperation(), nil
                     case "#microsoft.graph.stopHoldMusicOperation":

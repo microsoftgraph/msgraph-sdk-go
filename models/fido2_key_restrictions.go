@@ -50,13 +50,13 @@ func (m *Fido2KeyRestrictions) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078
     return m.backingStore
 }
 // GetEnforcementType gets the enforcementType property value. Enforcement type. Possible values are: allow, block.
-func (m *Fido2KeyRestrictions) GetEnforcementType()(*Fido2RestrictionEnforcementType) {
+func (m *Fido2KeyRestrictions) GetEnforcementType()(*Fido2KeyRestrictions_enforcementType) {
     val, err := m.GetBackingStore().Get("enforcementType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*Fido2RestrictionEnforcementType)
+        return val.(*Fido2KeyRestrictions_enforcementType)
     }
     return nil
 }
@@ -80,12 +80,12 @@ func (m *Fido2KeyRestrictions) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["enforcementType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseFido2RestrictionEnforcementType)
+        val, err := n.GetEnumValue(ParseFido2KeyRestrictions_enforcementType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEnforcementType(val.(*Fido2RestrictionEnforcementType))
+            m.SetEnforcementType(val.(*Fido2KeyRestrictions_enforcementType))
         }
         return nil
     }
@@ -187,7 +187,7 @@ func (m *Fido2KeyRestrictions) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ec
     m.backingStore = value
 }
 // SetEnforcementType sets the enforcementType property value. Enforcement type. Possible values are: allow, block.
-func (m *Fido2KeyRestrictions) SetEnforcementType(value *Fido2RestrictionEnforcementType)() {
+func (m *Fido2KeyRestrictions) SetEnforcementType(value *Fido2KeyRestrictions_enforcementType)() {
     err := m.GetBackingStore().Set("enforcementType", value)
     if err != nil {
         panic(err)
@@ -214,12 +214,12 @@ type Fido2KeyRestrictionsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAaGuids()([]string)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetEnforcementType()(*Fido2RestrictionEnforcementType)
+    GetEnforcementType()(*Fido2KeyRestrictions_enforcementType)
     GetIsEnforced()(*bool)
     GetOdataType()(*string)
     SetAaGuids(value []string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetEnforcementType(value *Fido2RestrictionEnforcementType)()
+    SetEnforcementType(value *Fido2KeyRestrictions_enforcementType)()
     SetIsEnforced(value *bool)()
     SetOdataType(value *string)()
 }

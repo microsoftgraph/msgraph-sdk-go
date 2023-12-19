@@ -22,13 +22,13 @@ func CreateSignInFrequencySessionControlFromDiscriminatorValue(parseNode i878a80
     return NewSignInFrequencySessionControl(), nil
 }
 // GetAuthenticationType gets the authenticationType property value. The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue.
-func (m *SignInFrequencySessionControl) GetAuthenticationType()(*SignInFrequencyAuthenticationType) {
+func (m *SignInFrequencySessionControl) GetAuthenticationType()(*SignInFrequencySessionControl_authenticationType) {
     val, err := m.GetBackingStore().Get("authenticationType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SignInFrequencyAuthenticationType)
+        return val.(*SignInFrequencySessionControl_authenticationType)
     }
     return nil
 }
@@ -36,32 +36,32 @@ func (m *SignInFrequencySessionControl) GetAuthenticationType()(*SignInFrequency
 func (m *SignInFrequencySessionControl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ConditionalAccessSessionControl.GetFieldDeserializers()
     res["authenticationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSignInFrequencyAuthenticationType)
+        val, err := n.GetEnumValue(ParseSignInFrequencySessionControl_authenticationType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAuthenticationType(val.(*SignInFrequencyAuthenticationType))
+            m.SetAuthenticationType(val.(*SignInFrequencySessionControl_authenticationType))
         }
         return nil
     }
     res["frequencyInterval"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSignInFrequencyInterval)
+        val, err := n.GetEnumValue(ParseSignInFrequencySessionControl_frequencyInterval)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFrequencyInterval(val.(*SignInFrequencyInterval))
+            m.SetFrequencyInterval(val.(*SignInFrequencySessionControl_frequencyInterval))
         }
         return nil
     }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSigninFrequencyType)
+        val, err := n.GetEnumValue(ParseSignInFrequencySessionControl_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*SigninFrequencyType))
+            m.SetTypeEscaped(val.(*SignInFrequencySessionControl_type))
         }
         return nil
     }
@@ -78,24 +78,24 @@ func (m *SignInFrequencySessionControl) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetFrequencyInterval gets the frequencyInterval property value. The possible values are timeBased, everyTime, unknownFutureValue.
-func (m *SignInFrequencySessionControl) GetFrequencyInterval()(*SignInFrequencyInterval) {
+func (m *SignInFrequencySessionControl) GetFrequencyInterval()(*SignInFrequencySessionControl_frequencyInterval) {
     val, err := m.GetBackingStore().Get("frequencyInterval")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SignInFrequencyInterval)
+        return val.(*SignInFrequencySessionControl_frequencyInterval)
     }
     return nil
 }
 // GetTypeEscaped gets the type property value. Possible values are: days, hours.
-func (m *SignInFrequencySessionControl) GetTypeEscaped()(*SigninFrequencyType) {
+func (m *SignInFrequencySessionControl) GetTypeEscaped()(*SignInFrequencySessionControl_type) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SigninFrequencyType)
+        return val.(*SignInFrequencySessionControl_type)
     }
     return nil
 }
@@ -146,21 +146,21 @@ func (m *SignInFrequencySessionControl) Serialize(writer i878a80d2330e89d2689638
     return nil
 }
 // SetAuthenticationType sets the authenticationType property value. The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue.
-func (m *SignInFrequencySessionControl) SetAuthenticationType(value *SignInFrequencyAuthenticationType)() {
+func (m *SignInFrequencySessionControl) SetAuthenticationType(value *SignInFrequencySessionControl_authenticationType)() {
     err := m.GetBackingStore().Set("authenticationType", value)
     if err != nil {
         panic(err)
     }
 }
 // SetFrequencyInterval sets the frequencyInterval property value. The possible values are timeBased, everyTime, unknownFutureValue.
-func (m *SignInFrequencySessionControl) SetFrequencyInterval(value *SignInFrequencyInterval)() {
+func (m *SignInFrequencySessionControl) SetFrequencyInterval(value *SignInFrequencySessionControl_frequencyInterval)() {
     err := m.GetBackingStore().Set("frequencyInterval", value)
     if err != nil {
         panic(err)
     }
 }
 // SetTypeEscaped sets the type property value. Possible values are: days, hours.
-func (m *SignInFrequencySessionControl) SetTypeEscaped(value *SigninFrequencyType)() {
+func (m *SignInFrequencySessionControl) SetTypeEscaped(value *SignInFrequencySessionControl_type)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -177,12 +177,12 @@ func (m *SignInFrequencySessionControl) SetValue(value *int32)() {
 type SignInFrequencySessionControlable interface {
     ConditionalAccessSessionControlable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAuthenticationType()(*SignInFrequencyAuthenticationType)
-    GetFrequencyInterval()(*SignInFrequencyInterval)
-    GetTypeEscaped()(*SigninFrequencyType)
+    GetAuthenticationType()(*SignInFrequencySessionControl_authenticationType)
+    GetFrequencyInterval()(*SignInFrequencySessionControl_frequencyInterval)
+    GetTypeEscaped()(*SignInFrequencySessionControl_type)
     GetValue()(*int32)
-    SetAuthenticationType(value *SignInFrequencyAuthenticationType)()
-    SetFrequencyInterval(value *SignInFrequencyInterval)()
-    SetTypeEscaped(value *SigninFrequencyType)()
+    SetAuthenticationType(value *SignInFrequencySessionControl_authenticationType)()
+    SetFrequencyInterval(value *SignInFrequencySessionControl_frequencyInterval)()
+    SetTypeEscaped(value *SignInFrequencySessionControl_type)()
     SetValue(value *int32)()
 }

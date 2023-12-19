@@ -172,12 +172,12 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["requestType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAccessPackageRequestType)
+        val, err := n.GetEnumValue(ParseAccessPackageAssignmentRequest_requestType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRequestType(val.(*AccessPackageRequestType))
+            m.SetRequestType(val.(*AccessPackageAssignmentRequest_requestType))
         }
         return nil
     }
@@ -192,12 +192,12 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAccessPackageRequestState)
+        val, err := n.GetEnumValue(ParseAccessPackageAssignmentRequest_state)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetState(val.(*AccessPackageRequestState))
+            m.SetState(val.(*AccessPackageAssignmentRequest_state))
         }
         return nil
     }
@@ -225,13 +225,13 @@ func (m *AccessPackageAssignmentRequest) GetRequestor()(AccessPackageSubjectable
     return nil
 }
 // GetRequestType gets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. A request from the user themselves would have requestType of userAdd, userUpdate or userRemove. This property can't be changed once set.
-func (m *AccessPackageAssignmentRequest) GetRequestType()(*AccessPackageRequestType) {
+func (m *AccessPackageAssignmentRequest) GetRequestType()(*AccessPackageAssignmentRequest_requestType) {
     val, err := m.GetBackingStore().Get("requestType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AccessPackageRequestType)
+        return val.(*AccessPackageAssignmentRequest_requestType)
     }
     return nil
 }
@@ -247,13 +247,13 @@ func (m *AccessPackageAssignmentRequest) GetSchedule()(EntitlementManagementSche
     return nil
 }
 // GetState gets the state property value. The state of the request. The possible values are: submitted, pendingApproval, delivering, delivered, deliveryFailed, denied, scheduled, canceled, partiallyDelivered, unknownFutureValue. Read-only. Supports $filter (eq).
-func (m *AccessPackageAssignmentRequest) GetState()(*AccessPackageRequestState) {
+func (m *AccessPackageAssignmentRequest) GetState()(*AccessPackageAssignmentRequest_state) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AccessPackageRequestState)
+        return val.(*AccessPackageAssignmentRequest_state)
     }
     return nil
 }
@@ -406,7 +406,7 @@ func (m *AccessPackageAssignmentRequest) SetRequestor(value AccessPackageSubject
     }
 }
 // SetRequestType sets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. A request from the user themselves would have requestType of userAdd, userUpdate or userRemove. This property can't be changed once set.
-func (m *AccessPackageAssignmentRequest) SetRequestType(value *AccessPackageRequestType)() {
+func (m *AccessPackageAssignmentRequest) SetRequestType(value *AccessPackageAssignmentRequest_requestType)() {
     err := m.GetBackingStore().Set("requestType", value)
     if err != nil {
         panic(err)
@@ -420,7 +420,7 @@ func (m *AccessPackageAssignmentRequest) SetSchedule(value EntitlementManagement
     }
 }
 // SetState sets the state property value. The state of the request. The possible values are: submitted, pendingApproval, delivering, delivered, deliveryFailed, denied, scheduled, canceled, partiallyDelivered, unknownFutureValue. Read-only. Supports $filter (eq).
-func (m *AccessPackageAssignmentRequest) SetState(value *AccessPackageRequestState)() {
+func (m *AccessPackageAssignmentRequest) SetState(value *AccessPackageAssignmentRequest_state)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {
         panic(err)
@@ -444,9 +444,9 @@ type AccessPackageAssignmentRequestable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCustomExtensionCalloutInstances()([]CustomExtensionCalloutInstanceable)
     GetRequestor()(AccessPackageSubjectable)
-    GetRequestType()(*AccessPackageRequestType)
+    GetRequestType()(*AccessPackageAssignmentRequest_requestType)
     GetSchedule()(EntitlementManagementScheduleable)
-    GetState()(*AccessPackageRequestState)
+    GetState()(*AccessPackageAssignmentRequest_state)
     GetStatus()(*string)
     SetAccessPackage(value AccessPackageable)()
     SetAnswers(value []AccessPackageAnswerable)()
@@ -455,8 +455,8 @@ type AccessPackageAssignmentRequestable interface {
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCustomExtensionCalloutInstances(value []CustomExtensionCalloutInstanceable)()
     SetRequestor(value AccessPackageSubjectable)()
-    SetRequestType(value *AccessPackageRequestType)()
+    SetRequestType(value *AccessPackageAssignmentRequest_requestType)()
     SetSchedule(value EntitlementManagementScheduleable)()
-    SetState(value *AccessPackageRequestState)()
+    SetState(value *AccessPackageAssignmentRequest_state)()
     SetStatus(value *string)()
 }

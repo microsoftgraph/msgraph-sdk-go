@@ -53,12 +53,12 @@ func (m *ResponseStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["response"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseResponseType)
+        val, err := n.GetEnumValue(ParseResponseStatus_response)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetResponse(val.(*ResponseType))
+            m.SetResponse(val.(*ResponseStatus_response))
         }
         return nil
     }
@@ -86,13 +86,13 @@ func (m *ResponseStatus) GetOdataType()(*string) {
     return nil
 }
 // GetResponse gets the response property value. The response type. Possible values are: none, organizer, tentativelyAccepted, accepted, declined, notResponded.To differentiate between none and notResponded:  none – from organizer's perspective. This value is used when the status of an attendee/participant is reported to the organizer of a meeting.  notResponded – from attendee's perspective. Indicates the attendee has not responded to the meeting request.  Clients can treat notResponded == none.  As an example, if attendee Alex hasn't responded to a meeting request, getting Alex' response status for that event in Alex' calendar returns notResponded. Getting Alex' response from the calendar of any other attendee or the organizer's returns none. Getting the organizer's response for the event in anybody's calendar also returns none.
-func (m *ResponseStatus) GetResponse()(*ResponseType) {
+func (m *ResponseStatus) GetResponse()(*ResponseStatus_response) {
     val, err := m.GetBackingStore().Get("response")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ResponseType)
+        return val.(*ResponseStatus_response)
     }
     return nil
 }
@@ -155,7 +155,7 @@ func (m *ResponseStatus) SetOdataType(value *string)() {
     }
 }
 // SetResponse sets the response property value. The response type. Possible values are: none, organizer, tentativelyAccepted, accepted, declined, notResponded.To differentiate between none and notResponded:  none – from organizer's perspective. This value is used when the status of an attendee/participant is reported to the organizer of a meeting.  notResponded – from attendee's perspective. Indicates the attendee has not responded to the meeting request.  Clients can treat notResponded == none.  As an example, if attendee Alex hasn't responded to a meeting request, getting Alex' response status for that event in Alex' calendar returns notResponded. Getting Alex' response from the calendar of any other attendee or the organizer's returns none. Getting the organizer's response for the event in anybody's calendar also returns none.
-func (m *ResponseStatus) SetResponse(value *ResponseType)() {
+func (m *ResponseStatus) SetResponse(value *ResponseStatus_response)() {
     err := m.GetBackingStore().Set("response", value)
     if err != nil {
         panic(err)
@@ -175,10 +175,10 @@ type ResponseStatusable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
-    GetResponse()(*ResponseType)
+    GetResponse()(*ResponseStatus_response)
     GetTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
-    SetResponse(value *ResponseType)()
+    SetResponse(value *ResponseStatus_response)()
     SetTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

@@ -144,12 +144,12 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     res["membershipType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseChannelMembershipType)
+        val, err := n.GetEnumValue(ParseChannel_membershipType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMembershipType(val.(*ChannelMembershipType))
+            m.SetMembershipType(val.(*Channel_membershipType))
         }
         return nil
     }
@@ -267,13 +267,13 @@ func (m *Channel) GetMembers()([]ConversationMemberable) {
     return nil
 }
 // GetMembershipType gets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
-func (m *Channel) GetMembershipType()(*ChannelMembershipType) {
+func (m *Channel) GetMembershipType()(*Channel_membershipType) {
     val, err := m.GetBackingStore().Get("membershipType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ChannelMembershipType)
+        return val.(*Channel_membershipType)
     }
     return nil
 }
@@ -510,7 +510,7 @@ func (m *Channel) SetMembers(value []ConversationMemberable)() {
     }
 }
 // SetMembershipType sets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
-func (m *Channel) SetMembershipType(value *ChannelMembershipType)() {
+func (m *Channel) SetMembershipType(value *Channel_membershipType)() {
     err := m.GetBackingStore().Set("membershipType", value)
     if err != nil {
         panic(err)
@@ -569,7 +569,7 @@ type Channelable interface {
     GetFilesFolder()(DriveItemable)
     GetIsFavoriteByDefault()(*bool)
     GetMembers()([]ConversationMemberable)
-    GetMembershipType()(*ChannelMembershipType)
+    GetMembershipType()(*Channel_membershipType)
     GetMessages()([]ChatMessageable)
     GetSharedWithTeams()([]SharedWithChannelTeamInfoable)
     GetSummary()(ChannelSummaryable)
@@ -583,7 +583,7 @@ type Channelable interface {
     SetFilesFolder(value DriveItemable)()
     SetIsFavoriteByDefault(value *bool)()
     SetMembers(value []ConversationMemberable)()
-    SetMembershipType(value *ChannelMembershipType)()
+    SetMembershipType(value *Channel_membershipType)()
     SetMessages(value []ChatMessageable)()
     SetSharedWithTeams(value []SharedWithChannelTeamInfoable)()
     SetSummary(value ChannelSummaryable)()

@@ -20,7 +20,7 @@ func NewVirtualEventRegistration()(*VirtualEventRegistration) {
 func CreateVirtualEventRegistrationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVirtualEventRegistration(), nil
 }
-// GetCancelationDateTime gets the cancelationDateTime property value. The cancelationDateTime property
+// GetCancelationDateTime gets the cancelationDateTime property value. Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *VirtualEventRegistration) GetCancelationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("cancelationDateTime")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *VirtualEventRegistration) GetCancelationDateTime()(*i336074805fc853987a
     }
     return nil
 }
-// GetEmail gets the email property value. The email property
+// GetEmail gets the email property value. Email address of the registrant.
 func (m *VirtualEventRegistration) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
     if err != nil {
@@ -112,12 +112,12 @@ func (m *VirtualEventRegistration) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVirtualEventAttendeeRegistrationStatus)
+        val, err := n.GetEnumValue(ParseVirtualEventRegistration_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*VirtualEventAttendeeRegistrationStatus))
+            m.SetStatus(val.(*VirtualEventRegistration_status))
         }
         return nil
     }
@@ -133,7 +133,7 @@ func (m *VirtualEventRegistration) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetFirstName gets the firstName property value. The firstName property
+// GetFirstName gets the firstName property value. First name of the registrant.
 func (m *VirtualEventRegistration) GetFirstName()(*string) {
     val, err := m.GetBackingStore().Get("firstName")
     if err != nil {
@@ -144,7 +144,7 @@ func (m *VirtualEventRegistration) GetFirstName()(*string) {
     }
     return nil
 }
-// GetLastName gets the lastName property value. The lastName property
+// GetLastName gets the lastName property value. Last name of the registrant.
 func (m *VirtualEventRegistration) GetLastName()(*string) {
     val, err := m.GetBackingStore().Get("lastName")
     if err != nil {
@@ -155,7 +155,7 @@ func (m *VirtualEventRegistration) GetLastName()(*string) {
     }
     return nil
 }
-// GetRegistrationDateTime gets the registrationDateTime property value. The registrationDateTime property
+// GetRegistrationDateTime gets the registrationDateTime property value. Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *VirtualEventRegistration) GetRegistrationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("registrationDateTime")
     if err != nil {
@@ -166,7 +166,7 @@ func (m *VirtualEventRegistration) GetRegistrationDateTime()(*i336074805fc853987
     }
     return nil
 }
-// GetRegistrationQuestionAnswers gets the registrationQuestionAnswers property value. The registrationQuestionAnswers property
+// GetRegistrationQuestionAnswers gets the registrationQuestionAnswers property value. The registrant's answer to the registration questions.
 func (m *VirtualEventRegistration) GetRegistrationQuestionAnswers()([]VirtualEventRegistrationQuestionAnswerable) {
     val, err := m.GetBackingStore().Get("registrationQuestionAnswers")
     if err != nil {
@@ -177,18 +177,18 @@ func (m *VirtualEventRegistration) GetRegistrationQuestionAnswers()([]VirtualEve
     }
     return nil
 }
-// GetStatus gets the status property value. The status property
-func (m *VirtualEventRegistration) GetStatus()(*VirtualEventAttendeeRegistrationStatus) {
+// GetStatus gets the status property value. Registration status of the registrant. Read-only.
+func (m *VirtualEventRegistration) GetStatus()(*VirtualEventRegistration_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*VirtualEventAttendeeRegistrationStatus)
+        return val.(*VirtualEventRegistration_status)
     }
     return nil
 }
-// GetUserId gets the userId property value. The userId property
+// GetUserId gets the userId property value. The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
 func (m *VirtualEventRegistration) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -262,56 +262,56 @@ func (m *VirtualEventRegistration) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetCancelationDateTime sets the cancelationDateTime property value. The cancelationDateTime property
+// SetCancelationDateTime sets the cancelationDateTime property value. Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *VirtualEventRegistration) SetCancelationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("cancelationDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEmail sets the email property value. The email property
+// SetEmail sets the email property value. Email address of the registrant.
 func (m *VirtualEventRegistration) SetEmail(value *string)() {
     err := m.GetBackingStore().Set("email", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFirstName sets the firstName property value. The firstName property
+// SetFirstName sets the firstName property value. First name of the registrant.
 func (m *VirtualEventRegistration) SetFirstName(value *string)() {
     err := m.GetBackingStore().Set("firstName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastName sets the lastName property value. The lastName property
+// SetLastName sets the lastName property value. Last name of the registrant.
 func (m *VirtualEventRegistration) SetLastName(value *string)() {
     err := m.GetBackingStore().Set("lastName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRegistrationDateTime sets the registrationDateTime property value. The registrationDateTime property
+// SetRegistrationDateTime sets the registrationDateTime property value. Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *VirtualEventRegistration) SetRegistrationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("registrationDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRegistrationQuestionAnswers sets the registrationQuestionAnswers property value. The registrationQuestionAnswers property
+// SetRegistrationQuestionAnswers sets the registrationQuestionAnswers property value. The registrant's answer to the registration questions.
 func (m *VirtualEventRegistration) SetRegistrationQuestionAnswers(value []VirtualEventRegistrationQuestionAnswerable)() {
     err := m.GetBackingStore().Set("registrationQuestionAnswers", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status property
-func (m *VirtualEventRegistration) SetStatus(value *VirtualEventAttendeeRegistrationStatus)() {
+// SetStatus sets the status property value. Registration status of the registrant. Read-only.
+func (m *VirtualEventRegistration) SetStatus(value *VirtualEventRegistration_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The userId property
+// SetUserId sets the userId property value. The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
 func (m *VirtualEventRegistration) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {
@@ -328,7 +328,7 @@ type VirtualEventRegistrationable interface {
     GetLastName()(*string)
     GetRegistrationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRegistrationQuestionAnswers()([]VirtualEventRegistrationQuestionAnswerable)
-    GetStatus()(*VirtualEventAttendeeRegistrationStatus)
+    GetStatus()(*VirtualEventRegistration_status)
     GetUserId()(*string)
     SetCancelationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetEmail(value *string)()
@@ -336,6 +336,6 @@ type VirtualEventRegistrationable interface {
     SetLastName(value *string)()
     SetRegistrationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRegistrationQuestionAnswers(value []VirtualEventRegistrationQuestionAnswerable)()
-    SetStatus(value *VirtualEventAttendeeRegistrationStatus)()
+    SetStatus(value *VirtualEventRegistration_status)()
     SetUserId(value *string)()
 }

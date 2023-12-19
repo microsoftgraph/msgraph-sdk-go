@@ -165,12 +165,12 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["result"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOperationResult)
+        val, err := n.GetEnumValue(ParseDirectoryAudit_result)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetResult(val.(*OperationResult))
+            m.SetResult(val.(*DirectoryAudit_result))
         }
         return nil
     }
@@ -236,13 +236,13 @@ func (m *DirectoryAudit) GetOperationType()(*string) {
     return nil
 }
 // GetResult gets the result property value. Indicates the result of the activity. Possible values are: success, failure, timeout, unknownFutureValue.
-func (m *DirectoryAudit) GetResult()(*OperationResult) {
+func (m *DirectoryAudit) GetResult()(*DirectoryAudit_result) {
     val, err := m.GetBackingStore().Get("result")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*OperationResult)
+        return val.(*DirectoryAudit_result)
     }
     return nil
 }
@@ -412,7 +412,7 @@ func (m *DirectoryAudit) SetOperationType(value *string)() {
     }
 }
 // SetResult sets the result property value. Indicates the result of the activity. Possible values are: success, failure, timeout, unknownFutureValue.
-func (m *DirectoryAudit) SetResult(value *OperationResult)() {
+func (m *DirectoryAudit) SetResult(value *DirectoryAudit_result)() {
     err := m.GetBackingStore().Set("result", value)
     if err != nil {
         panic(err)
@@ -444,7 +444,7 @@ type DirectoryAuditable interface {
     GetInitiatedBy()(AuditActivityInitiatorable)
     GetLoggedByService()(*string)
     GetOperationType()(*string)
-    GetResult()(*OperationResult)
+    GetResult()(*DirectoryAudit_result)
     GetResultReason()(*string)
     GetTargetResources()([]TargetResourceable)
     SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -455,7 +455,7 @@ type DirectoryAuditable interface {
     SetInitiatedBy(value AuditActivityInitiatorable)()
     SetLoggedByService(value *string)()
     SetOperationType(value *string)()
-    SetResult(value *OperationResult)()
+    SetResult(value *DirectoryAudit_result)()
     SetResultReason(value *string)()
     SetTargetResources(value []TargetResourceable)()
 }

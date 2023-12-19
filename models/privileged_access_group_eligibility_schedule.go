@@ -22,13 +22,13 @@ func CreatePrivilegedAccessGroupEligibilityScheduleFromDiscriminatorValue(parseN
     return NewPrivilegedAccessGroupEligibilitySchedule(), nil
 }
 // GetAccessId gets the accessId property value. The identifier of the membership or ownership eligibility to the group that is governed by PIM. Required. The possible values are: owner, member. Supports $filter (eq).
-func (m *PrivilegedAccessGroupEligibilitySchedule) GetAccessId()(*PrivilegedAccessGroupRelationships) {
+func (m *PrivilegedAccessGroupEligibilitySchedule) GetAccessId()(*PrivilegedAccessGroupEligibilitySchedule_accessId) {
     val, err := m.GetBackingStore().Get("accessId")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PrivilegedAccessGroupRelationships)
+        return val.(*PrivilegedAccessGroupEligibilitySchedule_accessId)
     }
     return nil
 }
@@ -36,12 +36,12 @@ func (m *PrivilegedAccessGroupEligibilitySchedule) GetAccessId()(*PrivilegedAcce
 func (m *PrivilegedAccessGroupEligibilitySchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PrivilegedAccessSchedule.GetFieldDeserializers()
     res["accessId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePrivilegedAccessGroupRelationships)
+        val, err := n.GetEnumValue(ParsePrivilegedAccessGroupEligibilitySchedule_accessId)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccessId(val.(*PrivilegedAccessGroupRelationships))
+            m.SetAccessId(val.(*PrivilegedAccessGroupEligibilitySchedule_accessId))
         }
         return nil
     }
@@ -66,12 +66,12 @@ func (m *PrivilegedAccessGroupEligibilitySchedule) GetFieldDeserializers()(map[s
         return nil
     }
     res["memberType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePrivilegedAccessGroupMemberType)
+        val, err := n.GetEnumValue(ParsePrivilegedAccessGroupEligibilitySchedule_memberType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMemberType(val.(*PrivilegedAccessGroupMemberType))
+            m.SetMemberType(val.(*PrivilegedAccessGroupEligibilitySchedule_memberType))
         }
         return nil
     }
@@ -120,13 +120,13 @@ func (m *PrivilegedAccessGroupEligibilitySchedule) GetGroupId()(*string) {
     return nil
 }
 // GetMemberType gets the memberType property value. Indicates whether the assignment is derived from a group assignment. It can further imply whether the caller can manage the schedule. Required. The possible values are: direct, group, unknownFutureValue. Supports $filter (eq).
-func (m *PrivilegedAccessGroupEligibilitySchedule) GetMemberType()(*PrivilegedAccessGroupMemberType) {
+func (m *PrivilegedAccessGroupEligibilitySchedule) GetMemberType()(*PrivilegedAccessGroupEligibilitySchedule_memberType) {
     val, err := m.GetBackingStore().Get("memberType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PrivilegedAccessGroupMemberType)
+        return val.(*PrivilegedAccessGroupEligibilitySchedule_memberType)
     }
     return nil
 }
@@ -199,7 +199,7 @@ func (m *PrivilegedAccessGroupEligibilitySchedule) Serialize(writer i878a80d2330
     return nil
 }
 // SetAccessId sets the accessId property value. The identifier of the membership or ownership eligibility to the group that is governed by PIM. Required. The possible values are: owner, member. Supports $filter (eq).
-func (m *PrivilegedAccessGroupEligibilitySchedule) SetAccessId(value *PrivilegedAccessGroupRelationships)() {
+func (m *PrivilegedAccessGroupEligibilitySchedule) SetAccessId(value *PrivilegedAccessGroupEligibilitySchedule_accessId)() {
     err := m.GetBackingStore().Set("accessId", value)
     if err != nil {
         panic(err)
@@ -220,7 +220,7 @@ func (m *PrivilegedAccessGroupEligibilitySchedule) SetGroupId(value *string)() {
     }
 }
 // SetMemberType sets the memberType property value. Indicates whether the assignment is derived from a group assignment. It can further imply whether the caller can manage the schedule. Required. The possible values are: direct, group, unknownFutureValue. Supports $filter (eq).
-func (m *PrivilegedAccessGroupEligibilitySchedule) SetMemberType(value *PrivilegedAccessGroupMemberType)() {
+func (m *PrivilegedAccessGroupEligibilitySchedule) SetMemberType(value *PrivilegedAccessGroupEligibilitySchedule_memberType)() {
     err := m.GetBackingStore().Set("memberType", value)
     if err != nil {
         panic(err)
@@ -244,16 +244,16 @@ func (m *PrivilegedAccessGroupEligibilitySchedule) SetPrincipalId(value *string)
 type PrivilegedAccessGroupEligibilityScheduleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PrivilegedAccessScheduleable
-    GetAccessId()(*PrivilegedAccessGroupRelationships)
+    GetAccessId()(*PrivilegedAccessGroupEligibilitySchedule_accessId)
     GetGroup()(Groupable)
     GetGroupId()(*string)
-    GetMemberType()(*PrivilegedAccessGroupMemberType)
+    GetMemberType()(*PrivilegedAccessGroupEligibilitySchedule_memberType)
     GetPrincipal()(DirectoryObjectable)
     GetPrincipalId()(*string)
-    SetAccessId(value *PrivilegedAccessGroupRelationships)()
+    SetAccessId(value *PrivilegedAccessGroupEligibilitySchedule_accessId)()
     SetGroup(value Groupable)()
     SetGroupId(value *string)()
-    SetMemberType(value *PrivilegedAccessGroupMemberType)()
+    SetMemberType(value *PrivilegedAccessGroupEligibilitySchedule_memberType)()
     SetPrincipal(value DirectoryObjectable)()
     SetPrincipalId(value *string)()
 }

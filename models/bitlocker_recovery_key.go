@@ -76,12 +76,12 @@ func (m *BitlockerRecoveryKey) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["volumeType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVolumeType)
+        val, err := n.GetEnumValue(ParseBitlockerRecoveryKey_volumeType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVolumeType(val.(*VolumeType))
+            m.SetVolumeType(val.(*BitlockerRecoveryKey_volumeType))
         }
         return nil
     }
@@ -99,13 +99,13 @@ func (m *BitlockerRecoveryKey) GetKey()(*string) {
     return nil
 }
 // GetVolumeType gets the volumeType property value. Indicates the type of volume the BitLocker key is associated with. The possible values are: 1 (for operatingSystemVolume), 2 (for fixedDataVolume), 3 (for removableDataVolume), and 4 (for unknownFutureValue).
-func (m *BitlockerRecoveryKey) GetVolumeType()(*VolumeType) {
+func (m *BitlockerRecoveryKey) GetVolumeType()(*BitlockerRecoveryKey_volumeType) {
     val, err := m.GetBackingStore().Get("volumeType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*VolumeType)
+        return val.(*BitlockerRecoveryKey_volumeType)
     }
     return nil
 }
@@ -164,7 +164,7 @@ func (m *BitlockerRecoveryKey) SetKey(value *string)() {
     }
 }
 // SetVolumeType sets the volumeType property value. Indicates the type of volume the BitLocker key is associated with. The possible values are: 1 (for operatingSystemVolume), 2 (for fixedDataVolume), 3 (for removableDataVolume), and 4 (for unknownFutureValue).
-func (m *BitlockerRecoveryKey) SetVolumeType(value *VolumeType)() {
+func (m *BitlockerRecoveryKey) SetVolumeType(value *BitlockerRecoveryKey_volumeType)() {
     err := m.GetBackingStore().Set("volumeType", value)
     if err != nil {
         panic(err)
@@ -177,9 +177,9 @@ type BitlockerRecoveryKeyable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDeviceId()(*string)
     GetKey()(*string)
-    GetVolumeType()(*VolumeType)
+    GetVolumeType()(*BitlockerRecoveryKey_volumeType)
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDeviceId(value *string)()
     SetKey(value *string)()
-    SetVolumeType(value *VolumeType)()
+    SetVolumeType(value *BitlockerRecoveryKey_volumeType)()
 }

@@ -165,22 +165,22 @@ func (m *LandingPage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSimulationContentSource)
+        val, err := n.GetEnumValue(ParseLandingPage_source)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSource(val.(*SimulationContentSource))
+            m.SetSource(val.(*LandingPage_source))
         }
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSimulationContentStatus)
+        val, err := n.GetEnumValue(ParseLandingPage_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*SimulationContentStatus))
+            m.SetStatus(val.(*LandingPage_status))
         }
         return nil
     }
@@ -236,24 +236,24 @@ func (m *LandingPage) GetLocale()(*string) {
     return nil
 }
 // GetSource gets the source property value. The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
-func (m *LandingPage) GetSource()(*SimulationContentSource) {
+func (m *LandingPage) GetSource()(*LandingPage_source) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SimulationContentSource)
+        return val.(*LandingPage_source)
     }
     return nil
 }
 // GetStatus gets the status property value. The status of the simulation. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
-func (m *LandingPage) GetStatus()(*SimulationContentStatus) {
+func (m *LandingPage) GetStatus()(*LandingPage_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SimulationContentStatus)
+        return val.(*LandingPage_status)
     }
     return nil
 }
@@ -407,14 +407,14 @@ func (m *LandingPage) SetLocale(value *string)() {
     }
 }
 // SetSource sets the source property value. The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
-func (m *LandingPage) SetSource(value *SimulationContentSource)() {
+func (m *LandingPage) SetSource(value *LandingPage_source)() {
     err := m.GetBackingStore().Set("source", value)
     if err != nil {
         panic(err)
     }
 }
 // SetStatus sets the status property value. The status of the simulation. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
-func (m *LandingPage) SetStatus(value *SimulationContentStatus)() {
+func (m *LandingPage) SetStatus(value *LandingPage_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -439,8 +439,8 @@ type LandingPageable interface {
     GetLastModifiedBy()(EmailIdentityable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLocale()(*string)
-    GetSource()(*SimulationContentSource)
-    GetStatus()(*SimulationContentStatus)
+    GetSource()(*LandingPage_source)
+    GetStatus()(*LandingPage_status)
     GetSupportedLocales()([]string)
     SetCreatedBy(value EmailIdentityable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -450,7 +450,7 @@ type LandingPageable interface {
     SetLastModifiedBy(value EmailIdentityable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLocale(value *string)()
-    SetSource(value *SimulationContentSource)()
-    SetStatus(value *SimulationContentStatus)()
+    SetSource(value *LandingPage_source)()
+    SetStatus(value *LandingPage_status)()
     SetSupportedLocales(value []string)()
 }

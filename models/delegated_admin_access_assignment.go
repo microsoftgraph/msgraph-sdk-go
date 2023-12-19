@@ -97,12 +97,12 @@ func (m *DelegatedAdminAccessAssignment) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDelegatedAdminAccessAssignmentStatus)
+        val, err := n.GetEnumValue(ParseDelegatedAdminAccessAssignment_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*DelegatedAdminAccessAssignmentStatus))
+            m.SetStatus(val.(*DelegatedAdminAccessAssignment_status))
         }
         return nil
     }
@@ -120,13 +120,13 @@ func (m *DelegatedAdminAccessAssignment) GetLastModifiedDateTime()(*i336074805fc
     return nil
 }
 // GetStatus gets the status property value. The status of the access assignment. Read-only. The possible values are: pending, active, deleting, deleted, error, unknownFutureValue.
-func (m *DelegatedAdminAccessAssignment) GetStatus()(*DelegatedAdminAccessAssignmentStatus) {
+func (m *DelegatedAdminAccessAssignment) GetStatus()(*DelegatedAdminAccessAssignment_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DelegatedAdminAccessAssignmentStatus)
+        return val.(*DelegatedAdminAccessAssignment_status)
     }
     return nil
 }
@@ -198,7 +198,7 @@ func (m *DelegatedAdminAccessAssignment) SetLastModifiedDateTime(value *i3360748
     }
 }
 // SetStatus sets the status property value. The status of the access assignment. Read-only. The possible values are: pending, active, deleting, deleted, error, unknownFutureValue.
-func (m *DelegatedAdminAccessAssignment) SetStatus(value *DelegatedAdminAccessAssignmentStatus)() {
+func (m *DelegatedAdminAccessAssignment) SetStatus(value *DelegatedAdminAccessAssignment_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -212,10 +212,10 @@ type DelegatedAdminAccessAssignmentable interface {
     GetAccessDetails()(DelegatedAdminAccessDetailsable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetStatus()(*DelegatedAdminAccessAssignmentStatus)
+    GetStatus()(*DelegatedAdminAccessAssignment_status)
     SetAccessContainer(value DelegatedAdminAccessContainerable)()
     SetAccessDetails(value DelegatedAdminAccessDetailsable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetStatus(value *DelegatedAdminAccessAssignmentStatus)()
+    SetStatus(value *DelegatedAdminAccessAssignment_status)()
 }

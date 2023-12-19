@@ -52,12 +52,12 @@ func (m *TeamworkActivityTopic) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTeamworkActivityTopicSource)
+        val, err := n.GetEnumValue(ParseTeamworkActivityTopic_source)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSource(val.(*TeamworkActivityTopicSource))
+            m.SetSource(val.(*TeamworkActivityTopic_source))
         }
         return nil
     }
@@ -95,13 +95,13 @@ func (m *TeamworkActivityTopic) GetOdataType()(*string) {
     return nil
 }
 // GetSource gets the source property value. Type of source. Possible values are: entityUrl, text. For supported Microsoft Graph URLs, use entityUrl. For custom text, use text.
-func (m *TeamworkActivityTopic) GetSource()(*TeamworkActivityTopicSource) {
+func (m *TeamworkActivityTopic) GetSource()(*TeamworkActivityTopic_source) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TeamworkActivityTopicSource)
+        return val.(*TeamworkActivityTopic_source)
     }
     return nil
 }
@@ -181,7 +181,7 @@ func (m *TeamworkActivityTopic) SetOdataType(value *string)() {
     }
 }
 // SetSource sets the source property value. Type of source. Possible values are: entityUrl, text. For supported Microsoft Graph URLs, use entityUrl. For custom text, use text.
-func (m *TeamworkActivityTopic) SetSource(value *TeamworkActivityTopicSource)() {
+func (m *TeamworkActivityTopic) SetSource(value *TeamworkActivityTopic_source)() {
     err := m.GetBackingStore().Set("source", value)
     if err != nil {
         panic(err)
@@ -208,12 +208,12 @@ type TeamworkActivityTopicable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
-    GetSource()(*TeamworkActivityTopicSource)
+    GetSource()(*TeamworkActivityTopic_source)
     GetValue()(*string)
     GetWebUrl()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
-    SetSource(value *TeamworkActivityTopicSource)()
+    SetSource(value *TeamworkActivityTopic_source)()
     SetValue(value *string)()
     SetWebUrl(value *string)()
 }

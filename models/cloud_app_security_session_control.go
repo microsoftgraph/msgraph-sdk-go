@@ -22,13 +22,13 @@ func CreateCloudAppSecuritySessionControlFromDiscriminatorValue(parseNode i878a8
     return NewCloudAppSecuritySessionControl(), nil
 }
 // GetCloudAppSecurityType gets the cloudAppSecurityType property value. Possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.
-func (m *CloudAppSecuritySessionControl) GetCloudAppSecurityType()(*CloudAppSecuritySessionControlType) {
+func (m *CloudAppSecuritySessionControl) GetCloudAppSecurityType()(*CloudAppSecuritySessionControl_cloudAppSecurityType) {
     val, err := m.GetBackingStore().Get("cloudAppSecurityType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudAppSecuritySessionControlType)
+        return val.(*CloudAppSecuritySessionControl_cloudAppSecurityType)
     }
     return nil
 }
@@ -36,12 +36,12 @@ func (m *CloudAppSecuritySessionControl) GetCloudAppSecurityType()(*CloudAppSecu
 func (m *CloudAppSecuritySessionControl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ConditionalAccessSessionControl.GetFieldDeserializers()
     res["cloudAppSecurityType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudAppSecuritySessionControlType)
+        val, err := n.GetEnumValue(ParseCloudAppSecuritySessionControl_cloudAppSecurityType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCloudAppSecurityType(val.(*CloudAppSecuritySessionControlType))
+            m.SetCloudAppSecurityType(val.(*CloudAppSecuritySessionControl_cloudAppSecurityType))
         }
         return nil
     }
@@ -63,7 +63,7 @@ func (m *CloudAppSecuritySessionControl) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetCloudAppSecurityType sets the cloudAppSecurityType property value. Possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.
-func (m *CloudAppSecuritySessionControl) SetCloudAppSecurityType(value *CloudAppSecuritySessionControlType)() {
+func (m *CloudAppSecuritySessionControl) SetCloudAppSecurityType(value *CloudAppSecuritySessionControl_cloudAppSecurityType)() {
     err := m.GetBackingStore().Set("cloudAppSecurityType", value)
     if err != nil {
         panic(err)
@@ -73,6 +73,6 @@ func (m *CloudAppSecuritySessionControl) SetCloudAppSecurityType(value *CloudApp
 type CloudAppSecuritySessionControlable interface {
     ConditionalAccessSessionControlable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCloudAppSecurityType()(*CloudAppSecuritySessionControlType)
-    SetCloudAppSecurityType(value *CloudAppSecuritySessionControlType)()
+    GetCloudAppSecurityType()(*CloudAppSecuritySessionControl_cloudAppSecurityType)
+    SetCloudAppSecurityType(value *CloudAppSecuritySessionControl_cloudAppSecurityType)()
 }

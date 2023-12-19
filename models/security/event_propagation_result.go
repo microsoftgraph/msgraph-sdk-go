@@ -72,12 +72,12 @@ func (m *EventPropagationResult) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEventPropagationStatus)
+        val, err := n.GetEnumValue(ParseEventPropagationResult_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*EventPropagationStatus))
+            m.SetStatus(val.(*EventPropagationResult_status))
         }
         return nil
     }
@@ -127,13 +127,13 @@ func (m *EventPropagationResult) GetServiceName()(*string) {
     return nil
 }
 // GetStatus gets the status property value. Indicates the status of the event creation request. The possible values are: none, inProcessing, failed, success, unknownFutureValue.
-func (m *EventPropagationResult) GetStatus()(*EventPropagationStatus) {
+func (m *EventPropagationResult) GetStatus()(*EventPropagationResult_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EventPropagationStatus)
+        return val.(*EventPropagationResult_status)
     }
     return nil
 }
@@ -222,7 +222,7 @@ func (m *EventPropagationResult) SetServiceName(value *string)() {
     }
 }
 // SetStatus sets the status property value. Indicates the status of the event creation request. The possible values are: none, inProcessing, failed, success, unknownFutureValue.
-func (m *EventPropagationResult) SetStatus(value *EventPropagationStatus)() {
+func (m *EventPropagationResult) SetStatus(value *EventPropagationResult_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -244,12 +244,12 @@ type EventPropagationResultable interface {
     GetLocation()(*string)
     GetOdataType()(*string)
     GetServiceName()(*string)
-    GetStatus()(*EventPropagationStatus)
+    GetStatus()(*EventPropagationResult_status)
     GetStatusInformation()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetLocation(value *string)()
     SetOdataType(value *string)()
     SetServiceName(value *string)()
-    SetStatus(value *EventPropagationStatus)()
+    SetStatus(value *EventPropagationResult_status)()
     SetStatusInformation(value *string)()
 }

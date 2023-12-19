@@ -94,12 +94,12 @@ func (m *Website) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWebsiteType)
+        val, err := n.GetEnumValue(ParseWebsite_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*WebsiteType))
+            m.SetTypeEscaped(val.(*Website_type))
         }
         return nil
     }
@@ -117,13 +117,13 @@ func (m *Website) GetOdataType()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The possible values are: other, home, work, blog, profile.
-func (m *Website) GetTypeEscaped()(*WebsiteType) {
+func (m *Website) GetTypeEscaped()(*Website_type) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*WebsiteType)
+        return val.(*Website_type)
     }
     return nil
 }
@@ -195,7 +195,7 @@ func (m *Website) SetOdataType(value *string)() {
     }
 }
 // SetTypeEscaped sets the type property value. The possible values are: other, home, work, blog, profile.
-func (m *Website) SetTypeEscaped(value *WebsiteType)() {
+func (m *Website) SetTypeEscaped(value *Website_type)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -210,10 +210,10 @@ type Websiteable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDisplayName()(*string)
     GetOdataType()(*string)
-    GetTypeEscaped()(*WebsiteType)
+    GetTypeEscaped()(*Website_type)
     SetAddress(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDisplayName(value *string)()
     SetOdataType(value *string)()
-    SetTypeEscaped(value *WebsiteType)()
+    SetTypeEscaped(value *Website_type)()
 }

@@ -43,13 +43,13 @@ func (m *WindowsProtectionState) GetDetectedMalwareState()([]WindowsDeviceMalwar
     return nil
 }
 // GetDeviceState gets the deviceState property value. Indicates device's health state. Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical. Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical.
-func (m *WindowsProtectionState) GetDeviceState()(*WindowsDeviceHealthState) {
+func (m *WindowsProtectionState) GetDeviceState()(*WindowsProtectionState_deviceState) {
     val, err := m.GetBackingStore().Get("deviceState")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*WindowsDeviceHealthState)
+        return val.(*WindowsProtectionState_deviceState)
     }
     return nil
 }
@@ -94,12 +94,12 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["deviceState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWindowsDeviceHealthState)
+        val, err := n.GetEnumValue(ParseWindowsProtectionState_deviceState)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceState(val.(*WindowsDeviceHealthState))
+            m.SetDeviceState(val.(*WindowsProtectionState_deviceState))
         }
         return nil
     }
@@ -214,12 +214,12 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["productStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWindowsDefenderProductStatus)
+        val, err := n.GetEnumValue(ParseWindowsProtectionState_productStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProductStatus(val.(*WindowsDefenderProductStatus))
+            m.SetProductStatus(val.(*WindowsProtectionState_productStatus))
         }
         return nil
     }
@@ -396,13 +396,13 @@ func (m *WindowsProtectionState) GetNetworkInspectionSystemEnabled()(*bool) {
     return nil
 }
 // GetProductStatus gets the productStatus property value. Product Status of Windows Defender Antivirus. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall.
-func (m *WindowsProtectionState) GetProductStatus()(*WindowsDefenderProductStatus) {
+func (m *WindowsProtectionState) GetProductStatus()(*WindowsProtectionState_productStatus) {
     val, err := m.GetBackingStore().Get("productStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*WindowsDefenderProductStatus)
+        return val.(*WindowsProtectionState_productStatus)
     }
     return nil
 }
@@ -629,7 +629,7 @@ func (m *WindowsProtectionState) SetDetectedMalwareState(value []WindowsDeviceMa
     }
 }
 // SetDeviceState sets the deviceState property value. Indicates device's health state. Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical. Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical.
-func (m *WindowsProtectionState) SetDeviceState(value *WindowsDeviceHealthState)() {
+func (m *WindowsProtectionState) SetDeviceState(value *WindowsProtectionState_deviceState)() {
     err := m.GetBackingStore().Set("deviceState", value)
     if err != nil {
         panic(err)
@@ -713,7 +713,7 @@ func (m *WindowsProtectionState) SetNetworkInspectionSystemEnabled(value *bool)(
     }
 }
 // SetProductStatus sets the productStatus property value. Product Status of Windows Defender Antivirus. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall.
-func (m *WindowsProtectionState) SetProductStatus(value *WindowsDefenderProductStatus)() {
+func (m *WindowsProtectionState) SetProductStatus(value *WindowsProtectionState_productStatus)() {
     err := m.GetBackingStore().Set("productStatus", value)
     if err != nil {
         panic(err)
@@ -767,7 +767,7 @@ type WindowsProtectionStateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAntiMalwareVersion()(*string)
     GetDetectedMalwareState()([]WindowsDeviceMalwareStateable)
-    GetDeviceState()(*WindowsDeviceHealthState)
+    GetDeviceState()(*WindowsProtectionState_deviceState)
     GetEngineVersion()(*string)
     GetFullScanOverdue()(*bool)
     GetFullScanRequired()(*bool)
@@ -779,7 +779,7 @@ type WindowsProtectionStateable interface {
     GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMalwareProtectionEnabled()(*bool)
     GetNetworkInspectionSystemEnabled()(*bool)
-    GetProductStatus()(*WindowsDefenderProductStatus)
+    GetProductStatus()(*WindowsProtectionState_productStatus)
     GetQuickScanOverdue()(*bool)
     GetRealTimeProtectionEnabled()(*bool)
     GetRebootRequired()(*bool)
@@ -788,7 +788,7 @@ type WindowsProtectionStateable interface {
     GetTamperProtectionEnabled()(*bool)
     SetAntiMalwareVersion(value *string)()
     SetDetectedMalwareState(value []WindowsDeviceMalwareStateable)()
-    SetDeviceState(value *WindowsDeviceHealthState)()
+    SetDeviceState(value *WindowsProtectionState_deviceState)()
     SetEngineVersion(value *string)()
     SetFullScanOverdue(value *bool)()
     SetFullScanRequired(value *bool)()
@@ -800,7 +800,7 @@ type WindowsProtectionStateable interface {
     SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMalwareProtectionEnabled(value *bool)()
     SetNetworkInspectionSystemEnabled(value *bool)()
-    SetProductStatus(value *WindowsDefenderProductStatus)()
+    SetProductStatus(value *WindowsProtectionState_productStatus)()
     SetQuickScanOverdue(value *bool)()
     SetRealTimeProtectionEnabled(value *bool)()
     SetRebootRequired(value *bool)()

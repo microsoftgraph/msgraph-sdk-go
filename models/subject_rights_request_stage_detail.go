@@ -73,22 +73,22 @@ func (m *SubjectRightsRequestStageDetail) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["stage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSubjectRightsRequestStage)
+        val, err := n.GetEnumValue(ParseSubjectRightsRequestStageDetail_stage)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStage(val.(*SubjectRightsRequestStage))
+            m.SetStage(val.(*SubjectRightsRequestStageDetail_stage))
         }
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSubjectRightsRequestStageStatus)
+        val, err := n.GetEnumValue(ParseSubjectRightsRequestStageDetail_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*SubjectRightsRequestStageStatus))
+            m.SetStatus(val.(*SubjectRightsRequestStageDetail_status))
         }
         return nil
     }
@@ -106,24 +106,24 @@ func (m *SubjectRightsRequestStageDetail) GetOdataType()(*string) {
     return nil
 }
 // GetStage gets the stage property value. The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue, approval. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: approval.
-func (m *SubjectRightsRequestStageDetail) GetStage()(*SubjectRightsRequestStage) {
+func (m *SubjectRightsRequestStageDetail) GetStage()(*SubjectRightsRequestStageDetail_stage) {
     val, err := m.GetBackingStore().Get("stage")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SubjectRightsRequestStage)
+        return val.(*SubjectRightsRequestStageDetail_stage)
     }
     return nil
 }
 // GetStatus gets the status property value. Status of the current stage. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
-func (m *SubjectRightsRequestStageDetail) GetStatus()(*SubjectRightsRequestStageStatus) {
+func (m *SubjectRightsRequestStageDetail) GetStatus()(*SubjectRightsRequestStageDetail_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SubjectRightsRequestStageStatus)
+        return val.(*SubjectRightsRequestStageDetail_status)
     }
     return nil
 }
@@ -189,14 +189,14 @@ func (m *SubjectRightsRequestStageDetail) SetOdataType(value *string)() {
     }
 }
 // SetStage sets the stage property value. The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue, approval. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: approval.
-func (m *SubjectRightsRequestStageDetail) SetStage(value *SubjectRightsRequestStage)() {
+func (m *SubjectRightsRequestStageDetail) SetStage(value *SubjectRightsRequestStageDetail_stage)() {
     err := m.GetBackingStore().Set("stage", value)
     if err != nil {
         panic(err)
     }
 }
 // SetStatus sets the status property value. Status of the current stage. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
-func (m *SubjectRightsRequestStageDetail) SetStatus(value *SubjectRightsRequestStageStatus)() {
+func (m *SubjectRightsRequestStageDetail) SetStatus(value *SubjectRightsRequestStageDetail_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -210,11 +210,11 @@ type SubjectRightsRequestStageDetailable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetError()(PublicErrorable)
     GetOdataType()(*string)
-    GetStage()(*SubjectRightsRequestStage)
-    GetStatus()(*SubjectRightsRequestStageStatus)
+    GetStage()(*SubjectRightsRequestStageDetail_stage)
+    GetStatus()(*SubjectRightsRequestStageDetail_status)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetError(value PublicErrorable)()
     SetOdataType(value *string)()
-    SetStage(value *SubjectRightsRequestStage)()
-    SetStatus(value *SubjectRightsRequestStageStatus)()
+    SetStage(value *SubjectRightsRequestStageDetail_stage)()
+    SetStatus(value *SubjectRightsRequestStageDetail_status)()
 }

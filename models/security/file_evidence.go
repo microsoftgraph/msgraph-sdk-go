@@ -22,13 +22,13 @@ func CreateFileEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewFileEvidence(), nil
 }
 // GetDetectionStatus gets the detectionStatus property value. The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.
-func (m *FileEvidence) GetDetectionStatus()(*DetectionStatus) {
+func (m *FileEvidence) GetDetectionStatus()(*FileEvidence_detectionStatus) {
     val, err := m.GetBackingStore().Get("detectionStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DetectionStatus)
+        return val.(*FileEvidence_detectionStatus)
     }
     return nil
 }
@@ -36,12 +36,12 @@ func (m *FileEvidence) GetDetectionStatus()(*DetectionStatus) {
 func (m *FileEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["detectionStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDetectionStatus)
+        val, err := n.GetEnumValue(ParseFileEvidence_detectionStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDetectionStatus(val.(*DetectionStatus))
+            m.SetDetectionStatus(val.(*FileEvidence_detectionStatus))
         }
         return nil
     }
@@ -117,7 +117,7 @@ func (m *FileEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // SetDetectionStatus sets the detectionStatus property value. The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.
-func (m *FileEvidence) SetDetectionStatus(value *DetectionStatus)() {
+func (m *FileEvidence) SetDetectionStatus(value *FileEvidence_detectionStatus)() {
     err := m.GetBackingStore().Set("detectionStatus", value)
     if err != nil {
         panic(err)
@@ -141,10 +141,10 @@ func (m *FileEvidence) SetMdeDeviceId(value *string)() {
 type FileEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetDetectionStatus()(*DetectionStatus)
+    GetDetectionStatus()(*FileEvidence_detectionStatus)
     GetFileDetails()(FileDetailsable)
     GetMdeDeviceId()(*string)
-    SetDetectionStatus(value *DetectionStatus)()
+    SetDetectionStatus(value *FileEvidence_detectionStatus)()
     SetFileDetails(value FileDetailsable)()
     SetMdeDeviceId(value *string)()
 }

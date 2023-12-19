@@ -63,12 +63,12 @@ func (m *UserTrainingEventInfo) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["latestTrainingStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTrainingStatus)
+        val, err := n.GetEnumValue(ParseUserTrainingEventInfo_latestTrainingStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLatestTrainingStatus(val.(*TrainingStatus))
+            m.SetLatestTrainingStatus(val.(*UserTrainingEventInfo_latestTrainingStatus))
         }
         return nil
     }
@@ -115,13 +115,13 @@ func (m *UserTrainingEventInfo) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetLatestTrainingStatus gets the latestTrainingStatus property value. Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
-func (m *UserTrainingEventInfo) GetLatestTrainingStatus()(*TrainingStatus) {
+func (m *UserTrainingEventInfo) GetLatestTrainingStatus()(*UserTrainingEventInfo_latestTrainingStatus) {
     val, err := m.GetBackingStore().Get("latestTrainingStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TrainingStatus)
+        return val.(*UserTrainingEventInfo_latestTrainingStatus)
     }
     return nil
 }
@@ -235,7 +235,7 @@ func (m *UserTrainingEventInfo) SetDisplayName(value *string)() {
     }
 }
 // SetLatestTrainingStatus sets the latestTrainingStatus property value. Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
-func (m *UserTrainingEventInfo) SetLatestTrainingStatus(value *TrainingStatus)() {
+func (m *UserTrainingEventInfo) SetLatestTrainingStatus(value *UserTrainingEventInfo_latestTrainingStatus)() {
     err := m.GetBackingStore().Set("latestTrainingStatus", value)
     if err != nil {
         panic(err)
@@ -276,14 +276,14 @@ type UserTrainingEventInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDisplayName()(*string)
-    GetLatestTrainingStatus()(*TrainingStatus)
+    GetLatestTrainingStatus()(*UserTrainingEventInfo_latestTrainingStatus)
     GetOdataType()(*string)
     GetTrainingAssignedProperties()(UserTrainingContentEventInfoable)
     GetTrainingCompletedProperties()(UserTrainingContentEventInfoable)
     GetTrainingUpdatedProperties()(UserTrainingContentEventInfoable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDisplayName(value *string)()
-    SetLatestTrainingStatus(value *TrainingStatus)()
+    SetLatestTrainingStatus(value *UserTrainingEventInfo_latestTrainingStatus)()
     SetOdataType(value *string)()
     SetTrainingAssignedProperties(value UserTrainingContentEventInfoable)()
     SetTrainingCompletedProperties(value UserTrainingContentEventInfoable)()

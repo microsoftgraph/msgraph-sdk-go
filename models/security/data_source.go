@@ -110,25 +110,25 @@ func (m *DataSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     res["holdStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDataSourceHoldStatus)
+        val, err := n.GetEnumValue(ParseDataSource_holdStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetHoldStatus(val.(*DataSourceHoldStatus))
+            m.SetHoldStatus(val.(*DataSource_holdStatus))
         }
         return nil
     }
     return res
 }
 // GetHoldStatus gets the holdStatus property value. The hold status of the dataSource.The possible values are: notApplied, applied, applying, removing, partial
-func (m *DataSource) GetHoldStatus()(*DataSourceHoldStatus) {
+func (m *DataSource) GetHoldStatus()(*DataSource_holdStatus) {
     val, err := m.GetBackingStore().Get("holdStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DataSourceHoldStatus)
+        return val.(*DataSource_holdStatus)
     }
     return nil
 }
@@ -187,7 +187,7 @@ func (m *DataSource) SetDisplayName(value *string)() {
     }
 }
 // SetHoldStatus sets the holdStatus property value. The hold status of the dataSource.The possible values are: notApplied, applied, applying, removing, partial
-func (m *DataSource) SetHoldStatus(value *DataSourceHoldStatus)() {
+func (m *DataSource) SetHoldStatus(value *DataSource_holdStatus)() {
     err := m.GetBackingStore().Set("holdStatus", value)
     if err != nil {
         panic(err)
@@ -200,9 +200,9 @@ type DataSourceable interface {
     GetCreatedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDisplayName()(*string)
-    GetHoldStatus()(*DataSourceHoldStatus)
+    GetHoldStatus()(*DataSource_holdStatus)
     SetCreatedBy(value iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDisplayName(value *string)()
-    SetHoldStatus(value *DataSourceHoldStatus)()
+    SetHoldStatus(value *DataSource_holdStatus)()
 }

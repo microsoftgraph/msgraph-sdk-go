@@ -20,13 +20,13 @@ func CreateUnifiedRoleEligibilityScheduleRequestFromDiscriminatorValue(parseNode
     return NewUnifiedRoleEligibilityScheduleRequest(), nil
 }
 // GetAction gets the action property value. Represents the type of operation on the role eligibility request. The possible values are: adminAssign, adminUpdate, adminRemove, selfActivate, selfDeactivate, adminExtend, adminRenew, selfExtend, selfRenew, unknownFutureValue. adminAssign: For administrators to assign eligible roles to principals.adminRemove: For administrators to remove eligible roles from principals. adminUpdate: For administrators to change existing role eligibilities.adminExtend: For administrators to extend expiring role eligibilities.adminRenew: For administrators to renew expired eligibilities.selfActivate: For users to activate their assignments.selfDeactivate: For users to deactivate their active assignments.selfExtend: For users to request to extend their expiring assignments.selfRenew: For users to request to renew their expired assignments.
-func (m *UnifiedRoleEligibilityScheduleRequest) GetAction()(*UnifiedRoleScheduleRequestActions) {
+func (m *UnifiedRoleEligibilityScheduleRequest) GetAction()(*UnifiedRoleEligibilityScheduleRequest_action) {
     val, err := m.GetBackingStore().Get("action")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*UnifiedRoleScheduleRequestActions)
+        return val.(*UnifiedRoleEligibilityScheduleRequest_action)
     }
     return nil
 }
@@ -78,12 +78,12 @@ func (m *UnifiedRoleEligibilityScheduleRequest) GetDirectoryScopeId()(*string) {
 func (m *UnifiedRoleEligibilityScheduleRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Request.GetFieldDeserializers()
     res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseUnifiedRoleScheduleRequestActions)
+        val, err := n.GetEnumValue(ParseUnifiedRoleEligibilityScheduleRequest_action)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAction(val.(*UnifiedRoleScheduleRequestActions))
+            m.SetAction(val.(*UnifiedRoleEligibilityScheduleRequest_action))
         }
         return nil
     }
@@ -439,7 +439,7 @@ func (m *UnifiedRoleEligibilityScheduleRequest) Serialize(writer i878a80d2330e89
     return nil
 }
 // SetAction sets the action property value. Represents the type of operation on the role eligibility request. The possible values are: adminAssign, adminUpdate, adminRemove, selfActivate, selfDeactivate, adminExtend, adminRenew, selfExtend, selfRenew, unknownFutureValue. adminAssign: For administrators to assign eligible roles to principals.adminRemove: For administrators to remove eligible roles from principals. adminUpdate: For administrators to change existing role eligibilities.adminExtend: For administrators to extend expiring role eligibilities.adminRenew: For administrators to renew expired eligibilities.selfActivate: For users to activate their assignments.selfDeactivate: For users to deactivate their active assignments.selfExtend: For users to request to extend their expiring assignments.selfRenew: For users to request to renew their expired assignments.
-func (m *UnifiedRoleEligibilityScheduleRequest) SetAction(value *UnifiedRoleScheduleRequestActions)() {
+func (m *UnifiedRoleEligibilityScheduleRequest) SetAction(value *UnifiedRoleEligibilityScheduleRequest_action)() {
     err := m.GetBackingStore().Set("action", value)
     if err != nil {
         panic(err)
@@ -547,7 +547,7 @@ func (m *UnifiedRoleEligibilityScheduleRequest) SetTicketInfo(value TicketInfoab
 type UnifiedRoleEligibilityScheduleRequestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Requestable
-    GetAction()(*UnifiedRoleScheduleRequestActions)
+    GetAction()(*UnifiedRoleEligibilityScheduleRequest_action)
     GetAppScope()(AppScopeable)
     GetAppScopeId()(*string)
     GetDirectoryScope()(DirectoryObjectable)
@@ -562,7 +562,7 @@ type UnifiedRoleEligibilityScheduleRequestable interface {
     GetTargetSchedule()(UnifiedRoleEligibilityScheduleable)
     GetTargetScheduleId()(*string)
     GetTicketInfo()(TicketInfoable)
-    SetAction(value *UnifiedRoleScheduleRequestActions)()
+    SetAction(value *UnifiedRoleEligibilityScheduleRequest_action)()
     SetAppScope(value AppScopeable)()
     SetAppScopeId(value *string)()
     SetDirectoryScope(value DirectoryObjectable)()

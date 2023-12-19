@@ -73,13 +73,13 @@ func (m *UserSecurityState) GetDomainName()(*string) {
     return nil
 }
 // GetEmailRole gets the emailRole property value. For email-related alerts - user account's email 'role'. Possible values are: unknown, sender, recipient.
-func (m *UserSecurityState) GetEmailRole()(*EmailRole) {
+func (m *UserSecurityState) GetEmailRole()(*UserSecurityState_emailRole) {
     val, err := m.GetBackingStore().Get("emailRole")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EmailRole)
+        return val.(*UserSecurityState_emailRole)
     }
     return nil
 }
@@ -117,12 +117,12 @@ func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["emailRole"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEmailRole)
+        val, err := n.GetEnumValue(ParseUserSecurityState_emailRole)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEmailRole(val.(*EmailRole))
+            m.SetEmailRole(val.(*UserSecurityState_emailRole))
         }
         return nil
     }
@@ -177,12 +177,12 @@ func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["logonType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseLogonType)
+        val, err := n.GetEnumValue(ParseUserSecurityState_logonType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLogonType(val.(*LogonType))
+            m.SetLogonType(val.(*UserSecurityState_logonType))
         }
         return nil
     }
@@ -217,12 +217,12 @@ func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["userAccountType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseUserAccountSecurityType)
+        val, err := n.GetEnumValue(ParseUserSecurityState_userAccountType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserAccountType(val.(*UserAccountSecurityType))
+            m.SetUserAccountType(val.(*UserSecurityState_userAccountType))
         }
         return nil
     }
@@ -294,13 +294,13 @@ func (m *UserSecurityState) GetLogonLocation()(*string) {
     return nil
 }
 // GetLogonType gets the logonType property value. Method of user sign in. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
-func (m *UserSecurityState) GetLogonType()(*LogonType) {
+func (m *UserSecurityState) GetLogonType()(*UserSecurityState_logonType) {
     val, err := m.GetBackingStore().Get("logonType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*LogonType)
+        return val.(*UserSecurityState_logonType)
     }
     return nil
 }
@@ -338,13 +338,13 @@ func (m *UserSecurityState) GetRiskScore()(*string) {
     return nil
 }
 // GetUserAccountType gets the userAccountType property value. User account type (group membership), per Windows definition. Possible values are: unknown, standard, power, administrator.
-func (m *UserSecurityState) GetUserAccountType()(*UserAccountSecurityType) {
+func (m *UserSecurityState) GetUserAccountType()(*UserSecurityState_userAccountType) {
     val, err := m.GetBackingStore().Get("userAccountType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*UserAccountSecurityType)
+        return val.(*UserSecurityState_userAccountType)
     }
     return nil
 }
@@ -495,7 +495,7 @@ func (m *UserSecurityState) SetDomainName(value *string)() {
     }
 }
 // SetEmailRole sets the emailRole property value. For email-related alerts - user account's email 'role'. Possible values are: unknown, sender, recipient.
-func (m *UserSecurityState) SetEmailRole(value *EmailRole)() {
+func (m *UserSecurityState) SetEmailRole(value *UserSecurityState_emailRole)() {
     err := m.GetBackingStore().Set("emailRole", value)
     if err != nil {
         panic(err)
@@ -537,7 +537,7 @@ func (m *UserSecurityState) SetLogonLocation(value *string)() {
     }
 }
 // SetLogonType sets the logonType property value. Method of user sign in. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
-func (m *UserSecurityState) SetLogonType(value *LogonType)() {
+func (m *UserSecurityState) SetLogonType(value *UserSecurityState_logonType)() {
     err := m.GetBackingStore().Set("logonType", value)
     if err != nil {
         panic(err)
@@ -565,7 +565,7 @@ func (m *UserSecurityState) SetRiskScore(value *string)() {
     }
 }
 // SetUserAccountType sets the userAccountType property value. User account type (group membership), per Windows definition. Possible values are: unknown, standard, power, administrator.
-func (m *UserSecurityState) SetUserAccountType(value *UserAccountSecurityType)() {
+func (m *UserSecurityState) SetUserAccountType(value *UserSecurityState_userAccountType)() {
     err := m.GetBackingStore().Set("userAccountType", value)
     if err != nil {
         panic(err)
@@ -587,32 +587,32 @@ type UserSecurityStateable interface {
     GetAccountName()(*string)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDomainName()(*string)
-    GetEmailRole()(*EmailRole)
+    GetEmailRole()(*UserSecurityState_emailRole)
     GetIsVpn()(*bool)
     GetLogonDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLogonId()(*string)
     GetLogonIp()(*string)
     GetLogonLocation()(*string)
-    GetLogonType()(*LogonType)
+    GetLogonType()(*UserSecurityState_logonType)
     GetOdataType()(*string)
     GetOnPremisesSecurityIdentifier()(*string)
     GetRiskScore()(*string)
-    GetUserAccountType()(*UserAccountSecurityType)
+    GetUserAccountType()(*UserSecurityState_userAccountType)
     GetUserPrincipalName()(*string)
     SetAadUserId(value *string)()
     SetAccountName(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDomainName(value *string)()
-    SetEmailRole(value *EmailRole)()
+    SetEmailRole(value *UserSecurityState_emailRole)()
     SetIsVpn(value *bool)()
     SetLogonDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLogonId(value *string)()
     SetLogonIp(value *string)()
     SetLogonLocation(value *string)()
-    SetLogonType(value *LogonType)()
+    SetLogonType(value *UserSecurityState_logonType)()
     SetOdataType(value *string)()
     SetOnPremisesSecurityIdentifier(value *string)()
     SetRiskScore(value *string)()
-    SetUserAccountType(value *UserAccountSecurityType)()
+    SetUserAccountType(value *UserSecurityState_userAccountType)()
     SetUserPrincipalName(value *string)()
 }

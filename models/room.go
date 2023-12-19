@@ -33,13 +33,13 @@ func (m *Room) GetAudioDeviceName()(*string) {
     return nil
 }
 // GetBookingType gets the bookingType property value. Type of room. Possible values are standard, and reserved.
-func (m *Room) GetBookingType()(*BookingType) {
+func (m *Room) GetBookingType()(*Room_bookingType) {
     val, err := m.GetBackingStore().Get("bookingType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*BookingType)
+        return val.(*Room_bookingType)
     }
     return nil
 }
@@ -101,12 +101,12 @@ func (m *Room) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     res["bookingType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseBookingType)
+        val, err := n.GetEnumValue(ParseRoom_bookingType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBookingType(val.(*BookingType))
+            m.SetBookingType(val.(*Room_bookingType))
         }
         return nil
     }
@@ -400,7 +400,7 @@ func (m *Room) SetAudioDeviceName(value *string)() {
     }
 }
 // SetBookingType sets the bookingType property value. Type of room. Possible values are standard, and reserved.
-func (m *Room) SetBookingType(value *BookingType)() {
+func (m *Room) SetBookingType(value *Room_bookingType)() {
     err := m.GetBackingStore().Set("bookingType", value)
     if err != nil {
         panic(err)
@@ -488,7 +488,7 @@ type Roomable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Placeable
     GetAudioDeviceName()(*string)
-    GetBookingType()(*BookingType)
+    GetBookingType()(*Room_bookingType)
     GetBuilding()(*string)
     GetCapacity()(*int32)
     GetDisplayDeviceName()(*string)
@@ -501,7 +501,7 @@ type Roomable interface {
     GetTags()([]string)
     GetVideoDeviceName()(*string)
     SetAudioDeviceName(value *string)()
-    SetBookingType(value *BookingType)()
+    SetBookingType(value *Room_bookingType)()
     SetBuilding(value *string)()
     SetCapacity(value *int32)()
     SetDisplayDeviceName(value *string)()

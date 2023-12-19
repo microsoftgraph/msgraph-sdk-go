@@ -164,12 +164,12 @@ func (m *SimulationAutomation) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSimulationAutomationStatus)
+        val, err := n.GetEnumValue(ParseSimulationAutomation_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*SimulationAutomationStatus))
+            m.SetStatus(val.(*SimulationAutomation_status))
         }
         return nil
     }
@@ -231,13 +231,13 @@ func (m *SimulationAutomation) GetRuns()([]SimulationAutomationRunable) {
     return nil
 }
 // GetStatus gets the status property value. Status of the attack simulation automation. Supports $filter and $orderby. The possible values are: unknown, draft, notRunning, running, completed, unknownFutureValue.
-func (m *SimulationAutomation) GetStatus()(*SimulationAutomationStatus) {
+func (m *SimulationAutomation) GetStatus()(*SimulationAutomation_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SimulationAutomationStatus)
+        return val.(*SimulationAutomation_status)
     }
     return nil
 }
@@ -380,7 +380,7 @@ func (m *SimulationAutomation) SetRuns(value []SimulationAutomationRunable)() {
     }
 }
 // SetStatus sets the status property value. Status of the attack simulation automation. Supports $filter and $orderby. The possible values are: unknown, draft, notRunning, running, completed, unknownFutureValue.
-func (m *SimulationAutomation) SetStatus(value *SimulationAutomationStatus)() {
+func (m *SimulationAutomation) SetStatus(value *SimulationAutomation_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -399,7 +399,7 @@ type SimulationAutomationable interface {
     GetLastRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetNextRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRuns()([]SimulationAutomationRunable)
-    GetStatus()(*SimulationAutomationStatus)
+    GetStatus()(*SimulationAutomation_status)
     SetCreatedBy(value EmailIdentityable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
@@ -409,5 +409,5 @@ type SimulationAutomationable interface {
     SetLastRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetNextRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRuns(value []SimulationAutomationRunable)()
-    SetStatus(value *SimulationAutomationStatus)()
+    SetStatus(value *SimulationAutomation_status)()
 }

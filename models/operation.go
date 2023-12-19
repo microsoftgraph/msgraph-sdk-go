@@ -73,12 +73,12 @@ func (m *Operation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOperationStatus)
+        val, err := n.GetEnumValue(ParseOperation_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*OperationStatus))
+            m.SetStatus(val.(*Operation_status))
         }
         return nil
     }
@@ -96,13 +96,13 @@ func (m *Operation) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     return nil
 }
 // GetStatus gets the status property value. The current status of the operation: notStarted, running, completed, failed
-func (m *Operation) GetStatus()(*OperationStatus) {
+func (m *Operation) GetStatus()(*Operation_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*OperationStatus)
+        return val.(*Operation_status)
     }
     return nil
 }
@@ -148,7 +148,7 @@ func (m *Operation) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97
     }
 }
 // SetStatus sets the status property value. The current status of the operation: notStarted, running, completed, failed
-func (m *Operation) SetStatus(value *OperationStatus)() {
+func (m *Operation) SetStatus(value *Operation_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -160,8 +160,8 @@ type Operationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetStatus()(*OperationStatus)
+    GetStatus()(*Operation_status)
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetStatus(value *OperationStatus)()
+    SetStatus(value *Operation_status)()
 }

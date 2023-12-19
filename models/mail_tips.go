@@ -208,12 +208,12 @@ func (m *MailTips) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["recipientScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRecipientScopeType)
+        val, err := n.GetEnumValue(ParseMailTips_recipientScope)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRecipientScope(val.(*RecipientScopeType))
+            m.SetRecipientScope(val.(*MailTips_recipientScope))
         }
         return nil
     }
@@ -290,13 +290,13 @@ func (m *MailTips) GetOdataType()(*string) {
     return nil
 }
 // GetRecipientScope gets the recipientScope property value. The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.
-func (m *MailTips) GetRecipientScope()(*RecipientScopeType) {
+func (m *MailTips) GetRecipientScope()(*MailTips_recipientScope) {
     val, err := m.GetBackingStore().Get("recipientScope")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RecipientScopeType)
+        return val.(*MailTips_recipientScope)
     }
     return nil
 }
@@ -499,7 +499,7 @@ func (m *MailTips) SetOdataType(value *string)() {
     }
 }
 // SetRecipientScope sets the recipientScope property value. The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.
-func (m *MailTips) SetRecipientScope(value *RecipientScopeType)() {
+func (m *MailTips) SetRecipientScope(value *MailTips_recipientScope)() {
     err := m.GetBackingStore().Set("recipientScope", value)
     if err != nil {
         panic(err)
@@ -535,7 +535,7 @@ type MailTipsable interface {
     GetMailboxFull()(*bool)
     GetMaxMessageSize()(*int32)
     GetOdataType()(*string)
-    GetRecipientScope()(*RecipientScopeType)
+    GetRecipientScope()(*MailTips_recipientScope)
     GetRecipientSuggestions()([]Recipientable)
     GetTotalMemberCount()(*int32)
     SetAutomaticReplies(value AutomaticRepliesMailTipsable)()
@@ -549,7 +549,7 @@ type MailTipsable interface {
     SetMailboxFull(value *bool)()
     SetMaxMessageSize(value *int32)()
     SetOdataType(value *string)()
-    SetRecipientScope(value *RecipientScopeType)()
+    SetRecipientScope(value *MailTips_recipientScope)()
     SetRecipientSuggestions(value []Recipientable)()
     SetTotalMemberCount(value *int32)()
 }

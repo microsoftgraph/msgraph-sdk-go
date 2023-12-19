@@ -155,32 +155,32 @@ func (m *EndUserNotification) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["notificationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEndUserNotificationType)
+        val, err := n.GetEnumValue(ParseEndUserNotification_notificationType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetNotificationType(val.(*EndUserNotificationType))
+            m.SetNotificationType(val.(*EndUserNotification_notificationType))
         }
         return nil
     }
     res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSimulationContentSource)
+        val, err := n.GetEnumValue(ParseEndUserNotification_source)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSource(val.(*SimulationContentSource))
+            m.SetSource(val.(*EndUserNotification_source))
         }
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSimulationContentStatus)
+        val, err := n.GetEnumValue(ParseEndUserNotification_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*SimulationContentStatus))
+            m.SetStatus(val.(*EndUserNotification_status))
         }
         return nil
     }
@@ -225,35 +225,35 @@ func (m *EndUserNotification) GetLastModifiedDateTime()(*i336074805fc853987abe6f
     return nil
 }
 // GetNotificationType gets the notificationType property value. Type of notification. Possible values are: unknown, positiveReinforcement, noTraining, trainingAssignment, trainingReminder, unknownFutureValue.
-func (m *EndUserNotification) GetNotificationType()(*EndUserNotificationType) {
+func (m *EndUserNotification) GetNotificationType()(*EndUserNotification_notificationType) {
     val, err := m.GetBackingStore().Get("notificationType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EndUserNotificationType)
+        return val.(*EndUserNotification_notificationType)
     }
     return nil
 }
 // GetSource gets the source property value. The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
-func (m *EndUserNotification) GetSource()(*SimulationContentSource) {
+func (m *EndUserNotification) GetSource()(*EndUserNotification_source) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SimulationContentSource)
+        return val.(*EndUserNotification_source)
     }
     return nil
 }
 // GetStatus gets the status property value. The status of the notification. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
-func (m *EndUserNotification) GetStatus()(*SimulationContentStatus) {
+func (m *EndUserNotification) GetStatus()(*EndUserNotification_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SimulationContentStatus)
+        return val.(*EndUserNotification_status)
     }
     return nil
 }
@@ -401,21 +401,21 @@ func (m *EndUserNotification) SetLastModifiedDateTime(value *i336074805fc853987a
     }
 }
 // SetNotificationType sets the notificationType property value. Type of notification. Possible values are: unknown, positiveReinforcement, noTraining, trainingAssignment, trainingReminder, unknownFutureValue.
-func (m *EndUserNotification) SetNotificationType(value *EndUserNotificationType)() {
+func (m *EndUserNotification) SetNotificationType(value *EndUserNotification_notificationType)() {
     err := m.GetBackingStore().Set("notificationType", value)
     if err != nil {
         panic(err)
     }
 }
 // SetSource sets the source property value. The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
-func (m *EndUserNotification) SetSource(value *SimulationContentSource)() {
+func (m *EndUserNotification) SetSource(value *EndUserNotification_source)() {
     err := m.GetBackingStore().Set("source", value)
     if err != nil {
         panic(err)
     }
 }
 // SetStatus sets the status property value. The status of the notification. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
-func (m *EndUserNotification) SetStatus(value *SimulationContentStatus)() {
+func (m *EndUserNotification) SetStatus(value *EndUserNotification_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -439,9 +439,9 @@ type EndUserNotificationable interface {
     GetDisplayName()(*string)
     GetLastModifiedBy()(EmailIdentityable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetNotificationType()(*EndUserNotificationType)
-    GetSource()(*SimulationContentSource)
-    GetStatus()(*SimulationContentStatus)
+    GetNotificationType()(*EndUserNotification_notificationType)
+    GetSource()(*EndUserNotification_source)
+    GetStatus()(*EndUserNotification_status)
     GetSupportedLocales()([]string)
     SetCreatedBy(value EmailIdentityable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -450,8 +450,8 @@ type EndUserNotificationable interface {
     SetDisplayName(value *string)()
     SetLastModifiedBy(value EmailIdentityable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetNotificationType(value *EndUserNotificationType)()
-    SetSource(value *SimulationContentSource)()
-    SetStatus(value *SimulationContentStatus)()
+    SetNotificationType(value *EndUserNotification_notificationType)()
+    SetSource(value *EndUserNotification_source)()
+    SetStatus(value *EndUserNotification_status)()
     SetSupportedLocales(value []string)()
 }

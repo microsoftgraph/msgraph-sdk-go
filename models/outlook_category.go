@@ -20,13 +20,13 @@ func CreateOutlookCategoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewOutlookCategory(), nil
 }
 // GetColor gets the color property value. A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. For more details, see the following note.
-func (m *OutlookCategory) GetColor()(*CategoryColor) {
+func (m *OutlookCategory) GetColor()(*OutlookCategory_color) {
     val, err := m.GetBackingStore().Get("color")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CategoryColor)
+        return val.(*OutlookCategory_color)
     }
     return nil
 }
@@ -45,12 +45,12 @@ func (m *OutlookCategory) GetDisplayName()(*string) {
 func (m *OutlookCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["color"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCategoryColor)
+        val, err := n.GetEnumValue(ParseOutlookCategory_color)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetColor(val.(*CategoryColor))
+            m.SetColor(val.(*OutlookCategory_color))
         }
         return nil
     }
@@ -88,7 +88,7 @@ func (m *OutlookCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetColor sets the color property value. A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. For more details, see the following note.
-func (m *OutlookCategory) SetColor(value *CategoryColor)() {
+func (m *OutlookCategory) SetColor(value *OutlookCategory_color)() {
     err := m.GetBackingStore().Set("color", value)
     if err != nil {
         panic(err)
@@ -105,8 +105,8 @@ func (m *OutlookCategory) SetDisplayName(value *string)() {
 type OutlookCategoryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetColor()(*CategoryColor)
+    GetColor()(*OutlookCategory_color)
     GetDisplayName()(*string)
-    SetColor(value *CategoryColor)()
+    SetColor(value *OutlookCategory_color)()
     SetDisplayName(value *string)()
 }

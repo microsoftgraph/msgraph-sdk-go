@@ -46,12 +46,12 @@ func (m *TimeOffReason) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["iconType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTimeOffReasonIconType)
+        val, err := n.GetEnumValue(ParseTimeOffReason_iconType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetIconType(val.(*TimeOffReasonIconType))
+            m.SetIconType(val.(*TimeOffReason_iconType))
         }
         return nil
     }
@@ -68,13 +68,13 @@ func (m *TimeOffReason) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetIconType gets the iconType property value. Supported icon types are: none, car, calendar, running, plane, firstAid, doctor, notWorking, clock, juryDuty, globe, cup, phone, weather, umbrella, piggyBank, dog, cake, trafficCone, pin, sunny. Required.
-func (m *TimeOffReason) GetIconType()(*TimeOffReasonIconType) {
+func (m *TimeOffReason) GetIconType()(*TimeOffReason_iconType) {
     val, err := m.GetBackingStore().Get("iconType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TimeOffReasonIconType)
+        return val.(*TimeOffReason_iconType)
     }
     return nil
 }
@@ -124,7 +124,7 @@ func (m *TimeOffReason) SetDisplayName(value *string)() {
     }
 }
 // SetIconType sets the iconType property value. Supported icon types are: none, car, calendar, running, plane, firstAid, doctor, notWorking, clock, juryDuty, globe, cup, phone, weather, umbrella, piggyBank, dog, cake, trafficCone, pin, sunny. Required.
-func (m *TimeOffReason) SetIconType(value *TimeOffReasonIconType)() {
+func (m *TimeOffReason) SetIconType(value *TimeOffReason_iconType)() {
     err := m.GetBackingStore().Set("iconType", value)
     if err != nil {
         panic(err)
@@ -142,9 +142,9 @@ type TimeOffReasonable interface {
     ChangeTrackedEntityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
-    GetIconType()(*TimeOffReasonIconType)
+    GetIconType()(*TimeOffReason_iconType)
     GetIsActive()(*bool)
     SetDisplayName(value *string)()
-    SetIconType(value *TimeOffReasonIconType)()
+    SetIconType(value *TimeOffReason_iconType)()
     SetIsActive(value *bool)()
 }

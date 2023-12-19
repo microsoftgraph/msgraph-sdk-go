@@ -145,12 +145,12 @@ func (m *BrowserSharedCookieHistory) GetFieldDeserializers()(map[string]func(i87
         return nil
     }
     res["sourceEnvironment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseBrowserSharedCookieSourceEnvironment)
+        val, err := n.GetEnumValue(ParseBrowserSharedCookieHistory_sourceEnvironment)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSourceEnvironment(val.(*BrowserSharedCookieSourceEnvironment))
+            m.SetSourceEnvironment(val.(*BrowserSharedCookieHistory_sourceEnvironment))
         }
         return nil
     }
@@ -223,13 +223,13 @@ func (m *BrowserSharedCookieHistory) GetPublishedDateTime()(*i336074805fc853987a
     return nil
 }
 // GetSourceEnvironment gets the sourceEnvironment property value. Specifies how the cookies are shared between Microsoft Edge and Internet Explorer. The possible values are: microsoftEdge, internetExplorer11, both, unknownFutureValue.
-func (m *BrowserSharedCookieHistory) GetSourceEnvironment()(*BrowserSharedCookieSourceEnvironment) {
+func (m *BrowserSharedCookieHistory) GetSourceEnvironment()(*BrowserSharedCookieHistory_sourceEnvironment) {
     val, err := m.GetBackingStore().Get("sourceEnvironment")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*BrowserSharedCookieSourceEnvironment)
+        return val.(*BrowserSharedCookieHistory_sourceEnvironment)
     }
     return nil
 }
@@ -366,7 +366,7 @@ func (m *BrowserSharedCookieHistory) SetPublishedDateTime(value *i336074805fc853
     }
 }
 // SetSourceEnvironment sets the sourceEnvironment property value. Specifies how the cookies are shared between Microsoft Edge and Internet Explorer. The possible values are: microsoftEdge, internetExplorer11, both, unknownFutureValue.
-func (m *BrowserSharedCookieHistory) SetSourceEnvironment(value *BrowserSharedCookieSourceEnvironment)() {
+func (m *BrowserSharedCookieHistory) SetSourceEnvironment(value *BrowserSharedCookieHistory_sourceEnvironment)() {
     err := m.GetBackingStore().Set("sourceEnvironment", value)
     if err != nil {
         panic(err)
@@ -386,7 +386,7 @@ type BrowserSharedCookieHistoryable interface {
     GetOdataType()(*string)
     GetPath()(*string)
     GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetSourceEnvironment()(*BrowserSharedCookieSourceEnvironment)
+    GetSourceEnvironment()(*BrowserSharedCookieHistory_sourceEnvironment)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetComment(value *string)()
     SetDisplayName(value *string)()
@@ -396,5 +396,5 @@ type BrowserSharedCookieHistoryable interface {
     SetOdataType(value *string)()
     SetPath(value *string)()
     SetPublishedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetSourceEnvironment(value *BrowserSharedCookieSourceEnvironment)()
+    SetSourceEnvironment(value *BrowserSharedCookieHistory_sourceEnvironment)()
 }

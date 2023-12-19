@@ -137,12 +137,12 @@ func (m *LearningCourseActivity) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCourseStatus)
+        val, err := n.GetEnumValue(ParseLearningCourseActivity_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*CourseStatus))
+            m.SetStatus(val.(*LearningCourseActivity_status))
         }
         return nil
     }
@@ -182,13 +182,13 @@ func (m *LearningCourseActivity) GetLearningProviderId()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The status of the course activity. Possible values are: notStarted, inProgress, completed. Required.
-func (m *LearningCourseActivity) GetStatus()(*CourseStatus) {
+func (m *LearningCourseActivity) GetStatus()(*LearningCourseActivity_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CourseStatus)
+        return val.(*LearningCourseActivity_status)
     }
     return nil
 }
@@ -286,7 +286,7 @@ func (m *LearningCourseActivity) SetLearningProviderId(value *string)() {
     }
 }
 // SetStatus sets the status property value. The status of the course activity. Possible values are: notStarted, inProgress, completed. Required.
-func (m *LearningCourseActivity) SetStatus(value *CourseStatus)() {
+func (m *LearningCourseActivity) SetStatus(value *LearningCourseActivity_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -302,12 +302,12 @@ type LearningCourseActivityable interface {
     GetLearnerUserId()(*string)
     GetLearningContentId()(*string)
     GetLearningProviderId()(*string)
-    GetStatus()(*CourseStatus)
+    GetStatus()(*LearningCourseActivity_status)
     SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCompletionPercentage(value *int32)()
     SetExternalcourseActivityId(value *string)()
     SetLearnerUserId(value *string)()
     SetLearningContentId(value *string)()
     SetLearningProviderId(value *string)()
-    SetStatus(value *CourseStatus)()
+    SetStatus(value *LearningCourseActivity_status)()
 }

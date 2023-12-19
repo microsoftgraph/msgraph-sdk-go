@@ -82,25 +82,25 @@ func (m *AuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]f
         return nil
     }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAuthenticationMethodState)
+        val, err := n.GetEnumValue(ParseAuthenticationMethodConfiguration_state)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetState(val.(*AuthenticationMethodState))
+            m.SetState(val.(*AuthenticationMethodConfiguration_state))
         }
         return nil
     }
     return res
 }
 // GetState gets the state property value. The state of the policy. Possible values are: enabled, disabled.
-func (m *AuthenticationMethodConfiguration) GetState()(*AuthenticationMethodState) {
+func (m *AuthenticationMethodConfiguration) GetState()(*AuthenticationMethodConfiguration_state) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AuthenticationMethodState)
+        return val.(*AuthenticationMethodConfiguration_state)
     }
     return nil
 }
@@ -139,7 +139,7 @@ func (m *AuthenticationMethodConfiguration) SetExcludeTargets(value []ExcludeTar
     }
 }
 // SetState sets the state property value. The state of the policy. Possible values are: enabled, disabled.
-func (m *AuthenticationMethodConfiguration) SetState(value *AuthenticationMethodState)() {
+func (m *AuthenticationMethodConfiguration) SetState(value *AuthenticationMethodConfiguration_state)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {
         panic(err)
@@ -150,7 +150,7 @@ type AuthenticationMethodConfigurationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetExcludeTargets()([]ExcludeTargetable)
-    GetState()(*AuthenticationMethodState)
+    GetState()(*AuthenticationMethodConfiguration_state)
     SetExcludeTargets(value []ExcludeTargetable)()
-    SetState(value *AuthenticationMethodState)()
+    SetState(value *AuthenticationMethodConfiguration_state)()
 }

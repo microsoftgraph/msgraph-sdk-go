@@ -31,13 +31,13 @@ func (m *CountryNamedLocation) GetCountriesAndRegions()([]string) {
     return nil
 }
 // GetCountryLookupMethod gets the countryLookupMethod property value. Determines what method is used to decide which country the user is located in. Possible values are clientIpAddress(default) and authenticatorAppGps. Note: authenticatorAppGps is not yet supported in the Microsoft Cloud for US Government.
-func (m *CountryNamedLocation) GetCountryLookupMethod()(*CountryLookupMethodType) {
+func (m *CountryNamedLocation) GetCountryLookupMethod()(*CountryNamedLocation_countryLookupMethod) {
     val, err := m.GetBackingStore().Get("countryLookupMethod")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CountryLookupMethodType)
+        return val.(*CountryNamedLocation_countryLookupMethod)
     }
     return nil
 }
@@ -61,12 +61,12 @@ func (m *CountryNamedLocation) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["countryLookupMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCountryLookupMethodType)
+        val, err := n.GetEnumValue(ParseCountryNamedLocation_countryLookupMethod)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCountryLookupMethod(val.(*CountryLookupMethodType))
+            m.SetCountryLookupMethod(val.(*CountryNamedLocation_countryLookupMethod))
         }
         return nil
     }
@@ -128,7 +128,7 @@ func (m *CountryNamedLocation) SetCountriesAndRegions(value []string)() {
     }
 }
 // SetCountryLookupMethod sets the countryLookupMethod property value. Determines what method is used to decide which country the user is located in. Possible values are clientIpAddress(default) and authenticatorAppGps. Note: authenticatorAppGps is not yet supported in the Microsoft Cloud for US Government.
-func (m *CountryNamedLocation) SetCountryLookupMethod(value *CountryLookupMethodType)() {
+func (m *CountryNamedLocation) SetCountryLookupMethod(value *CountryNamedLocation_countryLookupMethod)() {
     err := m.GetBackingStore().Set("countryLookupMethod", value)
     if err != nil {
         panic(err)
@@ -146,9 +146,9 @@ type CountryNamedLocationable interface {
     NamedLocationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCountriesAndRegions()([]string)
-    GetCountryLookupMethod()(*CountryLookupMethodType)
+    GetCountryLookupMethod()(*CountryNamedLocation_countryLookupMethod)
     GetIncludeUnknownCountriesAndRegions()(*bool)
     SetCountriesAndRegions(value []string)()
-    SetCountryLookupMethod(value *CountryLookupMethodType)()
+    SetCountryLookupMethod(value *CountryNamedLocation_countryLookupMethod)()
     SetIncludeUnknownCountriesAndRegions(value *bool)()
 }

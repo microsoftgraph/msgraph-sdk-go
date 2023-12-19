@@ -22,13 +22,13 @@ func CreateTeamworkConversationIdentityFromDiscriminatorValue(parseNode i878a80d
     return NewTeamworkConversationIdentity(), nil
 }
 // GetConversationIdentityType gets the conversationIdentityType property value. Type of conversation. Possible values are: team, channel, chat, and unknownFutureValue.
-func (m *TeamworkConversationIdentity) GetConversationIdentityType()(*TeamworkConversationIdentityType) {
+func (m *TeamworkConversationIdentity) GetConversationIdentityType()(*TeamworkConversationIdentity_conversationIdentityType) {
     val, err := m.GetBackingStore().Get("conversationIdentityType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TeamworkConversationIdentityType)
+        return val.(*TeamworkConversationIdentity_conversationIdentityType)
     }
     return nil
 }
@@ -36,12 +36,12 @@ func (m *TeamworkConversationIdentity) GetConversationIdentityType()(*TeamworkCo
 func (m *TeamworkConversationIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Identity.GetFieldDeserializers()
     res["conversationIdentityType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTeamworkConversationIdentityType)
+        val, err := n.GetEnumValue(ParseTeamworkConversationIdentity_conversationIdentityType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConversationIdentityType(val.(*TeamworkConversationIdentityType))
+            m.SetConversationIdentityType(val.(*TeamworkConversationIdentity_conversationIdentityType))
         }
         return nil
     }
@@ -63,7 +63,7 @@ func (m *TeamworkConversationIdentity) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetConversationIdentityType sets the conversationIdentityType property value. Type of conversation. Possible values are: team, channel, chat, and unknownFutureValue.
-func (m *TeamworkConversationIdentity) SetConversationIdentityType(value *TeamworkConversationIdentityType)() {
+func (m *TeamworkConversationIdentity) SetConversationIdentityType(value *TeamworkConversationIdentity_conversationIdentityType)() {
     err := m.GetBackingStore().Set("conversationIdentityType", value)
     if err != nil {
         panic(err)
@@ -73,6 +73,6 @@ func (m *TeamworkConversationIdentity) SetConversationIdentityType(value *Teamwo
 type TeamworkConversationIdentityable interface {
     Identityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetConversationIdentityType()(*TeamworkConversationIdentityType)
-    SetConversationIdentityType(value *TeamworkConversationIdentityType)()
+    GetConversationIdentityType()(*TeamworkConversationIdentity_conversationIdentityType)
+    SetConversationIdentityType(value *TeamworkConversationIdentity_conversationIdentityType)()
 }

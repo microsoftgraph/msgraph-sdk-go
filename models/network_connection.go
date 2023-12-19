@@ -106,13 +106,13 @@ func (m *NetworkConnection) GetDestinationUrl()(*string) {
     return nil
 }
 // GetDirection gets the direction property value. Network connection direction. Possible values are: unknown, inbound, outbound.
-func (m *NetworkConnection) GetDirection()(*ConnectionDirection) {
+func (m *NetworkConnection) GetDirection()(*NetworkConnection_direction) {
     val, err := m.GetBackingStore().Get("direction")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ConnectionDirection)
+        return val.(*NetworkConnection_direction)
     }
     return nil
 }
@@ -191,12 +191,12 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["direction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseConnectionDirection)
+        val, err := n.GetEnumValue(ParseNetworkConnection_direction)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDirection(val.(*ConnectionDirection))
+            m.SetDirection(val.(*NetworkConnection_direction))
         }
         return nil
     }
@@ -271,12 +271,12 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["protocol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSecurityNetworkProtocol)
+        val, err := n.GetEnumValue(ParseNetworkConnection_protocol)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProtocol(val.(*SecurityNetworkProtocol))
+            m.SetProtocol(val.(*NetworkConnection_protocol))
         }
         return nil
     }
@@ -321,12 +321,12 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseConnectionStatus)
+        val, err := n.GetEnumValue(ParseNetworkConnection_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*ConnectionStatus))
+            m.SetStatus(val.(*NetworkConnection_status))
         }
         return nil
     }
@@ -409,13 +409,13 @@ func (m *NetworkConnection) GetOdataType()(*string) {
     return nil
 }
 // GetProtocol gets the protocol property value. Network protocol. Possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.
-func (m *NetworkConnection) GetProtocol()(*SecurityNetworkProtocol) {
+func (m *NetworkConnection) GetProtocol()(*NetworkConnection_protocol) {
     val, err := m.GetBackingStore().Get("protocol")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SecurityNetworkProtocol)
+        return val.(*NetworkConnection_protocol)
     }
     return nil
 }
@@ -464,13 +464,13 @@ func (m *NetworkConnection) GetSourcePort()(*string) {
     return nil
 }
 // GetStatus gets the status property value. Network connection status. Possible values are: unknown, attempted, succeeded, blocked, failed.
-func (m *NetworkConnection) GetStatus()(*ConnectionStatus) {
+func (m *NetworkConnection) GetStatus()(*NetworkConnection_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ConnectionStatus)
+        return val.(*NetworkConnection_status)
     }
     return nil
 }
@@ -678,7 +678,7 @@ func (m *NetworkConnection) SetDestinationUrl(value *string)() {
     }
 }
 // SetDirection sets the direction property value. Network connection direction. Possible values are: unknown, inbound, outbound.
-func (m *NetworkConnection) SetDirection(value *ConnectionDirection)() {
+func (m *NetworkConnection) SetDirection(value *NetworkConnection_direction)() {
     err := m.GetBackingStore().Set("direction", value)
     if err != nil {
         panic(err)
@@ -734,7 +734,7 @@ func (m *NetworkConnection) SetOdataType(value *string)() {
     }
 }
 // SetProtocol sets the protocol property value. Network protocol. Possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.
-func (m *NetworkConnection) SetProtocol(value *SecurityNetworkProtocol)() {
+func (m *NetworkConnection) SetProtocol(value *NetworkConnection_protocol)() {
     err := m.GetBackingStore().Set("protocol", value)
     if err != nil {
         panic(err)
@@ -769,7 +769,7 @@ func (m *NetworkConnection) SetSourcePort(value *string)() {
     }
 }
 // SetStatus sets the status property value. Network connection status. Possible values are: unknown, attempted, succeeded, blocked, failed.
-func (m *NetworkConnection) SetStatus(value *ConnectionStatus)() {
+func (m *NetworkConnection) SetStatus(value *NetworkConnection_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -794,7 +794,7 @@ type NetworkConnectionable interface {
     GetDestinationLocation()(*string)
     GetDestinationPort()(*string)
     GetDestinationUrl()(*string)
-    GetDirection()(*ConnectionDirection)
+    GetDirection()(*NetworkConnection_direction)
     GetDomainRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLocalDnsName()(*string)
     GetNatDestinationAddress()(*string)
@@ -802,12 +802,12 @@ type NetworkConnectionable interface {
     GetNatSourceAddress()(*string)
     GetNatSourcePort()(*string)
     GetOdataType()(*string)
-    GetProtocol()(*SecurityNetworkProtocol)
+    GetProtocol()(*NetworkConnection_protocol)
     GetRiskScore()(*string)
     GetSourceAddress()(*string)
     GetSourceLocation()(*string)
     GetSourcePort()(*string)
-    GetStatus()(*ConnectionStatus)
+    GetStatus()(*NetworkConnection_status)
     GetUrlParameters()(*string)
     SetApplicationName(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
@@ -816,7 +816,7 @@ type NetworkConnectionable interface {
     SetDestinationLocation(value *string)()
     SetDestinationPort(value *string)()
     SetDestinationUrl(value *string)()
-    SetDirection(value *ConnectionDirection)()
+    SetDirection(value *NetworkConnection_direction)()
     SetDomainRegisteredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLocalDnsName(value *string)()
     SetNatDestinationAddress(value *string)()
@@ -824,11 +824,11 @@ type NetworkConnectionable interface {
     SetNatSourceAddress(value *string)()
     SetNatSourcePort(value *string)()
     SetOdataType(value *string)()
-    SetProtocol(value *SecurityNetworkProtocol)()
+    SetProtocol(value *NetworkConnection_protocol)()
     SetRiskScore(value *string)()
     SetSourceAddress(value *string)()
     SetSourceLocation(value *string)()
     SetSourcePort(value *string)()
-    SetStatus(value *ConnectionStatus)()
+    SetStatus(value *NetworkConnection_status)()
     SetUrlParameters(value *string)()
 }

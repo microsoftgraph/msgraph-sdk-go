@@ -35,13 +35,13 @@ func (m *OAuthConsentAppDetail) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAppScope gets the appScope property value. App scope. Possible values are: unknown, readCalendar, readContact, readMail, readAllChat, readAllFile, readAndWriteMail, sendMail, unknownFutureValue.
-func (m *OAuthConsentAppDetail) GetAppScope()(*OAuthAppScope) {
+func (m *OAuthConsentAppDetail) GetAppScope()(*OAuthConsentAppDetail_appScope) {
     val, err := m.GetBackingStore().Get("appScope")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*OAuthAppScope)
+        return val.(*OAuthConsentAppDetail_appScope)
     }
     return nil
 }
@@ -75,12 +75,12 @@ func (m *OAuthConsentAppDetail) GetDisplayName()(*string) {
 func (m *OAuthConsentAppDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["appScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOAuthAppScope)
+        val, err := n.GetEnumValue(ParseOAuthConsentAppDetail_appScope)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAppScope(val.(*OAuthAppScope))
+            m.SetAppScope(val.(*OAuthConsentAppDetail_appScope))
         }
         return nil
     }
@@ -170,7 +170,7 @@ func (m *OAuthConsentAppDetail) SetAdditionalData(value map[string]any)() {
     }
 }
 // SetAppScope sets the appScope property value. App scope. Possible values are: unknown, readCalendar, readContact, readMail, readAllChat, readAllFile, readAndWriteMail, sendMail, unknownFutureValue.
-func (m *OAuthConsentAppDetail) SetAppScope(value *OAuthAppScope)() {
+func (m *OAuthConsentAppDetail) SetAppScope(value *OAuthConsentAppDetail_appScope)() {
     err := m.GetBackingStore().Set("appScope", value)
     if err != nil {
         panic(err)
@@ -206,12 +206,12 @@ type OAuthConsentAppDetailable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAppScope()(*OAuthAppScope)
+    GetAppScope()(*OAuthConsentAppDetail_appScope)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDisplayLogo()(*string)
     GetDisplayName()(*string)
     GetOdataType()(*string)
-    SetAppScope(value *OAuthAppScope)()
+    SetAppScope(value *OAuthConsentAppDetail_appScope)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDisplayLogo(value *string)()
     SetDisplayName(value *string)()

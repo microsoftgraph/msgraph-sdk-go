@@ -109,13 +109,13 @@ func (m *SubjectRightsRequest) GetDataSubject()(DataSubjectable) {
     return nil
 }
 // GetDataSubjectType gets the dataSubjectType property value. The type of the data subject. Possible values are: customer, currentEmployee, formerEmployee, prospectiveEmployee, student, teacher, faculty, other, unknownFutureValue.
-func (m *SubjectRightsRequest) GetDataSubjectType()(*DataSubjectType) {
+func (m *SubjectRightsRequest) GetDataSubjectType()(*SubjectRightsRequest_dataSubjectType) {
     val, err := m.GetBackingStore().Get("dataSubjectType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DataSubjectType)
+        return val.(*SubjectRightsRequest_dataSubjectType)
     }
     return nil
 }
@@ -248,12 +248,12 @@ func (m *SubjectRightsRequest) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["dataSubjectType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDataSubjectType)
+        val, err := n.GetEnumValue(ParseSubjectRightsRequest_dataSubjectType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDataSubjectType(val.(*DataSubjectType))
+            m.SetDataSubjectType(val.(*SubjectRightsRequest_dataSubjectType))
         }
         return nil
     }
@@ -442,12 +442,12 @@ func (m *SubjectRightsRequest) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSubjectRightsRequestStatus)
+        val, err := n.GetEnumValue(ParseSubjectRightsRequest_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*SubjectRightsRequestStatus))
+            m.SetStatus(val.(*SubjectRightsRequest_status))
         }
         return nil
     }
@@ -462,12 +462,12 @@ func (m *SubjectRightsRequest) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSubjectRightsRequestType)
+        val, err := n.GetEnumValue(ParseSubjectRightsRequest_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*SubjectRightsRequestType))
+            m.SetTypeEscaped(val.(*SubjectRightsRequest_type))
         }
         return nil
     }
@@ -617,13 +617,13 @@ func (m *SubjectRightsRequest) GetStages()([]SubjectRightsRequestStageDetailable
     return nil
 }
 // GetStatus gets the status property value. The status of the request. Possible values are: active, closed, unknownFutureValue.
-func (m *SubjectRightsRequest) GetStatus()(*SubjectRightsRequestStatus) {
+func (m *SubjectRightsRequest) GetStatus()(*SubjectRightsRequest_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SubjectRightsRequestStatus)
+        return val.(*SubjectRightsRequest_status)
     }
     return nil
 }
@@ -639,13 +639,13 @@ func (m *SubjectRightsRequest) GetTeam()(Teamable) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
-func (m *SubjectRightsRequest) GetTypeEscaped()(*SubjectRightsRequestType) {
+func (m *SubjectRightsRequest) GetTypeEscaped()(*SubjectRightsRequest_type) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SubjectRightsRequestType)
+        return val.(*SubjectRightsRequest_type)
     }
     return nil
 }
@@ -915,7 +915,7 @@ func (m *SubjectRightsRequest) SetDataSubject(value DataSubjectable)() {
     }
 }
 // SetDataSubjectType sets the dataSubjectType property value. The type of the data subject. Possible values are: customer, currentEmployee, formerEmployee, prospectiveEmployee, student, teacher, faculty, other, unknownFutureValue.
-func (m *SubjectRightsRequest) SetDataSubjectType(value *DataSubjectType)() {
+func (m *SubjectRightsRequest) SetDataSubjectType(value *SubjectRightsRequest_dataSubjectType)() {
     err := m.GetBackingStore().Set("dataSubjectType", value)
     if err != nil {
         panic(err)
@@ -1034,7 +1034,7 @@ func (m *SubjectRightsRequest) SetStages(value []SubjectRightsRequestStageDetail
     }
 }
 // SetStatus sets the status property value. The status of the request. Possible values are: active, closed, unknownFutureValue.
-func (m *SubjectRightsRequest) SetStatus(value *SubjectRightsRequestStatus)() {
+func (m *SubjectRightsRequest) SetStatus(value *SubjectRightsRequest_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -1048,7 +1048,7 @@ func (m *SubjectRightsRequest) SetTeam(value Teamable)() {
     }
 }
 // SetTypeEscaped sets the type property value. The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
-func (m *SubjectRightsRequest) SetTypeEscaped(value *SubjectRightsRequestType)() {
+func (m *SubjectRightsRequest) SetTypeEscaped(value *SubjectRightsRequest_type)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -1066,7 +1066,7 @@ type SubjectRightsRequestable interface {
     GetCreatedBy()(IdentitySetable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDataSubject()(DataSubjectable)
-    GetDataSubjectType()(*DataSubjectType)
+    GetDataSubjectType()(*SubjectRightsRequest_dataSubjectType)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetExternalId()(*string)
@@ -1083,9 +1083,9 @@ type SubjectRightsRequestable interface {
     GetRegulations()([]string)
     GetSiteLocations()(SubjectRightsRequestSiteLocationable)
     GetStages()([]SubjectRightsRequestStageDetailable)
-    GetStatus()(*SubjectRightsRequestStatus)
+    GetStatus()(*SubjectRightsRequest_status)
     GetTeam()(Teamable)
-    GetTypeEscaped()(*SubjectRightsRequestType)
+    GetTypeEscaped()(*SubjectRightsRequest_type)
     SetApprovers(value []Userable)()
     SetAssignedTo(value Identityable)()
     SetClosedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -1094,7 +1094,7 @@ type SubjectRightsRequestable interface {
     SetCreatedBy(value IdentitySetable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDataSubject(value DataSubjectable)()
-    SetDataSubjectType(value *DataSubjectType)()
+    SetDataSubjectType(value *SubjectRightsRequest_dataSubjectType)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetExternalId(value *string)()
@@ -1111,7 +1111,7 @@ type SubjectRightsRequestable interface {
     SetRegulations(value []string)()
     SetSiteLocations(value SubjectRightsRequestSiteLocationable)()
     SetStages(value []SubjectRightsRequestStageDetailable)()
-    SetStatus(value *SubjectRightsRequestStatus)()
+    SetStatus(value *SubjectRightsRequest_status)()
     SetTeam(value Teamable)()
-    SetTypeEscaped(value *SubjectRightsRequestType)()
+    SetTypeEscaped(value *SubjectRightsRequest_type)()
 }

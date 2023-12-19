@@ -35,13 +35,13 @@ func (m *AttachmentItem) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAttachmentType gets the attachmentType property value. The type of attachment. Possible values are: file, item, reference. Required.
-func (m *AttachmentItem) GetAttachmentType()(*AttachmentType) {
+func (m *AttachmentItem) GetAttachmentType()(*AttachmentItem_attachmentType) {
     val, err := m.GetBackingStore().Get("attachmentType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AttachmentType)
+        return val.(*AttachmentItem_attachmentType)
     }
     return nil
 }
@@ -75,12 +75,12 @@ func (m *AttachmentItem) GetContentType()(*string) {
 func (m *AttachmentItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["attachmentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAttachmentType)
+        val, err := n.GetEnumValue(ParseAttachmentItem_attachmentType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAttachmentType(val.(*AttachmentType))
+            m.SetAttachmentType(val.(*AttachmentItem_attachmentType))
         }
         return nil
     }
@@ -251,7 +251,7 @@ func (m *AttachmentItem) SetAdditionalData(value map[string]any)() {
     }
 }
 // SetAttachmentType sets the attachmentType property value. The type of attachment. Possible values are: file, item, reference. Required.
-func (m *AttachmentItem) SetAttachmentType(value *AttachmentType)() {
+func (m *AttachmentItem) SetAttachmentType(value *AttachmentItem_attachmentType)() {
     err := m.GetBackingStore().Set("attachmentType", value)
     if err != nil {
         panic(err)
@@ -308,7 +308,7 @@ type AttachmentItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAttachmentType()(*AttachmentType)
+    GetAttachmentType()(*AttachmentItem_attachmentType)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetContentId()(*string)
     GetContentType()(*string)
@@ -316,7 +316,7 @@ type AttachmentItemable interface {
     GetName()(*string)
     GetOdataType()(*string)
     GetSize()(*int64)
-    SetAttachmentType(value *AttachmentType)()
+    SetAttachmentType(value *AttachmentItem_attachmentType)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetContentId(value *string)()
     SetContentType(value *string)()

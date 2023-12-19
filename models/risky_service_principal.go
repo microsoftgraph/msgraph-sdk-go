@@ -120,12 +120,12 @@ func (m *RiskyServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["riskDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRiskDetail)
+        val, err := n.GetEnumValue(ParseRiskyServicePrincipal_riskDetail)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRiskDetail(val.(*RiskDetail))
+            m.SetRiskDetail(val.(*RiskyServicePrincipal_riskDetail))
         }
         return nil
     }
@@ -140,22 +140,22 @@ func (m *RiskyServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["riskLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRiskLevel)
+        val, err := n.GetEnumValue(ParseRiskyServicePrincipal_riskLevel)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRiskLevel(val.(*RiskLevel))
+            m.SetRiskLevel(val.(*RiskyServicePrincipal_riskLevel))
         }
         return nil
     }
     res["riskState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRiskState)
+        val, err := n.GetEnumValue(ParseRiskyServicePrincipal_riskState)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRiskState(val.(*RiskState))
+            m.SetRiskState(val.(*RiskyServicePrincipal_riskState))
         }
         return nil
     }
@@ -205,13 +205,13 @@ func (m *RiskyServicePrincipal) GetIsProcessing()(*bool) {
     return nil
 }
 // GetRiskDetail gets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden,  unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
-func (m *RiskyServicePrincipal) GetRiskDetail()(*RiskDetail) {
+func (m *RiskyServicePrincipal) GetRiskDetail()(*RiskyServicePrincipal_riskDetail) {
     val, err := m.GetBackingStore().Get("riskDetail")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RiskDetail)
+        return val.(*RiskyServicePrincipal_riskDetail)
     }
     return nil
 }
@@ -227,24 +227,24 @@ func (m *RiskyServicePrincipal) GetRiskLastUpdatedDateTime()(*i336074805fc853987
     return nil
 }
 // GetRiskLevel gets the riskLevel property value. Level of the detected risky workload identity. The possible values are: low, medium, high, hidden, none, unknownFutureValue. Supports $filter (eq).
-func (m *RiskyServicePrincipal) GetRiskLevel()(*RiskLevel) {
+func (m *RiskyServicePrincipal) GetRiskLevel()(*RiskyServicePrincipal_riskLevel) {
     val, err := m.GetBackingStore().Get("riskLevel")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RiskLevel)
+        return val.(*RiskyServicePrincipal_riskLevel)
     }
     return nil
 }
 // GetRiskState gets the riskState property value. State of the service principal's risk. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
-func (m *RiskyServicePrincipal) GetRiskState()(*RiskState) {
+func (m *RiskyServicePrincipal) GetRiskState()(*RiskyServicePrincipal_riskState) {
     val, err := m.GetBackingStore().Get("riskState")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RiskState)
+        return val.(*RiskyServicePrincipal_riskState)
     }
     return nil
 }
@@ -372,7 +372,7 @@ func (m *RiskyServicePrincipal) SetIsProcessing(value *bool)() {
     }
 }
 // SetRiskDetail sets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden,  unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
-func (m *RiskyServicePrincipal) SetRiskDetail(value *RiskDetail)() {
+func (m *RiskyServicePrincipal) SetRiskDetail(value *RiskyServicePrincipal_riskDetail)() {
     err := m.GetBackingStore().Set("riskDetail", value)
     if err != nil {
         panic(err)
@@ -386,14 +386,14 @@ func (m *RiskyServicePrincipal) SetRiskLastUpdatedDateTime(value *i336074805fc85
     }
 }
 // SetRiskLevel sets the riskLevel property value. Level of the detected risky workload identity. The possible values are: low, medium, high, hidden, none, unknownFutureValue. Supports $filter (eq).
-func (m *RiskyServicePrincipal) SetRiskLevel(value *RiskLevel)() {
+func (m *RiskyServicePrincipal) SetRiskLevel(value *RiskyServicePrincipal_riskLevel)() {
     err := m.GetBackingStore().Set("riskLevel", value)
     if err != nil {
         panic(err)
     }
 }
 // SetRiskState sets the riskState property value. State of the service principal's risk. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
-func (m *RiskyServicePrincipal) SetRiskState(value *RiskState)() {
+func (m *RiskyServicePrincipal) SetRiskState(value *RiskyServicePrincipal_riskState)() {
     err := m.GetBackingStore().Set("riskState", value)
     if err != nil {
         panic(err)
@@ -415,19 +415,19 @@ type RiskyServicePrincipalable interface {
     GetHistory()([]RiskyServicePrincipalHistoryItemable)
     GetIsEnabled()(*bool)
     GetIsProcessing()(*bool)
-    GetRiskDetail()(*RiskDetail)
+    GetRiskDetail()(*RiskyServicePrincipal_riskDetail)
     GetRiskLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetRiskLevel()(*RiskLevel)
-    GetRiskState()(*RiskState)
+    GetRiskLevel()(*RiskyServicePrincipal_riskLevel)
+    GetRiskState()(*RiskyServicePrincipal_riskState)
     GetServicePrincipalType()(*string)
     SetAppId(value *string)()
     SetDisplayName(value *string)()
     SetHistory(value []RiskyServicePrincipalHistoryItemable)()
     SetIsEnabled(value *bool)()
     SetIsProcessing(value *bool)()
-    SetRiskDetail(value *RiskDetail)()
+    SetRiskDetail(value *RiskyServicePrincipal_riskDetail)()
     SetRiskLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetRiskLevel(value *RiskLevel)()
-    SetRiskState(value *RiskState)()
+    SetRiskLevel(value *RiskyServicePrincipal_riskLevel)()
+    SetRiskState(value *RiskyServicePrincipal_riskState)()
     SetServicePrincipalType(value *string)()
 }

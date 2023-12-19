@@ -23,24 +23,24 @@ func CreateCalendarSharingMessageActionFromDiscriminatorValue(parseNode i878a80d
     return NewCalendarSharingMessageAction(), nil
 }
 // GetAction gets the action property value. The action property
-func (m *CalendarSharingMessageAction) GetAction()(*CalendarSharingAction) {
+func (m *CalendarSharingMessageAction) GetAction()(*CalendarSharingMessageAction_action) {
     val, err := m.GetBackingStore().Get("action")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CalendarSharingAction)
+        return val.(*CalendarSharingMessageAction_action)
     }
     return nil
 }
 // GetActionType gets the actionType property value. The actionType property
-func (m *CalendarSharingMessageAction) GetActionType()(*CalendarSharingActionType) {
+func (m *CalendarSharingMessageAction) GetActionType()(*CalendarSharingMessageAction_actionType) {
     val, err := m.GetBackingStore().Get("actionType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CalendarSharingActionType)
+        return val.(*CalendarSharingMessageAction_actionType)
     }
     return nil
 }
@@ -64,32 +64,32 @@ func (m *CalendarSharingMessageAction) GetBackingStore()(ie8677ce2c7e1b4c22e9c38
 func (m *CalendarSharingMessageAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCalendarSharingAction)
+        val, err := n.GetEnumValue(ParseCalendarSharingMessageAction_action)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAction(val.(*CalendarSharingAction))
+            m.SetAction(val.(*CalendarSharingMessageAction_action))
         }
         return nil
     }
     res["actionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCalendarSharingActionType)
+        val, err := n.GetEnumValue(ParseCalendarSharingMessageAction_actionType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetActionType(val.(*CalendarSharingActionType))
+            m.SetActionType(val.(*CalendarSharingMessageAction_actionType))
         }
         return nil
     }
     res["importance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCalendarSharingActionImportance)
+        val, err := n.GetEnumValue(ParseCalendarSharingMessageAction_importance)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetImportance(val.(*CalendarSharingActionImportance))
+            m.SetImportance(val.(*CalendarSharingMessageAction_importance))
         }
         return nil
     }
@@ -106,13 +106,13 @@ func (m *CalendarSharingMessageAction) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetImportance gets the importance property value. The importance property
-func (m *CalendarSharingMessageAction) GetImportance()(*CalendarSharingActionImportance) {
+func (m *CalendarSharingMessageAction) GetImportance()(*CalendarSharingMessageAction_importance) {
     val, err := m.GetBackingStore().Get("importance")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CalendarSharingActionImportance)
+        return val.(*CalendarSharingMessageAction_importance)
     }
     return nil
 }
@@ -165,14 +165,14 @@ func (m *CalendarSharingMessageAction) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetAction sets the action property value. The action property
-func (m *CalendarSharingMessageAction) SetAction(value *CalendarSharingAction)() {
+func (m *CalendarSharingMessageAction) SetAction(value *CalendarSharingMessageAction_action)() {
     err := m.GetBackingStore().Set("action", value)
     if err != nil {
         panic(err)
     }
 }
 // SetActionType sets the actionType property value. The actionType property
-func (m *CalendarSharingMessageAction) SetActionType(value *CalendarSharingActionType)() {
+func (m *CalendarSharingMessageAction) SetActionType(value *CalendarSharingMessageAction_actionType)() {
     err := m.GetBackingStore().Set("actionType", value)
     if err != nil {
         panic(err)
@@ -190,7 +190,7 @@ func (m *CalendarSharingMessageAction) SetBackingStore(value ie8677ce2c7e1b4c22e
     m.backingStore = value
 }
 // SetImportance sets the importance property value. The importance property
-func (m *CalendarSharingMessageAction) SetImportance(value *CalendarSharingActionImportance)() {
+func (m *CalendarSharingMessageAction) SetImportance(value *CalendarSharingMessageAction_importance)() {
     err := m.GetBackingStore().Set("importance", value)
     if err != nil {
         panic(err)
@@ -208,14 +208,14 @@ type CalendarSharingMessageActionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAction()(*CalendarSharingAction)
-    GetActionType()(*CalendarSharingActionType)
+    GetAction()(*CalendarSharingMessageAction_action)
+    GetActionType()(*CalendarSharingMessageAction_actionType)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetImportance()(*CalendarSharingActionImportance)
+    GetImportance()(*CalendarSharingMessageAction_importance)
     GetOdataType()(*string)
-    SetAction(value *CalendarSharingAction)()
-    SetActionType(value *CalendarSharingActionType)()
+    SetAction(value *CalendarSharingMessageAction_action)()
+    SetActionType(value *CalendarSharingMessageAction_actionType)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetImportance(value *CalendarSharingActionImportance)()
+    SetImportance(value *CalendarSharingMessageAction_importance)()
     SetOdataType(value *string)()
 }

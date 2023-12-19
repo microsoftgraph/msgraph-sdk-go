@@ -103,12 +103,12 @@ func (m *RecurrenceRange) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRecurrenceRangeType)
+        val, err := n.GetEnumValue(ParseRecurrenceRange_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*RecurrenceRangeType))
+            m.SetTypeEscaped(val.(*RecurrenceRange_type))
         }
         return nil
     }
@@ -159,13 +159,13 @@ func (m *RecurrenceRange) GetStartDate()(*i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // GetTypeEscaped gets the type property value. The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
-func (m *RecurrenceRange) GetTypeEscaped()(*RecurrenceRangeType) {
+func (m *RecurrenceRange) GetTypeEscaped()(*RecurrenceRange_type) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RecurrenceRangeType)
+        return val.(*RecurrenceRange_type)
     }
     return nil
 }
@@ -263,7 +263,7 @@ func (m *RecurrenceRange) SetStartDate(value *i878a80d2330e89d26896388a3f487eef2
     }
 }
 // SetTypeEscaped sets the type property value. The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
-func (m *RecurrenceRange) SetTypeEscaped(value *RecurrenceRangeType)() {
+func (m *RecurrenceRange) SetTypeEscaped(value *RecurrenceRange_type)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -280,12 +280,12 @@ type RecurrenceRangeable interface {
     GetOdataType()(*string)
     GetRecurrenceTimeZone()(*string)
     GetStartDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
-    GetTypeEscaped()(*RecurrenceRangeType)
+    GetTypeEscaped()(*RecurrenceRange_type)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetEndDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetNumberOfOccurrences(value *int32)()
     SetOdataType(value *string)()
     SetRecurrenceTimeZone(value *string)()
     SetStartDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
-    SetTypeEscaped(value *RecurrenceRangeType)()
+    SetTypeEscaped(value *RecurrenceRange_type)()
 }

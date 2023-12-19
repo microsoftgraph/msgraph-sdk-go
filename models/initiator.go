@@ -25,25 +25,25 @@ func CreateInitiatorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 func (m *Initiator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Identity.GetFieldDeserializers()
     res["initiatorType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseInitiatorType)
+        val, err := n.GetEnumValue(ParseInitiator_initiatorType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInitiatorType(val.(*InitiatorType))
+            m.SetInitiatorType(val.(*Initiator_initiatorType))
         }
         return nil
     }
     return res
 }
 // GetInitiatorType gets the initiatorType property value. Type of initiator. Possible values are: user, application, system, unknownFutureValue.
-func (m *Initiator) GetInitiatorType()(*InitiatorType) {
+func (m *Initiator) GetInitiatorType()(*Initiator_initiatorType) {
     val, err := m.GetBackingStore().Get("initiatorType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*InitiatorType)
+        return val.(*Initiator_initiatorType)
     }
     return nil
 }
@@ -63,7 +63,7 @@ func (m *Initiator) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     return nil
 }
 // SetInitiatorType sets the initiatorType property value. Type of initiator. Possible values are: user, application, system, unknownFutureValue.
-func (m *Initiator) SetInitiatorType(value *InitiatorType)() {
+func (m *Initiator) SetInitiatorType(value *Initiator_initiatorType)() {
     err := m.GetBackingStore().Set("initiatorType", value)
     if err != nil {
         panic(err)
@@ -73,6 +73,6 @@ func (m *Initiator) SetInitiatorType(value *InitiatorType)() {
 type Initiatorable interface {
     Identityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetInitiatorType()(*InitiatorType)
-    SetInitiatorType(value *InitiatorType)()
+    GetInitiatorType()(*Initiator_initiatorType)
+    SetInitiatorType(value *Initiator_initiatorType)()
 }

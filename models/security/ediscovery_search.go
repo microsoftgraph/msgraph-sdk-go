@@ -55,13 +55,13 @@ func (m *EdiscoverySearch) GetCustodianSources()([]DataSourceable) {
     return nil
 }
 // GetDataSourceScopes gets the dataSourceScopes property value. When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
-func (m *EdiscoverySearch) GetDataSourceScopes()(*DataSourceScopes) {
+func (m *EdiscoverySearch) GetDataSourceScopes()(*EdiscoverySearch_dataSourceScopes) {
     val, err := m.GetBackingStore().Get("dataSourceScopes")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DataSourceScopes)
+        return val.(*EdiscoverySearch_dataSourceScopes)
     }
     return nil
 }
@@ -111,12 +111,12 @@ func (m *EdiscoverySearch) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["dataSourceScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDataSourceScopes)
+        val, err := n.GetEnumValue(ParseEdiscoverySearch_dataSourceScopes)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDataSourceScopes(val.(*DataSourceScopes))
+            m.SetDataSourceScopes(val.(*EdiscoverySearch_dataSourceScopes))
         }
         return nil
     }
@@ -255,7 +255,7 @@ func (m *EdiscoverySearch) SetCustodianSources(value []DataSourceable)() {
     }
 }
 // SetDataSourceScopes sets the dataSourceScopes property value. When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
-func (m *EdiscoverySearch) SetDataSourceScopes(value *DataSourceScopes)() {
+func (m *EdiscoverySearch) SetDataSourceScopes(value *EdiscoverySearch_dataSourceScopes)() {
     err := m.GetBackingStore().Set("dataSourceScopes", value)
     if err != nil {
         panic(err)
@@ -282,13 +282,13 @@ type EdiscoverySearchable interface {
     GetAdditionalSources()([]DataSourceable)
     GetAddToReviewSetOperation()(EdiscoveryAddToReviewSetOperationable)
     GetCustodianSources()([]DataSourceable)
-    GetDataSourceScopes()(*DataSourceScopes)
+    GetDataSourceScopes()(*EdiscoverySearch_dataSourceScopes)
     GetLastEstimateStatisticsOperation()(EdiscoveryEstimateOperationable)
     GetNoncustodialSources()([]EdiscoveryNoncustodialDataSourceable)
     SetAdditionalSources(value []DataSourceable)()
     SetAddToReviewSetOperation(value EdiscoveryAddToReviewSetOperationable)()
     SetCustodianSources(value []DataSourceable)()
-    SetDataSourceScopes(value *DataSourceScopes)()
+    SetDataSourceScopes(value *EdiscoverySearch_dataSourceScopes)()
     SetLastEstimateStatisticsOperation(value EdiscoveryEstimateOperationable)()
     SetNoncustodialSources(value []EdiscoveryNoncustodialDataSourceable)()
 }

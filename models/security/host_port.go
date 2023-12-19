@@ -112,12 +112,12 @@ func (m *HostPort) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["protocol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseHostPortProtocol)
+        val, err := n.GetEnumValue(ParseHostPort_protocol)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProtocol(val.(*HostPortProtocol))
+            m.SetProtocol(val.(*HostPort_protocol))
         }
         return nil
     }
@@ -138,12 +138,12 @@ func (m *HostPort) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseHostPortStatus)
+        val, err := n.GetEnumValue(ParseHostPort_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*HostPortStatus))
+            m.SetStatus(val.(*HostPort_status))
         }
         return nil
     }
@@ -226,13 +226,13 @@ func (m *HostPort) GetPort()(*int32) {
     return nil
 }
 // GetProtocol gets the protocol property value. The general protocol used to scan the port. The possible values are: tcp, udp, unknownFutureValue.
-func (m *HostPort) GetProtocol()(*HostPortProtocol) {
+func (m *HostPort) GetProtocol()(*HostPort_protocol) {
     val, err := m.GetBackingStore().Get("protocol")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*HostPortProtocol)
+        return val.(*HostPort_protocol)
     }
     return nil
 }
@@ -248,13 +248,13 @@ func (m *HostPort) GetServices()([]HostPortComponentable) {
     return nil
 }
 // GetStatus gets the status property value. The status of the port. The possible values are: open, filtered, closed, unknownFutureValue.
-func (m *HostPort) GetStatus()(*HostPortStatus) {
+func (m *HostPort) GetStatus()(*HostPort_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*HostPortStatus)
+        return val.(*HostPort_status)
     }
     return nil
 }
@@ -407,7 +407,7 @@ func (m *HostPort) SetPort(value *int32)() {
     }
 }
 // SetProtocol sets the protocol property value. The general protocol used to scan the port. The possible values are: tcp, udp, unknownFutureValue.
-func (m *HostPort) SetProtocol(value *HostPortProtocol)() {
+func (m *HostPort) SetProtocol(value *HostPort_protocol)() {
     err := m.GetBackingStore().Set("protocol", value)
     if err != nil {
         panic(err)
@@ -421,7 +421,7 @@ func (m *HostPort) SetServices(value []HostPortComponentable)() {
     }
 }
 // SetStatus sets the status property value. The status of the port. The possible values are: open, filtered, closed, unknownFutureValue.
-func (m *HostPort) SetStatus(value *HostPortStatus)() {
+func (m *HostPort) SetStatus(value *HostPort_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -445,9 +445,9 @@ type HostPortable interface {
     GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMostRecentSslCertificate()(SslCertificateable)
     GetPort()(*int32)
-    GetProtocol()(*HostPortProtocol)
+    GetProtocol()(*HostPort_protocol)
     GetServices()([]HostPortComponentable)
-    GetStatus()(*HostPortStatus)
+    GetStatus()(*HostPort_status)
     GetTimesObserved()(*int32)
     SetBanners(value []HostPortBannerable)()
     SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -456,8 +456,8 @@ type HostPortable interface {
     SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMostRecentSslCertificate(value SslCertificateable)()
     SetPort(value *int32)()
-    SetProtocol(value *HostPortProtocol)()
+    SetProtocol(value *HostPort_protocol)()
     SetServices(value []HostPortComponentable)()
-    SetStatus(value *HostPortStatus)()
+    SetStatus(value *HostPort_status)()
     SetTimesObserved(value *int32)()
 }

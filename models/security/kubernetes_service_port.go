@@ -103,12 +103,12 @@ func (m *KubernetesServicePort) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["protocol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseContainerPortProtocol)
+        val, err := n.GetEnumValue(ParseKubernetesServicePort_protocol)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProtocol(val.(*ContainerPortProtocol))
+            m.SetProtocol(val.(*KubernetesServicePort_protocol))
         }
         return nil
     }
@@ -169,13 +169,13 @@ func (m *KubernetesServicePort) GetPort()(*int32) {
     return nil
 }
 // GetProtocol gets the protocol property value. The protocol name. Possible values are: udp, tcp, sctp, unknownFutureValue.
-func (m *KubernetesServicePort) GetProtocol()(*ContainerPortProtocol) {
+func (m *KubernetesServicePort) GetProtocol()(*KubernetesServicePort_protocol) {
     val, err := m.GetBackingStore().Get("protocol")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ContainerPortProtocol)
+        return val.(*KubernetesServicePort_protocol)
     }
     return nil
 }
@@ -290,7 +290,7 @@ func (m *KubernetesServicePort) SetPort(value *int32)() {
     }
 }
 // SetProtocol sets the protocol property value. The protocol name. Possible values are: udp, tcp, sctp, unknownFutureValue.
-func (m *KubernetesServicePort) SetProtocol(value *ContainerPortProtocol)() {
+func (m *KubernetesServicePort) SetProtocol(value *KubernetesServicePort_protocol)() {
     err := m.GetBackingStore().Set("protocol", value)
     if err != nil {
         panic(err)
@@ -314,7 +314,7 @@ type KubernetesServicePortable interface {
     GetNodePort()(*int32)
     GetOdataType()(*string)
     GetPort()(*int32)
-    GetProtocol()(*ContainerPortProtocol)
+    GetProtocol()(*KubernetesServicePort_protocol)
     GetTargetPort()(*string)
     SetAppProtocol(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
@@ -322,6 +322,6 @@ type KubernetesServicePortable interface {
     SetNodePort(value *int32)()
     SetOdataType(value *string)()
     SetPort(value *int32)()
-    SetProtocol(value *ContainerPortProtocol)()
+    SetProtocol(value *KubernetesServicePort_protocol)()
     SetTargetPort(value *string)()
 }

@@ -73,12 +73,12 @@ func (m *PlannerPlanContainer) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePlannerContainerType)
+        val, err := n.GetEnumValue(ParsePlannerPlanContainer_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*PlannerContainerType))
+            m.SetTypeEscaped(val.(*PlannerPlanContainer_type))
         }
         return nil
     }
@@ -106,13 +106,13 @@ func (m *PlannerPlanContainer) GetOdataType()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster. Optional.
-func (m *PlannerPlanContainer) GetTypeEscaped()(*PlannerContainerType) {
+func (m *PlannerPlanContainer) GetTypeEscaped()(*PlannerPlanContainer_type) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PlannerContainerType)
+        return val.(*PlannerPlanContainer_type)
     }
     return nil
 }
@@ -188,7 +188,7 @@ func (m *PlannerPlanContainer) SetOdataType(value *string)() {
     }
 }
 // SetTypeEscaped sets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster. Optional.
-func (m *PlannerPlanContainer) SetTypeEscaped(value *PlannerContainerType)() {
+func (m *PlannerPlanContainer) SetTypeEscaped(value *PlannerPlanContainer_type)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -209,11 +209,11 @@ type PlannerPlanContainerable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetContainerId()(*string)
     GetOdataType()(*string)
-    GetTypeEscaped()(*PlannerContainerType)
+    GetTypeEscaped()(*PlannerPlanContainer_type)
     GetUrl()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetContainerId(value *string)()
     SetOdataType(value *string)()
-    SetTypeEscaped(value *PlannerContainerType)()
+    SetTypeEscaped(value *PlannerPlanContainer_type)()
     SetUrl(value *string)()
 }

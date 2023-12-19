@@ -39,13 +39,13 @@ func (m *OnlineMeetingRestricted) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd
     return m.backingStore
 }
 // GetContentSharingDisabled gets the contentSharingDisabled property value. Specifies the reason shared content from this participant is disabled. Possible values are: watermarkProtection, unknownFutureValue.
-func (m *OnlineMeetingRestricted) GetContentSharingDisabled()(*OnlineMeetingContentSharingDisabledReason) {
+func (m *OnlineMeetingRestricted) GetContentSharingDisabled()(*OnlineMeetingRestricted_contentSharingDisabled) {
     val, err := m.GetBackingStore().Get("contentSharingDisabled")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*OnlineMeetingContentSharingDisabledReason)
+        return val.(*OnlineMeetingRestricted_contentSharingDisabled)
     }
     return nil
 }
@@ -53,12 +53,12 @@ func (m *OnlineMeetingRestricted) GetContentSharingDisabled()(*OnlineMeetingCont
 func (m *OnlineMeetingRestricted) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["contentSharingDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOnlineMeetingContentSharingDisabledReason)
+        val, err := n.GetEnumValue(ParseOnlineMeetingRestricted_contentSharingDisabled)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetContentSharingDisabled(val.(*OnlineMeetingContentSharingDisabledReason))
+            m.SetContentSharingDisabled(val.(*OnlineMeetingRestricted_contentSharingDisabled))
         }
         return nil
     }
@@ -73,12 +73,12 @@ func (m *OnlineMeetingRestricted) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     res["videoDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOnlineMeetingVideoDisabledReason)
+        val, err := n.GetEnumValue(ParseOnlineMeetingRestricted_videoDisabled)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVideoDisabled(val.(*OnlineMeetingVideoDisabledReason))
+            m.SetVideoDisabled(val.(*OnlineMeetingRestricted_videoDisabled))
         }
         return nil
     }
@@ -96,13 +96,13 @@ func (m *OnlineMeetingRestricted) GetOdataType()(*string) {
     return nil
 }
 // GetVideoDisabled gets the videoDisabled property value. Specifies the reason video from this participant is disabled. Possible values are: watermarkProtection, unknownFutureValue.
-func (m *OnlineMeetingRestricted) GetVideoDisabled()(*OnlineMeetingVideoDisabledReason) {
+func (m *OnlineMeetingRestricted) GetVideoDisabled()(*OnlineMeetingRestricted_videoDisabled) {
     val, err := m.GetBackingStore().Get("videoDisabled")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*OnlineMeetingVideoDisabledReason)
+        return val.(*OnlineMeetingRestricted_videoDisabled)
     }
     return nil
 }
@@ -148,7 +148,7 @@ func (m *OnlineMeetingRestricted) SetBackingStore(value ie8677ce2c7e1b4c22e9c382
     m.backingStore = value
 }
 // SetContentSharingDisabled sets the contentSharingDisabled property value. Specifies the reason shared content from this participant is disabled. Possible values are: watermarkProtection, unknownFutureValue.
-func (m *OnlineMeetingRestricted) SetContentSharingDisabled(value *OnlineMeetingContentSharingDisabledReason)() {
+func (m *OnlineMeetingRestricted) SetContentSharingDisabled(value *OnlineMeetingRestricted_contentSharingDisabled)() {
     err := m.GetBackingStore().Set("contentSharingDisabled", value)
     if err != nil {
         panic(err)
@@ -162,7 +162,7 @@ func (m *OnlineMeetingRestricted) SetOdataType(value *string)() {
     }
 }
 // SetVideoDisabled sets the videoDisabled property value. Specifies the reason video from this participant is disabled. Possible values are: watermarkProtection, unknownFutureValue.
-func (m *OnlineMeetingRestricted) SetVideoDisabled(value *OnlineMeetingVideoDisabledReason)() {
+func (m *OnlineMeetingRestricted) SetVideoDisabled(value *OnlineMeetingRestricted_videoDisabled)() {
     err := m.GetBackingStore().Set("videoDisabled", value)
     if err != nil {
         panic(err)
@@ -174,11 +174,11 @@ type OnlineMeetingRestrictedable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetContentSharingDisabled()(*OnlineMeetingContentSharingDisabledReason)
+    GetContentSharingDisabled()(*OnlineMeetingRestricted_contentSharingDisabled)
     GetOdataType()(*string)
-    GetVideoDisabled()(*OnlineMeetingVideoDisabledReason)
+    GetVideoDisabled()(*OnlineMeetingRestricted_videoDisabled)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetContentSharingDisabled(value *OnlineMeetingContentSharingDisabledReason)()
+    SetContentSharingDisabled(value *OnlineMeetingRestricted_contentSharingDisabled)()
     SetOdataType(value *string)()
-    SetVideoDisabled(value *OnlineMeetingVideoDisabledReason)()
+    SetVideoDisabled(value *OnlineMeetingRestricted_videoDisabled)()
 }

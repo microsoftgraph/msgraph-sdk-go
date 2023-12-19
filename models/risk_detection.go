@@ -21,13 +21,13 @@ func CreateRiskDetectionFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewRiskDetection(), nil
 }
 // GetActivity gets the activity property value. Indicates the activity type the detected risk is linked to. Possible values are: signin, user, unknownFutureValue.
-func (m *RiskDetection) GetActivity()(*ActivityType) {
+func (m *RiskDetection) GetActivity()(*RiskDetection_activity) {
     val, err := m.GetBackingStore().Get("activity")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ActivityType)
+        return val.(*RiskDetection_activity)
     }
     return nil
 }
@@ -76,13 +76,13 @@ func (m *RiskDetection) GetDetectedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetDetectionTimingType gets the detectionTimingType property value. Timing of the detected risk (real-time/offline). Possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
-func (m *RiskDetection) GetDetectionTimingType()(*RiskDetectionTimingType) {
+func (m *RiskDetection) GetDetectionTimingType()(*RiskDetection_detectionTimingType) {
     val, err := m.GetBackingStore().Get("detectionTimingType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RiskDetectionTimingType)
+        return val.(*RiskDetection_detectionTimingType)
     }
     return nil
 }
@@ -90,12 +90,12 @@ func (m *RiskDetection) GetDetectionTimingType()(*RiskDetectionTimingType) {
 func (m *RiskDetection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseActivityType)
+        val, err := n.GetEnumValue(ParseRiskDetection_activity)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetActivity(val.(*ActivityType))
+            m.SetActivity(val.(*RiskDetection_activity))
         }
         return nil
     }
@@ -140,12 +140,12 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["detectionTimingType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRiskDetectionTimingType)
+        val, err := n.GetEnumValue(ParseRiskDetection_detectionTimingType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDetectionTimingType(val.(*RiskDetectionTimingType))
+            m.SetDetectionTimingType(val.(*RiskDetection_detectionTimingType))
         }
         return nil
     }
@@ -190,12 +190,12 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["riskDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRiskDetail)
+        val, err := n.GetEnumValue(ParseRiskDetection_riskDetail)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRiskDetail(val.(*RiskDetail))
+            m.SetRiskDetail(val.(*RiskDetection_riskDetail))
         }
         return nil
     }
@@ -210,22 +210,22 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["riskLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRiskLevel)
+        val, err := n.GetEnumValue(ParseRiskDetection_riskLevel)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRiskLevel(val.(*RiskLevel))
+            m.SetRiskLevel(val.(*RiskDetection_riskLevel))
         }
         return nil
     }
     res["riskState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRiskState)
+        val, err := n.GetEnumValue(ParseRiskDetection_riskState)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRiskState(val.(*RiskState))
+            m.SetRiskState(val.(*RiskDetection_riskState))
         }
         return nil
     }
@@ -240,12 +240,12 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["tokenIssuerType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTokenIssuerType)
+        val, err := n.GetEnumValue(ParseRiskDetection_tokenIssuerType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTokenIssuerType(val.(*TokenIssuerType))
+            m.SetTokenIssuerType(val.(*RiskDetection_tokenIssuerType))
         }
         return nil
     }
@@ -326,13 +326,13 @@ func (m *RiskDetection) GetRequestId()(*string) {
     return nil
 }
 // GetRiskDetail gets the riskDetail property value. Details of the detected risk. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, m365DAdminDismissedDetection. Note that you must use the Prefer: include - unknown -enum-members request header to get the following value(s) in this evolvable enum: m365DAdminDismissedDetection.
-func (m *RiskDetection) GetRiskDetail()(*RiskDetail) {
+func (m *RiskDetection) GetRiskDetail()(*RiskDetection_riskDetail) {
     val, err := m.GetBackingStore().Get("riskDetail")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RiskDetail)
+        return val.(*RiskDetection_riskDetail)
     }
     return nil
 }
@@ -348,24 +348,24 @@ func (m *RiskDetection) GetRiskEventType()(*string) {
     return nil
 }
 // GetRiskLevel gets the riskLevel property value. Level of the detected risk. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
-func (m *RiskDetection) GetRiskLevel()(*RiskLevel) {
+func (m *RiskDetection) GetRiskLevel()(*RiskDetection_riskLevel) {
     val, err := m.GetBackingStore().Get("riskLevel")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RiskLevel)
+        return val.(*RiskDetection_riskLevel)
     }
     return nil
 }
 // GetRiskState gets the riskState property value. The state of a detected risky user or sign-in. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
-func (m *RiskDetection) GetRiskState()(*RiskState) {
+func (m *RiskDetection) GetRiskState()(*RiskDetection_riskState) {
     val, err := m.GetBackingStore().Get("riskState")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RiskState)
+        return val.(*RiskDetection_riskState)
     }
     return nil
 }
@@ -381,13 +381,13 @@ func (m *RiskDetection) GetSource()(*string) {
     return nil
 }
 // GetTokenIssuerType gets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. Possible values are: AzureAD, ADFederationServices, UnknownFutureValue.
-func (m *RiskDetection) GetTokenIssuerType()(*TokenIssuerType) {
+func (m *RiskDetection) GetTokenIssuerType()(*RiskDetection_tokenIssuerType) {
     val, err := m.GetBackingStore().Get("tokenIssuerType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TokenIssuerType)
+        return val.(*RiskDetection_tokenIssuerType)
     }
     return nil
 }
@@ -553,7 +553,7 @@ func (m *RiskDetection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // SetActivity sets the activity property value. Indicates the activity type the detected risk is linked to. Possible values are: signin, user, unknownFutureValue.
-func (m *RiskDetection) SetActivity(value *ActivityType)() {
+func (m *RiskDetection) SetActivity(value *RiskDetection_activity)() {
     err := m.GetBackingStore().Set("activity", value)
     if err != nil {
         panic(err)
@@ -588,7 +588,7 @@ func (m *RiskDetection) SetDetectedDateTime(value *i336074805fc853987abe6f7fe3ad
     }
 }
 // SetDetectionTimingType sets the detectionTimingType property value. Timing of the detected risk (real-time/offline). Possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
-func (m *RiskDetection) SetDetectionTimingType(value *RiskDetectionTimingType)() {
+func (m *RiskDetection) SetDetectionTimingType(value *RiskDetection_detectionTimingType)() {
     err := m.GetBackingStore().Set("detectionTimingType", value)
     if err != nil {
         panic(err)
@@ -623,7 +623,7 @@ func (m *RiskDetection) SetRequestId(value *string)() {
     }
 }
 // SetRiskDetail sets the riskDetail property value. Details of the detected risk. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, m365DAdminDismissedDetection. Note that you must use the Prefer: include - unknown -enum-members request header to get the following value(s) in this evolvable enum: m365DAdminDismissedDetection.
-func (m *RiskDetection) SetRiskDetail(value *RiskDetail)() {
+func (m *RiskDetection) SetRiskDetail(value *RiskDetection_riskDetail)() {
     err := m.GetBackingStore().Set("riskDetail", value)
     if err != nil {
         panic(err)
@@ -637,14 +637,14 @@ func (m *RiskDetection) SetRiskEventType(value *string)() {
     }
 }
 // SetRiskLevel sets the riskLevel property value. Level of the detected risk. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
-func (m *RiskDetection) SetRiskLevel(value *RiskLevel)() {
+func (m *RiskDetection) SetRiskLevel(value *RiskDetection_riskLevel)() {
     err := m.GetBackingStore().Set("riskLevel", value)
     if err != nil {
         panic(err)
     }
 }
 // SetRiskState sets the riskState property value. The state of a detected risky user or sign-in. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
-func (m *RiskDetection) SetRiskState(value *RiskState)() {
+func (m *RiskDetection) SetRiskState(value *RiskDetection_riskState)() {
     err := m.GetBackingStore().Set("riskState", value)
     if err != nil {
         panic(err)
@@ -658,7 +658,7 @@ func (m *RiskDetection) SetSource(value *string)() {
     }
 }
 // SetTokenIssuerType sets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. Possible values are: AzureAD, ADFederationServices, UnknownFutureValue.
-func (m *RiskDetection) SetTokenIssuerType(value *TokenIssuerType)() {
+func (m *RiskDetection) SetTokenIssuerType(value *RiskDetection_tokenIssuerType)() {
     err := m.GetBackingStore().Set("tokenIssuerType", value)
     if err != nil {
         panic(err)
@@ -689,41 +689,41 @@ func (m *RiskDetection) SetUserPrincipalName(value *string)() {
 type RiskDetectionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetActivity()(*ActivityType)
+    GetActivity()(*RiskDetection_activity)
     GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetAdditionalInfo()(*string)
     GetCorrelationId()(*string)
     GetDetectedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetDetectionTimingType()(*RiskDetectionTimingType)
+    GetDetectionTimingType()(*RiskDetection_detectionTimingType)
     GetIpAddress()(*string)
     GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLocation()(SignInLocationable)
     GetRequestId()(*string)
-    GetRiskDetail()(*RiskDetail)
+    GetRiskDetail()(*RiskDetection_riskDetail)
     GetRiskEventType()(*string)
-    GetRiskLevel()(*RiskLevel)
-    GetRiskState()(*RiskState)
+    GetRiskLevel()(*RiskDetection_riskLevel)
+    GetRiskState()(*RiskDetection_riskState)
     GetSource()(*string)
-    GetTokenIssuerType()(*TokenIssuerType)
+    GetTokenIssuerType()(*RiskDetection_tokenIssuerType)
     GetUserDisplayName()(*string)
     GetUserId()(*string)
     GetUserPrincipalName()(*string)
-    SetActivity(value *ActivityType)()
+    SetActivity(value *RiskDetection_activity)()
     SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetAdditionalInfo(value *string)()
     SetCorrelationId(value *string)()
     SetDetectedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetDetectionTimingType(value *RiskDetectionTimingType)()
+    SetDetectionTimingType(value *RiskDetection_detectionTimingType)()
     SetIpAddress(value *string)()
     SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLocation(value SignInLocationable)()
     SetRequestId(value *string)()
-    SetRiskDetail(value *RiskDetail)()
+    SetRiskDetail(value *RiskDetection_riskDetail)()
     SetRiskEventType(value *string)()
-    SetRiskLevel(value *RiskLevel)()
-    SetRiskState(value *RiskState)()
+    SetRiskLevel(value *RiskDetection_riskLevel)()
+    SetRiskState(value *RiskDetection_riskState)()
     SetSource(value *string)()
-    SetTokenIssuerType(value *TokenIssuerType)()
+    SetTokenIssuerType(value *RiskDetection_tokenIssuerType)()
     SetUserDisplayName(value *string)()
     SetUserId(value *string)()
     SetUserPrincipalName(value *string)()

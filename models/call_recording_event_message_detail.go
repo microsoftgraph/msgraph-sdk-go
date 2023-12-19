@@ -55,13 +55,13 @@ func (m *CallRecordingEventMessageDetail) GetCallRecordingDuration()(*i878a80d23
     return nil
 }
 // GetCallRecordingStatus gets the callRecordingStatus property value. Status of the call recording. Possible values are: success, failure, initial, chunkFinished, unknownFutureValue.
-func (m *CallRecordingEventMessageDetail) GetCallRecordingStatus()(*CallRecordingStatus) {
+func (m *CallRecordingEventMessageDetail) GetCallRecordingStatus()(*CallRecordingEventMessageDetail_callRecordingStatus) {
     val, err := m.GetBackingStore().Get("callRecordingStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CallRecordingStatus)
+        return val.(*CallRecordingEventMessageDetail_callRecordingStatus)
     }
     return nil
 }
@@ -110,12 +110,12 @@ func (m *CallRecordingEventMessageDetail) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["callRecordingStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCallRecordingStatus)
+        val, err := n.GetEnumValue(ParseCallRecordingEventMessageDetail_callRecordingStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCallRecordingStatus(val.(*CallRecordingStatus))
+            m.SetCallRecordingStatus(val.(*CallRecordingEventMessageDetail_callRecordingStatus))
         }
         return nil
     }
@@ -246,7 +246,7 @@ func (m *CallRecordingEventMessageDetail) SetCallRecordingDuration(value *i878a8
     }
 }
 // SetCallRecordingStatus sets the callRecordingStatus property value. Status of the call recording. Possible values are: success, failure, initial, chunkFinished, unknownFutureValue.
-func (m *CallRecordingEventMessageDetail) SetCallRecordingStatus(value *CallRecordingStatus)() {
+func (m *CallRecordingEventMessageDetail) SetCallRecordingStatus(value *CallRecordingEventMessageDetail_callRecordingStatus)() {
     err := m.GetBackingStore().Set("callRecordingStatus", value)
     if err != nil {
         panic(err)
@@ -280,14 +280,14 @@ type CallRecordingEventMessageDetailable interface {
     GetCallId()(*string)
     GetCallRecordingDisplayName()(*string)
     GetCallRecordingDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
-    GetCallRecordingStatus()(*CallRecordingStatus)
+    GetCallRecordingStatus()(*CallRecordingEventMessageDetail_callRecordingStatus)
     GetCallRecordingUrl()(*string)
     GetInitiator()(IdentitySetable)
     GetMeetingOrganizer()(IdentitySetable)
     SetCallId(value *string)()
     SetCallRecordingDisplayName(value *string)()
     SetCallRecordingDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
-    SetCallRecordingStatus(value *CallRecordingStatus)()
+    SetCallRecordingStatus(value *CallRecordingEventMessageDetail_callRecordingStatus)()
     SetCallRecordingUrl(value *string)()
     SetInitiator(value IdentitySetable)()
     SetMeetingOrganizer(value IdentitySetable)()

@@ -39,13 +39,13 @@ func (m *ChatMessagePolicyViolation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827
     return m.backingStore
 }
 // GetDlpAction gets the dlpAction property value. The action taken by the DLP provider on the message with sensitive content. Supported values are: NoneNotifySender -- Inform the sender of the violation but allow readers to read the message.BlockAccess -- Block readers from reading the message.BlockAccessExternal -- Block users outside the organization from reading the message, while allowing users within the organization to read the message.
-func (m *ChatMessagePolicyViolation) GetDlpAction()(*ChatMessagePolicyViolationDlpActionTypes) {
+func (m *ChatMessagePolicyViolation) GetDlpAction()(*ChatMessagePolicyViolation_dlpAction) {
     val, err := m.GetBackingStore().Get("dlpAction")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ChatMessagePolicyViolationDlpActionTypes)
+        return val.(*ChatMessagePolicyViolation_dlpAction)
     }
     return nil
 }
@@ -53,12 +53,12 @@ func (m *ChatMessagePolicyViolation) GetDlpAction()(*ChatMessagePolicyViolationD
 func (m *ChatMessagePolicyViolation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["dlpAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseChatMessagePolicyViolationDlpActionTypes)
+        val, err := n.GetEnumValue(ParseChatMessagePolicyViolation_dlpAction)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDlpAction(val.(*ChatMessagePolicyViolationDlpActionTypes))
+            m.SetDlpAction(val.(*ChatMessagePolicyViolation_dlpAction))
         }
         return nil
     }
@@ -93,22 +93,22 @@ func (m *ChatMessagePolicyViolation) GetFieldDeserializers()(map[string]func(i87
         return nil
     }
     res["userAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseChatMessagePolicyViolationUserActionTypes)
+        val, err := n.GetEnumValue(ParseChatMessagePolicyViolation_userAction)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserAction(val.(*ChatMessagePolicyViolationUserActionTypes))
+            m.SetUserAction(val.(*ChatMessagePolicyViolation_userAction))
         }
         return nil
     }
     res["verdictDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseChatMessagePolicyViolationVerdictDetailsTypes)
+        val, err := n.GetEnumValue(ParseChatMessagePolicyViolation_verdictDetails)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVerdictDetails(val.(*ChatMessagePolicyViolationVerdictDetailsTypes))
+            m.SetVerdictDetails(val.(*ChatMessagePolicyViolation_verdictDetails))
         }
         return nil
     }
@@ -148,24 +148,24 @@ func (m *ChatMessagePolicyViolation) GetPolicyTip()(ChatMessagePolicyViolationPo
     return nil
 }
 // GetUserAction gets the userAction property value. Indicates the action taken by the user on a message blocked by the DLP provider. Supported values are: NoneOverrideReportFalsePositiveWhen the DLP provider is updating the message for blocking sensitive content, userAction isn't required.
-func (m *ChatMessagePolicyViolation) GetUserAction()(*ChatMessagePolicyViolationUserActionTypes) {
+func (m *ChatMessagePolicyViolation) GetUserAction()(*ChatMessagePolicyViolation_userAction) {
     val, err := m.GetBackingStore().Get("userAction")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ChatMessagePolicyViolationUserActionTypes)
+        return val.(*ChatMessagePolicyViolation_userAction)
     }
     return nil
 }
 // GetVerdictDetails gets the verdictDetails property value. Indicates what actions the sender may take in response to the policy violation. Supported values are: NoneAllowFalsePositiveOverride -- Allows the sender to declare the policyViolation to be an error in the DLP app and its rules, and allow readers to see the message again if the dlpAction hides it.AllowOverrideWithoutJustification -- Allows the sender to override the DLP violation and allow readers to see the message again if the dlpAction hides it, without needing to provide an explanation for doing so. AllowOverrideWithJustification -- Allows the sender to override the DLP violation and allow readers to see the message again if the dlpAction hides it, after providing an explanation for doing so.AllowOverrideWithoutJustification and AllowOverrideWithJustification are mutually exclusive.
-func (m *ChatMessagePolicyViolation) GetVerdictDetails()(*ChatMessagePolicyViolationVerdictDetailsTypes) {
+func (m *ChatMessagePolicyViolation) GetVerdictDetails()(*ChatMessagePolicyViolation_verdictDetails) {
     val, err := m.GetBackingStore().Get("verdictDetails")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ChatMessagePolicyViolationVerdictDetailsTypes)
+        return val.(*ChatMessagePolicyViolation_verdictDetails)
     }
     return nil
 }
@@ -230,7 +230,7 @@ func (m *ChatMessagePolicyViolation) SetBackingStore(value ie8677ce2c7e1b4c22e9c
     m.backingStore = value
 }
 // SetDlpAction sets the dlpAction property value. The action taken by the DLP provider on the message with sensitive content. Supported values are: NoneNotifySender -- Inform the sender of the violation but allow readers to read the message.BlockAccess -- Block readers from reading the message.BlockAccessExternal -- Block users outside the organization from reading the message, while allowing users within the organization to read the message.
-func (m *ChatMessagePolicyViolation) SetDlpAction(value *ChatMessagePolicyViolationDlpActionTypes)() {
+func (m *ChatMessagePolicyViolation) SetDlpAction(value *ChatMessagePolicyViolation_dlpAction)() {
     err := m.GetBackingStore().Set("dlpAction", value)
     if err != nil {
         panic(err)
@@ -258,14 +258,14 @@ func (m *ChatMessagePolicyViolation) SetPolicyTip(value ChatMessagePolicyViolati
     }
 }
 // SetUserAction sets the userAction property value. Indicates the action taken by the user on a message blocked by the DLP provider. Supported values are: NoneOverrideReportFalsePositiveWhen the DLP provider is updating the message for blocking sensitive content, userAction isn't required.
-func (m *ChatMessagePolicyViolation) SetUserAction(value *ChatMessagePolicyViolationUserActionTypes)() {
+func (m *ChatMessagePolicyViolation) SetUserAction(value *ChatMessagePolicyViolation_userAction)() {
     err := m.GetBackingStore().Set("userAction", value)
     if err != nil {
         panic(err)
     }
 }
 // SetVerdictDetails sets the verdictDetails property value. Indicates what actions the sender may take in response to the policy violation. Supported values are: NoneAllowFalsePositiveOverride -- Allows the sender to declare the policyViolation to be an error in the DLP app and its rules, and allow readers to see the message again if the dlpAction hides it.AllowOverrideWithoutJustification -- Allows the sender to override the DLP violation and allow readers to see the message again if the dlpAction hides it, without needing to provide an explanation for doing so. AllowOverrideWithJustification -- Allows the sender to override the DLP violation and allow readers to see the message again if the dlpAction hides it, after providing an explanation for doing so.AllowOverrideWithoutJustification and AllowOverrideWithJustification are mutually exclusive.
-func (m *ChatMessagePolicyViolation) SetVerdictDetails(value *ChatMessagePolicyViolationVerdictDetailsTypes)() {
+func (m *ChatMessagePolicyViolation) SetVerdictDetails(value *ChatMessagePolicyViolation_verdictDetails)() {
     err := m.GetBackingStore().Set("verdictDetails", value)
     if err != nil {
         panic(err)
@@ -277,17 +277,17 @@ type ChatMessagePolicyViolationable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetDlpAction()(*ChatMessagePolicyViolationDlpActionTypes)
+    GetDlpAction()(*ChatMessagePolicyViolation_dlpAction)
     GetJustificationText()(*string)
     GetOdataType()(*string)
     GetPolicyTip()(ChatMessagePolicyViolationPolicyTipable)
-    GetUserAction()(*ChatMessagePolicyViolationUserActionTypes)
-    GetVerdictDetails()(*ChatMessagePolicyViolationVerdictDetailsTypes)
+    GetUserAction()(*ChatMessagePolicyViolation_userAction)
+    GetVerdictDetails()(*ChatMessagePolicyViolation_verdictDetails)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetDlpAction(value *ChatMessagePolicyViolationDlpActionTypes)()
+    SetDlpAction(value *ChatMessagePolicyViolation_dlpAction)()
     SetJustificationText(value *string)()
     SetOdataType(value *string)()
     SetPolicyTip(value ChatMessagePolicyViolationPolicyTipable)()
-    SetUserAction(value *ChatMessagePolicyViolationUserActionTypes)()
-    SetVerdictDetails(value *ChatMessagePolicyViolationVerdictDetailsTypes)()
+    SetUserAction(value *ChatMessagePolicyViolation_userAction)()
+    SetVerdictDetails(value *ChatMessagePolicyViolation_verdictDetails)()
 }

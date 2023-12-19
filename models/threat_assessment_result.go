@@ -55,12 +55,12 @@ func (m *ThreatAssessmentResult) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["resultType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseThreatAssessmentResultType)
+        val, err := n.GetEnumValue(ParseThreatAssessmentResult_resultType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetResultType(val.(*ThreatAssessmentResultType))
+            m.SetResultType(val.(*ThreatAssessmentResult_resultType))
         }
         return nil
     }
@@ -78,13 +78,13 @@ func (m *ThreatAssessmentResult) GetMessage()(*string) {
     return nil
 }
 // GetResultType gets the resultType property value. The threat assessment result type. Possible values are: checkPolicy, rescan.
-func (m *ThreatAssessmentResult) GetResultType()(*ThreatAssessmentResultType) {
+func (m *ThreatAssessmentResult) GetResultType()(*ThreatAssessmentResult_resultType) {
     val, err := m.GetBackingStore().Get("resultType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ThreatAssessmentResultType)
+        return val.(*ThreatAssessmentResult_resultType)
     }
     return nil
 }
@@ -130,7 +130,7 @@ func (m *ThreatAssessmentResult) SetMessage(value *string)() {
     }
 }
 // SetResultType sets the resultType property value. The threat assessment result type. Possible values are: checkPolicy, rescan.
-func (m *ThreatAssessmentResult) SetResultType(value *ThreatAssessmentResultType)() {
+func (m *ThreatAssessmentResult) SetResultType(value *ThreatAssessmentResult_resultType)() {
     err := m.GetBackingStore().Set("resultType", value)
     if err != nil {
         panic(err)
@@ -142,8 +142,8 @@ type ThreatAssessmentResultable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMessage()(*string)
-    GetResultType()(*ThreatAssessmentResultType)
+    GetResultType()(*ThreatAssessmentResult_resultType)
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMessage(value *string)()
-    SetResultType(value *ThreatAssessmentResultType)()
+    SetResultType(value *ThreatAssessmentResult_resultType)()
 }

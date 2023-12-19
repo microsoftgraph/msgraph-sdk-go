@@ -73,12 +73,12 @@ func (m *KeyCredentialConfiguration) GetFieldDeserializers()(map[string]func(i87
         return nil
     }
     res["restrictionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAppKeyCredentialRestrictionType)
+        val, err := n.GetEnumValue(ParseKeyCredentialConfiguration_restrictionType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRestrictionType(val.(*AppKeyCredentialRestrictionType))
+            m.SetRestrictionType(val.(*KeyCredentialConfiguration_restrictionType))
         }
         return nil
     }
@@ -118,13 +118,13 @@ func (m *KeyCredentialConfiguration) GetRestrictForAppsCreatedAfterDateTime()(*i
     return nil
 }
 // GetRestrictionType gets the restrictionType property value. The type of restriction being applied. Possible values are asymmetricKeyLifetime, unknownFutureValue. Each value of restrictionType can be used only once per policy.
-func (m *KeyCredentialConfiguration) GetRestrictionType()(*AppKeyCredentialRestrictionType) {
+func (m *KeyCredentialConfiguration) GetRestrictionType()(*KeyCredentialConfiguration_restrictionType) {
     val, err := m.GetBackingStore().Get("restrictionType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AppKeyCredentialRestrictionType)
+        return val.(*KeyCredentialConfiguration_restrictionType)
     }
     return nil
 }
@@ -196,7 +196,7 @@ func (m *KeyCredentialConfiguration) SetRestrictForAppsCreatedAfterDateTime(valu
     }
 }
 // SetRestrictionType sets the restrictionType property value. The type of restriction being applied. Possible values are asymmetricKeyLifetime, unknownFutureValue. Each value of restrictionType can be used only once per policy.
-func (m *KeyCredentialConfiguration) SetRestrictionType(value *AppKeyCredentialRestrictionType)() {
+func (m *KeyCredentialConfiguration) SetRestrictionType(value *KeyCredentialConfiguration_restrictionType)() {
     err := m.GetBackingStore().Set("restrictionType", value)
     if err != nil {
         panic(err)
@@ -211,10 +211,10 @@ type KeyCredentialConfigurationable interface {
     GetMaxLifetime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetOdataType()(*string)
     GetRestrictForAppsCreatedAfterDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetRestrictionType()(*AppKeyCredentialRestrictionType)
+    GetRestrictionType()(*KeyCredentialConfiguration_restrictionType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetMaxLifetime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetOdataType(value *string)()
     SetRestrictForAppsCreatedAfterDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetRestrictionType(value *AppKeyCredentialRestrictionType)()
+    SetRestrictionType(value *KeyCredentialConfiguration_restrictionType)()
 }

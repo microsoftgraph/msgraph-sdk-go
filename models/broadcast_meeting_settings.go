@@ -35,13 +35,13 @@ func (m *BroadcastMeetingSettings) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAllowedAudience gets the allowedAudience property value. Defines who can join the Teams live event. Possible values are listed in the following table.
-func (m *BroadcastMeetingSettings) GetAllowedAudience()(*BroadcastMeetingAudience) {
+func (m *BroadcastMeetingSettings) GetAllowedAudience()(*BroadcastMeetingSettings_allowedAudience) {
     val, err := m.GetBackingStore().Get("allowedAudience")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*BroadcastMeetingAudience)
+        return val.(*BroadcastMeetingSettings_allowedAudience)
     }
     return nil
 }
@@ -64,12 +64,12 @@ func (m *BroadcastMeetingSettings) GetCaptions()(BroadcastMeetingCaptionSettings
 func (m *BroadcastMeetingSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allowedAudience"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseBroadcastMeetingAudience)
+        val, err := n.GetEnumValue(ParseBroadcastMeetingSettings_allowedAudience)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAllowedAudience(val.(*BroadcastMeetingAudience))
+            m.SetAllowedAudience(val.(*BroadcastMeetingSettings_allowedAudience))
         }
         return nil
     }
@@ -251,7 +251,7 @@ func (m *BroadcastMeetingSettings) SetAdditionalData(value map[string]any)() {
     }
 }
 // SetAllowedAudience sets the allowedAudience property value. Defines who can join the Teams live event. Possible values are listed in the following table.
-func (m *BroadcastMeetingSettings) SetAllowedAudience(value *BroadcastMeetingAudience)() {
+func (m *BroadcastMeetingSettings) SetAllowedAudience(value *BroadcastMeetingSettings_allowedAudience)() {
     err := m.GetBackingStore().Set("allowedAudience", value)
     if err != nil {
         panic(err)
@@ -308,7 +308,7 @@ type BroadcastMeetingSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAllowedAudience()(*BroadcastMeetingAudience)
+    GetAllowedAudience()(*BroadcastMeetingSettings_allowedAudience)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCaptions()(BroadcastMeetingCaptionSettingsable)
     GetIsAttendeeReportEnabled()(*bool)
@@ -316,7 +316,7 @@ type BroadcastMeetingSettingsable interface {
     GetIsRecordingEnabled()(*bool)
     GetIsVideoOnDemandEnabled()(*bool)
     GetOdataType()(*string)
-    SetAllowedAudience(value *BroadcastMeetingAudience)()
+    SetAllowedAudience(value *BroadcastMeetingSettings_allowedAudience)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCaptions(value BroadcastMeetingCaptionSettingsable)()
     SetIsAttendeeReportEnabled(value *bool)()

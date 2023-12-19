@@ -31,13 +31,13 @@ func (m *EntitlementManagementSettings) GetDurationUntilExternalUserDeletedAfter
     return nil
 }
 // GetExternalUserLifecycleAction gets the externalUserLifecycleAction property value. Automatic action that the service should take when an external user's last access package assignment is removed. The possible values are: none, blockSignIn, blockSignInAndDelete, unknownFutureValue.
-func (m *EntitlementManagementSettings) GetExternalUserLifecycleAction()(*AccessPackageExternalUserLifecycleAction) {
+func (m *EntitlementManagementSettings) GetExternalUserLifecycleAction()(*EntitlementManagementSettings_externalUserLifecycleAction) {
     val, err := m.GetBackingStore().Get("externalUserLifecycleAction")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AccessPackageExternalUserLifecycleAction)
+        return val.(*EntitlementManagementSettings_externalUserLifecycleAction)
     }
     return nil
 }
@@ -55,12 +55,12 @@ func (m *EntitlementManagementSettings) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["externalUserLifecycleAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAccessPackageExternalUserLifecycleAction)
+        val, err := n.GetEnumValue(ParseEntitlementManagementSettings_externalUserLifecycleAction)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetExternalUserLifecycleAction(val.(*AccessPackageExternalUserLifecycleAction))
+            m.SetExternalUserLifecycleAction(val.(*EntitlementManagementSettings_externalUserLifecycleAction))
         }
         return nil
     }
@@ -95,7 +95,7 @@ func (m *EntitlementManagementSettings) SetDurationUntilExternalUserDeletedAfter
     }
 }
 // SetExternalUserLifecycleAction sets the externalUserLifecycleAction property value. Automatic action that the service should take when an external user's last access package assignment is removed. The possible values are: none, blockSignIn, blockSignInAndDelete, unknownFutureValue.
-func (m *EntitlementManagementSettings) SetExternalUserLifecycleAction(value *AccessPackageExternalUserLifecycleAction)() {
+func (m *EntitlementManagementSettings) SetExternalUserLifecycleAction(value *EntitlementManagementSettings_externalUserLifecycleAction)() {
     err := m.GetBackingStore().Set("externalUserLifecycleAction", value)
     if err != nil {
         panic(err)
@@ -106,7 +106,7 @@ type EntitlementManagementSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDurationUntilExternalUserDeletedAfterBlocked()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
-    GetExternalUserLifecycleAction()(*AccessPackageExternalUserLifecycleAction)
+    GetExternalUserLifecycleAction()(*EntitlementManagementSettings_externalUserLifecycleAction)
     SetDurationUntilExternalUserDeletedAfterBlocked(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
-    SetExternalUserLifecycleAction(value *AccessPackageExternalUserLifecycleAction)()
+    SetExternalUserLifecycleAction(value *EntitlementManagementSettings_externalUserLifecycleAction)()
 }

@@ -62,12 +62,12 @@ func (m *LoginPageLayoutConfiguration) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["layoutTemplateType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseLayoutTemplateType)
+        val, err := n.GetEnumValue(ParseLoginPageLayoutConfiguration_layoutTemplateType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLayoutTemplateType(val.(*LayoutTemplateType))
+            m.SetLayoutTemplateType(val.(*LoginPageLayoutConfiguration_layoutTemplateType))
         }
         return nil
     }
@@ -106,13 +106,13 @@ func (m *LoginPageLayoutConfiguration) GetIsHeaderShown()(*bool) {
     return nil
 }
 // GetLayoutTemplateType gets the layoutTemplateType property value. Represents the layout template to be displayed on the login page for a tenant. The possible values are  default - Represents the default Microsoft layout with a centered lightbox.  verticalSplit - Represents a layout with a background on the left side and a full-height lightbox to the right.  unknownFutureValue - Evolvable enumeration sentinel value. Don't use.
-func (m *LoginPageLayoutConfiguration) GetLayoutTemplateType()(*LayoutTemplateType) {
+func (m *LoginPageLayoutConfiguration) GetLayoutTemplateType()(*LoginPageLayoutConfiguration_layoutTemplateType) {
     val, err := m.GetBackingStore().Get("layoutTemplateType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*LayoutTemplateType)
+        return val.(*LoginPageLayoutConfiguration_layoutTemplateType)
     }
     return nil
 }
@@ -188,7 +188,7 @@ func (m *LoginPageLayoutConfiguration) SetIsHeaderShown(value *bool)() {
     }
 }
 // SetLayoutTemplateType sets the layoutTemplateType property value. Represents the layout template to be displayed on the login page for a tenant. The possible values are  default - Represents the default Microsoft layout with a centered lightbox.  verticalSplit - Represents a layout with a background on the left side and a full-height lightbox to the right.  unknownFutureValue - Evolvable enumeration sentinel value. Don't use.
-func (m *LoginPageLayoutConfiguration) SetLayoutTemplateType(value *LayoutTemplateType)() {
+func (m *LoginPageLayoutConfiguration) SetLayoutTemplateType(value *LoginPageLayoutConfiguration_layoutTemplateType)() {
     err := m.GetBackingStore().Set("layoutTemplateType", value)
     if err != nil {
         panic(err)
@@ -209,11 +209,11 @@ type LoginPageLayoutConfigurationable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetIsFooterShown()(*bool)
     GetIsHeaderShown()(*bool)
-    GetLayoutTemplateType()(*LayoutTemplateType)
+    GetLayoutTemplateType()(*LoginPageLayoutConfiguration_layoutTemplateType)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetIsFooterShown(value *bool)()
     SetIsHeaderShown(value *bool)()
-    SetLayoutTemplateType(value *LayoutTemplateType)()
+    SetLayoutTemplateType(value *LoginPageLayoutConfiguration_layoutTemplateType)()
     SetOdataType(value *string)()
 }

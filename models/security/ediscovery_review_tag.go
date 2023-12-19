@@ -22,13 +22,13 @@ func CreateEdiscoveryReviewTagFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewEdiscoveryReviewTag(), nil
 }
 // GetChildSelectability gets the childSelectability property value. Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
-func (m *EdiscoveryReviewTag) GetChildSelectability()(*ChildSelectability) {
+func (m *EdiscoveryReviewTag) GetChildSelectability()(*EdiscoveryReviewTag_childSelectability) {
     val, err := m.GetBackingStore().Get("childSelectability")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ChildSelectability)
+        return val.(*EdiscoveryReviewTag_childSelectability)
     }
     return nil
 }
@@ -47,12 +47,12 @@ func (m *EdiscoveryReviewTag) GetChildTags()([]EdiscoveryReviewTagable) {
 func (m *EdiscoveryReviewTag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Tag.GetFieldDeserializers()
     res["childSelectability"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseChildSelectability)
+        val, err := n.GetEnumValue(ParseEdiscoveryReviewTag_childSelectability)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetChildSelectability(val.(*ChildSelectability))
+            m.SetChildSelectability(val.(*EdiscoveryReviewTag_childSelectability))
         }
         return nil
     }
@@ -129,7 +129,7 @@ func (m *EdiscoveryReviewTag) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetChildSelectability sets the childSelectability property value. Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
-func (m *EdiscoveryReviewTag) SetChildSelectability(value *ChildSelectability)() {
+func (m *EdiscoveryReviewTag) SetChildSelectability(value *EdiscoveryReviewTag_childSelectability)() {
     err := m.GetBackingStore().Set("childSelectability", value)
     if err != nil {
         panic(err)
@@ -153,10 +153,10 @@ func (m *EdiscoveryReviewTag) SetParent(value EdiscoveryReviewTagable)() {
 type EdiscoveryReviewTagable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Tagable
-    GetChildSelectability()(*ChildSelectability)
+    GetChildSelectability()(*EdiscoveryReviewTag_childSelectability)
     GetChildTags()([]EdiscoveryReviewTagable)
     GetParent()(EdiscoveryReviewTagable)
-    SetChildSelectability(value *ChildSelectability)()
+    SetChildSelectability(value *EdiscoveryReviewTag_childSelectability)()
     SetChildTags(value []EdiscoveryReviewTagable)()
     SetParent(value EdiscoveryReviewTagable)()
 }

@@ -95,12 +95,12 @@ func (m *ExpirationPattern) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseExpirationPatternType)
+        val, err := n.GetEnumValue(ParseExpirationPattern_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*ExpirationPatternType))
+            m.SetTypeEscaped(val.(*ExpirationPattern_type))
         }
         return nil
     }
@@ -118,13 +118,13 @@ func (m *ExpirationPattern) GetOdataType()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The requestor's desired expiration pattern type. The possible values are: notSpecified, noExpiration, afterDateTime, afterDuration.
-func (m *ExpirationPattern) GetTypeEscaped()(*ExpirationPatternType) {
+func (m *ExpirationPattern) GetTypeEscaped()(*ExpirationPattern_type) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ExpirationPatternType)
+        return val.(*ExpirationPattern_type)
     }
     return nil
 }
@@ -196,7 +196,7 @@ func (m *ExpirationPattern) SetOdataType(value *string)() {
     }
 }
 // SetTypeEscaped sets the type property value. The requestor's desired expiration pattern type. The possible values are: notSpecified, noExpiration, afterDateTime, afterDuration.
-func (m *ExpirationPattern) SetTypeEscaped(value *ExpirationPatternType)() {
+func (m *ExpirationPattern) SetTypeEscaped(value *ExpirationPattern_type)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -211,10 +211,10 @@ type ExpirationPatternable interface {
     GetDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOdataType()(*string)
-    GetTypeEscaped()(*ExpirationPatternType)
+    GetTypeEscaped()(*ExpirationPattern_type)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOdataType(value *string)()
-    SetTypeEscaped(value *ExpirationPatternType)()
+    SetTypeEscaped(value *ExpirationPattern_type)()
 }

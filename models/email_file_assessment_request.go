@@ -33,13 +33,13 @@ func (m *EmailFileAssessmentRequest) GetContentData()(*string) {
     return nil
 }
 // GetDestinationRoutingReason gets the destinationRoutingReason property value. The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
-func (m *EmailFileAssessmentRequest) GetDestinationRoutingReason()(*MailDestinationRoutingReason) {
+func (m *EmailFileAssessmentRequest) GetDestinationRoutingReason()(*EmailFileAssessmentRequest_destinationRoutingReason) {
     val, err := m.GetBackingStore().Get("destinationRoutingReason")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MailDestinationRoutingReason)
+        return val.(*EmailFileAssessmentRequest_destinationRoutingReason)
     }
     return nil
 }
@@ -57,12 +57,12 @@ func (m *EmailFileAssessmentRequest) GetFieldDeserializers()(map[string]func(i87
         return nil
     }
     res["destinationRoutingReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMailDestinationRoutingReason)
+        val, err := n.GetEnumValue(ParseEmailFileAssessmentRequest_destinationRoutingReason)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDestinationRoutingReason(val.(*MailDestinationRoutingReason))
+            m.SetDestinationRoutingReason(val.(*EmailFileAssessmentRequest_destinationRoutingReason))
         }
         return nil
     }
@@ -124,7 +124,7 @@ func (m *EmailFileAssessmentRequest) SetContentData(value *string)() {
     }
 }
 // SetDestinationRoutingReason sets the destinationRoutingReason property value. The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
-func (m *EmailFileAssessmentRequest) SetDestinationRoutingReason(value *MailDestinationRoutingReason)() {
+func (m *EmailFileAssessmentRequest) SetDestinationRoutingReason(value *EmailFileAssessmentRequest_destinationRoutingReason)() {
     err := m.GetBackingStore().Set("destinationRoutingReason", value)
     if err != nil {
         panic(err)
@@ -142,9 +142,9 @@ type EmailFileAssessmentRequestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ThreatAssessmentRequestable
     GetContentData()(*string)
-    GetDestinationRoutingReason()(*MailDestinationRoutingReason)
+    GetDestinationRoutingReason()(*EmailFileAssessmentRequest_destinationRoutingReason)
     GetRecipientEmail()(*string)
     SetContentData(value *string)()
-    SetDestinationRoutingReason(value *MailDestinationRoutingReason)()
+    SetDestinationRoutingReason(value *EmailFileAssessmentRequest_destinationRoutingReason)()
     SetRecipientEmail(value *string)()
 }

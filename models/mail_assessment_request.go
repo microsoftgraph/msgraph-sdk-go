@@ -22,13 +22,13 @@ func CreateMailAssessmentRequestFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewMailAssessmentRequest(), nil
 }
 // GetDestinationRoutingReason gets the destinationRoutingReason property value. The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
-func (m *MailAssessmentRequest) GetDestinationRoutingReason()(*MailDestinationRoutingReason) {
+func (m *MailAssessmentRequest) GetDestinationRoutingReason()(*MailAssessmentRequest_destinationRoutingReason) {
     val, err := m.GetBackingStore().Get("destinationRoutingReason")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MailDestinationRoutingReason)
+        return val.(*MailAssessmentRequest_destinationRoutingReason)
     }
     return nil
 }
@@ -36,12 +36,12 @@ func (m *MailAssessmentRequest) GetDestinationRoutingReason()(*MailDestinationRo
 func (m *MailAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ThreatAssessmentRequest.GetFieldDeserializers()
     res["destinationRoutingReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMailDestinationRoutingReason)
+        val, err := n.GetEnumValue(ParseMailAssessmentRequest_destinationRoutingReason)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDestinationRoutingReason(val.(*MailDestinationRoutingReason))
+            m.SetDestinationRoutingReason(val.(*MailAssessmentRequest_destinationRoutingReason))
         }
         return nil
     }
@@ -117,7 +117,7 @@ func (m *MailAssessmentRequest) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetDestinationRoutingReason sets the destinationRoutingReason property value. The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
-func (m *MailAssessmentRequest) SetDestinationRoutingReason(value *MailDestinationRoutingReason)() {
+func (m *MailAssessmentRequest) SetDestinationRoutingReason(value *MailAssessmentRequest_destinationRoutingReason)() {
     err := m.GetBackingStore().Set("destinationRoutingReason", value)
     if err != nil {
         panic(err)
@@ -141,10 +141,10 @@ func (m *MailAssessmentRequest) SetRecipientEmail(value *string)() {
 type MailAssessmentRequestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ThreatAssessmentRequestable
-    GetDestinationRoutingReason()(*MailDestinationRoutingReason)
+    GetDestinationRoutingReason()(*MailAssessmentRequest_destinationRoutingReason)
     GetMessageUri()(*string)
     GetRecipientEmail()(*string)
-    SetDestinationRoutingReason(value *MailDestinationRoutingReason)()
+    SetDestinationRoutingReason(value *MailAssessmentRequest_destinationRoutingReason)()
     SetMessageUri(value *string)()
     SetRecipientEmail(value *string)()
 }

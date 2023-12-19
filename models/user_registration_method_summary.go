@@ -78,22 +78,22 @@ func (m *UserRegistrationMethodSummary) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["userRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseIncludedUserRoles)
+        val, err := n.GetEnumValue(ParseUserRegistrationMethodSummary_userRoles)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserRoles(val.(*IncludedUserRoles))
+            m.SetUserRoles(val.(*UserRegistrationMethodSummary_userRoles))
         }
         return nil
     }
     res["userTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseIncludedUserTypes)
+        val, err := n.GetEnumValue(ParseUserRegistrationMethodSummary_userTypes)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserTypes(val.(*IncludedUserTypes))
+            m.SetUserTypes(val.(*UserRegistrationMethodSummary_userTypes))
         }
         return nil
     }
@@ -133,24 +133,24 @@ func (m *UserRegistrationMethodSummary) GetUserRegistrationMethodCounts()([]User
     return nil
 }
 // GetUserRoles gets the userRoles property value. The role type of the user. Possible values are: all, privilegedAdmin, admin, user, unknownFutureValue.
-func (m *UserRegistrationMethodSummary) GetUserRoles()(*IncludedUserRoles) {
+func (m *UserRegistrationMethodSummary) GetUserRoles()(*UserRegistrationMethodSummary_userRoles) {
     val, err := m.GetBackingStore().Get("userRoles")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*IncludedUserRoles)
+        return val.(*UserRegistrationMethodSummary_userRoles)
     }
     return nil
 }
 // GetUserTypes gets the userTypes property value. User type. Possible values are: all, member, guest, unknownFutureValue.
-func (m *UserRegistrationMethodSummary) GetUserTypes()(*IncludedUserTypes) {
+func (m *UserRegistrationMethodSummary) GetUserTypes()(*UserRegistrationMethodSummary_userTypes) {
     val, err := m.GetBackingStore().Get("userTypes")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*IncludedUserTypes)
+        return val.(*UserRegistrationMethodSummary_userTypes)
     }
     return nil
 }
@@ -235,14 +235,14 @@ func (m *UserRegistrationMethodSummary) SetUserRegistrationMethodCounts(value []
     }
 }
 // SetUserRoles sets the userRoles property value. The role type of the user. Possible values are: all, privilegedAdmin, admin, user, unknownFutureValue.
-func (m *UserRegistrationMethodSummary) SetUserRoles(value *IncludedUserRoles)() {
+func (m *UserRegistrationMethodSummary) SetUserRoles(value *UserRegistrationMethodSummary_userRoles)() {
     err := m.GetBackingStore().Set("userRoles", value)
     if err != nil {
         panic(err)
     }
 }
 // SetUserTypes sets the userTypes property value. User type. Possible values are: all, member, guest, unknownFutureValue.
-func (m *UserRegistrationMethodSummary) SetUserTypes(value *IncludedUserTypes)() {
+func (m *UserRegistrationMethodSummary) SetUserTypes(value *UserRegistrationMethodSummary_userTypes)() {
     err := m.GetBackingStore().Set("userTypes", value)
     if err != nil {
         panic(err)
@@ -257,12 +257,12 @@ type UserRegistrationMethodSummaryable interface {
     GetOdataType()(*string)
     GetTotalUserCount()(*int64)
     GetUserRegistrationMethodCounts()([]UserRegistrationMethodCountable)
-    GetUserRoles()(*IncludedUserRoles)
-    GetUserTypes()(*IncludedUserTypes)
+    GetUserRoles()(*UserRegistrationMethodSummary_userRoles)
+    GetUserTypes()(*UserRegistrationMethodSummary_userTypes)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetTotalUserCount(value *int64)()
     SetUserRegistrationMethodCounts(value []UserRegistrationMethodCountable)()
-    SetUserRoles(value *IncludedUserRoles)()
-    SetUserTypes(value *IncludedUserTypes)()
+    SetUserRoles(value *UserRegistrationMethodSummary_userRoles)()
+    SetUserTypes(value *UserRegistrationMethodSummary_userTypes)()
 }

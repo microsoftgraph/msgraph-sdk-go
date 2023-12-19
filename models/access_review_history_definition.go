@@ -43,13 +43,13 @@ func (m *AccessReviewHistoryDefinition) GetCreatedDateTime()(*i336074805fc853987
     return nil
 }
 // GetDecisions gets the decisions property value. Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions are included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
-func (m *AccessReviewHistoryDefinition) GetDecisions()([]AccessReviewHistoryDecisionFilter) {
+func (m *AccessReviewHistoryDefinition) GetDecisions()([]AccessReviewHistoryDefinition_decisions) {
     val, err := m.GetBackingStore().Get("decisions")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]AccessReviewHistoryDecisionFilter)
+        return val.([]AccessReviewHistoryDefinition_decisions)
     }
     return nil
 }
@@ -88,15 +88,15 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["decisions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseAccessReviewHistoryDecisionFilter)
+        val, err := n.GetCollectionOfEnumValues(ParseAccessReviewHistoryDefinition_decisions)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AccessReviewHistoryDecisionFilter, len(val))
+            res := make([]AccessReviewHistoryDefinition_decisions, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*AccessReviewHistoryDecisionFilter))
+                    res[i] = *(v.(*AccessReviewHistoryDefinition_decisions))
                 }
             }
             m.SetDecisions(res)
@@ -176,12 +176,12 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAccessReviewHistoryStatus)
+        val, err := n.GetEnumValue(ParseAccessReviewHistoryDefinition_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*AccessReviewHistoryStatus))
+            m.SetStatus(val.(*AccessReviewHistoryDefinition_status))
         }
         return nil
     }
@@ -243,13 +243,13 @@ func (m *AccessReviewHistoryDefinition) GetScopes()([]AccessReviewScopeable) {
     return nil
 }
 // GetStatus gets the status property value. Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue.
-func (m *AccessReviewHistoryDefinition) GetStatus()(*AccessReviewHistoryStatus) {
+func (m *AccessReviewHistoryDefinition) GetStatus()(*AccessReviewHistoryDefinition_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AccessReviewHistoryStatus)
+        return val.(*AccessReviewHistoryDefinition_status)
     }
     return nil
 }
@@ -272,7 +272,7 @@ func (m *AccessReviewHistoryDefinition) Serialize(writer i878a80d2330e89d2689638
         }
     }
     if m.GetDecisions() != nil {
-        err = writer.WriteCollectionOfStringValues("decisions", SerializeAccessReviewHistoryDecisionFilter(m.GetDecisions()))
+        err = writer.WriteCollectionOfStringValues("decisions", SerializeAccessReviewHistoryDefinition_decisions(m.GetDecisions()))
         if err != nil {
             return err
         }
@@ -349,7 +349,7 @@ func (m *AccessReviewHistoryDefinition) SetCreatedDateTime(value *i336074805fc85
     }
 }
 // SetDecisions sets the decisions property value. Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions are included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
-func (m *AccessReviewHistoryDefinition) SetDecisions(value []AccessReviewHistoryDecisionFilter)() {
+func (m *AccessReviewHistoryDefinition) SetDecisions(value []AccessReviewHistoryDefinition_decisions)() {
     err := m.GetBackingStore().Set("decisions", value)
     if err != nil {
         panic(err)
@@ -398,7 +398,7 @@ func (m *AccessReviewHistoryDefinition) SetScopes(value []AccessReviewScopeable)
     }
 }
 // SetStatus sets the status property value. Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue.
-func (m *AccessReviewHistoryDefinition) SetStatus(value *AccessReviewHistoryStatus)() {
+func (m *AccessReviewHistoryDefinition) SetStatus(value *AccessReviewHistoryDefinition_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -410,22 +410,22 @@ type AccessReviewHistoryDefinitionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCreatedBy()(UserIdentityable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetDecisions()([]AccessReviewHistoryDecisionFilter)
+    GetDecisions()([]AccessReviewHistoryDefinition_decisions)
     GetDisplayName()(*string)
     GetInstances()([]AccessReviewHistoryInstanceable)
     GetReviewHistoryPeriodEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetReviewHistoryPeriodStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetScheduleSettings()(AccessReviewHistoryScheduleSettingsable)
     GetScopes()([]AccessReviewScopeable)
-    GetStatus()(*AccessReviewHistoryStatus)
+    GetStatus()(*AccessReviewHistoryDefinition_status)
     SetCreatedBy(value UserIdentityable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetDecisions(value []AccessReviewHistoryDecisionFilter)()
+    SetDecisions(value []AccessReviewHistoryDefinition_decisions)()
     SetDisplayName(value *string)()
     SetInstances(value []AccessReviewHistoryInstanceable)()
     SetReviewHistoryPeriodEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetReviewHistoryPeriodStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetScheduleSettings(value AccessReviewHistoryScheduleSettingsable)()
     SetScopes(value []AccessReviewScopeable)()
-    SetStatus(value *AccessReviewHistoryStatus)()
+    SetStatus(value *AccessReviewHistoryDefinition_status)()
 }

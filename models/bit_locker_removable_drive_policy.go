@@ -50,13 +50,13 @@ func (m *BitLockerRemovableDrivePolicy) GetBlockCrossOrganizationWriteAccess()(*
     return nil
 }
 // GetEncryptionMethod gets the encryptionMethod property value. Select the encryption method for removable  drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
-func (m *BitLockerRemovableDrivePolicy) GetEncryptionMethod()(*BitLockerEncryptionMethod) {
+func (m *BitLockerRemovableDrivePolicy) GetEncryptionMethod()(*BitLockerRemovableDrivePolicy_encryptionMethod) {
     val, err := m.GetBackingStore().Get("encryptionMethod")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*BitLockerEncryptionMethod)
+        return val.(*BitLockerRemovableDrivePolicy_encryptionMethod)
     }
     return nil
 }
@@ -74,12 +74,12 @@ func (m *BitLockerRemovableDrivePolicy) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["encryptionMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseBitLockerEncryptionMethod)
+        val, err := n.GetEnumValue(ParseBitLockerRemovableDrivePolicy_encryptionMethod)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEncryptionMethod(val.(*BitLockerEncryptionMethod))
+            m.SetEncryptionMethod(val.(*BitLockerRemovableDrivePolicy_encryptionMethod))
         }
         return nil
     }
@@ -181,7 +181,7 @@ func (m *BitLockerRemovableDrivePolicy) SetBlockCrossOrganizationWriteAccess(val
     }
 }
 // SetEncryptionMethod sets the encryptionMethod property value. Select the encryption method for removable  drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
-func (m *BitLockerRemovableDrivePolicy) SetEncryptionMethod(value *BitLockerEncryptionMethod)() {
+func (m *BitLockerRemovableDrivePolicy) SetEncryptionMethod(value *BitLockerRemovableDrivePolicy_encryptionMethod)() {
     err := m.GetBackingStore().Set("encryptionMethod", value)
     if err != nil {
         panic(err)
@@ -208,12 +208,12 @@ type BitLockerRemovableDrivePolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetBlockCrossOrganizationWriteAccess()(*bool)
-    GetEncryptionMethod()(*BitLockerEncryptionMethod)
+    GetEncryptionMethod()(*BitLockerRemovableDrivePolicy_encryptionMethod)
     GetOdataType()(*string)
     GetRequireEncryptionForWriteAccess()(*bool)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetBlockCrossOrganizationWriteAccess(value *bool)()
-    SetEncryptionMethod(value *BitLockerEncryptionMethod)()
+    SetEncryptionMethod(value *BitLockerRemovableDrivePolicy_encryptionMethod)()
     SetOdataType(value *string)()
     SetRequireEncryptionForWriteAccess(value *bool)()
 }

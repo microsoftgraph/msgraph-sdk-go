@@ -62,12 +62,12 @@ func (m *MeetingParticipantInfo) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["role"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOnlineMeetingRole)
+        val, err := n.GetEnumValue(ParseMeetingParticipantInfo_role)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRole(val.(*OnlineMeetingRole))
+            m.SetRole(val.(*MeetingParticipantInfo_role))
         }
         return nil
     }
@@ -106,13 +106,13 @@ func (m *MeetingParticipantInfo) GetOdataType()(*string) {
     return nil
 }
 // GetRole gets the role property value. Specifies the participant's role in the meeting.
-func (m *MeetingParticipantInfo) GetRole()(*OnlineMeetingRole) {
+func (m *MeetingParticipantInfo) GetRole()(*MeetingParticipantInfo_role) {
     val, err := m.GetBackingStore().Get("role")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*OnlineMeetingRole)
+        return val.(*MeetingParticipantInfo_role)
     }
     return nil
 }
@@ -188,7 +188,7 @@ func (m *MeetingParticipantInfo) SetOdataType(value *string)() {
     }
 }
 // SetRole sets the role property value. Specifies the participant's role in the meeting.
-func (m *MeetingParticipantInfo) SetRole(value *OnlineMeetingRole)() {
+func (m *MeetingParticipantInfo) SetRole(value *MeetingParticipantInfo_role)() {
     err := m.GetBackingStore().Set("role", value)
     if err != nil {
         panic(err)
@@ -209,11 +209,11 @@ type MeetingParticipantInfoable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetIdentity()(IdentitySetable)
     GetOdataType()(*string)
-    GetRole()(*OnlineMeetingRole)
+    GetRole()(*MeetingParticipantInfo_role)
     GetUpn()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetIdentity(value IdentitySetable)()
     SetOdataType(value *string)()
-    SetRole(value *OnlineMeetingRole)()
+    SetRole(value *MeetingParticipantInfo_role)()
     SetUpn(value *string)()
 }

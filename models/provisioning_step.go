@@ -104,22 +104,22 @@ func (m *ProvisioningStep) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["provisioningStepType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseProvisioningStepType)
+        val, err := n.GetEnumValue(ParseProvisioningStep_provisioningStepType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProvisioningStepType(val.(*ProvisioningStepType))
+            m.SetProvisioningStepType(val.(*ProvisioningStep_provisioningStepType))
         }
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseProvisioningResult)
+        val, err := n.GetEnumValue(ParseProvisioningStep_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*ProvisioningResult))
+            m.SetStatus(val.(*ProvisioningStep_status))
         }
         return nil
     }
@@ -148,24 +148,24 @@ func (m *ProvisioningStep) GetOdataType()(*string) {
     return nil
 }
 // GetProvisioningStepType gets the provisioningStepType property value. Type of step. Possible values are: import, scoping, matching, processing, referenceResolution, export, unknownFutureValue.
-func (m *ProvisioningStep) GetProvisioningStepType()(*ProvisioningStepType) {
+func (m *ProvisioningStep) GetProvisioningStepType()(*ProvisioningStep_provisioningStepType) {
     val, err := m.GetBackingStore().Get("provisioningStepType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ProvisioningStepType)
+        return val.(*ProvisioningStep_provisioningStepType)
     }
     return nil
 }
 // GetStatus gets the status property value. Status of the step. Possible values are: success, warning,  failure, skipped, unknownFutureValue.
-func (m *ProvisioningStep) GetStatus()(*ProvisioningResult) {
+func (m *ProvisioningStep) GetStatus()(*ProvisioningStep_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ProvisioningResult)
+        return val.(*ProvisioningStep_status)
     }
     return nil
 }
@@ -257,14 +257,14 @@ func (m *ProvisioningStep) SetOdataType(value *string)() {
     }
 }
 // SetProvisioningStepType sets the provisioningStepType property value. Type of step. Possible values are: import, scoping, matching, processing, referenceResolution, export, unknownFutureValue.
-func (m *ProvisioningStep) SetProvisioningStepType(value *ProvisioningStepType)() {
+func (m *ProvisioningStep) SetProvisioningStepType(value *ProvisioningStep_provisioningStepType)() {
     err := m.GetBackingStore().Set("provisioningStepType", value)
     if err != nil {
         panic(err)
     }
 }
 // SetStatus sets the status property value. Status of the step. Possible values are: success, warning,  failure, skipped, unknownFutureValue.
-func (m *ProvisioningStep) SetStatus(value *ProvisioningResult)() {
+func (m *ProvisioningStep) SetStatus(value *ProvisioningStep_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -280,13 +280,13 @@ type ProvisioningStepable interface {
     GetDetails()(DetailsInfoable)
     GetName()(*string)
     GetOdataType()(*string)
-    GetProvisioningStepType()(*ProvisioningStepType)
-    GetStatus()(*ProvisioningResult)
+    GetProvisioningStepType()(*ProvisioningStep_provisioningStepType)
+    GetStatus()(*ProvisioningStep_status)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDescription(value *string)()
     SetDetails(value DetailsInfoable)()
     SetName(value *string)()
     SetOdataType(value *string)()
-    SetProvisioningStepType(value *ProvisioningStepType)()
-    SetStatus(value *ProvisioningResult)()
+    SetProvisioningStepType(value *ProvisioningStep_provisioningStepType)()
+    SetStatus(value *ProvisioningStep_status)()
 }

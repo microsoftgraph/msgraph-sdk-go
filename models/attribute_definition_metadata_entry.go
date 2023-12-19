@@ -42,12 +42,12 @@ func (m *AttributeDefinitionMetadataEntry) GetBackingStore()(ie8677ce2c7e1b4c22e
 func (m *AttributeDefinitionMetadataEntry) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["key"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAttributeDefinitionMetadata)
+        val, err := n.GetEnumValue(ParseAttributeDefinitionMetadataEntry_key)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetKey(val.(*AttributeDefinitionMetadata))
+            m.SetKey(val.(*AttributeDefinitionMetadataEntry_key))
         }
         return nil
     }
@@ -74,13 +74,13 @@ func (m *AttributeDefinitionMetadataEntry) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetKey gets the key property value. Possible values are: BaseAttributeName, ComplexObjectDefinition, IsContainer, IsCustomerDefined, IsDomainQualified, LinkPropertyNames, LinkTypeName, MaximumLength, ReferencedProperty.
-func (m *AttributeDefinitionMetadataEntry) GetKey()(*AttributeDefinitionMetadata) {
+func (m *AttributeDefinitionMetadataEntry) GetKey()(*AttributeDefinitionMetadataEntry_key) {
     val, err := m.GetBackingStore().Get("key")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AttributeDefinitionMetadata)
+        return val.(*AttributeDefinitionMetadataEntry_key)
     }
     return nil
 }
@@ -147,7 +147,7 @@ func (m *AttributeDefinitionMetadataEntry) SetBackingStore(value ie8677ce2c7e1b4
     m.backingStore = value
 }
 // SetKey sets the key property value. Possible values are: BaseAttributeName, ComplexObjectDefinition, IsContainer, IsCustomerDefined, IsDomainQualified, LinkPropertyNames, LinkTypeName, MaximumLength, ReferencedProperty.
-func (m *AttributeDefinitionMetadataEntry) SetKey(value *AttributeDefinitionMetadata)() {
+func (m *AttributeDefinitionMetadataEntry) SetKey(value *AttributeDefinitionMetadataEntry_key)() {
     err := m.GetBackingStore().Set("key", value)
     if err != nil {
         panic(err)
@@ -173,11 +173,11 @@ type AttributeDefinitionMetadataEntryable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetKey()(*AttributeDefinitionMetadata)
+    GetKey()(*AttributeDefinitionMetadataEntry_key)
     GetOdataType()(*string)
     GetValue()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetKey(value *AttributeDefinitionMetadata)()
+    SetKey(value *AttributeDefinitionMetadataEntry_key)()
     SetOdataType(value *string)()
     SetValue(value *string)()
 }

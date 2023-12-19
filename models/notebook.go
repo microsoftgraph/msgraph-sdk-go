@@ -107,12 +107,12 @@ func (m *Notebook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["userRole"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOnenoteUserRole)
+        val, err := n.GetEnumValue(ParseNotebook_userRole)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserRole(val.(*OnenoteUserRole))
+            m.SetUserRole(val.(*Notebook_userRole))
         }
         return nil
     }
@@ -196,13 +196,13 @@ func (m *Notebook) GetSectionsUrl()(*string) {
     return nil
 }
 // GetUserRole gets the userRole property value. Possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.
-func (m *Notebook) GetUserRole()(*OnenoteUserRole) {
+func (m *Notebook) GetUserRole()(*Notebook_userRole) {
     val, err := m.GetBackingStore().Get("userRole")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*OnenoteUserRole)
+        return val.(*Notebook_userRole)
     }
     return nil
 }
@@ -325,7 +325,7 @@ func (m *Notebook) SetSectionsUrl(value *string)() {
     }
 }
 // SetUserRole sets the userRole property value. Possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.
-func (m *Notebook) SetUserRole(value *OnenoteUserRole)() {
+func (m *Notebook) SetUserRole(value *Notebook_userRole)() {
     err := m.GetBackingStore().Set("userRole", value)
     if err != nil {
         panic(err)
@@ -342,7 +342,7 @@ type Notebookable interface {
     GetSectionGroupsUrl()(*string)
     GetSections()([]OnenoteSectionable)
     GetSectionsUrl()(*string)
-    GetUserRole()(*OnenoteUserRole)
+    GetUserRole()(*Notebook_userRole)
     SetIsDefault(value *bool)()
     SetIsShared(value *bool)()
     SetLinks(value NotebookLinksable)()
@@ -350,5 +350,5 @@ type Notebookable interface {
     SetSectionGroupsUrl(value *string)()
     SetSections(value []OnenoteSectionable)()
     SetSectionsUrl(value *string)()
-    SetUserRole(value *OnenoteUserRole)()
+    SetUserRole(value *Notebook_userRole)()
 }

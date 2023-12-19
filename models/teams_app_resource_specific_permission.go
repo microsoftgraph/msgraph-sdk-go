@@ -52,12 +52,12 @@ func (m *TeamsAppResourceSpecificPermission) GetFieldDeserializers()(map[string]
         return nil
     }
     res["permissionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTeamsAppResourceSpecificPermissionType)
+        val, err := n.GetEnumValue(ParseTeamsAppResourceSpecificPermission_permissionType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPermissionType(val.(*TeamsAppResourceSpecificPermissionType))
+            m.SetPermissionType(val.(*TeamsAppResourceSpecificPermission_permissionType))
         }
         return nil
     }
@@ -85,13 +85,13 @@ func (m *TeamsAppResourceSpecificPermission) GetOdataType()(*string) {
     return nil
 }
 // GetPermissionType gets the permissionType property value. The type of resource-specific permission.
-func (m *TeamsAppResourceSpecificPermission) GetPermissionType()(*TeamsAppResourceSpecificPermissionType) {
+func (m *TeamsAppResourceSpecificPermission) GetPermissionType()(*TeamsAppResourceSpecificPermission_permissionType) {
     val, err := m.GetBackingStore().Get("permissionType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TeamsAppResourceSpecificPermissionType)
+        return val.(*TeamsAppResourceSpecificPermission_permissionType)
     }
     return nil
 }
@@ -154,7 +154,7 @@ func (m *TeamsAppResourceSpecificPermission) SetOdataType(value *string)() {
     }
 }
 // SetPermissionType sets the permissionType property value. The type of resource-specific permission.
-func (m *TeamsAppResourceSpecificPermission) SetPermissionType(value *TeamsAppResourceSpecificPermissionType)() {
+func (m *TeamsAppResourceSpecificPermission) SetPermissionType(value *TeamsAppResourceSpecificPermission_permissionType)() {
     err := m.GetBackingStore().Set("permissionType", value)
     if err != nil {
         panic(err)
@@ -174,10 +174,10 @@ type TeamsAppResourceSpecificPermissionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
-    GetPermissionType()(*TeamsAppResourceSpecificPermissionType)
+    GetPermissionType()(*TeamsAppResourceSpecificPermission_permissionType)
     GetPermissionValue()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
-    SetPermissionType(value *TeamsAppResourceSpecificPermissionType)()
+    SetPermissionType(value *TeamsAppResourceSpecificPermission_permissionType)()
     SetPermissionValue(value *string)()
 }

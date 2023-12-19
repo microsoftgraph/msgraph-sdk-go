@@ -124,12 +124,12 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAccessPackageAssignmentState)
+        val, err := n.GetEnumValue(ParseAccessPackageAssignment_state)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetState(val.(*AccessPackageAssignmentState))
+            m.SetState(val.(*AccessPackageAssignment_state))
         }
         return nil
     }
@@ -167,13 +167,13 @@ func (m *AccessPackageAssignment) GetSchedule()(EntitlementManagementScheduleabl
     return nil
 }
 // GetState gets the state property value. The state of the access package assignment. The possible values are: delivering, partiallyDelivered, delivered, expired, deliveryFailed, unknownFutureValue. Read-only. Supports $filter (eq).
-func (m *AccessPackageAssignment) GetState()(*AccessPackageAssignmentState) {
+func (m *AccessPackageAssignment) GetState()(*AccessPackageAssignment_state) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AccessPackageAssignmentState)
+        return val.(*AccessPackageAssignment_state)
     }
     return nil
 }
@@ -298,7 +298,7 @@ func (m *AccessPackageAssignment) SetSchedule(value EntitlementManagementSchedul
     }
 }
 // SetState sets the state property value. The state of the access package assignment. The possible values are: delivering, partiallyDelivered, delivered, expired, deliveryFailed, unknownFutureValue. Read-only. Supports $filter (eq).
-func (m *AccessPackageAssignment) SetState(value *AccessPackageAssignmentState)() {
+func (m *AccessPackageAssignment) SetState(value *AccessPackageAssignment_state)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {
         panic(err)
@@ -327,7 +327,7 @@ type AccessPackageAssignmentable interface {
     GetCustomExtensionCalloutInstances()([]CustomExtensionCalloutInstanceable)
     GetExpiredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSchedule()(EntitlementManagementScheduleable)
-    GetState()(*AccessPackageAssignmentState)
+    GetState()(*AccessPackageAssignment_state)
     GetStatus()(*string)
     GetTarget()(AccessPackageSubjectable)
     SetAccessPackage(value AccessPackageable)()
@@ -335,7 +335,7 @@ type AccessPackageAssignmentable interface {
     SetCustomExtensionCalloutInstances(value []CustomExtensionCalloutInstanceable)()
     SetExpiredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSchedule(value EntitlementManagementScheduleable)()
-    SetState(value *AccessPackageAssignmentState)()
+    SetState(value *AccessPackageAssignment_state)()
     SetStatus(value *string)()
     SetTarget(value AccessPackageSubjectable)()
 }

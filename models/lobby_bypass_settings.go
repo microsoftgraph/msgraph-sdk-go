@@ -62,12 +62,12 @@ func (m *LobbyBypassSettings) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["scope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseLobbyBypassScope)
+        val, err := n.GetEnumValue(ParseLobbyBypassSettings_scope)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetScope(val.(*LobbyBypassScope))
+            m.SetScope(val.(*LobbyBypassSettings_scope))
         }
         return nil
     }
@@ -96,13 +96,13 @@ func (m *LobbyBypassSettings) GetOdataType()(*string) {
     return nil
 }
 // GetScope gets the scope property value. Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.
-func (m *LobbyBypassSettings) GetScope()(*LobbyBypassScope) {
+func (m *LobbyBypassSettings) GetScope()(*LobbyBypassSettings_scope) {
     val, err := m.GetBackingStore().Get("scope")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*LobbyBypassScope)
+        return val.(*LobbyBypassSettings_scope)
     }
     return nil
 }
@@ -161,7 +161,7 @@ func (m *LobbyBypassSettings) SetOdataType(value *string)() {
     }
 }
 // SetScope sets the scope property value. Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.
-func (m *LobbyBypassSettings) SetScope(value *LobbyBypassScope)() {
+func (m *LobbyBypassSettings) SetScope(value *LobbyBypassSettings_scope)() {
     err := m.GetBackingStore().Set("scope", value)
     if err != nil {
         panic(err)
@@ -175,9 +175,9 @@ type LobbyBypassSettingsable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetIsDialInBypassEnabled()(*bool)
     GetOdataType()(*string)
-    GetScope()(*LobbyBypassScope)
+    GetScope()(*LobbyBypassSettings_scope)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetIsDialInBypassEnabled(value *bool)()
     SetOdataType(value *string)()
-    SetScope(value *LobbyBypassScope)()
+    SetScope(value *LobbyBypassSettings_scope)()
 }

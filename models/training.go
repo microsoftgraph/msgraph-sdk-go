@@ -21,13 +21,13 @@ func CreateTrainingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
     return NewTraining(), nil
 }
 // GetAvailabilityStatus gets the availabilityStatus property value. Training availability status. Possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.
-func (m *Training) GetAvailabilityStatus()(*TrainingAvailabilityStatus) {
+func (m *Training) GetAvailabilityStatus()(*Training_availabilityStatus) {
     val, err := m.GetBackingStore().Get("availabilityStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TrainingAvailabilityStatus)
+        return val.(*Training_availabilityStatus)
     }
     return nil
 }
@@ -90,12 +90,12 @@ func (m *Training) GetDurationInMinutes()(*int32) {
 func (m *Training) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["availabilityStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTrainingAvailabilityStatus)
+        val, err := n.GetEnumValue(ParseTraining_availabilityStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAvailabilityStatus(val.(*TrainingAvailabilityStatus))
+            m.SetAvailabilityStatus(val.(*Training_availabilityStatus))
         }
         return nil
     }
@@ -196,12 +196,12 @@ func (m *Training) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSimulationContentSource)
+        val, err := n.GetEnumValue(ParseTraining_source)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSource(val.(*SimulationContentSource))
+            m.SetSource(val.(*Training_source))
         }
         return nil
     }
@@ -238,12 +238,12 @@ func (m *Training) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTrainingType)
+        val, err := n.GetEnumValue(ParseTraining_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*TrainingType))
+            m.SetTypeEscaped(val.(*Training_type))
         }
         return nil
     }
@@ -294,13 +294,13 @@ func (m *Training) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetSource gets the source property value. Training content source. Possible values are: unknown, global, tenant, unknownFutureValue.
-func (m *Training) GetSource()(*SimulationContentSource) {
+func (m *Training) GetSource()(*Training_source) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SimulationContentSource)
+        return val.(*Training_source)
     }
     return nil
 }
@@ -327,13 +327,13 @@ func (m *Training) GetTags()([]string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type of training. Possible values are: unknown, phishing, unknownFutureValue.
-func (m *Training) GetTypeEscaped()(*TrainingType) {
+func (m *Training) GetTypeEscaped()(*Training_type) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TrainingType)
+        return val.(*Training_type)
     }
     return nil
 }
@@ -439,7 +439,7 @@ func (m *Training) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     return nil
 }
 // SetAvailabilityStatus sets the availabilityStatus property value. Training availability status. Possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.
-func (m *Training) SetAvailabilityStatus(value *TrainingAvailabilityStatus)() {
+func (m *Training) SetAvailabilityStatus(value *Training_availabilityStatus)() {
     err := m.GetBackingStore().Set("availabilityStatus", value)
     if err != nil {
         panic(err)
@@ -509,7 +509,7 @@ func (m *Training) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad9
     }
 }
 // SetSource sets the source property value. Training content source. Possible values are: unknown, global, tenant, unknownFutureValue.
-func (m *Training) SetSource(value *SimulationContentSource)() {
+func (m *Training) SetSource(value *Training_source)() {
     err := m.GetBackingStore().Set("source", value)
     if err != nil {
         panic(err)
@@ -530,7 +530,7 @@ func (m *Training) SetTags(value []string)() {
     }
 }
 // SetTypeEscaped sets the type property value. The type of training. Possible values are: unknown, phishing, unknownFutureValue.
-func (m *Training) SetTypeEscaped(value *TrainingType)() {
+func (m *Training) SetTypeEscaped(value *Training_type)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -540,7 +540,7 @@ func (m *Training) SetTypeEscaped(value *TrainingType)() {
 type Trainingable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAvailabilityStatus()(*TrainingAvailabilityStatus)
+    GetAvailabilityStatus()(*Training_availabilityStatus)
     GetCreatedBy()(EmailIdentityable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDescription()(*string)
@@ -550,11 +550,11 @@ type Trainingable interface {
     GetLanguageDetails()([]TrainingLanguageDetailable)
     GetLastModifiedBy()(EmailIdentityable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetSource()(*SimulationContentSource)
+    GetSource()(*Training_source)
     GetSupportedLocales()([]string)
     GetTags()([]string)
-    GetTypeEscaped()(*TrainingType)
-    SetAvailabilityStatus(value *TrainingAvailabilityStatus)()
+    GetTypeEscaped()(*Training_type)
+    SetAvailabilityStatus(value *Training_availabilityStatus)()
     SetCreatedBy(value EmailIdentityable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
@@ -564,8 +564,8 @@ type Trainingable interface {
     SetLanguageDetails(value []TrainingLanguageDetailable)()
     SetLastModifiedBy(value EmailIdentityable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetSource(value *SimulationContentSource)()
+    SetSource(value *Training_source)()
     SetSupportedLocales(value []string)()
     SetTags(value []string)()
-    SetTypeEscaped(value *TrainingType)()
+    SetTypeEscaped(value *Training_type)()
 }

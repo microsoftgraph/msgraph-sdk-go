@@ -52,12 +52,12 @@ func (m *WorkforceIntegrationEncryption) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["protocol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWorkforceIntegrationEncryptionProtocol)
+        val, err := n.GetEnumValue(ParseWorkforceIntegrationEncryption_protocol)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProtocol(val.(*WorkforceIntegrationEncryptionProtocol))
+            m.SetProtocol(val.(*WorkforceIntegrationEncryption_protocol))
         }
         return nil
     }
@@ -85,13 +85,13 @@ func (m *WorkforceIntegrationEncryption) GetOdataType()(*string) {
     return nil
 }
 // GetProtocol gets the protocol property value. Possible values are: sharedSecret, unknownFutureValue.
-func (m *WorkforceIntegrationEncryption) GetProtocol()(*WorkforceIntegrationEncryptionProtocol) {
+func (m *WorkforceIntegrationEncryption) GetProtocol()(*WorkforceIntegrationEncryption_protocol) {
     val, err := m.GetBackingStore().Get("protocol")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*WorkforceIntegrationEncryptionProtocol)
+        return val.(*WorkforceIntegrationEncryption_protocol)
     }
     return nil
 }
@@ -154,7 +154,7 @@ func (m *WorkforceIntegrationEncryption) SetOdataType(value *string)() {
     }
 }
 // SetProtocol sets the protocol property value. Possible values are: sharedSecret, unknownFutureValue.
-func (m *WorkforceIntegrationEncryption) SetProtocol(value *WorkforceIntegrationEncryptionProtocol)() {
+func (m *WorkforceIntegrationEncryption) SetProtocol(value *WorkforceIntegrationEncryption_protocol)() {
     err := m.GetBackingStore().Set("protocol", value)
     if err != nil {
         panic(err)
@@ -174,10 +174,10 @@ type WorkforceIntegrationEncryptionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
-    GetProtocol()(*WorkforceIntegrationEncryptionProtocol)
+    GetProtocol()(*WorkforceIntegrationEncryption_protocol)
     GetSecret()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
-    SetProtocol(value *WorkforceIntegrationEncryptionProtocol)()
+    SetProtocol(value *WorkforceIntegrationEncryption_protocol)()
     SetSecret(value *string)()
 }

@@ -68,13 +68,13 @@ func (m *StandardTimeZoneOffset) GetDayOccurrence()(*int32) {
     return nil
 }
 // GetDayOfWeek gets the dayOfWeek property value. Represents the day of the week when the transition from daylight saving time to standard time.
-func (m *StandardTimeZoneOffset) GetDayOfWeek()(*DayOfWeek) {
+func (m *StandardTimeZoneOffset) GetDayOfWeek()(*StandardTimeZoneOffset_dayOfWeek) {
     val, err := m.GetBackingStore().Get("dayOfWeek")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DayOfWeek)
+        return val.(*StandardTimeZoneOffset_dayOfWeek)
     }
     return nil
 }
@@ -92,12 +92,12 @@ func (m *StandardTimeZoneOffset) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["dayOfWeek"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDayOfWeek)
+        val, err := n.GetEnumValue(ParseStandardTimeZoneOffset_dayOfWeek)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDayOfWeek(val.(*DayOfWeek))
+            m.SetDayOfWeek(val.(*StandardTimeZoneOffset_dayOfWeek))
         }
         return nil
     }
@@ -253,7 +253,7 @@ func (m *StandardTimeZoneOffset) SetDayOccurrence(value *int32)() {
     }
 }
 // SetDayOfWeek sets the dayOfWeek property value. Represents the day of the week when the transition from daylight saving time to standard time.
-func (m *StandardTimeZoneOffset) SetDayOfWeek(value *DayOfWeek)() {
+func (m *StandardTimeZoneOffset) SetDayOfWeek(value *StandardTimeZoneOffset_dayOfWeek)() {
     err := m.GetBackingStore().Set("dayOfWeek", value)
     if err != nil {
         panic(err)
@@ -294,14 +294,14 @@ type StandardTimeZoneOffsetable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDayOccurrence()(*int32)
-    GetDayOfWeek()(*DayOfWeek)
+    GetDayOfWeek()(*StandardTimeZoneOffset_dayOfWeek)
     GetMonth()(*int32)
     GetOdataType()(*string)
     GetTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)
     GetYear()(*int32)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDayOccurrence(value *int32)()
-    SetDayOfWeek(value *DayOfWeek)()
+    SetDayOfWeek(value *StandardTimeZoneOffset_dayOfWeek)()
     SetMonth(value *int32)()
     SetOdataType(value *string)()
     SetTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)()

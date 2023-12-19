@@ -116,12 +116,12 @@ func (m *UserTrainingStatusInfo) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["trainingStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTrainingStatus)
+        val, err := n.GetEnumValue(ParseUserTrainingStatusInfo_trainingStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTrainingStatus(val.(*TrainingStatus))
+            m.SetTrainingStatus(val.(*UserTrainingStatusInfo_trainingStatus))
         }
         return nil
     }
@@ -139,13 +139,13 @@ func (m *UserTrainingStatusInfo) GetOdataType()(*string) {
     return nil
 }
 // GetTrainingStatus gets the trainingStatus property value. The status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
-func (m *UserTrainingStatusInfo) GetTrainingStatus()(*TrainingStatus) {
+func (m *UserTrainingStatusInfo) GetTrainingStatus()(*UserTrainingStatusInfo_trainingStatus) {
     val, err := m.GetBackingStore().Get("trainingStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TrainingStatus)
+        return val.(*UserTrainingStatusInfo_trainingStatus)
     }
     return nil
 }
@@ -230,7 +230,7 @@ func (m *UserTrainingStatusInfo) SetOdataType(value *string)() {
     }
 }
 // SetTrainingStatus sets the trainingStatus property value. The status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
-func (m *UserTrainingStatusInfo) SetTrainingStatus(value *TrainingStatus)() {
+func (m *UserTrainingStatusInfo) SetTrainingStatus(value *UserTrainingStatusInfo_trainingStatus)() {
     err := m.GetBackingStore().Set("trainingStatus", value)
     if err != nil {
         panic(err)
@@ -246,11 +246,11 @@ type UserTrainingStatusInfoable interface {
     GetCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDisplayName()(*string)
     GetOdataType()(*string)
-    GetTrainingStatus()(*TrainingStatus)
+    GetTrainingStatus()(*UserTrainingStatusInfo_trainingStatus)
     SetAssignedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDisplayName(value *string)()
     SetOdataType(value *string)()
-    SetTrainingStatus(value *TrainingStatus)()
+    SetTrainingStatus(value *UserTrainingStatusInfo_trainingStatus)()
 }

@@ -106,12 +106,12 @@ func (m *AccessReviewHistoryInstance) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAccessReviewHistoryStatus)
+        val, err := n.GetEnumValue(ParseAccessReviewHistoryInstance_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*AccessReviewHistoryStatus))
+            m.SetStatus(val.(*AccessReviewHistoryInstance_status))
         }
         return nil
     }
@@ -162,13 +162,13 @@ func (m *AccessReviewHistoryInstance) GetRunDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetStatus gets the status property value. Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue. Once the status has been marked as done, a link can be generated to retrieve the instance's data by calling generateDownloadUri method.
-func (m *AccessReviewHistoryInstance) GetStatus()(*AccessReviewHistoryStatus) {
+func (m *AccessReviewHistoryInstance) GetStatus()(*AccessReviewHistoryInstance_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AccessReviewHistoryStatus)
+        return val.(*AccessReviewHistoryInstance_status)
     }
     return nil
 }
@@ -266,7 +266,7 @@ func (m *AccessReviewHistoryInstance) SetRunDateTime(value *i336074805fc853987ab
     }
 }
 // SetStatus sets the status property value. Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue. Once the status has been marked as done, a link can be generated to retrieve the instance's data by calling generateDownloadUri method.
-func (m *AccessReviewHistoryInstance) SetStatus(value *AccessReviewHistoryStatus)() {
+func (m *AccessReviewHistoryInstance) SetStatus(value *AccessReviewHistoryInstance_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -282,12 +282,12 @@ type AccessReviewHistoryInstanceable interface {
     GetReviewHistoryPeriodEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetReviewHistoryPeriodStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetStatus()(*AccessReviewHistoryStatus)
+    GetStatus()(*AccessReviewHistoryInstance_status)
     SetDownloadUri(value *string)()
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetFulfilledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetReviewHistoryPeriodEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetReviewHistoryPeriodStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetStatus(value *AccessReviewHistoryStatus)()
+    SetStatus(value *AccessReviewHistoryInstance_status)()
 }

@@ -67,12 +67,12 @@ func (m *AccessPackageAssignmentRequestCallbackData) GetFieldDeserializers()(map
         return nil
     }
     res["stage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAccessPackageCustomExtensionStage)
+        val, err := n.GetEnumValue(ParseAccessPackageAssignmentRequestCallbackData_stage)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStage(val.(*AccessPackageCustomExtensionStage))
+            m.SetStage(val.(*AccessPackageAssignmentRequestCallbackData_stage))
         }
         return nil
     }
@@ -89,13 +89,13 @@ func (m *AccessPackageAssignmentRequestCallbackData) GetFieldDeserializers()(map
     return res
 }
 // GetStage gets the stage property value. Indicates the stage at which the custom callout extension is executed. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
-func (m *AccessPackageAssignmentRequestCallbackData) GetStage()(*AccessPackageCustomExtensionStage) {
+func (m *AccessPackageAssignmentRequestCallbackData) GetStage()(*AccessPackageAssignmentRequestCallbackData_stage) {
     val, err := m.GetBackingStore().Get("stage")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AccessPackageCustomExtensionStage)
+        return val.(*AccessPackageAssignmentRequestCallbackData_stage)
     }
     return nil
 }
@@ -158,7 +158,7 @@ func (m *AccessPackageAssignmentRequestCallbackData) SetCustomExtensionStageInst
     }
 }
 // SetStage sets the stage property value. Indicates the stage at which the custom callout extension is executed. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
-func (m *AccessPackageAssignmentRequestCallbackData) SetStage(value *AccessPackageCustomExtensionStage)() {
+func (m *AccessPackageAssignmentRequestCallbackData) SetStage(value *AccessPackageAssignmentRequestCallbackData_stage)() {
     err := m.GetBackingStore().Set("stage", value)
     if err != nil {
         panic(err)
@@ -177,10 +177,10 @@ type AccessPackageAssignmentRequestCallbackDataable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCustomExtensionStageInstanceDetail()(*string)
     GetCustomExtensionStageInstanceId()(*string)
-    GetStage()(*AccessPackageCustomExtensionStage)
+    GetStage()(*AccessPackageAssignmentRequestCallbackData_stage)
     GetState()(*string)
     SetCustomExtensionStageInstanceDetail(value *string)()
     SetCustomExtensionStageInstanceId(value *string)()
-    SetStage(value *AccessPackageCustomExtensionStage)()
+    SetStage(value *AccessPackageAssignmentRequestCallbackData_stage)()
     SetState(value *string)()
 }

@@ -34,12 +34,12 @@ func (m *Relation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["relationship"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRelationType)
+        val, err := n.GetEnumValue(ParseRelation_relationship)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRelationship(val.(*RelationType))
+            m.SetRelationship(val.(*Relation_relationship))
         }
         return nil
     }
@@ -77,13 +77,13 @@ func (m *Relation) GetFromTerm()(Termable) {
     return nil
 }
 // GetRelationship gets the relationship property value. The type of relation. Possible values are: pin, reuse.
-func (m *Relation) GetRelationship()(*RelationType) {
+func (m *Relation) GetRelationship()(*Relation_relationship) {
     val, err := m.GetBackingStore().Get("relationship")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RelationType)
+        return val.(*Relation_relationship)
     }
     return nil
 }
@@ -150,7 +150,7 @@ func (m *Relation) SetFromTerm(value Termable)() {
     }
 }
 // SetRelationship sets the relationship property value. The type of relation. Possible values are: pin, reuse.
-func (m *Relation) SetRelationship(value *RelationType)() {
+func (m *Relation) SetRelationship(value *Relation_relationship)() {
     err := m.GetBackingStore().Set("relationship", value)
     if err != nil {
         panic(err)
@@ -175,11 +175,11 @@ type Relationable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetFromTerm()(Termable)
-    GetRelationship()(*RelationType)
+    GetRelationship()(*Relation_relationship)
     GetSet()(Setable)
     GetToTerm()(Termable)
     SetFromTerm(value Termable)()
-    SetRelationship(value *RelationType)()
+    SetRelationship(value *Relation_relationship)()
     SetSet(value Setable)()
     SetToTerm(value Termable)()
 }

@@ -39,13 +39,13 @@ func (m *AccessPackageAssignmentReviewSettings) GetBackingStore()(ie8677ce2c7e1b
     return m.backingStore
 }
 // GetExpirationBehavior gets the expirationBehavior property value. The default decision to apply if the access is not reviewed. The possible values are: keepAccess, removeAccess, acceptAccessRecommendation, unknownFutureValue.
-func (m *AccessPackageAssignmentReviewSettings) GetExpirationBehavior()(*AccessReviewExpirationBehavior) {
+func (m *AccessPackageAssignmentReviewSettings) GetExpirationBehavior()(*AccessPackageAssignmentReviewSettings_expirationBehavior) {
     val, err := m.GetBackingStore().Get("expirationBehavior")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AccessReviewExpirationBehavior)
+        return val.(*AccessPackageAssignmentReviewSettings_expirationBehavior)
     }
     return nil
 }
@@ -64,12 +64,12 @@ func (m *AccessPackageAssignmentReviewSettings) GetFallbackReviewers()([]Subject
 func (m *AccessPackageAssignmentReviewSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["expirationBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAccessReviewExpirationBehavior)
+        val, err := n.GetEnumValue(ParseAccessPackageAssignmentReviewSettings_expirationBehavior)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetExpirationBehavior(val.(*AccessReviewExpirationBehavior))
+            m.SetExpirationBehavior(val.(*AccessPackageAssignmentReviewSettings_expirationBehavior))
         }
         return nil
     }
@@ -333,7 +333,7 @@ func (m *AccessPackageAssignmentReviewSettings) SetBackingStore(value ie8677ce2c
     m.backingStore = value
 }
 // SetExpirationBehavior sets the expirationBehavior property value. The default decision to apply if the access is not reviewed. The possible values are: keepAccess, removeAccess, acceptAccessRecommendation, unknownFutureValue.
-func (m *AccessPackageAssignmentReviewSettings) SetExpirationBehavior(value *AccessReviewExpirationBehavior)() {
+func (m *AccessPackageAssignmentReviewSettings) SetExpirationBehavior(value *AccessPackageAssignmentReviewSettings_expirationBehavior)() {
     err := m.GetBackingStore().Set("expirationBehavior", value)
     if err != nil {
         panic(err)
@@ -401,7 +401,7 @@ type AccessPackageAssignmentReviewSettingsable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetExpirationBehavior()(*AccessReviewExpirationBehavior)
+    GetExpirationBehavior()(*AccessPackageAssignmentReviewSettings_expirationBehavior)
     GetFallbackReviewers()([]SubjectSetable)
     GetIsEnabled()(*bool)
     GetIsRecommendationEnabled()(*bool)
@@ -411,7 +411,7 @@ type AccessPackageAssignmentReviewSettingsable interface {
     GetPrimaryReviewers()([]SubjectSetable)
     GetSchedule()(EntitlementManagementScheduleable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetExpirationBehavior(value *AccessReviewExpirationBehavior)()
+    SetExpirationBehavior(value *AccessPackageAssignmentReviewSettings_expirationBehavior)()
     SetFallbackReviewers(value []SubjectSetable)()
     SetIsEnabled(value *bool)()
     SetIsRecommendationEnabled(value *bool)()

@@ -20,13 +20,13 @@ func CreateDelegatedPermissionClassificationFromDiscriminatorValue(parseNode i87
     return NewDelegatedPermissionClassification(), nil
 }
 // GetClassification gets the classification property value. The classification value being given. Possible value: low. Doesn't support $filter.
-func (m *DelegatedPermissionClassification) GetClassification()(*PermissionClassificationType) {
+func (m *DelegatedPermissionClassification) GetClassification()(*DelegatedPermissionClassification_classification) {
     val, err := m.GetBackingStore().Get("classification")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PermissionClassificationType)
+        return val.(*DelegatedPermissionClassification_classification)
     }
     return nil
 }
@@ -34,12 +34,12 @@ func (m *DelegatedPermissionClassification) GetClassification()(*PermissionClass
 func (m *DelegatedPermissionClassification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["classification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePermissionClassificationType)
+        val, err := n.GetEnumValue(ParseDelegatedPermissionClassification_classification)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetClassification(val.(*PermissionClassificationType))
+            m.SetClassification(val.(*DelegatedPermissionClassification_classification))
         }
         return nil
     }
@@ -115,7 +115,7 @@ func (m *DelegatedPermissionClassification) Serialize(writer i878a80d2330e89d268
     return nil
 }
 // SetClassification sets the classification property value. The classification value being given. Possible value: low. Doesn't support $filter.
-func (m *DelegatedPermissionClassification) SetClassification(value *PermissionClassificationType)() {
+func (m *DelegatedPermissionClassification) SetClassification(value *DelegatedPermissionClassification_classification)() {
     err := m.GetBackingStore().Set("classification", value)
     if err != nil {
         panic(err)
@@ -139,10 +139,10 @@ func (m *DelegatedPermissionClassification) SetPermissionName(value *string)() {
 type DelegatedPermissionClassificationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetClassification()(*PermissionClassificationType)
+    GetClassification()(*DelegatedPermissionClassification_classification)
     GetPermissionId()(*string)
     GetPermissionName()(*string)
-    SetClassification(value *PermissionClassificationType)()
+    SetClassification(value *DelegatedPermissionClassification_classification)()
     SetPermissionId(value *string)()
     SetPermissionName(value *string)()
 }

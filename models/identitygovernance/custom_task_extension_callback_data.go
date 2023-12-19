@@ -26,25 +26,25 @@ func CreateCustomTaskExtensionCallbackDataFromDiscriminatorValue(parseNode i878a
 func (m *CustomTaskExtensionCallbackData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CustomExtensionData.GetFieldDeserializers()
     res["operationStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCustomTaskExtensionOperationStatus)
+        val, err := n.GetEnumValue(ParseCustomTaskExtensionCallbackData_operationStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOperationStatus(val.(*CustomTaskExtensionOperationStatus))
+            m.SetOperationStatus(val.(*CustomTaskExtensionCallbackData_operationStatus))
         }
         return nil
     }
     return res
 }
 // GetOperationStatus gets the operationStatus property value. Operation status that's provided by the Azure Logic App indicating whenever the Azure Logic App has run successfully or not. Supported values: completed, failed, unknownFutureValue.
-func (m *CustomTaskExtensionCallbackData) GetOperationStatus()(*CustomTaskExtensionOperationStatus) {
+func (m *CustomTaskExtensionCallbackData) GetOperationStatus()(*CustomTaskExtensionCallbackData_operationStatus) {
     val, err := m.GetBackingStore().Get("operationStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CustomTaskExtensionOperationStatus)
+        return val.(*CustomTaskExtensionCallbackData_operationStatus)
     }
     return nil
 }
@@ -64,7 +64,7 @@ func (m *CustomTaskExtensionCallbackData) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetOperationStatus sets the operationStatus property value. Operation status that's provided by the Azure Logic App indicating whenever the Azure Logic App has run successfully or not. Supported values: completed, failed, unknownFutureValue.
-func (m *CustomTaskExtensionCallbackData) SetOperationStatus(value *CustomTaskExtensionOperationStatus)() {
+func (m *CustomTaskExtensionCallbackData) SetOperationStatus(value *CustomTaskExtensionCallbackData_operationStatus)() {
     err := m.GetBackingStore().Set("operationStatus", value)
     if err != nil {
         panic(err)
@@ -74,6 +74,6 @@ func (m *CustomTaskExtensionCallbackData) SetOperationStatus(value *CustomTaskEx
 type CustomTaskExtensionCallbackDataable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomExtensionDataable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOperationStatus()(*CustomTaskExtensionOperationStatus)
-    SetOperationStatus(value *CustomTaskExtensionOperationStatus)()
+    GetOperationStatus()(*CustomTaskExtensionCallbackData_operationStatus)
+    SetOperationStatus(value *CustomTaskExtensionCallbackData_operationStatus)()
 }

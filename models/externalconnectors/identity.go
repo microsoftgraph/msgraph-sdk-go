@@ -24,25 +24,25 @@ func CreateIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 func (m *Identity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseIdentityType)
+        val, err := n.GetEnumValue(ParseIdentity_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*IdentityType))
+            m.SetTypeEscaped(val.(*Identity_type))
         }
         return nil
     }
     return res
 }
 // GetTypeEscaped gets the type property value. The type of identity. Possible values are: user or group for Microsoft Entra identities and externalgroup for groups in an external system.
-func (m *Identity) GetTypeEscaped()(*IdentityType) {
+func (m *Identity) GetTypeEscaped()(*Identity_type) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*IdentityType)
+        return val.(*Identity_type)
     }
     return nil
 }
@@ -62,7 +62,7 @@ func (m *Identity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     return nil
 }
 // SetTypeEscaped sets the type property value. The type of identity. Possible values are: user or group for Microsoft Entra identities and externalgroup for groups in an external system.
-func (m *Identity) SetTypeEscaped(value *IdentityType)() {
+func (m *Identity) SetTypeEscaped(value *Identity_type)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -72,6 +72,6 @@ func (m *Identity) SetTypeEscaped(value *IdentityType)() {
 type Identityable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetTypeEscaped()(*IdentityType)
-    SetTypeEscaped(value *IdentityType)()
+    GetTypeEscaped()(*Identity_type)
+    SetTypeEscaped(value *Identity_type)()
 }

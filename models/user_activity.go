@@ -239,12 +239,12 @@ func (m *UserActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseStatus)
+        val, err := n.GetEnumValue(ParseUserActivity_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*Status))
+            m.SetStatus(val.(*UserActivity_status))
         }
         return nil
     }
@@ -293,13 +293,13 @@ func (m *UserActivity) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad9
     return nil
 }
 // GetStatus gets the status property value. Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.
-func (m *UserActivity) GetStatus()(*Status) {
+func (m *UserActivity) GetStatus()(*UserActivity_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*Status)
+        return val.(*UserActivity_status)
     }
     return nil
 }
@@ -502,7 +502,7 @@ func (m *UserActivity) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe
     }
 }
 // SetStatus sets the status property value. Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.
-func (m *UserActivity) SetStatus(value *Status)() {
+func (m *UserActivity) SetStatus(value *UserActivity_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -537,7 +537,7 @@ type UserActivityable interface {
     GetFallbackUrl()(*string)
     GetHistoryItems()([]ActivityHistoryItemable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetStatus()(*Status)
+    GetStatus()(*UserActivity_status)
     GetUserTimezone()(*string)
     GetVisualElements()(VisualInfoable)
     SetActivationUrl(value *string)()
@@ -551,7 +551,7 @@ type UserActivityable interface {
     SetFallbackUrl(value *string)()
     SetHistoryItems(value []ActivityHistoryItemable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetStatus(value *Status)()
+    SetStatus(value *UserActivity_status)()
     SetUserTimezone(value *string)()
     SetVisualElements(value VisualInfoable)()
 }

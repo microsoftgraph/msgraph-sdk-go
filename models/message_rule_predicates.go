@@ -165,12 +165,12 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["importance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseImportance)
+        val, err := n.GetEnumValue(ParseMessageRulePredicates_importance)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetImportance(val.(*Importance))
+            m.SetImportance(val.(*MessageRulePredicates_importance))
         }
         return nil
     }
@@ -285,12 +285,12 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["messageActionFlag"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMessageActionFlag)
+        val, err := n.GetEnumValue(ParseMessageRulePredicates_messageActionFlag)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMessageActionFlag(val.(*MessageActionFlag))
+            m.SetMessageActionFlag(val.(*MessageRulePredicates_messageActionFlag))
         }
         return nil
     }
@@ -347,12 +347,12 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["sensitivity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSensitivity)
+        val, err := n.GetEnumValue(ParseMessageRulePredicates_sensitivity)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSensitivity(val.(*Sensitivity))
+            m.SetSensitivity(val.(*MessageRulePredicates_sensitivity))
         }
         return nil
     }
@@ -474,13 +474,13 @@ func (m *MessageRulePredicates) GetHeaderContains()([]string) {
     return nil
 }
 // GetImportance gets the importance property value. The importance that is stamped on an incoming message in order for the condition or exception to apply: low, normal, high.
-func (m *MessageRulePredicates) GetImportance()(*Importance) {
+func (m *MessageRulePredicates) GetImportance()(*MessageRulePredicates_importance) {
     val, err := m.GetBackingStore().Get("importance")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*Importance)
+        return val.(*MessageRulePredicates_importance)
     }
     return nil
 }
@@ -606,13 +606,13 @@ func (m *MessageRulePredicates) GetIsVoicemail()(*bool) {
     return nil
 }
 // GetMessageActionFlag gets the messageActionFlag property value. Represents the flag-for-action value that appears on an incoming message in order for the condition or exception to apply. The possible values are: any, call, doNotForward, followUp, fyi, forward, noResponseNecessary, read, reply, replyToAll, review.
-func (m *MessageRulePredicates) GetMessageActionFlag()(*MessageActionFlag) {
+func (m *MessageRulePredicates) GetMessageActionFlag()(*MessageRulePredicates_messageActionFlag) {
     val, err := m.GetBackingStore().Get("messageActionFlag")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MessageActionFlag)
+        return val.(*MessageRulePredicates_messageActionFlag)
     }
     return nil
 }
@@ -661,13 +661,13 @@ func (m *MessageRulePredicates) GetSenderContains()([]string) {
     return nil
 }
 // GetSensitivity gets the sensitivity property value. Represents the sensitivity level that must be stamped on an incoming message in order for the condition or exception to apply. The possible values are: normal, personal, private, confidential.
-func (m *MessageRulePredicates) GetSensitivity()(*Sensitivity) {
+func (m *MessageRulePredicates) GetSensitivity()(*MessageRulePredicates_sensitivity) {
     val, err := m.GetBackingStore().Get("sensitivity")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*Sensitivity)
+        return val.(*MessageRulePredicates_sensitivity)
     }
     return nil
 }
@@ -1013,7 +1013,7 @@ func (m *MessageRulePredicates) SetHeaderContains(value []string)() {
     }
 }
 // SetImportance sets the importance property value. The importance that is stamped on an incoming message in order for the condition or exception to apply: low, normal, high.
-func (m *MessageRulePredicates) SetImportance(value *Importance)() {
+func (m *MessageRulePredicates) SetImportance(value *MessageRulePredicates_importance)() {
     err := m.GetBackingStore().Set("importance", value)
     if err != nil {
         panic(err)
@@ -1097,7 +1097,7 @@ func (m *MessageRulePredicates) SetIsVoicemail(value *bool)() {
     }
 }
 // SetMessageActionFlag sets the messageActionFlag property value. Represents the flag-for-action value that appears on an incoming message in order for the condition or exception to apply. The possible values are: any, call, doNotForward, followUp, fyi, forward, noResponseNecessary, read, reply, replyToAll, review.
-func (m *MessageRulePredicates) SetMessageActionFlag(value *MessageActionFlag)() {
+func (m *MessageRulePredicates) SetMessageActionFlag(value *MessageRulePredicates_messageActionFlag)() {
     err := m.GetBackingStore().Set("messageActionFlag", value)
     if err != nil {
         panic(err)
@@ -1132,7 +1132,7 @@ func (m *MessageRulePredicates) SetSenderContains(value []string)() {
     }
 }
 // SetSensitivity sets the sensitivity property value. Represents the sensitivity level that must be stamped on an incoming message in order for the condition or exception to apply. The possible values are: normal, personal, private, confidential.
-func (m *MessageRulePredicates) SetSensitivity(value *Sensitivity)() {
+func (m *MessageRulePredicates) SetSensitivity(value *MessageRulePredicates_sensitivity)() {
     err := m.GetBackingStore().Set("sensitivity", value)
     if err != nil {
         panic(err)
@@ -1199,7 +1199,7 @@ type MessageRulePredicatesable interface {
     GetFromAddresses()([]Recipientable)
     GetHasAttachments()(*bool)
     GetHeaderContains()([]string)
-    GetImportance()(*Importance)
+    GetImportance()(*MessageRulePredicates_importance)
     GetIsApprovalRequest()(*bool)
     GetIsAutomaticForward()(*bool)
     GetIsAutomaticReply()(*bool)
@@ -1211,12 +1211,12 @@ type MessageRulePredicatesable interface {
     GetIsReadReceipt()(*bool)
     GetIsSigned()(*bool)
     GetIsVoicemail()(*bool)
-    GetMessageActionFlag()(*MessageActionFlag)
+    GetMessageActionFlag()(*MessageRulePredicates_messageActionFlag)
     GetNotSentToMe()(*bool)
     GetOdataType()(*string)
     GetRecipientContains()([]string)
     GetSenderContains()([]string)
-    GetSensitivity()(*Sensitivity)
+    GetSensitivity()(*MessageRulePredicates_sensitivity)
     GetSentCcMe()(*bool)
     GetSentOnlyToMe()(*bool)
     GetSentToAddresses()([]Recipientable)
@@ -1231,7 +1231,7 @@ type MessageRulePredicatesable interface {
     SetFromAddresses(value []Recipientable)()
     SetHasAttachments(value *bool)()
     SetHeaderContains(value []string)()
-    SetImportance(value *Importance)()
+    SetImportance(value *MessageRulePredicates_importance)()
     SetIsApprovalRequest(value *bool)()
     SetIsAutomaticForward(value *bool)()
     SetIsAutomaticReply(value *bool)()
@@ -1243,12 +1243,12 @@ type MessageRulePredicatesable interface {
     SetIsReadReceipt(value *bool)()
     SetIsSigned(value *bool)()
     SetIsVoicemail(value *bool)()
-    SetMessageActionFlag(value *MessageActionFlag)()
+    SetMessageActionFlag(value *MessageRulePredicates_messageActionFlag)()
     SetNotSentToMe(value *bool)()
     SetOdataType(value *string)()
     SetRecipientContains(value []string)()
     SetSenderContains(value []string)()
-    SetSensitivity(value *Sensitivity)()
+    SetSensitivity(value *MessageRulePredicates_sensitivity)()
     SetSentCcMe(value *bool)()
     SetSentOnlyToMe(value *bool)()
     SetSentToAddresses(value []Recipientable)()

@@ -89,25 +89,25 @@ func (m *WindowsHelloForBusinessAuthenticationMethod) GetFieldDeserializers()(ma
         return nil
     }
     res["keyStrength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAuthenticationMethodKeyStrength)
+        val, err := n.GetEnumValue(ParseWindowsHelloForBusinessAuthenticationMethod_keyStrength)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetKeyStrength(val.(*AuthenticationMethodKeyStrength))
+            m.SetKeyStrength(val.(*WindowsHelloForBusinessAuthenticationMethod_keyStrength))
         }
         return nil
     }
     return res
 }
 // GetKeyStrength gets the keyStrength property value. Key strength of this Windows Hello for Business key. Possible values are: normal, weak, unknown.
-func (m *WindowsHelloForBusinessAuthenticationMethod) GetKeyStrength()(*AuthenticationMethodKeyStrength) {
+func (m *WindowsHelloForBusinessAuthenticationMethod) GetKeyStrength()(*WindowsHelloForBusinessAuthenticationMethod_keyStrength) {
     val, err := m.GetBackingStore().Get("keyStrength")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AuthenticationMethodKeyStrength)
+        return val.(*WindowsHelloForBusinessAuthenticationMethod_keyStrength)
     }
     return nil
 }
@@ -166,7 +166,7 @@ func (m *WindowsHelloForBusinessAuthenticationMethod) SetDisplayName(value *stri
     }
 }
 // SetKeyStrength sets the keyStrength property value. Key strength of this Windows Hello for Business key. Possible values are: normal, weak, unknown.
-func (m *WindowsHelloForBusinessAuthenticationMethod) SetKeyStrength(value *AuthenticationMethodKeyStrength)() {
+func (m *WindowsHelloForBusinessAuthenticationMethod) SetKeyStrength(value *WindowsHelloForBusinessAuthenticationMethod_keyStrength)() {
     err := m.GetBackingStore().Set("keyStrength", value)
     if err != nil {
         panic(err)
@@ -179,9 +179,9 @@ type WindowsHelloForBusinessAuthenticationMethodable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDevice()(Deviceable)
     GetDisplayName()(*string)
-    GetKeyStrength()(*AuthenticationMethodKeyStrength)
+    GetKeyStrength()(*WindowsHelloForBusinessAuthenticationMethod_keyStrength)
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDevice(value Deviceable)()
     SetDisplayName(value *string)()
-    SetKeyStrength(value *AuthenticationMethodKeyStrength)()
+    SetKeyStrength(value *WindowsHelloForBusinessAuthenticationMethod_keyStrength)()
 }

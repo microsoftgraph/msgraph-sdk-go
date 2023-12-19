@@ -35,12 +35,12 @@ func (m *EventMessageResponse) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["responseType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseResponseType)
+        val, err := n.GetEnumValue(ParseEventMessageResponse_responseType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetResponseType(val.(*ResponseType))
+            m.SetResponseType(val.(*EventMessageResponse_responseType))
         }
         return nil
     }
@@ -58,13 +58,13 @@ func (m *EventMessageResponse) GetProposedNewTime()(TimeSlotable) {
     return nil
 }
 // GetResponseType gets the responseType property value. The responseType property
-func (m *EventMessageResponse) GetResponseType()(*ResponseType) {
+func (m *EventMessageResponse) GetResponseType()(*EventMessageResponse_responseType) {
     val, err := m.GetBackingStore().Get("responseType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ResponseType)
+        return val.(*EventMessageResponse_responseType)
     }
     return nil
 }
@@ -97,7 +97,7 @@ func (m *EventMessageResponse) SetProposedNewTime(value TimeSlotable)() {
     }
 }
 // SetResponseType sets the responseType property value. The responseType property
-func (m *EventMessageResponse) SetResponseType(value *ResponseType)() {
+func (m *EventMessageResponse) SetResponseType(value *EventMessageResponse_responseType)() {
     err := m.GetBackingStore().Set("responseType", value)
     if err != nil {
         panic(err)
@@ -108,7 +108,7 @@ type EventMessageResponseable interface {
     EventMessageable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetProposedNewTime()(TimeSlotable)
-    GetResponseType()(*ResponseType)
+    GetResponseType()(*EventMessageResponse_responseType)
     SetProposedNewTime(value TimeSlotable)()
-    SetResponseType(value *ResponseType)()
+    SetResponseType(value *EventMessageResponse_responseType)()
 }

@@ -279,12 +279,12 @@ func (m *DelegatedAdminRelationship) GetFieldDeserializers()(map[string]func(i87
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDelegatedAdminRelationshipStatus)
+        val, err := n.GetEnumValue(ParseDelegatedAdminRelationship_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*DelegatedAdminRelationshipStatus))
+            m.SetStatus(val.(*DelegatedAdminRelationship_status))
         }
         return nil
     }
@@ -324,13 +324,13 @@ func (m *DelegatedAdminRelationship) GetRequests()([]DelegatedAdminRelationshipR
     return nil
 }
 // GetStatus gets the status property value. The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderby.
-func (m *DelegatedAdminRelationship) GetStatus()(*DelegatedAdminRelationshipStatus) {
+func (m *DelegatedAdminRelationship) GetStatus()(*DelegatedAdminRelationship_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DelegatedAdminRelationshipStatus)
+        return val.(*DelegatedAdminRelationship_status)
     }
     return nil
 }
@@ -524,7 +524,7 @@ func (m *DelegatedAdminRelationship) SetRequests(value []DelegatedAdminRelations
     }
 }
 // SetStatus sets the status property value. The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderby.
-func (m *DelegatedAdminRelationship) SetStatus(value *DelegatedAdminRelationshipStatus)() {
+func (m *DelegatedAdminRelationship) SetStatus(value *DelegatedAdminRelationship_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -546,7 +546,7 @@ type DelegatedAdminRelationshipable interface {
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOperations()([]DelegatedAdminRelationshipOperationable)
     GetRequests()([]DelegatedAdminRelationshipRequestable)
-    GetStatus()(*DelegatedAdminRelationshipStatus)
+    GetStatus()(*DelegatedAdminRelationship_status)
     SetAccessAssignments(value []DelegatedAdminAccessAssignmentable)()
     SetAccessDetails(value DelegatedAdminAccessDetailsable)()
     SetActivatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -559,5 +559,5 @@ type DelegatedAdminRelationshipable interface {
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOperations(value []DelegatedAdminRelationshipOperationable)()
     SetRequests(value []DelegatedAdminRelationshipRequestable)()
-    SetStatus(value *DelegatedAdminRelationshipStatus)()
+    SetStatus(value *DelegatedAdminRelationship_status)()
 }

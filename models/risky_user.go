@@ -78,12 +78,12 @@ func (m *RiskyUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         return nil
     }
     res["riskDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRiskDetail)
+        val, err := n.GetEnumValue(ParseRiskyUser_riskDetail)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRiskDetail(val.(*RiskDetail))
+            m.SetRiskDetail(val.(*RiskyUser_riskDetail))
         }
         return nil
     }
@@ -98,22 +98,22 @@ func (m *RiskyUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         return nil
     }
     res["riskLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRiskLevel)
+        val, err := n.GetEnumValue(ParseRiskyUser_riskLevel)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRiskLevel(val.(*RiskLevel))
+            m.SetRiskLevel(val.(*RiskyUser_riskLevel))
         }
         return nil
     }
     res["riskState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRiskState)
+        val, err := n.GetEnumValue(ParseRiskyUser_riskState)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRiskState(val.(*RiskState))
+            m.SetRiskState(val.(*RiskyUser_riskState))
         }
         return nil
     }
@@ -173,13 +173,13 @@ func (m *RiskyUser) GetIsProcessing()(*bool) {
     return nil
 }
 // GetRiskDetail gets the riskDetail property value. Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
-func (m *RiskyUser) GetRiskDetail()(*RiskDetail) {
+func (m *RiskyUser) GetRiskDetail()(*RiskyUser_riskDetail) {
     val, err := m.GetBackingStore().Get("riskDetail")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RiskDetail)
+        return val.(*RiskyUser_riskDetail)
     }
     return nil
 }
@@ -195,24 +195,24 @@ func (m *RiskyUser) GetRiskLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad9
     return nil
 }
 // GetRiskLevel gets the riskLevel property value. Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
-func (m *RiskyUser) GetRiskLevel()(*RiskLevel) {
+func (m *RiskyUser) GetRiskLevel()(*RiskyUser_riskLevel) {
     val, err := m.GetBackingStore().Get("riskLevel")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RiskLevel)
+        return val.(*RiskyUser_riskLevel)
     }
     return nil
 }
 // GetRiskState gets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
-func (m *RiskyUser) GetRiskState()(*RiskState) {
+func (m *RiskyUser) GetRiskState()(*RiskyUser_riskState) {
     val, err := m.GetBackingStore().Get("riskState")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RiskState)
+        return val.(*RiskyUser_riskState)
     }
     return nil
 }
@@ -331,7 +331,7 @@ func (m *RiskyUser) SetIsProcessing(value *bool)() {
     }
 }
 // SetRiskDetail sets the riskDetail property value. Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
-func (m *RiskyUser) SetRiskDetail(value *RiskDetail)() {
+func (m *RiskyUser) SetRiskDetail(value *RiskyUser_riskDetail)() {
     err := m.GetBackingStore().Set("riskDetail", value)
     if err != nil {
         panic(err)
@@ -345,14 +345,14 @@ func (m *RiskyUser) SetRiskLastUpdatedDateTime(value *i336074805fc853987abe6f7fe
     }
 }
 // SetRiskLevel sets the riskLevel property value. Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
-func (m *RiskyUser) SetRiskLevel(value *RiskLevel)() {
+func (m *RiskyUser) SetRiskLevel(value *RiskyUser_riskLevel)() {
     err := m.GetBackingStore().Set("riskLevel", value)
     if err != nil {
         panic(err)
     }
 }
 // SetRiskState sets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
-func (m *RiskyUser) SetRiskState(value *RiskState)() {
+func (m *RiskyUser) SetRiskState(value *RiskyUser_riskState)() {
     err := m.GetBackingStore().Set("riskState", value)
     if err != nil {
         panic(err)
@@ -379,19 +379,19 @@ type RiskyUserable interface {
     GetHistory()([]RiskyUserHistoryItemable)
     GetIsDeleted()(*bool)
     GetIsProcessing()(*bool)
-    GetRiskDetail()(*RiskDetail)
+    GetRiskDetail()(*RiskyUser_riskDetail)
     GetRiskLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetRiskLevel()(*RiskLevel)
-    GetRiskState()(*RiskState)
+    GetRiskLevel()(*RiskyUser_riskLevel)
+    GetRiskState()(*RiskyUser_riskState)
     GetUserDisplayName()(*string)
     GetUserPrincipalName()(*string)
     SetHistory(value []RiskyUserHistoryItemable)()
     SetIsDeleted(value *bool)()
     SetIsProcessing(value *bool)()
-    SetRiskDetail(value *RiskDetail)()
+    SetRiskDetail(value *RiskyUser_riskDetail)()
     SetRiskLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetRiskLevel(value *RiskLevel)()
-    SetRiskState(value *RiskState)()
+    SetRiskLevel(value *RiskyUser_riskLevel)()
+    SetRiskState(value *RiskyUser_riskState)()
     SetUserDisplayName(value *string)()
     SetUserPrincipalName(value *string)()
 }

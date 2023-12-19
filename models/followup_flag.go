@@ -84,12 +84,12 @@ func (m *FollowupFlag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     res["flagStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseFollowupFlagStatus)
+        val, err := n.GetEnumValue(ParseFollowupFlag_flagStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFlagStatus(val.(*FollowupFlagStatus))
+            m.SetFlagStatus(val.(*FollowupFlag_flagStatus))
         }
         return nil
     }
@@ -116,13 +116,13 @@ func (m *FollowupFlag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetFlagStatus gets the flagStatus property value. The status for follow-up for an item. Possible values are notFlagged, complete, and flagged.
-func (m *FollowupFlag) GetFlagStatus()(*FollowupFlagStatus) {
+func (m *FollowupFlag) GetFlagStatus()(*FollowupFlag_flagStatus) {
     val, err := m.GetBackingStore().Get("flagStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*FollowupFlagStatus)
+        return val.(*FollowupFlag_flagStatus)
     }
     return nil
 }
@@ -215,7 +215,7 @@ func (m *FollowupFlag) SetDueDateTime(value DateTimeTimeZoneable)() {
     }
 }
 // SetFlagStatus sets the flagStatus property value. The status for follow-up for an item. Possible values are notFlagged, complete, and flagged.
-func (m *FollowupFlag) SetFlagStatus(value *FollowupFlagStatus)() {
+func (m *FollowupFlag) SetFlagStatus(value *FollowupFlag_flagStatus)() {
     err := m.GetBackingStore().Set("flagStatus", value)
     if err != nil {
         panic(err)
@@ -243,13 +243,13 @@ type FollowupFlagable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCompletedDateTime()(DateTimeTimeZoneable)
     GetDueDateTime()(DateTimeTimeZoneable)
-    GetFlagStatus()(*FollowupFlagStatus)
+    GetFlagStatus()(*FollowupFlag_flagStatus)
     GetOdataType()(*string)
     GetStartDateTime()(DateTimeTimeZoneable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCompletedDateTime(value DateTimeTimeZoneable)()
     SetDueDateTime(value DateTimeTimeZoneable)()
-    SetFlagStatus(value *FollowupFlagStatus)()
+    SetFlagStatus(value *FollowupFlag_flagStatus)()
     SetOdataType(value *string)()
     SetStartDateTime(value DateTimeTimeZoneable)()
 }

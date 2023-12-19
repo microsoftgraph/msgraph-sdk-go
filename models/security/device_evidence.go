@@ -34,13 +34,13 @@ func (m *DeviceEvidence) GetAzureAdDeviceId()(*string) {
     return nil
 }
 // GetDefenderAvStatus gets the defenderAvStatus property value. State of the Defender AntiMalware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.
-func (m *DeviceEvidence) GetDefenderAvStatus()(*DefenderAvStatus) {
+func (m *DeviceEvidence) GetDefenderAvStatus()(*DeviceEvidence_defenderAvStatus) {
     val, err := m.GetBackingStore().Get("defenderAvStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DefenderAvStatus)
+        return val.(*DeviceEvidence_defenderAvStatus)
     }
     return nil
 }
@@ -69,12 +69,12 @@ func (m *DeviceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["defenderAvStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDefenderAvStatus)
+        val, err := n.GetEnumValue(ParseDeviceEvidence_defenderAvStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefenderAvStatus(val.(*DefenderAvStatus))
+            m.SetDefenderAvStatus(val.(*DeviceEvidence_defenderAvStatus))
         }
         return nil
     }
@@ -99,12 +99,12 @@ func (m *DeviceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["healthStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDeviceHealthStatus)
+        val, err := n.GetEnumValue(ParseDeviceEvidence_healthStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetHealthStatus(val.(*DeviceHealthStatus))
+            m.SetHealthStatus(val.(*DeviceEvidence_healthStatus))
         }
         return nil
     }
@@ -151,12 +151,12 @@ func (m *DeviceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["onboardingStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOnboardingStatus)
+        val, err := n.GetEnumValue(ParseDeviceEvidence_onboardingStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOnboardingStatus(val.(*OnboardingStatus))
+            m.SetOnboardingStatus(val.(*DeviceEvidence_onboardingStatus))
         }
         return nil
     }
@@ -201,12 +201,12 @@ func (m *DeviceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["riskScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDeviceRiskScore)
+        val, err := n.GetEnumValue(ParseDeviceEvidence_riskScore)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRiskScore(val.(*DeviceRiskScore))
+            m.SetRiskScore(val.(*DeviceEvidence_riskScore))
         }
         return nil
     }
@@ -244,13 +244,13 @@ func (m *DeviceEvidence) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetHealthStatus gets the healthStatus property value. The health state of the device. The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
-func (m *DeviceEvidence) GetHealthStatus()(*DeviceHealthStatus) {
+func (m *DeviceEvidence) GetHealthStatus()(*DeviceEvidence_healthStatus) {
     val, err := m.GetBackingStore().Get("healthStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DeviceHealthStatus)
+        return val.(*DeviceEvidence_healthStatus)
     }
     return nil
 }
@@ -288,13 +288,13 @@ func (m *DeviceEvidence) GetMdeDeviceId()(*string) {
     return nil
 }
 // GetOnboardingStatus gets the onboardingStatus property value. The status of the machine onboarding to Microsoft Defender for Endpoint. The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
-func (m *DeviceEvidence) GetOnboardingStatus()(*OnboardingStatus) {
+func (m *DeviceEvidence) GetOnboardingStatus()(*DeviceEvidence_onboardingStatus) {
     val, err := m.GetBackingStore().Get("onboardingStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*OnboardingStatus)
+        return val.(*DeviceEvidence_onboardingStatus)
     }
     return nil
 }
@@ -343,13 +343,13 @@ func (m *DeviceEvidence) GetRbacGroupName()(*string) {
     return nil
 }
 // GetRiskScore gets the riskScore property value. Risk score as evaluated by Microsoft Defender for Endpoint. The possible values are: none, informational, low, medium, high, unknownFutureValue.
-func (m *DeviceEvidence) GetRiskScore()(*DeviceRiskScore) {
+func (m *DeviceEvidence) GetRiskScore()(*DeviceEvidence_riskScore) {
     val, err := m.GetBackingStore().Get("riskScore")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DeviceRiskScore)
+        return val.(*DeviceEvidence_riskScore)
     }
     return nil
 }
@@ -497,7 +497,7 @@ func (m *DeviceEvidence) SetAzureAdDeviceId(value *string)() {
     }
 }
 // SetDefenderAvStatus sets the defenderAvStatus property value. State of the Defender AntiMalware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.
-func (m *DeviceEvidence) SetDefenderAvStatus(value *DefenderAvStatus)() {
+func (m *DeviceEvidence) SetDefenderAvStatus(value *DeviceEvidence_defenderAvStatus)() {
     err := m.GetBackingStore().Set("defenderAvStatus", value)
     if err != nil {
         panic(err)
@@ -518,7 +518,7 @@ func (m *DeviceEvidence) SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3
     }
 }
 // SetHealthStatus sets the healthStatus property value. The health state of the device. The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
-func (m *DeviceEvidence) SetHealthStatus(value *DeviceHealthStatus)() {
+func (m *DeviceEvidence) SetHealthStatus(value *DeviceEvidence_healthStatus)() {
     err := m.GetBackingStore().Set("healthStatus", value)
     if err != nil {
         panic(err)
@@ -546,7 +546,7 @@ func (m *DeviceEvidence) SetMdeDeviceId(value *string)() {
     }
 }
 // SetOnboardingStatus sets the onboardingStatus property value. The status of the machine onboarding to Microsoft Defender for Endpoint. The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
-func (m *DeviceEvidence) SetOnboardingStatus(value *OnboardingStatus)() {
+func (m *DeviceEvidence) SetOnboardingStatus(value *DeviceEvidence_onboardingStatus)() {
     err := m.GetBackingStore().Set("onboardingStatus", value)
     if err != nil {
         panic(err)
@@ -581,7 +581,7 @@ func (m *DeviceEvidence) SetRbacGroupName(value *string)() {
     }
 }
 // SetRiskScore sets the riskScore property value. Risk score as evaluated by Microsoft Defender for Endpoint. The possible values are: none, informational, low, medium, high, unknownFutureValue.
-func (m *DeviceEvidence) SetRiskScore(value *DeviceRiskScore)() {
+func (m *DeviceEvidence) SetRiskScore(value *DeviceEvidence_riskScore)() {
     err := m.GetBackingStore().Set("riskScore", value)
     if err != nil {
         panic(err)
@@ -606,35 +606,35 @@ type DeviceEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAzureAdDeviceId()(*string)
-    GetDefenderAvStatus()(*DefenderAvStatus)
+    GetDefenderAvStatus()(*DeviceEvidence_defenderAvStatus)
     GetDeviceDnsName()(*string)
     GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetHealthStatus()(*DeviceHealthStatus)
+    GetHealthStatus()(*DeviceEvidence_healthStatus)
     GetIpInterfaces()([]string)
     GetLoggedOnUsers()([]LoggedOnUserable)
     GetMdeDeviceId()(*string)
-    GetOnboardingStatus()(*OnboardingStatus)
+    GetOnboardingStatus()(*DeviceEvidence_onboardingStatus)
     GetOsBuild()(*int64)
     GetOsPlatform()(*string)
     GetRbacGroupId()(*int32)
     GetRbacGroupName()(*string)
-    GetRiskScore()(*DeviceRiskScore)
+    GetRiskScore()(*DeviceEvidence_riskScore)
     GetVersion()(*string)
     GetVmMetadata()(VmMetadataable)
     SetAzureAdDeviceId(value *string)()
-    SetDefenderAvStatus(value *DefenderAvStatus)()
+    SetDefenderAvStatus(value *DeviceEvidence_defenderAvStatus)()
     SetDeviceDnsName(value *string)()
     SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetHealthStatus(value *DeviceHealthStatus)()
+    SetHealthStatus(value *DeviceEvidence_healthStatus)()
     SetIpInterfaces(value []string)()
     SetLoggedOnUsers(value []LoggedOnUserable)()
     SetMdeDeviceId(value *string)()
-    SetOnboardingStatus(value *OnboardingStatus)()
+    SetOnboardingStatus(value *DeviceEvidence_onboardingStatus)()
     SetOsBuild(value *int64)()
     SetOsPlatform(value *string)()
     SetRbacGroupId(value *int32)()
     SetRbacGroupName(value *string)()
-    SetRiskScore(value *DeviceRiskScore)()
+    SetRiskScore(value *DeviceEvidence_riskScore)()
     SetVersion(value *string)()
     SetVmMetadata(value VmMetadataable)()
 }

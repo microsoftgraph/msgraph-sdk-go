@@ -138,12 +138,12 @@ func (m *ActivityHistoryItem) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseStatus)
+        val, err := n.GetEnumValue(ParseActivityHistoryItem_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*Status))
+            m.SetStatus(val.(*ActivityHistoryItem_status))
         }
         return nil
     }
@@ -193,13 +193,13 @@ func (m *ActivityHistoryItem) GetStartedDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetStatus gets the status property value. Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.
-func (m *ActivityHistoryItem) GetStatus()(*Status) {
+func (m *ActivityHistoryItem) GetStatus()(*ActivityHistoryItem_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*Status)
+        return val.(*ActivityHistoryItem_status)
     }
     return nil
 }
@@ -327,7 +327,7 @@ func (m *ActivityHistoryItem) SetStartedDateTime(value *i336074805fc853987abe6f7
     }
 }
 // SetStatus sets the status property value. Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.
-func (m *ActivityHistoryItem) SetStatus(value *Status)() {
+func (m *ActivityHistoryItem) SetStatus(value *ActivityHistoryItem_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -351,7 +351,7 @@ type ActivityHistoryItemable interface {
     GetLastActiveDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetStatus()(*Status)
+    GetStatus()(*ActivityHistoryItem_status)
     GetUserTimezone()(*string)
     SetActiveDurationSeconds(value *int32)()
     SetActivity(value UserActivityable)()
@@ -360,6 +360,6 @@ type ActivityHistoryItemable interface {
     SetLastActiveDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetStatus(value *Status)()
+    SetStatus(value *ActivityHistoryItem_status)()
     SetUserTimezone(value *string)()
 }

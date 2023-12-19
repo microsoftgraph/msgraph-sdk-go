@@ -35,13 +35,13 @@ func (m *CallMediaState) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAudio gets the audio property value. The audio media state. Possible values are: active, inactive, unknownFutureValue.
-func (m *CallMediaState) GetAudio()(*MediaState) {
+func (m *CallMediaState) GetAudio()(*CallMediaState_audio) {
     val, err := m.GetBackingStore().Get("audio")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MediaState)
+        return val.(*CallMediaState_audio)
     }
     return nil
 }
@@ -53,12 +53,12 @@ func (m *CallMediaState) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185
 func (m *CallMediaState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["audio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMediaState)
+        val, err := n.GetEnumValue(ParseCallMediaState_audio)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAudio(val.(*MediaState))
+            m.SetAudio(val.(*CallMediaState_audio))
         }
         return nil
     }
@@ -116,7 +116,7 @@ func (m *CallMediaState) SetAdditionalData(value map[string]any)() {
     }
 }
 // SetAudio sets the audio property value. The audio media state. Possible values are: active, inactive, unknownFutureValue.
-func (m *CallMediaState) SetAudio(value *MediaState)() {
+func (m *CallMediaState) SetAudio(value *CallMediaState_audio)() {
     err := m.GetBackingStore().Set("audio", value)
     if err != nil {
         panic(err)
@@ -138,10 +138,10 @@ type CallMediaStateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAudio()(*MediaState)
+    GetAudio()(*CallMediaState_audio)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
-    SetAudio(value *MediaState)()
+    SetAudio(value *CallMediaState_audio)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
 }

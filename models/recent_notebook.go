@@ -94,12 +94,12 @@ func (m *RecentNotebook) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["sourceService"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOnenoteSourceService)
+        val, err := n.GetEnumValue(ParseRecentNotebook_sourceService)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSourceService(val.(*OnenoteSourceService))
+            m.SetSourceService(val.(*RecentNotebook_sourceService))
         }
         return nil
     }
@@ -139,13 +139,13 @@ func (m *RecentNotebook) GetOdataType()(*string) {
     return nil
 }
 // GetSourceService gets the sourceService property value. The backend store where the Notebook resides, either OneDriveForBusiness or OneDrive.
-func (m *RecentNotebook) GetSourceService()(*OnenoteSourceService) {
+func (m *RecentNotebook) GetSourceService()(*RecentNotebook_sourceService) {
     val, err := m.GetBackingStore().Get("sourceService")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*OnenoteSourceService)
+        return val.(*RecentNotebook_sourceService)
     }
     return nil
 }
@@ -230,7 +230,7 @@ func (m *RecentNotebook) SetOdataType(value *string)() {
     }
 }
 // SetSourceService sets the sourceService property value. The backend store where the Notebook resides, either OneDriveForBusiness or OneDrive.
-func (m *RecentNotebook) SetSourceService(value *OnenoteSourceService)() {
+func (m *RecentNotebook) SetSourceService(value *RecentNotebook_sourceService)() {
     err := m.GetBackingStore().Set("sourceService", value)
     if err != nil {
         panic(err)
@@ -246,11 +246,11 @@ type RecentNotebookable interface {
     GetLastAccessedTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLinks()(RecentNotebookLinksable)
     GetOdataType()(*string)
-    GetSourceService()(*OnenoteSourceService)
+    GetSourceService()(*RecentNotebook_sourceService)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDisplayName(value *string)()
     SetLastAccessedTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLinks(value RecentNotebookLinksable)()
     SetOdataType(value *string)()
-    SetSourceService(value *OnenoteSourceService)()
+    SetSourceService(value *RecentNotebook_sourceService)()
 }

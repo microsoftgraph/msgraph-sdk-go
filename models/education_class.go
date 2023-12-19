@@ -141,13 +141,13 @@ func (m *EducationClass) GetExternalName()(*string) {
     return nil
 }
 // GetExternalSource gets the externalSource property value. How this class was created. Possible values are: sis, manual.
-func (m *EducationClass) GetExternalSource()(*EducationExternalSource) {
+func (m *EducationClass) GetExternalSource()(*EducationClass_externalSource) {
     val, err := m.GetBackingStore().Get("externalSource")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EducationExternalSource)
+        return val.(*EducationClass_externalSource)
     }
     return nil
 }
@@ -288,12 +288,12 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["externalSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEducationExternalSource)
+        val, err := n.GetEnumValue(ParseEducationClass_externalSource)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetExternalSource(val.(*EducationExternalSource))
+            m.SetExternalSource(val.(*EducationClass_externalSource))
         }
         return nil
     }
@@ -711,7 +711,7 @@ func (m *EducationClass) SetExternalName(value *string)() {
     }
 }
 // SetExternalSource sets the externalSource property value. How this class was created. Possible values are: sis, manual.
-func (m *EducationClass) SetExternalSource(value *EducationExternalSource)() {
+func (m *EducationClass) SetExternalSource(value *EducationClass_externalSource)() {
     err := m.GetBackingStore().Set("externalSource", value)
     if err != nil {
         panic(err)
@@ -788,7 +788,7 @@ type EducationClassable interface {
     GetDisplayName()(*string)
     GetExternalId()(*string)
     GetExternalName()(*string)
-    GetExternalSource()(*EducationExternalSource)
+    GetExternalSource()(*EducationClass_externalSource)
     GetExternalSourceDetail()(*string)
     GetGrade()(*string)
     GetGroup()(Groupable)
@@ -808,7 +808,7 @@ type EducationClassable interface {
     SetDisplayName(value *string)()
     SetExternalId(value *string)()
     SetExternalName(value *string)()
-    SetExternalSource(value *EducationExternalSource)()
+    SetExternalSource(value *EducationClass_externalSource)()
     SetExternalSourceDetail(value *string)()
     SetGrade(value *string)()
     SetGroup(value Groupable)()

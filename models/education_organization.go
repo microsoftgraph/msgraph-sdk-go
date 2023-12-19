@@ -60,13 +60,13 @@ func (m *EducationOrganization) GetDisplayName()(*string) {
     return nil
 }
 // GetExternalSource gets the externalSource property value. Source where this organization was created from. Possible values are: sis, manual.
-func (m *EducationOrganization) GetExternalSource()(*EducationExternalSource) {
+func (m *EducationOrganization) GetExternalSource()(*EducationOrganization_externalSource) {
     val, err := m.GetBackingStore().Get("externalSource")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EducationExternalSource)
+        return val.(*EducationOrganization_externalSource)
     }
     return nil
 }
@@ -105,12 +105,12 @@ func (m *EducationOrganization) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["externalSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEducationExternalSource)
+        val, err := n.GetEnumValue(ParseEducationOrganization_externalSource)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetExternalSource(val.(*EducationExternalSource))
+            m.SetExternalSource(val.(*EducationOrganization_externalSource))
         }
         return nil
     }
@@ -174,7 +174,7 @@ func (m *EducationOrganization) SetDisplayName(value *string)() {
     }
 }
 // SetExternalSource sets the externalSource property value. Source where this organization was created from. Possible values are: sis, manual.
-func (m *EducationOrganization) SetExternalSource(value *EducationExternalSource)() {
+func (m *EducationOrganization) SetExternalSource(value *EducationOrganization_externalSource)() {
     err := m.GetBackingStore().Set("externalSource", value)
     if err != nil {
         panic(err)
@@ -193,10 +193,10 @@ type EducationOrganizationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDescription()(*string)
     GetDisplayName()(*string)
-    GetExternalSource()(*EducationExternalSource)
+    GetExternalSource()(*EducationOrganization_externalSource)
     GetExternalSourceDetail()(*string)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
-    SetExternalSource(value *EducationExternalSource)()
+    SetExternalSource(value *EducationOrganization_externalSource)()
     SetExternalSourceDetail(value *string)()
 }

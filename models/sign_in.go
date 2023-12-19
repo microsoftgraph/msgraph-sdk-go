@@ -65,13 +65,13 @@ func (m *SignIn) GetClientAppUsed()(*string) {
     return nil
 }
 // GetConditionalAccessStatus gets the conditionalAccessStatus property value. Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue.  Supports $filter (eq).
-func (m *SignIn) GetConditionalAccessStatus()(*ConditionalAccessStatus) {
+func (m *SignIn) GetConditionalAccessStatus()(*SignIn_conditionalAccessStatus) {
     val, err := m.GetBackingStore().Get("conditionalAccessStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ConditionalAccessStatus)
+        return val.(*SignIn_conditionalAccessStatus)
     }
     return nil
 }
@@ -158,12 +158,12 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         return nil
     }
     res["conditionalAccessStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseConditionalAccessStatus)
+        val, err := n.GetEnumValue(ParseSignIn_conditionalAccessStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConditionalAccessStatus(val.(*ConditionalAccessStatus))
+            m.SetConditionalAccessStatus(val.(*SignIn_conditionalAccessStatus))
         }
         return nil
     }
@@ -248,25 +248,25 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         return nil
     }
     res["riskDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRiskDetail)
+        val, err := n.GetEnumValue(ParseSignIn_riskDetail)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRiskDetail(val.(*RiskDetail))
+            m.SetRiskDetail(val.(*SignIn_riskDetail))
         }
         return nil
     }
     res["riskEventTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseRiskEventType)
+        val, err := n.GetCollectionOfEnumValues(ParseSignIn_riskEventTypes)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]RiskEventType, len(val))
+            res := make([]SignIn_riskEventTypes, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*RiskEventType))
+                    res[i] = *(v.(*SignIn_riskEventTypes))
                 }
             }
             m.SetRiskEventTypes(res)
@@ -290,32 +290,32 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         return nil
     }
     res["riskLevelAggregated"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRiskLevel)
+        val, err := n.GetEnumValue(ParseSignIn_riskLevelAggregated)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRiskLevelAggregated(val.(*RiskLevel))
+            m.SetRiskLevelAggregated(val.(*SignIn_riskLevelAggregated))
         }
         return nil
     }
     res["riskLevelDuringSignIn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRiskLevel)
+        val, err := n.GetEnumValue(ParseSignIn_riskLevelDuringSignIn)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRiskLevelDuringSignIn(val.(*RiskLevel))
+            m.SetRiskLevelDuringSignIn(val.(*SignIn_riskLevelDuringSignIn))
         }
         return nil
     }
     res["riskState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRiskState)
+        val, err := n.GetEnumValue(ParseSignIn_riskState)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRiskState(val.(*RiskState))
+            m.SetRiskState(val.(*SignIn_riskState))
         }
         return nil
     }
@@ -417,24 +417,24 @@ func (m *SignIn) GetResourceId()(*string) {
     return nil
 }
 // GetRiskDetail gets the riskDetail property value. Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq).Note: Details for this property require a Microsoft Entra ID P2 license. Other licenses return the value hidden.
-func (m *SignIn) GetRiskDetail()(*RiskDetail) {
+func (m *SignIn) GetRiskDetail()(*SignIn_riskDetail) {
     val, err := m.GetBackingStore().Get("riskDetail")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RiskDetail)
+        return val.(*SignIn_riskDetail)
     }
     return nil
 }
 // GetRiskEventTypes gets the riskEventTypes property value. Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue.  Supports $filter (eq).
-func (m *SignIn) GetRiskEventTypes()([]RiskEventType) {
+func (m *SignIn) GetRiskEventTypes()([]SignIn_riskEventTypes) {
     val, err := m.GetBackingStore().Get("riskEventTypes")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]RiskEventType)
+        return val.([]SignIn_riskEventTypes)
     }
     return nil
 }
@@ -450,35 +450,35 @@ func (m *SignIn) GetRiskEventTypesV2()([]string) {
     return nil
 }
 // GetRiskLevelAggregated gets the riskLevelAggregated property value. Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports $filter (eq).  Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
-func (m *SignIn) GetRiskLevelAggregated()(*RiskLevel) {
+func (m *SignIn) GetRiskLevelAggregated()(*SignIn_riskLevelAggregated) {
     val, err := m.GetBackingStore().Get("riskLevelAggregated")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RiskLevel)
+        return val.(*SignIn_riskLevelAggregated)
     }
     return nil
 }
 // GetRiskLevelDuringSignIn gets the riskLevelDuringSignIn property value. Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports $filter (eq).  Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
-func (m *SignIn) GetRiskLevelDuringSignIn()(*RiskLevel) {
+func (m *SignIn) GetRiskLevelDuringSignIn()(*SignIn_riskLevelDuringSignIn) {
     val, err := m.GetBackingStore().Get("riskLevelDuringSignIn")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RiskLevel)
+        return val.(*SignIn_riskLevelDuringSignIn)
     }
     return nil
 }
 // GetRiskState gets the riskState property value. Reports status of the risky user, sign-in, or a risk event. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.  Supports $filter (eq).
-func (m *SignIn) GetRiskState()(*RiskState) {
+func (m *SignIn) GetRiskState()(*SignIn_riskState) {
     val, err := m.GetBackingStore().Get("riskState")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RiskState)
+        return val.(*SignIn_riskState)
     }
     return nil
 }
@@ -625,7 +625,7 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     if m.GetRiskEventTypes() != nil {
-        err = writer.WriteCollectionOfStringValues("riskEventTypes", SerializeRiskEventType(m.GetRiskEventTypes()))
+        err = writer.WriteCollectionOfStringValues("riskEventTypes", SerializeSignIn_riskEventTypes(m.GetRiskEventTypes()))
         if err != nil {
             return err
         }
@@ -712,7 +712,7 @@ func (m *SignIn) SetClientAppUsed(value *string)() {
     }
 }
 // SetConditionalAccessStatus sets the conditionalAccessStatus property value. Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue.  Supports $filter (eq).
-func (m *SignIn) SetConditionalAccessStatus(value *ConditionalAccessStatus)() {
+func (m *SignIn) SetConditionalAccessStatus(value *SignIn_conditionalAccessStatus)() {
     err := m.GetBackingStore().Set("conditionalAccessStatus", value)
     if err != nil {
         panic(err)
@@ -775,14 +775,14 @@ func (m *SignIn) SetResourceId(value *string)() {
     }
 }
 // SetRiskDetail sets the riskDetail property value. Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq).Note: Details for this property require a Microsoft Entra ID P2 license. Other licenses return the value hidden.
-func (m *SignIn) SetRiskDetail(value *RiskDetail)() {
+func (m *SignIn) SetRiskDetail(value *SignIn_riskDetail)() {
     err := m.GetBackingStore().Set("riskDetail", value)
     if err != nil {
         panic(err)
     }
 }
 // SetRiskEventTypes sets the riskEventTypes property value. Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue.  Supports $filter (eq).
-func (m *SignIn) SetRiskEventTypes(value []RiskEventType)() {
+func (m *SignIn) SetRiskEventTypes(value []SignIn_riskEventTypes)() {
     err := m.GetBackingStore().Set("riskEventTypes", value)
     if err != nil {
         panic(err)
@@ -796,21 +796,21 @@ func (m *SignIn) SetRiskEventTypesV2(value []string)() {
     }
 }
 // SetRiskLevelAggregated sets the riskLevelAggregated property value. Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports $filter (eq).  Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
-func (m *SignIn) SetRiskLevelAggregated(value *RiskLevel)() {
+func (m *SignIn) SetRiskLevelAggregated(value *SignIn_riskLevelAggregated)() {
     err := m.GetBackingStore().Set("riskLevelAggregated", value)
     if err != nil {
         panic(err)
     }
 }
 // SetRiskLevelDuringSignIn sets the riskLevelDuringSignIn property value. Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports $filter (eq).  Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
-func (m *SignIn) SetRiskLevelDuringSignIn(value *RiskLevel)() {
+func (m *SignIn) SetRiskLevelDuringSignIn(value *SignIn_riskLevelDuringSignIn)() {
     err := m.GetBackingStore().Set("riskLevelDuringSignIn", value)
     if err != nil {
         panic(err)
     }
 }
 // SetRiskState sets the riskState property value. Reports status of the risky user, sign-in, or a risk event. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.  Supports $filter (eq).
-func (m *SignIn) SetRiskState(value *RiskState)() {
+func (m *SignIn) SetRiskState(value *SignIn_riskState)() {
     err := m.GetBackingStore().Set("riskState", value)
     if err != nil {
         panic(err)
@@ -852,7 +852,7 @@ type SignInable interface {
     GetAppId()(*string)
     GetAppliedConditionalAccessPolicies()([]AppliedConditionalAccessPolicyable)
     GetClientAppUsed()(*string)
-    GetConditionalAccessStatus()(*ConditionalAccessStatus)
+    GetConditionalAccessStatus()(*SignIn_conditionalAccessStatus)
     GetCorrelationId()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDeviceDetail()(DeviceDetailable)
@@ -861,12 +861,12 @@ type SignInable interface {
     GetLocation()(SignInLocationable)
     GetResourceDisplayName()(*string)
     GetResourceId()(*string)
-    GetRiskDetail()(*RiskDetail)
-    GetRiskEventTypes()([]RiskEventType)
+    GetRiskDetail()(*SignIn_riskDetail)
+    GetRiskEventTypes()([]SignIn_riskEventTypes)
     GetRiskEventTypesV2()([]string)
-    GetRiskLevelAggregated()(*RiskLevel)
-    GetRiskLevelDuringSignIn()(*RiskLevel)
-    GetRiskState()(*RiskState)
+    GetRiskLevelAggregated()(*SignIn_riskLevelAggregated)
+    GetRiskLevelDuringSignIn()(*SignIn_riskLevelDuringSignIn)
+    GetRiskState()(*SignIn_riskState)
     GetStatus()(SignInStatusable)
     GetUserDisplayName()(*string)
     GetUserId()(*string)
@@ -875,7 +875,7 @@ type SignInable interface {
     SetAppId(value *string)()
     SetAppliedConditionalAccessPolicies(value []AppliedConditionalAccessPolicyable)()
     SetClientAppUsed(value *string)()
-    SetConditionalAccessStatus(value *ConditionalAccessStatus)()
+    SetConditionalAccessStatus(value *SignIn_conditionalAccessStatus)()
     SetCorrelationId(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDeviceDetail(value DeviceDetailable)()
@@ -884,12 +884,12 @@ type SignInable interface {
     SetLocation(value SignInLocationable)()
     SetResourceDisplayName(value *string)()
     SetResourceId(value *string)()
-    SetRiskDetail(value *RiskDetail)()
-    SetRiskEventTypes(value []RiskEventType)()
+    SetRiskDetail(value *SignIn_riskDetail)()
+    SetRiskEventTypes(value []SignIn_riskEventTypes)()
     SetRiskEventTypesV2(value []string)()
-    SetRiskLevelAggregated(value *RiskLevel)()
-    SetRiskLevelDuringSignIn(value *RiskLevel)()
-    SetRiskState(value *RiskState)()
+    SetRiskLevelAggregated(value *SignIn_riskLevelAggregated)()
+    SetRiskLevelDuringSignIn(value *SignIn_riskLevelDuringSignIn)()
+    SetRiskState(value *SignIn_riskState)()
     SetStatus(value SignInStatusable)()
     SetUserDisplayName(value *string)()
     SetUserId(value *string)()

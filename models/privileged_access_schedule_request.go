@@ -40,13 +40,13 @@ func CreatePrivilegedAccessScheduleRequestFromDiscriminatorValue(parseNode i878a
     return NewPrivilegedAccessScheduleRequest(), nil
 }
 // GetAction gets the action property value. Represents the type of operation on the group membership or ownership assignment request. The possible values are: adminAssign, adminUpdate, adminRemove, selfActivate, selfDeactivate, adminExtend, adminRenew. adminAssign: For administrators to assign group membership or ownership to principals.adminRemove: For administrators to remove principals from group membership or ownership. adminUpdate: For administrators to change existing group membership or ownership assignments.adminExtend: For administrators to extend expiring assignments.adminRenew: For administrators to renew expired assignments.selfActivate: For principals to activate their assignments.selfDeactivate: For principals to deactivate their active assignments.
-func (m *PrivilegedAccessScheduleRequest) GetAction()(*ScheduleRequestActions) {
+func (m *PrivilegedAccessScheduleRequest) GetAction()(*PrivilegedAccessScheduleRequest_action) {
     val, err := m.GetBackingStore().Get("action")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ScheduleRequestActions)
+        return val.(*PrivilegedAccessScheduleRequest_action)
     }
     return nil
 }
@@ -54,12 +54,12 @@ func (m *PrivilegedAccessScheduleRequest) GetAction()(*ScheduleRequestActions) {
 func (m *PrivilegedAccessScheduleRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Request.GetFieldDeserializers()
     res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseScheduleRequestActions)
+        val, err := n.GetEnumValue(ParsePrivilegedAccessScheduleRequest_action)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAction(val.(*ScheduleRequestActions))
+            m.SetAction(val.(*PrivilegedAccessScheduleRequest_action))
         }
         return nil
     }
@@ -189,7 +189,7 @@ func (m *PrivilegedAccessScheduleRequest) Serialize(writer i878a80d2330e89d26896
     return nil
 }
 // SetAction sets the action property value. Represents the type of operation on the group membership or ownership assignment request. The possible values are: adminAssign, adminUpdate, adminRemove, selfActivate, selfDeactivate, adminExtend, adminRenew. adminAssign: For administrators to assign group membership or ownership to principals.adminRemove: For administrators to remove principals from group membership or ownership. adminUpdate: For administrators to change existing group membership or ownership assignments.adminExtend: For administrators to extend expiring assignments.adminRenew: For administrators to renew expired assignments.selfActivate: For principals to activate their assignments.selfDeactivate: For principals to deactivate their active assignments.
-func (m *PrivilegedAccessScheduleRequest) SetAction(value *ScheduleRequestActions)() {
+func (m *PrivilegedAccessScheduleRequest) SetAction(value *PrivilegedAccessScheduleRequest_action)() {
     err := m.GetBackingStore().Set("action", value)
     if err != nil {
         panic(err)
@@ -227,12 +227,12 @@ func (m *PrivilegedAccessScheduleRequest) SetTicketInfo(value TicketInfoable)() 
 type PrivilegedAccessScheduleRequestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Requestable
-    GetAction()(*ScheduleRequestActions)
+    GetAction()(*PrivilegedAccessScheduleRequest_action)
     GetIsValidationOnly()(*bool)
     GetJustification()(*string)
     GetScheduleInfo()(RequestScheduleable)
     GetTicketInfo()(TicketInfoable)
-    SetAction(value *ScheduleRequestActions)()
+    SetAction(value *PrivilegedAccessScheduleRequest_action)()
     SetIsValidationOnly(value *bool)()
     SetJustification(value *string)()
     SetScheduleInfo(value RequestScheduleable)()

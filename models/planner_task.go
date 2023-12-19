@@ -379,12 +379,12 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["previewType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePlannerPreviewType)
+        val, err := n.GetEnumValue(ParsePlannerTask_previewType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPreviewType(val.(*PlannerPreviewType))
+            m.SetPreviewType(val.(*PlannerTask_previewType))
         }
         return nil
     }
@@ -485,13 +485,13 @@ func (m *PlannerTask) GetPlanId()(*string) {
     return nil
 }
 // GetPreviewType gets the previewType property value. This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference.
-func (m *PlannerTask) GetPreviewType()(*PlannerPreviewType) {
+func (m *PlannerTask) GetPreviewType()(*PlannerTask_previewType) {
     val, err := m.GetBackingStore().Get("previewType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PlannerPreviewType)
+        return val.(*PlannerTask_previewType)
     }
     return nil
 }
@@ -843,7 +843,7 @@ func (m *PlannerTask) SetPlanId(value *string)() {
     }
 }
 // SetPreviewType sets the previewType property value. This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference.
-func (m *PlannerTask) SetPreviewType(value *PlannerPreviewType)() {
+func (m *PlannerTask) SetPreviewType(value *PlannerTask_previewType)() {
     err := m.GetBackingStore().Set("previewType", value)
     if err != nil {
         panic(err)
@@ -907,7 +907,7 @@ type PlannerTaskable interface {
     GetOrderHint()(*string)
     GetPercentComplete()(*int32)
     GetPlanId()(*string)
-    GetPreviewType()(*PlannerPreviewType)
+    GetPreviewType()(*PlannerTask_previewType)
     GetPriority()(*int32)
     GetProgressTaskBoardFormat()(PlannerProgressTaskBoardTaskFormatable)
     GetReferenceCount()(*int32)
@@ -932,7 +932,7 @@ type PlannerTaskable interface {
     SetOrderHint(value *string)()
     SetPercentComplete(value *int32)()
     SetPlanId(value *string)()
-    SetPreviewType(value *PlannerPreviewType)()
+    SetPreviewType(value *PlannerTask_previewType)()
     SetPriority(value *int32)()
     SetProgressTaskBoardFormat(value PlannerProgressTaskBoardTaskFormatable)()
     SetReferenceCount(value *int32)()

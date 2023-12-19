@@ -22,13 +22,13 @@ func CreatePrivilegedAccessGroupEligibilityScheduleRequestFromDiscriminatorValue
     return NewPrivilegedAccessGroupEligibilityScheduleRequest(), nil
 }
 // GetAccessId gets the accessId property value. The identifier of membership or ownership eligibility relationship to the group. Required. The possible values are: owner, member, unknownFutureValue.
-func (m *PrivilegedAccessGroupEligibilityScheduleRequest) GetAccessId()(*PrivilegedAccessGroupRelationships) {
+func (m *PrivilegedAccessGroupEligibilityScheduleRequest) GetAccessId()(*PrivilegedAccessGroupEligibilityScheduleRequest_accessId) {
     val, err := m.GetBackingStore().Get("accessId")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PrivilegedAccessGroupRelationships)
+        return val.(*PrivilegedAccessGroupEligibilityScheduleRequest_accessId)
     }
     return nil
 }
@@ -36,12 +36,12 @@ func (m *PrivilegedAccessGroupEligibilityScheduleRequest) GetAccessId()(*Privile
 func (m *PrivilegedAccessGroupEligibilityScheduleRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PrivilegedAccessScheduleRequest.GetFieldDeserializers()
     res["accessId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePrivilegedAccessGroupRelationships)
+        val, err := n.GetEnumValue(ParsePrivilegedAccessGroupEligibilityScheduleRequest_accessId)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccessId(val.(*PrivilegedAccessGroupRelationships))
+            m.SetAccessId(val.(*PrivilegedAccessGroupEligibilityScheduleRequest_accessId))
         }
         return nil
     }
@@ -225,7 +225,7 @@ func (m *PrivilegedAccessGroupEligibilityScheduleRequest) Serialize(writer i878a
     return nil
 }
 // SetAccessId sets the accessId property value. The identifier of membership or ownership eligibility relationship to the group. Required. The possible values are: owner, member, unknownFutureValue.
-func (m *PrivilegedAccessGroupEligibilityScheduleRequest) SetAccessId(value *PrivilegedAccessGroupRelationships)() {
+func (m *PrivilegedAccessGroupEligibilityScheduleRequest) SetAccessId(value *PrivilegedAccessGroupEligibilityScheduleRequest_accessId)() {
     err := m.GetBackingStore().Set("accessId", value)
     if err != nil {
         panic(err)
@@ -277,14 +277,14 @@ func (m *PrivilegedAccessGroupEligibilityScheduleRequest) SetTargetScheduleId(va
 type PrivilegedAccessGroupEligibilityScheduleRequestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PrivilegedAccessScheduleRequestable
-    GetAccessId()(*PrivilegedAccessGroupRelationships)
+    GetAccessId()(*PrivilegedAccessGroupEligibilityScheduleRequest_accessId)
     GetGroup()(Groupable)
     GetGroupId()(*string)
     GetPrincipal()(DirectoryObjectable)
     GetPrincipalId()(*string)
     GetTargetSchedule()(PrivilegedAccessGroupEligibilityScheduleable)
     GetTargetScheduleId()(*string)
-    SetAccessId(value *PrivilegedAccessGroupRelationships)()
+    SetAccessId(value *PrivilegedAccessGroupEligibilityScheduleRequest_accessId)()
     SetGroup(value Groupable)()
     SetGroupId(value *string)()
     SetPrincipal(value DirectoryObjectable)()

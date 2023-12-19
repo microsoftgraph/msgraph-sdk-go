@@ -127,12 +127,12 @@ func (m *EventMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     res["meetingMessageType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMeetingMessageType)
+        val, err := n.GetEnumValue(ParseEventMessage_meetingMessageType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMeetingMessageType(val.(*MeetingMessageType))
+            m.SetMeetingMessageType(val.(*EventMessage_meetingMessageType))
         }
         return nil
     }
@@ -157,12 +157,12 @@ func (m *EventMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEventType)
+        val, err := n.GetEnumValue(ParseEventMessage_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*EventType))
+            m.SetTypeEscaped(val.(*EventMessage_type))
         }
         return nil
     }
@@ -213,13 +213,13 @@ func (m *EventMessage) GetLocation()(Locationable) {
     return nil
 }
 // GetMeetingMessageType gets the meetingMessageType property value. The meetingMessageType property
-func (m *EventMessage) GetMeetingMessageType()(*MeetingMessageType) {
+func (m *EventMessage) GetMeetingMessageType()(*EventMessage_meetingMessageType) {
     val, err := m.GetBackingStore().Get("meetingMessageType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*MeetingMessageType)
+        return val.(*EventMessage_meetingMessageType)
     }
     return nil
 }
@@ -246,13 +246,13 @@ func (m *EventMessage) GetStartDateTime()(DateTimeTimeZoneable) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type property
-func (m *EventMessage) GetTypeEscaped()(*EventType) {
+func (m *EventMessage) GetTypeEscaped()(*EventMessage_type) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EventType)
+        return val.(*EventMessage_type)
     }
     return nil
 }
@@ -369,7 +369,7 @@ func (m *EventMessage) SetLocation(value Locationable)() {
     }
 }
 // SetMeetingMessageType sets the meetingMessageType property value. The meetingMessageType property
-func (m *EventMessage) SetMeetingMessageType(value *MeetingMessageType)() {
+func (m *EventMessage) SetMeetingMessageType(value *EventMessage_meetingMessageType)() {
     err := m.GetBackingStore().Set("meetingMessageType", value)
     if err != nil {
         panic(err)
@@ -390,7 +390,7 @@ func (m *EventMessage) SetStartDateTime(value DateTimeTimeZoneable)() {
     }
 }
 // SetTypeEscaped sets the type property value. The type property
-func (m *EventMessage) SetTypeEscaped(value *EventType)() {
+func (m *EventMessage) SetTypeEscaped(value *EventMessage_type)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -406,18 +406,18 @@ type EventMessageable interface {
     GetIsDelegated()(*bool)
     GetIsOutOfDate()(*bool)
     GetLocation()(Locationable)
-    GetMeetingMessageType()(*MeetingMessageType)
+    GetMeetingMessageType()(*EventMessage_meetingMessageType)
     GetRecurrence()(PatternedRecurrenceable)
     GetStartDateTime()(DateTimeTimeZoneable)
-    GetTypeEscaped()(*EventType)
+    GetTypeEscaped()(*EventMessage_type)
     SetEndDateTime(value DateTimeTimeZoneable)()
     SetEvent(value Eventable)()
     SetIsAllDay(value *bool)()
     SetIsDelegated(value *bool)()
     SetIsOutOfDate(value *bool)()
     SetLocation(value Locationable)()
-    SetMeetingMessageType(value *MeetingMessageType)()
+    SetMeetingMessageType(value *EventMessage_meetingMessageType)()
     SetRecurrence(value PatternedRecurrenceable)()
     SetStartDateTime(value DateTimeTimeZoneable)()
-    SetTypeEscaped(value *EventType)()
+    SetTypeEscaped(value *EventMessage_type)()
 }

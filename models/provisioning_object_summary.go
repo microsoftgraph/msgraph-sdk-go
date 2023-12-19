@@ -144,12 +144,12 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     res["provisioningAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseProvisioningAction)
+        val, err := n.GetEnumValue(ParseProvisioningObjectSummary_provisioningAction)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProvisioningAction(val.(*ProvisioningAction))
+            m.SetProvisioningAction(val.(*ProvisioningObjectSummary_provisioningAction))
         }
         return nil
     }
@@ -275,13 +275,13 @@ func (m *ProvisioningObjectSummary) GetModifiedProperties()([]ModifiedPropertyab
     return nil
 }
 // GetProvisioningAction gets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Microsoft Entra activity list. Supports $filter (eq, contains).
-func (m *ProvisioningObjectSummary) GetProvisioningAction()(*ProvisioningAction) {
+func (m *ProvisioningObjectSummary) GetProvisioningAction()(*ProvisioningObjectSummary_provisioningAction) {
     val, err := m.GetBackingStore().Get("provisioningAction")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ProvisioningAction)
+        return val.(*ProvisioningObjectSummary_provisioningAction)
     }
     return nil
 }
@@ -540,7 +540,7 @@ func (m *ProvisioningObjectSummary) SetModifiedProperties(value []ModifiedProper
     }
 }
 // SetProvisioningAction sets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Microsoft Entra activity list. Supports $filter (eq, contains).
-func (m *ProvisioningObjectSummary) SetProvisioningAction(value *ProvisioningAction)() {
+func (m *ProvisioningObjectSummary) SetProvisioningAction(value *ProvisioningObjectSummary_provisioningAction)() {
     err := m.GetBackingStore().Set("provisioningAction", value)
     if err != nil {
         panic(err)
@@ -613,7 +613,7 @@ type ProvisioningObjectSummaryable interface {
     GetInitiatedBy()(Initiatorable)
     GetJobId()(*string)
     GetModifiedProperties()([]ModifiedPropertyable)
-    GetProvisioningAction()(*ProvisioningAction)
+    GetProvisioningAction()(*ProvisioningObjectSummary_provisioningAction)
     GetProvisioningStatusInfo()(ProvisioningStatusInfoable)
     GetProvisioningSteps()([]ProvisioningStepable)
     GetServicePrincipal()(ProvisioningServicePrincipalable)
@@ -629,7 +629,7 @@ type ProvisioningObjectSummaryable interface {
     SetInitiatedBy(value Initiatorable)()
     SetJobId(value *string)()
     SetModifiedProperties(value []ModifiedPropertyable)()
-    SetProvisioningAction(value *ProvisioningAction)()
+    SetProvisioningAction(value *ProvisioningObjectSummary_provisioningAction)()
     SetProvisioningStatusInfo(value ProvisioningStatusInfoable)()
     SetProvisioningSteps(value []ProvisioningStepable)()
     SetServicePrincipal(value ProvisioningServicePrincipalable)()

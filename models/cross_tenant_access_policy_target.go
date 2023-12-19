@@ -62,12 +62,12 @@ func (m *CrossTenantAccessPolicyTarget) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["targetType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCrossTenantAccessPolicyTargetType)
+        val, err := n.GetEnumValue(ParseCrossTenantAccessPolicyTarget_targetType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTargetType(val.(*CrossTenantAccessPolicyTargetType))
+            m.SetTargetType(val.(*CrossTenantAccessPolicyTarget_targetType))
         }
         return nil
     }
@@ -96,13 +96,13 @@ func (m *CrossTenantAccessPolicyTarget) GetTarget()(*string) {
     return nil
 }
 // GetTargetType gets the targetType property value. The type of resource that you want to target. The possible values are: user, group, application, unknownFutureValue.
-func (m *CrossTenantAccessPolicyTarget) GetTargetType()(*CrossTenantAccessPolicyTargetType) {
+func (m *CrossTenantAccessPolicyTarget) GetTargetType()(*CrossTenantAccessPolicyTarget_targetType) {
     val, err := m.GetBackingStore().Get("targetType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CrossTenantAccessPolicyTargetType)
+        return val.(*CrossTenantAccessPolicyTarget_targetType)
     }
     return nil
 }
@@ -161,7 +161,7 @@ func (m *CrossTenantAccessPolicyTarget) SetTarget(value *string)() {
     }
 }
 // SetTargetType sets the targetType property value. The type of resource that you want to target. The possible values are: user, group, application, unknownFutureValue.
-func (m *CrossTenantAccessPolicyTarget) SetTargetType(value *CrossTenantAccessPolicyTargetType)() {
+func (m *CrossTenantAccessPolicyTarget) SetTargetType(value *CrossTenantAccessPolicyTarget_targetType)() {
     err := m.GetBackingStore().Set("targetType", value)
     if err != nil {
         panic(err)
@@ -175,9 +175,9 @@ type CrossTenantAccessPolicyTargetable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetTarget()(*string)
-    GetTargetType()(*CrossTenantAccessPolicyTargetType)
+    GetTargetType()(*CrossTenantAccessPolicyTarget_targetType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetTarget(value *string)()
-    SetTargetType(value *CrossTenantAccessPolicyTargetType)()
+    SetTargetType(value *CrossTenantAccessPolicyTarget_targetType)()
 }

@@ -327,12 +327,12 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     res["partnerTenantType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePartnerTenantType)
+        val, err := n.GetEnumValue(ParseOrganization_partnerTenantType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPartnerTenantType(val.(*PartnerTenantType))
+            m.SetPartnerTenantType(val.(*Organization_partnerTenantType))
         }
         return nil
     }
@@ -523,13 +523,13 @@ func (m *Organization) GetOnPremisesSyncEnabled()(*bool) {
     return nil
 }
 // GetPartnerTenantType gets the partnerTenantType property value. The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.
-func (m *Organization) GetPartnerTenantType()(*PartnerTenantType) {
+func (m *Organization) GetPartnerTenantType()(*Organization_partnerTenantType) {
     val, err := m.GetBackingStore().Get("partnerTenantType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PartnerTenantType)
+        return val.(*Organization_partnerTenantType)
     }
     return nil
 }
@@ -962,7 +962,7 @@ func (m *Organization) SetOnPremisesSyncEnabled(value *bool)() {
     }
 }
 // SetPartnerTenantType sets the partnerTenantType property value. The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.
-func (m *Organization) SetPartnerTenantType(value *PartnerTenantType)() {
+func (m *Organization) SetPartnerTenantType(value *Organization_partnerTenantType)() {
     err := m.GetBackingStore().Set("partnerTenantType", value)
     if err != nil {
         panic(err)
@@ -1064,7 +1064,7 @@ type Organizationable interface {
     GetMobileDeviceManagementAuthority()(*MdmAuthority)
     GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOnPremisesSyncEnabled()(*bool)
-    GetPartnerTenantType()(*PartnerTenantType)
+    GetPartnerTenantType()(*Organization_partnerTenantType)
     GetPostalCode()(*string)
     GetPreferredLanguage()(*string)
     GetPrivacyProfile()(PrivacyProfileable)
@@ -1091,7 +1091,7 @@ type Organizationable interface {
     SetMobileDeviceManagementAuthority(value *MdmAuthority)()
     SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOnPremisesSyncEnabled(value *bool)()
-    SetPartnerTenantType(value *PartnerTenantType)()
+    SetPartnerTenantType(value *Organization_partnerTenantType)()
     SetPostalCode(value *string)()
     SetPreferredLanguage(value *string)()
     SetPrivacyProfile(value PrivacyProfileable)()

@@ -175,13 +175,13 @@ func (m *Alert) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a163
     return nil
 }
 // GetFeedback gets the feedback property value. Analyst feedback on the alert. Possible values are: unknown, truePositive, falsePositive, benignPositive. (supports update)
-func (m *Alert) GetFeedback()(*AlertFeedback) {
+func (m *Alert) GetFeedback()(*Alert_feedback) {
     val, err := m.GetBackingStore().Get("feedback")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AlertFeedback)
+        return val.(*Alert_feedback)
     }
     return nil
 }
@@ -353,12 +353,12 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         return nil
     }
     res["feedback"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAlertFeedback)
+        val, err := n.GetEnumValue(ParseAlert_feedback)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFeedback(val.(*AlertFeedback))
+            m.SetFeedback(val.(*Alert_feedback))
         }
         return nil
     }
@@ -1416,7 +1416,7 @@ func (m *Alert) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077
     }
 }
 // SetFeedback sets the feedback property value. Analyst feedback on the alert. Possible values are: unknown, truePositive, falsePositive, benignPositive. (supports update)
-func (m *Alert) SetFeedback(value *AlertFeedback)() {
+func (m *Alert) SetFeedback(value *Alert_feedback)() {
     err := m.GetBackingStore().Set("feedback", value)
     if err != nil {
         panic(err)
@@ -1608,7 +1608,7 @@ type Alertable interface {
     GetDescription()(*string)
     GetDetectionIds()([]string)
     GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetFeedback()(*AlertFeedback)
+    GetFeedback()(*Alert_feedback)
     GetFileStates()([]FileSecurityStateable)
     GetHistoryStates()([]AlertHistoryStateable)
     GetHostStates()([]HostSecurityStateable)
@@ -1647,7 +1647,7 @@ type Alertable interface {
     SetDescription(value *string)()
     SetDetectionIds(value []string)()
     SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetFeedback(value *AlertFeedback)()
+    SetFeedback(value *Alert_feedback)()
     SetFileStates(value []FileSecurityStateable)()
     SetHistoryStates(value []AlertHistoryStateable)()
     SetHostStates(value []HostSecurityStateable)()

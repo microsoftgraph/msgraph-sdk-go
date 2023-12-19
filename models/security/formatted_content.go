@@ -63,12 +63,12 @@ func (m *FormattedContent) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["format"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseContentFormat)
+        val, err := n.GetEnumValue(ParseFormattedContent_format)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFormat(val.(*ContentFormat))
+            m.SetFormat(val.(*FormattedContent_format))
         }
         return nil
     }
@@ -85,13 +85,13 @@ func (m *FormattedContent) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetFormat gets the format property value. The format of the content. The possible values are: text, html, markdown, unknownFutureValue.
-func (m *FormattedContent) GetFormat()(*ContentFormat) {
+func (m *FormattedContent) GetFormat()(*FormattedContent_format) {
     val, err := m.GetBackingStore().Get("format")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ContentFormat)
+        return val.(*FormattedContent_format)
     }
     return nil
 }
@@ -154,7 +154,7 @@ func (m *FormattedContent) SetContent(value *string)() {
     }
 }
 // SetFormat sets the format property value. The format of the content. The possible values are: text, html, markdown, unknownFutureValue.
-func (m *FormattedContent) SetFormat(value *ContentFormat)() {
+func (m *FormattedContent) SetFormat(value *FormattedContent_format)() {
     err := m.GetBackingStore().Set("format", value)
     if err != nil {
         panic(err)
@@ -174,10 +174,10 @@ type FormattedContentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetContent()(*string)
-    GetFormat()(*ContentFormat)
+    GetFormat()(*FormattedContent_format)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetContent(value *string)()
-    SetFormat(value *ContentFormat)()
+    SetFormat(value *FormattedContent_format)()
     SetOdataType(value *string)()
 }

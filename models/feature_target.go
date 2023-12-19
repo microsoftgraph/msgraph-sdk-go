@@ -62,12 +62,12 @@ func (m *FeatureTarget) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["targetType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseFeatureTargetType)
+        val, err := n.GetEnumValue(ParseFeatureTarget_targetType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTargetType(val.(*FeatureTargetType))
+            m.SetTargetType(val.(*FeatureTarget_targetType))
         }
         return nil
     }
@@ -96,13 +96,13 @@ func (m *FeatureTarget) GetOdataType()(*string) {
     return nil
 }
 // GetTargetType gets the targetType property value. The kind of entity that's targeted. The possible values are: group, administrativeUnit, role, unknownFutureValue.
-func (m *FeatureTarget) GetTargetType()(*FeatureTargetType) {
+func (m *FeatureTarget) GetTargetType()(*FeatureTarget_targetType) {
     val, err := m.GetBackingStore().Get("targetType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*FeatureTargetType)
+        return val.(*FeatureTarget_targetType)
     }
     return nil
 }
@@ -161,7 +161,7 @@ func (m *FeatureTarget) SetOdataType(value *string)() {
     }
 }
 // SetTargetType sets the targetType property value. The kind of entity that's targeted. The possible values are: group, administrativeUnit, role, unknownFutureValue.
-func (m *FeatureTarget) SetTargetType(value *FeatureTargetType)() {
+func (m *FeatureTarget) SetTargetType(value *FeatureTarget_targetType)() {
     err := m.GetBackingStore().Set("targetType", value)
     if err != nil {
         panic(err)
@@ -175,9 +175,9 @@ type FeatureTargetable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetId()(*string)
     GetOdataType()(*string)
-    GetTargetType()(*FeatureTargetType)
+    GetTargetType()(*FeatureTarget_targetType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetId(value *string)()
     SetOdataType(value *string)()
-    SetTargetType(value *FeatureTargetType)()
+    SetTargetType(value *FeatureTarget_targetType)()
 }

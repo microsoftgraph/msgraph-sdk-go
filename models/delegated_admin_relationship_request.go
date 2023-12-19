@@ -76,12 +76,12 @@ func (m *DelegatedAdminRelationshipRequest) GetFieldDeserializers()(map[string]f
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDelegatedAdminRelationshipRequestStatus)
+        val, err := n.GetEnumValue(ParseDelegatedAdminRelationshipRequest_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*DelegatedAdminRelationshipRequestStatus))
+            m.SetStatus(val.(*DelegatedAdminRelationshipRequest_status))
         }
         return nil
     }
@@ -99,13 +99,13 @@ func (m *DelegatedAdminRelationshipRequest) GetLastModifiedDateTime()(*i33607480
     return nil
 }
 // GetStatus gets the status property value. The status of the request. Read-only. The possible values are: created, pending, succeeded, failed, unknownFutureValue.
-func (m *DelegatedAdminRelationshipRequest) GetStatus()(*DelegatedAdminRelationshipRequestStatus) {
+func (m *DelegatedAdminRelationshipRequest) GetStatus()(*DelegatedAdminRelationshipRequest_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DelegatedAdminRelationshipRequestStatus)
+        return val.(*DelegatedAdminRelationshipRequest_status)
     }
     return nil
 }
@@ -165,7 +165,7 @@ func (m *DelegatedAdminRelationshipRequest) SetLastModifiedDateTime(value *i3360
     }
 }
 // SetStatus sets the status property value. The status of the request. Read-only. The possible values are: created, pending, succeeded, failed, unknownFutureValue.
-func (m *DelegatedAdminRelationshipRequest) SetStatus(value *DelegatedAdminRelationshipRequestStatus)() {
+func (m *DelegatedAdminRelationshipRequest) SetStatus(value *DelegatedAdminRelationshipRequest_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -178,9 +178,9 @@ type DelegatedAdminRelationshipRequestable interface {
     GetAction()(*DelegatedAdminRelationshipRequestAction)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetStatus()(*DelegatedAdminRelationshipRequestStatus)
+    GetStatus()(*DelegatedAdminRelationshipRequest_status)
     SetAction(value *DelegatedAdminRelationshipRequestAction)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetStatus(value *DelegatedAdminRelationshipRequestStatus)()
+    SetStatus(value *DelegatedAdminRelationshipRequest_status)()
 }

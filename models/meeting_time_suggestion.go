@@ -136,12 +136,12 @@ func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["organizerAvailability"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseFreeBusyStatus)
+        val, err := n.GetEnumValue(ParseMeetingTimeSuggestion_organizerAvailability)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOrganizerAvailability(val.(*FreeBusyStatus))
+            m.SetOrganizerAvailability(val.(*MeetingTimeSuggestion_organizerAvailability))
         }
         return nil
     }
@@ -202,13 +202,13 @@ func (m *MeetingTimeSuggestion) GetOrder()(*int32) {
     return nil
 }
 // GetOrganizerAvailability gets the organizerAvailability property value. Availability of the meeting organizer for this meeting suggestion. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
-func (m *MeetingTimeSuggestion) GetOrganizerAvailability()(*FreeBusyStatus) {
+func (m *MeetingTimeSuggestion) GetOrganizerAvailability()(*MeetingTimeSuggestion_organizerAvailability) {
     val, err := m.GetBackingStore().Get("organizerAvailability")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*FreeBusyStatus)
+        return val.(*MeetingTimeSuggestion_organizerAvailability)
     }
     return nil
 }
@@ -348,7 +348,7 @@ func (m *MeetingTimeSuggestion) SetOrder(value *int32)() {
     }
 }
 // SetOrganizerAvailability sets the organizerAvailability property value. Availability of the meeting organizer for this meeting suggestion. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
-func (m *MeetingTimeSuggestion) SetOrganizerAvailability(value *FreeBusyStatus)() {
+func (m *MeetingTimeSuggestion) SetOrganizerAvailability(value *MeetingTimeSuggestion_organizerAvailability)() {
     err := m.GetBackingStore().Set("organizerAvailability", value)
     if err != nil {
         panic(err)
@@ -373,7 +373,7 @@ type MeetingTimeSuggestionable interface {
     GetMeetingTimeSlot()(TimeSlotable)
     GetOdataType()(*string)
     GetOrder()(*int32)
-    GetOrganizerAvailability()(*FreeBusyStatus)
+    GetOrganizerAvailability()(*MeetingTimeSuggestion_organizerAvailability)
     GetSuggestionReason()(*string)
     SetAttendeeAvailability(value []AttendeeAvailabilityable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
@@ -382,6 +382,6 @@ type MeetingTimeSuggestionable interface {
     SetMeetingTimeSlot(value TimeSlotable)()
     SetOdataType(value *string)()
     SetOrder(value *int32)()
-    SetOrganizerAvailability(value *FreeBusyStatus)()
+    SetOrganizerAvailability(value *MeetingTimeSuggestion_organizerAvailability)()
     SetSuggestionReason(value *string)()
 }

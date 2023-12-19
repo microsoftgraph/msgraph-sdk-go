@@ -153,12 +153,12 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["markImportance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseImportance)
+        val, err := n.GetEnumValue(ParseMessageRuleActions_markImportance)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMarkImportance(val.(*Importance))
+            m.SetMarkImportance(val.(*MessageRuleActions_markImportance))
         }
         return nil
     }
@@ -254,13 +254,13 @@ func (m *MessageRuleActions) GetMarkAsRead()(*bool) {
     return nil
 }
 // GetMarkImportance gets the markImportance property value. Sets the importance of the message, which can be: low, normal, high.
-func (m *MessageRuleActions) GetMarkImportance()(*Importance) {
+func (m *MessageRuleActions) GetMarkImportance()(*MessageRuleActions_markImportance) {
     val, err := m.GetBackingStore().Get("markImportance")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*Importance)
+        return val.(*MessageRuleActions_markImportance)
     }
     return nil
 }
@@ -474,7 +474,7 @@ func (m *MessageRuleActions) SetMarkAsRead(value *bool)() {
     }
 }
 // SetMarkImportance sets the markImportance property value. Sets the importance of the message, which can be: low, normal, high.
-func (m *MessageRuleActions) SetMarkImportance(value *Importance)() {
+func (m *MessageRuleActions) SetMarkImportance(value *MessageRuleActions_markImportance)() {
     err := m.GetBackingStore().Set("markImportance", value)
     if err != nil {
         panic(err)
@@ -527,7 +527,7 @@ type MessageRuleActionsable interface {
     GetForwardAsAttachmentTo()([]Recipientable)
     GetForwardTo()([]Recipientable)
     GetMarkAsRead()(*bool)
-    GetMarkImportance()(*Importance)
+    GetMarkImportance()(*MessageRuleActions_markImportance)
     GetMoveToFolder()(*string)
     GetOdataType()(*string)
     GetPermanentDelete()(*bool)
@@ -540,7 +540,7 @@ type MessageRuleActionsable interface {
     SetForwardAsAttachmentTo(value []Recipientable)()
     SetForwardTo(value []Recipientable)()
     SetMarkAsRead(value *bool)()
-    SetMarkImportance(value *Importance)()
+    SetMarkImportance(value *MessageRuleActions_markImportance)()
     SetMoveToFolder(value *string)()
     SetOdataType(value *string)()
     SetPermanentDelete(value *bool)()

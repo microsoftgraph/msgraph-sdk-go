@@ -36,13 +36,13 @@ func (m *MediaStream) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAudioCodec gets the audioCodec property value. Codec name used to encode audio for transmission on the network. Possible values are: unknown, invalid, cn, pcma, pcmu, amrWide, g722, g7221, g7221c, g729, multiChannelAudio, muchv2, opus, satin, satinFullband, rtAudio8, rtAudio16, silk, silkNarrow, silkWide, siren, xmsRta, unknownFutureValue.
-func (m *MediaStream) GetAudioCodec()(*AudioCodec) {
+func (m *MediaStream) GetAudioCodec()(*MediaStream_audioCodec) {
     val, err := m.GetBackingStore().Get("audioCodec")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AudioCodec)
+        return val.(*MediaStream_audioCodec)
     }
     return nil
 }
@@ -197,12 +197,12 @@ func (m *MediaStream) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077
 func (m *MediaStream) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["audioCodec"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAudioCodec)
+        val, err := n.GetEnumValue(ParseMediaStream_audioCodec)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAudioCodec(val.(*AudioCodec))
+            m.SetAudioCodec(val.(*MediaStream_audioCodec))
         }
         return nil
     }
@@ -487,12 +487,12 @@ func (m *MediaStream) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["videoCodec"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseVideoCodec)
+        val, err := n.GetEnumValue(ParseMediaStream_videoCodec)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVideoCodec(val.(*VideoCodec))
+            m.SetVideoCodec(val.(*MediaStream_videoCodec))
         }
         return nil
     }
@@ -674,13 +674,13 @@ func (m *MediaStream) GetStreamId()(*string) {
     return nil
 }
 // GetVideoCodec gets the videoCodec property value. Codec name used to encode video for transmission on the network. Possible values are: unknown, invalid, av1, h263, h264, h264s, h264uc, h265, rtvc1, rtVideo, xrtvc1, unknownFutureValue.
-func (m *MediaStream) GetVideoCodec()(*VideoCodec) {
+func (m *MediaStream) GetVideoCodec()(*MediaStream_videoCodec) {
     val, err := m.GetBackingStore().Get("videoCodec")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*VideoCodec)
+        return val.(*MediaStream_videoCodec)
     }
     return nil
 }
@@ -902,7 +902,7 @@ func (m *MediaStream) SetAdditionalData(value map[string]any)() {
     }
 }
 // SetAudioCodec sets the audioCodec property value. Codec name used to encode audio for transmission on the network. Possible values are: unknown, invalid, cn, pcma, pcmu, amrWide, g722, g7221, g7221c, g729, multiChannelAudio, muchv2, opus, satin, satinFullband, rtAudio8, rtAudio16, silk, silkNarrow, silkWide, siren, xmsRta, unknownFutureValue.
-func (m *MediaStream) SetAudioCodec(value *AudioCodec)() {
+func (m *MediaStream) SetAudioCodec(value *MediaStream_audioCodec)() {
     err := m.GetBackingStore().Set("audioCodec", value)
     if err != nil {
         panic(err)
@@ -1109,7 +1109,7 @@ func (m *MediaStream) SetStreamId(value *string)() {
     }
 }
 // SetVideoCodec sets the videoCodec property value. Codec name used to encode video for transmission on the network. Possible values are: unknown, invalid, av1, h263, h264, h264s, h264uc, h265, rtvc1, rtVideo, xrtvc1, unknownFutureValue.
-func (m *MediaStream) SetVideoCodec(value *VideoCodec)() {
+func (m *MediaStream) SetVideoCodec(value *MediaStream_videoCodec)() {
     err := m.GetBackingStore().Set("videoCodec", value)
     if err != nil {
         panic(err)
@@ -1127,7 +1127,7 @@ type MediaStreamable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAudioCodec()(*AudioCodec)
+    GetAudioCodec()(*MediaStream_audioCodec)
     GetAverageAudioDegradation()(*float32)
     GetAverageAudioNetworkJitter()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetAverageBandwidthEstimate()(*int64)
@@ -1157,9 +1157,9 @@ type MediaStreamable interface {
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetStreamDirection()(*MediaStreamDirection)
     GetStreamId()(*string)
-    GetVideoCodec()(*VideoCodec)
+    GetVideoCodec()(*MediaStream_videoCodec)
     GetWasMediaBypassed()(*bool)
-    SetAudioCodec(value *AudioCodec)()
+    SetAudioCodec(value *MediaStream_audioCodec)()
     SetAverageAudioDegradation(value *float32)()
     SetAverageAudioNetworkJitter(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetAverageBandwidthEstimate(value *int64)()
@@ -1189,6 +1189,6 @@ type MediaStreamable interface {
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetStreamDirection(value *MediaStreamDirection)()
     SetStreamId(value *string)()
-    SetVideoCodec(value *VideoCodec)()
+    SetVideoCodec(value *MediaStream_videoCodec)()
     SetWasMediaBypassed(value *bool)()
 }

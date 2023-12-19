@@ -20,13 +20,13 @@ func CreateBookingCustomQuestionFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewBookingCustomQuestion(), nil
 }
 // GetAnswerInputType gets the answerInputType property value. The expected answer type. The possible values are: text, radioButton, unknownFutureValue.
-func (m *BookingCustomQuestion) GetAnswerInputType()(*AnswerInputType) {
+func (m *BookingCustomQuestion) GetAnswerInputType()(*BookingCustomQuestion_answerInputType) {
     val, err := m.GetBackingStore().Get("answerInputType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AnswerInputType)
+        return val.(*BookingCustomQuestion_answerInputType)
     }
     return nil
 }
@@ -56,12 +56,12 @@ func (m *BookingCustomQuestion) GetDisplayName()(*string) {
 func (m *BookingCustomQuestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["answerInputType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAnswerInputType)
+        val, err := n.GetEnumValue(ParseBookingCustomQuestion_answerInputType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAnswerInputType(val.(*AnswerInputType))
+            m.SetAnswerInputType(val.(*BookingCustomQuestion_answerInputType))
         }
         return nil
     }
@@ -121,7 +121,7 @@ func (m *BookingCustomQuestion) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAnswerInputType sets the answerInputType property value. The expected answer type. The possible values are: text, radioButton, unknownFutureValue.
-func (m *BookingCustomQuestion) SetAnswerInputType(value *AnswerInputType)() {
+func (m *BookingCustomQuestion) SetAnswerInputType(value *BookingCustomQuestion_answerInputType)() {
     err := m.GetBackingStore().Set("answerInputType", value)
     if err != nil {
         panic(err)
@@ -145,10 +145,10 @@ func (m *BookingCustomQuestion) SetDisplayName(value *string)() {
 type BookingCustomQuestionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAnswerInputType()(*AnswerInputType)
+    GetAnswerInputType()(*BookingCustomQuestion_answerInputType)
     GetAnswerOptions()([]string)
     GetDisplayName()(*string)
-    SetAnswerInputType(value *AnswerInputType)()
+    SetAnswerInputType(value *BookingCustomQuestion_answerInputType)()
     SetAnswerOptions(value []string)()
     SetDisplayName(value *string)()
 }

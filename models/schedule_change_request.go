@@ -47,13 +47,13 @@ func CreateScheduleChangeRequestFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewScheduleChangeRequest(), nil
 }
 // GetAssignedTo gets the assignedTo property value. The assignedTo property
-func (m *ScheduleChangeRequest) GetAssignedTo()(*ScheduleChangeRequestActor) {
+func (m *ScheduleChangeRequest) GetAssignedTo()(*ScheduleChangeRequest_assignedTo) {
     val, err := m.GetBackingStore().Get("assignedTo")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ScheduleChangeRequestActor)
+        return val.(*ScheduleChangeRequest_assignedTo)
     }
     return nil
 }
@@ -61,12 +61,12 @@ func (m *ScheduleChangeRequest) GetAssignedTo()(*ScheduleChangeRequestActor) {
 func (m *ScheduleChangeRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ChangeTrackedEntity.GetFieldDeserializers()
     res["assignedTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseScheduleChangeRequestActor)
+        val, err := n.GetEnumValue(ParseScheduleChangeRequest_assignedTo)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAssignedTo(val.(*ScheduleChangeRequestActor))
+            m.SetAssignedTo(val.(*ScheduleChangeRequest_assignedTo))
         }
         return nil
     }
@@ -131,12 +131,12 @@ func (m *ScheduleChangeRequest) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseScheduleChangeState)
+        val, err := n.GetEnumValue(ParseScheduleChangeRequest_state)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetState(val.(*ScheduleChangeState))
+            m.SetState(val.(*ScheduleChangeRequest_state))
         }
         return nil
     }
@@ -209,13 +209,13 @@ func (m *ScheduleChangeRequest) GetSenderUserId()(*string) {
     return nil
 }
 // GetState gets the state property value. The state property
-func (m *ScheduleChangeRequest) GetState()(*ScheduleChangeState) {
+func (m *ScheduleChangeRequest) GetState()(*ScheduleChangeRequest_state) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ScheduleChangeState)
+        return val.(*ScheduleChangeRequest_state)
     }
     return nil
 }
@@ -254,7 +254,7 @@ func (m *ScheduleChangeRequest) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAssignedTo sets the assignedTo property value. The assignedTo property
-func (m *ScheduleChangeRequest) SetAssignedTo(value *ScheduleChangeRequestActor)() {
+func (m *ScheduleChangeRequest) SetAssignedTo(value *ScheduleChangeRequest_assignedTo)() {
     err := m.GetBackingStore().Set("assignedTo", value)
     if err != nil {
         panic(err)
@@ -303,7 +303,7 @@ func (m *ScheduleChangeRequest) SetSenderUserId(value *string)() {
     }
 }
 // SetState sets the state property value. The state property
-func (m *ScheduleChangeRequest) SetState(value *ScheduleChangeState)() {
+func (m *ScheduleChangeRequest) SetState(value *ScheduleChangeRequest_state)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {
         panic(err)
@@ -313,20 +313,20 @@ func (m *ScheduleChangeRequest) SetState(value *ScheduleChangeState)() {
 type ScheduleChangeRequestable interface {
     ChangeTrackedEntityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAssignedTo()(*ScheduleChangeRequestActor)
+    GetAssignedTo()(*ScheduleChangeRequest_assignedTo)
     GetManagerActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetManagerActionMessage()(*string)
     GetManagerUserId()(*string)
     GetSenderDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSenderMessage()(*string)
     GetSenderUserId()(*string)
-    GetState()(*ScheduleChangeState)
-    SetAssignedTo(value *ScheduleChangeRequestActor)()
+    GetState()(*ScheduleChangeRequest_state)
+    SetAssignedTo(value *ScheduleChangeRequest_assignedTo)()
     SetManagerActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetManagerActionMessage(value *string)()
     SetManagerUserId(value *string)()
     SetSenderDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSenderMessage(value *string)()
     SetSenderUserId(value *string)()
-    SetState(value *ScheduleChangeState)()
+    SetState(value *ScheduleChangeRequest_state)()
 }

@@ -181,12 +181,12 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAgreementAcceptanceState)
+        val, err := n.GetEnumValue(ParseAgreementAcceptance_state)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetState(val.(*AgreementAcceptanceState))
+            m.SetState(val.(*AgreementAcceptance_state))
         }
         return nil
     }
@@ -244,13 +244,13 @@ func (m *AgreementAcceptance) GetRecordedDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetState gets the state property value. The state of the agreement acceptance. Possible values are: accepted, declined. Supports $filter (eq).
-func (m *AgreementAcceptance) GetState()(*AgreementAcceptanceState) {
+func (m *AgreementAcceptance) GetState()(*AgreementAcceptance_state) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AgreementAcceptanceState)
+        return val.(*AgreementAcceptance_state)
     }
     return nil
 }
@@ -442,7 +442,7 @@ func (m *AgreementAcceptance) SetRecordedDateTime(value *i336074805fc853987abe6f
     }
 }
 // SetState sets the state property value. The state of the agreement acceptance. Possible values are: accepted, declined. Supports $filter (eq).
-func (m *AgreementAcceptance) SetState(value *AgreementAcceptanceState)() {
+func (m *AgreementAcceptance) SetState(value *AgreementAcceptance_state)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {
         panic(err)
@@ -488,7 +488,7 @@ type AgreementAcceptanceable interface {
     GetDeviceOSVersion()(*string)
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRecordedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetState()(*AgreementAcceptanceState)
+    GetState()(*AgreementAcceptance_state)
     GetUserDisplayName()(*string)
     GetUserEmail()(*string)
     GetUserId()(*string)
@@ -501,7 +501,7 @@ type AgreementAcceptanceable interface {
     SetDeviceOSVersion(value *string)()
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRecordedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetState(value *AgreementAcceptanceState)()
+    SetState(value *AgreementAcceptance_state)()
     SetUserDisplayName(value *string)()
     SetUserEmail(value *string)()
     SetUserId(value *string)()

@@ -87,12 +87,12 @@ func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["holdStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDataSourceHoldStatus)
+        val, err := n.GetEnumValue(ParseDataSourceContainer_holdStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetHoldStatus(val.(*DataSourceHoldStatus))
+            m.SetHoldStatus(val.(*DataSourceContainer_holdStatus))
         }
         return nil
     }
@@ -117,25 +117,25 @@ func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDataSourceContainerStatus)
+        val, err := n.GetEnumValue(ParseDataSourceContainer_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*DataSourceContainerStatus))
+            m.SetStatus(val.(*DataSourceContainer_status))
         }
         return nil
     }
     return res
 }
 // GetHoldStatus gets the holdStatus property value. The hold status of the dataSourceContainer. The possible values are: notApplied, applied, applying, removing, partial
-func (m *DataSourceContainer) GetHoldStatus()(*DataSourceHoldStatus) {
+func (m *DataSourceContainer) GetHoldStatus()(*DataSourceContainer_holdStatus) {
     val, err := m.GetBackingStore().Get("holdStatus")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DataSourceHoldStatus)
+        return val.(*DataSourceContainer_holdStatus)
     }
     return nil
 }
@@ -162,13 +162,13 @@ func (m *DataSourceContainer) GetReleasedDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetStatus gets the status property value. Latest status of the dataSourceContainer. Possible values are: Active, Released.
-func (m *DataSourceContainer) GetStatus()(*DataSourceContainerStatus) {
+func (m *DataSourceContainer) GetStatus()(*DataSourceContainer_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DataSourceContainerStatus)
+        return val.(*DataSourceContainer_status)
     }
     return nil
 }
@@ -233,7 +233,7 @@ func (m *DataSourceContainer) SetDisplayName(value *string)() {
     }
 }
 // SetHoldStatus sets the holdStatus property value. The hold status of the dataSourceContainer. The possible values are: notApplied, applied, applying, removing, partial
-func (m *DataSourceContainer) SetHoldStatus(value *DataSourceHoldStatus)() {
+func (m *DataSourceContainer) SetHoldStatus(value *DataSourceContainer_holdStatus)() {
     err := m.GetBackingStore().Set("holdStatus", value)
     if err != nil {
         panic(err)
@@ -254,7 +254,7 @@ func (m *DataSourceContainer) SetReleasedDateTime(value *i336074805fc853987abe6f
     }
 }
 // SetStatus sets the status property value. Latest status of the dataSourceContainer. Possible values are: Active, Released.
-func (m *DataSourceContainer) SetStatus(value *DataSourceContainerStatus)() {
+func (m *DataSourceContainer) SetStatus(value *DataSourceContainer_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -266,14 +266,14 @@ type DataSourceContainerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDisplayName()(*string)
-    GetHoldStatus()(*DataSourceHoldStatus)
+    GetHoldStatus()(*DataSourceContainer_holdStatus)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetReleasedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetStatus()(*DataSourceContainerStatus)
+    GetStatus()(*DataSourceContainer_status)
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDisplayName(value *string)()
-    SetHoldStatus(value *DataSourceHoldStatus)()
+    SetHoldStatus(value *DataSourceContainer_holdStatus)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetReleasedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetStatus(value *DataSourceContainerStatus)()
+    SetStatus(value *DataSourceContainer_status)()
 }

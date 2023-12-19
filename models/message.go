@@ -272,22 +272,22 @@ func (m *Message) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     res["importance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseImportance)
+        val, err := n.GetEnumValue(ParseMessage_importance)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetImportance(val.(*Importance))
+            m.SetImportance(val.(*Message_importance))
         }
         return nil
     }
     res["inferenceClassification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseInferenceClassificationType)
+        val, err := n.GetEnumValue(ParseMessage_inferenceClassification)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInferenceClassification(val.(*InferenceClassificationType))
+            m.SetInferenceClassification(val.(*Message_inferenceClassification))
         }
         return nil
     }
@@ -527,24 +527,24 @@ func (m *Message) GetHasAttachments()(*bool) {
     return nil
 }
 // GetImportance gets the importance property value. The importance property
-func (m *Message) GetImportance()(*Importance) {
+func (m *Message) GetImportance()(*Message_importance) {
     val, err := m.GetBackingStore().Get("importance")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*Importance)
+        return val.(*Message_importance)
     }
     return nil
 }
 // GetInferenceClassification gets the inferenceClassification property value. The inferenceClassification property
-func (m *Message) GetInferenceClassification()(*InferenceClassificationType) {
+func (m *Message) GetInferenceClassification()(*Message_inferenceClassification) {
     val, err := m.GetBackingStore().Get("inferenceClassification")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*InferenceClassificationType)
+        return val.(*Message_inferenceClassification)
     }
     return nil
 }
@@ -1057,14 +1057,14 @@ func (m *Message) SetHasAttachments(value *bool)() {
     }
 }
 // SetImportance sets the importance property value. The importance property
-func (m *Message) SetImportance(value *Importance)() {
+func (m *Message) SetImportance(value *Message_importance)() {
     err := m.GetBackingStore().Set("importance", value)
     if err != nil {
         panic(err)
     }
 }
 // SetInferenceClassification sets the inferenceClassification property value. The inferenceClassification property
-func (m *Message) SetInferenceClassification(value *InferenceClassificationType)() {
+func (m *Message) SetInferenceClassification(value *Message_inferenceClassification)() {
     err := m.GetBackingStore().Set("inferenceClassification", value)
     if err != nil {
         panic(err)
@@ -1204,8 +1204,8 @@ type Messageable interface {
     GetFlag()(FollowupFlagable)
     GetFrom()(Recipientable)
     GetHasAttachments()(*bool)
-    GetImportance()(*Importance)
-    GetInferenceClassification()(*InferenceClassificationType)
+    GetImportance()(*Message_importance)
+    GetInferenceClassification()(*Message_inferenceClassification)
     GetInternetMessageHeaders()([]InternetMessageHeaderable)
     GetInternetMessageId()(*string)
     GetIsDeliveryReceiptRequested()(*bool)
@@ -1234,8 +1234,8 @@ type Messageable interface {
     SetFlag(value FollowupFlagable)()
     SetFrom(value Recipientable)()
     SetHasAttachments(value *bool)()
-    SetImportance(value *Importance)()
-    SetInferenceClassification(value *InferenceClassificationType)()
+    SetImportance(value *Message_importance)()
+    SetInferenceClassification(value *Message_inferenceClassification)()
     SetInternetMessageHeaders(value []InternetMessageHeaderable)()
     SetInternetMessageId(value *string)()
     SetIsDeliveryReceiptRequested(value *bool)()

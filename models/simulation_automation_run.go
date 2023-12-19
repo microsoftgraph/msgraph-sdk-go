@@ -65,12 +65,12 @@ func (m *SimulationAutomationRun) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSimulationAutomationRunStatus)
+        val, err := n.GetEnumValue(ParseSimulationAutomationRun_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*SimulationAutomationRunStatus))
+            m.SetStatus(val.(*SimulationAutomationRun_status))
         }
         return nil
     }
@@ -99,13 +99,13 @@ func (m *SimulationAutomationRun) GetStartDateTime()(*i336074805fc853987abe6f7fe
     return nil
 }
 // GetStatus gets the status property value. Status of the attack simulation automation run. The possible values are: unknown, running, succeeded, failed, skipped, unknownFutureValue.
-func (m *SimulationAutomationRun) GetStatus()(*SimulationAutomationRunStatus) {
+func (m *SimulationAutomationRun) GetStatus()(*SimulationAutomationRun_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*SimulationAutomationRunStatus)
+        return val.(*SimulationAutomationRun_status)
     }
     return nil
 }
@@ -164,7 +164,7 @@ func (m *SimulationAutomationRun) SetStartDateTime(value *i336074805fc853987abe6
     }
 }
 // SetStatus sets the status property value. Status of the attack simulation automation run. The possible values are: unknown, running, succeeded, failed, skipped, unknownFutureValue.
-func (m *SimulationAutomationRun) SetStatus(value *SimulationAutomationRunStatus)() {
+func (m *SimulationAutomationRun) SetStatus(value *SimulationAutomationRun_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -177,9 +177,9 @@ type SimulationAutomationRunable interface {
     GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSimulationId()(*string)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetStatus()(*SimulationAutomationRunStatus)
+    GetStatus()(*SimulationAutomationRun_status)
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSimulationId(value *string)()
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetStatus(value *SimulationAutomationRunStatus)()
+    SetStatus(value *SimulationAutomationRun_status)()
 }

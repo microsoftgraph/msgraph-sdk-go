@@ -45,13 +45,13 @@ func (m *Fido2AuthenticationMethod) GetAttestationCertificates()([]string) {
     return nil
 }
 // GetAttestationLevel gets the attestationLevel property value. The attestation level of this FIDO2 security key. Possible values are: attested, or notAttested.
-func (m *Fido2AuthenticationMethod) GetAttestationLevel()(*AttestationLevel) {
+func (m *Fido2AuthenticationMethod) GetAttestationLevel()(*Fido2AuthenticationMethod_attestationLevel) {
     val, err := m.GetBackingStore().Get("attestationLevel")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AttestationLevel)
+        return val.(*Fido2AuthenticationMethod_attestationLevel)
     }
     return nil
 }
@@ -107,12 +107,12 @@ func (m *Fido2AuthenticationMethod) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     res["attestationLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAttestationLevel)
+        val, err := n.GetEnumValue(ParseFido2AuthenticationMethod_attestationLevel)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAttestationLevel(val.(*AttestationLevel))
+            m.SetAttestationLevel(val.(*Fido2AuthenticationMethod_attestationLevel))
         }
         return nil
     }
@@ -219,7 +219,7 @@ func (m *Fido2AuthenticationMethod) SetAttestationCertificates(value []string)()
     }
 }
 // SetAttestationLevel sets the attestationLevel property value. The attestation level of this FIDO2 security key. Possible values are: attested, or notAttested.
-func (m *Fido2AuthenticationMethod) SetAttestationLevel(value *AttestationLevel)() {
+func (m *Fido2AuthenticationMethod) SetAttestationLevel(value *Fido2AuthenticationMethod_attestationLevel)() {
     err := m.GetBackingStore().Set("attestationLevel", value)
     if err != nil {
         panic(err)
@@ -252,13 +252,13 @@ type Fido2AuthenticationMethodable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAaGuid()(*string)
     GetAttestationCertificates()([]string)
-    GetAttestationLevel()(*AttestationLevel)
+    GetAttestationLevel()(*Fido2AuthenticationMethod_attestationLevel)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDisplayName()(*string)
     GetModel()(*string)
     SetAaGuid(value *string)()
     SetAttestationCertificates(value []string)()
-    SetAttestationLevel(value *AttestationLevel)()
+    SetAttestationLevel(value *Fido2AuthenticationMethod_attestationLevel)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDisplayName(value *string)()
     SetModel(value *string)()

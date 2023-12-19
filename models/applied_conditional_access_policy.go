@@ -137,12 +137,12 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["result"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAppliedConditionalAccessPolicyResult)
+        val, err := n.GetEnumValue(ParseAppliedConditionalAccessPolicy_result)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetResult(val.(*AppliedConditionalAccessPolicyResult))
+            m.SetResult(val.(*AppliedConditionalAccessPolicy_result))
         }
         return nil
     }
@@ -171,13 +171,13 @@ func (m *AppliedConditionalAccessPolicy) GetOdataType()(*string) {
     return nil
 }
 // GetResult gets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions weren't met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.
-func (m *AppliedConditionalAccessPolicy) GetResult()(*AppliedConditionalAccessPolicyResult) {
+func (m *AppliedConditionalAccessPolicy) GetResult()(*AppliedConditionalAccessPolicy_result) {
     val, err := m.GetBackingStore().Get("result")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AppliedConditionalAccessPolicyResult)
+        return val.(*AppliedConditionalAccessPolicy_result)
     }
     return nil
 }
@@ -275,7 +275,7 @@ func (m *AppliedConditionalAccessPolicy) SetOdataType(value *string)() {
     }
 }
 // SetResult sets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions weren't met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.
-func (m *AppliedConditionalAccessPolicy) SetResult(value *AppliedConditionalAccessPolicyResult)() {
+func (m *AppliedConditionalAccessPolicy) SetResult(value *AppliedConditionalAccessPolicy_result)() {
     err := m.GetBackingStore().Set("result", value)
     if err != nil {
         panic(err)
@@ -292,12 +292,12 @@ type AppliedConditionalAccessPolicyable interface {
     GetEnforcedSessionControls()([]string)
     GetId()(*string)
     GetOdataType()(*string)
-    GetResult()(*AppliedConditionalAccessPolicyResult)
+    GetResult()(*AppliedConditionalAccessPolicy_result)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDisplayName(value *string)()
     SetEnforcedGrantControls(value []string)()
     SetEnforcedSessionControls(value []string)()
     SetId(value *string)()
     SetOdataType(value *string)()
-    SetResult(value *AppliedConditionalAccessPolicyResult)()
+    SetResult(value *AppliedConditionalAccessPolicy_result)()
 }

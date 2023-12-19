@@ -63,12 +63,12 @@ func (m *MicrosoftCustomTrainingSetting) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["trainingCompletionDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTrainingCompletionDuration)
+        val, err := n.GetEnumValue(ParseMicrosoftCustomTrainingSetting_trainingCompletionDuration)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTrainingCompletionDuration(val.(*TrainingCompletionDuration))
+            m.SetTrainingCompletionDuration(val.(*MicrosoftCustomTrainingSetting_trainingCompletionDuration))
         }
         return nil
     }
@@ -86,13 +86,13 @@ func (m *MicrosoftCustomTrainingSetting) GetTrainingAssignmentMappings()([]Micro
     return nil
 }
 // GetTrainingCompletionDuration gets the trainingCompletionDuration property value. The training completion duration that needs to be provided before scheduling the training. Possible values are: week, fortnite, month, unknownFutureValue.
-func (m *MicrosoftCustomTrainingSetting) GetTrainingCompletionDuration()(*TrainingCompletionDuration) {
+func (m *MicrosoftCustomTrainingSetting) GetTrainingCompletionDuration()(*MicrosoftCustomTrainingSetting_trainingCompletionDuration) {
     val, err := m.GetBackingStore().Get("trainingCompletionDuration")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TrainingCompletionDuration)
+        return val.(*MicrosoftCustomTrainingSetting_trainingCompletionDuration)
     }
     return nil
 }
@@ -144,7 +144,7 @@ func (m *MicrosoftCustomTrainingSetting) SetTrainingAssignmentMappings(value []M
     }
 }
 // SetTrainingCompletionDuration sets the trainingCompletionDuration property value. The training completion duration that needs to be provided before scheduling the training. Possible values are: week, fortnite, month, unknownFutureValue.
-func (m *MicrosoftCustomTrainingSetting) SetTrainingCompletionDuration(value *TrainingCompletionDuration)() {
+func (m *MicrosoftCustomTrainingSetting) SetTrainingCompletionDuration(value *MicrosoftCustomTrainingSetting_trainingCompletionDuration)() {
     err := m.GetBackingStore().Set("trainingCompletionDuration", value)
     if err != nil {
         panic(err)
@@ -156,8 +156,8 @@ type MicrosoftCustomTrainingSettingable interface {
     TrainingSettingable
     GetCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetTrainingAssignmentMappings()([]MicrosoftTrainingAssignmentMappingable)
-    GetTrainingCompletionDuration()(*TrainingCompletionDuration)
+    GetTrainingCompletionDuration()(*MicrosoftCustomTrainingSetting_trainingCompletionDuration)
     SetCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetTrainingAssignmentMappings(value []MicrosoftTrainingAssignmentMappingable)()
-    SetTrainingCompletionDuration(value *TrainingCompletionDuration)()
+    SetTrainingCompletionDuration(value *MicrosoftCustomTrainingSetting_trainingCompletionDuration)()
 }

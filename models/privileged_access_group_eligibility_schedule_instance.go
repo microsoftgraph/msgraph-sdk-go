@@ -22,13 +22,13 @@ func CreatePrivilegedAccessGroupEligibilityScheduleInstanceFromDiscriminatorValu
     return NewPrivilegedAccessGroupEligibilityScheduleInstance(), nil
 }
 // GetAccessId gets the accessId property value. The identifier of the membership or ownership eligibility relationship to the group. Required. The possible values are: owner, member. Supports $filter (eq).
-func (m *PrivilegedAccessGroupEligibilityScheduleInstance) GetAccessId()(*PrivilegedAccessGroupRelationships) {
+func (m *PrivilegedAccessGroupEligibilityScheduleInstance) GetAccessId()(*PrivilegedAccessGroupEligibilityScheduleInstance_accessId) {
     val, err := m.GetBackingStore().Get("accessId")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PrivilegedAccessGroupRelationships)
+        return val.(*PrivilegedAccessGroupEligibilityScheduleInstance_accessId)
     }
     return nil
 }
@@ -47,12 +47,12 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstance) GetEligibilitySchedul
 func (m *PrivilegedAccessGroupEligibilityScheduleInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PrivilegedAccessScheduleInstance.GetFieldDeserializers()
     res["accessId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePrivilegedAccessGroupRelationships)
+        val, err := n.GetEnumValue(ParsePrivilegedAccessGroupEligibilityScheduleInstance_accessId)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccessId(val.(*PrivilegedAccessGroupRelationships))
+            m.SetAccessId(val.(*PrivilegedAccessGroupEligibilityScheduleInstance_accessId))
         }
         return nil
     }
@@ -87,12 +87,12 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstance) GetFieldDeserializers
         return nil
     }
     res["memberType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePrivilegedAccessGroupMemberType)
+        val, err := n.GetEnumValue(ParsePrivilegedAccessGroupEligibilityScheduleInstance_memberType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMemberType(val.(*PrivilegedAccessGroupMemberType))
+            m.SetMemberType(val.(*PrivilegedAccessGroupEligibilityScheduleInstance_memberType))
         }
         return nil
     }
@@ -141,13 +141,13 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstance) GetGroupId()(*string)
     return nil
 }
 // GetMemberType gets the memberType property value. Indicates whether the assignment is derived from a group assignment. It can further imply whether the calling principal can manage the assignment schedule. Required. The possible values are: direct, group, unknownFutureValue. Supports $filter (eq).
-func (m *PrivilegedAccessGroupEligibilityScheduleInstance) GetMemberType()(*PrivilegedAccessGroupMemberType) {
+func (m *PrivilegedAccessGroupEligibilityScheduleInstance) GetMemberType()(*PrivilegedAccessGroupEligibilityScheduleInstance_memberType) {
     val, err := m.GetBackingStore().Get("memberType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PrivilegedAccessGroupMemberType)
+        return val.(*PrivilegedAccessGroupEligibilityScheduleInstance_memberType)
     }
     return nil
 }
@@ -226,7 +226,7 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstance) Serialize(writer i878
     return nil
 }
 // SetAccessId sets the accessId property value. The identifier of the membership or ownership eligibility relationship to the group. Required. The possible values are: owner, member. Supports $filter (eq).
-func (m *PrivilegedAccessGroupEligibilityScheduleInstance) SetAccessId(value *PrivilegedAccessGroupRelationships)() {
+func (m *PrivilegedAccessGroupEligibilityScheduleInstance) SetAccessId(value *PrivilegedAccessGroupEligibilityScheduleInstance_accessId)() {
     err := m.GetBackingStore().Set("accessId", value)
     if err != nil {
         panic(err)
@@ -254,7 +254,7 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstance) SetGroupId(value *str
     }
 }
 // SetMemberType sets the memberType property value. Indicates whether the assignment is derived from a group assignment. It can further imply whether the calling principal can manage the assignment schedule. Required. The possible values are: direct, group, unknownFutureValue. Supports $filter (eq).
-func (m *PrivilegedAccessGroupEligibilityScheduleInstance) SetMemberType(value *PrivilegedAccessGroupMemberType)() {
+func (m *PrivilegedAccessGroupEligibilityScheduleInstance) SetMemberType(value *PrivilegedAccessGroupEligibilityScheduleInstance_memberType)() {
     err := m.GetBackingStore().Set("memberType", value)
     if err != nil {
         panic(err)
@@ -278,18 +278,18 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstance) SetPrincipalId(value 
 type PrivilegedAccessGroupEligibilityScheduleInstanceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PrivilegedAccessScheduleInstanceable
-    GetAccessId()(*PrivilegedAccessGroupRelationships)
+    GetAccessId()(*PrivilegedAccessGroupEligibilityScheduleInstance_accessId)
     GetEligibilityScheduleId()(*string)
     GetGroup()(Groupable)
     GetGroupId()(*string)
-    GetMemberType()(*PrivilegedAccessGroupMemberType)
+    GetMemberType()(*PrivilegedAccessGroupEligibilityScheduleInstance_memberType)
     GetPrincipal()(DirectoryObjectable)
     GetPrincipalId()(*string)
-    SetAccessId(value *PrivilegedAccessGroupRelationships)()
+    SetAccessId(value *PrivilegedAccessGroupEligibilityScheduleInstance_accessId)()
     SetEligibilityScheduleId(value *string)()
     SetGroup(value Groupable)()
     SetGroupId(value *string)()
-    SetMemberType(value *PrivilegedAccessGroupMemberType)()
+    SetMemberType(value *PrivilegedAccessGroupEligibilityScheduleInstance_memberType)()
     SetPrincipal(value DirectoryObjectable)()
     SetPrincipalId(value *string)()
 }

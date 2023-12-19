@@ -42,13 +42,13 @@ func (m *TeamsApp) GetDisplayName()(*string) {
     return nil
 }
 // GetDistributionMethod gets the distributionMethod property value. The method of distribution for the app. Read-only.
-func (m *TeamsApp) GetDistributionMethod()(*TeamsAppDistributionMethod) {
+func (m *TeamsApp) GetDistributionMethod()(*TeamsApp_distributionMethod) {
     val, err := m.GetBackingStore().Get("distributionMethod")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*TeamsAppDistributionMethod)
+        return val.(*TeamsApp_distributionMethod)
     }
     return nil
 }
@@ -93,12 +93,12 @@ func (m *TeamsApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["distributionMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTeamsAppDistributionMethod)
+        val, err := n.GetEnumValue(ParseTeamsApp_distributionMethod)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDistributionMethod(val.(*TeamsAppDistributionMethod))
+            m.SetDistributionMethod(val.(*TeamsApp_distributionMethod))
         }
         return nil
     }
@@ -168,7 +168,7 @@ func (m *TeamsApp) SetDisplayName(value *string)() {
     }
 }
 // SetDistributionMethod sets the distributionMethod property value. The method of distribution for the app. Read-only.
-func (m *TeamsApp) SetDistributionMethod(value *TeamsAppDistributionMethod)() {
+func (m *TeamsApp) SetDistributionMethod(value *TeamsApp_distributionMethod)() {
     err := m.GetBackingStore().Set("distributionMethod", value)
     if err != nil {
         panic(err)
@@ -187,10 +187,10 @@ type TeamsAppable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAppDefinitions()([]TeamsAppDefinitionable)
     GetDisplayName()(*string)
-    GetDistributionMethod()(*TeamsAppDistributionMethod)
+    GetDistributionMethod()(*TeamsApp_distributionMethod)
     GetExternalId()(*string)
     SetAppDefinitions(value []TeamsAppDefinitionable)()
     SetDisplayName(value *string)()
-    SetDistributionMethod(value *TeamsAppDistributionMethod)()
+    SetDistributionMethod(value *TeamsApp_distributionMethod)()
     SetExternalId(value *string)()
 }

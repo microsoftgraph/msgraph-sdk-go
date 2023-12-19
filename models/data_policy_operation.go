@@ -55,12 +55,12 @@ func (m *DataPolicyOperation) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDataPolicyOperationStatus)
+        val, err := n.GetEnumValue(ParseDataPolicyOperation_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*DataPolicyOperationStatus))
+            m.SetStatus(val.(*DataPolicyOperation_status))
         }
         return nil
     }
@@ -108,13 +108,13 @@ func (m *DataPolicyOperation) GetProgress()(*float64) {
     return nil
 }
 // GetStatus gets the status property value. Possible values are: notStarted, running, complete, failed, unknownFutureValue.
-func (m *DataPolicyOperation) GetStatus()(*DataPolicyOperationStatus) {
+func (m *DataPolicyOperation) GetStatus()(*DataPolicyOperation_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*DataPolicyOperationStatus)
+        return val.(*DataPolicyOperation_status)
     }
     return nil
 }
@@ -211,7 +211,7 @@ func (m *DataPolicyOperation) SetProgress(value *float64)() {
     }
 }
 // SetStatus sets the status property value. Possible values are: notStarted, running, complete, failed, unknownFutureValue.
-func (m *DataPolicyOperation) SetStatus(value *DataPolicyOperationStatus)() {
+func (m *DataPolicyOperation) SetStatus(value *DataPolicyOperation_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -244,13 +244,13 @@ type DataPolicyOperationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetProgress()(*float64)
-    GetStatus()(*DataPolicyOperationStatus)
+    GetStatus()(*DataPolicyOperation_status)
     GetStorageLocation()(*string)
     GetSubmittedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetUserId()(*string)
     SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetProgress(value *float64)()
-    SetStatus(value *DataPolicyOperationStatus)()
+    SetStatus(value *DataPolicyOperation_status)()
     SetStorageLocation(value *string)()
     SetSubmittedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetUserId(value *string)()

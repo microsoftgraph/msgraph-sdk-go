@@ -73,13 +73,13 @@ func (m *AlertHistoryState) GetComments()([]string) {
     return nil
 }
 // GetFeedback gets the feedback property value. The feedback property
-func (m *AlertHistoryState) GetFeedback()(*AlertFeedback) {
+func (m *AlertHistoryState) GetFeedback()(*AlertHistoryState_feedback) {
     val, err := m.GetBackingStore().Get("feedback")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AlertFeedback)
+        return val.(*AlertHistoryState_feedback)
     }
     return nil
 }
@@ -123,12 +123,12 @@ func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["feedback"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAlertFeedback)
+        val, err := n.GetEnumValue(ParseAlertHistoryState_feedback)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetFeedback(val.(*AlertFeedback))
+            m.SetFeedback(val.(*AlertHistoryState_feedback))
         }
         return nil
     }
@@ -143,12 +143,12 @@ func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAlertStatus)
+        val, err := n.GetEnumValue(ParseAlertHistoryState_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*AlertStatus))
+            m.SetStatus(val.(*AlertHistoryState_status))
         }
         return nil
     }
@@ -186,13 +186,13 @@ func (m *AlertHistoryState) GetOdataType()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The status property
-func (m *AlertHistoryState) GetStatus()(*AlertStatus) {
+func (m *AlertHistoryState) GetStatus()(*AlertHistoryState_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AlertStatus)
+        return val.(*AlertHistoryState_status)
     }
     return nil
 }
@@ -311,7 +311,7 @@ func (m *AlertHistoryState) SetComments(value []string)() {
     }
 }
 // SetFeedback sets the feedback property value. The feedback property
-func (m *AlertHistoryState) SetFeedback(value *AlertFeedback)() {
+func (m *AlertHistoryState) SetFeedback(value *AlertHistoryState_feedback)() {
     err := m.GetBackingStore().Set("feedback", value)
     if err != nil {
         panic(err)
@@ -325,7 +325,7 @@ func (m *AlertHistoryState) SetOdataType(value *string)() {
     }
 }
 // SetStatus sets the status property value. The status property
-func (m *AlertHistoryState) SetStatus(value *AlertStatus)() {
+func (m *AlertHistoryState) SetStatus(value *AlertHistoryState_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -354,18 +354,18 @@ type AlertHistoryStateable interface {
     GetAssignedTo()(*string)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetComments()([]string)
-    GetFeedback()(*AlertFeedback)
+    GetFeedback()(*AlertHistoryState_feedback)
     GetOdataType()(*string)
-    GetStatus()(*AlertStatus)
+    GetStatus()(*AlertHistoryState_status)
     GetUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetUser()(*string)
     SetAppId(value *string)()
     SetAssignedTo(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetComments(value []string)()
-    SetFeedback(value *AlertFeedback)()
+    SetFeedback(value *AlertHistoryState_feedback)()
     SetOdataType(value *string)()
-    SetStatus(value *AlertStatus)()
+    SetStatus(value *AlertHistoryState_status)()
     SetUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetUser(value *string)()
 }

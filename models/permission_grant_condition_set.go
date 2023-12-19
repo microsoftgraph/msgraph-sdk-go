@@ -151,12 +151,12 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     res["permissionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePermissionType)
+        val, err := n.GetEnumValue(ParsePermissionGrantConditionSet_permissionType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPermissionType(val.(*PermissionType))
+            m.SetPermissionType(val.(*PermissionGrantConditionSet_permissionType))
         }
         return nil
     }
@@ -195,13 +195,13 @@ func (m *PermissionGrantConditionSet) GetPermissions()([]string) {
     return nil
 }
 // GetPermissionType gets the permissionType property value. The permission type of the permission being granted. Possible values: application for application permissions (for example app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions that haven't been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but can't be used in custom permission grant policies. Required.
-func (m *PermissionGrantConditionSet) GetPermissionType()(*PermissionType) {
+func (m *PermissionGrantConditionSet) GetPermissionType()(*PermissionGrantConditionSet_permissionType) {
     val, err := m.GetBackingStore().Get("permissionType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PermissionType)
+        return val.(*PermissionGrantConditionSet_permissionType)
     }
     return nil
 }
@@ -316,7 +316,7 @@ func (m *PermissionGrantConditionSet) SetPermissions(value []string)() {
     }
 }
 // SetPermissionType sets the permissionType property value. The permission type of the permission being granted. Possible values: application for application permissions (for example app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions that haven't been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but can't be used in custom permission grant policies. Required.
-func (m *PermissionGrantConditionSet) SetPermissionType(value *PermissionType)() {
+func (m *PermissionGrantConditionSet) SetPermissionType(value *PermissionGrantConditionSet_permissionType)() {
     err := m.GetBackingStore().Set("permissionType", value)
     if err != nil {
         panic(err)
@@ -339,7 +339,7 @@ type PermissionGrantConditionSetable interface {
     GetClientApplicationTenantIds()([]string)
     GetPermissionClassification()(*string)
     GetPermissions()([]string)
-    GetPermissionType()(*PermissionType)
+    GetPermissionType()(*PermissionGrantConditionSet_permissionType)
     GetResourceApplication()(*string)
     SetClientApplicationIds(value []string)()
     SetClientApplicationPublisherIds(value []string)()
@@ -347,6 +347,6 @@ type PermissionGrantConditionSetable interface {
     SetClientApplicationTenantIds(value []string)()
     SetPermissionClassification(value *string)()
     SetPermissions(value []string)()
-    SetPermissionType(value *PermissionType)()
+    SetPermissionType(value *PermissionGrantConditionSet_permissionType)()
     SetResourceApplication(value *string)()
 }

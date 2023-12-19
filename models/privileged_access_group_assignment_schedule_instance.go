@@ -22,13 +22,13 @@ func CreatePrivilegedAccessGroupAssignmentScheduleInstanceFromDiscriminatorValue
     return NewPrivilegedAccessGroupAssignmentScheduleInstance(), nil
 }
 // GetAccessId gets the accessId property value. The identifier of the membership or ownership assignment relationship to the group. Required. The possible values are: owner, member,  unknownFutureValue. Supports $filter (eq).
-func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetAccessId()(*PrivilegedAccessGroupRelationships) {
+func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetAccessId()(*PrivilegedAccessGroupAssignmentScheduleInstance_accessId) {
     val, err := m.GetBackingStore().Get("accessId")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PrivilegedAccessGroupRelationships)
+        return val.(*PrivilegedAccessGroupAssignmentScheduleInstance_accessId)
     }
     return nil
 }
@@ -55,13 +55,13 @@ func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetAssignmentScheduleI
     return nil
 }
 // GetAssignmentType gets the assignmentType property value. Indicates whether the membership or ownership assignment is granted through activation of an eligibility or through direct assignment. Required. The possible values are: assigned, activated, unknownFutureValue. Supports $filter (eq).
-func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetAssignmentType()(*PrivilegedAccessGroupAssignmentType) {
+func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetAssignmentType()(*PrivilegedAccessGroupAssignmentScheduleInstance_assignmentType) {
     val, err := m.GetBackingStore().Get("assignmentType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PrivilegedAccessGroupAssignmentType)
+        return val.(*PrivilegedAccessGroupAssignmentScheduleInstance_assignmentType)
     }
     return nil
 }
@@ -69,12 +69,12 @@ func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetAssignmentType()(*P
 func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PrivilegedAccessScheduleInstance.GetFieldDeserializers()
     res["accessId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePrivilegedAccessGroupRelationships)
+        val, err := n.GetEnumValue(ParsePrivilegedAccessGroupAssignmentScheduleInstance_accessId)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAccessId(val.(*PrivilegedAccessGroupRelationships))
+            m.SetAccessId(val.(*PrivilegedAccessGroupAssignmentScheduleInstance_accessId))
         }
         return nil
     }
@@ -99,12 +99,12 @@ func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetFieldDeserializers(
         return nil
     }
     res["assignmentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePrivilegedAccessGroupAssignmentType)
+        val, err := n.GetEnumValue(ParsePrivilegedAccessGroupAssignmentScheduleInstance_assignmentType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAssignmentType(val.(*PrivilegedAccessGroupAssignmentType))
+            m.SetAssignmentType(val.(*PrivilegedAccessGroupAssignmentScheduleInstance_assignmentType))
         }
         return nil
     }
@@ -129,12 +129,12 @@ func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetFieldDeserializers(
         return nil
     }
     res["memberType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePrivilegedAccessGroupMemberType)
+        val, err := n.GetEnumValue(ParsePrivilegedAccessGroupAssignmentScheduleInstance_memberType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMemberType(val.(*PrivilegedAccessGroupMemberType))
+            m.SetMemberType(val.(*PrivilegedAccessGroupAssignmentScheduleInstance_memberType))
         }
         return nil
     }
@@ -183,13 +183,13 @@ func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetGroupId()(*string) 
     return nil
 }
 // GetMemberType gets the memberType property value. Indicates whether the assignment is derived from a group assignment. It can further imply whether the caller can manage the assignment schedule. Required. The possible values are: direct, group, unknownFutureValue. Supports $filter (eq).
-func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetMemberType()(*PrivilegedAccessGroupMemberType) {
+func (m *PrivilegedAccessGroupAssignmentScheduleInstance) GetMemberType()(*PrivilegedAccessGroupAssignmentScheduleInstance_memberType) {
     val, err := m.GetBackingStore().Get("memberType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PrivilegedAccessGroupMemberType)
+        return val.(*PrivilegedAccessGroupAssignmentScheduleInstance_memberType)
     }
     return nil
 }
@@ -281,7 +281,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleInstance) Serialize(writer i878a
     return nil
 }
 // SetAccessId sets the accessId property value. The identifier of the membership or ownership assignment relationship to the group. Required. The possible values are: owner, member,  unknownFutureValue. Supports $filter (eq).
-func (m *PrivilegedAccessGroupAssignmentScheduleInstance) SetAccessId(value *PrivilegedAccessGroupRelationships)() {
+func (m *PrivilegedAccessGroupAssignmentScheduleInstance) SetAccessId(value *PrivilegedAccessGroupAssignmentScheduleInstance_accessId)() {
     err := m.GetBackingStore().Set("accessId", value)
     if err != nil {
         panic(err)
@@ -302,7 +302,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleInstance) SetAssignmentScheduleI
     }
 }
 // SetAssignmentType sets the assignmentType property value. Indicates whether the membership or ownership assignment is granted through activation of an eligibility or through direct assignment. Required. The possible values are: assigned, activated, unknownFutureValue. Supports $filter (eq).
-func (m *PrivilegedAccessGroupAssignmentScheduleInstance) SetAssignmentType(value *PrivilegedAccessGroupAssignmentType)() {
+func (m *PrivilegedAccessGroupAssignmentScheduleInstance) SetAssignmentType(value *PrivilegedAccessGroupAssignmentScheduleInstance_assignmentType)() {
     err := m.GetBackingStore().Set("assignmentType", value)
     if err != nil {
         panic(err)
@@ -323,7 +323,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleInstance) SetGroupId(value *stri
     }
 }
 // SetMemberType sets the memberType property value. Indicates whether the assignment is derived from a group assignment. It can further imply whether the caller can manage the assignment schedule. Required. The possible values are: direct, group, unknownFutureValue. Supports $filter (eq).
-func (m *PrivilegedAccessGroupAssignmentScheduleInstance) SetMemberType(value *PrivilegedAccessGroupMemberType)() {
+func (m *PrivilegedAccessGroupAssignmentScheduleInstance) SetMemberType(value *PrivilegedAccessGroupAssignmentScheduleInstance_memberType)() {
     err := m.GetBackingStore().Set("memberType", value)
     if err != nil {
         panic(err)
@@ -347,22 +347,22 @@ func (m *PrivilegedAccessGroupAssignmentScheduleInstance) SetPrincipalId(value *
 type PrivilegedAccessGroupAssignmentScheduleInstanceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PrivilegedAccessScheduleInstanceable
-    GetAccessId()(*PrivilegedAccessGroupRelationships)
+    GetAccessId()(*PrivilegedAccessGroupAssignmentScheduleInstance_accessId)
     GetActivatedUsing()(PrivilegedAccessGroupEligibilityScheduleInstanceable)
     GetAssignmentScheduleId()(*string)
-    GetAssignmentType()(*PrivilegedAccessGroupAssignmentType)
+    GetAssignmentType()(*PrivilegedAccessGroupAssignmentScheduleInstance_assignmentType)
     GetGroup()(Groupable)
     GetGroupId()(*string)
-    GetMemberType()(*PrivilegedAccessGroupMemberType)
+    GetMemberType()(*PrivilegedAccessGroupAssignmentScheduleInstance_memberType)
     GetPrincipal()(DirectoryObjectable)
     GetPrincipalId()(*string)
-    SetAccessId(value *PrivilegedAccessGroupRelationships)()
+    SetAccessId(value *PrivilegedAccessGroupAssignmentScheduleInstance_accessId)()
     SetActivatedUsing(value PrivilegedAccessGroupEligibilityScheduleInstanceable)()
     SetAssignmentScheduleId(value *string)()
-    SetAssignmentType(value *PrivilegedAccessGroupAssignmentType)()
+    SetAssignmentType(value *PrivilegedAccessGroupAssignmentScheduleInstance_assignmentType)()
     SetGroup(value Groupable)()
     SetGroupId(value *string)()
-    SetMemberType(value *PrivilegedAccessGroupMemberType)()
+    SetMemberType(value *PrivilegedAccessGroupAssignmentScheduleInstance_memberType)()
     SetPrincipal(value DirectoryObjectable)()
     SetPrincipalId(value *string)()
 }

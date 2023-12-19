@@ -21,7 +21,7 @@ func NewVirtualEventSession()(*VirtualEventSession) {
 func CreateVirtualEventSessionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVirtualEventSession(), nil
 }
-// GetEndDateTime gets the endDateTime property value. The endDateTime property
+// GetEndDateTime gets the endDateTime property value. The virtual event session end time.
 func (m *VirtualEventSession) GetEndDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -57,7 +57,7 @@ func (m *VirtualEventSession) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetStartDateTime gets the startDateTime property value. The startDateTime property
+// GetStartDateTime gets the startDateTime property value. The virtual event session start time.
 func (m *VirtualEventSession) GetStartDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -88,14 +88,14 @@ func (m *VirtualEventSession) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetEndDateTime sets the endDateTime property value. The endDateTime property
+// SetEndDateTime sets the endDateTime property value. The virtual event session end time.
 func (m *VirtualEventSession) SetEndDateTime(value DateTimeTimeZoneable)() {
     err := m.GetBackingStore().Set("endDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStartDateTime sets the startDateTime property value. The startDateTime property
+// SetStartDateTime sets the startDateTime property value. The virtual event session start time.
 func (m *VirtualEventSession) SetStartDateTime(value DateTimeTimeZoneable)() {
     err := m.GetBackingStore().Set("startDateTime", value)
     if err != nil {

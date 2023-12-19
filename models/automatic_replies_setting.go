@@ -39,13 +39,13 @@ func (m *AutomaticRepliesSetting) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd
     return m.backingStore
 }
 // GetExternalAudience gets the externalAudience property value. The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.
-func (m *AutomaticRepliesSetting) GetExternalAudience()(*ExternalAudienceScope) {
+func (m *AutomaticRepliesSetting) GetExternalAudience()(*AutomaticRepliesSetting_externalAudience) {
     val, err := m.GetBackingStore().Get("externalAudience")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ExternalAudienceScope)
+        return val.(*AutomaticRepliesSetting_externalAudience)
     }
     return nil
 }
@@ -64,12 +64,12 @@ func (m *AutomaticRepliesSetting) GetExternalReplyMessage()(*string) {
 func (m *AutomaticRepliesSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["externalAudience"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseExternalAudienceScope)
+        val, err := n.GetEnumValue(ParseAutomaticRepliesSetting_externalAudience)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetExternalAudience(val.(*ExternalAudienceScope))
+            m.SetExternalAudience(val.(*AutomaticRepliesSetting_externalAudience))
         }
         return nil
     }
@@ -124,12 +124,12 @@ func (m *AutomaticRepliesSetting) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAutomaticRepliesStatus)
+        val, err := n.GetEnumValue(ParseAutomaticRepliesSetting_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*AutomaticRepliesStatus))
+            m.SetStatus(val.(*AutomaticRepliesSetting_status))
         }
         return nil
     }
@@ -180,13 +180,13 @@ func (m *AutomaticRepliesSetting) GetScheduledStartDateTime()(DateTimeTimeZoneab
     return nil
 }
 // GetStatus gets the status property value. Configurations status for automatic replies. The possible values are: disabled, alwaysEnabled, scheduled.
-func (m *AutomaticRepliesSetting) GetStatus()(*AutomaticRepliesStatus) {
+func (m *AutomaticRepliesSetting) GetStatus()(*AutomaticRepliesSetting_status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AutomaticRepliesStatus)
+        return val.(*AutomaticRepliesSetting_status)
     }
     return nil
 }
@@ -256,7 +256,7 @@ func (m *AutomaticRepliesSetting) SetBackingStore(value ie8677ce2c7e1b4c22e9c382
     m.backingStore = value
 }
 // SetExternalAudience sets the externalAudience property value. The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.
-func (m *AutomaticRepliesSetting) SetExternalAudience(value *ExternalAudienceScope)() {
+func (m *AutomaticRepliesSetting) SetExternalAudience(value *AutomaticRepliesSetting_externalAudience)() {
     err := m.GetBackingStore().Set("externalAudience", value)
     if err != nil {
         panic(err)
@@ -298,7 +298,7 @@ func (m *AutomaticRepliesSetting) SetScheduledStartDateTime(value DateTimeTimeZo
     }
 }
 // SetStatus sets the status property value. Configurations status for automatic replies. The possible values are: disabled, alwaysEnabled, scheduled.
-func (m *AutomaticRepliesSetting) SetStatus(value *AutomaticRepliesStatus)() {
+func (m *AutomaticRepliesSetting) SetStatus(value *AutomaticRepliesSetting_status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
@@ -310,19 +310,19 @@ type AutomaticRepliesSettingable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetExternalAudience()(*ExternalAudienceScope)
+    GetExternalAudience()(*AutomaticRepliesSetting_externalAudience)
     GetExternalReplyMessage()(*string)
     GetInternalReplyMessage()(*string)
     GetOdataType()(*string)
     GetScheduledEndDateTime()(DateTimeTimeZoneable)
     GetScheduledStartDateTime()(DateTimeTimeZoneable)
-    GetStatus()(*AutomaticRepliesStatus)
+    GetStatus()(*AutomaticRepliesSetting_status)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetExternalAudience(value *ExternalAudienceScope)()
+    SetExternalAudience(value *AutomaticRepliesSetting_externalAudience)()
     SetExternalReplyMessage(value *string)()
     SetInternalReplyMessage(value *string)()
     SetOdataType(value *string)()
     SetScheduledEndDateTime(value DateTimeTimeZoneable)()
     SetScheduledStartDateTime(value DateTimeTimeZoneable)()
-    SetStatus(value *AutomaticRepliesStatus)()
+    SetStatus(value *AutomaticRepliesSetting_status)()
 }

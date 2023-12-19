@@ -66,13 +66,13 @@ func (m *CommunicationsIdentitySet) GetEncrypted()(Identityable) {
     return nil
 }
 // GetEndpointType gets the endpointType property value. Type of endpoint that the participant uses. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone, unknownFutureValue.
-func (m *CommunicationsIdentitySet) GetEndpointType()(*EndpointType) {
+func (m *CommunicationsIdentitySet) GetEndpointType()(*CommunicationsIdentitySet_endpointType) {
     val, err := m.GetBackingStore().Get("endpointType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*EndpointType)
+        return val.(*CommunicationsIdentitySet_endpointType)
     }
     return nil
 }
@@ -120,12 +120,12 @@ func (m *CommunicationsIdentitySet) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     res["endpointType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEndpointType)
+        val, err := n.GetEnumValue(ParseCommunicationsIdentitySet_endpointType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEndpointType(val.(*EndpointType))
+            m.SetEndpointType(val.(*CommunicationsIdentitySet_endpointType))
         }
         return nil
     }
@@ -280,7 +280,7 @@ func (m *CommunicationsIdentitySet) SetEncrypted(value Identityable)() {
     }
 }
 // SetEndpointType sets the endpointType property value. Type of endpoint that the participant uses. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone, unknownFutureValue.
-func (m *CommunicationsIdentitySet) SetEndpointType(value *EndpointType)() {
+func (m *CommunicationsIdentitySet) SetEndpointType(value *CommunicationsIdentitySet_endpointType)() {
     err := m.GetBackingStore().Set("endpointType", value)
     if err != nil {
         panic(err)
@@ -315,7 +315,7 @@ type CommunicationsIdentitySetable interface {
     GetAssertedIdentity()(Identityable)
     GetAzureCommunicationServicesUser()(Identityable)
     GetEncrypted()(Identityable)
-    GetEndpointType()(*EndpointType)
+    GetEndpointType()(*CommunicationsIdentitySet_endpointType)
     GetGuest()(Identityable)
     GetOnPremises()(Identityable)
     GetPhone()(Identityable)
@@ -323,7 +323,7 @@ type CommunicationsIdentitySetable interface {
     SetAssertedIdentity(value Identityable)()
     SetAzureCommunicationServicesUser(value Identityable)()
     SetEncrypted(value Identityable)()
-    SetEndpointType(value *EndpointType)()
+    SetEndpointType(value *CommunicationsIdentitySet_endpointType)()
     SetGuest(value Identityable)()
     SetOnPremises(value Identityable)()
     SetPhone(value Identityable)()

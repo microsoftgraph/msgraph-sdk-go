@@ -82,12 +82,12 @@ func (m *Phone) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         return nil
     }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePhoneType)
+        val, err := n.GetEnumValue(ParsePhone_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*PhoneType))
+            m.SetTypeEscaped(val.(*Phone_type))
         }
         return nil
     }
@@ -138,13 +138,13 @@ func (m *Phone) GetRegion()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
-func (m *Phone) GetTypeEscaped()(*PhoneType) {
+func (m *Phone) GetTypeEscaped()(*Phone_type) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*PhoneType)
+        return val.(*Phone_type)
     }
     return nil
 }
@@ -229,7 +229,7 @@ func (m *Phone) SetRegion(value *string)() {
     }
 }
 // SetTypeEscaped sets the type property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
-func (m *Phone) SetTypeEscaped(value *PhoneType)() {
+func (m *Phone) SetTypeEscaped(value *Phone_type)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -245,11 +245,11 @@ type Phoneable interface {
     GetNumber()(*string)
     GetOdataType()(*string)
     GetRegion()(*string)
-    GetTypeEscaped()(*PhoneType)
+    GetTypeEscaped()(*Phone_type)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetLanguage(value *string)()
     SetNumber(value *string)()
     SetOdataType(value *string)()
     SetRegion(value *string)()
-    SetTypeEscaped(value *PhoneType)()
+    SetTypeEscaped(value *Phone_type)()
 }

@@ -75,12 +75,12 @@ func (m *SamlOrWsFedProvider) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["preferredAuthenticationProtocol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAuthenticationProtocol)
+        val, err := n.GetEnumValue(ParseSamlOrWsFedProvider_preferredAuthenticationProtocol)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPreferredAuthenticationProtocol(val.(*AuthenticationProtocol))
+            m.SetPreferredAuthenticationProtocol(val.(*SamlOrWsFedProvider_preferredAuthenticationProtocol))
         }
         return nil
     }
@@ -130,13 +130,13 @@ func (m *SamlOrWsFedProvider) GetPassiveSignInUri()(*string) {
     return nil
 }
 // GetPreferredAuthenticationProtocol gets the preferredAuthenticationProtocol property value. Preferred authentication protocol. The possible values are: wsFed, saml, unknownFutureValue.
-func (m *SamlOrWsFedProvider) GetPreferredAuthenticationProtocol()(*AuthenticationProtocol) {
+func (m *SamlOrWsFedProvider) GetPreferredAuthenticationProtocol()(*SamlOrWsFedProvider_preferredAuthenticationProtocol) {
     val, err := m.GetBackingStore().Get("preferredAuthenticationProtocol")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AuthenticationProtocol)
+        return val.(*SamlOrWsFedProvider_preferredAuthenticationProtocol)
     }
     return nil
 }
@@ -212,7 +212,7 @@ func (m *SamlOrWsFedProvider) SetPassiveSignInUri(value *string)() {
     }
 }
 // SetPreferredAuthenticationProtocol sets the preferredAuthenticationProtocol property value. Preferred authentication protocol. The possible values are: wsFed, saml, unknownFutureValue.
-func (m *SamlOrWsFedProvider) SetPreferredAuthenticationProtocol(value *AuthenticationProtocol)() {
+func (m *SamlOrWsFedProvider) SetPreferredAuthenticationProtocol(value *SamlOrWsFedProvider_preferredAuthenticationProtocol)() {
     err := m.GetBackingStore().Set("preferredAuthenticationProtocol", value)
     if err != nil {
         panic(err)
@@ -232,11 +232,11 @@ type SamlOrWsFedProviderable interface {
     GetIssuerUri()(*string)
     GetMetadataExchangeUri()(*string)
     GetPassiveSignInUri()(*string)
-    GetPreferredAuthenticationProtocol()(*AuthenticationProtocol)
+    GetPreferredAuthenticationProtocol()(*SamlOrWsFedProvider_preferredAuthenticationProtocol)
     GetSigningCertificate()(*string)
     SetIssuerUri(value *string)()
     SetMetadataExchangeUri(value *string)()
     SetPassiveSignInUri(value *string)()
-    SetPreferredAuthenticationProtocol(value *AuthenticationProtocol)()
+    SetPreferredAuthenticationProtocol(value *SamlOrWsFedProvider_preferredAuthenticationProtocol)()
     SetSigningCertificate(value *string)()
 }

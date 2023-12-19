@@ -43,12 +43,12 @@ func (m *AttackSimulationOperation) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAttackSimulationOperationType)
+        val, err := n.GetEnumValue(ParseAttackSimulationOperation_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*AttackSimulationOperationType))
+            m.SetTypeEscaped(val.(*AttackSimulationOperation_type))
         }
         return nil
     }
@@ -77,13 +77,13 @@ func (m *AttackSimulationOperation) GetTenantId()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The attack simulation operation type. Possible values are: createSimulation, updateSimulation, unknownFutureValue.
-func (m *AttackSimulationOperation) GetTypeEscaped()(*AttackSimulationOperationType) {
+func (m *AttackSimulationOperation) GetTypeEscaped()(*AttackSimulationOperation_type) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AttackSimulationOperationType)
+        return val.(*AttackSimulationOperation_type)
     }
     return nil
 }
@@ -129,7 +129,7 @@ func (m *AttackSimulationOperation) SetTenantId(value *string)() {
     }
 }
 // SetTypeEscaped sets the type property value. The attack simulation operation type. Possible values are: createSimulation, updateSimulation, unknownFutureValue.
-func (m *AttackSimulationOperation) SetTypeEscaped(value *AttackSimulationOperationType)() {
+func (m *AttackSimulationOperation) SetTypeEscaped(value *AttackSimulationOperation_type)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -141,8 +141,8 @@ type AttackSimulationOperationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetPercentageCompleted()(*int32)
     GetTenantId()(*string)
-    GetTypeEscaped()(*AttackSimulationOperationType)
+    GetTypeEscaped()(*AttackSimulationOperation_type)
     SetPercentageCompleted(value *int32)()
     SetTenantId(value *string)()
-    SetTypeEscaped(value *AttackSimulationOperationType)()
+    SetTypeEscaped(value *AttackSimulationOperation_type)()
 }

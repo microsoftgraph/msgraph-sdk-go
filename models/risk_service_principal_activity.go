@@ -39,13 +39,13 @@ func (m *RiskServicePrincipalActivity) GetBackingStore()(ie8677ce2c7e1b4c22e9c38
     return m.backingStore
 }
 // GetDetail gets the detail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
-func (m *RiskServicePrincipalActivity) GetDetail()(*RiskDetail) {
+func (m *RiskServicePrincipalActivity) GetDetail()(*RiskServicePrincipalActivity_detail) {
     val, err := m.GetBackingStore().Get("detail")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RiskDetail)
+        return val.(*RiskServicePrincipalActivity_detail)
     }
     return nil
 }
@@ -53,12 +53,12 @@ func (m *RiskServicePrincipalActivity) GetDetail()(*RiskDetail) {
 func (m *RiskServicePrincipalActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["detail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRiskDetail)
+        val, err := n.GetEnumValue(ParseRiskServicePrincipalActivity_detail)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDetail(val.(*RiskDetail))
+            m.SetDetail(val.(*RiskServicePrincipalActivity_detail))
         }
         return nil
     }
@@ -153,7 +153,7 @@ func (m *RiskServicePrincipalActivity) SetBackingStore(value ie8677ce2c7e1b4c22e
     m.backingStore = value
 }
 // SetDetail sets the detail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
-func (m *RiskServicePrincipalActivity) SetDetail(value *RiskDetail)() {
+func (m *RiskServicePrincipalActivity) SetDetail(value *RiskServicePrincipalActivity_detail)() {
     err := m.GetBackingStore().Set("detail", value)
     if err != nil {
         panic(err)
@@ -179,11 +179,11 @@ type RiskServicePrincipalActivityable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetDetail()(*RiskDetail)
+    GetDetail()(*RiskServicePrincipalActivity_detail)
     GetOdataType()(*string)
     GetRiskEventTypes()([]string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetDetail(value *RiskDetail)()
+    SetDetail(value *RiskServicePrincipalActivity_detail)()
     SetOdataType(value *string)()
     SetRiskEventTypes(value []string)()
 }

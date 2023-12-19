@@ -35,13 +35,13 @@ func (m *RequestSignatureVerification) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAllowedWeakAlgorithms gets the allowedWeakAlgorithms property value. Specifies which weak algorithms are allowed.  The possible values are: rsaSha1, unknownFutureValue.
-func (m *RequestSignatureVerification) GetAllowedWeakAlgorithms()(*WeakAlgorithms) {
+func (m *RequestSignatureVerification) GetAllowedWeakAlgorithms()(*RequestSignatureVerification_allowedWeakAlgorithms) {
     val, err := m.GetBackingStore().Get("allowedWeakAlgorithms")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*WeakAlgorithms)
+        return val.(*RequestSignatureVerification_allowedWeakAlgorithms)
     }
     return nil
 }
@@ -53,12 +53,12 @@ func (m *RequestSignatureVerification) GetBackingStore()(ie8677ce2c7e1b4c22e9c38
 func (m *RequestSignatureVerification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allowedWeakAlgorithms"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWeakAlgorithms)
+        val, err := n.GetEnumValue(ParseRequestSignatureVerification_allowedWeakAlgorithms)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAllowedWeakAlgorithms(val.(*WeakAlgorithms))
+            m.SetAllowedWeakAlgorithms(val.(*RequestSignatureVerification_allowedWeakAlgorithms))
         }
         return nil
     }
@@ -143,7 +143,7 @@ func (m *RequestSignatureVerification) SetAdditionalData(value map[string]any)()
     }
 }
 // SetAllowedWeakAlgorithms sets the allowedWeakAlgorithms property value. Specifies which weak algorithms are allowed.  The possible values are: rsaSha1, unknownFutureValue.
-func (m *RequestSignatureVerification) SetAllowedWeakAlgorithms(value *WeakAlgorithms)() {
+func (m *RequestSignatureVerification) SetAllowedWeakAlgorithms(value *RequestSignatureVerification_allowedWeakAlgorithms)() {
     err := m.GetBackingStore().Set("allowedWeakAlgorithms", value)
     if err != nil {
         panic(err)
@@ -172,11 +172,11 @@ type RequestSignatureVerificationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAllowedWeakAlgorithms()(*WeakAlgorithms)
+    GetAllowedWeakAlgorithms()(*RequestSignatureVerification_allowedWeakAlgorithms)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetIsSignedRequestRequired()(*bool)
     GetOdataType()(*string)
-    SetAllowedWeakAlgorithms(value *WeakAlgorithms)()
+    SetAllowedWeakAlgorithms(value *RequestSignatureVerification_allowedWeakAlgorithms)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetIsSignedRequestRequired(value *bool)()
     SetOdataType(value *string)()

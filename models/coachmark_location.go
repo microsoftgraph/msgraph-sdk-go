@@ -72,12 +72,12 @@ func (m *CoachmarkLocation) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCoachmarkLocationType)
+        val, err := n.GetEnumValue(ParseCoachmarkLocation_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*CoachmarkLocationType))
+            m.SetTypeEscaped(val.(*CoachmarkLocation_type))
         }
         return nil
     }
@@ -117,13 +117,13 @@ func (m *CoachmarkLocation) GetOffset()(*int32) {
     return nil
 }
 // GetTypeEscaped gets the type property value. Type of coachmark location. The possible values are: unknown, fromEmail, subject, externalTag, displayName, messageBody, unknownFutureValue.
-func (m *CoachmarkLocation) GetTypeEscaped()(*CoachmarkLocationType) {
+func (m *CoachmarkLocation) GetTypeEscaped()(*CoachmarkLocation_type) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CoachmarkLocationType)
+        return val.(*CoachmarkLocation_type)
     }
     return nil
 }
@@ -195,7 +195,7 @@ func (m *CoachmarkLocation) SetOffset(value *int32)() {
     }
 }
 // SetTypeEscaped sets the type property value. Type of coachmark location. The possible values are: unknown, fromEmail, subject, externalTag, displayName, messageBody, unknownFutureValue.
-func (m *CoachmarkLocation) SetTypeEscaped(value *CoachmarkLocationType)() {
+func (m *CoachmarkLocation) SetTypeEscaped(value *CoachmarkLocation_type)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
@@ -210,10 +210,10 @@ type CoachmarkLocationable interface {
     GetLength()(*int32)
     GetOdataType()(*string)
     GetOffset()(*int32)
-    GetTypeEscaped()(*CoachmarkLocationType)
+    GetTypeEscaped()(*CoachmarkLocation_type)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetLength(value *int32)()
     SetOdataType(value *string)()
     SetOffset(value *int32)()
-    SetTypeEscaped(value *CoachmarkLocationType)()
+    SetTypeEscaped(value *CoachmarkLocation_type)()
 }
