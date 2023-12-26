@@ -57,7 +57,7 @@ func (m *ServiceProvisioningError) GetAdditionalData()(map[string]any) {
 func (m *ServiceProvisioningError) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time at which the error occurred.
 func (m *ServiceProvisioningError) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -113,7 +113,7 @@ func (m *ServiceProvisioningError) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetIsResolved gets the isResolved property value. The isResolved property
+// GetIsResolved gets the isResolved property value. Indicates whether the error has been attended to.
 func (m *ServiceProvisioningError) GetIsResolved()(*bool) {
     val, err := m.GetBackingStore().Get("isResolved")
     if err != nil {
@@ -135,7 +135,7 @@ func (m *ServiceProvisioningError) GetOdataType()(*string) {
     }
     return nil
 }
-// GetServiceInstance gets the serviceInstance property value. The serviceInstance property
+// GetServiceInstance gets the serviceInstance property value. Qualified service instance (for example, 'SharePoint/Dublin') that published the service error information.
 func (m *ServiceProvisioningError) GetServiceInstance()(*string) {
     val, err := m.GetBackingStore().Get("serviceInstance")
     if err != nil {
@@ -191,14 +191,14 @@ func (m *ServiceProvisioningError) SetAdditionalData(value map[string]any)() {
 func (m *ServiceProvisioningError) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time at which the error occurred.
 func (m *ServiceProvisioningError) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsResolved sets the isResolved property value. The isResolved property
+// SetIsResolved sets the isResolved property value. Indicates whether the error has been attended to.
 func (m *ServiceProvisioningError) SetIsResolved(value *bool)() {
     err := m.GetBackingStore().Set("isResolved", value)
     if err != nil {
@@ -212,7 +212,7 @@ func (m *ServiceProvisioningError) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetServiceInstance sets the serviceInstance property value. The serviceInstance property
+// SetServiceInstance sets the serviceInstance property value. Qualified service instance (for example, 'SharePoint/Dublin') that published the service error information.
 func (m *ServiceProvisioningError) SetServiceInstance(value *string)() {
     err := m.GetBackingStore().Set("serviceInstance", value)
     if err != nil {

@@ -50,7 +50,7 @@ func (m *InnerError) GetClientRequestId()(*string) {
     }
     return nil
 }
-// GetDate gets the Date property value. Date when the error occured.
+// GetDate gets the date property value. Date when the error occured.
 func (m *InnerError) GetDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("date")
     if err != nil {
@@ -74,7 +74,7 @@ func (m *InnerError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
-    res["Date"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["date"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *InnerError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
-        err := writer.WriteTimeValue("Date", m.GetDate())
+        err := writer.WriteTimeValue("date", m.GetDate())
         if err != nil {
             return err
         }
@@ -180,7 +180,7 @@ func (m *InnerError) SetClientRequestId(value *string)() {
         panic(err)
     }
 }
-// SetDate sets the Date property value. Date when the error occured.
+// SetDate sets the date property value. Date when the error occured.
 func (m *InnerError) SetDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("date", value)
     if err != nil {
