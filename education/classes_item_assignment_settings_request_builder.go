@@ -89,6 +89,10 @@ func (m *ClassesItemAssignmentSettingsRequestBuilder) Get(ctx context.Context, r
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentSettingsable), nil
 }
+// GradingCategories provides operations to manage the gradingCategories property of the microsoft.graph.educationAssignmentSettings entity.
+func (m *ClassesItemAssignmentSettingsRequestBuilder) GradingCategories()(*ClassesItemAssignmentSettingsGradingCategoriesRequestBuilder) {
+    return NewClassesItemAssignmentSettingsGradingCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the properties of an educationAssignmentSettings object. Only teachers can update these settings.
 // [Find more info here]
 // 

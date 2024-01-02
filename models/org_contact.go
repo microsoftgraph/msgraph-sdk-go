@@ -441,7 +441,7 @@ func (m *OrgContact) GetProxyAddresses()([]string) {
     }
     return nil
 }
-// GetServiceProvisioningErrors gets the serviceProvisioningErrors property value. The serviceProvisioningErrors property
+// GetServiceProvisioningErrors gets the serviceProvisioningErrors property value. Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from an organizational contact object .  Supports $filter (eq, not, for isResolved and serviceInstance).
 func (m *OrgContact) GetServiceProvisioningErrors()([]ServiceProvisioningErrorable) {
     val, err := m.GetBackingStore().Get("serviceProvisioningErrors")
     if err != nil {
@@ -750,7 +750,7 @@ func (m *OrgContact) SetProxyAddresses(value []string)() {
         panic(err)
     }
 }
-// SetServiceProvisioningErrors sets the serviceProvisioningErrors property value. The serviceProvisioningErrors property
+// SetServiceProvisioningErrors sets the serviceProvisioningErrors property value. Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from an organizational contact object .  Supports $filter (eq, not, for isResolved and serviceInstance).
 func (m *OrgContact) SetServiceProvisioningErrors(value []ServiceProvisioningErrorable)() {
     err := m.GetBackingStore().Set("serviceProvisioningErrors", value)
     if err != nil {
