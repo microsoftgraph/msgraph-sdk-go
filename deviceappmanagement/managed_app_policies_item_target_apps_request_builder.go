@@ -33,7 +33,7 @@ func NewManagedAppPoliciesItemTargetAppsRequestBuilder(rawUrl string, requestAda
 // Post not yet documented
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappprotection-targetapps?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-managedappprotection-targetapps?view=graph-rest-1.0
 func (m *ManagedAppPoliciesItemTargetAppsRequestBuilder) Post(ctx context.Context, body ManagedAppPoliciesItemTargetAppsPostRequestBodyable, requestConfiguration *ManagedAppPoliciesItemTargetAppsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

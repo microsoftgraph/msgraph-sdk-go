@@ -35,7 +35,7 @@ func (m *LearningSelfInitiatedCourse) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetStartedDateTime gets the startedDateTime property value. The date and time on which the self-initiated course was started by the learner. Optional.
+// GetStartedDateTime gets the startedDateTime property value. The date and time on which the learner started the self-initiated course. Optional.
 func (m *LearningSelfInitiatedCourse) GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startedDateTime")
     if err != nil {
@@ -60,7 +60,7 @@ func (m *LearningSelfInitiatedCourse) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetStartedDateTime sets the startedDateTime property value. The date and time on which the self-initiated course was started by the learner. Optional.
+// SetStartedDateTime sets the startedDateTime property value. The date and time on which the learner started the self-initiated course. Optional.
 func (m *LearningSelfInitiatedCourse) SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startedDateTime", value)
     if err != nil {

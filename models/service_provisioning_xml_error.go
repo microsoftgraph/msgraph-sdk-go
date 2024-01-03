@@ -21,7 +21,7 @@ func NewServiceProvisioningXmlError()(*ServiceProvisioningXmlError) {
 func CreateServiceProvisioningXmlErrorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServiceProvisioningXmlError(), nil
 }
-// GetErrorDetail gets the errorDetail property value. The errorDetail property
+// GetErrorDetail gets the errorDetail property value. Error Information published by the Federated Service as an xml string.
 func (m *ServiceProvisioningXmlError) GetErrorDetail()(*string) {
     val, err := m.GetBackingStore().Get("errorDetail")
     if err != nil {
@@ -61,7 +61,7 @@ func (m *ServiceProvisioningXmlError) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetErrorDetail sets the errorDetail property value. The errorDetail property
+// SetErrorDetail sets the errorDetail property value. Error Information published by the Federated Service as an xml string.
 func (m *ServiceProvisioningXmlError) SetErrorDetail(value *string)() {
     err := m.GetBackingStore().Set("errorDetail", value)
     if err != nil {
