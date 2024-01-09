@@ -30,7 +30,7 @@ func (m *Call) GetAudioRoutingGroups()([]AudioRoutingGroupable) {
     }
     return nil
 }
-// GetCallbackUri gets the callbackUri property value. The callback URL on which callbacks will be delivered. Must be https.
+// GetCallbackUri gets the callbackUri property value. The callback URL on which callbacks are delivered. Must be an HTTPS URL.
 func (m *Call) GetCallbackUri()(*string) {
     val, err := m.GetBackingStore().Get("callbackUri")
     if err != nil {
@@ -41,7 +41,7 @@ func (m *Call) GetCallbackUri()(*string) {
     }
     return nil
 }
-// GetCallChainId gets the callChainId property value. A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.
+// GetCallChainId gets the callChainId property value. A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This identifier must be copied over from Microsoft.Graph.Call.CallChainId.
 func (m *Call) GetCallChainId()(*string) {
     val, err := m.GetBackingStore().Get("callChainId")
     if err != nil {
@@ -767,14 +767,14 @@ func (m *Call) SetAudioRoutingGroups(value []AudioRoutingGroupable)() {
         panic(err)
     }
 }
-// SetCallbackUri sets the callbackUri property value. The callback URL on which callbacks will be delivered. Must be https.
+// SetCallbackUri sets the callbackUri property value. The callback URL on which callbacks are delivered. Must be an HTTPS URL.
 func (m *Call) SetCallbackUri(value *string)() {
     err := m.GetBackingStore().Set("callbackUri", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCallChainId sets the callChainId property value. A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.
+// SetCallChainId sets the callChainId property value. A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This identifier must be copied over from Microsoft.Graph.Call.CallChainId.
 func (m *Call) SetCallChainId(value *string)() {
     err := m.GetBackingStore().Set("callChainId", value)
     if err != nil {
