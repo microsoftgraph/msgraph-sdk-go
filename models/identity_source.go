@@ -40,6 +40,8 @@ func CreateIdentitySourceFromDiscriminatorValue(parseNode i878a80d2330e89d268963
                         return NewDomainIdentitySource(), nil
                     case "#microsoft.graph.externalDomainFederation":
                         return NewExternalDomainFederation(), nil
+                    case "#microsoft.graph.socialIdentitySource":
+                        return NewSocialIdentitySource(), nil
                 }
             }
         }

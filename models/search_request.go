@@ -93,7 +93,7 @@ func (m *SearchRequest) GetEnableTopResults()(*bool) {
     }
     return nil
 }
-// GetEntityTypes gets the entityTypes property value. One or more types of resources expected in the response. Possible values are: event, message, driveItem, externalItem, site, list, listItem, drive, chatMessage, person, acronym, bookmark.  Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum:chatMessage, person, acronym, bookmark. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
+// GetEntityTypes gets the entityTypes property value. One or more types of resources expected in the response. Possible values are: event, message, driveItem, externalItem, site, list, listItem, drive, chatMessage, person, acronym, bookmark.  Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: chatMessage, person, acronym, bookmark. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
 func (m *SearchRequest) GetEntityTypes()([]EntityType) {
     val, err := m.GetBackingStore().Get("entityTypes")
     if err != nil {
@@ -591,7 +591,7 @@ func (m *SearchRequest) SetEnableTopResults(value *bool)() {
         panic(err)
     }
 }
-// SetEntityTypes sets the entityTypes property value. One or more types of resources expected in the response. Possible values are: event, message, driveItem, externalItem, site, list, listItem, drive, chatMessage, person, acronym, bookmark.  Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum:chatMessage, person, acronym, bookmark. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
+// SetEntityTypes sets the entityTypes property value. One or more types of resources expected in the response. Possible values are: event, message, driveItem, externalItem, site, list, listItem, drive, chatMessage, person, acronym, bookmark.  Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: chatMessage, person, acronym, bookmark. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
 func (m *SearchRequest) SetEntityTypes(value []EntityType)() {
     err := m.GetBackingStore().Set("entityTypes", value)
     if err != nil {

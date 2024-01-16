@@ -55,8 +55,18 @@ func CreateAlertEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
                         return NewDeviceEvidence(), nil
                     case "#microsoft.graph.security.fileEvidence":
                         return NewFileEvidence(), nil
+                    case "#microsoft.graph.security.gitHubOrganizationEvidence":
+                        return NewGitHubOrganizationEvidence(), nil
+                    case "#microsoft.graph.security.gitHubRepoEvidence":
+                        return NewGitHubRepoEvidence(), nil
+                    case "#microsoft.graph.security.gitHubUserEvidence":
+                        return NewGitHubUserEvidence(), nil
                     case "#microsoft.graph.security.googleCloudResourceEvidence":
                         return NewGoogleCloudResourceEvidence(), nil
+                    case "#microsoft.graph.security.hostLogonSessionEvidence":
+                        return NewHostLogonSessionEvidence(), nil
+                    case "#microsoft.graph.security.ioTDeviceEvidence":
+                        return NewIoTDeviceEvidence(), nil
                     case "#microsoft.graph.security.ipEvidence":
                         return NewIpEvidence(), nil
                     case "#microsoft.graph.security.kubernetesClusterEvidence":
@@ -77,6 +87,12 @@ func CreateAlertEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
                         return NewMailboxEvidence(), nil
                     case "#microsoft.graph.security.mailClusterEvidence":
                         return NewMailClusterEvidence(), nil
+                    case "#microsoft.graph.security.malwareEvidence":
+                        return NewMalwareEvidence(), nil
+                    case "#microsoft.graph.security.networkConnectionEvidence":
+                        return NewNetworkConnectionEvidence(), nil
+                    case "#microsoft.graph.security.nicEvidence":
+                        return NewNicEvidence(), nil
                     case "#microsoft.graph.security.oauthApplicationEvidence":
                         return NewOauthApplicationEvidence(), nil
                     case "#microsoft.graph.security.processEvidence":
@@ -85,8 +101,14 @@ func CreateAlertEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
                         return NewRegistryKeyEvidence(), nil
                     case "#microsoft.graph.security.registryValueEvidence":
                         return NewRegistryValueEvidence(), nil
+                    case "#microsoft.graph.security.sasTokenEvidence":
+                        return NewSasTokenEvidence(), nil
                     case "#microsoft.graph.security.securityGroupEvidence":
                         return NewSecurityGroupEvidence(), nil
+                    case "#microsoft.graph.security.servicePrincipalEvidence":
+                        return NewServicePrincipalEvidence(), nil
+                    case "#microsoft.graph.security.submissionMailEvidence":
+                        return NewSubmissionMailEvidence(), nil
                     case "#microsoft.graph.security.urlEvidence":
                         return NewUrlEvidence(), nil
                     case "#microsoft.graph.security.userEvidence":
