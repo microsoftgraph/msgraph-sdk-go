@@ -11,7 +11,7 @@ import (
 type ClassesItemAssignmentSettingsGradingCategoriesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClassesItemAssignmentSettingsGradingCategoriesRequestBuilderGetQueryParameters get gradingCategories from education
+// ClassesItemAssignmentSettingsGradingCategoriesRequestBuilderGetQueryParameters when set, enables users to weight assignments differently when computing a class average grade.
 type ClassesItemAssignmentSettingsGradingCategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewClassesItemAssignmentSettingsGradingCategoriesRequestBuilder(rawUrl stri
 func (m *ClassesItemAssignmentSettingsGradingCategoriesRequestBuilder) Count()(*ClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilder) {
     return NewClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get gradingCategories from education
+// Get when set, enables users to weight assignments differently when computing a class average grade.
 func (m *ClassesItemAssignmentSettingsGradingCategoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemAssignmentSettingsGradingCategoriesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationGradingCategoryCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -112,7 +112,7 @@ func (m *ClassesItemAssignmentSettingsGradingCategoriesRequestBuilder) Post(ctx 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationGradingCategoryable), nil
 }
-// ToGetRequestInformation get gradingCategories from education
+// ToGetRequestInformation when set, enables users to weight assignments differently when computing a class average grade.
 func (m *ClassesItemAssignmentSettingsGradingCategoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentSettingsGradingCategoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

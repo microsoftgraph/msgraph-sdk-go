@@ -20,7 +20,7 @@ func NewEducationAssignment()(*EducationAssignment) {
 func CreateEducationAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationAssignment(), nil
 }
-// GetAddedStudentAction gets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment should not be assigned to new students.
+// GetAddedStudentAction gets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment shouldn't be assigned to new students.
 func (m *EducationAssignment) GetAddedStudentAction()(*EducationAddedStudentAction) {
     val, err := m.GetBackingStore().Get("addedStudentAction")
     if err != nil {
@@ -31,7 +31,7 @@ func (m *EducationAssignment) GetAddedStudentAction()(*EducationAddedStudentActi
     }
     return nil
 }
-// GetAddToCalendarAction gets the addToCalendarAction property value. Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
+// GetAddToCalendarAction gets the addToCalendarAction property value. Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
 func (m *EducationAssignment) GetAddToCalendarAction()(*EducationAddToCalendarOptions) {
     val, err := m.GetBackingStore().Get("addToCalendarAction")
     if err != nil {
@@ -108,7 +108,7 @@ func (m *EducationAssignment) GetCategories()([]EducationCategoryable) {
     }
     return nil
 }
-// GetClassId gets the classId property value. Class which this assignment belongs.
+// GetClassId gets the classId property value. Class to which this assignment belongs.
 func (m *EducationAssignment) GetClassId()(*string) {
     val, err := m.GetBackingStore().Get("classId")
     if err != nil {
@@ -119,7 +119,7 @@ func (m *EducationAssignment) GetClassId()(*string) {
     }
     return nil
 }
-// GetCloseDateTime gets the closeDateTime property value. Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment does not allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetCloseDateTime gets the closeDateTime property value. Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment doesn't allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationAssignment) GetCloseDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("closeDateTime")
     if err != nil {
@@ -489,7 +489,7 @@ func (m *EducationAssignment) GetGrading()(EducationAssignmentGradeTypeable) {
     }
     return nil
 }
-// GetGradingCategory gets the gradingCategory property value. The gradingCategory property
+// GetGradingCategory gets the gradingCategory property value. When set, enables users to weight assignments differently when computing a class average grade.
 func (m *EducationAssignment) GetGradingCategory()(EducationGradingCategoryable) {
     val, err := m.GetBackingStore().Get("gradingCategory")
     if err != nil {
@@ -500,7 +500,7 @@ func (m *EducationAssignment) GetGradingCategory()(EducationGradingCategoryable)
     }
     return nil
 }
-// GetInstructions gets the instructions property value. Instructions for the assignment.  This along with the display name tell the student what to do.
+// GetInstructions gets the instructions property value. Instructions for the assignment.  The instructsions and the display name tell the student what to do.
 func (m *EducationAssignment) GetInstructions()(EducationItemBodyable) {
     val, err := m.GetBackingStore().Get("instructions")
     if err != nil {
@@ -588,7 +588,7 @@ func (m *EducationAssignment) GetStatus()(*EducationAssignmentStatus) {
     }
     return nil
 }
-// GetSubmissions gets the submissions property value. Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
+// GetSubmissions gets the submissions property value. Once published, there's a submission object for each student representing their work and grade.  Read-only. Nullable.
 func (m *EducationAssignment) GetSubmissions()([]EducationSubmissionable) {
     val, err := m.GetBackingStore().Get("submissions")
     if err != nil {
@@ -740,14 +740,14 @@ func (m *EducationAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetAddedStudentAction sets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment should not be assigned to new students.
+// SetAddedStudentAction sets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment shouldn't be assigned to new students.
 func (m *EducationAssignment) SetAddedStudentAction(value *EducationAddedStudentAction)() {
     err := m.GetBackingStore().Set("addedStudentAction", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAddToCalendarAction sets the addToCalendarAction property value. Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
+// SetAddToCalendarAction sets the addToCalendarAction property value. Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
 func (m *EducationAssignment) SetAddToCalendarAction(value *EducationAddToCalendarOptions)() {
     err := m.GetBackingStore().Set("addToCalendarAction", value)
     if err != nil {
@@ -796,14 +796,14 @@ func (m *EducationAssignment) SetCategories(value []EducationCategoryable)() {
         panic(err)
     }
 }
-// SetClassId sets the classId property value. Class which this assignment belongs.
+// SetClassId sets the classId property value. Class to which this assignment belongs.
 func (m *EducationAssignment) SetClassId(value *string)() {
     err := m.GetBackingStore().Set("classId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCloseDateTime sets the closeDateTime property value. Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment does not allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// SetCloseDateTime sets the closeDateTime property value. Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment doesn't allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EducationAssignment) SetCloseDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("closeDateTime", value)
     if err != nil {
@@ -852,14 +852,14 @@ func (m *EducationAssignment) SetGrading(value EducationAssignmentGradeTypeable)
         panic(err)
     }
 }
-// SetGradingCategory sets the gradingCategory property value. The gradingCategory property
+// SetGradingCategory sets the gradingCategory property value. When set, enables users to weight assignments differently when computing a class average grade.
 func (m *EducationAssignment) SetGradingCategory(value EducationGradingCategoryable)() {
     err := m.GetBackingStore().Set("gradingCategory", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInstructions sets the instructions property value. Instructions for the assignment.  This along with the display name tell the student what to do.
+// SetInstructions sets the instructions property value. Instructions for the assignment.  The instructsions and the display name tell the student what to do.
 func (m *EducationAssignment) SetInstructions(value EducationItemBodyable)() {
     err := m.GetBackingStore().Set("instructions", value)
     if err != nil {
@@ -915,7 +915,7 @@ func (m *EducationAssignment) SetStatus(value *EducationAssignmentStatus)() {
         panic(err)
     }
 }
-// SetSubmissions sets the submissions property value. Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
+// SetSubmissions sets the submissions property value. Once published, there's a submission object for each student representing their work and grade.  Read-only. Nullable.
 func (m *EducationAssignment) SetSubmissions(value []EducationSubmissionable)() {
     err := m.GetBackingStore().Set("submissions", value)
     if err != nil {

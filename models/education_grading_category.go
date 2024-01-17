@@ -19,7 +19,7 @@ func NewEducationGradingCategory()(*EducationGradingCategory) {
 func CreateEducationGradingCategoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationGradingCategory(), nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The name of the grading category.
 func (m *EducationGradingCategory) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -55,7 +55,7 @@ func (m *EducationGradingCategory) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetPercentageWeight gets the percentageWeight property value. The percentageWeight property
+// GetPercentageWeight gets the percentageWeight property value. The weight of the category; an integer between 0 and 100.
 func (m *EducationGradingCategory) GetPercentageWeight()(*int32) {
     val, err := m.GetBackingStore().Get("percentageWeight")
     if err != nil {
@@ -86,14 +86,14 @@ func (m *EducationGradingCategory) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The name of the grading category.
 func (m *EducationGradingCategory) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPercentageWeight sets the percentageWeight property value. The percentageWeight property
+// SetPercentageWeight sets the percentageWeight property value. The weight of the category; an integer between 0 and 100.
 func (m *EducationGradingCategory) SetPercentageWeight(value *int32)() {
     err := m.GetBackingStore().Set("percentageWeight", value)
     if err != nil {

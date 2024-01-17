@@ -74,7 +74,7 @@ func (m *RemovedState) GetOdataType()(*string) {
     }
     return nil
 }
-// GetReason gets the reason property value. The reason property
+// GetReason gets the reason property value. The removal reason for the participant resource.
 func (m *RemovedState) GetReason()(*string) {
     val, err := m.GetBackingStore().Get("reason")
     if err != nil {
@@ -125,7 +125,7 @@ func (m *RemovedState) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetReason sets the reason property value. The reason property
+// SetReason sets the reason property value. The removal reason for the participant resource.
 func (m *RemovedState) SetReason(value *string)() {
     err := m.GetBackingStore().Set("reason", value)
     if err != nil {

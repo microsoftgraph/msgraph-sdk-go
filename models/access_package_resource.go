@@ -20,6 +20,17 @@ func NewAccessPackageResource()(*AccessPackageResource) {
 func CreateAccessPackageResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageResource(), nil
 }
+// GetAttributes gets the attributes property value. The attributes property
+func (m *AccessPackageResource) GetAttributes()([]AccessPackageResourceAttributeable) {
+    val, err := m.GetBackingStore().Get("attributes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessPackageResourceAttributeable)
+    }
+    return nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageResource) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -67,6 +78,22 @@ func (m *AccessPackageResource) GetEnvironment()(AccessPackageResourceEnvironmen
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["attributes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageResourceAttributeFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AccessPackageResourceAttributeable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AccessPackageResourceAttributeable)
+                }
+            }
+            m.SetAttributes(res)
+        }
+        return nil
+    }
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -232,6 +259,18 @@ func (m *AccessPackageResource) Serialize(writer i878a80d2330e89d26896388a3f487e
     if err != nil {
         return err
     }
+    if m.GetAttributes() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttributes()))
+        for i, v := range m.GetAttributes() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("attributes", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
         if err != nil {
@@ -300,6 +339,13 @@ func (m *AccessPackageResource) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
+// SetAttributes sets the attributes property value. The attributes property
+func (m *AccessPackageResource) SetAttributes(value []AccessPackageResourceAttributeable)() {
+    err := m.GetBackingStore().Set("attributes", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *AccessPackageResource) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
@@ -367,6 +413,7 @@ func (m *AccessPackageResource) SetScopes(value []AccessPackageResourceScopeable
 type AccessPackageResourceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAttributes()([]AccessPackageResourceAttributeable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDescription()(*string)
     GetDisplayName()(*string)
@@ -376,6 +423,7 @@ type AccessPackageResourceable interface {
     GetOriginSystem()(*string)
     GetRoles()([]AccessPackageResourceRoleable)
     GetScopes()([]AccessPackageResourceScopeable)
+    SetAttributes(value []AccessPackageResourceAttributeable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
