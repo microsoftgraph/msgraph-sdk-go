@@ -99,9 +99,17 @@ func (m *LearningProvidersLearningProviderItemRequestBuilder) Get(ctx context.Co
 func (m *LearningProvidersLearningProviderItemRequestBuilder) LearningContents()(*LearningProvidersItemLearningContentsRequestBuilder) {
     return NewLearningProvidersItemLearningContentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// LearningContentsWithExternalId provides operations to manage the learningContents property of the microsoft.graph.learningProvider entity.
+func (m *LearningProvidersLearningProviderItemRequestBuilder) LearningContentsWithExternalId(externalId *string)(*LearningProvidersItemLearningContentsWithExternalIdRequestBuilder) {
+    return NewLearningProvidersItemLearningContentsWithExternalIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, externalId)
+}
 // LearningCourseActivities provides operations to manage the learningCourseActivities property of the microsoft.graph.learningProvider entity.
 func (m *LearningProvidersLearningProviderItemRequestBuilder) LearningCourseActivities()(*LearningProvidersItemLearningCourseActivitiesRequestBuilder) {
     return NewLearningProvidersItemLearningCourseActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// LearningCourseActivitiesWithExternalcourseActivityId provides operations to manage the learningCourseActivities property of the microsoft.graph.learningProvider entity.
+func (m *LearningProvidersLearningProviderItemRequestBuilder) LearningCourseActivitiesWithExternalcourseActivityId(externalcourseActivityId *string)(*LearningProvidersItemLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder) {
+    return NewLearningProvidersItemLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, externalcourseActivityId)
 }
 // Patch update the properties of a learningProvider object.
 // [Find more info here]

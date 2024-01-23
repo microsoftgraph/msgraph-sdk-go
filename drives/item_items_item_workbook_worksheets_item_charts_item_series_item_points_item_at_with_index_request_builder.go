@@ -35,6 +35,10 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsItemAtWithI
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsItemAtWithIndexRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
+// Format provides operations to manage the format property of the microsoft.graph.workbookChartPoint entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsItemAtWithIndexRequestBuilder) Format()(*ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsItemAtWithIndexFormatRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsItemAtWithIndexFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get invoke function itemAt
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsItemAtWithIndexRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemPointsItemAtWithIndexRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartPointable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);

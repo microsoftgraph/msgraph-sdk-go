@@ -35,6 +35,10 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexReques
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
+// Format provides operations to manage the format property of the microsoft.graph.workbookChartSeries entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexRequestBuilder) Format()(*ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexFormatRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get invoke function itemAt
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartSeriesable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -53,6 +57,10 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexReque
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartSeriesable), nil
+}
+// Points provides operations to manage the points property of the microsoft.graph.workbookChartSeries entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexRequestBuilder) Points()(*ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexPointsRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexPointsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation invoke function itemAt
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemSeriesItemAtWithIndexRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

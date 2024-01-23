@@ -1,0 +1,28 @@
+package drives
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthResponse 
+// Deprecated: This class is obsolete. Use imageWithWidthGetResponse instead.
+type ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthResponse struct {
+    ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthGetResponse
+}
+// NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthResponse instantiates a new ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthResponse and sets the default values.
+func NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthResponse()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthResponse) {
+    m := &ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthResponse{
+        ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthGetResponse: *NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthGetResponse(),
+    }
+    return m
+}
+// CreateItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthResponse(), nil
+}
+// ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthResponseable 
+// Deprecated: This class is obsolete. Use imageWithWidthGetResponse instead.
+type ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthResponseable interface {
+    ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthGetResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+}

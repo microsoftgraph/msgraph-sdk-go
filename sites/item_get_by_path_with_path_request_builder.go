@@ -18,6 +18,14 @@ type ItemGetByPathWithPathRequestBuilderGetRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Analytics provides operations to manage the analytics property of the microsoft.graph.site entity.
+func (m *ItemGetByPathWithPathRequestBuilder) Analytics()(*ItemGetByPathWithPathAnalyticsRequestBuilder) {
+    return NewItemGetByPathWithPathAnalyticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Columns provides operations to manage the columns property of the microsoft.graph.site entity.
+func (m *ItemGetByPathWithPathRequestBuilder) Columns()(*ItemGetByPathWithPathColumnsRequestBuilder) {
+    return NewItemGetByPathWithPathColumnsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemGetByPathWithPathRequestBuilderInternal instantiates a new GetByPathWithPathRequestBuilder and sets the default values.
 func NewItemGetByPathWithPathRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, path *string)(*ItemGetByPathWithPathRequestBuilder) {
     m := &ItemGetByPathWithPathRequestBuilder{
@@ -33,6 +41,26 @@ func NewItemGetByPathWithPathRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemGetByPathWithPathRequestBuilderInternal(urlParams, requestAdapter, nil)
+}
+// ContentTypes provides operations to manage the contentTypes property of the microsoft.graph.site entity.
+func (m *ItemGetByPathWithPathRequestBuilder) ContentTypes()(*ItemGetByPathWithPathContentTypesRequestBuilder) {
+    return NewItemGetByPathWithPathContentTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CreatedByUser provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
+func (m *ItemGetByPathWithPathRequestBuilder) CreatedByUser()(*ItemGetByPathWithPathCreatedByUserRequestBuilder) {
+    return NewItemGetByPathWithPathCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Drive provides operations to manage the drive property of the microsoft.graph.site entity.
+func (m *ItemGetByPathWithPathRequestBuilder) Drive()(*ItemGetByPathWithPathDriveRequestBuilder) {
+    return NewItemGetByPathWithPathDriveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Drives provides operations to manage the drives property of the microsoft.graph.site entity.
+func (m *ItemGetByPathWithPathRequestBuilder) Drives()(*ItemGetByPathWithPathDrivesRequestBuilder) {
+    return NewItemGetByPathWithPathDrivesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ExternalColumns provides operations to manage the externalColumns property of the microsoft.graph.site entity.
+func (m *ItemGetByPathWithPathRequestBuilder) ExternalColumns()(*ItemGetByPathWithPathExternalColumnsRequestBuilder) {
+    return NewItemGetByPathWithPathExternalColumnsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get invoke function getByPath
 func (m *ItemGetByPathWithPathRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGetByPathWithPathRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable, error) {
@@ -52,6 +80,58 @@ func (m *ItemGetByPathWithPathRequestBuilder) Get(ctx context.Context, requestCo
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Siteable), nil
+}
+// GetActivitiesByInterval provides operations to call the getActivitiesByInterval method.
+func (m *ItemGetByPathWithPathRequestBuilder) GetActivitiesByInterval()(*ItemGetByPathWithPathGetActivitiesByIntervalRequestBuilder) {
+    return NewItemGetByPathWithPathGetActivitiesByIntervalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
+func (m *ItemGetByPathWithPathRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ItemGetByPathWithPathGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
+    return NewItemGetByPathWithPathGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, endDateTime, interval, startDateTime)
+}
+// GetApplicableContentTypesForListWithListId provides operations to call the getApplicableContentTypesForList method.
+func (m *ItemGetByPathWithPathRequestBuilder) GetApplicableContentTypesForListWithListId(listId *string)(*ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilder) {
+    return NewItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, listId)
+}
+// GetByPathWithPath1 provides operations to call the getByPath method.
+func (m *ItemGetByPathWithPathRequestBuilder) GetByPathWithPath1(path1 *string)(*ItemGetByPathWithPathGetByPathWithPath1RequestBuilder) {
+    return NewItemGetByPathWithPathGetByPathWithPath1RequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, path1)
+}
+// Items provides operations to manage the items property of the microsoft.graph.site entity.
+func (m *ItemGetByPathWithPathRequestBuilder) Items()(*ItemGetByPathWithPathItemsRequestBuilder) {
+    return NewItemGetByPathWithPathItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// LastModifiedByUser provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.
+func (m *ItemGetByPathWithPathRequestBuilder) LastModifiedByUser()(*ItemGetByPathWithPathLastModifiedByUserRequestBuilder) {
+    return NewItemGetByPathWithPathLastModifiedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Lists provides operations to manage the lists property of the microsoft.graph.site entity.
+func (m *ItemGetByPathWithPathRequestBuilder) Lists()(*ItemGetByPathWithPathListsRequestBuilder) {
+    return NewItemGetByPathWithPathListsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Onenote provides operations to manage the onenote property of the microsoft.graph.site entity.
+func (m *ItemGetByPathWithPathRequestBuilder) Onenote()(*ItemGetByPathWithPathOnenoteRequestBuilder) {
+    return NewItemGetByPathWithPathOnenoteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Operations provides operations to manage the operations property of the microsoft.graph.site entity.
+func (m *ItemGetByPathWithPathRequestBuilder) Operations()(*ItemGetByPathWithPathOperationsRequestBuilder) {
+    return NewItemGetByPathWithPathOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Permissions provides operations to manage the permissions property of the microsoft.graph.site entity.
+func (m *ItemGetByPathWithPathRequestBuilder) Permissions()(*ItemGetByPathWithPathPermissionsRequestBuilder) {
+    return NewItemGetByPathWithPathPermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sites provides operations to manage the sites property of the microsoft.graph.site entity.
+func (m *ItemGetByPathWithPathRequestBuilder) Sites()(*ItemGetByPathWithPathSitesRequestBuilder) {
+    return NewItemGetByPathWithPathSitesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TermStore provides operations to manage the termStore property of the microsoft.graph.site entity.
+func (m *ItemGetByPathWithPathRequestBuilder) TermStore()(*ItemGetByPathWithPathTermStoreRequestBuilder) {
+    return NewItemGetByPathWithPathTermStoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TermStores provides operations to manage the termStores property of the microsoft.graph.site entity.
+func (m *ItemGetByPathWithPathRequestBuilder) TermStores()(*ItemGetByPathWithPathTermStoresRequestBuilder) {
+    return NewItemGetByPathWithPathTermStoresRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation invoke function getByPath
 func (m *ItemGetByPathWithPathRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGetByPathWithPathRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

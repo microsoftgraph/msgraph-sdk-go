@@ -19,6 +19,14 @@ type ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilderGetRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ClearFilters provides operations to call the clearFilters method.
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilder) ClearFilters()(*ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexClearFiltersRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexClearFiltersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Columns provides operations to manage the columns property of the microsoft.graph.workbookTable entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilder) Columns()(*ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexColumnsRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexColumnsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilderInternal instantiates a new ItemAtWithIndexRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, index *int32)(*ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilder{
@@ -34,6 +42,14 @@ func NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilder(r
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilderInternal(urlParams, requestAdapter, nil)
+}
+// ConvertToRange provides operations to call the convertToRange method.
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilder) ConvertToRange()(*ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexConvertToRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexConvertToRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DataBodyRange provides operations to call the dataBodyRange method.
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilder) DataBodyRange()(*ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexDataBodyRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexDataBodyRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get invoke function itemAt
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableable, error) {
@@ -54,6 +70,26 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilder)
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableable), nil
 }
+// HeaderRowRange provides operations to call the headerRowRange method.
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilder) HeaderRowRange()(*ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexHeaderRowRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexHeaderRowRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RangeEscaped provides operations to call the range method.
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilder) RangeEscaped()(*ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ReapplyFilters provides operations to call the reapplyFilters method.
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilder) ReapplyFilters()(*ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Rows provides operations to manage the rows property of the microsoft.graph.workbookTable entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilder) Rows()(*ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRowsRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sort provides operations to manage the sort property of the microsoft.graph.workbookTable entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilder) Sort()(*ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexSortRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexSortRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation invoke function itemAt
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -64,7 +100,15 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilder)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
+// TotalRowRange provides operations to call the totalRowRange method.
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilder) TotalRowRange()(*ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexTotalRowRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexTotalRowRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}
+// Worksheet provides operations to manage the worksheet property of the microsoft.graph.workbookTable entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexRequestBuilder) Worksheet()(*ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexWorksheetRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexWorksheetRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

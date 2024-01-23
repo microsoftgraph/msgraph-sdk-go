@@ -31,7 +31,7 @@ func NewSubjectRightsRequestsItemGetFinalAttachmentRequestBuilder(rawUrl string,
     return NewSubjectRightsRequestsItemGetFinalAttachmentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getFinalAttachment
-// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
 func (m *SubjectRightsRequestsItemGetFinalAttachmentRequestBuilder) Get(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemGetFinalAttachmentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -51,7 +51,7 @@ func (m *SubjectRightsRequestsItemGetFinalAttachmentRequestBuilder) Get(ctx cont
     return res.([]byte), nil
 }
 // ToGetRequestInformation invoke function getFinalAttachment
-// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
 func (m *SubjectRightsRequestsItemGetFinalAttachmentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemGetFinalAttachmentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -62,7 +62,7 @@ func (m *SubjectRightsRequestsItemGetFinalAttachmentRequestBuilder) ToGetRequest
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20
+// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
 func (m *SubjectRightsRequestsItemGetFinalAttachmentRequestBuilder) WithUrl(rawUrl string)(*SubjectRightsRequestsItemGetFinalAttachmentRequestBuilder) {
     return NewSubjectRightsRequestsItemGetFinalAttachmentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

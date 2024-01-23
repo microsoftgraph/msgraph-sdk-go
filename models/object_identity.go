@@ -94,7 +94,7 @@ func (m *ObjectIdentity) GetIssuer()(*string) {
     }
     return nil
 }
-// GetIssuerAssignedId gets the issuerAssignedId property value. Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or Supports $filter. 64 character limit.
+// GetIssuerAssignedId gets the issuerAssignedId property value. Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or . 64 character limit.Supports $filter.
 func (m *ObjectIdentity) GetIssuerAssignedId()(*string) {
     val, err := m.GetBackingStore().Get("issuerAssignedId")
     if err != nil {
@@ -179,7 +179,7 @@ func (m *ObjectIdentity) SetIssuer(value *string)() {
         panic(err)
     }
 }
-// SetIssuerAssignedId sets the issuerAssignedId property value. Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or Supports $filter. 64 character limit.
+// SetIssuerAssignedId sets the issuerAssignedId property value. Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or . 64 character limit.Supports $filter.
 func (m *ObjectIdentity) SetIssuerAssignedId(value *string)() {
     err := m.GetBackingStore().Set("issuerAssignedId", value)
     if err != nil {

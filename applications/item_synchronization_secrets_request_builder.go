@@ -3,8 +3,6 @@ package applications
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
     ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a "github.com/microsoftgraph/msgraph-sdk-go/models/odataerrors"
 )
 
@@ -37,7 +35,8 @@ func (m *ItemSynchronizationSecretsRequestBuilder) Count()(*ItemSynchronizationS
     return NewItemSynchronizationSecretsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Put update property secrets value.
-func (m *ItemSynchronizationSecretsRequestBuilder) Put(ctx context.Context, body []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SynchronizationSecretKeyStringValuePairable, requestConfiguration *ItemSynchronizationSecretsRequestBuilderPutRequestConfiguration)([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SynchronizationSecretKeyStringValuePairable, error) {
+// Deprecated: This method is obsolete. Use PutAsSecretsPutResponse instead.
+func (m *ItemSynchronizationSecretsRequestBuilder) Put(ctx context.Context, body ItemSynchronizationSecretsPutRequestBodyable, requestConfiguration *ItemSynchronizationSecretsRequestBuilderPutRequestConfiguration)(ItemSynchronizationSecretsResponseable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -46,33 +45,43 @@ func (m *ItemSynchronizationSecretsRequestBuilder) Put(ctx context.Context, body
         "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
         "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateSynchronizationSecretKeyStringValuePairFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSynchronizationSecretsResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
-    val := make([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SynchronizationSecretKeyStringValuePairable, len(res))
-    for i, v := range res {
-        if v != nil {
-            val[i] = v.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SynchronizationSecretKeyStringValuePairable)
-        }
+    if res == nil {
+        return nil, nil
     }
-    return val, nil
+    return res.(ItemSynchronizationSecretsResponseable), nil
+}
+// PutAsSecretsPutResponse update property secrets value.
+func (m *ItemSynchronizationSecretsRequestBuilder) PutAsSecretsPutResponse(ctx context.Context, body ItemSynchronizationSecretsPutRequestBodyable, requestConfiguration *ItemSynchronizationSecretsRequestBuilderPutRequestConfiguration)(ItemSynchronizationSecretsPutResponseable, error) {
+    requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSynchronizationSecretsPutResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ItemSynchronizationSecretsPutResponseable), nil
 }
 // ToPutRequestInformation update property secrets value.
-func (m *ItemSynchronizationSecretsRequestBuilder) ToPutRequestInformation(ctx context.Context, body []iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SynchronizationSecretKeyStringValuePairable, requestConfiguration *ItemSynchronizationSecretsRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemSynchronizationSecretsRequestBuilder) ToPutRequestInformation(ctx context.Context, body ItemSynchronizationSecretsPutRequestBodyable, requestConfiguration *ItemSynchronizationSecretsRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     requestInfo.Headers.TryAdd("Accept", "application/json")
-    cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(body))
-    for i, v := range body {
-        if v != nil {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
-    }
-    err := requestInfo.SetContentFromParsableCollection(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", cast)
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
     }

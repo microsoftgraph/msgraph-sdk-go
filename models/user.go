@@ -2297,7 +2297,7 @@ func (m *User) GetManagedDevices()([]ManagedDeviceable) {
     }
     return nil
 }
-// GetManager gets the manager property value. The user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
+// GetManager gets the manager property value. The user or contact that is this user's manager. Read-only. Supports $expand.
 func (m *User) GetManager()(DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("manager")
     if err != nil {
@@ -4406,7 +4406,7 @@ func (m *User) SetManagedDevices(value []ManagedDeviceable)() {
         panic(err)
     }
 }
-// SetManager sets the manager property value. The user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
+// SetManager sets the manager property value. The user or contact that is this user's manager. Read-only. Supports $expand.
 func (m *User) SetManager(value DirectoryObjectable)() {
     err := m.GetBackingStore().Set("manager", value)
     if err != nil {
