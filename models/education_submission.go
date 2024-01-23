@@ -181,6 +181,16 @@ func (m *EducationSubmission) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["webUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWebUrl(val)
+        }
+        return nil
+    }
     return res
 }
 // GetOutcomes gets the outcomes property value. The outcomes property
@@ -337,6 +347,17 @@ func (m *EducationSubmission) GetUnsubmittedDateTime()(*i336074805fc853987abe6f7
     }
     return nil
 }
+// GetWebUrl gets the webUrl property value. The webUrl property
+func (m *EducationSubmission) GetWebUrl()(*string) {
+    val, err := m.GetBackingStore().Get("webUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *EducationSubmission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -485,6 +506,13 @@ func (m *EducationSubmission) SetUnsubmittedDateTime(value *i336074805fc853987ab
         panic(err)
     }
 }
+// SetWebUrl sets the webUrl property value. The webUrl property
+func (m *EducationSubmission) SetWebUrl(value *string)() {
+    err := m.GetBackingStore().Set("webUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // EducationSubmissionable 
 type EducationSubmissionable interface {
     Entityable
@@ -503,6 +531,7 @@ type EducationSubmissionable interface {
     GetSubmittedResources()([]EducationSubmissionResourceable)
     GetUnsubmittedBy()(IdentitySetable)
     GetUnsubmittedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetWebUrl()(*string)
     SetOutcomes(value []EducationOutcomeable)()
     SetReassignedBy(value IdentitySetable)()
     SetReassignedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -517,4 +546,5 @@ type EducationSubmissionable interface {
     SetSubmittedResources(value []EducationSubmissionResourceable)()
     SetUnsubmittedBy(value IdentitySetable)()
     SetUnsubmittedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetWebUrl(value *string)()
 }

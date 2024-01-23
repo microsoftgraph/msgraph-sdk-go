@@ -21,7 +21,7 @@ func NewTimeOff()(*TimeOff) {
 func CreateTimeOffFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTimeOff(), nil
 }
-// GetDraftTimeOff gets the draftTimeOff property value. The draft version of this timeOff that is viewable by managers. Required.
+// GetDraftTimeOff gets the draftTimeOff property value. The draft version of this timeOff item that is viewable by managers. It must be shared before it is visible to team members. Required.
 func (m *TimeOff) GetDraftTimeOff()(TimeOffItemable) {
     val, err := m.GetBackingStore().Get("draftTimeOff")
     if err != nil {
@@ -67,7 +67,7 @@ func (m *TimeOff) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     }
     return res
 }
-// GetSharedTimeOff gets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers. Required.
+// GetSharedTimeOff gets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers. Updates to the sharedTimeOff property send notifications to users in the Teams client. Required.
 func (m *TimeOff) GetSharedTimeOff()(TimeOffItemable) {
     val, err := m.GetBackingStore().Get("sharedTimeOff")
     if err != nil {
@@ -115,14 +115,14 @@ func (m *TimeOff) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     return nil
 }
-// SetDraftTimeOff sets the draftTimeOff property value. The draft version of this timeOff that is viewable by managers. Required.
+// SetDraftTimeOff sets the draftTimeOff property value. The draft version of this timeOff item that is viewable by managers. It must be shared before it is visible to team members. Required.
 func (m *TimeOff) SetDraftTimeOff(value TimeOffItemable)() {
     err := m.GetBackingStore().Set("draftTimeOff", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSharedTimeOff sets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers. Required.
+// SetSharedTimeOff sets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers. Updates to the sharedTimeOff property send notifications to users in the Teams client. Required.
 func (m *TimeOff) SetSharedTimeOff(value TimeOffItemable)() {
     err := m.GetBackingStore().Set("sharedTimeOff", value)
     if err != nil {

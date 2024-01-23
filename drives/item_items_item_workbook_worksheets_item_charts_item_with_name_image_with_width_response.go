@@ -1,0 +1,28 @@
+package drives
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthResponse 
+// Deprecated: This class is obsolete. Use imageWithWidthGetResponse instead.
+type ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthResponse struct {
+    ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthGetResponse
+}
+// NewItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthResponse instantiates a new ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthResponse and sets the default values.
+func NewItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthResponse()(*ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthResponse) {
+    m := &ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthResponse{
+        ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthGetResponse: *NewItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthGetResponse(),
+    }
+    return m
+}
+// CreateItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthResponse(), nil
+}
+// ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthResponseable 
+// Deprecated: This class is obsolete. Use imageWithWidthGetResponse instead.
+type ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthResponseable interface {
+    ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthGetResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+}

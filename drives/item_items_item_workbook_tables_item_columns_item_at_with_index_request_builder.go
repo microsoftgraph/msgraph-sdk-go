@@ -35,6 +35,14 @@ func NewItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
+// DataBodyRange provides operations to call the dataBodyRange method.
+func (m *ItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRequestBuilder) DataBodyRange()(*ItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexDataBodyRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexDataBodyRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Filter provides operations to manage the filter property of the microsoft.graph.workbookTableColumn entity.
+func (m *ItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRequestBuilder) Filter()(*ItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexFilterRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexFilterRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get invoke function itemAt
 func (m *ItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableColumnable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
@@ -54,6 +62,14 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRequestBuilder) Ge
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookTableColumnable), nil
 }
+// HeaderRowRange provides operations to call the headerRowRange method.
+func (m *ItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRequestBuilder) HeaderRowRange()(*ItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexHeaderRowRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexHeaderRowRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RangeEscaped provides operations to call the range method.
+func (m *ItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRequestBuilder) RangeEscaped()(*ItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation invoke function itemAt
 func (m *ItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -63,6 +79,10 @@ func (m *ItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRequestBuilder) To
     }
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
+}
+// TotalRowRange provides operations to call the totalRowRange method.
+func (m *ItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRequestBuilder) TotalRowRange()(*ItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexTotalRowRangeRequestBuilder) {
+    return NewItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexTotalRowRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 func (m *ItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookTablesItemColumnsItemAtWithIndexRequestBuilder) {

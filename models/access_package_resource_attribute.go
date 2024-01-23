@@ -38,7 +38,7 @@ func (m *AccessPackageResourceAttribute) GetAdditionalData()(map[string]any) {
 func (m *AccessPackageResourceAttribute) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDestination gets the destination property value. The destination property
+// GetDestination gets the destination property value. Information about how to set the attribute, currently a accessPackageUserDirectoryAttributeStore type.
 func (m *AccessPackageResourceAttribute) GetDestination()(AccessPackageResourceAttributeDestinationable) {
     val, err := m.GetBackingStore().Get("destination")
     if err != nil {
@@ -94,7 +94,7 @@ func (m *AccessPackageResourceAttribute) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension2b676109c7c74ae2b41549205f1947edpersonalTitle.
 func (m *AccessPackageResourceAttribute) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -116,7 +116,7 @@ func (m *AccessPackageResourceAttribute) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSource gets the source property value. The source property
+// GetSource gets the source property value. Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled, currently a accessPackageResourceAttributeQuestion type.
 func (m *AccessPackageResourceAttribute) GetSource()(AccessPackageResourceAttributeSourceable) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
@@ -172,14 +172,14 @@ func (m *AccessPackageResourceAttribute) SetAdditionalData(value map[string]any)
 func (m *AccessPackageResourceAttribute) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDestination sets the destination property value. The destination property
+// SetDestination sets the destination property value. Information about how to set the attribute, currently a accessPackageUserDirectoryAttributeStore type.
 func (m *AccessPackageResourceAttribute) SetDestination(value AccessPackageResourceAttributeDestinationable)() {
     err := m.GetBackingStore().Set("destination", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension2b676109c7c74ae2b41549205f1947edpersonalTitle.
 func (m *AccessPackageResourceAttribute) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
@@ -193,7 +193,7 @@ func (m *AccessPackageResourceAttribute) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSource sets the source property value. The source property
+// SetSource sets the source property value. Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled, currently a accessPackageResourceAttributeQuestion type.
 func (m *AccessPackageResourceAttribute) SetSource(value AccessPackageResourceAttributeSourceable)() {
     err := m.GetBackingStore().Set("source", value)
     if err != nil {

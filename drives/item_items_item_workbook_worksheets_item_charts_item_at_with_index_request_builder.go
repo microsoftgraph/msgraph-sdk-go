@@ -19,6 +19,10 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilderGetRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Axes provides operations to manage the axes property of the microsoft.graph.workbookChart entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder) Axes()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexAxesRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexAxesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilderInternal instantiates a new ItemAtWithIndexRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, index *int32)(*ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder{
@@ -34,6 +38,14 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder(r
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilderInternal(urlParams, requestAdapter, nil)
+}
+// DataLabels provides operations to manage the dataLabels property of the microsoft.graph.workbookChart entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder) DataLabels()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexDataLabelsRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexDataLabelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Format provides operations to manage the format property of the microsoft.graph.workbookChart entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder) Format()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexFormatRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get invoke function itemAt
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartable, error) {
@@ -54,6 +66,42 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder)
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookChartable), nil
 }
+// Image provides operations to call the image method.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder) Image()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImageWithWidth provides operations to call the image method.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder) ImageWithWidth(width *int32)(*ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, width)
+}
+// ImageWithWidthWithHeight provides operations to call the image method.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder) ImageWithWidthWithHeight(height *int32, width *int32)(*ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthWithHeightRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthWithHeightRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, height, width)
+}
+// ImageWithWidthWithHeightWithFittingMode provides operations to call the image method.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder) ImageWithWidthWithHeightWithFittingMode(fittingMode *string, height *int32, width *int32)(*ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthWithHeightWithFittingModeRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthWithHeightWithFittingModeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, fittingMode, height, width)
+}
+// Legend provides operations to manage the legend property of the microsoft.graph.workbookChart entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder) Legend()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexLegendRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexLegendRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Series provides operations to manage the series property of the microsoft.graph.workbookChart entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder) Series()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexSeriesRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexSeriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SetData provides operations to call the setData method.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder) SetData()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexSetDataRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexSetDataRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SetPosition provides operations to call the setPosition method.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder) SetPosition()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexSetPositionRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexSetPositionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Title provides operations to manage the title property of the microsoft.graph.workbookChart entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder) Title()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexTitleRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexTitleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation invoke function itemAt
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -67,4 +115,8 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder)
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}
+// Worksheet provides operations to manage the worksheet property of the microsoft.graph.workbookChart entity.
+func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexRequestBuilder) Worksheet()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexWorksheetRequestBuilder) {
+    return NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexWorksheetRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
