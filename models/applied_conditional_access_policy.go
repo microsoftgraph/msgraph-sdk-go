@@ -148,7 +148,7 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetId gets the id property value. An identifier of the conditional access policy.
+// GetId gets the id property value. An identifier of the conditional access policy. Supports $filter (eq).
 func (m *AppliedConditionalAccessPolicy) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -170,7 +170,7 @@ func (m *AppliedConditionalAccessPolicy) GetOdataType()(*string) {
     }
     return nil
 }
-// GetResult gets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions weren't met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.
+// GetResult gets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (policy isn't applied because policy conditions weren't met), notEnabled (This is due to the policy in a disabled state), unknown, unknownFutureValue, reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.  You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.
 func (m *AppliedConditionalAccessPolicy) GetResult()(*AppliedConditionalAccessPolicyResult) {
     val, err := m.GetBackingStore().Get("result")
     if err != nil {
@@ -260,7 +260,7 @@ func (m *AppliedConditionalAccessPolicy) SetEnforcedSessionControls(value []stri
         panic(err)
     }
 }
-// SetId sets the id property value. An identifier of the conditional access policy.
+// SetId sets the id property value. An identifier of the conditional access policy. Supports $filter (eq).
 func (m *AppliedConditionalAccessPolicy) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {
@@ -274,7 +274,7 @@ func (m *AppliedConditionalAccessPolicy) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetResult sets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions weren't met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.
+// SetResult sets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (policy isn't applied because policy conditions weren't met), notEnabled (This is due to the policy in a disabled state), unknown, unknownFutureValue, reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.  You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.
 func (m *AppliedConditionalAccessPolicy) SetResult(value *AppliedConditionalAccessPolicyResult)() {
     err := m.GetBackingStore().Set("result", value)
     if err != nil {
