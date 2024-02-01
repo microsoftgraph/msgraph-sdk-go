@@ -11,6 +11,20 @@ import (
 type MeAssignmentsItemCategoriesRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// MeAssignmentsItemCategoriesRefRequestBuilderDeleteQueryParameters remove an educationCategory from an educationAssignment. Only teachers can perform this operation.
+type MeAssignmentsItemCategoriesRefRequestBuilderDeleteQueryParameters struct {
+    // The delete Uri
+    Id *string `uriparametername:"%40id"`
+}
+// MeAssignmentsItemCategoriesRefRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type MeAssignmentsItemCategoriesRefRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *MeAssignmentsItemCategoriesRefRequestBuilderDeleteQueryParameters
+}
 // MeAssignmentsItemCategoriesRefRequestBuilderGetQueryParameters list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
 type MeAssignmentsItemCategoriesRefRequestBuilderGetQueryParameters struct {
     // Include count of items
@@ -45,7 +59,7 @@ type MeAssignmentsItemCategoriesRefRequestBuilderPostRequestConfiguration struct
 // NewMeAssignmentsItemCategoriesRefRequestBuilderInternal instantiates a new RefRequestBuilder and sets the default values.
 func NewMeAssignmentsItemCategoriesRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MeAssignmentsItemCategoriesRefRequestBuilder) {
     m := &MeAssignmentsItemCategoriesRefRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/categories/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/categories/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%40id*}", pathParameters),
     }
     return m
 }
@@ -54,6 +68,25 @@ func NewMeAssignmentsItemCategoriesRefRequestBuilder(rawUrl string, requestAdapt
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMeAssignmentsItemCategoriesRefRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Delete remove an educationCategory from an educationAssignment. Only teachers can perform this operation.
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-remove-category?view=graph-rest-1.0
+func (m *MeAssignmentsItemCategoriesRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *MeAssignmentsItemCategoriesRefRequestBuilderDeleteRequestConfiguration)(error) {
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
 }
 // Get list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
 // [Find more info here]
@@ -95,6 +128,19 @@ func (m *MeAssignmentsItemCategoriesRefRequestBuilder) Post(ctx context.Context,
         return err
     }
     return nil
+}
+// ToDeleteRequestInformation remove an educationCategory from an educationAssignment. Only teachers can perform this operation.
+func (m *MeAssignmentsItemCategoriesRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MeAssignmentsItemCategoriesRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
 }
 // ToGetRequestInformation list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
 func (m *MeAssignmentsItemCategoriesRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MeAssignmentsItemCategoriesRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

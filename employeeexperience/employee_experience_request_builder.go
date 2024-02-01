@@ -13,8 +13,6 @@ type EmployeeExperienceRequestBuilder struct {
 }
 // EmployeeExperienceRequestBuilderGetQueryParameters get employeeExperience
 type EmployeeExperienceRequestBuilderGetQueryParameters struct {
-    // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -37,7 +35,7 @@ type EmployeeExperienceRequestBuilderPatchRequestConfiguration struct {
 // NewEmployeeExperienceRequestBuilderInternal instantiates a new EmployeeExperienceRequestBuilder and sets the default values.
 func NewEmployeeExperienceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EmployeeExperienceRequestBuilder) {
     m := &EmployeeExperienceRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/employeeExperience{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/employeeExperience{?%24select}", pathParameters),
     }
     return m
 }
