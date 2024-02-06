@@ -30,7 +30,7 @@ type EntitlementManagementResourcesItemEnvironmentRequestBuilderGetRequestConfig
 // NewEntitlementManagementResourcesItemEnvironmentRequestBuilderInternal instantiates a new EnvironmentRequestBuilder and sets the default values.
 func NewEntitlementManagementResourcesItemEnvironmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementResourcesItemEnvironmentRequestBuilder) {
     m := &EntitlementManagementResourcesItemEnvironmentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/resources/{accessPackageResource%2Did}/environment{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/resources/{accessPackageResource%2Did}/environment{?%24expand,%24select}", pathParameters),
     }
     return m
 }

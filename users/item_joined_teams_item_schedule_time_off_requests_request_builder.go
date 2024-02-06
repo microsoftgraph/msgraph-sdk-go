@@ -58,7 +58,7 @@ func (m *ItemJoinedTeamsItemScheduleTimeOffRequestsRequestBuilder) ByTimeOffRequ
 // NewItemJoinedTeamsItemScheduleTimeOffRequestsRequestBuilderInternal instantiates a new TimeOffRequestsRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemScheduleTimeOffRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemScheduleTimeOffRequestsRequestBuilder) {
     m := &ItemJoinedTeamsItemScheduleTimeOffRequestsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule/timeOffRequests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule/timeOffRequests{?%24count,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }

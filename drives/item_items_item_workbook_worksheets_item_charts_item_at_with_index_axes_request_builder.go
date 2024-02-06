@@ -44,7 +44,7 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexAxesRequestBuilderP
 // NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexAxesRequestBuilderInternal instantiates a new AxesRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexAxesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexAxesRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexAxesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/itemAt(index={index})/axes{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/itemAt(index={index})/axes{?%24expand,%24select}", pathParameters),
     }
     return m
 }

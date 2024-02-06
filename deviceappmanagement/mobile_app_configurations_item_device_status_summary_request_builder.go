@@ -44,7 +44,7 @@ type MobileAppConfigurationsItemDeviceStatusSummaryRequestBuilderPatchRequestCon
 // NewMobileAppConfigurationsItemDeviceStatusSummaryRequestBuilderInternal instantiates a new DeviceStatusSummaryRequestBuilder and sets the default values.
 func NewMobileAppConfigurationsItemDeviceStatusSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppConfigurationsItemDeviceStatusSummaryRequestBuilder) {
     m := &MobileAppConfigurationsItemDeviceStatusSummaryRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration%2Did}/deviceStatusSummary{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration%2Did}/deviceStatusSummary{?%24expand,%24select}", pathParameters),
     }
     return m
 }

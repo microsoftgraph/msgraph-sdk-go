@@ -30,7 +30,7 @@ type ThreatIntelligenceHostsItemWhoisRequestBuilderGetRequestConfiguration struc
 // NewThreatIntelligenceHostsItemWhoisRequestBuilderInternal instantiates a new WhoisRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostsItemWhoisRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostsItemWhoisRequestBuilder) {
     m := &ThreatIntelligenceHostsItemWhoisRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/whois{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/whois{?%24expand,%24select}", pathParameters),
     }
     return m
 }

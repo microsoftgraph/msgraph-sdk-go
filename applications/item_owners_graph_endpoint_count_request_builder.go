@@ -29,7 +29,7 @@ type ItemOwnersGraphEndpointCountRequestBuilderGetRequestConfiguration struct {
 // NewItemOwnersGraphEndpointCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemOwnersGraphEndpointCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOwnersGraphEndpointCountRequestBuilder) {
     m := &ItemOwnersGraphEndpointCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/applications/{application%2Did}/owners/graph.endpoint/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/applications/{application%2Did}/owners/graph.endpoint/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

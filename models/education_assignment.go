@@ -394,6 +394,16 @@ func (m *EducationAssignment) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["moduleUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetModuleUrl(val)
+        }
+        return nil
+    }
     res["notificationChannelUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -530,6 +540,17 @@ func (m *EducationAssignment) GetLastModifiedDateTime()(*i336074805fc853987abe6f
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetModuleUrl gets the moduleUrl property value. The moduleUrl property
+func (m *EducationAssignment) GetModuleUrl()(*string) {
+    val, err := m.GetBackingStore().Get("moduleUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -698,6 +719,12 @@ func (m *EducationAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err = writer.WriteObjectValue("instructions", m.GetInstructions())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("moduleUrl", m.GetModuleUrl())
         if err != nil {
             return err
         }
@@ -880,6 +907,13 @@ func (m *EducationAssignment) SetLastModifiedDateTime(value *i336074805fc853987a
         panic(err)
     }
 }
+// SetModuleUrl sets the moduleUrl property value. The moduleUrl property
+func (m *EducationAssignment) SetModuleUrl(value *string)() {
+    err := m.GetBackingStore().Set("moduleUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetNotificationChannelUrl sets the notificationChannelUrl property value. Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl isn't allowed after the assignment has been published.
 func (m *EducationAssignment) SetNotificationChannelUrl(value *string)() {
     err := m.GetBackingStore().Set("notificationChannelUrl", value)
@@ -953,6 +987,7 @@ type EducationAssignmentable interface {
     GetInstructions()(EducationItemBodyable)
     GetLastModifiedBy()(IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetModuleUrl()(*string)
     GetNotificationChannelUrl()(*string)
     GetResources()([]EducationAssignmentResourceable)
     GetResourcesFolderUrl()(*string)
@@ -980,6 +1015,7 @@ type EducationAssignmentable interface {
     SetInstructions(value EducationItemBodyable)()
     SetLastModifiedBy(value IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetModuleUrl(value *string)()
     SetNotificationChannelUrl(value *string)()
     SetResources(value []EducationAssignmentResourceable)()
     SetResourcesFolderUrl(value *string)()

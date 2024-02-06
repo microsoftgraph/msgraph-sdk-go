@@ -37,7 +37,7 @@ type PrivacyRequestBuilderPatchRequestConfiguration struct {
 // NewPrivacyRequestBuilderInternal instantiates a new PrivacyRequestBuilder and sets the default values.
 func NewPrivacyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivacyRequestBuilder) {
     m := &PrivacyRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privacy{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privacy{?%24expand,%24select}", pathParameters),
     }
     return m
 }

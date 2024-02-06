@@ -44,7 +44,7 @@ type ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderPatchR
 // NewItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderInternal instantiates a new SynchronizationTemplateItemRequestBuilder and sets the default values.
 func NewItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) {
     m := &ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/applications/{application%2Did}/synchronization/templates/{synchronizationTemplate%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/applications/{application%2Did}/synchronization/templates/{synchronizationTemplate%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

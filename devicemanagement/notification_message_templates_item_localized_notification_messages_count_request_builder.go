@@ -29,7 +29,7 @@ type NotificationMessageTemplatesItemLocalizedNotificationMessagesCountRequestBu
 // NewNotificationMessageTemplatesItemLocalizedNotificationMessagesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewNotificationMessageTemplatesItemLocalizedNotificationMessagesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*NotificationMessageTemplatesItemLocalizedNotificationMessagesCountRequestBuilder) {
     m := &NotificationMessageTemplatesItemLocalizedNotificationMessagesCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/notificationMessageTemplates/{notificationMessageTemplate%2Did}/localizedNotificationMessages/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/notificationMessageTemplates/{notificationMessageTemplate%2Did}/localizedNotificationMessages/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

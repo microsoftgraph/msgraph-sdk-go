@@ -6,7 +6,7 @@ import (
 type EndpointType int
 
 const (
-    DEFAULTESCAPED_ENDPOINTTYPE EndpointType = iota
+    DEFAULT_ENDPOINTTYPE EndpointType = iota
     VOICEMAIL_ENDPOINTTYPE
     SKYPEFORBUSINESS_ENDPOINTTYPE
     SKYPEFORBUSINESSVOIPPHONE_ENDPOINTTYPE
@@ -17,10 +17,10 @@ func (i EndpointType) String() string {
     return []string{"default", "voicemail", "skypeForBusiness", "skypeForBusinessVoipPhone", "unknownFutureValue"}[i]
 }
 func ParseEndpointType(v string) (any, error) {
-    result := DEFAULTESCAPED_ENDPOINTTYPE
+    result := DEFAULT_ENDPOINTTYPE
     switch v {
         case "default":
-            result = DEFAULTESCAPED_ENDPOINTTYPE
+            result = DEFAULT_ENDPOINTTYPE
         case "voicemail":
             result = VOICEMAIL_ENDPOINTTYPE
         case "skypeForBusiness":

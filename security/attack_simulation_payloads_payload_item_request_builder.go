@@ -44,7 +44,7 @@ type AttackSimulationPayloadsPayloadItemRequestBuilderPatchRequestConfiguration 
 // NewAttackSimulationPayloadsPayloadItemRequestBuilderInternal instantiates a new PayloadItemRequestBuilder and sets the default values.
 func NewAttackSimulationPayloadsPayloadItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttackSimulationPayloadsPayloadItemRequestBuilder) {
     m := &AttackSimulationPayloadsPayloadItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/attackSimulation/payloads/{payload%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/attackSimulation/payloads/{payload%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -44,7 +44,7 @@ type ItemSynchronizationTemplatesItemSchemaRequestBuilderPatchRequestConfigurati
 // NewItemSynchronizationTemplatesItemSchemaRequestBuilderInternal instantiates a new SchemaRequestBuilder and sets the default values.
 func NewItemSynchronizationTemplatesItemSchemaRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationTemplatesItemSchemaRequestBuilder) {
     m := &ItemSynchronizationTemplatesItemSchemaRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/templates/{synchronizationTemplate%2Did}/schema{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/templates/{synchronizationTemplate%2Did}/schema{?%24expand,%24select}", pathParameters),
     }
     return m
 }

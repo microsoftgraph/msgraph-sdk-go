@@ -52,7 +52,7 @@ func (m *SharesItemJobsPrintJobItemRequestBuilder) Cancel()(*SharesItemJobsItemC
 // NewSharesItemJobsPrintJobItemRequestBuilderInternal instantiates a new PrintJobItemRequestBuilder and sets the default values.
 func NewSharesItemJobsPrintJobItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesItemJobsPrintJobItemRequestBuilder) {
     m := &SharesItemJobsPrintJobItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/jobs/{printJob%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/jobs/{printJob%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

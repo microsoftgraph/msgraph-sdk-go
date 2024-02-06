@@ -29,7 +29,7 @@ type UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCountReque
 // NewUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCountRequestBuilder) {
     m := &UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

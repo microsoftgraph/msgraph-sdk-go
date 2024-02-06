@@ -30,7 +30,7 @@ type ItemOwnersItemGraphGroupRequestBuilderGetRequestConfiguration struct {
 // NewItemOwnersItemGraphGroupRequestBuilderInternal instantiates a new GraphGroupRequestBuilder and sets the default values.
 func NewItemOwnersItemGraphGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOwnersItemGraphGroupRequestBuilder) {
     m := &ItemOwnersItemGraphGroupRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/owners/{directoryObject%2Did}/graph.group{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/owners/{directoryObject%2Did}/graph.group{?%24expand,%24select}", pathParameters),
     }
     return m
 }

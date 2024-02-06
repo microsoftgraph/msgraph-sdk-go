@@ -44,7 +44,7 @@ type ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderPatchRequestConfig
 // NewItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderInternal instantiates a new AppRoleAssignmentItemRequestBuilder and sets the default values.
 func NewItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder) {
     m := &ItemAppRoleAssignmentsAppRoleAssignmentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/appRoleAssignments/{appRoleAssignment%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/appRoleAssignments/{appRoleAssignment%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

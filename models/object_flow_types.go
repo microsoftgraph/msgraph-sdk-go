@@ -1,23 +1,26 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type ObjectFlowTypes int
 
 const (
-    NONE_OBJECTFLOWTYPES ObjectFlowTypes = iota
-    ADD_OBJECTFLOWTYPES
-    UPDATE_OBJECTFLOWTYPES
-    DELETE_OBJECTFLOWTYPES
+    NONE_OBJECTFLOWTYPES = 1
+    ADD_OBJECTFLOWTYPES = 2
+    UPDATE_OBJECTFLOWTYPES = 4
+    DELETE_OBJECTFLOWTYPES = 8
 )
 
 func (i ObjectFlowTypes) String() string {
     var values []string
-    for p := ObjectFlowTypes(1); p <= DELETE_OBJECTFLOWTYPES; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"None", "Add", "Update", "Delete"}[p])
+    options := []string{"None", "Add", "Update", "Delete"}
+    for p := 0; p < 4; p++ {
+        mantis := ObjectFlowTypes(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

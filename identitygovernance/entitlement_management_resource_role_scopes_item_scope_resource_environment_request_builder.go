@@ -30,7 +30,7 @@ type EntitlementManagementResourceRoleScopesItemScopeResourceEnvironmentRequestB
 // NewEntitlementManagementResourceRoleScopesItemScopeResourceEnvironmentRequestBuilderInternal instantiates a new EnvironmentRequestBuilder and sets the default values.
 func NewEntitlementManagementResourceRoleScopesItemScopeResourceEnvironmentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementResourceRoleScopesItemScopeResourceEnvironmentRequestBuilder) {
     m := &EntitlementManagementResourceRoleScopesItemScopeResourceEnvironmentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/resourceRoleScopes/{accessPackageResourceRoleScope%2Did}/scope/resource/environment{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/resourceRoleScopes/{accessPackageResourceRoleScope%2Did}/scope/resource/environment{?%24expand,%24select}", pathParameters),
     }
     return m
 }

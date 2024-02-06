@@ -44,7 +44,7 @@ type SecureScoresSecureScoreItemRequestBuilderPatchRequestConfiguration struct {
 // NewSecureScoresSecureScoreItemRequestBuilderInternal instantiates a new SecureScoreItemRequestBuilder and sets the default values.
 func NewSecureScoresSecureScoreItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SecureScoresSecureScoreItemRequestBuilder) {
     m := &SecureScoresSecureScoreItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/secureScores/{secureScore%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/secureScores/{secureScore%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -30,7 +30,7 @@ type ItemListsItemLastModifiedByUserRequestBuilderGetRequestConfiguration struct
 // NewItemListsItemLastModifiedByUserRequestBuilderInternal instantiates a new LastModifiedByUserRequestBuilder and sets the default values.
 func NewItemListsItemLastModifiedByUserRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemLastModifiedByUserRequestBuilder) {
     m := &ItemListsItemLastModifiedByUserRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/lastModifiedByUser{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/lastModifiedByUser{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -44,7 +44,7 @@ type SignInsSignInItemRequestBuilderPatchRequestConfiguration struct {
 // NewSignInsSignInItemRequestBuilderInternal instantiates a new SignInItemRequestBuilder and sets the default values.
 func NewSignInsSignInItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SignInsSignInItemRequestBuilder) {
     m := &SignInsSignInItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/auditLogs/signIns/{signIn%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/auditLogs/signIns/{signIn%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

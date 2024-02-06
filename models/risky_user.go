@@ -161,7 +161,7 @@ func (m *RiskyUser) GetIsDeleted()(*bool) {
     }
     return nil
 }
-// GetIsProcessing gets the isProcessing property value. Indicates whether a user's risky state is being processed by the backend.
+// GetIsProcessing gets the isProcessing property value. Indicates whether a user's risky state is being processed by the backend. Supports $filter (eq).
 func (m *RiskyUser) GetIsProcessing()(*bool) {
     val, err := m.GetBackingStore().Get("isProcessing")
     if err != nil {
@@ -183,7 +183,7 @@ func (m *RiskyUser) GetRiskDetail()(*RiskDetail) {
     }
     return nil
 }
-// GetRiskLastUpdatedDateTime gets the riskLastUpdatedDateTime property value. The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetRiskLastUpdatedDateTime gets the riskLastUpdatedDateTime property value. The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, gt, lt).
 func (m *RiskyUser) GetRiskLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("riskLastUpdatedDateTime")
     if err != nil {
@@ -194,7 +194,7 @@ func (m *RiskyUser) GetRiskLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad9
     }
     return nil
 }
-// GetRiskLevel gets the riskLevel property value. Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
+// GetRiskLevel gets the riskLevel property value. Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Supports $filter (eq).
 func (m *RiskyUser) GetRiskLevel()(*RiskLevel) {
     val, err := m.GetBackingStore().Get("riskLevel")
     if err != nil {
@@ -205,7 +205,7 @@ func (m *RiskyUser) GetRiskLevel()(*RiskLevel) {
     }
     return nil
 }
-// GetRiskState gets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
+// GetRiskState gets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue. Supports $filter (eq).
 func (m *RiskyUser) GetRiskState()(*RiskState) {
     val, err := m.GetBackingStore().Get("riskState")
     if err != nil {
@@ -323,7 +323,7 @@ func (m *RiskyUser) SetIsDeleted(value *bool)() {
         panic(err)
     }
 }
-// SetIsProcessing sets the isProcessing property value. Indicates whether a user's risky state is being processed by the backend.
+// SetIsProcessing sets the isProcessing property value. Indicates whether a user's risky state is being processed by the backend. Supports $filter (eq).
 func (m *RiskyUser) SetIsProcessing(value *bool)() {
     err := m.GetBackingStore().Set("isProcessing", value)
     if err != nil {
@@ -337,21 +337,21 @@ func (m *RiskyUser) SetRiskDetail(value *RiskDetail)() {
         panic(err)
     }
 }
-// SetRiskLastUpdatedDateTime sets the riskLastUpdatedDateTime property value. The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// SetRiskLastUpdatedDateTime sets the riskLastUpdatedDateTime property value. The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, gt, lt).
 func (m *RiskyUser) SetRiskLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("riskLastUpdatedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRiskLevel sets the riskLevel property value. Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
+// SetRiskLevel sets the riskLevel property value. Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Supports $filter (eq).
 func (m *RiskyUser) SetRiskLevel(value *RiskLevel)() {
     err := m.GetBackingStore().Set("riskLevel", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRiskState sets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
+// SetRiskState sets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue. Supports $filter (eq).
 func (m *RiskyUser) SetRiskState(value *RiskState)() {
     err := m.GetBackingStore().Set("riskState", value)
     if err != nil {

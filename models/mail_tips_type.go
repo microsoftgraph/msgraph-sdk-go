@@ -1,29 +1,32 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type MailTipsType int
 
 const (
-    AUTOMATICREPLIES_MAILTIPSTYPE MailTipsType = iota
-    MAILBOXFULLSTATUS_MAILTIPSTYPE
-    CUSTOMMAILTIP_MAILTIPSTYPE
-    EXTERNALMEMBERCOUNT_MAILTIPSTYPE
-    TOTALMEMBERCOUNT_MAILTIPSTYPE
-    MAXMESSAGESIZE_MAILTIPSTYPE
-    DELIVERYRESTRICTION_MAILTIPSTYPE
-    MODERATIONSTATUS_MAILTIPSTYPE
-    RECIPIENTSCOPE_MAILTIPSTYPE
-    RECIPIENTSUGGESTIONS_MAILTIPSTYPE
+    AUTOMATICREPLIES_MAILTIPSTYPE = 1
+    MAILBOXFULLSTATUS_MAILTIPSTYPE = 2
+    CUSTOMMAILTIP_MAILTIPSTYPE = 4
+    EXTERNALMEMBERCOUNT_MAILTIPSTYPE = 8
+    TOTALMEMBERCOUNT_MAILTIPSTYPE = 16
+    MAXMESSAGESIZE_MAILTIPSTYPE = 32
+    DELIVERYRESTRICTION_MAILTIPSTYPE = 64
+    MODERATIONSTATUS_MAILTIPSTYPE = 128
+    RECIPIENTSCOPE_MAILTIPSTYPE = 256
+    RECIPIENTSUGGESTIONS_MAILTIPSTYPE = 512
 )
 
 func (i MailTipsType) String() string {
     var values []string
-    for p := MailTipsType(1); p <= RECIPIENTSUGGESTIONS_MAILTIPSTYPE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"automaticReplies", "mailboxFullStatus", "customMailTip", "externalMemberCount", "totalMemberCount", "maxMessageSize", "deliveryRestriction", "moderationStatus", "recipientScope", "recipientSuggestions"}[p])
+    options := []string{"automaticReplies", "mailboxFullStatus", "customMailTip", "externalMemberCount", "totalMemberCount", "maxMessageSize", "deliveryRestriction", "moderationStatus", "recipientScope", "recipientSuggestions"}
+    for p := 0; p < 10; p++ {
+        mantis := MailTipsType(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

@@ -29,7 +29,7 @@ type ItemRegisteredUsersCountRequestBuilderGetRequestConfiguration struct {
 // NewItemRegisteredUsersCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemRegisteredUsersCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRegisteredUsersCountRequestBuilder) {
     m := &ItemRegisteredUsersCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/devices/{device%2Did}/registeredUsers/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/devices/{device%2Did}/registeredUsers/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

@@ -9,7 +9,7 @@ const (
     // No merge type
     NOMERGE_BROWSERSITEMERGETYPE BrowserSiteMergeType = iota
     // Default merge type
-    DEFAULTESCAPED_BROWSERSITEMERGETYPE
+    DEFAULT_BROWSERSITEMERGETYPE
     // Placeholder for evolvable enum, but this enum is never returned to the caller, so it shouldn't be necessary.
     UNKNOWNFUTUREVALUE_BROWSERSITEMERGETYPE
 )
@@ -23,7 +23,7 @@ func ParseBrowserSiteMergeType(v string) (any, error) {
         case "noMerge":
             result = NOMERGE_BROWSERSITEMERGETYPE
         case "default":
-            result = DEFAULTESCAPED_BROWSERSITEMERGETYPE
+            result = DEFAULT_BROWSERSITEMERGETYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_BROWSERSITEMERGETYPE
         default:

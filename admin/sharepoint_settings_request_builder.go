@@ -44,7 +44,7 @@ type SharepointSettingsRequestBuilderPatchRequestConfiguration struct {
 // NewSharepointSettingsRequestBuilderInternal instantiates a new SettingsRequestBuilder and sets the default values.
 func NewSharepointSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharepointSettingsRequestBuilder) {
     m := &SharepointSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/sharepoint/settings{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/sharepoint/settings{?%24expand,%24select}", pathParameters),
     }
     return m
 }

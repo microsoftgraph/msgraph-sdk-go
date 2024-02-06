@@ -38,7 +38,7 @@ func (m *MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilder) Categori
 // NewMobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilderInternal instantiates a new GraphMicrosoftStoreForBusinessAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilder) {
     m := &MobileAppsItemGraphMicrosoftStoreForBusinessAppRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.microsoftStoreForBusinessApp{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.microsoftStoreForBusinessApp{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -52,7 +52,7 @@ func (m *PresencesPresenceItemRequestBuilder) ClearUserPreferredPresence()(*Pres
 // NewPresencesPresenceItemRequestBuilderInternal instantiates a new PresenceItemRequestBuilder and sets the default values.
 func NewPresencesPresenceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PresencesPresenceItemRequestBuilder) {
     m := &PresencesPresenceItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/presences/{presence%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/presences/{presence%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -52,7 +52,7 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) AttendeeReport()(*It
 // NewItemOnlineMeetingsOnlineMeetingItemRequestBuilderInternal instantiates a new OnlineMeetingItemRequestBuilder and sets the default values.
 func NewItemOnlineMeetingsOnlineMeetingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) {
     m := &ItemOnlineMeetingsOnlineMeetingItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/onlineMeetings/{onlineMeeting%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/onlineMeetings/{onlineMeeting%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
@@ -132,6 +132,14 @@ func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Patch(ctx context.Co
 // Recordings provides operations to manage the recordings property of the microsoft.graph.onlineMeeting entity.
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) Recordings()(*ItemOnlineMeetingsItemRecordingsRequestBuilder) {
     return NewItemOnlineMeetingsItemRecordingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SendVirtualAppointmentReminderSms provides operations to call the sendVirtualAppointmentReminderSms method.
+func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) SendVirtualAppointmentReminderSms()(*ItemOnlineMeetingsItemSendVirtualAppointmentReminderSmsRequestBuilder) {
+    return NewItemOnlineMeetingsItemSendVirtualAppointmentReminderSmsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SendVirtualAppointmentSms provides operations to call the sendVirtualAppointmentSms method.
+func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) SendVirtualAppointmentSms()(*ItemOnlineMeetingsItemSendVirtualAppointmentSmsRequestBuilder) {
+    return NewItemOnlineMeetingsItemSendVirtualAppointmentSmsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete an onlineMeeting object.
 func (m *ItemOnlineMeetingsOnlineMeetingItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsOnlineMeetingItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

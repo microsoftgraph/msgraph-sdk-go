@@ -53,8 +53,12 @@ func CreateAlertEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
                         return NewContainerRegistryEvidence(), nil
                     case "#microsoft.graph.security.deviceEvidence":
                         return NewDeviceEvidence(), nil
+                    case "#microsoft.graph.security.dnsEvidence":
+                        return NewDnsEvidence(), nil
                     case "#microsoft.graph.security.fileEvidence":
                         return NewFileEvidence(), nil
+                    case "#microsoft.graph.security.fileHashEvidence":
+                        return NewFileHashEvidence(), nil
                     case "#microsoft.graph.security.gitHubOrganizationEvidence":
                         return NewGitHubOrganizationEvidence(), nil
                     case "#microsoft.graph.security.gitHubRepoEvidence":

@@ -44,7 +44,7 @@ type ItemActivitiesUserActivityItemRequestBuilderPatchRequestConfiguration struc
 // NewItemActivitiesUserActivityItemRequestBuilderInternal instantiates a new UserActivityItemRequestBuilder and sets the default values.
 func NewItemActivitiesUserActivityItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemActivitiesUserActivityItemRequestBuilder) {
     m := &ItemActivitiesUserActivityItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/activities/{userActivity%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/activities/{userActivity%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

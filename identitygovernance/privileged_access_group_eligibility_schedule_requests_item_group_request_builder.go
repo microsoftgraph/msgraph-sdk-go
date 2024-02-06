@@ -30,7 +30,7 @@ type PrivilegedAccessGroupEligibilityScheduleRequestsItemGroupRequestBuilderGetR
 // NewPrivilegedAccessGroupEligibilityScheduleRequestsItemGroupRequestBuilderInternal instantiates a new GroupRequestBuilder and sets the default values.
 func NewPrivilegedAccessGroupEligibilityScheduleRequestsItemGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegedAccessGroupEligibilityScheduleRequestsItemGroupRequestBuilder) {
     m := &PrivilegedAccessGroupEligibilityScheduleRequestsItemGroupRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/{privilegedAccessGroupEligibilityScheduleRequest%2Did}/group{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/privilegedAccess/group/eligibilityScheduleRequests/{privilegedAccessGroupEligibilityScheduleRequest%2Did}/group{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -38,7 +38,7 @@ func (m *MobileAppsItemGraphWindowsWebAppRequestBuilder) Categories()(*MobileApp
 // NewMobileAppsItemGraphWindowsWebAppRequestBuilderInternal instantiates a new GraphWindowsWebAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWindowsWebAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWindowsWebAppRequestBuilder) {
     m := &MobileAppsItemGraphWindowsWebAppRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsWebApp{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsWebApp{?%24expand,%24select}", pathParameters),
     }
     return m
 }

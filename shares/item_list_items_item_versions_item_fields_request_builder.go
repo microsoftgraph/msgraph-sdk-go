@@ -44,7 +44,7 @@ type ItemListItemsItemVersionsItemFieldsRequestBuilderPatchRequestConfiguration 
 // NewItemListItemsItemVersionsItemFieldsRequestBuilderInternal instantiates a new FieldsRequestBuilder and sets the default values.
 func NewItemListItemsItemVersionsItemFieldsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListItemsItemVersionsItemFieldsRequestBuilder) {
     m := &ItemListItemsItemVersionsItemFieldsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/items/{listItem%2Did}/versions/{listItemVersion%2Did}/fields{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/items/{listItem%2Did}/versions/{listItemVersion%2Did}/fields{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -48,7 +48,7 @@ func (m *ThreatIntelligenceArticleIndicatorsArticleIndicatorItemRequestBuilder) 
 // NewThreatIntelligenceArticleIndicatorsArticleIndicatorItemRequestBuilderInternal instantiates a new ArticleIndicatorItemRequestBuilder and sets the default values.
 func NewThreatIntelligenceArticleIndicatorsArticleIndicatorItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceArticleIndicatorsArticleIndicatorItemRequestBuilder) {
     m := &ThreatIntelligenceArticleIndicatorsArticleIndicatorItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/articleIndicators/{articleIndicator%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/articleIndicators/{articleIndicator%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

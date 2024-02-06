@@ -30,7 +30,7 @@ type DeletedItemsItemGraphServicePrincipalRequestBuilderGetRequestConfiguration 
 // NewDeletedItemsItemGraphServicePrincipalRequestBuilderInternal instantiates a new GraphServicePrincipalRequestBuilder and sets the default values.
 func NewDeletedItemsItemGraphServicePrincipalRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedItemsItemGraphServicePrincipalRequestBuilder) {
     m := &DeletedItemsItemGraphServicePrincipalRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/deletedItems/{directoryObject%2Did}/graph.servicePrincipal{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/deletedItems/{directoryObject%2Did}/graph.servicePrincipal{?%24expand,%24select}", pathParameters),
     }
     return m
 }

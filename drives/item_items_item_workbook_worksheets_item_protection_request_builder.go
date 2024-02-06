@@ -44,7 +44,7 @@ type ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilderPatchRequestConf
 // NewItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilderInternal instantiates a new ProtectionRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/protection{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/protection{?%24expand,%24select}", pathParameters),
     }
     return m
 }

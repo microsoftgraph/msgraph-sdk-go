@@ -30,7 +30,7 @@ type ThreatIntelligenceHostsItemPortsHostPortItemRequestBuilderGetRequestConfigu
 // NewThreatIntelligenceHostsItemPortsHostPortItemRequestBuilderInternal instantiates a new HostPortItemRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostsItemPortsHostPortItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostsItemPortsHostPortItemRequestBuilder) {
     m := &ThreatIntelligenceHostsItemPortsHostPortItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/ports/{hostPort%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/ports/{hostPort%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

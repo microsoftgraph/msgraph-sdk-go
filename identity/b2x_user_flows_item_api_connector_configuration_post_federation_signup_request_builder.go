@@ -44,7 +44,7 @@ type B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilder
 // NewB2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilderInternal instantiates a new PostFederationSignupRequestBuilder and sets the default values.
 func NewB2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilder) {
     m := &B2xUserFlowsItemApiConnectorConfigurationPostFederationSignupRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/apiConnectorConfiguration/postFederationSignup{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/apiConnectorConfiguration/postFederationSignup{?%24expand,%24select}", pathParameters),
     }
     return m
 }

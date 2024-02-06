@@ -30,7 +30,7 @@ type ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilderGetRequestCo
 // NewConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilderInternal instantiates a new PerformedByRequestBuilder and sets the default values.
 func NewConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilder) {
     m := &ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/connections/{externalConnection%2Did}/items/{externalItem%2Did}/activities/{externalActivity%2Did}/performedBy{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/connections/{externalConnection%2Did}/items/{externalItem%2Did}/activities/{externalActivity%2Did}/performedBy{?%24expand,%24select}", pathParameters),
     }
     return m
 }

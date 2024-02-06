@@ -30,7 +30,7 @@ type ItemSitesItemGetByPathWithPathGetByPathWithPath1LastModifiedByUserRequestBu
 // NewItemSitesItemGetByPathWithPathGetByPathWithPath1LastModifiedByUserRequestBuilderInternal instantiates a new LastModifiedByUserRequestBuilder and sets the default values.
 func NewItemSitesItemGetByPathWithPathGetByPathWithPath1LastModifiedByUserRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemGetByPathWithPathGetByPathWithPath1LastModifiedByUserRequestBuilder) {
     m := &ItemSitesItemGetByPathWithPathGetByPathWithPath1LastModifiedByUserRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/getByPath(path='{path}')/getByPath(path='{path1}')/lastModifiedByUser{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/getByPath(path='{path}')/getByPath(path='{path1}')/lastModifiedByUser{?%24expand,%24select}", pathParameters),
     }
     return m
 }

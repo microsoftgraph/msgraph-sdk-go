@@ -1,23 +1,26 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type ChatMessagePolicyViolationDlpActionTypes int
 
 const (
-    NONE_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES ChatMessagePolicyViolationDlpActionTypes = iota
-    NOTIFYSENDER_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES
-    BLOCKACCESS_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES
-    BLOCKACCESSEXTERNAL_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES
+    NONE_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES = 1
+    NOTIFYSENDER_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES = 2
+    BLOCKACCESS_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES = 4
+    BLOCKACCESSEXTERNAL_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES = 8
 )
 
 func (i ChatMessagePolicyViolationDlpActionTypes) String() string {
     var values []string
-    for p := ChatMessagePolicyViolationDlpActionTypes(1); p <= BLOCKACCESSEXTERNAL_CHATMESSAGEPOLICYVIOLATIONDLPACTIONTYPES; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "notifySender", "blockAccess", "blockAccessExternal"}[p])
+    options := []string{"none", "notifySender", "blockAccess", "blockAccessExternal"}
+    for p := 0; p < 4; p++ {
+        mantis := ChatMessagePolicyViolationDlpActionTypes(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

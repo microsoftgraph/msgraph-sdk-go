@@ -30,7 +30,7 @@ type ItemGetByPathWithPathGetByPathWithPath1DriveRequestBuilderGetRequestConfigu
 // NewItemGetByPathWithPathGetByPathWithPath1DriveRequestBuilderInternal instantiates a new DriveRequestBuilder and sets the default values.
 func NewItemGetByPathWithPathGetByPathWithPath1DriveRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGetByPathWithPathGetByPathWithPath1DriveRequestBuilder) {
     m := &ItemGetByPathWithPathGetByPathWithPath1DriveRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/getByPath(path='{path1}')/drive{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/getByPath(path='{path1}')/drive{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -44,7 +44,7 @@ type DevicesWithDeviceIdRequestBuilderPatchRequestConfiguration struct {
 // NewDevicesWithDeviceIdRequestBuilderInternal instantiates a new DevicesWithDeviceIdRequestBuilder and sets the default values.
 func NewDevicesWithDeviceIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceId *string)(*DevicesWithDeviceIdRequestBuilder) {
     m := &DevicesWithDeviceIdRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/devices(deviceId='{deviceId}'){?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/devices(deviceId='{deviceId}'){?%24expand,%24select}", pathParameters),
     }
     if deviceId != nil {
         m.BaseRequestBuilder.PathParameters["deviceId"] = *deviceId

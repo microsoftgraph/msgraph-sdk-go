@@ -44,7 +44,7 @@ type ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderPatchRe
 // NewManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderInternal instantiates a new ManagedEBookAssignmentItemRequestBuilder and sets the default values.
 func NewManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) {
     m := &ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/assignments/{managedEBookAssignment%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/assignments/{managedEBookAssignment%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
@@ -54,10 +54,10 @@ func NewManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder(raw
     urlParams["request-raw-url"] = rawUrl
     return NewManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a iosVppEBookAssignment.
+// Delete deletes a managedEBookAssignment.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-delete?view=graph-rest-1.0
 func (m *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -117,7 +117,7 @@ func (m *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) P
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedEBookAssignmentable), nil
 }
-// ToDeleteRequestInformation deletes a iosVppEBookAssignment.
+// ToDeleteRequestInformation deletes a managedEBookAssignment.
 func (m *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

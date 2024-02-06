@@ -29,7 +29,7 @@ type ItemItemsItemWorkbookNamesCountRequestBuilderGetRequestConfiguration struct
 // NewItemItemsItemWorkbookNamesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookNamesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookNamesCountRequestBuilder) {
     m := &ItemItemsItemWorkbookNamesCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/names/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/names/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

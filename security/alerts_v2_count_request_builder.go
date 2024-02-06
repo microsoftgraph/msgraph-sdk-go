@@ -29,7 +29,7 @@ type Alerts_v2CountRequestBuilderGetRequestConfiguration struct {
 // NewAlerts_v2CountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewAlerts_v2CountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*Alerts_v2CountRequestBuilder) {
     m := &Alerts_v2CountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/alerts_v2/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/alerts_v2/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

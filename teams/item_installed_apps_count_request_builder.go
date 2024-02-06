@@ -29,7 +29,7 @@ type ItemInstalledAppsCountRequestBuilderGetRequestConfiguration struct {
 // NewItemInstalledAppsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemInstalledAppsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInstalledAppsCountRequestBuilder) {
     m := &ItemInstalledAppsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/installedApps/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/installedApps/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

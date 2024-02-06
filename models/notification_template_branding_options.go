@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
@@ -8,26 +9,28 @@ type NotificationTemplateBrandingOptions int
 
 const (
     // Indicates that no branding options are set in the message template.
-    NONE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS NotificationTemplateBrandingOptions = iota
+    NONE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS = 1
     // Indicates to include company logo in the message template.
-    INCLUDECOMPANYLOGO_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
+    INCLUDECOMPANYLOGO_NOTIFICATIONTEMPLATEBRANDINGOPTIONS = 2
     // Indicates to include company name in the message template.
-    INCLUDECOMPANYNAME_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
+    INCLUDECOMPANYNAME_NOTIFICATIONTEMPLATEBRANDINGOPTIONS = 4
     // Indicates to include contact information in the message template.
-    INCLUDECONTACTINFORMATION_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
+    INCLUDECONTACTINFORMATION_NOTIFICATIONTEMPLATEBRANDINGOPTIONS = 8
     // Indicates to include company portal website link in the message template.
-    INCLUDECOMPANYPORTALLINK_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
+    INCLUDECOMPANYPORTALLINK_NOTIFICATIONTEMPLATEBRANDINGOPTIONS = 16
     // Indicates to include device details in the message template.
-    INCLUDEDEVICEDETAILS_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
+    INCLUDEDEVICEDETAILS_NOTIFICATIONTEMPLATEBRANDINGOPTIONS = 32
     // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
+    UNKNOWNFUTUREVALUE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS = 64
 )
 
 func (i NotificationTemplateBrandingOptions) String() string {
     var values []string
-    for p := NotificationTemplateBrandingOptions(1); p <= UNKNOWNFUTUREVALUE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "includeCompanyLogo", "includeCompanyName", "includeContactInformation", "includeCompanyPortalLink", "includeDeviceDetails", "unknownFutureValue"}[p])
+    options := []string{"none", "includeCompanyLogo", "includeCompanyName", "includeContactInformation", "includeCompanyPortalLink", "includeDeviceDetails", "unknownFutureValue"}
+    for p := 0; p < 7; p++ {
+        mantis := NotificationTemplateBrandingOptions(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

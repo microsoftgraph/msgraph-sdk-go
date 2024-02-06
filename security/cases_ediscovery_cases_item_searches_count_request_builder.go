@@ -29,7 +29,7 @@ type CasesEdiscoveryCasesItemSearchesCountRequestBuilderGetRequestConfiguration 
 // NewCasesEdiscoveryCasesItemSearchesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemSearchesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemSearchesCountRequestBuilder) {
     m := &CasesEdiscoveryCasesItemSearchesCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/searches/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/searches/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

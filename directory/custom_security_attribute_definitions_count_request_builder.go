@@ -29,7 +29,7 @@ type CustomSecurityAttributeDefinitionsCountRequestBuilderGetRequestConfiguratio
 // NewCustomSecurityAttributeDefinitionsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewCustomSecurityAttributeDefinitionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CustomSecurityAttributeDefinitionsCountRequestBuilder) {
     m := &CustomSecurityAttributeDefinitionsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/customSecurityAttributeDefinitions/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/customSecurityAttributeDefinitions/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

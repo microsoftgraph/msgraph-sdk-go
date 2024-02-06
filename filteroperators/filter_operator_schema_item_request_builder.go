@@ -44,7 +44,7 @@ type FilterOperatorSchemaItemRequestBuilderPatchRequestConfiguration struct {
 // NewFilterOperatorSchemaItemRequestBuilderInternal instantiates a new FilterOperatorSchemaItemRequestBuilder and sets the default values.
 func NewFilterOperatorSchemaItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FilterOperatorSchemaItemRequestBuilder) {
     m := &FilterOperatorSchemaItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/filterOperators/{filterOperatorSchema%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/filterOperators/{filterOperatorSchema%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

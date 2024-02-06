@@ -44,7 +44,7 @@ type IdentitySecurityDefaultsEnforcementPolicyRequestBuilderPatchRequestConfigur
 // NewIdentitySecurityDefaultsEnforcementPolicyRequestBuilderInternal instantiates a new IdentitySecurityDefaultsEnforcementPolicyRequestBuilder and sets the default values.
 func NewIdentitySecurityDefaultsEnforcementPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) {
     m := &IdentitySecurityDefaultsEnforcementPolicyRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/identitySecurityDefaultsEnforcementPolicy{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/identitySecurityDefaultsEnforcementPolicy{?%24expand,%24select}", pathParameters),
     }
     return m
 }

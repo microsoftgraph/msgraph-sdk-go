@@ -30,7 +30,7 @@ type ThreatIntelligencePassiveDnsRecordsItemArtifactRequestBuilderGetRequestConf
 // NewThreatIntelligencePassiveDnsRecordsItemArtifactRequestBuilderInternal instantiates a new ArtifactRequestBuilder and sets the default values.
 func NewThreatIntelligencePassiveDnsRecordsItemArtifactRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligencePassiveDnsRecordsItemArtifactRequestBuilder) {
     m := &ThreatIntelligencePassiveDnsRecordsItemArtifactRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/passiveDnsRecords/{passiveDnsRecord%2Did}/artifact{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/passiveDnsRecords/{passiveDnsRecord%2Did}/artifact{?%24expand,%24select}", pathParameters),
     }
     return m
 }

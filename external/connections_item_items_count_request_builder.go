@@ -29,7 +29,7 @@ type ConnectionsItemItemsCountRequestBuilderGetRequestConfiguration struct {
 // NewConnectionsItemItemsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewConnectionsItemItemsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectionsItemItemsCountRequestBuilder) {
     m := &ConnectionsItemItemsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/connections/{externalConnection%2Did}/items/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/connections/{externalConnection%2Did}/items/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

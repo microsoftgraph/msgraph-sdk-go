@@ -30,7 +30,7 @@ type ItemListContentTypesItemBaseRequestBuilderGetRequestConfiguration struct {
 // NewItemListContentTypesItemBaseRequestBuilderInternal instantiates a new BaseRequestBuilder and sets the default values.
 func NewItemListContentTypesItemBaseRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListContentTypesItemBaseRequestBuilder) {
     m := &ItemListContentTypesItemBaseRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/contentTypes/{contentType%2Did}/base{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/contentTypes/{contentType%2Did}/base{?%24expand,%24select}", pathParameters),
     }
     return m
 }

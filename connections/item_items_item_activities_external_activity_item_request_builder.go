@@ -44,7 +44,7 @@ type ItemItemsItemActivitiesExternalActivityItemRequestBuilderPatchRequestConfig
 // NewItemItemsItemActivitiesExternalActivityItemRequestBuilderInternal instantiates a new ExternalActivityItemRequestBuilder and sets the default values.
 func NewItemItemsItemActivitiesExternalActivityItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemActivitiesExternalActivityItemRequestBuilder) {
     m := &ItemItemsItemActivitiesExternalActivityItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/connections/{externalConnection%2Did}/items/{externalItem%2Did}/activities/{externalActivity%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/connections/{externalConnection%2Did}/items/{externalItem%2Did}/activities/{externalActivity%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

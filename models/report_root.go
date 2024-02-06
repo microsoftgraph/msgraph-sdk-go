@@ -158,6 +158,16 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["partners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePartnersFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPartners(val.(Partnersable))
+        }
+        return nil
+    }
     res["security"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSecurityReportsRootFromDiscriminatorValue)
         if err != nil {
@@ -200,6 +210,17 @@ func (m *ReportRoot) GetOdataType()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetPartners gets the partners property value. Represents billing details for a Microsoft direct partner.
+func (m *ReportRoot) GetPartners()(Partnersable) {
+    val, err := m.GetBackingStore().Get("partners")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Partnersable)
     }
     return nil
 }
@@ -277,6 +298,12 @@ func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
+        err := writer.WriteObjectValue("partners", m.GetPartners())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("security", m.GetSecurity())
         if err != nil {
             return err
@@ -343,6 +370,13 @@ func (m *ReportRoot) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetPartners sets the partners property value. Represents billing details for a Microsoft direct partner.
+func (m *ReportRoot) SetPartners(value Partnersable)() {
+    err := m.GetBackingStore().Set("partners", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSecurity sets the security property value. Represents an abstract type that contains resources for attack simulation and training reports.
 func (m *ReportRoot) SetSecurity(value SecurityReportsRootable)() {
     err := m.GetBackingStore().Set("security", value)
@@ -362,6 +396,7 @@ type ReportRootable interface {
     GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinterable)
     GetMonthlyPrintUsageByUser()([]PrintUsageByUserable)
     GetOdataType()(*string)
+    GetPartners()(Partnersable)
     GetSecurity()(SecurityReportsRootable)
     SetAuthenticationMethods(value AuthenticationMethodsRootable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
@@ -370,5 +405,6 @@ type ReportRootable interface {
     SetMonthlyPrintUsageByPrinter(value []PrintUsageByPrinterable)()
     SetMonthlyPrintUsageByUser(value []PrintUsageByUserable)()
     SetOdataType(value *string)()
+    SetPartners(value Partnersable)()
     SetSecurity(value SecurityReportsRootable)()
 }

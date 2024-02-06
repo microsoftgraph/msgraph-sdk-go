@@ -44,7 +44,7 @@ type DeviceCompliancePoliciesItemDeviceStatusOverviewRequestBuilderPatchRequestC
 // NewDeviceCompliancePoliciesItemDeviceStatusOverviewRequestBuilderInternal instantiates a new DeviceStatusOverviewRequestBuilder and sets the default values.
 func NewDeviceCompliancePoliciesItemDeviceStatusOverviewRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceCompliancePoliciesItemDeviceStatusOverviewRequestBuilder) {
     m := &DeviceCompliancePoliciesItemDeviceStatusOverviewRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy%2Did}/deviceStatusOverview{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy%2Did}/deviceStatusOverview{?%24expand,%24select}", pathParameters),
     }
     return m
 }

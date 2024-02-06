@@ -44,7 +44,7 @@ type ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilderPatchRequestConfigurat
 // NewItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilderInternal instantiates a new OpenShiftItemRequestBuilder and sets the default values.
 func NewItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilder) {
     m := &ItemTeamScheduleOpenShiftsOpenShiftItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/schedule/openShifts/{openShift%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/schedule/openShifts/{openShift%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

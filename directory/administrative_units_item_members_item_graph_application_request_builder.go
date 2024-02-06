@@ -30,7 +30,7 @@ type AdministrativeUnitsItemMembersItemGraphApplicationRequestBuilderGetRequestC
 // NewAdministrativeUnitsItemMembersItemGraphApplicationRequestBuilderInternal instantiates a new GraphApplicationRequestBuilder and sets the default values.
 func NewAdministrativeUnitsItemMembersItemGraphApplicationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdministrativeUnitsItemMembersItemGraphApplicationRequestBuilder) {
     m := &AdministrativeUnitsItemMembersItemGraphApplicationRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/administrativeUnits/{administrativeUnit%2Did}/members/{directoryObject%2Did}/graph.application{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/administrativeUnits/{administrativeUnit%2Did}/members/{directoryObject%2Did}/graph.application{?%24expand,%24select}", pathParameters),
     }
     return m
 }

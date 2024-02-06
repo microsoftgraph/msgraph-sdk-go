@@ -29,7 +29,7 @@ type DirectoryRoleAssignmentSchedulesCountRequestBuilderGetRequestConfiguration 
 // NewDirectoryRoleAssignmentSchedulesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewDirectoryRoleAssignmentSchedulesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRoleAssignmentSchedulesCountRequestBuilder) {
     m := &DirectoryRoleAssignmentSchedulesCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/directory/roleAssignmentSchedules/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/directory/roleAssignmentSchedules/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

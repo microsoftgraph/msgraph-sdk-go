@@ -44,7 +44,7 @@ type CallRecordsItemSessionsSessionItemRequestBuilderPatchRequestConfiguration s
 // NewCallRecordsItemSessionsSessionItemRequestBuilderInternal instantiates a new SessionItemRequestBuilder and sets the default values.
 func NewCallRecordsItemSessionsSessionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallRecordsItemSessionsSessionItemRequestBuilder) {
     m := &CallRecordsItemSessionsSessionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/callRecords/{callRecord%2Did}/sessions/{session%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/callRecords/{callRecord%2Did}/sessions/{session%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

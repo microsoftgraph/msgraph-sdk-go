@@ -44,7 +44,7 @@ type ItemSynchronizationJobsItemSchemaRequestBuilderPatchRequestConfiguration st
 // NewItemSynchronizationJobsItemSchemaRequestBuilderInternal instantiates a new SchemaRequestBuilder and sets the default values.
 func NewItemSynchronizationJobsItemSchemaRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationJobsItemSchemaRequestBuilder) {
     m := &ItemSynchronizationJobsItemSchemaRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/applications/{application%2Did}/synchronization/jobs/{synchronizationJob%2Did}/schema{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/applications/{application%2Did}/synchronization/jobs/{synchronizationJob%2Did}/schema{?%24expand,%24select}", pathParameters),
     }
     return m
 }

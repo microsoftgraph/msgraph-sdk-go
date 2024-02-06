@@ -14,6 +14,8 @@ type DeletedTeamsItemChannelsGetAllMessagesRequestBuilder struct {
 type DeletedTeamsItemChannelsGetAllMessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // The payment model for the API
@@ -41,7 +43,7 @@ type DeletedTeamsItemChannelsGetAllMessagesRequestBuilderGetRequestConfiguration
 // NewDeletedTeamsItemChannelsGetAllMessagesRequestBuilderInternal instantiates a new GetAllMessagesRequestBuilder and sets the default values.
 func NewDeletedTeamsItemChannelsGetAllMessagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedTeamsItemChannelsGetAllMessagesRequestBuilder) {
     m := &DeletedTeamsItemChannelsGetAllMessagesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/getAllMessages(){?model*,%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/getAllMessages(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top,model*}", pathParameters),
     }
     return m
 }

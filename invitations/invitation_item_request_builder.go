@@ -44,7 +44,7 @@ type InvitationItemRequestBuilderPatchRequestConfiguration struct {
 // NewInvitationItemRequestBuilderInternal instantiates a new InvitationItemRequestBuilder and sets the default values.
 func NewInvitationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InvitationItemRequestBuilder) {
     m := &InvitationItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/invitations/{invitation%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/invitations/{invitation%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -1,24 +1,27 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type ClonableTeamParts int
 
 const (
-    APPS_CLONABLETEAMPARTS ClonableTeamParts = iota
-    TABS_CLONABLETEAMPARTS
-    SETTINGS_CLONABLETEAMPARTS
-    CHANNELS_CLONABLETEAMPARTS
-    MEMBERS_CLONABLETEAMPARTS
+    APPS_CLONABLETEAMPARTS = 1
+    TABS_CLONABLETEAMPARTS = 2
+    SETTINGS_CLONABLETEAMPARTS = 4
+    CHANNELS_CLONABLETEAMPARTS = 8
+    MEMBERS_CLONABLETEAMPARTS = 16
 )
 
 func (i ClonableTeamParts) String() string {
     var values []string
-    for p := ClonableTeamParts(1); p <= MEMBERS_CLONABLETEAMPARTS; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"apps", "tabs", "settings", "channels", "members"}[p])
+    options := []string{"apps", "tabs", "settings", "channels", "members"}
+    for p := 0; p < 5; p++ {
+        mantis := ClonableTeamParts(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

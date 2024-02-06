@@ -44,7 +44,7 @@ type TeamsTemplateItemRequestBuilderPatchRequestConfiguration struct {
 // NewTeamsTemplateItemRequestBuilderInternal instantiates a new TeamsTemplateItemRequestBuilder and sets the default values.
 func NewTeamsTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamsTemplateItemRequestBuilder) {
     m := &TeamsTemplateItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamsTemplates/{teamsTemplate%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamsTemplates/{teamsTemplate%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

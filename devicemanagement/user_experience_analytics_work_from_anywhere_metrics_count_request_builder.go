@@ -29,7 +29,7 @@ type UserExperienceAnalyticsWorkFromAnywhereMetricsCountRequestBuilderGetRequest
 // NewUserExperienceAnalyticsWorkFromAnywhereMetricsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereMetricsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsWorkFromAnywhereMetricsCountRequestBuilder) {
     m := &UserExperienceAnalyticsWorkFromAnywhereMetricsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsWorkFromAnywhereMetrics/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsWorkFromAnywhereMetrics/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

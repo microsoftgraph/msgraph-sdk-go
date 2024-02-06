@@ -29,7 +29,7 @@ type ItemTeamChannelsItemTabsCountRequestBuilderGetRequestConfiguration struct {
 // NewItemTeamChannelsItemTabsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemTeamChannelsItemTabsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamChannelsItemTabsCountRequestBuilder) {
     m := &ItemTeamChannelsItemTabsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/tabs/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/tabs/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

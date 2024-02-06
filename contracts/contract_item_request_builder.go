@@ -52,7 +52,7 @@ func (m *ContractItemRequestBuilder) CheckMemberObjects()(*ItemCheckMemberObject
 // NewContractItemRequestBuilderInternal instantiates a new ContractItemRequestBuilder and sets the default values.
 func NewContractItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ContractItemRequestBuilder) {
     m := &ContractItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/contracts/{contract%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/contracts/{contract%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -30,7 +30,7 @@ type DeletedItemsItemGraphDeviceRequestBuilderGetRequestConfiguration struct {
 // NewDeletedItemsItemGraphDeviceRequestBuilderInternal instantiates a new GraphDeviceRequestBuilder and sets the default values.
 func NewDeletedItemsItemGraphDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedItemsItemGraphDeviceRequestBuilder) {
     m := &DeletedItemsItemGraphDeviceRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/deletedItems/{directoryObject%2Did}/graph.device{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/deletedItems/{directoryObject%2Did}/graph.device{?%24expand,%24select}", pathParameters),
     }
     return m
 }

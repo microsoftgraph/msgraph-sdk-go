@@ -44,7 +44,7 @@ type TaskDefinitionsItemTasksPrintTaskItemRequestBuilderPatchRequestConfiguratio
 // NewTaskDefinitionsItemTasksPrintTaskItemRequestBuilderInternal instantiates a new PrintTaskItemRequestBuilder and sets the default values.
 func NewTaskDefinitionsItemTasksPrintTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) {
     m := &TaskDefinitionsItemTasksPrintTaskItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/taskDefinitions/{printTaskDefinition%2Did}/tasks/{printTask%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/taskDefinitions/{printTaskDefinition%2Did}/tasks/{printTask%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

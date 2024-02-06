@@ -1,27 +1,30 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type WorkforceIntegrationSupportedEntities int
 
 const (
-    NONE_WORKFORCEINTEGRATIONSUPPORTEDENTITIES WorkforceIntegrationSupportedEntities = iota
-    SHIFT_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
-    SWAPREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
-    USERSHIFTPREFERENCES_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
-    OPENSHIFT_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
-    OPENSHIFTREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
-    OFFERSHIFTREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
-    UNKNOWNFUTUREVALUE_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
+    NONE_WORKFORCEINTEGRATIONSUPPORTEDENTITIES = 1
+    SHIFT_WORKFORCEINTEGRATIONSUPPORTEDENTITIES = 2
+    SWAPREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES = 4
+    USERSHIFTPREFERENCES_WORKFORCEINTEGRATIONSUPPORTEDENTITIES = 8
+    OPENSHIFT_WORKFORCEINTEGRATIONSUPPORTEDENTITIES = 16
+    OPENSHIFTREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES = 32
+    OFFERSHIFTREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES = 64
+    UNKNOWNFUTUREVALUE_WORKFORCEINTEGRATIONSUPPORTEDENTITIES = 128
 )
 
 func (i WorkforceIntegrationSupportedEntities) String() string {
     var values []string
-    for p := WorkforceIntegrationSupportedEntities(1); p <= UNKNOWNFUTUREVALUE_WORKFORCEINTEGRATIONSUPPORTEDENTITIES; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "shift", "swapRequest", "userShiftPreferences", "openShift", "openShiftRequest", "offerShiftRequest", "unknownFutureValue"}[p])
+    options := []string{"none", "shift", "swapRequest", "userShiftPreferences", "openShift", "openShiftRequest", "offerShiftRequest", "unknownFutureValue"}
+    for p := 0; p < 8; p++ {
+        mantis := WorkforceIntegrationSupportedEntities(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

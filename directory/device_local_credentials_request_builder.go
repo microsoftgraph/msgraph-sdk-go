@@ -56,7 +56,7 @@ func (m *DeviceLocalCredentialsRequestBuilder) ByDeviceLocalCredentialInfoId(dev
 // NewDeviceLocalCredentialsRequestBuilderInternal instantiates a new DeviceLocalCredentialsRequestBuilder and sets the default values.
 func NewDeviceLocalCredentialsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceLocalCredentialsRequestBuilder) {
     m := &DeviceLocalCredentialsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/deviceLocalCredentials{?%24top,%24search,%24filter,%24count,%24orderby,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/deviceLocalCredentials{?%24count,%24filter,%24orderby,%24search,%24select,%24top}", pathParameters),
     }
     return m
 }

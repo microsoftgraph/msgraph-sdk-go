@@ -48,7 +48,7 @@ func (m *TeamsAppsTeamsAppItemRequestBuilder) AppDefinitions()(*TeamsAppsItemApp
 // NewTeamsAppsTeamsAppItemRequestBuilderInternal instantiates a new TeamsAppItemRequestBuilder and sets the default values.
 func NewTeamsAppsTeamsAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamsAppsTeamsAppItemRequestBuilder) {
     m := &TeamsAppsTeamsAppItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/appCatalogs/teamsApps/{teamsApp%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/appCatalogs/teamsApps/{teamsApp%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

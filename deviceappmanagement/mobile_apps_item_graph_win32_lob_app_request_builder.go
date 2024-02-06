@@ -38,7 +38,7 @@ func (m *MobileAppsItemGraphWin32LobAppRequestBuilder) Categories()(*MobileAppsI
 // NewMobileAppsItemGraphWin32LobAppRequestBuilderInternal instantiates a new GraphWin32LobAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWin32LobAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWin32LobAppRequestBuilder) {
     m := &MobileAppsItemGraphWin32LobAppRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.win32LobApp{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.win32LobApp{?%24expand,%24select}", pathParameters),
     }
     return m
 }

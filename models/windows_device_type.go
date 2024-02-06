@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Contains properties for Windows device type. Multiple values can be selected. Default value is `none`.
@@ -8,24 +9,26 @@ type WindowsDeviceType int
 
 const (
     // No device types supported. Default value.
-    NONE_WINDOWSDEVICETYPE WindowsDeviceType = iota
+    NONE_WINDOWSDEVICETYPE = 1
     // Indicates support for Desktop Windows device type.
-    DESKTOP_WINDOWSDEVICETYPE
+    DESKTOP_WINDOWSDEVICETYPE = 2
     // Indicates support for Mobile Windows device type.
-    MOBILE_WINDOWSDEVICETYPE
+    MOBILE_WINDOWSDEVICETYPE = 4
     // Indicates support for Holographic Windows device type.
-    HOLOGRAPHIC_WINDOWSDEVICETYPE
+    HOLOGRAPHIC_WINDOWSDEVICETYPE = 8
     // Indicates support for Team Windows device type.
-    TEAM_WINDOWSDEVICETYPE
+    TEAM_WINDOWSDEVICETYPE = 16
     // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_WINDOWSDEVICETYPE
+    UNKNOWNFUTUREVALUE_WINDOWSDEVICETYPE = 32
 )
 
 func (i WindowsDeviceType) String() string {
     var values []string
-    for p := WindowsDeviceType(1); p <= UNKNOWNFUTUREVALUE_WINDOWSDEVICETYPE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "desktop", "mobile", "holographic", "team", "unknownFutureValue"}[p])
+    options := []string{"none", "desktop", "mobile", "holographic", "team", "unknownFutureValue"}
+    for p := 0; p < 6; p++ {
+        mantis := WindowsDeviceType(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

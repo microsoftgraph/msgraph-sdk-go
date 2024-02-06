@@ -29,7 +29,7 @@ type ItemItemsItemSubscriptionsCountRequestBuilderGetRequestConfiguration struct
 // NewItemItemsItemSubscriptionsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemItemsItemSubscriptionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemSubscriptionsCountRequestBuilder) {
     m := &ItemItemsItemSubscriptionsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/subscriptions/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/subscriptions/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

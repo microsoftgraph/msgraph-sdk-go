@@ -348,7 +348,7 @@ func (m *Site) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     }
     return res
 }
-// GetIsPersonalSite gets the isPersonalSite property value. The isPersonalSite property
+// GetIsPersonalSite gets the isPersonalSite property value. Identifies whether the site is personal or not. Read-only.
 func (m *Site) GetIsPersonalSite()(*bool) {
     val, err := m.GetBackingStore().Get("isPersonalSite")
     if err != nil {
@@ -684,7 +684,7 @@ func (m *Site) SetExternalColumns(value []ColumnDefinitionable)() {
         panic(err)
     }
 }
-// SetIsPersonalSite sets the isPersonalSite property value. The isPersonalSite property
+// SetIsPersonalSite sets the isPersonalSite property value. Identifies whether the site is personal or not. Read-only.
 func (m *Site) SetIsPersonalSite(value *bool)() {
     err := m.GetBackingStore().Set("isPersonalSite", value)
     if err != nil {

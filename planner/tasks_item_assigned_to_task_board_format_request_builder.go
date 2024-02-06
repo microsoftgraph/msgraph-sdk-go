@@ -44,7 +44,7 @@ type TasksItemAssignedToTaskBoardFormatRequestBuilderPatchRequestConfiguration s
 // NewTasksItemAssignedToTaskBoardFormatRequestBuilderInternal instantiates a new AssignedToTaskBoardFormatRequestBuilder and sets the default values.
 func NewTasksItemAssignedToTaskBoardFormatRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TasksItemAssignedToTaskBoardFormatRequestBuilder) {
     m := &TasksItemAssignedToTaskBoardFormatRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/tasks/{plannerTask%2Did}/assignedToTaskBoardFormat{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/tasks/{plannerTask%2Did}/assignedToTaskBoardFormat{?%24expand,%24select}", pathParameters),
     }
     return m
 }

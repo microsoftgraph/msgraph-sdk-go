@@ -44,7 +44,7 @@ type EdgeInternetExplorerModeRequestBuilderPatchRequestConfiguration struct {
 // NewEdgeInternetExplorerModeRequestBuilderInternal instantiates a new InternetExplorerModeRequestBuilder and sets the default values.
 func NewEdgeInternetExplorerModeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdgeInternetExplorerModeRequestBuilder) {
     m := &EdgeInternetExplorerModeRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/edge/internetExplorerMode{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/edge/internetExplorerMode{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -29,7 +29,7 @@ type BucketsItemTasksCountRequestBuilderGetRequestConfiguration struct {
 // NewBucketsItemTasksCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewBucketsItemTasksCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BucketsItemTasksCountRequestBuilder) {
     m := &BucketsItemTasksCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/buckets/{plannerBucket%2Did}/tasks/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/buckets/{plannerBucket%2Did}/tasks/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

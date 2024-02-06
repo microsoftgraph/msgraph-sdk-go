@@ -1,22 +1,25 @@
 package security
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type AdditionalDataOptions int
 
 const (
-    ALLVERSIONS_ADDITIONALDATAOPTIONS AdditionalDataOptions = iota
-    LINKEDFILES_ADDITIONALDATAOPTIONS
-    UNKNOWNFUTUREVALUE_ADDITIONALDATAOPTIONS
+    ALLVERSIONS_ADDITIONALDATAOPTIONS = 1
+    LINKEDFILES_ADDITIONALDATAOPTIONS = 2
+    UNKNOWNFUTUREVALUE_ADDITIONALDATAOPTIONS = 4
 )
 
 func (i AdditionalDataOptions) String() string {
     var values []string
-    for p := AdditionalDataOptions(1); p <= UNKNOWNFUTUREVALUE_ADDITIONALDATAOPTIONS; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"allVersions", "linkedFiles", "unknownFutureValue"}[p])
+    options := []string{"allVersions", "linkedFiles", "unknownFutureValue"}
+    for p := 0; p < 3; p++ {
+        mantis := AdditionalDataOptions(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

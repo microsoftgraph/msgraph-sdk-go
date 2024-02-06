@@ -29,7 +29,7 @@ type ItemTeamScheduleTimesOffCountRequestBuilderGetRequestConfiguration struct {
 // NewItemTeamScheduleTimesOffCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemTeamScheduleTimesOffCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamScheduleTimesOffCountRequestBuilder) {
     m := &ItemTeamScheduleTimesOffCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/schedule/timesOff/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/schedule/timesOff/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

@@ -29,7 +29,7 @@ type B2xUserFlowsItemIdentityProvidersCountRequestBuilderGetRequestConfiguration
 // NewB2xUserFlowsItemIdentityProvidersCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewB2xUserFlowsItemIdentityProvidersCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2xUserFlowsItemIdentityProvidersCountRequestBuilder) {
     m := &B2xUserFlowsItemIdentityProvidersCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/identityProviders/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/identityProviders/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

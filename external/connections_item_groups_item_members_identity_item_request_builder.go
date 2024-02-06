@@ -44,7 +44,7 @@ type ConnectionsItemGroupsItemMembersIdentityItemRequestBuilderPatchRequestConfi
 // NewConnectionsItemGroupsItemMembersIdentityItemRequestBuilderInternal instantiates a new IdentityItemRequestBuilder and sets the default values.
 func NewConnectionsItemGroupsItemMembersIdentityItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectionsItemGroupsItemMembersIdentityItemRequestBuilder) {
     m := &ConnectionsItemGroupsItemMembersIdentityItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/connections/{externalConnection%2Did}/groups/{externalGroup%2Did}/members/{identity%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/connections/{externalConnection%2Did}/groups/{externalGroup%2Did}/members/{identity%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

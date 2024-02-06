@@ -29,7 +29,7 @@ type ServiceAnnouncementHealthOverviewsItemIssuesCountRequestBuilderGetRequestCo
 // NewServiceAnnouncementHealthOverviewsItemIssuesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewServiceAnnouncementHealthOverviewsItemIssuesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServiceAnnouncementHealthOverviewsItemIssuesCountRequestBuilder) {
     m := &ServiceAnnouncementHealthOverviewsItemIssuesCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/serviceAnnouncement/healthOverviews/{serviceHealth%2Did}/issues/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/serviceAnnouncement/healthOverviews/{serviceHealth%2Did}/issues/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

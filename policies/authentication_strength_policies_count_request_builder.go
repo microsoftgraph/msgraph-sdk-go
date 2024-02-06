@@ -29,7 +29,7 @@ type AuthenticationStrengthPoliciesCountRequestBuilderGetRequestConfiguration st
 // NewAuthenticationStrengthPoliciesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewAuthenticationStrengthPoliciesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationStrengthPoliciesCountRequestBuilder) {
     m := &AuthenticationStrengthPoliciesCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/authenticationStrengthPolicies/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/authenticationStrengthPolicies/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

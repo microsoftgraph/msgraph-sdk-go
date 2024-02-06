@@ -29,7 +29,7 @@ type MobileAppsItemGraphWindowsMobileMSIContentVersionsItemContainedAppsCountReq
 // NewMobileAppsItemGraphWindowsMobileMSIContentVersionsItemContainedAppsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWindowsMobileMSIContentVersionsItemContainedAppsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWindowsMobileMSIContentVersionsItemContainedAppsCountRequestBuilder) {
     m := &MobileAppsItemGraphWindowsMobileMSIContentVersionsItemContainedAppsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsMobileMSI/contentVersions/{mobileAppContent%2Did}/containedApps/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsMobileMSI/contentVersions/{mobileAppContent%2Did}/containedApps/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

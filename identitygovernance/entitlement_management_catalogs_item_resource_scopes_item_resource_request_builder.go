@@ -44,7 +44,7 @@ type EntitlementManagementCatalogsItemResourceScopesItemResourceRequestBuilderPa
 // NewEntitlementManagementCatalogsItemResourceScopesItemResourceRequestBuilderInternal instantiates a new ResourceRequestBuilder and sets the default values.
 func NewEntitlementManagementCatalogsItemResourceScopesItemResourceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementCatalogsItemResourceScopesItemResourceRequestBuilder) {
     m := &EntitlementManagementCatalogsItemResourceScopesItemResourceRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog%2Did}/resourceScopes/{accessPackageResourceScope%2Did}/resource{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog%2Did}/resourceScopes/{accessPackageResourceScope%2Did}/resource{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -30,7 +30,7 @@ type ItemCreatedByUserRequestBuilderGetRequestConfiguration struct {
 // NewItemCreatedByUserRequestBuilderInternal instantiates a new CreatedByUserRequestBuilder and sets the default values.
 func NewItemCreatedByUserRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCreatedByUserRequestBuilder) {
     m := &ItemCreatedByUserRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/createdByUser{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/createdByUser{?%24expand,%24select}", pathParameters),
     }
     return m
 }

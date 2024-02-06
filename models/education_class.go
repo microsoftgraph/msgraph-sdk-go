@@ -353,6 +353,22 @@ func (m *EducationClass) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["modules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateEducationModuleFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]EducationModuleable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(EducationModuleable)
+                }
+            }
+            m.SetModules(res)
+        }
+        return nil
+    }
     res["schools"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationSchoolFromDiscriminatorValue)
         if err != nil {
@@ -438,6 +454,17 @@ func (m *EducationClass) GetMembers()([]EducationUserable) {
     }
     if val != nil {
         return val.([]EducationUserable)
+    }
+    return nil
+}
+// GetModules gets the modules property value. The modules property
+func (m *EducationClass) GetModules()([]EducationModuleable) {
+    val, err := m.GetBackingStore().Get("modules")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EducationModuleable)
     }
     return nil
 }
@@ -601,6 +628,18 @@ func (m *EducationClass) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    if m.GetModules() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetModules()))
+        for i, v := range m.GetModules() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("modules", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSchools() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSchools()))
         for i, v := range m.GetSchools() {
@@ -752,6 +791,13 @@ func (m *EducationClass) SetMembers(value []EducationUserable)() {
         panic(err)
     }
 }
+// SetModules sets the modules property value. The modules property
+func (m *EducationClass) SetModules(value []EducationModuleable)() {
+    err := m.GetBackingStore().Set("modules", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSchools sets the schools property value. All schools that this class is associated with. Nullable.
 func (m *EducationClass) SetSchools(value []EducationSchoolable)() {
     err := m.GetBackingStore().Set("schools", value)
@@ -794,6 +840,7 @@ type EducationClassable interface {
     GetGroup()(Groupable)
     GetMailNickname()(*string)
     GetMembers()([]EducationUserable)
+    GetModules()([]EducationModuleable)
     GetSchools()([]EducationSchoolable)
     GetTeachers()([]EducationUserable)
     GetTerm()(EducationTermable)
@@ -814,6 +861,7 @@ type EducationClassable interface {
     SetGroup(value Groupable)()
     SetMailNickname(value *string)()
     SetMembers(value []EducationUserable)()
+    SetModules(value []EducationModuleable)()
     SetSchools(value []EducationSchoolable)()
     SetTeachers(value []EducationUserable)()
     SetTerm(value EducationTermable)()

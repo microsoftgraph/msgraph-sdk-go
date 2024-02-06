@@ -1,22 +1,25 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // 
 type SearchContent int
 
 const (
-    SHAREDCONTENT_SEARCHCONTENT SearchContent = iota
-    PRIVATECONTENT_SEARCHCONTENT
-    UNKNOWNFUTUREVALUE_SEARCHCONTENT
+    SHAREDCONTENT_SEARCHCONTENT = 1
+    PRIVATECONTENT_SEARCHCONTENT = 2
+    UNKNOWNFUTUREVALUE_SEARCHCONTENT = 4
 )
 
 func (i SearchContent) String() string {
     var values []string
-    for p := SearchContent(1); p <= UNKNOWNFUTUREVALUE_SEARCHCONTENT; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"sharedContent", "privateContent", "unknownFutureValue"}[p])
+    options := []string{"sharedContent", "privateContent", "unknownFutureValue"}
+    for p := 0; p < 3; p++ {
+        mantis := SearchContent(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

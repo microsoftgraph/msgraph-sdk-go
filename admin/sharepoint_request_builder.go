@@ -44,7 +44,7 @@ type SharepointRequestBuilderPatchRequestConfiguration struct {
 // NewSharepointRequestBuilderInternal instantiates a new SharepointRequestBuilder and sets the default values.
 func NewSharepointRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharepointRequestBuilder) {
     m := &SharepointRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/sharepoint{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/sharepoint{?%24expand,%24select}", pathParameters),
     }
     return m
 }

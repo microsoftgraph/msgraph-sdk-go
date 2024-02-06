@@ -30,7 +30,7 @@ type ThreatIntelligenceHostSslCertificatesItemSslCertificateRequestBuilderGetReq
 // NewThreatIntelligenceHostSslCertificatesItemSslCertificateRequestBuilderInternal instantiates a new SslCertificateRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostSslCertificatesItemSslCertificateRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostSslCertificatesItemSslCertificateRequestBuilder) {
     m := &ThreatIntelligenceHostSslCertificatesItemSslCertificateRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hostSslCertificates/{hostSslCertificate%2Did}/sslCertificate{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hostSslCertificates/{hostSslCertificate%2Did}/sslCertificate{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -33,12 +33,16 @@ func CreateEducationResourceFromDiscriminatorValue(parseNode i878a80d2330e89d268
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.educationChannelResource":
+                        return NewEducationChannelResource(), nil
                     case "#microsoft.graph.educationExcelResource":
                         return NewEducationExcelResource(), nil
                     case "#microsoft.graph.educationExternalResource":
                         return NewEducationExternalResource(), nil
                     case "#microsoft.graph.educationFileResource":
                         return NewEducationFileResource(), nil
+                    case "#microsoft.graph.educationLinkedAssignmentResource":
+                        return NewEducationLinkedAssignmentResource(), nil
                     case "#microsoft.graph.educationLinkResource":
                         return NewEducationLinkResource(), nil
                     case "#microsoft.graph.educationMediaResource":

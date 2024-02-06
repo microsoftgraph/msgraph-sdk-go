@@ -44,7 +44,7 @@ type ItemPermissionRequestBuilderPatchRequestConfiguration struct {
 // NewItemPermissionRequestBuilderInternal instantiates a new PermissionRequestBuilder and sets the default values.
 func NewItemPermissionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPermissionRequestBuilder) {
     m := &ItemPermissionRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/permission{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/permission{?%24expand,%24select}", pathParameters),
     }
     return m
 }

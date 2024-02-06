@@ -30,7 +30,7 @@ type ThreatIntelligenceHostsItemSubdomainsSubdomainItemRequestBuilderGetRequestC
 // NewThreatIntelligenceHostsItemSubdomainsSubdomainItemRequestBuilderInternal instantiates a new SubdomainItemRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostsItemSubdomainsSubdomainItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostsItemSubdomainsSubdomainItemRequestBuilder) {
     m := &ThreatIntelligenceHostsItemSubdomainsSubdomainItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/subdomains/{subdomain%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/subdomains/{subdomain%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

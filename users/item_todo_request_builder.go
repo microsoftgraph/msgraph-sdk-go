@@ -44,7 +44,7 @@ type ItemTodoRequestBuilderPatchRequestConfiguration struct {
 // NewItemTodoRequestBuilderInternal instantiates a new TodoRequestBuilder and sets the default values.
 func NewItemTodoRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTodoRequestBuilder) {
     m := &ItemTodoRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/todo{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/todo{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -29,7 +29,7 @@ type ItemListContentTypesItemColumnsCountRequestBuilderGetRequestConfiguration s
 // NewItemListContentTypesItemColumnsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemListContentTypesItemColumnsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListContentTypesItemColumnsCountRequestBuilder) {
     m := &ItemListContentTypesItemColumnsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/contentTypes/{contentType%2Did}/columns/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/contentTypes/{contentType%2Did}/columns/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

@@ -6,7 +6,7 @@ import (
 type ProvisioningStepType int
 
 const (
-    IMPORTESCAPED_PROVISIONINGSTEPTYPE ProvisioningStepType = iota
+    IMPORT_PROVISIONINGSTEPTYPE ProvisioningStepType = iota
     SCOPING_PROVISIONINGSTEPTYPE
     MATCHING_PROVISIONINGSTEPTYPE
     PROCESSING_PROVISIONINGSTEPTYPE
@@ -19,10 +19,10 @@ func (i ProvisioningStepType) String() string {
     return []string{"import", "scoping", "matching", "processing", "referenceResolution", "export", "unknownFutureValue"}[i]
 }
 func ParseProvisioningStepType(v string) (any, error) {
-    result := IMPORTESCAPED_PROVISIONINGSTEPTYPE
+    result := IMPORT_PROVISIONINGSTEPTYPE
     switch v {
         case "import":
-            result = IMPORTESCAPED_PROVISIONINGSTEPTYPE
+            result = IMPORT_PROVISIONINGSTEPTYPE
         case "scoping":
             result = SCOPING_PROVISIONINGSTEPTYPE
         case "matching":

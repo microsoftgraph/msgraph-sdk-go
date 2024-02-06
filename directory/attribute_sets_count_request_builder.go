@@ -29,7 +29,7 @@ type AttributeSetsCountRequestBuilderGetRequestConfiguration struct {
 // NewAttributeSetsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewAttributeSetsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttributeSetsCountRequestBuilder) {
     m := &AttributeSetsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/attributeSets/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/attributeSets/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

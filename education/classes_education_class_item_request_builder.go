@@ -60,7 +60,7 @@ func (m *ClassesEducationClassItemRequestBuilder) AssignmentSettings()(*ClassesI
 // NewClassesEducationClassItemRequestBuilderInternal instantiates a new EducationClassItemRequestBuilder and sets the default values.
 func NewClassesEducationClassItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesEducationClassItemRequestBuilder) {
     m := &ClassesEducationClassItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
@@ -118,6 +118,10 @@ func (m *ClassesEducationClassItemRequestBuilder) Group()(*ClassesItemGroupReque
 // Members provides operations to manage the members property of the microsoft.graph.educationClass entity.
 func (m *ClassesEducationClassItemRequestBuilder) Members()(*ClassesItemMembersRequestBuilder) {
     return NewClassesItemMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Modules provides operations to manage the modules property of the microsoft.graph.educationClass entity.
+func (m *ClassesEducationClassItemRequestBuilder) Modules()(*ClassesItemModulesRequestBuilder) {
+    return NewClassesItemModulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the properties of an educationClass object.
 // [Find more info here]

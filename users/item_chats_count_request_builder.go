@@ -29,7 +29,7 @@ type ItemChatsCountRequestBuilderGetRequestConfiguration struct {
 // NewItemChatsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
 func NewItemChatsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChatsCountRequestBuilder) {
     m := &ItemChatsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/chats/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/chats/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

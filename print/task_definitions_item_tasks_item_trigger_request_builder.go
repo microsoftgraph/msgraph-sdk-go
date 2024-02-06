@@ -30,7 +30,7 @@ type TaskDefinitionsItemTasksItemTriggerRequestBuilderGetRequestConfiguration st
 // NewTaskDefinitionsItemTasksItemTriggerRequestBuilderInternal instantiates a new TriggerRequestBuilder and sets the default values.
 func NewTaskDefinitionsItemTasksItemTriggerRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TaskDefinitionsItemTasksItemTriggerRequestBuilder) {
     m := &TaskDefinitionsItemTasksItemTriggerRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/taskDefinitions/{printTaskDefinition%2Did}/tasks/{printTask%2Did}/trigger{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/taskDefinitions/{printTaskDefinition%2Did}/tasks/{printTask%2Did}/trigger{?%24expand,%24select}", pathParameters),
     }
     return m
 }

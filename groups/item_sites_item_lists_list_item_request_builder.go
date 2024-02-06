@@ -18,7 +18,7 @@ type ItemSitesItemListsListItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemListsListItemRequestBuilderGetQueryParameters returns the metadata for a [list][].
+// ItemSitesItemListsListItemRequestBuilderGetQueryParameters get a list of rich long-running operations associated with a list.
 type ItemSitesItemListsListItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -48,7 +48,7 @@ func (m *ItemSitesItemListsListItemRequestBuilder) Columns()(*ItemSitesItemLists
 // NewItemSitesItemListsListItemRequestBuilderInternal instantiates a new ListItemRequestBuilder and sets the default values.
 func NewItemSitesItemListsListItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemListsListItemRequestBuilder) {
     m := &ItemSitesItemListsListItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
@@ -86,10 +86,10 @@ func (m *ItemSitesItemListsListItemRequestBuilder) Delete(ctx context.Context, r
 func (m *ItemSitesItemListsListItemRequestBuilder) Drive()(*ItemSitesItemListsItemDriveRequestBuilder) {
     return NewItemSitesItemListsItemDriveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get returns the metadata for a [list][].
+// Get get a list of rich long-running operations associated with a list.
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/list-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/list-list-operations?view=graph-rest-1.0
 func (m *ItemSitesItemListsListItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemListsListItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Listable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -153,7 +153,7 @@ func (m *ItemSitesItemListsListItemRequestBuilder) ToDeleteRequestInformation(ct
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation returns the metadata for a [list][].
+// ToGetRequestInformation get a list of rich long-running operations associated with a list.
 func (m *ItemSitesItemListsListItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsListItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

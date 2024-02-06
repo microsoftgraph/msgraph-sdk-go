@@ -57,7 +57,7 @@ type ItemRejectedSendersRefRequestBuilderPostRequestConfiguration struct {
 // NewItemRejectedSendersRefRequestBuilderInternal instantiates a new RefRequestBuilder and sets the default values.
 func NewItemRejectedSendersRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRejectedSendersRefRequestBuilder) {
     m := &ItemRejectedSendersRefRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/rejectedSenders/$ref{?%24top,%24skip,%24filter,%24count,%24orderby,%40id*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/rejectedSenders/$ref?@id={%40id}{&%24count,%24filter,%24orderby,%24skip,%24top}", pathParameters),
     }
     return m
 }

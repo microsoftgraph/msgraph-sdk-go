@@ -30,7 +30,7 @@ type ThreatIntelligenceHostsItemComponentsHostComponentItemRequestBuilderGetRequ
 // NewThreatIntelligenceHostsItemComponentsHostComponentItemRequestBuilderInternal instantiates a new HostComponentItemRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostsItemComponentsHostComponentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostsItemComponentsHostComponentItemRequestBuilder) {
     m := &ThreatIntelligenceHostsItemComponentsHostComponentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/components/{hostComponent%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/components/{hostComponent%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
