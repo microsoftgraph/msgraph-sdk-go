@@ -17,21 +17,23 @@ type ItemPrimaryChannelMembersAddRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemPrimaryChannelMembersAddRequestBuilderInternal instantiates a new AddRequestBuilder and sets the default values.
+// NewItemPrimaryChannelMembersAddRequestBuilderInternal instantiates a new ItemPrimaryChannelMembersAddRequestBuilder and sets the default values.
 func NewItemPrimaryChannelMembersAddRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPrimaryChannelMembersAddRequestBuilder) {
     m := &ItemPrimaryChannelMembersAddRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/primaryChannel/members/add", pathParameters),
     }
     return m
 }
-// NewItemPrimaryChannelMembersAddRequestBuilder instantiates a new AddRequestBuilder and sets the default values.
+// NewItemPrimaryChannelMembersAddRequestBuilder instantiates a new ItemPrimaryChannelMembersAddRequestBuilder and sets the default values.
 func NewItemPrimaryChannelMembersAddRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPrimaryChannelMembersAddRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemPrimaryChannelMembersAddRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-// Deprecated: This method is obsolete. Use PostAsAddPostResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ItemPrimaryChannelMembersAddResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *ItemPrimaryChannelMembersAddRequestBuilder) Post(ctx context.Context, b
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemPrimaryChannelMembersAddResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,8 @@ func (m *ItemPrimaryChannelMembersAddRequestBuilder) Post(ctx context.Context, b
     return res.(ItemPrimaryChannelMembersAddResponseable), nil
 }
 // PostAsAddPostResponse add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
+// returns a ItemPrimaryChannelMembersAddPostResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
@@ -63,8 +66,7 @@ func (m *ItemPrimaryChannelMembersAddRequestBuilder) PostAsAddPostResponse(ctx c
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemPrimaryChannelMembersAddPostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -76,6 +78,7 @@ func (m *ItemPrimaryChannelMembersAddRequestBuilder) PostAsAddPostResponse(ctx c
     return res.(ItemPrimaryChannelMembersAddPostResponseable), nil
 }
 // ToPostRequestInformation add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
+// returns a *RequestInformation when successful
 func (m *ItemPrimaryChannelMembersAddRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPrimaryChannelMembersAddPostRequestBodyable, requestConfiguration *ItemPrimaryChannelMembersAddRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -90,6 +93,7 @@ func (m *ItemPrimaryChannelMembersAddRequestBuilder) ToPostRequestInformation(ct
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemPrimaryChannelMembersAddRequestBuilder when successful
 func (m *ItemPrimaryChannelMembersAddRequestBuilder) WithUrl(rawUrl string)(*ItemPrimaryChannelMembersAddRequestBuilder) {
     return NewItemPrimaryChannelMembersAddRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

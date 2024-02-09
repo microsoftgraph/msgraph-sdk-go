@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivilegedAccessGroup 
 type PrivilegedAccessGroup struct {
     Entity
 }
-// NewPrivilegedAccessGroup instantiates a new privilegedAccessGroup and sets the default values.
+// NewPrivilegedAccessGroup instantiates a new PrivilegedAccessGroup and sets the default values.
 func NewPrivilegedAccessGroup()(*PrivilegedAccessGroup) {
     m := &PrivilegedAccessGroup{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewPrivilegedAccessGroup()(*PrivilegedAccessGroup) {
     return m
 }
 // CreatePrivilegedAccessGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrivilegedAccessGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivilegedAccessGroup(), nil
 }
 // GetAssignmentApprovals gets the assignmentApprovals property value. The assignmentApprovals property
+// returns a []Approvalable when successful
 func (m *PrivilegedAccessGroup) GetAssignmentApprovals()([]Approvalable) {
     val, err := m.GetBackingStore().Get("assignmentApprovals")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *PrivilegedAccessGroup) GetAssignmentApprovals()([]Approvalable) {
     return nil
 }
 // GetAssignmentScheduleInstances gets the assignmentScheduleInstances property value. The instances of assignment schedules to activate a just-in-time access.
+// returns a []PrivilegedAccessGroupAssignmentScheduleInstanceable when successful
 func (m *PrivilegedAccessGroup) GetAssignmentScheduleInstances()([]PrivilegedAccessGroupAssignmentScheduleInstanceable) {
     val, err := m.GetBackingStore().Get("assignmentScheduleInstances")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *PrivilegedAccessGroup) GetAssignmentScheduleInstances()([]PrivilegedAcc
     return nil
 }
 // GetAssignmentScheduleRequests gets the assignmentScheduleRequests property value. The schedule requests for operations to create, update, delete, extend, and renew an assignment.
+// returns a []PrivilegedAccessGroupAssignmentScheduleRequestable when successful
 func (m *PrivilegedAccessGroup) GetAssignmentScheduleRequests()([]PrivilegedAccessGroupAssignmentScheduleRequestable) {
     val, err := m.GetBackingStore().Get("assignmentScheduleRequests")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *PrivilegedAccessGroup) GetAssignmentScheduleRequests()([]PrivilegedAcce
     return nil
 }
 // GetAssignmentSchedules gets the assignmentSchedules property value. The assignment schedules to activate a just-in-time access.
+// returns a []PrivilegedAccessGroupAssignmentScheduleable when successful
 func (m *PrivilegedAccessGroup) GetAssignmentSchedules()([]PrivilegedAccessGroupAssignmentScheduleable) {
     val, err := m.GetBackingStore().Get("assignmentSchedules")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *PrivilegedAccessGroup) GetAssignmentSchedules()([]PrivilegedAccessGroup
     return nil
 }
 // GetEligibilityScheduleInstances gets the eligibilityScheduleInstances property value. The instances of eligibility schedules to activate a just-in-time access.
+// returns a []PrivilegedAccessGroupEligibilityScheduleInstanceable when successful
 func (m *PrivilegedAccessGroup) GetEligibilityScheduleInstances()([]PrivilegedAccessGroupEligibilityScheduleInstanceable) {
     val, err := m.GetBackingStore().Get("eligibilityScheduleInstances")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *PrivilegedAccessGroup) GetEligibilityScheduleInstances()([]PrivilegedAc
     return nil
 }
 // GetEligibilityScheduleRequests gets the eligibilityScheduleRequests property value. The schedule requests for operations to create, update, delete, extend, and renew an eligibility.
+// returns a []PrivilegedAccessGroupEligibilityScheduleRequestable when successful
 func (m *PrivilegedAccessGroup) GetEligibilityScheduleRequests()([]PrivilegedAccessGroupEligibilityScheduleRequestable) {
     val, err := m.GetBackingStore().Get("eligibilityScheduleRequests")
     if err != nil {
@@ -86,6 +92,7 @@ func (m *PrivilegedAccessGroup) GetEligibilityScheduleRequests()([]PrivilegedAcc
     return nil
 }
 // GetEligibilitySchedules gets the eligibilitySchedules property value. The eligibility schedules to activate a just-in-time access.
+// returns a []PrivilegedAccessGroupEligibilityScheduleable when successful
 func (m *PrivilegedAccessGroup) GetEligibilitySchedules()([]PrivilegedAccessGroupEligibilityScheduleable) {
     val, err := m.GetBackingStore().Get("eligibilitySchedules")
     if err != nil {
@@ -97,6 +104,7 @@ func (m *PrivilegedAccessGroup) GetEligibilitySchedules()([]PrivilegedAccessGrou
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrivilegedAccessGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignmentApprovals"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -354,7 +362,6 @@ func (m *PrivilegedAccessGroup) SetEligibilitySchedules(value []PrivilegedAccess
         panic(err)
     }
 }
-// PrivilegedAccessGroupable 
 type PrivilegedAccessGroupable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

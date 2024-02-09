@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationFileResource 
 type EducationFileResource struct {
     EducationResource
 }
-// NewEducationFileResource instantiates a new educationFileResource and sets the default values.
+// NewEducationFileResource instantiates a new EducationFileResource and sets the default values.
 func NewEducationFileResource()(*EducationFileResource) {
     m := &EducationFileResource{
         EducationResource: *NewEducationResource(),
@@ -18,10 +17,12 @@ func NewEducationFileResource()(*EducationFileResource) {
     return m
 }
 // CreateEducationFileResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationFileResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationFileResource(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationFileResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EducationResource.GetFieldDeserializers()
     res["fileUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *EducationFileResource) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetFileUrl gets the fileUrl property value. Location on disk of the file resource.
+// returns a *string when successful
 func (m *EducationFileResource) GetFileUrl()(*string) {
     val, err := m.GetBackingStore().Get("fileUrl")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *EducationFileResource) SetFileUrl(value *string)() {
         panic(err)
     }
 }
-// EducationFileResourceable 
 type EducationFileResourceable interface {
     EducationResourceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnenoteOperationCollectionResponse 
 type OnenoteOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewOnenoteOperationCollectionResponse instantiates a new onenoteOperationCollectionResponse and sets the default values.
+// NewOnenoteOperationCollectionResponse instantiates a new OnenoteOperationCollectionResponse and sets the default values.
 func NewOnenoteOperationCollectionResponse()(*OnenoteOperationCollectionResponse) {
     m := &OnenoteOperationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewOnenoteOperationCollectionResponse()(*OnenoteOperationCollectionResponse
     return m
 }
 // CreateOnenoteOperationCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnenoteOperationCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnenoteOperationCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnenoteOperationCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *OnenoteOperationCollectionResponse) GetFieldDeserializers()(map[string]
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []OnenoteOperationable when successful
 func (m *OnenoteOperationCollectionResponse) GetValue()([]OnenoteOperationable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *OnenoteOperationCollectionResponse) SetValue(value []OnenoteOperationab
         panic(err)
     }
 }
-// OnenoteOperationCollectionResponseable 
 type OnenoteOperationCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

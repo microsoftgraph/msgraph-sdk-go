@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// TargetResource 
 type TargetResource struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTargetResource instantiates a new targetResource and sets the default values.
+// NewTargetResource instantiates a new TargetResource and sets the default values.
 func NewTargetResource()(*TargetResource) {
     m := &TargetResource{
     }
@@ -19,10 +18,12 @@ func NewTargetResource()(*TargetResource) {
     return m
 }
 // CreateTargetResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTargetResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTargetResource(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TargetResource) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *TargetResource) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *TargetResource) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDisplayName gets the displayName property value. Indicates the visible name defined for the resource. Typically specified when the resource is created.
+// returns a *string when successful
 func (m *TargetResource) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *TargetResource) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TargetResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -131,6 +135,7 @@ func (m *TargetResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetGroupType gets the groupType property value. When type is set to Group, this indicates the group type. Possible values are: unifiedGroups, azureAD, and unknownFutureValue
+// returns a *GroupType when successful
 func (m *TargetResource) GetGroupType()(*GroupType) {
     val, err := m.GetBackingStore().Get("groupType")
     if err != nil {
@@ -142,6 +147,7 @@ func (m *TargetResource) GetGroupType()(*GroupType) {
     return nil
 }
 // GetId gets the id property value. Indicates the unique ID of the resource.
+// returns a *string when successful
 func (m *TargetResource) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -153,6 +159,7 @@ func (m *TargetResource) GetId()(*string) {
     return nil
 }
 // GetModifiedProperties gets the modifiedProperties property value. Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.
+// returns a []ModifiedPropertyable when successful
 func (m *TargetResource) GetModifiedProperties()([]ModifiedPropertyable) {
     val, err := m.GetBackingStore().Get("modifiedProperties")
     if err != nil {
@@ -164,6 +171,7 @@ func (m *TargetResource) GetModifiedProperties()([]ModifiedPropertyable) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *TargetResource) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -175,6 +183,7 @@ func (m *TargetResource) GetOdataType()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
+// returns a *string when successful
 func (m *TargetResource) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -186,6 +195,7 @@ func (m *TargetResource) GetTypeEscaped()(*string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. When type is set to User, this includes the user name that initiated the action; null for other types.
+// returns a *string when successful
 func (m *TargetResource) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -315,7 +325,6 @@ func (m *TargetResource) SetUserPrincipalName(value *string)() {
         panic(err)
     }
 }
-// TargetResourceable 
 type TargetResourceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

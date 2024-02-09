@@ -5,11 +5,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Task 
 type Task struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewTask instantiates a new task and sets the default values.
+// NewTask instantiates a new Task and sets the default values.
 func NewTask()(*Task) {
     m := &Task{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -17,10 +16,12 @@ func NewTask()(*Task) {
     return m
 }
 // CreateTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTask(), nil
 }
 // GetArguments gets the arguments property value. Arguments included within the task.  For guidance to configure this property, see Configure the arguments for built-in Lifecycle Workflow tasks. Required.
+// returns a []KeyValuePairable when successful
 func (m *Task) GetArguments()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValuePairable) {
     val, err := m.GetBackingStore().Get("arguments")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *Task) GetArguments()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda
     return nil
 }
 // GetCategory gets the category property value. The category property
+// returns a *LifecycleTaskCategory when successful
 func (m *Task) GetCategory()(*LifecycleTaskCategory) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *Task) GetCategory()(*LifecycleTaskCategory) {
     return nil
 }
 // GetContinueOnError gets the continueOnError property value. A boolean value that specifies whether, if this task fails, the workflow will stop, and subsequent tasks will not run. Optional.
+// returns a *bool when successful
 func (m *Task) GetContinueOnError()(*bool) {
     val, err := m.GetBackingStore().Get("continueOnError")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *Task) GetContinueOnError()(*bool) {
     return nil
 }
 // GetDescription gets the description property value. A string that describes the purpose of the task for administrative use. Optional.
+// returns a *string when successful
 func (m *Task) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *Task) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. A unique string that identifies the task. Required.Supports $filter(eq, ne) and orderBy.
+// returns a *string when successful
 func (m *Task) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *Task) GetDisplayName()(*string) {
     return nil
 }
 // GetExecutionSequence gets the executionSequence property value. An integer that states in what order the task will run in a workflow.Supports $orderby.
+// returns a *int32 when successful
 func (m *Task) GetExecutionSequence()(*int32) {
     val, err := m.GetBackingStore().Get("executionSequence")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *Task) GetExecutionSequence()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Task) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["arguments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -194,6 +201,7 @@ func (m *Task) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     return res
 }
 // GetIsEnabled gets the isEnabled property value. A boolean value that denotes whether the task is set to run or not. Optional.Supports $filter(eq, ne) and orderBy.
+// returns a *bool when successful
 func (m *Task) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -205,6 +213,7 @@ func (m *Task) GetIsEnabled()(*bool) {
     return nil
 }
 // GetTaskDefinitionId gets the taskDefinitionId property value. A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see supported tasks. Required.Supports $filter(eq, ne).
+// returns a *string when successful
 func (m *Task) GetTaskDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("taskDefinitionId")
     if err != nil {
@@ -216,6 +225,7 @@ func (m *Task) GetTaskDefinitionId()(*string) {
     return nil
 }
 // GetTaskProcessingResults gets the taskProcessingResults property value. The result of processing the task.
+// returns a []TaskProcessingResultable when successful
 func (m *Task) GetTaskProcessingResults()([]TaskProcessingResultable) {
     val, err := m.GetBackingStore().Get("taskProcessingResults")
     if err != nil {
@@ -364,7 +374,6 @@ func (m *Task) SetTaskProcessingResults(value []TaskProcessingResultable)() {
         panic(err)
     }
 }
-// Taskable 
 type Taskable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

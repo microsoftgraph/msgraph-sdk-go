@@ -8,7 +8,7 @@ import (
 type RoleAssignment struct {
     Entity
 }
-// NewRoleAssignment instantiates a new roleAssignment and sets the default values.
+// NewRoleAssignment instantiates a new RoleAssignment and sets the default values.
 func NewRoleAssignment()(*RoleAssignment) {
     m := &RoleAssignment{
         Entity: *NewEntity(),
@@ -16,6 +16,7 @@ func NewRoleAssignment()(*RoleAssignment) {
     return m
 }
 // CreateRoleAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRoleAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -38,6 +39,7 @@ func CreateRoleAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewRoleAssignment(), nil
 }
 // GetDescription gets the description property value. Description of the Role Assignment.
+// returns a *string when successful
 func (m *RoleAssignment) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -49,6 +51,7 @@ func (m *RoleAssignment) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display or friendly name of the role Assignment.
+// returns a *string when successful
 func (m *RoleAssignment) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -60,6 +63,7 @@ func (m *RoleAssignment) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -111,6 +115,7 @@ func (m *RoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetResourceScopes gets the resourceScopes property value. List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
+// returns a []string when successful
 func (m *RoleAssignment) GetResourceScopes()([]string) {
     val, err := m.GetBackingStore().Get("resourceScopes")
     if err != nil {
@@ -122,6 +127,7 @@ func (m *RoleAssignment) GetResourceScopes()([]string) {
     return nil
 }
 // GetRoleDefinition gets the roleDefinition property value. Role definition this assignment is part of.
+// returns a RoleDefinitionable when successful
 func (m *RoleAssignment) GetRoleDefinition()(RoleDefinitionable) {
     val, err := m.GetBackingStore().Get("roleDefinition")
     if err != nil {
@@ -192,7 +198,6 @@ func (m *RoleAssignment) SetRoleDefinition(value RoleDefinitionable)() {
         panic(err)
     }
 }
-// RoleAssignmentable 
 type RoleAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

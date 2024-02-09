@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Chat 
 type Chat struct {
     Entity
 }
-// NewChat instantiates a new chat and sets the default values.
+// NewChat instantiates a new Chat and sets the default values.
 func NewChat()(*Chat) {
     m := &Chat{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewChat()(*Chat) {
     return m
 }
 // CreateChatFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateChatFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChat(), nil
 }
 // GetChatType gets the chatType property value. The chatType property
+// returns a *ChatType when successful
 func (m *Chat) GetChatType()(*ChatType) {
     val, err := m.GetBackingStore().Get("chatType")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *Chat) GetChatType()(*ChatType) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time at which the chat was created. Read-only.
+// returns a *Time when successful
 func (m *Chat) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *Chat) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Chat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["chatType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -234,6 +237,7 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     return res
 }
 // GetInstalledApps gets the installedApps property value. A collection of all the apps in the chat. Nullable.
+// returns a []TeamsAppInstallationable when successful
 func (m *Chat) GetInstalledApps()([]TeamsAppInstallationable) {
     val, err := m.GetBackingStore().Get("installedApps")
     if err != nil {
@@ -245,6 +249,7 @@ func (m *Chat) GetInstalledApps()([]TeamsAppInstallationable) {
     return nil
 }
 // GetLastMessagePreview gets the lastMessagePreview property value. Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
+// returns a ChatMessageInfoable when successful
 func (m *Chat) GetLastMessagePreview()(ChatMessageInfoable) {
     val, err := m.GetBackingStore().Get("lastMessagePreview")
     if err != nil {
@@ -256,6 +261,7 @@ func (m *Chat) GetLastMessagePreview()(ChatMessageInfoable) {
     return nil
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Date and time at which the chat was renamed or list of members were last changed. Read-only.
+// returns a *Time when successful
 func (m *Chat) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
     if err != nil {
@@ -267,6 +273,7 @@ func (m *Chat) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     return nil
 }
 // GetMembers gets the members property value. A collection of all the members in the chat. Nullable.
+// returns a []ConversationMemberable when successful
 func (m *Chat) GetMembers()([]ConversationMemberable) {
     val, err := m.GetBackingStore().Get("members")
     if err != nil {
@@ -278,6 +285,7 @@ func (m *Chat) GetMembers()([]ConversationMemberable) {
     return nil
 }
 // GetMessages gets the messages property value. A collection of all the messages in the chat. Nullable.
+// returns a []ChatMessageable when successful
 func (m *Chat) GetMessages()([]ChatMessageable) {
     val, err := m.GetBackingStore().Get("messages")
     if err != nil {
@@ -289,6 +297,7 @@ func (m *Chat) GetMessages()([]ChatMessageable) {
     return nil
 }
 // GetOnlineMeetingInfo gets the onlineMeetingInfo property value. Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
+// returns a TeamworkOnlineMeetingInfoable when successful
 func (m *Chat) GetOnlineMeetingInfo()(TeamworkOnlineMeetingInfoable) {
     val, err := m.GetBackingStore().Get("onlineMeetingInfo")
     if err != nil {
@@ -300,6 +309,7 @@ func (m *Chat) GetOnlineMeetingInfo()(TeamworkOnlineMeetingInfoable) {
     return nil
 }
 // GetPermissionGrants gets the permissionGrants property value. A collection of permissions granted to apps for the chat.
+// returns a []ResourceSpecificPermissionGrantable when successful
 func (m *Chat) GetPermissionGrants()([]ResourceSpecificPermissionGrantable) {
     val, err := m.GetBackingStore().Get("permissionGrants")
     if err != nil {
@@ -311,6 +321,7 @@ func (m *Chat) GetPermissionGrants()([]ResourceSpecificPermissionGrantable) {
     return nil
 }
 // GetPinnedMessages gets the pinnedMessages property value. A collection of all the pinned messages in the chat. Nullable.
+// returns a []PinnedChatMessageInfoable when successful
 func (m *Chat) GetPinnedMessages()([]PinnedChatMessageInfoable) {
     val, err := m.GetBackingStore().Get("pinnedMessages")
     if err != nil {
@@ -322,6 +333,7 @@ func (m *Chat) GetPinnedMessages()([]PinnedChatMessageInfoable) {
     return nil
 }
 // GetTabs gets the tabs property value. A collection of all the tabs in the chat. Nullable.
+// returns a []TeamsTabable when successful
 func (m *Chat) GetTabs()([]TeamsTabable) {
     val, err := m.GetBackingStore().Get("tabs")
     if err != nil {
@@ -333,6 +345,7 @@ func (m *Chat) GetTabs()([]TeamsTabable) {
     return nil
 }
 // GetTenantId gets the tenantId property value. The identifier of the tenant in which the chat was created. Read-only.
+// returns a *string when successful
 func (m *Chat) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -344,6 +357,7 @@ func (m *Chat) GetTenantId()(*string) {
     return nil
 }
 // GetTopic gets the topic property value. (Optional) Subject or topic for the chat. Only available for group chats.
+// returns a *string when successful
 func (m *Chat) GetTopic()(*string) {
     val, err := m.GetBackingStore().Get("topic")
     if err != nil {
@@ -355,6 +369,7 @@ func (m *Chat) GetTopic()(*string) {
     return nil
 }
 // GetViewpoint gets the viewpoint property value. Represents caller-specific information about the chat, such as last message read date and time. This property is populated only when the request is made in a delegated context.
+// returns a ChatViewpointable when successful
 func (m *Chat) GetViewpoint()(ChatViewpointable) {
     val, err := m.GetBackingStore().Get("viewpoint")
     if err != nil {
@@ -366,6 +381,7 @@ func (m *Chat) GetViewpoint()(ChatViewpointable) {
     return nil
 }
 // GetWebUrl gets the webUrl property value. The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
+// returns a *string when successful
 func (m *Chat) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -616,7 +632,6 @@ func (m *Chat) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// Chatable 
 type Chatable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

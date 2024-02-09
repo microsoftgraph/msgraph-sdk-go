@@ -8,7 +8,7 @@ import (
 type LocateDeviceActionResult struct {
     DeviceActionResult
 }
-// NewLocateDeviceActionResult instantiates a new locateDeviceActionResult and sets the default values.
+// NewLocateDeviceActionResult instantiates a new LocateDeviceActionResult and sets the default values.
 func NewLocateDeviceActionResult()(*LocateDeviceActionResult) {
     m := &LocateDeviceActionResult{
         DeviceActionResult: *NewDeviceActionResult(),
@@ -16,10 +16,12 @@ func NewLocateDeviceActionResult()(*LocateDeviceActionResult) {
     return m
 }
 // CreateLocateDeviceActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateLocateDeviceActionResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLocateDeviceActionResult(), nil
 }
 // GetDeviceLocation gets the deviceLocation property value. device location
+// returns a DeviceGeoLocationable when successful
 func (m *LocateDeviceActionResult) GetDeviceLocation()(DeviceGeoLocationable) {
     val, err := m.GetBackingStore().Get("deviceLocation")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *LocateDeviceActionResult) GetDeviceLocation()(DeviceGeoLocationable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *LocateDeviceActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceActionResult.GetFieldDeserializers()
     res["deviceLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,7 +69,6 @@ func (m *LocateDeviceActionResult) SetDeviceLocation(value DeviceGeoLocationable
         panic(err)
     }
 }
-// LocateDeviceActionResultable 
 type LocateDeviceActionResultable interface {
     DeviceActionResultable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

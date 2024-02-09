@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRbacResourceNamespace 
 type UnifiedRbacResourceNamespace struct {
     Entity
 }
-// NewUnifiedRbacResourceNamespace instantiates a new unifiedRbacResourceNamespace and sets the default values.
+// NewUnifiedRbacResourceNamespace instantiates a new UnifiedRbacResourceNamespace and sets the default values.
 func NewUnifiedRbacResourceNamespace()(*UnifiedRbacResourceNamespace) {
     m := &UnifiedRbacResourceNamespace{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewUnifiedRbacResourceNamespace()(*UnifiedRbacResourceNamespace) {
     return m
 }
 // CreateUnifiedRbacResourceNamespaceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnifiedRbacResourceNamespaceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRbacResourceNamespace(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnifiedRbacResourceNamespace) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -51,6 +52,7 @@ func (m *UnifiedRbacResourceNamespace) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *UnifiedRbacResourceNamespace) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -62,6 +64,7 @@ func (m *UnifiedRbacResourceNamespace) GetName()(*string) {
     return nil
 }
 // GetResourceActions gets the resourceActions property value. The resourceActions property
+// returns a []UnifiedRbacResourceActionable when successful
 func (m *UnifiedRbacResourceNamespace) GetResourceActions()([]UnifiedRbacResourceActionable) {
     val, err := m.GetBackingStore().Get("resourceActions")
     if err != nil {
@@ -112,7 +115,6 @@ func (m *UnifiedRbacResourceNamespace) SetResourceActions(value []UnifiedRbacRes
         panic(err)
     }
 }
-// UnifiedRbacResourceNamespaceable 
 type UnifiedRbacResourceNamespaceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

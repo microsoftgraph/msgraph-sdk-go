@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SettingStateDeviceSummaryCollectionResponse 
 type SettingStateDeviceSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSettingStateDeviceSummaryCollectionResponse instantiates a new settingStateDeviceSummaryCollectionResponse and sets the default values.
+// NewSettingStateDeviceSummaryCollectionResponse instantiates a new SettingStateDeviceSummaryCollectionResponse and sets the default values.
 func NewSettingStateDeviceSummaryCollectionResponse()(*SettingStateDeviceSummaryCollectionResponse) {
     m := &SettingStateDeviceSummaryCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewSettingStateDeviceSummaryCollectionResponse()(*SettingStateDeviceSummary
     return m
 }
 // CreateSettingStateDeviceSummaryCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSettingStateDeviceSummaryCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSettingStateDeviceSummaryCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SettingStateDeviceSummaryCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *SettingStateDeviceSummaryCollectionResponse) GetFieldDeserializers()(ma
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []SettingStateDeviceSummaryable when successful
 func (m *SettingStateDeviceSummaryCollectionResponse) GetValue()([]SettingStateDeviceSummaryable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *SettingStateDeviceSummaryCollectionResponse) SetValue(value []SettingSt
         panic(err)
     }
 }
-// SettingStateDeviceSummaryCollectionResponseable 
 type SettingStateDeviceSummaryCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

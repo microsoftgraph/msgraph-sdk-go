@@ -8,7 +8,7 @@ import (
 type BookingCustomQuestion struct {
     Entity
 }
-// NewBookingCustomQuestion instantiates a new bookingCustomQuestion and sets the default values.
+// NewBookingCustomQuestion instantiates a new BookingCustomQuestion and sets the default values.
 func NewBookingCustomQuestion()(*BookingCustomQuestion) {
     m := &BookingCustomQuestion{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewBookingCustomQuestion()(*BookingCustomQuestion) {
     return m
 }
 // CreateBookingCustomQuestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBookingCustomQuestionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBookingCustomQuestion(), nil
 }
 // GetAnswerInputType gets the answerInputType property value. The expected answer type. The possible values are: text, radioButton, unknownFutureValue.
+// returns a *AnswerInputType when successful
 func (m *BookingCustomQuestion) GetAnswerInputType()(*AnswerInputType) {
     val, err := m.GetBackingStore().Get("answerInputType")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *BookingCustomQuestion) GetAnswerInputType()(*AnswerInputType) {
     return nil
 }
 // GetAnswerOptions gets the answerOptions property value. List of possible answer values.
+// returns a []string when successful
 func (m *BookingCustomQuestion) GetAnswerOptions()([]string) {
     val, err := m.GetBackingStore().Get("answerOptions")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *BookingCustomQuestion) GetAnswerOptions()([]string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The question.
+// returns a *string when successful
 func (m *BookingCustomQuestion) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *BookingCustomQuestion) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BookingCustomQuestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["answerInputType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -141,7 +146,6 @@ func (m *BookingCustomQuestion) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// BookingCustomQuestionable 
 type BookingCustomQuestionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

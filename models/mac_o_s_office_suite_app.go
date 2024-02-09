@@ -8,7 +8,7 @@ import (
 type MacOSOfficeSuiteApp struct {
     MobileApp
 }
-// NewMacOSOfficeSuiteApp instantiates a new macOSOfficeSuiteApp and sets the default values.
+// NewMacOSOfficeSuiteApp instantiates a new MacOSOfficeSuiteApp and sets the default values.
 func NewMacOSOfficeSuiteApp()(*MacOSOfficeSuiteApp) {
     m := &MacOSOfficeSuiteApp{
         MobileApp: *NewMobileApp(),
@@ -18,10 +18,12 @@ func NewMacOSOfficeSuiteApp()(*MacOSOfficeSuiteApp) {
     return m
 }
 // CreateMacOSOfficeSuiteAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOSOfficeSuiteAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSOfficeSuiteApp(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSOfficeSuiteApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileApp.GetFieldDeserializers()
     return res
@@ -34,7 +36,6 @@ func (m *MacOSOfficeSuiteApp) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// MacOSOfficeSuiteAppable 
 type MacOSOfficeSuiteAppable interface {
     MobileAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -6,11 +6,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// CallRecord 
 type CallRecord struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewCallRecord instantiates a new callRecord and sets the default values.
+// NewCallRecord instantiates a new CallRecord and sets the default values.
 func NewCallRecord()(*CallRecord) {
     m := &CallRecord{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -18,10 +17,12 @@ func NewCallRecord()(*CallRecord) {
     return m
 }
 // CreateCallRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCallRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCallRecord(), nil
 }
 // GetEndDateTime gets the endDateTime property value. UTC time when the last user left the call. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *CallRecord) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *CallRecord) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CallRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["endDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -156,6 +158,7 @@ func (m *CallRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetJoinWebUrl gets the joinWebUrl property value. Meeting URL associated to the call. May not be available for a peerToPeer call record type.
+// returns a *string when successful
 func (m *CallRecord) GetJoinWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("joinWebUrl")
     if err != nil {
@@ -167,6 +170,7 @@ func (m *CallRecord) GetJoinWebUrl()(*string) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. UTC time when the call record was created. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *CallRecord) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -178,6 +182,7 @@ func (m *CallRecord) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetModalities gets the modalities property value. List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
+// returns a []Modality when successful
 func (m *CallRecord) GetModalities()([]Modality) {
     val, err := m.GetBackingStore().Get("modalities")
     if err != nil {
@@ -189,6 +194,7 @@ func (m *CallRecord) GetModalities()([]Modality) {
     return nil
 }
 // GetOrganizer gets the organizer property value. The organizing party's identity.
+// returns a IdentitySetable when successful
 func (m *CallRecord) GetOrganizer()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable) {
     val, err := m.GetBackingStore().Get("organizer")
     if err != nil {
@@ -200,6 +206,7 @@ func (m *CallRecord) GetOrganizer()(iadcd81124412c61e647227ecfc4449d8bba17de0380
     return nil
 }
 // GetParticipants gets the participants property value. List of distinct identities involved in the call.
+// returns a []IdentitySetable when successful
 func (m *CallRecord) GetParticipants()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable) {
     val, err := m.GetBackingStore().Get("participants")
     if err != nil {
@@ -211,6 +218,7 @@ func (m *CallRecord) GetParticipants()([]iadcd81124412c61e647227ecfc4449d8bba17d
     return nil
 }
 // GetSessions gets the sessions property value. List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
+// returns a []Sessionable when successful
 func (m *CallRecord) GetSessions()([]Sessionable) {
     val, err := m.GetBackingStore().Get("sessions")
     if err != nil {
@@ -222,6 +230,7 @@ func (m *CallRecord) GetSessions()([]Sessionable) {
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *CallRecord) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -233,6 +242,7 @@ func (m *CallRecord) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     return nil
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *CallType when successful
 func (m *CallRecord) GetTypeEscaped()(*CallType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -244,6 +254,7 @@ func (m *CallRecord) GetTypeEscaped()(*CallType) {
     return nil
 }
 // GetVersion gets the version property value. Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
+// returns a *int64 when successful
 func (m *CallRecord) GetVersion()(*int64) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -405,7 +416,6 @@ func (m *CallRecord) SetVersion(value *int64)() {
         panic(err)
     }
 }
-// CallRecordable 
 type CallRecordable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

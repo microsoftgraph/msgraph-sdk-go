@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AttackSimulationRoot 
 type AttackSimulationRoot struct {
     Entity
 }
-// NewAttackSimulationRoot instantiates a new attackSimulationRoot and sets the default values.
+// NewAttackSimulationRoot instantiates a new AttackSimulationRoot and sets the default values.
 func NewAttackSimulationRoot()(*AttackSimulationRoot) {
     m := &AttackSimulationRoot{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewAttackSimulationRoot()(*AttackSimulationRoot) {
     return m
 }
 // CreateAttackSimulationRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAttackSimulationRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAttackSimulationRoot(), nil
 }
 // GetEndUserNotifications gets the endUserNotifications property value. Represents an end user's notification for an attack simulation training.
+// returns a []EndUserNotificationable when successful
 func (m *AttackSimulationRoot) GetEndUserNotifications()([]EndUserNotificationable) {
     val, err := m.GetBackingStore().Get("endUserNotifications")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *AttackSimulationRoot) GetEndUserNotifications()([]EndUserNotificationab
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AttackSimulationRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["endUserNotifications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -164,6 +166,7 @@ func (m *AttackSimulationRoot) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetLandingPages gets the landingPages property value. Represents an attack simulation training landing page.
+// returns a []LandingPageable when successful
 func (m *AttackSimulationRoot) GetLandingPages()([]LandingPageable) {
     val, err := m.GetBackingStore().Get("landingPages")
     if err != nil {
@@ -175,6 +178,7 @@ func (m *AttackSimulationRoot) GetLandingPages()([]LandingPageable) {
     return nil
 }
 // GetLoginPages gets the loginPages property value. Represents an attack simulation training login page.
+// returns a []LoginPageable when successful
 func (m *AttackSimulationRoot) GetLoginPages()([]LoginPageable) {
     val, err := m.GetBackingStore().Get("loginPages")
     if err != nil {
@@ -186,6 +190,7 @@ func (m *AttackSimulationRoot) GetLoginPages()([]LoginPageable) {
     return nil
 }
 // GetOperations gets the operations property value. Represents an attack simulation training operation.
+// returns a []AttackSimulationOperationable when successful
 func (m *AttackSimulationRoot) GetOperations()([]AttackSimulationOperationable) {
     val, err := m.GetBackingStore().Get("operations")
     if err != nil {
@@ -197,6 +202,7 @@ func (m *AttackSimulationRoot) GetOperations()([]AttackSimulationOperationable) 
     return nil
 }
 // GetPayloads gets the payloads property value. Represents an attack simulation training campaign payload in a tenant.
+// returns a []Payloadable when successful
 func (m *AttackSimulationRoot) GetPayloads()([]Payloadable) {
     val, err := m.GetBackingStore().Get("payloads")
     if err != nil {
@@ -208,6 +214,7 @@ func (m *AttackSimulationRoot) GetPayloads()([]Payloadable) {
     return nil
 }
 // GetSimulationAutomations gets the simulationAutomations property value. Represents simulation automation created to run on a tenant.
+// returns a []SimulationAutomationable when successful
 func (m *AttackSimulationRoot) GetSimulationAutomations()([]SimulationAutomationable) {
     val, err := m.GetBackingStore().Get("simulationAutomations")
     if err != nil {
@@ -219,6 +226,7 @@ func (m *AttackSimulationRoot) GetSimulationAutomations()([]SimulationAutomation
     return nil
 }
 // GetSimulations gets the simulations property value. Represents an attack simulation training campaign in a tenant.
+// returns a []Simulationable when successful
 func (m *AttackSimulationRoot) GetSimulations()([]Simulationable) {
     val, err := m.GetBackingStore().Get("simulations")
     if err != nil {
@@ -230,6 +238,7 @@ func (m *AttackSimulationRoot) GetSimulations()([]Simulationable) {
     return nil
 }
 // GetTrainings gets the trainings property value. Represents details about attack simulation trainings.
+// returns a []Trainingable when successful
 func (m *AttackSimulationRoot) GetTrainings()([]Trainingable) {
     val, err := m.GetBackingStore().Get("trainings")
     if err != nil {
@@ -400,7 +409,6 @@ func (m *AttackSimulationRoot) SetTrainings(value []Trainingable)() {
         panic(err)
     }
 }
-// AttackSimulationRootable 
 type AttackSimulationRootable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

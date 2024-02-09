@@ -8,7 +8,7 @@ import (
 type MobileContainedApp struct {
     Entity
 }
-// NewMobileContainedApp instantiates a new mobileContainedApp and sets the default values.
+// NewMobileContainedApp instantiates a new MobileContainedApp and sets the default values.
 func NewMobileContainedApp()(*MobileContainedApp) {
     m := &MobileContainedApp{
         Entity: *NewEntity(),
@@ -16,6 +16,7 @@ func NewMobileContainedApp()(*MobileContainedApp) {
     return m
 }
 // CreateMobileContainedAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMobileContainedAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -38,6 +39,7 @@ func CreateMobileContainedAppFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewMobileContainedApp(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MobileContainedApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     return res
@@ -50,7 +52,6 @@ func (m *MobileContainedApp) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// MobileContainedAppable 
 type MobileContainedAppable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

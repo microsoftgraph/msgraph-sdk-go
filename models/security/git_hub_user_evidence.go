@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GitHubUserEvidence 
 type GitHubUserEvidence struct {
     AlertEvidence
 }
-// NewGitHubUserEvidence instantiates a new gitHubUserEvidence and sets the default values.
+// NewGitHubUserEvidence instantiates a new GitHubUserEvidence and sets the default values.
 func NewGitHubUserEvidence()(*GitHubUserEvidence) {
     m := &GitHubUserEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -18,10 +17,12 @@ func NewGitHubUserEvidence()(*GitHubUserEvidence) {
     return m
 }
 // CreateGitHubUserEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGitHubUserEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGitHubUserEvidence(), nil
 }
 // GetEmail gets the email property value. The email property
+// returns a *string when successful
 func (m *GitHubUserEvidence) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *GitHubUserEvidence) GetEmail()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GitHubUserEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["email"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -88,6 +90,7 @@ func (m *GitHubUserEvidence) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetLogin gets the login property value. The login property
+// returns a *string when successful
 func (m *GitHubUserEvidence) GetLogin()(*string) {
     val, err := m.GetBackingStore().Get("login")
     if err != nil {
@@ -99,6 +102,7 @@ func (m *GitHubUserEvidence) GetLogin()(*string) {
     return nil
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *GitHubUserEvidence) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -110,6 +114,7 @@ func (m *GitHubUserEvidence) GetName()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. The userId property
+// returns a *string when successful
 func (m *GitHubUserEvidence) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -121,6 +126,7 @@ func (m *GitHubUserEvidence) GetUserId()(*string) {
     return nil
 }
 // GetWebUrl gets the webUrl property value. The webUrl property
+// returns a *string when successful
 func (m *GitHubUserEvidence) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -204,7 +210,6 @@ func (m *GitHubUserEvidence) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// GitHubUserEvidenceable 
 type GitHubUserEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

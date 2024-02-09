@@ -16,6 +16,8 @@ type ItemCalendarsItemCalendarViewDeltaRequestBuilderGetQueryParameters struct {
     Count *bool `uriparametername:"%24count"`
     // The end date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00
     EndDateTime *string `uriparametername:"endDateTime"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -40,21 +42,23 @@ type ItemCalendarsItemCalendarViewDeltaRequestBuilderGetRequestConfiguration str
     // Request query parameters
     QueryParameters *ItemCalendarsItemCalendarViewDeltaRequestBuilderGetQueryParameters
 }
-// NewItemCalendarsItemCalendarViewDeltaRequestBuilderInternal instantiates a new DeltaRequestBuilder and sets the default values.
+// NewItemCalendarsItemCalendarViewDeltaRequestBuilderInternal instantiates a new ItemCalendarsItemCalendarViewDeltaRequestBuilder and sets the default values.
 func NewItemCalendarsItemCalendarViewDeltaRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarsItemCalendarViewDeltaRequestBuilder) {
     m := &ItemCalendarsItemCalendarViewDeltaRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/calendarView/delta(){?startDateTime*,endDateTime*,%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/calendarView/delta()?endDateTime={endDateTime}&startDateTime={startDateTime}{&%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemCalendarsItemCalendarViewDeltaRequestBuilder instantiates a new DeltaRequestBuilder and sets the default values.
+// NewItemCalendarsItemCalendarViewDeltaRequestBuilder instantiates a new ItemCalendarsItemCalendarViewDeltaRequestBuilder and sets the default values.
 func NewItemCalendarsItemCalendarViewDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarsItemCalendarViewDeltaRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarsItemCalendarViewDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user's primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time.
-// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ItemCalendarsItemCalendarViewDeltaResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -64,8 +68,7 @@ func (m *ItemCalendarsItemCalendarViewDeltaRequestBuilder) Get(ctx context.Conte
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemCalendarsItemCalendarViewDeltaResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -77,6 +80,8 @@ func (m *ItemCalendarsItemCalendarViewDeltaRequestBuilder) Get(ctx context.Conte
     return res.(ItemCalendarsItemCalendarViewDeltaResponseable), nil
 }
 // GetAsDeltaGetResponse get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user's primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time.
+// returns a ItemCalendarsItemCalendarViewDeltaGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -86,8 +91,7 @@ func (m *ItemCalendarsItemCalendarViewDeltaRequestBuilder) GetAsDeltaGetResponse
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemCalendarsItemCalendarViewDeltaGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -99,6 +103,7 @@ func (m *ItemCalendarsItemCalendarViewDeltaRequestBuilder) GetAsDeltaGetResponse
     return res.(ItemCalendarsItemCalendarViewDeltaGetResponseable), nil
 }
 // ToGetRequestInformation get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user's primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time.
+// returns a *RequestInformation when successful
 func (m *ItemCalendarsItemCalendarViewDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarsItemCalendarViewDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -112,6 +117,7 @@ func (m *ItemCalendarsItemCalendarViewDeltaRequestBuilder) ToGetRequestInformati
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemCalendarsItemCalendarViewDeltaRequestBuilder when successful
 func (m *ItemCalendarsItemCalendarViewDeltaRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarsItemCalendarViewDeltaRequestBuilder) {
     return NewItemCalendarsItemCalendarViewDeltaRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

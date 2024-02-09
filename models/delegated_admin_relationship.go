@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DelegatedAdminRelationship 
 type DelegatedAdminRelationship struct {
     Entity
 }
-// NewDelegatedAdminRelationship instantiates a new delegatedAdminRelationship and sets the default values.
+// NewDelegatedAdminRelationship instantiates a new DelegatedAdminRelationship and sets the default values.
 func NewDelegatedAdminRelationship()(*DelegatedAdminRelationship) {
     m := &DelegatedAdminRelationship{
         Entity: *NewEntity(),
@@ -17,6 +16,7 @@ func NewDelegatedAdminRelationship()(*DelegatedAdminRelationship) {
     return m
 }
 // CreateDelegatedAdminRelationshipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDelegatedAdminRelationshipFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -39,6 +39,7 @@ func CreateDelegatedAdminRelationshipFromDiscriminatorValue(parseNode i878a80d23
     return NewDelegatedAdminRelationship(), nil
 }
 // GetAccessAssignments gets the accessAssignments property value. The access assignments associated with the delegated admin relationship.
+// returns a []DelegatedAdminAccessAssignmentable when successful
 func (m *DelegatedAdminRelationship) GetAccessAssignments()([]DelegatedAdminAccessAssignmentable) {
     val, err := m.GetBackingStore().Get("accessAssignments")
     if err != nil {
@@ -50,6 +51,7 @@ func (m *DelegatedAdminRelationship) GetAccessAssignments()([]DelegatedAdminAcce
     return nil
 }
 // GetAccessDetails gets the accessDetails property value. The accessDetails property
+// returns a DelegatedAdminAccessDetailsable when successful
 func (m *DelegatedAdminRelationship) GetAccessDetails()(DelegatedAdminAccessDetailsable) {
     val, err := m.GetBackingStore().Get("accessDetails")
     if err != nil {
@@ -61,6 +63,7 @@ func (m *DelegatedAdminRelationship) GetAccessDetails()(DelegatedAdminAccessDeta
     return nil
 }
 // GetActivatedDateTime gets the activatedDateTime property value. The date and time in ISO 8601 format and in UTC time when the relationship became active. Read-only.
+// returns a *Time when successful
 func (m *DelegatedAdminRelationship) GetActivatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("activatedDateTime")
     if err != nil {
@@ -72,6 +75,7 @@ func (m *DelegatedAdminRelationship) GetActivatedDateTime()(*i336074805fc853987a
     return nil
 }
 // GetAutoExtendDuration gets the autoExtendDuration property value. The duration by which the validity of the relationship is automatically extended, denoted in ISO 8601 format. Supported values are: P0D, PT0S, P180D. The default value is PT0S. PT0S indicates that the relationship expires when the endDateTime is reached and it isn't automatically extended.
+// returns a *ISODuration when successful
 func (m *DelegatedAdminRelationship) GetAutoExtendDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("autoExtendDuration")
     if err != nil {
@@ -83,6 +87,7 @@ func (m *DelegatedAdminRelationship) GetAutoExtendDuration()(*i878a80d2330e89d26
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time in ISO 8601 format and in UTC time when the relationship was created. Read-only.
+// returns a *Time when successful
 func (m *DelegatedAdminRelationship) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -94,6 +99,7 @@ func (m *DelegatedAdminRelationship) GetCreatedDateTime()(*i336074805fc853987abe
     return nil
 }
 // GetCustomer gets the customer property value. The display name and unique identifier of the customer of the relationship. This is configured either by the partner at the time the relationship is created or by the system after the customer approves the relationship. Can't be changed by the customer.
+// returns a DelegatedAdminRelationshipCustomerParticipantable when successful
 func (m *DelegatedAdminRelationship) GetCustomer()(DelegatedAdminRelationshipCustomerParticipantable) {
     val, err := m.GetBackingStore().Get("customer")
     if err != nil {
@@ -105,6 +111,7 @@ func (m *DelegatedAdminRelationship) GetCustomer()(DelegatedAdminRelationshipCus
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner and is set by the partner only when the relationship is in the created status and can't be changed by the customer.
+// returns a *string when successful
 func (m *DelegatedAdminRelationship) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -116,6 +123,7 @@ func (m *DelegatedAdminRelationship) GetDisplayName()(*string) {
     return nil
 }
 // GetDuration gets the duration property value. The duration of the relationship in ISO 8601 format. Must be a value between P1D and P2Y inclusive. This is set by the partner only when the relationship is in the created status and can't be changed by the customer.
+// returns a *ISODuration when successful
 func (m *DelegatedAdminRelationship) GetDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("duration")
     if err != nil {
@@ -127,6 +135,7 @@ func (m *DelegatedAdminRelationship) GetDuration()(*i878a80d2330e89d26896388a3f4
     return nil
 }
 // GetEndDateTime gets the endDateTime property value. The date and time in ISO 8601 format and in UTC time when the status of relationship changes to either terminated or expired. Calculated as endDateTime = activatedDateTime + duration. Read-only.
+// returns a *Time when successful
 func (m *DelegatedAdminRelationship) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -138,6 +147,7 @@ func (m *DelegatedAdminRelationship) GetEndDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DelegatedAdminRelationship) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -291,6 +301,7 @@ func (m *DelegatedAdminRelationship) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time in ISO 8601 format and in UTC time when the relationship was last modified. Read-only.
+// returns a *Time when successful
 func (m *DelegatedAdminRelationship) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -302,6 +313,7 @@ func (m *DelegatedAdminRelationship) GetLastModifiedDateTime()(*i336074805fc8539
     return nil
 }
 // GetOperations gets the operations property value. The long running operations associated with the delegated admin relationship.
+// returns a []DelegatedAdminRelationshipOperationable when successful
 func (m *DelegatedAdminRelationship) GetOperations()([]DelegatedAdminRelationshipOperationable) {
     val, err := m.GetBackingStore().Get("operations")
     if err != nil {
@@ -313,6 +325,7 @@ func (m *DelegatedAdminRelationship) GetOperations()([]DelegatedAdminRelationshi
     return nil
 }
 // GetRequests gets the requests property value. The requests associated with the delegated admin relationship.
+// returns a []DelegatedAdminRelationshipRequestable when successful
 func (m *DelegatedAdminRelationship) GetRequests()([]DelegatedAdminRelationshipRequestable) {
     val, err := m.GetBackingStore().Get("requests")
     if err != nil {
@@ -324,6 +337,7 @@ func (m *DelegatedAdminRelationship) GetRequests()([]DelegatedAdminRelationshipR
     return nil
 }
 // GetStatus gets the status property value. The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderby.
+// returns a *DelegatedAdminRelationshipStatus when successful
 func (m *DelegatedAdminRelationship) GetStatus()(*DelegatedAdminRelationshipStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -530,7 +544,6 @@ func (m *DelegatedAdminRelationship) SetStatus(value *DelegatedAdminRelationship
         panic(err)
     }
 }
-// DelegatedAdminRelationshipable 
 type DelegatedAdminRelationshipable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

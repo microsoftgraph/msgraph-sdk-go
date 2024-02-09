@@ -5,7 +5,6 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// EntitlementManagementRoleEligibilitySchedulesFilterByCurrentUserWithOnGetResponse 
 type EntitlementManagementRoleEligibilitySchedulesFilterByCurrentUserWithOnGetResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
 }
@@ -17,10 +16,12 @@ func NewEntitlementManagementRoleEligibilitySchedulesFilterByCurrentUserWithOnGe
     return m
 }
 // CreateEntitlementManagementRoleEligibilitySchedulesFilterByCurrentUserWithOnGetResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEntitlementManagementRoleEligibilitySchedulesFilterByCurrentUserWithOnGetResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEntitlementManagementRoleEligibilitySchedulesFilterByCurrentUserWithOnGetResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EntitlementManagementRoleEligibilitySchedulesFilterByCurrentUserWithOnGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +43,7 @@ func (m *EntitlementManagementRoleEligibilitySchedulesFilterByCurrentUserWithOnG
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []UnifiedRoleEligibilityScheduleable when successful
 func (m *EntitlementManagementRoleEligibilitySchedulesFilterByCurrentUserWithOnGetResponse) GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleEligibilityScheduleable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -79,7 +81,6 @@ func (m *EntitlementManagementRoleEligibilitySchedulesFilterByCurrentUserWithOnG
         panic(err)
     }
 }
-// EntitlementManagementRoleEligibilitySchedulesFilterByCurrentUserWithOnGetResponseable 
 type EntitlementManagementRoleEligibilitySchedulesFilterByCurrentUserWithOnGetResponseable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

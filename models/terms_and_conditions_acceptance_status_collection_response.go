@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TermsAndConditionsAcceptanceStatusCollectionResponse 
 type TermsAndConditionsAcceptanceStatusCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTermsAndConditionsAcceptanceStatusCollectionResponse instantiates a new termsAndConditionsAcceptanceStatusCollectionResponse and sets the default values.
+// NewTermsAndConditionsAcceptanceStatusCollectionResponse instantiates a new TermsAndConditionsAcceptanceStatusCollectionResponse and sets the default values.
 func NewTermsAndConditionsAcceptanceStatusCollectionResponse()(*TermsAndConditionsAcceptanceStatusCollectionResponse) {
     m := &TermsAndConditionsAcceptanceStatusCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewTermsAndConditionsAcceptanceStatusCollectionResponse()(*TermsAndConditio
     return m
 }
 // CreateTermsAndConditionsAcceptanceStatusCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTermsAndConditionsAcceptanceStatusCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTermsAndConditionsAcceptanceStatusCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TermsAndConditionsAcceptanceStatusCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *TermsAndConditionsAcceptanceStatusCollectionResponse) GetFieldDeseriali
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []TermsAndConditionsAcceptanceStatusable when successful
 func (m *TermsAndConditionsAcceptanceStatusCollectionResponse) GetValue()([]TermsAndConditionsAcceptanceStatusable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *TermsAndConditionsAcceptanceStatusCollectionResponse) SetValue(value []
         panic(err)
     }
 }
-// TermsAndConditionsAcceptanceStatusCollectionResponseable 
 type TermsAndConditionsAcceptanceStatusCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

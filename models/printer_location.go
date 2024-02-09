@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// PrinterLocation 
 type PrinterLocation struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPrinterLocation instantiates a new printerLocation and sets the default values.
+// NewPrinterLocation instantiates a new PrinterLocation and sets the default values.
 func NewPrinterLocation()(*PrinterLocation) {
     m := &PrinterLocation{
     }
@@ -19,10 +18,12 @@ func NewPrinterLocation()(*PrinterLocation) {
     return m
 }
 // CreatePrinterLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrinterLocationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrinterLocation(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PrinterLocation) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *PrinterLocation) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAltitudeInMeters gets the altitudeInMeters property value. The altitude, in meters, that the printer is located at.
+// returns a *int32 when successful
 func (m *PrinterLocation) GetAltitudeInMeters()(*int32) {
     val, err := m.GetBackingStore().Get("altitudeInMeters")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *PrinterLocation) GetAltitudeInMeters()(*int32) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *PrinterLocation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBuilding gets the building property value. The building that the printer is located in.
+// returns a *string when successful
 func (m *PrinterLocation) GetBuilding()(*string) {
     val, err := m.GetBackingStore().Get("building")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *PrinterLocation) GetBuilding()(*string) {
     return nil
 }
 // GetCity gets the city property value. The city that the printer is located in.
+// returns a *string when successful
 func (m *PrinterLocation) GetCity()(*string) {
     val, err := m.GetBackingStore().Get("city")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *PrinterLocation) GetCity()(*string) {
     return nil
 }
 // GetCountryOrRegion gets the countryOrRegion property value. The country or region that the printer is located in.
+// returns a *string when successful
 func (m *PrinterLocation) GetCountryOrRegion()(*string) {
     val, err := m.GetBackingStore().Get("countryOrRegion")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *PrinterLocation) GetCountryOrRegion()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["altitudeInMeters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -286,6 +293,7 @@ func (m *PrinterLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetFloor gets the floor property value. The floor that the printer is located on. Only numerical values are supported right now.
+// returns a *string when successful
 func (m *PrinterLocation) GetFloor()(*string) {
     val, err := m.GetBackingStore().Get("floor")
     if err != nil {
@@ -297,6 +305,7 @@ func (m *PrinterLocation) GetFloor()(*string) {
     return nil
 }
 // GetFloorDescription gets the floorDescription property value. The description of the floor that the printer is located on.
+// returns a *string when successful
 func (m *PrinterLocation) GetFloorDescription()(*string) {
     val, err := m.GetBackingStore().Get("floorDescription")
     if err != nil {
@@ -308,6 +317,7 @@ func (m *PrinterLocation) GetFloorDescription()(*string) {
     return nil
 }
 // GetLatitude gets the latitude property value. The latitude that the printer is located at.
+// returns a *float64 when successful
 func (m *PrinterLocation) GetLatitude()(*float64) {
     val, err := m.GetBackingStore().Get("latitude")
     if err != nil {
@@ -319,6 +329,7 @@ func (m *PrinterLocation) GetLatitude()(*float64) {
     return nil
 }
 // GetLongitude gets the longitude property value. The longitude that the printer is located at.
+// returns a *float64 when successful
 func (m *PrinterLocation) GetLongitude()(*float64) {
     val, err := m.GetBackingStore().Get("longitude")
     if err != nil {
@@ -330,6 +341,7 @@ func (m *PrinterLocation) GetLongitude()(*float64) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PrinterLocation) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -341,6 +353,7 @@ func (m *PrinterLocation) GetOdataType()(*string) {
     return nil
 }
 // GetOrganization gets the organization property value. The organizational hierarchy that the printer belongs to. The elements should be in hierarchical order.
+// returns a []string when successful
 func (m *PrinterLocation) GetOrganization()([]string) {
     val, err := m.GetBackingStore().Get("organization")
     if err != nil {
@@ -352,6 +365,7 @@ func (m *PrinterLocation) GetOrganization()([]string) {
     return nil
 }
 // GetPostalCode gets the postalCode property value. The postal code that the printer is located in.
+// returns a *string when successful
 func (m *PrinterLocation) GetPostalCode()(*string) {
     val, err := m.GetBackingStore().Get("postalCode")
     if err != nil {
@@ -363,6 +377,7 @@ func (m *PrinterLocation) GetPostalCode()(*string) {
     return nil
 }
 // GetRoomDescription gets the roomDescription property value. The description of the room that the printer is located in.
+// returns a *string when successful
 func (m *PrinterLocation) GetRoomDescription()(*string) {
     val, err := m.GetBackingStore().Get("roomDescription")
     if err != nil {
@@ -374,6 +389,7 @@ func (m *PrinterLocation) GetRoomDescription()(*string) {
     return nil
 }
 // GetRoomName gets the roomName property value. The room that the printer is located in. Only numerical values are supported right now.
+// returns a *string when successful
 func (m *PrinterLocation) GetRoomName()(*string) {
     val, err := m.GetBackingStore().Get("roomName")
     if err != nil {
@@ -385,6 +401,7 @@ func (m *PrinterLocation) GetRoomName()(*string) {
     return nil
 }
 // GetSite gets the site property value. The site that the printer is located in.
+// returns a *string when successful
 func (m *PrinterLocation) GetSite()(*string) {
     val, err := m.GetBackingStore().Get("site")
     if err != nil {
@@ -396,6 +413,7 @@ func (m *PrinterLocation) GetSite()(*string) {
     return nil
 }
 // GetStateOrProvince gets the stateOrProvince property value. The state or province that the printer is located in.
+// returns a *string when successful
 func (m *PrinterLocation) GetStateOrProvince()(*string) {
     val, err := m.GetBackingStore().Get("stateOrProvince")
     if err != nil {
@@ -407,6 +425,7 @@ func (m *PrinterLocation) GetStateOrProvince()(*string) {
     return nil
 }
 // GetStreetAddress gets the streetAddress property value. The street address where the printer is located.
+// returns a *string when successful
 func (m *PrinterLocation) GetStreetAddress()(*string) {
     val, err := m.GetBackingStore().Get("streetAddress")
     if err != nil {
@@ -418,6 +437,7 @@ func (m *PrinterLocation) GetStreetAddress()(*string) {
     return nil
 }
 // GetSubdivision gets the subdivision property value. The subdivision that the printer is located in. The elements should be in hierarchical order.
+// returns a []string when successful
 func (m *PrinterLocation) GetSubdivision()([]string) {
     val, err := m.GetBackingStore().Get("subdivision")
     if err != nil {
@@ -429,6 +449,7 @@ func (m *PrinterLocation) GetSubdivision()([]string) {
     return nil
 }
 // GetSubunit gets the subunit property value. The subunit property
+// returns a []string when successful
 func (m *PrinterLocation) GetSubunit()([]string) {
     val, err := m.GetBackingStore().Get("subunit")
     if err != nil {
@@ -694,7 +715,6 @@ func (m *PrinterLocation) SetSubunit(value []string)() {
         panic(err)
     }
 }
-// PrinterLocationable 
 type PrinterLocationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

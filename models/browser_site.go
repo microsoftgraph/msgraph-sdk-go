@@ -9,7 +9,7 @@ import (
 type BrowserSite struct {
     Entity
 }
-// NewBrowserSite instantiates a new browserSite and sets the default values.
+// NewBrowserSite instantiates a new BrowserSite and sets the default values.
 func NewBrowserSite()(*BrowserSite) {
     m := &BrowserSite{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewBrowserSite()(*BrowserSite) {
     return m
 }
 // CreateBrowserSiteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBrowserSiteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBrowserSite(), nil
 }
 // GetAllowRedirect gets the allowRedirect property value. Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.
+// returns a *bool when successful
 func (m *BrowserSite) GetAllowRedirect()(*bool) {
     val, err := m.GetBackingStore().Get("allowRedirect")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *BrowserSite) GetAllowRedirect()(*bool) {
     return nil
 }
 // GetComment gets the comment property value. The comment for the site.
+// returns a *string when successful
 func (m *BrowserSite) GetComment()(*string) {
     val, err := m.GetBackingStore().Get("comment")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *BrowserSite) GetComment()(*string) {
     return nil
 }
 // GetCompatibilityMode gets the compatibilityMode property value. The compatibilityMode property
+// returns a *BrowserSiteCompatibilityMode when successful
 func (m *BrowserSite) GetCompatibilityMode()(*BrowserSiteCompatibilityMode) {
     val, err := m.GetBackingStore().Get("compatibilityMode")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *BrowserSite) GetCompatibilityMode()(*BrowserSiteCompatibilityMode) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the site was created.
+// returns a *Time when successful
 func (m *BrowserSite) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *BrowserSite) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     return nil
 }
 // GetDeletedDateTime gets the deletedDateTime property value. The date and time when the site was deleted.
+// returns a *Time when successful
 func (m *BrowserSite) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("deletedDateTime")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *BrowserSite) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BrowserSite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["allowRedirect"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -207,6 +214,7 @@ func (m *BrowserSite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetHistory gets the history property value. The history of modifications applied to the site.
+// returns a []BrowserSiteHistoryable when successful
 func (m *BrowserSite) GetHistory()([]BrowserSiteHistoryable) {
     val, err := m.GetBackingStore().Get("history")
     if err != nil {
@@ -218,6 +226,7 @@ func (m *BrowserSite) GetHistory()([]BrowserSiteHistoryable) {
     return nil
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The user who last modified the site.
+// returns a IdentitySetable when successful
 func (m *BrowserSite) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -229,6 +238,7 @@ func (m *BrowserSite) GetLastModifiedBy()(IdentitySetable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the site was last modified.
+// returns a *Time when successful
 func (m *BrowserSite) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -240,6 +250,7 @@ func (m *BrowserSite) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetMergeType gets the mergeType property value. The mergeType property
+// returns a *BrowserSiteMergeType when successful
 func (m *BrowserSite) GetMergeType()(*BrowserSiteMergeType) {
     val, err := m.GetBackingStore().Get("mergeType")
     if err != nil {
@@ -251,6 +262,7 @@ func (m *BrowserSite) GetMergeType()(*BrowserSiteMergeType) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *BrowserSiteStatus when successful
 func (m *BrowserSite) GetStatus()(*BrowserSiteStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -262,6 +274,7 @@ func (m *BrowserSite) GetStatus()(*BrowserSiteStatus) {
     return nil
 }
 // GetTargetEnvironment gets the targetEnvironment property value. The targetEnvironment property
+// returns a *BrowserSiteTargetEnvironment when successful
 func (m *BrowserSite) GetTargetEnvironment()(*BrowserSiteTargetEnvironment) {
     val, err := m.GetBackingStore().Get("targetEnvironment")
     if err != nil {
@@ -273,6 +286,7 @@ func (m *BrowserSite) GetTargetEnvironment()(*BrowserSiteTargetEnvironment) {
     return nil
 }
 // GetWebUrl gets the webUrl property value. The URL of the site.
+// returns a *string when successful
 func (m *BrowserSite) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -457,7 +471,6 @@ func (m *BrowserSite) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// BrowserSiteable 
 type BrowserSiteable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

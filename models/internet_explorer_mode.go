@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// InternetExplorerMode 
 type InternetExplorerMode struct {
     Entity
 }
-// NewInternetExplorerMode instantiates a new internetExplorerMode and sets the default values.
+// NewInternetExplorerMode instantiates a new InternetExplorerMode and sets the default values.
 func NewInternetExplorerMode()(*InternetExplorerMode) {
     m := &InternetExplorerMode{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewInternetExplorerMode()(*InternetExplorerMode) {
     return m
 }
 // CreateInternetExplorerModeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInternetExplorerModeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInternetExplorerMode(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InternetExplorerMode) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["siteLists"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *InternetExplorerMode) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetSiteLists gets the siteLists property value. A collection of site lists to support Internet Explorer mode.
+// returns a []BrowserSiteListable when successful
 func (m *InternetExplorerMode) GetSiteLists()([]BrowserSiteListable) {
     val, err := m.GetBackingStore().Get("siteLists")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *InternetExplorerMode) SetSiteLists(value []BrowserSiteListable)() {
         panic(err)
     }
 }
-// InternetExplorerModeable 
 type InternetExplorerModeable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

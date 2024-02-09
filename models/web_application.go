@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// WebApplication 
 type WebApplication struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewWebApplication instantiates a new webApplication and sets the default values.
+// NewWebApplication instantiates a new WebApplication and sets the default values.
 func NewWebApplication()(*WebApplication) {
     m := &WebApplication{
     }
@@ -19,10 +18,12 @@ func NewWebApplication()(*WebApplication) {
     return m
 }
 // CreateWebApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWebApplicationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWebApplication(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WebApplication) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *WebApplication) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *WebApplication) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WebApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["homePageUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +119,7 @@ func (m *WebApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetHomePageUrl gets the homePageUrl property value. Home page or landing page of the application.
+// returns a *string when successful
 func (m *WebApplication) GetHomePageUrl()(*string) {
     val, err := m.GetBackingStore().Get("homePageUrl")
     if err != nil {
@@ -127,6 +131,7 @@ func (m *WebApplication) GetHomePageUrl()(*string) {
     return nil
 }
 // GetImplicitGrantSettings gets the implicitGrantSettings property value. Specifies whether this web application can request tokens using the OAuth 2.0 implicit flow.
+// returns a ImplicitGrantSettingsable when successful
 func (m *WebApplication) GetImplicitGrantSettings()(ImplicitGrantSettingsable) {
     val, err := m.GetBackingStore().Get("implicitGrantSettings")
     if err != nil {
@@ -138,6 +143,7 @@ func (m *WebApplication) GetImplicitGrantSettings()(ImplicitGrantSettingsable) {
     return nil
 }
 // GetLogoutUrl gets the logoutUrl property value. Specifies the URL that is used by Microsoft's authorization service to log out a user using front-channel, back-channel or SAML logout protocols.
+// returns a *string when successful
 func (m *WebApplication) GetLogoutUrl()(*string) {
     val, err := m.GetBackingStore().Get("logoutUrl")
     if err != nil {
@@ -149,6 +155,7 @@ func (m *WebApplication) GetLogoutUrl()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *WebApplication) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -160,6 +167,7 @@ func (m *WebApplication) GetOdataType()(*string) {
     return nil
 }
 // GetRedirectUris gets the redirectUris property value. Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
+// returns a []string when successful
 func (m *WebApplication) GetRedirectUris()([]string) {
     val, err := m.GetBackingStore().Get("redirectUris")
     if err != nil {
@@ -171,6 +179,7 @@ func (m *WebApplication) GetRedirectUris()([]string) {
     return nil
 }
 // GetRedirectUriSettings gets the redirectUriSettings property value. The redirectUriSettings property
+// returns a []RedirectUriSettingsable when successful
 func (m *WebApplication) GetRedirectUriSettings()([]RedirectUriSettingsable) {
     val, err := m.GetBackingStore().Get("redirectUriSettings")
     if err != nil {
@@ -286,7 +295,6 @@ func (m *WebApplication) SetRedirectUriSettings(value []RedirectUriSettingsable)
         panic(err)
     }
 }
-// WebApplicationable 
 type WebApplicationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

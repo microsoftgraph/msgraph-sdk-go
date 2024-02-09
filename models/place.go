@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Place 
 type Place struct {
     Entity
 }
-// NewPlace instantiates a new place and sets the default values.
+// NewPlace instantiates a new Place and sets the default values.
 func NewPlace()(*Place) {
     m := &Place{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewPlace()(*Place) {
     return m
 }
 // CreatePlaceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlaceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +40,7 @@ func CreatePlaceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487e
     return NewPlace(), nil
 }
 // GetAddress gets the address property value. The street address of the place.
+// returns a PhysicalAddressable when successful
 func (m *Place) GetAddress()(PhysicalAddressable) {
     val, err := m.GetBackingStore().Get("address")
     if err != nil {
@@ -51,6 +52,7 @@ func (m *Place) GetAddress()(PhysicalAddressable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name associated with the place.
+// returns a *string when successful
 func (m *Place) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -62,6 +64,7 @@ func (m *Place) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Place) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["address"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -107,6 +110,7 @@ func (m *Place) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     return res
 }
 // GetGeoCoordinates gets the geoCoordinates property value. Specifies the place location in latitude, longitude and (optionally) altitude coordinates.
+// returns a OutlookGeoCoordinatesable when successful
 func (m *Place) GetGeoCoordinates()(OutlookGeoCoordinatesable) {
     val, err := m.GetBackingStore().Get("geoCoordinates")
     if err != nil {
@@ -118,6 +122,7 @@ func (m *Place) GetGeoCoordinates()(OutlookGeoCoordinatesable) {
     return nil
 }
 // GetPhone gets the phone property value. The phone number of the place.
+// returns a *string when successful
 func (m *Place) GetPhone()(*string) {
     val, err := m.GetBackingStore().Get("phone")
     if err != nil {
@@ -188,7 +193,6 @@ func (m *Place) SetPhone(value *string)() {
         panic(err)
     }
 }
-// Placeable 
 type Placeable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

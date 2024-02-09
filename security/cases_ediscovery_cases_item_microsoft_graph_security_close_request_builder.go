@@ -17,20 +17,21 @@ type CasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilderPostReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewCasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilderInternal instantiates a new MicrosoftGraphSecurityCloseRequestBuilder and sets the default values.
+// NewCasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilderInternal instantiates a new CasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilder) {
     m := &CasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/microsoft.graph.security.close", pathParameters),
     }
     return m
 }
-// NewCasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilder instantiates a new MicrosoftGraphSecurityCloseRequestBuilder and sets the default values.
+// NewCasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilder instantiates a new CasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post close an eDiscovery case. For details, see Close a case.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycase-close?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *CasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilder) Post
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *CasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilder) Post
     return nil
 }
 // ToPostRequestInformation close an eDiscovery case. For details, see Close a case.
+// returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *CasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilder) ToPo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilder when successful
 func (m *CasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilder) WithUrl(rawUrl string)(*CasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilder) {
     return NewCasesEdiscoveryCasesItemMicrosoftGraphSecurityCloseRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

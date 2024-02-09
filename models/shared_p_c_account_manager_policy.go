@@ -10,7 +10,7 @@ type SharedPCAccountManagerPolicy struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSharedPCAccountManagerPolicy instantiates a new sharedPCAccountManagerPolicy and sets the default values.
+// NewSharedPCAccountManagerPolicy instantiates a new SharedPCAccountManagerPolicy and sets the default values.
 func NewSharedPCAccountManagerPolicy()(*SharedPCAccountManagerPolicy) {
     m := &SharedPCAccountManagerPolicy{
     }
@@ -19,10 +19,12 @@ func NewSharedPCAccountManagerPolicy()(*SharedPCAccountManagerPolicy) {
     return m
 }
 // CreateSharedPCAccountManagerPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSharedPCAccountManagerPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSharedPCAccountManagerPolicy(), nil
 }
 // GetAccountDeletionPolicy gets the accountDeletionPolicy property value. Possible values for when accounts are deleted on a shared PC.
+// returns a *SharedPCAccountDeletionPolicyType when successful
 func (m *SharedPCAccountManagerPolicy) GetAccountDeletionPolicy()(*SharedPCAccountDeletionPolicyType) {
     val, err := m.GetBackingStore().Get("accountDeletionPolicy")
     if err != nil {
@@ -34,6 +36,7 @@ func (m *SharedPCAccountManagerPolicy) GetAccountDeletionPolicy()(*SharedPCAccou
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SharedPCAccountManagerPolicy) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -46,10 +49,12 @@ func (m *SharedPCAccountManagerPolicy) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *SharedPCAccountManagerPolicy) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCacheAccountsAboveDiskFreePercentage gets the cacheAccountsAboveDiskFreePercentage property value. Sets the percentage of available disk space a PC should have before it stops deleting cached shared PC accounts. Only applies when AccountDeletionPolicy is DiskSpaceThreshold or DiskSpaceThresholdOrInactiveThreshold. Valid values 0 to 100
+// returns a *int32 when successful
 func (m *SharedPCAccountManagerPolicy) GetCacheAccountsAboveDiskFreePercentage()(*int32) {
     val, err := m.GetBackingStore().Get("cacheAccountsAboveDiskFreePercentage")
     if err != nil {
@@ -61,6 +66,7 @@ func (m *SharedPCAccountManagerPolicy) GetCacheAccountsAboveDiskFreePercentage()
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SharedPCAccountManagerPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["accountDeletionPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +122,7 @@ func (m *SharedPCAccountManagerPolicy) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetInactiveThresholdDays gets the inactiveThresholdDays property value. Specifies when the accounts will start being deleted when they have not been logged on during the specified period, given as number of days. Only applies when AccountDeletionPolicy is DiskSpaceThreshold or DiskSpaceThresholdOrInactiveThreshold.
+// returns a *int32 when successful
 func (m *SharedPCAccountManagerPolicy) GetInactiveThresholdDays()(*int32) {
     val, err := m.GetBackingStore().Get("inactiveThresholdDays")
     if err != nil {
@@ -127,6 +134,7 @@ func (m *SharedPCAccountManagerPolicy) GetInactiveThresholdDays()(*int32) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *SharedPCAccountManagerPolicy) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -138,6 +146,7 @@ func (m *SharedPCAccountManagerPolicy) GetOdataType()(*string) {
     return nil
 }
 // GetRemoveAccountsBelowDiskFreePercentage gets the removeAccountsBelowDiskFreePercentage property value. Sets the percentage of disk space remaining on a PC before cached accounts will be deleted to free disk space. Accounts that have been inactive the longest will be deleted first. Only applies when AccountDeletionPolicy is DiskSpaceThresholdOrInactiveThreshold. Valid values 0 to 100
+// returns a *int32 when successful
 func (m *SharedPCAccountManagerPolicy) GetRemoveAccountsBelowDiskFreePercentage()(*int32) {
     val, err := m.GetBackingStore().Get("removeAccountsBelowDiskFreePercentage")
     if err != nil {
@@ -235,7 +244,6 @@ func (m *SharedPCAccountManagerPolicy) SetRemoveAccountsBelowDiskFreePercentage(
         panic(err)
     }
 }
-// SharedPCAccountManagerPolicyable 
 type SharedPCAccountManagerPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

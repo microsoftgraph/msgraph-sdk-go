@@ -26,28 +26,29 @@ type AttributeSetsCountRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *AttributeSetsCountRequestBuilderGetQueryParameters
 }
-// NewAttributeSetsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewAttributeSetsCountRequestBuilderInternal instantiates a new AttributeSetsCountRequestBuilder and sets the default values.
 func NewAttributeSetsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttributeSetsCountRequestBuilder) {
     m := &AttributeSetsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/attributeSets/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/attributeSets/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewAttributeSetsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewAttributeSetsCountRequestBuilder instantiates a new AttributeSetsCountRequestBuilder and sets the default values.
 func NewAttributeSetsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttributeSetsCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAttributeSetsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AttributeSetsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *AttributeSetsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *AttributeSetsCountRequestBuilder) Get(ctx context.Context, requestConfi
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *AttributeSetsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttributeSetsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *AttributeSetsCountRequestBuilder) ToGetRequestInformation(ctx context.C
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *AttributeSetsCountRequestBuilder when successful
 func (m *AttributeSetsCountRequestBuilder) WithUrl(rawUrl string)(*AttributeSetsCountRequestBuilder) {
     return NewAttributeSetsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

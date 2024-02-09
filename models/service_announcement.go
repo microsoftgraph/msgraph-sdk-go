@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServiceAnnouncement 
 type ServiceAnnouncement struct {
     Entity
 }
-// NewServiceAnnouncement instantiates a new serviceAnnouncement and sets the default values.
+// NewServiceAnnouncement instantiates a new ServiceAnnouncement and sets the default values.
 func NewServiceAnnouncement()(*ServiceAnnouncement) {
     m := &ServiceAnnouncement{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewServiceAnnouncement()(*ServiceAnnouncement) {
     return m
 }
 // CreateServiceAnnouncementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateServiceAnnouncementFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServiceAnnouncement(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ServiceAnnouncement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["healthOverviews"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -73,6 +74,7 @@ func (m *ServiceAnnouncement) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetHealthOverviews gets the healthOverviews property value. A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
+// returns a []ServiceHealthable when successful
 func (m *ServiceAnnouncement) GetHealthOverviews()([]ServiceHealthable) {
     val, err := m.GetBackingStore().Get("healthOverviews")
     if err != nil {
@@ -84,6 +86,7 @@ func (m *ServiceAnnouncement) GetHealthOverviews()([]ServiceHealthable) {
     return nil
 }
 // GetIssues gets the issues property value. A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
+// returns a []ServiceHealthIssueable when successful
 func (m *ServiceAnnouncement) GetIssues()([]ServiceHealthIssueable) {
     val, err := m.GetBackingStore().Get("issues")
     if err != nil {
@@ -95,6 +98,7 @@ func (m *ServiceAnnouncement) GetIssues()([]ServiceHealthIssueable) {
     return nil
 }
 // GetMessages gets the messages property value. A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
+// returns a []ServiceUpdateMessageable when successful
 func (m *ServiceAnnouncement) GetMessages()([]ServiceUpdateMessageable) {
     val, err := m.GetBackingStore().Get("messages")
     if err != nil {
@@ -170,7 +174,6 @@ func (m *ServiceAnnouncement) SetMessages(value []ServiceUpdateMessageable)() {
         panic(err)
     }
 }
-// ServiceAnnouncementable 
 type ServiceAnnouncementable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

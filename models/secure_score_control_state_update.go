@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// SecureScoreControlStateUpdate 
 type SecureScoreControlStateUpdate struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSecureScoreControlStateUpdate instantiates a new secureScoreControlStateUpdate and sets the default values.
+// NewSecureScoreControlStateUpdate instantiates a new SecureScoreControlStateUpdate and sets the default values.
 func NewSecureScoreControlStateUpdate()(*SecureScoreControlStateUpdate) {
     m := &SecureScoreControlStateUpdate{
     }
@@ -20,10 +19,12 @@ func NewSecureScoreControlStateUpdate()(*SecureScoreControlStateUpdate) {
     return m
 }
 // CreateSecureScoreControlStateUpdateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSecureScoreControlStateUpdateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecureScoreControlStateUpdate(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SecureScoreControlStateUpdate) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,6 +37,7 @@ func (m *SecureScoreControlStateUpdate) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAssignedTo gets the assignedTo property value. Assigns the control to the user who will take the action.
+// returns a *string when successful
 func (m *SecureScoreControlStateUpdate) GetAssignedTo()(*string) {
     val, err := m.GetBackingStore().Get("assignedTo")
     if err != nil {
@@ -47,10 +49,12 @@ func (m *SecureScoreControlStateUpdate) GetAssignedTo()(*string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *SecureScoreControlStateUpdate) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetComment gets the comment property value. Provides optional comment about the control.
+// returns a *string when successful
 func (m *SecureScoreControlStateUpdate) GetComment()(*string) {
     val, err := m.GetBackingStore().Get("comment")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *SecureScoreControlStateUpdate) GetComment()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SecureScoreControlStateUpdate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["assignedTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -127,6 +132,7 @@ func (m *SecureScoreControlStateUpdate) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *SecureScoreControlStateUpdate) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -138,6 +144,7 @@ func (m *SecureScoreControlStateUpdate) GetOdataType()(*string) {
     return nil
 }
 // GetState gets the state property value. State of the control, which can be modified via a PATCH command (for example, ignored, thirdParty).
+// returns a *string when successful
 func (m *SecureScoreControlStateUpdate) GetState()(*string) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -149,6 +156,7 @@ func (m *SecureScoreControlStateUpdate) GetState()(*string) {
     return nil
 }
 // GetUpdatedBy gets the updatedBy property value. ID of the user who updated tenant state.
+// returns a *string when successful
 func (m *SecureScoreControlStateUpdate) GetUpdatedBy()(*string) {
     val, err := m.GetBackingStore().Get("updatedBy")
     if err != nil {
@@ -160,6 +168,7 @@ func (m *SecureScoreControlStateUpdate) GetUpdatedBy()(*string) {
     return nil
 }
 // GetUpdatedDateTime gets the updatedDateTime property value. Time at which the control state was updated.
+// returns a *Time when successful
 func (m *SecureScoreControlStateUpdate) GetUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("updatedDateTime")
     if err != nil {
@@ -269,7 +278,6 @@ func (m *SecureScoreControlStateUpdate) SetUpdatedDateTime(value *i336074805fc85
         panic(err)
     }
 }
-// SecureScoreControlStateUpdateable 
 type SecureScoreControlStateUpdateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

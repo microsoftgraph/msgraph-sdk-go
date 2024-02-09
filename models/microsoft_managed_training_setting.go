@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MicrosoftManagedTrainingSetting 
 type MicrosoftManagedTrainingSetting struct {
     TrainingSetting
 }
-// NewMicrosoftManagedTrainingSetting instantiates a new microsoftManagedTrainingSetting and sets the default values.
+// NewMicrosoftManagedTrainingSetting instantiates a new MicrosoftManagedTrainingSetting and sets the default values.
 func NewMicrosoftManagedTrainingSetting()(*MicrosoftManagedTrainingSetting) {
     m := &MicrosoftManagedTrainingSetting{
         TrainingSetting: *NewTrainingSetting(),
@@ -19,10 +18,12 @@ func NewMicrosoftManagedTrainingSetting()(*MicrosoftManagedTrainingSetting) {
     return m
 }
 // CreateMicrosoftManagedTrainingSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMicrosoftManagedTrainingSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMicrosoftManagedTrainingSetting(), nil
 }
 // GetCompletionDateTime gets the completionDateTime property value. The completion date for the training. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *MicrosoftManagedTrainingSetting) GetCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("completionDateTime")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *MicrosoftManagedTrainingSetting) GetCompletionDateTime()(*i336074805fc8
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MicrosoftManagedTrainingSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.TrainingSetting.GetFieldDeserializers()
     res["completionDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -59,6 +61,7 @@ func (m *MicrosoftManagedTrainingSetting) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetTrainingCompletionDuration gets the trainingCompletionDuration property value. The training completion duration that needs to be provided before scheduling the training. The possible values are: week, fortnite, month, unknownFutureValue.
+// returns a *TrainingCompletionDuration when successful
 func (m *MicrosoftManagedTrainingSetting) GetTrainingCompletionDuration()(*TrainingCompletionDuration) {
     val, err := m.GetBackingStore().Get("trainingCompletionDuration")
     if err != nil {
@@ -104,7 +107,6 @@ func (m *MicrosoftManagedTrainingSetting) SetTrainingCompletionDuration(value *T
         panic(err)
     }
 }
-// MicrosoftManagedTrainingSettingable 
 type MicrosoftManagedTrainingSettingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     TrainingSettingable

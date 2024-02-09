@@ -2,7 +2,6 @@ package security
 import (
     "errors"
 )
-// 
 type DetectionSource int
 
 const (

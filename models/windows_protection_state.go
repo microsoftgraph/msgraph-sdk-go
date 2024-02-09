@@ -9,7 +9,7 @@ import (
 type WindowsProtectionState struct {
     Entity
 }
-// NewWindowsProtectionState instantiates a new windowsProtectionState and sets the default values.
+// NewWindowsProtectionState instantiates a new WindowsProtectionState and sets the default values.
 func NewWindowsProtectionState()(*WindowsProtectionState) {
     m := &WindowsProtectionState{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewWindowsProtectionState()(*WindowsProtectionState) {
     return m
 }
 // CreateWindowsProtectionStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsProtectionStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsProtectionState(), nil
 }
 // GetAntiMalwareVersion gets the antiMalwareVersion property value. Current anti malware version
+// returns a *string when successful
 func (m *WindowsProtectionState) GetAntiMalwareVersion()(*string) {
     val, err := m.GetBackingStore().Get("antiMalwareVersion")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *WindowsProtectionState) GetAntiMalwareVersion()(*string) {
     return nil
 }
 // GetDetectedMalwareState gets the detectedMalwareState property value. Device malware list
+// returns a []WindowsDeviceMalwareStateable when successful
 func (m *WindowsProtectionState) GetDetectedMalwareState()([]WindowsDeviceMalwareStateable) {
     val, err := m.GetBackingStore().Get("detectedMalwareState")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *WindowsProtectionState) GetDetectedMalwareState()([]WindowsDeviceMalwar
     return nil
 }
 // GetDeviceState gets the deviceState property value. Indicates device's health state. Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical. Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical.
+// returns a *WindowsDeviceHealthState when successful
 func (m *WindowsProtectionState) GetDeviceState()(*WindowsDeviceHealthState) {
     val, err := m.GetBackingStore().Get("deviceState")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *WindowsProtectionState) GetDeviceState()(*WindowsDeviceHealthState) {
     return nil
 }
 // GetEngineVersion gets the engineVersion property value. Current endpoint protection engine's version
+// returns a *string when successful
 func (m *WindowsProtectionState) GetEngineVersion()(*string) {
     val, err := m.GetBackingStore().Get("engineVersion")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *WindowsProtectionState) GetEngineVersion()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["antiMalwareVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -286,6 +292,7 @@ func (m *WindowsProtectionState) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetFullScanOverdue gets the fullScanOverdue property value. When TRUE indicates full scan is overdue, when FALSE indicates full scan is not overdue. Defaults to setting on client device.
+// returns a *bool when successful
 func (m *WindowsProtectionState) GetFullScanOverdue()(*bool) {
     val, err := m.GetBackingStore().Get("fullScanOverdue")
     if err != nil {
@@ -297,6 +304,7 @@ func (m *WindowsProtectionState) GetFullScanOverdue()(*bool) {
     return nil
 }
 // GetFullScanRequired gets the fullScanRequired property value. When TRUE indicates full scan is required, when FALSE indicates full scan is not required. Defaults to setting on client device.
+// returns a *bool when successful
 func (m *WindowsProtectionState) GetFullScanRequired()(*bool) {
     val, err := m.GetBackingStore().Get("fullScanRequired")
     if err != nil {
@@ -308,6 +316,7 @@ func (m *WindowsProtectionState) GetFullScanRequired()(*bool) {
     return nil
 }
 // GetIsVirtualMachine gets the isVirtualMachine property value. When TRUE indicates the device is a virtual machine, when FALSE indicates the device is not a virtual machine. Defaults to setting on client device.
+// returns a *bool when successful
 func (m *WindowsProtectionState) GetIsVirtualMachine()(*bool) {
     val, err := m.GetBackingStore().Get("isVirtualMachine")
     if err != nil {
@@ -319,6 +328,7 @@ func (m *WindowsProtectionState) GetIsVirtualMachine()(*bool) {
     return nil
 }
 // GetLastFullScanDateTime gets the lastFullScanDateTime property value. Last quick scan datetime
+// returns a *Time when successful
 func (m *WindowsProtectionState) GetLastFullScanDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastFullScanDateTime")
     if err != nil {
@@ -330,6 +340,7 @@ func (m *WindowsProtectionState) GetLastFullScanDateTime()(*i336074805fc853987ab
     return nil
 }
 // GetLastFullScanSignatureVersion gets the lastFullScanSignatureVersion property value. Last full scan signature version
+// returns a *string when successful
 func (m *WindowsProtectionState) GetLastFullScanSignatureVersion()(*string) {
     val, err := m.GetBackingStore().Get("lastFullScanSignatureVersion")
     if err != nil {
@@ -341,6 +352,7 @@ func (m *WindowsProtectionState) GetLastFullScanSignatureVersion()(*string) {
     return nil
 }
 // GetLastQuickScanDateTime gets the lastQuickScanDateTime property value. Last quick scan datetime
+// returns a *Time when successful
 func (m *WindowsProtectionState) GetLastQuickScanDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastQuickScanDateTime")
     if err != nil {
@@ -352,6 +364,7 @@ func (m *WindowsProtectionState) GetLastQuickScanDateTime()(*i336074805fc853987a
     return nil
 }
 // GetLastQuickScanSignatureVersion gets the lastQuickScanSignatureVersion property value. Last quick scan signature version
+// returns a *string when successful
 func (m *WindowsProtectionState) GetLastQuickScanSignatureVersion()(*string) {
     val, err := m.GetBackingStore().Get("lastQuickScanSignatureVersion")
     if err != nil {
@@ -363,6 +376,7 @@ func (m *WindowsProtectionState) GetLastQuickScanSignatureVersion()(*string) {
     return nil
 }
 // GetLastReportedDateTime gets the lastReportedDateTime property value. Last device health status reported time
+// returns a *Time when successful
 func (m *WindowsProtectionState) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastReportedDateTime")
     if err != nil {
@@ -374,6 +388,7 @@ func (m *WindowsProtectionState) GetLastReportedDateTime()(*i336074805fc853987ab
     return nil
 }
 // GetMalwareProtectionEnabled gets the malwareProtectionEnabled property value. When TRUE indicates anti malware is enabled when FALSE indicates anti malware is not enabled.
+// returns a *bool when successful
 func (m *WindowsProtectionState) GetMalwareProtectionEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("malwareProtectionEnabled")
     if err != nil {
@@ -385,6 +400,7 @@ func (m *WindowsProtectionState) GetMalwareProtectionEnabled()(*bool) {
     return nil
 }
 // GetNetworkInspectionSystemEnabled gets the networkInspectionSystemEnabled property value. When TRUE indicates network inspection system enabled, when FALSE indicates network inspection system is not enabled. Defaults to setting on client device.
+// returns a *bool when successful
 func (m *WindowsProtectionState) GetNetworkInspectionSystemEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("networkInspectionSystemEnabled")
     if err != nil {
@@ -396,6 +412,7 @@ func (m *WindowsProtectionState) GetNetworkInspectionSystemEnabled()(*bool) {
     return nil
 }
 // GetProductStatus gets the productStatus property value. Product Status of Windows Defender Antivirus. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall.
+// returns a *WindowsDefenderProductStatus when successful
 func (m *WindowsProtectionState) GetProductStatus()(*WindowsDefenderProductStatus) {
     val, err := m.GetBackingStore().Get("productStatus")
     if err != nil {
@@ -407,6 +424,7 @@ func (m *WindowsProtectionState) GetProductStatus()(*WindowsDefenderProductStatu
     return nil
 }
 // GetQuickScanOverdue gets the quickScanOverdue property value. When TRUE indicates quick scan is overdue, when FALSE indicates quick scan is not overdue. Defaults to setting on client device.
+// returns a *bool when successful
 func (m *WindowsProtectionState) GetQuickScanOverdue()(*bool) {
     val, err := m.GetBackingStore().Get("quickScanOverdue")
     if err != nil {
@@ -418,6 +436,7 @@ func (m *WindowsProtectionState) GetQuickScanOverdue()(*bool) {
     return nil
 }
 // GetRealTimeProtectionEnabled gets the realTimeProtectionEnabled property value. When TRUE indicates real time protection is enabled, when FALSE indicates real time protection is not enabled. Defaults to setting on client device.
+// returns a *bool when successful
 func (m *WindowsProtectionState) GetRealTimeProtectionEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("realTimeProtectionEnabled")
     if err != nil {
@@ -429,6 +448,7 @@ func (m *WindowsProtectionState) GetRealTimeProtectionEnabled()(*bool) {
     return nil
 }
 // GetRebootRequired gets the rebootRequired property value. When TRUE indicates reboot is required, when FALSE indicates when TRUE indicates reboot is not required. Defaults to setting on client device.
+// returns a *bool when successful
 func (m *WindowsProtectionState) GetRebootRequired()(*bool) {
     val, err := m.GetBackingStore().Get("rebootRequired")
     if err != nil {
@@ -440,6 +460,7 @@ func (m *WindowsProtectionState) GetRebootRequired()(*bool) {
     return nil
 }
 // GetSignatureUpdateOverdue gets the signatureUpdateOverdue property value. When TRUE indicates signature is out of date, when FALSE indicates signature is not out of date. Defaults to setting on client device.
+// returns a *bool when successful
 func (m *WindowsProtectionState) GetSignatureUpdateOverdue()(*bool) {
     val, err := m.GetBackingStore().Get("signatureUpdateOverdue")
     if err != nil {
@@ -451,6 +472,7 @@ func (m *WindowsProtectionState) GetSignatureUpdateOverdue()(*bool) {
     return nil
 }
 // GetSignatureVersion gets the signatureVersion property value. Current malware definitions version
+// returns a *string when successful
 func (m *WindowsProtectionState) GetSignatureVersion()(*string) {
     val, err := m.GetBackingStore().Get("signatureVersion")
     if err != nil {
@@ -462,6 +484,7 @@ func (m *WindowsProtectionState) GetSignatureVersion()(*string) {
     return nil
 }
 // GetTamperProtectionEnabled gets the tamperProtectionEnabled property value. When TRUE indicates the Windows Defender tamper protection feature is enabled, when FALSE indicates the Windows Defender tamper protection feature is not enabled. Defaults to setting on client device.
+// returns a *bool when successful
 func (m *WindowsProtectionState) GetTamperProtectionEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("tamperProtectionEnabled")
     if err != nil {
@@ -761,7 +784,6 @@ func (m *WindowsProtectionState) SetTamperProtectionEnabled(value *bool)() {
         panic(err)
     }
 }
-// WindowsProtectionStateable 
 type WindowsProtectionStateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

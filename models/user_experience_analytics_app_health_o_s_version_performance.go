@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsAppHealthOSVersionPerformance struct {
     Entity
 }
-// NewUserExperienceAnalyticsAppHealthOSVersionPerformance instantiates a new userExperienceAnalyticsAppHealthOSVersionPerformance and sets the default values.
+// NewUserExperienceAnalyticsAppHealthOSVersionPerformance instantiates a new UserExperienceAnalyticsAppHealthOSVersionPerformance and sets the default values.
 func NewUserExperienceAnalyticsAppHealthOSVersionPerformance()(*UserExperienceAnalyticsAppHealthOSVersionPerformance) {
     m := &UserExperienceAnalyticsAppHealthOSVersionPerformance{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewUserExperienceAnalyticsAppHealthOSVersionPerformance()(*UserExperienceAn
     return m
 }
 // CreateUserExperienceAnalyticsAppHealthOSVersionPerformanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsAppHealthOSVersionPerformanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsAppHealthOSVersionPerformance(), nil
 }
 // GetActiveDeviceCount gets the activeDeviceCount property value. The number of active devices for the OS version. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetActiveDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("activeDeviceCount")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetActiveDeviceCo
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activeDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -86,6 +89,7 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetFieldDeseriali
     return res
 }
 // GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetMeanTimeToFailureInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("meanTimeToFailureInMinutes")
     if err != nil {
@@ -97,6 +101,7 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetMeanTimeToFail
     return nil
 }
 // GetOsBuildNumber gets the osBuildNumber property value. The OS build number installed on the device. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetOsBuildNumber()(*string) {
     val, err := m.GetBackingStore().Get("osBuildNumber")
     if err != nil {
@@ -108,6 +113,7 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetOsBuildNumber(
     return nil
 }
 // GetOsVersion gets the osVersion property value. The OS version installed on the device. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetOsVersion()(*string) {
     val, err := m.GetBackingStore().Get("osVersion")
     if err != nil {
@@ -119,6 +125,7 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetOsVersion()(*s
     return nil
 }
 // GetOsVersionAppHealthScore gets the osVersionAppHealthScore property value. The application health score of the OS version. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetOsVersionAppHealthScore()(*float64) {
     val, err := m.GetBackingStore().Get("osVersionAppHealthScore")
     if err != nil {
@@ -202,7 +209,6 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) SetOsVersionAppHe
         panic(err)
     }
 }
-// UserExperienceAnalyticsAppHealthOSVersionPerformanceable 
 type UserExperienceAnalyticsAppHealthOSVersionPerformanceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

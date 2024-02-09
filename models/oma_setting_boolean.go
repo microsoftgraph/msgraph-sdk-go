@@ -8,7 +8,7 @@ import (
 type OmaSettingBoolean struct {
     OmaSetting
 }
-// NewOmaSettingBoolean instantiates a new omaSettingBoolean and sets the default values.
+// NewOmaSettingBoolean instantiates a new OmaSettingBoolean and sets the default values.
 func NewOmaSettingBoolean()(*OmaSettingBoolean) {
     m := &OmaSettingBoolean{
         OmaSetting: *NewOmaSetting(),
@@ -18,10 +18,12 @@ func NewOmaSettingBoolean()(*OmaSettingBoolean) {
     return m
 }
 // CreateOmaSettingBooleanFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOmaSettingBooleanFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOmaSettingBoolean(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OmaSettingBoolean) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OmaSetting.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *OmaSettingBoolean) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetValue gets the value property value. Value.
+// returns a *bool when successful
 func (m *OmaSettingBoolean) GetValue()(*bool) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *OmaSettingBoolean) SetValue(value *bool)() {
         panic(err)
     }
 }
-// OmaSettingBooleanable 
 type OmaSettingBooleanable interface {
     OmaSettingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

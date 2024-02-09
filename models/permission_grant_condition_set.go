@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PermissionGrantConditionSet 
 type PermissionGrantConditionSet struct {
     Entity
 }
-// NewPermissionGrantConditionSet instantiates a new permissionGrantConditionSet and sets the default values.
+// NewPermissionGrantConditionSet instantiates a new PermissionGrantConditionSet and sets the default values.
 func NewPermissionGrantConditionSet()(*PermissionGrantConditionSet) {
     m := &PermissionGrantConditionSet{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewPermissionGrantConditionSet()(*PermissionGrantConditionSet) {
     return m
 }
 // CreatePermissionGrantConditionSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePermissionGrantConditionSetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPermissionGrantConditionSet(), nil
 }
 // GetClientApplicationIds gets the clientApplicationIds property value. A list of appId values for the client applications to match with, or a list with the single value all to match any client application. Default is the single value all.
+// returns a []string when successful
 func (m *PermissionGrantConditionSet) GetClientApplicationIds()([]string) {
     val, err := m.GetBackingStore().Get("clientApplicationIds")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *PermissionGrantConditionSet) GetClientApplicationIds()([]string) {
     return nil
 }
 // GetClientApplicationPublisherIds gets the clientApplicationPublisherIds property value. A list of Microsoft Partner Network (MPN) IDs for verified publishers of the client application, or a list with the single value all to match with client apps from any publisher. Default is the single value all.
+// returns a []string when successful
 func (m *PermissionGrantConditionSet) GetClientApplicationPublisherIds()([]string) {
     val, err := m.GetBackingStore().Get("clientApplicationPublisherIds")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *PermissionGrantConditionSet) GetClientApplicationPublisherIds()([]strin
     return nil
 }
 // GetClientApplicationsFromVerifiedPublisherOnly gets the clientApplicationsFromVerifiedPublisherOnly property value. Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it doesn't have a verified publisher. Default is false.
+// returns a *bool when successful
 func (m *PermissionGrantConditionSet) GetClientApplicationsFromVerifiedPublisherOnly()(*bool) {
     val, err := m.GetBackingStore().Get("clientApplicationsFromVerifiedPublisherOnly")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *PermissionGrantConditionSet) GetClientApplicationsFromVerifiedPublisher
     return nil
 }
 // GetClientApplicationTenantIds gets the clientApplicationTenantIds property value. A list of Microsoft Entra tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
+// returns a []string when successful
 func (m *PermissionGrantConditionSet) GetClientApplicationTenantIds()([]string) {
     val, err := m.GetBackingStore().Get("clientApplicationTenantIds")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *PermissionGrantConditionSet) GetClientApplicationTenantIds()([]string) 
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["clientApplicationIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -173,6 +178,7 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetPermissionClassification gets the permissionClassification property value. The permission classification for the permission being granted, or all to match with any permission classification (including permissions that aren't classified). Default is all.
+// returns a *string when successful
 func (m *PermissionGrantConditionSet) GetPermissionClassification()(*string) {
     val, err := m.GetBackingStore().Get("permissionClassification")
     if err != nil {
@@ -184,6 +190,7 @@ func (m *PermissionGrantConditionSet) GetPermissionClassification()(*string) {
     return nil
 }
 // GetPermissions gets the permissions property value. The list of id values for the specific permissions to match with, or a list with the single value all to match with any permission. The id of delegated permissions can be found in the oauth2PermissionScopes property of the API's servicePrincipal object. The id of application permissions can be found in the appRoles property of the API's servicePrincipal object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API's servicePrincipal object. Default is the single value all.
+// returns a []string when successful
 func (m *PermissionGrantConditionSet) GetPermissions()([]string) {
     val, err := m.GetBackingStore().Get("permissions")
     if err != nil {
@@ -195,6 +202,7 @@ func (m *PermissionGrantConditionSet) GetPermissions()([]string) {
     return nil
 }
 // GetPermissionType gets the permissionType property value. The permission type of the permission being granted. Possible values: application for application permissions (for example app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions that haven't been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but can't be used in custom permission grant policies. Required.
+// returns a *PermissionType when successful
 func (m *PermissionGrantConditionSet) GetPermissionType()(*PermissionType) {
     val, err := m.GetBackingStore().Get("permissionType")
     if err != nil {
@@ -206,6 +214,7 @@ func (m *PermissionGrantConditionSet) GetPermissionType()(*PermissionType) {
     return nil
 }
 // GetResourceApplication gets the resourceApplication property value. The appId of the resource application (for example the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.
+// returns a *string when successful
 func (m *PermissionGrantConditionSet) GetResourceApplication()(*string) {
     val, err := m.GetBackingStore().Get("resourceApplication")
     if err != nil {
@@ -329,7 +338,6 @@ func (m *PermissionGrantConditionSet) SetResourceApplication(value *string)() {
         panic(err)
     }
 }
-// PermissionGrantConditionSetable 
 type PermissionGrantConditionSetable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

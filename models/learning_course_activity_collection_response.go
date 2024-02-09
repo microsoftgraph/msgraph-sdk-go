@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LearningCourseActivityCollectionResponse 
 type LearningCourseActivityCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewLearningCourseActivityCollectionResponse instantiates a new learningCourseActivityCollectionResponse and sets the default values.
+// NewLearningCourseActivityCollectionResponse instantiates a new LearningCourseActivityCollectionResponse and sets the default values.
 func NewLearningCourseActivityCollectionResponse()(*LearningCourseActivityCollectionResponse) {
     m := &LearningCourseActivityCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewLearningCourseActivityCollectionResponse()(*LearningCourseActivityCollec
     return m
 }
 // CreateLearningCourseActivityCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateLearningCourseActivityCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLearningCourseActivityCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *LearningCourseActivityCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *LearningCourseActivityCollectionResponse) GetFieldDeserializers()(map[s
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []LearningCourseActivityable when successful
 func (m *LearningCourseActivityCollectionResponse) GetValue()([]LearningCourseActivityable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *LearningCourseActivityCollectionResponse) SetValue(value []LearningCour
         panic(err)
     }
 }
-// LearningCourseActivityCollectionResponseable 
 type LearningCourseActivityCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

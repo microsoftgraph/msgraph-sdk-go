@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SecureScoreControlProfile 
 type SecureScoreControlProfile struct {
     Entity
 }
-// NewSecureScoreControlProfile instantiates a new secureScoreControlProfile and sets the default values.
+// NewSecureScoreControlProfile instantiates a new SecureScoreControlProfile and sets the default values.
 func NewSecureScoreControlProfile()(*SecureScoreControlProfile) {
     m := &SecureScoreControlProfile{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewSecureScoreControlProfile()(*SecureScoreControlProfile) {
     return m
 }
 // CreateSecureScoreControlProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSecureScoreControlProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecureScoreControlProfile(), nil
 }
 // GetActionType gets the actionType property value. Control action type (Config, Review, Behavior).
+// returns a *string when successful
 func (m *SecureScoreControlProfile) GetActionType()(*string) {
     val, err := m.GetBackingStore().Get("actionType")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *SecureScoreControlProfile) GetActionType()(*string) {
     return nil
 }
 // GetActionUrl gets the actionUrl property value. URL to where the control can be actioned.
+// returns a *string when successful
 func (m *SecureScoreControlProfile) GetActionUrl()(*string) {
     val, err := m.GetBackingStore().Get("actionUrl")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *SecureScoreControlProfile) GetActionUrl()(*string) {
     return nil
 }
 // GetAzureTenantId gets the azureTenantId property value. GUID string for tenant ID.
+// returns a *string when successful
 func (m *SecureScoreControlProfile) GetAzureTenantId()(*string) {
     val, err := m.GetBackingStore().Get("azureTenantId")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *SecureScoreControlProfile) GetAzureTenantId()(*string) {
     return nil
 }
 // GetComplianceInformation gets the complianceInformation property value. The collection of compliance information associated with secure score control
+// returns a []ComplianceInformationable when successful
 func (m *SecureScoreControlProfile) GetComplianceInformation()([]ComplianceInformationable) {
     val, err := m.GetBackingStore().Get("complianceInformation")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *SecureScoreControlProfile) GetComplianceInformation()([]ComplianceInfor
     return nil
 }
 // GetControlCategory gets the controlCategory property value. Control action category (Identity, Data, Device, Apps, Infrastructure).
+// returns a *string when successful
 func (m *SecureScoreControlProfile) GetControlCategory()(*string) {
     val, err := m.GetBackingStore().Get("controlCategory")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *SecureScoreControlProfile) GetControlCategory()(*string) {
     return nil
 }
 // GetControlStateUpdates gets the controlStateUpdates property value. Flag to indicate where the tenant has marked a control (ignored, thirdParty, reviewed) (supports update).
+// returns a []SecureScoreControlStateUpdateable when successful
 func (m *SecureScoreControlProfile) GetControlStateUpdates()([]SecureScoreControlStateUpdateable) {
     val, err := m.GetBackingStore().Get("controlStateUpdates")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *SecureScoreControlProfile) GetControlStateUpdates()([]SecureScoreContro
     return nil
 }
 // GetDeprecated gets the deprecated property value. Flag to indicate if a control is depreciated.
+// returns a *bool when successful
 func (m *SecureScoreControlProfile) GetDeprecated()(*bool) {
     val, err := m.GetBackingStore().Get("deprecated")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *SecureScoreControlProfile) GetDeprecated()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["actionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -311,6 +319,7 @@ func (m *SecureScoreControlProfile) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetImplementationCost gets the implementationCost property value. Resource cost of implemmentating control (low, moderate, high).
+// returns a *string when successful
 func (m *SecureScoreControlProfile) GetImplementationCost()(*string) {
     val, err := m.GetBackingStore().Get("implementationCost")
     if err != nil {
@@ -322,6 +331,7 @@ func (m *SecureScoreControlProfile) GetImplementationCost()(*string) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Time at which the control profile entity was last modified. The Timestamp type represents date and time
+// returns a *Time when successful
 func (m *SecureScoreControlProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -333,6 +343,7 @@ func (m *SecureScoreControlProfile) GetLastModifiedDateTime()(*i336074805fc85398
     return nil
 }
 // GetMaxScore gets the maxScore property value. max attainable score for the control.
+// returns a *float64 when successful
 func (m *SecureScoreControlProfile) GetMaxScore()(*float64) {
     val, err := m.GetBackingStore().Get("maxScore")
     if err != nil {
@@ -344,6 +355,7 @@ func (m *SecureScoreControlProfile) GetMaxScore()(*float64) {
     return nil
 }
 // GetRank gets the rank property value. Microsoft's stack ranking of control.
+// returns a *int32 when successful
 func (m *SecureScoreControlProfile) GetRank()(*int32) {
     val, err := m.GetBackingStore().Get("rank")
     if err != nil {
@@ -355,6 +367,7 @@ func (m *SecureScoreControlProfile) GetRank()(*int32) {
     return nil
 }
 // GetRemediation gets the remediation property value. Description of what the control will help remediate.
+// returns a *string when successful
 func (m *SecureScoreControlProfile) GetRemediation()(*string) {
     val, err := m.GetBackingStore().Get("remediation")
     if err != nil {
@@ -366,6 +379,7 @@ func (m *SecureScoreControlProfile) GetRemediation()(*string) {
     return nil
 }
 // GetRemediationImpact gets the remediationImpact property value. Description of the impact on users of the remediation.
+// returns a *string when successful
 func (m *SecureScoreControlProfile) GetRemediationImpact()(*string) {
     val, err := m.GetBackingStore().Get("remediationImpact")
     if err != nil {
@@ -377,6 +391,7 @@ func (m *SecureScoreControlProfile) GetRemediationImpact()(*string) {
     return nil
 }
 // GetService gets the service property value. Service that owns the control (Exchange, Sharepoint, Microsoft Entra ID).
+// returns a *string when successful
 func (m *SecureScoreControlProfile) GetService()(*string) {
     val, err := m.GetBackingStore().Get("service")
     if err != nil {
@@ -388,6 +403,7 @@ func (m *SecureScoreControlProfile) GetService()(*string) {
     return nil
 }
 // GetThreats gets the threats property value. List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage,
+// returns a []string when successful
 func (m *SecureScoreControlProfile) GetThreats()([]string) {
     val, err := m.GetBackingStore().Get("threats")
     if err != nil {
@@ -399,6 +415,7 @@ func (m *SecureScoreControlProfile) GetThreats()([]string) {
     return nil
 }
 // GetTier gets the tier property value. The tier property
+// returns a *string when successful
 func (m *SecureScoreControlProfile) GetTier()(*string) {
     val, err := m.GetBackingStore().Get("tier")
     if err != nil {
@@ -410,6 +427,7 @@ func (m *SecureScoreControlProfile) GetTier()(*string) {
     return nil
 }
 // GetTitle gets the title property value. The title property
+// returns a *string when successful
 func (m *SecureScoreControlProfile) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -421,6 +439,7 @@ func (m *SecureScoreControlProfile) GetTitle()(*string) {
     return nil
 }
 // GetUserImpact gets the userImpact property value. The userImpact property
+// returns a *string when successful
 func (m *SecureScoreControlProfile) GetUserImpact()(*string) {
     val, err := m.GetBackingStore().Get("userImpact")
     if err != nil {
@@ -432,6 +451,7 @@ func (m *SecureScoreControlProfile) GetUserImpact()(*string) {
     return nil
 }
 // GetVendorInformation gets the vendorInformation property value. The vendorInformation property
+// returns a SecurityVendorInformationable when successful
 func (m *SecureScoreControlProfile) GetVendorInformation()(SecurityVendorInformationable) {
     val, err := m.GetBackingStore().Get("vendorInformation")
     if err != nil {
@@ -709,7 +729,6 @@ func (m *SecureScoreControlProfile) SetVendorInformation(value SecurityVendorInf
         panic(err)
     }
 }
-// SecureScoreControlProfileable 
 type SecureScoreControlProfileable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

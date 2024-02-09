@@ -4,8 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthWithHeightResponse 
-// Deprecated: This class is obsolete. Use imageWithWidthWithHeightGetResponse instead.
+// Deprecated: This class is obsolete. Use {TypeName} instead.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthWithHeightResponse struct {
     ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthWithHeightGetResponse
 }
@@ -17,11 +16,11 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthWithH
     return m
 }
 // CreateItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthWithHeightResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthWithHeightResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthWithHeightResponse(), nil
 }
-// ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthWithHeightResponseable 
-// Deprecated: This class is obsolete. Use imageWithWidthWithHeightGetResponse instead.
+// Deprecated: This class is obsolete. Use {TypeName} instead.
 type ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthWithHeightResponseable interface {
     ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameImageWithWidthWithHeightGetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SignInFrequencySessionControl 
 type SignInFrequencySessionControl struct {
     ConditionalAccessSessionControl
 }
-// NewSignInFrequencySessionControl instantiates a new signInFrequencySessionControl and sets the default values.
+// NewSignInFrequencySessionControl instantiates a new SignInFrequencySessionControl and sets the default values.
 func NewSignInFrequencySessionControl()(*SignInFrequencySessionControl) {
     m := &SignInFrequencySessionControl{
         ConditionalAccessSessionControl: *NewConditionalAccessSessionControl(),
@@ -18,10 +17,12 @@ func NewSignInFrequencySessionControl()(*SignInFrequencySessionControl) {
     return m
 }
 // CreateSignInFrequencySessionControlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSignInFrequencySessionControlFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSignInFrequencySessionControl(), nil
 }
 // GetAuthenticationType gets the authenticationType property value. The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue.
+// returns a *SignInFrequencyAuthenticationType when successful
 func (m *SignInFrequencySessionControl) GetAuthenticationType()(*SignInFrequencyAuthenticationType) {
     val, err := m.GetBackingStore().Get("authenticationType")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *SignInFrequencySessionControl) GetAuthenticationType()(*SignInFrequency
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SignInFrequencySessionControl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ConditionalAccessSessionControl.GetFieldDeserializers()
     res["authenticationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,6 +80,7 @@ func (m *SignInFrequencySessionControl) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetFrequencyInterval gets the frequencyInterval property value. The possible values are timeBased, everyTime, unknownFutureValue.
+// returns a *SignInFrequencyInterval when successful
 func (m *SignInFrequencySessionControl) GetFrequencyInterval()(*SignInFrequencyInterval) {
     val, err := m.GetBackingStore().Get("frequencyInterval")
     if err != nil {
@@ -89,6 +92,7 @@ func (m *SignInFrequencySessionControl) GetFrequencyInterval()(*SignInFrequencyI
     return nil
 }
 // GetTypeEscaped gets the type property value. Possible values are: days, hours.
+// returns a *SigninFrequencyType when successful
 func (m *SignInFrequencySessionControl) GetTypeEscaped()(*SigninFrequencyType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -100,6 +104,7 @@ func (m *SignInFrequencySessionControl) GetTypeEscaped()(*SigninFrequencyType) {
     return nil
 }
 // GetValue gets the value property value. The number of days or hours.
+// returns a *int32 when successful
 func (m *SignInFrequencySessionControl) GetValue()(*int32) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -173,7 +178,6 @@ func (m *SignInFrequencySessionControl) SetValue(value *int32)() {
         panic(err)
     }
 }
-// SignInFrequencySessionControlable 
 type SignInFrequencySessionControlable interface {
     ConditionalAccessSessionControlable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

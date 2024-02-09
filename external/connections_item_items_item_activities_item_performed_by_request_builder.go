@@ -27,28 +27,29 @@ type ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilderGetRequestCo
     // Request query parameters
     QueryParameters *ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilderGetQueryParameters
 }
-// NewConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilderInternal instantiates a new PerformedByRequestBuilder and sets the default values.
+// NewConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilderInternal instantiates a new ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilder and sets the default values.
 func NewConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilder) {
     m := &ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/connections/{externalConnection%2Did}/items/{externalItem%2Did}/activities/{externalActivity%2Did}/performedBy{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/connections/{externalConnection%2Did}/items/{externalItem%2Did}/activities/{externalActivity%2Did}/performedBy{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilder instantiates a new PerformedByRequestBuilder and sets the default values.
+// NewConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilder instantiates a new ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilder and sets the default values.
 func NewConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get represents an identity used to identify who is responsible for the activity.
+// returns a Identityable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilderGetRequestConfiguration)(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.Identityable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.CreateIdentityFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilder) Get(ct
     return res.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.Identityable), nil
 }
 // ToGetRequestInformation represents an identity used to identify who is responsible for the activity.
+// returns a *RequestInformation when successful
 func (m *ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilder) ToGetR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilder when successful
 func (m *ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilder) WithUrl(rawUrl string)(*ConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilder) {
     return NewConnectionsItemItemsItemActivitiesItemPerformedByRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

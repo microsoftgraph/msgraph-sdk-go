@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemAnalytics 
 type ItemAnalytics struct {
     Entity
 }
-// NewItemAnalytics instantiates a new itemAnalytics and sets the default values.
+// NewItemAnalytics instantiates a new ItemAnalytics and sets the default values.
 func NewItemAnalytics()(*ItemAnalytics) {
     m := &ItemAnalytics{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewItemAnalytics()(*ItemAnalytics) {
     return m
 }
 // CreateItemAnalyticsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemAnalyticsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemAnalytics(), nil
 }
 // GetAllTime gets the allTime property value. The allTime property
+// returns a ItemActivityStatable when successful
 func (m *ItemAnalytics) GetAllTime()(ItemActivityStatable) {
     val, err := m.GetBackingStore().Get("allTime")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ItemAnalytics) GetAllTime()(ItemActivityStatable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemAnalytics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["allTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -72,6 +74,7 @@ func (m *ItemAnalytics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetItemActivityStats gets the itemActivityStats property value. The itemActivityStats property
+// returns a []ItemActivityStatable when successful
 func (m *ItemAnalytics) GetItemActivityStats()([]ItemActivityStatable) {
     val, err := m.GetBackingStore().Get("itemActivityStats")
     if err != nil {
@@ -83,6 +86,7 @@ func (m *ItemAnalytics) GetItemActivityStats()([]ItemActivityStatable) {
     return nil
 }
 // GetLastSevenDays gets the lastSevenDays property value. The lastSevenDays property
+// returns a ItemActivityStatable when successful
 func (m *ItemAnalytics) GetLastSevenDays()(ItemActivityStatable) {
     val, err := m.GetBackingStore().Get("lastSevenDays")
     if err != nil {
@@ -146,7 +150,6 @@ func (m *ItemAnalytics) SetLastSevenDays(value ItemActivityStatable)() {
         panic(err)
     }
 }
-// ItemAnalyticsable 
 type ItemAnalyticsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

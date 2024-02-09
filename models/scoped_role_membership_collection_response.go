@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ScopedRoleMembershipCollectionResponse 
 type ScopedRoleMembershipCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewScopedRoleMembershipCollectionResponse instantiates a new scopedRoleMembershipCollectionResponse and sets the default values.
+// NewScopedRoleMembershipCollectionResponse instantiates a new ScopedRoleMembershipCollectionResponse and sets the default values.
 func NewScopedRoleMembershipCollectionResponse()(*ScopedRoleMembershipCollectionResponse) {
     m := &ScopedRoleMembershipCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewScopedRoleMembershipCollectionResponse()(*ScopedRoleMembershipCollection
     return m
 }
 // CreateScopedRoleMembershipCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateScopedRoleMembershipCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewScopedRoleMembershipCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ScopedRoleMembershipCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ScopedRoleMembershipCollectionResponse) GetFieldDeserializers()(map[str
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ScopedRoleMembershipable when successful
 func (m *ScopedRoleMembershipCollectionResponse) GetValue()([]ScopedRoleMembershipable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ScopedRoleMembershipCollectionResponse) SetValue(value []ScopedRoleMemb
         panic(err)
     }
 }
-// ScopedRoleMembershipCollectionResponseable 
 type ScopedRoleMembershipCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

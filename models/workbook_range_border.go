@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookRangeBorder 
 type WorkbookRangeBorder struct {
     Entity
 }
-// NewWorkbookRangeBorder instantiates a new workbookRangeBorder and sets the default values.
+// NewWorkbookRangeBorder instantiates a new WorkbookRangeBorder and sets the default values.
 func NewWorkbookRangeBorder()(*WorkbookRangeBorder) {
     m := &WorkbookRangeBorder{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewWorkbookRangeBorder()(*WorkbookRangeBorder) {
     return m
 }
 // CreateWorkbookRangeBorderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookRangeBorderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookRangeBorder(), nil
 }
 // GetColor gets the color property value. HTML color code representing the color of the border line, of the form #RRGGBB (for example 'FFA500') or as a named HTML color (for example 'orange').
+// returns a *string when successful
 func (m *WorkbookRangeBorder) GetColor()(*string) {
     val, err := m.GetBackingStore().Get("color")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *WorkbookRangeBorder) GetColor()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookRangeBorder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["color"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -76,6 +78,7 @@ func (m *WorkbookRangeBorder) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetSideIndex gets the sideIndex property value. Constant value that indicates the specific side of the border. The possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp. Read-only.
+// returns a *string when successful
 func (m *WorkbookRangeBorder) GetSideIndex()(*string) {
     val, err := m.GetBackingStore().Get("sideIndex")
     if err != nil {
@@ -87,6 +90,7 @@ func (m *WorkbookRangeBorder) GetSideIndex()(*string) {
     return nil
 }
 // GetStyle gets the style property value. One of the constants of line style specifying the line style for the border. The possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.
+// returns a *string when successful
 func (m *WorkbookRangeBorder) GetStyle()(*string) {
     val, err := m.GetBackingStore().Get("style")
     if err != nil {
@@ -98,6 +102,7 @@ func (m *WorkbookRangeBorder) GetStyle()(*string) {
     return nil
 }
 // GetWeight gets the weight property value. Specifies the weight of the border around a range. The possible values are: Hairline, Thin, Medium, Thick.
+// returns a *string when successful
 func (m *WorkbookRangeBorder) GetWeight()(*string) {
     val, err := m.GetBackingStore().Get("weight")
     if err != nil {
@@ -168,7 +173,6 @@ func (m *WorkbookRangeBorder) SetWeight(value *string)() {
         panic(err)
     }
 }
-// WorkbookRangeBorderable 
 type WorkbookRangeBorderable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

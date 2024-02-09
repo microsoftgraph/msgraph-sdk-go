@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MeetingPolicyUpdatedEventMessageDetail 
 type MeetingPolicyUpdatedEventMessageDetail struct {
     EventMessageDetail
 }
-// NewMeetingPolicyUpdatedEventMessageDetail instantiates a new meetingPolicyUpdatedEventMessageDetail and sets the default values.
+// NewMeetingPolicyUpdatedEventMessageDetail instantiates a new MeetingPolicyUpdatedEventMessageDetail and sets the default values.
 func NewMeetingPolicyUpdatedEventMessageDetail()(*MeetingPolicyUpdatedEventMessageDetail) {
     m := &MeetingPolicyUpdatedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
@@ -18,10 +17,12 @@ func NewMeetingPolicyUpdatedEventMessageDetail()(*MeetingPolicyUpdatedEventMessa
     return m
 }
 // CreateMeetingPolicyUpdatedEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMeetingPolicyUpdatedEventMessageDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMeetingPolicyUpdatedEventMessageDetail(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MeetingPolicyUpdatedEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EventMessageDetail.GetFieldDeserializers()
     res["initiator"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -57,6 +58,7 @@ func (m *MeetingPolicyUpdatedEventMessageDetail) GetFieldDeserializers()(map[str
     return res
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
+// returns a IdentitySetable when successful
 func (m *MeetingPolicyUpdatedEventMessageDetail) GetInitiator()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("initiator")
     if err != nil {
@@ -68,6 +70,7 @@ func (m *MeetingPolicyUpdatedEventMessageDetail) GetInitiator()(IdentitySetable)
     return nil
 }
 // GetMeetingChatEnabled gets the meetingChatEnabled property value. Represents whether the meeting chat is enabled or not.
+// returns a *bool when successful
 func (m *MeetingPolicyUpdatedEventMessageDetail) GetMeetingChatEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("meetingChatEnabled")
     if err != nil {
@@ -79,6 +82,7 @@ func (m *MeetingPolicyUpdatedEventMessageDetail) GetMeetingChatEnabled()(*bool) 
     return nil
 }
 // GetMeetingChatId gets the meetingChatId property value. Unique identifier of the meeting chat.
+// returns a *string when successful
 func (m *MeetingPolicyUpdatedEventMessageDetail) GetMeetingChatId()(*string) {
     val, err := m.GetBackingStore().Get("meetingChatId")
     if err != nil {
@@ -136,7 +140,6 @@ func (m *MeetingPolicyUpdatedEventMessageDetail) SetMeetingChatId(value *string)
         panic(err)
     }
 }
-// MeetingPolicyUpdatedEventMessageDetailable 
 type MeetingPolicyUpdatedEventMessageDetailable interface {
     EventMessageDetailable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

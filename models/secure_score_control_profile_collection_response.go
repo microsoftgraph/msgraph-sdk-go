@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SecureScoreControlProfileCollectionResponse 
 type SecureScoreControlProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSecureScoreControlProfileCollectionResponse instantiates a new secureScoreControlProfileCollectionResponse and sets the default values.
+// NewSecureScoreControlProfileCollectionResponse instantiates a new SecureScoreControlProfileCollectionResponse and sets the default values.
 func NewSecureScoreControlProfileCollectionResponse()(*SecureScoreControlProfileCollectionResponse) {
     m := &SecureScoreControlProfileCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewSecureScoreControlProfileCollectionResponse()(*SecureScoreControlProfile
     return m
 }
 // CreateSecureScoreControlProfileCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSecureScoreControlProfileCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecureScoreControlProfileCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SecureScoreControlProfileCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *SecureScoreControlProfileCollectionResponse) GetFieldDeserializers()(ma
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []SecureScoreControlProfileable when successful
 func (m *SecureScoreControlProfileCollectionResponse) GetValue()([]SecureScoreControlProfileable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *SecureScoreControlProfileCollectionResponse) SetValue(value []SecureSco
         panic(err)
     }
 }
-// SecureScoreControlProfileCollectionResponseable 
 type SecureScoreControlProfileCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

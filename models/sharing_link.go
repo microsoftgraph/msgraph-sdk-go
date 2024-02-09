@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// SharingLink 
 type SharingLink struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSharingLink instantiates a new sharingLink and sets the default values.
+// NewSharingLink instantiates a new SharingLink and sets the default values.
 func NewSharingLink()(*SharingLink) {
     m := &SharingLink{
     }
@@ -19,10 +18,12 @@ func NewSharingLink()(*SharingLink) {
     return m
 }
 // CreateSharingLinkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSharingLinkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSharingLink(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SharingLink) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *SharingLink) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetApplication gets the application property value. The app the link is associated with.
+// returns a Identityable when successful
 func (m *SharingLink) GetApplication()(Identityable) {
     val, err := m.GetBackingStore().Get("application")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *SharingLink) GetApplication()(Identityable) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *SharingLink) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SharingLink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["application"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -125,6 +129,7 @@ func (m *SharingLink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *SharingLink) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -136,6 +141,7 @@ func (m *SharingLink) GetOdataType()(*string) {
     return nil
 }
 // GetPreventsDownload gets the preventsDownload property value. If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.
+// returns a *bool when successful
 func (m *SharingLink) GetPreventsDownload()(*bool) {
     val, err := m.GetBackingStore().Get("preventsDownload")
     if err != nil {
@@ -147,6 +153,7 @@ func (m *SharingLink) GetPreventsDownload()(*bool) {
     return nil
 }
 // GetScope gets the scope property value. The scope of the link represented by this permission. Value anonymous indicates the link is usable by anyone, organization indicates the link is only usable for users signed into the same tenant.
+// returns a *string when successful
 func (m *SharingLink) GetScope()(*string) {
     val, err := m.GetBackingStore().Get("scope")
     if err != nil {
@@ -158,6 +165,7 @@ func (m *SharingLink) GetScope()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type of the link created.
+// returns a *string when successful
 func (m *SharingLink) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -169,6 +177,7 @@ func (m *SharingLink) GetTypeEscaped()(*string) {
     return nil
 }
 // GetWebHtml gets the webHtml property value. For embed links, this property contains the HTML code for an <iframe> element that will embed the item in a webpage.
+// returns a *string when successful
 func (m *SharingLink) GetWebHtml()(*string) {
     val, err := m.GetBackingStore().Get("webHtml")
     if err != nil {
@@ -180,6 +189,7 @@ func (m *SharingLink) GetWebHtml()(*string) {
     return nil
 }
 // GetWebUrl gets the webUrl property value. A URL that opens the item in the browser on the OneDrive website.
+// returns a *string when successful
 func (m *SharingLink) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -302,7 +312,6 @@ func (m *SharingLink) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// SharingLinkable 
 type SharingLinkable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -5,11 +5,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// CasesRoot 
 type CasesRoot struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewCasesRoot instantiates a new casesRoot and sets the default values.
+// NewCasesRoot instantiates a new CasesRoot and sets the default values.
 func NewCasesRoot()(*CasesRoot) {
     m := &CasesRoot{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -17,10 +16,12 @@ func NewCasesRoot()(*CasesRoot) {
     return m
 }
 // CreateCasesRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCasesRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCasesRoot(), nil
 }
 // GetEdiscoveryCases gets the ediscoveryCases property value. The ediscoveryCases property
+// returns a []EdiscoveryCaseable when successful
 func (m *CasesRoot) GetEdiscoveryCases()([]EdiscoveryCaseable) {
     val, err := m.GetBackingStore().Get("ediscoveryCases")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *CasesRoot) GetEdiscoveryCases()([]EdiscoveryCaseable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CasesRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["ediscoveryCases"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -79,7 +81,6 @@ func (m *CasesRoot) SetEdiscoveryCases(value []EdiscoveryCaseable)() {
         panic(err)
     }
 }
-// CasesRootable 
 type CasesRootable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

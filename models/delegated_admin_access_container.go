@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// DelegatedAdminAccessContainer 
 type DelegatedAdminAccessContainer struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDelegatedAdminAccessContainer instantiates a new delegatedAdminAccessContainer and sets the default values.
+// NewDelegatedAdminAccessContainer instantiates a new DelegatedAdminAccessContainer and sets the default values.
 func NewDelegatedAdminAccessContainer()(*DelegatedAdminAccessContainer) {
     m := &DelegatedAdminAccessContainer{
     }
@@ -19,10 +18,12 @@ func NewDelegatedAdminAccessContainer()(*DelegatedAdminAccessContainer) {
     return m
 }
 // CreateDelegatedAdminAccessContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDelegatedAdminAccessContainerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDelegatedAdminAccessContainer(), nil
 }
 // GetAccessContainerId gets the accessContainerId property value. The identifier of the access container (for example, a security group). For 'securityGroup' access containers, this must be a valid ID of a Microsoft Entra security group in the Microsoft partner's tenant.
+// returns a *string when successful
 func (m *DelegatedAdminAccessContainer) GetAccessContainerId()(*string) {
     val, err := m.GetBackingStore().Get("accessContainerId")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *DelegatedAdminAccessContainer) GetAccessContainerId()(*string) {
     return nil
 }
 // GetAccessContainerType gets the accessContainerType property value. The accessContainerType property
+// returns a *DelegatedAdminAccessContainerType when successful
 func (m *DelegatedAdminAccessContainer) GetAccessContainerType()(*DelegatedAdminAccessContainerType) {
     val, err := m.GetBackingStore().Get("accessContainerType")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *DelegatedAdminAccessContainer) GetAccessContainerType()(*DelegatedAdmin
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DelegatedAdminAccessContainer) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -57,10 +60,12 @@ func (m *DelegatedAdminAccessContainer) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *DelegatedAdminAccessContainer) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DelegatedAdminAccessContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["accessContainerId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -96,6 +101,7 @@ func (m *DelegatedAdminAccessContainer) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *DelegatedAdminAccessContainer) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -167,7 +173,6 @@ func (m *DelegatedAdminAccessContainer) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// DelegatedAdminAccessContainerable 
 type DelegatedAdminAccessContainerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

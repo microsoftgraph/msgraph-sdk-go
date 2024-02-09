@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AadUserNotificationRecipient 
 type AadUserNotificationRecipient struct {
     TeamworkNotificationRecipient
 }
-// NewAadUserNotificationRecipient instantiates a new aadUserNotificationRecipient and sets the default values.
+// NewAadUserNotificationRecipient instantiates a new AadUserNotificationRecipient and sets the default values.
 func NewAadUserNotificationRecipient()(*AadUserNotificationRecipient) {
     m := &AadUserNotificationRecipient{
         TeamworkNotificationRecipient: *NewTeamworkNotificationRecipient(),
@@ -18,10 +17,12 @@ func NewAadUserNotificationRecipient()(*AadUserNotificationRecipient) {
     return m
 }
 // CreateAadUserNotificationRecipientFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAadUserNotificationRecipientFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAadUserNotificationRecipient(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AadUserNotificationRecipient) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.TeamworkNotificationRecipient.GetFieldDeserializers()
     res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *AadUserNotificationRecipient) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetUserId gets the userId property value. Microsoft Entra user identifier. Use the List users method to get this ID.
+// returns a *string when successful
 func (m *AadUserNotificationRecipient) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *AadUserNotificationRecipient) SetUserId(value *string)() {
         panic(err)
     }
 }
-// AadUserNotificationRecipientable 
 type AadUserNotificationRecipientable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     TeamworkNotificationRecipientable

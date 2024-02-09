@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// UserTrainingContentEventInfo 
 type UserTrainingContentEventInfo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewUserTrainingContentEventInfo instantiates a new userTrainingContentEventInfo and sets the default values.
+// NewUserTrainingContentEventInfo instantiates a new UserTrainingContentEventInfo and sets the default values.
 func NewUserTrainingContentEventInfo()(*UserTrainingContentEventInfo) {
     m := &UserTrainingContentEventInfo{
     }
@@ -20,10 +19,12 @@ func NewUserTrainingContentEventInfo()(*UserTrainingContentEventInfo) {
     return m
 }
 // CreateUserTrainingContentEventInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserTrainingContentEventInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserTrainingContentEventInfo(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *UserTrainingContentEventInfo) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *UserTrainingContentEventInfo) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *UserTrainingContentEventInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBrowser gets the browser property value. Browser of the user from where the training event was generated.
+// returns a *string when successful
 func (m *UserTrainingContentEventInfo) GetBrowser()(*string) {
     val, err := m.GetBackingStore().Get("browser")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *UserTrainingContentEventInfo) GetBrowser()(*string) {
     return nil
 }
 // GetContentDateTime gets the contentDateTime property value. Date and time of the training content playback by the user.
+// returns a *Time when successful
 func (m *UserTrainingContentEventInfo) GetContentDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("contentDateTime")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *UserTrainingContentEventInfo) GetContentDateTime()(*i336074805fc853987a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserTrainingContentEventInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["browser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -127,6 +132,7 @@ func (m *UserTrainingContentEventInfo) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetIpAddress gets the ipAddress property value. IP address of the user for the training event.
+// returns a *string when successful
 func (m *UserTrainingContentEventInfo) GetIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("ipAddress")
     if err != nil {
@@ -138,6 +144,7 @@ func (m *UserTrainingContentEventInfo) GetIpAddress()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *UserTrainingContentEventInfo) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -149,6 +156,7 @@ func (m *UserTrainingContentEventInfo) GetOdataType()(*string) {
     return nil
 }
 // GetOsPlatformDeviceDetails gets the osPlatformDeviceDetails property value. The operating system, platform, and device details of the user for the training event.
+// returns a *string when successful
 func (m *UserTrainingContentEventInfo) GetOsPlatformDeviceDetails()(*string) {
     val, err := m.GetBackingStore().Get("osPlatformDeviceDetails")
     if err != nil {
@@ -160,6 +168,7 @@ func (m *UserTrainingContentEventInfo) GetOsPlatformDeviceDetails()(*string) {
     return nil
 }
 // GetPotentialScoreImpact gets the potentialScoreImpact property value. Potential improvement in the tenant security posture after completion of the training by the user.
+// returns a *float64 when successful
 func (m *UserTrainingContentEventInfo) GetPotentialScoreImpact()(*float64) {
     val, err := m.GetBackingStore().Get("potentialScoreImpact")
     if err != nil {
@@ -269,7 +278,6 @@ func (m *UserTrainingContentEventInfo) SetPotentialScoreImpact(value *float64)()
         panic(err)
     }
 }
-// UserTrainingContentEventInfoable 
 type UserTrainingContentEventInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

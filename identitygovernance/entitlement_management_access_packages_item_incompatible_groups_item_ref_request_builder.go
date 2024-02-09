@@ -17,20 +17,21 @@ type EntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequestBuil
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewEntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequestBuilderInternal instantiates a new RefRequestBuilder and sets the default values.
+// NewEntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequestBuilderInternal instantiates a new EntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequestBuilder) {
     m := &EntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/incompatibleGroups/{group%2Did}/$ref", pathParameters),
     }
     return m
 }
-// NewEntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequestBuilder instantiates a new RefRequestBuilder and sets the default values.
+// NewEntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequestBuilder instantiates a new EntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete remove a group from the list of groups that have been marked as incompatible on an accessPackage.  
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-delete-incompatiblegroup?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequest
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequest
     return nil
 }
 // ToDeleteRequestInformation remove a group from the list of groups that have been marked as incompatible on an accessPackage.  
+// returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequest
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *EntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequestBuilder when successful
 func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequestBuilder) {
     return NewEntitlementManagementAccessPackagesItemIncompatibleGroupsItemRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

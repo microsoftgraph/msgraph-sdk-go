@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ShiftCollectionResponse 
 type ShiftCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewShiftCollectionResponse instantiates a new shiftCollectionResponse and sets the default values.
+// NewShiftCollectionResponse instantiates a new ShiftCollectionResponse and sets the default values.
 func NewShiftCollectionResponse()(*ShiftCollectionResponse) {
     m := &ShiftCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewShiftCollectionResponse()(*ShiftCollectionResponse) {
     return m
 }
 // CreateShiftCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateShiftCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewShiftCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ShiftCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ShiftCollectionResponse) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []Shiftable when successful
 func (m *ShiftCollectionResponse) GetValue()([]Shiftable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ShiftCollectionResponse) SetValue(value []Shiftable)() {
         panic(err)
     }
 }
-// ShiftCollectionResponseable 
 type ShiftCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

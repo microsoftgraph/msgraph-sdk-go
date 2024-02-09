@@ -8,7 +8,7 @@ import (
 type UserInstallStateSummary struct {
     Entity
 }
-// NewUserInstallStateSummary instantiates a new userInstallStateSummary and sets the default values.
+// NewUserInstallStateSummary instantiates a new UserInstallStateSummary and sets the default values.
 func NewUserInstallStateSummary()(*UserInstallStateSummary) {
     m := &UserInstallStateSummary{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewUserInstallStateSummary()(*UserInstallStateSummary) {
     return m
 }
 // CreateUserInstallStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserInstallStateSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserInstallStateSummary(), nil
 }
 // GetDeviceStates gets the deviceStates property value. The install state of the eBook.
+// returns a []DeviceInstallStateable when successful
 func (m *UserInstallStateSummary) GetDeviceStates()([]DeviceInstallStateable) {
     val, err := m.GetBackingStore().Get("deviceStates")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *UserInstallStateSummary) GetDeviceStates()([]DeviceInstallStateable) {
     return nil
 }
 // GetFailedDeviceCount gets the failedDeviceCount property value. Failed Device Count.
+// returns a *int32 when successful
 func (m *UserInstallStateSummary) GetFailedDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("failedDeviceCount")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *UserInstallStateSummary) GetFailedDeviceCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserInstallStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -103,6 +107,7 @@ func (m *UserInstallStateSummary) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetInstalledDeviceCount gets the installedDeviceCount property value. Installed Device Count.
+// returns a *int32 when successful
 func (m *UserInstallStateSummary) GetInstalledDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("installedDeviceCount")
     if err != nil {
@@ -114,6 +119,7 @@ func (m *UserInstallStateSummary) GetInstalledDeviceCount()(*int32) {
     return nil
 }
 // GetNotInstalledDeviceCount gets the notInstalledDeviceCount property value. Not installed device count.
+// returns a *int32 when successful
 func (m *UserInstallStateSummary) GetNotInstalledDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("notInstalledDeviceCount")
     if err != nil {
@@ -125,6 +131,7 @@ func (m *UserInstallStateSummary) GetNotInstalledDeviceCount()(*int32) {
     return nil
 }
 // GetUserName gets the userName property value. User name.
+// returns a *string when successful
 func (m *UserInstallStateSummary) GetUserName()(*string) {
     val, err := m.GetBackingStore().Get("userName")
     if err != nil {
@@ -214,7 +221,6 @@ func (m *UserInstallStateSummary) SetUserName(value *string)() {
         panic(err)
     }
 }
-// UserInstallStateSummaryable 
 type UserInstallStateSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

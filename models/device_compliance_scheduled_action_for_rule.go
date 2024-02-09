@@ -8,7 +8,7 @@ import (
 type DeviceComplianceScheduledActionForRule struct {
     Entity
 }
-// NewDeviceComplianceScheduledActionForRule instantiates a new deviceComplianceScheduledActionForRule and sets the default values.
+// NewDeviceComplianceScheduledActionForRule instantiates a new DeviceComplianceScheduledActionForRule and sets the default values.
 func NewDeviceComplianceScheduledActionForRule()(*DeviceComplianceScheduledActionForRule) {
     m := &DeviceComplianceScheduledActionForRule{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewDeviceComplianceScheduledActionForRule()(*DeviceComplianceScheduledActio
     return m
 }
 // CreateDeviceComplianceScheduledActionForRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceComplianceScheduledActionForRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceComplianceScheduledActionForRule(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceComplianceScheduledActionForRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["ruleName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -51,6 +53,7 @@ func (m *DeviceComplianceScheduledActionForRule) GetFieldDeserializers()(map[str
     return res
 }
 // GetRuleName gets the ruleName property value. Name of the rule which this scheduled action applies to. Currently scheduled actions are created per policy instead of per rule, thus RuleName is always set to default value PasswordRequired.
+// returns a *string when successful
 func (m *DeviceComplianceScheduledActionForRule) GetRuleName()(*string) {
     val, err := m.GetBackingStore().Get("ruleName")
     if err != nil {
@@ -62,6 +65,7 @@ func (m *DeviceComplianceScheduledActionForRule) GetRuleName()(*string) {
     return nil
 }
 // GetScheduledActionConfigurations gets the scheduledActionConfigurations property value. The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+// returns a []DeviceComplianceActionItemable when successful
 func (m *DeviceComplianceScheduledActionForRule) GetScheduledActionConfigurations()([]DeviceComplianceActionItemable) {
     val, err := m.GetBackingStore().Get("scheduledActionConfigurations")
     if err != nil {
@@ -112,7 +116,6 @@ func (m *DeviceComplianceScheduledActionForRule) SetScheduledActionConfiguration
         panic(err)
     }
 }
-// DeviceComplianceScheduledActionForRuleable 
 type DeviceComplianceScheduledActionForRuleable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

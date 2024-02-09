@@ -8,7 +8,7 @@ import (
 type MobileAppContent struct {
     Entity
 }
-// NewMobileAppContent instantiates a new mobileAppContent and sets the default values.
+// NewMobileAppContent instantiates a new MobileAppContent and sets the default values.
 func NewMobileAppContent()(*MobileAppContent) {
     m := &MobileAppContent{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewMobileAppContent()(*MobileAppContent) {
     return m
 }
 // CreateMobileAppContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMobileAppContentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileAppContent(), nil
 }
 // GetContainedApps gets the containedApps property value. The collection of contained apps in a MobileLobApp acting as a package.
+// returns a []MobileContainedAppable when successful
 func (m *MobileAppContent) GetContainedApps()([]MobileContainedAppable) {
     val, err := m.GetBackingStore().Get("containedApps")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *MobileAppContent) GetContainedApps()([]MobileContainedAppable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MobileAppContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["containedApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,6 +71,7 @@ func (m *MobileAppContent) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetFiles gets the files property value. The list of files for this app content version.
+// returns a []MobileAppContentFileable when successful
 func (m *MobileAppContent) GetFiles()([]MobileAppContentFileable) {
     val, err := m.GetBackingStore().Get("files")
     if err != nil {
@@ -124,7 +128,6 @@ func (m *MobileAppContent) SetFiles(value []MobileAppContentFileable)() {
         panic(err)
     }
 }
-// MobileAppContentable 
 type MobileAppContentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// WorkbookSortField 
 type WorkbookSortField struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewWorkbookSortField instantiates a new workbookSortField and sets the default values.
+// NewWorkbookSortField instantiates a new WorkbookSortField and sets the default values.
 func NewWorkbookSortField()(*WorkbookSortField) {
     m := &WorkbookSortField{
     }
@@ -19,10 +18,12 @@ func NewWorkbookSortField()(*WorkbookSortField) {
     return m
 }
 // CreateWorkbookSortFieldFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookSortFieldFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookSortField(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WorkbookSortField) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *WorkbookSortField) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAscending gets the ascending property value. Represents whether the sorting is done in an ascending fashion.
+// returns a *bool when successful
 func (m *WorkbookSortField) GetAscending()(*bool) {
     val, err := m.GetBackingStore().Get("ascending")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *WorkbookSortField) GetAscending()(*bool) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *WorkbookSortField) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetColor gets the color property value. Represents the color that is the target of the condition if the sorting is on font or cell color.
+// returns a *string when successful
 func (m *WorkbookSortField) GetColor()(*string) {
     val, err := m.GetBackingStore().Get("color")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *WorkbookSortField) GetColor()(*string) {
     return nil
 }
 // GetDataOption gets the dataOption property value. Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.
+// returns a *string when successful
 func (m *WorkbookSortField) GetDataOption()(*string) {
     val, err := m.GetBackingStore().Get("dataOption")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *WorkbookSortField) GetDataOption()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookSortField) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["ascending"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -147,6 +153,7 @@ func (m *WorkbookSortField) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetIcon gets the icon property value. Represents the icon that is the target of the condition if the sorting is on the cell's icon.
+// returns a WorkbookIconable when successful
 func (m *WorkbookSortField) GetIcon()(WorkbookIconable) {
     val, err := m.GetBackingStore().Get("icon")
     if err != nil {
@@ -158,6 +165,7 @@ func (m *WorkbookSortField) GetIcon()(WorkbookIconable) {
     return nil
 }
 // GetKey gets the key property value. Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).
+// returns a *int32 when successful
 func (m *WorkbookSortField) GetKey()(*int32) {
     val, err := m.GetBackingStore().Get("key")
     if err != nil {
@@ -169,6 +177,7 @@ func (m *WorkbookSortField) GetKey()(*int32) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *WorkbookSortField) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -180,6 +189,7 @@ func (m *WorkbookSortField) GetOdataType()(*string) {
     return nil
 }
 // GetSortOn gets the sortOn property value. Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
+// returns a *string when successful
 func (m *WorkbookSortField) GetSortOn()(*string) {
     val, err := m.GetBackingStore().Get("sortOn")
     if err != nil {
@@ -302,7 +312,6 @@ func (m *WorkbookSortField) SetSortOn(value *string)() {
         panic(err)
     }
 }
-// WorkbookSortFieldable 
 type WorkbookSortFieldable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

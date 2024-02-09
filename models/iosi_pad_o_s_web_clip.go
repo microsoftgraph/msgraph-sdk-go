@@ -8,7 +8,7 @@ import (
 type IosiPadOSWebClip struct {
     MobileApp
 }
-// NewIosiPadOSWebClip instantiates a new iosiPadOSWebClip and sets the default values.
+// NewIosiPadOSWebClip instantiates a new IosiPadOSWebClip and sets the default values.
 func NewIosiPadOSWebClip()(*IosiPadOSWebClip) {
     m := &IosiPadOSWebClip{
         MobileApp: *NewMobileApp(),
@@ -18,10 +18,12 @@ func NewIosiPadOSWebClip()(*IosiPadOSWebClip) {
     return m
 }
 // CreateIosiPadOSWebClipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosiPadOSWebClipFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosiPadOSWebClip(), nil
 }
 // GetAppUrl gets the appUrl property value. Indicates iOS/iPadOS web clip app URL. Example: 'https://www.contoso.com'
+// returns a *string when successful
 func (m *IosiPadOSWebClip) GetAppUrl()(*string) {
     val, err := m.GetBackingStore().Get("appUrl")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *IosiPadOSWebClip) GetAppUrl()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosiPadOSWebClip) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileApp.GetFieldDeserializers()
     res["appUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +61,7 @@ func (m *IosiPadOSWebClip) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetUseManagedBrowser gets the useManagedBrowser property value. Whether or not to use managed browser. When TRUE, the app will be required to be opened in Microsoft Edge. When FALSE, the app will not be required to be opened in Microsoft Edge. By default, this property is set to FALSE.
+// returns a *bool when successful
 func (m *IosiPadOSWebClip) GetUseManagedBrowser()(*bool) {
     val, err := m.GetBackingStore().Get("useManagedBrowser")
     if err != nil {
@@ -102,7 +106,6 @@ func (m *IosiPadOSWebClip) SetUseManagedBrowser(value *bool)() {
         panic(err)
     }
 }
-// IosiPadOSWebClipable 
 type IosiPadOSWebClipable interface {
     MobileAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

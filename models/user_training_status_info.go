@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// UserTrainingStatusInfo 
 type UserTrainingStatusInfo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewUserTrainingStatusInfo instantiates a new userTrainingStatusInfo and sets the default values.
+// NewUserTrainingStatusInfo instantiates a new UserTrainingStatusInfo and sets the default values.
 func NewUserTrainingStatusInfo()(*UserTrainingStatusInfo) {
     m := &UserTrainingStatusInfo{
     }
@@ -20,10 +19,12 @@ func NewUserTrainingStatusInfo()(*UserTrainingStatusInfo) {
     return m
 }
 // CreateUserTrainingStatusInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserTrainingStatusInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserTrainingStatusInfo(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *UserTrainingStatusInfo) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,6 +37,7 @@ func (m *UserTrainingStatusInfo) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAssignedDateTime gets the assignedDateTime property value. Date and time of assignment of the training to the user.
+// returns a *Time when successful
 func (m *UserTrainingStatusInfo) GetAssignedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("assignedDateTime")
     if err != nil {
@@ -47,10 +49,12 @@ func (m *UserTrainingStatusInfo) GetAssignedDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *UserTrainingStatusInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCompletionDateTime gets the completionDateTime property value. Date and time of completion of the training by the user.
+// returns a *Time when successful
 func (m *UserTrainingStatusInfo) GetCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("completionDateTime")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *UserTrainingStatusInfo) GetCompletionDateTime()(*i336074805fc853987abe6
     return nil
 }
 // GetDisplayName gets the displayName property value. Display name of the assigned training.
+// returns a *string when successful
 func (m *UserTrainingStatusInfo) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -73,6 +78,7 @@ func (m *UserTrainingStatusInfo) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserTrainingStatusInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["assignedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -128,6 +134,7 @@ func (m *UserTrainingStatusInfo) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *UserTrainingStatusInfo) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -139,6 +146,7 @@ func (m *UserTrainingStatusInfo) GetOdataType()(*string) {
     return nil
 }
 // GetTrainingStatus gets the trainingStatus property value. The status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
+// returns a *TrainingStatus when successful
 func (m *UserTrainingStatusInfo) GetTrainingStatus()(*TrainingStatus) {
     val, err := m.GetBackingStore().Get("trainingStatus")
     if err != nil {
@@ -236,7 +244,6 @@ func (m *UserTrainingStatusInfo) SetTrainingStatus(value *TrainingStatus)() {
         panic(err)
     }
 }
-// UserTrainingStatusInfoable 
 type UserTrainingStatusInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

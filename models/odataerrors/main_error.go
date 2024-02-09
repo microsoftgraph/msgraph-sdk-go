@@ -5,7 +5,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// MainError 
 type MainError struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -19,10 +18,12 @@ func NewMainError()(*MainError) {
     return m
 }
 // CreateMainErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMainErrorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMainError(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *MainError) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *MainError) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *MainError) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCode gets the code property value. The code property
+// returns a *string when successful
 func (m *MainError) GetCode()(*string) {
     val, err := m.GetBackingStore().Get("code")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *MainError) GetCode()(*string) {
     return nil
 }
 // GetDetails gets the details property value. The details property
+// returns a []ErrorDetailsable when successful
 func (m *MainError) GetDetails()([]ErrorDetailsable) {
     val, err := m.GetBackingStore().Get("details")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *MainError) GetDetails()([]ErrorDetailsable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MainError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["code"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -122,6 +127,7 @@ func (m *MainError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetInnerError gets the innerError property value. The innerError property
+// returns a InnerErrorable when successful
 func (m *MainError) GetInnerError()(InnerErrorable) {
     val, err := m.GetBackingStore().Get("innerError")
     if err != nil {
@@ -133,6 +139,7 @@ func (m *MainError) GetInnerError()(InnerErrorable) {
     return nil
 }
 // GetMessage gets the message property value. The message property
+// returns a *string when successful
 func (m *MainError) GetMessage()(*string) {
     val, err := m.GetBackingStore().Get("message")
     if err != nil {
@@ -144,6 +151,7 @@ func (m *MainError) GetMessage()(*string) {
     return nil
 }
 // GetTarget gets the target property value. The target property
+// returns a *string when successful
 func (m *MainError) GetTarget()(*string) {
     val, err := m.GetBackingStore().Get("target")
     if err != nil {
@@ -246,7 +254,6 @@ func (m *MainError) SetTarget(value *string)() {
         panic(err)
     }
 }
-// MainErrorable 
 type MainErrorable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

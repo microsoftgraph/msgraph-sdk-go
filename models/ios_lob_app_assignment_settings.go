@@ -8,7 +8,7 @@ import (
 type IosLobAppAssignmentSettings struct {
     MobileAppAssignmentSettings
 }
-// NewIosLobAppAssignmentSettings instantiates a new iosLobAppAssignmentSettings and sets the default values.
+// NewIosLobAppAssignmentSettings instantiates a new IosLobAppAssignmentSettings and sets the default values.
 func NewIosLobAppAssignmentSettings()(*IosLobAppAssignmentSettings) {
     m := &IosLobAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
@@ -18,10 +18,12 @@ func NewIosLobAppAssignmentSettings()(*IosLobAppAssignmentSettings) {
     return m
 }
 // CreateIosLobAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosLobAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosLobAppAssignmentSettings(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosLobAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileAppAssignmentSettings.GetFieldDeserializers()
     res["isRemovable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -57,6 +59,7 @@ func (m *IosLobAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetIsRemovable gets the isRemovable property value. When TRUE, indicates that the app can be uninstalled by the user. When FALSE, indicates that the app cannot be uninstalled by the user. By default, this property is set to null which internally is treated as TRUE.
+// returns a *bool when successful
 func (m *IosLobAppAssignmentSettings) GetIsRemovable()(*bool) {
     val, err := m.GetBackingStore().Get("isRemovable")
     if err != nil {
@@ -68,6 +71,7 @@ func (m *IosLobAppAssignmentSettings) GetIsRemovable()(*bool) {
     return nil
 }
 // GetUninstallOnDeviceRemoval gets the uninstallOnDeviceRemoval property value. When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune. By default, property is set to null which internally is treated as TRUE.
+// returns a *bool when successful
 func (m *IosLobAppAssignmentSettings) GetUninstallOnDeviceRemoval()(*bool) {
     val, err := m.GetBackingStore().Get("uninstallOnDeviceRemoval")
     if err != nil {
@@ -79,6 +83,7 @@ func (m *IosLobAppAssignmentSettings) GetUninstallOnDeviceRemoval()(*bool) {
     return nil
 }
 // GetVpnConfigurationId gets the vpnConfigurationId property value. This is the unique identifier (Id) of the VPN Configuration to apply to the app.
+// returns a *string when successful
 func (m *IosLobAppAssignmentSettings) GetVpnConfigurationId()(*string) {
     val, err := m.GetBackingStore().Get("vpnConfigurationId")
     if err != nil {
@@ -136,7 +141,6 @@ func (m *IosLobAppAssignmentSettings) SetVpnConfigurationId(value *string)() {
         panic(err)
     }
 }
-// IosLobAppAssignmentSettingsable 
 type IosLobAppAssignmentSettingsable interface {
     MobileAppAssignmentSettingsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

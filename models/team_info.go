@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamInfo 
 type TeamInfo struct {
     Entity
 }
-// NewTeamInfo instantiates a new teamInfo and sets the default values.
+// NewTeamInfo instantiates a new TeamInfo and sets the default values.
 func NewTeamInfo()(*TeamInfo) {
     m := &TeamInfo{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewTeamInfo()(*TeamInfo) {
     return m
 }
 // CreateTeamInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +40,7 @@ func CreateTeamInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
     return NewTeamInfo(), nil
 }
 // GetDisplayName gets the displayName property value. The name of the team.
+// returns a *string when successful
 func (m *TeamInfo) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -51,6 +52,7 @@ func (m *TeamInfo) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -86,6 +88,7 @@ func (m *TeamInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetTeam gets the team property value. The team property
+// returns a Teamable when successful
 func (m *TeamInfo) GetTeam()(Teamable) {
     val, err := m.GetBackingStore().Get("team")
     if err != nil {
@@ -97,6 +100,7 @@ func (m *TeamInfo) GetTeam()(Teamable) {
     return nil
 }
 // GetTenantId gets the tenantId property value. The ID of the Microsoft Entra tenant.
+// returns a *string when successful
 func (m *TeamInfo) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -154,7 +158,6 @@ func (m *TeamInfo) SetTenantId(value *string)() {
         panic(err)
     }
 }
-// TeamInfoable 
 type TeamInfoable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

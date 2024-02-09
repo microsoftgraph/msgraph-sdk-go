@@ -8,7 +8,7 @@ import (
 type Win32LobApp struct {
     MobileLobApp
 }
-// NewWin32LobApp instantiates a new win32LobApp and sets the default values.
+// NewWin32LobApp instantiates a new Win32LobApp and sets the default values.
 func NewWin32LobApp()(*Win32LobApp) {
     m := &Win32LobApp{
         MobileLobApp: *NewMobileLobApp(),
@@ -18,10 +18,12 @@ func NewWin32LobApp()(*Win32LobApp) {
     return m
 }
 // CreateWin32LobAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWin32LobAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWin32LobApp(), nil
 }
 // GetApplicableArchitectures gets the applicableArchitectures property value. Contains properties for Windows architecture.
+// returns a *WindowsArchitecture when successful
 func (m *Win32LobApp) GetApplicableArchitectures()(*WindowsArchitecture) {
     val, err := m.GetBackingStore().Get("applicableArchitectures")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *Win32LobApp) GetApplicableArchitectures()(*WindowsArchitecture) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Win32LobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileLobApp.GetFieldDeserializers()
     res["applicableArchitectures"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -180,6 +183,7 @@ func (m *Win32LobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetInstallCommandLine gets the installCommandLine property value. The command line to install this app
+// returns a *string when successful
 func (m *Win32LobApp) GetInstallCommandLine()(*string) {
     val, err := m.GetBackingStore().Get("installCommandLine")
     if err != nil {
@@ -191,6 +195,7 @@ func (m *Win32LobApp) GetInstallCommandLine()(*string) {
     return nil
 }
 // GetInstallExperience gets the installExperience property value. The install experience for this app.
+// returns a Win32LobAppInstallExperienceable when successful
 func (m *Win32LobApp) GetInstallExperience()(Win32LobAppInstallExperienceable) {
     val, err := m.GetBackingStore().Get("installExperience")
     if err != nil {
@@ -202,6 +207,7 @@ func (m *Win32LobApp) GetInstallExperience()(Win32LobAppInstallExperienceable) {
     return nil
 }
 // GetMinimumCpuSpeedInMHz gets the minimumCpuSpeedInMHz property value. The value for the minimum CPU speed which is required to install this app.
+// returns a *int32 when successful
 func (m *Win32LobApp) GetMinimumCpuSpeedInMHz()(*int32) {
     val, err := m.GetBackingStore().Get("minimumCpuSpeedInMHz")
     if err != nil {
@@ -213,6 +219,7 @@ func (m *Win32LobApp) GetMinimumCpuSpeedInMHz()(*int32) {
     return nil
 }
 // GetMinimumFreeDiskSpaceInMB gets the minimumFreeDiskSpaceInMB property value. The value for the minimum free disk space which is required to install this app.
+// returns a *int32 when successful
 func (m *Win32LobApp) GetMinimumFreeDiskSpaceInMB()(*int32) {
     val, err := m.GetBackingStore().Get("minimumFreeDiskSpaceInMB")
     if err != nil {
@@ -224,6 +231,7 @@ func (m *Win32LobApp) GetMinimumFreeDiskSpaceInMB()(*int32) {
     return nil
 }
 // GetMinimumMemoryInMB gets the minimumMemoryInMB property value. The value for the minimum physical memory which is required to install this app.
+// returns a *int32 when successful
 func (m *Win32LobApp) GetMinimumMemoryInMB()(*int32) {
     val, err := m.GetBackingStore().Get("minimumMemoryInMB")
     if err != nil {
@@ -235,6 +243,7 @@ func (m *Win32LobApp) GetMinimumMemoryInMB()(*int32) {
     return nil
 }
 // GetMinimumNumberOfProcessors gets the minimumNumberOfProcessors property value. The value for the minimum number of processors which is required to install this app.
+// returns a *int32 when successful
 func (m *Win32LobApp) GetMinimumNumberOfProcessors()(*int32) {
     val, err := m.GetBackingStore().Get("minimumNumberOfProcessors")
     if err != nil {
@@ -246,6 +255,7 @@ func (m *Win32LobApp) GetMinimumNumberOfProcessors()(*int32) {
     return nil
 }
 // GetMinimumSupportedWindowsRelease gets the minimumSupportedWindowsRelease property value. The value for the minimum supported windows release.
+// returns a *string when successful
 func (m *Win32LobApp) GetMinimumSupportedWindowsRelease()(*string) {
     val, err := m.GetBackingStore().Get("minimumSupportedWindowsRelease")
     if err != nil {
@@ -257,6 +267,7 @@ func (m *Win32LobApp) GetMinimumSupportedWindowsRelease()(*string) {
     return nil
 }
 // GetMsiInformation gets the msiInformation property value. The MSI details if this Win32 app is an MSI app.
+// returns a Win32LobAppMsiInformationable when successful
 func (m *Win32LobApp) GetMsiInformation()(Win32LobAppMsiInformationable) {
     val, err := m.GetBackingStore().Get("msiInformation")
     if err != nil {
@@ -268,6 +279,7 @@ func (m *Win32LobApp) GetMsiInformation()(Win32LobAppMsiInformationable) {
     return nil
 }
 // GetReturnCodes gets the returnCodes property value. The return codes for post installation behavior.
+// returns a []Win32LobAppReturnCodeable when successful
 func (m *Win32LobApp) GetReturnCodes()([]Win32LobAppReturnCodeable) {
     val, err := m.GetBackingStore().Get("returnCodes")
     if err != nil {
@@ -279,6 +291,7 @@ func (m *Win32LobApp) GetReturnCodes()([]Win32LobAppReturnCodeable) {
     return nil
 }
 // GetRules gets the rules property value. The detection and requirement rules for this app.
+// returns a []Win32LobAppRuleable when successful
 func (m *Win32LobApp) GetRules()([]Win32LobAppRuleable) {
     val, err := m.GetBackingStore().Get("rules")
     if err != nil {
@@ -290,6 +303,7 @@ func (m *Win32LobApp) GetRules()([]Win32LobAppRuleable) {
     return nil
 }
 // GetSetupFilePath gets the setupFilePath property value. The relative path of the setup file in the encrypted Win32LobApp package.
+// returns a *string when successful
 func (m *Win32LobApp) GetSetupFilePath()(*string) {
     val, err := m.GetBackingStore().Get("setupFilePath")
     if err != nil {
@@ -301,6 +315,7 @@ func (m *Win32LobApp) GetSetupFilePath()(*string) {
     return nil
 }
 // GetUninstallCommandLine gets the uninstallCommandLine property value. The command line to uninstall this app
+// returns a *string when successful
 func (m *Win32LobApp) GetUninstallCommandLine()(*string) {
     val, err := m.GetBackingStore().Get("uninstallCommandLine")
     if err != nil {
@@ -501,7 +516,6 @@ func (m *Win32LobApp) SetUninstallCommandLine(value *string)() {
         panic(err)
     }
 }
-// Win32LobAppable 
 type Win32LobAppable interface {
     MobileLobAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

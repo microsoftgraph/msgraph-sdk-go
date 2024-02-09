@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FileAttachment 
 type FileAttachment struct {
     Attachment
 }
-// NewFileAttachment instantiates a new fileAttachment and sets the default values.
+// NewFileAttachment instantiates a new FileAttachment and sets the default values.
 func NewFileAttachment()(*FileAttachment) {
     m := &FileAttachment{
         Attachment: *NewAttachment(),
@@ -18,10 +17,12 @@ func NewFileAttachment()(*FileAttachment) {
     return m
 }
 // CreateFileAttachmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFileAttachmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFileAttachment(), nil
 }
 // GetContentBytes gets the contentBytes property value. The base64-encoded contents of the file.
+// returns a []byte when successful
 func (m *FileAttachment) GetContentBytes()([]byte) {
     val, err := m.GetBackingStore().Get("contentBytes")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *FileAttachment) GetContentBytes()([]byte) {
     return nil
 }
 // GetContentId gets the contentId property value. The ID of the attachment in the Exchange store.
+// returns a *string when successful
 func (m *FileAttachment) GetContentId()(*string) {
     val, err := m.GetBackingStore().Get("contentId")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *FileAttachment) GetContentId()(*string) {
     return nil
 }
 // GetContentLocation gets the contentLocation property value. Don't use this property as it isn't supported.
+// returns a *string when successful
 func (m *FileAttachment) GetContentLocation()(*string) {
     val, err := m.GetBackingStore().Get("contentLocation")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *FileAttachment) GetContentLocation()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FileAttachment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Attachment.GetFieldDeserializers()
     res["contentBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -136,7 +140,6 @@ func (m *FileAttachment) SetContentLocation(value *string)() {
         panic(err)
     }
 }
-// FileAttachmentable 
 type FileAttachmentable interface {
     Attachmentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

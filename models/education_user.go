@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationUser 
 type EducationUser struct {
     Entity
 }
-// NewEducationUser instantiates a new educationUser and sets the default values.
+// NewEducationUser instantiates a new EducationUser and sets the default values.
 func NewEducationUser()(*EducationUser) {
     m := &EducationUser{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewEducationUser()(*EducationUser) {
     return m
 }
 // CreateEducationUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationUser(), nil
 }
 // GetAccountEnabled gets the accountEnabled property value. True if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter.
+// returns a *bool when successful
 func (m *EducationUser) GetAccountEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("accountEnabled")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *EducationUser) GetAccountEnabled()(*bool) {
     return nil
 }
 // GetAssignedLicenses gets the assignedLicenses property value. The licenses that are assigned to the user. Not nullable.
+// returns a []AssignedLicenseable when successful
 func (m *EducationUser) GetAssignedLicenses()([]AssignedLicenseable) {
     val, err := m.GetBackingStore().Get("assignedLicenses")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *EducationUser) GetAssignedLicenses()([]AssignedLicenseable) {
     return nil
 }
 // GetAssignedPlans gets the assignedPlans property value. The plans that are assigned to the user. Read-only. Not nullable.
+// returns a []AssignedPlanable when successful
 func (m *EducationUser) GetAssignedPlans()([]AssignedPlanable) {
     val, err := m.GetBackingStore().Get("assignedPlans")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *EducationUser) GetAssignedPlans()([]AssignedPlanable) {
     return nil
 }
 // GetAssignments gets the assignments property value. Assignments belonging to the user.
+// returns a []EducationAssignmentable when successful
 func (m *EducationUser) GetAssignments()([]EducationAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *EducationUser) GetAssignments()([]EducationAssignmentable) {
     return nil
 }
 // GetBusinessPhones gets the businessPhones property value. The telephone numbers for the user. Note: Although this is a string collection, only one number can be set for this property.
+// returns a []string when successful
 func (m *EducationUser) GetBusinessPhones()([]string) {
     val, err := m.GetBackingStore().Get("businessPhones")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *EducationUser) GetBusinessPhones()([]string) {
     return nil
 }
 // GetClasses gets the classes property value. Classes to which the user belongs. Nullable.
+// returns a []EducationClassable when successful
 func (m *EducationUser) GetClasses()([]EducationClassable) {
     val, err := m.GetBackingStore().Get("classes")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *EducationUser) GetClasses()([]EducationClassable) {
     return nil
 }
 // GetCreatedBy gets the createdBy property value. The entity who created the user.
+// returns a IdentitySetable when successful
 func (m *EducationUser) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *EducationUser) GetCreatedBy()(IdentitySetable) {
     return nil
 }
 // GetDepartment gets the department property value. The name for the department in which the user works. Supports $filter.
+// returns a *string when successful
 func (m *EducationUser) GetDepartment()(*string) {
     val, err := m.GetBackingStore().Get("department")
     if err != nil {
@@ -109,6 +117,7 @@ func (m *EducationUser) GetDepartment()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Supports $filter and $orderby.
+// returns a *string when successful
 func (m *EducationUser) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -120,6 +129,7 @@ func (m *EducationUser) GetDisplayName()(*string) {
     return nil
 }
 // GetExternalSource gets the externalSource property value. Where this user was created from. Possible values are: sis, manual.
+// returns a *EducationExternalSource when successful
 func (m *EducationUser) GetExternalSource()(*EducationExternalSource) {
     val, err := m.GetBackingStore().Get("externalSource")
     if err != nil {
@@ -131,6 +141,7 @@ func (m *EducationUser) GetExternalSource()(*EducationExternalSource) {
     return nil
 }
 // GetExternalSourceDetail gets the externalSourceDetail property value. The name of the external source this resource was generated from.
+// returns a *string when successful
 func (m *EducationUser) GetExternalSourceDetail()(*string) {
     val, err := m.GetBackingStore().Get("externalSourceDetail")
     if err != nil {
@@ -142,6 +153,7 @@ func (m *EducationUser) GetExternalSourceDetail()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accountEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -587,6 +599,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetGivenName gets the givenName property value. The given name (first name) of the user. Supports $filter.
+// returns a *string when successful
 func (m *EducationUser) GetGivenName()(*string) {
     val, err := m.GetBackingStore().Get("givenName")
     if err != nil {
@@ -598,6 +611,7 @@ func (m *EducationUser) GetGivenName()(*string) {
     return nil
 }
 // GetMail gets the mail property value. The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Read-Only. Supports $filter.
+// returns a *string when successful
 func (m *EducationUser) GetMail()(*string) {
     val, err := m.GetBackingStore().Get("mail")
     if err != nil {
@@ -609,6 +623,7 @@ func (m *EducationUser) GetMail()(*string) {
     return nil
 }
 // GetMailingAddress gets the mailingAddress property value. The mail address of the user.
+// returns a PhysicalAddressable when successful
 func (m *EducationUser) GetMailingAddress()(PhysicalAddressable) {
     val, err := m.GetBackingStore().Get("mailingAddress")
     if err != nil {
@@ -620,6 +635,7 @@ func (m *EducationUser) GetMailingAddress()(PhysicalAddressable) {
     return nil
 }
 // GetMailNickname gets the mailNickname property value. The mail alias for the user. This property must be specified when a user is created. Supports $filter.
+// returns a *string when successful
 func (m *EducationUser) GetMailNickname()(*string) {
     val, err := m.GetBackingStore().Get("mailNickname")
     if err != nil {
@@ -631,6 +647,7 @@ func (m *EducationUser) GetMailNickname()(*string) {
     return nil
 }
 // GetMiddleName gets the middleName property value. The middle name of the user.
+// returns a *string when successful
 func (m *EducationUser) GetMiddleName()(*string) {
     val, err := m.GetBackingStore().Get("middleName")
     if err != nil {
@@ -642,6 +659,7 @@ func (m *EducationUser) GetMiddleName()(*string) {
     return nil
 }
 // GetMobilePhone gets the mobilePhone property value. The primary cellular telephone number for the user.
+// returns a *string when successful
 func (m *EducationUser) GetMobilePhone()(*string) {
     val, err := m.GetBackingStore().Get("mobilePhone")
     if err != nil {
@@ -653,6 +671,7 @@ func (m *EducationUser) GetMobilePhone()(*string) {
     return nil
 }
 // GetOfficeLocation gets the officeLocation property value. The officeLocation property
+// returns a *string when successful
 func (m *EducationUser) GetOfficeLocation()(*string) {
     val, err := m.GetBackingStore().Get("officeLocation")
     if err != nil {
@@ -664,6 +683,7 @@ func (m *EducationUser) GetOfficeLocation()(*string) {
     return nil
 }
 // GetOnPremisesInfo gets the onPremisesInfo property value. Additional information used to associate the Microsoft Entra user with its Active Directory counterpart.
+// returns a EducationOnPremisesInfoable when successful
 func (m *EducationUser) GetOnPremisesInfo()(EducationOnPremisesInfoable) {
     val, err := m.GetBackingStore().Get("onPremisesInfo")
     if err != nil {
@@ -675,6 +695,7 @@ func (m *EducationUser) GetOnPremisesInfo()(EducationOnPremisesInfoable) {
     return nil
 }
 // GetPasswordPolicies gets the passwordPolicies property value. Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two can be specified together; for example: DisablePasswordExpiration, DisableStrongPassword.
+// returns a *string when successful
 func (m *EducationUser) GetPasswordPolicies()(*string) {
     val, err := m.GetBackingStore().Get("passwordPolicies")
     if err != nil {
@@ -686,6 +707,7 @@ func (m *EducationUser) GetPasswordPolicies()(*string) {
     return nil
 }
 // GetPasswordProfile gets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required.
+// returns a PasswordProfileable when successful
 func (m *EducationUser) GetPasswordProfile()(PasswordProfileable) {
     val, err := m.GetBackingStore().Get("passwordProfile")
     if err != nil {
@@ -697,6 +719,7 @@ func (m *EducationUser) GetPasswordProfile()(PasswordProfileable) {
     return nil
 }
 // GetPreferredLanguage gets the preferredLanguage property value. The preferred language for the user that should follow the ISO 639-1 code, for example, en-US.
+// returns a *string when successful
 func (m *EducationUser) GetPreferredLanguage()(*string) {
     val, err := m.GetBackingStore().Get("preferredLanguage")
     if err != nil {
@@ -708,6 +731,7 @@ func (m *EducationUser) GetPreferredLanguage()(*string) {
     return nil
 }
 // GetPrimaryRole gets the primaryRole property value. The primaryRole property
+// returns a *EducationUserRole when successful
 func (m *EducationUser) GetPrimaryRole()(*EducationUserRole) {
     val, err := m.GetBackingStore().Get("primaryRole")
     if err != nil {
@@ -719,6 +743,7 @@ func (m *EducationUser) GetPrimaryRole()(*EducationUserRole) {
     return nil
 }
 // GetProvisionedPlans gets the provisionedPlans property value. The plans that are provisioned for the user. Read-only. Not nullable.
+// returns a []ProvisionedPlanable when successful
 func (m *EducationUser) GetProvisionedPlans()([]ProvisionedPlanable) {
     val, err := m.GetBackingStore().Get("provisionedPlans")
     if err != nil {
@@ -730,6 +755,7 @@ func (m *EducationUser) GetProvisionedPlans()([]ProvisionedPlanable) {
     return nil
 }
 // GetRefreshTokensValidFromDateTime gets the refreshTokensValidFromDateTime property value. The refreshTokensValidFromDateTime property
+// returns a *Time when successful
 func (m *EducationUser) GetRefreshTokensValidFromDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("refreshTokensValidFromDateTime")
     if err != nil {
@@ -741,6 +767,7 @@ func (m *EducationUser) GetRefreshTokensValidFromDateTime()(*i336074805fc853987a
     return nil
 }
 // GetRelatedContacts gets the relatedContacts property value. Related records associated with the user. Read-only.
+// returns a []RelatedContactable when successful
 func (m *EducationUser) GetRelatedContacts()([]RelatedContactable) {
     val, err := m.GetBackingStore().Get("relatedContacts")
     if err != nil {
@@ -752,6 +779,7 @@ func (m *EducationUser) GetRelatedContacts()([]RelatedContactable) {
     return nil
 }
 // GetResidenceAddress gets the residenceAddress property value. The address where the user lives.
+// returns a PhysicalAddressable when successful
 func (m *EducationUser) GetResidenceAddress()(PhysicalAddressable) {
     val, err := m.GetBackingStore().Get("residenceAddress")
     if err != nil {
@@ -763,6 +791,7 @@ func (m *EducationUser) GetResidenceAddress()(PhysicalAddressable) {
     return nil
 }
 // GetRubrics gets the rubrics property value. When set, the grading rubric attached to the assignment.
+// returns a []EducationRubricable when successful
 func (m *EducationUser) GetRubrics()([]EducationRubricable) {
     val, err := m.GetBackingStore().Get("rubrics")
     if err != nil {
@@ -774,6 +803,7 @@ func (m *EducationUser) GetRubrics()([]EducationRubricable) {
     return nil
 }
 // GetSchools gets the schools property value. Schools to which the user belongs. Nullable.
+// returns a []EducationSchoolable when successful
 func (m *EducationUser) GetSchools()([]EducationSchoolable) {
     val, err := m.GetBackingStore().Get("schools")
     if err != nil {
@@ -785,6 +815,7 @@ func (m *EducationUser) GetSchools()([]EducationSchoolable) {
     return nil
 }
 // GetShowInAddressList gets the showInAddressList property value. True if the Outlook Global Address List should contain this user; otherwise, false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false.
+// returns a *bool when successful
 func (m *EducationUser) GetShowInAddressList()(*bool) {
     val, err := m.GetBackingStore().Get("showInAddressList")
     if err != nil {
@@ -796,6 +827,7 @@ func (m *EducationUser) GetShowInAddressList()(*bool) {
     return nil
 }
 // GetStudent gets the student property value. If the primary role is student, this block will contain student specific data.
+// returns a EducationStudentable when successful
 func (m *EducationUser) GetStudent()(EducationStudentable) {
     val, err := m.GetBackingStore().Get("student")
     if err != nil {
@@ -807,6 +839,7 @@ func (m *EducationUser) GetStudent()(EducationStudentable) {
     return nil
 }
 // GetSurname gets the surname property value. The user's surname (family name or last name). Supports $filter.
+// returns a *string when successful
 func (m *EducationUser) GetSurname()(*string) {
     val, err := m.GetBackingStore().Get("surname")
     if err != nil {
@@ -818,6 +851,7 @@ func (m *EducationUser) GetSurname()(*string) {
     return nil
 }
 // GetTaughtClasses gets the taughtClasses property value. Classes for which the user is a teacher.
+// returns a []EducationClassable when successful
 func (m *EducationUser) GetTaughtClasses()([]EducationClassable) {
     val, err := m.GetBackingStore().Get("taughtClasses")
     if err != nil {
@@ -829,6 +863,7 @@ func (m *EducationUser) GetTaughtClasses()([]EducationClassable) {
     return nil
 }
 // GetTeacher gets the teacher property value. If the primary role is teacher, this block will contain teacher specific data.
+// returns a EducationTeacherable when successful
 func (m *EducationUser) GetTeacher()(EducationTeacherable) {
     val, err := m.GetBackingStore().Get("teacher")
     if err != nil {
@@ -840,6 +875,7 @@ func (m *EducationUser) GetTeacher()(EducationTeacherable) {
     return nil
 }
 // GetUsageLocation gets the usageLocation property value. A two-letter country code (ISO standard 3166). Required for users who will be assigned licenses due to a legal requirement to check for availability of services in countries or regions. Examples include: US, JP, and GB. Not nullable. Supports $filter.
+// returns a *string when successful
 func (m *EducationUser) GetUsageLocation()(*string) {
     val, err := m.GetBackingStore().Get("usageLocation")
     if err != nil {
@@ -851,6 +887,7 @@ func (m *EducationUser) GetUsageLocation()(*string) {
     return nil
 }
 // GetUser gets the user property value. The directory user that corresponds to this user.
+// returns a Userable when successful
 func (m *EducationUser) GetUser()(Userable) {
     val, err := m.GetBackingStore().Get("user")
     if err != nil {
@@ -862,6 +899,7 @@ func (m *EducationUser) GetUser()(Userable) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) of the user. The UPN is an internet-style login name for the user based on the internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of the organization. Supports $filter and $orderby.
+// returns a *string when successful
 func (m *EducationUser) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -873,6 +911,7 @@ func (m *EducationUser) GetUserPrincipalName()(*string) {
     return nil
 }
 // GetUserType gets the userType property value. A string value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter.
+// returns a *string when successful
 func (m *EducationUser) GetUserType()(*string) {
     val, err := m.GetBackingStore().Get("userType")
     if err != nil {
@@ -1441,7 +1480,6 @@ func (m *EducationUser) SetUserType(value *string)() {
         panic(err)
     }
 }
-// EducationUserable 
 type EducationUserable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

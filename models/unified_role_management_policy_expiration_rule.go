@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleManagementPolicyExpirationRule 
 type UnifiedRoleManagementPolicyExpirationRule struct {
     UnifiedRoleManagementPolicyRule
 }
-// NewUnifiedRoleManagementPolicyExpirationRule instantiates a new unifiedRoleManagementPolicyExpirationRule and sets the default values.
+// NewUnifiedRoleManagementPolicyExpirationRule instantiates a new UnifiedRoleManagementPolicyExpirationRule and sets the default values.
 func NewUnifiedRoleManagementPolicyExpirationRule()(*UnifiedRoleManagementPolicyExpirationRule) {
     m := &UnifiedRoleManagementPolicyExpirationRule{
         UnifiedRoleManagementPolicyRule: *NewUnifiedRoleManagementPolicyRule(),
@@ -18,10 +17,12 @@ func NewUnifiedRoleManagementPolicyExpirationRule()(*UnifiedRoleManagementPolicy
     return m
 }
 // CreateUnifiedRoleManagementPolicyExpirationRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnifiedRoleManagementPolicyExpirationRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleManagementPolicyExpirationRule(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnifiedRoleManagementPolicyExpirationRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UnifiedRoleManagementPolicyRule.GetFieldDeserializers()
     res["isExpirationRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +48,7 @@ func (m *UnifiedRoleManagementPolicyExpirationRule) GetFieldDeserializers()(map[
     return res
 }
 // GetIsExpirationRequired gets the isExpirationRequired property value. Indicates whether expiration is required or if it's a permanently active assignment or eligibility.
+// returns a *bool when successful
 func (m *UnifiedRoleManagementPolicyExpirationRule) GetIsExpirationRequired()(*bool) {
     val, err := m.GetBackingStore().Get("isExpirationRequired")
     if err != nil {
@@ -58,6 +60,7 @@ func (m *UnifiedRoleManagementPolicyExpirationRule) GetIsExpirationRequired()(*b
     return nil
 }
 // GetMaximumDuration gets the maximumDuration property value. The maximum duration allowed for eligibility or assignment that isn't permanent. Required when isExpirationRequired is true.
+// returns a *ISODuration when successful
 func (m *UnifiedRoleManagementPolicyExpirationRule) GetMaximumDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("maximumDuration")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *UnifiedRoleManagementPolicyExpirationRule) SetMaximumDuration(value *i8
         panic(err)
     }
 }
-// UnifiedRoleManagementPolicyExpirationRuleable 
 type UnifiedRoleManagementPolicyExpirationRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UnifiedRoleManagementPolicyRuleable

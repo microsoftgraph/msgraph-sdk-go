@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AutomaticRepliesSetting 
 type AutomaticRepliesSetting struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAutomaticRepliesSetting instantiates a new automaticRepliesSetting and sets the default values.
+// NewAutomaticRepliesSetting instantiates a new AutomaticRepliesSetting and sets the default values.
 func NewAutomaticRepliesSetting()(*AutomaticRepliesSetting) {
     m := &AutomaticRepliesSetting{
     }
@@ -19,10 +18,12 @@ func NewAutomaticRepliesSetting()(*AutomaticRepliesSetting) {
     return m
 }
 // CreateAutomaticRepliesSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAutomaticRepliesSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAutomaticRepliesSetting(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AutomaticRepliesSetting) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *AutomaticRepliesSetting) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AutomaticRepliesSetting) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetExternalAudience gets the externalAudience property value. The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.
+// returns a *ExternalAudienceScope when successful
 func (m *AutomaticRepliesSetting) GetExternalAudience()(*ExternalAudienceScope) {
     val, err := m.GetBackingStore().Get("externalAudience")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *AutomaticRepliesSetting) GetExternalAudience()(*ExternalAudienceScope) 
     return nil
 }
 // GetExternalReplyMessage gets the externalReplyMessage property value. The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.
+// returns a *string when successful
 func (m *AutomaticRepliesSetting) GetExternalReplyMessage()(*string) {
     val, err := m.GetBackingStore().Get("externalReplyMessage")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *AutomaticRepliesSetting) GetExternalReplyMessage()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AutomaticRepliesSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["externalAudience"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -136,6 +141,7 @@ func (m *AutomaticRepliesSetting) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetInternalReplyMessage gets the internalReplyMessage property value. The automatic reply to send to the audience internal to the signed-in user's organization, if Status is AlwaysEnabled or Scheduled.
+// returns a *string when successful
 func (m *AutomaticRepliesSetting) GetInternalReplyMessage()(*string) {
     val, err := m.GetBackingStore().Get("internalReplyMessage")
     if err != nil {
@@ -147,6 +153,7 @@ func (m *AutomaticRepliesSetting) GetInternalReplyMessage()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AutomaticRepliesSetting) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -158,6 +165,7 @@ func (m *AutomaticRepliesSetting) GetOdataType()(*string) {
     return nil
 }
 // GetScheduledEndDateTime gets the scheduledEndDateTime property value. The date and time that automatic replies are set to end, if Status is set to Scheduled.
+// returns a DateTimeTimeZoneable when successful
 func (m *AutomaticRepliesSetting) GetScheduledEndDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("scheduledEndDateTime")
     if err != nil {
@@ -169,6 +177,7 @@ func (m *AutomaticRepliesSetting) GetScheduledEndDateTime()(DateTimeTimeZoneable
     return nil
 }
 // GetScheduledStartDateTime gets the scheduledStartDateTime property value. The date and time that automatic replies are set to begin, if Status is set to Scheduled.
+// returns a DateTimeTimeZoneable when successful
 func (m *AutomaticRepliesSetting) GetScheduledStartDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("scheduledStartDateTime")
     if err != nil {
@@ -180,6 +189,7 @@ func (m *AutomaticRepliesSetting) GetScheduledStartDateTime()(DateTimeTimeZoneab
     return nil
 }
 // GetStatus gets the status property value. Configurations status for automatic replies. The possible values are: disabled, alwaysEnabled, scheduled.
+// returns a *AutomaticRepliesStatus when successful
 func (m *AutomaticRepliesSetting) GetStatus()(*AutomaticRepliesStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -304,7 +314,6 @@ func (m *AutomaticRepliesSetting) SetStatus(value *AutomaticRepliesStatus)() {
         panic(err)
     }
 }
-// AutomaticRepliesSettingable 
 type AutomaticRepliesSettingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

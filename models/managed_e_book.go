@@ -9,7 +9,7 @@ import (
 type ManagedEBook struct {
     Entity
 }
-// NewManagedEBook instantiates a new managedEBook and sets the default values.
+// NewManagedEBook instantiates a new ManagedEBook and sets the default values.
 func NewManagedEBook()(*ManagedEBook) {
     m := &ManagedEBook{
         Entity: *NewEntity(),
@@ -17,6 +17,7 @@ func NewManagedEBook()(*ManagedEBook) {
     return m
 }
 // CreateManagedEBookFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedEBookFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -39,6 +40,7 @@ func CreateManagedEBookFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewManagedEBook(), nil
 }
 // GetAssignments gets the assignments property value. The list of assignments for this eBook.
+// returns a []ManagedEBookAssignmentable when successful
 func (m *ManagedEBook) GetAssignments()([]ManagedEBookAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -50,6 +52,7 @@ func (m *ManagedEBook) GetAssignments()([]ManagedEBookAssignmentable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the eBook file was created.
+// returns a *Time when successful
 func (m *ManagedEBook) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -61,6 +64,7 @@ func (m *ManagedEBook) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     return nil
 }
 // GetDescription gets the description property value. Description.
+// returns a *string when successful
 func (m *ManagedEBook) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -72,6 +76,7 @@ func (m *ManagedEBook) GetDescription()(*string) {
     return nil
 }
 // GetDeviceStates gets the deviceStates property value. The list of installation states for this eBook.
+// returns a []DeviceInstallStateable when successful
 func (m *ManagedEBook) GetDeviceStates()([]DeviceInstallStateable) {
     val, err := m.GetBackingStore().Get("deviceStates")
     if err != nil {
@@ -83,6 +88,7 @@ func (m *ManagedEBook) GetDeviceStates()([]DeviceInstallStateable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Name of the eBook.
+// returns a *string when successful
 func (m *ManagedEBook) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -94,6 +100,7 @@ func (m *ManagedEBook) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -247,6 +254,7 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetInformationUrl gets the informationUrl property value. The more information Url.
+// returns a *string when successful
 func (m *ManagedEBook) GetInformationUrl()(*string) {
     val, err := m.GetBackingStore().Get("informationUrl")
     if err != nil {
@@ -258,6 +266,7 @@ func (m *ManagedEBook) GetInformationUrl()(*string) {
     return nil
 }
 // GetInstallSummary gets the installSummary property value. Mobile App Install Summary.
+// returns a EBookInstallSummaryable when successful
 func (m *ManagedEBook) GetInstallSummary()(EBookInstallSummaryable) {
     val, err := m.GetBackingStore().Get("installSummary")
     if err != nil {
@@ -269,6 +278,7 @@ func (m *ManagedEBook) GetInstallSummary()(EBookInstallSummaryable) {
     return nil
 }
 // GetLargeCover gets the largeCover property value. Book cover.
+// returns a MimeContentable when successful
 func (m *ManagedEBook) GetLargeCover()(MimeContentable) {
     val, err := m.GetBackingStore().Get("largeCover")
     if err != nil {
@@ -280,6 +290,7 @@ func (m *ManagedEBook) GetLargeCover()(MimeContentable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the eBook was last modified.
+// returns a *Time when successful
 func (m *ManagedEBook) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -291,6 +302,7 @@ func (m *ManagedEBook) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad9
     return nil
 }
 // GetPrivacyInformationUrl gets the privacyInformationUrl property value. The privacy statement Url.
+// returns a *string when successful
 func (m *ManagedEBook) GetPrivacyInformationUrl()(*string) {
     val, err := m.GetBackingStore().Get("privacyInformationUrl")
     if err != nil {
@@ -302,6 +314,7 @@ func (m *ManagedEBook) GetPrivacyInformationUrl()(*string) {
     return nil
 }
 // GetPublishedDateTime gets the publishedDateTime property value. The date and time when the eBook was published.
+// returns a *Time when successful
 func (m *ManagedEBook) GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("publishedDateTime")
     if err != nil {
@@ -313,6 +326,7 @@ func (m *ManagedEBook) GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetPublisher gets the publisher property value. Publisher.
+// returns a *string when successful
 func (m *ManagedEBook) GetPublisher()(*string) {
     val, err := m.GetBackingStore().Get("publisher")
     if err != nil {
@@ -324,6 +338,7 @@ func (m *ManagedEBook) GetPublisher()(*string) {
     return nil
 }
 // GetUserStateSummary gets the userStateSummary property value. The list of installation states for this eBook.
+// returns a []UserInstallStateSummaryable when successful
 func (m *ManagedEBook) GetUserStateSummary()([]UserInstallStateSummaryable) {
     val, err := m.GetBackingStore().Get("userStateSummary")
     if err != nil {
@@ -529,7 +544,6 @@ func (m *ManagedEBook) SetUserStateSummary(value []UserInstallStateSummaryable)(
         panic(err)
     }
 }
-// ManagedEBookable 
 type ManagedEBookable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

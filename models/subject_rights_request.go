@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SubjectRightsRequest 
 type SubjectRightsRequest struct {
     Entity
 }
-// NewSubjectRightsRequest instantiates a new subjectRightsRequest and sets the default values.
+// NewSubjectRightsRequest instantiates a new SubjectRightsRequest and sets the default values.
 func NewSubjectRightsRequest()(*SubjectRightsRequest) {
     m := &SubjectRightsRequest{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewSubjectRightsRequest()(*SubjectRightsRequest) {
     return m
 }
 // CreateSubjectRightsRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSubjectRightsRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSubjectRightsRequest(), nil
 }
 // GetApprovers gets the approvers property value. Collection of users who can approve the request. Currently only supported for requests of type delete.
+// returns a []Userable when successful
 func (m *SubjectRightsRequest) GetApprovers()([]Userable) {
     val, err := m.GetBackingStore().Get("approvers")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *SubjectRightsRequest) GetApprovers()([]Userable) {
     return nil
 }
 // GetAssignedTo gets the assignedTo property value. Identity that the request is assigned to.
+// returns a Identityable when successful
 func (m *SubjectRightsRequest) GetAssignedTo()(Identityable) {
     val, err := m.GetBackingStore().Get("assignedTo")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *SubjectRightsRequest) GetAssignedTo()(Identityable) {
     return nil
 }
 // GetClosedDateTime gets the closedDateTime property value. The date and time when the request was closed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *SubjectRightsRequest) GetClosedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("closedDateTime")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *SubjectRightsRequest) GetClosedDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetCollaborators gets the collaborators property value. Collection of users who can collaborate on the request.
+// returns a []Userable when successful
 func (m *SubjectRightsRequest) GetCollaborators()([]Userable) {
     val, err := m.GetBackingStore().Get("collaborators")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *SubjectRightsRequest) GetCollaborators()([]Userable) {
     return nil
 }
 // GetContentQuery gets the contentQuery property value. KQL based content query that should be used for search. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+// returns a *string when successful
 func (m *SubjectRightsRequest) GetContentQuery()(*string) {
     val, err := m.GetBackingStore().Get("contentQuery")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *SubjectRightsRequest) GetContentQuery()(*string) {
     return nil
 }
 // GetCreatedBy gets the createdBy property value. Identity information for the entity that created the request.
+// returns a IdentitySetable when successful
 func (m *SubjectRightsRequest) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *SubjectRightsRequest) GetCreatedBy()(IdentitySetable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the request was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *SubjectRightsRequest) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *SubjectRightsRequest) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetDataSubject gets the dataSubject property value. Information about the data subject.
+// returns a DataSubjectable when successful
 func (m *SubjectRightsRequest) GetDataSubject()(DataSubjectable) {
     val, err := m.GetBackingStore().Get("dataSubject")
     if err != nil {
@@ -109,6 +117,7 @@ func (m *SubjectRightsRequest) GetDataSubject()(DataSubjectable) {
     return nil
 }
 // GetDataSubjectType gets the dataSubjectType property value. The type of the data subject. Possible values are: customer, currentEmployee, formerEmployee, prospectiveEmployee, student, teacher, faculty, other, unknownFutureValue.
+// returns a *DataSubjectType when successful
 func (m *SubjectRightsRequest) GetDataSubjectType()(*DataSubjectType) {
     val, err := m.GetBackingStore().Get("dataSubjectType")
     if err != nil {
@@ -120,6 +129,7 @@ func (m *SubjectRightsRequest) GetDataSubjectType()(*DataSubjectType) {
     return nil
 }
 // GetDescription gets the description property value. Description for the request.
+// returns a *string when successful
 func (m *SubjectRightsRequest) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -131,6 +141,7 @@ func (m *SubjectRightsRequest) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of the request.
+// returns a *string when successful
 func (m *SubjectRightsRequest) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -142,6 +153,7 @@ func (m *SubjectRightsRequest) GetDisplayName()(*string) {
     return nil
 }
 // GetExternalId gets the externalId property value. The external ID for the request that is immutable after creation and is used for tracking the request for the external system. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+// returns a *string when successful
 func (m *SubjectRightsRequest) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -153,6 +165,7 @@ func (m *SubjectRightsRequest) GetExternalId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SubjectRightsRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["approvers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -474,6 +487,7 @@ func (m *SubjectRightsRequest) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetHistory gets the history property value. Collection of history change events.
+// returns a []SubjectRightsRequestHistoryable when successful
 func (m *SubjectRightsRequest) GetHistory()([]SubjectRightsRequestHistoryable) {
     val, err := m.GetBackingStore().Get("history")
     if err != nil {
@@ -485,6 +499,7 @@ func (m *SubjectRightsRequest) GetHistory()([]SubjectRightsRequestHistoryable) {
     return nil
 }
 // GetIncludeAllVersions gets the includeAllVersions property value. Include all versions of the documents. By default, the current copies of the documents are returned. If SharePoint sites have versioning enabled, including all versions includes the historical copies of the documents. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+// returns a *bool when successful
 func (m *SubjectRightsRequest) GetIncludeAllVersions()(*bool) {
     val, err := m.GetBackingStore().Get("includeAllVersions")
     if err != nil {
@@ -496,6 +511,7 @@ func (m *SubjectRightsRequest) GetIncludeAllVersions()(*bool) {
     return nil
 }
 // GetIncludeAuthoredContent gets the includeAuthoredContent property value. Include content authored by the data subject. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+// returns a *bool when successful
 func (m *SubjectRightsRequest) GetIncludeAuthoredContent()(*bool) {
     val, err := m.GetBackingStore().Get("includeAuthoredContent")
     if err != nil {
@@ -507,6 +523,7 @@ func (m *SubjectRightsRequest) GetIncludeAuthoredContent()(*bool) {
     return nil
 }
 // GetInsight gets the insight property value. Insight about the request.
+// returns a SubjectRightsRequestDetailable when successful
 func (m *SubjectRightsRequest) GetInsight()(SubjectRightsRequestDetailable) {
     val, err := m.GetBackingStore().Get("insight")
     if err != nil {
@@ -518,6 +535,7 @@ func (m *SubjectRightsRequest) GetInsight()(SubjectRightsRequestDetailable) {
     return nil
 }
 // GetInternalDueDateTime gets the internalDueDateTime property value. The date and time when the request is internally due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *SubjectRightsRequest) GetInternalDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("internalDueDateTime")
     if err != nil {
@@ -529,6 +547,7 @@ func (m *SubjectRightsRequest) GetInternalDueDateTime()(*i336074805fc853987abe6f
     return nil
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Identity information for the entity that last modified the request.
+// returns a IdentitySetable when successful
 func (m *SubjectRightsRequest) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -540,6 +559,7 @@ func (m *SubjectRightsRequest) GetLastModifiedBy()(IdentitySetable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the request was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *SubjectRightsRequest) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -551,6 +571,7 @@ func (m *SubjectRightsRequest) GetLastModifiedDateTime()(*i336074805fc853987abe6
     return nil
 }
 // GetMailboxLocations gets the mailboxLocations property value. The mailbox locations that should be searched. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+// returns a SubjectRightsRequestMailboxLocationable when successful
 func (m *SubjectRightsRequest) GetMailboxLocations()(SubjectRightsRequestMailboxLocationable) {
     val, err := m.GetBackingStore().Get("mailboxLocations")
     if err != nil {
@@ -562,6 +583,7 @@ func (m *SubjectRightsRequest) GetMailboxLocations()(SubjectRightsRequestMailbox
     return nil
 }
 // GetNotes gets the notes property value. List of notes associated with the request.
+// returns a []AuthoredNoteable when successful
 func (m *SubjectRightsRequest) GetNotes()([]AuthoredNoteable) {
     val, err := m.GetBackingStore().Get("notes")
     if err != nil {
@@ -573,6 +595,7 @@ func (m *SubjectRightsRequest) GetNotes()([]AuthoredNoteable) {
     return nil
 }
 // GetPauseAfterEstimate gets the pauseAfterEstimate property value. Pause the request after estimate has finished. By default, the data estimate runs and then pauses, allowing you to preview results and then select the option to retrieve data in the UI. You can set this property to false if you want it to perform the estimate and then automatically begin with the retrieval of the content. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+// returns a *bool when successful
 func (m *SubjectRightsRequest) GetPauseAfterEstimate()(*bool) {
     val, err := m.GetBackingStore().Get("pauseAfterEstimate")
     if err != nil {
@@ -584,6 +607,7 @@ func (m *SubjectRightsRequest) GetPauseAfterEstimate()(*bool) {
     return nil
 }
 // GetRegulations gets the regulations property value. List of regulations that this request fulfill.
+// returns a []string when successful
 func (m *SubjectRightsRequest) GetRegulations()([]string) {
     val, err := m.GetBackingStore().Get("regulations")
     if err != nil {
@@ -595,6 +619,7 @@ func (m *SubjectRightsRequest) GetRegulations()([]string) {
     return nil
 }
 // GetSiteLocations gets the siteLocations property value. The SharePoint and OneDrive site locations that should be searched. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
+// returns a SubjectRightsRequestSiteLocationable when successful
 func (m *SubjectRightsRequest) GetSiteLocations()(SubjectRightsRequestSiteLocationable) {
     val, err := m.GetBackingStore().Get("siteLocations")
     if err != nil {
@@ -606,6 +631,7 @@ func (m *SubjectRightsRequest) GetSiteLocations()(SubjectRightsRequestSiteLocati
     return nil
 }
 // GetStages gets the stages property value. Information about the different stages for the request.
+// returns a []SubjectRightsRequestStageDetailable when successful
 func (m *SubjectRightsRequest) GetStages()([]SubjectRightsRequestStageDetailable) {
     val, err := m.GetBackingStore().Get("stages")
     if err != nil {
@@ -617,6 +643,7 @@ func (m *SubjectRightsRequest) GetStages()([]SubjectRightsRequestStageDetailable
     return nil
 }
 // GetStatus gets the status property value. The status of the request. Possible values are: active, closed, unknownFutureValue.
+// returns a *SubjectRightsRequestStatus when successful
 func (m *SubjectRightsRequest) GetStatus()(*SubjectRightsRequestStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -628,6 +655,7 @@ func (m *SubjectRightsRequest) GetStatus()(*SubjectRightsRequestStatus) {
     return nil
 }
 // GetTeam gets the team property value. Information about the Microsoft Teams team that was created for the request.
+// returns a Teamable when successful
 func (m *SubjectRightsRequest) GetTeam()(Teamable) {
     val, err := m.GetBackingStore().Get("team")
     if err != nil {
@@ -639,6 +667,7 @@ func (m *SubjectRightsRequest) GetTeam()(Teamable) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
+// returns a *SubjectRightsRequestType when successful
 func (m *SubjectRightsRequest) GetTypeEscaped()(*SubjectRightsRequestType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -1054,7 +1083,6 @@ func (m *SubjectRightsRequest) SetTypeEscaped(value *SubjectRightsRequestType)()
         panic(err)
     }
 }
-// SubjectRightsRequestable 
 type SubjectRightsRequestable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

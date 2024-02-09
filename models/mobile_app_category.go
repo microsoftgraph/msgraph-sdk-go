@@ -9,7 +9,7 @@ import (
 type MobileAppCategory struct {
     Entity
 }
-// NewMobileAppCategory instantiates a new mobileAppCategory and sets the default values.
+// NewMobileAppCategory instantiates a new MobileAppCategory and sets the default values.
 func NewMobileAppCategory()(*MobileAppCategory) {
     m := &MobileAppCategory{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewMobileAppCategory()(*MobileAppCategory) {
     return m
 }
 // CreateMobileAppCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMobileAppCategoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileAppCategory(), nil
 }
 // GetDisplayName gets the displayName property value. The name of the app category.
+// returns a *string when successful
 func (m *MobileAppCategory) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *MobileAppCategory) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MobileAppCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -57,6 +60,7 @@ func (m *MobileAppCategory) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the mobileAppCategory was last modified.
+// returns a *Time when successful
 func (m *MobileAppCategory) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -101,7 +105,6 @@ func (m *MobileAppCategory) SetLastModifiedDateTime(value *i336074805fc853987abe
         panic(err)
     }
 }
-// MobileAppCategoryable 
 type MobileAppCategoryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

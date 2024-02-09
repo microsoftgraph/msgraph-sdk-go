@@ -17,21 +17,23 @@ type ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilderPostRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilderInternal instantiates a new RemoveGroupRequestBuilder and sets the default values.
+// NewItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilderInternal instantiates a new ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder and sets the default values.
 func NewItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder) {
     m := &ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/groupLifecyclePolicies/{groupLifecyclePolicy%2Did}/removeGroup", pathParameters),
     }
     return m
 }
-// NewItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder instantiates a new RemoveGroupRequestBuilder and sets the default values.
+// NewItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder instantiates a new ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder and sets the default values.
 func NewItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post removes a group from a lifecycle policy.
-// Deprecated: This method is obsolete. Use PostAsRemoveGroupPostResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ItemGroupLifecyclePoliciesItemRemoveGroupResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-removegroup?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder) Post(ctx conte
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemGroupLifecyclePoliciesItemRemoveGroupResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,8 @@ func (m *ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder) Post(ctx conte
     return res.(ItemGroupLifecyclePoliciesItemRemoveGroupResponseable), nil
 }
 // PostAsRemoveGroupPostResponse removes a group from a lifecycle policy.
+// returns a ItemGroupLifecyclePoliciesItemRemoveGroupPostResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-removegroup?view=graph-rest-1.0
@@ -63,8 +66,7 @@ func (m *ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder) PostAsRemoveGr
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemGroupLifecyclePoliciesItemRemoveGroupPostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -76,6 +78,7 @@ func (m *ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder) PostAsRemoveGr
     return res.(ItemGroupLifecyclePoliciesItemRemoveGroupPostResponseable), nil
 }
 // ToPostRequestInformation removes a group from a lifecycle policy.
+// returns a *RequestInformation when successful
 func (m *ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemGroupLifecyclePoliciesItemRemoveGroupPostRequestBodyable, requestConfiguration *ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -90,6 +93,7 @@ func (m *ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder) ToPostRequestI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder when successful
 func (m *ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder) WithUrl(rawUrl string)(*ItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder) {
     return NewItemGroupLifecyclePoliciesItemRemoveGroupRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

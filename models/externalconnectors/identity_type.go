@@ -2,7 +2,6 @@ package externalconnectors
 import (
     "errors"
 )
-// 
 type IdentityType int
 
 const (

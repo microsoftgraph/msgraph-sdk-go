@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChannelMembersNotificationRecipient 
 type ChannelMembersNotificationRecipient struct {
     TeamworkNotificationRecipient
 }
-// NewChannelMembersNotificationRecipient instantiates a new channelMembersNotificationRecipient and sets the default values.
+// NewChannelMembersNotificationRecipient instantiates a new ChannelMembersNotificationRecipient and sets the default values.
 func NewChannelMembersNotificationRecipient()(*ChannelMembersNotificationRecipient) {
     m := &ChannelMembersNotificationRecipient{
         TeamworkNotificationRecipient: *NewTeamworkNotificationRecipient(),
@@ -18,10 +17,12 @@ func NewChannelMembersNotificationRecipient()(*ChannelMembersNotificationRecipie
     return m
 }
 // CreateChannelMembersNotificationRecipientFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateChannelMembersNotificationRecipientFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChannelMembersNotificationRecipient(), nil
 }
 // GetChannelId gets the channelId property value. The unique identifier for the channel whose members should receive the notification.
+// returns a *string when successful
 func (m *ChannelMembersNotificationRecipient) GetChannelId()(*string) {
     val, err := m.GetBackingStore().Get("channelId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ChannelMembersNotificationRecipient) GetChannelId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ChannelMembersNotificationRecipient) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.TeamworkNotificationRecipient.GetFieldDeserializers()
     res["channelId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +60,7 @@ func (m *ChannelMembersNotificationRecipient) GetFieldDeserializers()(map[string
     return res
 }
 // GetTeamId gets the teamId property value. The unique identifier for the team under which the channel resides.
+// returns a *string when successful
 func (m *ChannelMembersNotificationRecipient) GetTeamId()(*string) {
     val, err := m.GetBackingStore().Get("teamId")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *ChannelMembersNotificationRecipient) SetTeamId(value *string)() {
         panic(err)
     }
 }
-// ChannelMembersNotificationRecipientable 
 type ChannelMembersNotificationRecipientable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     TeamworkNotificationRecipientable

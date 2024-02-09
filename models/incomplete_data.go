@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// IncompleteData 
 type IncompleteData struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewIncompleteData instantiates a new incompleteData and sets the default values.
+// NewIncompleteData instantiates a new IncompleteData and sets the default values.
 func NewIncompleteData()(*IncompleteData) {
     m := &IncompleteData{
     }
@@ -20,10 +19,12 @@ func NewIncompleteData()(*IncompleteData) {
     return m
 }
 // CreateIncompleteDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIncompleteDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIncompleteData(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *IncompleteData) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *IncompleteData) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *IncompleteData) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IncompleteData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["missingDataBeforeDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -75,6 +78,7 @@ func (m *IncompleteData) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetMissingDataBeforeDateTime gets the missingDataBeforeDateTime property value. The service does not have source data before the specified time.
+// returns a *Time when successful
 func (m *IncompleteData) GetMissingDataBeforeDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("missingDataBeforeDateTime")
     if err != nil {
@@ -86,6 +90,7 @@ func (m *IncompleteData) GetMissingDataBeforeDateTime()(*i336074805fc853987abe6f
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *IncompleteData) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -97,6 +102,7 @@ func (m *IncompleteData) GetOdataType()(*string) {
     return nil
 }
 // GetWasThrottled gets the wasThrottled property value. Some data was not recorded due to excessive activity.
+// returns a *bool when successful
 func (m *IncompleteData) GetWasThrottled()(*bool) {
     val, err := m.GetBackingStore().Get("wasThrottled")
     if err != nil {
@@ -167,7 +173,6 @@ func (m *IncompleteData) SetWasThrottled(value *bool)() {
         panic(err)
     }
 }
-// IncompleteDataable 
 type IncompleteDataable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// HomeRealmDiscoveryPolicyCollectionResponse 
 type HomeRealmDiscoveryPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewHomeRealmDiscoveryPolicyCollectionResponse instantiates a new homeRealmDiscoveryPolicyCollectionResponse and sets the default values.
+// NewHomeRealmDiscoveryPolicyCollectionResponse instantiates a new HomeRealmDiscoveryPolicyCollectionResponse and sets the default values.
 func NewHomeRealmDiscoveryPolicyCollectionResponse()(*HomeRealmDiscoveryPolicyCollectionResponse) {
     m := &HomeRealmDiscoveryPolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewHomeRealmDiscoveryPolicyCollectionResponse()(*HomeRealmDiscoveryPolicyCo
     return m
 }
 // CreateHomeRealmDiscoveryPolicyCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateHomeRealmDiscoveryPolicyCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHomeRealmDiscoveryPolicyCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *HomeRealmDiscoveryPolicyCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *HomeRealmDiscoveryPolicyCollectionResponse) GetFieldDeserializers()(map
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []HomeRealmDiscoveryPolicyable when successful
 func (m *HomeRealmDiscoveryPolicyCollectionResponse) GetValue()([]HomeRealmDiscoveryPolicyable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *HomeRealmDiscoveryPolicyCollectionResponse) SetValue(value []HomeRealmD
         panic(err)
     }
 }
-// HomeRealmDiscoveryPolicyCollectionResponseable 
 type HomeRealmDiscoveryPolicyCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

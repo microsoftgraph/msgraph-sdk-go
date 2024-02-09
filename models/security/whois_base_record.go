@@ -6,11 +6,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// WhoisBaseRecord 
 type WhoisBaseRecord struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewWhoisBaseRecord instantiates a new whoisBaseRecord and sets the default values.
+// NewWhoisBaseRecord instantiates a new WhoisBaseRecord and sets the default values.
 func NewWhoisBaseRecord()(*WhoisBaseRecord) {
     m := &WhoisBaseRecord{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -18,6 +17,7 @@ func NewWhoisBaseRecord()(*WhoisBaseRecord) {
     return m
 }
 // CreateWhoisBaseRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWhoisBaseRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -42,6 +42,7 @@ func CreateWhoisBaseRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewWhoisBaseRecord(), nil
 }
 // GetAbuse gets the abuse property value. The contact information for the abuse contact.
+// returns a WhoisContactable when successful
 func (m *WhoisBaseRecord) GetAbuse()(WhoisContactable) {
     val, err := m.GetBackingStore().Get("abuse")
     if err != nil {
@@ -53,6 +54,7 @@ func (m *WhoisBaseRecord) GetAbuse()(WhoisContactable) {
     return nil
 }
 // GetAdmin gets the admin property value. The contact information for the admin contact.
+// returns a WhoisContactable when successful
 func (m *WhoisBaseRecord) GetAdmin()(WhoisContactable) {
     val, err := m.GetBackingStore().Get("admin")
     if err != nil {
@@ -64,6 +66,7 @@ func (m *WhoisBaseRecord) GetAdmin()(WhoisContactable) {
     return nil
 }
 // GetBilling gets the billing property value. The contact information for the billing contact.
+// returns a WhoisContactable when successful
 func (m *WhoisBaseRecord) GetBilling()(WhoisContactable) {
     val, err := m.GetBackingStore().Get("billing")
     if err != nil {
@@ -75,6 +78,7 @@ func (m *WhoisBaseRecord) GetBilling()(WhoisContactable) {
     return nil
 }
 // GetDomainStatus gets the domainStatus property value. The domain status for this WHOIS object.
+// returns a *string when successful
 func (m *WhoisBaseRecord) GetDomainStatus()(*string) {
     val, err := m.GetBackingStore().Get("domainStatus")
     if err != nil {
@@ -86,6 +90,7 @@ func (m *WhoisBaseRecord) GetDomainStatus()(*string) {
     return nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The date and time when this WHOIS record expires with the registrar. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *WhoisBaseRecord) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -97,6 +102,7 @@ func (m *WhoisBaseRecord) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WhoisBaseRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["abuse"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -288,6 +294,7 @@ func (m *WhoisBaseRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetFirstSeenDateTime gets the firstSeenDateTime property value. The first seen date and time of this WHOIS record. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *WhoisBaseRecord) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstSeenDateTime")
     if err != nil {
@@ -299,6 +306,7 @@ func (m *WhoisBaseRecord) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad9
     return nil
 }
 // GetHost gets the host property value. The host property
+// returns a Hostable when successful
 func (m *WhoisBaseRecord) GetHost()(Hostable) {
     val, err := m.GetBackingStore().Get("host")
     if err != nil {
@@ -310,6 +318,7 @@ func (m *WhoisBaseRecord) GetHost()(Hostable) {
     return nil
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. The last seen date and time of this WHOIS record. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *WhoisBaseRecord) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSeenDateTime")
     if err != nil {
@@ -321,6 +330,7 @@ func (m *WhoisBaseRecord) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetLastUpdateDateTime gets the lastUpdateDateTime property value. The date and time when this WHOIS record was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *WhoisBaseRecord) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdateDateTime")
     if err != nil {
@@ -332,6 +342,7 @@ func (m *WhoisBaseRecord) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad
     return nil
 }
 // GetNameservers gets the nameservers property value. The nameservers for this WHOIS object.
+// returns a []WhoisNameserverable when successful
 func (m *WhoisBaseRecord) GetNameservers()([]WhoisNameserverable) {
     val, err := m.GetBackingStore().Get("nameservers")
     if err != nil {
@@ -343,6 +354,7 @@ func (m *WhoisBaseRecord) GetNameservers()([]WhoisNameserverable) {
     return nil
 }
 // GetNoc gets the noc property value. The contact information for the noc contact.
+// returns a WhoisContactable when successful
 func (m *WhoisBaseRecord) GetNoc()(WhoisContactable) {
     val, err := m.GetBackingStore().Get("noc")
     if err != nil {
@@ -354,6 +366,7 @@ func (m *WhoisBaseRecord) GetNoc()(WhoisContactable) {
     return nil
 }
 // GetRawWhoisText gets the rawWhoisText property value. The raw WHOIS details for this WHOIS object.
+// returns a *string when successful
 func (m *WhoisBaseRecord) GetRawWhoisText()(*string) {
     val, err := m.GetBackingStore().Get("rawWhoisText")
     if err != nil {
@@ -365,6 +378,7 @@ func (m *WhoisBaseRecord) GetRawWhoisText()(*string) {
     return nil
 }
 // GetRegistrant gets the registrant property value. The contact information for the registrant contact.
+// returns a WhoisContactable when successful
 func (m *WhoisBaseRecord) GetRegistrant()(WhoisContactable) {
     val, err := m.GetBackingStore().Get("registrant")
     if err != nil {
@@ -376,6 +390,7 @@ func (m *WhoisBaseRecord) GetRegistrant()(WhoisContactable) {
     return nil
 }
 // GetRegistrar gets the registrar property value. The contact information for the registrar contact.
+// returns a WhoisContactable when successful
 func (m *WhoisBaseRecord) GetRegistrar()(WhoisContactable) {
     val, err := m.GetBackingStore().Get("registrar")
     if err != nil {
@@ -387,6 +402,7 @@ func (m *WhoisBaseRecord) GetRegistrar()(WhoisContactable) {
     return nil
 }
 // GetRegistrationDateTime gets the registrationDateTime property value. The date and time when this WHOIS record was registered with a registrar. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *WhoisBaseRecord) GetRegistrationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("registrationDateTime")
     if err != nil {
@@ -398,6 +414,7 @@ func (m *WhoisBaseRecord) GetRegistrationDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetTechnical gets the technical property value. The contact information for the technical contact.
+// returns a WhoisContactable when successful
 func (m *WhoisBaseRecord) GetTechnical()(WhoisContactable) {
     val, err := m.GetBackingStore().Get("technical")
     if err != nil {
@@ -409,6 +426,7 @@ func (m *WhoisBaseRecord) GetTechnical()(WhoisContactable) {
     return nil
 }
 // GetWhoisServer gets the whoisServer property value. The WHOIS server that provides the details.
+// returns a *string when successful
 func (m *WhoisBaseRecord) GetWhoisServer()(*string) {
     val, err := m.GetBackingStore().Get("whoisServer")
     if err != nil {
@@ -420,6 +438,7 @@ func (m *WhoisBaseRecord) GetWhoisServer()(*string) {
     return nil
 }
 // GetZone gets the zone property value. The contact information for the zone contact.
+// returns a WhoisContactable when successful
 func (m *WhoisBaseRecord) GetZone()(WhoisContactable) {
     val, err := m.GetBackingStore().Get("zone")
     if err != nil {
@@ -678,7 +697,6 @@ func (m *WhoisBaseRecord) SetZone(value WhoisContactable)() {
         panic(err)
     }
 }
-// WhoisBaseRecordable 
 type WhoisBaseRecordable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

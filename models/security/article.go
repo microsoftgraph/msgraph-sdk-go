@@ -6,11 +6,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Article 
 type Article struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewArticle instantiates a new article and sets the default values.
+// NewArticle instantiates a new Article and sets the default values.
 func NewArticle()(*Article) {
     m := &Article{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -18,10 +17,12 @@ func NewArticle()(*Article) {
     return m
 }
 // CreateArticleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateArticleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewArticle(), nil
 }
 // GetBody gets the body property value. The body property
+// returns a FormattedContentable when successful
 func (m *Article) GetBody()(FormattedContentable) {
     val, err := m.GetBackingStore().Get("body")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *Article) GetBody()(FormattedContentable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when this article was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *Article) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *Article) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Article) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["body"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -151,6 +154,7 @@ func (m *Article) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetImageUrl gets the imageUrl property value. URL of the header image for this article, used for display purposes.
+// returns a *string when successful
 func (m *Article) GetImageUrl()(*string) {
     val, err := m.GetBackingStore().Get("imageUrl")
     if err != nil {
@@ -162,6 +166,7 @@ func (m *Article) GetImageUrl()(*string) {
     return nil
 }
 // GetIndicators gets the indicators property value. Indicators related to this article.
+// returns a []ArticleIndicatorable when successful
 func (m *Article) GetIndicators()([]ArticleIndicatorable) {
     val, err := m.GetBackingStore().Get("indicators")
     if err != nil {
@@ -173,6 +178,7 @@ func (m *Article) GetIndicators()([]ArticleIndicatorable) {
     return nil
 }
 // GetIsFeatured gets the isFeatured property value. Indicates whether this article is currently featured by Microsoft.
+// returns a *bool when successful
 func (m *Article) GetIsFeatured()(*bool) {
     val, err := m.GetBackingStore().Get("isFeatured")
     if err != nil {
@@ -184,6 +190,7 @@ func (m *Article) GetIsFeatured()(*bool) {
     return nil
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The most recent date and time when this article was updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *Article) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
     if err != nil {
@@ -195,6 +202,7 @@ func (m *Article) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     return nil
 }
 // GetSummary gets the summary property value. The summary property
+// returns a FormattedContentable when successful
 func (m *Article) GetSummary()(FormattedContentable) {
     val, err := m.GetBackingStore().Get("summary")
     if err != nil {
@@ -206,6 +214,7 @@ func (m *Article) GetSummary()(FormattedContentable) {
     return nil
 }
 // GetTags gets the tags property value. Tags for this article, communicating keywords, or key concepts.
+// returns a []string when successful
 func (m *Article) GetTags()([]string) {
     val, err := m.GetBackingStore().Get("tags")
     if err != nil {
@@ -217,6 +226,7 @@ func (m *Article) GetTags()([]string) {
     return nil
 }
 // GetTitle gets the title property value. The title of this article.
+// returns a *string when successful
 func (m *Article) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -358,7 +368,6 @@ func (m *Article) SetTitle(value *string)() {
         panic(err)
     }
 }
-// Articleable 
 type Articleable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -2,7 +2,6 @@ package models
 import (
     "errors"
 )
-// 
 type ScreenSharingRole int
 
 const (

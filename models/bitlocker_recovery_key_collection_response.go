@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BitlockerRecoveryKeyCollectionResponse 
 type BitlockerRecoveryKeyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewBitlockerRecoveryKeyCollectionResponse instantiates a new bitlockerRecoveryKeyCollectionResponse and sets the default values.
+// NewBitlockerRecoveryKeyCollectionResponse instantiates a new BitlockerRecoveryKeyCollectionResponse and sets the default values.
 func NewBitlockerRecoveryKeyCollectionResponse()(*BitlockerRecoveryKeyCollectionResponse) {
     m := &BitlockerRecoveryKeyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewBitlockerRecoveryKeyCollectionResponse()(*BitlockerRecoveryKeyCollection
     return m
 }
 // CreateBitlockerRecoveryKeyCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBitlockerRecoveryKeyCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBitlockerRecoveryKeyCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BitlockerRecoveryKeyCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *BitlockerRecoveryKeyCollectionResponse) GetFieldDeserializers()(map[str
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []BitlockerRecoveryKeyable when successful
 func (m *BitlockerRecoveryKeyCollectionResponse) GetValue()([]BitlockerRecoveryKeyable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *BitlockerRecoveryKeyCollectionResponse) SetValue(value []BitlockerRecov
         panic(err)
     }
 }
-// BitlockerRecoveryKeyCollectionResponseable 
 type BitlockerRecoveryKeyCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -6,11 +6,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// CaseOperation 
 type CaseOperation struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewCaseOperation instantiates a new caseOperation and sets the default values.
+// NewCaseOperation instantiates a new CaseOperation and sets the default values.
 func NewCaseOperation()(*CaseOperation) {
     m := &CaseOperation{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -18,6 +17,7 @@ func NewCaseOperation()(*CaseOperation) {
     return m
 }
 // CreateCaseOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCaseOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -52,6 +52,7 @@ func CreateCaseOperationFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewCaseOperation(), nil
 }
 // GetAction gets the action property value. The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData
+// returns a *CaseAction when successful
 func (m *CaseOperation) GetAction()(*CaseAction) {
     val, err := m.GetBackingStore().Get("action")
     if err != nil {
@@ -63,6 +64,7 @@ func (m *CaseOperation) GetAction()(*CaseAction) {
     return nil
 }
 // GetCompletedDateTime gets the completedDateTime property value. The date and time the operation was completed.
+// returns a *Time when successful
 func (m *CaseOperation) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("completedDateTime")
     if err != nil {
@@ -74,6 +76,7 @@ func (m *CaseOperation) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetCreatedBy gets the createdBy property value. The user that created the operation.
+// returns a IdentitySetable when successful
 func (m *CaseOperation) GetCreatedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -85,6 +88,7 @@ func (m *CaseOperation) GetCreatedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the operation was created.
+// returns a *Time when successful
 func (m *CaseOperation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -96,6 +100,7 @@ func (m *CaseOperation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CaseOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -171,6 +176,7 @@ func (m *CaseOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetPercentProgress gets the percentProgress property value. The progress of the operation.
+// returns a *int32 when successful
 func (m *CaseOperation) GetPercentProgress()(*int32) {
     val, err := m.GetBackingStore().Get("percentProgress")
     if err != nil {
@@ -182,6 +188,7 @@ func (m *CaseOperation) GetPercentProgress()(*int32) {
     return nil
 }
 // GetResultInfo gets the resultInfo property value. Contains success and failure-specific result information.
+// returns a ResultInfoable when successful
 func (m *CaseOperation) GetResultInfo()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ResultInfoable) {
     val, err := m.GetBackingStore().Get("resultInfo")
     if err != nil {
@@ -193,6 +200,7 @@ func (m *CaseOperation) GetResultInfo()(iadcd81124412c61e647227ecfc4449d8bba17de
     return nil
 }
 // GetStatus gets the status property value. The status of the case operation. Possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.
+// returns a *CaseOperationStatus when successful
 func (m *CaseOperation) GetStatus()(*CaseOperationStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -304,7 +312,6 @@ func (m *CaseOperation) SetStatus(value *CaseOperationStatus)() {
         panic(err)
     }
 }
-// CaseOperationable 
 type CaseOperationable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

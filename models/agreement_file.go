@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AgreementFile 
 type AgreementFile struct {
     AgreementFileProperties
 }
-// NewAgreementFile instantiates a new agreementFile and sets the default values.
+// NewAgreementFile instantiates a new AgreementFile and sets the default values.
 func NewAgreementFile()(*AgreementFile) {
     m := &AgreementFile{
         AgreementFileProperties: *NewAgreementFileProperties(),
@@ -16,10 +15,12 @@ func NewAgreementFile()(*AgreementFile) {
     return m
 }
 // CreateAgreementFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAgreementFileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAgreementFile(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AgreementFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AgreementFileProperties.GetFieldDeserializers()
     res["localizations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *AgreementFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetLocalizations gets the localizations property value. The localized version of the terms of use agreement files attached to the agreement.
+// returns a []AgreementFileLocalizationable when successful
 func (m *AgreementFile) GetLocalizations()([]AgreementFileLocalizationable) {
     val, err := m.GetBackingStore().Get("localizations")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *AgreementFile) SetLocalizations(value []AgreementFileLocalizationable)(
         panic(err)
     }
 }
-// AgreementFileable 
 type AgreementFileable interface {
     AgreementFilePropertiesable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

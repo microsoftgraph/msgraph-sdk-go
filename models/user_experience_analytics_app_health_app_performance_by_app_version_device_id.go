@@ -9,7 +9,7 @@ import (
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId struct {
     Entity
 }
-// NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId instantiates a new userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId and sets the default values.
+// NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId instantiates a new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId and sets the default values.
 func NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId()(*UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) {
     m := &UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId()(*Us
     return m
 }
 // CreateUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId(), nil
 }
 // GetAppCrashCount gets the appCrashCount property value. The number of crashes for the app. Valid values -2147483648 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) GetAppCrashCount()(*int32) {
     val, err := m.GetBackingStore().Get("appCrashCount")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Get
     return nil
 }
 // GetAppDisplayName gets the appDisplayName property value. The friendly name of the application.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) GetAppDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("appDisplayName")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Get
     return nil
 }
 // GetAppName gets the appName property value. The name of the application.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) GetAppName()(*string) {
     val, err := m.GetBackingStore().Get("appName")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Get
     return nil
 }
 // GetAppPublisher gets the appPublisher property value. The publisher of the application.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) GetAppPublisher()(*string) {
     val, err := m.GetBackingStore().Get("appPublisher")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Get
     return nil
 }
 // GetAppVersion gets the appVersion property value. The version of the application.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) GetAppVersion()(*string) {
     val, err := m.GetBackingStore().Get("appVersion")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Get
     return nil
 }
 // GetDeviceDisplayName gets the deviceDisplayName property value. The name of the device. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) GetDeviceDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("deviceDisplayName")
     if err != nil {
@@ -87,6 +94,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Get
     return nil
 }
 // GetDeviceId gets the deviceId property value. The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -98,6 +106,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Get
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appCrashCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -183,6 +192,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Get
     return res
 }
 // GetProcessedDateTime gets the processedDateTime property value. The date and time when the statistics were last computed. The value cannot be modified and is automatically populated when the statistics are computed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.
+// returns a *Time when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) GetProcessedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("processedDateTime")
     if err != nil {
@@ -305,7 +315,6 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId) Set
         panic(err)
     }
 }
-// UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdable 
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

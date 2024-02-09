@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthoredNoteCollectionResponse 
 type AuthoredNoteCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAuthoredNoteCollectionResponse instantiates a new authoredNoteCollectionResponse and sets the default values.
+// NewAuthoredNoteCollectionResponse instantiates a new AuthoredNoteCollectionResponse and sets the default values.
 func NewAuthoredNoteCollectionResponse()(*AuthoredNoteCollectionResponse) {
     m := &AuthoredNoteCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewAuthoredNoteCollectionResponse()(*AuthoredNoteCollectionResponse) {
     return m
 }
 // CreateAuthoredNoteCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthoredNoteCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthoredNoteCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthoredNoteCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *AuthoredNoteCollectionResponse) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []AuthoredNoteable when successful
 func (m *AuthoredNoteCollectionResponse) GetValue()([]AuthoredNoteable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *AuthoredNoteCollectionResponse) SetValue(value []AuthoredNoteable)() {
         panic(err)
     }
 }
-// AuthoredNoteCollectionResponseable 
 type AuthoredNoteCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

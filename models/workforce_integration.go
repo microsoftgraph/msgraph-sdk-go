@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkforceIntegration 
 type WorkforceIntegration struct {
     ChangeTrackedEntity
 }
-// NewWorkforceIntegration instantiates a new workforceIntegration and sets the default values.
+// NewWorkforceIntegration instantiates a new WorkforceIntegration and sets the default values.
 func NewWorkforceIntegration()(*WorkforceIntegration) {
     m := &WorkforceIntegration{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
@@ -18,10 +17,12 @@ func NewWorkforceIntegration()(*WorkforceIntegration) {
     return m
 }
 // CreateWorkforceIntegrationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkforceIntegrationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkforceIntegration(), nil
 }
 // GetApiVersion gets the apiVersion property value. API version for the call back URL. Start with 1.
+// returns a *int32 when successful
 func (m *WorkforceIntegration) GetApiVersion()(*int32) {
     val, err := m.GetBackingStore().Get("apiVersion")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *WorkforceIntegration) GetApiVersion()(*int32) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Name of the workforce integration.
+// returns a *string when successful
 func (m *WorkforceIntegration) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *WorkforceIntegration) GetDisplayName()(*string) {
     return nil
 }
 // GetEncryption gets the encryption property value. The workforce integration encryption resource.
+// returns a WorkforceIntegrationEncryptionable when successful
 func (m *WorkforceIntegration) GetEncryption()(WorkforceIntegrationEncryptionable) {
     val, err := m.GetBackingStore().Get("encryption")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *WorkforceIntegration) GetEncryption()(WorkforceIntegrationEncryptionabl
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkforceIntegration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ChangeTrackedEntity.GetFieldDeserializers()
     res["apiVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -120,6 +124,7 @@ func (m *WorkforceIntegration) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetIsActive gets the isActive property value. Indicates whether this workforce integration is currently active and available.
+// returns a *bool when successful
 func (m *WorkforceIntegration) GetIsActive()(*bool) {
     val, err := m.GetBackingStore().Get("isActive")
     if err != nil {
@@ -131,6 +136,7 @@ func (m *WorkforceIntegration) GetIsActive()(*bool) {
     return nil
 }
 // GetSupportedEntities gets the supportedEntities property value. The Shifts entities supported for synchronous change notifications. Shifts will make a call back to the url provided on client changes on those entities added here. By default, no entities are supported for change notifications. Possible values are: none, shift, swapRequest, userShiftPreferences, openshift, openShiftRequest, offerShiftRequest, unknownFutureValue.
+// returns a *WorkforceIntegrationSupportedEntities when successful
 func (m *WorkforceIntegration) GetSupportedEntities()(*WorkforceIntegrationSupportedEntities) {
     val, err := m.GetBackingStore().Get("supportedEntities")
     if err != nil {
@@ -142,6 +148,7 @@ func (m *WorkforceIntegration) GetSupportedEntities()(*WorkforceIntegrationSuppo
     return nil
 }
 // GetUrl gets the url property value. Workforce Integration URL for callbacks from the Shifts service.
+// returns a *string when successful
 func (m *WorkforceIntegration) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -239,7 +246,6 @@ func (m *WorkforceIntegration) SetUrl(value *string)() {
         panic(err)
     }
 }
-// WorkforceIntegrationable 
 type WorkforceIntegrationable interface {
     ChangeTrackedEntityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

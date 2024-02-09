@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityUserFlowAttributeAssignment 
 type IdentityUserFlowAttributeAssignment struct {
     Entity
 }
-// NewIdentityUserFlowAttributeAssignment instantiates a new identityUserFlowAttributeAssignment and sets the default values.
+// NewIdentityUserFlowAttributeAssignment instantiates a new IdentityUserFlowAttributeAssignment and sets the default values.
 func NewIdentityUserFlowAttributeAssignment()(*IdentityUserFlowAttributeAssignment) {
     m := &IdentityUserFlowAttributeAssignment{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewIdentityUserFlowAttributeAssignment()(*IdentityUserFlowAttributeAssignme
     return m
 }
 // CreateIdentityUserFlowAttributeAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIdentityUserFlowAttributeAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIdentityUserFlowAttributeAssignment(), nil
 }
 // GetDisplayName gets the displayName property value. The display name of the identityUserFlowAttribute within a user flow.
+// returns a *string when successful
 func (m *IdentityUserFlowAttributeAssignment) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *IdentityUserFlowAttributeAssignment) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IdentityUserFlowAttributeAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -102,6 +104,7 @@ func (m *IdentityUserFlowAttributeAssignment) GetFieldDeserializers()(map[string
     return res
 }
 // GetIsOptional gets the isOptional property value. Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user can't complete sign-up without providing a value.
+// returns a *bool when successful
 func (m *IdentityUserFlowAttributeAssignment) GetIsOptional()(*bool) {
     val, err := m.GetBackingStore().Get("isOptional")
     if err != nil {
@@ -113,6 +116,7 @@ func (m *IdentityUserFlowAttributeAssignment) GetIsOptional()(*bool) {
     return nil
 }
 // GetRequiresVerification gets the requiresVerification property value. Determines whether the identityUserFlowAttribute requires verification, and is only used for verifying the user's phone number or email address.
+// returns a *bool when successful
 func (m *IdentityUserFlowAttributeAssignment) GetRequiresVerification()(*bool) {
     val, err := m.GetBackingStore().Get("requiresVerification")
     if err != nil {
@@ -124,6 +128,7 @@ func (m *IdentityUserFlowAttributeAssignment) GetRequiresVerification()(*bool) {
     return nil
 }
 // GetUserAttribute gets the userAttribute property value. The user attribute that you want to add to your user flow.
+// returns a IdentityUserFlowAttributeable when successful
 func (m *IdentityUserFlowAttributeAssignment) GetUserAttribute()(IdentityUserFlowAttributeable) {
     val, err := m.GetBackingStore().Get("userAttribute")
     if err != nil {
@@ -135,6 +140,7 @@ func (m *IdentityUserFlowAttributeAssignment) GetUserAttribute()(IdentityUserFlo
     return nil
 }
 // GetUserAttributeValues gets the userAttributeValues property value. The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.
+// returns a []UserAttributeValuesItemable when successful
 func (m *IdentityUserFlowAttributeAssignment) GetUserAttributeValues()([]UserAttributeValuesItemable) {
     val, err := m.GetBackingStore().Get("userAttributeValues")
     if err != nil {
@@ -146,6 +152,7 @@ func (m *IdentityUserFlowAttributeAssignment) GetUserAttributeValues()([]UserAtt
     return nil
 }
 // GetUserInputType gets the userInputType property value. The userInputType property
+// returns a *IdentityUserFlowAttributeInputType when successful
 func (m *IdentityUserFlowAttributeAssignment) GetUserInputType()(*IdentityUserFlowAttributeInputType) {
     val, err := m.GetBackingStore().Get("userInputType")
     if err != nil {
@@ -249,7 +256,6 @@ func (m *IdentityUserFlowAttributeAssignment) SetUserInputType(value *IdentityUs
         panic(err)
     }
 }
-// IdentityUserFlowAttributeAssignmentable 
 type IdentityUserFlowAttributeAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

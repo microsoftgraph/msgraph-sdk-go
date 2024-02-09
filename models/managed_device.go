@@ -9,7 +9,7 @@ import (
 type ManagedDevice struct {
     Entity
 }
-// NewManagedDevice instantiates a new managedDevice and sets the default values.
+// NewManagedDevice instantiates a new ManagedDevice and sets the default values.
 func NewManagedDevice()(*ManagedDevice) {
     m := &ManagedDevice{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewManagedDevice()(*ManagedDevice) {
     return m
 }
 // CreateManagedDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedDevice(), nil
 }
 // GetActivationLockBypassCode gets the activationLockBypassCode property value. The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetActivationLockBypassCode()(*string) {
     val, err := m.GetBackingStore().Get("activationLockBypassCode")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *ManagedDevice) GetActivationLockBypassCode()(*string) {
     return nil
 }
 // GetAndroidSecurityPatchLevel gets the androidSecurityPatchLevel property value. Android security patch level. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetAndroidSecurityPatchLevel()(*string) {
     val, err := m.GetBackingStore().Get("androidSecurityPatchLevel")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *ManagedDevice) GetAndroidSecurityPatchLevel()(*string) {
     return nil
 }
 // GetAzureADDeviceId gets the azureADDeviceId property value. The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetAzureADDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("azureADDeviceId")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *ManagedDevice) GetAzureADDeviceId()(*string) {
     return nil
 }
 // GetAzureADRegistered gets the azureADRegistered property value. Whether the device is Azure Active Directory registered. This property is read-only.
+// returns a *bool when successful
 func (m *ManagedDevice) GetAzureADRegistered()(*bool) {
     val, err := m.GetBackingStore().Get("azureADRegistered")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *ManagedDevice) GetAzureADRegistered()(*bool) {
     return nil
 }
 // GetComplianceGracePeriodExpirationDateTime gets the complianceGracePeriodExpirationDateTime property value. The DateTime when device compliance grace period expires. This property is read-only.
+// returns a *Time when successful
 func (m *ManagedDevice) GetComplianceGracePeriodExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("complianceGracePeriodExpirationDateTime")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *ManagedDevice) GetComplianceGracePeriodExpirationDateTime()(*i336074805
     return nil
 }
 // GetComplianceState gets the complianceState property value. Compliance state.
+// returns a *ComplianceState when successful
 func (m *ManagedDevice) GetComplianceState()(*ComplianceState) {
     val, err := m.GetBackingStore().Get("complianceState")
     if err != nil {
@@ -87,6 +94,7 @@ func (m *ManagedDevice) GetComplianceState()(*ComplianceState) {
     return nil
 }
 // GetConfigurationManagerClientEnabledFeatures gets the configurationManagerClientEnabledFeatures property value. ConfigrMgr client enabled features. This property is read-only.
+// returns a ConfigurationManagerClientEnabledFeaturesable when successful
 func (m *ManagedDevice) GetConfigurationManagerClientEnabledFeatures()(ConfigurationManagerClientEnabledFeaturesable) {
     val, err := m.GetBackingStore().Get("configurationManagerClientEnabledFeatures")
     if err != nil {
@@ -98,6 +106,7 @@ func (m *ManagedDevice) GetConfigurationManagerClientEnabledFeatures()(Configura
     return nil
 }
 // GetDeviceActionResults gets the deviceActionResults property value. List of ComplexType deviceActionResult objects. This property is read-only.
+// returns a []DeviceActionResultable when successful
 func (m *ManagedDevice) GetDeviceActionResults()([]DeviceActionResultable) {
     val, err := m.GetBackingStore().Get("deviceActionResults")
     if err != nil {
@@ -109,6 +118,7 @@ func (m *ManagedDevice) GetDeviceActionResults()([]DeviceActionResultable) {
     return nil
 }
 // GetDeviceCategory gets the deviceCategory property value. Device category
+// returns a DeviceCategoryable when successful
 func (m *ManagedDevice) GetDeviceCategory()(DeviceCategoryable) {
     val, err := m.GetBackingStore().Get("deviceCategory")
     if err != nil {
@@ -120,6 +130,7 @@ func (m *ManagedDevice) GetDeviceCategory()(DeviceCategoryable) {
     return nil
 }
 // GetDeviceCategoryDisplayName gets the deviceCategoryDisplayName property value. Device category display name. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetDeviceCategoryDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("deviceCategoryDisplayName")
     if err != nil {
@@ -131,6 +142,7 @@ func (m *ManagedDevice) GetDeviceCategoryDisplayName()(*string) {
     return nil
 }
 // GetDeviceCompliancePolicyStates gets the deviceCompliancePolicyStates property value. Device compliance policy states for this device.
+// returns a []DeviceCompliancePolicyStateable when successful
 func (m *ManagedDevice) GetDeviceCompliancePolicyStates()([]DeviceCompliancePolicyStateable) {
     val, err := m.GetBackingStore().Get("deviceCompliancePolicyStates")
     if err != nil {
@@ -142,6 +154,7 @@ func (m *ManagedDevice) GetDeviceCompliancePolicyStates()([]DeviceCompliancePoli
     return nil
 }
 // GetDeviceConfigurationStates gets the deviceConfigurationStates property value. Device configuration states for this device.
+// returns a []DeviceConfigurationStateable when successful
 func (m *ManagedDevice) GetDeviceConfigurationStates()([]DeviceConfigurationStateable) {
     val, err := m.GetBackingStore().Get("deviceConfigurationStates")
     if err != nil {
@@ -153,6 +166,7 @@ func (m *ManagedDevice) GetDeviceConfigurationStates()([]DeviceConfigurationStat
     return nil
 }
 // GetDeviceEnrollmentType gets the deviceEnrollmentType property value. Possible ways of adding a mobile device to management.
+// returns a *DeviceEnrollmentType when successful
 func (m *ManagedDevice) GetDeviceEnrollmentType()(*DeviceEnrollmentType) {
     val, err := m.GetBackingStore().Get("deviceEnrollmentType")
     if err != nil {
@@ -164,6 +178,7 @@ func (m *ManagedDevice) GetDeviceEnrollmentType()(*DeviceEnrollmentType) {
     return nil
 }
 // GetDeviceHealthAttestationState gets the deviceHealthAttestationState property value. The device health attestation state. This property is read-only.
+// returns a DeviceHealthAttestationStateable when successful
 func (m *ManagedDevice) GetDeviceHealthAttestationState()(DeviceHealthAttestationStateable) {
     val, err := m.GetBackingStore().Get("deviceHealthAttestationState")
     if err != nil {
@@ -175,6 +190,7 @@ func (m *ManagedDevice) GetDeviceHealthAttestationState()(DeviceHealthAttestatio
     return nil
 }
 // GetDeviceName gets the deviceName property value. Name of the device. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -186,6 +202,7 @@ func (m *ManagedDevice) GetDeviceName()(*string) {
     return nil
 }
 // GetDeviceRegistrationState gets the deviceRegistrationState property value. Device registration status.
+// returns a *DeviceRegistrationState when successful
 func (m *ManagedDevice) GetDeviceRegistrationState()(*DeviceRegistrationState) {
     val, err := m.GetBackingStore().Get("deviceRegistrationState")
     if err != nil {
@@ -197,6 +214,7 @@ func (m *ManagedDevice) GetDeviceRegistrationState()(*DeviceRegistrationState) {
     return nil
 }
 // GetEasActivated gets the easActivated property value. Whether the device is Exchange ActiveSync activated. This property is read-only.
+// returns a *bool when successful
 func (m *ManagedDevice) GetEasActivated()(*bool) {
     val, err := m.GetBackingStore().Get("easActivated")
     if err != nil {
@@ -208,6 +226,7 @@ func (m *ManagedDevice) GetEasActivated()(*bool) {
     return nil
 }
 // GetEasActivationDateTime gets the easActivationDateTime property value. Exchange ActivationSync activation time of the device. This property is read-only.
+// returns a *Time when successful
 func (m *ManagedDevice) GetEasActivationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("easActivationDateTime")
     if err != nil {
@@ -219,6 +238,7 @@ func (m *ManagedDevice) GetEasActivationDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetEasDeviceId gets the easDeviceId property value. Exchange ActiveSync Id of the device. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetEasDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("easDeviceId")
     if err != nil {
@@ -230,6 +250,7 @@ func (m *ManagedDevice) GetEasDeviceId()(*string) {
     return nil
 }
 // GetEmailAddress gets the emailAddress property value. Email(s) for the user associated with the device. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("emailAddress")
     if err != nil {
@@ -241,6 +262,7 @@ func (m *ManagedDevice) GetEmailAddress()(*string) {
     return nil
 }
 // GetEnrolledDateTime gets the enrolledDateTime property value. Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
+// returns a *Time when successful
 func (m *ManagedDevice) GetEnrolledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("enrolledDateTime")
     if err != nil {
@@ -252,6 +274,7 @@ func (m *ManagedDevice) GetEnrolledDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetEthernetMacAddress gets the ethernetMacAddress property value. Indicates Ethernet MAC Address of the device. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetEthernetMacAddress()(*string) {
     val, err := m.GetBackingStore().Get("ethernetMacAddress")
     if err != nil {
@@ -263,6 +286,7 @@ func (m *ManagedDevice) GetEthernetMacAddress()(*string) {
     return nil
 }
 // GetExchangeAccessState gets the exchangeAccessState property value. Device Exchange Access State.
+// returns a *DeviceManagementExchangeAccessState when successful
 func (m *ManagedDevice) GetExchangeAccessState()(*DeviceManagementExchangeAccessState) {
     val, err := m.GetBackingStore().Get("exchangeAccessState")
     if err != nil {
@@ -274,6 +298,7 @@ func (m *ManagedDevice) GetExchangeAccessState()(*DeviceManagementExchangeAccess
     return nil
 }
 // GetExchangeAccessStateReason gets the exchangeAccessStateReason property value. Device Exchange Access State Reason.
+// returns a *DeviceManagementExchangeAccessStateReason when successful
 func (m *ManagedDevice) GetExchangeAccessStateReason()(*DeviceManagementExchangeAccessStateReason) {
     val, err := m.GetBackingStore().Get("exchangeAccessStateReason")
     if err != nil {
@@ -285,6 +310,7 @@ func (m *ManagedDevice) GetExchangeAccessStateReason()(*DeviceManagementExchange
     return nil
 }
 // GetExchangeLastSuccessfulSyncDateTime gets the exchangeLastSuccessfulSyncDateTime property value. Last time the device contacted Exchange. This property is read-only.
+// returns a *Time when successful
 func (m *ManagedDevice) GetExchangeLastSuccessfulSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("exchangeLastSuccessfulSyncDateTime")
     if err != nil {
@@ -296,6 +322,7 @@ func (m *ManagedDevice) GetExchangeLastSuccessfulSyncDateTime()(*i336074805fc853
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activationLockBypassCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -921,6 +948,7 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetFreeStorageSpaceInBytes gets the freeStorageSpaceInBytes property value. Free Storage in Bytes. Default value is 0. Read-only. This property is read-only.
+// returns a *int64 when successful
 func (m *ManagedDevice) GetFreeStorageSpaceInBytes()(*int64) {
     val, err := m.GetBackingStore().Get("freeStorageSpaceInBytes")
     if err != nil {
@@ -932,6 +960,7 @@ func (m *ManagedDevice) GetFreeStorageSpaceInBytes()(*int64) {
     return nil
 }
 // GetIccid gets the iccid property value. Integrated Circuit Card Identifier, it is A SIM card's unique identification number. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetIccid()(*string) {
     val, err := m.GetBackingStore().Get("iccid")
     if err != nil {
@@ -943,6 +972,7 @@ func (m *ManagedDevice) GetIccid()(*string) {
     return nil
 }
 // GetImei gets the imei property value. IMEI. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetImei()(*string) {
     val, err := m.GetBackingStore().Get("imei")
     if err != nil {
@@ -954,6 +984,7 @@ func (m *ManagedDevice) GetImei()(*string) {
     return nil
 }
 // GetIsEncrypted gets the isEncrypted property value. Device encryption status. This property is read-only.
+// returns a *bool when successful
 func (m *ManagedDevice) GetIsEncrypted()(*bool) {
     val, err := m.GetBackingStore().Get("isEncrypted")
     if err != nil {
@@ -965,6 +996,7 @@ func (m *ManagedDevice) GetIsEncrypted()(*bool) {
     return nil
 }
 // GetIsSupervised gets the isSupervised property value. Device supervised status. This property is read-only.
+// returns a *bool when successful
 func (m *ManagedDevice) GetIsSupervised()(*bool) {
     val, err := m.GetBackingStore().Get("isSupervised")
     if err != nil {
@@ -976,6 +1008,7 @@ func (m *ManagedDevice) GetIsSupervised()(*bool) {
     return nil
 }
 // GetJailBroken gets the jailBroken property value. Whether the device is jail broken or rooted. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetJailBroken()(*string) {
     val, err := m.GetBackingStore().Get("jailBroken")
     if err != nil {
@@ -987,6 +1020,7 @@ func (m *ManagedDevice) GetJailBroken()(*string) {
     return nil
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. The date and time that the device last completed a successful sync with Intune. Supports $filter operator 'lt' and 'gt'. This property is read-only.
+// returns a *Time when successful
 func (m *ManagedDevice) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSyncDateTime")
     if err != nil {
@@ -998,6 +1032,7 @@ func (m *ManagedDevice) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetLogCollectionRequests gets the logCollectionRequests property value. List of log collection requests
+// returns a []DeviceLogCollectionResponseable when successful
 func (m *ManagedDevice) GetLogCollectionRequests()([]DeviceLogCollectionResponseable) {
     val, err := m.GetBackingStore().Get("logCollectionRequests")
     if err != nil {
@@ -1009,6 +1044,7 @@ func (m *ManagedDevice) GetLogCollectionRequests()([]DeviceLogCollectionResponse
     return nil
 }
 // GetManagedDeviceName gets the managedDeviceName property value. Automatically generated name to identify a device. Can be overwritten to a user friendly name.
+// returns a *string when successful
 func (m *ManagedDevice) GetManagedDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("managedDeviceName")
     if err != nil {
@@ -1020,6 +1056,7 @@ func (m *ManagedDevice) GetManagedDeviceName()(*string) {
     return nil
 }
 // GetManagedDeviceOwnerType gets the managedDeviceOwnerType property value. Owner type of device.
+// returns a *ManagedDeviceOwnerType when successful
 func (m *ManagedDevice) GetManagedDeviceOwnerType()(*ManagedDeviceOwnerType) {
     val, err := m.GetBackingStore().Get("managedDeviceOwnerType")
     if err != nil {
@@ -1031,6 +1068,7 @@ func (m *ManagedDevice) GetManagedDeviceOwnerType()(*ManagedDeviceOwnerType) {
     return nil
 }
 // GetManagementAgent gets the managementAgent property value. The managementAgent property
+// returns a *ManagementAgentType when successful
 func (m *ManagedDevice) GetManagementAgent()(*ManagementAgentType) {
     val, err := m.GetBackingStore().Get("managementAgent")
     if err != nil {
@@ -1042,6 +1080,7 @@ func (m *ManagedDevice) GetManagementAgent()(*ManagementAgentType) {
     return nil
 }
 // GetManagementCertificateExpirationDate gets the managementCertificateExpirationDate property value. Reports device management certificate expiration date. This property is read-only.
+// returns a *Time when successful
 func (m *ManagedDevice) GetManagementCertificateExpirationDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("managementCertificateExpirationDate")
     if err != nil {
@@ -1053,6 +1092,7 @@ func (m *ManagedDevice) GetManagementCertificateExpirationDate()(*i336074805fc85
     return nil
 }
 // GetManufacturer gets the manufacturer property value. Manufacturer of the device. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
     if err != nil {
@@ -1064,6 +1104,7 @@ func (m *ManagedDevice) GetManufacturer()(*string) {
     return nil
 }
 // GetMeid gets the meid property value. MEID. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetMeid()(*string) {
     val, err := m.GetBackingStore().Get("meid")
     if err != nil {
@@ -1075,6 +1116,7 @@ func (m *ManagedDevice) GetMeid()(*string) {
     return nil
 }
 // GetModel gets the model property value. Model of the device. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
     if err != nil {
@@ -1086,6 +1128,7 @@ func (m *ManagedDevice) GetModel()(*string) {
     return nil
 }
 // GetNotes gets the notes property value. Notes on the device created by IT Admin. Default is null. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported.
+// returns a *string when successful
 func (m *ManagedDevice) GetNotes()(*string) {
     val, err := m.GetBackingStore().Get("notes")
     if err != nil {
@@ -1097,6 +1140,7 @@ func (m *ManagedDevice) GetNotes()(*string) {
     return nil
 }
 // GetOperatingSystem gets the operatingSystem property value. Operating system of the device. Windows, iOS, etc. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetOperatingSystem()(*string) {
     val, err := m.GetBackingStore().Get("operatingSystem")
     if err != nil {
@@ -1108,6 +1152,7 @@ func (m *ManagedDevice) GetOperatingSystem()(*string) {
     return nil
 }
 // GetOsVersion gets the osVersion property value. Operating system version of the device. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetOsVersion()(*string) {
     val, err := m.GetBackingStore().Get("osVersion")
     if err != nil {
@@ -1119,6 +1164,7 @@ func (m *ManagedDevice) GetOsVersion()(*string) {
     return nil
 }
 // GetPartnerReportedThreatState gets the partnerReportedThreatState property value. Available health states for the Device Health API
+// returns a *ManagedDevicePartnerReportedHealthState when successful
 func (m *ManagedDevice) GetPartnerReportedThreatState()(*ManagedDevicePartnerReportedHealthState) {
     val, err := m.GetBackingStore().Get("partnerReportedThreatState")
     if err != nil {
@@ -1130,6 +1176,7 @@ func (m *ManagedDevice) GetPartnerReportedThreatState()(*ManagedDevicePartnerRep
     return nil
 }
 // GetPhoneNumber gets the phoneNumber property value. Phone number of the device. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetPhoneNumber()(*string) {
     val, err := m.GetBackingStore().Get("phoneNumber")
     if err != nil {
@@ -1141,6 +1188,7 @@ func (m *ManagedDevice) GetPhoneNumber()(*string) {
     return nil
 }
 // GetPhysicalMemoryInBytes gets the physicalMemoryInBytes property value. Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.
+// returns a *int64 when successful
 func (m *ManagedDevice) GetPhysicalMemoryInBytes()(*int64) {
     val, err := m.GetBackingStore().Get("physicalMemoryInBytes")
     if err != nil {
@@ -1152,6 +1200,7 @@ func (m *ManagedDevice) GetPhysicalMemoryInBytes()(*int64) {
     return nil
 }
 // GetRemoteAssistanceSessionErrorDetails gets the remoteAssistanceSessionErrorDetails property value. An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetRemoteAssistanceSessionErrorDetails()(*string) {
     val, err := m.GetBackingStore().Get("remoteAssistanceSessionErrorDetails")
     if err != nil {
@@ -1163,6 +1212,7 @@ func (m *ManagedDevice) GetRemoteAssistanceSessionErrorDetails()(*string) {
     return nil
 }
 // GetRemoteAssistanceSessionUrl gets the remoteAssistanceSessionUrl property value. Url that allows a Remote Assistance session to be established with the device. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetRemoteAssistanceSessionUrl()(*string) {
     val, err := m.GetBackingStore().Get("remoteAssistanceSessionUrl")
     if err != nil {
@@ -1174,6 +1224,7 @@ func (m *ManagedDevice) GetRemoteAssistanceSessionUrl()(*string) {
     return nil
 }
 // GetRequireUserEnrollmentApproval gets the requireUserEnrollmentApproval property value. Reports if the managed iOS device is user approval enrollment. This property is read-only.
+// returns a *bool when successful
 func (m *ManagedDevice) GetRequireUserEnrollmentApproval()(*bool) {
     val, err := m.GetBackingStore().Get("requireUserEnrollmentApproval")
     if err != nil {
@@ -1185,6 +1236,7 @@ func (m *ManagedDevice) GetRequireUserEnrollmentApproval()(*bool) {
     return nil
 }
 // GetSerialNumber gets the serialNumber property value. SerialNumber. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetSerialNumber()(*string) {
     val, err := m.GetBackingStore().Get("serialNumber")
     if err != nil {
@@ -1196,6 +1248,7 @@ func (m *ManagedDevice) GetSerialNumber()(*string) {
     return nil
 }
 // GetSubscriberCarrier gets the subscriberCarrier property value. Subscriber Carrier. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetSubscriberCarrier()(*string) {
     val, err := m.GetBackingStore().Get("subscriberCarrier")
     if err != nil {
@@ -1207,6 +1260,7 @@ func (m *ManagedDevice) GetSubscriberCarrier()(*string) {
     return nil
 }
 // GetTotalStorageSpaceInBytes gets the totalStorageSpaceInBytes property value. Total Storage in Bytes. This property is read-only.
+// returns a *int64 when successful
 func (m *ManagedDevice) GetTotalStorageSpaceInBytes()(*int64) {
     val, err := m.GetBackingStore().Get("totalStorageSpaceInBytes")
     if err != nil {
@@ -1218,6 +1272,7 @@ func (m *ManagedDevice) GetTotalStorageSpaceInBytes()(*int64) {
     return nil
 }
 // GetUdid gets the udid property value. Unique Device Identifier for iOS and macOS devices. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetUdid()(*string) {
     val, err := m.GetBackingStore().Get("udid")
     if err != nil {
@@ -1229,6 +1284,7 @@ func (m *ManagedDevice) GetUdid()(*string) {
     return nil
 }
 // GetUserDisplayName gets the userDisplayName property value. User display name. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetUserDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("userDisplayName")
     if err != nil {
@@ -1240,6 +1296,7 @@ func (m *ManagedDevice) GetUserDisplayName()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. Unique Identifier for the user associated with the device. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -1251,6 +1308,7 @@ func (m *ManagedDevice) GetUserId()(*string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. Device user principal name. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -1262,6 +1320,7 @@ func (m *ManagedDevice) GetUserPrincipalName()(*string) {
     return nil
 }
 // GetUsers gets the users property value. The primary users associated with the managed device.
+// returns a []Userable when successful
 func (m *ManagedDevice) GetUsers()([]Userable) {
     val, err := m.GetBackingStore().Get("users")
     if err != nil {
@@ -1273,6 +1332,7 @@ func (m *ManagedDevice) GetUsers()([]Userable) {
     return nil
 }
 // GetWiFiMacAddress gets the wiFiMacAddress property value. Wi-Fi MAC. This property is read-only.
+// returns a *string when successful
 func (m *ManagedDevice) GetWiFiMacAddress()(*string) {
     val, err := m.GetBackingStore().Get("wiFiMacAddress")
     if err != nil {
@@ -1284,6 +1344,7 @@ func (m *ManagedDevice) GetWiFiMacAddress()(*string) {
     return nil
 }
 // GetWindowsProtectionState gets the windowsProtectionState property value. The device protection status. This property is read-only.
+// returns a WindowsProtectionStateable when successful
 func (m *ManagedDevice) GetWindowsProtectionState()(WindowsProtectionStateable) {
     val, err := m.GetBackingStore().Get("windowsProtectionState")
     if err != nil {
@@ -1843,7 +1904,6 @@ func (m *ManagedDevice) SetWindowsProtectionState(value WindowsProtectionStateab
         panic(err)
     }
 }
-// ManagedDeviceable 
 type ManagedDeviceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

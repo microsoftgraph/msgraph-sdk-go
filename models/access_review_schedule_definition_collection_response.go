@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewScheduleDefinitionCollectionResponse 
 type AccessReviewScheduleDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAccessReviewScheduleDefinitionCollectionResponse instantiates a new accessReviewScheduleDefinitionCollectionResponse and sets the default values.
+// NewAccessReviewScheduleDefinitionCollectionResponse instantiates a new AccessReviewScheduleDefinitionCollectionResponse and sets the default values.
 func NewAccessReviewScheduleDefinitionCollectionResponse()(*AccessReviewScheduleDefinitionCollectionResponse) {
     m := &AccessReviewScheduleDefinitionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewAccessReviewScheduleDefinitionCollectionResponse()(*AccessReviewSchedule
     return m
 }
 // CreateAccessReviewScheduleDefinitionCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessReviewScheduleDefinitionCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewScheduleDefinitionCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessReviewScheduleDefinitionCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *AccessReviewScheduleDefinitionCollectionResponse) GetFieldDeserializers
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []AccessReviewScheduleDefinitionable when successful
 func (m *AccessReviewScheduleDefinitionCollectionResponse) GetValue()([]AccessReviewScheduleDefinitionable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *AccessReviewScheduleDefinitionCollectionResponse) SetValue(value []Acce
         panic(err)
     }
 }
-// AccessReviewScheduleDefinitionCollectionResponseable 
 type AccessReviewScheduleDefinitionCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

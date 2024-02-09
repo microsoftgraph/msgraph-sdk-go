@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// InformationalUrl 
 type InformationalUrl struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewInformationalUrl instantiates a new informationalUrl and sets the default values.
+// NewInformationalUrl instantiates a new InformationalUrl and sets the default values.
 func NewInformationalUrl()(*InformationalUrl) {
     m := &InformationalUrl{
     }
@@ -19,10 +18,12 @@ func NewInformationalUrl()(*InformationalUrl) {
     return m
 }
 // CreateInformationalUrlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInformationalUrlFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInformationalUrl(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *InformationalUrl) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *InformationalUrl) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *InformationalUrl) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InformationalUrl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["logoUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -104,6 +107,7 @@ func (m *InformationalUrl) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetLogoUrl gets the logoUrl property value. CDN URL to the application's logo, Read-only.
+// returns a *string when successful
 func (m *InformationalUrl) GetLogoUrl()(*string) {
     val, err := m.GetBackingStore().Get("logoUrl")
     if err != nil {
@@ -115,6 +119,7 @@ func (m *InformationalUrl) GetLogoUrl()(*string) {
     return nil
 }
 // GetMarketingUrl gets the marketingUrl property value. Link to the application's marketing page. For example, https://www.contoso.com/app/marketing
+// returns a *string when successful
 func (m *InformationalUrl) GetMarketingUrl()(*string) {
     val, err := m.GetBackingStore().Get("marketingUrl")
     if err != nil {
@@ -126,6 +131,7 @@ func (m *InformationalUrl) GetMarketingUrl()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *InformationalUrl) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -137,6 +143,7 @@ func (m *InformationalUrl) GetOdataType()(*string) {
     return nil
 }
 // GetPrivacyStatementUrl gets the privacyStatementUrl property value. Link to the application's privacy statement. For example, https://www.contoso.com/app/privacy
+// returns a *string when successful
 func (m *InformationalUrl) GetPrivacyStatementUrl()(*string) {
     val, err := m.GetBackingStore().Get("privacyStatementUrl")
     if err != nil {
@@ -148,6 +155,7 @@ func (m *InformationalUrl) GetPrivacyStatementUrl()(*string) {
     return nil
 }
 // GetSupportUrl gets the supportUrl property value. Link to the application's support page. For example, https://www.contoso.com/app/support
+// returns a *string when successful
 func (m *InformationalUrl) GetSupportUrl()(*string) {
     val, err := m.GetBackingStore().Get("supportUrl")
     if err != nil {
@@ -159,6 +167,7 @@ func (m *InformationalUrl) GetSupportUrl()(*string) {
     return nil
 }
 // GetTermsOfServiceUrl gets the termsOfServiceUrl property value. Link to the application's terms of service statement. For example, https://www.contoso.com/app/termsofservice
+// returns a *string when successful
 func (m *InformationalUrl) GetTermsOfServiceUrl()(*string) {
     val, err := m.GetBackingStore().Get("termsOfServiceUrl")
     if err != nil {
@@ -268,7 +277,6 @@ func (m *InformationalUrl) SetTermsOfServiceUrl(value *string)() {
         panic(err)
     }
 }
-// InformationalUrlable 
 type InformationalUrlable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

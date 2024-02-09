@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DirectoryRole 
 type DirectoryRole struct {
     DirectoryObject
 }
-// NewDirectoryRole instantiates a new directoryRole and sets the default values.
+// NewDirectoryRole instantiates a new DirectoryRole and sets the default values.
 func NewDirectoryRole()(*DirectoryRole) {
     m := &DirectoryRole{
         DirectoryObject: *NewDirectoryObject(),
@@ -18,10 +17,12 @@ func NewDirectoryRole()(*DirectoryRole) {
     return m
 }
 // CreateDirectoryRoleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDirectoryRoleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDirectoryRole(), nil
 }
 // GetDescription gets the description property value. The description for the directory role. Read-only. Supports $filter (eq), $search, $select.
+// returns a *string when successful
 func (m *DirectoryRole) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *DirectoryRole) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.
+// returns a *string when successful
 func (m *DirectoryRole) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *DirectoryRole) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DirectoryRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -111,6 +114,7 @@ func (m *DirectoryRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetMembers gets the members property value. Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
+// returns a []DirectoryObjectable when successful
 func (m *DirectoryRole) GetMembers()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("members")
     if err != nil {
@@ -122,6 +126,7 @@ func (m *DirectoryRole) GetMembers()([]DirectoryObjectable) {
     return nil
 }
 // GetRoleTemplateId gets the roleTemplateId property value. The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.
+// returns a *string when successful
 func (m *DirectoryRole) GetRoleTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("roleTemplateId")
     if err != nil {
@@ -133,6 +138,7 @@ func (m *DirectoryRole) GetRoleTemplateId()(*string) {
     return nil
 }
 // GetScopedMembers gets the scopedMembers property value. Members of this directory role that are scoped to administrative units. Read-only. Nullable.
+// returns a []ScopedRoleMembershipable when successful
 func (m *DirectoryRole) GetScopedMembers()([]ScopedRoleMembershipable) {
     val, err := m.GetBackingStore().Get("scopedMembers")
     if err != nil {
@@ -228,7 +234,6 @@ func (m *DirectoryRole) SetScopedMembers(value []ScopedRoleMembershipable)() {
         panic(err)
     }
 }
-// DirectoryRoleable 
 type DirectoryRoleable interface {
     DirectoryObjectable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

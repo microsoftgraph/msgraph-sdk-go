@@ -10,7 +10,7 @@ type ComplianceManagementPartnerAssignment struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewComplianceManagementPartnerAssignment instantiates a new complianceManagementPartnerAssignment and sets the default values.
+// NewComplianceManagementPartnerAssignment instantiates a new ComplianceManagementPartnerAssignment and sets the default values.
 func NewComplianceManagementPartnerAssignment()(*ComplianceManagementPartnerAssignment) {
     m := &ComplianceManagementPartnerAssignment{
     }
@@ -19,10 +19,12 @@ func NewComplianceManagementPartnerAssignment()(*ComplianceManagementPartnerAssi
     return m
 }
 // CreateComplianceManagementPartnerAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateComplianceManagementPartnerAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewComplianceManagementPartnerAssignment(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ComplianceManagementPartnerAssignment) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *ComplianceManagementPartnerAssignment) GetAdditionalData()(map[string]a
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ComplianceManagementPartnerAssignment) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ComplianceManagementPartnerAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -64,6 +68,7 @@ func (m *ComplianceManagementPartnerAssignment) GetFieldDeserializers()(map[stri
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ComplianceManagementPartnerAssignment) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *ComplianceManagementPartnerAssignment) GetOdataType()(*string) {
     return nil
 }
 // GetTarget gets the target property value. Group assignment target.
+// returns a DeviceAndAppManagementAssignmentTargetable when successful
 func (m *ComplianceManagementPartnerAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
     val, err := m.GetBackingStore().Get("target")
     if err != nil {
@@ -132,7 +138,6 @@ func (m *ComplianceManagementPartnerAssignment) SetTarget(value DeviceAndAppMana
         panic(err)
     }
 }
-// ComplianceManagementPartnerAssignmentable 
 type ComplianceManagementPartnerAssignmentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -6,11 +6,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// IntelligenceProfile 
 type IntelligenceProfile struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewIntelligenceProfile instantiates a new intelligenceProfile and sets the default values.
+// NewIntelligenceProfile instantiates a new IntelligenceProfile and sets the default values.
 func NewIntelligenceProfile()(*IntelligenceProfile) {
     m := &IntelligenceProfile{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -18,10 +17,12 @@ func NewIntelligenceProfile()(*IntelligenceProfile) {
     return m
 }
 // CreateIntelligenceProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIntelligenceProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIntelligenceProfile(), nil
 }
 // GetAliases gets the aliases property value. A list of commonly-known aliases for the threat intelligence included in the intelligenceProfile.
+// returns a []string when successful
 func (m *IntelligenceProfile) GetAliases()([]string) {
     val, err := m.GetBackingStore().Get("aliases")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *IntelligenceProfile) GetAliases()([]string) {
     return nil
 }
 // GetCountriesOrRegionsOfOrigin gets the countriesOrRegionsOfOrigin property value. The country/region of origin for the given actor or threat associated with this intelligenceProfile.
+// returns a []IntelligenceProfileCountryOrRegionOfOriginable when successful
 func (m *IntelligenceProfile) GetCountriesOrRegionsOfOrigin()([]IntelligenceProfileCountryOrRegionOfOriginable) {
     val, err := m.GetBackingStore().Get("countriesOrRegionsOfOrigin")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *IntelligenceProfile) GetCountriesOrRegionsOfOrigin()([]IntelligenceProf
     return nil
 }
 // GetDescription gets the description property value. The description property
+// returns a FormattedContentable when successful
 func (m *IntelligenceProfile) GetDescription()(FormattedContentable) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *IntelligenceProfile) GetDescription()(FormattedContentable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IntelligenceProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["aliases"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -184,6 +188,7 @@ func (m *IntelligenceProfile) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetFirstActiveDateTime gets the firstActiveDateTime property value. The date and time when this intelligenceProfile was first active. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *IntelligenceProfile) GetFirstActiveDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstActiveDateTime")
     if err != nil {
@@ -195,6 +200,7 @@ func (m *IntelligenceProfile) GetFirstActiveDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetIndicators gets the indicators property value. Includes an assemblage of high-fidelity network indicators of compromise.
+// returns a []IntelligenceProfileIndicatorable when successful
 func (m *IntelligenceProfile) GetIndicators()([]IntelligenceProfileIndicatorable) {
     val, err := m.GetBackingStore().Get("indicators")
     if err != nil {
@@ -206,6 +212,7 @@ func (m *IntelligenceProfile) GetIndicators()([]IntelligenceProfileIndicatorable
     return nil
 }
 // GetKind gets the kind property value. The kind property
+// returns a *IntelligenceProfileKind when successful
 func (m *IntelligenceProfile) GetKind()(*IntelligenceProfileKind) {
     val, err := m.GetBackingStore().Get("kind")
     if err != nil {
@@ -217,6 +224,7 @@ func (m *IntelligenceProfile) GetKind()(*IntelligenceProfileKind) {
     return nil
 }
 // GetSummary gets the summary property value. The summary property
+// returns a FormattedContentable when successful
 func (m *IntelligenceProfile) GetSummary()(FormattedContentable) {
     val, err := m.GetBackingStore().Get("summary")
     if err != nil {
@@ -228,6 +236,7 @@ func (m *IntelligenceProfile) GetSummary()(FormattedContentable) {
     return nil
 }
 // GetTargets gets the targets property value. Known targets related to this intelligenceProfile.
+// returns a []string when successful
 func (m *IntelligenceProfile) GetTargets()([]string) {
     val, err := m.GetBackingStore().Get("targets")
     if err != nil {
@@ -239,6 +248,7 @@ func (m *IntelligenceProfile) GetTargets()([]string) {
     return nil
 }
 // GetTitle gets the title property value. The title of this intelligenceProfile.
+// returns a *string when successful
 func (m *IntelligenceProfile) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -250,6 +260,7 @@ func (m *IntelligenceProfile) GetTitle()(*string) {
     return nil
 }
 // GetTradecraft gets the tradecraft property value. Formatted information featuring a description of the distinctive tactics, techniques, and procedures (TTP) of the group, followed by a list of all known custom, commodity, and publicly available implants used by the group.
+// returns a FormattedContentable when successful
 func (m *IntelligenceProfile) GetTradecraft()(FormattedContentable) {
     val, err := m.GetBackingStore().Get("tradecraft")
     if err != nil {
@@ -411,7 +422,6 @@ func (m *IntelligenceProfile) SetTradecraft(value FormattedContentable)() {
         panic(err)
     }
 }
-// IntelligenceProfileable 
 type IntelligenceProfileable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

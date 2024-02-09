@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ConvertIdResult 
 type ConvertIdResult struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewConvertIdResult instantiates a new convertIdResult and sets the default values.
+// NewConvertIdResult instantiates a new ConvertIdResult and sets the default values.
 func NewConvertIdResult()(*ConvertIdResult) {
     m := &ConvertIdResult{
     }
@@ -19,10 +18,12 @@ func NewConvertIdResult()(*ConvertIdResult) {
     return m
 }
 // CreateConvertIdResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConvertIdResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConvertIdResult(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ConvertIdResult) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ConvertIdResult) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ConvertIdResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetErrorDetails gets the errorDetails property value. An error object indicating the reason for the conversion failure. This value isn't present if the conversion succeeded.
+// returns a GenericErrorable when successful
 func (m *ConvertIdResult) GetErrorDetails()(GenericErrorable) {
     val, err := m.GetBackingStore().Get("errorDetails")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *ConvertIdResult) GetErrorDetails()(GenericErrorable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConvertIdResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["errorDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,6 +99,7 @@ func (m *ConvertIdResult) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ConvertIdResult) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *ConvertIdResult) GetOdataType()(*string) {
     return nil
 }
 // GetSourceId gets the sourceId property value. The identifier that was converted. This value is the original, un-converted identifier.
+// returns a *string when successful
 func (m *ConvertIdResult) GetSourceId()(*string) {
     val, err := m.GetBackingStore().Get("sourceId")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *ConvertIdResult) GetSourceId()(*string) {
     return nil
 }
 // GetTargetId gets the targetId property value. The converted identifier. This value isn't present if the conversion failed.
+// returns a *string when successful
 func (m *ConvertIdResult) GetTargetId()(*string) {
     val, err := m.GetBackingStore().Get("targetId")
     if err != nil {
@@ -200,7 +207,6 @@ func (m *ConvertIdResult) SetTargetId(value *string)() {
         panic(err)
     }
 }
-// ConvertIdResultable 
 type ConvertIdResultable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -6,7 +6,6 @@ import (
     i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc "github.com/microsoftgraph/msgraph-sdk-go/models/externalconnectors"
 )
 
-// ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesPostResponse 
 type ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesPostResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
 }
@@ -18,10 +17,12 @@ func NewItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesP
     return m
 }
 // CreateItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesPostResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesPostResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesPostResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesPostResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -43,6 +44,7 @@ func (m *ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivities
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ExternalActivityResultable when successful
 func (m *ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesPostResponse) GetValue()([]i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.ExternalActivityResultable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -80,7 +82,6 @@ func (m *ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivities
         panic(err)
     }
 }
-// ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesPostResponseable 
 type ItemItemsItemMicrosoftGraphExternalConnectorsAddActivitiesAddActivitiesPostResponseable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Notebook 
 type Notebook struct {
     OnenoteEntityHierarchyModel
 }
-// NewNotebook instantiates a new notebook and sets the default values.
+// NewNotebook instantiates a new Notebook and sets the default values.
 func NewNotebook()(*Notebook) {
     m := &Notebook{
         OnenoteEntityHierarchyModel: *NewOnenoteEntityHierarchyModel(),
@@ -18,10 +17,12 @@ func NewNotebook()(*Notebook) {
     return m
 }
 // CreateNotebookFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateNotebookFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNotebook(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Notebook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OnenoteEntityHierarchyModel.GetFieldDeserializers()
     res["isDefault"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -119,6 +120,7 @@ func (m *Notebook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetIsDefault gets the isDefault property value. Indicates whether this is the user's default notebook. Read-only.
+// returns a *bool when successful
 func (m *Notebook) GetIsDefault()(*bool) {
     val, err := m.GetBackingStore().Get("isDefault")
     if err != nil {
@@ -130,6 +132,7 @@ func (m *Notebook) GetIsDefault()(*bool) {
     return nil
 }
 // GetIsShared gets the isShared property value. Indicates whether the notebook is shared. If true, the contents of the notebook can be seen by people other than the owner. Read-only.
+// returns a *bool when successful
 func (m *Notebook) GetIsShared()(*bool) {
     val, err := m.GetBackingStore().Get("isShared")
     if err != nil {
@@ -141,6 +144,7 @@ func (m *Notebook) GetIsShared()(*bool) {
     return nil
 }
 // GetLinks gets the links property value. Links for opening the notebook. The oneNoteClientURL link opens the notebook in the OneNote native client if it's installed. The oneNoteWebURL link opens the notebook in OneNote on the web.
+// returns a NotebookLinksable when successful
 func (m *Notebook) GetLinks()(NotebookLinksable) {
     val, err := m.GetBackingStore().Get("links")
     if err != nil {
@@ -152,6 +156,7 @@ func (m *Notebook) GetLinks()(NotebookLinksable) {
     return nil
 }
 // GetSectionGroups gets the sectionGroups property value. The section groups in the notebook. Read-only. Nullable.
+// returns a []SectionGroupable when successful
 func (m *Notebook) GetSectionGroups()([]SectionGroupable) {
     val, err := m.GetBackingStore().Get("sectionGroups")
     if err != nil {
@@ -163,6 +168,7 @@ func (m *Notebook) GetSectionGroups()([]SectionGroupable) {
     return nil
 }
 // GetSectionGroupsUrl gets the sectionGroupsUrl property value. The URL for the sectionGroups navigation property, which returns all the section groups in the notebook. Read-only.
+// returns a *string when successful
 func (m *Notebook) GetSectionGroupsUrl()(*string) {
     val, err := m.GetBackingStore().Get("sectionGroupsUrl")
     if err != nil {
@@ -174,6 +180,7 @@ func (m *Notebook) GetSectionGroupsUrl()(*string) {
     return nil
 }
 // GetSections gets the sections property value. The sections in the notebook. Read-only. Nullable.
+// returns a []OnenoteSectionable when successful
 func (m *Notebook) GetSections()([]OnenoteSectionable) {
     val, err := m.GetBackingStore().Get("sections")
     if err != nil {
@@ -185,6 +192,7 @@ func (m *Notebook) GetSections()([]OnenoteSectionable) {
     return nil
 }
 // GetSectionsUrl gets the sectionsUrl property value. The URL for the sections navigation property, which returns all the sections in the notebook. Read-only.
+// returns a *string when successful
 func (m *Notebook) GetSectionsUrl()(*string) {
     val, err := m.GetBackingStore().Get("sectionsUrl")
     if err != nil {
@@ -196,6 +204,7 @@ func (m *Notebook) GetSectionsUrl()(*string) {
     return nil
 }
 // GetUserRole gets the userRole property value. Possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.
+// returns a *OnenoteUserRole when successful
 func (m *Notebook) GetUserRole()(*OnenoteUserRole) {
     val, err := m.GetBackingStore().Get("userRole")
     if err != nil {
@@ -331,7 +340,6 @@ func (m *Notebook) SetUserRole(value *OnenoteUserRole)() {
         panic(err)
     }
 }
-// Notebookable 
 type Notebookable interface {
     OnenoteEntityHierarchyModelable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

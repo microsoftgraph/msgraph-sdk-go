@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BaseItem 
 type BaseItem struct {
     Entity
 }
-// NewBaseItem instantiates a new baseItem and sets the default values.
+// NewBaseItem instantiates a new BaseItem and sets the default values.
 func NewBaseItem()(*BaseItem) {
     m := &BaseItem{
         Entity: *NewEntity(),
@@ -17,6 +16,7 @@ func NewBaseItem()(*BaseItem) {
     return m
 }
 // CreateBaseItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBaseItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -49,6 +49,7 @@ func CreateBaseItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
     return NewBaseItem(), nil
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user, device, or application that created the item. Read-only.
+// returns a IdentitySetable when successful
 func (m *BaseItem) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -60,6 +61,7 @@ func (m *BaseItem) GetCreatedBy()(IdentitySetable) {
     return nil
 }
 // GetCreatedByUser gets the createdByUser property value. Identity of the user who created the item. Read-only.
+// returns a Userable when successful
 func (m *BaseItem) GetCreatedByUser()(Userable) {
     val, err := m.GetBackingStore().Get("createdByUser")
     if err != nil {
@@ -71,6 +73,7 @@ func (m *BaseItem) GetCreatedByUser()(Userable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time of item creation. Read-only.
+// returns a *Time when successful
 func (m *BaseItem) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -82,6 +85,7 @@ func (m *BaseItem) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     return nil
 }
 // GetDescription gets the description property value. Provides a user-visible description of the item. Optional.
+// returns a *string when successful
 func (m *BaseItem) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -93,6 +97,7 @@ func (m *BaseItem) GetDescription()(*string) {
     return nil
 }
 // GetETag gets the eTag property value. ETag for the item. Read-only.
+// returns a *string when successful
 func (m *BaseItem) GetETag()(*string) {
     val, err := m.GetBackingStore().Get("eTag")
     if err != nil {
@@ -104,6 +109,7 @@ func (m *BaseItem) GetETag()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BaseItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -219,6 +225,7 @@ func (m *BaseItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user, device, and application that last modified the item. Read-only.
+// returns a IdentitySetable when successful
 func (m *BaseItem) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -230,6 +237,7 @@ func (m *BaseItem) GetLastModifiedBy()(IdentitySetable) {
     return nil
 }
 // GetLastModifiedByUser gets the lastModifiedByUser property value. Identity of the user who last modified the item. Read-only.
+// returns a Userable when successful
 func (m *BaseItem) GetLastModifiedByUser()(Userable) {
     val, err := m.GetBackingStore().Get("lastModifiedByUser")
     if err != nil {
@@ -241,6 +249,7 @@ func (m *BaseItem) GetLastModifiedByUser()(Userable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time the item was last modified. Read-only.
+// returns a *Time when successful
 func (m *BaseItem) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -252,6 +261,7 @@ func (m *BaseItem) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetName gets the name property value. The name of the item. Read-write.
+// returns a *string when successful
 func (m *BaseItem) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -263,6 +273,7 @@ func (m *BaseItem) GetName()(*string) {
     return nil
 }
 // GetParentReference gets the parentReference property value. Parent information, if the item has a parent. Read-write.
+// returns a ItemReferenceable when successful
 func (m *BaseItem) GetParentReference()(ItemReferenceable) {
     val, err := m.GetBackingStore().Get("parentReference")
     if err != nil {
@@ -274,6 +285,7 @@ func (m *BaseItem) GetParentReference()(ItemReferenceable) {
     return nil
 }
 // GetWebUrl gets the webUrl property value. URL that either displays the resource in the browser (for Office file formats), or is a direct link to the file (for other formats). Read-only.
+// returns a *string when successful
 func (m *BaseItem) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -435,7 +447,6 @@ func (m *BaseItem) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// BaseItemable 
 type BaseItemable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

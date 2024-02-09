@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Post 
 type Post struct {
     OutlookItem
 }
-// NewPost instantiates a new post and sets the default values.
+// NewPost instantiates a new Post and sets the default values.
 func NewPost()(*Post) {
     m := &Post{
         OutlookItem: *NewOutlookItem(),
@@ -19,10 +18,12 @@ func NewPost()(*Post) {
     return m
 }
 // CreatePostFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePostFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPost(), nil
 }
 // GetAttachments gets the attachments property value. Read-only. Nullable. Supports $expand.
+// returns a []Attachmentable when successful
 func (m *Post) GetAttachments()([]Attachmentable) {
     val, err := m.GetBackingStore().Get("attachments")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *Post) GetAttachments()([]Attachmentable) {
     return nil
 }
 // GetBody gets the body property value. The contents of the post. This is a default property. This property can be null.
+// returns a ItemBodyable when successful
 func (m *Post) GetBody()(ItemBodyable) {
     val, err := m.GetBackingStore().Get("body")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *Post) GetBody()(ItemBodyable) {
     return nil
 }
 // GetConversationId gets the conversationId property value. Unique ID of the conversation. Read-only.
+// returns a *string when successful
 func (m *Post) GetConversationId()(*string) {
     val, err := m.GetBackingStore().Get("conversationId")
     if err != nil {
@@ -56,6 +59,7 @@ func (m *Post) GetConversationId()(*string) {
     return nil
 }
 // GetConversationThreadId gets the conversationThreadId property value. Unique ID of the conversation thread. Read-only.
+// returns a *string when successful
 func (m *Post) GetConversationThreadId()(*string) {
     val, err := m.GetBackingStore().Get("conversationThreadId")
     if err != nil {
@@ -67,6 +71,7 @@ func (m *Post) GetConversationThreadId()(*string) {
     return nil
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
+// returns a []Extensionable when successful
 func (m *Post) GetExtensions()([]Extensionable) {
     val, err := m.GetBackingStore().Get("extensions")
     if err != nil {
@@ -78,6 +83,7 @@ func (m *Post) GetExtensions()([]Extensionable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Post) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OutlookItem.GetFieldDeserializers()
     res["attachments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -243,6 +249,7 @@ func (m *Post) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     return res
 }
 // GetFrom gets the from property value. The from property
+// returns a Recipientable when successful
 func (m *Post) GetFrom()(Recipientable) {
     val, err := m.GetBackingStore().Get("from")
     if err != nil {
@@ -254,6 +261,7 @@ func (m *Post) GetFrom()(Recipientable) {
     return nil
 }
 // GetHasAttachments gets the hasAttachments property value. Indicates whether the post has at least one attachment. This is a default property.
+// returns a *bool when successful
 func (m *Post) GetHasAttachments()(*bool) {
     val, err := m.GetBackingStore().Get("hasAttachments")
     if err != nil {
@@ -265,6 +273,7 @@ func (m *Post) GetHasAttachments()(*bool) {
     return nil
 }
 // GetInReplyTo gets the inReplyTo property value. Read-only. Supports $expand.
+// returns a Postable when successful
 func (m *Post) GetInReplyTo()(Postable) {
     val, err := m.GetBackingStore().Get("inReplyTo")
     if err != nil {
@@ -276,6 +285,7 @@ func (m *Post) GetInReplyTo()(Postable) {
     return nil
 }
 // GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the post. Read-only. Nullable.
+// returns a []MultiValueLegacyExtendedPropertyable when successful
 func (m *Post) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("multiValueExtendedProperties")
     if err != nil {
@@ -287,6 +297,7 @@ func (m *Post) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPrope
     return nil
 }
 // GetNewParticipants gets the newParticipants property value. Conversation participants that were added to the thread as part of this post.
+// returns a []Recipientable when successful
 func (m *Post) GetNewParticipants()([]Recipientable) {
     val, err := m.GetBackingStore().Get("newParticipants")
     if err != nil {
@@ -298,6 +309,7 @@ func (m *Post) GetNewParticipants()([]Recipientable) {
     return nil
 }
 // GetReceivedDateTime gets the receivedDateTime property value. Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *Post) GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("receivedDateTime")
     if err != nil {
@@ -309,6 +321,7 @@ func (m *Post) GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a1
     return nil
 }
 // GetSender gets the sender property value. Contains the address of the sender. The value of Sender is assumed to be the address of the authenticated user in the case when Sender is not specified. This is a default property.
+// returns a Recipientable when successful
 func (m *Post) GetSender()(Recipientable) {
     val, err := m.GetBackingStore().Get("sender")
     if err != nil {
@@ -320,6 +333,7 @@ func (m *Post) GetSender()(Recipientable) {
     return nil
 }
 // GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the post. Read-only. Nullable.
+// returns a []SingleValueLegacyExtendedPropertyable when successful
 func (m *Post) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("singleValueExtendedProperties")
     if err != nil {
@@ -537,7 +551,6 @@ func (m *Post) SetSingleValueExtendedProperties(value []SingleValueLegacyExtende
         panic(err)
     }
 }
-// Postable 
 type Postable interface {
     OutlookItemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

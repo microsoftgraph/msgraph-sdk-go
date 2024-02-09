@@ -6,11 +6,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// RetentionEventType 
 type RetentionEventType struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewRetentionEventType instantiates a new retentionEventType and sets the default values.
+// NewRetentionEventType instantiates a new RetentionEventType and sets the default values.
 func NewRetentionEventType()(*RetentionEventType) {
     m := &RetentionEventType{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -18,10 +17,12 @@ func NewRetentionEventType()(*RetentionEventType) {
     return m
 }
 // CreateRetentionEventTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRetentionEventTypeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRetentionEventType(), nil
 }
 // GetCreatedBy gets the createdBy property value. The user who created the retentionEventType.
+// returns a IdentitySetable when successful
 func (m *RetentionEventType) GetCreatedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *RetentionEventType) GetCreatedBy()(iadcd81124412c61e647227ecfc4449d8bba
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date time when the retentionEventType was created.
+// returns a *Time when successful
 func (m *RetentionEventType) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *RetentionEventType) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad
     return nil
 }
 // GetDescription gets the description property value. Optional information about the event type.
+// returns a *string when successful
 func (m *RetentionEventType) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *RetentionEventType) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Name of the event type.
+// returns a *string when successful
 func (m *RetentionEventType) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *RetentionEventType) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RetentionEventType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -131,6 +136,7 @@ func (m *RetentionEventType) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The user who last modified the retentionEventType.
+// returns a IdentitySetable when successful
 func (m *RetentionEventType) GetLastModifiedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -142,6 +148,7 @@ func (m *RetentionEventType) GetLastModifiedBy()(iadcd81124412c61e647227ecfc4449
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The latest date time when the retentionEventType was modified.
+// returns a *Time when successful
 func (m *RetentionEventType) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -238,7 +245,6 @@ func (m *RetentionEventType) SetLastModifiedDateTime(value *i336074805fc853987ab
         panic(err)
     }
 }
-// RetentionEventTypeable 
 type RetentionEventTypeable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

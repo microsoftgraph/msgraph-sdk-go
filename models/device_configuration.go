@@ -9,7 +9,7 @@ import (
 type DeviceConfiguration struct {
     Entity
 }
-// NewDeviceConfiguration instantiates a new deviceConfiguration and sets the default values.
+// NewDeviceConfiguration instantiates a new DeviceConfiguration and sets the default values.
 func NewDeviceConfiguration()(*DeviceConfiguration) {
     m := &DeviceConfiguration{
         Entity: *NewEntity(),
@@ -17,6 +17,7 @@ func NewDeviceConfiguration()(*DeviceConfiguration) {
     return m
 }
 // CreateDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -89,6 +90,7 @@ func CreateDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewDeviceConfiguration(), nil
 }
 // GetAssignments gets the assignments property value. The list of assignments for the device configuration profile.
+// returns a []DeviceConfigurationAssignmentable when successful
 func (m *DeviceConfiguration) GetAssignments()([]DeviceConfigurationAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -100,6 +102,7 @@ func (m *DeviceConfiguration) GetAssignments()([]DeviceConfigurationAssignmentab
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. DateTime the object was created.
+// returns a *Time when successful
 func (m *DeviceConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -111,6 +114,7 @@ func (m *DeviceConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetDescription gets the description property value. Admin provided description of the Device Configuration.
+// returns a *string when successful
 func (m *DeviceConfiguration) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -122,6 +126,7 @@ func (m *DeviceConfiguration) GetDescription()(*string) {
     return nil
 }
 // GetDeviceSettingStateSummaries gets the deviceSettingStateSummaries property value. Device Configuration Setting State Device Summary
+// returns a []SettingStateDeviceSummaryable when successful
 func (m *DeviceConfiguration) GetDeviceSettingStateSummaries()([]SettingStateDeviceSummaryable) {
     val, err := m.GetBackingStore().Get("deviceSettingStateSummaries")
     if err != nil {
@@ -133,6 +138,7 @@ func (m *DeviceConfiguration) GetDeviceSettingStateSummaries()([]SettingStateDev
     return nil
 }
 // GetDeviceStatuses gets the deviceStatuses property value. Device configuration installation status by device.
+// returns a []DeviceConfigurationDeviceStatusable when successful
 func (m *DeviceConfiguration) GetDeviceStatuses()([]DeviceConfigurationDeviceStatusable) {
     val, err := m.GetBackingStore().Get("deviceStatuses")
     if err != nil {
@@ -144,6 +150,7 @@ func (m *DeviceConfiguration) GetDeviceStatuses()([]DeviceConfigurationDeviceSta
     return nil
 }
 // GetDeviceStatusOverview gets the deviceStatusOverview property value. Device Configuration devices status overview
+// returns a DeviceConfigurationDeviceOverviewable when successful
 func (m *DeviceConfiguration) GetDeviceStatusOverview()(DeviceConfigurationDeviceOverviewable) {
     val, err := m.GetBackingStore().Get("deviceStatusOverview")
     if err != nil {
@@ -155,6 +162,7 @@ func (m *DeviceConfiguration) GetDeviceStatusOverview()(DeviceConfigurationDevic
     return nil
 }
 // GetDisplayName gets the displayName property value. Admin provided name of the device configuration.
+// returns a *string when successful
 func (m *DeviceConfiguration) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -166,6 +174,7 @@ func (m *DeviceConfiguration) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -305,6 +314,7 @@ func (m *DeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
+// returns a *Time when successful
 func (m *DeviceConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -316,6 +326,7 @@ func (m *DeviceConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f
     return nil
 }
 // GetUserStatuses gets the userStatuses property value. Device configuration installation status by user.
+// returns a []DeviceConfigurationUserStatusable when successful
 func (m *DeviceConfiguration) GetUserStatuses()([]DeviceConfigurationUserStatusable) {
     val, err := m.GetBackingStore().Get("userStatuses")
     if err != nil {
@@ -327,6 +338,7 @@ func (m *DeviceConfiguration) GetUserStatuses()([]DeviceConfigurationUserStatusa
     return nil
 }
 // GetUserStatusOverview gets the userStatusOverview property value. Device Configuration users status overview
+// returns a DeviceConfigurationUserOverviewable when successful
 func (m *DeviceConfiguration) GetUserStatusOverview()(DeviceConfigurationUserOverviewable) {
     val, err := m.GetBackingStore().Get("userStatusOverview")
     if err != nil {
@@ -338,6 +350,7 @@ func (m *DeviceConfiguration) GetUserStatusOverview()(DeviceConfigurationUserOve
     return nil
 }
 // GetVersion gets the version property value. Version of the device configuration.
+// returns a *int32 when successful
 func (m *DeviceConfiguration) GetVersion()(*int32) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -523,7 +536,6 @@ func (m *DeviceConfiguration) SetVersion(value *int32)() {
         panic(err)
     }
 }
-// DeviceConfigurationable 
 type DeviceConfigurationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

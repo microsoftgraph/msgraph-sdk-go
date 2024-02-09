@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ClientCertificateAuthentication 
 type ClientCertificateAuthentication struct {
     ApiAuthenticationConfigurationBase
 }
-// NewClientCertificateAuthentication instantiates a new clientCertificateAuthentication and sets the default values.
+// NewClientCertificateAuthentication instantiates a new ClientCertificateAuthentication and sets the default values.
 func NewClientCertificateAuthentication()(*ClientCertificateAuthentication) {
     m := &ClientCertificateAuthentication{
         ApiAuthenticationConfigurationBase: *NewApiAuthenticationConfigurationBase(),
@@ -18,10 +17,12 @@ func NewClientCertificateAuthentication()(*ClientCertificateAuthentication) {
     return m
 }
 // CreateClientCertificateAuthenticationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateClientCertificateAuthenticationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewClientCertificateAuthentication(), nil
 }
 // GetCertificateList gets the certificateList property value. The list of certificates uploaded for this API connector.
+// returns a []Pkcs12CertificateInformationable when successful
 func (m *ClientCertificateAuthentication) GetCertificateList()([]Pkcs12CertificateInformationable) {
     val, err := m.GetBackingStore().Get("certificateList")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ClientCertificateAuthentication) GetCertificateList()([]Pkcs12Certifica
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ClientCertificateAuthentication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ApiAuthenticationConfigurationBase.GetFieldDeserializers()
     res["certificateList"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -80,7 +82,6 @@ func (m *ClientCertificateAuthentication) SetCertificateList(value []Pkcs12Certi
         panic(err)
     }
 }
-// ClientCertificateAuthenticationable 
 type ClientCertificateAuthenticationable interface {
     ApiAuthenticationConfigurationBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

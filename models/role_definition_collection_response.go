@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RoleDefinitionCollectionResponse 
 type RoleDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewRoleDefinitionCollectionResponse instantiates a new roleDefinitionCollectionResponse and sets the default values.
+// NewRoleDefinitionCollectionResponse instantiates a new RoleDefinitionCollectionResponse and sets the default values.
 func NewRoleDefinitionCollectionResponse()(*RoleDefinitionCollectionResponse) {
     m := &RoleDefinitionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewRoleDefinitionCollectionResponse()(*RoleDefinitionCollectionResponse) {
     return m
 }
 // CreateRoleDefinitionCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRoleDefinitionCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRoleDefinitionCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RoleDefinitionCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *RoleDefinitionCollectionResponse) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []RoleDefinitionable when successful
 func (m *RoleDefinitionCollectionResponse) GetValue()([]RoleDefinitionable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *RoleDefinitionCollectionResponse) SetValue(value []RoleDefinitionable)(
         panic(err)
     }
 }
-// RoleDefinitionCollectionResponseable 
 type RoleDefinitionCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

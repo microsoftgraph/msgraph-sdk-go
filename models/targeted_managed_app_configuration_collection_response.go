@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TargetedManagedAppConfigurationCollectionResponse 
 type TargetedManagedAppConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTargetedManagedAppConfigurationCollectionResponse instantiates a new targetedManagedAppConfigurationCollectionResponse and sets the default values.
+// NewTargetedManagedAppConfigurationCollectionResponse instantiates a new TargetedManagedAppConfigurationCollectionResponse and sets the default values.
 func NewTargetedManagedAppConfigurationCollectionResponse()(*TargetedManagedAppConfigurationCollectionResponse) {
     m := &TargetedManagedAppConfigurationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewTargetedManagedAppConfigurationCollectionResponse()(*TargetedManagedAppC
     return m
 }
 // CreateTargetedManagedAppConfigurationCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTargetedManagedAppConfigurationCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTargetedManagedAppConfigurationCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TargetedManagedAppConfigurationCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *TargetedManagedAppConfigurationCollectionResponse) GetFieldDeserializer
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []TargetedManagedAppConfigurationable when successful
 func (m *TargetedManagedAppConfigurationCollectionResponse) GetValue()([]TargetedManagedAppConfigurationable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *TargetedManagedAppConfigurationCollectionResponse) SetValue(value []Tar
         panic(err)
     }
 }
-// TargetedManagedAppConfigurationCollectionResponseable 
 type TargetedManagedAppConfigurationCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

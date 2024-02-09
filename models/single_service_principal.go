@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SingleServicePrincipal 
 type SingleServicePrincipal struct {
     SubjectSet
 }
-// NewSingleServicePrincipal instantiates a new singleServicePrincipal and sets the default values.
+// NewSingleServicePrincipal instantiates a new SingleServicePrincipal and sets the default values.
 func NewSingleServicePrincipal()(*SingleServicePrincipal) {
     m := &SingleServicePrincipal{
         SubjectSet: *NewSubjectSet(),
@@ -18,10 +17,12 @@ func NewSingleServicePrincipal()(*SingleServicePrincipal) {
     return m
 }
 // CreateSingleServicePrincipalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSingleServicePrincipalFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSingleServicePrincipal(), nil
 }
 // GetDescription gets the description property value. Description of this service principal.
+// returns a *string when successful
 func (m *SingleServicePrincipal) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *SingleServicePrincipal) GetDescription()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SingleServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.SubjectSet.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +60,7 @@ func (m *SingleServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetServicePrincipalId gets the servicePrincipalId property value. ID of the servicePrincipal.
+// returns a *string when successful
 func (m *SingleServicePrincipal) GetServicePrincipalId()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalId")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *SingleServicePrincipal) SetServicePrincipalId(value *string)() {
         panic(err)
     }
 }
-// SingleServicePrincipalable 
 type SingleServicePrincipalable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     SubjectSetable

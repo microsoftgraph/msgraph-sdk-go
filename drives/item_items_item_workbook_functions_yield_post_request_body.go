@@ -6,7 +6,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ItemItemsItemWorkbookFunctionsYieldPostRequestBody 
 type ItemItemsItemWorkbookFunctionsYieldPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -20,10 +19,12 @@ func NewItemItemsItemWorkbookFunctionsYieldPostRequestBody()(*ItemItemsItemWorkb
     return m
 }
 // CreateItemItemsItemWorkbookFunctionsYieldPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemsItemWorkbookFunctionsYieldPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemsItemWorkbookFunctionsYieldPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemsItemWorkbookFunctionsYieldPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *ItemItemsItemWorkbookFunctionsYieldPostRequestBody) GetAdditionalData()
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ItemItemsItemWorkbookFunctionsYieldPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBasis gets the basis property value. The basis property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsYieldPostRequestBody) GetBasis()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("basis")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *ItemItemsItemWorkbookFunctionsYieldPostRequestBody) GetBasis()(iadcd811
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemsItemWorkbookFunctionsYieldPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["basis"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -126,6 +130,7 @@ func (m *ItemItemsItemWorkbookFunctionsYieldPostRequestBody) GetFieldDeserialize
     return res
 }
 // GetFrequency gets the frequency property value. The frequency property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsYieldPostRequestBody) GetFrequency()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("frequency")
     if err != nil {
@@ -137,6 +142,7 @@ func (m *ItemItemsItemWorkbookFunctionsYieldPostRequestBody) GetFrequency()(iadc
     return nil
 }
 // GetMaturity gets the maturity property value. The maturity property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsYieldPostRequestBody) GetMaturity()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("maturity")
     if err != nil {
@@ -148,6 +154,7 @@ func (m *ItemItemsItemWorkbookFunctionsYieldPostRequestBody) GetMaturity()(iadcd
     return nil
 }
 // GetPr gets the pr property value. The pr property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsYieldPostRequestBody) GetPr()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("pr")
     if err != nil {
@@ -159,6 +166,7 @@ func (m *ItemItemsItemWorkbookFunctionsYieldPostRequestBody) GetPr()(iadcd811244
     return nil
 }
 // GetRate gets the rate property value. The rate property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsYieldPostRequestBody) GetRate()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("rate")
     if err != nil {
@@ -170,6 +178,7 @@ func (m *ItemItemsItemWorkbookFunctionsYieldPostRequestBody) GetRate()(iadcd8112
     return nil
 }
 // GetRedemption gets the redemption property value. The redemption property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsYieldPostRequestBody) GetRedemption()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("redemption")
     if err != nil {
@@ -181,6 +190,7 @@ func (m *ItemItemsItemWorkbookFunctionsYieldPostRequestBody) GetRedemption()(iad
     return nil
 }
 // GetSettlement gets the settlement property value. The settlement property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsYieldPostRequestBody) GetSettlement()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("settlement")
     if err != nil {
@@ -303,7 +313,6 @@ func (m *ItemItemsItemWorkbookFunctionsYieldPostRequestBody) SetSettlement(value
         panic(err)
     }
 }
-// ItemItemsItemWorkbookFunctionsYieldPostRequestBodyable 
 type ItemItemsItemWorkbookFunctionsYieldPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

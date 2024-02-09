@@ -9,6 +9,7 @@ type PlacesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ByPlaceId provides operations to manage the collection of place entities.
+// returns a *PlaceItemRequestBuilder when successful
 func (m *PlacesRequestBuilder) ByPlaceId(placeId string)(*PlaceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -33,14 +34,17 @@ func NewPlacesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewPlacesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *CountRequestBuilder when successful
 func (m *PlacesRequestBuilder) Count()(*CountRequestBuilder) {
     return NewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphRoom casts the previous resource to room.
+// returns a *GraphRoomRequestBuilder when successful
 func (m *PlacesRequestBuilder) GraphRoom()(*GraphRoomRequestBuilder) {
     return NewGraphRoomRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphRoomList casts the previous resource to roomList.
+// returns a *GraphRoomListRequestBuilder when successful
 func (m *PlacesRequestBuilder) GraphRoomList()(*GraphRoomListRequestBuilder) {
     return NewGraphRoomListRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProfileCardPropertyCollectionResponse 
 type ProfileCardPropertyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewProfileCardPropertyCollectionResponse instantiates a new profileCardPropertyCollectionResponse and sets the default values.
+// NewProfileCardPropertyCollectionResponse instantiates a new ProfileCardPropertyCollectionResponse and sets the default values.
 func NewProfileCardPropertyCollectionResponse()(*ProfileCardPropertyCollectionResponse) {
     m := &ProfileCardPropertyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewProfileCardPropertyCollectionResponse()(*ProfileCardPropertyCollectionRe
     return m
 }
 // CreateProfileCardPropertyCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateProfileCardPropertyCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProfileCardPropertyCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProfileCardPropertyCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ProfileCardPropertyCollectionResponse) GetFieldDeserializers()(map[stri
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ProfileCardPropertyable when successful
 func (m *ProfileCardPropertyCollectionResponse) GetValue()([]ProfileCardPropertyable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ProfileCardPropertyCollectionResponse) SetValue(value []ProfileCardProp
         panic(err)
     }
 }
-// ProfileCardPropertyCollectionResponseable 
 type ProfileCardPropertyCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

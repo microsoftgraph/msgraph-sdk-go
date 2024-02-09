@@ -17,20 +17,21 @@ type ItemCalendarsItemCalendarViewItemInstancesItemForwardRequestBuilderPostRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemCalendarsItemCalendarViewItemInstancesItemForwardRequestBuilderInternal instantiates a new ForwardRequestBuilder and sets the default values.
+// NewItemCalendarsItemCalendarViewItemInstancesItemForwardRequestBuilderInternal instantiates a new ItemCalendarsItemCalendarViewItemInstancesItemForwardRequestBuilder and sets the default values.
 func NewItemCalendarsItemCalendarViewItemInstancesItemForwardRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarsItemCalendarViewItemInstancesItemForwardRequestBuilder) {
     m := &ItemCalendarsItemCalendarViewItemInstancesItemForwardRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}/instances/{event%2Did1}/forward", pathParameters),
     }
     return m
 }
-// NewItemCalendarsItemCalendarViewItemInstancesItemForwardRequestBuilder instantiates a new ForwardRequestBuilder and sets the default values.
+// NewItemCalendarsItemCalendarViewItemInstancesItemForwardRequestBuilder instantiates a new ItemCalendarsItemCalendarViewItemInstancesItemForwardRequestBuilder and sets the default values.
 func NewItemCalendarsItemCalendarViewItemInstancesItemForwardRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarsItemCalendarViewItemInstancesItemForwardRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarsItemCalendarViewItemInstancesItemForwardRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post this action allows the organizer or attendee of a meeting event to forward the meeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action also sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's copy of the meeting event. This convenience is not available when forwarding from an Outlook.com account.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemCalendarsItemCalendarViewItemInstancesItemForwardRequestBuilder) Po
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemCalendarsItemCalendarViewItemInstancesItemForwardRequestBuilder) Po
     return nil
 }
 // ToPostRequestInformation this action allows the organizer or attendee of a meeting event to forward the meeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action also sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's copy of the meeting event. This convenience is not available when forwarding from an Outlook.com account.
+// returns a *RequestInformation when successful
 func (m *ItemCalendarsItemCalendarViewItemInstancesItemForwardRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCalendarsItemCalendarViewItemInstancesItemForwardPostRequestBodyable, requestConfiguration *ItemCalendarsItemCalendarViewItemInstancesItemForwardRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *ItemCalendarsItemCalendarViewItemInstancesItemForwardRequestBuilder) To
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemCalendarsItemCalendarViewItemInstancesItemForwardRequestBuilder when successful
 func (m *ItemCalendarsItemCalendarViewItemInstancesItemForwardRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarsItemCalendarViewItemInstancesItemForwardRequestBuilder) {
     return NewItemCalendarsItemCalendarViewItemInstancesItemForwardRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

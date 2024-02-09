@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewInstance 
 type AccessReviewInstance struct {
     Entity
 }
-// NewAccessReviewInstance instantiates a new accessReviewInstance and sets the default values.
+// NewAccessReviewInstance instantiates a new AccessReviewInstance and sets the default values.
 func NewAccessReviewInstance()(*AccessReviewInstance) {
     m := &AccessReviewInstance{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewAccessReviewInstance()(*AccessReviewInstance) {
     return m
 }
 // CreateAccessReviewInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessReviewInstanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewInstance(), nil
 }
 // GetContactedReviewers gets the contactedReviewers property value. Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.
+// returns a []AccessReviewReviewerable when successful
 func (m *AccessReviewInstance) GetContactedReviewers()([]AccessReviewReviewerable) {
     val, err := m.GetBackingStore().Get("contactedReviewers")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *AccessReviewInstance) GetContactedReviewers()([]AccessReviewReviewerabl
     return nil
 }
 // GetDecisions gets the decisions property value. Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
+// returns a []AccessReviewInstanceDecisionItemable when successful
 func (m *AccessReviewInstance) GetDecisions()([]AccessReviewInstanceDecisionItemable) {
     val, err := m.GetBackingStore().Get("decisions")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *AccessReviewInstance) GetDecisions()([]AccessReviewInstanceDecisionItem
     return nil
 }
 // GetEndDateTime gets the endDateTime property value. DateTime when review instance is scheduled to end.The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
+// returns a *Time when successful
 func (m *AccessReviewInstance) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *AccessReviewInstance) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetFallbackReviewers gets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. Supports $select.
+// returns a []AccessReviewReviewerScopeable when successful
 func (m *AccessReviewInstance) GetFallbackReviewers()([]AccessReviewReviewerScopeable) {
     val, err := m.GetBackingStore().Get("fallbackReviewers")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *AccessReviewInstance) GetFallbackReviewers()([]AccessReviewReviewerScop
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessReviewInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["contactedReviewers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -190,6 +195,7 @@ func (m *AccessReviewInstance) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetReviewers gets the reviewers property value. This collection of access review scopes is used to define who the reviewers are. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
+// returns a []AccessReviewReviewerScopeable when successful
 func (m *AccessReviewInstance) GetReviewers()([]AccessReviewReviewerScopeable) {
     val, err := m.GetBackingStore().Get("reviewers")
     if err != nil {
@@ -201,6 +207,7 @@ func (m *AccessReviewInstance) GetReviewers()([]AccessReviewReviewerScopeable) {
     return nil
 }
 // GetScope gets the scope property value. Created based on scope and instanceEnumerationScope at the accessReviewScheduleDefinition level. Defines the scope of users reviewed in a group. Supports $select and $filter (contains only). Read-only.
+// returns a AccessReviewScopeable when successful
 func (m *AccessReviewInstance) GetScope()(AccessReviewScopeable) {
     val, err := m.GetBackingStore().Get("scope")
     if err != nil {
@@ -212,6 +219,7 @@ func (m *AccessReviewInstance) GetScope()(AccessReviewScopeable) {
     return nil
 }
 // GetStages gets the stages property value. If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.
+// returns a []AccessReviewStageable when successful
 func (m *AccessReviewInstance) GetStages()([]AccessReviewStageable) {
     val, err := m.GetBackingStore().Get("stages")
     if err != nil {
@@ -223,6 +231,7 @@ func (m *AccessReviewInstance) GetStages()([]AccessReviewStageable) {
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
+// returns a *Time when successful
 func (m *AccessReviewInstance) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -234,6 +243,7 @@ func (m *AccessReviewInstance) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad
     return nil
 }
 // GetStatus gets the status property value. Specifies the status of an accessReview. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only). Read-only.
+// returns a *string when successful
 func (m *AccessReviewInstance) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -399,7 +409,6 @@ func (m *AccessReviewInstance) SetStatus(value *string)() {
         panic(err)
     }
 }
-// AccessReviewInstanceable 
 type AccessReviewInstanceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

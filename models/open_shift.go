@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OpenShift 
 type OpenShift struct {
     ChangeTrackedEntity
 }
-// NewOpenShift instantiates a new openShift and sets the default values.
+// NewOpenShift instantiates a new OpenShift and sets the default values.
 func NewOpenShift()(*OpenShift) {
     m := &OpenShift{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
@@ -18,10 +17,12 @@ func NewOpenShift()(*OpenShift) {
     return m
 }
 // CreateOpenShiftFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOpenShiftFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOpenShift(), nil
 }
 // GetDraftOpenShift gets the draftOpenShift property value. An unpublished open shift.
+// returns a OpenShiftItemable when successful
 func (m *OpenShift) GetDraftOpenShift()(OpenShiftItemable) {
     val, err := m.GetBackingStore().Get("draftOpenShift")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *OpenShift) GetDraftOpenShift()(OpenShiftItemable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OpenShift) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ChangeTrackedEntity.GetFieldDeserializers()
     res["draftOpenShift"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,6 +70,7 @@ func (m *OpenShift) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetSchedulingGroupId gets the schedulingGroupId property value. ID for the scheduling group that the open shift belongs to.
+// returns a *string when successful
 func (m *OpenShift) GetSchedulingGroupId()(*string) {
     val, err := m.GetBackingStore().Get("schedulingGroupId")
     if err != nil {
@@ -79,6 +82,7 @@ func (m *OpenShift) GetSchedulingGroupId()(*string) {
     return nil
 }
 // GetSharedOpenShift gets the sharedOpenShift property value. A published open shift.
+// returns a OpenShiftItemable when successful
 func (m *OpenShift) GetSharedOpenShift()(OpenShiftItemable) {
     val, err := m.GetBackingStore().Get("sharedOpenShift")
     if err != nil {
@@ -136,7 +140,6 @@ func (m *OpenShift) SetSharedOpenShift(value OpenShiftItemable)() {
         panic(err)
     }
 }
-// OpenShiftable 
 type OpenShiftable interface {
     ChangeTrackedEntityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

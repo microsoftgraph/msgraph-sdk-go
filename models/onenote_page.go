@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnenotePage 
 type OnenotePage struct {
     OnenoteEntitySchemaObjectModel
 }
-// NewOnenotePage instantiates a new onenotePage and sets the default values.
+// NewOnenotePage instantiates a new OnenotePage and sets the default values.
 func NewOnenotePage()(*OnenotePage) {
     m := &OnenotePage{
         OnenoteEntitySchemaObjectModel: *NewOnenoteEntitySchemaObjectModel(),
@@ -19,10 +18,12 @@ func NewOnenotePage()(*OnenotePage) {
     return m
 }
 // CreateOnenotePageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnenotePageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnenotePage(), nil
 }
 // GetContent gets the content property value. The page's HTML content.
+// returns a []byte when successful
 func (m *OnenotePage) GetContent()([]byte) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *OnenotePage) GetContent()([]byte) {
     return nil
 }
 // GetContentUrl gets the contentUrl property value. The URL for the page's HTML content.  Read-only.
+// returns a *string when successful
 func (m *OnenotePage) GetContentUrl()(*string) {
     val, err := m.GetBackingStore().Get("contentUrl")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *OnenotePage) GetContentUrl()(*string) {
     return nil
 }
 // GetCreatedByAppId gets the createdByAppId property value. The unique identifier of the application that created the page. Read-only.
+// returns a *string when successful
 func (m *OnenotePage) GetCreatedByAppId()(*string) {
     val, err := m.GetBackingStore().Get("createdByAppId")
     if err != nil {
@@ -56,6 +59,7 @@ func (m *OnenotePage) GetCreatedByAppId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnenotePage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OnenoteEntitySchemaObjectModel.GetFieldDeserializers()
     res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -177,6 +181,7 @@ func (m *OnenotePage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the page was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *OnenotePage) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -188,6 +193,7 @@ func (m *OnenotePage) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetLevel gets the level property value. The indentation level of the page. Read-only.
+// returns a *int32 when successful
 func (m *OnenotePage) GetLevel()(*int32) {
     val, err := m.GetBackingStore().Get("level")
     if err != nil {
@@ -199,6 +205,7 @@ func (m *OnenotePage) GetLevel()(*int32) {
     return nil
 }
 // GetLinks gets the links property value. Links for opening the page. The oneNoteClientURL link opens the page in the OneNote native client if it 's installed. The oneNoteWebUrl link opens the page in OneNote on the web. Read-only.
+// returns a PageLinksable when successful
 func (m *OnenotePage) GetLinks()(PageLinksable) {
     val, err := m.GetBackingStore().Get("links")
     if err != nil {
@@ -210,6 +217,7 @@ func (m *OnenotePage) GetLinks()(PageLinksable) {
     return nil
 }
 // GetOrder gets the order property value. The order of the page within its parent section. Read-only.
+// returns a *int32 when successful
 func (m *OnenotePage) GetOrder()(*int32) {
     val, err := m.GetBackingStore().Get("order")
     if err != nil {
@@ -221,6 +229,7 @@ func (m *OnenotePage) GetOrder()(*int32) {
     return nil
 }
 // GetParentNotebook gets the parentNotebook property value. The notebook that contains the page.  Read-only.
+// returns a Notebookable when successful
 func (m *OnenotePage) GetParentNotebook()(Notebookable) {
     val, err := m.GetBackingStore().Get("parentNotebook")
     if err != nil {
@@ -232,6 +241,7 @@ func (m *OnenotePage) GetParentNotebook()(Notebookable) {
     return nil
 }
 // GetParentSection gets the parentSection property value. The section that contains the page. Read-only.
+// returns a OnenoteSectionable when successful
 func (m *OnenotePage) GetParentSection()(OnenoteSectionable) {
     val, err := m.GetBackingStore().Get("parentSection")
     if err != nil {
@@ -243,6 +253,7 @@ func (m *OnenotePage) GetParentSection()(OnenoteSectionable) {
     return nil
 }
 // GetTitle gets the title property value. The title of the page.
+// returns a *string when successful
 func (m *OnenotePage) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -254,6 +265,7 @@ func (m *OnenotePage) GetTitle()(*string) {
     return nil
 }
 // GetUserTags gets the userTags property value. The userTags property
+// returns a []string when successful
 func (m *OnenotePage) GetUserTags()([]string) {
     val, err := m.GetBackingStore().Get("userTags")
     if err != nil {
@@ -415,7 +427,6 @@ func (m *OnenotePage) SetUserTags(value []string)() {
         panic(err)
     }
 }
-// OnenotePageable 
 type OnenotePageable interface {
     OnenoteEntitySchemaObjectModelable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

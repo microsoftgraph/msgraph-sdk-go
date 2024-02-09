@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ResourceSpecificPermission 
 type ResourceSpecificPermission struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewResourceSpecificPermission instantiates a new resourceSpecificPermission and sets the default values.
+// NewResourceSpecificPermission instantiates a new ResourceSpecificPermission and sets the default values.
 func NewResourceSpecificPermission()(*ResourceSpecificPermission) {
     m := &ResourceSpecificPermission{
     }
@@ -20,10 +19,12 @@ func NewResourceSpecificPermission()(*ResourceSpecificPermission) {
     return m
 }
 // CreateResourceSpecificPermissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateResourceSpecificPermissionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewResourceSpecificPermission(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ResourceSpecificPermission) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *ResourceSpecificPermission) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ResourceSpecificPermission) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDescription gets the description property value. Describes the level of access that the resource-specific permission represents.
+// returns a *string when successful
 func (m *ResourceSpecificPermission) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *ResourceSpecificPermission) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the resource-specific permission.
+// returns a *string when successful
 func (m *ResourceSpecificPermission) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *ResourceSpecificPermission) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ResourceSpecificPermission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -127,6 +132,7 @@ func (m *ResourceSpecificPermission) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetId gets the id property value. The unique identifier for the resource-specific application permission.
+// returns a *UUID when successful
 func (m *ResourceSpecificPermission) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -138,6 +144,7 @@ func (m *ResourceSpecificPermission) GetId()(*i561e97a8befe7661a44c8f54600992b42
     return nil
 }
 // GetIsEnabled gets the isEnabled property value. Indicates whether the permission is enabled.
+// returns a *bool when successful
 func (m *ResourceSpecificPermission) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -149,6 +156,7 @@ func (m *ResourceSpecificPermission) GetIsEnabled()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ResourceSpecificPermission) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -160,6 +168,7 @@ func (m *ResourceSpecificPermission) GetOdataType()(*string) {
     return nil
 }
 // GetValue gets the value property value. The value of the permission.
+// returns a *string when successful
 func (m *ResourceSpecificPermission) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -269,7 +278,6 @@ func (m *ResourceSpecificPermission) SetValue(value *string)() {
         panic(err)
     }
 }
-// ResourceSpecificPermissionable 
 type ResourceSpecificPermissionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

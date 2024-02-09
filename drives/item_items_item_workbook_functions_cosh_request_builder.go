@@ -18,28 +18,29 @@ type ItemItemsItemWorkbookFunctionsCoshRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemItemsItemWorkbookFunctionsCoshRequestBuilderInternal instantiates a new CoshRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookFunctionsCoshRequestBuilderInternal instantiates a new ItemItemsItemWorkbookFunctionsCoshRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookFunctionsCoshRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookFunctionsCoshRequestBuilder) {
     m := &ItemItemsItemWorkbookFunctionsCoshRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions/cosh", pathParameters),
     }
     return m
 }
-// NewItemItemsItemWorkbookFunctionsCoshRequestBuilder instantiates a new CoshRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookFunctionsCoshRequestBuilder instantiates a new ItemItemsItemWorkbookFunctionsCoshRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookFunctionsCoshRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookFunctionsCoshRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookFunctionsCoshRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action cosh
+// returns a WorkbookFunctionResultable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookFunctionsCoshRequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookFunctionsCoshPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookFunctionsCoshRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookFunctionResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateWorkbookFunctionResultFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,6 +52,7 @@ func (m *ItemItemsItemWorkbookFunctionsCoshRequestBuilder) Post(ctx context.Cont
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookFunctionResultable), nil
 }
 // ToPostRequestInformation invoke action cosh
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookFunctionsCoshRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemWorkbookFunctionsCoshPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookFunctionsCoshRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -65,6 +67,7 @@ func (m *ItemItemsItemWorkbookFunctionsCoshRequestBuilder) ToPostRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemsItemWorkbookFunctionsCoshRequestBuilder when successful
 func (m *ItemItemsItemWorkbookFunctionsCoshRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookFunctionsCoshRequestBuilder) {
     return NewItemItemsItemWorkbookFunctionsCoshRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

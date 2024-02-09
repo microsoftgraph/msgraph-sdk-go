@@ -10,7 +10,7 @@ import (
 type AuditEvent struct {
     Entity
 }
-// NewAuditEvent instantiates a new auditEvent and sets the default values.
+// NewAuditEvent instantiates a new AuditEvent and sets the default values.
 func NewAuditEvent()(*AuditEvent) {
     m := &AuditEvent{
         Entity: *NewEntity(),
@@ -18,10 +18,12 @@ func NewAuditEvent()(*AuditEvent) {
     return m
 }
 // CreateAuditEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuditEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuditEvent(), nil
 }
 // GetActivity gets the activity property value. Friendly name of the activity.
+// returns a *string when successful
 func (m *AuditEvent) GetActivity()(*string) {
     val, err := m.GetBackingStore().Get("activity")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AuditEvent) GetActivity()(*string) {
     return nil
 }
 // GetActivityDateTime gets the activityDateTime property value. The date time in UTC when the activity was performed.
+// returns a *Time when successful
 func (m *AuditEvent) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("activityDateTime")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *AuditEvent) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     return nil
 }
 // GetActivityOperationType gets the activityOperationType property value. The HTTP operation type of the activity.
+// returns a *string when successful
 func (m *AuditEvent) GetActivityOperationType()(*string) {
     val, err := m.GetBackingStore().Get("activityOperationType")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *AuditEvent) GetActivityOperationType()(*string) {
     return nil
 }
 // GetActivityResult gets the activityResult property value. The result of the activity.
+// returns a *string when successful
 func (m *AuditEvent) GetActivityResult()(*string) {
     val, err := m.GetBackingStore().Get("activityResult")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *AuditEvent) GetActivityResult()(*string) {
     return nil
 }
 // GetActivityType gets the activityType property value. The type of activity that was being performed.
+// returns a *string when successful
 func (m *AuditEvent) GetActivityType()(*string) {
     val, err := m.GetBackingStore().Get("activityType")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *AuditEvent) GetActivityType()(*string) {
     return nil
 }
 // GetActor gets the actor property value. AAD user and application that are associated with the audit event.
+// returns a AuditActorable when successful
 func (m *AuditEvent) GetActor()(AuditActorable) {
     val, err := m.GetBackingStore().Get("actor")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *AuditEvent) GetActor()(AuditActorable) {
     return nil
 }
 // GetCategory gets the category property value. Audit category.
+// returns a *string when successful
 func (m *AuditEvent) GetCategory()(*string) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
@@ -99,6 +107,7 @@ func (m *AuditEvent) GetCategory()(*string) {
     return nil
 }
 // GetComponentName gets the componentName property value. Component name.
+// returns a *string when successful
 func (m *AuditEvent) GetComponentName()(*string) {
     val, err := m.GetBackingStore().Get("componentName")
     if err != nil {
@@ -110,6 +119,7 @@ func (m *AuditEvent) GetComponentName()(*string) {
     return nil
 }
 // GetCorrelationId gets the correlationId property value. The client request Id that is used to correlate activity within the system.
+// returns a *UUID when successful
 func (m *AuditEvent) GetCorrelationId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("correlationId")
     if err != nil {
@@ -121,6 +131,7 @@ func (m *AuditEvent) GetCorrelationId()(*i561e97a8befe7661a44c8f54600992b4207a3a
     return nil
 }
 // GetDisplayName gets the displayName property value. Event display name.
+// returns a *string when successful
 func (m *AuditEvent) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -132,6 +143,7 @@ func (m *AuditEvent) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuditEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -253,6 +265,7 @@ func (m *AuditEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetResources gets the resources property value. Resources being modified.
+// returns a []AuditResourceable when successful
 func (m *AuditEvent) GetResources()([]AuditResourceable) {
     val, err := m.GetBackingStore().Get("resources")
     if err != nil {
@@ -420,7 +433,6 @@ func (m *AuditEvent) SetResources(value []AuditResourceable)() {
         panic(err)
     }
 }
-// AuditEventable 
 type AuditEventable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

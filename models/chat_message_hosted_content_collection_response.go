@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChatMessageHostedContentCollectionResponse 
 type ChatMessageHostedContentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewChatMessageHostedContentCollectionResponse instantiates a new chatMessageHostedContentCollectionResponse and sets the default values.
+// NewChatMessageHostedContentCollectionResponse instantiates a new ChatMessageHostedContentCollectionResponse and sets the default values.
 func NewChatMessageHostedContentCollectionResponse()(*ChatMessageHostedContentCollectionResponse) {
     m := &ChatMessageHostedContentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewChatMessageHostedContentCollectionResponse()(*ChatMessageHostedContentCo
     return m
 }
 // CreateChatMessageHostedContentCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateChatMessageHostedContentCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChatMessageHostedContentCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ChatMessageHostedContentCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ChatMessageHostedContentCollectionResponse) GetFieldDeserializers()(map
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ChatMessageHostedContentable when successful
 func (m *ChatMessageHostedContentCollectionResponse) GetValue()([]ChatMessageHostedContentable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ChatMessageHostedContentCollectionResponse) SetValue(value []ChatMessag
         panic(err)
     }
 }
-// ChatMessageHostedContentCollectionResponseable 
 type ChatMessageHostedContentCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

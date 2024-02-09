@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageAnswerString 
 type AccessPackageAnswerString struct {
     AccessPackageAnswer
 }
-// NewAccessPackageAnswerString instantiates a new accessPackageAnswerString and sets the default values.
+// NewAccessPackageAnswerString instantiates a new AccessPackageAnswerString and sets the default values.
 func NewAccessPackageAnswerString()(*AccessPackageAnswerString) {
     m := &AccessPackageAnswerString{
         AccessPackageAnswer: *NewAccessPackageAnswer(),
@@ -18,10 +17,12 @@ func NewAccessPackageAnswerString()(*AccessPackageAnswerString) {
     return m
 }
 // CreateAccessPackageAnswerStringFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessPackageAnswerStringFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageAnswerString(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessPackageAnswerString) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AccessPackageAnswer.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *AccessPackageAnswerString) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetValue gets the value property value. The value stored on the requestor's user profile, if this answer is configured to be stored as a specific attribute.
+// returns a *string when successful
 func (m *AccessPackageAnswerString) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *AccessPackageAnswerString) SetValue(value *string)() {
         panic(err)
     }
 }
-// AccessPackageAnswerStringable 
 type AccessPackageAnswerStringable interface {
     AccessPackageAnswerable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

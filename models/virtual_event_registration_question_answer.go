@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// VirtualEventRegistrationQuestionAnswer 
 type VirtualEventRegistrationQuestionAnswer struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewVirtualEventRegistrationQuestionAnswer instantiates a new virtualEventRegistrationQuestionAnswer and sets the default values.
+// NewVirtualEventRegistrationQuestionAnswer instantiates a new VirtualEventRegistrationQuestionAnswer and sets the default values.
 func NewVirtualEventRegistrationQuestionAnswer()(*VirtualEventRegistrationQuestionAnswer) {
     m := &VirtualEventRegistrationQuestionAnswer{
     }
@@ -19,10 +18,12 @@ func NewVirtualEventRegistrationQuestionAnswer()(*VirtualEventRegistrationQuesti
     return m
 }
 // CreateVirtualEventRegistrationQuestionAnswerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVirtualEventRegistrationQuestionAnswerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVirtualEventRegistrationQuestionAnswer(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *VirtualEventRegistrationQuestionAnswer) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *VirtualEventRegistrationQuestionAnswer) GetAdditionalData()(map[string]
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *VirtualEventRegistrationQuestionAnswer) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBooleanValue gets the booleanValue property value. Boolean answer of the virtual event registration question. Only appears when answerInputType is boolean.
+// returns a *bool when successful
 func (m *VirtualEventRegistrationQuestionAnswer) GetBooleanValue()(*bool) {
     val, err := m.GetBackingStore().Get("booleanValue")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *VirtualEventRegistrationQuestionAnswer) GetBooleanValue()(*bool) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Display name of the registration question.
+// returns a *string when successful
 func (m *VirtualEventRegistrationQuestionAnswer) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *VirtualEventRegistrationQuestionAnswer) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VirtualEventRegistrationQuestionAnswer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["booleanValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -132,6 +137,7 @@ func (m *VirtualEventRegistrationQuestionAnswer) GetFieldDeserializers()(map[str
     return res
 }
 // GetMultiChoiceValues gets the multiChoiceValues property value. Collection of text answer of the virtual event registration question. Only appears when answerInputType is multiChoice.
+// returns a []string when successful
 func (m *VirtualEventRegistrationQuestionAnswer) GetMultiChoiceValues()([]string) {
     val, err := m.GetBackingStore().Get("multiChoiceValues")
     if err != nil {
@@ -143,6 +149,7 @@ func (m *VirtualEventRegistrationQuestionAnswer) GetMultiChoiceValues()([]string
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *VirtualEventRegistrationQuestionAnswer) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -154,6 +161,7 @@ func (m *VirtualEventRegistrationQuestionAnswer) GetOdataType()(*string) {
     return nil
 }
 // GetQuestionId gets the questionId property value. id of the virtual event registration question.
+// returns a *string when successful
 func (m *VirtualEventRegistrationQuestionAnswer) GetQuestionId()(*string) {
     val, err := m.GetBackingStore().Get("questionId")
     if err != nil {
@@ -165,6 +173,7 @@ func (m *VirtualEventRegistrationQuestionAnswer) GetQuestionId()(*string) {
     return nil
 }
 // GetValue gets the value property value. Text answer of the virtual event registration question. Appears when answerInputType is text, multilineText or singleChoice.
+// returns a *string when successful
 func (m *VirtualEventRegistrationQuestionAnswer) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -274,7 +283,6 @@ func (m *VirtualEventRegistrationQuestionAnswer) SetValue(value *string)() {
         panic(err)
     }
 }
-// VirtualEventRegistrationQuestionAnswerable 
 type VirtualEventRegistrationQuestionAnswerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

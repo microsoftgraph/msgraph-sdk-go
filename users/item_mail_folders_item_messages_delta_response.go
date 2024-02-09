@@ -4,8 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemMailFoldersItemMessagesDeltaResponse 
-// Deprecated: This class is obsolete. Use deltaGetResponse instead.
+// Deprecated: This class is obsolete. Use {TypeName} instead.
 type ItemMailFoldersItemMessagesDeltaResponse struct {
     ItemMailFoldersItemMessagesDeltaGetResponse
 }
@@ -17,11 +16,11 @@ func NewItemMailFoldersItemMessagesDeltaResponse()(*ItemMailFoldersItemMessagesD
     return m
 }
 // CreateItemMailFoldersItemMessagesDeltaResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemMailFoldersItemMessagesDeltaResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemMailFoldersItemMessagesDeltaResponse(), nil
 }
-// ItemMailFoldersItemMessagesDeltaResponseable 
-// Deprecated: This class is obsolete. Use deltaGetResponse instead.
+// Deprecated: This class is obsolete. Use {TypeName} instead.
 type ItemMailFoldersItemMessagesDeltaResponseable interface {
     ItemMailFoldersItemMessagesDeltaGetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

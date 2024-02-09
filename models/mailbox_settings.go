@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// MailboxSettings 
 type MailboxSettings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewMailboxSettings instantiates a new mailboxSettings and sets the default values.
+// NewMailboxSettings instantiates a new MailboxSettings and sets the default values.
 func NewMailboxSettings()(*MailboxSettings) {
     m := &MailboxSettings{
     }
@@ -19,10 +18,12 @@ func NewMailboxSettings()(*MailboxSettings) {
     return m
 }
 // CreateMailboxSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMailboxSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMailboxSettings(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *MailboxSettings) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *MailboxSettings) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetArchiveFolder gets the archiveFolder property value. Folder ID of an archive folder for the user.
+// returns a *string when successful
 func (m *MailboxSettings) GetArchiveFolder()(*string) {
     val, err := m.GetBackingStore().Get("archiveFolder")
     if err != nil {
@@ -46,6 +48,7 @@ func (m *MailboxSettings) GetArchiveFolder()(*string) {
     return nil
 }
 // GetAutomaticRepliesSetting gets the automaticRepliesSetting property value. Configuration settings to automatically notify the sender of an incoming email with a message from the signed-in user.
+// returns a AutomaticRepliesSettingable when successful
 func (m *MailboxSettings) GetAutomaticRepliesSetting()(AutomaticRepliesSettingable) {
     val, err := m.GetBackingStore().Get("automaticRepliesSetting")
     if err != nil {
@@ -57,10 +60,12 @@ func (m *MailboxSettings) GetAutomaticRepliesSetting()(AutomaticRepliesSettingab
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *MailboxSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDateFormat gets the dateFormat property value. The date format for the user's mailbox.
+// returns a *string when successful
 func (m *MailboxSettings) GetDateFormat()(*string) {
     val, err := m.GetBackingStore().Get("dateFormat")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *MailboxSettings) GetDateFormat()(*string) {
     return nil
 }
 // GetDelegateMeetingMessageDeliveryOptions gets the delegateMeetingMessageDeliveryOptions property value. If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
+// returns a *DelegateMeetingMessageDeliveryOptions when successful
 func (m *MailboxSettings) GetDelegateMeetingMessageDeliveryOptions()(*DelegateMeetingMessageDeliveryOptions) {
     val, err := m.GetBackingStore().Get("delegateMeetingMessageDeliveryOptions")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *MailboxSettings) GetDelegateMeetingMessageDeliveryOptions()(*DelegateMe
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["archiveFolder"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -188,6 +195,7 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetLanguage gets the language property value. The locale information for the user, including the preferred language and country/region.
+// returns a LocaleInfoable when successful
 func (m *MailboxSettings) GetLanguage()(LocaleInfoable) {
     val, err := m.GetBackingStore().Get("language")
     if err != nil {
@@ -199,6 +207,7 @@ func (m *MailboxSettings) GetLanguage()(LocaleInfoable) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *MailboxSettings) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -210,6 +219,7 @@ func (m *MailboxSettings) GetOdataType()(*string) {
     return nil
 }
 // GetTimeFormat gets the timeFormat property value. The time format for the user's mailbox.
+// returns a *string when successful
 func (m *MailboxSettings) GetTimeFormat()(*string) {
     val, err := m.GetBackingStore().Get("timeFormat")
     if err != nil {
@@ -221,6 +231,7 @@ func (m *MailboxSettings) GetTimeFormat()(*string) {
     return nil
 }
 // GetTimeZone gets the timeZone property value. The default time zone for the user's mailbox.
+// returns a *string when successful
 func (m *MailboxSettings) GetTimeZone()(*string) {
     val, err := m.GetBackingStore().Get("timeZone")
     if err != nil {
@@ -232,6 +243,7 @@ func (m *MailboxSettings) GetTimeZone()(*string) {
     return nil
 }
 // GetUserPurpose gets the userPurpose property value. The purpose of the mailbox. Differentiates a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Possible values are: user, linked, shared, room, equipment, others, unknownFutureValue. Read-only.
+// returns a *UserPurpose when successful
 func (m *MailboxSettings) GetUserPurpose()(*UserPurpose) {
     val, err := m.GetBackingStore().Get("userPurpose")
     if err != nil {
@@ -243,6 +255,7 @@ func (m *MailboxSettings) GetUserPurpose()(*UserPurpose) {
     return nil
 }
 // GetWorkingHours gets the workingHours property value. The days of the week and hours in a specific time zone that the user works.
+// returns a WorkingHoursable when successful
 func (m *MailboxSettings) GetWorkingHours()(WorkingHoursable) {
     val, err := m.GetBackingStore().Get("workingHours")
     if err != nil {
@@ -406,7 +419,6 @@ func (m *MailboxSettings) SetWorkingHours(value WorkingHoursable)() {
         panic(err)
     }
 }
-// MailboxSettingsable 
 type MailboxSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

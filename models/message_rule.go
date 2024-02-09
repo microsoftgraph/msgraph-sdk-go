@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MessageRule 
 type MessageRule struct {
     Entity
 }
-// NewMessageRule instantiates a new messageRule and sets the default values.
+// NewMessageRule instantiates a new MessageRule and sets the default values.
 func NewMessageRule()(*MessageRule) {
     m := &MessageRule{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewMessageRule()(*MessageRule) {
     return m
 }
 // CreateMessageRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMessageRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMessageRule(), nil
 }
 // GetActions gets the actions property value. Actions to be taken on a message when the corresponding conditions are fulfilled.
+// returns a MessageRuleActionsable when successful
 func (m *MessageRule) GetActions()(MessageRuleActionsable) {
     val, err := m.GetBackingStore().Get("actions")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *MessageRule) GetActions()(MessageRuleActionsable) {
     return nil
 }
 // GetConditions gets the conditions property value. Conditions that when fulfilled, will trigger the corresponding actions for that rule.
+// returns a MessageRulePredicatesable when successful
 func (m *MessageRule) GetConditions()(MessageRulePredicatesable) {
     val, err := m.GetBackingStore().Get("conditions")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *MessageRule) GetConditions()(MessageRulePredicatesable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the rule.
+// returns a *string when successful
 func (m *MessageRule) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *MessageRule) GetDisplayName()(*string) {
     return nil
 }
 // GetExceptions gets the exceptions property value. Exception conditions for the rule.
+// returns a MessageRulePredicatesable when successful
 func (m *MessageRule) GetExceptions()(MessageRulePredicatesable) {
     val, err := m.GetBackingStore().Get("exceptions")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *MessageRule) GetExceptions()(MessageRulePredicatesable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MessageRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["actions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -149,6 +154,7 @@ func (m *MessageRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetHasError gets the hasError property value. Indicates whether the rule is in an error condition. Read-only.
+// returns a *bool when successful
 func (m *MessageRule) GetHasError()(*bool) {
     val, err := m.GetBackingStore().Get("hasError")
     if err != nil {
@@ -160,6 +166,7 @@ func (m *MessageRule) GetHasError()(*bool) {
     return nil
 }
 // GetIsEnabled gets the isEnabled property value. Indicates whether the rule is enabled to be applied to messages.
+// returns a *bool when successful
 func (m *MessageRule) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -171,6 +178,7 @@ func (m *MessageRule) GetIsEnabled()(*bool) {
     return nil
 }
 // GetIsReadOnly gets the isReadOnly property value. Indicates if the rule is read-only and cannot be modified or deleted by the rules REST API.
+// returns a *bool when successful
 func (m *MessageRule) GetIsReadOnly()(*bool) {
     val, err := m.GetBackingStore().Get("isReadOnly")
     if err != nil {
@@ -182,6 +190,7 @@ func (m *MessageRule) GetIsReadOnly()(*bool) {
     return nil
 }
 // GetSequence gets the sequence property value. Indicates the order in which the rule is executed, among other rules.
+// returns a *int32 when successful
 func (m *MessageRule) GetSequence()(*int32) {
     val, err := m.GetBackingStore().Get("sequence")
     if err != nil {
@@ -304,7 +313,6 @@ func (m *MessageRule) SetSequence(value *int32)() {
         panic(err)
     }
 }
-// MessageRuleable 
 type MessageRuleable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

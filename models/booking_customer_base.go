@@ -8,7 +8,7 @@ import (
 type BookingCustomerBase struct {
     Entity
 }
-// NewBookingCustomerBase instantiates a new bookingCustomerBase and sets the default values.
+// NewBookingCustomerBase instantiates a new BookingCustomerBase and sets the default values.
 func NewBookingCustomerBase()(*BookingCustomerBase) {
     m := &BookingCustomerBase{
         Entity: *NewEntity(),
@@ -16,6 +16,7 @@ func NewBookingCustomerBase()(*BookingCustomerBase) {
     return m
 }
 // CreateBookingCustomerBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBookingCustomerBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -38,6 +39,7 @@ func CreateBookingCustomerBaseFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewBookingCustomerBase(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BookingCustomerBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     return res
@@ -50,7 +52,6 @@ func (m *BookingCustomerBase) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// BookingCustomerBaseable 
 type BookingCustomerBaseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

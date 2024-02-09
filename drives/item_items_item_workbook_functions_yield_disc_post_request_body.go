@@ -6,7 +6,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ItemItemsItemWorkbookFunctionsYieldDiscPostRequestBody 
 type ItemItemsItemWorkbookFunctionsYieldDiscPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -20,10 +19,12 @@ func NewItemItemsItemWorkbookFunctionsYieldDiscPostRequestBody()(*ItemItemsItemW
     return m
 }
 // CreateItemItemsItemWorkbookFunctionsYieldDiscPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemsItemWorkbookFunctionsYieldDiscPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemsItemWorkbookFunctionsYieldDiscPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemsItemWorkbookFunctionsYieldDiscPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *ItemItemsItemWorkbookFunctionsYieldDiscPostRequestBody) GetAdditionalDa
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ItemItemsItemWorkbookFunctionsYieldDiscPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBasis gets the basis property value. The basis property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsYieldDiscPostRequestBody) GetBasis()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("basis")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *ItemItemsItemWorkbookFunctionsYieldDiscPostRequestBody) GetBasis()(iadc
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemsItemWorkbookFunctionsYieldDiscPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["basis"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -106,6 +110,7 @@ func (m *ItemItemsItemWorkbookFunctionsYieldDiscPostRequestBody) GetFieldDeseria
     return res
 }
 // GetMaturity gets the maturity property value. The maturity property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsYieldDiscPostRequestBody) GetMaturity()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("maturity")
     if err != nil {
@@ -117,6 +122,7 @@ func (m *ItemItemsItemWorkbookFunctionsYieldDiscPostRequestBody) GetMaturity()(i
     return nil
 }
 // GetPr gets the pr property value. The pr property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsYieldDiscPostRequestBody) GetPr()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("pr")
     if err != nil {
@@ -128,6 +134,7 @@ func (m *ItemItemsItemWorkbookFunctionsYieldDiscPostRequestBody) GetPr()(iadcd81
     return nil
 }
 // GetRedemption gets the redemption property value. The redemption property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsYieldDiscPostRequestBody) GetRedemption()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("redemption")
     if err != nil {
@@ -139,6 +146,7 @@ func (m *ItemItemsItemWorkbookFunctionsYieldDiscPostRequestBody) GetRedemption()
     return nil
 }
 // GetSettlement gets the settlement property value. The settlement property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsYieldDiscPostRequestBody) GetSettlement()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("settlement")
     if err != nil {
@@ -235,7 +243,6 @@ func (m *ItemItemsItemWorkbookFunctionsYieldDiscPostRequestBody) SetSettlement(v
         panic(err)
     }
 }
-// ItemItemsItemWorkbookFunctionsYieldDiscPostRequestBodyable 
 type ItemItemsItemWorkbookFunctionsYieldDiscPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -17,28 +17,28 @@ type MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewMobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitRequestBuilderInternal instantiates a new CommitRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitRequestBuilderInternal instantiates a new MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitRequestBuilder) {
     m := &MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsMobileMSI/contentVersions/{mobileAppContent%2Did}/files/{mobileAppContentFile%2Did}/commit", pathParameters),
     }
     return m
 }
-// NewMobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitRequestBuilder instantiates a new CommitRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitRequestBuilder instantiates a new MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post commits a file of a given app.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitRequestBuilder) Post(ctx context.Context, body MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitPostRequestBodyable, requestConfiguration *MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitRe
     return nil
 }
 // ToPostRequestInformation commits a file of a given app.
+// returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitRequestBuilder) ToPostRequestInformation(ctx context.Context, body MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitPostRequestBodyable, requestConfiguration *MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -61,6 +62,7 @@ func (m *MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitRequestBuilder when successful
 func (m *MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitRequestBuilder) WithUrl(rawUrl string)(*MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitRequestBuilder) {
     return NewMobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemCommitRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

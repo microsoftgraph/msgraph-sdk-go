@@ -9,7 +9,7 @@ import (
 type ManagedAppPolicyDeploymentSummary struct {
     Entity
 }
-// NewManagedAppPolicyDeploymentSummary instantiates a new managedAppPolicyDeploymentSummary and sets the default values.
+// NewManagedAppPolicyDeploymentSummary instantiates a new ManagedAppPolicyDeploymentSummary and sets the default values.
 func NewManagedAppPolicyDeploymentSummary()(*ManagedAppPolicyDeploymentSummary) {
     m := &ManagedAppPolicyDeploymentSummary{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewManagedAppPolicyDeploymentSummary()(*ManagedAppPolicyDeploymentSummary) 
     return m
 }
 // CreateManagedAppPolicyDeploymentSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedAppPolicyDeploymentSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedAppPolicyDeploymentSummary(), nil
 }
 // GetConfigurationDeployedUserCount gets the configurationDeployedUserCount property value. Not yet documented
+// returns a *int32 when successful
 func (m *ManagedAppPolicyDeploymentSummary) GetConfigurationDeployedUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("configurationDeployedUserCount")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *ManagedAppPolicyDeploymentSummary) GetConfigurationDeployedUserCount()(
     return nil
 }
 // GetConfigurationDeploymentSummaryPerApp gets the configurationDeploymentSummaryPerApp property value. Not yet documented
+// returns a []ManagedAppPolicyDeploymentSummaryPerAppable when successful
 func (m *ManagedAppPolicyDeploymentSummary) GetConfigurationDeploymentSummaryPerApp()([]ManagedAppPolicyDeploymentSummaryPerAppable) {
     val, err := m.GetBackingStore().Get("configurationDeploymentSummaryPerApp")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *ManagedAppPolicyDeploymentSummary) GetConfigurationDeploymentSummaryPer
     return nil
 }
 // GetDisplayName gets the displayName property value. Not yet documented
+// returns a *string when successful
 func (m *ManagedAppPolicyDeploymentSummary) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *ManagedAppPolicyDeploymentSummary) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedAppPolicyDeploymentSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["configurationDeployedUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -115,6 +120,7 @@ func (m *ManagedAppPolicyDeploymentSummary) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetLastRefreshTime gets the lastRefreshTime property value. Not yet documented
+// returns a *Time when successful
 func (m *ManagedAppPolicyDeploymentSummary) GetLastRefreshTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastRefreshTime")
     if err != nil {
@@ -126,6 +132,7 @@ func (m *ManagedAppPolicyDeploymentSummary) GetLastRefreshTime()(*i336074805fc85
     return nil
 }
 // GetVersion gets the version property value. Version of the entity.
+// returns a *string when successful
 func (m *ManagedAppPolicyDeploymentSummary) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -215,7 +222,6 @@ func (m *ManagedAppPolicyDeploymentSummary) SetVersion(value *string)() {
         panic(err)
     }
 }
-// ManagedAppPolicyDeploymentSummaryable 
 type ManagedAppPolicyDeploymentSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

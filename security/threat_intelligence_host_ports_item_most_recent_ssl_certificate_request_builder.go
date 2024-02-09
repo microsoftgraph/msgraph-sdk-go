@@ -27,28 +27,29 @@ type ThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilderGetReq
     // Request query parameters
     QueryParameters *ThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilderGetQueryParameters
 }
-// NewThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilderInternal instantiates a new MostRecentSslCertificateRequestBuilder and sets the default values.
+// NewThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilderInternal instantiates a new ThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilder) {
     m := &ThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hostPorts/{hostPort%2Did}/mostRecentSslCertificate{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hostPorts/{hostPort%2Did}/mostRecentSslCertificate{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilder instantiates a new MostRecentSslCertificateRequestBuilder and sets the default values.
+// NewThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilder instantiates a new ThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the most recent sslCertificate used to communicate on the port.
+// returns a SslCertificateable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.SslCertificateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.CreateSslCertificateFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *ThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilder) 
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.SslCertificateable), nil
 }
 // ToGetRequestInformation the most recent sslCertificate used to communicate on the port.
+// returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *ThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilder) 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilder when successful
 func (m *ThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilder) {
     return NewThreatIntelligenceHostPortsItemMostRecentSslCertificateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

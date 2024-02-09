@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ToneInfo 
 type ToneInfo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewToneInfo instantiates a new toneInfo and sets the default values.
+// NewToneInfo instantiates a new ToneInfo and sets the default values.
 func NewToneInfo()(*ToneInfo) {
     m := &ToneInfo{
     }
@@ -19,10 +18,12 @@ func NewToneInfo()(*ToneInfo) {
     return m
 }
 // CreateToneInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateToneInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewToneInfo(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ToneInfo) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ToneInfo) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ToneInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ToneInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +77,7 @@ func (m *ToneInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ToneInfo) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -85,6 +89,7 @@ func (m *ToneInfo) GetOdataType()(*string) {
     return nil
 }
 // GetSequenceId gets the sequenceId property value. An incremental identifier used for ordering DTMF events.
+// returns a *int64 when successful
 func (m *ToneInfo) GetSequenceId()(*int64) {
     val, err := m.GetBackingStore().Get("sequenceId")
     if err != nil {
@@ -96,6 +101,7 @@ func (m *ToneInfo) GetSequenceId()(*int64) {
     return nil
 }
 // GetTone gets the tone property value. The tone property
+// returns a *Tone when successful
 func (m *ToneInfo) GetTone()(*Tone) {
     val, err := m.GetBackingStore().Get("tone")
     if err != nil {
@@ -167,7 +173,6 @@ func (m *ToneInfo) SetTone(value *Tone)() {
         panic(err)
     }
 }
-// ToneInfoable 
 type ToneInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

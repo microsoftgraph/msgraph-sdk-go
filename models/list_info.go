@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ListInfo 
 type ListInfo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewListInfo instantiates a new listInfo and sets the default values.
+// NewListInfo instantiates a new ListInfo and sets the default values.
 func NewListInfo()(*ListInfo) {
     m := &ListInfo{
     }
@@ -19,10 +18,12 @@ func NewListInfo()(*ListInfo) {
     return m
 }
 // CreateListInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateListInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewListInfo(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ListInfo) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ListInfo) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ListInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetContentTypesEnabled gets the contentTypesEnabled property value. If true, indicates that content types are enabled for this list.
+// returns a *bool when successful
 func (m *ListInfo) GetContentTypesEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("contentTypesEnabled")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *ListInfo) GetContentTypesEnabled()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ListInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["contentTypesEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,6 +99,7 @@ func (m *ListInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetHidden gets the hidden property value. If true, indicates that the list isn't normally visible in the SharePoint user experience.
+// returns a *bool when successful
 func (m *ListInfo) GetHidden()(*bool) {
     val, err := m.GetBackingStore().Get("hidden")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *ListInfo) GetHidden()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ListInfo) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *ListInfo) GetOdataType()(*string) {
     return nil
 }
 // GetTemplate gets the template property value. An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
+// returns a *string when successful
 func (m *ListInfo) GetTemplate()(*string) {
     val, err := m.GetBackingStore().Get("template")
     if err != nil {
@@ -200,7 +207,6 @@ func (m *ListInfo) SetTemplate(value *string)() {
         panic(err)
     }
 }
-// ListInfoable 
 type ListInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

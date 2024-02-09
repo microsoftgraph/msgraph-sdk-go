@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChatMessageInfo 
 type ChatMessageInfo struct {
     Entity
 }
-// NewChatMessageInfo instantiates a new chatMessageInfo and sets the default values.
+// NewChatMessageInfo instantiates a new ChatMessageInfo and sets the default values.
 func NewChatMessageInfo()(*ChatMessageInfo) {
     m := &ChatMessageInfo{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewChatMessageInfo()(*ChatMessageInfo) {
     return m
 }
 // CreateChatMessageInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateChatMessageInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChatMessageInfo(), nil
 }
 // GetBody gets the body property value. Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object doesn't return @mentions and attachments.
+// returns a ItemBodyable when successful
 func (m *ChatMessageInfo) GetBody()(ItemBodyable) {
     val, err := m.GetBackingStore().Get("body")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *ChatMessageInfo) GetBody()(ItemBodyable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date time object representing the time at which message was created.
+// returns a *Time when successful
 func (m *ChatMessageInfo) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *ChatMessageInfo) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetEventDetail gets the eventDetail property value. Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, members were added, and so on. For event messages, the messageType property is set to systemEventMessage.
+// returns a EventMessageDetailable when successful
 func (m *ChatMessageInfo) GetEventDetail()(EventMessageDetailable) {
     val, err := m.GetBackingStore().Get("eventDetail")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *ChatMessageInfo) GetEventDetail()(EventMessageDetailable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ChatMessageInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["body"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -119,6 +123,7 @@ func (m *ChatMessageInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetFrom gets the from property value. Information about the sender of the message.
+// returns a ChatMessageFromIdentitySetable when successful
 func (m *ChatMessageInfo) GetFrom()(ChatMessageFromIdentitySetable) {
     val, err := m.GetBackingStore().Get("from")
     if err != nil {
@@ -130,6 +135,7 @@ func (m *ChatMessageInfo) GetFrom()(ChatMessageFromIdentitySetable) {
     return nil
 }
 // GetIsDeleted gets the isDeleted property value. If set to true, the original message has been deleted.
+// returns a *bool when successful
 func (m *ChatMessageInfo) GetIsDeleted()(*bool) {
     val, err := m.GetBackingStore().Get("isDeleted")
     if err != nil {
@@ -141,6 +147,7 @@ func (m *ChatMessageInfo) GetIsDeleted()(*bool) {
     return nil
 }
 // GetMessageType gets the messageType property value. The messageType property
+// returns a *ChatMessageType when successful
 func (m *ChatMessageInfo) GetMessageType()(*ChatMessageType) {
     val, err := m.GetBackingStore().Get("messageType")
     if err != nil {
@@ -238,7 +245,6 @@ func (m *ChatMessageInfo) SetMessageType(value *ChatMessageType)() {
         panic(err)
     }
 }
-// ChatMessageInfoable 
 type ChatMessageInfoable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

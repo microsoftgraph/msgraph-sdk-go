@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// InvitedUserMessageInfo 
 type InvitedUserMessageInfo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewInvitedUserMessageInfo instantiates a new invitedUserMessageInfo and sets the default values.
+// NewInvitedUserMessageInfo instantiates a new InvitedUserMessageInfo and sets the default values.
 func NewInvitedUserMessageInfo()(*InvitedUserMessageInfo) {
     m := &InvitedUserMessageInfo{
     }
@@ -19,10 +18,12 @@ func NewInvitedUserMessageInfo()(*InvitedUserMessageInfo) {
     return m
 }
 // CreateInvitedUserMessageInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInvitedUserMessageInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInvitedUserMessageInfo(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *InvitedUserMessageInfo) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *InvitedUserMessageInfo) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *InvitedUserMessageInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCcRecipients gets the ccRecipients property value. Additional recipients the invitation message should be sent to. Currently only one additional recipient is supported.
+// returns a []Recipientable when successful
 func (m *InvitedUserMessageInfo) GetCcRecipients()([]Recipientable) {
     val, err := m.GetBackingStore().Get("ccRecipients")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *InvitedUserMessageInfo) GetCcRecipients()([]Recipientable) {
     return nil
 }
 // GetCustomizedMessageBody gets the customizedMessageBody property value. Customized message body you want to send if you don't want the default message.
+// returns a *string when successful
 func (m *InvitedUserMessageInfo) GetCustomizedMessageBody()(*string) {
     val, err := m.GetBackingStore().Get("customizedMessageBody")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *InvitedUserMessageInfo) GetCustomizedMessageBody()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InvitedUserMessageInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["ccRecipients"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -112,6 +117,7 @@ func (m *InvitedUserMessageInfo) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetMessageLanguage gets the messageLanguage property value. The language you want to send the default message in. If the customizedMessageBody is specified, this property is ignored, and the message is sent using the customizedMessageBody. The language format should be in ISO 639. The default is en-US.
+// returns a *string when successful
 func (m *InvitedUserMessageInfo) GetMessageLanguage()(*string) {
     val, err := m.GetBackingStore().Get("messageLanguage")
     if err != nil {
@@ -123,6 +129,7 @@ func (m *InvitedUserMessageInfo) GetMessageLanguage()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *InvitedUserMessageInfo) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -212,7 +219,6 @@ func (m *InvitedUserMessageInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// InvitedUserMessageInfoable 
 type InvitedUserMessageInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

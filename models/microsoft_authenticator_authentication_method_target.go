@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MicrosoftAuthenticatorAuthenticationMethodTarget 
 type MicrosoftAuthenticatorAuthenticationMethodTarget struct {
     AuthenticationMethodTarget
 }
-// NewMicrosoftAuthenticatorAuthenticationMethodTarget instantiates a new microsoftAuthenticatorAuthenticationMethodTarget and sets the default values.
+// NewMicrosoftAuthenticatorAuthenticationMethodTarget instantiates a new MicrosoftAuthenticatorAuthenticationMethodTarget and sets the default values.
 func NewMicrosoftAuthenticatorAuthenticationMethodTarget()(*MicrosoftAuthenticatorAuthenticationMethodTarget) {
     m := &MicrosoftAuthenticatorAuthenticationMethodTarget{
         AuthenticationMethodTarget: *NewAuthenticationMethodTarget(),
@@ -16,10 +15,12 @@ func NewMicrosoftAuthenticatorAuthenticationMethodTarget()(*MicrosoftAuthenticat
     return m
 }
 // CreateMicrosoftAuthenticatorAuthenticationMethodTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMicrosoftAuthenticatorAuthenticationMethodTargetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMicrosoftAuthenticatorAuthenticationMethodTarget(), nil
 }
 // GetAuthenticationMode gets the authenticationMode property value. The authenticationMode property
+// returns a *MicrosoftAuthenticatorAuthenticationMode when successful
 func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) GetAuthenticationMode()(*MicrosoftAuthenticatorAuthenticationMode) {
     val, err := m.GetBackingStore().Get("authenticationMode")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) GetAuthenticationMode
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethodTarget.GetFieldDeserializers()
     res["authenticationMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -67,7 +69,6 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodTarget) SetAuthenticationMode
         panic(err)
     }
 }
-// MicrosoftAuthenticatorAuthenticationMethodTargetable 
 type MicrosoftAuthenticatorAuthenticationMethodTargetable interface {
     AuthenticationMethodTargetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

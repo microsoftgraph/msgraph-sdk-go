@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// VoiceAuthenticationMethodConfiguration 
 type VoiceAuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
 }
-// NewVoiceAuthenticationMethodConfiguration instantiates a new voiceAuthenticationMethodConfiguration and sets the default values.
+// NewVoiceAuthenticationMethodConfiguration instantiates a new VoiceAuthenticationMethodConfiguration and sets the default values.
 func NewVoiceAuthenticationMethodConfiguration()(*VoiceAuthenticationMethodConfiguration) {
     m := &VoiceAuthenticationMethodConfiguration{
         AuthenticationMethodConfiguration: *NewAuthenticationMethodConfiguration(),
@@ -18,10 +17,12 @@ func NewVoiceAuthenticationMethodConfiguration()(*VoiceAuthenticationMethodConfi
     return m
 }
 // CreateVoiceAuthenticationMethodConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVoiceAuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVoiceAuthenticationMethodConfiguration(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VoiceAuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethodConfiguration.GetFieldDeserializers()
     res["includeTargets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -53,6 +54,7 @@ func (m *VoiceAuthenticationMethodConfiguration) GetFieldDeserializers()(map[str
     return res
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to use the authentication method. Expanded by default.
+// returns a []AuthenticationMethodTargetable when successful
 func (m *VoiceAuthenticationMethodConfiguration) GetIncludeTargets()([]AuthenticationMethodTargetable) {
     val, err := m.GetBackingStore().Get("includeTargets")
     if err != nil {
@@ -64,6 +66,7 @@ func (m *VoiceAuthenticationMethodConfiguration) GetIncludeTargets()([]Authentic
     return nil
 }
 // GetIsOfficePhoneAllowed gets the isOfficePhoneAllowed property value. true if users can register office phones, otherwise, false.
+// returns a *bool when successful
 func (m *VoiceAuthenticationMethodConfiguration) GetIsOfficePhoneAllowed()(*bool) {
     val, err := m.GetBackingStore().Get("isOfficePhoneAllowed")
     if err != nil {
@@ -114,7 +117,6 @@ func (m *VoiceAuthenticationMethodConfiguration) SetIsOfficePhoneAllowed(value *
         panic(err)
     }
 }
-// VoiceAuthenticationMethodConfigurationable 
 type VoiceAuthenticationMethodConfigurationable interface {
     AuthenticationMethodConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

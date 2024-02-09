@@ -30,7 +30,7 @@ type PeopleRequestBuilderGetRequestConfiguration struct {
 // NewPeopleRequestBuilderInternal instantiates a new PeopleRequestBuilder and sets the default values.
 func NewPeopleRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PeopleRequestBuilder) {
     m := &PeopleRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/people{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/people{?%24expand,%24select}", pathParameters),
     }
     return m
 }
@@ -41,6 +41,8 @@ func NewPeopleRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewPeopleRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get retrieve the properties and relationships of a peopleAdminSettings object.
+// returns a PeopleAdminSettingsable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/peopleadminsettings-get?view=graph-rest-1.0
@@ -50,8 +52,7 @@ func (m *PeopleRequestBuilder) Get(ctx context.Context, requestConfiguration *Pe
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreatePeopleAdminSettingsFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -63,14 +64,17 @@ func (m *PeopleRequestBuilder) Get(ctx context.Context, requestConfiguration *Pe
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PeopleAdminSettingsable), nil
 }
 // ProfileCardProperties provides operations to manage the profileCardProperties property of the microsoft.graph.peopleAdminSettings entity.
+// returns a *PeopleProfileCardPropertiesRequestBuilder when successful
 func (m *PeopleRequestBuilder) ProfileCardProperties()(*PeopleProfileCardPropertiesRequestBuilder) {
     return NewPeopleProfileCardPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Pronouns provides operations to manage the pronouns property of the microsoft.graph.peopleAdminSettings entity.
+// returns a *PeoplePronounsRequestBuilder when successful
 func (m *PeopleRequestBuilder) Pronouns()(*PeoplePronounsRequestBuilder) {
     return NewPeoplePronounsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation retrieve the properties and relationships of a peopleAdminSettings object.
+// returns a *RequestInformation when successful
 func (m *PeopleRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PeopleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -84,6 +88,7 @@ func (m *PeopleRequestBuilder) ToGetRequestInformation(ctx context.Context, requ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *PeopleRequestBuilder when successful
 func (m *PeopleRequestBuilder) WithUrl(rawUrl string)(*PeopleRequestBuilder) {
     return NewPeopleRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

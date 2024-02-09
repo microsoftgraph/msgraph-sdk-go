@@ -18,20 +18,22 @@ type CallsItemUpdateRecordingStatusRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewCallsItemUpdateRecordingStatusRequestBuilderInternal instantiates a new UpdateRecordingStatusRequestBuilder and sets the default values.
+// NewCallsItemUpdateRecordingStatusRequestBuilderInternal instantiates a new CallsItemUpdateRecordingStatusRequestBuilder and sets the default values.
 func NewCallsItemUpdateRecordingStatusRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemUpdateRecordingStatusRequestBuilder) {
     m := &CallsItemUpdateRecordingStatusRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/calls/{call%2Did}/updateRecordingStatus", pathParameters),
     }
     return m
 }
-// NewCallsItemUpdateRecordingStatusRequestBuilder instantiates a new UpdateRecordingStatusRequestBuilder and sets the default values.
+// NewCallsItemUpdateRecordingStatusRequestBuilder instantiates a new CallsItemUpdateRecordingStatusRequestBuilder and sets the default values.
 func NewCallsItemUpdateRecordingStatusRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemUpdateRecordingStatusRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCallsItemUpdateRecordingStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post update the application's recording status associated with a call. This requires the use of the Teams policy-based recording solution.
+// returns a UpdateRecordingStatusOperationable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/call-updaterecordingstatus?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *CallsItemUpdateRecordingStatusRequestBuilder) Post(ctx context.Context,
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateUpdateRecordingStatusOperationFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,7 @@ func (m *CallsItemUpdateRecordingStatusRequestBuilder) Post(ctx context.Context,
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UpdateRecordingStatusOperationable), nil
 }
 // ToPostRequestInformation update the application's recording status associated with a call. This requires the use of the Teams policy-based recording solution.
+// returns a *RequestInformation when successful
 func (m *CallsItemUpdateRecordingStatusRequestBuilder) ToPostRequestInformation(ctx context.Context, body CallsItemUpdateRecordingStatusPostRequestBodyable, requestConfiguration *CallsItemUpdateRecordingStatusRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -68,6 +70,7 @@ func (m *CallsItemUpdateRecordingStatusRequestBuilder) ToPostRequestInformation(
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CallsItemUpdateRecordingStatusRequestBuilder when successful
 func (m *CallsItemUpdateRecordingStatusRequestBuilder) WithUrl(rawUrl string)(*CallsItemUpdateRecordingStatusRequestBuilder) {
     return NewCallsItemUpdateRecordingStatusRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

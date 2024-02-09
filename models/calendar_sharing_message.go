@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CalendarSharingMessage 
 type CalendarSharingMessage struct {
     Message
 }
-// NewCalendarSharingMessage instantiates a new calendarSharingMessage and sets the default values.
+// NewCalendarSharingMessage instantiates a new CalendarSharingMessage and sets the default values.
 func NewCalendarSharingMessage()(*CalendarSharingMessage) {
     m := &CalendarSharingMessage{
         Message: *NewMessage(),
@@ -18,10 +17,12 @@ func NewCalendarSharingMessage()(*CalendarSharingMessage) {
     return m
 }
 // CreateCalendarSharingMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCalendarSharingMessageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCalendarSharingMessage(), nil
 }
 // GetCanAccept gets the canAccept property value. The canAccept property
+// returns a *bool when successful
 func (m *CalendarSharingMessage) GetCanAccept()(*bool) {
     val, err := m.GetBackingStore().Get("canAccept")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *CalendarSharingMessage) GetCanAccept()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CalendarSharingMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Message.GetFieldDeserializers()
     res["canAccept"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -84,6 +86,7 @@ func (m *CalendarSharingMessage) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetSharingMessageAction gets the sharingMessageAction property value. The sharingMessageAction property
+// returns a CalendarSharingMessageActionable when successful
 func (m *CalendarSharingMessage) GetSharingMessageAction()(CalendarSharingMessageActionable) {
     val, err := m.GetBackingStore().Get("sharingMessageAction")
     if err != nil {
@@ -95,6 +98,7 @@ func (m *CalendarSharingMessage) GetSharingMessageAction()(CalendarSharingMessag
     return nil
 }
 // GetSharingMessageActions gets the sharingMessageActions property value. The sharingMessageActions property
+// returns a []CalendarSharingMessageActionable when successful
 func (m *CalendarSharingMessage) GetSharingMessageActions()([]CalendarSharingMessageActionable) {
     val, err := m.GetBackingStore().Get("sharingMessageActions")
     if err != nil {
@@ -106,6 +110,7 @@ func (m *CalendarSharingMessage) GetSharingMessageActions()([]CalendarSharingMes
     return nil
 }
 // GetSuggestedCalendarName gets the suggestedCalendarName property value. The suggestedCalendarName property
+// returns a *string when successful
 func (m *CalendarSharingMessage) GetSuggestedCalendarName()(*string) {
     val, err := m.GetBackingStore().Get("suggestedCalendarName")
     if err != nil {
@@ -182,7 +187,6 @@ func (m *CalendarSharingMessage) SetSuggestedCalendarName(value *string)() {
         panic(err)
     }
 }
-// CalendarSharingMessageable 
 type CalendarSharingMessageable interface {
     Messageable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

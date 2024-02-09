@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Fido2AuthenticationMethod 
 type Fido2AuthenticationMethod struct {
     AuthenticationMethod
 }
-// NewFido2AuthenticationMethod instantiates a new fido2AuthenticationMethod and sets the default values.
+// NewFido2AuthenticationMethod instantiates a new Fido2AuthenticationMethod and sets the default values.
 func NewFido2AuthenticationMethod()(*Fido2AuthenticationMethod) {
     m := &Fido2AuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),
@@ -19,10 +18,12 @@ func NewFido2AuthenticationMethod()(*Fido2AuthenticationMethod) {
     return m
 }
 // CreateFido2AuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFido2AuthenticationMethodFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFido2AuthenticationMethod(), nil
 }
 // GetAaGuid gets the aaGuid property value. Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
+// returns a *string when successful
 func (m *Fido2AuthenticationMethod) GetAaGuid()(*string) {
     val, err := m.GetBackingStore().Get("aaGuid")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *Fido2AuthenticationMethod) GetAaGuid()(*string) {
     return nil
 }
 // GetAttestationCertificates gets the attestationCertificates property value. The attestation certificate(s) attached to this security key.
+// returns a []string when successful
 func (m *Fido2AuthenticationMethod) GetAttestationCertificates()([]string) {
     val, err := m.GetBackingStore().Get("attestationCertificates")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *Fido2AuthenticationMethod) GetAttestationCertificates()([]string) {
     return nil
 }
 // GetAttestationLevel gets the attestationLevel property value. The attestation level of this FIDO2 security key. Possible values are: attested, or notAttested.
+// returns a *AttestationLevel when successful
 func (m *Fido2AuthenticationMethod) GetAttestationLevel()(*AttestationLevel) {
     val, err := m.GetBackingStore().Get("attestationLevel")
     if err != nil {
@@ -56,6 +59,7 @@ func (m *Fido2AuthenticationMethod) GetAttestationLevel()(*AttestationLevel) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The timestamp when this key was registered to the user.
+// returns a *Time when successful
 func (m *Fido2AuthenticationMethod) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -67,6 +71,7 @@ func (m *Fido2AuthenticationMethod) GetCreatedDateTime()(*i336074805fc853987abe6
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the key as given by the user.
+// returns a *string when successful
 func (m *Fido2AuthenticationMethod) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -78,6 +83,7 @@ func (m *Fido2AuthenticationMethod) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Fido2AuthenticationMethod) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethod.GetFieldDeserializers()
     res["aaGuid"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -149,6 +155,7 @@ func (m *Fido2AuthenticationMethod) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetModel gets the model property value. The manufacturer-assigned model of the FIDO2 security key.
+// returns a *string when successful
 func (m *Fido2AuthenticationMethod) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
     if err != nil {
@@ -246,7 +253,6 @@ func (m *Fido2AuthenticationMethod) SetModel(value *string)() {
         panic(err)
     }
 }
-// Fido2AuthenticationMethodable 
 type Fido2AuthenticationMethodable interface {
     AuthenticationMethodable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

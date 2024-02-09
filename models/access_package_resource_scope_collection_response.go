@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageResourceScopeCollectionResponse 
 type AccessPackageResourceScopeCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAccessPackageResourceScopeCollectionResponse instantiates a new accessPackageResourceScopeCollectionResponse and sets the default values.
+// NewAccessPackageResourceScopeCollectionResponse instantiates a new AccessPackageResourceScopeCollectionResponse and sets the default values.
 func NewAccessPackageResourceScopeCollectionResponse()(*AccessPackageResourceScopeCollectionResponse) {
     m := &AccessPackageResourceScopeCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewAccessPackageResourceScopeCollectionResponse()(*AccessPackageResourceSco
     return m
 }
 // CreateAccessPackageResourceScopeCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessPackageResourceScopeCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageResourceScopeCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessPackageResourceScopeCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *AccessPackageResourceScopeCollectionResponse) GetFieldDeserializers()(m
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []AccessPackageResourceScopeable when successful
 func (m *AccessPackageResourceScopeCollectionResponse) GetValue()([]AccessPackageResourceScopeable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *AccessPackageResourceScopeCollectionResponse) SetValue(value []AccessPa
         panic(err)
     }
 }
-// AccessPackageResourceScopeCollectionResponseable 
 type AccessPackageResourceScopeCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

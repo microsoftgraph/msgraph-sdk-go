@@ -5,11 +5,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Store 
 type Store struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewStore instantiates a new store and sets the default values.
+// NewStore instantiates a new Store and sets the default values.
 func NewStore()(*Store) {
     m := &Store{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -17,10 +16,12 @@ func NewStore()(*Store) {
     return m
 }
 // CreateStoreFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateStoreFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewStore(), nil
 }
 // GetDefaultLanguageTag gets the defaultLanguageTag property value. Default language of the term store.
+// returns a *string when successful
 func (m *Store) GetDefaultLanguageTag()(*string) {
     val, err := m.GetBackingStore().Get("defaultLanguageTag")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *Store) GetDefaultLanguageTag()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Store) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["defaultLanguageTag"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,6 +97,7 @@ func (m *Store) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     return res
 }
 // GetGroups gets the groups property value. Collection of all groups available in the term store.
+// returns a []Groupable when successful
 func (m *Store) GetGroups()([]Groupable) {
     val, err := m.GetBackingStore().Get("groups")
     if err != nil {
@@ -106,6 +109,7 @@ func (m *Store) GetGroups()([]Groupable) {
     return nil
 }
 // GetLanguageTags gets the languageTags property value. List of languages for the term store.
+// returns a []string when successful
 func (m *Store) GetLanguageTags()([]string) {
     val, err := m.GetBackingStore().Get("languageTags")
     if err != nil {
@@ -117,6 +121,7 @@ func (m *Store) GetLanguageTags()([]string) {
     return nil
 }
 // GetSets gets the sets property value. Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
+// returns a []Setable when successful
 func (m *Store) GetSets()([]Setable) {
     val, err := m.GetBackingStore().Get("sets")
     if err != nil {
@@ -199,7 +204,6 @@ func (m *Store) SetSets(value []Setable)() {
         panic(err)
     }
 }
-// Storeable 
 type Storeable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

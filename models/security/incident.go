@@ -6,11 +6,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Incident 
 type Incident struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewIncident instantiates a new incident and sets the default values.
+// NewIncident instantiates a new Incident and sets the default values.
 func NewIncident()(*Incident) {
     m := &Incident{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -18,10 +17,12 @@ func NewIncident()(*Incident) {
     return m
 }
 // CreateIncidentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIncidentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIncident(), nil
 }
 // GetAlerts gets the alerts property value. The list of related alerts. Supports $expand.
+// returns a []Alertable when successful
 func (m *Incident) GetAlerts()([]Alertable) {
     val, err := m.GetBackingStore().Get("alerts")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *Incident) GetAlerts()([]Alertable) {
     return nil
 }
 // GetAssignedTo gets the assignedTo property value. Owner of the incident, or null if no owner is assigned. Free editable text.
+// returns a *string when successful
 func (m *Incident) GetAssignedTo()(*string) {
     val, err := m.GetBackingStore().Get("assignedTo")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *Incident) GetAssignedTo()(*string) {
     return nil
 }
 // GetClassification gets the classification property value. The specification for the incident. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
+// returns a *AlertClassification when successful
 func (m *Incident) GetClassification()(*AlertClassification) {
     val, err := m.GetBackingStore().Get("classification")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *Incident) GetClassification()(*AlertClassification) {
     return nil
 }
 // GetComments gets the comments property value. Array of comments created by the Security Operations (SecOps) team when the incident is managed.
+// returns a []AlertCommentable when successful
 func (m *Incident) GetComments()([]AlertCommentable) {
     val, err := m.GetBackingStore().Get("comments")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *Incident) GetComments()([]AlertCommentable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Time when the incident was first created.
+// returns a *Time when successful
 func (m *Incident) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *Incident) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     return nil
 }
 // GetCustomTags gets the customTags property value. Array of custom tags associated with an incident.
+// returns a []string when successful
 func (m *Incident) GetCustomTags()([]string) {
     val, err := m.GetBackingStore().Get("customTags")
     if err != nil {
@@ -88,6 +94,7 @@ func (m *Incident) GetCustomTags()([]string) {
     return nil
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *Incident) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -99,6 +106,7 @@ func (m *Incident) GetDescription()(*string) {
     return nil
 }
 // GetDetermination gets the determination property value. Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
+// returns a *AlertDetermination when successful
 func (m *Incident) GetDetermination()(*AlertDetermination) {
     val, err := m.GetBackingStore().Get("determination")
     if err != nil {
@@ -110,6 +118,7 @@ func (m *Incident) GetDetermination()(*AlertDetermination) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The incident name.
+// returns a *string when successful
 func (m *Incident) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -121,6 +130,7 @@ func (m *Incident) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["alerts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -320,6 +330,7 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetIncidentWebUrl gets the incidentWebUrl property value. The URL for the incident page in the Microsoft 365 Defender portal.
+// returns a *string when successful
 func (m *Incident) GetIncidentWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("incidentWebUrl")
     if err != nil {
@@ -331,6 +342,7 @@ func (m *Incident) GetIncidentWebUrl()(*string) {
     return nil
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// returns a *string when successful
 func (m *Incident) GetLastModifiedBy()(*string) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -342,6 +354,7 @@ func (m *Incident) GetLastModifiedBy()(*string) {
     return nil
 }
 // GetLastUpdateDateTime gets the lastUpdateDateTime property value. Time when the incident was last updated.
+// returns a *Time when successful
 func (m *Incident) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdateDateTime")
     if err != nil {
@@ -353,6 +366,7 @@ func (m *Incident) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     return nil
 }
 // GetRedirectIncidentId gets the redirectIncidentId property value. Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.
+// returns a *string when successful
 func (m *Incident) GetRedirectIncidentId()(*string) {
     val, err := m.GetBackingStore().Get("redirectIncidentId")
     if err != nil {
@@ -364,6 +378,7 @@ func (m *Incident) GetRedirectIncidentId()(*string) {
     return nil
 }
 // GetSeverity gets the severity property value. The severity property
+// returns a *AlertSeverity when successful
 func (m *Incident) GetSeverity()(*AlertSeverity) {
     val, err := m.GetBackingStore().Get("severity")
     if err != nil {
@@ -375,6 +390,7 @@ func (m *Incident) GetSeverity()(*AlertSeverity) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *IncidentStatus when successful
 func (m *Incident) GetStatus()(*IncidentStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -386,6 +402,7 @@ func (m *Incident) GetStatus()(*IncidentStatus) {
     return nil
 }
 // GetSystemTags gets the systemTags property value. The systemTags property
+// returns a []string when successful
 func (m *Incident) GetSystemTags()([]string) {
     val, err := m.GetBackingStore().Get("systemTags")
     if err != nil {
@@ -397,6 +414,7 @@ func (m *Incident) GetSystemTags()([]string) {
     return nil
 }
 // GetTenantId gets the tenantId property value. The Microsoft Entra tenant in which the alert was created.
+// returns a *string when successful
 func (m *Incident) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -652,7 +670,6 @@ func (m *Incident) SetTenantId(value *string)() {
         panic(err)
     }
 }
-// Incidentable 
 type Incidentable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

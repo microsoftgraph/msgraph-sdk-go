@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BlobEvidence 
 type BlobEvidence struct {
     AlertEvidence
 }
-// NewBlobEvidence instantiates a new blobEvidence and sets the default values.
+// NewBlobEvidence instantiates a new BlobEvidence and sets the default values.
 func NewBlobEvidence()(*BlobEvidence) {
     m := &BlobEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -18,10 +17,12 @@ func NewBlobEvidence()(*BlobEvidence) {
     return m
 }
 // CreateBlobEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBlobEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBlobEvidence(), nil
 }
 // GetBlobContainer gets the blobContainer property value. The container which the blob belongs to.
+// returns a BlobContainerEvidenceable when successful
 func (m *BlobEvidence) GetBlobContainer()(BlobContainerEvidenceable) {
     val, err := m.GetBackingStore().Get("blobContainer")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *BlobEvidence) GetBlobContainer()(BlobContainerEvidenceable) {
     return nil
 }
 // GetEtag gets the etag property value. The Etag associated with this blob.
+// returns a *string when successful
 func (m *BlobEvidence) GetEtag()(*string) {
     val, err := m.GetBackingStore().Get("etag")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *BlobEvidence) GetEtag()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BlobEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["blobContainer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -105,6 +108,7 @@ func (m *BlobEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetFileHashes gets the fileHashes property value. The file hashes associated with this blob.
+// returns a []FileHashable when successful
 func (m *BlobEvidence) GetFileHashes()([]FileHashable) {
     val, err := m.GetBackingStore().Get("fileHashes")
     if err != nil {
@@ -116,6 +120,7 @@ func (m *BlobEvidence) GetFileHashes()([]FileHashable) {
     return nil
 }
 // GetName gets the name property value. The name of the blob.
+// returns a *string when successful
 func (m *BlobEvidence) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -127,6 +132,7 @@ func (m *BlobEvidence) GetName()(*string) {
     return nil
 }
 // GetUrl gets the url property value. The full URL representation of the blob.
+// returns a *string when successful
 func (m *BlobEvidence) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -216,7 +222,6 @@ func (m *BlobEvidence) SetUrl(value *string)() {
         panic(err)
     }
 }
-// BlobEvidenceable 
 type BlobEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

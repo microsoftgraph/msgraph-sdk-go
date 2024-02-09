@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// KubernetesPodEvidence 
 type KubernetesPodEvidence struct {
     AlertEvidence
 }
-// NewKubernetesPodEvidence instantiates a new kubernetesPodEvidence and sets the default values.
+// NewKubernetesPodEvidence instantiates a new KubernetesPodEvidence and sets the default values.
 func NewKubernetesPodEvidence()(*KubernetesPodEvidence) {
     m := &KubernetesPodEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -18,10 +17,12 @@ func NewKubernetesPodEvidence()(*KubernetesPodEvidence) {
     return m
 }
 // CreateKubernetesPodEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateKubernetesPodEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewKubernetesPodEvidence(), nil
 }
 // GetContainers gets the containers property value. The list of pod containers which are not init or ephemeral containers.
+// returns a []ContainerEvidenceable when successful
 func (m *KubernetesPodEvidence) GetContainers()([]ContainerEvidenceable) {
     val, err := m.GetBackingStore().Get("containers")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *KubernetesPodEvidence) GetContainers()([]ContainerEvidenceable) {
     return nil
 }
 // GetController gets the controller property value. The pod controller.
+// returns a KubernetesControllerEvidenceable when successful
 func (m *KubernetesPodEvidence) GetController()(KubernetesControllerEvidenceable) {
     val, err := m.GetBackingStore().Get("controller")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *KubernetesPodEvidence) GetController()(KubernetesControllerEvidenceable
     return nil
 }
 // GetEphemeralContainers gets the ephemeralContainers property value. The list of pod ephemeral containers.
+// returns a []ContainerEvidenceable when successful
 func (m *KubernetesPodEvidence) GetEphemeralContainers()([]ContainerEvidenceable) {
     val, err := m.GetBackingStore().Get("ephemeralContainers")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *KubernetesPodEvidence) GetEphemeralContainers()([]ContainerEvidenceable
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *KubernetesPodEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["containers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -168,6 +172,7 @@ func (m *KubernetesPodEvidence) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetInitContainers gets the initContainers property value. The list of pod init containers.
+// returns a []ContainerEvidenceable when successful
 func (m *KubernetesPodEvidence) GetInitContainers()([]ContainerEvidenceable) {
     val, err := m.GetBackingStore().Get("initContainers")
     if err != nil {
@@ -179,6 +184,7 @@ func (m *KubernetesPodEvidence) GetInitContainers()([]ContainerEvidenceable) {
     return nil
 }
 // GetLabels gets the labels property value. The pod labels.
+// returns a Dictionaryable when successful
 func (m *KubernetesPodEvidence) GetLabels()(Dictionaryable) {
     val, err := m.GetBackingStore().Get("labels")
     if err != nil {
@@ -190,6 +196,7 @@ func (m *KubernetesPodEvidence) GetLabels()(Dictionaryable) {
     return nil
 }
 // GetName gets the name property value. The pod name.
+// returns a *string when successful
 func (m *KubernetesPodEvidence) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -201,6 +208,7 @@ func (m *KubernetesPodEvidence) GetName()(*string) {
     return nil
 }
 // GetNamespace gets the namespace property value. The pod namespace.
+// returns a KubernetesNamespaceEvidenceable when successful
 func (m *KubernetesPodEvidence) GetNamespace()(KubernetesNamespaceEvidenceable) {
     val, err := m.GetBackingStore().Get("namespace")
     if err != nil {
@@ -212,6 +220,7 @@ func (m *KubernetesPodEvidence) GetNamespace()(KubernetesNamespaceEvidenceable) 
     return nil
 }
 // GetPodIp gets the podIp property value. The pod IP.
+// returns a IpEvidenceable when successful
 func (m *KubernetesPodEvidence) GetPodIp()(IpEvidenceable) {
     val, err := m.GetBackingStore().Get("podIp")
     if err != nil {
@@ -223,6 +232,7 @@ func (m *KubernetesPodEvidence) GetPodIp()(IpEvidenceable) {
     return nil
 }
 // GetServiceAccount gets the serviceAccount property value. The pod service account.
+// returns a KubernetesServiceAccountEvidenceable when successful
 func (m *KubernetesPodEvidence) GetServiceAccount()(KubernetesServiceAccountEvidenceable) {
     val, err := m.GetBackingStore().Get("serviceAccount")
     if err != nil {
@@ -376,7 +386,6 @@ func (m *KubernetesPodEvidence) SetServiceAccount(value KubernetesServiceAccount
         panic(err)
     }
 }
-// KubernetesPodEvidenceable 
 type KubernetesPodEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

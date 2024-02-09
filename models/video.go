@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// Video 
 type Video struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewVideo instantiates a new video and sets the default values.
+// NewVideo instantiates a new Video and sets the default values.
 func NewVideo()(*Video) {
     m := &Video{
     }
@@ -19,10 +18,12 @@ func NewVideo()(*Video) {
     return m
 }
 // CreateVideoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVideoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVideo(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Video) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *Video) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAudioBitsPerSample gets the audioBitsPerSample property value. Number of audio bits per sample.
+// returns a *int32 when successful
 func (m *Video) GetAudioBitsPerSample()(*int32) {
     val, err := m.GetBackingStore().Get("audioBitsPerSample")
     if err != nil {
@@ -46,6 +48,7 @@ func (m *Video) GetAudioBitsPerSample()(*int32) {
     return nil
 }
 // GetAudioChannels gets the audioChannels property value. Number of audio channels.
+// returns a *int32 when successful
 func (m *Video) GetAudioChannels()(*int32) {
     val, err := m.GetBackingStore().Get("audioChannels")
     if err != nil {
@@ -57,6 +60,7 @@ func (m *Video) GetAudioChannels()(*int32) {
     return nil
 }
 // GetAudioFormat gets the audioFormat property value. Name of the audio format (AAC, MP3, etc.).
+// returns a *string when successful
 func (m *Video) GetAudioFormat()(*string) {
     val, err := m.GetBackingStore().Get("audioFormat")
     if err != nil {
@@ -68,6 +72,7 @@ func (m *Video) GetAudioFormat()(*string) {
     return nil
 }
 // GetAudioSamplesPerSecond gets the audioSamplesPerSecond property value. Number of audio samples per second.
+// returns a *int32 when successful
 func (m *Video) GetAudioSamplesPerSecond()(*int32) {
     val, err := m.GetBackingStore().Get("audioSamplesPerSecond")
     if err != nil {
@@ -79,10 +84,12 @@ func (m *Video) GetAudioSamplesPerSecond()(*int32) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *Video) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBitrate gets the bitrate property value. Bit rate of the video in bits per second.
+// returns a *int32 when successful
 func (m *Video) GetBitrate()(*int32) {
     val, err := m.GetBackingStore().Get("bitrate")
     if err != nil {
@@ -94,6 +101,7 @@ func (m *Video) GetBitrate()(*int32) {
     return nil
 }
 // GetDuration gets the duration property value. Duration of the file in milliseconds.
+// returns a *int64 when successful
 func (m *Video) GetDuration()(*int64) {
     val, err := m.GetBackingStore().Get("duration")
     if err != nil {
@@ -105,6 +113,7 @@ func (m *Video) GetDuration()(*int64) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Video) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["audioBitsPerSample"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -220,6 +229,7 @@ func (m *Video) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     return res
 }
 // GetFourCC gets the fourCC property value. 'Four character code' name of the video format.
+// returns a *string when successful
 func (m *Video) GetFourCC()(*string) {
     val, err := m.GetBackingStore().Get("fourCC")
     if err != nil {
@@ -231,6 +241,7 @@ func (m *Video) GetFourCC()(*string) {
     return nil
 }
 // GetFrameRate gets the frameRate property value. Frame rate of the video.
+// returns a *float64 when successful
 func (m *Video) GetFrameRate()(*float64) {
     val, err := m.GetBackingStore().Get("frameRate")
     if err != nil {
@@ -242,6 +253,7 @@ func (m *Video) GetFrameRate()(*float64) {
     return nil
 }
 // GetHeight gets the height property value. Height of the video, in pixels.
+// returns a *int32 when successful
 func (m *Video) GetHeight()(*int32) {
     val, err := m.GetBackingStore().Get("height")
     if err != nil {
@@ -253,6 +265,7 @@ func (m *Video) GetHeight()(*int32) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *Video) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -264,6 +277,7 @@ func (m *Video) GetOdataType()(*string) {
     return nil
 }
 // GetWidth gets the width property value. Width of the video, in pixels.
+// returns a *int32 when successful
 func (m *Video) GetWidth()(*int32) {
     val, err := m.GetBackingStore().Get("width")
     if err != nil {
@@ -438,7 +452,6 @@ func (m *Video) SetWidth(value *int32)() {
         panic(err)
     }
 }
-// Videoable 
 type Videoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

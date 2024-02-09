@@ -6,7 +6,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ItemItemsItemWorkbookFunctionsMidbPostRequestBody 
 type ItemItemsItemWorkbookFunctionsMidbPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -20,10 +19,12 @@ func NewItemItemsItemWorkbookFunctionsMidbPostRequestBody()(*ItemItemsItemWorkbo
     return m
 }
 // CreateItemItemsItemWorkbookFunctionsMidbPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemsItemWorkbookFunctionsMidbPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemsItemWorkbookFunctionsMidbPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemsItemWorkbookFunctionsMidbPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *ItemItemsItemWorkbookFunctionsMidbPostRequestBody) GetAdditionalData()(
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ItemItemsItemWorkbookFunctionsMidbPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemsItemWorkbookFunctionsMidbPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["numBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -75,6 +78,7 @@ func (m *ItemItemsItemWorkbookFunctionsMidbPostRequestBody) GetFieldDeserializer
     return res
 }
 // GetNumBytes gets the numBytes property value. The numBytes property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsMidbPostRequestBody) GetNumBytes()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("numBytes")
     if err != nil {
@@ -86,6 +90,7 @@ func (m *ItemItemsItemWorkbookFunctionsMidbPostRequestBody) GetNumBytes()(iadcd8
     return nil
 }
 // GetStartNum gets the startNum property value. The startNum property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsMidbPostRequestBody) GetStartNum()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("startNum")
     if err != nil {
@@ -97,6 +102,7 @@ func (m *ItemItemsItemWorkbookFunctionsMidbPostRequestBody) GetStartNum()(iadcd8
     return nil
 }
 // GetText gets the text property value. The text property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsMidbPostRequestBody) GetText()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("text")
     if err != nil {
@@ -167,7 +173,6 @@ func (m *ItemItemsItemWorkbookFunctionsMidbPostRequestBody) SetText(value iadcd8
         panic(err)
     }
 }
-// ItemItemsItemWorkbookFunctionsMidbPostRequestBodyable 
 type ItemItemsItemWorkbookFunctionsMidbPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

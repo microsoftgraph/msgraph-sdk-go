@@ -6,11 +6,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Alert 
 type Alert struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewAlert instantiates a new alert and sets the default values.
+// NewAlert instantiates a new Alert and sets the default values.
 func NewAlert()(*Alert) {
     m := &Alert{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -18,10 +17,12 @@ func NewAlert()(*Alert) {
     return m
 }
 // CreateAlertFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAlertFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAlert(), nil
 }
 // GetActorDisplayName gets the actorDisplayName property value. The adversary or activity group that is associated with this alert.
+// returns a *string when successful
 func (m *Alert) GetActorDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("actorDisplayName")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *Alert) GetActorDisplayName()(*string) {
     return nil
 }
 // GetAlertPolicyId gets the alertPolicyId property value. The alertPolicyId property
+// returns a *string when successful
 func (m *Alert) GetAlertPolicyId()(*string) {
     val, err := m.GetBackingStore().Get("alertPolicyId")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *Alert) GetAlertPolicyId()(*string) {
     return nil
 }
 // GetAlertWebUrl gets the alertWebUrl property value. URL for the alert page in the Microsoft 365 Defender portal.
+// returns a *string when successful
 func (m *Alert) GetAlertWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("alertWebUrl")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *Alert) GetAlertWebUrl()(*string) {
     return nil
 }
 // GetAssignedTo gets the assignedTo property value. Owner of the alert, or null if no owner is assigned.
+// returns a *string when successful
 func (m *Alert) GetAssignedTo()(*string) {
     val, err := m.GetBackingStore().Get("assignedTo")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *Alert) GetAssignedTo()(*string) {
     return nil
 }
 // GetCategory gets the category property value. The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&CK framework.
+// returns a *string when successful
 func (m *Alert) GetCategory()(*string) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *Alert) GetCategory()(*string) {
     return nil
 }
 // GetClassification gets the classification property value. Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
+// returns a *AlertClassification when successful
 func (m *Alert) GetClassification()(*AlertClassification) {
     val, err := m.GetBackingStore().Get("classification")
     if err != nil {
@@ -88,6 +94,7 @@ func (m *Alert) GetClassification()(*AlertClassification) {
     return nil
 }
 // GetComments gets the comments property value. Array of comments created by the Security Operations (SecOps) team during the alert management process.
+// returns a []AlertCommentable when successful
 func (m *Alert) GetComments()([]AlertCommentable) {
     val, err := m.GetBackingStore().Get("comments")
     if err != nil {
@@ -99,6 +106,7 @@ func (m *Alert) GetComments()([]AlertCommentable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Time when Microsoft 365 Defender created the alert.
+// returns a *Time when successful
 func (m *Alert) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -110,6 +118,7 @@ func (m *Alert) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a1
     return nil
 }
 // GetDescription gets the description property value. String value describing each alert.
+// returns a *string when successful
 func (m *Alert) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -121,6 +130,7 @@ func (m *Alert) GetDescription()(*string) {
     return nil
 }
 // GetDetectionSource gets the detectionSource property value. Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement.
+// returns a *DetectionSource when successful
 func (m *Alert) GetDetectionSource()(*DetectionSource) {
     val, err := m.GetBackingStore().Get("detectionSource")
     if err != nil {
@@ -132,6 +142,7 @@ func (m *Alert) GetDetectionSource()(*DetectionSource) {
     return nil
 }
 // GetDetectorId gets the detectorId property value. The ID of the detector that triggered the alert.
+// returns a *string when successful
 func (m *Alert) GetDetectorId()(*string) {
     val, err := m.GetBackingStore().Get("detectorId")
     if err != nil {
@@ -143,6 +154,7 @@ func (m *Alert) GetDetectorId()(*string) {
     return nil
 }
 // GetDetermination gets the determination property value. Specifies the result of the investigation, whether the alert represents a true attack and if so, the nature of the attack. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
+// returns a *AlertDetermination when successful
 func (m *Alert) GetDetermination()(*AlertDetermination) {
     val, err := m.GetBackingStore().Get("determination")
     if err != nil {
@@ -154,6 +166,7 @@ func (m *Alert) GetDetermination()(*AlertDetermination) {
     return nil
 }
 // GetEvidence gets the evidence property value. Collection of evidence related to the alert.
+// returns a []AlertEvidenceable when successful
 func (m *Alert) GetEvidence()([]AlertEvidenceable) {
     val, err := m.GetBackingStore().Get("evidence")
     if err != nil {
@@ -165,6 +178,7 @@ func (m *Alert) GetEvidence()([]AlertEvidenceable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Alert) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["actorDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -488,6 +502,7 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     return res
 }
 // GetFirstActivityDateTime gets the firstActivityDateTime property value. The earliest activity associated with the alert.
+// returns a *Time when successful
 func (m *Alert) GetFirstActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstActivityDateTime")
     if err != nil {
@@ -499,6 +514,7 @@ func (m *Alert) GetFirstActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     return nil
 }
 // GetIncidentId gets the incidentId property value. Unique identifier to represent the incident this alert resource is associated with.
+// returns a *string when successful
 func (m *Alert) GetIncidentId()(*string) {
     val, err := m.GetBackingStore().Get("incidentId")
     if err != nil {
@@ -510,6 +526,7 @@ func (m *Alert) GetIncidentId()(*string) {
     return nil
 }
 // GetIncidentWebUrl gets the incidentWebUrl property value. URL for the incident page in the Microsoft 365 Defender portal.
+// returns a *string when successful
 func (m *Alert) GetIncidentWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("incidentWebUrl")
     if err != nil {
@@ -521,6 +538,7 @@ func (m *Alert) GetIncidentWebUrl()(*string) {
     return nil
 }
 // GetLastActivityDateTime gets the lastActivityDateTime property value. The oldest activity associated with the alert.
+// returns a *Time when successful
 func (m *Alert) GetLastActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastActivityDateTime")
     if err != nil {
@@ -532,6 +550,7 @@ func (m *Alert) GetLastActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
     return nil
 }
 // GetLastUpdateDateTime gets the lastUpdateDateTime property value. Time when the alert was last updated at Microsoft 365 Defender.
+// returns a *Time when successful
 func (m *Alert) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdateDateTime")
     if err != nil {
@@ -543,6 +562,7 @@ func (m *Alert) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     return nil
 }
 // GetMitreTechniques gets the mitreTechniques property value. The attack techniques, as aligned with the MITRE ATT&CK framework.
+// returns a []string when successful
 func (m *Alert) GetMitreTechniques()([]string) {
     val, err := m.GetBackingStore().Get("mitreTechniques")
     if err != nil {
@@ -554,6 +574,7 @@ func (m *Alert) GetMitreTechniques()([]string) {
     return nil
 }
 // GetProductName gets the productName property value. The productName property
+// returns a *string when successful
 func (m *Alert) GetProductName()(*string) {
     val, err := m.GetBackingStore().Get("productName")
     if err != nil {
@@ -565,6 +586,7 @@ func (m *Alert) GetProductName()(*string) {
     return nil
 }
 // GetProviderAlertId gets the providerAlertId property value. The ID of the alert as it appears in the security provider product that generated the alert.
+// returns a *string when successful
 func (m *Alert) GetProviderAlertId()(*string) {
     val, err := m.GetBackingStore().Get("providerAlertId")
     if err != nil {
@@ -576,6 +598,7 @@ func (m *Alert) GetProviderAlertId()(*string) {
     return nil
 }
 // GetRecommendedActions gets the recommendedActions property value. Recommended response and remediation actions to take in the event this alert was generated.
+// returns a *string when successful
 func (m *Alert) GetRecommendedActions()(*string) {
     val, err := m.GetBackingStore().Get("recommendedActions")
     if err != nil {
@@ -587,6 +610,7 @@ func (m *Alert) GetRecommendedActions()(*string) {
     return nil
 }
 // GetResolvedDateTime gets the resolvedDateTime property value. Time when the alert was resolved.
+// returns a *Time when successful
 func (m *Alert) GetResolvedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("resolvedDateTime")
     if err != nil {
@@ -598,6 +622,7 @@ func (m *Alert) GetResolvedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a
     return nil
 }
 // GetServiceSource gets the serviceSource property value. The serviceSource property
+// returns a *ServiceSource when successful
 func (m *Alert) GetServiceSource()(*ServiceSource) {
     val, err := m.GetBackingStore().Get("serviceSource")
     if err != nil {
@@ -609,6 +634,7 @@ func (m *Alert) GetServiceSource()(*ServiceSource) {
     return nil
 }
 // GetSeverity gets the severity property value. The severity property
+// returns a *AlertSeverity when successful
 func (m *Alert) GetSeverity()(*AlertSeverity) {
     val, err := m.GetBackingStore().Get("severity")
     if err != nil {
@@ -620,6 +646,7 @@ func (m *Alert) GetSeverity()(*AlertSeverity) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *AlertStatus when successful
 func (m *Alert) GetStatus()(*AlertStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -631,6 +658,7 @@ func (m *Alert) GetStatus()(*AlertStatus) {
     return nil
 }
 // GetTenantId gets the tenantId property value. The Microsoft Entra tenant the alert was created in.
+// returns a *string when successful
 func (m *Alert) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -642,6 +670,7 @@ func (m *Alert) GetTenantId()(*string) {
     return nil
 }
 // GetThreatDisplayName gets the threatDisplayName property value. The threat associated with this alert.
+// returns a *string when successful
 func (m *Alert) GetThreatDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("threatDisplayName")
     if err != nil {
@@ -653,6 +682,7 @@ func (m *Alert) GetThreatDisplayName()(*string) {
     return nil
 }
 // GetThreatFamilyName gets the threatFamilyName property value. Threat family associated with this alert.
+// returns a *string when successful
 func (m *Alert) GetThreatFamilyName()(*string) {
     val, err := m.GetBackingStore().Get("threatFamilyName")
     if err != nil {
@@ -664,6 +694,7 @@ func (m *Alert) GetThreatFamilyName()(*string) {
     return nil
 }
 // GetTitle gets the title property value. Brief identifying string value describing the alert.
+// returns a *string when successful
 func (m *Alert) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -1090,7 +1121,6 @@ func (m *Alert) SetTitle(value *string)() {
         panic(err)
     }
 }
-// Alertable 
 type Alertable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

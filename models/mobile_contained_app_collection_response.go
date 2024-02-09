@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileContainedAppCollectionResponse 
 type MobileContainedAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMobileContainedAppCollectionResponse instantiates a new mobileContainedAppCollectionResponse and sets the default values.
+// NewMobileContainedAppCollectionResponse instantiates a new MobileContainedAppCollectionResponse and sets the default values.
 func NewMobileContainedAppCollectionResponse()(*MobileContainedAppCollectionResponse) {
     m := &MobileContainedAppCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewMobileContainedAppCollectionResponse()(*MobileContainedAppCollectionResp
     return m
 }
 // CreateMobileContainedAppCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMobileContainedAppCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileContainedAppCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MobileContainedAppCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *MobileContainedAppCollectionResponse) GetFieldDeserializers()(map[strin
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []MobileContainedAppable when successful
 func (m *MobileContainedAppCollectionResponse) GetValue()([]MobileContainedAppable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *MobileContainedAppCollectionResponse) SetValue(value []MobileContainedA
         panic(err)
     }
 }
-// MobileContainedAppCollectionResponseable 
 type MobileContainedAppCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

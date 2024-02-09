@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PermissionGrantPolicy 
 type PermissionGrantPolicy struct {
     PolicyBase
 }
-// NewPermissionGrantPolicy instantiates a new permissionGrantPolicy and sets the default values.
+// NewPermissionGrantPolicy instantiates a new PermissionGrantPolicy and sets the default values.
 func NewPermissionGrantPolicy()(*PermissionGrantPolicy) {
     m := &PermissionGrantPolicy{
         PolicyBase: *NewPolicyBase(),
@@ -18,10 +17,12 @@ func NewPermissionGrantPolicy()(*PermissionGrantPolicy) {
     return m
 }
 // CreatePermissionGrantPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePermissionGrantPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPermissionGrantPolicy(), nil
 }
 // GetExcludes gets the excludes property value. Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
+// returns a []PermissionGrantConditionSetable when successful
 func (m *PermissionGrantPolicy) GetExcludes()([]PermissionGrantConditionSetable) {
     val, err := m.GetBackingStore().Get("excludes")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *PermissionGrantPolicy) GetExcludes()([]PermissionGrantConditionSetable)
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PermissionGrantPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicyBase.GetFieldDeserializers()
     res["excludes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -70,6 +72,7 @@ func (m *PermissionGrantPolicy) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetIncludes gets the includes property value. Condition sets which are included in this permission grant policy. Automatically expanded on GET.
+// returns a []PermissionGrantConditionSetable when successful
 func (m *PermissionGrantPolicy) GetIncludes()([]PermissionGrantConditionSetable) {
     val, err := m.GetBackingStore().Get("includes")
     if err != nil {
@@ -126,7 +129,6 @@ func (m *PermissionGrantPolicy) SetIncludes(value []PermissionGrantConditionSeta
         panic(err)
     }
 }
-// PermissionGrantPolicyable 
 type PermissionGrantPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicyBaseable

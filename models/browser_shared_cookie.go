@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BrowserSharedCookie 
 type BrowserSharedCookie struct {
     Entity
 }
-// NewBrowserSharedCookie instantiates a new browserSharedCookie and sets the default values.
+// NewBrowserSharedCookie instantiates a new BrowserSharedCookie and sets the default values.
 func NewBrowserSharedCookie()(*BrowserSharedCookie) {
     m := &BrowserSharedCookie{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewBrowserSharedCookie()(*BrowserSharedCookie) {
     return m
 }
 // CreateBrowserSharedCookieFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBrowserSharedCookieFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBrowserSharedCookie(), nil
 }
 // GetComment gets the comment property value. The comment for the shared cookie.
+// returns a *string when successful
 func (m *BrowserSharedCookie) GetComment()(*string) {
     val, err := m.GetBackingStore().Get("comment")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *BrowserSharedCookie) GetComment()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the shared cookie was created.
+// returns a *Time when successful
 func (m *BrowserSharedCookie) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *BrowserSharedCookie) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetDeletedDateTime gets the deletedDateTime property value. The date and time when the shared cookie was deleted.
+// returns a *Time when successful
 func (m *BrowserSharedCookie) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("deletedDateTime")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *BrowserSharedCookie) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of the cookie.
+// returns a *string when successful
 func (m *BrowserSharedCookie) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *BrowserSharedCookie) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BrowserSharedCookie) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["comment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -196,6 +201,7 @@ func (m *BrowserSharedCookie) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetHistory gets the history property value. The history of modifications applied to the cookie.
+// returns a []BrowserSharedCookieHistoryable when successful
 func (m *BrowserSharedCookie) GetHistory()([]BrowserSharedCookieHistoryable) {
     val, err := m.GetBackingStore().Get("history")
     if err != nil {
@@ -207,6 +213,7 @@ func (m *BrowserSharedCookie) GetHistory()([]BrowserSharedCookieHistoryable) {
     return nil
 }
 // GetHostOnly gets the hostOnly property value. Controls whether a cookie is a host-only or domain cookie.
+// returns a *bool when successful
 func (m *BrowserSharedCookie) GetHostOnly()(*bool) {
     val, err := m.GetBackingStore().Get("hostOnly")
     if err != nil {
@@ -218,6 +225,7 @@ func (m *BrowserSharedCookie) GetHostOnly()(*bool) {
     return nil
 }
 // GetHostOrDomain gets the hostOrDomain property value. The URL of the cookie.
+// returns a *string when successful
 func (m *BrowserSharedCookie) GetHostOrDomain()(*string) {
     val, err := m.GetBackingStore().Get("hostOrDomain")
     if err != nil {
@@ -229,6 +237,7 @@ func (m *BrowserSharedCookie) GetHostOrDomain()(*string) {
     return nil
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The user who last modified the cookie.
+// returns a IdentitySetable when successful
 func (m *BrowserSharedCookie) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -240,6 +249,7 @@ func (m *BrowserSharedCookie) GetLastModifiedBy()(IdentitySetable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the cookie was last modified.
+// returns a *Time when successful
 func (m *BrowserSharedCookie) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -251,6 +261,7 @@ func (m *BrowserSharedCookie) GetLastModifiedDateTime()(*i336074805fc853987abe6f
     return nil
 }
 // GetPath gets the path property value. The path of the cookie.
+// returns a *string when successful
 func (m *BrowserSharedCookie) GetPath()(*string) {
     val, err := m.GetBackingStore().Get("path")
     if err != nil {
@@ -262,6 +273,7 @@ func (m *BrowserSharedCookie) GetPath()(*string) {
     return nil
 }
 // GetSourceEnvironment gets the sourceEnvironment property value. The sourceEnvironment property
+// returns a *BrowserSharedCookieSourceEnvironment when successful
 func (m *BrowserSharedCookie) GetSourceEnvironment()(*BrowserSharedCookieSourceEnvironment) {
     val, err := m.GetBackingStore().Get("sourceEnvironment")
     if err != nil {
@@ -273,6 +285,7 @@ func (m *BrowserSharedCookie) GetSourceEnvironment()(*BrowserSharedCookieSourceE
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *BrowserSharedCookieStatus when successful
 func (m *BrowserSharedCookie) GetStatus()(*BrowserSharedCookieStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -455,7 +468,6 @@ func (m *BrowserSharedCookie) SetStatus(value *BrowserSharedCookieStatus)() {
         panic(err)
     }
 }
-// BrowserSharedCookieable 
 type BrowserSharedCookieable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

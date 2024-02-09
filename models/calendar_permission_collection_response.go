@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CalendarPermissionCollectionResponse 
 type CalendarPermissionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCalendarPermissionCollectionResponse instantiates a new calendarPermissionCollectionResponse and sets the default values.
+// NewCalendarPermissionCollectionResponse instantiates a new CalendarPermissionCollectionResponse and sets the default values.
 func NewCalendarPermissionCollectionResponse()(*CalendarPermissionCollectionResponse) {
     m := &CalendarPermissionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewCalendarPermissionCollectionResponse()(*CalendarPermissionCollectionResp
     return m
 }
 // CreateCalendarPermissionCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCalendarPermissionCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCalendarPermissionCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CalendarPermissionCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *CalendarPermissionCollectionResponse) GetFieldDeserializers()(map[strin
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []CalendarPermissionable when successful
 func (m *CalendarPermissionCollectionResponse) GetValue()([]CalendarPermissionable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *CalendarPermissionCollectionResponse) SetValue(value []CalendarPermissi
         panic(err)
     }
 }
-// CalendarPermissionCollectionResponseable 
 type CalendarPermissionCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -40,6 +40,7 @@ type ThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilderGetRequestConfigu
     QueryParameters *ThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilderGetQueryParameters
 }
 // ByPassiveDnsRecordId provides operations to manage the passiveDnsReverse property of the microsoft.graph.security.host entity.
+// returns a *ThreatIntelligenceHostsItemPassiveDnsReversePassiveDnsRecordItemRequestBuilder when successful
 func (m *ThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilder) ByPassiveDnsRecordId(passiveDnsRecordId string)(*ThreatIntelligenceHostsItemPassiveDnsReversePassiveDnsRecordItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,24 +51,27 @@ func (m *ThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilder) ByPassiveDn
     }
     return NewThreatIntelligenceHostsItemPassiveDnsReversePassiveDnsRecordItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilderInternal instantiates a new PassiveDnsReverseRequestBuilder and sets the default values.
+// NewThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilderInternal instantiates a new ThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilder) {
     m := &ThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/passiveDnsReverse{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/passiveDnsReverse{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilder instantiates a new PassiveDnsReverseRequestBuilder and sets the default values.
+// NewThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilder instantiates a new ThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ThreatIntelligenceHostsItemPassiveDnsReverseCountRequestBuilder when successful
 func (m *ThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilder) Count()(*ThreatIntelligenceHostsItemPassiveDnsReverseCountRequestBuilder) {
     return NewThreatIntelligenceHostsItemPassiveDnsReverseCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a collection of passiveDnsRecord resources from a reverse passive DNS retrieval.  A reverse DNS lookup queries the hostname of a host using an IP address.
+// returns a PassiveDnsRecordCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-host-list-passivednsreverse?view=graph-rest-1.0
@@ -77,8 +81,7 @@ func (m *ThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilder) Get(ctx con
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.CreatePassiveDnsRecordCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,6 +93,7 @@ func (m *ThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilder) Get(ctx con
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.PassiveDnsRecordCollectionResponseable), nil
 }
 // ToGetRequestInformation get a collection of passiveDnsRecord resources from a reverse passive DNS retrieval.  A reverse DNS lookup queries the hostname of a host using an IP address.
+// returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -103,6 +107,7 @@ func (m *ThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilder) ToGetReques
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilder when successful
 func (m *ThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilder) {
     return NewThreatIntelligenceHostsItemPassiveDnsReverseRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

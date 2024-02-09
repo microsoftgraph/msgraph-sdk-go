@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsDeviceADAccount 
 type WindowsDeviceADAccount struct {
     WindowsDeviceAccount
 }
-// NewWindowsDeviceADAccount instantiates a new windowsDeviceADAccount and sets the default values.
+// NewWindowsDeviceADAccount instantiates a new WindowsDeviceADAccount and sets the default values.
 func NewWindowsDeviceADAccount()(*WindowsDeviceADAccount) {
     m := &WindowsDeviceADAccount{
         WindowsDeviceAccount: *NewWindowsDeviceAccount(),
@@ -18,10 +17,12 @@ func NewWindowsDeviceADAccount()(*WindowsDeviceADAccount) {
     return m
 }
 // CreateWindowsDeviceADAccountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsDeviceADAccountFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsDeviceADAccount(), nil
 }
 // GetDomainName gets the domainName property value. Not yet documented
+// returns a *string when successful
 func (m *WindowsDeviceADAccount) GetDomainName()(*string) {
     val, err := m.GetBackingStore().Get("domainName")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *WindowsDeviceADAccount) GetDomainName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsDeviceADAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsDeviceAccount.GetFieldDeserializers()
     res["domainName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +60,7 @@ func (m *WindowsDeviceADAccount) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetUserName gets the userName property value. Not yet documented
+// returns a *string when successful
 func (m *WindowsDeviceADAccount) GetUserName()(*string) {
     val, err := m.GetBackingStore().Get("userName")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *WindowsDeviceADAccount) SetUserName(value *string)() {
         panic(err)
     }
 }
-// WindowsDeviceADAccountable 
 type WindowsDeviceADAccountable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsDeviceAccountable

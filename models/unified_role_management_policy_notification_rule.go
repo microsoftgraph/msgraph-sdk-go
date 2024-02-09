@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleManagementPolicyNotificationRule 
 type UnifiedRoleManagementPolicyNotificationRule struct {
     UnifiedRoleManagementPolicyRule
 }
-// NewUnifiedRoleManagementPolicyNotificationRule instantiates a new unifiedRoleManagementPolicyNotificationRule and sets the default values.
+// NewUnifiedRoleManagementPolicyNotificationRule instantiates a new UnifiedRoleManagementPolicyNotificationRule and sets the default values.
 func NewUnifiedRoleManagementPolicyNotificationRule()(*UnifiedRoleManagementPolicyNotificationRule) {
     m := &UnifiedRoleManagementPolicyNotificationRule{
         UnifiedRoleManagementPolicyRule: *NewUnifiedRoleManagementPolicyRule(),
@@ -18,10 +17,12 @@ func NewUnifiedRoleManagementPolicyNotificationRule()(*UnifiedRoleManagementPoli
     return m
 }
 // CreateUnifiedRoleManagementPolicyNotificationRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnifiedRoleManagementPolicyNotificationRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleManagementPolicyNotificationRule(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnifiedRoleManagementPolicyNotificationRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UnifiedRoleManagementPolicyRule.GetFieldDeserializers()
     res["isDefaultRecipientsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -83,6 +84,7 @@ func (m *UnifiedRoleManagementPolicyNotificationRule) GetFieldDeserializers()(ma
     return res
 }
 // GetIsDefaultRecipientsEnabled gets the isDefaultRecipientsEnabled property value. Indicates whether a default recipient will receive the notification email.
+// returns a *bool when successful
 func (m *UnifiedRoleManagementPolicyNotificationRule) GetIsDefaultRecipientsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isDefaultRecipientsEnabled")
     if err != nil {
@@ -94,6 +96,7 @@ func (m *UnifiedRoleManagementPolicyNotificationRule) GetIsDefaultRecipientsEnab
     return nil
 }
 // GetNotificationLevel gets the notificationLevel property value. The level of notification. The possible values are None, Critical, All.
+// returns a *string when successful
 func (m *UnifiedRoleManagementPolicyNotificationRule) GetNotificationLevel()(*string) {
     val, err := m.GetBackingStore().Get("notificationLevel")
     if err != nil {
@@ -105,6 +108,7 @@ func (m *UnifiedRoleManagementPolicyNotificationRule) GetNotificationLevel()(*st
     return nil
 }
 // GetNotificationRecipients gets the notificationRecipients property value. The list of recipients of the email notifications.
+// returns a []string when successful
 func (m *UnifiedRoleManagementPolicyNotificationRule) GetNotificationRecipients()([]string) {
     val, err := m.GetBackingStore().Get("notificationRecipients")
     if err != nil {
@@ -116,6 +120,7 @@ func (m *UnifiedRoleManagementPolicyNotificationRule) GetNotificationRecipients(
     return nil
 }
 // GetNotificationType gets the notificationType property value. The type of notification. Only Email is supported.
+// returns a *string when successful
 func (m *UnifiedRoleManagementPolicyNotificationRule) GetNotificationType()(*string) {
     val, err := m.GetBackingStore().Get("notificationType")
     if err != nil {
@@ -127,6 +132,7 @@ func (m *UnifiedRoleManagementPolicyNotificationRule) GetNotificationType()(*str
     return nil
 }
 // GetRecipientType gets the recipientType property value. The type of recipient of the notification. The possible values are Requestor, Approver, Admin.
+// returns a *string when successful
 func (m *UnifiedRoleManagementPolicyNotificationRule) GetRecipientType()(*string) {
     val, err := m.GetBackingStore().Get("recipientType")
     if err != nil {
@@ -210,7 +216,6 @@ func (m *UnifiedRoleManagementPolicyNotificationRule) SetRecipientType(value *st
         panic(err)
     }
 }
-// UnifiedRoleManagementPolicyNotificationRuleable 
 type UnifiedRoleManagementPolicyNotificationRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UnifiedRoleManagementPolicyRuleable

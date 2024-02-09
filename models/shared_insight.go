@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SharedInsight 
 type SharedInsight struct {
     Entity
 }
-// NewSharedInsight instantiates a new sharedInsight and sets the default values.
+// NewSharedInsight instantiates a new SharedInsight and sets the default values.
 func NewSharedInsight()(*SharedInsight) {
     m := &SharedInsight{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewSharedInsight()(*SharedInsight) {
     return m
 }
 // CreateSharedInsightFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSharedInsightFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSharedInsight(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SharedInsight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["lastShared"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -91,6 +92,7 @@ func (m *SharedInsight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetLastShared gets the lastShared property value. Details about the shared item. Read only.
+// returns a SharingDetailable when successful
 func (m *SharedInsight) GetLastShared()(SharingDetailable) {
     val, err := m.GetBackingStore().Get("lastShared")
     if err != nil {
@@ -102,6 +104,7 @@ func (m *SharedInsight) GetLastShared()(SharingDetailable) {
     return nil
 }
 // GetLastSharedMethod gets the lastSharedMethod property value. The lastSharedMethod property
+// returns a Entityable when successful
 func (m *SharedInsight) GetLastSharedMethod()(Entityable) {
     val, err := m.GetBackingStore().Get("lastSharedMethod")
     if err != nil {
@@ -113,6 +116,7 @@ func (m *SharedInsight) GetLastSharedMethod()(Entityable) {
     return nil
 }
 // GetResource gets the resource property value. Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
+// returns a Entityable when successful
 func (m *SharedInsight) GetResource()(Entityable) {
     val, err := m.GetBackingStore().Get("resource")
     if err != nil {
@@ -124,6 +128,7 @@ func (m *SharedInsight) GetResource()(Entityable) {
     return nil
 }
 // GetResourceReference gets the resourceReference property value. Reference properties of the shared document, such as the url and type of the document. Read-only
+// returns a ResourceReferenceable when successful
 func (m *SharedInsight) GetResourceReference()(ResourceReferenceable) {
     val, err := m.GetBackingStore().Get("resourceReference")
     if err != nil {
@@ -135,6 +140,7 @@ func (m *SharedInsight) GetResourceReference()(ResourceReferenceable) {
     return nil
 }
 // GetResourceVisualization gets the resourceVisualization property value. Properties that you can use to visualize the document in your experience. Read-only
+// returns a ResourceVisualizationable when successful
 func (m *SharedInsight) GetResourceVisualization()(ResourceVisualizationable) {
     val, err := m.GetBackingStore().Get("resourceVisualization")
     if err != nil {
@@ -146,6 +152,7 @@ func (m *SharedInsight) GetResourceVisualization()(ResourceVisualizationable) {
     return nil
 }
 // GetSharingHistory gets the sharingHistory property value. The sharingHistory property
+// returns a []SharingDetailable when successful
 func (m *SharedInsight) GetSharingHistory()([]SharingDetailable) {
     val, err := m.GetBackingStore().Get("sharingHistory")
     if err != nil {
@@ -236,7 +243,6 @@ func (m *SharedInsight) SetSharingHistory(value []SharingDetailable)() {
         panic(err)
     }
 }
-// SharedInsightable 
 type SharedInsightable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

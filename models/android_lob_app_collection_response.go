@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidLobAppCollectionResponse 
 type AndroidLobAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAndroidLobAppCollectionResponse instantiates a new androidLobAppCollectionResponse and sets the default values.
+// NewAndroidLobAppCollectionResponse instantiates a new AndroidLobAppCollectionResponse and sets the default values.
 func NewAndroidLobAppCollectionResponse()(*AndroidLobAppCollectionResponse) {
     m := &AndroidLobAppCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewAndroidLobAppCollectionResponse()(*AndroidLobAppCollectionResponse) {
     return m
 }
 // CreateAndroidLobAppCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidLobAppCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidLobAppCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidLobAppCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *AndroidLobAppCollectionResponse) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []AndroidLobAppable when successful
 func (m *AndroidLobAppCollectionResponse) GetValue()([]AndroidLobAppable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *AndroidLobAppCollectionResponse) SetValue(value []AndroidLobAppable)() 
         panic(err)
     }
 }
-// AndroidLobAppCollectionResponseable 
 type AndroidLobAppCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

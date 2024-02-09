@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Calendar 
 type Calendar struct {
     Entity
 }
-// NewCalendar instantiates a new calendar and sets the default values.
+// NewCalendar instantiates a new Calendar and sets the default values.
 func NewCalendar()(*Calendar) {
     m := &Calendar{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewCalendar()(*Calendar) {
     return m
 }
 // CreateCalendarFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCalendarFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCalendar(), nil
 }
 // GetAllowedOnlineMeetingProviders gets the allowedOnlineMeetingProviders property value. Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
+// returns a []OnlineMeetingProviderType when successful
 func (m *Calendar) GetAllowedOnlineMeetingProviders()([]OnlineMeetingProviderType) {
     val, err := m.GetBackingStore().Get("allowedOnlineMeetingProviders")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Calendar) GetAllowedOnlineMeetingProviders()([]OnlineMeetingProviderTyp
     return nil
 }
 // GetCalendarPermissions gets the calendarPermissions property value. The permissions of the users with whom the calendar is shared.
+// returns a []CalendarPermissionable when successful
 func (m *Calendar) GetCalendarPermissions()([]CalendarPermissionable) {
     val, err := m.GetBackingStore().Get("calendarPermissions")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *Calendar) GetCalendarPermissions()([]CalendarPermissionable) {
     return nil
 }
 // GetCalendarView gets the calendarView property value. The calendar view for the calendar. Navigation property. Read-only.
+// returns a []Eventable when successful
 func (m *Calendar) GetCalendarView()([]Eventable) {
     val, err := m.GetBackingStore().Get("calendarView")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *Calendar) GetCalendarView()([]Eventable) {
     return nil
 }
 // GetCanEdit gets the canEdit property value. true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.
+// returns a *bool when successful
 func (m *Calendar) GetCanEdit()(*bool) {
     val, err := m.GetBackingStore().Get("canEdit")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *Calendar) GetCanEdit()(*bool) {
     return nil
 }
 // GetCanShare gets the canShare property value. true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it.
+// returns a *bool when successful
 func (m *Calendar) GetCanShare()(*bool) {
     val, err := m.GetBackingStore().Get("canShare")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *Calendar) GetCanShare()(*bool) {
     return nil
 }
 // GetCanViewPrivateItems gets the canViewPrivateItems property value. true if the user can read calendar items that have been marked private, false otherwise.
+// returns a *bool when successful
 func (m *Calendar) GetCanViewPrivateItems()(*bool) {
     val, err := m.GetBackingStore().Get("canViewPrivateItems")
     if err != nil {
@@ -86,6 +92,7 @@ func (m *Calendar) GetCanViewPrivateItems()(*bool) {
     return nil
 }
 // GetChangeKey gets the changeKey property value. Identifies the version of the calendar object. Every time the calendar is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
+// returns a *string when successful
 func (m *Calendar) GetChangeKey()(*string) {
     val, err := m.GetBackingStore().Get("changeKey")
     if err != nil {
@@ -97,6 +104,7 @@ func (m *Calendar) GetChangeKey()(*string) {
     return nil
 }
 // GetColor gets the color property value. Specifies the color theme to distinguish the calendar from other calendars in a UI. The property values are: auto, lightBlue, lightGreen, lightOrange, lightGray, lightYellow, lightTeal, lightPink, lightBrown, lightRed, maxColor.
+// returns a *CalendarColor when successful
 func (m *Calendar) GetColor()(*CalendarColor) {
     val, err := m.GetBackingStore().Get("color")
     if err != nil {
@@ -108,6 +116,7 @@ func (m *Calendar) GetColor()(*CalendarColor) {
     return nil
 }
 // GetDefaultOnlineMeetingProvider gets the defaultOnlineMeetingProvider property value. The default online meeting provider for meetings sent from this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
+// returns a *OnlineMeetingProviderType when successful
 func (m *Calendar) GetDefaultOnlineMeetingProvider()(*OnlineMeetingProviderType) {
     val, err := m.GetBackingStore().Get("defaultOnlineMeetingProvider")
     if err != nil {
@@ -119,6 +128,7 @@ func (m *Calendar) GetDefaultOnlineMeetingProvider()(*OnlineMeetingProviderType)
     return nil
 }
 // GetEvents gets the events property value. The events in the calendar. Navigation property. Read-only.
+// returns a []Eventable when successful
 func (m *Calendar) GetEvents()([]Eventable) {
     val, err := m.GetBackingStore().Get("events")
     if err != nil {
@@ -130,6 +140,7 @@ func (m *Calendar) GetEvents()([]Eventable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Calendar) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["allowedOnlineMeetingProviders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -351,6 +362,7 @@ func (m *Calendar) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetHexColor gets the hexColor property value. The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is empty. Read-only.
+// returns a *string when successful
 func (m *Calendar) GetHexColor()(*string) {
     val, err := m.GetBackingStore().Get("hexColor")
     if err != nil {
@@ -362,6 +374,7 @@ func (m *Calendar) GetHexColor()(*string) {
     return nil
 }
 // GetIsDefaultCalendar gets the isDefaultCalendar property value. true if this is the default calendar where new events are created by default, false otherwise.
+// returns a *bool when successful
 func (m *Calendar) GetIsDefaultCalendar()(*bool) {
     val, err := m.GetBackingStore().Get("isDefaultCalendar")
     if err != nil {
@@ -373,6 +386,7 @@ func (m *Calendar) GetIsDefaultCalendar()(*bool) {
     return nil
 }
 // GetIsRemovable gets the isRemovable property value. Indicates whether this user calendar can be deleted from the user mailbox.
+// returns a *bool when successful
 func (m *Calendar) GetIsRemovable()(*bool) {
     val, err := m.GetBackingStore().Get("isRemovable")
     if err != nil {
@@ -384,6 +398,7 @@ func (m *Calendar) GetIsRemovable()(*bool) {
     return nil
 }
 // GetIsTallyingResponses gets the isTallyingResponses property value. Indicates whether this user calendar supports tracking of meeting responses. Only meeting invites sent from users' primary calendars support tracking of meeting responses.
+// returns a *bool when successful
 func (m *Calendar) GetIsTallyingResponses()(*bool) {
     val, err := m.GetBackingStore().Get("isTallyingResponses")
     if err != nil {
@@ -395,6 +410,7 @@ func (m *Calendar) GetIsTallyingResponses()(*bool) {
     return nil
 }
 // GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
+// returns a []MultiValueLegacyExtendedPropertyable when successful
 func (m *Calendar) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("multiValueExtendedProperties")
     if err != nil {
@@ -406,6 +422,7 @@ func (m *Calendar) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedP
     return nil
 }
 // GetName gets the name property value. The calendar name.
+// returns a *string when successful
 func (m *Calendar) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -417,6 +434,7 @@ func (m *Calendar) GetName()(*string) {
     return nil
 }
 // GetOwner gets the owner property value. If set, this represents the user who created or added the calendar. For a calendar that the user created or added, the owner property is set to the user. For a calendar shared with the user, the owner property is set to the person who shared that calendar with the user.
+// returns a EmailAddressable when successful
 func (m *Calendar) GetOwner()(EmailAddressable) {
     val, err := m.GetBackingStore().Get("owner")
     if err != nil {
@@ -428,6 +446,7 @@ func (m *Calendar) GetOwner()(EmailAddressable) {
     return nil
 }
 // GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
+// returns a []SingleValueLegacyExtendedPropertyable when successful
 func (m *Calendar) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("singleValueExtendedProperties")
     if err != nil {
@@ -712,7 +731,6 @@ func (m *Calendar) SetSingleValueExtendedProperties(value []SingleValueLegacyExt
         panic(err)
     }
 }
-// Calendarable 
 type Calendarable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

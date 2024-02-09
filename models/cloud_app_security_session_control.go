@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudAppSecuritySessionControl 
 type CloudAppSecuritySessionControl struct {
     ConditionalAccessSessionControl
 }
-// NewCloudAppSecuritySessionControl instantiates a new cloudAppSecuritySessionControl and sets the default values.
+// NewCloudAppSecuritySessionControl instantiates a new CloudAppSecuritySessionControl and sets the default values.
 func NewCloudAppSecuritySessionControl()(*CloudAppSecuritySessionControl) {
     m := &CloudAppSecuritySessionControl{
         ConditionalAccessSessionControl: *NewConditionalAccessSessionControl(),
@@ -18,10 +17,12 @@ func NewCloudAppSecuritySessionControl()(*CloudAppSecuritySessionControl) {
     return m
 }
 // CreateCloudAppSecuritySessionControlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudAppSecuritySessionControlFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudAppSecuritySessionControl(), nil
 }
 // GetCloudAppSecurityType gets the cloudAppSecurityType property value. Possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.
+// returns a *CloudAppSecuritySessionControlType when successful
 func (m *CloudAppSecuritySessionControl) GetCloudAppSecurityType()(*CloudAppSecuritySessionControlType) {
     val, err := m.GetBackingStore().Get("cloudAppSecurityType")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *CloudAppSecuritySessionControl) GetCloudAppSecurityType()(*CloudAppSecu
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudAppSecuritySessionControl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ConditionalAccessSessionControl.GetFieldDeserializers()
     res["cloudAppSecurityType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -69,7 +71,6 @@ func (m *CloudAppSecuritySessionControl) SetCloudAppSecurityType(value *CloudApp
         panic(err)
     }
 }
-// CloudAppSecuritySessionControlable 
 type CloudAppSecuritySessionControlable interface {
     ConditionalAccessSessionControlable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

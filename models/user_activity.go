@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserActivity 
 type UserActivity struct {
     Entity
 }
-// NewUserActivity instantiates a new userActivity and sets the default values.
+// NewUserActivity instantiates a new UserActivity and sets the default values.
 func NewUserActivity()(*UserActivity) {
     m := &UserActivity{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewUserActivity()(*UserActivity) {
     return m
 }
 // CreateUserActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserActivityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserActivity(), nil
 }
 // GetActivationUrl gets the activationUrl property value. Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.
+// returns a *string when successful
 func (m *UserActivity) GetActivationUrl()(*string) {
     val, err := m.GetBackingStore().Get("activationUrl")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *UserActivity) GetActivationUrl()(*string) {
     return nil
 }
 // GetActivitySourceHost gets the activitySourceHost property value. Required. URL for the domain representing the cross-platform identity mapping for the app. Mapping is stored either as a JSON file hosted on the domain or configurable via Windows Dev Center. The JSON file is named cross-platform-app-identifiers and is hosted at root of your HTTPS domain, either at the top level domain or include a sub domain. For example: https://contoso.com or https://myapp.contoso.com but NOT https://myapp.contoso.com/somepath. You must have a unique file and domain (or sub domain) per cross-platform app identity. For example, a separate file and domain is needed for Word vs. PowerPoint.
+// returns a *string when successful
 func (m *UserActivity) GetActivitySourceHost()(*string) {
     val, err := m.GetBackingStore().Get("activitySourceHost")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *UserActivity) GetActivitySourceHost()(*string) {
     return nil
 }
 // GetAppActivityId gets the appActivityId property value. Required. The unique activity ID in the context of the app - supplied by caller and immutable thereafter.
+// returns a *string when successful
 func (m *UserActivity) GetAppActivityId()(*string) {
     val, err := m.GetBackingStore().Get("appActivityId")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *UserActivity) GetAppActivityId()(*string) {
     return nil
 }
 // GetAppDisplayName gets the appDisplayName property value. Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.
+// returns a *string when successful
 func (m *UserActivity) GetAppDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("appDisplayName")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *UserActivity) GetAppDisplayName()(*string) {
     return nil
 }
 // GetContentInfo gets the contentInfo property value. Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.
+// returns a Jsonable when successful
 func (m *UserActivity) GetContentInfo()(Jsonable) {
     val, err := m.GetBackingStore().Get("contentInfo")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *UserActivity) GetContentInfo()(Jsonable) {
     return nil
 }
 // GetContentUrl gets the contentUrl property value. Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).
+// returns a *string when successful
 func (m *UserActivity) GetContentUrl()(*string) {
     val, err := m.GetBackingStore().Get("contentUrl")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *UserActivity) GetContentUrl()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Set by the server. DateTime in UTC when the object was created on the server.
+// returns a *Time when successful
 func (m *UserActivity) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *UserActivity) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     return nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. Set by the server. DateTime in UTC when the object expired on the server.
+// returns a *Time when successful
 func (m *UserActivity) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -109,6 +117,7 @@ func (m *UserActivity) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetFallbackUrl gets the fallbackUrl property value. Optional. URL used to launch the activity in a web-based app, if available.
+// returns a *string when successful
 func (m *UserActivity) GetFallbackUrl()(*string) {
     val, err := m.GetBackingStore().Get("fallbackUrl")
     if err != nil {
@@ -120,6 +129,7 @@ func (m *UserActivity) GetFallbackUrl()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activationUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -271,6 +281,7 @@ func (m *UserActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetHistoryItems gets the historyItems property value. Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+// returns a []ActivityHistoryItemable when successful
 func (m *UserActivity) GetHistoryItems()([]ActivityHistoryItemable) {
     val, err := m.GetBackingStore().Get("historyItems")
     if err != nil {
@@ -282,6 +293,7 @@ func (m *UserActivity) GetHistoryItems()([]ActivityHistoryItemable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Set by the server. DateTime in UTC when the object was modified on the server.
+// returns a *Time when successful
 func (m *UserActivity) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -293,6 +305,7 @@ func (m *UserActivity) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad9
     return nil
 }
 // GetStatus gets the status property value. Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.
+// returns a *Status when successful
 func (m *UserActivity) GetStatus()(*Status) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -304,6 +317,7 @@ func (m *UserActivity) GetStatus()(*Status) {
     return nil
 }
 // GetUserTimezone gets the userTimezone property value. Optional. The timezone in which the user's device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.
+// returns a *string when successful
 func (m *UserActivity) GetUserTimezone()(*string) {
     val, err := m.GetBackingStore().Get("userTimezone")
     if err != nil {
@@ -315,6 +329,7 @@ func (m *UserActivity) GetUserTimezone()(*string) {
     return nil
 }
 // GetVisualElements gets the visualElements property value. The visualElements property
+// returns a VisualInfoable when successful
 func (m *UserActivity) GetVisualElements()(VisualInfoable) {
     val, err := m.GetBackingStore().Get("visualElements")
     if err != nil {
@@ -522,7 +537,6 @@ func (m *UserActivity) SetVisualElements(value VisualInfoable)() {
         panic(err)
     }
 }
-// UserActivityable 
 type UserActivityable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,11 +5,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// CustomTaskExtensionCallbackConfiguration 
 type CustomTaskExtensionCallbackConfiguration struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomExtensionCallbackConfiguration
 }
-// NewCustomTaskExtensionCallbackConfiguration instantiates a new customTaskExtensionCallbackConfiguration and sets the default values.
+// NewCustomTaskExtensionCallbackConfiguration instantiates a new CustomTaskExtensionCallbackConfiguration and sets the default values.
 func NewCustomTaskExtensionCallbackConfiguration()(*CustomTaskExtensionCallbackConfiguration) {
     m := &CustomTaskExtensionCallbackConfiguration{
         CustomExtensionCallbackConfiguration: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewCustomExtensionCallbackConfiguration(),
@@ -19,10 +18,12 @@ func NewCustomTaskExtensionCallbackConfiguration()(*CustomTaskExtensionCallbackC
     return m
 }
 // CreateCustomTaskExtensionCallbackConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCustomTaskExtensionCallbackConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomTaskExtensionCallbackConfiguration(), nil
 }
 // GetAuthorizedApps gets the authorizedApps property value. The authorizedApps property
+// returns a []Applicationable when successful
 func (m *CustomTaskExtensionCallbackConfiguration) GetAuthorizedApps()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable) {
     val, err := m.GetBackingStore().Get("authorizedApps")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *CustomTaskExtensionCallbackConfiguration) GetAuthorizedApps()([]iadcd81
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomTaskExtensionCallbackConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CustomExtensionCallbackConfiguration.GetFieldDeserializers()
     res["authorizedApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -81,7 +83,6 @@ func (m *CustomTaskExtensionCallbackConfiguration) SetAuthorizedApps(value []iad
         panic(err)
     }
 }
-// CustomTaskExtensionCallbackConfigurationable 
 type CustomTaskExtensionCallbackConfigurationable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomExtensionCallbackConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -6,11 +6,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// TaskProcessingResult 
 type TaskProcessingResult struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewTaskProcessingResult instantiates a new taskProcessingResult and sets the default values.
+// NewTaskProcessingResult instantiates a new TaskProcessingResult and sets the default values.
 func NewTaskProcessingResult()(*TaskProcessingResult) {
     m := &TaskProcessingResult{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -18,10 +17,12 @@ func NewTaskProcessingResult()(*TaskProcessingResult) {
     return m
 }
 // CreateTaskProcessingResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTaskProcessingResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTaskProcessingResult(), nil
 }
 // GetCompletedDateTime gets the completedDateTime property value. The date time when taskProcessingResult execution ended. Value is null if task execution is still in progress.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
+// returns a *Time when successful
 func (m *TaskProcessingResult) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("completedDateTime")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *TaskProcessingResult) GetCompletedDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date time when the taskProcessingResult was created.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
+// returns a *Time when successful
 func (m *TaskProcessingResult) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *TaskProcessingResult) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetFailureReason gets the failureReason property value. Describes why the taskProcessingResult has failed.
+// returns a *string when successful
 func (m *TaskProcessingResult) GetFailureReason()(*string) {
     val, err := m.GetBackingStore().Get("failureReason")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *TaskProcessingResult) GetFailureReason()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TaskProcessingResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["completedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -130,6 +134,7 @@ func (m *TaskProcessingResult) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetProcessingStatus gets the processingStatus property value. The processingStatus property
+// returns a *LifecycleWorkflowProcessingStatus when successful
 func (m *TaskProcessingResult) GetProcessingStatus()(*LifecycleWorkflowProcessingStatus) {
     val, err := m.GetBackingStore().Get("processingStatus")
     if err != nil {
@@ -141,6 +146,7 @@ func (m *TaskProcessingResult) GetProcessingStatus()(*LifecycleWorkflowProcessin
     return nil
 }
 // GetStartedDateTime gets the startedDateTime property value. The date time when taskProcessingResult execution started. Value is null if task execution has not yet started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
+// returns a *Time when successful
 func (m *TaskProcessingResult) GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startedDateTime")
     if err != nil {
@@ -152,6 +158,7 @@ func (m *TaskProcessingResult) GetStartedDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetSubject gets the subject property value. The subject property
+// returns a Userable when successful
 func (m *TaskProcessingResult) GetSubject()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable) {
     val, err := m.GetBackingStore().Get("subject")
     if err != nil {
@@ -163,6 +170,7 @@ func (m *TaskProcessingResult) GetSubject()(iadcd81124412c61e647227ecfc4449d8bba
     return nil
 }
 // GetTask gets the task property value. The task property
+// returns a Taskable when successful
 func (m *TaskProcessingResult) GetTask()(Taskable) {
     val, err := m.GetBackingStore().Get("task")
     if err != nil {
@@ -273,7 +281,6 @@ func (m *TaskProcessingResult) SetTask(value Taskable)() {
         panic(err)
     }
 }
-// TaskProcessingResultable 
 type TaskProcessingResultable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

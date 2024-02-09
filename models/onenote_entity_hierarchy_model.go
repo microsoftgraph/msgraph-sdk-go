@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnenoteEntityHierarchyModel 
 type OnenoteEntityHierarchyModel struct {
     OnenoteEntitySchemaObjectModel
 }
-// NewOnenoteEntityHierarchyModel instantiates a new onenoteEntityHierarchyModel and sets the default values.
+// NewOnenoteEntityHierarchyModel instantiates a new OnenoteEntityHierarchyModel and sets the default values.
 func NewOnenoteEntityHierarchyModel()(*OnenoteEntityHierarchyModel) {
     m := &OnenoteEntityHierarchyModel{
         OnenoteEntitySchemaObjectModel: *NewOnenoteEntitySchemaObjectModel(),
@@ -19,6 +18,7 @@ func NewOnenoteEntityHierarchyModel()(*OnenoteEntityHierarchyModel) {
     return m
 }
 // CreateOnenoteEntityHierarchyModelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnenoteEntityHierarchyModelFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -45,6 +45,7 @@ func CreateOnenoteEntityHierarchyModelFromDiscriminatorValue(parseNode i878a80d2
     return NewOnenoteEntityHierarchyModel(), nil
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user, device, and application that created the item. Read-only.
+// returns a IdentitySetable when successful
 func (m *OnenoteEntityHierarchyModel) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -56,6 +57,7 @@ func (m *OnenoteEntityHierarchyModel) GetCreatedBy()(IdentitySetable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of the notebook.
+// returns a *string when successful
 func (m *OnenoteEntityHierarchyModel) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -67,6 +69,7 @@ func (m *OnenoteEntityHierarchyModel) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnenoteEntityHierarchyModel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OnenoteEntitySchemaObjectModel.GetFieldDeserializers()
     res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -112,6 +115,7 @@ func (m *OnenoteEntityHierarchyModel) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user, device, and application that created the item. Read-only.
+// returns a IdentitySetable when successful
 func (m *OnenoteEntityHierarchyModel) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -123,6 +127,7 @@ func (m *OnenoteEntityHierarchyModel) GetLastModifiedBy()(IdentitySetable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *OnenoteEntityHierarchyModel) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -193,7 +198,6 @@ func (m *OnenoteEntityHierarchyModel) SetLastModifiedDateTime(value *i336074805f
         panic(err)
     }
 }
-// OnenoteEntityHierarchyModelable 
 type OnenoteEntityHierarchyModelable interface {
     OnenoteEntitySchemaObjectModelable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -39,28 +39,29 @@ type ItemGetByPathWithPathDrivesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemGetByPathWithPathDrivesRequestBuilderGetQueryParameters
 }
-// NewItemGetByPathWithPathDrivesRequestBuilderInternal instantiates a new DrivesRequestBuilder and sets the default values.
+// NewItemGetByPathWithPathDrivesRequestBuilderInternal instantiates a new ItemGetByPathWithPathDrivesRequestBuilder and sets the default values.
 func NewItemGetByPathWithPathDrivesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGetByPathWithPathDrivesRequestBuilder) {
     m := &ItemGetByPathWithPathDrivesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/drives{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/drives{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemGetByPathWithPathDrivesRequestBuilder instantiates a new DrivesRequestBuilder and sets the default values.
+// NewItemGetByPathWithPathDrivesRequestBuilder instantiates a new ItemGetByPathWithPathDrivesRequestBuilder and sets the default values.
 func NewItemGetByPathWithPathDrivesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGetByPathWithPathDrivesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemGetByPathWithPathDrivesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the collection of drives (document libraries) under this site.
+// returns a DriveCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGetByPathWithPathDrivesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGetByPathWithPathDrivesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDriveCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -72,6 +73,7 @@ func (m *ItemGetByPathWithPathDrivesRequestBuilder) Get(ctx context.Context, req
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveCollectionResponseable), nil
 }
 // ToGetRequestInformation the collection of drives (document libraries) under this site.
+// returns a *RequestInformation when successful
 func (m *ItemGetByPathWithPathDrivesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGetByPathWithPathDrivesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -85,6 +87,7 @@ func (m *ItemGetByPathWithPathDrivesRequestBuilder) ToGetRequestInformation(ctx 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemGetByPathWithPathDrivesRequestBuilder when successful
 func (m *ItemGetByPathWithPathDrivesRequestBuilder) WithUrl(rawUrl string)(*ItemGetByPathWithPathDrivesRequestBuilder) {
     return NewItemGetByPathWithPathDrivesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

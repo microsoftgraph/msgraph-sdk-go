@@ -17,20 +17,21 @@ type ItemJoinedTeamsItemChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuil
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemJoinedTeamsItemChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilderInternal instantiates a new SoftDeleteRequestBuilder and sets the default values.
+// NewItemJoinedTeamsItemChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilderInternal instantiates a new ItemJoinedTeamsItemChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilder) {
     m := &ItemJoinedTeamsItemChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/channels/{channel%2Did}/messages/{chatMessage%2Did}/replies/{chatMessage%2Did1}/softDelete", pathParameters),
     }
     return m
 }
-// NewItemJoinedTeamsItemChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilder instantiates a new SoftDeleteRequestBuilder and sets the default values.
+// NewItemJoinedTeamsItemChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilder instantiates a new ItemJoinedTeamsItemChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemJoinedTeamsItemChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post delete a single chatMessage or a chat message reply in a channel or a chat.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemJoinedTeamsItemChannelsItemMessagesItemRepliesItemSoftDeleteRequest
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemJoinedTeamsItemChannelsItemMessagesItemRepliesItemSoftDeleteRequest
     return nil
 }
 // ToPostRequestInformation delete a single chatMessage or a chat message reply in a channel or a chat.
+// returns a *RequestInformation when successful
 func (m *ItemJoinedTeamsItemChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *ItemJoinedTeamsItemChannelsItemMessagesItemRepliesItemSoftDeleteRequest
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemJoinedTeamsItemChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilder when successful
 func (m *ItemJoinedTeamsItemChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilder) WithUrl(rawUrl string)(*ItemJoinedTeamsItemChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilder) {
     return NewItemJoinedTeamsItemChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

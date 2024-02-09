@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsWorkFromAnywhereDevice struct {
     Entity
 }
-// NewUserExperienceAnalyticsWorkFromAnywhereDevice instantiates a new userExperienceAnalyticsWorkFromAnywhereDevice and sets the default values.
+// NewUserExperienceAnalyticsWorkFromAnywhereDevice instantiates a new UserExperienceAnalyticsWorkFromAnywhereDevice and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereDevice()(*UserExperienceAnalyticsWorkFromAnywhereDevice) {
     m := &UserExperienceAnalyticsWorkFromAnywhereDevice{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewUserExperienceAnalyticsWorkFromAnywhereDevice()(*UserExperienceAnalytics
     return m
 }
 // CreateUserExperienceAnalyticsWorkFromAnywhereDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsWorkFromAnywhereDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsWorkFromAnywhereDevice(), nil
 }
 // GetAutoPilotProfileAssigned gets the autoPilotProfileAssigned property value. When TRUE, indicates the intune device's autopilot profile is assigned. When FALSE, indicates it's not Assigned. Supports: $select, $OrderBy. Read-only.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetAutoPilotProfileAssigned()(*bool) {
     val, err := m.GetBackingStore().Get("autoPilotProfileAssigned")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetAutoPilotProfileAssig
     return nil
 }
 // GetAutoPilotRegistered gets the autoPilotRegistered property value. When TRUE, indicates the intune device's autopilot is registered. When FALSE, indicates it's not registered. Supports: $select, $OrderBy. Read-only.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetAutoPilotRegistered()(*bool) {
     val, err := m.GetBackingStore().Get("autoPilotRegistered")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetAutoPilotRegistered()
     return nil
 }
 // GetAzureAdDeviceId gets the azureAdDeviceId property value. The Azure Active Directory (Azure AD) device Id. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetAzureAdDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("azureAdDeviceId")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetAzureAdDeviceId()(*st
     return nil
 }
 // GetAzureAdJoinType gets the azureAdJoinType property value. The work from anywhere device's Azure Active Directory (Azure AD) join type. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetAzureAdJoinType()(*string) {
     val, err := m.GetBackingStore().Get("azureAdJoinType")
     if err != nil {
@@ -64,6 +69,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetAzureAdJoinType()(*st
     return nil
 }
 // GetAzureAdRegistered gets the azureAdRegistered property value. When TRUE, indicates the device's Azure Active Directory (Azure AD) is registered. When False, indicates it's not registered. Supports: $select, $OrderBy. Read-only.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetAzureAdRegistered()(*bool) {
     val, err := m.GetBackingStore().Get("azureAdRegistered")
     if err != nil {
@@ -75,6 +81,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetAzureAdRegistered()(*
     return nil
 }
 // GetCloudIdentityScore gets the cloudIdentityScore property value. Indicates per device cloud identity score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetCloudIdentityScore()(*float64) {
     val, err := m.GetBackingStore().Get("cloudIdentityScore")
     if err != nil {
@@ -86,6 +93,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetCloudIdentityScore()(
     return nil
 }
 // GetCloudManagementScore gets the cloudManagementScore property value. Indicates per device cloud management score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetCloudManagementScore()(*float64) {
     val, err := m.GetBackingStore().Get("cloudManagementScore")
     if err != nil {
@@ -97,6 +105,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetCloudManagementScore(
     return nil
 }
 // GetCloudProvisioningScore gets the cloudProvisioningScore property value. Indicates per device cloud provisioning score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetCloudProvisioningScore()(*float64) {
     val, err := m.GetBackingStore().Get("cloudProvisioningScore")
     if err != nil {
@@ -108,6 +117,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetCloudProvisioningScor
     return nil
 }
 // GetCompliancePolicySetToIntune gets the compliancePolicySetToIntune property value. When TRUE, indicates the device's compliance policy is set to intune. When FALSE, indicates it's not set to intune. Supports: $select, $OrderBy. Read-only.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetCompliancePolicySetToIntune()(*bool) {
     val, err := m.GetBackingStore().Get("compliancePolicySetToIntune")
     if err != nil {
@@ -119,6 +129,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetCompliancePolicySetTo
     return nil
 }
 // GetDeviceId gets the deviceId property value. The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -130,6 +141,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetDeviceId()(*string) {
     return nil
 }
 // GetDeviceName gets the deviceName property value. The name of the device. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -141,6 +153,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetDeviceName()(*string)
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["autoPilotProfileAssigned"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -486,6 +499,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
     return res
 }
 // GetHealthStatus gets the healthStatus property value. The healthStatus property
+// returns a *UserExperienceAnalyticsHealthState when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
     val, err := m.GetBackingStore().Get("healthStatus")
     if err != nil {
@@ -497,6 +511,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetHealthStatus()(*UserE
     return nil
 }
 // GetIsCloudManagedGatewayEnabled gets the isCloudManagedGatewayEnabled property value. When TRUE, indicates the device's Cloud Management Gateway for Configuration Manager is enabled. When FALSE, indicates it's not enabled. Supports: $select, $OrderBy. Read-only.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetIsCloudManagedGatewayEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isCloudManagedGatewayEnabled")
     if err != nil {
@@ -508,6 +523,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetIsCloudManagedGateway
     return nil
 }
 // GetManagedBy gets the managedBy property value. The management agent of the device. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetManagedBy()(*string) {
     val, err := m.GetBackingStore().Get("managedBy")
     if err != nil {
@@ -519,6 +535,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetManagedBy()(*string) 
     return nil
 }
 // GetManufacturer gets the manufacturer property value. The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
     if err != nil {
@@ -530,6 +547,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetManufacturer()(*strin
     return nil
 }
 // GetModel gets the model property value. The model name of the device. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
     if err != nil {
@@ -541,6 +559,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetModel()(*string) {
     return nil
 }
 // GetOsCheckFailed gets the osCheckFailed property value. When TRUE, indicates OS check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetOsCheckFailed()(*bool) {
     val, err := m.GetBackingStore().Get("osCheckFailed")
     if err != nil {
@@ -552,6 +571,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetOsCheckFailed()(*bool
     return nil
 }
 // GetOsDescription gets the osDescription property value. The OS description of the device. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetOsDescription()(*string) {
     val, err := m.GetBackingStore().Get("osDescription")
     if err != nil {
@@ -563,6 +583,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetOsDescription()(*stri
     return nil
 }
 // GetOsVersion gets the osVersion property value. The OS version of the device. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetOsVersion()(*string) {
     val, err := m.GetBackingStore().Get("osVersion")
     if err != nil {
@@ -574,6 +595,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetOsVersion()(*string) 
     return nil
 }
 // GetOtherWorkloadsSetToIntune gets the otherWorkloadsSetToIntune property value. When TRUE, indicates the device's other workloads is set to intune. When FALSE, indicates it's not set to intune. Supports: $select, $OrderBy. Read-only.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetOtherWorkloadsSetToIntune()(*bool) {
     val, err := m.GetBackingStore().Get("otherWorkloadsSetToIntune")
     if err != nil {
@@ -585,6 +607,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetOtherWorkloadsSetToIn
     return nil
 }
 // GetOwnership gets the ownership property value. Ownership of the device. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetOwnership()(*string) {
     val, err := m.GetBackingStore().Get("ownership")
     if err != nil {
@@ -596,6 +619,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetOwnership()(*string) 
     return nil
 }
 // GetProcessor64BitCheckFailed gets the processor64BitCheckFailed property value. When TRUE, indicates processor hardware 64-bit architecture check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetProcessor64BitCheckFailed()(*bool) {
     val, err := m.GetBackingStore().Get("processor64BitCheckFailed")
     if err != nil {
@@ -607,6 +631,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetProcessor64BitCheckFa
     return nil
 }
 // GetProcessorCoreCountCheckFailed gets the processorCoreCountCheckFailed property value. When TRUE, indicates processor hardware core count check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetProcessorCoreCountCheckFailed()(*bool) {
     val, err := m.GetBackingStore().Get("processorCoreCountCheckFailed")
     if err != nil {
@@ -618,6 +643,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetProcessorCoreCountChe
     return nil
 }
 // GetProcessorFamilyCheckFailed gets the processorFamilyCheckFailed property value. When TRUE, indicates processor hardware family check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetProcessorFamilyCheckFailed()(*bool) {
     val, err := m.GetBackingStore().Get("processorFamilyCheckFailed")
     if err != nil {
@@ -629,6 +655,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetProcessorFamilyCheckF
     return nil
 }
 // GetProcessorSpeedCheckFailed gets the processorSpeedCheckFailed property value. When TRUE, indicates processor hardware speed check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetProcessorSpeedCheckFailed()(*bool) {
     val, err := m.GetBackingStore().Get("processorSpeedCheckFailed")
     if err != nil {
@@ -640,6 +667,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetProcessorSpeedCheckFa
     return nil
 }
 // GetRamCheckFailed gets the ramCheckFailed property value. When TRUE, indicates RAM hardware check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetRamCheckFailed()(*bool) {
     val, err := m.GetBackingStore().Get("ramCheckFailed")
     if err != nil {
@@ -651,6 +679,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetRamCheckFailed()(*boo
     return nil
 }
 // GetSecureBootCheckFailed gets the secureBootCheckFailed property value. When TRUE, indicates secure boot hardware check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetSecureBootCheckFailed()(*bool) {
     val, err := m.GetBackingStore().Get("secureBootCheckFailed")
     if err != nil {
@@ -662,6 +691,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetSecureBootCheckFailed
     return nil
 }
 // GetSerialNumber gets the serialNumber property value. The serial number of the device. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetSerialNumber()(*string) {
     val, err := m.GetBackingStore().Get("serialNumber")
     if err != nil {
@@ -673,6 +703,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetSerialNumber()(*strin
     return nil
 }
 // GetStorageCheckFailed gets the storageCheckFailed property value. When TRUE, indicates storage hardware check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetStorageCheckFailed()(*bool) {
     val, err := m.GetBackingStore().Get("storageCheckFailed")
     if err != nil {
@@ -684,6 +715,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetStorageCheckFailed()(
     return nil
 }
 // GetTenantAttached gets the tenantAttached property value. When TRUE, indicates the device is Tenant Attached. When FALSE, indicates it's not Tenant Attached. Supports: $select, $OrderBy. Read-only.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetTenantAttached()(*bool) {
     val, err := m.GetBackingStore().Get("tenantAttached")
     if err != nil {
@@ -695,6 +727,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetTenantAttached()(*boo
     return nil
 }
 // GetTpmCheckFailed gets the tpmCheckFailed property value. When TRUE, indicates Trusted Platform Module (TPM) hardware check failed for device to the latest version of upgrade to windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetTpmCheckFailed()(*bool) {
     val, err := m.GetBackingStore().Get("tpmCheckFailed")
     if err != nil {
@@ -706,6 +739,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetTpmCheckFailed()(*boo
     return nil
 }
 // GetUpgradeEligibility gets the upgradeEligibility property value. Work From Anywhere windows device upgrade eligibility status.
+// returns a *OperatingSystemUpgradeEligibility when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetUpgradeEligibility()(*OperatingSystemUpgradeEligibility) {
     val, err := m.GetBackingStore().Get("upgradeEligibility")
     if err != nil {
@@ -717,6 +751,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetUpgradeEligibility()(
     return nil
 }
 // GetWindowsScore gets the windowsScore property value. Indicates per device windows score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetWindowsScore()(*float64) {
     val, err := m.GetBackingStore().Get("windowsScore")
     if err != nil {
@@ -728,6 +763,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetWindowsScore()(*float
     return nil
 }
 // GetWorkFromAnywhereScore gets the workFromAnywhereScore property value. Indicates work from anywhere per device overall score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetWorkFromAnywhereScore()(*float64) {
     val, err := m.GetBackingStore().Get("workFromAnywhereScore")
     if err != nil {
@@ -1190,7 +1226,6 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetWorkFromAnywhereScore
         panic(err)
     }
 }
-// UserExperienceAnalyticsWorkFromAnywhereDeviceable 
 type UserExperienceAnalyticsWorkFromAnywhereDeviceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

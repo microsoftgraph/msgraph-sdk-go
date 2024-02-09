@@ -8,7 +8,7 @@ import (
 type ManagedApp struct {
     MobileApp
 }
-// NewManagedApp instantiates a new managedApp and sets the default values.
+// NewManagedApp instantiates a new ManagedApp and sets the default values.
 func NewManagedApp()(*ManagedApp) {
     m := &ManagedApp{
         MobileApp: *NewMobileApp(),
@@ -18,6 +18,7 @@ func NewManagedApp()(*ManagedApp) {
     return m
 }
 // CreateManagedAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -48,6 +49,7 @@ func CreateManagedAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewManagedApp(), nil
 }
 // GetAppAvailability gets the appAvailability property value. A managed (MAM) application's availability.
+// returns a *ManagedAppAvailability when successful
 func (m *ManagedApp) GetAppAvailability()(*ManagedAppAvailability) {
     val, err := m.GetBackingStore().Get("appAvailability")
     if err != nil {
@@ -59,6 +61,7 @@ func (m *ManagedApp) GetAppAvailability()(*ManagedAppAvailability) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileApp.GetFieldDeserializers()
     res["appAvailability"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -84,6 +87,7 @@ func (m *ManagedApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetVersion gets the version property value. The Application's version.
+// returns a *string when successful
 func (m *ManagedApp) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -129,7 +133,6 @@ func (m *ManagedApp) SetVersion(value *string)() {
         panic(err)
     }
 }
-// ManagedAppable 
 type ManagedAppable interface {
     MobileAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

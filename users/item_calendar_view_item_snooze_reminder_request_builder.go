@@ -17,20 +17,21 @@ type ItemCalendarViewItemSnoozeReminderRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemCalendarViewItemSnoozeReminderRequestBuilderInternal instantiates a new SnoozeReminderRequestBuilder and sets the default values.
+// NewItemCalendarViewItemSnoozeReminderRequestBuilderInternal instantiates a new ItemCalendarViewItemSnoozeReminderRequestBuilder and sets the default values.
 func NewItemCalendarViewItemSnoozeReminderRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarViewItemSnoozeReminderRequestBuilder) {
     m := &ItemCalendarViewItemSnoozeReminderRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarView/{event%2Did}/snoozeReminder", pathParameters),
     }
     return m
 }
-// NewItemCalendarViewItemSnoozeReminderRequestBuilder instantiates a new SnoozeReminderRequestBuilder and sets the default values.
+// NewItemCalendarViewItemSnoozeReminderRequestBuilder instantiates a new ItemCalendarViewItemSnoozeReminderRequestBuilder and sets the default values.
 func NewItemCalendarViewItemSnoozeReminderRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarViewItemSnoozeReminderRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarViewItemSnoozeReminderRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post postpone a reminder for an event in a user calendar until a new time.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemCalendarViewItemSnoozeReminderRequestBuilder) Post(ctx context.Cont
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemCalendarViewItemSnoozeReminderRequestBuilder) Post(ctx context.Cont
     return nil
 }
 // ToPostRequestInformation postpone a reminder for an event in a user calendar until a new time.
+// returns a *RequestInformation when successful
 func (m *ItemCalendarViewItemSnoozeReminderRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCalendarViewItemSnoozeReminderPostRequestBodyable, requestConfiguration *ItemCalendarViewItemSnoozeReminderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *ItemCalendarViewItemSnoozeReminderRequestBuilder) ToPostRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemCalendarViewItemSnoozeReminderRequestBuilder when successful
 func (m *ItemCalendarViewItemSnoozeReminderRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarViewItemSnoozeReminderRequestBuilder) {
     return NewItemCalendarViewItemSnoozeReminderRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

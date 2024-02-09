@@ -8,7 +8,7 @@ import (
 type Win32LobAppFileSystemRule struct {
     Win32LobAppRule
 }
-// NewWin32LobAppFileSystemRule instantiates a new win32LobAppFileSystemRule and sets the default values.
+// NewWin32LobAppFileSystemRule instantiates a new Win32LobAppFileSystemRule and sets the default values.
 func NewWin32LobAppFileSystemRule()(*Win32LobAppFileSystemRule) {
     m := &Win32LobAppFileSystemRule{
         Win32LobAppRule: *NewWin32LobAppRule(),
@@ -18,10 +18,12 @@ func NewWin32LobAppFileSystemRule()(*Win32LobAppFileSystemRule) {
     return m
 }
 // CreateWin32LobAppFileSystemRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWin32LobAppFileSystemRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWin32LobAppFileSystemRule(), nil
 }
 // GetCheck32BitOn64System gets the check32BitOn64System property value. A value indicating whether to expand environment variables in the 32-bit context on 64-bit systems.
+// returns a *bool when successful
 func (m *Win32LobAppFileSystemRule) GetCheck32BitOn64System()(*bool) {
     val, err := m.GetBackingStore().Get("check32BitOn64System")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *Win32LobAppFileSystemRule) GetCheck32BitOn64System()(*bool) {
     return nil
 }
 // GetComparisonValue gets the comparisonValue property value. The file or folder comparison value.
+// returns a *string when successful
 func (m *Win32LobAppFileSystemRule) GetComparisonValue()(*string) {
     val, err := m.GetBackingStore().Get("comparisonValue")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *Win32LobAppFileSystemRule) GetComparisonValue()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Win32LobAppFileSystemRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Win32LobAppRule.GetFieldDeserializers()
     res["check32BitOn64System"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -109,6 +113,7 @@ func (m *Win32LobAppFileSystemRule) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetFileOrFolderName gets the fileOrFolderName property value. The file or folder name to look up.
+// returns a *string when successful
 func (m *Win32LobAppFileSystemRule) GetFileOrFolderName()(*string) {
     val, err := m.GetBackingStore().Get("fileOrFolderName")
     if err != nil {
@@ -120,6 +125,7 @@ func (m *Win32LobAppFileSystemRule) GetFileOrFolderName()(*string) {
     return nil
 }
 // GetOperationType gets the operationType property value. Contains all supported file system detection type.
+// returns a *Win32LobAppFileSystemOperationType when successful
 func (m *Win32LobAppFileSystemRule) GetOperationType()(*Win32LobAppFileSystemOperationType) {
     val, err := m.GetBackingStore().Get("operationType")
     if err != nil {
@@ -131,6 +137,7 @@ func (m *Win32LobAppFileSystemRule) GetOperationType()(*Win32LobAppFileSystemOpe
     return nil
 }
 // GetOperator gets the operator property value. Contains properties for detection operator.
+// returns a *Win32LobAppRuleOperator when successful
 func (m *Win32LobAppFileSystemRule) GetOperator()(*Win32LobAppRuleOperator) {
     val, err := m.GetBackingStore().Get("operator")
     if err != nil {
@@ -142,6 +149,7 @@ func (m *Win32LobAppFileSystemRule) GetOperator()(*Win32LobAppRuleOperator) {
     return nil
 }
 // GetPath gets the path property value. The file or folder path to look up.
+// returns a *string when successful
 func (m *Win32LobAppFileSystemRule) GetPath()(*string) {
     val, err := m.GetBackingStore().Get("path")
     if err != nil {
@@ -240,7 +248,6 @@ func (m *Win32LobAppFileSystemRule) SetPath(value *string)() {
         panic(err)
     }
 }
-// Win32LobAppFileSystemRuleable 
 type Win32LobAppFileSystemRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Win32LobAppRuleable

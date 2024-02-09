@@ -25,28 +25,29 @@ type ItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilderGetRequestCon
     // Request query parameters
     QueryParameters *ItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilderGetQueryParameters
 }
-// NewItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilderInternal instantiates a new CalendarRequestBuilder and sets the default values.
+// NewItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilderInternal instantiates a new ItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilder and sets the default values.
 func NewItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilder) {
     m := &ItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/events/{event%2Did}/instances/{event%2Did1}/calendar{?%24select}", pathParameters),
     }
     return m
 }
-// NewItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilder instantiates a new CalendarRequestBuilder and sets the default values.
+// NewItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilder instantiates a new ItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilder and sets the default values.
 func NewItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the calendar that contains the event. Navigation property. Read-only.
+// returns a Calendarable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Calendarable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateCalendarFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -58,6 +59,7 @@ func (m *ItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilder) Get(ctx
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Calendarable), nil
 }
 // ToGetRequestInformation the calendar that contains the event. Navigation property. Read-only.
+// returns a *RequestInformation when successful
 func (m *ItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -71,6 +73,7 @@ func (m *ItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilder) ToGetRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilder when successful
 func (m *ItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilder) {
     return NewItemCalendarsItemEventsItemInstancesItemCalendarRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

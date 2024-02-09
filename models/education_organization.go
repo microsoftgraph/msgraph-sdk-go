@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationOrganization 
 type EducationOrganization struct {
     Entity
 }
-// NewEducationOrganization instantiates a new educationOrganization and sets the default values.
+// NewEducationOrganization instantiates a new EducationOrganization and sets the default values.
 func NewEducationOrganization()(*EducationOrganization) {
     m := &EducationOrganization{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewEducationOrganization()(*EducationOrganization) {
     return m
 }
 // CreateEducationOrganizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationOrganizationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -38,6 +38,7 @@ func CreateEducationOrganizationFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewEducationOrganization(), nil
 }
 // GetDescription gets the description property value. Organization description.
+// returns a *string when successful
 func (m *EducationOrganization) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -49,6 +50,7 @@ func (m *EducationOrganization) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Organization display name.
+// returns a *string when successful
 func (m *EducationOrganization) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -60,6 +62,7 @@ func (m *EducationOrganization) GetDisplayName()(*string) {
     return nil
 }
 // GetExternalSource gets the externalSource property value. Source where this organization was created from. Possible values are: sis, manual.
+// returns a *EducationExternalSource when successful
 func (m *EducationOrganization) GetExternalSource()(*EducationExternalSource) {
     val, err := m.GetBackingStore().Get("externalSource")
     if err != nil {
@@ -71,6 +74,7 @@ func (m *EducationOrganization) GetExternalSource()(*EducationExternalSource) {
     return nil
 }
 // GetExternalSourceDetail gets the externalSourceDetail property value. The name of the external source this resource was generated from.
+// returns a *string when successful
 func (m *EducationOrganization) GetExternalSourceDetail()(*string) {
     val, err := m.GetBackingStore().Get("externalSourceDetail")
     if err != nil {
@@ -82,6 +86,7 @@ func (m *EducationOrganization) GetExternalSourceDetail()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationOrganization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -187,7 +192,6 @@ func (m *EducationOrganization) SetExternalSourceDetail(value *string)() {
         panic(err)
     }
 }
-// EducationOrganizationable 
 type EducationOrganizationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

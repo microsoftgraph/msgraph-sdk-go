@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OutlookCategoryCollectionResponse 
 type OutlookCategoryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewOutlookCategoryCollectionResponse instantiates a new outlookCategoryCollectionResponse and sets the default values.
+// NewOutlookCategoryCollectionResponse instantiates a new OutlookCategoryCollectionResponse and sets the default values.
 func NewOutlookCategoryCollectionResponse()(*OutlookCategoryCollectionResponse) {
     m := &OutlookCategoryCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewOutlookCategoryCollectionResponse()(*OutlookCategoryCollectionResponse) 
     return m
 }
 // CreateOutlookCategoryCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOutlookCategoryCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOutlookCategoryCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OutlookCategoryCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *OutlookCategoryCollectionResponse) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []OutlookCategoryable when successful
 func (m *OutlookCategoryCollectionResponse) GetValue()([]OutlookCategoryable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *OutlookCategoryCollectionResponse) SetValue(value []OutlookCategoryable
         panic(err)
     }
 }
-// OutlookCategoryCollectionResponseable 
 type OutlookCategoryCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

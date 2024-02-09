@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FilterOperatorSchema 
 type FilterOperatorSchema struct {
     Entity
 }
-// NewFilterOperatorSchema instantiates a new filterOperatorSchema and sets the default values.
+// NewFilterOperatorSchema instantiates a new FilterOperatorSchema and sets the default values.
 func NewFilterOperatorSchema()(*FilterOperatorSchema) {
     m := &FilterOperatorSchema{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewFilterOperatorSchema()(*FilterOperatorSchema) {
     return m
 }
 // CreateFilterOperatorSchemaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFilterOperatorSchemaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFilterOperatorSchema(), nil
 }
 // GetArity gets the arity property value. The arity property
+// returns a *ScopeOperatorType when successful
 func (m *FilterOperatorSchema) GetArity()(*ScopeOperatorType) {
     val, err := m.GetBackingStore().Get("arity")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *FilterOperatorSchema) GetArity()(*ScopeOperatorType) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FilterOperatorSchema) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["arity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -72,6 +74,7 @@ func (m *FilterOperatorSchema) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetMultivaluedComparisonType gets the multivaluedComparisonType property value. The multivaluedComparisonType property
+// returns a *ScopeOperatorMultiValuedComparisonType when successful
 func (m *FilterOperatorSchema) GetMultivaluedComparisonType()(*ScopeOperatorMultiValuedComparisonType) {
     val, err := m.GetBackingStore().Get("multivaluedComparisonType")
     if err != nil {
@@ -83,6 +86,7 @@ func (m *FilterOperatorSchema) GetMultivaluedComparisonType()(*ScopeOperatorMult
     return nil
 }
 // GetSupportedAttributeTypes gets the supportedAttributeTypes property value. Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.
+// returns a []AttributeType when successful
 func (m *FilterOperatorSchema) GetSupportedAttributeTypes()([]AttributeType) {
     val, err := m.GetBackingStore().Get("supportedAttributeTypes")
     if err != nil {
@@ -142,7 +146,6 @@ func (m *FilterOperatorSchema) SetSupportedAttributeTypes(value []AttributeType)
         panic(err)
     }
 }
-// FilterOperatorSchemaable 
 type FilterOperatorSchemaable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

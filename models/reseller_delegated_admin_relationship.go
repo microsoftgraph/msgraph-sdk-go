@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ResellerDelegatedAdminRelationship 
 type ResellerDelegatedAdminRelationship struct {
     DelegatedAdminRelationship
 }
-// NewResellerDelegatedAdminRelationship instantiates a new resellerDelegatedAdminRelationship and sets the default values.
+// NewResellerDelegatedAdminRelationship instantiates a new ResellerDelegatedAdminRelationship and sets the default values.
 func NewResellerDelegatedAdminRelationship()(*ResellerDelegatedAdminRelationship) {
     m := &ResellerDelegatedAdminRelationship{
         DelegatedAdminRelationship: *NewDelegatedAdminRelationship(),
@@ -16,10 +15,12 @@ func NewResellerDelegatedAdminRelationship()(*ResellerDelegatedAdminRelationship
     return m
 }
 // CreateResellerDelegatedAdminRelationshipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateResellerDelegatedAdminRelationshipFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewResellerDelegatedAdminRelationship(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ResellerDelegatedAdminRelationship) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DelegatedAdminRelationship.GetFieldDeserializers()
     res["indirectProviderTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -45,6 +46,7 @@ func (m *ResellerDelegatedAdminRelationship) GetFieldDeserializers()(map[string]
     return res
 }
 // GetIndirectProviderTenantId gets the indirectProviderTenantId property value. The tenant ID of the indirect provider partner who created the relationship for the indirect reseller partner.
+// returns a *string when successful
 func (m *ResellerDelegatedAdminRelationship) GetIndirectProviderTenantId()(*string) {
     val, err := m.GetBackingStore().Get("indirectProviderTenantId")
     if err != nil {
@@ -56,6 +58,7 @@ func (m *ResellerDelegatedAdminRelationship) GetIndirectProviderTenantId()(*stri
     return nil
 }
 // GetIsPartnerConsentPending gets the isPartnerConsentPending property value. Indicates the indirect reseller partner consent status. true indicates that the partner has yet to review the relationship; false indicates that the partner has already provided consent by approving or rejecting the relationship.
+// returns a *bool when successful
 func (m *ResellerDelegatedAdminRelationship) GetIsPartnerConsentPending()(*bool) {
     val, err := m.GetBackingStore().Get("isPartnerConsentPending")
     if err != nil {
@@ -100,7 +103,6 @@ func (m *ResellerDelegatedAdminRelationship) SetIsPartnerConsentPending(value *b
         panic(err)
     }
 }
-// ResellerDelegatedAdminRelationshipable 
 type ResellerDelegatedAdminRelationshipable interface {
     DelegatedAdminRelationshipable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

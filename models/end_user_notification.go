@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EndUserNotification 
 type EndUserNotification struct {
     Entity
 }
-// NewEndUserNotification instantiates a new endUserNotification and sets the default values.
+// NewEndUserNotification instantiates a new EndUserNotification and sets the default values.
 func NewEndUserNotification()(*EndUserNotification) {
     m := &EndUserNotification{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewEndUserNotification()(*EndUserNotification) {
     return m
 }
 // CreateEndUserNotificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEndUserNotificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEndUserNotification(), nil
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user who created the notification.
+// returns a EmailIdentityable when successful
 func (m *EndUserNotification) GetCreatedBy()(EmailIdentityable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *EndUserNotification) GetCreatedBy()(EmailIdentityable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time when the notification was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *EndUserNotification) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *EndUserNotification) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetDescription gets the description property value. Description of the notification as defined by the user.
+// returns a *string when successful
 func (m *EndUserNotification) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *EndUserNotification) GetDescription()(*string) {
     return nil
 }
 // GetDetails gets the details property value. The details property
+// returns a []EndUserNotificationDetailable when successful
 func (m *EndUserNotification) GetDetails()([]EndUserNotificationDetailable) {
     val, err := m.GetBackingStore().Get("details")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *EndUserNotification) GetDetails()([]EndUserNotificationDetailable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Name of the notification as defined by the user.
+// returns a *string when successful
 func (m *EndUserNotification) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *EndUserNotification) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EndUserNotification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -203,6 +209,7 @@ func (m *EndUserNotification) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who last modified the notification.
+// returns a EmailIdentityable when successful
 func (m *EndUserNotification) GetLastModifiedBy()(EmailIdentityable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -214,6 +221,7 @@ func (m *EndUserNotification) GetLastModifiedBy()(EmailIdentityable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time when the notification was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *EndUserNotification) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -225,6 +233,7 @@ func (m *EndUserNotification) GetLastModifiedDateTime()(*i336074805fc853987abe6f
     return nil
 }
 // GetNotificationType gets the notificationType property value. Type of notification. Possible values are: unknown, positiveReinforcement, noTraining, trainingAssignment, trainingReminder, unknownFutureValue.
+// returns a *EndUserNotificationType when successful
 func (m *EndUserNotification) GetNotificationType()(*EndUserNotificationType) {
     val, err := m.GetBackingStore().Get("notificationType")
     if err != nil {
@@ -236,6 +245,7 @@ func (m *EndUserNotification) GetNotificationType()(*EndUserNotificationType) {
     return nil
 }
 // GetSource gets the source property value. The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
+// returns a *SimulationContentSource when successful
 func (m *EndUserNotification) GetSource()(*SimulationContentSource) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
@@ -247,6 +257,7 @@ func (m *EndUserNotification) GetSource()(*SimulationContentSource) {
     return nil
 }
 // GetStatus gets the status property value. The status of the notification. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
+// returns a *SimulationContentStatus when successful
 func (m *EndUserNotification) GetStatus()(*SimulationContentStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -258,6 +269,7 @@ func (m *EndUserNotification) GetStatus()(*SimulationContentStatus) {
     return nil
 }
 // GetSupportedLocales gets the supportedLocales property value. Supported locales for endUserNotification content.
+// returns a []string when successful
 func (m *EndUserNotification) GetSupportedLocales()([]string) {
     val, err := m.GetBackingStore().Get("supportedLocales")
     if err != nil {
@@ -428,7 +440,6 @@ func (m *EndUserNotification) SetSupportedLocales(value []string)() {
         panic(err)
     }
 }
-// EndUserNotificationable 
 type EndUserNotificationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

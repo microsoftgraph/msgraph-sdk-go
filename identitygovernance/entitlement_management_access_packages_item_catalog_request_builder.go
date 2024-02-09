@@ -27,28 +27,29 @@ type EntitlementManagementAccessPackagesItemCatalogRequestBuilderGetRequestConfi
     // Request query parameters
     QueryParameters *EntitlementManagementAccessPackagesItemCatalogRequestBuilderGetQueryParameters
 }
-// NewEntitlementManagementAccessPackagesItemCatalogRequestBuilderInternal instantiates a new CatalogRequestBuilder and sets the default values.
+// NewEntitlementManagementAccessPackagesItemCatalogRequestBuilderInternal instantiates a new EntitlementManagementAccessPackagesItemCatalogRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackagesItemCatalogRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackagesItemCatalogRequestBuilder) {
     m := &EntitlementManagementAccessPackagesItemCatalogRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/catalog{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/catalog{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewEntitlementManagementAccessPackagesItemCatalogRequestBuilder instantiates a new CatalogRequestBuilder and sets the default values.
+// NewEntitlementManagementAccessPackagesItemCatalogRequestBuilder instantiates a new EntitlementManagementAccessPackagesItemCatalogRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackagesItemCatalogRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackagesItemCatalogRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAccessPackagesItemCatalogRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get required when creating the access package. Read-only. Nullable.
+// returns a AccessPackageCatalogable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackagesItemCatalogRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemCatalogRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCatalogable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateAccessPackageCatalogFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *EntitlementManagementAccessPackagesItemCatalogRequestBuilder) Get(ctx c
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageCatalogable), nil
 }
 // ToGetRequestInformation required when creating the access package. Read-only. Nullable.
+// returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesItemCatalogRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemCatalogRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *EntitlementManagementAccessPackagesItemCatalogRequestBuilder) ToGetRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *EntitlementManagementAccessPackagesItemCatalogRequestBuilder when successful
 func (m *EntitlementManagementAccessPackagesItemCatalogRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackagesItemCatalogRequestBuilder) {
     return NewEntitlementManagementAccessPackagesItemCatalogRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

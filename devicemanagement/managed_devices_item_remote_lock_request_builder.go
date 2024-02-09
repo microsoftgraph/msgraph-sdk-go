@@ -17,20 +17,21 @@ type ManagedDevicesItemRemoteLockRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewManagedDevicesItemRemoteLockRequestBuilderInternal instantiates a new RemoteLockRequestBuilder and sets the default values.
+// NewManagedDevicesItemRemoteLockRequestBuilderInternal instantiates a new ManagedDevicesItemRemoteLockRequestBuilder and sets the default values.
 func NewManagedDevicesItemRemoteLockRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDevicesItemRemoteLockRequestBuilder) {
     m := &ManagedDevicesItemRemoteLockRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/remoteLock", pathParameters),
     }
     return m
 }
-// NewManagedDevicesItemRemoteLockRequestBuilder instantiates a new RemoteLockRequestBuilder and sets the default values.
+// NewManagedDevicesItemRemoteLockRequestBuilder instantiates a new ManagedDevicesItemRemoteLockRequestBuilder and sets the default values.
 func NewManagedDevicesItemRemoteLockRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDevicesItemRemoteLockRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDevicesItemRemoteLockRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post remote lock
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-remotelock?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ManagedDevicesItemRemoteLockRequestBuilder) Post(ctx context.Context, r
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ManagedDevicesItemRemoteLockRequestBuilder) Post(ctx context.Context, r
     return nil
 }
 // ToPostRequestInformation remote lock
+// returns a *RequestInformation when successful
 func (m *ManagedDevicesItemRemoteLockRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ManagedDevicesItemRemoteLockRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *ManagedDevicesItemRemoteLockRequestBuilder) ToPostRequestInformation(ct
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ManagedDevicesItemRemoteLockRequestBuilder when successful
 func (m *ManagedDevicesItemRemoteLockRequestBuilder) WithUrl(rawUrl string)(*ManagedDevicesItemRemoteLockRequestBuilder) {
     return NewManagedDevicesItemRemoteLockRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

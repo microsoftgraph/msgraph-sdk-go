@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CustomTrainingSetting 
 type CustomTrainingSetting struct {
     TrainingSetting
 }
-// NewCustomTrainingSetting instantiates a new customTrainingSetting and sets the default values.
+// NewCustomTrainingSetting instantiates a new CustomTrainingSetting and sets the default values.
 func NewCustomTrainingSetting()(*CustomTrainingSetting) {
     m := &CustomTrainingSetting{
         TrainingSetting: *NewTrainingSetting(),
@@ -18,10 +17,12 @@ func NewCustomTrainingSetting()(*CustomTrainingSetting) {
     return m
 }
 // CreateCustomTrainingSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCustomTrainingSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomTrainingSetting(), nil
 }
 // GetAssignedTo gets the assignedTo property value. A user collection that specifies to whom the training should be assigned. Possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.
+// returns a []TrainingAssignedTo when successful
 func (m *CustomTrainingSetting) GetAssignedTo()([]TrainingAssignedTo) {
     val, err := m.GetBackingStore().Get("assignedTo")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *CustomTrainingSetting) GetAssignedTo()([]TrainingAssignedTo) {
     return nil
 }
 // GetDescription gets the description property value. The description of the custom training setting.
+// returns a *string when successful
 func (m *CustomTrainingSetting) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *CustomTrainingSetting) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the custom training setting.
+// returns a *string when successful
 func (m *CustomTrainingSetting) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *CustomTrainingSetting) GetDisplayName()(*string) {
     return nil
 }
 // GetDurationInMinutes gets the durationInMinutes property value. Training duration.
+// returns a *int32 when successful
 func (m *CustomTrainingSetting) GetDurationInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("durationInMinutes")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *CustomTrainingSetting) GetDurationInMinutes()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomTrainingSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.TrainingSetting.GetFieldDeserializers()
     res["assignedTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -127,6 +132,7 @@ func (m *CustomTrainingSetting) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetUrl gets the url property value. The training URL.
+// returns a *string when successful
 func (m *CustomTrainingSetting) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -210,7 +216,6 @@ func (m *CustomTrainingSetting) SetUrl(value *string)() {
         panic(err)
     }
 }
-// CustomTrainingSettingable 
 type CustomTrainingSettingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     TrainingSettingable

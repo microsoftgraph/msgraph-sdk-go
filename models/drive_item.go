@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DriveItem 
 type DriveItem struct {
     BaseItem
 }
-// NewDriveItem instantiates a new driveItem and sets the default values.
+// NewDriveItem instantiates a new DriveItem and sets the default values.
 func NewDriveItem()(*DriveItem) {
     m := &DriveItem{
         BaseItem: *NewBaseItem(),
@@ -18,10 +17,12 @@ func NewDriveItem()(*DriveItem) {
     return m
 }
 // CreateDriveItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDriveItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDriveItem(), nil
 }
 // GetAnalytics gets the analytics property value. Analytics about the view activities that took place on this item.
+// returns a ItemAnalyticsable when successful
 func (m *DriveItem) GetAnalytics()(ItemAnalyticsable) {
     val, err := m.GetBackingStore().Get("analytics")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *DriveItem) GetAnalytics()(ItemAnalyticsable) {
     return nil
 }
 // GetAudio gets the audio property value. Audio metadata, if the item is an audio file. Read-only. Read-only. Only on OneDrive Personal.
+// returns a Audioable when successful
 func (m *DriveItem) GetAudio()(Audioable) {
     val, err := m.GetBackingStore().Get("audio")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *DriveItem) GetAudio()(Audioable) {
     return nil
 }
 // GetBundle gets the bundle property value. Bundle metadata, if the item is a bundle. Read-only.
+// returns a Bundleable when successful
 func (m *DriveItem) GetBundle()(Bundleable) {
     val, err := m.GetBackingStore().Get("bundle")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *DriveItem) GetBundle()(Bundleable) {
     return nil
 }
 // GetChildren gets the children property value. Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
+// returns a []DriveItemable when successful
 func (m *DriveItem) GetChildren()([]DriveItemable) {
     val, err := m.GetBackingStore().Get("children")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *DriveItem) GetChildren()([]DriveItemable) {
     return nil
 }
 // GetContent gets the content property value. The content stream, if the item represents a file.
+// returns a []byte when successful
 func (m *DriveItem) GetContent()([]byte) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *DriveItem) GetContent()([]byte) {
     return nil
 }
 // GetCTag gets the cTag property value. An eTag for the content of the item. This eTag isn't changed if only the metadata is changed. Note This property isn't returned if the item is a folder. Read-only.
+// returns a *string when successful
 func (m *DriveItem) GetCTag()(*string) {
     val, err := m.GetBackingStore().Get("cTag")
     if err != nil {
@@ -88,6 +94,7 @@ func (m *DriveItem) GetCTag()(*string) {
     return nil
 }
 // GetDeleted gets the deleted property value. Information about the deleted state of the item. Read-only.
+// returns a Deletedable when successful
 func (m *DriveItem) GetDeleted()(Deletedable) {
     val, err := m.GetBackingStore().Get("deleted")
     if err != nil {
@@ -99,6 +106,7 @@ func (m *DriveItem) GetDeleted()(Deletedable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DriveItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseItem.GetFieldDeserializers()
     res["analytics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -464,6 +472,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetFile gets the file property value. File metadata, if the item is a file. Read-only.
+// returns a Fileable when successful
 func (m *DriveItem) GetFile()(Fileable) {
     val, err := m.GetBackingStore().Get("file")
     if err != nil {
@@ -475,6 +484,7 @@ func (m *DriveItem) GetFile()(Fileable) {
     return nil
 }
 // GetFileSystemInfo gets the fileSystemInfo property value. File system information on client. Read-write.
+// returns a FileSystemInfoable when successful
 func (m *DriveItem) GetFileSystemInfo()(FileSystemInfoable) {
     val, err := m.GetBackingStore().Get("fileSystemInfo")
     if err != nil {
@@ -486,6 +496,7 @@ func (m *DriveItem) GetFileSystemInfo()(FileSystemInfoable) {
     return nil
 }
 // GetFolder gets the folder property value. Folder metadata, if the item is a folder. Read-only.
+// returns a Folderable when successful
 func (m *DriveItem) GetFolder()(Folderable) {
     val, err := m.GetBackingStore().Get("folder")
     if err != nil {
@@ -497,6 +508,7 @@ func (m *DriveItem) GetFolder()(Folderable) {
     return nil
 }
 // GetImage gets the image property value. Image metadata, if the item is an image. Read-only.
+// returns a Imageable when successful
 func (m *DriveItem) GetImage()(Imageable) {
     val, err := m.GetBackingStore().Get("image")
     if err != nil {
@@ -508,6 +520,7 @@ func (m *DriveItem) GetImage()(Imageable) {
     return nil
 }
 // GetListItem gets the listItem property value. For drives in SharePoint, the associated document library list item. Read-only. Nullable.
+// returns a ListItemable when successful
 func (m *DriveItem) GetListItem()(ListItemable) {
     val, err := m.GetBackingStore().Get("listItem")
     if err != nil {
@@ -519,6 +532,7 @@ func (m *DriveItem) GetListItem()(ListItemable) {
     return nil
 }
 // GetLocation gets the location property value. Location metadata, if the item has location data. Read-only.
+// returns a GeoCoordinatesable when successful
 func (m *DriveItem) GetLocation()(GeoCoordinatesable) {
     val, err := m.GetBackingStore().Get("location")
     if err != nil {
@@ -530,6 +544,7 @@ func (m *DriveItem) GetLocation()(GeoCoordinatesable) {
     return nil
 }
 // GetMalware gets the malware property value. Malware metadata, if the item was detected to contain malware. Read-only.
+// returns a Malwareable when successful
 func (m *DriveItem) GetMalware()(Malwareable) {
     val, err := m.GetBackingStore().Get("malware")
     if err != nil {
@@ -541,6 +556,7 @@ func (m *DriveItem) GetMalware()(Malwareable) {
     return nil
 }
 // GetPackageEscaped gets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
+// returns a PackageEscapedable when successful
 func (m *DriveItem) GetPackageEscaped()(PackageEscapedable) {
     val, err := m.GetBackingStore().Get("packageEscaped")
     if err != nil {
@@ -552,6 +568,7 @@ func (m *DriveItem) GetPackageEscaped()(PackageEscapedable) {
     return nil
 }
 // GetPendingOperations gets the pendingOperations property value. If present, indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.
+// returns a PendingOperationsable when successful
 func (m *DriveItem) GetPendingOperations()(PendingOperationsable) {
     val, err := m.GetBackingStore().Get("pendingOperations")
     if err != nil {
@@ -563,6 +580,7 @@ func (m *DriveItem) GetPendingOperations()(PendingOperationsable) {
     return nil
 }
 // GetPermissions gets the permissions property value. The set of permissions for the item. Read-only. Nullable.
+// returns a []Permissionable when successful
 func (m *DriveItem) GetPermissions()([]Permissionable) {
     val, err := m.GetBackingStore().Get("permissions")
     if err != nil {
@@ -574,6 +592,7 @@ func (m *DriveItem) GetPermissions()([]Permissionable) {
     return nil
 }
 // GetPhoto gets the photo property value. Photo metadata, if the item is a photo. Read-only.
+// returns a Photoable when successful
 func (m *DriveItem) GetPhoto()(Photoable) {
     val, err := m.GetBackingStore().Get("photo")
     if err != nil {
@@ -585,6 +604,7 @@ func (m *DriveItem) GetPhoto()(Photoable) {
     return nil
 }
 // GetPublication gets the publication property value. Provides information about the published or checked-out state of an item, in locations that support such actions. This property isn't returned by default. Read-only.
+// returns a PublicationFacetable when successful
 func (m *DriveItem) GetPublication()(PublicationFacetable) {
     val, err := m.GetBackingStore().Get("publication")
     if err != nil {
@@ -596,6 +616,7 @@ func (m *DriveItem) GetPublication()(PublicationFacetable) {
     return nil
 }
 // GetRemoteItem gets the remoteItem property value. Remote item data, if the item is shared from a drive other than the one being accessed. Read-only.
+// returns a RemoteItemable when successful
 func (m *DriveItem) GetRemoteItem()(RemoteItemable) {
     val, err := m.GetBackingStore().Get("remoteItem")
     if err != nil {
@@ -607,6 +628,7 @@ func (m *DriveItem) GetRemoteItem()(RemoteItemable) {
     return nil
 }
 // GetRetentionLabel gets the retentionLabel property value. Information about retention label and settings enforced on the driveItem. Read-write.
+// returns a ItemRetentionLabelable when successful
 func (m *DriveItem) GetRetentionLabel()(ItemRetentionLabelable) {
     val, err := m.GetBackingStore().Get("retentionLabel")
     if err != nil {
@@ -618,6 +640,7 @@ func (m *DriveItem) GetRetentionLabel()(ItemRetentionLabelable) {
     return nil
 }
 // GetRoot gets the root property value. If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive.
+// returns a Rootable when successful
 func (m *DriveItem) GetRoot()(Rootable) {
     val, err := m.GetBackingStore().Get("root")
     if err != nil {
@@ -629,6 +652,7 @@ func (m *DriveItem) GetRoot()(Rootable) {
     return nil
 }
 // GetSearchResult gets the searchResult property value. Search metadata, if the item is from a search result. Read-only.
+// returns a SearchResultable when successful
 func (m *DriveItem) GetSearchResult()(SearchResultable) {
     val, err := m.GetBackingStore().Get("searchResult")
     if err != nil {
@@ -640,6 +664,7 @@ func (m *DriveItem) GetSearchResult()(SearchResultable) {
     return nil
 }
 // GetShared gets the shared property value. Indicates that the item was shared with others and provides information about the shared state of the item. Read-only.
+// returns a Sharedable when successful
 func (m *DriveItem) GetShared()(Sharedable) {
     val, err := m.GetBackingStore().Get("shared")
     if err != nil {
@@ -651,6 +676,7 @@ func (m *DriveItem) GetShared()(Sharedable) {
     return nil
 }
 // GetSharepointIds gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
+// returns a SharepointIdsable when successful
 func (m *DriveItem) GetSharepointIds()(SharepointIdsable) {
     val, err := m.GetBackingStore().Get("sharepointIds")
     if err != nil {
@@ -662,6 +688,7 @@ func (m *DriveItem) GetSharepointIds()(SharepointIdsable) {
     return nil
 }
 // GetSize gets the size property value. Size of the item in bytes. Read-only.
+// returns a *int64 when successful
 func (m *DriveItem) GetSize()(*int64) {
     val, err := m.GetBackingStore().Get("size")
     if err != nil {
@@ -673,6 +700,7 @@ func (m *DriveItem) GetSize()(*int64) {
     return nil
 }
 // GetSpecialFolder gets the specialFolder property value. If the current item is also available as a special folder, this facet is returned. Read-only.
+// returns a SpecialFolderable when successful
 func (m *DriveItem) GetSpecialFolder()(SpecialFolderable) {
     val, err := m.GetBackingStore().Get("specialFolder")
     if err != nil {
@@ -684,6 +712,7 @@ func (m *DriveItem) GetSpecialFolder()(SpecialFolderable) {
     return nil
 }
 // GetSubscriptions gets the subscriptions property value. The set of subscriptions on the item. Only supported on the root of a drive.
+// returns a []Subscriptionable when successful
 func (m *DriveItem) GetSubscriptions()([]Subscriptionable) {
     val, err := m.GetBackingStore().Get("subscriptions")
     if err != nil {
@@ -695,6 +724,7 @@ func (m *DriveItem) GetSubscriptions()([]Subscriptionable) {
     return nil
 }
 // GetThumbnails gets the thumbnails property value. Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.
+// returns a []ThumbnailSetable when successful
 func (m *DriveItem) GetThumbnails()([]ThumbnailSetable) {
     val, err := m.GetBackingStore().Get("thumbnails")
     if err != nil {
@@ -706,6 +736,7 @@ func (m *DriveItem) GetThumbnails()([]ThumbnailSetable) {
     return nil
 }
 // GetVersions gets the versions property value. The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
+// returns a []DriveItemVersionable when successful
 func (m *DriveItem) GetVersions()([]DriveItemVersionable) {
     val, err := m.GetBackingStore().Get("versions")
     if err != nil {
@@ -717,6 +748,7 @@ func (m *DriveItem) GetVersions()([]DriveItemVersionable) {
     return nil
 }
 // GetVideo gets the video property value. Video metadata, if the item is a video. Read-only.
+// returns a Videoable when successful
 func (m *DriveItem) GetVideo()(Videoable) {
     val, err := m.GetBackingStore().Get("video")
     if err != nil {
@@ -728,6 +760,7 @@ func (m *DriveItem) GetVideo()(Videoable) {
     return nil
 }
 // GetWebDavUrl gets the webDavUrl property value. WebDAV compatible URL for the item.
+// returns a *string when successful
 func (m *DriveItem) GetWebDavUrl()(*string) {
     val, err := m.GetBackingStore().Get("webDavUrl")
     if err != nil {
@@ -739,6 +772,7 @@ func (m *DriveItem) GetWebDavUrl()(*string) {
     return nil
 }
 // GetWorkbook gets the workbook property value. For files that are Excel spreadsheets, access to the workbook API to work with the spreadsheet's contents. Nullable.
+// returns a Workbookable when successful
 func (m *DriveItem) GetWorkbook()(Workbookable) {
     val, err := m.GetBackingStore().Get("workbook")
     if err != nil {
@@ -1216,7 +1250,6 @@ func (m *DriveItem) SetWorkbook(value Workbookable)() {
         panic(err)
     }
 }
-// DriveItemable 
 type DriveItemable interface {
     BaseItemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

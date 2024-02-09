@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PassiveDnsRecord 
 type PassiveDnsRecord struct {
     Artifact
 }
-// NewPassiveDnsRecord instantiates a new passiveDnsRecord and sets the default values.
+// NewPassiveDnsRecord instantiates a new PassiveDnsRecord and sets the default values.
 func NewPassiveDnsRecord()(*PassiveDnsRecord) {
     m := &PassiveDnsRecord{
         Artifact: *NewArtifact(),
@@ -19,10 +18,12 @@ func NewPassiveDnsRecord()(*PassiveDnsRecord) {
     return m
 }
 // CreatePassiveDnsRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePassiveDnsRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPassiveDnsRecord(), nil
 }
 // GetArtifact gets the artifact property value. The artifact property
+// returns a Artifactable when successful
 func (m *PassiveDnsRecord) GetArtifact()(Artifactable) {
     val, err := m.GetBackingStore().Get("artifact")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *PassiveDnsRecord) GetArtifact()(Artifactable) {
     return nil
 }
 // GetCollectedDateTime gets the collectedDateTime property value. The date and time that this passiveDnsRecord entry was collected by Microsoft. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *PassiveDnsRecord) GetCollectedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("collectedDateTime")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *PassiveDnsRecord) GetCollectedDateTime()(*i336074805fc853987abe6f7fe3ad
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PassiveDnsRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Artifact.GetFieldDeserializers()
     res["artifact"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -110,6 +113,7 @@ func (m *PassiveDnsRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetFirstSeenDateTime gets the firstSeenDateTime property value. The date and time when this passiveDnsRecord entry was first seen. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *PassiveDnsRecord) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstSeenDateTime")
     if err != nil {
@@ -121,6 +125,7 @@ func (m *PassiveDnsRecord) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad
     return nil
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. The date and time when this passiveDnsRecord entry was most recently seen. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *PassiveDnsRecord) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSeenDateTime")
     if err != nil {
@@ -132,6 +137,7 @@ func (m *PassiveDnsRecord) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad9
     return nil
 }
 // GetParentHost gets the parentHost property value. The parentHost property
+// returns a Hostable when successful
 func (m *PassiveDnsRecord) GetParentHost()(Hostable) {
     val, err := m.GetBackingStore().Get("parentHost")
     if err != nil {
@@ -143,6 +149,7 @@ func (m *PassiveDnsRecord) GetParentHost()(Hostable) {
     return nil
 }
 // GetRecordType gets the recordType property value. The DNS record type for this passiveDnsRecord entry.
+// returns a *string when successful
 func (m *PassiveDnsRecord) GetRecordType()(*string) {
     val, err := m.GetBackingStore().Get("recordType")
     if err != nil {
@@ -239,7 +246,6 @@ func (m *PassiveDnsRecord) SetRecordType(value *string)() {
         panic(err)
     }
 }
-// PassiveDnsRecordable 
 type PassiveDnsRecordable interface {
     Artifactable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

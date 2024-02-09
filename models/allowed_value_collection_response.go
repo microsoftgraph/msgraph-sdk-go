@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AllowedValueCollectionResponse 
 type AllowedValueCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAllowedValueCollectionResponse instantiates a new allowedValueCollectionResponse and sets the default values.
+// NewAllowedValueCollectionResponse instantiates a new AllowedValueCollectionResponse and sets the default values.
 func NewAllowedValueCollectionResponse()(*AllowedValueCollectionResponse) {
     m := &AllowedValueCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewAllowedValueCollectionResponse()(*AllowedValueCollectionResponse) {
     return m
 }
 // CreateAllowedValueCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAllowedValueCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAllowedValueCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AllowedValueCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *AllowedValueCollectionResponse) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []AllowedValueable when successful
 func (m *AllowedValueCollectionResponse) GetValue()([]AllowedValueable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *AllowedValueCollectionResponse) SetValue(value []AllowedValueable)() {
         panic(err)
     }
 }
-// AllowedValueCollectionResponseable 
 type AllowedValueCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

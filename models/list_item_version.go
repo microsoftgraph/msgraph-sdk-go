@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ListItemVersion 
 type ListItemVersion struct {
     BaseItemVersion
 }
-// NewListItemVersion instantiates a new listItemVersion and sets the default values.
+// NewListItemVersion instantiates a new ListItemVersion and sets the default values.
 func NewListItemVersion()(*ListItemVersion) {
     m := &ListItemVersion{
         BaseItemVersion: *NewBaseItemVersion(),
@@ -18,6 +17,7 @@ func NewListItemVersion()(*ListItemVersion) {
     return m
 }
 // CreateListItemVersionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateListItemVersionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +40,7 @@ func CreateListItemVersionFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewListItemVersion(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ListItemVersion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseItemVersion.GetFieldDeserializers()
     res["fields"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -55,6 +56,7 @@ func (m *ListItemVersion) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetFields gets the fields property value. A collection of the fields and values for this version of the list item.
+// returns a FieldValueSetable when successful
 func (m *ListItemVersion) GetFields()(FieldValueSetable) {
     val, err := m.GetBackingStore().Get("fields")
     if err != nil {
@@ -86,7 +88,6 @@ func (m *ListItemVersion) SetFields(value FieldValueSetable)() {
         panic(err)
     }
 }
-// ListItemVersionable 
 type ListItemVersionable interface {
     BaseItemVersionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

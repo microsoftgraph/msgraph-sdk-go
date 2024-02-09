@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TargetManager 
 type TargetManager struct {
     SubjectSet
 }
-// NewTargetManager instantiates a new targetManager and sets the default values.
+// NewTargetManager instantiates a new TargetManager and sets the default values.
 func NewTargetManager()(*TargetManager) {
     m := &TargetManager{
         SubjectSet: *NewSubjectSet(),
@@ -18,10 +17,12 @@ func NewTargetManager()(*TargetManager) {
     return m
 }
 // CreateTargetManagerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTargetManagerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTargetManager(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TargetManager) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.SubjectSet.GetFieldDeserializers()
     res["managerLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *TargetManager) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetManagerLevel gets the managerLevel property value. Manager level, between 1 and 4. The direct manager is 1.
+// returns a *int32 when successful
 func (m *TargetManager) GetManagerLevel()(*int32) {
     val, err := m.GetBackingStore().Get("managerLevel")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *TargetManager) SetManagerLevel(value *int32)() {
         panic(err)
     }
 }
-// TargetManagerable 
 type TargetManagerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     SubjectSetable

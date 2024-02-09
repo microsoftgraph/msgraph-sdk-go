@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidStoreAppCollectionResponse 
 type AndroidStoreAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAndroidStoreAppCollectionResponse instantiates a new androidStoreAppCollectionResponse and sets the default values.
+// NewAndroidStoreAppCollectionResponse instantiates a new AndroidStoreAppCollectionResponse and sets the default values.
 func NewAndroidStoreAppCollectionResponse()(*AndroidStoreAppCollectionResponse) {
     m := &AndroidStoreAppCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewAndroidStoreAppCollectionResponse()(*AndroidStoreAppCollectionResponse) 
     return m
 }
 // CreateAndroidStoreAppCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidStoreAppCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidStoreAppCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidStoreAppCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *AndroidStoreAppCollectionResponse) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []AndroidStoreAppable when successful
 func (m *AndroidStoreAppCollectionResponse) GetValue()([]AndroidStoreAppable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *AndroidStoreAppCollectionResponse) SetValue(value []AndroidStoreAppable
         panic(err)
     }
 }
-// AndroidStoreAppCollectionResponseable 
 type AndroidStoreAppCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

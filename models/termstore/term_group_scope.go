@@ -2,7 +2,6 @@ package termstore
 import (
     "errors"
 )
-// 
 type TermGroupScope int
 
 const (

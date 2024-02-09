@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationStrengthRoot 
 type AuthenticationStrengthRoot struct {
     Entity
 }
-// NewAuthenticationStrengthRoot instantiates a new authenticationStrengthRoot and sets the default values.
+// NewAuthenticationStrengthRoot instantiates a new AuthenticationStrengthRoot and sets the default values.
 func NewAuthenticationStrengthRoot()(*AuthenticationStrengthRoot) {
     m := &AuthenticationStrengthRoot{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewAuthenticationStrengthRoot()(*AuthenticationStrengthRoot) {
     return m
 }
 // CreateAuthenticationStrengthRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthenticationStrengthRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationStrengthRoot(), nil
 }
 // GetAuthenticationMethodModes gets the authenticationMethodModes property value. Names and descriptions of all valid authentication method modes in the system.
+// returns a []AuthenticationMethodModeDetailable when successful
 func (m *AuthenticationStrengthRoot) GetAuthenticationMethodModes()([]AuthenticationMethodModeDetailable) {
     val, err := m.GetBackingStore().Get("authenticationMethodModes")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *AuthenticationStrengthRoot) GetAuthenticationMethodModes()([]Authentica
     return nil
 }
 // GetCombinations gets the combinations property value. The combinations property
+// returns a []AuthenticationMethodModes when successful
 func (m *AuthenticationStrengthRoot) GetCombinations()([]AuthenticationMethodModes) {
     val, err := m.GetBackingStore().Get("combinations")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *AuthenticationStrengthRoot) GetCombinations()([]AuthenticationMethodMod
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationStrengthRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["authenticationMethodModes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,6 +98,7 @@ func (m *AuthenticationStrengthRoot) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetPolicies gets the policies property value. A collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.
+// returns a []AuthenticationStrengthPolicyable when successful
 func (m *AuthenticationStrengthRoot) GetPolicies()([]AuthenticationStrengthPolicyable) {
     val, err := m.GetBackingStore().Get("policies")
     if err != nil {
@@ -164,7 +168,6 @@ func (m *AuthenticationStrengthRoot) SetPolicies(value []AuthenticationStrengthP
         panic(err)
     }
 }
-// AuthenticationStrengthRootable 
 type AuthenticationStrengthRootable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

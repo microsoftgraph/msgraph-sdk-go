@@ -9,7 +9,7 @@ import (
 type WindowsInformationProtection struct {
     ManagedAppPolicy
 }
-// NewWindowsInformationProtection instantiates a new windowsInformationProtection and sets the default values.
+// NewWindowsInformationProtection instantiates a new WindowsInformationProtection and sets the default values.
 func NewWindowsInformationProtection()(*WindowsInformationProtection) {
     m := &WindowsInformationProtection{
         ManagedAppPolicy: *NewManagedAppPolicy(),
@@ -19,6 +19,7 @@ func NewWindowsInformationProtection()(*WindowsInformationProtection) {
     return m
 }
 // CreateWindowsInformationProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsInformationProtectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -43,6 +44,7 @@ func CreateWindowsInformationProtectionFromDiscriminatorValue(parseNode i878a80d
     return NewWindowsInformationProtection(), nil
 }
 // GetAssignments gets the assignments property value. Navigation property to list of security groups targeted for policy.
+// returns a []TargetedManagedAppPolicyAssignmentable when successful
 func (m *WindowsInformationProtection) GetAssignments()([]TargetedManagedAppPolicyAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -54,6 +56,7 @@ func (m *WindowsInformationProtection) GetAssignments()([]TargetedManagedAppPoli
     return nil
 }
 // GetAzureRightsManagementServicesAllowed gets the azureRightsManagementServicesAllowed property value. Specifies whether to allow Azure RMS encryption for WIP
+// returns a *bool when successful
 func (m *WindowsInformationProtection) GetAzureRightsManagementServicesAllowed()(*bool) {
     val, err := m.GetBackingStore().Get("azureRightsManagementServicesAllowed")
     if err != nil {
@@ -65,6 +68,7 @@ func (m *WindowsInformationProtection) GetAzureRightsManagementServicesAllowed()
     return nil
 }
 // GetDataRecoveryCertificate gets the dataRecoveryCertificate property value. Specifies a recovery certificate that can be used for data recovery of encrypted files. This is the same as the data recovery agent(DRA) certificate for encrypting file system(EFS)
+// returns a WindowsInformationProtectionDataRecoveryCertificateable when successful
 func (m *WindowsInformationProtection) GetDataRecoveryCertificate()(WindowsInformationProtectionDataRecoveryCertificateable) {
     val, err := m.GetBackingStore().Get("dataRecoveryCertificate")
     if err != nil {
@@ -76,6 +80,7 @@ func (m *WindowsInformationProtection) GetDataRecoveryCertificate()(WindowsInfor
     return nil
 }
 // GetEnforcementLevel gets the enforcementLevel property value. Possible values for WIP Protection enforcement levels
+// returns a *WindowsInformationProtectionEnforcementLevel when successful
 func (m *WindowsInformationProtection) GetEnforcementLevel()(*WindowsInformationProtectionEnforcementLevel) {
     val, err := m.GetBackingStore().Get("enforcementLevel")
     if err != nil {
@@ -87,6 +92,7 @@ func (m *WindowsInformationProtection) GetEnforcementLevel()(*WindowsInformation
     return nil
 }
 // GetEnterpriseDomain gets the enterpriseDomain property value. Primary enterprise domain
+// returns a *string when successful
 func (m *WindowsInformationProtection) GetEnterpriseDomain()(*string) {
     val, err := m.GetBackingStore().Get("enterpriseDomain")
     if err != nil {
@@ -98,6 +104,7 @@ func (m *WindowsInformationProtection) GetEnterpriseDomain()(*string) {
     return nil
 }
 // GetEnterpriseInternalProxyServers gets the enterpriseInternalProxyServers property value. This is the comma-separated list of internal proxy servers. For example, '157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59'. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies
+// returns a []WindowsInformationProtectionResourceCollectionable when successful
 func (m *WindowsInformationProtection) GetEnterpriseInternalProxyServers()([]WindowsInformationProtectionResourceCollectionable) {
     val, err := m.GetBackingStore().Get("enterpriseInternalProxyServers")
     if err != nil {
@@ -109,6 +116,7 @@ func (m *WindowsInformationProtection) GetEnterpriseInternalProxyServers()([]Win
     return nil
 }
 // GetEnterpriseIPRanges gets the enterpriseIPRanges property value. Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to
+// returns a []WindowsInformationProtectionIPRangeCollectionable when successful
 func (m *WindowsInformationProtection) GetEnterpriseIPRanges()([]WindowsInformationProtectionIPRangeCollectionable) {
     val, err := m.GetBackingStore().Get("enterpriseIPRanges")
     if err != nil {
@@ -120,6 +128,7 @@ func (m *WindowsInformationProtection) GetEnterpriseIPRanges()([]WindowsInformat
     return nil
 }
 // GetEnterpriseIPRangesAreAuthoritative gets the enterpriseIPRangesAreAuthoritative property value. Boolean value that tells the client to accept the configured list and not to use heuristics to attempt to find other subnets. Default is false
+// returns a *bool when successful
 func (m *WindowsInformationProtection) GetEnterpriseIPRangesAreAuthoritative()(*bool) {
     val, err := m.GetBackingStore().Get("enterpriseIPRangesAreAuthoritative")
     if err != nil {
@@ -131,6 +140,7 @@ func (m *WindowsInformationProtection) GetEnterpriseIPRangesAreAuthoritative()(*
     return nil
 }
 // GetEnterpriseNetworkDomainNames gets the enterpriseNetworkDomainNames property value. This is the list of domains that comprise the boundaries of the enterprise. Data from one of these domains that is sent to a device will be considered enterprise data and protected These locations will be considered a safe destination for enterprise data to be shared to
+// returns a []WindowsInformationProtectionResourceCollectionable when successful
 func (m *WindowsInformationProtection) GetEnterpriseNetworkDomainNames()([]WindowsInformationProtectionResourceCollectionable) {
     val, err := m.GetBackingStore().Get("enterpriseNetworkDomainNames")
     if err != nil {
@@ -142,6 +152,7 @@ func (m *WindowsInformationProtection) GetEnterpriseNetworkDomainNames()([]Windo
     return nil
 }
 // GetEnterpriseProtectedDomainNames gets the enterpriseProtectedDomainNames property value. List of enterprise domains to be protected
+// returns a []WindowsInformationProtectionResourceCollectionable when successful
 func (m *WindowsInformationProtection) GetEnterpriseProtectedDomainNames()([]WindowsInformationProtectionResourceCollectionable) {
     val, err := m.GetBackingStore().Get("enterpriseProtectedDomainNames")
     if err != nil {
@@ -153,6 +164,7 @@ func (m *WindowsInformationProtection) GetEnterpriseProtectedDomainNames()([]Win
     return nil
 }
 // GetEnterpriseProxiedDomains gets the enterpriseProxiedDomains property value. Contains a list of Enterprise resource domains hosted in the cloud that need to be protected. Connections to these resources are considered enterprise data. If a proxy is paired with a cloud resource, traffic to the cloud resource will be routed through the enterprise network via the denoted proxy server (on Port 80). A proxy server used for this purpose must also be configured using the EnterpriseInternalProxyServers policy
+// returns a []WindowsInformationProtectionProxiedDomainCollectionable when successful
 func (m *WindowsInformationProtection) GetEnterpriseProxiedDomains()([]WindowsInformationProtectionProxiedDomainCollectionable) {
     val, err := m.GetBackingStore().Get("enterpriseProxiedDomains")
     if err != nil {
@@ -164,6 +176,7 @@ func (m *WindowsInformationProtection) GetEnterpriseProxiedDomains()([]WindowsIn
     return nil
 }
 // GetEnterpriseProxyServers gets the enterpriseProxyServers property value. This is a list of proxy servers. Any server not on this list is considered non-enterprise
+// returns a []WindowsInformationProtectionResourceCollectionable when successful
 func (m *WindowsInformationProtection) GetEnterpriseProxyServers()([]WindowsInformationProtectionResourceCollectionable) {
     val, err := m.GetBackingStore().Get("enterpriseProxyServers")
     if err != nil {
@@ -175,6 +188,7 @@ func (m *WindowsInformationProtection) GetEnterpriseProxyServers()([]WindowsInfo
     return nil
 }
 // GetEnterpriseProxyServersAreAuthoritative gets the enterpriseProxyServersAreAuthoritative property value. Boolean value that tells the client to accept the configured list of proxies and not try to detect other work proxies. Default is false
+// returns a *bool when successful
 func (m *WindowsInformationProtection) GetEnterpriseProxyServersAreAuthoritative()(*bool) {
     val, err := m.GetBackingStore().Get("enterpriseProxyServersAreAuthoritative")
     if err != nil {
@@ -186,6 +200,7 @@ func (m *WindowsInformationProtection) GetEnterpriseProxyServersAreAuthoritative
     return nil
 }
 // GetExemptAppLockerFiles gets the exemptAppLockerFiles property value. Another way to input exempt apps through xml files
+// returns a []WindowsInformationProtectionAppLockerFileable when successful
 func (m *WindowsInformationProtection) GetExemptAppLockerFiles()([]WindowsInformationProtectionAppLockerFileable) {
     val, err := m.GetBackingStore().Get("exemptAppLockerFiles")
     if err != nil {
@@ -197,6 +212,7 @@ func (m *WindowsInformationProtection) GetExemptAppLockerFiles()([]WindowsInform
     return nil
 }
 // GetExemptApps gets the exemptApps property value. Exempt applications can also access enterprise data, but the data handled by those applications are not protected. This is because some critical enterprise applications may have compatibility problems with encrypted data.
+// returns a []WindowsInformationProtectionAppable when successful
 func (m *WindowsInformationProtection) GetExemptApps()([]WindowsInformationProtectionAppable) {
     val, err := m.GetBackingStore().Get("exemptApps")
     if err != nil {
@@ -208,6 +224,7 @@ func (m *WindowsInformationProtection) GetExemptApps()([]WindowsInformationProte
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedAppPolicy.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -541,6 +558,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetIconsVisible gets the iconsVisible property value. Determines whether overlays are added to icons for WIP protected files in Explorer and enterprise only app tiles in the Start menu. Starting in Windows 10, version 1703 this setting also configures the visibility of the WIP icon in the title bar of a WIP-protected app
+// returns a *bool when successful
 func (m *WindowsInformationProtection) GetIconsVisible()(*bool) {
     val, err := m.GetBackingStore().Get("iconsVisible")
     if err != nil {
@@ -552,6 +570,7 @@ func (m *WindowsInformationProtection) GetIconsVisible()(*bool) {
     return nil
 }
 // GetIndexingEncryptedStoresOrItemsBlocked gets the indexingEncryptedStoresOrItemsBlocked property value. This switch is for the Windows Search Indexer, to allow or disallow indexing of items
+// returns a *bool when successful
 func (m *WindowsInformationProtection) GetIndexingEncryptedStoresOrItemsBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("indexingEncryptedStoresOrItemsBlocked")
     if err != nil {
@@ -563,6 +582,7 @@ func (m *WindowsInformationProtection) GetIndexingEncryptedStoresOrItemsBlocked(
     return nil
 }
 // GetIsAssigned gets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
+// returns a *bool when successful
 func (m *WindowsInformationProtection) GetIsAssigned()(*bool) {
     val, err := m.GetBackingStore().Get("isAssigned")
     if err != nil {
@@ -574,6 +594,7 @@ func (m *WindowsInformationProtection) GetIsAssigned()(*bool) {
     return nil
 }
 // GetNeutralDomainResources gets the neutralDomainResources property value. List of domain names that can used for work or personal resource
+// returns a []WindowsInformationProtectionResourceCollectionable when successful
 func (m *WindowsInformationProtection) GetNeutralDomainResources()([]WindowsInformationProtectionResourceCollectionable) {
     val, err := m.GetBackingStore().Get("neutralDomainResources")
     if err != nil {
@@ -585,6 +606,7 @@ func (m *WindowsInformationProtection) GetNeutralDomainResources()([]WindowsInfo
     return nil
 }
 // GetProtectedAppLockerFiles gets the protectedAppLockerFiles property value. Another way to input protected apps through xml files
+// returns a []WindowsInformationProtectionAppLockerFileable when successful
 func (m *WindowsInformationProtection) GetProtectedAppLockerFiles()([]WindowsInformationProtectionAppLockerFileable) {
     val, err := m.GetBackingStore().Get("protectedAppLockerFiles")
     if err != nil {
@@ -596,6 +618,7 @@ func (m *WindowsInformationProtection) GetProtectedAppLockerFiles()([]WindowsInf
     return nil
 }
 // GetProtectedApps gets the protectedApps property value. Protected applications can access enterprise data and the data handled by those applications are protected with encryption
+// returns a []WindowsInformationProtectionAppable when successful
 func (m *WindowsInformationProtection) GetProtectedApps()([]WindowsInformationProtectionAppable) {
     val, err := m.GetBackingStore().Get("protectedApps")
     if err != nil {
@@ -607,6 +630,7 @@ func (m *WindowsInformationProtection) GetProtectedApps()([]WindowsInformationPr
     return nil
 }
 // GetProtectionUnderLockConfigRequired gets the protectionUnderLockConfigRequired property value. Specifies whether the protection under lock feature (also known as encrypt under pin) should be configured
+// returns a *bool when successful
 func (m *WindowsInformationProtection) GetProtectionUnderLockConfigRequired()(*bool) {
     val, err := m.GetBackingStore().Get("protectionUnderLockConfigRequired")
     if err != nil {
@@ -618,6 +642,7 @@ func (m *WindowsInformationProtection) GetProtectionUnderLockConfigRequired()(*b
     return nil
 }
 // GetRevokeOnUnenrollDisabled gets the revokeOnUnenrollDisabled property value. This policy controls whether to revoke the WIP keys when a device unenrolls from the management service. If set to 1 (Don't revoke keys), the keys will not be revoked and the user will continue to have access to protected files after unenrollment. If the keys are not revoked, there will be no revoked file cleanup subsequently.
+// returns a *bool when successful
 func (m *WindowsInformationProtection) GetRevokeOnUnenrollDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("revokeOnUnenrollDisabled")
     if err != nil {
@@ -629,6 +654,7 @@ func (m *WindowsInformationProtection) GetRevokeOnUnenrollDisabled()(*bool) {
     return nil
 }
 // GetRightsManagementServicesTemplateId gets the rightsManagementServicesTemplateId property value. TemplateID GUID to use for RMS encryption. The RMS template allows the IT admin to configure the details about who has access to RMS-protected file and how long they have access
+// returns a *UUID when successful
 func (m *WindowsInformationProtection) GetRightsManagementServicesTemplateId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("rightsManagementServicesTemplateId")
     if err != nil {
@@ -640,6 +666,7 @@ func (m *WindowsInformationProtection) GetRightsManagementServicesTemplateId()(*
     return nil
 }
 // GetSmbAutoEncryptedFileExtensions gets the smbAutoEncryptedFileExtensions property value. Specifies a list of file extensions, so that files with these extensions are encrypted when copying from an SMB share within the corporate boundary
+// returns a []WindowsInformationProtectionResourceCollectionable when successful
 func (m *WindowsInformationProtection) GetSmbAutoEncryptedFileExtensions()([]WindowsInformationProtectionResourceCollectionable) {
     val, err := m.GetBackingStore().Get("smbAutoEncryptedFileExtensions")
     if err != nil {
@@ -1062,7 +1089,6 @@ func (m *WindowsInformationProtection) SetSmbAutoEncryptedFileExtensions(value [
         panic(err)
     }
 }
-// WindowsInformationProtectionable 
 type WindowsInformationProtectionable interface {
     ManagedAppPolicyable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

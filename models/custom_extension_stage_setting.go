@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CustomExtensionStageSetting 
 type CustomExtensionStageSetting struct {
     Entity
 }
-// NewCustomExtensionStageSetting instantiates a new customExtensionStageSetting and sets the default values.
+// NewCustomExtensionStageSetting instantiates a new CustomExtensionStageSetting and sets the default values.
 func NewCustomExtensionStageSetting()(*CustomExtensionStageSetting) {
     m := &CustomExtensionStageSetting{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewCustomExtensionStageSetting()(*CustomExtensionStageSetting) {
     return m
 }
 // CreateCustomExtensionStageSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCustomExtensionStageSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomExtensionStageSetting(), nil
 }
 // GetCustomExtension gets the customExtension property value. Indicates the custom workflow extension that will be executed at this stage. Nullable. Supports $expand.
+// returns a CustomCalloutExtensionable when successful
 func (m *CustomExtensionStageSetting) GetCustomExtension()(CustomCalloutExtensionable) {
     val, err := m.GetBackingStore().Get("customExtension")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *CustomExtensionStageSetting) GetCustomExtension()(CustomCalloutExtensio
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomExtensionStageSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["customExtension"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -56,6 +58,7 @@ func (m *CustomExtensionStageSetting) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetStage gets the stage property value. The stage property
+// returns a *AccessPackageCustomExtensionStage when successful
 func (m *CustomExtensionStageSetting) GetStage()(*AccessPackageCustomExtensionStage) {
     val, err := m.GetBackingStore().Get("stage")
     if err != nil {
@@ -101,7 +104,6 @@ func (m *CustomExtensionStageSetting) SetStage(value *AccessPackageCustomExtensi
         panic(err)
     }
 }
-// CustomExtensionStageSettingable 
 type CustomExtensionStageSettingable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

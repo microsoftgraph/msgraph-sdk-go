@@ -9,7 +9,7 @@ import (
 type ComplianceManagementPartner struct {
     Entity
 }
-// NewComplianceManagementPartner instantiates a new complianceManagementPartner and sets the default values.
+// NewComplianceManagementPartner instantiates a new ComplianceManagementPartner and sets the default values.
 func NewComplianceManagementPartner()(*ComplianceManagementPartner) {
     m := &ComplianceManagementPartner{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewComplianceManagementPartner()(*ComplianceManagementPartner) {
     return m
 }
 // CreateComplianceManagementPartnerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateComplianceManagementPartnerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewComplianceManagementPartner(), nil
 }
 // GetAndroidEnrollmentAssignments gets the androidEnrollmentAssignments property value. User groups which enroll Android devices through partner.
+// returns a []ComplianceManagementPartnerAssignmentable when successful
 func (m *ComplianceManagementPartner) GetAndroidEnrollmentAssignments()([]ComplianceManagementPartnerAssignmentable) {
     val, err := m.GetBackingStore().Get("androidEnrollmentAssignments")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *ComplianceManagementPartner) GetAndroidEnrollmentAssignments()([]Compli
     return nil
 }
 // GetAndroidOnboarded gets the androidOnboarded property value. Partner onboarded for Android devices.
+// returns a *bool when successful
 func (m *ComplianceManagementPartner) GetAndroidOnboarded()(*bool) {
     val, err := m.GetBackingStore().Get("androidOnboarded")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *ComplianceManagementPartner) GetAndroidOnboarded()(*bool) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Partner display name
+// returns a *string when successful
 func (m *ComplianceManagementPartner) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *ComplianceManagementPartner) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["androidEnrollmentAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -167,6 +172,7 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetIosEnrollmentAssignments gets the iosEnrollmentAssignments property value. User groups which enroll ios devices through partner.
+// returns a []ComplianceManagementPartnerAssignmentable when successful
 func (m *ComplianceManagementPartner) GetIosEnrollmentAssignments()([]ComplianceManagementPartnerAssignmentable) {
     val, err := m.GetBackingStore().Get("iosEnrollmentAssignments")
     if err != nil {
@@ -178,6 +184,7 @@ func (m *ComplianceManagementPartner) GetIosEnrollmentAssignments()([]Compliance
     return nil
 }
 // GetIosOnboarded gets the iosOnboarded property value. Partner onboarded for ios devices.
+// returns a *bool when successful
 func (m *ComplianceManagementPartner) GetIosOnboarded()(*bool) {
     val, err := m.GetBackingStore().Get("iosOnboarded")
     if err != nil {
@@ -189,6 +196,7 @@ func (m *ComplianceManagementPartner) GetIosOnboarded()(*bool) {
     return nil
 }
 // GetLastHeartbeatDateTime gets the lastHeartbeatDateTime property value. Timestamp of last heartbeat after admin onboarded to the compliance management partner
+// returns a *Time when successful
 func (m *ComplianceManagementPartner) GetLastHeartbeatDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastHeartbeatDateTime")
     if err != nil {
@@ -200,6 +208,7 @@ func (m *ComplianceManagementPartner) GetLastHeartbeatDateTime()(*i336074805fc85
     return nil
 }
 // GetMacOsEnrollmentAssignments gets the macOsEnrollmentAssignments property value. User groups which enroll Mac devices through partner.
+// returns a []ComplianceManagementPartnerAssignmentable when successful
 func (m *ComplianceManagementPartner) GetMacOsEnrollmentAssignments()([]ComplianceManagementPartnerAssignmentable) {
     val, err := m.GetBackingStore().Get("macOsEnrollmentAssignments")
     if err != nil {
@@ -211,6 +220,7 @@ func (m *ComplianceManagementPartner) GetMacOsEnrollmentAssignments()([]Complian
     return nil
 }
 // GetMacOsOnboarded gets the macOsOnboarded property value. Partner onboarded for Mac devices.
+// returns a *bool when successful
 func (m *ComplianceManagementPartner) GetMacOsOnboarded()(*bool) {
     val, err := m.GetBackingStore().Get("macOsOnboarded")
     if err != nil {
@@ -222,6 +232,7 @@ func (m *ComplianceManagementPartner) GetMacOsOnboarded()(*bool) {
     return nil
 }
 // GetPartnerState gets the partnerState property value. Partner state of this tenant.
+// returns a *DeviceManagementPartnerTenantState when successful
 func (m *ComplianceManagementPartner) GetPartnerState()(*DeviceManagementPartnerTenantState) {
     val, err := m.GetBackingStore().Get("partnerState")
     if err != nil {
@@ -376,7 +387,6 @@ func (m *ComplianceManagementPartner) SetPartnerState(value *DeviceManagementPar
         panic(err)
     }
 }
-// ComplianceManagementPartnerable 
 type ComplianceManagementPartnerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

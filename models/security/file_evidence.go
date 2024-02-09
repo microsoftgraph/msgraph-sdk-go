@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FileEvidence 
 type FileEvidence struct {
     AlertEvidence
 }
-// NewFileEvidence instantiates a new fileEvidence and sets the default values.
+// NewFileEvidence instantiates a new FileEvidence and sets the default values.
 func NewFileEvidence()(*FileEvidence) {
     m := &FileEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -18,10 +17,12 @@ func NewFileEvidence()(*FileEvidence) {
     return m
 }
 // CreateFileEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFileEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFileEvidence(), nil
 }
 // GetDetectionStatus gets the detectionStatus property value. The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.
+// returns a *DetectionStatus when successful
 func (m *FileEvidence) GetDetectionStatus()(*DetectionStatus) {
     val, err := m.GetBackingStore().Get("detectionStatus")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *FileEvidence) GetDetectionStatus()(*DetectionStatus) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FileEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["detectionStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,6 +70,7 @@ func (m *FileEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetFileDetails gets the fileDetails property value. The file details.
+// returns a FileDetailsable when successful
 func (m *FileEvidence) GetFileDetails()(FileDetailsable) {
     val, err := m.GetBackingStore().Get("fileDetails")
     if err != nil {
@@ -79,6 +82,7 @@ func (m *FileEvidence) GetFileDetails()(FileDetailsable) {
     return nil
 }
 // GetMdeDeviceId gets the mdeDeviceId property value. A unique identifier assigned to a device by Microsoft Defender for Endpoint.
+// returns a *string when successful
 func (m *FileEvidence) GetMdeDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("mdeDeviceId")
     if err != nil {
@@ -137,7 +141,6 @@ func (m *FileEvidence) SetMdeDeviceId(value *string)() {
         panic(err)
     }
 }
-// FileEvidenceable 
 type FileEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// BroadcastMeetingCaptionSettings 
 type BroadcastMeetingCaptionSettings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewBroadcastMeetingCaptionSettings instantiates a new broadcastMeetingCaptionSettings and sets the default values.
+// NewBroadcastMeetingCaptionSettings instantiates a new BroadcastMeetingCaptionSettings and sets the default values.
 func NewBroadcastMeetingCaptionSettings()(*BroadcastMeetingCaptionSettings) {
     m := &BroadcastMeetingCaptionSettings{
     }
@@ -19,10 +18,12 @@ func NewBroadcastMeetingCaptionSettings()(*BroadcastMeetingCaptionSettings) {
     return m
 }
 // CreateBroadcastMeetingCaptionSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBroadcastMeetingCaptionSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBroadcastMeetingCaptionSettings(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *BroadcastMeetingCaptionSettings) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *BroadcastMeetingCaptionSettings) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *BroadcastMeetingCaptionSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BroadcastMeetingCaptionSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["isCaptionEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -90,6 +93,7 @@ func (m *BroadcastMeetingCaptionSettings) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetIsCaptionEnabled gets the isCaptionEnabled property value. Indicates whether captions are enabled for this Teams live event.
+// returns a *bool when successful
 func (m *BroadcastMeetingCaptionSettings) GetIsCaptionEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isCaptionEnabled")
     if err != nil {
@@ -101,6 +105,7 @@ func (m *BroadcastMeetingCaptionSettings) GetIsCaptionEnabled()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *BroadcastMeetingCaptionSettings) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -112,6 +117,7 @@ func (m *BroadcastMeetingCaptionSettings) GetOdataType()(*string) {
     return nil
 }
 // GetSpokenLanguage gets the spokenLanguage property value. The spoken language.
+// returns a *string when successful
 func (m *BroadcastMeetingCaptionSettings) GetSpokenLanguage()(*string) {
     val, err := m.GetBackingStore().Get("spokenLanguage")
     if err != nil {
@@ -123,6 +129,7 @@ func (m *BroadcastMeetingCaptionSettings) GetSpokenLanguage()(*string) {
     return nil
 }
 // GetTranslationLanguages gets the translationLanguages property value. The translation languages (choose up to 6).
+// returns a []string when successful
 func (m *BroadcastMeetingCaptionSettings) GetTranslationLanguages()([]string) {
     val, err := m.GetBackingStore().Get("translationLanguages")
     if err != nil {
@@ -206,7 +213,6 @@ func (m *BroadcastMeetingCaptionSettings) SetTranslationLanguages(value []string
         panic(err)
     }
 }
-// BroadcastMeetingCaptionSettingsable 
 type BroadcastMeetingCaptionSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Simulation 
 type Simulation struct {
     Entity
 }
-// NewSimulation instantiates a new simulation and sets the default values.
+// NewSimulation instantiates a new Simulation and sets the default values.
 func NewSimulation()(*Simulation) {
     m := &Simulation{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewSimulation()(*Simulation) {
     return m
 }
 // CreateSimulationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSimulationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSimulation(), nil
 }
 // GetAttackTechnique gets the attackTechnique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.
+// returns a *SimulationAttackTechnique when successful
 func (m *Simulation) GetAttackTechnique()(*SimulationAttackTechnique) {
     val, err := m.GetBackingStore().Get("attackTechnique")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *Simulation) GetAttackTechnique()(*SimulationAttackTechnique) {
     return nil
 }
 // GetAttackType gets the attackType property value. Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.
+// returns a *SimulationAttackType when successful
 func (m *Simulation) GetAttackType()(*SimulationAttackType) {
     val, err := m.GetBackingStore().Get("attackType")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *Simulation) GetAttackType()(*SimulationAttackType) {
     return nil
 }
 // GetAutomationId gets the automationId property value. Unique identifier for the attack simulation automation.
+// returns a *string when successful
 func (m *Simulation) GetAutomationId()(*string) {
     val, err := m.GetBackingStore().Get("automationId")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *Simulation) GetAutomationId()(*string) {
     return nil
 }
 // GetCompletionDateTime gets the completionDateTime property value. Date and time of completion of the attack simulation and training campaign. Supports $filter and $orderby.
+// returns a *Time when successful
 func (m *Simulation) GetCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("completionDateTime")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *Simulation) GetCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user who created the attack simulation and training campaign.
+// returns a EmailIdentityable when successful
 func (m *Simulation) GetCreatedBy()(EmailIdentityable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *Simulation) GetCreatedBy()(EmailIdentityable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time of creation of the attack simulation and training campaign.
+// returns a *Time when successful
 func (m *Simulation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *Simulation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
     return nil
 }
 // GetDescription gets the description property value. Description of the attack simulation and training campaign.
+// returns a *string when successful
 func (m *Simulation) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *Simulation) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Display name of the attack simulation and training campaign. Supports $filter and $orderby.
+// returns a *string when successful
 func (m *Simulation) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -109,6 +117,7 @@ func (m *Simulation) GetDisplayName()(*string) {
     return nil
 }
 // GetDurationInDays gets the durationInDays property value. Simulation duration in days.
+// returns a *int32 when successful
 func (m *Simulation) GetDurationInDays()(*int32) {
     val, err := m.GetBackingStore().Get("durationInDays")
     if err != nil {
@@ -120,6 +129,7 @@ func (m *Simulation) GetDurationInDays()(*int32) {
     return nil
 }
 // GetEndUserNotificationSetting gets the endUserNotificationSetting property value. Details about the end user notification setting.
+// returns a EndUserNotificationSettingable when successful
 func (m *Simulation) GetEndUserNotificationSetting()(EndUserNotificationSettingable) {
     val, err := m.GetBackingStore().Get("endUserNotificationSetting")
     if err != nil {
@@ -131,6 +141,7 @@ func (m *Simulation) GetEndUserNotificationSetting()(EndUserNotificationSettinga
     return nil
 }
 // GetExcludedAccountTarget gets the excludedAccountTarget property value. Users excluded from the simulation.
+// returns a AccountTargetContentable when successful
 func (m *Simulation) GetExcludedAccountTarget()(AccountTargetContentable) {
     val, err := m.GetBackingStore().Get("excludedAccountTarget")
     if err != nil {
@@ -142,6 +153,7 @@ func (m *Simulation) GetExcludedAccountTarget()(AccountTargetContentable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Simulation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["attackTechnique"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -387,6 +399,7 @@ func (m *Simulation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetIncludedAccountTarget gets the includedAccountTarget property value. Users targeted in the simulation.
+// returns a AccountTargetContentable when successful
 func (m *Simulation) GetIncludedAccountTarget()(AccountTargetContentable) {
     val, err := m.GetBackingStore().Get("includedAccountTarget")
     if err != nil {
@@ -398,6 +411,7 @@ func (m *Simulation) GetIncludedAccountTarget()(AccountTargetContentable) {
     return nil
 }
 // GetIsAutomated gets the isAutomated property value. Flag that represents if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
+// returns a *bool when successful
 func (m *Simulation) GetIsAutomated()(*bool) {
     val, err := m.GetBackingStore().Get("isAutomated")
     if err != nil {
@@ -409,6 +423,7 @@ func (m *Simulation) GetIsAutomated()(*bool) {
     return nil
 }
 // GetLandingPage gets the landingPage property value. The landing page associated with a simulation during its creation.
+// returns a LandingPageable when successful
 func (m *Simulation) GetLandingPage()(LandingPageable) {
     val, err := m.GetBackingStore().Get("landingPage")
     if err != nil {
@@ -420,6 +435,7 @@ func (m *Simulation) GetLandingPage()(LandingPageable) {
     return nil
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who most recently modified the attack simulation and training campaign.
+// returns a EmailIdentityable when successful
 func (m *Simulation) GetLastModifiedBy()(EmailIdentityable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -431,6 +447,7 @@ func (m *Simulation) GetLastModifiedBy()(EmailIdentityable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time of the most recent modification of the attack simulation and training campaign.
+// returns a *Time when successful
 func (m *Simulation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -442,6 +459,7 @@ func (m *Simulation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetLaunchDateTime gets the launchDateTime property value. Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.
+// returns a *Time when successful
 func (m *Simulation) GetLaunchDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("launchDateTime")
     if err != nil {
@@ -453,6 +471,7 @@ func (m *Simulation) GetLaunchDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
     return nil
 }
 // GetLoginPage gets the loginPage property value. The login page associated with a simulation during its creation.
+// returns a LoginPageable when successful
 func (m *Simulation) GetLoginPage()(LoginPageable) {
     val, err := m.GetBackingStore().Get("loginPage")
     if err != nil {
@@ -464,6 +483,7 @@ func (m *Simulation) GetLoginPage()(LoginPageable) {
     return nil
 }
 // GetOAuthConsentAppDetail gets the oAuthConsentAppDetail property value. OAuth app details for the OAuth technique.
+// returns a OAuthConsentAppDetailable when successful
 func (m *Simulation) GetOAuthConsentAppDetail()(OAuthConsentAppDetailable) {
     val, err := m.GetBackingStore().Get("oAuthConsentAppDetail")
     if err != nil {
@@ -475,6 +495,7 @@ func (m *Simulation) GetOAuthConsentAppDetail()(OAuthConsentAppDetailable) {
     return nil
 }
 // GetPayload gets the payload property value. The payload associated with a simulation during its creation.
+// returns a Payloadable when successful
 func (m *Simulation) GetPayload()(Payloadable) {
     val, err := m.GetBackingStore().Get("payload")
     if err != nil {
@@ -486,6 +507,7 @@ func (m *Simulation) GetPayload()(Payloadable) {
     return nil
 }
 // GetPayloadDeliveryPlatform gets the payloadDeliveryPlatform property value. Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.
+// returns a *PayloadDeliveryPlatform when successful
 func (m *Simulation) GetPayloadDeliveryPlatform()(*PayloadDeliveryPlatform) {
     val, err := m.GetBackingStore().Get("payloadDeliveryPlatform")
     if err != nil {
@@ -497,6 +519,7 @@ func (m *Simulation) GetPayloadDeliveryPlatform()(*PayloadDeliveryPlatform) {
     return nil
 }
 // GetReport gets the report property value. Report of the attack simulation and training campaign.
+// returns a SimulationReportable when successful
 func (m *Simulation) GetReport()(SimulationReportable) {
     val, err := m.GetBackingStore().Get("report")
     if err != nil {
@@ -508,6 +531,7 @@ func (m *Simulation) GetReport()(SimulationReportable) {
     return nil
 }
 // GetStatus gets the status property value. Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, running, scheduled, succeeded, failed, cancelled, excluded, unknownFutureValue.
+// returns a *SimulationStatus when successful
 func (m *Simulation) GetStatus()(*SimulationStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -519,6 +543,7 @@ func (m *Simulation) GetStatus()(*SimulationStatus) {
     return nil
 }
 // GetTrainingSetting gets the trainingSetting property value. Details about the training settings for a simulation.
+// returns a TrainingSettingable when successful
 func (m *Simulation) GetTrainingSetting()(TrainingSettingable) {
     val, err := m.GetBackingStore().Get("trainingSetting")
     if err != nil {
@@ -853,7 +878,6 @@ func (m *Simulation) SetTrainingSetting(value TrainingSettingable)() {
         panic(err)
     }
 }
-// Simulationable 
 type Simulationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

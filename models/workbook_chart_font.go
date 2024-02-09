@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookChartFont 
 type WorkbookChartFont struct {
     Entity
 }
-// NewWorkbookChartFont instantiates a new workbookChartFont and sets the default values.
+// NewWorkbookChartFont instantiates a new WorkbookChartFont and sets the default values.
 func NewWorkbookChartFont()(*WorkbookChartFont) {
     m := &WorkbookChartFont{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewWorkbookChartFont()(*WorkbookChartFont) {
     return m
 }
 // CreateWorkbookChartFontFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookChartFontFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookChartFont(), nil
 }
 // GetBold gets the bold property value. Represents the bold status of font.
+// returns a *bool when successful
 func (m *WorkbookChartFont) GetBold()(*bool) {
     val, err := m.GetBackingStore().Get("bold")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *WorkbookChartFont) GetBold()(*bool) {
     return nil
 }
 // GetColor gets the color property value. HTML color code representation of the text color. for example #FF0000 represents Red.
+// returns a *string when successful
 func (m *WorkbookChartFont) GetColor()(*string) {
     val, err := m.GetBackingStore().Get("color")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *WorkbookChartFont) GetColor()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookChartFont) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["bold"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -107,6 +110,7 @@ func (m *WorkbookChartFont) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetItalic gets the italic property value. Represents the italic status of the font.
+// returns a *bool when successful
 func (m *WorkbookChartFont) GetItalic()(*bool) {
     val, err := m.GetBackingStore().Get("italic")
     if err != nil {
@@ -118,6 +122,7 @@ func (m *WorkbookChartFont) GetItalic()(*bool) {
     return nil
 }
 // GetName gets the name property value. Font name (for example 'Calibri')
+// returns a *string when successful
 func (m *WorkbookChartFont) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -129,6 +134,7 @@ func (m *WorkbookChartFont) GetName()(*string) {
     return nil
 }
 // GetSize gets the size property value. Size of the font (for example 11)
+// returns a *float64 when successful
 func (m *WorkbookChartFont) GetSize()(*float64) {
     val, err := m.GetBackingStore().Get("size")
     if err != nil {
@@ -140,6 +146,7 @@ func (m *WorkbookChartFont) GetSize()(*float64) {
     return nil
 }
 // GetUnderline gets the underline property value. Type of underline applied to the font. The possible values are: None, Single.
+// returns a *string when successful
 func (m *WorkbookChartFont) GetUnderline()(*string) {
     val, err := m.GetBackingStore().Get("underline")
     if err != nil {
@@ -236,7 +243,6 @@ func (m *WorkbookChartFont) SetUnderline(value *string)() {
         panic(err)
     }
 }
-// WorkbookChartFontable 
 type WorkbookChartFontable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

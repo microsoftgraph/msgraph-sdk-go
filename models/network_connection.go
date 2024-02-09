@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// NetworkConnection 
 type NetworkConnection struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewNetworkConnection instantiates a new networkConnection and sets the default values.
+// NewNetworkConnection instantiates a new NetworkConnection and sets the default values.
 func NewNetworkConnection()(*NetworkConnection) {
     m := &NetworkConnection{
     }
@@ -20,10 +19,12 @@ func NewNetworkConnection()(*NetworkConnection) {
     return m
 }
 // CreateNetworkConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateNetworkConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNetworkConnection(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *NetworkConnection) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,6 +37,7 @@ func (m *NetworkConnection) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetApplicationName gets the applicationName property value. Name of the application managing the network connection (for example, Facebook or SMTP).
+// returns a *string when successful
 func (m *NetworkConnection) GetApplicationName()(*string) {
     val, err := m.GetBackingStore().Get("applicationName")
     if err != nil {
@@ -47,10 +49,12 @@ func (m *NetworkConnection) GetApplicationName()(*string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *NetworkConnection) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDestinationAddress gets the destinationAddress property value. Destination IP address (of the network connection).
+// returns a *string when successful
 func (m *NetworkConnection) GetDestinationAddress()(*string) {
     val, err := m.GetBackingStore().Get("destinationAddress")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *NetworkConnection) GetDestinationAddress()(*string) {
     return nil
 }
 // GetDestinationDomain gets the destinationDomain property value. Destination domain portion of the destination URL. (for example 'www.contoso.com').
+// returns a *string when successful
 func (m *NetworkConnection) GetDestinationDomain()(*string) {
     val, err := m.GetBackingStore().Get("destinationDomain")
     if err != nil {
@@ -73,6 +78,7 @@ func (m *NetworkConnection) GetDestinationDomain()(*string) {
     return nil
 }
 // GetDestinationLocation gets the destinationLocation property value. Location (by IP address mapping) associated with the destination of a network connection.
+// returns a *string when successful
 func (m *NetworkConnection) GetDestinationLocation()(*string) {
     val, err := m.GetBackingStore().Get("destinationLocation")
     if err != nil {
@@ -84,6 +90,7 @@ func (m *NetworkConnection) GetDestinationLocation()(*string) {
     return nil
 }
 // GetDestinationPort gets the destinationPort property value. Destination port (of the network connection).
+// returns a *string when successful
 func (m *NetworkConnection) GetDestinationPort()(*string) {
     val, err := m.GetBackingStore().Get("destinationPort")
     if err != nil {
@@ -95,6 +102,7 @@ func (m *NetworkConnection) GetDestinationPort()(*string) {
     return nil
 }
 // GetDestinationUrl gets the destinationUrl property value. Network connection URL/URI string - excluding parameters. (for example 'www.contoso.com/products/default.html')
+// returns a *string when successful
 func (m *NetworkConnection) GetDestinationUrl()(*string) {
     val, err := m.GetBackingStore().Get("destinationUrl")
     if err != nil {
@@ -106,6 +114,7 @@ func (m *NetworkConnection) GetDestinationUrl()(*string) {
     return nil
 }
 // GetDirection gets the direction property value. Network connection direction. Possible values are: unknown, inbound, outbound.
+// returns a *ConnectionDirection when successful
 func (m *NetworkConnection) GetDirection()(*ConnectionDirection) {
     val, err := m.GetBackingStore().Get("direction")
     if err != nil {
@@ -117,6 +126,7 @@ func (m *NetworkConnection) GetDirection()(*ConnectionDirection) {
     return nil
 }
 // GetDomainRegisteredDateTime gets the domainRegisteredDateTime property value. Date when the destination domain was registered. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *NetworkConnection) GetDomainRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("domainRegisteredDateTime")
     if err != nil {
@@ -128,6 +138,7 @@ func (m *NetworkConnection) GetDomainRegisteredDateTime()(*i336074805fc853987abe
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["applicationName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -343,6 +354,7 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetLocalDnsName gets the localDnsName property value. The local DNS name resolution as it appears in the host's local DNS cache (for example, in case the 'hosts' file was tampered with).
+// returns a *string when successful
 func (m *NetworkConnection) GetLocalDnsName()(*string) {
     val, err := m.GetBackingStore().Get("localDnsName")
     if err != nil {
@@ -354,6 +366,7 @@ func (m *NetworkConnection) GetLocalDnsName()(*string) {
     return nil
 }
 // GetNatDestinationAddress gets the natDestinationAddress property value. Network Address Translation destination IP address.
+// returns a *string when successful
 func (m *NetworkConnection) GetNatDestinationAddress()(*string) {
     val, err := m.GetBackingStore().Get("natDestinationAddress")
     if err != nil {
@@ -365,6 +378,7 @@ func (m *NetworkConnection) GetNatDestinationAddress()(*string) {
     return nil
 }
 // GetNatDestinationPort gets the natDestinationPort property value. Network Address Translation destination port.
+// returns a *string when successful
 func (m *NetworkConnection) GetNatDestinationPort()(*string) {
     val, err := m.GetBackingStore().Get("natDestinationPort")
     if err != nil {
@@ -376,6 +390,7 @@ func (m *NetworkConnection) GetNatDestinationPort()(*string) {
     return nil
 }
 // GetNatSourceAddress gets the natSourceAddress property value. Network Address Translation source IP address.
+// returns a *string when successful
 func (m *NetworkConnection) GetNatSourceAddress()(*string) {
     val, err := m.GetBackingStore().Get("natSourceAddress")
     if err != nil {
@@ -387,6 +402,7 @@ func (m *NetworkConnection) GetNatSourceAddress()(*string) {
     return nil
 }
 // GetNatSourcePort gets the natSourcePort property value. Network Address Translation source port.
+// returns a *string when successful
 func (m *NetworkConnection) GetNatSourcePort()(*string) {
     val, err := m.GetBackingStore().Get("natSourcePort")
     if err != nil {
@@ -398,6 +414,7 @@ func (m *NetworkConnection) GetNatSourcePort()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *NetworkConnection) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -409,6 +426,7 @@ func (m *NetworkConnection) GetOdataType()(*string) {
     return nil
 }
 // GetProtocol gets the protocol property value. Network protocol. Possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.
+// returns a *SecurityNetworkProtocol when successful
 func (m *NetworkConnection) GetProtocol()(*SecurityNetworkProtocol) {
     val, err := m.GetBackingStore().Get("protocol")
     if err != nil {
@@ -420,6 +438,7 @@ func (m *NetworkConnection) GetProtocol()(*SecurityNetworkProtocol) {
     return nil
 }
 // GetRiskScore gets the riskScore property value. Provider generated/calculated risk score of the network connection. Recommended value range of 0-1, which equates to a percentage.
+// returns a *string when successful
 func (m *NetworkConnection) GetRiskScore()(*string) {
     val, err := m.GetBackingStore().Get("riskScore")
     if err != nil {
@@ -431,6 +450,7 @@ func (m *NetworkConnection) GetRiskScore()(*string) {
     return nil
 }
 // GetSourceAddress gets the sourceAddress property value. Source (i.e. origin) IP address (of the network connection).
+// returns a *string when successful
 func (m *NetworkConnection) GetSourceAddress()(*string) {
     val, err := m.GetBackingStore().Get("sourceAddress")
     if err != nil {
@@ -442,6 +462,7 @@ func (m *NetworkConnection) GetSourceAddress()(*string) {
     return nil
 }
 // GetSourceLocation gets the sourceLocation property value. Location (by IP address mapping) associated with the source of a network connection.
+// returns a *string when successful
 func (m *NetworkConnection) GetSourceLocation()(*string) {
     val, err := m.GetBackingStore().Get("sourceLocation")
     if err != nil {
@@ -453,6 +474,7 @@ func (m *NetworkConnection) GetSourceLocation()(*string) {
     return nil
 }
 // GetSourcePort gets the sourcePort property value. Source (i.e. origin) IP port (of the network connection).
+// returns a *string when successful
 func (m *NetworkConnection) GetSourcePort()(*string) {
     val, err := m.GetBackingStore().Get("sourcePort")
     if err != nil {
@@ -464,6 +486,7 @@ func (m *NetworkConnection) GetSourcePort()(*string) {
     return nil
 }
 // GetStatus gets the status property value. Network connection status. Possible values are: unknown, attempted, succeeded, blocked, failed.
+// returns a *ConnectionStatus when successful
 func (m *NetworkConnection) GetStatus()(*ConnectionStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -475,6 +498,7 @@ func (m *NetworkConnection) GetStatus()(*ConnectionStatus) {
     return nil
 }
 // GetUrlParameters gets the urlParameters property value. Parameters (suffix) of the destination URL.
+// returns a *string when successful
 func (m *NetworkConnection) GetUrlParameters()(*string) {
     val, err := m.GetBackingStore().Get("urlParameters")
     if err != nil {
@@ -782,7 +806,6 @@ func (m *NetworkConnection) SetUrlParameters(value *string)() {
         panic(err)
     }
 }
-// NetworkConnectionable 
 type NetworkConnectionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

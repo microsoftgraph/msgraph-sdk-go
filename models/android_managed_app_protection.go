@@ -8,7 +8,7 @@ import (
 type AndroidManagedAppProtection struct {
     TargetedManagedAppProtection
 }
-// NewAndroidManagedAppProtection instantiates a new androidManagedAppProtection and sets the default values.
+// NewAndroidManagedAppProtection instantiates a new AndroidManagedAppProtection and sets the default values.
 func NewAndroidManagedAppProtection()(*AndroidManagedAppProtection) {
     m := &AndroidManagedAppProtection{
         TargetedManagedAppProtection: *NewTargetedManagedAppProtection(),
@@ -18,10 +18,12 @@ func NewAndroidManagedAppProtection()(*AndroidManagedAppProtection) {
     return m
 }
 // CreateAndroidManagedAppProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidManagedAppProtection(), nil
 }
 // GetApps gets the apps property value. List of apps to which the policy is deployed.
+// returns a []ManagedMobileAppable when successful
 func (m *AndroidManagedAppProtection) GetApps()([]ManagedMobileAppable) {
     val, err := m.GetBackingStore().Get("apps")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AndroidManagedAppProtection) GetApps()([]ManagedMobileAppable) {
     return nil
 }
 // GetCustomBrowserDisplayName gets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+// returns a *string when successful
 func (m *AndroidManagedAppProtection) GetCustomBrowserDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("customBrowserDisplayName")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *AndroidManagedAppProtection) GetCustomBrowserDisplayName()(*string) {
     return nil
 }
 // GetCustomBrowserPackageId gets the customBrowserPackageId property value. Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+// returns a *string when successful
 func (m *AndroidManagedAppProtection) GetCustomBrowserPackageId()(*string) {
     val, err := m.GetBackingStore().Get("customBrowserPackageId")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *AndroidManagedAppProtection) GetCustomBrowserPackageId()(*string) {
     return nil
 }
 // GetDeployedAppCount gets the deployedAppCount property value. Count of apps to which the current policy is deployed.
+// returns a *int32 when successful
 func (m *AndroidManagedAppProtection) GetDeployedAppCount()(*int32) {
     val, err := m.GetBackingStore().Get("deployedAppCount")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *AndroidManagedAppProtection) GetDeployedAppCount()(*int32) {
     return nil
 }
 // GetDeploymentSummary gets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
+// returns a ManagedAppPolicyDeploymentSummaryable when successful
 func (m *AndroidManagedAppProtection) GetDeploymentSummary()(ManagedAppPolicyDeploymentSummaryable) {
     val, err := m.GetBackingStore().Get("deploymentSummary")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *AndroidManagedAppProtection) GetDeploymentSummary()(ManagedAppPolicyDep
     return nil
 }
 // GetDisableAppEncryptionIfDeviceEncryptionIsEnabled gets the disableAppEncryptionIfDeviceEncryptionIsEnabled property value. When this setting is enabled, app level encryption is disabled if device level encryption is enabled
+// returns a *bool when successful
 func (m *AndroidManagedAppProtection) GetDisableAppEncryptionIfDeviceEncryptionIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("disableAppEncryptionIfDeviceEncryptionIsEnabled")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *AndroidManagedAppProtection) GetDisableAppEncryptionIfDeviceEncryptionI
     return nil
 }
 // GetEncryptAppData gets the encryptAppData property value. Indicates whether application data for managed apps should be encrypted
+// returns a *bool when successful
 func (m *AndroidManagedAppProtection) GetEncryptAppData()(*bool) {
     val, err := m.GetBackingStore().Get("encryptAppData")
     if err != nil {
@@ -99,6 +107,7 @@ func (m *AndroidManagedAppProtection) GetEncryptAppData()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.TargetedManagedAppProtection.GetFieldDeserializers()
     res["apps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -210,6 +219,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetMinimumRequiredPatchVersion gets the minimumRequiredPatchVersion property value. Define the oldest required Android security patch level a user can have to gain secure access to the app.
+// returns a *string when successful
 func (m *AndroidManagedAppProtection) GetMinimumRequiredPatchVersion()(*string) {
     val, err := m.GetBackingStore().Get("minimumRequiredPatchVersion")
     if err != nil {
@@ -221,6 +231,7 @@ func (m *AndroidManagedAppProtection) GetMinimumRequiredPatchVersion()(*string) 
     return nil
 }
 // GetMinimumWarningPatchVersion gets the minimumWarningPatchVersion property value. Define the oldest recommended Android security patch level a user can have for secure access to the app.
+// returns a *string when successful
 func (m *AndroidManagedAppProtection) GetMinimumWarningPatchVersion()(*string) {
     val, err := m.GetBackingStore().Get("minimumWarningPatchVersion")
     if err != nil {
@@ -232,6 +243,7 @@ func (m *AndroidManagedAppProtection) GetMinimumWarningPatchVersion()(*string) {
     return nil
 }
 // GetScreenCaptureBlocked gets the screenCaptureBlocked property value. Indicates whether a managed user can take screen captures of managed apps
+// returns a *bool when successful
 func (m *AndroidManagedAppProtection) GetScreenCaptureBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("screenCaptureBlocked")
     if err != nil {
@@ -386,7 +398,6 @@ func (m *AndroidManagedAppProtection) SetScreenCaptureBlocked(value *bool)() {
         panic(err)
     }
 }
-// AndroidManagedAppProtectionable 
 type AndroidManagedAppProtectionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     TargetedManagedAppProtectionable

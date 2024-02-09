@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Teamwork 
 type Teamwork struct {
     Entity
 }
-// NewTeamwork instantiates a new teamwork and sets the default values.
+// NewTeamwork instantiates a new Teamwork and sets the default values.
 func NewTeamwork()(*Teamwork) {
     m := &Teamwork{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewTeamwork()(*Teamwork) {
     return m
 }
 // CreateTeamworkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamworkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamwork(), nil
 }
 // GetDeletedTeams gets the deletedTeams property value. The deleted team.
+// returns a []DeletedTeamable when successful
 func (m *Teamwork) GetDeletedTeams()([]DeletedTeamable) {
     val, err := m.GetBackingStore().Get("deletedTeams")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Teamwork) GetDeletedTeams()([]DeletedTeamable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deletedTeams"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,6 +80,7 @@ func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetTeamsAppSettings gets the teamsAppSettings property value. Represents tenant-wide settings for all Teams apps in the tenant.
+// returns a TeamsAppSettingsable when successful
 func (m *Teamwork) GetTeamsAppSettings()(TeamsAppSettingsable) {
     val, err := m.GetBackingStore().Get("teamsAppSettings")
     if err != nil {
@@ -89,6 +92,7 @@ func (m *Teamwork) GetTeamsAppSettings()(TeamsAppSettingsable) {
     return nil
 }
 // GetWorkforceIntegrations gets the workforceIntegrations property value. The workforceIntegrations property
+// returns a []WorkforceIntegrationable when successful
 func (m *Teamwork) GetWorkforceIntegrations()([]WorkforceIntegrationable) {
     val, err := m.GetBackingStore().Get("workforceIntegrations")
     if err != nil {
@@ -158,7 +162,6 @@ func (m *Teamwork) SetWorkforceIntegrations(value []WorkforceIntegrationable)() 
         panic(err)
     }
 }
-// Teamworkable 
 type Teamworkable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

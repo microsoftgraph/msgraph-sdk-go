@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceConfigurationDeviceStatus 
 type DeviceConfigurationDeviceStatus struct {
     Entity
 }
-// NewDeviceConfigurationDeviceStatus instantiates a new deviceConfigurationDeviceStatus and sets the default values.
+// NewDeviceConfigurationDeviceStatus instantiates a new DeviceConfigurationDeviceStatus and sets the default values.
 func NewDeviceConfigurationDeviceStatus()(*DeviceConfigurationDeviceStatus) {
     m := &DeviceConfigurationDeviceStatus{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewDeviceConfigurationDeviceStatus()(*DeviceConfigurationDeviceStatus) {
     return m
 }
 // CreateDeviceConfigurationDeviceStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceConfigurationDeviceStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceConfigurationDeviceStatus(), nil
 }
 // GetComplianceGracePeriodExpirationDateTime gets the complianceGracePeriodExpirationDateTime property value. The DateTime when device compliance grace period expires
+// returns a *Time when successful
 func (m *DeviceConfigurationDeviceStatus) GetComplianceGracePeriodExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("complianceGracePeriodExpirationDateTime")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *DeviceConfigurationDeviceStatus) GetComplianceGracePeriodExpirationDate
     return nil
 }
 // GetDeviceDisplayName gets the deviceDisplayName property value. Device name of the DevicePolicyStatus.
+// returns a *string when successful
 func (m *DeviceConfigurationDeviceStatus) GetDeviceDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("deviceDisplayName")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *DeviceConfigurationDeviceStatus) GetDeviceDisplayName()(*string) {
     return nil
 }
 // GetDeviceModel gets the deviceModel property value. The device model that is being reported
+// returns a *string when successful
 func (m *DeviceConfigurationDeviceStatus) GetDeviceModel()(*string) {
     val, err := m.GetBackingStore().Get("deviceModel")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *DeviceConfigurationDeviceStatus) GetDeviceModel()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceConfigurationDeviceStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["complianceGracePeriodExpirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -129,6 +133,7 @@ func (m *DeviceConfigurationDeviceStatus) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetLastReportedDateTime gets the lastReportedDateTime property value. Last modified date time of the policy report.
+// returns a *Time when successful
 func (m *DeviceConfigurationDeviceStatus) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastReportedDateTime")
     if err != nil {
@@ -140,6 +145,7 @@ func (m *DeviceConfigurationDeviceStatus) GetLastReportedDateTime()(*i336074805f
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *ComplianceStatus when successful
 func (m *DeviceConfigurationDeviceStatus) GetStatus()(*ComplianceStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -151,6 +157,7 @@ func (m *DeviceConfigurationDeviceStatus) GetStatus()(*ComplianceStatus) {
     return nil
 }
 // GetUserName gets the userName property value. The User Name that is being reported
+// returns a *string when successful
 func (m *DeviceConfigurationDeviceStatus) GetUserName()(*string) {
     val, err := m.GetBackingStore().Get("userName")
     if err != nil {
@@ -162,6 +169,7 @@ func (m *DeviceConfigurationDeviceStatus) GetUserName()(*string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName.
+// returns a *string when successful
 func (m *DeviceConfigurationDeviceStatus) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -272,7 +280,6 @@ func (m *DeviceConfigurationDeviceStatus) SetUserPrincipalName(value *string)() 
         panic(err)
     }
 }
-// DeviceConfigurationDeviceStatusable 
 type DeviceConfigurationDeviceStatusable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

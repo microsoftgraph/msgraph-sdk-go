@@ -27,28 +27,29 @@ type RoleManagementPolicyAssignmentsItemPolicyRequestBuilderGetRequestConfigurat
     // Request query parameters
     QueryParameters *RoleManagementPolicyAssignmentsItemPolicyRequestBuilderGetQueryParameters
 }
-// NewRoleManagementPolicyAssignmentsItemPolicyRequestBuilderInternal instantiates a new PolicyRequestBuilder and sets the default values.
+// NewRoleManagementPolicyAssignmentsItemPolicyRequestBuilderInternal instantiates a new RoleManagementPolicyAssignmentsItemPolicyRequestBuilder and sets the default values.
 func NewRoleManagementPolicyAssignmentsItemPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleManagementPolicyAssignmentsItemPolicyRequestBuilder) {
     m := &RoleManagementPolicyAssignmentsItemPolicyRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/roleManagementPolicyAssignments/{unifiedRoleManagementPolicyAssignment%2Did}/policy{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/roleManagementPolicyAssignments/{unifiedRoleManagementPolicyAssignment%2Did}/policy{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewRoleManagementPolicyAssignmentsItemPolicyRequestBuilder instantiates a new PolicyRequestBuilder and sets the default values.
+// NewRoleManagementPolicyAssignmentsItemPolicyRequestBuilder instantiates a new RoleManagementPolicyAssignmentsItemPolicyRequestBuilder and sets the default values.
 func NewRoleManagementPolicyAssignmentsItemPolicyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleManagementPolicyAssignmentsItemPolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRoleManagementPolicyAssignmentsItemPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the policy that's associated with a policy assignment. Supports $expand and a nested $expand of the rules and effectiveRules relationships for the policy.
+// returns a UnifiedRoleManagementPolicyable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RoleManagementPolicyAssignmentsItemPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleManagementPolicyAssignmentsItemPolicyRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleManagementPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateUnifiedRoleManagementPolicyFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *RoleManagementPolicyAssignmentsItemPolicyRequestBuilder) Get(ctx contex
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UnifiedRoleManagementPolicyable), nil
 }
 // ToGetRequestInformation the policy that's associated with a policy assignment. Supports $expand and a nested $expand of the rules and effectiveRules relationships for the policy.
+// returns a *RequestInformation when successful
 func (m *RoleManagementPolicyAssignmentsItemPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleManagementPolicyAssignmentsItemPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *RoleManagementPolicyAssignmentsItemPolicyRequestBuilder) ToGetRequestIn
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *RoleManagementPolicyAssignmentsItemPolicyRequestBuilder when successful
 func (m *RoleManagementPolicyAssignmentsItemPolicyRequestBuilder) WithUrl(rawUrl string)(*RoleManagementPolicyAssignmentsItemPolicyRequestBuilder) {
     return NewRoleManagementPolicyAssignmentsItemPolicyRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -26,28 +26,29 @@ type B2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilderGetRequestConfig
     // Request query parameters
     QueryParameters *B2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilderGetQueryParameters
 }
-// NewB2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewB2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilderInternal instantiates a new B2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilder and sets the default values.
 func NewB2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilder) {
     m := &B2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/userAttributeAssignments/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/userAttributeAssignments/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewB2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewB2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilder instantiates a new B2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilder and sets the default values.
 func NewB2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewB2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *B2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *B2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *B2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilder) Get(ctx co
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *B2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *B2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilder) ToGetReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *B2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilder when successful
 func (m *B2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilder) WithUrl(rawUrl string)(*B2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilder) {
     return NewB2xUserFlowsItemUserAttributeAssignmentsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

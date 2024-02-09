@@ -9,7 +9,7 @@ import (
 type NotificationMessageTemplate struct {
     Entity
 }
-// NewNotificationMessageTemplate instantiates a new notificationMessageTemplate and sets the default values.
+// NewNotificationMessageTemplate instantiates a new NotificationMessageTemplate and sets the default values.
 func NewNotificationMessageTemplate()(*NotificationMessageTemplate) {
     m := &NotificationMessageTemplate{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewNotificationMessageTemplate()(*NotificationMessageTemplate) {
     return m
 }
 // CreateNotificationMessageTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateNotificationMessageTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNotificationMessageTemplate(), nil
 }
 // GetBrandingOptions gets the brandingOptions property value. Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
+// returns a *NotificationTemplateBrandingOptions when successful
 func (m *NotificationMessageTemplate) GetBrandingOptions()(*NotificationTemplateBrandingOptions) {
     val, err := m.GetBackingStore().Get("brandingOptions")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *NotificationMessageTemplate) GetBrandingOptions()(*NotificationTemplate
     return nil
 }
 // GetDefaultLocale gets the defaultLocale property value. The default locale to fallback onto when the requested locale is not available.
+// returns a *string when successful
 func (m *NotificationMessageTemplate) GetDefaultLocale()(*string) {
     val, err := m.GetBackingStore().Get("defaultLocale")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *NotificationMessageTemplate) GetDefaultLocale()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Display name for the Notification Message Template.
+// returns a *string when successful
 func (m *NotificationMessageTemplate) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *NotificationMessageTemplate) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *NotificationMessageTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["brandingOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -131,6 +136,7 @@ func (m *NotificationMessageTemplate) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
+// returns a *Time when successful
 func (m *NotificationMessageTemplate) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -142,6 +148,7 @@ func (m *NotificationMessageTemplate) GetLastModifiedDateTime()(*i336074805fc853
     return nil
 }
 // GetLocalizedNotificationMessages gets the localizedNotificationMessages property value. The list of localized messages for this Notification Message Template.
+// returns a []LocalizedNotificationMessageable when successful
 func (m *NotificationMessageTemplate) GetLocalizedNotificationMessages()([]LocalizedNotificationMessageable) {
     val, err := m.GetBackingStore().Get("localizedNotificationMessages")
     if err != nil {
@@ -153,6 +160,7 @@ func (m *NotificationMessageTemplate) GetLocalizedNotificationMessages()([]Local
     return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
+// returns a []string when successful
 func (m *NotificationMessageTemplate) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -256,7 +264,6 @@ func (m *NotificationMessageTemplate) SetRoleScopeTagIds(value []string)() {
         panic(err)
     }
 }
-// NotificationMessageTemplateable 
 type NotificationMessageTemplateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

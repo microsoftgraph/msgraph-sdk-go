@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// PayloadCoachmark 
 type PayloadCoachmark struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPayloadCoachmark instantiates a new payloadCoachmark and sets the default values.
+// NewPayloadCoachmark instantiates a new PayloadCoachmark and sets the default values.
 func NewPayloadCoachmark()(*PayloadCoachmark) {
     m := &PayloadCoachmark{
     }
@@ -19,10 +18,12 @@ func NewPayloadCoachmark()(*PayloadCoachmark) {
     return m
 }
 // CreatePayloadCoachmarkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePayloadCoachmarkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPayloadCoachmark(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PayloadCoachmark) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *PayloadCoachmark) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *PayloadCoachmark) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCoachmarkLocation gets the coachmarkLocation property value. The coachmark location.
+// returns a CoachmarkLocationable when successful
 func (m *PayloadCoachmark) GetCoachmarkLocation()(CoachmarkLocationable) {
     val, err := m.GetBackingStore().Get("coachmarkLocation")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *PayloadCoachmark) GetCoachmarkLocation()(CoachmarkLocationable) {
     return nil
 }
 // GetDescription gets the description property value. The description about the coachmark.
+// returns a *string when successful
 func (m *PayloadCoachmark) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *PayloadCoachmark) GetDescription()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PayloadCoachmark) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["coachmarkLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -136,6 +141,7 @@ func (m *PayloadCoachmark) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetIndicator gets the indicator property value. The coachmark indicator.
+// returns a *string when successful
 func (m *PayloadCoachmark) GetIndicator()(*string) {
     val, err := m.GetBackingStore().Get("indicator")
     if err != nil {
@@ -147,6 +153,7 @@ func (m *PayloadCoachmark) GetIndicator()(*string) {
     return nil
 }
 // GetIsValid gets the isValid property value. Indicates whether the coachmark is valid or not.
+// returns a *bool when successful
 func (m *PayloadCoachmark) GetIsValid()(*bool) {
     val, err := m.GetBackingStore().Get("isValid")
     if err != nil {
@@ -158,6 +165,7 @@ func (m *PayloadCoachmark) GetIsValid()(*bool) {
     return nil
 }
 // GetLanguage gets the language property value. The coachmark language.
+// returns a *string when successful
 func (m *PayloadCoachmark) GetLanguage()(*string) {
     val, err := m.GetBackingStore().Get("language")
     if err != nil {
@@ -169,6 +177,7 @@ func (m *PayloadCoachmark) GetLanguage()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PayloadCoachmark) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -180,6 +189,7 @@ func (m *PayloadCoachmark) GetOdataType()(*string) {
     return nil
 }
 // GetOrder gets the order property value. The coachmark order.
+// returns a *string when successful
 func (m *PayloadCoachmark) GetOrder()(*string) {
     val, err := m.GetBackingStore().Get("order")
     if err != nil {
@@ -302,7 +312,6 @@ func (m *PayloadCoachmark) SetOrder(value *string)() {
         panic(err)
     }
 }
-// PayloadCoachmarkable 
 type PayloadCoachmarkable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

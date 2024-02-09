@@ -17,20 +17,21 @@ type ItemJoinedTeamsItemUnarchiveRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemJoinedTeamsItemUnarchiveRequestBuilderInternal instantiates a new UnarchiveRequestBuilder and sets the default values.
+// NewItemJoinedTeamsItemUnarchiveRequestBuilderInternal instantiates a new ItemJoinedTeamsItemUnarchiveRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemUnarchiveRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemUnarchiveRequestBuilder) {
     m := &ItemJoinedTeamsItemUnarchiveRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/unarchive", pathParameters),
     }
     return m
 }
-// NewItemJoinedTeamsItemUnarchiveRequestBuilder instantiates a new UnarchiveRequestBuilder and sets the default values.
+// NewItemJoinedTeamsItemUnarchiveRequestBuilder instantiates a new ItemJoinedTeamsItemUnarchiveRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemUnarchiveRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemUnarchiveRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemJoinedTeamsItemUnarchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post restore an archived team. This restores users' ability to send messages and edit the team, abiding by tenant and team settings. A Team is archived using the archive API. Unarchiving is an async operation. A team is unarchived once the async operation completes successfully, which may occur subsequent to a response from this API.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-unarchive?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemJoinedTeamsItemUnarchiveRequestBuilder) Post(ctx context.Context, r
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemJoinedTeamsItemUnarchiveRequestBuilder) Post(ctx context.Context, r
     return nil
 }
 // ToPostRequestInformation restore an archived team. This restores users' ability to send messages and edit the team, abiding by tenant and team settings. A Team is archived using the archive API. Unarchiving is an async operation. A team is unarchived once the async operation completes successfully, which may occur subsequent to a response from this API.
+// returns a *RequestInformation when successful
 func (m *ItemJoinedTeamsItemUnarchiveRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemUnarchiveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *ItemJoinedTeamsItemUnarchiveRequestBuilder) ToPostRequestInformation(ct
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemJoinedTeamsItemUnarchiveRequestBuilder when successful
 func (m *ItemJoinedTeamsItemUnarchiveRequestBuilder) WithUrl(rawUrl string)(*ItemJoinedTeamsItemUnarchiveRequestBuilder) {
     return NewItemJoinedTeamsItemUnarchiveRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

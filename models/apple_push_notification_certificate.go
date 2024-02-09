@@ -9,7 +9,7 @@ import (
 type ApplePushNotificationCertificate struct {
     Entity
 }
-// NewApplePushNotificationCertificate instantiates a new applePushNotificationCertificate and sets the default values.
+// NewApplePushNotificationCertificate instantiates a new ApplePushNotificationCertificate and sets the default values.
 func NewApplePushNotificationCertificate()(*ApplePushNotificationCertificate) {
     m := &ApplePushNotificationCertificate{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewApplePushNotificationCertificate()(*ApplePushNotificationCertificate) {
     return m
 }
 // CreateApplePushNotificationCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateApplePushNotificationCertificateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApplePushNotificationCertificate(), nil
 }
 // GetAppleIdentifier gets the appleIdentifier property value. Apple Id of the account used to create the MDM push certificate.
+// returns a *string when successful
 func (m *ApplePushNotificationCertificate) GetAppleIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("appleIdentifier")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *ApplePushNotificationCertificate) GetAppleIdentifier()(*string) {
     return nil
 }
 // GetCertificate gets the certificate property value. Not yet documented
+// returns a *string when successful
 func (m *ApplePushNotificationCertificate) GetCertificate()(*string) {
     val, err := m.GetBackingStore().Get("certificate")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *ApplePushNotificationCertificate) GetCertificate()(*string) {
     return nil
 }
 // GetCertificateSerialNumber gets the certificateSerialNumber property value. Certificate serial number. This property is read-only.
+// returns a *string when successful
 func (m *ApplePushNotificationCertificate) GetCertificateSerialNumber()(*string) {
     val, err := m.GetBackingStore().Get("certificateSerialNumber")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *ApplePushNotificationCertificate) GetCertificateSerialNumber()(*string)
     return nil
 }
 // GetCertificateUploadFailureReason gets the certificateUploadFailureReason property value. The reason the certificate upload failed.
+// returns a *string when successful
 func (m *ApplePushNotificationCertificate) GetCertificateUploadFailureReason()(*string) {
     val, err := m.GetBackingStore().Get("certificateUploadFailureReason")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *ApplePushNotificationCertificate) GetCertificateUploadFailureReason()(*
     return nil
 }
 // GetCertificateUploadStatus gets the certificateUploadStatus property value. The certificate upload status.
+// returns a *string when successful
 func (m *ApplePushNotificationCertificate) GetCertificateUploadStatus()(*string) {
     val, err := m.GetBackingStore().Get("certificateUploadStatus")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *ApplePushNotificationCertificate) GetCertificateUploadStatus()(*string)
     return nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The expiration date and time for Apple push notification certificate.
+// returns a *Time when successful
 func (m *ApplePushNotificationCertificate) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -87,6 +94,7 @@ func (m *ApplePushNotificationCertificate) GetExpirationDateTime()(*i336074805fc
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ApplePushNotificationCertificate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appleIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -172,6 +180,7 @@ func (m *ApplePushNotificationCertificate) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified date and time for Apple push notification certificate.
+// returns a *Time when successful
 func (m *ApplePushNotificationCertificate) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -183,6 +192,7 @@ func (m *ApplePushNotificationCertificate) GetLastModifiedDateTime()(*i336074805
     return nil
 }
 // GetTopicIdentifier gets the topicIdentifier property value. Topic Id.
+// returns a *string when successful
 func (m *ApplePushNotificationCertificate) GetTopicIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("topicIdentifier")
     if err != nil {
@@ -299,7 +309,6 @@ func (m *ApplePushNotificationCertificate) SetTopicIdentifier(value *string)() {
         panic(err)
     }
 }
-// ApplePushNotificationCertificateable 
 type ApplePushNotificationCertificateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

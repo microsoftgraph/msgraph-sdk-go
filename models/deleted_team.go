@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeletedTeam 
 type DeletedTeam struct {
     Entity
 }
-// NewDeletedTeam instantiates a new deletedTeam and sets the default values.
+// NewDeletedTeam instantiates a new DeletedTeam and sets the default values.
 func NewDeletedTeam()(*DeletedTeam) {
     m := &DeletedTeam{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewDeletedTeam()(*DeletedTeam) {
     return m
 }
 // CreateDeletedTeamFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeletedTeamFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeletedTeam(), nil
 }
 // GetChannels gets the channels property value. The channels that are either shared with this deleted team or created in this deleted team.
+// returns a []Channelable when successful
 func (m *DeletedTeam) GetChannels()([]Channelable) {
     val, err := m.GetBackingStore().Get("channels")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *DeletedTeam) GetChannels()([]Channelable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeletedTeam) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["channels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,7 +80,6 @@ func (m *DeletedTeam) SetChannels(value []Channelable)() {
         panic(err)
     }
 }
-// DeletedTeamable 
 type DeletedTeamable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

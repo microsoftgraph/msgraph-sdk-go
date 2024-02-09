@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// LookupColumn 
 type LookupColumn struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewLookupColumn instantiates a new lookupColumn and sets the default values.
+// NewLookupColumn instantiates a new LookupColumn and sets the default values.
 func NewLookupColumn()(*LookupColumn) {
     m := &LookupColumn{
     }
@@ -19,10 +18,12 @@ func NewLookupColumn()(*LookupColumn) {
     return m
 }
 // CreateLookupColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateLookupColumnFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLookupColumn(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *LookupColumn) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *LookupColumn) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAllowMultipleValues gets the allowMultipleValues property value. Indicates whether multiple values can be selected from the source.
+// returns a *bool when successful
 func (m *LookupColumn) GetAllowMultipleValues()(*bool) {
     val, err := m.GetBackingStore().Get("allowMultipleValues")
     if err != nil {
@@ -46,6 +48,7 @@ func (m *LookupColumn) GetAllowMultipleValues()(*bool) {
     return nil
 }
 // GetAllowUnlimitedLength gets the allowUnlimitedLength property value. Indicates whether values in the column should be able to exceed the standard limit of 255 characters.
+// returns a *bool when successful
 func (m *LookupColumn) GetAllowUnlimitedLength()(*bool) {
     val, err := m.GetBackingStore().Get("allowUnlimitedLength")
     if err != nil {
@@ -57,10 +60,12 @@ func (m *LookupColumn) GetAllowUnlimitedLength()(*bool) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *LookupColumn) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetColumnName gets the columnName property value. The name of the lookup source column.
+// returns a *string when successful
 func (m *LookupColumn) GetColumnName()(*string) {
     val, err := m.GetBackingStore().Get("columnName")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *LookupColumn) GetColumnName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *LookupColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allowMultipleValues"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -137,6 +143,7 @@ func (m *LookupColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetListId gets the listId property value. The unique identifier of the lookup source list.
+// returns a *string when successful
 func (m *LookupColumn) GetListId()(*string) {
     val, err := m.GetBackingStore().Get("listId")
     if err != nil {
@@ -148,6 +155,7 @@ func (m *LookupColumn) GetListId()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *LookupColumn) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -159,6 +167,7 @@ func (m *LookupColumn) GetOdataType()(*string) {
     return nil
 }
 // GetPrimaryLookupColumnId gets the primaryLookupColumnId property value. If specified, this column is a secondary lookup, pulling an additional field from the list item looked up by the primary lookup. Use the list item looked up by the primary as the source for the column named here.
+// returns a *string when successful
 func (m *LookupColumn) GetPrimaryLookupColumnId()(*string) {
     val, err := m.GetBackingStore().Get("primaryLookupColumnId")
     if err != nil {
@@ -268,7 +277,6 @@ func (m *LookupColumn) SetPrimaryLookupColumnId(value *string)() {
         panic(err)
     }
 }
-// LookupColumnable 
 type LookupColumnable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

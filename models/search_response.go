@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// SearchResponse 
 type SearchResponse struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSearchResponse instantiates a new searchResponse and sets the default values.
+// NewSearchResponse instantiates a new SearchResponse and sets the default values.
 func NewSearchResponse()(*SearchResponse) {
     m := &SearchResponse{
     }
@@ -19,10 +18,12 @@ func NewSearchResponse()(*SearchResponse) {
     return m
 }
 // CreateSearchResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSearchResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSearchResponse(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SearchResponse) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *SearchResponse) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *SearchResponse) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SearchResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["hitsContainers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -106,6 +109,7 @@ func (m *SearchResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetHitsContainers gets the hitsContainers property value. A collection of search results.
+// returns a []SearchHitsContainerable when successful
 func (m *SearchResponse) GetHitsContainers()([]SearchHitsContainerable) {
     val, err := m.GetBackingStore().Get("hitsContainers")
     if err != nil {
@@ -117,6 +121,7 @@ func (m *SearchResponse) GetHitsContainers()([]SearchHitsContainerable) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *SearchResponse) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -128,6 +133,7 @@ func (m *SearchResponse) GetOdataType()(*string) {
     return nil
 }
 // GetQueryAlterationResponse gets the queryAlterationResponse property value. Provides information related to spelling corrections in the alteration response.
+// returns a AlterationResponseable when successful
 func (m *SearchResponse) GetQueryAlterationResponse()(AlterationResponseable) {
     val, err := m.GetBackingStore().Get("queryAlterationResponse")
     if err != nil {
@@ -139,6 +145,7 @@ func (m *SearchResponse) GetQueryAlterationResponse()(AlterationResponseable) {
     return nil
 }
 // GetResultTemplates gets the resultTemplates property value. A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.
+// returns a ResultTemplateDictionaryable when successful
 func (m *SearchResponse) GetResultTemplates()(ResultTemplateDictionaryable) {
     val, err := m.GetBackingStore().Get("resultTemplates")
     if err != nil {
@@ -150,6 +157,7 @@ func (m *SearchResponse) GetResultTemplates()(ResultTemplateDictionaryable) {
     return nil
 }
 // GetSearchTerms gets the searchTerms property value. Contains the search terms sent in the initial search query.
+// returns a []string when successful
 func (m *SearchResponse) GetSearchTerms()([]string) {
     val, err := m.GetBackingStore().Get("searchTerms")
     if err != nil {
@@ -252,7 +260,6 @@ func (m *SearchResponse) SetSearchTerms(value []string)() {
         panic(err)
     }
 }
-// SearchResponseable 
 type SearchResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

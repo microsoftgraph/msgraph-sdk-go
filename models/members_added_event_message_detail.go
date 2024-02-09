@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MembersAddedEventMessageDetail 
 type MembersAddedEventMessageDetail struct {
     EventMessageDetail
 }
-// NewMembersAddedEventMessageDetail instantiates a new membersAddedEventMessageDetail and sets the default values.
+// NewMembersAddedEventMessageDetail instantiates a new MembersAddedEventMessageDetail and sets the default values.
 func NewMembersAddedEventMessageDetail()(*MembersAddedEventMessageDetail) {
     m := &MembersAddedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
@@ -19,10 +18,12 @@ func NewMembersAddedEventMessageDetail()(*MembersAddedEventMessageDetail) {
     return m
 }
 // CreateMembersAddedEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMembersAddedEventMessageDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMembersAddedEventMessageDetail(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MembersAddedEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EventMessageDetail.GetFieldDeserializers()
     res["initiator"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -64,6 +65,7 @@ func (m *MembersAddedEventMessageDetail) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
+// returns a IdentitySetable when successful
 func (m *MembersAddedEventMessageDetail) GetInitiator()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("initiator")
     if err != nil {
@@ -75,6 +77,7 @@ func (m *MembersAddedEventMessageDetail) GetInitiator()(IdentitySetable) {
     return nil
 }
 // GetMembers gets the members property value. List of members added.
+// returns a []TeamworkUserIdentityable when successful
 func (m *MembersAddedEventMessageDetail) GetMembers()([]TeamworkUserIdentityable) {
     val, err := m.GetBackingStore().Get("members")
     if err != nil {
@@ -86,6 +89,7 @@ func (m *MembersAddedEventMessageDetail) GetMembers()([]TeamworkUserIdentityable
     return nil
 }
 // GetVisibleHistoryStartDateTime gets the visibleHistoryStartDateTime property value. The timestamp that denotes how far back a conversation's history is shared with the conversation members.
+// returns a *Time when successful
 func (m *MembersAddedEventMessageDetail) GetVisibleHistoryStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("visibleHistoryStartDateTime")
     if err != nil {
@@ -149,7 +153,6 @@ func (m *MembersAddedEventMessageDetail) SetVisibleHistoryStartDateTime(value *i
         panic(err)
     }
 }
-// MembersAddedEventMessageDetailable 
 type MembersAddedEventMessageDetailable interface {
     EventMessageDetailable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

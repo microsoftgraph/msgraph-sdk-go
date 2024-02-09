@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MailFolder 
 type MailFolder struct {
     Entity
 }
-// NewMailFolder instantiates a new mailFolder and sets the default values.
+// NewMailFolder instantiates a new MailFolder and sets the default values.
 func NewMailFolder()(*MailFolder) {
     m := &MailFolder{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewMailFolder()(*MailFolder) {
     return m
 }
 // CreateMailFolderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMailFolderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -38,6 +38,7 @@ func CreateMailFolderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewMailFolder(), nil
 }
 // GetChildFolderCount gets the childFolderCount property value. The number of immediate child mailFolders in the current mailFolder.
+// returns a *int32 when successful
 func (m *MailFolder) GetChildFolderCount()(*int32) {
     val, err := m.GetBackingStore().Get("childFolderCount")
     if err != nil {
@@ -49,6 +50,7 @@ func (m *MailFolder) GetChildFolderCount()(*int32) {
     return nil
 }
 // GetChildFolders gets the childFolders property value. The collection of child folders in the mailFolder.
+// returns a []MailFolderable when successful
 func (m *MailFolder) GetChildFolders()([]MailFolderable) {
     val, err := m.GetBackingStore().Get("childFolders")
     if err != nil {
@@ -60,6 +62,7 @@ func (m *MailFolder) GetChildFolders()([]MailFolderable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The mailFolder's display name.
+// returns a *string when successful
 func (m *MailFolder) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -71,6 +74,7 @@ func (m *MailFolder) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MailFolder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["childFolderCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -216,6 +220,7 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetIsHidden gets the isHidden property value. Indicates whether the mailFolder is hidden. This property can be set only when creating the folder. Find more information in Hidden mail folders.
+// returns a *bool when successful
 func (m *MailFolder) GetIsHidden()(*bool) {
     val, err := m.GetBackingStore().Get("isHidden")
     if err != nil {
@@ -227,6 +232,7 @@ func (m *MailFolder) GetIsHidden()(*bool) {
     return nil
 }
 // GetMessageRules gets the messageRules property value. The collection of rules that apply to the user's Inbox folder.
+// returns a []MessageRuleable when successful
 func (m *MailFolder) GetMessageRules()([]MessageRuleable) {
     val, err := m.GetBackingStore().Get("messageRules")
     if err != nil {
@@ -238,6 +244,7 @@ func (m *MailFolder) GetMessageRules()([]MessageRuleable) {
     return nil
 }
 // GetMessages gets the messages property value. The collection of messages in the mailFolder.
+// returns a []Messageable when successful
 func (m *MailFolder) GetMessages()([]Messageable) {
     val, err := m.GetBackingStore().Get("messages")
     if err != nil {
@@ -249,6 +256,7 @@ func (m *MailFolder) GetMessages()([]Messageable) {
     return nil
 }
 // GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
+// returns a []MultiValueLegacyExtendedPropertyable when successful
 func (m *MailFolder) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("multiValueExtendedProperties")
     if err != nil {
@@ -260,6 +268,7 @@ func (m *MailFolder) GetMultiValueExtendedProperties()([]MultiValueLegacyExtende
     return nil
 }
 // GetParentFolderId gets the parentFolderId property value. The unique identifier for the mailFolder's parent mailFolder.
+// returns a *string when successful
 func (m *MailFolder) GetParentFolderId()(*string) {
     val, err := m.GetBackingStore().Get("parentFolderId")
     if err != nil {
@@ -271,6 +280,7 @@ func (m *MailFolder) GetParentFolderId()(*string) {
     return nil
 }
 // GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
+// returns a []SingleValueLegacyExtendedPropertyable when successful
 func (m *MailFolder) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("singleValueExtendedProperties")
     if err != nil {
@@ -282,6 +292,7 @@ func (m *MailFolder) GetSingleValueExtendedProperties()([]SingleValueLegacyExten
     return nil
 }
 // GetTotalItemCount gets the totalItemCount property value. The number of items in the mailFolder.
+// returns a *int32 when successful
 func (m *MailFolder) GetTotalItemCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalItemCount")
     if err != nil {
@@ -293,6 +304,7 @@ func (m *MailFolder) GetTotalItemCount()(*int32) {
     return nil
 }
 // GetUnreadItemCount gets the unreadItemCount property value. The number of items in the mailFolder marked as unread.
+// returns a *int32 when successful
 func (m *MailFolder) GetUnreadItemCount()(*int32) {
     val, err := m.GetBackingStore().Get("unreadItemCount")
     if err != nil {
@@ -484,7 +496,6 @@ func (m *MailFolder) SetUnreadItemCount(value *int32)() {
         panic(err)
     }
 }
-// MailFolderable 
 type MailFolderable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

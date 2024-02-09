@@ -5,7 +5,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ReportsGetPolicyNonComplianceReportPostRequestBody 
 type ReportsGetPolicyNonComplianceReportPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -19,10 +18,12 @@ func NewReportsGetPolicyNonComplianceReportPostRequestBody()(*ReportsGetPolicyNo
     return m
 }
 // CreateReportsGetPolicyNonComplianceReportPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateReportsGetPolicyNonComplianceReportPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewReportsGetPolicyNonComplianceReportPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ReportsGetPolicyNonComplianceReportPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ReportsGetPolicyNonComplianceReportPostRequestBody) GetAdditionalData()
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ReportsGetPolicyNonComplianceReportPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ReportsGetPolicyNonComplianceReportPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["filter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -152,6 +155,7 @@ func (m *ReportsGetPolicyNonComplianceReportPostRequestBody) GetFieldDeserialize
     return res
 }
 // GetFilter gets the filter property value. The filter property
+// returns a *string when successful
 func (m *ReportsGetPolicyNonComplianceReportPostRequestBody) GetFilter()(*string) {
     val, err := m.GetBackingStore().Get("filter")
     if err != nil {
@@ -163,6 +167,7 @@ func (m *ReportsGetPolicyNonComplianceReportPostRequestBody) GetFilter()(*string
     return nil
 }
 // GetGroupBy gets the groupBy property value. The groupBy property
+// returns a []string when successful
 func (m *ReportsGetPolicyNonComplianceReportPostRequestBody) GetGroupBy()([]string) {
     val, err := m.GetBackingStore().Get("groupBy")
     if err != nil {
@@ -174,6 +179,7 @@ func (m *ReportsGetPolicyNonComplianceReportPostRequestBody) GetGroupBy()([]stri
     return nil
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *ReportsGetPolicyNonComplianceReportPostRequestBody) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -185,6 +191,7 @@ func (m *ReportsGetPolicyNonComplianceReportPostRequestBody) GetName()(*string) 
     return nil
 }
 // GetOrderBy gets the orderBy property value. The orderBy property
+// returns a []string when successful
 func (m *ReportsGetPolicyNonComplianceReportPostRequestBody) GetOrderBy()([]string) {
     val, err := m.GetBackingStore().Get("orderBy")
     if err != nil {
@@ -196,6 +203,7 @@ func (m *ReportsGetPolicyNonComplianceReportPostRequestBody) GetOrderBy()([]stri
     return nil
 }
 // GetSearch gets the search property value. The search property
+// returns a *string when successful
 func (m *ReportsGetPolicyNonComplianceReportPostRequestBody) GetSearch()(*string) {
     val, err := m.GetBackingStore().Get("search")
     if err != nil {
@@ -207,6 +215,7 @@ func (m *ReportsGetPolicyNonComplianceReportPostRequestBody) GetSearch()(*string
     return nil
 }
 // GetSelectEscaped gets the select property value. The select property
+// returns a []string when successful
 func (m *ReportsGetPolicyNonComplianceReportPostRequestBody) GetSelectEscaped()([]string) {
     val, err := m.GetBackingStore().Get("selectEscaped")
     if err != nil {
@@ -218,6 +227,7 @@ func (m *ReportsGetPolicyNonComplianceReportPostRequestBody) GetSelectEscaped()(
     return nil
 }
 // GetSessionId gets the sessionId property value. The sessionId property
+// returns a *string when successful
 func (m *ReportsGetPolicyNonComplianceReportPostRequestBody) GetSessionId()(*string) {
     val, err := m.GetBackingStore().Get("sessionId")
     if err != nil {
@@ -229,6 +239,7 @@ func (m *ReportsGetPolicyNonComplianceReportPostRequestBody) GetSessionId()(*str
     return nil
 }
 // GetSkip gets the skip property value. The skip property
+// returns a *int32 when successful
 func (m *ReportsGetPolicyNonComplianceReportPostRequestBody) GetSkip()(*int32) {
     val, err := m.GetBackingStore().Get("skip")
     if err != nil {
@@ -240,6 +251,7 @@ func (m *ReportsGetPolicyNonComplianceReportPostRequestBody) GetSkip()(*int32) {
     return nil
 }
 // GetTop gets the top property value. The top property
+// returns a *int32 when successful
 func (m *ReportsGetPolicyNonComplianceReportPostRequestBody) GetTop()(*int32) {
     val, err := m.GetBackingStore().Get("top")
     if err != nil {
@@ -388,7 +400,6 @@ func (m *ReportsGetPolicyNonComplianceReportPostRequestBody) SetTop(value *int32
         panic(err)
     }
 }
-// ReportsGetPolicyNonComplianceReportPostRequestBodyable 
 type ReportsGetPolicyNonComplianceReportPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

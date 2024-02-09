@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AadUserConversationMember 
 type AadUserConversationMember struct {
     ConversationMember
 }
-// NewAadUserConversationMember instantiates a new aadUserConversationMember and sets the default values.
+// NewAadUserConversationMember instantiates a new AadUserConversationMember and sets the default values.
 func NewAadUserConversationMember()(*AadUserConversationMember) {
     m := &AadUserConversationMember{
         ConversationMember: *NewConversationMember(),
@@ -18,10 +17,12 @@ func NewAadUserConversationMember()(*AadUserConversationMember) {
     return m
 }
 // CreateAadUserConversationMemberFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAadUserConversationMemberFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAadUserConversationMember(), nil
 }
 // GetEmail gets the email property value. The email address of the user.
+// returns a *string when successful
 func (m *AadUserConversationMember) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AadUserConversationMember) GetEmail()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AadUserConversationMember) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ConversationMember.GetFieldDeserializers()
     res["email"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,6 +80,7 @@ func (m *AadUserConversationMember) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetTenantId gets the tenantId property value. TenantId which the Microsoft Entra user belongs to.
+// returns a *string when successful
 func (m *AadUserConversationMember) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -89,6 +92,7 @@ func (m *AadUserConversationMember) GetTenantId()(*string) {
     return nil
 }
 // GetUser gets the user property value. The user property
+// returns a Userable when successful
 func (m *AadUserConversationMember) GetUser()(Userable) {
     val, err := m.GetBackingStore().Get("user")
     if err != nil {
@@ -100,6 +104,7 @@ func (m *AadUserConversationMember) GetUser()(Userable) {
     return nil
 }
 // GetUserId gets the userId property value. The guid of the user.
+// returns a *string when successful
 func (m *AadUserConversationMember) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -170,7 +175,6 @@ func (m *AadUserConversationMember) SetUserId(value *string)() {
         panic(err)
     }
 }
-// AadUserConversationMemberable 
 type AadUserConversationMemberable interface {
     ConversationMemberable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

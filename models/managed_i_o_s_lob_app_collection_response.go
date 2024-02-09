@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedIOSLobAppCollectionResponse 
 type ManagedIOSLobAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewManagedIOSLobAppCollectionResponse instantiates a new managedIOSLobAppCollectionResponse and sets the default values.
+// NewManagedIOSLobAppCollectionResponse instantiates a new ManagedIOSLobAppCollectionResponse and sets the default values.
 func NewManagedIOSLobAppCollectionResponse()(*ManagedIOSLobAppCollectionResponse) {
     m := &ManagedIOSLobAppCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewManagedIOSLobAppCollectionResponse()(*ManagedIOSLobAppCollectionResponse
     return m
 }
 // CreateManagedIOSLobAppCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedIOSLobAppCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedIOSLobAppCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedIOSLobAppCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ManagedIOSLobAppCollectionResponse) GetFieldDeserializers()(map[string]
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ManagedIOSLobAppable when successful
 func (m *ManagedIOSLobAppCollectionResponse) GetValue()([]ManagedIOSLobAppable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ManagedIOSLobAppCollectionResponse) SetValue(value []ManagedIOSLobAppab
         panic(err)
     }
 }
-// ManagedIOSLobAppCollectionResponseable 
 type ManagedIOSLobAppCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

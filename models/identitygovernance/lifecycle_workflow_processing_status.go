@@ -2,7 +2,6 @@ package identitygovernance
 import (
     "errors"
 )
-// 
 type LifecycleWorkflowProcessingStatus int
 
 const (

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamJoiningEnabledEventMessageDetail 
 type TeamJoiningEnabledEventMessageDetail struct {
     EventMessageDetail
 }
-// NewTeamJoiningEnabledEventMessageDetail instantiates a new teamJoiningEnabledEventMessageDetail and sets the default values.
+// NewTeamJoiningEnabledEventMessageDetail instantiates a new TeamJoiningEnabledEventMessageDetail and sets the default values.
 func NewTeamJoiningEnabledEventMessageDetail()(*TeamJoiningEnabledEventMessageDetail) {
     m := &TeamJoiningEnabledEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
@@ -18,10 +17,12 @@ func NewTeamJoiningEnabledEventMessageDetail()(*TeamJoiningEnabledEventMessageDe
     return m
 }
 // CreateTeamJoiningEnabledEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamJoiningEnabledEventMessageDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamJoiningEnabledEventMessageDetail(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamJoiningEnabledEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EventMessageDetail.GetFieldDeserializers()
     res["initiator"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +48,7 @@ func (m *TeamJoiningEnabledEventMessageDetail) GetFieldDeserializers()(map[strin
     return res
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
+// returns a IdentitySetable when successful
 func (m *TeamJoiningEnabledEventMessageDetail) GetInitiator()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("initiator")
     if err != nil {
@@ -58,6 +60,7 @@ func (m *TeamJoiningEnabledEventMessageDetail) GetInitiator()(IdentitySetable) {
     return nil
 }
 // GetTeamId gets the teamId property value. Unique identifier of the team.
+// returns a *string when successful
 func (m *TeamJoiningEnabledEventMessageDetail) GetTeamId()(*string) {
     val, err := m.GetBackingStore().Get("teamId")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *TeamJoiningEnabledEventMessageDetail) SetTeamId(value *string)() {
         panic(err)
     }
 }
-// TeamJoiningEnabledEventMessageDetailable 
 type TeamJoiningEnabledEventMessageDetailable interface {
     EventMessageDetailable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

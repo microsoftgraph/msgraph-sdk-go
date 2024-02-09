@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AdminConsentRequestPolicy 
 type AdminConsentRequestPolicy struct {
     Entity
 }
-// NewAdminConsentRequestPolicy instantiates a new adminConsentRequestPolicy and sets the default values.
+// NewAdminConsentRequestPolicy instantiates a new AdminConsentRequestPolicy and sets the default values.
 func NewAdminConsentRequestPolicy()(*AdminConsentRequestPolicy) {
     m := &AdminConsentRequestPolicy{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewAdminConsentRequestPolicy()(*AdminConsentRequestPolicy) {
     return m
 }
 // CreateAdminConsentRequestPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAdminConsentRequestPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAdminConsentRequestPolicy(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AdminConsentRequestPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["isEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -91,6 +92,7 @@ func (m *AdminConsentRequestPolicy) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetIsEnabled gets the isEnabled property value. Specifies whether the admin consent request feature is enabled or disabled. Required.
+// returns a *bool when successful
 func (m *AdminConsentRequestPolicy) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -102,6 +104,7 @@ func (m *AdminConsentRequestPolicy) GetIsEnabled()(*bool) {
     return nil
 }
 // GetNotifyReviewers gets the notifyReviewers property value. Specifies whether reviewers will receive notifications. Required.
+// returns a *bool when successful
 func (m *AdminConsentRequestPolicy) GetNotifyReviewers()(*bool) {
     val, err := m.GetBackingStore().Get("notifyReviewers")
     if err != nil {
@@ -113,6 +116,7 @@ func (m *AdminConsentRequestPolicy) GetNotifyReviewers()(*bool) {
     return nil
 }
 // GetRemindersEnabled gets the remindersEnabled property value. Specifies whether reviewers will receive reminder emails. Required.
+// returns a *bool when successful
 func (m *AdminConsentRequestPolicy) GetRemindersEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("remindersEnabled")
     if err != nil {
@@ -124,6 +128,7 @@ func (m *AdminConsentRequestPolicy) GetRemindersEnabled()(*bool) {
     return nil
 }
 // GetRequestDurationInDays gets the requestDurationInDays property value. Specifies the duration the request is active before it automatically expires if no decision is applied.
+// returns a *int32 when successful
 func (m *AdminConsentRequestPolicy) GetRequestDurationInDays()(*int32) {
     val, err := m.GetBackingStore().Get("requestDurationInDays")
     if err != nil {
@@ -135,6 +140,7 @@ func (m *AdminConsentRequestPolicy) GetRequestDurationInDays()(*int32) {
     return nil
 }
 // GetReviewers gets the reviewers property value. The list of reviewers for the admin consent. Required.
+// returns a []AccessReviewReviewerScopeable when successful
 func (m *AdminConsentRequestPolicy) GetReviewers()([]AccessReviewReviewerScopeable) {
     val, err := m.GetBackingStore().Get("reviewers")
     if err != nil {
@@ -146,6 +152,7 @@ func (m *AdminConsentRequestPolicy) GetReviewers()([]AccessReviewReviewerScopeab
     return nil
 }
 // GetVersion gets the version property value. Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.
+// returns a *int32 when successful
 func (m *AdminConsentRequestPolicy) GetVersion()(*int32) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -248,7 +255,6 @@ func (m *AdminConsentRequestPolicy) SetVersion(value *int32)() {
         panic(err)
     }
 }
-// AdminConsentRequestPolicyable 
 type AdminConsentRequestPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

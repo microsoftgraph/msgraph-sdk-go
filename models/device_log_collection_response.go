@@ -10,7 +10,7 @@ import (
 type DeviceLogCollectionResponse struct {
     Entity
 }
-// NewDeviceLogCollectionResponse instantiates a new deviceLogCollectionResponse and sets the default values.
+// NewDeviceLogCollectionResponse instantiates a new DeviceLogCollectionResponse and sets the default values.
 func NewDeviceLogCollectionResponse()(*DeviceLogCollectionResponse) {
     m := &DeviceLogCollectionResponse{
         Entity: *NewEntity(),
@@ -18,10 +18,12 @@ func NewDeviceLogCollectionResponse()(*DeviceLogCollectionResponse) {
     return m
 }
 // CreateDeviceLogCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceLogCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceLogCollectionResponse(), nil
 }
 // GetEnrolledByUser gets the enrolledByUser property value. The User Principal Name (UPN) of the user that enrolled the device.
+// returns a *string when successful
 func (m *DeviceLogCollectionResponse) GetEnrolledByUser()(*string) {
     val, err := m.GetBackingStore().Get("enrolledByUser")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *DeviceLogCollectionResponse) GetEnrolledByUser()(*string) {
     return nil
 }
 // GetExpirationDateTimeUTC gets the expirationDateTimeUTC property value. The DateTime of the expiration of the logs.
+// returns a *Time when successful
 func (m *DeviceLogCollectionResponse) GetExpirationDateTimeUTC()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTimeUTC")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *DeviceLogCollectionResponse) GetExpirationDateTimeUTC()(*i336074805fc85
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["enrolledByUser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -129,6 +133,7 @@ func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetInitiatedByUserPrincipalName gets the initiatedByUserPrincipalName property value. The UPN for who initiated the request.
+// returns a *string when successful
 func (m *DeviceLogCollectionResponse) GetInitiatedByUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("initiatedByUserPrincipalName")
     if err != nil {
@@ -140,6 +145,7 @@ func (m *DeviceLogCollectionResponse) GetInitiatedByUserPrincipalName()(*string)
     return nil
 }
 // GetManagedDeviceId gets the managedDeviceId property value. Indicates Intune device unique identifier.
+// returns a *UUID when successful
 func (m *DeviceLogCollectionResponse) GetManagedDeviceId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("managedDeviceId")
     if err != nil {
@@ -151,6 +157,7 @@ func (m *DeviceLogCollectionResponse) GetManagedDeviceId()(*i561e97a8befe7661a44
     return nil
 }
 // GetReceivedDateTimeUTC gets the receivedDateTimeUTC property value. The DateTime the request was received.
+// returns a *Time when successful
 func (m *DeviceLogCollectionResponse) GetReceivedDateTimeUTC()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("receivedDateTimeUTC")
     if err != nil {
@@ -162,6 +169,7 @@ func (m *DeviceLogCollectionResponse) GetReceivedDateTimeUTC()(*i336074805fc8539
     return nil
 }
 // GetRequestedDateTimeUTC gets the requestedDateTimeUTC property value. The DateTime of the request.
+// returns a *Time when successful
 func (m *DeviceLogCollectionResponse) GetRequestedDateTimeUTC()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("requestedDateTimeUTC")
     if err != nil {
@@ -173,6 +181,7 @@ func (m *DeviceLogCollectionResponse) GetRequestedDateTimeUTC()(*i336074805fc853
     return nil
 }
 // GetSizeInKB gets the sizeInKB property value. The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *DeviceLogCollectionResponse) GetSizeInKB()(*float64) {
     val, err := m.GetBackingStore().Get("sizeInKB")
     if err != nil {
@@ -184,6 +193,7 @@ func (m *DeviceLogCollectionResponse) GetSizeInKB()(*float64) {
     return nil
 }
 // GetStatus gets the status property value. AppLogUploadStatus
+// returns a *AppLogUploadState when successful
 func (m *DeviceLogCollectionResponse) GetStatus()(*AppLogUploadState) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -307,7 +317,6 @@ func (m *DeviceLogCollectionResponse) SetStatus(value *AppLogUploadState)() {
         panic(err)
     }
 }
-// DeviceLogCollectionResponseable 
 type DeviceLogCollectionResponseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

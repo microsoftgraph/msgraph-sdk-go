@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeltaParticipants 
 type DeltaParticipants struct {
     Entity
 }
-// NewDeltaParticipants instantiates a new deltaParticipants and sets the default values.
+// NewDeltaParticipants instantiates a new DeltaParticipants and sets the default values.
 func NewDeltaParticipants()(*DeltaParticipants) {
     m := &DeltaParticipants{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewDeltaParticipants()(*DeltaParticipants) {
     return m
 }
 // CreateDeltaParticipantsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeltaParticipantsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeltaParticipants(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeltaParticipants) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["participants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -51,6 +52,7 @@ func (m *DeltaParticipants) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetParticipants gets the participants property value. The collection of participants that were updated since the last roster update.
+// returns a []Participantable when successful
 func (m *DeltaParticipants) GetParticipants()([]Participantable) {
     val, err := m.GetBackingStore().Get("participants")
     if err != nil {
@@ -62,6 +64,7 @@ func (m *DeltaParticipants) GetParticipants()([]Participantable) {
     return nil
 }
 // GetSequenceNumber gets the sequenceNumber property value. The sequence number for the roster update that is used to identify the notification order.
+// returns a *int64 when successful
 func (m *DeltaParticipants) GetSequenceNumber()(*int64) {
     val, err := m.GetBackingStore().Get("sequenceNumber")
     if err != nil {
@@ -112,7 +115,6 @@ func (m *DeltaParticipants) SetSequenceNumber(value *int64)() {
         panic(err)
     }
 }
-// DeltaParticipantsable 
 type DeltaParticipantsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

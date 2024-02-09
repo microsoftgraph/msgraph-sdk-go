@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationAssignmentPointsGradeType 
 type EducationAssignmentPointsGradeType struct {
     EducationAssignmentGradeType
 }
-// NewEducationAssignmentPointsGradeType instantiates a new educationAssignmentPointsGradeType and sets the default values.
+// NewEducationAssignmentPointsGradeType instantiates a new EducationAssignmentPointsGradeType and sets the default values.
 func NewEducationAssignmentPointsGradeType()(*EducationAssignmentPointsGradeType) {
     m := &EducationAssignmentPointsGradeType{
         EducationAssignmentGradeType: *NewEducationAssignmentGradeType(),
@@ -18,10 +17,12 @@ func NewEducationAssignmentPointsGradeType()(*EducationAssignmentPointsGradeType
     return m
 }
 // CreateEducationAssignmentPointsGradeTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationAssignmentPointsGradeTypeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationAssignmentPointsGradeType(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationAssignmentPointsGradeType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EducationAssignmentGradeType.GetFieldDeserializers()
     res["maxPoints"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *EducationAssignmentPointsGradeType) GetFieldDeserializers()(map[string]
     return res
 }
 // GetMaxPoints gets the maxPoints property value. Max points possible for this assignment.
+// returns a *float32 when successful
 func (m *EducationAssignmentPointsGradeType) GetMaxPoints()(*float32) {
     val, err := m.GetBackingStore().Get("maxPoints")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *EducationAssignmentPointsGradeType) SetMaxPoints(value *float32)() {
         panic(err)
     }
 }
-// EducationAssignmentPointsGradeTypeable 
 type EducationAssignmentPointsGradeTypeable interface {
     EducationAssignmentGradeTypeable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

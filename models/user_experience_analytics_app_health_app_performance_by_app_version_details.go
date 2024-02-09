@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails struct {
     Entity
 }
-// NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails instantiates a new userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails and sets the default values.
+// NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails instantiates a new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails and sets the default values.
 func NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails()(*UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) {
     m := &UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails()(*Use
     return m
 }
 // CreateUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails(), nil
 }
 // GetAppCrashCount gets the appCrashCount property value. The number of crashes for the app. Valid values -2147483648 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetAppCrashCount()(*int32) {
     val, err := m.GetBackingStore().Get("appCrashCount")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetA
     return nil
 }
 // GetAppDisplayName gets the appDisplayName property value. The friendly name of the application.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetAppDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("appDisplayName")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetA
     return nil
 }
 // GetAppName gets the appName property value. The name of the application.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetAppName()(*string) {
     val, err := m.GetBackingStore().Get("appName")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetA
     return nil
 }
 // GetAppPublisher gets the appPublisher property value. The publisher of the application.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetAppPublisher()(*string) {
     val, err := m.GetBackingStore().Get("appPublisher")
     if err != nil {
@@ -64,6 +69,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetA
     return nil
 }
 // GetAppVersion gets the appVersion property value. The version of the application.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetAppVersion()(*string) {
     val, err := m.GetBackingStore().Get("appVersion")
     if err != nil {
@@ -75,6 +81,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetA
     return nil
 }
 // GetDeviceCountWithCrashes gets the deviceCountWithCrashes property value. The total number of devices that have reported one or more application crashes for this application and version. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetDeviceCountWithCrashes()(*int32) {
     val, err := m.GetBackingStore().Get("deviceCountWithCrashes")
     if err != nil {
@@ -86,6 +93,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetD
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appCrashCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -171,6 +179,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetF
     return res
 }
 // GetIsLatestUsedVersion gets the isLatestUsedVersion property value. When TRUE, indicates the version of application is the latest version for that application that is in use. When FALSE, indicates the version is not the latest version. FALSE by default. Supports: $select, $OrderBy.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetIsLatestUsedVersion()(*bool) {
     val, err := m.GetBackingStore().Get("isLatestUsedVersion")
     if err != nil {
@@ -182,6 +191,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetI
     return nil
 }
 // GetIsMostUsedVersion gets the isMostUsedVersion property value. When TRUE, indicates the version of application is the most used version for that application. When FALSE, indicates the version is not the most used version. FALSE by default. Supports: $select, $OrderBy. Read-only.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) GetIsMostUsedVersion()(*bool) {
     val, err := m.GetBackingStore().Get("isMostUsedVersion")
     if err != nil {
@@ -304,7 +314,6 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails) SetI
         panic(err)
     }
 }
-// UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsable 
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

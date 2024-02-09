@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Fido2CombinationConfiguration 
 type Fido2CombinationConfiguration struct {
     AuthenticationCombinationConfiguration
 }
-// NewFido2CombinationConfiguration instantiates a new fido2CombinationConfiguration and sets the default values.
+// NewFido2CombinationConfiguration instantiates a new Fido2CombinationConfiguration and sets the default values.
 func NewFido2CombinationConfiguration()(*Fido2CombinationConfiguration) {
     m := &Fido2CombinationConfiguration{
         AuthenticationCombinationConfiguration: *NewAuthenticationCombinationConfiguration(),
@@ -18,10 +17,12 @@ func NewFido2CombinationConfiguration()(*Fido2CombinationConfiguration) {
     return m
 }
 // CreateFido2CombinationConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFido2CombinationConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFido2CombinationConfiguration(), nil
 }
 // GetAllowedAAGUIDs gets the allowedAAGUIDs property value. A list of AAGUIDs allowed to be used as part of the specified authentication method combinations.
+// returns a []string when successful
 func (m *Fido2CombinationConfiguration) GetAllowedAAGUIDs()([]string) {
     val, err := m.GetBackingStore().Get("allowedAAGUIDs")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *Fido2CombinationConfiguration) GetAllowedAAGUIDs()([]string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Fido2CombinationConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationCombinationConfiguration.GetFieldDeserializers()
     res["allowedAAGUIDs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,7 +76,6 @@ func (m *Fido2CombinationConfiguration) SetAllowedAAGUIDs(value []string)() {
         panic(err)
     }
 }
-// Fido2CombinationConfigurationable 
 type Fido2CombinationConfigurationable interface {
     AuthenticationCombinationConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

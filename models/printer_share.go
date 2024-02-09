@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrinterShare 
 type PrinterShare struct {
     PrinterBase
 }
-// NewPrinterShare instantiates a new printerShare and sets the default values.
+// NewPrinterShare instantiates a new PrinterShare and sets the default values.
 func NewPrinterShare()(*PrinterShare) {
     m := &PrinterShare{
         PrinterBase: *NewPrinterBase(),
@@ -19,10 +18,12 @@ func NewPrinterShare()(*PrinterShare) {
     return m
 }
 // CreatePrinterShareFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrinterShareFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrinterShare(), nil
 }
 // GetAllowAllUsers gets the allowAllUsers property value. If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
+// returns a *bool when successful
 func (m *PrinterShare) GetAllowAllUsers()(*bool) {
     val, err := m.GetBackingStore().Get("allowAllUsers")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *PrinterShare) GetAllowAllUsers()(*bool) {
     return nil
 }
 // GetAllowedGroups gets the allowedGroups property value. The groups whose users have access to print using the printer.
+// returns a []Groupable when successful
 func (m *PrinterShare) GetAllowedGroups()([]Groupable) {
     val, err := m.GetBackingStore().Get("allowedGroups")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *PrinterShare) GetAllowedGroups()([]Groupable) {
     return nil
 }
 // GetAllowedUsers gets the allowedUsers property value. The users who have access to print using the printer.
+// returns a []Userable when successful
 func (m *PrinterShare) GetAllowedUsers()([]Userable) {
     val, err := m.GetBackingStore().Get("allowedUsers")
     if err != nil {
@@ -56,6 +59,7 @@ func (m *PrinterShare) GetAllowedUsers()([]Userable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The DateTimeOffset when the printer share was created. Read-only.
+// returns a *Time when successful
 func (m *PrinterShare) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -67,6 +71,7 @@ func (m *PrinterShare) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrinterShare) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PrinterBase.GetFieldDeserializers()
     res["allowAllUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -144,6 +149,7 @@ func (m *PrinterShare) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetPrinter gets the printer property value. The printer that this printer share is related to.
+// returns a Printerable when successful
 func (m *PrinterShare) GetPrinter()(Printerable) {
     val, err := m.GetBackingStore().Get("printer")
     if err != nil {
@@ -155,6 +161,7 @@ func (m *PrinterShare) GetPrinter()(Printerable) {
     return nil
 }
 // GetViewPoint gets the viewPoint property value. Additional data for a printer share as viewed by the signed-in user.
+// returns a PrinterShareViewpointable when successful
 func (m *PrinterShare) GetViewPoint()(PrinterShareViewpointable) {
     val, err := m.GetBackingStore().Get("viewPoint")
     if err != nil {
@@ -263,7 +270,6 @@ func (m *PrinterShare) SetViewPoint(value PrinterShareViewpointable)() {
         panic(err)
     }
 }
-// PrinterShareable 
 type PrinterShareable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PrinterBaseable

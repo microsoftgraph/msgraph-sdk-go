@@ -8,7 +8,7 @@ import (
 type EdgeSearchEngine struct {
     EdgeSearchEngineBase
 }
-// NewEdgeSearchEngine instantiates a new edgeSearchEngine and sets the default values.
+// NewEdgeSearchEngine instantiates a new EdgeSearchEngine and sets the default values.
 func NewEdgeSearchEngine()(*EdgeSearchEngine) {
     m := &EdgeSearchEngine{
         EdgeSearchEngineBase: *NewEdgeSearchEngineBase(),
@@ -18,10 +18,12 @@ func NewEdgeSearchEngine()(*EdgeSearchEngine) {
     return m
 }
 // CreateEdgeSearchEngineFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEdgeSearchEngineFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdgeSearchEngine(), nil
 }
 // GetEdgeSearchEngineType gets the edgeSearchEngineType property value. Allows IT admind to set a predefined default search engine for MDM-Controlled devices
+// returns a *EdgeSearchEngineType when successful
 func (m *EdgeSearchEngine) GetEdgeSearchEngineType()(*EdgeSearchEngineType) {
     val, err := m.GetBackingStore().Get("edgeSearchEngineType")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *EdgeSearchEngine) GetEdgeSearchEngineType()(*EdgeSearchEngineType) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EdgeSearchEngine) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EdgeSearchEngineBase.GetFieldDeserializers()
     res["edgeSearchEngineType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -69,7 +72,6 @@ func (m *EdgeSearchEngine) SetEdgeSearchEngineType(value *EdgeSearchEngineType)(
         panic(err)
     }
 }
-// EdgeSearchEngineable 
 type EdgeSearchEngineable interface {
     EdgeSearchEngineBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

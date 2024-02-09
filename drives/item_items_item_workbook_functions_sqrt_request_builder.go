@@ -18,28 +18,29 @@ type ItemItemsItemWorkbookFunctionsSqrtRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemItemsItemWorkbookFunctionsSqrtRequestBuilderInternal instantiates a new SqrtRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookFunctionsSqrtRequestBuilderInternal instantiates a new ItemItemsItemWorkbookFunctionsSqrtRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookFunctionsSqrtRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookFunctionsSqrtRequestBuilder) {
     m := &ItemItemsItemWorkbookFunctionsSqrtRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions/sqrt", pathParameters),
     }
     return m
 }
-// NewItemItemsItemWorkbookFunctionsSqrtRequestBuilder instantiates a new SqrtRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookFunctionsSqrtRequestBuilder instantiates a new ItemItemsItemWorkbookFunctionsSqrtRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookFunctionsSqrtRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookFunctionsSqrtRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookFunctionsSqrtRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action sqrt
+// returns a WorkbookFunctionResultable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookFunctionsSqrtRequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookFunctionsSqrtPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookFunctionsSqrtRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookFunctionResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateWorkbookFunctionResultFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,6 +52,7 @@ func (m *ItemItemsItemWorkbookFunctionsSqrtRequestBuilder) Post(ctx context.Cont
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookFunctionResultable), nil
 }
 // ToPostRequestInformation invoke action sqrt
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookFunctionsSqrtRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemWorkbookFunctionsSqrtPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookFunctionsSqrtRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -65,6 +67,7 @@ func (m *ItemItemsItemWorkbookFunctionsSqrtRequestBuilder) ToPostRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemsItemWorkbookFunctionsSqrtRequestBuilder when successful
 func (m *ItemItemsItemWorkbookFunctionsSqrtRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookFunctionsSqrtRequestBuilder) {
     return NewItemItemsItemWorkbookFunctionsSqrtRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookChart 
 type WorkbookChart struct {
     Entity
 }
-// NewWorkbookChart instantiates a new workbookChart and sets the default values.
+// NewWorkbookChart instantiates a new WorkbookChart and sets the default values.
 func NewWorkbookChart()(*WorkbookChart) {
     m := &WorkbookChart{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewWorkbookChart()(*WorkbookChart) {
     return m
 }
 // CreateWorkbookChartFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookChartFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookChart(), nil
 }
 // GetAxes gets the axes property value. Represents chart axes. Read-only.
+// returns a WorkbookChartAxesable when successful
 func (m *WorkbookChart) GetAxes()(WorkbookChartAxesable) {
     val, err := m.GetBackingStore().Get("axes")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *WorkbookChart) GetAxes()(WorkbookChartAxesable) {
     return nil
 }
 // GetDataLabels gets the dataLabels property value. Represents the datalabels on the chart. Read-only.
+// returns a WorkbookChartDataLabelsable when successful
 func (m *WorkbookChart) GetDataLabels()(WorkbookChartDataLabelsable) {
     val, err := m.GetBackingStore().Get("dataLabels")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *WorkbookChart) GetDataLabels()(WorkbookChartDataLabelsable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookChart) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["axes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -173,6 +176,7 @@ func (m *WorkbookChart) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetFormat gets the format property value. Encapsulates the format properties for the chart area. Read-only.
+// returns a WorkbookChartAreaFormatable when successful
 func (m *WorkbookChart) GetFormat()(WorkbookChartAreaFormatable) {
     val, err := m.GetBackingStore().Get("format")
     if err != nil {
@@ -184,6 +188,7 @@ func (m *WorkbookChart) GetFormat()(WorkbookChartAreaFormatable) {
     return nil
 }
 // GetHeight gets the height property value. Represents the height, in points, of the chart object.
+// returns a *float64 when successful
 func (m *WorkbookChart) GetHeight()(*float64) {
     val, err := m.GetBackingStore().Get("height")
     if err != nil {
@@ -195,6 +200,7 @@ func (m *WorkbookChart) GetHeight()(*float64) {
     return nil
 }
 // GetLeft gets the left property value. The distance, in points, from the left side of the chart to the worksheet origin.
+// returns a *float64 when successful
 func (m *WorkbookChart) GetLeft()(*float64) {
     val, err := m.GetBackingStore().Get("left")
     if err != nil {
@@ -206,6 +212,7 @@ func (m *WorkbookChart) GetLeft()(*float64) {
     return nil
 }
 // GetLegend gets the legend property value. Represents the legend for the chart. Read-only.
+// returns a WorkbookChartLegendable when successful
 func (m *WorkbookChart) GetLegend()(WorkbookChartLegendable) {
     val, err := m.GetBackingStore().Get("legend")
     if err != nil {
@@ -217,6 +224,7 @@ func (m *WorkbookChart) GetLegend()(WorkbookChartLegendable) {
     return nil
 }
 // GetName gets the name property value. Represents the name of a chart object.
+// returns a *string when successful
 func (m *WorkbookChart) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -228,6 +236,7 @@ func (m *WorkbookChart) GetName()(*string) {
     return nil
 }
 // GetSeries gets the series property value. Represents either a single series or collection of series in the chart. Read-only.
+// returns a []WorkbookChartSeriesable when successful
 func (m *WorkbookChart) GetSeries()([]WorkbookChartSeriesable) {
     val, err := m.GetBackingStore().Get("series")
     if err != nil {
@@ -239,6 +248,7 @@ func (m *WorkbookChart) GetSeries()([]WorkbookChartSeriesable) {
     return nil
 }
 // GetTitle gets the title property value. Represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.
+// returns a WorkbookChartTitleable when successful
 func (m *WorkbookChart) GetTitle()(WorkbookChartTitleable) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -250,6 +260,7 @@ func (m *WorkbookChart) GetTitle()(WorkbookChartTitleable) {
     return nil
 }
 // GetTop gets the top property value. Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).
+// returns a *float64 when successful
 func (m *WorkbookChart) GetTop()(*float64) {
     val, err := m.GetBackingStore().Get("top")
     if err != nil {
@@ -261,6 +272,7 @@ func (m *WorkbookChart) GetTop()(*float64) {
     return nil
 }
 // GetWidth gets the width property value. Represents the width, in points, of the chart object.
+// returns a *float64 when successful
 func (m *WorkbookChart) GetWidth()(*float64) {
     val, err := m.GetBackingStore().Get("width")
     if err != nil {
@@ -272,6 +284,7 @@ func (m *WorkbookChart) GetWidth()(*float64) {
     return nil
 }
 // GetWorksheet gets the worksheet property value. The worksheet containing the current chart. Read-only.
+// returns a WorkbookWorksheetable when successful
 func (m *WorkbookChart) GetWorksheet()(WorkbookWorksheetable) {
     val, err := m.GetBackingStore().Get("worksheet")
     if err != nil {
@@ -452,7 +465,6 @@ func (m *WorkbookChart) SetWorksheet(value WorkbookWorksheetable)() {
         panic(err)
     }
 }
-// WorkbookChartable 
 type WorkbookChartable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

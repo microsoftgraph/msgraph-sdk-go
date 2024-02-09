@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageAssignmentWorkflowExtension 
 type AccessPackageAssignmentWorkflowExtension struct {
     CustomCalloutExtension
 }
-// NewAccessPackageAssignmentWorkflowExtension instantiates a new accessPackageAssignmentWorkflowExtension and sets the default values.
+// NewAccessPackageAssignmentWorkflowExtension instantiates a new AccessPackageAssignmentWorkflowExtension and sets the default values.
 func NewAccessPackageAssignmentWorkflowExtension()(*AccessPackageAssignmentWorkflowExtension) {
     m := &AccessPackageAssignmentWorkflowExtension{
         CustomCalloutExtension: *NewCustomCalloutExtension(),
@@ -19,10 +18,12 @@ func NewAccessPackageAssignmentWorkflowExtension()(*AccessPackageAssignmentWorkf
     return m
 }
 // CreateAccessPackageAssignmentWorkflowExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessPackageAssignmentWorkflowExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageAssignmentWorkflowExtension(), nil
 }
 // GetCallbackConfiguration gets the callbackConfiguration property value. The callback configuration for a custom extension.
+// returns a CustomExtensionCallbackConfigurationable when successful
 func (m *AccessPackageAssignmentWorkflowExtension) GetCallbackConfiguration()(CustomExtensionCallbackConfigurationable) {
     val, err := m.GetBackingStore().Get("callbackConfiguration")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *AccessPackageAssignmentWorkflowExtension) GetCallbackConfiguration()(Cu
     return nil
 }
 // GetCreatedBy gets the createdBy property value. The userPrincipalName of the user or identity of the subject that created this resource. Read-only.
+// returns a *string when successful
 func (m *AccessPackageAssignmentWorkflowExtension) GetCreatedBy()(*string) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *AccessPackageAssignmentWorkflowExtension) GetCreatedBy()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. When the entity was created.
+// returns a *Time when successful
 func (m *AccessPackageAssignmentWorkflowExtension) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -56,6 +59,7 @@ func (m *AccessPackageAssignmentWorkflowExtension) GetCreatedDateTime()(*i336074
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessPackageAssignmentWorkflowExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CustomCalloutExtension.GetFieldDeserializers()
     res["callbackConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -111,6 +115,7 @@ func (m *AccessPackageAssignmentWorkflowExtension) GetFieldDeserializers()(map[s
     return res
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The userPrincipalName of the identity that last modified the entity.
+// returns a *string when successful
 func (m *AccessPackageAssignmentWorkflowExtension) GetLastModifiedBy()(*string) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -122,6 +127,7 @@ func (m *AccessPackageAssignmentWorkflowExtension) GetLastModifiedBy()(*string) 
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. When the entity was last modified.
+// returns a *Time when successful
 func (m *AccessPackageAssignmentWorkflowExtension) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -205,7 +211,6 @@ func (m *AccessPackageAssignmentWorkflowExtension) SetLastModifiedDateTime(value
         panic(err)
     }
 }
-// AccessPackageAssignmentWorkflowExtensionable 
 type AccessPackageAssignmentWorkflowExtensionable interface {
     CustomCalloutExtensionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookTable 
 type WorkbookTable struct {
     Entity
 }
-// NewWorkbookTable instantiates a new workbookTable and sets the default values.
+// NewWorkbookTable instantiates a new WorkbookTable and sets the default values.
 func NewWorkbookTable()(*WorkbookTable) {
     m := &WorkbookTable{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewWorkbookTable()(*WorkbookTable) {
     return m
 }
 // CreateWorkbookTableFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookTableFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookTable(), nil
 }
 // GetColumns gets the columns property value. Represents a collection of all the columns in the table. Read-only.
+// returns a []WorkbookTableColumnable when successful
 func (m *WorkbookTable) GetColumns()([]WorkbookTableColumnable) {
     val, err := m.GetBackingStore().Get("columns")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *WorkbookTable) GetColumns()([]WorkbookTableColumnable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookTable) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["columns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -188,6 +190,7 @@ func (m *WorkbookTable) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetHighlightFirstColumn gets the highlightFirstColumn property value. Indicates whether the first column contains special formatting.
+// returns a *bool when successful
 func (m *WorkbookTable) GetHighlightFirstColumn()(*bool) {
     val, err := m.GetBackingStore().Get("highlightFirstColumn")
     if err != nil {
@@ -199,6 +202,7 @@ func (m *WorkbookTable) GetHighlightFirstColumn()(*bool) {
     return nil
 }
 // GetHighlightLastColumn gets the highlightLastColumn property value. Indicates whether the last column contains special formatting.
+// returns a *bool when successful
 func (m *WorkbookTable) GetHighlightLastColumn()(*bool) {
     val, err := m.GetBackingStore().Get("highlightLastColumn")
     if err != nil {
@@ -210,6 +214,7 @@ func (m *WorkbookTable) GetHighlightLastColumn()(*bool) {
     return nil
 }
 // GetLegacyId gets the legacyId property value. Legacy ID used in older Excel clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and shouldn't be parsed to any other type. Read-only.
+// returns a *string when successful
 func (m *WorkbookTable) GetLegacyId()(*string) {
     val, err := m.GetBackingStore().Get("legacyId")
     if err != nil {
@@ -221,6 +226,7 @@ func (m *WorkbookTable) GetLegacyId()(*string) {
     return nil
 }
 // GetName gets the name property value. Name of the table.
+// returns a *string when successful
 func (m *WorkbookTable) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -232,6 +238,7 @@ func (m *WorkbookTable) GetName()(*string) {
     return nil
 }
 // GetRows gets the rows property value. Represents a collection of all the rows in the table. Read-only.
+// returns a []WorkbookTableRowable when successful
 func (m *WorkbookTable) GetRows()([]WorkbookTableRowable) {
     val, err := m.GetBackingStore().Get("rows")
     if err != nil {
@@ -243,6 +250,7 @@ func (m *WorkbookTable) GetRows()([]WorkbookTableRowable) {
     return nil
 }
 // GetShowBandedColumns gets the showBandedColumns property value. Indicates whether the columns show banded formatting in which odd columns are highlighted differently from even ones to make reading the table easier.
+// returns a *bool when successful
 func (m *WorkbookTable) GetShowBandedColumns()(*bool) {
     val, err := m.GetBackingStore().Get("showBandedColumns")
     if err != nil {
@@ -254,6 +262,7 @@ func (m *WorkbookTable) GetShowBandedColumns()(*bool) {
     return nil
 }
 // GetShowBandedRows gets the showBandedRows property value. Indicates whether the rows show banded formatting in which odd rows are highlighted differently from even ones to make reading the table easier.
+// returns a *bool when successful
 func (m *WorkbookTable) GetShowBandedRows()(*bool) {
     val, err := m.GetBackingStore().Get("showBandedRows")
     if err != nil {
@@ -265,6 +274,7 @@ func (m *WorkbookTable) GetShowBandedRows()(*bool) {
     return nil
 }
 // GetShowFilterButton gets the showFilterButton property value. Indicates whether the filter buttons are visible at the top of each column header. Setting this is only allowed if the table contains a header row.
+// returns a *bool when successful
 func (m *WorkbookTable) GetShowFilterButton()(*bool) {
     val, err := m.GetBackingStore().Get("showFilterButton")
     if err != nil {
@@ -276,6 +286,7 @@ func (m *WorkbookTable) GetShowFilterButton()(*bool) {
     return nil
 }
 // GetShowHeaders gets the showHeaders property value. Indicates whether the header row is visible or not. This value can be set to show or remove the header row.
+// returns a *bool when successful
 func (m *WorkbookTable) GetShowHeaders()(*bool) {
     val, err := m.GetBackingStore().Get("showHeaders")
     if err != nil {
@@ -287,6 +298,7 @@ func (m *WorkbookTable) GetShowHeaders()(*bool) {
     return nil
 }
 // GetShowTotals gets the showTotals property value. Indicates whether the total row is visible or not. This value can be set to show or remove the total row.
+// returns a *bool when successful
 func (m *WorkbookTable) GetShowTotals()(*bool) {
     val, err := m.GetBackingStore().Get("showTotals")
     if err != nil {
@@ -298,6 +310,7 @@ func (m *WorkbookTable) GetShowTotals()(*bool) {
     return nil
 }
 // GetSort gets the sort property value. Represents the sorting for the table. Read-only.
+// returns a WorkbookTableSortable when successful
 func (m *WorkbookTable) GetSort()(WorkbookTableSortable) {
     val, err := m.GetBackingStore().Get("sort")
     if err != nil {
@@ -309,6 +322,7 @@ func (m *WorkbookTable) GetSort()(WorkbookTableSortable) {
     return nil
 }
 // GetStyle gets the style property value. Constant value that represents the Table style. The possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
+// returns a *string when successful
 func (m *WorkbookTable) GetStyle()(*string) {
     val, err := m.GetBackingStore().Get("style")
     if err != nil {
@@ -320,6 +334,7 @@ func (m *WorkbookTable) GetStyle()(*string) {
     return nil
 }
 // GetWorksheet gets the worksheet property value. The worksheet containing the current table. Read-only.
+// returns a WorkbookWorksheetable when successful
 func (m *WorkbookTable) GetWorksheet()(WorkbookWorksheetable) {
     val, err := m.GetBackingStore().Get("worksheet")
     if err != nil {
@@ -532,7 +547,6 @@ func (m *WorkbookTable) SetWorksheet(value WorkbookWorksheetable)() {
         panic(err)
     }
 }
-// WorkbookTableable 
 type WorkbookTableable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

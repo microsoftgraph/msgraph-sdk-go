@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SoftwareUpdateStatusSummary 
 type SoftwareUpdateStatusSummary struct {
     Entity
 }
-// NewSoftwareUpdateStatusSummary instantiates a new softwareUpdateStatusSummary and sets the default values.
+// NewSoftwareUpdateStatusSummary instantiates a new SoftwareUpdateStatusSummary and sets the default values.
 func NewSoftwareUpdateStatusSummary()(*SoftwareUpdateStatusSummary) {
     m := &SoftwareUpdateStatusSummary{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewSoftwareUpdateStatusSummary()(*SoftwareUpdateStatusSummary) {
     return m
 }
 // CreateSoftwareUpdateStatusSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSoftwareUpdateStatusSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSoftwareUpdateStatusSummary(), nil
 }
 // GetCompliantDeviceCount gets the compliantDeviceCount property value. Number of compliant devices.
+// returns a *int32 when successful
 func (m *SoftwareUpdateStatusSummary) GetCompliantDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("compliantDeviceCount")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *SoftwareUpdateStatusSummary) GetCompliantDeviceCount()(*int32) {
     return nil
 }
 // GetCompliantUserCount gets the compliantUserCount property value. Number of compliant users.
+// returns a *int32 when successful
 func (m *SoftwareUpdateStatusSummary) GetCompliantUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("compliantUserCount")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *SoftwareUpdateStatusSummary) GetCompliantUserCount()(*int32) {
     return nil
 }
 // GetConflictDeviceCount gets the conflictDeviceCount property value. Number of conflict devices.
+// returns a *int32 when successful
 func (m *SoftwareUpdateStatusSummary) GetConflictDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("conflictDeviceCount")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *SoftwareUpdateStatusSummary) GetConflictDeviceCount()(*int32) {
     return nil
 }
 // GetConflictUserCount gets the conflictUserCount property value. Number of conflict users.
+// returns a *int32 when successful
 func (m *SoftwareUpdateStatusSummary) GetConflictUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("conflictUserCount")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *SoftwareUpdateStatusSummary) GetConflictUserCount()(*int32) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of the policy.
+// returns a *string when successful
 func (m *SoftwareUpdateStatusSummary) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *SoftwareUpdateStatusSummary) GetDisplayName()(*string) {
     return nil
 }
 // GetErrorDeviceCount gets the errorDeviceCount property value. Number of devices had error.
+// returns a *int32 when successful
 func (m *SoftwareUpdateStatusSummary) GetErrorDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("errorDeviceCount")
     if err != nil {
@@ -86,6 +92,7 @@ func (m *SoftwareUpdateStatusSummary) GetErrorDeviceCount()(*int32) {
     return nil
 }
 // GetErrorUserCount gets the errorUserCount property value. Number of users had error.
+// returns a *int32 when successful
 func (m *SoftwareUpdateStatusSummary) GetErrorUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("errorUserCount")
     if err != nil {
@@ -97,6 +104,7 @@ func (m *SoftwareUpdateStatusSummary) GetErrorUserCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SoftwareUpdateStatusSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["compliantDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -252,6 +260,7 @@ func (m *SoftwareUpdateStatusSummary) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetNonCompliantDeviceCount gets the nonCompliantDeviceCount property value. Number of non compliant devices.
+// returns a *int32 when successful
 func (m *SoftwareUpdateStatusSummary) GetNonCompliantDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("nonCompliantDeviceCount")
     if err != nil {
@@ -263,6 +272,7 @@ func (m *SoftwareUpdateStatusSummary) GetNonCompliantDeviceCount()(*int32) {
     return nil
 }
 // GetNonCompliantUserCount gets the nonCompliantUserCount property value. Number of non compliant users.
+// returns a *int32 when successful
 func (m *SoftwareUpdateStatusSummary) GetNonCompliantUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("nonCompliantUserCount")
     if err != nil {
@@ -274,6 +284,7 @@ func (m *SoftwareUpdateStatusSummary) GetNonCompliantUserCount()(*int32) {
     return nil
 }
 // GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. Number of not applicable devices.
+// returns a *int32 when successful
 func (m *SoftwareUpdateStatusSummary) GetNotApplicableDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("notApplicableDeviceCount")
     if err != nil {
@@ -285,6 +296,7 @@ func (m *SoftwareUpdateStatusSummary) GetNotApplicableDeviceCount()(*int32) {
     return nil
 }
 // GetNotApplicableUserCount gets the notApplicableUserCount property value. Number of not applicable users.
+// returns a *int32 when successful
 func (m *SoftwareUpdateStatusSummary) GetNotApplicableUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("notApplicableUserCount")
     if err != nil {
@@ -296,6 +308,7 @@ func (m *SoftwareUpdateStatusSummary) GetNotApplicableUserCount()(*int32) {
     return nil
 }
 // GetRemediatedDeviceCount gets the remediatedDeviceCount property value. Number of remediated devices.
+// returns a *int32 when successful
 func (m *SoftwareUpdateStatusSummary) GetRemediatedDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("remediatedDeviceCount")
     if err != nil {
@@ -307,6 +320,7 @@ func (m *SoftwareUpdateStatusSummary) GetRemediatedDeviceCount()(*int32) {
     return nil
 }
 // GetRemediatedUserCount gets the remediatedUserCount property value. Number of remediated users.
+// returns a *int32 when successful
 func (m *SoftwareUpdateStatusSummary) GetRemediatedUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("remediatedUserCount")
     if err != nil {
@@ -318,6 +332,7 @@ func (m *SoftwareUpdateStatusSummary) GetRemediatedUserCount()(*int32) {
     return nil
 }
 // GetUnknownDeviceCount gets the unknownDeviceCount property value. Number of unknown devices.
+// returns a *int32 when successful
 func (m *SoftwareUpdateStatusSummary) GetUnknownDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("unknownDeviceCount")
     if err != nil {
@@ -329,6 +344,7 @@ func (m *SoftwareUpdateStatusSummary) GetUnknownDeviceCount()(*int32) {
     return nil
 }
 // GetUnknownUserCount gets the unknownUserCount property value. Number of unknown users.
+// returns a *int32 when successful
 func (m *SoftwareUpdateStatusSummary) GetUnknownUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("unknownUserCount")
     if err != nil {
@@ -542,7 +558,6 @@ func (m *SoftwareUpdateStatusSummary) SetUnknownUserCount(value *int32)() {
         panic(err)
     }
 }
-// SoftwareUpdateStatusSummaryable 
 type SoftwareUpdateStatusSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

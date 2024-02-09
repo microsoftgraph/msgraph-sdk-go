@@ -27,28 +27,29 @@ type ItemSitesItemListsItemContentTypesItemBaseRequestBuilderGetRequestConfigura
     // Request query parameters
     QueryParameters *ItemSitesItemListsItemContentTypesItemBaseRequestBuilderGetQueryParameters
 }
-// NewItemSitesItemListsItemContentTypesItemBaseRequestBuilderInternal instantiates a new BaseRequestBuilder and sets the default values.
+// NewItemSitesItemListsItemContentTypesItemBaseRequestBuilderInternal instantiates a new ItemSitesItemListsItemContentTypesItemBaseRequestBuilder and sets the default values.
 func NewItemSitesItemListsItemContentTypesItemBaseRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemListsItemContentTypesItemBaseRequestBuilder) {
     m := &ItemSitesItemListsItemContentTypesItemBaseRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/contentTypes/{contentType%2Did}/base{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/contentTypes/{contentType%2Did}/base{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemSitesItemListsItemContentTypesItemBaseRequestBuilder instantiates a new BaseRequestBuilder and sets the default values.
+// NewItemSitesItemListsItemContentTypesItemBaseRequestBuilder instantiates a new ItemSitesItemListsItemContentTypesItemBaseRequestBuilder and sets the default values.
 func NewItemSitesItemListsItemContentTypesItemBaseRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemListsItemContentTypesItemBaseRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemListsItemContentTypesItemBaseRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get parent contentType from which this content type is derived.
+// returns a ContentTypeable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemListsItemContentTypesItemBaseRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemListsItemContentTypesItemBaseRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateContentTypeFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *ItemSitesItemListsItemContentTypesItemBaseRequestBuilder) Get(ctx conte
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable), nil
 }
 // ToGetRequestInformation parent contentType from which this content type is derived.
+// returns a *RequestInformation when successful
 func (m *ItemSitesItemListsItemContentTypesItemBaseRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsItemContentTypesItemBaseRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *ItemSitesItemListsItemContentTypesItemBaseRequestBuilder) ToGetRequestI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemSitesItemListsItemContentTypesItemBaseRequestBuilder when successful
 func (m *ItemSitesItemListsItemContentTypesItemBaseRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemListsItemContentTypesItemBaseRequestBuilder) {
     return NewItemSitesItemListsItemContentTypesItemBaseRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -17,20 +17,21 @@ type ItemContentTypesItemAssociateWithHubSitesRequestBuilderPostRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemContentTypesItemAssociateWithHubSitesRequestBuilderInternal instantiates a new AssociateWithHubSitesRequestBuilder and sets the default values.
+// NewItemContentTypesItemAssociateWithHubSitesRequestBuilderInternal instantiates a new ItemContentTypesItemAssociateWithHubSitesRequestBuilder and sets the default values.
 func NewItemContentTypesItemAssociateWithHubSitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemContentTypesItemAssociateWithHubSitesRequestBuilder) {
     m := &ItemContentTypesItemAssociateWithHubSitesRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/contentTypes/{contentType%2Did}/associateWithHubSites", pathParameters),
     }
     return m
 }
-// NewItemContentTypesItemAssociateWithHubSitesRequestBuilder instantiates a new AssociateWithHubSitesRequestBuilder and sets the default values.
+// NewItemContentTypesItemAssociateWithHubSitesRequestBuilder instantiates a new ItemContentTypesItemAssociateWithHubSitesRequestBuilder and sets the default values.
 func NewItemContentTypesItemAssociateWithHubSitesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemContentTypesItemAssociateWithHubSitesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemContentTypesItemAssociateWithHubSitesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post associate a published [content type][contentType] present in a content type hub with a list of hub sites.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemContentTypesItemAssociateWithHubSitesRequestBuilder) Post(ctx conte
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemContentTypesItemAssociateWithHubSitesRequestBuilder) Post(ctx conte
     return nil
 }
 // ToPostRequestInformation associate a published [content type][contentType] present in a content type hub with a list of hub sites.
+// returns a *RequestInformation when successful
 func (m *ItemContentTypesItemAssociateWithHubSitesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemContentTypesItemAssociateWithHubSitesPostRequestBodyable, requestConfiguration *ItemContentTypesItemAssociateWithHubSitesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *ItemContentTypesItemAssociateWithHubSitesRequestBuilder) ToPostRequestI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemContentTypesItemAssociateWithHubSitesRequestBuilder when successful
 func (m *ItemContentTypesItemAssociateWithHubSitesRequestBuilder) WithUrl(rawUrl string)(*ItemContentTypesItemAssociateWithHubSitesRequestBuilder) {
     return NewItemContentTypesItemAssociateWithHubSitesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

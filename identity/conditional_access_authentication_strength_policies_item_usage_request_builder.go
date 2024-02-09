@@ -18,28 +18,29 @@ type ConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilderGetRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilderInternal instantiates a new UsageRequestBuilder and sets the default values.
+// NewConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilderInternal instantiates a new ConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilder and sets the default values.
 func NewConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilder) {
     m := &ConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/conditionalAccess/authenticationStrength/policies/{authenticationStrengthPolicy%2Did}/usage()", pathParameters),
     }
     return m
 }
-// NewConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilder instantiates a new UsageRequestBuilder and sets the default values.
+// NewConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilder instantiates a new ConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilder and sets the default values.
 func NewConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function usage
+// returns a AuthenticationStrengthUsageable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilder) Get(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationStrengthUsageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateAuthenticationStrengthUsageFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,6 +52,7 @@ func (m *ConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilder)
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AuthenticationStrengthUsageable), nil
 }
 // ToGetRequestInformation invoke function usage
+// returns a *RequestInformation when successful
 func (m *ConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -61,6 +63,7 @@ func (m *ConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilder)
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilder when successful
 func (m *ConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilder) WithUrl(rawUrl string)(*ConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilder) {
     return NewConditionalAccessAuthenticationStrengthPoliciesItemUsageRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

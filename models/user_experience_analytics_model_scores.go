@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsModelScores struct {
     Entity
 }
-// NewUserExperienceAnalyticsModelScores instantiates a new userExperienceAnalyticsModelScores and sets the default values.
+// NewUserExperienceAnalyticsModelScores instantiates a new UserExperienceAnalyticsModelScores and sets the default values.
 func NewUserExperienceAnalyticsModelScores()(*UserExperienceAnalyticsModelScores) {
     m := &UserExperienceAnalyticsModelScores{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewUserExperienceAnalyticsModelScores()(*UserExperienceAnalyticsModelScores
     return m
 }
 // CreateUserExperienceAnalyticsModelScoresFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsModelScoresFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsModelScores(), nil
 }
 // GetAppReliabilityScore gets the appReliabilityScore property value. Indicates a score calculated from application health data to indicate when a device is having problems running one or more applications. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsModelScores) GetAppReliabilityScore()(*float64) {
     val, err := m.GetBackingStore().Get("appReliabilityScore")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *UserExperienceAnalyticsModelScores) GetAppReliabilityScore()(*float64) 
     return nil
 }
 // GetBatteryHealthScore gets the batteryHealthScore property value. Indicates a calulated score indicating the health of the device's battery. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsModelScores) GetBatteryHealthScore()(*float64) {
     val, err := m.GetBackingStore().Get("batteryHealthScore")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *UserExperienceAnalyticsModelScores) GetBatteryHealthScore()(*float64) {
     return nil
 }
 // GetEndpointAnalyticsScore gets the endpointAnalyticsScore property value. Indicates a weighted average of the various scores. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsModelScores) GetEndpointAnalyticsScore()(*float64) {
     val, err := m.GetBackingStore().Get("endpointAnalyticsScore")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *UserExperienceAnalyticsModelScores) GetEndpointAnalyticsScore()(*float6
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appReliabilityScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -148,6 +153,7 @@ func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]
     return res
 }
 // GetHealthStatus gets the healthStatus property value. The healthStatus property
+// returns a *UserExperienceAnalyticsHealthState when successful
 func (m *UserExperienceAnalyticsModelScores) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
     val, err := m.GetBackingStore().Get("healthStatus")
     if err != nil {
@@ -159,6 +165,7 @@ func (m *UserExperienceAnalyticsModelScores) GetHealthStatus()(*UserExperienceAn
     return nil
 }
 // GetManufacturer gets the manufacturer property value. The manufacturer name of the device. Examples: Microsoft Corporation, HP, Lenovo. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsModelScores) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
     if err != nil {
@@ -170,6 +177,7 @@ func (m *UserExperienceAnalyticsModelScores) GetManufacturer()(*string) {
     return nil
 }
 // GetModel gets the model property value. The model name of the device. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsModelScores) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
     if err != nil {
@@ -181,6 +189,7 @@ func (m *UserExperienceAnalyticsModelScores) GetModel()(*string) {
     return nil
 }
 // GetModelDeviceCount gets the modelDeviceCount property value. Indicates unique devices count of given model in a consolidated report. Supports: $select, $OrderBy. Read-only. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
+// returns a *int64 when successful
 func (m *UserExperienceAnalyticsModelScores) GetModelDeviceCount()(*int64) {
     val, err := m.GetBackingStore().Get("modelDeviceCount")
     if err != nil {
@@ -192,6 +201,7 @@ func (m *UserExperienceAnalyticsModelScores) GetModelDeviceCount()(*int64) {
     return nil
 }
 // GetStartupPerformanceScore gets the startupPerformanceScore property value. Indicates a weighted average of boot score and logon score used for measuring startup performance. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsModelScores) GetStartupPerformanceScore()(*float64) {
     val, err := m.GetBackingStore().Get("startupPerformanceScore")
     if err != nil {
@@ -203,6 +213,7 @@ func (m *UserExperienceAnalyticsModelScores) GetStartupPerformanceScore()(*float
     return nil
 }
 // GetWorkFromAnywhereScore gets the workFromAnywhereScore property value. Indicates a weighted score of the work from anywhere on a device level. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsModelScores) GetWorkFromAnywhereScore()(*float64) {
     val, err := m.GetBackingStore().Get("workFromAnywhereScore")
     if err != nil {
@@ -339,7 +350,6 @@ func (m *UserExperienceAnalyticsModelScores) SetWorkFromAnywhereScore(value *flo
         panic(err)
     }
 }
-// UserExperienceAnalyticsModelScoresable 
 type UserExperienceAnalyticsModelScoresable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

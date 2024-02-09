@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RiskyServicePrincipalHistoryItemCollectionResponse 
 type RiskyServicePrincipalHistoryItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewRiskyServicePrincipalHistoryItemCollectionResponse instantiates a new riskyServicePrincipalHistoryItemCollectionResponse and sets the default values.
+// NewRiskyServicePrincipalHistoryItemCollectionResponse instantiates a new RiskyServicePrincipalHistoryItemCollectionResponse and sets the default values.
 func NewRiskyServicePrincipalHistoryItemCollectionResponse()(*RiskyServicePrincipalHistoryItemCollectionResponse) {
     m := &RiskyServicePrincipalHistoryItemCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewRiskyServicePrincipalHistoryItemCollectionResponse()(*RiskyServicePrinci
     return m
 }
 // CreateRiskyServicePrincipalHistoryItemCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRiskyServicePrincipalHistoryItemCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRiskyServicePrincipalHistoryItemCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RiskyServicePrincipalHistoryItemCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *RiskyServicePrincipalHistoryItemCollectionResponse) GetFieldDeserialize
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []RiskyServicePrincipalHistoryItemable when successful
 func (m *RiskyServicePrincipalHistoryItemCollectionResponse) GetValue()([]RiskyServicePrincipalHistoryItemable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *RiskyServicePrincipalHistoryItemCollectionResponse) SetValue(value []Ri
         panic(err)
     }
 }
-// RiskyServicePrincipalHistoryItemCollectionResponseable 
 type RiskyServicePrincipalHistoryItemCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

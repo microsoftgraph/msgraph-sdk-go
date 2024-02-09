@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GoogleCloudResourceEvidence 
 type GoogleCloudResourceEvidence struct {
     AlertEvidence
 }
-// NewGoogleCloudResourceEvidence instantiates a new googleCloudResourceEvidence and sets the default values.
+// NewGoogleCloudResourceEvidence instantiates a new GoogleCloudResourceEvidence and sets the default values.
 func NewGoogleCloudResourceEvidence()(*GoogleCloudResourceEvidence) {
     m := &GoogleCloudResourceEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -18,10 +17,12 @@ func NewGoogleCloudResourceEvidence()(*GoogleCloudResourceEvidence) {
     return m
 }
 // CreateGoogleCloudResourceEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGoogleCloudResourceEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGoogleCloudResourceEvidence(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GoogleCloudResourceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["location"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -87,6 +88,7 @@ func (m *GoogleCloudResourceEvidence) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetLocation gets the location property value. The zone or region where the resource is located.
+// returns a *string when successful
 func (m *GoogleCloudResourceEvidence) GetLocation()(*string) {
     val, err := m.GetBackingStore().Get("location")
     if err != nil {
@@ -98,6 +100,7 @@ func (m *GoogleCloudResourceEvidence) GetLocation()(*string) {
     return nil
 }
 // GetLocationType gets the locationType property value. The type of location. Possible values are: unknown, regional, zonal, global, unknownFutureValue.
+// returns a *GoogleCloudLocationType when successful
 func (m *GoogleCloudResourceEvidence) GetLocationType()(*GoogleCloudLocationType) {
     val, err := m.GetBackingStore().Get("locationType")
     if err != nil {
@@ -109,6 +112,7 @@ func (m *GoogleCloudResourceEvidence) GetLocationType()(*GoogleCloudLocationType
     return nil
 }
 // GetProjectId gets the projectId property value. The Google project ID as defined by the user.
+// returns a *string when successful
 func (m *GoogleCloudResourceEvidence) GetProjectId()(*string) {
     val, err := m.GetBackingStore().Get("projectId")
     if err != nil {
@@ -120,6 +124,7 @@ func (m *GoogleCloudResourceEvidence) GetProjectId()(*string) {
     return nil
 }
 // GetProjectNumber gets the projectNumber property value. The project number assigned by Google.
+// returns a *int64 when successful
 func (m *GoogleCloudResourceEvidence) GetProjectNumber()(*int64) {
     val, err := m.GetBackingStore().Get("projectNumber")
     if err != nil {
@@ -131,6 +136,7 @@ func (m *GoogleCloudResourceEvidence) GetProjectNumber()(*int64) {
     return nil
 }
 // GetResourceName gets the resourceName property value. The name of the resource.
+// returns a *string when successful
 func (m *GoogleCloudResourceEvidence) GetResourceName()(*string) {
     val, err := m.GetBackingStore().Get("resourceName")
     if err != nil {
@@ -142,6 +148,7 @@ func (m *GoogleCloudResourceEvidence) GetResourceName()(*string) {
     return nil
 }
 // GetResourceType gets the resourceType property value. The type of the resource.
+// returns a *string when successful
 func (m *GoogleCloudResourceEvidence) GetResourceType()(*string) {
     val, err := m.GetBackingStore().Get("resourceType")
     if err != nil {
@@ -239,7 +246,6 @@ func (m *GoogleCloudResourceEvidence) SetResourceType(value *string)() {
         panic(err)
     }
 }
-// GoogleCloudResourceEvidenceable 
 type GoogleCloudResourceEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

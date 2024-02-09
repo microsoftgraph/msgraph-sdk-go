@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ContentType 
 type ContentType struct {
     Entity
 }
-// NewContentType instantiates a new contentType and sets the default values.
+// NewContentType instantiates a new ContentType and sets the default values.
 func NewContentType()(*ContentType) {
     m := &ContentType{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewContentType()(*ContentType) {
     return m
 }
 // CreateContentTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateContentTypeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewContentType(), nil
 }
 // GetAssociatedHubsUrls gets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+// returns a []string when successful
 func (m *ContentType) GetAssociatedHubsUrls()([]string) {
     val, err := m.GetBackingStore().Get("associatedHubsUrls")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ContentType) GetAssociatedHubsUrls()([]string) {
     return nil
 }
 // GetBase gets the base property value. Parent contentType from which this content type is derived.
+// returns a ContentTypeable when successful
 func (m *ContentType) GetBase()(ContentTypeable) {
     val, err := m.GetBackingStore().Get("base")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *ContentType) GetBase()(ContentTypeable) {
     return nil
 }
 // GetBaseTypes gets the baseTypes property value. The collection of content types that are ancestors of this content type.
+// returns a []ContentTypeable when successful
 func (m *ContentType) GetBaseTypes()([]ContentTypeable) {
     val, err := m.GetBackingStore().Get("baseTypes")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *ContentType) GetBaseTypes()([]ContentTypeable) {
     return nil
 }
 // GetColumnLinks gets the columnLinks property value. The collection of columns that are required by this content type.
+// returns a []ColumnLinkable when successful
 func (m *ContentType) GetColumnLinks()([]ColumnLinkable) {
     val, err := m.GetBackingStore().Get("columnLinks")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *ContentType) GetColumnLinks()([]ColumnLinkable) {
     return nil
 }
 // GetColumnPositions gets the columnPositions property value. Column order information in a content type.
+// returns a []ColumnDefinitionable when successful
 func (m *ContentType) GetColumnPositions()([]ColumnDefinitionable) {
     val, err := m.GetBackingStore().Get("columnPositions")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *ContentType) GetColumnPositions()([]ColumnDefinitionable) {
     return nil
 }
 // GetColumns gets the columns property value. The collection of column definitions for this contentType.
+// returns a []ColumnDefinitionable when successful
 func (m *ContentType) GetColumns()([]ColumnDefinitionable) {
     val, err := m.GetBackingStore().Get("columns")
     if err != nil {
@@ -86,6 +92,7 @@ func (m *ContentType) GetColumns()([]ColumnDefinitionable) {
     return nil
 }
 // GetDescription gets the description property value. The descriptive text for the item.
+// returns a *string when successful
 func (m *ContentType) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -97,6 +104,7 @@ func (m *ContentType) GetDescription()(*string) {
     return nil
 }
 // GetDocumentSet gets the documentSet property value. Document Set metadata.
+// returns a DocumentSetable when successful
 func (m *ContentType) GetDocumentSet()(DocumentSetable) {
     val, err := m.GetBackingStore().Get("documentSet")
     if err != nil {
@@ -108,6 +116,7 @@ func (m *ContentType) GetDocumentSet()(DocumentSetable) {
     return nil
 }
 // GetDocumentTemplate gets the documentTemplate property value. Document template metadata. To make sure that documents have consistent content across a site and its subsites, you can associate a Word, Excel, or PowerPoint template with a site content type.
+// returns a DocumentSetContentable when successful
 func (m *ContentType) GetDocumentTemplate()(DocumentSetContentable) {
     val, err := m.GetBackingStore().Get("documentTemplate")
     if err != nil {
@@ -119,6 +128,7 @@ func (m *ContentType) GetDocumentTemplate()(DocumentSetContentable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ContentType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["associatedHubsUrls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -344,6 +354,7 @@ func (m *ContentType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetGroup gets the group property value. The name of the group this content type belongs to. Helps organize related content types.
+// returns a *string when successful
 func (m *ContentType) GetGroup()(*string) {
     val, err := m.GetBackingStore().Get("group")
     if err != nil {
@@ -355,6 +366,7 @@ func (m *ContentType) GetGroup()(*string) {
     return nil
 }
 // GetHidden gets the hidden property value. Indicates whether the content type is hidden in the list's 'New' menu.
+// returns a *bool when successful
 func (m *ContentType) GetHidden()(*bool) {
     val, err := m.GetBackingStore().Get("hidden")
     if err != nil {
@@ -366,6 +378,7 @@ func (m *ContentType) GetHidden()(*bool) {
     return nil
 }
 // GetInheritedFrom gets the inheritedFrom property value. If this content type is inherited from another scope (like a site), provides a reference to the item where the content type is defined.
+// returns a ItemReferenceable when successful
 func (m *ContentType) GetInheritedFrom()(ItemReferenceable) {
     val, err := m.GetBackingStore().Get("inheritedFrom")
     if err != nil {
@@ -377,6 +390,7 @@ func (m *ContentType) GetInheritedFrom()(ItemReferenceable) {
     return nil
 }
 // GetIsBuiltIn gets the isBuiltIn property value. Specifies if a content type is a built-in content type.
+// returns a *bool when successful
 func (m *ContentType) GetIsBuiltIn()(*bool) {
     val, err := m.GetBackingStore().Get("isBuiltIn")
     if err != nil {
@@ -388,6 +402,7 @@ func (m *ContentType) GetIsBuiltIn()(*bool) {
     return nil
 }
 // GetName gets the name property value. The name of the content type.
+// returns a *string when successful
 func (m *ContentType) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -399,6 +414,7 @@ func (m *ContentType) GetName()(*string) {
     return nil
 }
 // GetOrder gets the order property value. Specifies the order in which the content type appears in the selection UI.
+// returns a ContentTypeOrderable when successful
 func (m *ContentType) GetOrder()(ContentTypeOrderable) {
     val, err := m.GetBackingStore().Get("order")
     if err != nil {
@@ -410,6 +426,7 @@ func (m *ContentType) GetOrder()(ContentTypeOrderable) {
     return nil
 }
 // GetParentId gets the parentId property value. The unique identifier of the content type.
+// returns a *string when successful
 func (m *ContentType) GetParentId()(*string) {
     val, err := m.GetBackingStore().Get("parentId")
     if err != nil {
@@ -421,6 +438,7 @@ func (m *ContentType) GetParentId()(*string) {
     return nil
 }
 // GetPropagateChanges gets the propagateChanges property value. If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
+// returns a *bool when successful
 func (m *ContentType) GetPropagateChanges()(*bool) {
     val, err := m.GetBackingStore().Get("propagateChanges")
     if err != nil {
@@ -432,6 +450,7 @@ func (m *ContentType) GetPropagateChanges()(*bool) {
     return nil
 }
 // GetReadOnly gets the readOnly property value. If true, the content type can't be modified unless this value is first set to false.
+// returns a *bool when successful
 func (m *ContentType) GetReadOnly()(*bool) {
     val, err := m.GetBackingStore().Get("readOnly")
     if err != nil {
@@ -443,6 +462,7 @@ func (m *ContentType) GetReadOnly()(*bool) {
     return nil
 }
 // GetSealed gets the sealed property value. If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
+// returns a *bool when successful
 func (m *ContentType) GetSealed()(*bool) {
     val, err := m.GetBackingStore().Get("sealed")
     if err != nil {
@@ -732,7 +752,6 @@ func (m *ContentType) SetSealed(value *bool)() {
         panic(err)
     }
 }
-// ContentTypeable 
 type ContentTypeable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

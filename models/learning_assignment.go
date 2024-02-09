@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LearningAssignment 
 type LearningAssignment struct {
     LearningCourseActivity
 }
-// NewLearningAssignment instantiates a new learningAssignment and sets the default values.
+// NewLearningAssignment instantiates a new LearningAssignment and sets the default values.
 func NewLearningAssignment()(*LearningAssignment) {
     m := &LearningAssignment{
         LearningCourseActivity: *NewLearningCourseActivity(),
@@ -17,10 +16,12 @@ func NewLearningAssignment()(*LearningAssignment) {
     return m
 }
 // CreateLearningAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateLearningAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLearningAssignment(), nil
 }
 // GetAssignedDateTime gets the assignedDateTime property value. Assigned date for the course activity. Optional.
+// returns a *Time when successful
 func (m *LearningAssignment) GetAssignedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("assignedDateTime")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *LearningAssignment) GetAssignedDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetAssignerUserId gets the assignerUserId property value. The user ID of the assigner. Optional.
+// returns a *string when successful
 func (m *LearningAssignment) GetAssignerUserId()(*string) {
     val, err := m.GetBackingStore().Get("assignerUserId")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *LearningAssignment) GetAssignerUserId()(*string) {
     return nil
 }
 // GetAssignmentType gets the assignmentType property value. The assignmentType property
+// returns a *AssignmentType when successful
 func (m *LearningAssignment) GetAssignmentType()(*AssignmentType) {
     val, err := m.GetBackingStore().Get("assignmentType")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *LearningAssignment) GetAssignmentType()(*AssignmentType) {
     return nil
 }
 // GetDueDateTime gets the dueDateTime property value. Due date for the course activity. Optional.
+// returns a DateTimeTimeZoneable when successful
 func (m *LearningAssignment) GetDueDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("dueDateTime")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *LearningAssignment) GetDueDateTime()(DateTimeTimeZoneable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *LearningAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.LearningCourseActivity.GetFieldDeserializers()
     res["assignedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -120,6 +125,7 @@ func (m *LearningAssignment) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetNotes gets the notes property value. Notes for the course activity. Optional.
+// returns a ItemBodyable when successful
 func (m *LearningAssignment) GetNotes()(ItemBodyable) {
     val, err := m.GetBackingStore().Get("notes")
     if err != nil {
@@ -204,7 +210,6 @@ func (m *LearningAssignment) SetNotes(value ItemBodyable)() {
         panic(err)
     }
 }
-// LearningAssignmentable 
 type LearningAssignmentable interface {
     LearningCourseActivityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

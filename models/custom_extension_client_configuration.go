@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CustomExtensionClientConfiguration 
 type CustomExtensionClientConfiguration struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCustomExtensionClientConfiguration instantiates a new customExtensionClientConfiguration and sets the default values.
+// NewCustomExtensionClientConfiguration instantiates a new CustomExtensionClientConfiguration and sets the default values.
 func NewCustomExtensionClientConfiguration()(*CustomExtensionClientConfiguration) {
     m := &CustomExtensionClientConfiguration{
     }
@@ -19,10 +18,12 @@ func NewCustomExtensionClientConfiguration()(*CustomExtensionClientConfiguration
     return m
 }
 // CreateCustomExtensionClientConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCustomExtensionClientConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomExtensionClientConfiguration(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CustomExtensionClientConfiguration) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *CustomExtensionClientConfiguration) GetAdditionalData()(map[string]any)
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CustomExtensionClientConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomExtensionClientConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -64,6 +67,7 @@ func (m *CustomExtensionClientConfiguration) GetFieldDeserializers()(map[string]
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *CustomExtensionClientConfiguration) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -75,6 +79,7 @@ func (m *CustomExtensionClientConfiguration) GetOdataType()(*string) {
     return nil
 }
 // GetTimeoutInMilliseconds gets the timeoutInMilliseconds property value. The max duration in milliseconds that Microsoft Entra ID waits for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
+// returns a *int32 when successful
 func (m *CustomExtensionClientConfiguration) GetTimeoutInMilliseconds()(*int32) {
     val, err := m.GetBackingStore().Get("timeoutInMilliseconds")
     if err != nil {
@@ -132,7 +137,6 @@ func (m *CustomExtensionClientConfiguration) SetTimeoutInMilliseconds(value *int
         panic(err)
     }
 }
-// CustomExtensionClientConfigurationable 
 type CustomExtensionClientConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -8,7 +8,7 @@ import (
 type DeviceCategory struct {
     Entity
 }
-// NewDeviceCategory instantiates a new deviceCategory and sets the default values.
+// NewDeviceCategory instantiates a new DeviceCategory and sets the default values.
 func NewDeviceCategory()(*DeviceCategory) {
     m := &DeviceCategory{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewDeviceCategory()(*DeviceCategory) {
     return m
 }
 // CreateDeviceCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceCategoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceCategory(), nil
 }
 // GetDescription gets the description property value. Optional description for the device category.
+// returns a *string when successful
 func (m *DeviceCategory) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *DeviceCategory) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Display name for the device category.
+// returns a *string when successful
 func (m *DeviceCategory) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *DeviceCategory) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -100,7 +104,6 @@ func (m *DeviceCategory) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// DeviceCategoryable 
 type DeviceCategoryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

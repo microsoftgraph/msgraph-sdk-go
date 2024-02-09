@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserScopeTeamsAppInstallation 
 type UserScopeTeamsAppInstallation struct {
     TeamsAppInstallation
 }
-// NewUserScopeTeamsAppInstallation instantiates a new userScopeTeamsAppInstallation and sets the default values.
+// NewUserScopeTeamsAppInstallation instantiates a new UserScopeTeamsAppInstallation and sets the default values.
 func NewUserScopeTeamsAppInstallation()(*UserScopeTeamsAppInstallation) {
     m := &UserScopeTeamsAppInstallation{
         TeamsAppInstallation: *NewTeamsAppInstallation(),
@@ -18,10 +17,12 @@ func NewUserScopeTeamsAppInstallation()(*UserScopeTeamsAppInstallation) {
     return m
 }
 // CreateUserScopeTeamsAppInstallationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserScopeTeamsAppInstallationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserScopeTeamsAppInstallation(), nil
 }
 // GetChat gets the chat property value. The chat between the user and Teams app.
+// returns a Chatable when successful
 func (m *UserScopeTeamsAppInstallation) GetChat()(Chatable) {
     val, err := m.GetBackingStore().Get("chat")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *UserScopeTeamsAppInstallation) GetChat()(Chatable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserScopeTeamsAppInstallation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.TeamsAppInstallation.GetFieldDeserializers()
     res["chat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +70,6 @@ func (m *UserScopeTeamsAppInstallation) SetChat(value Chatable)() {
         panic(err)
     }
 }
-// UserScopeTeamsAppInstallationable 
 type UserScopeTeamsAppInstallationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     TeamsAppInstallationable

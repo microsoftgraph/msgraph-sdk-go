@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Permission 
 type Permission struct {
     Entity
 }
-// NewPermission instantiates a new permission and sets the default values.
+// NewPermission instantiates a new Permission and sets the default values.
 func NewPermission()(*Permission) {
     m := &Permission{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewPermission()(*Permission) {
     return m
 }
 // CreatePermissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePermissionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPermission(), nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there's no expiration set for this permission. Optional.
+// returns a *Time when successful
 func (m *Permission) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *Permission) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Permission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["expirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -165,6 +167,7 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetGrantedTo gets the grantedTo property value. The grantedTo property
+// returns a IdentitySetable when successful
 func (m *Permission) GetGrantedTo()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("grantedTo")
     if err != nil {
@@ -176,6 +179,7 @@ func (m *Permission) GetGrantedTo()(IdentitySetable) {
     return nil
 }
 // GetGrantedToIdentities gets the grantedToIdentities property value. The grantedToIdentities property
+// returns a []IdentitySetable when successful
 func (m *Permission) GetGrantedToIdentities()([]IdentitySetable) {
     val, err := m.GetBackingStore().Get("grantedToIdentities")
     if err != nil {
@@ -187,6 +191,7 @@ func (m *Permission) GetGrantedToIdentities()([]IdentitySetable) {
     return nil
 }
 // GetGrantedToIdentitiesV2 gets the grantedToIdentitiesV2 property value. For link type permissions, the details of the users to whom permission was granted. Read-only.
+// returns a []SharePointIdentitySetable when successful
 func (m *Permission) GetGrantedToIdentitiesV2()([]SharePointIdentitySetable) {
     val, err := m.GetBackingStore().Get("grantedToIdentitiesV2")
     if err != nil {
@@ -198,6 +203,7 @@ func (m *Permission) GetGrantedToIdentitiesV2()([]SharePointIdentitySetable) {
     return nil
 }
 // GetGrantedToV2 gets the grantedToV2 property value. For user type permissions, the details of the users and applications for this permission. Read-only.
+// returns a SharePointIdentitySetable when successful
 func (m *Permission) GetGrantedToV2()(SharePointIdentitySetable) {
     val, err := m.GetBackingStore().Get("grantedToV2")
     if err != nil {
@@ -209,6 +215,7 @@ func (m *Permission) GetGrantedToV2()(SharePointIdentitySetable) {
     return nil
 }
 // GetHasPassword gets the hasPassword property value. Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only..
+// returns a *bool when successful
 func (m *Permission) GetHasPassword()(*bool) {
     val, err := m.GetBackingStore().Get("hasPassword")
     if err != nil {
@@ -220,6 +227,7 @@ func (m *Permission) GetHasPassword()(*bool) {
     return nil
 }
 // GetInheritedFrom gets the inheritedFrom property value. Provides a reference to the ancestor of the current permission, if it's inherited from an ancestor. Read-only.
+// returns a ItemReferenceable when successful
 func (m *Permission) GetInheritedFrom()(ItemReferenceable) {
     val, err := m.GetBackingStore().Get("inheritedFrom")
     if err != nil {
@@ -231,6 +239,7 @@ func (m *Permission) GetInheritedFrom()(ItemReferenceable) {
     return nil
 }
 // GetInvitation gets the invitation property value. Details of any associated sharing invitation for this permission. Read-only.
+// returns a SharingInvitationable when successful
 func (m *Permission) GetInvitation()(SharingInvitationable) {
     val, err := m.GetBackingStore().Get("invitation")
     if err != nil {
@@ -242,6 +251,7 @@ func (m *Permission) GetInvitation()(SharingInvitationable) {
     return nil
 }
 // GetLink gets the link property value. Provides the link details of the current permission, if it's a link type permission. Read-only.
+// returns a SharingLinkable when successful
 func (m *Permission) GetLink()(SharingLinkable) {
     val, err := m.GetBackingStore().Get("link")
     if err != nil {
@@ -253,6 +263,7 @@ func (m *Permission) GetLink()(SharingLinkable) {
     return nil
 }
 // GetRoles gets the roles property value. The type of permission, for example, read. See below for the full list of roles. Read-only.
+// returns a []string when successful
 func (m *Permission) GetRoles()([]string) {
     val, err := m.GetBackingStore().Get("roles")
     if err != nil {
@@ -264,6 +275,7 @@ func (m *Permission) GetRoles()([]string) {
     return nil
 }
 // GetShareId gets the shareId property value. A unique token that can be used to access this shared item via the shares API. Read-only.
+// returns a *string when successful
 func (m *Permission) GetShareId()(*string) {
     val, err := m.GetBackingStore().Get("shareId")
     if err != nil {
@@ -437,7 +449,6 @@ func (m *Permission) SetShareId(value *string)() {
         panic(err)
     }
 }
-// Permissionable 
 type Permissionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

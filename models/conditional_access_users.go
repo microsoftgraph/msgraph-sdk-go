@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ConditionalAccessUsers 
 type ConditionalAccessUsers struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewConditionalAccessUsers instantiates a new conditionalAccessUsers and sets the default values.
+// NewConditionalAccessUsers instantiates a new ConditionalAccessUsers and sets the default values.
 func NewConditionalAccessUsers()(*ConditionalAccessUsers) {
     m := &ConditionalAccessUsers{
     }
@@ -19,10 +18,12 @@ func NewConditionalAccessUsers()(*ConditionalAccessUsers) {
     return m
 }
 // CreateConditionalAccessUsersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConditionalAccessUsersFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConditionalAccessUsers(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ConditionalAccessUsers) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ConditionalAccessUsers) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ConditionalAccessUsers) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetExcludeGroups gets the excludeGroups property value. Group IDs excluded from scope of policy.
+// returns a []string when successful
 func (m *ConditionalAccessUsers) GetExcludeGroups()([]string) {
     val, err := m.GetBackingStore().Get("excludeGroups")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *ConditionalAccessUsers) GetExcludeGroups()([]string) {
     return nil
 }
 // GetExcludeGuestsOrExternalUsers gets the excludeGuestsOrExternalUsers property value. Internal guests or external users excluded from the policy scope. Optionally populated.
+// returns a ConditionalAccessGuestsOrExternalUsersable when successful
 func (m *ConditionalAccessUsers) GetExcludeGuestsOrExternalUsers()(ConditionalAccessGuestsOrExternalUsersable) {
     val, err := m.GetBackingStore().Get("excludeGuestsOrExternalUsers")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *ConditionalAccessUsers) GetExcludeGuestsOrExternalUsers()(ConditionalAc
     return nil
 }
 // GetExcludeRoles gets the excludeRoles property value. Role IDs excluded from scope of policy.
+// returns a []string when successful
 func (m *ConditionalAccessUsers) GetExcludeRoles()([]string) {
     val, err := m.GetBackingStore().Get("excludeRoles")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *ConditionalAccessUsers) GetExcludeRoles()([]string) {
     return nil
 }
 // GetExcludeUsers gets the excludeUsers property value. User IDs excluded from scope of policy and/or GuestsOrExternalUsers.
+// returns a []string when successful
 func (m *ConditionalAccessUsers) GetExcludeUsers()([]string) {
     val, err := m.GetBackingStore().Get("excludeUsers")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *ConditionalAccessUsers) GetExcludeUsers()([]string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["excludeGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -214,6 +221,7 @@ func (m *ConditionalAccessUsers) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetIncludeGroups gets the includeGroups property value. Group IDs in scope of policy unless explicitly excluded.
+// returns a []string when successful
 func (m *ConditionalAccessUsers) GetIncludeGroups()([]string) {
     val, err := m.GetBackingStore().Get("includeGroups")
     if err != nil {
@@ -225,6 +233,7 @@ func (m *ConditionalAccessUsers) GetIncludeGroups()([]string) {
     return nil
 }
 // GetIncludeGuestsOrExternalUsers gets the includeGuestsOrExternalUsers property value. Internal guests or external users included in the policy scope. Optionally populated.
+// returns a ConditionalAccessGuestsOrExternalUsersable when successful
 func (m *ConditionalAccessUsers) GetIncludeGuestsOrExternalUsers()(ConditionalAccessGuestsOrExternalUsersable) {
     val, err := m.GetBackingStore().Get("includeGuestsOrExternalUsers")
     if err != nil {
@@ -236,6 +245,7 @@ func (m *ConditionalAccessUsers) GetIncludeGuestsOrExternalUsers()(ConditionalAc
     return nil
 }
 // GetIncludeRoles gets the includeRoles property value. Role IDs in scope of policy unless explicitly excluded.
+// returns a []string when successful
 func (m *ConditionalAccessUsers) GetIncludeRoles()([]string) {
     val, err := m.GetBackingStore().Get("includeRoles")
     if err != nil {
@@ -247,6 +257,7 @@ func (m *ConditionalAccessUsers) GetIncludeRoles()([]string) {
     return nil
 }
 // GetIncludeUsers gets the includeUsers property value. User IDs in scope of policy unless explicitly excluded, None, All, or GuestsOrExternalUsers.
+// returns a []string when successful
 func (m *ConditionalAccessUsers) GetIncludeUsers()([]string) {
     val, err := m.GetBackingStore().Get("includeUsers")
     if err != nil {
@@ -258,6 +269,7 @@ func (m *ConditionalAccessUsers) GetIncludeUsers()([]string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ConditionalAccessUsers) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -406,7 +418,6 @@ func (m *ConditionalAccessUsers) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// ConditionalAccessUsersable 
 type ConditionalAccessUsersable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

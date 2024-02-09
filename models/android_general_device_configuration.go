@@ -8,7 +8,7 @@ import (
 type AndroidGeneralDeviceConfiguration struct {
     DeviceConfiguration
 }
-// NewAndroidGeneralDeviceConfiguration instantiates a new androidGeneralDeviceConfiguration and sets the default values.
+// NewAndroidGeneralDeviceConfiguration instantiates a new AndroidGeneralDeviceConfiguration and sets the default values.
 func NewAndroidGeneralDeviceConfiguration()(*AndroidGeneralDeviceConfiguration) {
     m := &AndroidGeneralDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewAndroidGeneralDeviceConfiguration()(*AndroidGeneralDeviceConfiguration) 
     return m
 }
 // CreateAndroidGeneralDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidGeneralDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidGeneralDeviceConfiguration(), nil
 }
 // GetAppsBlockClipboardSharing gets the appsBlockClipboardSharing property value. Indicates whether or not to block clipboard sharing to copy and paste between applications.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetAppsBlockClipboardSharing()(*bool) {
     val, err := m.GetBackingStore().Get("appsBlockClipboardSharing")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetAppsBlockClipboardSharing()(*bool
     return nil
 }
 // GetAppsBlockCopyPaste gets the appsBlockCopyPaste property value. Indicates whether or not to block copy and paste within applications.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetAppsBlockCopyPaste()(*bool) {
     val, err := m.GetBackingStore().Get("appsBlockCopyPaste")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetAppsBlockCopyPaste()(*bool) {
     return nil
 }
 // GetAppsBlockYouTube gets the appsBlockYouTube property value. Indicates whether or not to block the YouTube app.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetAppsBlockYouTube()(*bool) {
     val, err := m.GetBackingStore().Get("appsBlockYouTube")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetAppsBlockYouTube()(*bool) {
     return nil
 }
 // GetAppsHideList gets the appsHideList property value. List of apps to be hidden on the KNOX device. This collection can contain a maximum of 500 elements.
+// returns a []AppListItemable when successful
 func (m *AndroidGeneralDeviceConfiguration) GetAppsHideList()([]AppListItemable) {
     val, err := m.GetBackingStore().Get("appsHideList")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetAppsHideList()([]AppListItemable)
     return nil
 }
 // GetAppsInstallAllowList gets the appsInstallAllowList property value. List of apps which can be installed on the KNOX device. This collection can contain a maximum of 500 elements.
+// returns a []AppListItemable when successful
 func (m *AndroidGeneralDeviceConfiguration) GetAppsInstallAllowList()([]AppListItemable) {
     val, err := m.GetBackingStore().Get("appsInstallAllowList")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetAppsInstallAllowList()([]AppListI
     return nil
 }
 // GetAppsLaunchBlockList gets the appsLaunchBlockList property value. List of apps which are blocked from being launched on the KNOX device. This collection can contain a maximum of 500 elements.
+// returns a []AppListItemable when successful
 func (m *AndroidGeneralDeviceConfiguration) GetAppsLaunchBlockList()([]AppListItemable) {
     val, err := m.GetBackingStore().Get("appsLaunchBlockList")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetAppsLaunchBlockList()([]AppListIt
     return nil
 }
 // GetBluetoothBlocked gets the bluetoothBlocked property value. Indicates whether or not to block Bluetooth.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetBluetoothBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("bluetoothBlocked")
     if err != nil {
@@ -99,6 +107,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetBluetoothBlocked()(*bool) {
     return nil
 }
 // GetCameraBlocked gets the cameraBlocked property value. Indicates whether or not to block the use of the camera.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetCameraBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("cameraBlocked")
     if err != nil {
@@ -110,6 +119,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetCameraBlocked()(*bool) {
     return nil
 }
 // GetCellularBlockDataRoaming gets the cellularBlockDataRoaming property value. Indicates whether or not to block data roaming.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetCellularBlockDataRoaming()(*bool) {
     val, err := m.GetBackingStore().Get("cellularBlockDataRoaming")
     if err != nil {
@@ -121,6 +131,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetCellularBlockDataRoaming()(*bool)
     return nil
 }
 // GetCellularBlockMessaging gets the cellularBlockMessaging property value. Indicates whether or not to block SMS/MMS messaging.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetCellularBlockMessaging()(*bool) {
     val, err := m.GetBackingStore().Get("cellularBlockMessaging")
     if err != nil {
@@ -132,6 +143,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetCellularBlockMessaging()(*bool) {
     return nil
 }
 // GetCellularBlockVoiceRoaming gets the cellularBlockVoiceRoaming property value. Indicates whether or not to block voice roaming.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetCellularBlockVoiceRoaming()(*bool) {
     val, err := m.GetBackingStore().Get("cellularBlockVoiceRoaming")
     if err != nil {
@@ -143,6 +155,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetCellularBlockVoiceRoaming()(*bool
     return nil
 }
 // GetCellularBlockWiFiTethering gets the cellularBlockWiFiTethering property value. Indicates whether or not to block syncing Wi-Fi tethering.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetCellularBlockWiFiTethering()(*bool) {
     val, err := m.GetBackingStore().Get("cellularBlockWiFiTethering")
     if err != nil {
@@ -154,6 +167,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetCellularBlockWiFiTethering()(*boo
     return nil
 }
 // GetCompliantAppListType gets the compliantAppListType property value. Possible values of the compliance app list.
+// returns a *AppListType when successful
 func (m *AndroidGeneralDeviceConfiguration) GetCompliantAppListType()(*AppListType) {
     val, err := m.GetBackingStore().Get("compliantAppListType")
     if err != nil {
@@ -165,6 +179,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetCompliantAppListType()(*AppListTy
     return nil
 }
 // GetCompliantAppsList gets the compliantAppsList property value. List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
+// returns a []AppListItemable when successful
 func (m *AndroidGeneralDeviceConfiguration) GetCompliantAppsList()([]AppListItemable) {
     val, err := m.GetBackingStore().Get("compliantAppsList")
     if err != nil {
@@ -176,6 +191,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetCompliantAppsList()([]AppListItem
     return nil
 }
 // GetDeviceSharingAllowed gets the deviceSharingAllowed property value. Indicates whether or not to allow device sharing mode.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetDeviceSharingAllowed()(*bool) {
     val, err := m.GetBackingStore().Get("deviceSharingAllowed")
     if err != nil {
@@ -187,6 +203,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetDeviceSharingAllowed()(*bool) {
     return nil
 }
 // GetDiagnosticDataBlockSubmission gets the diagnosticDataBlockSubmission property value. Indicates whether or not to block diagnostic data submission.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetDiagnosticDataBlockSubmission()(*bool) {
     val, err := m.GetBackingStore().Get("diagnosticDataBlockSubmission")
     if err != nil {
@@ -198,6 +215,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetDiagnosticDataBlockSubmission()(*
     return nil
 }
 // GetFactoryResetBlocked gets the factoryResetBlocked property value. Indicates whether or not to block user performing a factory reset.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetFactoryResetBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("factoryResetBlocked")
     if err != nil {
@@ -209,6 +227,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetFactoryResetBlocked()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["appsBlockClipboardSharing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -724,6 +743,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetGoogleAccountBlockAutoSync gets the googleAccountBlockAutoSync property value. Indicates whether or not to block Google account auto sync.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetGoogleAccountBlockAutoSync()(*bool) {
     val, err := m.GetBackingStore().Get("googleAccountBlockAutoSync")
     if err != nil {
@@ -735,6 +755,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetGoogleAccountBlockAutoSync()(*boo
     return nil
 }
 // GetGooglePlayStoreBlocked gets the googlePlayStoreBlocked property value. Indicates whether or not to block the Google Play store.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetGooglePlayStoreBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("googlePlayStoreBlocked")
     if err != nil {
@@ -746,6 +767,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetGooglePlayStoreBlocked()(*bool) {
     return nil
 }
 // GetKioskModeApps gets the kioskModeApps property value. A list of apps that will be allowed to run when the device is in Kiosk Mode. This collection can contain a maximum of 500 elements.
+// returns a []AppListItemable when successful
 func (m *AndroidGeneralDeviceConfiguration) GetKioskModeApps()([]AppListItemable) {
     val, err := m.GetBackingStore().Get("kioskModeApps")
     if err != nil {
@@ -757,6 +779,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetKioskModeApps()([]AppListItemable
     return nil
 }
 // GetKioskModeBlockSleepButton gets the kioskModeBlockSleepButton property value. Indicates whether or not to block the screen sleep button while in Kiosk Mode.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetKioskModeBlockSleepButton()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeBlockSleepButton")
     if err != nil {
@@ -768,6 +791,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetKioskModeBlockSleepButton()(*bool
     return nil
 }
 // GetKioskModeBlockVolumeButtons gets the kioskModeBlockVolumeButtons property value. Indicates whether or not to block the volume buttons while in Kiosk Mode.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetKioskModeBlockVolumeButtons()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeBlockVolumeButtons")
     if err != nil {
@@ -779,6 +803,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetKioskModeBlockVolumeButtons()(*bo
     return nil
 }
 // GetLocationServicesBlocked gets the locationServicesBlocked property value. Indicates whether or not to block location services.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetLocationServicesBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("locationServicesBlocked")
     if err != nil {
@@ -790,6 +815,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetLocationServicesBlocked()(*bool) 
     return nil
 }
 // GetNfcBlocked gets the nfcBlocked property value. Indicates whether or not to block Near-Field Communication.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetNfcBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("nfcBlocked")
     if err != nil {
@@ -801,6 +827,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetNfcBlocked()(*bool) {
     return nil
 }
 // GetPasswordBlockFingerprintUnlock gets the passwordBlockFingerprintUnlock property value. Indicates whether or not to block fingerprint unlock.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetPasswordBlockFingerprintUnlock()(*bool) {
     val, err := m.GetBackingStore().Get("passwordBlockFingerprintUnlock")
     if err != nil {
@@ -812,6 +839,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetPasswordBlockFingerprintUnlock()(
     return nil
 }
 // GetPasswordBlockTrustAgents gets the passwordBlockTrustAgents property value. Indicates whether or not to block Smart Lock and other trust agents.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetPasswordBlockTrustAgents()(*bool) {
     val, err := m.GetBackingStore().Get("passwordBlockTrustAgents")
     if err != nil {
@@ -823,6 +851,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetPasswordBlockTrustAgents()(*bool)
     return nil
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Number of days before the password expires. Valid values 1 to 365
+// returns a *int32 when successful
 func (m *AndroidGeneralDeviceConfiguration) GetPasswordExpirationDays()(*int32) {
     val, err := m.GetBackingStore().Get("passwordExpirationDays")
     if err != nil {
@@ -834,6 +863,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetPasswordExpirationDays()(*int32) 
     return nil
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Minimum length of passwords. Valid values 4 to 16
+// returns a *int32 when successful
 func (m *AndroidGeneralDeviceConfiguration) GetPasswordMinimumLength()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinimumLength")
     if err != nil {
@@ -845,6 +875,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetPasswordMinimumLength()(*int32) {
     return nil
 }
 // GetPasswordMinutesOfInactivityBeforeScreenTimeout gets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
+// returns a *int32 when successful
 func (m *AndroidGeneralDeviceConfiguration) GetPasswordMinutesOfInactivityBeforeScreenTimeout()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinutesOfInactivityBeforeScreenTimeout")
     if err != nil {
@@ -856,6 +887,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetPasswordMinutesOfInactivityBefore
     return nil
 }
 // GetPasswordPreviousPasswordBlockCount gets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 0 to 24
+// returns a *int32 when successful
 func (m *AndroidGeneralDeviceConfiguration) GetPasswordPreviousPasswordBlockCount()(*int32) {
     val, err := m.GetBackingStore().Get("passwordPreviousPasswordBlockCount")
     if err != nil {
@@ -867,6 +899,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetPasswordPreviousPasswordBlockCoun
     return nil
 }
 // GetPasswordRequired gets the passwordRequired property value. Indicates whether or not to require a password.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetPasswordRequired()(*bool) {
     val, err := m.GetBackingStore().Get("passwordRequired")
     if err != nil {
@@ -878,6 +911,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetPasswordRequired()(*bool) {
     return nil
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Android required password type.
+// returns a *AndroidRequiredPasswordType when successful
 func (m *AndroidGeneralDeviceConfiguration) GetPasswordRequiredType()(*AndroidRequiredPasswordType) {
     val, err := m.GetBackingStore().Get("passwordRequiredType")
     if err != nil {
@@ -889,6 +923,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetPasswordRequiredType()(*AndroidRe
     return nil
 }
 // GetPasswordSignInFailureCountBeforeFactoryReset gets the passwordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before factory reset. Valid values 1 to 16
+// returns a *int32 when successful
 func (m *AndroidGeneralDeviceConfiguration) GetPasswordSignInFailureCountBeforeFactoryReset()(*int32) {
     val, err := m.GetBackingStore().Get("passwordSignInFailureCountBeforeFactoryReset")
     if err != nil {
@@ -900,6 +935,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetPasswordSignInFailureCountBeforeF
     return nil
 }
 // GetPowerOffBlocked gets the powerOffBlocked property value. Indicates whether or not to block powering off the device.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetPowerOffBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("powerOffBlocked")
     if err != nil {
@@ -911,6 +947,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetPowerOffBlocked()(*bool) {
     return nil
 }
 // GetScreenCaptureBlocked gets the screenCaptureBlocked property value. Indicates whether or not to block screenshots.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetScreenCaptureBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("screenCaptureBlocked")
     if err != nil {
@@ -922,6 +959,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetScreenCaptureBlocked()(*bool) {
     return nil
 }
 // GetSecurityRequireVerifyApps gets the securityRequireVerifyApps property value. Require the Android Verify apps feature is turned on.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetSecurityRequireVerifyApps()(*bool) {
     val, err := m.GetBackingStore().Get("securityRequireVerifyApps")
     if err != nil {
@@ -933,6 +971,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetSecurityRequireVerifyApps()(*bool
     return nil
 }
 // GetStorageBlockGoogleBackup gets the storageBlockGoogleBackup property value. Indicates whether or not to block Google Backup.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetStorageBlockGoogleBackup()(*bool) {
     val, err := m.GetBackingStore().Get("storageBlockGoogleBackup")
     if err != nil {
@@ -944,6 +983,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetStorageBlockGoogleBackup()(*bool)
     return nil
 }
 // GetStorageBlockRemovableStorage gets the storageBlockRemovableStorage property value. Indicates whether or not to block removable storage usage.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetStorageBlockRemovableStorage()(*bool) {
     val, err := m.GetBackingStore().Get("storageBlockRemovableStorage")
     if err != nil {
@@ -955,6 +995,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetStorageBlockRemovableStorage()(*b
     return nil
 }
 // GetStorageRequireDeviceEncryption gets the storageRequireDeviceEncryption property value. Indicates whether or not to require device encryption.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetStorageRequireDeviceEncryption()(*bool) {
     val, err := m.GetBackingStore().Get("storageRequireDeviceEncryption")
     if err != nil {
@@ -966,6 +1007,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetStorageRequireDeviceEncryption()(
     return nil
 }
 // GetStorageRequireRemovableStorageEncryption gets the storageRequireRemovableStorageEncryption property value. Indicates whether or not to require removable storage encryption.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetStorageRequireRemovableStorageEncryption()(*bool) {
     val, err := m.GetBackingStore().Get("storageRequireRemovableStorageEncryption")
     if err != nil {
@@ -977,6 +1019,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetStorageRequireRemovableStorageEnc
     return nil
 }
 // GetVoiceAssistantBlocked gets the voiceAssistantBlocked property value. Indicates whether or not to block the use of the Voice Assistant.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetVoiceAssistantBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("voiceAssistantBlocked")
     if err != nil {
@@ -988,6 +1031,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetVoiceAssistantBlocked()(*bool) {
     return nil
 }
 // GetVoiceDialingBlocked gets the voiceDialingBlocked property value. Indicates whether or not to block voice dialing.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetVoiceDialingBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("voiceDialingBlocked")
     if err != nil {
@@ -999,6 +1043,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetVoiceDialingBlocked()(*bool) {
     return nil
 }
 // GetWebBrowserBlockAutofill gets the webBrowserBlockAutofill property value. Indicates whether or not to block the web browser's auto fill feature.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetWebBrowserBlockAutofill()(*bool) {
     val, err := m.GetBackingStore().Get("webBrowserBlockAutofill")
     if err != nil {
@@ -1010,6 +1055,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetWebBrowserBlockAutofill()(*bool) 
     return nil
 }
 // GetWebBrowserBlocked gets the webBrowserBlocked property value. Indicates whether or not to block the web browser.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetWebBrowserBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("webBrowserBlocked")
     if err != nil {
@@ -1021,6 +1067,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetWebBrowserBlocked()(*bool) {
     return nil
 }
 // GetWebBrowserBlockJavaScript gets the webBrowserBlockJavaScript property value. Indicates whether or not to block JavaScript within the web browser.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetWebBrowserBlockJavaScript()(*bool) {
     val, err := m.GetBackingStore().Get("webBrowserBlockJavaScript")
     if err != nil {
@@ -1032,6 +1079,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetWebBrowserBlockJavaScript()(*bool
     return nil
 }
 // GetWebBrowserBlockPopups gets the webBrowserBlockPopups property value. Indicates whether or not to block popups within the web browser.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetWebBrowserBlockPopups()(*bool) {
     val, err := m.GetBackingStore().Get("webBrowserBlockPopups")
     if err != nil {
@@ -1043,6 +1091,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetWebBrowserBlockPopups()(*bool) {
     return nil
 }
 // GetWebBrowserCookieSettings gets the webBrowserCookieSettings property value. Web Browser Cookie Settings.
+// returns a *WebBrowserCookieSettings when successful
 func (m *AndroidGeneralDeviceConfiguration) GetWebBrowserCookieSettings()(*WebBrowserCookieSettings) {
     val, err := m.GetBackingStore().Get("webBrowserCookieSettings")
     if err != nil {
@@ -1054,6 +1103,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetWebBrowserCookieSettings()(*WebBr
     return nil
 }
 // GetWiFiBlocked gets the wiFiBlocked property value. Indicates whether or not to block syncing Wi-Fi.
+// returns a *bool when successful
 func (m *AndroidGeneralDeviceConfiguration) GetWiFiBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("wiFiBlocked")
     if err != nil {
@@ -1729,7 +1779,6 @@ func (m *AndroidGeneralDeviceConfiguration) SetWiFiBlocked(value *bool)() {
         panic(err)
     }
 }
-// AndroidGeneralDeviceConfigurationable 
 type AndroidGeneralDeviceConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

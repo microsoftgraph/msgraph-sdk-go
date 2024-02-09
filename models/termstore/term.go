@@ -6,11 +6,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Term 
 type Term struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewTerm instantiates a new term and sets the default values.
+// NewTerm instantiates a new Term and sets the default values.
 func NewTerm()(*Term) {
     m := &Term{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -18,10 +17,12 @@ func NewTerm()(*Term) {
     return m
 }
 // CreateTermFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTermFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTerm(), nil
 }
 // GetChildren gets the children property value. Children of current term.
+// returns a []Termable when successful
 func (m *Term) GetChildren()([]Termable) {
     val, err := m.GetBackingStore().Get("children")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *Term) GetChildren()([]Termable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time of term creation. Read-only.
+// returns a *Time when successful
 func (m *Term) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *Term) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16
     return nil
 }
 // GetDescriptions gets the descriptions property value. Description about term that is dependent on the languageTag.
+// returns a []LocalizedDescriptionable when successful
 func (m *Term) GetDescriptions()([]LocalizedDescriptionable) {
     val, err := m.GetBackingStore().Get("descriptions")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *Term) GetDescriptions()([]LocalizedDescriptionable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Term) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["children"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -170,6 +174,7 @@ func (m *Term) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     return res
 }
 // GetLabels gets the labels property value. Label metadata for a term.
+// returns a []LocalizedLabelable when successful
 func (m *Term) GetLabels()([]LocalizedLabelable) {
     val, err := m.GetBackingStore().Get("labels")
     if err != nil {
@@ -181,6 +186,7 @@ func (m *Term) GetLabels()([]LocalizedLabelable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last date and time of term modification. Read-only.
+// returns a *Time when successful
 func (m *Term) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -192,6 +198,7 @@ func (m *Term) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
     return nil
 }
 // GetProperties gets the properties property value. Collection of properties on the term.
+// returns a []KeyValueable when successful
 func (m *Term) GetProperties()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValueable) {
     val, err := m.GetBackingStore().Get("properties")
     if err != nil {
@@ -203,6 +210,7 @@ func (m *Term) GetProperties()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddd
     return nil
 }
 // GetRelations gets the relations property value. To indicate which terms are related to the current term as either pinned or reused.
+// returns a []Relationable when successful
 func (m *Term) GetRelations()([]Relationable) {
     val, err := m.GetBackingStore().Get("relations")
     if err != nil {
@@ -214,6 +222,7 @@ func (m *Term) GetRelations()([]Relationable) {
     return nil
 }
 // GetSet gets the set property value. The [set] in which the term is created.
+// returns a Setable when successful
 func (m *Term) GetSet()(Setable) {
     val, err := m.GetBackingStore().Get("set")
     if err != nil {
@@ -366,7 +375,6 @@ func (m *Term) SetSet(value Setable)() {
         panic(err)
     }
 }
-// Termable 
 type Termable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkHostedContent 
 type TeamworkHostedContent struct {
     Entity
 }
-// NewTeamworkHostedContent instantiates a new teamworkHostedContent and sets the default values.
+// NewTeamworkHostedContent instantiates a new TeamworkHostedContent and sets the default values.
 func NewTeamworkHostedContent()(*TeamworkHostedContent) {
     m := &TeamworkHostedContent{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewTeamworkHostedContent()(*TeamworkHostedContent) {
     return m
 }
 // CreateTeamworkHostedContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamworkHostedContentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -38,6 +38,7 @@ func CreateTeamworkHostedContentFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewTeamworkHostedContent(), nil
 }
 // GetContentBytes gets the contentBytes property value. Write only. Bytes for the hosted content (such as images).
+// returns a []byte when successful
 func (m *TeamworkHostedContent) GetContentBytes()([]byte) {
     val, err := m.GetBackingStore().Get("contentBytes")
     if err != nil {
@@ -49,6 +50,7 @@ func (m *TeamworkHostedContent) GetContentBytes()([]byte) {
     return nil
 }
 // GetContentType gets the contentType property value. Write only. Content type. such as image/png, image/jpg.
+// returns a *string when successful
 func (m *TeamworkHostedContent) GetContentType()(*string) {
     val, err := m.GetBackingStore().Get("contentType")
     if err != nil {
@@ -60,6 +62,7 @@ func (m *TeamworkHostedContent) GetContentType()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamworkHostedContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["contentBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -118,7 +121,6 @@ func (m *TeamworkHostedContent) SetContentType(value *string)() {
         panic(err)
     }
 }
-// TeamworkHostedContentable 
 type TeamworkHostedContentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TemporaryAccessPassAuthenticationMethodCollectionResponse 
 type TemporaryAccessPassAuthenticationMethodCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTemporaryAccessPassAuthenticationMethodCollectionResponse instantiates a new temporaryAccessPassAuthenticationMethodCollectionResponse and sets the default values.
+// NewTemporaryAccessPassAuthenticationMethodCollectionResponse instantiates a new TemporaryAccessPassAuthenticationMethodCollectionResponse and sets the default values.
 func NewTemporaryAccessPassAuthenticationMethodCollectionResponse()(*TemporaryAccessPassAuthenticationMethodCollectionResponse) {
     m := &TemporaryAccessPassAuthenticationMethodCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewTemporaryAccessPassAuthenticationMethodCollectionResponse()(*TemporaryAc
     return m
 }
 // CreateTemporaryAccessPassAuthenticationMethodCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTemporaryAccessPassAuthenticationMethodCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTemporaryAccessPassAuthenticationMethodCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TemporaryAccessPassAuthenticationMethodCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *TemporaryAccessPassAuthenticationMethodCollectionResponse) GetFieldDese
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []TemporaryAccessPassAuthenticationMethodable when successful
 func (m *TemporaryAccessPassAuthenticationMethodCollectionResponse) GetValue()([]TemporaryAccessPassAuthenticationMethodable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *TemporaryAccessPassAuthenticationMethodCollectionResponse) SetValue(val
         panic(err)
     }
 }
-// TemporaryAccessPassAuthenticationMethodCollectionResponseable 
 type TemporaryAccessPassAuthenticationMethodCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

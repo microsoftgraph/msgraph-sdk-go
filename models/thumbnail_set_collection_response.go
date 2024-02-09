@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ThumbnailSetCollectionResponse 
 type ThumbnailSetCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewThumbnailSetCollectionResponse instantiates a new thumbnailSetCollectionResponse and sets the default values.
+// NewThumbnailSetCollectionResponse instantiates a new ThumbnailSetCollectionResponse and sets the default values.
 func NewThumbnailSetCollectionResponse()(*ThumbnailSetCollectionResponse) {
     m := &ThumbnailSetCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewThumbnailSetCollectionResponse()(*ThumbnailSetCollectionResponse) {
     return m
 }
 // CreateThumbnailSetCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateThumbnailSetCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewThumbnailSetCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ThumbnailSetCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ThumbnailSetCollectionResponse) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ThumbnailSetable when successful
 func (m *ThumbnailSetCollectionResponse) GetValue()([]ThumbnailSetable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ThumbnailSetCollectionResponse) SetValue(value []ThumbnailSetable)() {
         panic(err)
     }
 }
-// ThumbnailSetCollectionResponseable 
 type ThumbnailSetCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

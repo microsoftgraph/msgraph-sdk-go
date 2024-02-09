@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// X509CertificateRule 
 type X509CertificateRule struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewX509CertificateRule instantiates a new x509CertificateRule and sets the default values.
+// NewX509CertificateRule instantiates a new X509CertificateRule and sets the default values.
 func NewX509CertificateRule()(*X509CertificateRule) {
     m := &X509CertificateRule{
     }
@@ -19,10 +18,12 @@ func NewX509CertificateRule()(*X509CertificateRule) {
     return m
 }
 // CreateX509CertificateRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateX509CertificateRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewX509CertificateRule(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *X509CertificateRule) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *X509CertificateRule) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *X509CertificateRule) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *X509CertificateRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["identifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -84,6 +87,7 @@ func (m *X509CertificateRule) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetIdentifier gets the identifier property value. The identifier of the X.509 certificate. Required.
+// returns a *string when successful
 func (m *X509CertificateRule) GetIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("identifier")
     if err != nil {
@@ -95,6 +99,7 @@ func (m *X509CertificateRule) GetIdentifier()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *X509CertificateRule) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *X509CertificateRule) GetOdataType()(*string) {
     return nil
 }
 // GetX509CertificateAuthenticationMode gets the x509CertificateAuthenticationMode property value. The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue. Required.
+// returns a *X509CertificateAuthenticationMode when successful
 func (m *X509CertificateRule) GetX509CertificateAuthenticationMode()(*X509CertificateAuthenticationMode) {
     val, err := m.GetBackingStore().Get("x509CertificateAuthenticationMode")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *X509CertificateRule) GetX509CertificateAuthenticationMode()(*X509Certif
     return nil
 }
 // GetX509CertificateRuleType gets the x509CertificateRuleType property value. The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue. Required.
+// returns a *X509CertificateRuleType when successful
 func (m *X509CertificateRule) GetX509CertificateRuleType()(*X509CertificateRuleType) {
     val, err := m.GetBackingStore().Get("x509CertificateRuleType")
     if err != nil {
@@ -202,7 +209,6 @@ func (m *X509CertificateRule) SetX509CertificateRuleType(value *X509CertificateR
         panic(err)
     }
 }
-// X509CertificateRuleable 
 type X509CertificateRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

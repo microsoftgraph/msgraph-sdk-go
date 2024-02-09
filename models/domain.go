@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Domain 
 type Domain struct {
     Entity
 }
-// NewDomain instantiates a new domain and sets the default values.
+// NewDomain instantiates a new Domain and sets the default values.
 func NewDomain()(*Domain) {
     m := &Domain{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewDomain()(*Domain) {
     return m
 }
 // CreateDomainFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDomainFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDomain(), nil
 }
 // GetAuthenticationType gets the authenticationType property value. Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Microsoft Entra ID performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. Not nullable.
+// returns a *string when successful
 func (m *Domain) GetAuthenticationType()(*string) {
     val, err := m.GetBackingStore().Get("authenticationType")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Domain) GetAuthenticationType()(*string) {
     return nil
 }
 // GetAvailabilityStatus gets the availabilityStatus property value. This property is always null except when the verify action is used. When the verify action is used, a domain entity is returned in the response. The availabilityStatus property of the domain entity in the response is either AvailableImmediately or EmailVerifiedDomainTakeoverScheduled.
+// returns a *string when successful
 func (m *Domain) GetAvailabilityStatus()(*string) {
     val, err := m.GetBackingStore().Get("availabilityStatus")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *Domain) GetAvailabilityStatus()(*string) {
     return nil
 }
 // GetDomainNameReferences gets the domainNameReferences property value. The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
+// returns a []DirectoryObjectable when successful
 func (m *Domain) GetDomainNameReferences()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("domainNameReferences")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *Domain) GetDomainNameReferences()([]DirectoryObjectable) {
     return nil
 }
 // GetFederationConfiguration gets the federationConfiguration property value. Domain settings configured by a customer when federated with Microsoft Entra ID. Supports $expand.
+// returns a []InternalDomainFederationable when successful
 func (m *Domain) GetFederationConfiguration()([]InternalDomainFederationable) {
     val, err := m.GetBackingStore().Get("federationConfiguration")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *Domain) GetFederationConfiguration()([]InternalDomainFederationable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Domain) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["authenticationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -269,6 +274,7 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     return res
 }
 // GetIsAdminManaged gets the isAdminManaged property value. The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable
+// returns a *bool when successful
 func (m *Domain) GetIsAdminManaged()(*bool) {
     val, err := m.GetBackingStore().Get("isAdminManaged")
     if err != nil {
@@ -280,6 +286,7 @@ func (m *Domain) GetIsAdminManaged()(*bool) {
     return nil
 }
 // GetIsDefault gets the isDefault property value. true if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable
+// returns a *bool when successful
 func (m *Domain) GetIsDefault()(*bool) {
     val, err := m.GetBackingStore().Get("isDefault")
     if err != nil {
@@ -291,6 +298,7 @@ func (m *Domain) GetIsDefault()(*bool) {
     return nil
 }
 // GetIsInitial gets the isInitial property value. true if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com). There is only one initial domain per company. Not nullable
+// returns a *bool when successful
 func (m *Domain) GetIsInitial()(*bool) {
     val, err := m.GetBackingStore().Get("isInitial")
     if err != nil {
@@ -302,6 +310,7 @@ func (m *Domain) GetIsInitial()(*bool) {
     return nil
 }
 // GetIsRoot gets the isRoot property value. true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable
+// returns a *bool when successful
 func (m *Domain) GetIsRoot()(*bool) {
     val, err := m.GetBackingStore().Get("isRoot")
     if err != nil {
@@ -313,6 +322,7 @@ func (m *Domain) GetIsRoot()(*bool) {
     return nil
 }
 // GetIsVerified gets the isVerified property value. true if the domain has completed domain ownership verification. Not nullable
+// returns a *bool when successful
 func (m *Domain) GetIsVerified()(*bool) {
     val, err := m.GetBackingStore().Get("isVerified")
     if err != nil {
@@ -324,6 +334,7 @@ func (m *Domain) GetIsVerified()(*bool) {
     return nil
 }
 // GetManufacturer gets the manufacturer property value. The manufacturer property
+// returns a *string when successful
 func (m *Domain) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
     if err != nil {
@@ -335,6 +346,7 @@ func (m *Domain) GetManufacturer()(*string) {
     return nil
 }
 // GetModel gets the model property value. The model property
+// returns a *string when successful
 func (m *Domain) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
     if err != nil {
@@ -346,6 +358,7 @@ func (m *Domain) GetModel()(*string) {
     return nil
 }
 // GetPasswordNotificationWindowInDays gets the passwordNotificationWindowInDays property value. Specifies the number of days before a user receives notification that their password will expire. If the property is not set, a default value of 14 days will be used.
+// returns a *int32 when successful
 func (m *Domain) GetPasswordNotificationWindowInDays()(*int32) {
     val, err := m.GetBackingStore().Get("passwordNotificationWindowInDays")
     if err != nil {
@@ -357,6 +370,7 @@ func (m *Domain) GetPasswordNotificationWindowInDays()(*int32) {
     return nil
 }
 // GetPasswordValidityPeriodInDays gets the passwordValidityPeriodInDays property value. Specifies the length of time that a password is valid before it must be changed. If the property is not set, a default value of 90 days will be used.
+// returns a *int32 when successful
 func (m *Domain) GetPasswordValidityPeriodInDays()(*int32) {
     val, err := m.GetBackingStore().Get("passwordValidityPeriodInDays")
     if err != nil {
@@ -368,6 +382,7 @@ func (m *Domain) GetPasswordValidityPeriodInDays()(*int32) {
     return nil
 }
 // GetServiceConfigurationRecords gets the serviceConfigurationRecords property value. DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.
+// returns a []DomainDnsRecordable when successful
 func (m *Domain) GetServiceConfigurationRecords()([]DomainDnsRecordable) {
     val, err := m.GetBackingStore().Get("serviceConfigurationRecords")
     if err != nil {
@@ -379,6 +394,7 @@ func (m *Domain) GetServiceConfigurationRecords()([]DomainDnsRecordable) {
     return nil
 }
 // GetState gets the state property value. Status of asynchronous operations scheduled for the domain.
+// returns a DomainStateable when successful
 func (m *Domain) GetState()(DomainStateable) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -390,6 +406,7 @@ func (m *Domain) GetState()(DomainStateable) {
     return nil
 }
 // GetSupportedServices gets the supportedServices property value. The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.
+// returns a []string when successful
 func (m *Domain) GetSupportedServices()([]string) {
     val, err := m.GetBackingStore().Get("supportedServices")
     if err != nil {
@@ -401,6 +418,7 @@ func (m *Domain) GetSupportedServices()([]string) {
     return nil
 }
 // GetVerificationDnsRecords gets the verificationDnsRecords property value. DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Supports $expand.
+// returns a []DomainDnsRecordable when successful
 func (m *Domain) GetVerificationDnsRecords()([]DomainDnsRecordable) {
     val, err := m.GetBackingStore().Get("verificationDnsRecords")
     if err != nil {
@@ -664,7 +682,6 @@ func (m *Domain) SetVerificationDnsRecords(value []DomainDnsRecordable)() {
         panic(err)
     }
 }
-// Domainable 
 type Domainable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

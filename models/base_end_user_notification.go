@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// BaseEndUserNotification 
 type BaseEndUserNotification struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewBaseEndUserNotification instantiates a new baseEndUserNotification and sets the default values.
+// NewBaseEndUserNotification instantiates a new BaseEndUserNotification and sets the default values.
 func NewBaseEndUserNotification()(*BaseEndUserNotification) {
     m := &BaseEndUserNotification{
     }
@@ -19,6 +18,7 @@ func NewBaseEndUserNotification()(*BaseEndUserNotification) {
     return m
 }
 // CreateBaseEndUserNotificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBaseEndUserNotificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -45,6 +45,7 @@ func CreateBaseEndUserNotificationFromDiscriminatorValue(parseNode i878a80d2330e
     return NewBaseEndUserNotification(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *BaseEndUserNotification) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -57,10 +58,12 @@ func (m *BaseEndUserNotification) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *BaseEndUserNotification) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDefaultLanguage gets the defaultLanguage property value. The default language for the end user notification.
+// returns a *string when successful
 func (m *BaseEndUserNotification) GetDefaultLanguage()(*string) {
     val, err := m.GetBackingStore().Get("defaultLanguage")
     if err != nil {
@@ -72,6 +75,7 @@ func (m *BaseEndUserNotification) GetDefaultLanguage()(*string) {
     return nil
 }
 // GetEndUserNotification gets the endUserNotification property value. The endUserNotification property
+// returns a EndUserNotificationable when successful
 func (m *BaseEndUserNotification) GetEndUserNotification()(EndUserNotificationable) {
     val, err := m.GetBackingStore().Get("endUserNotification")
     if err != nil {
@@ -83,6 +87,7 @@ func (m *BaseEndUserNotification) GetEndUserNotification()(EndUserNotificationab
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BaseEndUserNotification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["defaultLanguage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -118,6 +123,7 @@ func (m *BaseEndUserNotification) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *BaseEndUserNotification) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -188,7 +194,6 @@ func (m *BaseEndUserNotification) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// BaseEndUserNotificationable 
 type BaseEndUserNotificationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

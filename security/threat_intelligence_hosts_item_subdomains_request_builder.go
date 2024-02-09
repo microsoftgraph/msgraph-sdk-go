@@ -40,6 +40,7 @@ type ThreatIntelligenceHostsItemSubdomainsRequestBuilderGetRequestConfiguration 
     QueryParameters *ThreatIntelligenceHostsItemSubdomainsRequestBuilderGetQueryParameters
 }
 // BySubdomainId provides operations to manage the subdomains property of the microsoft.graph.security.host entity.
+// returns a *ThreatIntelligenceHostsItemSubdomainsSubdomainItemRequestBuilder when successful
 func (m *ThreatIntelligenceHostsItemSubdomainsRequestBuilder) BySubdomainId(subdomainId string)(*ThreatIntelligenceHostsItemSubdomainsSubdomainItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,24 +51,27 @@ func (m *ThreatIntelligenceHostsItemSubdomainsRequestBuilder) BySubdomainId(subd
     }
     return NewThreatIntelligenceHostsItemSubdomainsSubdomainItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewThreatIntelligenceHostsItemSubdomainsRequestBuilderInternal instantiates a new SubdomainsRequestBuilder and sets the default values.
+// NewThreatIntelligenceHostsItemSubdomainsRequestBuilderInternal instantiates a new ThreatIntelligenceHostsItemSubdomainsRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostsItemSubdomainsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostsItemSubdomainsRequestBuilder) {
     m := &ThreatIntelligenceHostsItemSubdomainsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/subdomains{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/subdomains{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewThreatIntelligenceHostsItemSubdomainsRequestBuilder instantiates a new SubdomainsRequestBuilder and sets the default values.
+// NewThreatIntelligenceHostsItemSubdomainsRequestBuilder instantiates a new ThreatIntelligenceHostsItemSubdomainsRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostsItemSubdomainsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostsItemSubdomainsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewThreatIntelligenceHostsItemSubdomainsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ThreatIntelligenceHostsItemSubdomainsCountRequestBuilder when successful
 func (m *ThreatIntelligenceHostsItemSubdomainsRequestBuilder) Count()(*ThreatIntelligenceHostsItemSubdomainsCountRequestBuilder) {
     return NewThreatIntelligenceHostsItemSubdomainsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the list of subdomain resources associated with a host.
+// returns a SubdomainCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-host-list-subdomains?view=graph-rest-1.0
@@ -77,8 +81,7 @@ func (m *ThreatIntelligenceHostsItemSubdomainsRequestBuilder) Get(ctx context.Co
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.CreateSubdomainCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,6 +93,7 @@ func (m *ThreatIntelligenceHostsItemSubdomainsRequestBuilder) Get(ctx context.Co
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.SubdomainCollectionResponseable), nil
 }
 // ToGetRequestInformation get the list of subdomain resources associated with a host.
+// returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostsItemSubdomainsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemSubdomainsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -103,6 +107,7 @@ func (m *ThreatIntelligenceHostsItemSubdomainsRequestBuilder) ToGetRequestInform
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ThreatIntelligenceHostsItemSubdomainsRequestBuilder when successful
 func (m *ThreatIntelligenceHostsItemSubdomainsRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceHostsItemSubdomainsRequestBuilder) {
     return NewThreatIntelligenceHostsItemSubdomainsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

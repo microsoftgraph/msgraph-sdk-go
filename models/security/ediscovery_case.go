@@ -6,11 +6,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// EdiscoveryCase 
 type EdiscoveryCase struct {
     CaseEscaped
 }
-// NewEdiscoveryCase instantiates a new ediscoveryCase and sets the default values.
+// NewEdiscoveryCase instantiates a new EdiscoveryCase and sets the default values.
 func NewEdiscoveryCase()(*EdiscoveryCase) {
     m := &EdiscoveryCase{
         CaseEscaped: *NewCaseEscaped(),
@@ -20,10 +19,12 @@ func NewEdiscoveryCase()(*EdiscoveryCase) {
     return m
 }
 // CreateEdiscoveryCaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEdiscoveryCaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryCase(), nil
 }
 // GetClosedBy gets the closedBy property value. The user who closed the case.
+// returns a IdentitySetable when successful
 func (m *EdiscoveryCase) GetClosedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable) {
     val, err := m.GetBackingStore().Get("closedBy")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *EdiscoveryCase) GetClosedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0
     return nil
 }
 // GetClosedDateTime gets the closedDateTime property value. The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *EdiscoveryCase) GetClosedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("closedDateTime")
     if err != nil {
@@ -46,6 +48,7 @@ func (m *EdiscoveryCase) GetClosedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetCustodians gets the custodians property value. Returns a list of case ediscoveryCustodian objects for this case.
+// returns a []EdiscoveryCustodianable when successful
 func (m *EdiscoveryCase) GetCustodians()([]EdiscoveryCustodianable) {
     val, err := m.GetBackingStore().Get("custodians")
     if err != nil {
@@ -57,6 +60,7 @@ func (m *EdiscoveryCase) GetCustodians()([]EdiscoveryCustodianable) {
     return nil
 }
 // GetExternalId gets the externalId property value. The external case number for customer reference.
+// returns a *string when successful
 func (m *EdiscoveryCase) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -68,6 +72,7 @@ func (m *EdiscoveryCase) GetExternalId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EdiscoveryCase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CaseEscaped.GetFieldDeserializers()
     res["closedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -209,6 +214,7 @@ func (m *EdiscoveryCase) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetNoncustodialDataSources gets the noncustodialDataSources property value. Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
+// returns a []EdiscoveryNoncustodialDataSourceable when successful
 func (m *EdiscoveryCase) GetNoncustodialDataSources()([]EdiscoveryNoncustodialDataSourceable) {
     val, err := m.GetBackingStore().Get("noncustodialDataSources")
     if err != nil {
@@ -220,6 +226,7 @@ func (m *EdiscoveryCase) GetNoncustodialDataSources()([]EdiscoveryNoncustodialDa
     return nil
 }
 // GetOperations gets the operations property value. Returns a list of case caseOperation objects for this case.
+// returns a []CaseOperationable when successful
 func (m *EdiscoveryCase) GetOperations()([]CaseOperationable) {
     val, err := m.GetBackingStore().Get("operations")
     if err != nil {
@@ -231,6 +238,7 @@ func (m *EdiscoveryCase) GetOperations()([]CaseOperationable) {
     return nil
 }
 // GetReviewSets gets the reviewSets property value. Returns a list of eDiscoveryReviewSet objects in the case.
+// returns a []EdiscoveryReviewSetable when successful
 func (m *EdiscoveryCase) GetReviewSets()([]EdiscoveryReviewSetable) {
     val, err := m.GetBackingStore().Get("reviewSets")
     if err != nil {
@@ -242,6 +250,7 @@ func (m *EdiscoveryCase) GetReviewSets()([]EdiscoveryReviewSetable) {
     return nil
 }
 // GetSearches gets the searches property value. Returns a list of eDiscoverySearch objects associated with this case.
+// returns a []EdiscoverySearchable when successful
 func (m *EdiscoveryCase) GetSearches()([]EdiscoverySearchable) {
     val, err := m.GetBackingStore().Get("searches")
     if err != nil {
@@ -253,6 +262,7 @@ func (m *EdiscoveryCase) GetSearches()([]EdiscoverySearchable) {
     return nil
 }
 // GetSettings gets the settings property value. Returns a list of eDIscoverySettings objects in the case.
+// returns a EdiscoveryCaseSettingsable when successful
 func (m *EdiscoveryCase) GetSettings()(EdiscoveryCaseSettingsable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -264,6 +274,7 @@ func (m *EdiscoveryCase) GetSettings()(EdiscoveryCaseSettingsable) {
     return nil
 }
 // GetTags gets the tags property value. Returns a list of ediscoveryReviewTag objects associated to this case.
+// returns a []EdiscoveryReviewTagable when successful
 func (m *EdiscoveryCase) GetTags()([]EdiscoveryReviewTagable) {
     val, err := m.GetBackingStore().Get("tags")
     if err != nil {
@@ -448,7 +459,6 @@ func (m *EdiscoveryCase) SetTags(value []EdiscoveryReviewTagable)() {
         panic(err)
     }
 }
-// EdiscoveryCaseable 
 type EdiscoveryCaseable interface {
     CaseEscapedable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

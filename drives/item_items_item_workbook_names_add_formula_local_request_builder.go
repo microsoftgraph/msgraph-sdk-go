@@ -18,20 +18,22 @@ type ItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilderPostRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilderInternal instantiates a new AddFormulaLocalRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilderInternal instantiates a new ItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilder) {
     m := &ItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/names/addFormulaLocal", pathParameters),
     }
     return m
 }
-// NewItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilder instantiates a new AddFormulaLocalRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilder instantiates a new ItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post adds a new name to the collection of the given scope using the user's locale for the formula.
+// returns a WorkbookNamedItemable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/nameditem-addformulalocal?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *ItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilder) Post(ctx conte
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateWorkbookNamedItemFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,7 @@ func (m *ItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilder) Post(ctx conte
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookNamedItemable), nil
 }
 // ToPostRequestInformation adds a new name to the collection of the given scope using the user's locale for the formula.
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemWorkbookNamesAddFormulaLocalPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -68,6 +70,7 @@ func (m *ItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilder) ToPostRequestI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilder when successful
 func (m *ItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilder) {
     return NewItemItemsItemWorkbookNamesAddFormulaLocalRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

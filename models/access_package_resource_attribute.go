@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AccessPackageResourceAttribute 
 type AccessPackageResourceAttribute struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAccessPackageResourceAttribute instantiates a new accessPackageResourceAttribute and sets the default values.
+// NewAccessPackageResourceAttribute instantiates a new AccessPackageResourceAttribute and sets the default values.
 func NewAccessPackageResourceAttribute()(*AccessPackageResourceAttribute) {
     m := &AccessPackageResourceAttribute{
     }
@@ -19,10 +18,12 @@ func NewAccessPackageResourceAttribute()(*AccessPackageResourceAttribute) {
     return m
 }
 // CreateAccessPackageResourceAttributeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessPackageResourceAttributeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageResourceAttribute(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AccessPackageResourceAttribute) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *AccessPackageResourceAttribute) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AccessPackageResourceAttribute) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDestination gets the destination property value. Information about how to set the attribute, currently a accessPackageUserDirectoryAttributeStore type.
+// returns a AccessPackageResourceAttributeDestinationable when successful
 func (m *AccessPackageResourceAttribute) GetDestination()(AccessPackageResourceAttributeDestinationable) {
     val, err := m.GetBackingStore().Get("destination")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *AccessPackageResourceAttribute) GetDestination()(AccessPackageResourceA
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessPackageResourceAttribute) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["destination"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,6 +99,7 @@ func (m *AccessPackageResourceAttribute) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetName gets the name property value. The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension2b676109c7c74ae2b41549205f1947edpersonalTitle.
+// returns a *string when successful
 func (m *AccessPackageResourceAttribute) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *AccessPackageResourceAttribute) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AccessPackageResourceAttribute) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *AccessPackageResourceAttribute) GetOdataType()(*string) {
     return nil
 }
 // GetSource gets the source property value. Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled, currently a accessPackageResourceAttributeQuestion type.
+// returns a AccessPackageResourceAttributeSourceable when successful
 func (m *AccessPackageResourceAttribute) GetSource()(AccessPackageResourceAttributeSourceable) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
@@ -200,7 +207,6 @@ func (m *AccessPackageResourceAttribute) SetSource(value AccessPackageResourceAt
         panic(err)
     }
 }
-// AccessPackageResourceAttributeable 
 type AccessPackageResourceAttributeable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PasswordAuthenticationMethod 
 type PasswordAuthenticationMethod struct {
     AuthenticationMethod
 }
-// NewPasswordAuthenticationMethod instantiates a new passwordAuthenticationMethod and sets the default values.
+// NewPasswordAuthenticationMethod instantiates a new PasswordAuthenticationMethod and sets the default values.
 func NewPasswordAuthenticationMethod()(*PasswordAuthenticationMethod) {
     m := &PasswordAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),
@@ -19,10 +18,12 @@ func NewPasswordAuthenticationMethod()(*PasswordAuthenticationMethod) {
     return m
 }
 // CreatePasswordAuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePasswordAuthenticationMethodFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPasswordAuthenticationMethod(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when this password was last updated. This property is currently not populated. Read-only. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *PasswordAuthenticationMethod) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *PasswordAuthenticationMethod) GetCreatedDateTime()(*i336074805fc853987a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PasswordAuthenticationMethod) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethod.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -59,6 +61,7 @@ func (m *PasswordAuthenticationMethod) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetPassword gets the password property value. For security, the password is always returned as null from a LIST or GET operation.
+// returns a *string when successful
 func (m *PasswordAuthenticationMethod) GetPassword()(*string) {
     val, err := m.GetBackingStore().Get("password")
     if err != nil {
@@ -103,7 +106,6 @@ func (m *PasswordAuthenticationMethod) SetPassword(value *string)() {
         panic(err)
     }
 }
-// PasswordAuthenticationMethodable 
 type PasswordAuthenticationMethodable interface {
     AuthenticationMethodable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// DirectRoutingLogRow 
 type DirectRoutingLogRow struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDirectRoutingLogRow instantiates a new directRoutingLogRow and sets the default values.
+// NewDirectRoutingLogRow instantiates a new DirectRoutingLogRow and sets the default values.
 func NewDirectRoutingLogRow()(*DirectRoutingLogRow) {
     m := &DirectRoutingLogRow{
     }
@@ -20,10 +19,12 @@ func NewDirectRoutingLogRow()(*DirectRoutingLogRow) {
     return m
 }
 // CreateDirectRoutingLogRowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDirectRoutingLogRowFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDirectRoutingLogRow(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DirectRoutingLogRow) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *DirectRoutingLogRow) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *DirectRoutingLogRow) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCalleeNumber gets the calleeNumber property value. Number of the user or bot who received the call. E.164 format, but might include other data.
+// returns a *string when successful
 func (m *DirectRoutingLogRow) GetCalleeNumber()(*string) {
     val, err := m.GetBackingStore().Get("calleeNumber")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *DirectRoutingLogRow) GetCalleeNumber()(*string) {
     return nil
 }
 // GetCallEndSubReason gets the callEndSubReason property value. In addition to the SIP codes, Microsoft has subcodes that indicate the specific issue.
+// returns a *int32 when successful
 func (m *DirectRoutingLogRow) GetCallEndSubReason()(*int32) {
     val, err := m.GetBackingStore().Get("callEndSubReason")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *DirectRoutingLogRow) GetCallEndSubReason()(*int32) {
     return nil
 }
 // GetCallerNumber gets the callerNumber property value. Number of the user or bot who made the call. E.164 format, but might include other data.
+// returns a *string when successful
 func (m *DirectRoutingLogRow) GetCallerNumber()(*string) {
     val, err := m.GetBackingStore().Get("callerNumber")
     if err != nil {
@@ -73,6 +78,7 @@ func (m *DirectRoutingLogRow) GetCallerNumber()(*string) {
     return nil
 }
 // GetCallType gets the callType property value. Call type and direction.
+// returns a *string when successful
 func (m *DirectRoutingLogRow) GetCallType()(*string) {
     val, err := m.GetBackingStore().Get("callType")
     if err != nil {
@@ -84,6 +90,7 @@ func (m *DirectRoutingLogRow) GetCallType()(*string) {
     return nil
 }
 // GetCorrelationId gets the correlationId property value. Identifier for the call that you can use when calling Microsoft Support. GUID.
+// returns a *string when successful
 func (m *DirectRoutingLogRow) GetCorrelationId()(*string) {
     val, err := m.GetBackingStore().Get("correlationId")
     if err != nil {
@@ -95,6 +102,7 @@ func (m *DirectRoutingLogRow) GetCorrelationId()(*string) {
     return nil
 }
 // GetDuration gets the duration property value. Duration of the call in seconds.
+// returns a *int32 when successful
 func (m *DirectRoutingLogRow) GetDuration()(*int32) {
     val, err := m.GetBackingStore().Get("duration")
     if err != nil {
@@ -106,6 +114,7 @@ func (m *DirectRoutingLogRow) GetDuration()(*int32) {
     return nil
 }
 // GetEndDateTime gets the endDateTime property value. Only exists for successful (fully established) calls. Time when call ended.
+// returns a *Time when successful
 func (m *DirectRoutingLogRow) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -117,6 +126,7 @@ func (m *DirectRoutingLogRow) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetFailureDateTime gets the failureDateTime property value. Only exists for failed (not fully established) calls.
+// returns a *Time when successful
 func (m *DirectRoutingLogRow) GetFailureDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("failureDateTime")
     if err != nil {
@@ -128,6 +138,7 @@ func (m *DirectRoutingLogRow) GetFailureDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DirectRoutingLogRow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["calleeNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -353,6 +364,7 @@ func (m *DirectRoutingLogRow) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetFinalSipCode gets the finalSipCode property value. The code with which the call ended. For more information, see RFC 3261.
+// returns a *int32 when successful
 func (m *DirectRoutingLogRow) GetFinalSipCode()(*int32) {
     val, err := m.GetBackingStore().Get("finalSipCode")
     if err != nil {
@@ -364,6 +376,7 @@ func (m *DirectRoutingLogRow) GetFinalSipCode()(*int32) {
     return nil
 }
 // GetFinalSipCodePhrase gets the finalSipCodePhrase property value. Description of the SIP code and Microsoft subcode.
+// returns a *string when successful
 func (m *DirectRoutingLogRow) GetFinalSipCodePhrase()(*string) {
     val, err := m.GetBackingStore().Get("finalSipCodePhrase")
     if err != nil {
@@ -375,6 +388,7 @@ func (m *DirectRoutingLogRow) GetFinalSipCodePhrase()(*string) {
     return nil
 }
 // GetId gets the id property value. Unique call identifier. GUID.
+// returns a *string when successful
 func (m *DirectRoutingLogRow) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -386,6 +400,7 @@ func (m *DirectRoutingLogRow) GetId()(*string) {
     return nil
 }
 // GetInviteDateTime gets the inviteDateTime property value. When the initial invite was sent.
+// returns a *Time when successful
 func (m *DirectRoutingLogRow) GetInviteDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("inviteDateTime")
     if err != nil {
@@ -397,6 +412,7 @@ func (m *DirectRoutingLogRow) GetInviteDateTime()(*i336074805fc853987abe6f7fe3ad
     return nil
 }
 // GetMediaBypassEnabled gets the mediaBypassEnabled property value. Indicates whether the trunk was enabled for media bypass.
+// returns a *bool when successful
 func (m *DirectRoutingLogRow) GetMediaBypassEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("mediaBypassEnabled")
     if err != nil {
@@ -408,6 +424,7 @@ func (m *DirectRoutingLogRow) GetMediaBypassEnabled()(*bool) {
     return nil
 }
 // GetMediaPathLocation gets the mediaPathLocation property value. The datacenter used for media path in a nonbypass call.
+// returns a *string when successful
 func (m *DirectRoutingLogRow) GetMediaPathLocation()(*string) {
     val, err := m.GetBackingStore().Get("mediaPathLocation")
     if err != nil {
@@ -419,6 +436,7 @@ func (m *DirectRoutingLogRow) GetMediaPathLocation()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *DirectRoutingLogRow) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -430,6 +448,7 @@ func (m *DirectRoutingLogRow) GetOdataType()(*string) {
     return nil
 }
 // GetSignalingLocation gets the signalingLocation property value. The datacenter used for signaling for both bypass and nonbypass calls.
+// returns a *string when successful
 func (m *DirectRoutingLogRow) GetSignalingLocation()(*string) {
     val, err := m.GetBackingStore().Get("signalingLocation")
     if err != nil {
@@ -441,6 +460,7 @@ func (m *DirectRoutingLogRow) GetSignalingLocation()(*string) {
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. Call start time.For failed and unanswered calls, this can be equal to the invite or failure time.
+// returns a *Time when successful
 func (m *DirectRoutingLogRow) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -452,6 +472,7 @@ func (m *DirectRoutingLogRow) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad9
     return nil
 }
 // GetSuccessfulCall gets the successfulCall property value. Success or attempt.
+// returns a *bool when successful
 func (m *DirectRoutingLogRow) GetSuccessfulCall()(*bool) {
     val, err := m.GetBackingStore().Get("successfulCall")
     if err != nil {
@@ -463,6 +484,7 @@ func (m *DirectRoutingLogRow) GetSuccessfulCall()(*bool) {
     return nil
 }
 // GetTrunkFullyQualifiedDomainName gets the trunkFullyQualifiedDomainName property value. Fully qualified domain name of the session border controller.
+// returns a *string when successful
 func (m *DirectRoutingLogRow) GetTrunkFullyQualifiedDomainName()(*string) {
     val, err := m.GetBackingStore().Get("trunkFullyQualifiedDomainName")
     if err != nil {
@@ -474,6 +496,7 @@ func (m *DirectRoutingLogRow) GetTrunkFullyQualifiedDomainName()(*string) {
     return nil
 }
 // GetUserDisplayName gets the userDisplayName property value. Display name of the user.
+// returns a *string when successful
 func (m *DirectRoutingLogRow) GetUserDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("userDisplayName")
     if err != nil {
@@ -485,6 +508,7 @@ func (m *DirectRoutingLogRow) GetUserDisplayName()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. Calling user's ID in Microsoft Graph. This and other user information is null/empty for bot call types. GUID.
+// returns a *string when successful
 func (m *DirectRoutingLogRow) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -496,6 +520,7 @@ func (m *DirectRoutingLogRow) GetUserId()(*string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP Address, and can be the same as the user's email address.
+// returns a *string when successful
 func (m *DirectRoutingLogRow) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -813,7 +838,6 @@ func (m *DirectRoutingLogRow) SetUserPrincipalName(value *string)() {
         panic(err)
     }
 }
-// DirectRoutingLogRowable 
 type DirectRoutingLogRowable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

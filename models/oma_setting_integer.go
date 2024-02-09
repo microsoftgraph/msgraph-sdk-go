@@ -8,7 +8,7 @@ import (
 type OmaSettingInteger struct {
     OmaSetting
 }
-// NewOmaSettingInteger instantiates a new omaSettingInteger and sets the default values.
+// NewOmaSettingInteger instantiates a new OmaSettingInteger and sets the default values.
 func NewOmaSettingInteger()(*OmaSettingInteger) {
     m := &OmaSettingInteger{
         OmaSetting: *NewOmaSetting(),
@@ -18,10 +18,12 @@ func NewOmaSettingInteger()(*OmaSettingInteger) {
     return m
 }
 // CreateOmaSettingIntegerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOmaSettingIntegerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOmaSettingInteger(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OmaSettingInteger) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OmaSetting.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *OmaSettingInteger) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetValue gets the value property value. Value.
+// returns a *int32 when successful
 func (m *OmaSettingInteger) GetValue()(*int32) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *OmaSettingInteger) SetValue(value *int32)() {
         panic(err)
     }
 }
-// OmaSettingIntegerable 
 type OmaSettingIntegerable interface {
     OmaSettingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

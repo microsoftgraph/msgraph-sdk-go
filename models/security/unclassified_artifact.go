@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnclassifiedArtifact 
 type UnclassifiedArtifact struct {
     Artifact
 }
-// NewUnclassifiedArtifact instantiates a new unclassifiedArtifact and sets the default values.
+// NewUnclassifiedArtifact instantiates a new UnclassifiedArtifact and sets the default values.
 func NewUnclassifiedArtifact()(*UnclassifiedArtifact) {
     m := &UnclassifiedArtifact{
         Artifact: *NewArtifact(),
@@ -18,10 +17,12 @@ func NewUnclassifiedArtifact()(*UnclassifiedArtifact) {
     return m
 }
 // CreateUnclassifiedArtifactFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnclassifiedArtifactFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnclassifiedArtifact(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnclassifiedArtifact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Artifact.GetFieldDeserializers()
     res["kind"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +48,7 @@ func (m *UnclassifiedArtifact) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetKind gets the kind property value. The kind for this unclassifiedArtifact resource, describing what this value means.
+// returns a *string when successful
 func (m *UnclassifiedArtifact) GetKind()(*string) {
     val, err := m.GetBackingStore().Get("kind")
     if err != nil {
@@ -58,6 +60,7 @@ func (m *UnclassifiedArtifact) GetKind()(*string) {
     return nil
 }
 // GetValue gets the value property value. The value for this unclassifiedArtifact.
+// returns a *string when successful
 func (m *UnclassifiedArtifact) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *UnclassifiedArtifact) SetValue(value *string)() {
         panic(err)
     }
 }
-// UnclassifiedArtifactable 
 type UnclassifiedArtifactable interface {
     Artifactable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

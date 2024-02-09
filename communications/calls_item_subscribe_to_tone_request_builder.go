@@ -18,20 +18,22 @@ type CallsItemSubscribeToToneRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewCallsItemSubscribeToToneRequestBuilderInternal instantiates a new SubscribeToToneRequestBuilder and sets the default values.
+// NewCallsItemSubscribeToToneRequestBuilderInternal instantiates a new CallsItemSubscribeToToneRequestBuilder and sets the default values.
 func NewCallsItemSubscribeToToneRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemSubscribeToToneRequestBuilder) {
     m := &CallsItemSubscribeToToneRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/calls/{call%2Did}/subscribeToTone", pathParameters),
     }
     return m
 }
-// NewCallsItemSubscribeToToneRequestBuilder instantiates a new SubscribeToToneRequestBuilder and sets the default values.
+// NewCallsItemSubscribeToToneRequestBuilder instantiates a new CallsItemSubscribeToToneRequestBuilder and sets the default values.
 func NewCallsItemSubscribeToToneRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemSubscribeToToneRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCallsItemSubscribeToToneRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post subscribe to DTMF (dual-tone multi-frequency signaling) which allows you to be notified when the user presses keys on a 'dialpad'.
+// returns a SubscribeToToneOperationable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/call-subscribetotone?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *CallsItemSubscribeToToneRequestBuilder) Post(ctx context.Context, body 
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateSubscribeToToneOperationFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,7 @@ func (m *CallsItemSubscribeToToneRequestBuilder) Post(ctx context.Context, body 
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubscribeToToneOperationable), nil
 }
 // ToPostRequestInformation subscribe to DTMF (dual-tone multi-frequency signaling) which allows you to be notified when the user presses keys on a 'dialpad'.
+// returns a *RequestInformation when successful
 func (m *CallsItemSubscribeToToneRequestBuilder) ToPostRequestInformation(ctx context.Context, body CallsItemSubscribeToTonePostRequestBodyable, requestConfiguration *CallsItemSubscribeToToneRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -68,6 +70,7 @@ func (m *CallsItemSubscribeToToneRequestBuilder) ToPostRequestInformation(ctx co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CallsItemSubscribeToToneRequestBuilder when successful
 func (m *CallsItemSubscribeToToneRequestBuilder) WithUrl(rawUrl string)(*CallsItemSubscribeToToneRequestBuilder) {
     return NewCallsItemSubscribeToToneRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

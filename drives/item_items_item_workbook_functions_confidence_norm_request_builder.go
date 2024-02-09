@@ -18,28 +18,29 @@ type ItemItemsItemWorkbookFunctionsConfidence_NormRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemItemsItemWorkbookFunctionsConfidence_NormRequestBuilderInternal instantiates a new Confidence_NormRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookFunctionsConfidence_NormRequestBuilderInternal instantiates a new ItemItemsItemWorkbookFunctionsConfidence_NormRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookFunctionsConfidence_NormRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookFunctionsConfidence_NormRequestBuilder) {
     m := &ItemItemsItemWorkbookFunctionsConfidence_NormRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions/confidence_Norm", pathParameters),
     }
     return m
 }
-// NewItemItemsItemWorkbookFunctionsConfidence_NormRequestBuilder instantiates a new Confidence_NormRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookFunctionsConfidence_NormRequestBuilder instantiates a new ItemItemsItemWorkbookFunctionsConfidence_NormRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookFunctionsConfidence_NormRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookFunctionsConfidence_NormRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookFunctionsConfidence_NormRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action confidence_Norm
+// returns a WorkbookFunctionResultable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookFunctionsConfidence_NormRequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookFunctionsConfidence_NormPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookFunctionsConfidence_NormRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookFunctionResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateWorkbookFunctionResultFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,6 +52,7 @@ func (m *ItemItemsItemWorkbookFunctionsConfidence_NormRequestBuilder) Post(ctx c
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookFunctionResultable), nil
 }
 // ToPostRequestInformation invoke action confidence_Norm
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookFunctionsConfidence_NormRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemWorkbookFunctionsConfidence_NormPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookFunctionsConfidence_NormRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -65,6 +67,7 @@ func (m *ItemItemsItemWorkbookFunctionsConfidence_NormRequestBuilder) ToPostRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemsItemWorkbookFunctionsConfidence_NormRequestBuilder when successful
 func (m *ItemItemsItemWorkbookFunctionsConfidence_NormRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookFunctionsConfidence_NormRequestBuilder) {
     return NewItemItemsItemWorkbookFunctionsConfidence_NormRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

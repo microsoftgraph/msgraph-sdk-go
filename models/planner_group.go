@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerGroup 
 type PlannerGroup struct {
     Entity
 }
-// NewPlannerGroup instantiates a new plannerGroup and sets the default values.
+// NewPlannerGroup instantiates a new PlannerGroup and sets the default values.
 func NewPlannerGroup()(*PlannerGroup) {
     m := &PlannerGroup{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewPlannerGroup()(*PlannerGroup) {
     return m
 }
 // CreatePlannerGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlannerGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerGroup(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlannerGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["plans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *PlannerGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetPlans gets the plans property value. Read-only. Nullable. Returns the plannerPlans owned by the group.
+// returns a []PlannerPlanable when successful
 func (m *PlannerGroup) GetPlans()([]PlannerPlanable) {
     val, err := m.GetBackingStore().Get("plans")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *PlannerGroup) SetPlans(value []PlannerPlanable)() {
         panic(err)
     }
 }
-// PlannerGroupable 
 type PlannerGroupable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

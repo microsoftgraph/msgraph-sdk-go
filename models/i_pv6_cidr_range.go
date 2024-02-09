@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IPv6CidrRange 
 type IPv6CidrRange struct {
     IpRange
 }
-// NewIPv6CidrRange instantiates a new iPv6CidrRange and sets the default values.
+// NewIPv6CidrRange instantiates a new IPv6CidrRange and sets the default values.
 func NewIPv6CidrRange()(*IPv6CidrRange) {
     m := &IPv6CidrRange{
         IpRange: *NewIpRange(),
@@ -18,10 +17,12 @@ func NewIPv6CidrRange()(*IPv6CidrRange) {
     return m
 }
 // CreateIPv6CidrRangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIPv6CidrRangeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIPv6CidrRange(), nil
 }
 // GetCidrAddress gets the cidrAddress property value. IPv6 address in CIDR notation. Not nullable.
+// returns a *string when successful
 func (m *IPv6CidrRange) GetCidrAddress()(*string) {
     val, err := m.GetBackingStore().Get("cidrAddress")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *IPv6CidrRange) GetCidrAddress()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IPv6CidrRange) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IpRange.GetFieldDeserializers()
     res["cidrAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +70,6 @@ func (m *IPv6CidrRange) SetCidrAddress(value *string)() {
         panic(err)
     }
 }
-// IPv6CidrRangeable 
 type IPv6CidrRangeable interface {
     IpRangeable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeleconferenceDeviceVideoQuality 
 type TeleconferenceDeviceVideoQuality struct {
     TeleconferenceDeviceMediaQuality
 }
-// NewTeleconferenceDeviceVideoQuality instantiates a new teleconferenceDeviceVideoQuality and sets the default values.
+// NewTeleconferenceDeviceVideoQuality instantiates a new TeleconferenceDeviceVideoQuality and sets the default values.
 func NewTeleconferenceDeviceVideoQuality()(*TeleconferenceDeviceVideoQuality) {
     m := &TeleconferenceDeviceVideoQuality{
         TeleconferenceDeviceMediaQuality: *NewTeleconferenceDeviceMediaQuality(),
@@ -18,6 +17,7 @@ func NewTeleconferenceDeviceVideoQuality()(*TeleconferenceDeviceVideoQuality) {
     return m
 }
 // CreateTeleconferenceDeviceVideoQualityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeleconferenceDeviceVideoQualityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +40,7 @@ func CreateTeleconferenceDeviceVideoQualityFromDiscriminatorValue(parseNode i878
     return NewTeleconferenceDeviceVideoQuality(), nil
 }
 // GetAverageInboundBitRate gets the averageInboundBitRate property value. The average inbound stream video bit rate per second.
+// returns a *float64 when successful
 func (m *TeleconferenceDeviceVideoQuality) GetAverageInboundBitRate()(*float64) {
     val, err := m.GetBackingStore().Get("averageInboundBitRate")
     if err != nil {
@@ -51,6 +52,7 @@ func (m *TeleconferenceDeviceVideoQuality) GetAverageInboundBitRate()(*float64) 
     return nil
 }
 // GetAverageInboundFrameRate gets the averageInboundFrameRate property value. The average inbound stream video frame rate per second.
+// returns a *float64 when successful
 func (m *TeleconferenceDeviceVideoQuality) GetAverageInboundFrameRate()(*float64) {
     val, err := m.GetBackingStore().Get("averageInboundFrameRate")
     if err != nil {
@@ -62,6 +64,7 @@ func (m *TeleconferenceDeviceVideoQuality) GetAverageInboundFrameRate()(*float64
     return nil
 }
 // GetAverageOutboundBitRate gets the averageOutboundBitRate property value. The average outbound stream video bit rate per second.
+// returns a *float64 when successful
 func (m *TeleconferenceDeviceVideoQuality) GetAverageOutboundBitRate()(*float64) {
     val, err := m.GetBackingStore().Get("averageOutboundBitRate")
     if err != nil {
@@ -73,6 +76,7 @@ func (m *TeleconferenceDeviceVideoQuality) GetAverageOutboundBitRate()(*float64)
     return nil
 }
 // GetAverageOutboundFrameRate gets the averageOutboundFrameRate property value. The average outbound stream video frame rate per second.
+// returns a *float64 when successful
 func (m *TeleconferenceDeviceVideoQuality) GetAverageOutboundFrameRate()(*float64) {
     val, err := m.GetBackingStore().Get("averageOutboundFrameRate")
     if err != nil {
@@ -84,6 +88,7 @@ func (m *TeleconferenceDeviceVideoQuality) GetAverageOutboundFrameRate()(*float6
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeleconferenceDeviceVideoQuality) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.TeleconferenceDeviceMediaQuality.GetFieldDeserializers()
     res["averageInboundBitRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -188,7 +193,6 @@ func (m *TeleconferenceDeviceVideoQuality) SetAverageOutboundFrameRate(value *fl
         panic(err)
     }
 }
-// TeleconferenceDeviceVideoQualityable 
 type TeleconferenceDeviceVideoQualityable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     TeleconferenceDeviceMediaQualityable

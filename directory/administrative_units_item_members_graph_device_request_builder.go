@@ -39,32 +39,34 @@ type AdministrativeUnitsItemMembersGraphDeviceRequestBuilderGetRequestConfigurat
     // Request query parameters
     QueryParameters *AdministrativeUnitsItemMembersGraphDeviceRequestBuilderGetQueryParameters
 }
-// NewAdministrativeUnitsItemMembersGraphDeviceRequestBuilderInternal instantiates a new GraphDeviceRequestBuilder and sets the default values.
+// NewAdministrativeUnitsItemMembersGraphDeviceRequestBuilderInternal instantiates a new AdministrativeUnitsItemMembersGraphDeviceRequestBuilder and sets the default values.
 func NewAdministrativeUnitsItemMembersGraphDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdministrativeUnitsItemMembersGraphDeviceRequestBuilder) {
     m := &AdministrativeUnitsItemMembersGraphDeviceRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/administrativeUnits/{administrativeUnit%2Did}/members/graph.device{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/administrativeUnits/{administrativeUnit%2Did}/members/graph.device{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewAdministrativeUnitsItemMembersGraphDeviceRequestBuilder instantiates a new GraphDeviceRequestBuilder and sets the default values.
+// NewAdministrativeUnitsItemMembersGraphDeviceRequestBuilder instantiates a new AdministrativeUnitsItemMembersGraphDeviceRequestBuilder and sets the default values.
 func NewAdministrativeUnitsItemMembersGraphDeviceRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdministrativeUnitsItemMembersGraphDeviceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAdministrativeUnitsItemMembersGraphDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *AdministrativeUnitsItemMembersGraphDeviceCountRequestBuilder when successful
 func (m *AdministrativeUnitsItemMembersGraphDeviceRequestBuilder) Count()(*AdministrativeUnitsItemMembersGraphDeviceCountRequestBuilder) {
     return NewAdministrativeUnitsItemMembersGraphDeviceCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
+// returns a DeviceCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AdministrativeUnitsItemMembersGraphDeviceRequestBuilder) Get(ctx context.Context, requestConfiguration *AdministrativeUnitsItemMembersGraphDeviceRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDeviceCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -76,6 +78,7 @@ func (m *AdministrativeUnitsItemMembersGraphDeviceRequestBuilder) Get(ctx contex
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceCollectionResponseable), nil
 }
 // ToGetRequestInformation get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
+// returns a *RequestInformation when successful
 func (m *AdministrativeUnitsItemMembersGraphDeviceRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AdministrativeUnitsItemMembersGraphDeviceRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -89,6 +92,7 @@ func (m *AdministrativeUnitsItemMembersGraphDeviceRequestBuilder) ToGetRequestIn
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *AdministrativeUnitsItemMembersGraphDeviceRequestBuilder when successful
 func (m *AdministrativeUnitsItemMembersGraphDeviceRequestBuilder) WithUrl(rawUrl string)(*AdministrativeUnitsItemMembersGraphDeviceRequestBuilder) {
     return NewAdministrativeUnitsItemMembersGraphDeviceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

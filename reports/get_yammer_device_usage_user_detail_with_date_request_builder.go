@@ -35,14 +35,15 @@ func NewGetYammerDeviceUsageUserDetailWithDateRequestBuilder(rawUrl string, requ
     return NewGetYammerDeviceUsageUserDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getYammerDeviceUsageUserDetail
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetYammerDeviceUsageUserDetailWithDateRequestBuilder) Get(ctx context.Context, requestConfiguration *GetYammerDeviceUsageUserDetailWithDateRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -54,6 +55,7 @@ func (m *GetYammerDeviceUsageUserDetailWithDateRequestBuilder) Get(ctx context.C
     return res.([]byte), nil
 }
 // ToGetRequestInformation invoke function getYammerDeviceUsageUserDetail
+// returns a *RequestInformation when successful
 func (m *GetYammerDeviceUsageUserDetailWithDateRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetYammerDeviceUsageUserDetailWithDateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +66,7 @@ func (m *GetYammerDeviceUsageUserDetailWithDateRequestBuilder) ToGetRequestInfor
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *GetYammerDeviceUsageUserDetailWithDateRequestBuilder when successful
 func (m *GetYammerDeviceUsageUserDetailWithDateRequestBuilder) WithUrl(rawUrl string)(*GetYammerDeviceUsageUserDetailWithDateRequestBuilder) {
     return NewGetYammerDeviceUsageUserDetailWithDateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

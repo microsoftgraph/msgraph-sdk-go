@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// UserSecurityState 
 type UserSecurityState struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewUserSecurityState instantiates a new userSecurityState and sets the default values.
+// NewUserSecurityState instantiates a new UserSecurityState and sets the default values.
 func NewUserSecurityState()(*UserSecurityState) {
     m := &UserSecurityState{
     }
@@ -20,10 +19,12 @@ func NewUserSecurityState()(*UserSecurityState) {
     return m
 }
 // CreateUserSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserSecurityStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserSecurityState(), nil
 }
 // GetAadUserId gets the aadUserId property value. AAD User object identifier (GUID) - represents the physical/multi-account user entity.
+// returns a *string when successful
 func (m *UserSecurityState) GetAadUserId()(*string) {
     val, err := m.GetBackingStore().Get("aadUserId")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *UserSecurityState) GetAadUserId()(*string) {
     return nil
 }
 // GetAccountName gets the accountName property value. Account name of user account (without Active Directory domain or DNS domain) - (also called mailNickName).
+// returns a *string when successful
 func (m *UserSecurityState) GetAccountName()(*string) {
     val, err := m.GetBackingStore().Get("accountName")
     if err != nil {
@@ -46,6 +48,7 @@ func (m *UserSecurityState) GetAccountName()(*string) {
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *UserSecurityState) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -58,10 +61,12 @@ func (m *UserSecurityState) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *UserSecurityState) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDomainName gets the domainName property value. NetBIOS/Active Directory domain of user account (that is, domain/account format).
+// returns a *string when successful
 func (m *UserSecurityState) GetDomainName()(*string) {
     val, err := m.GetBackingStore().Get("domainName")
     if err != nil {
@@ -73,6 +78,7 @@ func (m *UserSecurityState) GetDomainName()(*string) {
     return nil
 }
 // GetEmailRole gets the emailRole property value. For email-related alerts - user account's email 'role'. Possible values are: unknown, sender, recipient.
+// returns a *EmailRole when successful
 func (m *UserSecurityState) GetEmailRole()(*EmailRole) {
     val, err := m.GetBackingStore().Get("emailRole")
     if err != nil {
@@ -84,6 +90,7 @@ func (m *UserSecurityState) GetEmailRole()(*EmailRole) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["aadUserId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -239,6 +246,7 @@ func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetIsVpn gets the isVpn property value. Indicates whether the user logged on through a VPN.
+// returns a *bool when successful
 func (m *UserSecurityState) GetIsVpn()(*bool) {
     val, err := m.GetBackingStore().Get("isVpn")
     if err != nil {
@@ -250,6 +258,7 @@ func (m *UserSecurityState) GetIsVpn()(*bool) {
     return nil
 }
 // GetLogonDateTime gets the logonDateTime property value. Time at which the sign-in occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *UserSecurityState) GetLogonDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("logonDateTime")
     if err != nil {
@@ -261,6 +270,7 @@ func (m *UserSecurityState) GetLogonDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetLogonId gets the logonId property value. User sign-in ID.
+// returns a *string when successful
 func (m *UserSecurityState) GetLogonId()(*string) {
     val, err := m.GetBackingStore().Get("logonId")
     if err != nil {
@@ -272,6 +282,7 @@ func (m *UserSecurityState) GetLogonId()(*string) {
     return nil
 }
 // GetLogonIp gets the logonIp property value. IP Address the sign-in request originated from.
+// returns a *string when successful
 func (m *UserSecurityState) GetLogonIp()(*string) {
     val, err := m.GetBackingStore().Get("logonIp")
     if err != nil {
@@ -283,6 +294,7 @@ func (m *UserSecurityState) GetLogonIp()(*string) {
     return nil
 }
 // GetLogonLocation gets the logonLocation property value. Location (by IP address mapping) associated with a user sign-in event by this user.
+// returns a *string when successful
 func (m *UserSecurityState) GetLogonLocation()(*string) {
     val, err := m.GetBackingStore().Get("logonLocation")
     if err != nil {
@@ -294,6 +306,7 @@ func (m *UserSecurityState) GetLogonLocation()(*string) {
     return nil
 }
 // GetLogonType gets the logonType property value. Method of user sign in. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
+// returns a *LogonType when successful
 func (m *UserSecurityState) GetLogonType()(*LogonType) {
     val, err := m.GetBackingStore().Get("logonType")
     if err != nil {
@@ -305,6 +318,7 @@ func (m *UserSecurityState) GetLogonType()(*LogonType) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *UserSecurityState) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -316,6 +330,7 @@ func (m *UserSecurityState) GetOdataType()(*string) {
     return nil
 }
 // GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. Active Directory (on-premises) Security Identifier (SID) of the user.
+// returns a *string when successful
 func (m *UserSecurityState) GetOnPremisesSecurityIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesSecurityIdentifier")
     if err != nil {
@@ -327,6 +342,7 @@ func (m *UserSecurityState) GetOnPremisesSecurityIdentifier()(*string) {
     return nil
 }
 // GetRiskScore gets the riskScore property value. Provider-generated/calculated risk score of the user account. Recommended value range of 0-1, which equates to a percentage.
+// returns a *string when successful
 func (m *UserSecurityState) GetRiskScore()(*string) {
     val, err := m.GetBackingStore().Get("riskScore")
     if err != nil {
@@ -338,6 +354,7 @@ func (m *UserSecurityState) GetRiskScore()(*string) {
     return nil
 }
 // GetUserAccountType gets the userAccountType property value. User account type (group membership), per Windows definition. Possible values are: unknown, standard, power, administrator.
+// returns a *UserAccountSecurityType when successful
 func (m *UserSecurityState) GetUserAccountType()(*UserAccountSecurityType) {
     val, err := m.GetBackingStore().Get("userAccountType")
     if err != nil {
@@ -349,6 +366,7 @@ func (m *UserSecurityState) GetUserAccountType()(*UserAccountSecurityType) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User sign-in name - internet format: (user account name)@(user account DNS domain name).
+// returns a *string when successful
 func (m *UserSecurityState) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -578,7 +596,6 @@ func (m *UserSecurityState) SetUserPrincipalName(value *string)() {
         panic(err)
     }
 }
-// UserSecurityStateable 
 type UserSecurityStateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

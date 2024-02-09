@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PhoneAuthenticationMethod 
 type PhoneAuthenticationMethod struct {
     AuthenticationMethod
 }
-// NewPhoneAuthenticationMethod instantiates a new phoneAuthenticationMethod and sets the default values.
+// NewPhoneAuthenticationMethod instantiates a new PhoneAuthenticationMethod and sets the default values.
 func NewPhoneAuthenticationMethod()(*PhoneAuthenticationMethod) {
     m := &PhoneAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),
@@ -18,10 +17,12 @@ func NewPhoneAuthenticationMethod()(*PhoneAuthenticationMethod) {
     return m
 }
 // CreatePhoneAuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePhoneAuthenticationMethodFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPhoneAuthenticationMethod(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PhoneAuthenticationMethod) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethod.GetFieldDeserializers()
     res["phoneNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -57,6 +58,7 @@ func (m *PhoneAuthenticationMethod) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetPhoneNumber gets the phoneNumber property value. The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they don't match the required format.
+// returns a *string when successful
 func (m *PhoneAuthenticationMethod) GetPhoneNumber()(*string) {
     val, err := m.GetBackingStore().Get("phoneNumber")
     if err != nil {
@@ -68,6 +70,7 @@ func (m *PhoneAuthenticationMethod) GetPhoneNumber()(*string) {
     return nil
 }
 // GetPhoneType gets the phoneType property value. The type of this phone. Possible values are: mobile, alternateMobile, or office.
+// returns a *AuthenticationPhoneType when successful
 func (m *PhoneAuthenticationMethod) GetPhoneType()(*AuthenticationPhoneType) {
     val, err := m.GetBackingStore().Get("phoneType")
     if err != nil {
@@ -79,6 +82,7 @@ func (m *PhoneAuthenticationMethod) GetPhoneType()(*AuthenticationPhoneType) {
     return nil
 }
 // GetSmsSignInState gets the smsSignInState property value. Whether a phone is ready to be used for SMS sign-in or not. Possible values are: notSupported, notAllowedByPolicy, notEnabled, phoneNumberNotUnique, ready, or notConfigured, unknownFutureValue.
+// returns a *AuthenticationMethodSignInState when successful
 func (m *PhoneAuthenticationMethod) GetSmsSignInState()(*AuthenticationMethodSignInState) {
     val, err := m.GetBackingStore().Get("smsSignInState")
     if err != nil {
@@ -138,7 +142,6 @@ func (m *PhoneAuthenticationMethod) SetSmsSignInState(value *AuthenticationMetho
         panic(err)
     }
 }
-// PhoneAuthenticationMethodable 
 type PhoneAuthenticationMethodable interface {
     AuthenticationMethodable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

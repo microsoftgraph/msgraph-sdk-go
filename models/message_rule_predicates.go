@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// MessageRulePredicates 
 type MessageRulePredicates struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewMessageRulePredicates instantiates a new messageRulePredicates and sets the default values.
+// NewMessageRulePredicates instantiates a new MessageRulePredicates and sets the default values.
 func NewMessageRulePredicates()(*MessageRulePredicates) {
     m := &MessageRulePredicates{
     }
@@ -19,10 +18,12 @@ func NewMessageRulePredicates()(*MessageRulePredicates) {
     return m
 }
 // CreateMessageRulePredicatesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMessageRulePredicatesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMessageRulePredicates(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *MessageRulePredicates) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *MessageRulePredicates) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *MessageRulePredicates) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBodyContains gets the bodyContains property value. Represents the strings that should appear in the body of an incoming message in order for the condition or exception to apply.
+// returns a []string when successful
 func (m *MessageRulePredicates) GetBodyContains()([]string) {
     val, err := m.GetBackingStore().Get("bodyContains")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *MessageRulePredicates) GetBodyContains()([]string) {
     return nil
 }
 // GetBodyOrSubjectContains gets the bodyOrSubjectContains property value. Represents the strings that should appear in the body or subject of an incoming message in order for the condition or exception to apply.
+// returns a []string when successful
 func (m *MessageRulePredicates) GetBodyOrSubjectContains()([]string) {
     val, err := m.GetBackingStore().Get("bodyOrSubjectContains")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *MessageRulePredicates) GetBodyOrSubjectContains()([]string) {
     return nil
 }
 // GetCategories gets the categories property value. Represents the categories that an incoming message should be labeled with in order for the condition or exception to apply.
+// returns a []string when successful
 func (m *MessageRulePredicates) GetCategories()([]string) {
     val, err := m.GetBackingStore().Get("categories")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *MessageRulePredicates) GetCategories()([]string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["bodyContains"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -441,6 +447,7 @@ func (m *MessageRulePredicates) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetFromAddresses gets the fromAddresses property value. Represents the specific sender email addresses of an incoming message in order for the condition or exception to apply.
+// returns a []Recipientable when successful
 func (m *MessageRulePredicates) GetFromAddresses()([]Recipientable) {
     val, err := m.GetBackingStore().Get("fromAddresses")
     if err != nil {
@@ -452,6 +459,7 @@ func (m *MessageRulePredicates) GetFromAddresses()([]Recipientable) {
     return nil
 }
 // GetHasAttachments gets the hasAttachments property value. Indicates whether an incoming message must have attachments in order for the condition or exception to apply.
+// returns a *bool when successful
 func (m *MessageRulePredicates) GetHasAttachments()(*bool) {
     val, err := m.GetBackingStore().Get("hasAttachments")
     if err != nil {
@@ -463,6 +471,7 @@ func (m *MessageRulePredicates) GetHasAttachments()(*bool) {
     return nil
 }
 // GetHeaderContains gets the headerContains property value. Represents the strings that appear in the headers of an incoming message in order for the condition or exception to apply.
+// returns a []string when successful
 func (m *MessageRulePredicates) GetHeaderContains()([]string) {
     val, err := m.GetBackingStore().Get("headerContains")
     if err != nil {
@@ -474,6 +483,7 @@ func (m *MessageRulePredicates) GetHeaderContains()([]string) {
     return nil
 }
 // GetImportance gets the importance property value. The importance that is stamped on an incoming message in order for the condition or exception to apply: low, normal, high.
+// returns a *Importance when successful
 func (m *MessageRulePredicates) GetImportance()(*Importance) {
     val, err := m.GetBackingStore().Get("importance")
     if err != nil {
@@ -485,6 +495,7 @@ func (m *MessageRulePredicates) GetImportance()(*Importance) {
     return nil
 }
 // GetIsApprovalRequest gets the isApprovalRequest property value. Indicates whether an incoming message must be an approval request in order for the condition or exception to apply.
+// returns a *bool when successful
 func (m *MessageRulePredicates) GetIsApprovalRequest()(*bool) {
     val, err := m.GetBackingStore().Get("isApprovalRequest")
     if err != nil {
@@ -496,6 +507,7 @@ func (m *MessageRulePredicates) GetIsApprovalRequest()(*bool) {
     return nil
 }
 // GetIsAutomaticForward gets the isAutomaticForward property value. Indicates whether an incoming message must be automatically forwarded in order for the condition or exception to apply.
+// returns a *bool when successful
 func (m *MessageRulePredicates) GetIsAutomaticForward()(*bool) {
     val, err := m.GetBackingStore().Get("isAutomaticForward")
     if err != nil {
@@ -507,6 +519,7 @@ func (m *MessageRulePredicates) GetIsAutomaticForward()(*bool) {
     return nil
 }
 // GetIsAutomaticReply gets the isAutomaticReply property value. Indicates whether an incoming message must be an auto reply in order for the condition or exception to apply.
+// returns a *bool when successful
 func (m *MessageRulePredicates) GetIsAutomaticReply()(*bool) {
     val, err := m.GetBackingStore().Get("isAutomaticReply")
     if err != nil {
@@ -518,6 +531,7 @@ func (m *MessageRulePredicates) GetIsAutomaticReply()(*bool) {
     return nil
 }
 // GetIsEncrypted gets the isEncrypted property value. Indicates whether an incoming message must be encrypted in order for the condition or exception to apply.
+// returns a *bool when successful
 func (m *MessageRulePredicates) GetIsEncrypted()(*bool) {
     val, err := m.GetBackingStore().Get("isEncrypted")
     if err != nil {
@@ -529,6 +543,7 @@ func (m *MessageRulePredicates) GetIsEncrypted()(*bool) {
     return nil
 }
 // GetIsMeetingRequest gets the isMeetingRequest property value. Indicates whether an incoming message must be a meeting request in order for the condition or exception to apply.
+// returns a *bool when successful
 func (m *MessageRulePredicates) GetIsMeetingRequest()(*bool) {
     val, err := m.GetBackingStore().Get("isMeetingRequest")
     if err != nil {
@@ -540,6 +555,7 @@ func (m *MessageRulePredicates) GetIsMeetingRequest()(*bool) {
     return nil
 }
 // GetIsMeetingResponse gets the isMeetingResponse property value. Indicates whether an incoming message must be a meeting response in order for the condition or exception to apply.
+// returns a *bool when successful
 func (m *MessageRulePredicates) GetIsMeetingResponse()(*bool) {
     val, err := m.GetBackingStore().Get("isMeetingResponse")
     if err != nil {
@@ -551,6 +567,7 @@ func (m *MessageRulePredicates) GetIsMeetingResponse()(*bool) {
     return nil
 }
 // GetIsNonDeliveryReport gets the isNonDeliveryReport property value. Indicates whether an incoming message must be a non-delivery report in order for the condition or exception to apply.
+// returns a *bool when successful
 func (m *MessageRulePredicates) GetIsNonDeliveryReport()(*bool) {
     val, err := m.GetBackingStore().Get("isNonDeliveryReport")
     if err != nil {
@@ -562,6 +579,7 @@ func (m *MessageRulePredicates) GetIsNonDeliveryReport()(*bool) {
     return nil
 }
 // GetIsPermissionControlled gets the isPermissionControlled property value. Indicates whether an incoming message must be permission controlled (RMS-protected) in order for the condition or exception to apply.
+// returns a *bool when successful
 func (m *MessageRulePredicates) GetIsPermissionControlled()(*bool) {
     val, err := m.GetBackingStore().Get("isPermissionControlled")
     if err != nil {
@@ -573,6 +591,7 @@ func (m *MessageRulePredicates) GetIsPermissionControlled()(*bool) {
     return nil
 }
 // GetIsReadReceipt gets the isReadReceipt property value. Indicates whether an incoming message must be a read receipt in order for the condition or exception to apply.
+// returns a *bool when successful
 func (m *MessageRulePredicates) GetIsReadReceipt()(*bool) {
     val, err := m.GetBackingStore().Get("isReadReceipt")
     if err != nil {
@@ -584,6 +603,7 @@ func (m *MessageRulePredicates) GetIsReadReceipt()(*bool) {
     return nil
 }
 // GetIsSigned gets the isSigned property value. Indicates whether an incoming message must be S/MIME-signed in order for the condition or exception to apply.
+// returns a *bool when successful
 func (m *MessageRulePredicates) GetIsSigned()(*bool) {
     val, err := m.GetBackingStore().Get("isSigned")
     if err != nil {
@@ -595,6 +615,7 @@ func (m *MessageRulePredicates) GetIsSigned()(*bool) {
     return nil
 }
 // GetIsVoicemail gets the isVoicemail property value. Indicates whether an incoming message must be a voice mail in order for the condition or exception to apply.
+// returns a *bool when successful
 func (m *MessageRulePredicates) GetIsVoicemail()(*bool) {
     val, err := m.GetBackingStore().Get("isVoicemail")
     if err != nil {
@@ -606,6 +627,7 @@ func (m *MessageRulePredicates) GetIsVoicemail()(*bool) {
     return nil
 }
 // GetMessageActionFlag gets the messageActionFlag property value. Represents the flag-for-action value that appears on an incoming message in order for the condition or exception to apply. The possible values are: any, call, doNotForward, followUp, fyi, forward, noResponseNecessary, read, reply, replyToAll, review.
+// returns a *MessageActionFlag when successful
 func (m *MessageRulePredicates) GetMessageActionFlag()(*MessageActionFlag) {
     val, err := m.GetBackingStore().Get("messageActionFlag")
     if err != nil {
@@ -617,6 +639,7 @@ func (m *MessageRulePredicates) GetMessageActionFlag()(*MessageActionFlag) {
     return nil
 }
 // GetNotSentToMe gets the notSentToMe property value. Indicates whether the owner of the mailbox must not be a recipient of an incoming message in order for the condition or exception to apply.
+// returns a *bool when successful
 func (m *MessageRulePredicates) GetNotSentToMe()(*bool) {
     val, err := m.GetBackingStore().Get("notSentToMe")
     if err != nil {
@@ -628,6 +651,7 @@ func (m *MessageRulePredicates) GetNotSentToMe()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *MessageRulePredicates) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -639,6 +663,7 @@ func (m *MessageRulePredicates) GetOdataType()(*string) {
     return nil
 }
 // GetRecipientContains gets the recipientContains property value. Represents the strings that appear in either the toRecipients or ccRecipients properties of an incoming message in order for the condition or exception to apply.
+// returns a []string when successful
 func (m *MessageRulePredicates) GetRecipientContains()([]string) {
     val, err := m.GetBackingStore().Get("recipientContains")
     if err != nil {
@@ -650,6 +675,7 @@ func (m *MessageRulePredicates) GetRecipientContains()([]string) {
     return nil
 }
 // GetSenderContains gets the senderContains property value. Represents the strings that appear in the from property of an incoming message in order for the condition or exception to apply.
+// returns a []string when successful
 func (m *MessageRulePredicates) GetSenderContains()([]string) {
     val, err := m.GetBackingStore().Get("senderContains")
     if err != nil {
@@ -661,6 +687,7 @@ func (m *MessageRulePredicates) GetSenderContains()([]string) {
     return nil
 }
 // GetSensitivity gets the sensitivity property value. Represents the sensitivity level that must be stamped on an incoming message in order for the condition or exception to apply. The possible values are: normal, personal, private, confidential.
+// returns a *Sensitivity when successful
 func (m *MessageRulePredicates) GetSensitivity()(*Sensitivity) {
     val, err := m.GetBackingStore().Get("sensitivity")
     if err != nil {
@@ -672,6 +699,7 @@ func (m *MessageRulePredicates) GetSensitivity()(*Sensitivity) {
     return nil
 }
 // GetSentCcMe gets the sentCcMe property value. Indicates whether the owner of the mailbox must be in the ccRecipients property of an incoming message in order for the condition or exception to apply.
+// returns a *bool when successful
 func (m *MessageRulePredicates) GetSentCcMe()(*bool) {
     val, err := m.GetBackingStore().Get("sentCcMe")
     if err != nil {
@@ -683,6 +711,7 @@ func (m *MessageRulePredicates) GetSentCcMe()(*bool) {
     return nil
 }
 // GetSentOnlyToMe gets the sentOnlyToMe property value. Indicates whether the owner of the mailbox must be the only recipient in an incoming message in order for the condition or exception to apply.
+// returns a *bool when successful
 func (m *MessageRulePredicates) GetSentOnlyToMe()(*bool) {
     val, err := m.GetBackingStore().Get("sentOnlyToMe")
     if err != nil {
@@ -694,6 +723,7 @@ func (m *MessageRulePredicates) GetSentOnlyToMe()(*bool) {
     return nil
 }
 // GetSentToAddresses gets the sentToAddresses property value. Represents the email addresses that an incoming message must have been sent to in order for the condition or exception to apply.
+// returns a []Recipientable when successful
 func (m *MessageRulePredicates) GetSentToAddresses()([]Recipientable) {
     val, err := m.GetBackingStore().Get("sentToAddresses")
     if err != nil {
@@ -705,6 +735,7 @@ func (m *MessageRulePredicates) GetSentToAddresses()([]Recipientable) {
     return nil
 }
 // GetSentToMe gets the sentToMe property value. Indicates whether the owner of the mailbox must be in the toRecipients property of an incoming message in order for the condition or exception to apply.
+// returns a *bool when successful
 func (m *MessageRulePredicates) GetSentToMe()(*bool) {
     val, err := m.GetBackingStore().Get("sentToMe")
     if err != nil {
@@ -716,6 +747,7 @@ func (m *MessageRulePredicates) GetSentToMe()(*bool) {
     return nil
 }
 // GetSentToOrCcMe gets the sentToOrCcMe property value. Indicates whether the owner of the mailbox must be in either a toRecipients or ccRecipients property of an incoming message in order for the condition or exception to apply.
+// returns a *bool when successful
 func (m *MessageRulePredicates) GetSentToOrCcMe()(*bool) {
     val, err := m.GetBackingStore().Get("sentToOrCcMe")
     if err != nil {
@@ -727,6 +759,7 @@ func (m *MessageRulePredicates) GetSentToOrCcMe()(*bool) {
     return nil
 }
 // GetSubjectContains gets the subjectContains property value. Represents the strings that appear in the subject of an incoming message in order for the condition or exception to apply.
+// returns a []string when successful
 func (m *MessageRulePredicates) GetSubjectContains()([]string) {
     val, err := m.GetBackingStore().Get("subjectContains")
     if err != nil {
@@ -738,6 +771,7 @@ func (m *MessageRulePredicates) GetSubjectContains()([]string) {
     return nil
 }
 // GetWithinSizeRange gets the withinSizeRange property value. Represents the minimum and maximum sizes (in kilobytes) that an incoming message must fall in between in order for the condition or exception to apply.
+// returns a SizeRangeable when successful
 func (m *MessageRulePredicates) GetWithinSizeRange()(SizeRangeable) {
     val, err := m.GetBackingStore().Get("withinSizeRange")
     if err != nil {
@@ -1187,7 +1221,6 @@ func (m *MessageRulePredicates) SetWithinSizeRange(value SizeRangeable)() {
         panic(err)
     }
 }
-// MessageRulePredicatesable 
 type MessageRulePredicatesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

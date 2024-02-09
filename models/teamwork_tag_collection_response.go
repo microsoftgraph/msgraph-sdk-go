@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkTagCollectionResponse 
 type TeamworkTagCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTeamworkTagCollectionResponse instantiates a new teamworkTagCollectionResponse and sets the default values.
+// NewTeamworkTagCollectionResponse instantiates a new TeamworkTagCollectionResponse and sets the default values.
 func NewTeamworkTagCollectionResponse()(*TeamworkTagCollectionResponse) {
     m := &TeamworkTagCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewTeamworkTagCollectionResponse()(*TeamworkTagCollectionResponse) {
     return m
 }
 // CreateTeamworkTagCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamworkTagCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkTagCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamworkTagCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *TeamworkTagCollectionResponse) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []TeamworkTagable when successful
 func (m *TeamworkTagCollectionResponse) GetValue()([]TeamworkTagable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *TeamworkTagCollectionResponse) SetValue(value []TeamworkTagable)() {
         panic(err)
     }
 }
-// TeamworkTagCollectionResponseable 
 type TeamworkTagCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

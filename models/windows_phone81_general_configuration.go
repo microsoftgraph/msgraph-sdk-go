@@ -8,7 +8,7 @@ import (
 type WindowsPhone81GeneralConfiguration struct {
     DeviceConfiguration
 }
-// NewWindowsPhone81GeneralConfiguration instantiates a new windowsPhone81GeneralConfiguration and sets the default values.
+// NewWindowsPhone81GeneralConfiguration instantiates a new WindowsPhone81GeneralConfiguration and sets the default values.
 func NewWindowsPhone81GeneralConfiguration()(*WindowsPhone81GeneralConfiguration) {
     m := &WindowsPhone81GeneralConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewWindowsPhone81GeneralConfiguration()(*WindowsPhone81GeneralConfiguration
     return m
 }
 // CreateWindowsPhone81GeneralConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsPhone81GeneralConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsPhone81GeneralConfiguration(), nil
 }
 // GetApplyOnlyToWindowsPhone81 gets the applyOnlyToWindowsPhone81 property value. Value indicating whether this policy only applies to Windows Phone 8.1. This property is read-only.
+// returns a *bool when successful
 func (m *WindowsPhone81GeneralConfiguration) GetApplyOnlyToWindowsPhone81()(*bool) {
     val, err := m.GetBackingStore().Get("applyOnlyToWindowsPhone81")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetApplyOnlyToWindowsPhone81()(*boo
     return nil
 }
 // GetAppsBlockCopyPaste gets the appsBlockCopyPaste property value. Indicates whether or not to block copy paste.
+// returns a *bool when successful
 func (m *WindowsPhone81GeneralConfiguration) GetAppsBlockCopyPaste()(*bool) {
     val, err := m.GetBackingStore().Get("appsBlockCopyPaste")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetAppsBlockCopyPaste()(*bool) {
     return nil
 }
 // GetBluetoothBlocked gets the bluetoothBlocked property value. Indicates whether or not to block bluetooth.
+// returns a *bool when successful
 func (m *WindowsPhone81GeneralConfiguration) GetBluetoothBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("bluetoothBlocked")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetBluetoothBlocked()(*bool) {
     return nil
 }
 // GetCameraBlocked gets the cameraBlocked property value. Indicates whether or not to block camera.
+// returns a *bool when successful
 func (m *WindowsPhone81GeneralConfiguration) GetCameraBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("cameraBlocked")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetCameraBlocked()(*bool) {
     return nil
 }
 // GetCellularBlockWifiTethering gets the cellularBlockWifiTethering property value. Indicates whether or not to block Wi-Fi tethering. Has no impact if Wi-Fi is blocked.
+// returns a *bool when successful
 func (m *WindowsPhone81GeneralConfiguration) GetCellularBlockWifiTethering()(*bool) {
     val, err := m.GetBackingStore().Get("cellularBlockWifiTethering")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetCellularBlockWifiTethering()(*bo
     return nil
 }
 // GetCompliantAppListType gets the compliantAppListType property value. Possible values of the compliance app list.
+// returns a *AppListType when successful
 func (m *WindowsPhone81GeneralConfiguration) GetCompliantAppListType()(*AppListType) {
     val, err := m.GetBackingStore().Get("compliantAppListType")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetCompliantAppListType()(*AppListT
     return nil
 }
 // GetCompliantAppsList gets the compliantAppsList property value. List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
+// returns a []AppListItemable when successful
 func (m *WindowsPhone81GeneralConfiguration) GetCompliantAppsList()([]AppListItemable) {
     val, err := m.GetBackingStore().Get("compliantAppsList")
     if err != nil {
@@ -99,6 +107,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetCompliantAppsList()([]AppListIte
     return nil
 }
 // GetDiagnosticDataBlockSubmission gets the diagnosticDataBlockSubmission property value. Indicates whether or not to block diagnostic data submission.
+// returns a *bool when successful
 func (m *WindowsPhone81GeneralConfiguration) GetDiagnosticDataBlockSubmission()(*bool) {
     val, err := m.GetBackingStore().Get("diagnosticDataBlockSubmission")
     if err != nil {
@@ -110,6 +119,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetDiagnosticDataBlockSubmission()(
     return nil
 }
 // GetEmailBlockAddingAccounts gets the emailBlockAddingAccounts property value. Indicates whether or not to block custom email accounts.
+// returns a *bool when successful
 func (m *WindowsPhone81GeneralConfiguration) GetEmailBlockAddingAccounts()(*bool) {
     val, err := m.GetBackingStore().Get("emailBlockAddingAccounts")
     if err != nil {
@@ -121,6 +131,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetEmailBlockAddingAccounts()(*bool
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsPhone81GeneralConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["applyOnlyToWindowsPhone81"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -422,6 +433,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetFieldDeserializers()(map[string]
     return res
 }
 // GetLocationServicesBlocked gets the locationServicesBlocked property value. Indicates whether or not to block location services.
+// returns a *bool when successful
 func (m *WindowsPhone81GeneralConfiguration) GetLocationServicesBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("locationServicesBlocked")
     if err != nil {
@@ -433,6 +445,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetLocationServicesBlocked()(*bool)
     return nil
 }
 // GetMicrosoftAccountBlocked gets the microsoftAccountBlocked property value. Indicates whether or not to block using a Microsoft Account.
+// returns a *bool when successful
 func (m *WindowsPhone81GeneralConfiguration) GetMicrosoftAccountBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("microsoftAccountBlocked")
     if err != nil {
@@ -444,6 +457,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetMicrosoftAccountBlocked()(*bool)
     return nil
 }
 // GetNfcBlocked gets the nfcBlocked property value. Indicates whether or not to block Near-Field Communication.
+// returns a *bool when successful
 func (m *WindowsPhone81GeneralConfiguration) GetNfcBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("nfcBlocked")
     if err != nil {
@@ -455,6 +469,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetNfcBlocked()(*bool) {
     return nil
 }
 // GetPasswordBlockSimple gets the passwordBlockSimple property value. Indicates whether or not to block syncing the calendar.
+// returns a *bool when successful
 func (m *WindowsPhone81GeneralConfiguration) GetPasswordBlockSimple()(*bool) {
     val, err := m.GetBackingStore().Get("passwordBlockSimple")
     if err != nil {
@@ -466,6 +481,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetPasswordBlockSimple()(*bool) {
     return nil
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Number of days before the password expires.
+// returns a *int32 when successful
 func (m *WindowsPhone81GeneralConfiguration) GetPasswordExpirationDays()(*int32) {
     val, err := m.GetBackingStore().Get("passwordExpirationDays")
     if err != nil {
@@ -477,6 +493,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetPasswordExpirationDays()(*int32)
     return nil
 }
 // GetPasswordMinimumCharacterSetCount gets the passwordMinimumCharacterSetCount property value. Number of character sets a password must contain.
+// returns a *int32 when successful
 func (m *WindowsPhone81GeneralConfiguration) GetPasswordMinimumCharacterSetCount()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinimumCharacterSetCount")
     if err != nil {
@@ -488,6 +505,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetPasswordMinimumCharacterSetCount
     return nil
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Minimum length of passwords.
+// returns a *int32 when successful
 func (m *WindowsPhone81GeneralConfiguration) GetPasswordMinimumLength()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinimumLength")
     if err != nil {
@@ -499,6 +517,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetPasswordMinimumLength()(*int32) 
     return nil
 }
 // GetPasswordMinutesOfInactivityBeforeScreenTimeout gets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before screen timeout.
+// returns a *int32 when successful
 func (m *WindowsPhone81GeneralConfiguration) GetPasswordMinutesOfInactivityBeforeScreenTimeout()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinutesOfInactivityBeforeScreenTimeout")
     if err != nil {
@@ -510,6 +529,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetPasswordMinutesOfInactivityBefor
     return nil
 }
 // GetPasswordPreviousPasswordBlockCount gets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 0 to 24
+// returns a *int32 when successful
 func (m *WindowsPhone81GeneralConfiguration) GetPasswordPreviousPasswordBlockCount()(*int32) {
     val, err := m.GetBackingStore().Get("passwordPreviousPasswordBlockCount")
     if err != nil {
@@ -521,6 +541,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetPasswordPreviousPasswordBlockCou
     return nil
 }
 // GetPasswordRequired gets the passwordRequired property value. Indicates whether or not to require a password.
+// returns a *bool when successful
 func (m *WindowsPhone81GeneralConfiguration) GetPasswordRequired()(*bool) {
     val, err := m.GetBackingStore().Get("passwordRequired")
     if err != nil {
@@ -532,6 +553,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetPasswordRequired()(*bool) {
     return nil
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Possible values of required passwords.
+// returns a *RequiredPasswordType when successful
 func (m *WindowsPhone81GeneralConfiguration) GetPasswordRequiredType()(*RequiredPasswordType) {
     val, err := m.GetBackingStore().Get("passwordRequiredType")
     if err != nil {
@@ -543,6 +565,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetPasswordRequiredType()(*Required
     return nil
 }
 // GetPasswordSignInFailureCountBeforeFactoryReset gets the passwordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before factory reset.
+// returns a *int32 when successful
 func (m *WindowsPhone81GeneralConfiguration) GetPasswordSignInFailureCountBeforeFactoryReset()(*int32) {
     val, err := m.GetBackingStore().Get("passwordSignInFailureCountBeforeFactoryReset")
     if err != nil {
@@ -554,6 +577,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetPasswordSignInFailureCountBefore
     return nil
 }
 // GetScreenCaptureBlocked gets the screenCaptureBlocked property value. Indicates whether or not to block screenshots.
+// returns a *bool when successful
 func (m *WindowsPhone81GeneralConfiguration) GetScreenCaptureBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("screenCaptureBlocked")
     if err != nil {
@@ -565,6 +589,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetScreenCaptureBlocked()(*bool) {
     return nil
 }
 // GetStorageBlockRemovableStorage gets the storageBlockRemovableStorage property value. Indicates whether or not to block removable storage.
+// returns a *bool when successful
 func (m *WindowsPhone81GeneralConfiguration) GetStorageBlockRemovableStorage()(*bool) {
     val, err := m.GetBackingStore().Get("storageBlockRemovableStorage")
     if err != nil {
@@ -576,6 +601,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetStorageBlockRemovableStorage()(*
     return nil
 }
 // GetStorageRequireEncryption gets the storageRequireEncryption property value. Indicates whether or not to require encryption.
+// returns a *bool when successful
 func (m *WindowsPhone81GeneralConfiguration) GetStorageRequireEncryption()(*bool) {
     val, err := m.GetBackingStore().Get("storageRequireEncryption")
     if err != nil {
@@ -587,6 +613,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetStorageRequireEncryption()(*bool
     return nil
 }
 // GetWebBrowserBlocked gets the webBrowserBlocked property value. Indicates whether or not to block the web browser.
+// returns a *bool when successful
 func (m *WindowsPhone81GeneralConfiguration) GetWebBrowserBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("webBrowserBlocked")
     if err != nil {
@@ -598,6 +625,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetWebBrowserBlocked()(*bool) {
     return nil
 }
 // GetWifiBlockAutomaticConnectHotspots gets the wifiBlockAutomaticConnectHotspots property value. Indicates whether or not to block automatically connecting to Wi-Fi hotspots. Has no impact if Wi-Fi is blocked.
+// returns a *bool when successful
 func (m *WindowsPhone81GeneralConfiguration) GetWifiBlockAutomaticConnectHotspots()(*bool) {
     val, err := m.GetBackingStore().Get("wifiBlockAutomaticConnectHotspots")
     if err != nil {
@@ -609,6 +637,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetWifiBlockAutomaticConnectHotspot
     return nil
 }
 // GetWifiBlocked gets the wifiBlocked property value. Indicates whether or not to block Wi-Fi.
+// returns a *bool when successful
 func (m *WindowsPhone81GeneralConfiguration) GetWifiBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("wifiBlocked")
     if err != nil {
@@ -620,6 +649,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetWifiBlocked()(*bool) {
     return nil
 }
 // GetWifiBlockHotspotReporting gets the wifiBlockHotspotReporting property value. Indicates whether or not to block Wi-Fi hotspot reporting. Has no impact if Wi-Fi is blocked.
+// returns a *bool when successful
 func (m *WindowsPhone81GeneralConfiguration) GetWifiBlockHotspotReporting()(*bool) {
     val, err := m.GetBackingStore().Get("wifiBlockHotspotReporting")
     if err != nil {
@@ -631,6 +661,7 @@ func (m *WindowsPhone81GeneralConfiguration) GetWifiBlockHotspotReporting()(*boo
     return nil
 }
 // GetWindowsStoreBlocked gets the windowsStoreBlocked property value. Indicates whether or not to block the Windows Store.
+// returns a *bool when successful
 func (m *WindowsPhone81GeneralConfiguration) GetWindowsStoreBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("windowsStoreBlocked")
     if err != nil {
@@ -1028,7 +1059,6 @@ func (m *WindowsPhone81GeneralConfiguration) SetWindowsStoreBlocked(value *bool)
         panic(err)
     }
 }
-// WindowsPhone81GeneralConfigurationable 
 type WindowsPhone81GeneralConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

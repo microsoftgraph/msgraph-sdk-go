@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ClientUserAgent 
 type ClientUserAgent struct {
     UserAgent
 }
-// NewClientUserAgent instantiates a new clientUserAgent and sets the default values.
+// NewClientUserAgent instantiates a new ClientUserAgent and sets the default values.
 func NewClientUserAgent()(*ClientUserAgent) {
     m := &ClientUserAgent{
         UserAgent: *NewUserAgent(),
@@ -18,10 +17,12 @@ func NewClientUserAgent()(*ClientUserAgent) {
     return m
 }
 // CreateClientUserAgentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateClientUserAgentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewClientUserAgent(), nil
 }
 // GetAzureADAppId gets the azureADAppId property value. The unique identifier of the Microsoft Entra application used by this endpoint.
+// returns a *string when successful
 func (m *ClientUserAgent) GetAzureADAppId()(*string) {
     val, err := m.GetBackingStore().Get("azureADAppId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ClientUserAgent) GetAzureADAppId()(*string) {
     return nil
 }
 // GetCommunicationServiceId gets the communicationServiceId property value. Immutable resource identifier of the Azure Communication Service associated with this endpoint based on Communication Services APIs.
+// returns a *string when successful
 func (m *ClientUserAgent) GetCommunicationServiceId()(*string) {
     val, err := m.GetBackingStore().Get("communicationServiceId")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ClientUserAgent) GetCommunicationServiceId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ClientUserAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UserAgent.GetFieldDeserializers()
     res["azureADAppId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -89,6 +92,7 @@ func (m *ClientUserAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetPlatform gets the platform property value. The platform property
+// returns a *ClientPlatform when successful
 func (m *ClientUserAgent) GetPlatform()(*ClientPlatform) {
     val, err := m.GetBackingStore().Get("platform")
     if err != nil {
@@ -100,6 +104,7 @@ func (m *ClientUserAgent) GetPlatform()(*ClientPlatform) {
     return nil
 }
 // GetProductFamily gets the productFamily property value. The productFamily property
+// returns a *ProductFamily when successful
 func (m *ClientUserAgent) GetProductFamily()(*ProductFamily) {
     val, err := m.GetBackingStore().Get("productFamily")
     if err != nil {
@@ -172,7 +177,6 @@ func (m *ClientUserAgent) SetProductFamily(value *ProductFamily)() {
         panic(err)
     }
 }
-// ClientUserAgentable 
 type ClientUserAgentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UserAgentable

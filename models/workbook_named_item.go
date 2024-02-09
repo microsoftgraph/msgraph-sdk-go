@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookNamedItem 
 type WorkbookNamedItem struct {
     Entity
 }
-// NewWorkbookNamedItem instantiates a new workbookNamedItem and sets the default values.
+// NewWorkbookNamedItem instantiates a new WorkbookNamedItem and sets the default values.
 func NewWorkbookNamedItem()(*WorkbookNamedItem) {
     m := &WorkbookNamedItem{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewWorkbookNamedItem()(*WorkbookNamedItem) {
     return m
 }
 // CreateWorkbookNamedItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookNamedItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookNamedItem(), nil
 }
 // GetComment gets the comment property value. Represents the comment associated with this name.
+// returns a *string when successful
 func (m *WorkbookNamedItem) GetComment()(*string) {
     val, err := m.GetBackingStore().Get("comment")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *WorkbookNamedItem) GetComment()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookNamedItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["comment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -106,6 +108,7 @@ func (m *WorkbookNamedItem) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetName gets the name property value. The name of the object. Read-only.
+// returns a *string when successful
 func (m *WorkbookNamedItem) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -117,6 +120,7 @@ func (m *WorkbookNamedItem) GetName()(*string) {
     return nil
 }
 // GetScope gets the scope property value. Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only.
+// returns a *string when successful
 func (m *WorkbookNamedItem) GetScope()(*string) {
     val, err := m.GetBackingStore().Get("scope")
     if err != nil {
@@ -128,6 +132,7 @@ func (m *WorkbookNamedItem) GetScope()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
+// returns a *string when successful
 func (m *WorkbookNamedItem) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -139,6 +144,7 @@ func (m *WorkbookNamedItem) GetTypeEscaped()(*string) {
     return nil
 }
 // GetValue gets the value property value. Represents the formula that the name is defined to refer to. for example, =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.
+// returns a Jsonable when successful
 func (m *WorkbookNamedItem) GetValue()(Jsonable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -150,6 +156,7 @@ func (m *WorkbookNamedItem) GetValue()(Jsonable) {
     return nil
 }
 // GetVisible gets the visible property value. Specifies whether the object is visible or not.
+// returns a *bool when successful
 func (m *WorkbookNamedItem) GetVisible()(*bool) {
     val, err := m.GetBackingStore().Get("visible")
     if err != nil {
@@ -161,6 +168,7 @@ func (m *WorkbookNamedItem) GetVisible()(*bool) {
     return nil
 }
 // GetWorksheet gets the worksheet property value. Returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
+// returns a WorkbookWorksheetable when successful
 func (m *WorkbookNamedItem) GetWorksheet()(WorkbookWorksheetable) {
     val, err := m.GetBackingStore().Get("worksheet")
     if err != nil {
@@ -270,7 +278,6 @@ func (m *WorkbookNamedItem) SetWorksheet(value WorkbookWorksheetable)() {
         panic(err)
     }
 }
-// WorkbookNamedItemable 
 type WorkbookNamedItemable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

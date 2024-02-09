@@ -8,7 +8,7 @@ import (
 type IosDeviceFeaturesConfiguration struct {
     AppleDeviceFeaturesConfigurationBase
 }
-// NewIosDeviceFeaturesConfiguration instantiates a new iosDeviceFeaturesConfiguration and sets the default values.
+// NewIosDeviceFeaturesConfiguration instantiates a new IosDeviceFeaturesConfiguration and sets the default values.
 func NewIosDeviceFeaturesConfiguration()(*IosDeviceFeaturesConfiguration) {
     m := &IosDeviceFeaturesConfiguration{
         AppleDeviceFeaturesConfigurationBase: *NewAppleDeviceFeaturesConfigurationBase(),
@@ -18,10 +18,12 @@ func NewIosDeviceFeaturesConfiguration()(*IosDeviceFeaturesConfiguration) {
     return m
 }
 // CreateIosDeviceFeaturesConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosDeviceFeaturesConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosDeviceFeaturesConfiguration(), nil
 }
 // GetAssetTagTemplate gets the assetTagTemplate property value. Asset tag information for the device, displayed on the login window and lock screen.
+// returns a *string when successful
 func (m *IosDeviceFeaturesConfiguration) GetAssetTagTemplate()(*string) {
     val, err := m.GetBackingStore().Get("assetTagTemplate")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *IosDeviceFeaturesConfiguration) GetAssetTagTemplate()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AppleDeviceFeaturesConfigurationBase.GetFieldDeserializers()
     res["assetTagTemplate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -106,6 +109,7 @@ func (m *IosDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetHomeScreenDockIcons gets the homeScreenDockIcons property value. A list of app and folders to appear on the Home Screen Dock. This collection can contain a maximum of 500 elements.
+// returns a []IosHomeScreenItemable when successful
 func (m *IosDeviceFeaturesConfiguration) GetHomeScreenDockIcons()([]IosHomeScreenItemable) {
     val, err := m.GetBackingStore().Get("homeScreenDockIcons")
     if err != nil {
@@ -117,6 +121,7 @@ func (m *IosDeviceFeaturesConfiguration) GetHomeScreenDockIcons()([]IosHomeScree
     return nil
 }
 // GetHomeScreenPages gets the homeScreenPages property value. A list of pages on the Home Screen. This collection can contain a maximum of 500 elements.
+// returns a []IosHomeScreenPageable when successful
 func (m *IosDeviceFeaturesConfiguration) GetHomeScreenPages()([]IosHomeScreenPageable) {
     val, err := m.GetBackingStore().Get("homeScreenPages")
     if err != nil {
@@ -128,6 +133,7 @@ func (m *IosDeviceFeaturesConfiguration) GetHomeScreenPages()([]IosHomeScreenPag
     return nil
 }
 // GetLockScreenFootnote gets the lockScreenFootnote property value. A footnote displayed on the login window and lock screen. Available in iOS 9.3.1 and later.
+// returns a *string when successful
 func (m *IosDeviceFeaturesConfiguration) GetLockScreenFootnote()(*string) {
     val, err := m.GetBackingStore().Get("lockScreenFootnote")
     if err != nil {
@@ -139,6 +145,7 @@ func (m *IosDeviceFeaturesConfiguration) GetLockScreenFootnote()(*string) {
     return nil
 }
 // GetNotificationSettings gets the notificationSettings property value. Notification settings for each bundle id. Applicable to devices in supervised mode only (iOS 9.3 and later). This collection can contain a maximum of 500 elements.
+// returns a []IosNotificationSettingsable when successful
 func (m *IosDeviceFeaturesConfiguration) GetNotificationSettings()([]IosNotificationSettingsable) {
     val, err := m.GetBackingStore().Get("notificationSettings")
     if err != nil {
@@ -240,7 +247,6 @@ func (m *IosDeviceFeaturesConfiguration) SetNotificationSettings(value []IosNoti
         panic(err)
     }
 }
-// IosDeviceFeaturesConfigurationable 
 type IosDeviceFeaturesConfigurationable interface {
     AppleDeviceFeaturesConfigurationBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

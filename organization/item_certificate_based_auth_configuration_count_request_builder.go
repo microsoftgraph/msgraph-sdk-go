@@ -26,28 +26,29 @@ type ItemCertificateBasedAuthConfigurationCountRequestBuilderGetRequestConfigura
     // Request query parameters
     QueryParameters *ItemCertificateBasedAuthConfigurationCountRequestBuilderGetQueryParameters
 }
-// NewItemCertificateBasedAuthConfigurationCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewItemCertificateBasedAuthConfigurationCountRequestBuilderInternal instantiates a new ItemCertificateBasedAuthConfigurationCountRequestBuilder and sets the default values.
 func NewItemCertificateBasedAuthConfigurationCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCertificateBasedAuthConfigurationCountRequestBuilder) {
     m := &ItemCertificateBasedAuthConfigurationCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/organization/{organization%2Did}/certificateBasedAuthConfiguration/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/organization/{organization%2Did}/certificateBasedAuthConfiguration/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewItemCertificateBasedAuthConfigurationCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewItemCertificateBasedAuthConfigurationCountRequestBuilder instantiates a new ItemCertificateBasedAuthConfigurationCountRequestBuilder and sets the default values.
 func NewItemCertificateBasedAuthConfigurationCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCertificateBasedAuthConfigurationCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCertificateBasedAuthConfigurationCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCertificateBasedAuthConfigurationCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCertificateBasedAuthConfigurationCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *ItemCertificateBasedAuthConfigurationCountRequestBuilder) Get(ctx conte
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *ItemCertificateBasedAuthConfigurationCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCertificateBasedAuthConfigurationCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *ItemCertificateBasedAuthConfigurationCountRequestBuilder) ToGetRequestI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemCertificateBasedAuthConfigurationCountRequestBuilder when successful
 func (m *ItemCertificateBasedAuthConfigurationCountRequestBuilder) WithUrl(rawUrl string)(*ItemCertificateBasedAuthConfigurationCountRequestBuilder) {
     return NewItemCertificateBasedAuthConfigurationCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

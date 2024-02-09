@@ -9,7 +9,7 @@ import (
 type UserExperienceAnalyticsBaseline struct {
     Entity
 }
-// NewUserExperienceAnalyticsBaseline instantiates a new userExperienceAnalyticsBaseline and sets the default values.
+// NewUserExperienceAnalyticsBaseline instantiates a new UserExperienceAnalyticsBaseline and sets the default values.
 func NewUserExperienceAnalyticsBaseline()(*UserExperienceAnalyticsBaseline) {
     m := &UserExperienceAnalyticsBaseline{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewUserExperienceAnalyticsBaseline()(*UserExperienceAnalyticsBaseline) {
     return m
 }
 // CreateUserExperienceAnalyticsBaselineFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsBaselineFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsBaseline(), nil
 }
 // GetAppHealthMetrics gets the appHealthMetrics property value. The scores and insights for the application health metrics.
+// returns a UserExperienceAnalyticsCategoryable when successful
 func (m *UserExperienceAnalyticsBaseline) GetAppHealthMetrics()(UserExperienceAnalyticsCategoryable) {
     val, err := m.GetBackingStore().Get("appHealthMetrics")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *UserExperienceAnalyticsBaseline) GetAppHealthMetrics()(UserExperienceAn
     return nil
 }
 // GetBatteryHealthMetrics gets the batteryHealthMetrics property value. The scores and insights for the battery health metrics.
+// returns a UserExperienceAnalyticsCategoryable when successful
 func (m *UserExperienceAnalyticsBaseline) GetBatteryHealthMetrics()(UserExperienceAnalyticsCategoryable) {
     val, err := m.GetBackingStore().Get("batteryHealthMetrics")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *UserExperienceAnalyticsBaseline) GetBatteryHealthMetrics()(UserExperien
     return nil
 }
 // GetBestPracticesMetrics gets the bestPracticesMetrics property value. The scores and insights for the best practices metrics.
+// returns a UserExperienceAnalyticsCategoryable when successful
 func (m *UserExperienceAnalyticsBaseline) GetBestPracticesMetrics()(UserExperienceAnalyticsCategoryable) {
     val, err := m.GetBackingStore().Get("bestPracticesMetrics")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *UserExperienceAnalyticsBaseline) GetBestPracticesMetrics()(UserExperien
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date the custom baseline was created. The value cannot be modified and is automatically populated when the baseline is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default.
+// returns a *Time when successful
 func (m *UserExperienceAnalyticsBaseline) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *UserExperienceAnalyticsBaseline) GetCreatedDateTime()(*i336074805fc8539
     return nil
 }
 // GetDeviceBootPerformanceMetrics gets the deviceBootPerformanceMetrics property value. The scores and insights for the device boot performance metrics.
+// returns a UserExperienceAnalyticsCategoryable when successful
 func (m *UserExperienceAnalyticsBaseline) GetDeviceBootPerformanceMetrics()(UserExperienceAnalyticsCategoryable) {
     val, err := m.GetBackingStore().Get("deviceBootPerformanceMetrics")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *UserExperienceAnalyticsBaseline) GetDeviceBootPerformanceMetrics()(User
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of the baseline.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsBaseline) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -87,6 +94,7 @@ func (m *UserExperienceAnalyticsBaseline) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appHealthMetrics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -192,6 +200,7 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetIsBuiltIn gets the isBuiltIn property value. When TRUE, indicates the current baseline is the commercial median baseline. When FALSE, indicates it is a custom baseline. FALSE by default.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsBaseline) GetIsBuiltIn()(*bool) {
     val, err := m.GetBackingStore().Get("isBuiltIn")
     if err != nil {
@@ -203,6 +212,7 @@ func (m *UserExperienceAnalyticsBaseline) GetIsBuiltIn()(*bool) {
     return nil
 }
 // GetRebootAnalyticsMetrics gets the rebootAnalyticsMetrics property value. The scores and insights for the reboot analytics metrics.
+// returns a UserExperienceAnalyticsCategoryable when successful
 func (m *UserExperienceAnalyticsBaseline) GetRebootAnalyticsMetrics()(UserExperienceAnalyticsCategoryable) {
     val, err := m.GetBackingStore().Get("rebootAnalyticsMetrics")
     if err != nil {
@@ -214,6 +224,7 @@ func (m *UserExperienceAnalyticsBaseline) GetRebootAnalyticsMetrics()(UserExperi
     return nil
 }
 // GetResourcePerformanceMetrics gets the resourcePerformanceMetrics property value. The scores and insights for the resource performance metrics.
+// returns a UserExperienceAnalyticsCategoryable when successful
 func (m *UserExperienceAnalyticsBaseline) GetResourcePerformanceMetrics()(UserExperienceAnalyticsCategoryable) {
     val, err := m.GetBackingStore().Get("resourcePerformanceMetrics")
     if err != nil {
@@ -225,6 +236,7 @@ func (m *UserExperienceAnalyticsBaseline) GetResourcePerformanceMetrics()(UserEx
     return nil
 }
 // GetWorkFromAnywhereMetrics gets the workFromAnywhereMetrics property value. The scores and insights for the work from anywhere metrics.
+// returns a UserExperienceAnalyticsCategoryable when successful
 func (m *UserExperienceAnalyticsBaseline) GetWorkFromAnywhereMetrics()(UserExperienceAnalyticsCategoryable) {
     val, err := m.GetBackingStore().Get("workFromAnywhereMetrics")
     if err != nil {
@@ -373,7 +385,6 @@ func (m *UserExperienceAnalyticsBaseline) SetWorkFromAnywhereMetrics(value UserE
         panic(err)
     }
 }
-// UserExperienceAnalyticsBaselineable 
 type UserExperienceAnalyticsBaselineable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

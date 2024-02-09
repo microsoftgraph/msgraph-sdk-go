@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ThreatAssessmentResult 
 type ThreatAssessmentResult struct {
     Entity
 }
-// NewThreatAssessmentResult instantiates a new threatAssessmentResult and sets the default values.
+// NewThreatAssessmentResult instantiates a new ThreatAssessmentResult and sets the default values.
 func NewThreatAssessmentResult()(*ThreatAssessmentResult) {
     m := &ThreatAssessmentResult{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewThreatAssessmentResult()(*ThreatAssessmentResult) {
     return m
 }
 // CreateThreatAssessmentResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateThreatAssessmentResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewThreatAssessmentResult(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *ThreatAssessmentResult) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *ThreatAssessmentResult) GetCreatedDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ThreatAssessmentResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -67,6 +69,7 @@ func (m *ThreatAssessmentResult) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetMessage gets the message property value. The result message for each threat assessment.
+// returns a *string when successful
 func (m *ThreatAssessmentResult) GetMessage()(*string) {
     val, err := m.GetBackingStore().Get("message")
     if err != nil {
@@ -78,6 +81,7 @@ func (m *ThreatAssessmentResult) GetMessage()(*string) {
     return nil
 }
 // GetResultType gets the resultType property value. The threat assessment result type. Possible values are: checkPolicy, rescan.
+// returns a *ThreatAssessmentResultType when successful
 func (m *ThreatAssessmentResult) GetResultType()(*ThreatAssessmentResultType) {
     val, err := m.GetBackingStore().Get("resultType")
     if err != nil {
@@ -136,7 +140,6 @@ func (m *ThreatAssessmentResult) SetResultType(value *ThreatAssessmentResultType
         panic(err)
     }
 }
-// ThreatAssessmentResultable 
 type ThreatAssessmentResultable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

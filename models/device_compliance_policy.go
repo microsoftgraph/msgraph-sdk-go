@@ -9,7 +9,7 @@ import (
 type DeviceCompliancePolicy struct {
     Entity
 }
-// NewDeviceCompliancePolicy instantiates a new deviceCompliancePolicy and sets the default values.
+// NewDeviceCompliancePolicy instantiates a new DeviceCompliancePolicy and sets the default values.
 func NewDeviceCompliancePolicy()(*DeviceCompliancePolicy) {
     m := &DeviceCompliancePolicy{
         Entity: *NewEntity(),
@@ -17,6 +17,7 @@ func NewDeviceCompliancePolicy()(*DeviceCompliancePolicy) {
     return m
 }
 // CreateDeviceCompliancePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceCompliancePolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -53,6 +54,7 @@ func CreateDeviceCompliancePolicyFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewDeviceCompliancePolicy(), nil
 }
 // GetAssignments gets the assignments property value. The collection of assignments for this compliance policy.
+// returns a []DeviceCompliancePolicyAssignmentable when successful
 func (m *DeviceCompliancePolicy) GetAssignments()([]DeviceCompliancePolicyAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -64,6 +66,7 @@ func (m *DeviceCompliancePolicy) GetAssignments()([]DeviceCompliancePolicyAssign
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. DateTime the object was created.
+// returns a *Time when successful
 func (m *DeviceCompliancePolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -75,6 +78,7 @@ func (m *DeviceCompliancePolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetDescription gets the description property value. Admin provided description of the Device Configuration.
+// returns a *string when successful
 func (m *DeviceCompliancePolicy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -86,6 +90,7 @@ func (m *DeviceCompliancePolicy) GetDescription()(*string) {
     return nil
 }
 // GetDeviceSettingStateSummaries gets the deviceSettingStateSummaries property value. Compliance Setting State Device Summary
+// returns a []SettingStateDeviceSummaryable when successful
 func (m *DeviceCompliancePolicy) GetDeviceSettingStateSummaries()([]SettingStateDeviceSummaryable) {
     val, err := m.GetBackingStore().Get("deviceSettingStateSummaries")
     if err != nil {
@@ -97,6 +102,7 @@ func (m *DeviceCompliancePolicy) GetDeviceSettingStateSummaries()([]SettingState
     return nil
 }
 // GetDeviceStatuses gets the deviceStatuses property value. List of DeviceComplianceDeviceStatus.
+// returns a []DeviceComplianceDeviceStatusable when successful
 func (m *DeviceCompliancePolicy) GetDeviceStatuses()([]DeviceComplianceDeviceStatusable) {
     val, err := m.GetBackingStore().Get("deviceStatuses")
     if err != nil {
@@ -108,6 +114,7 @@ func (m *DeviceCompliancePolicy) GetDeviceStatuses()([]DeviceComplianceDeviceSta
     return nil
 }
 // GetDeviceStatusOverview gets the deviceStatusOverview property value. Device compliance devices status overview
+// returns a DeviceComplianceDeviceOverviewable when successful
 func (m *DeviceCompliancePolicy) GetDeviceStatusOverview()(DeviceComplianceDeviceOverviewable) {
     val, err := m.GetBackingStore().Get("deviceStatusOverview")
     if err != nil {
@@ -119,6 +126,7 @@ func (m *DeviceCompliancePolicy) GetDeviceStatusOverview()(DeviceComplianceDevic
     return nil
 }
 // GetDisplayName gets the displayName property value. Admin provided name of the device configuration.
+// returns a *string when successful
 func (m *DeviceCompliancePolicy) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -130,6 +138,7 @@ func (m *DeviceCompliancePolicy) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -285,6 +294,7 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
+// returns a *Time when successful
 func (m *DeviceCompliancePolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -296,6 +306,7 @@ func (m *DeviceCompliancePolicy) GetLastModifiedDateTime()(*i336074805fc853987ab
     return nil
 }
 // GetScheduledActionsForRule gets the scheduledActionsForRule property value. The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+// returns a []DeviceComplianceScheduledActionForRuleable when successful
 func (m *DeviceCompliancePolicy) GetScheduledActionsForRule()([]DeviceComplianceScheduledActionForRuleable) {
     val, err := m.GetBackingStore().Get("scheduledActionsForRule")
     if err != nil {
@@ -307,6 +318,7 @@ func (m *DeviceCompliancePolicy) GetScheduledActionsForRule()([]DeviceCompliance
     return nil
 }
 // GetUserStatuses gets the userStatuses property value. List of DeviceComplianceUserStatus.
+// returns a []DeviceComplianceUserStatusable when successful
 func (m *DeviceCompliancePolicy) GetUserStatuses()([]DeviceComplianceUserStatusable) {
     val, err := m.GetBackingStore().Get("userStatuses")
     if err != nil {
@@ -318,6 +330,7 @@ func (m *DeviceCompliancePolicy) GetUserStatuses()([]DeviceComplianceUserStatusa
     return nil
 }
 // GetUserStatusOverview gets the userStatusOverview property value. Device compliance users status overview
+// returns a DeviceComplianceUserOverviewable when successful
 func (m *DeviceCompliancePolicy) GetUserStatusOverview()(DeviceComplianceUserOverviewable) {
     val, err := m.GetBackingStore().Get("userStatusOverview")
     if err != nil {
@@ -329,6 +342,7 @@ func (m *DeviceCompliancePolicy) GetUserStatusOverview()(DeviceComplianceUserOve
     return nil
 }
 // GetVersion gets the version property value. Version of the device configuration.
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicy) GetVersion()(*int32) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -533,7 +547,6 @@ func (m *DeviceCompliancePolicy) SetVersion(value *int32)() {
         panic(err)
     }
 }
-// DeviceCompliancePolicyable 
 type DeviceCompliancePolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

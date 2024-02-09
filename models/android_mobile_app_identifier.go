@@ -8,7 +8,7 @@ import (
 type AndroidMobileAppIdentifier struct {
     MobileAppIdentifier
 }
-// NewAndroidMobileAppIdentifier instantiates a new androidMobileAppIdentifier and sets the default values.
+// NewAndroidMobileAppIdentifier instantiates a new AndroidMobileAppIdentifier and sets the default values.
 func NewAndroidMobileAppIdentifier()(*AndroidMobileAppIdentifier) {
     m := &AndroidMobileAppIdentifier{
         MobileAppIdentifier: *NewMobileAppIdentifier(),
@@ -18,10 +18,12 @@ func NewAndroidMobileAppIdentifier()(*AndroidMobileAppIdentifier) {
     return m
 }
 // CreateAndroidMobileAppIdentifierFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidMobileAppIdentifierFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidMobileAppIdentifier(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidMobileAppIdentifier) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileAppIdentifier.GetFieldDeserializers()
     res["packageId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *AndroidMobileAppIdentifier) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetPackageId gets the packageId property value. The identifier for an app, as specified in the play store.
+// returns a *string when successful
 func (m *AndroidMobileAppIdentifier) GetPackageId()(*string) {
     val, err := m.GetBackingStore().Get("packageId")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *AndroidMobileAppIdentifier) SetPackageId(value *string)() {
         panic(err)
     }
 }
-// AndroidMobileAppIdentifierable 
 type AndroidMobileAppIdentifierable interface {
     MobileAppIdentifierable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

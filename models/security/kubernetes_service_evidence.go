@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// KubernetesServiceEvidence 
 type KubernetesServiceEvidence struct {
     AlertEvidence
 }
-// NewKubernetesServiceEvidence instantiates a new kubernetesServiceEvidence and sets the default values.
+// NewKubernetesServiceEvidence instantiates a new KubernetesServiceEvidence and sets the default values.
 func NewKubernetesServiceEvidence()(*KubernetesServiceEvidence) {
     m := &KubernetesServiceEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -18,10 +17,12 @@ func NewKubernetesServiceEvidence()(*KubernetesServiceEvidence) {
     return m
 }
 // CreateKubernetesServiceEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateKubernetesServiceEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewKubernetesServiceEvidence(), nil
 }
 // GetClusterIP gets the clusterIP property value. The service cluster IP.
+// returns a IpEvidenceable when successful
 func (m *KubernetesServiceEvidence) GetClusterIP()(IpEvidenceable) {
     val, err := m.GetBackingStore().Get("clusterIP")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *KubernetesServiceEvidence) GetClusterIP()(IpEvidenceable) {
     return nil
 }
 // GetExternalIPs gets the externalIPs property value. The service external IPs.
+// returns a []IpEvidenceable when successful
 func (m *KubernetesServiceEvidence) GetExternalIPs()([]IpEvidenceable) {
     val, err := m.GetBackingStore().Get("externalIPs")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *KubernetesServiceEvidence) GetExternalIPs()([]IpEvidenceable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *KubernetesServiceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["clusterIP"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -141,6 +144,7 @@ func (m *KubernetesServiceEvidence) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetLabels gets the labels property value. The service labels.
+// returns a Dictionaryable when successful
 func (m *KubernetesServiceEvidence) GetLabels()(Dictionaryable) {
     val, err := m.GetBackingStore().Get("labels")
     if err != nil {
@@ -152,6 +156,7 @@ func (m *KubernetesServiceEvidence) GetLabels()(Dictionaryable) {
     return nil
 }
 // GetName gets the name property value. The service name.
+// returns a *string when successful
 func (m *KubernetesServiceEvidence) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -163,6 +168,7 @@ func (m *KubernetesServiceEvidence) GetName()(*string) {
     return nil
 }
 // GetNamespace gets the namespace property value. The service namespace.
+// returns a KubernetesNamespaceEvidenceable when successful
 func (m *KubernetesServiceEvidence) GetNamespace()(KubernetesNamespaceEvidenceable) {
     val, err := m.GetBackingStore().Get("namespace")
     if err != nil {
@@ -174,6 +180,7 @@ func (m *KubernetesServiceEvidence) GetNamespace()(KubernetesNamespaceEvidenceab
     return nil
 }
 // GetSelector gets the selector property value. The service selector.
+// returns a Dictionaryable when successful
 func (m *KubernetesServiceEvidence) GetSelector()(Dictionaryable) {
     val, err := m.GetBackingStore().Get("selector")
     if err != nil {
@@ -185,6 +192,7 @@ func (m *KubernetesServiceEvidence) GetSelector()(Dictionaryable) {
     return nil
 }
 // GetServicePorts gets the servicePorts property value. The list of service ports.
+// returns a []KubernetesServicePortable when successful
 func (m *KubernetesServiceEvidence) GetServicePorts()([]KubernetesServicePortable) {
     val, err := m.GetBackingStore().Get("servicePorts")
     if err != nil {
@@ -196,6 +204,7 @@ func (m *KubernetesServiceEvidence) GetServicePorts()([]KubernetesServicePortabl
     return nil
 }
 // GetServiceType gets the serviceType property value. The serviceType property
+// returns a *KubernetesServiceType when successful
 func (m *KubernetesServiceEvidence) GetServiceType()(*KubernetesServiceType) {
     val, err := m.GetBackingStore().Get("serviceType")
     if err != nil {
@@ -331,7 +340,6 @@ func (m *KubernetesServiceEvidence) SetServiceType(value *KubernetesServiceType)
         panic(err)
     }
 }
-// KubernetesServiceEvidenceable 
 type KubernetesServiceEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

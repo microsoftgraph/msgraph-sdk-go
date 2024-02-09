@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// TeamMemberSettings 
 type TeamMemberSettings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTeamMemberSettings instantiates a new teamMemberSettings and sets the default values.
+// NewTeamMemberSettings instantiates a new TeamMemberSettings and sets the default values.
 func NewTeamMemberSettings()(*TeamMemberSettings) {
     m := &TeamMemberSettings{
     }
@@ -19,10 +18,12 @@ func NewTeamMemberSettings()(*TeamMemberSettings) {
     return m
 }
 // CreateTeamMemberSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamMemberSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamMemberSettings(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TeamMemberSettings) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *TeamMemberSettings) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAllowAddRemoveApps gets the allowAddRemoveApps property value. If set to true, members can add and remove apps.
+// returns a *bool when successful
 func (m *TeamMemberSettings) GetAllowAddRemoveApps()(*bool) {
     val, err := m.GetBackingStore().Get("allowAddRemoveApps")
     if err != nil {
@@ -46,6 +48,7 @@ func (m *TeamMemberSettings) GetAllowAddRemoveApps()(*bool) {
     return nil
 }
 // GetAllowCreatePrivateChannels gets the allowCreatePrivateChannels property value. If set to true, members can add and update private channels.
+// returns a *bool when successful
 func (m *TeamMemberSettings) GetAllowCreatePrivateChannels()(*bool) {
     val, err := m.GetBackingStore().Get("allowCreatePrivateChannels")
     if err != nil {
@@ -57,6 +60,7 @@ func (m *TeamMemberSettings) GetAllowCreatePrivateChannels()(*bool) {
     return nil
 }
 // GetAllowCreateUpdateChannels gets the allowCreateUpdateChannels property value. If set to true, members can add and update channels.
+// returns a *bool when successful
 func (m *TeamMemberSettings) GetAllowCreateUpdateChannels()(*bool) {
     val, err := m.GetBackingStore().Get("allowCreateUpdateChannels")
     if err != nil {
@@ -68,6 +72,7 @@ func (m *TeamMemberSettings) GetAllowCreateUpdateChannels()(*bool) {
     return nil
 }
 // GetAllowCreateUpdateRemoveConnectors gets the allowCreateUpdateRemoveConnectors property value. If set to true, members can add, update, and remove connectors.
+// returns a *bool when successful
 func (m *TeamMemberSettings) GetAllowCreateUpdateRemoveConnectors()(*bool) {
     val, err := m.GetBackingStore().Get("allowCreateUpdateRemoveConnectors")
     if err != nil {
@@ -79,6 +84,7 @@ func (m *TeamMemberSettings) GetAllowCreateUpdateRemoveConnectors()(*bool) {
     return nil
 }
 // GetAllowCreateUpdateRemoveTabs gets the allowCreateUpdateRemoveTabs property value. If set to true, members can add, update, and remove tabs.
+// returns a *bool when successful
 func (m *TeamMemberSettings) GetAllowCreateUpdateRemoveTabs()(*bool) {
     val, err := m.GetBackingStore().Get("allowCreateUpdateRemoveTabs")
     if err != nil {
@@ -90,6 +96,7 @@ func (m *TeamMemberSettings) GetAllowCreateUpdateRemoveTabs()(*bool) {
     return nil
 }
 // GetAllowDeleteChannels gets the allowDeleteChannels property value. If set to true, members can delete channels.
+// returns a *bool when successful
 func (m *TeamMemberSettings) GetAllowDeleteChannels()(*bool) {
     val, err := m.GetBackingStore().Get("allowDeleteChannels")
     if err != nil {
@@ -101,10 +108,12 @@ func (m *TeamMemberSettings) GetAllowDeleteChannels()(*bool) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *TeamMemberSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamMemberSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allowAddRemoveApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -180,6 +189,7 @@ func (m *TeamMemberSettings) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *TeamMemberSettings) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -302,7 +312,6 @@ func (m *TeamMemberSettings) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// TeamMemberSettingsable 
 type TeamMemberSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

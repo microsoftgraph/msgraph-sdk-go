@@ -17,20 +17,21 @@ type PrintersItemJobsItemCancelRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewPrintersItemJobsItemCancelRequestBuilderInternal instantiates a new CancelRequestBuilder and sets the default values.
+// NewPrintersItemJobsItemCancelRequestBuilderInternal instantiates a new PrintersItemJobsItemCancelRequestBuilder and sets the default values.
 func NewPrintersItemJobsItemCancelRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrintersItemJobsItemCancelRequestBuilder) {
     m := &PrintersItemJobsItemCancelRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/printers/{printer%2Did}/jobs/{printJob%2Did}/cancel", pathParameters),
     }
     return m
 }
-// NewPrintersItemJobsItemCancelRequestBuilder instantiates a new CancelRequestBuilder and sets the default values.
+// NewPrintersItemJobsItemCancelRequestBuilder instantiates a new PrintersItemJobsItemCancelRequestBuilder and sets the default values.
 func NewPrintersItemJobsItemCancelRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrintersItemJobsItemCancelRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrintersItemJobsItemCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/printjob-cancel?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *PrintersItemJobsItemCancelRequestBuilder) Post(ctx context.Context, req
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *PrintersItemJobsItemCancelRequestBuilder) Post(ctx context.Context, req
     return nil
 }
 // ToPostRequestInformation cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.
+// returns a *RequestInformation when successful
 func (m *PrintersItemJobsItemCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *PrintersItemJobsItemCancelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *PrintersItemJobsItemCancelRequestBuilder) ToPostRequestInformation(ctx 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *PrintersItemJobsItemCancelRequestBuilder when successful
 func (m *PrintersItemJobsItemCancelRequestBuilder) WithUrl(rawUrl string)(*PrintersItemJobsItemCancelRequestBuilder) {
     return NewPrintersItemJobsItemCancelRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

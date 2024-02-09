@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CrossTenantAccessPolicyB2BSetting 
 type CrossTenantAccessPolicyB2BSetting struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCrossTenantAccessPolicyB2BSetting instantiates a new crossTenantAccessPolicyB2BSetting and sets the default values.
+// NewCrossTenantAccessPolicyB2BSetting instantiates a new CrossTenantAccessPolicyB2BSetting and sets the default values.
 func NewCrossTenantAccessPolicyB2BSetting()(*CrossTenantAccessPolicyB2BSetting) {
     m := &CrossTenantAccessPolicyB2BSetting{
     }
@@ -19,10 +18,12 @@ func NewCrossTenantAccessPolicyB2BSetting()(*CrossTenantAccessPolicyB2BSetting) 
     return m
 }
 // CreateCrossTenantAccessPolicyB2BSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCrossTenantAccessPolicyB2BSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCrossTenantAccessPolicyB2BSetting(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CrossTenantAccessPolicyB2BSetting) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *CrossTenantAccessPolicyB2BSetting) GetAdditionalData()(map[string]any) 
     return val.(map[string]any)
 }
 // GetApplications gets the applications property value. The list of applications targeted with your cross-tenant access policy.
+// returns a CrossTenantAccessPolicyTargetConfigurationable when successful
 func (m *CrossTenantAccessPolicyB2BSetting) GetApplications()(CrossTenantAccessPolicyTargetConfigurationable) {
     val, err := m.GetBackingStore().Get("applications")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *CrossTenantAccessPolicyB2BSetting) GetApplications()(CrossTenantAccessP
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CrossTenantAccessPolicyB2BSetting) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CrossTenantAccessPolicyB2BSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["applications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -85,6 +89,7 @@ func (m *CrossTenantAccessPolicyB2BSetting) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *CrossTenantAccessPolicyB2BSetting) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -96,6 +101,7 @@ func (m *CrossTenantAccessPolicyB2BSetting) GetOdataType()(*string) {
     return nil
 }
 // GetUsersAndGroups gets the usersAndGroups property value. The list of users and groups targeted with your cross-tenant access policy.
+// returns a CrossTenantAccessPolicyTargetConfigurationable when successful
 func (m *CrossTenantAccessPolicyB2BSetting) GetUsersAndGroups()(CrossTenantAccessPolicyTargetConfigurationable) {
     val, err := m.GetBackingStore().Get("usersAndGroups")
     if err != nil {
@@ -166,7 +172,6 @@ func (m *CrossTenantAccessPolicyB2BSetting) SetUsersAndGroups(value CrossTenantA
         panic(err)
     }
 }
-// CrossTenantAccessPolicyB2BSettingable 
 type CrossTenantAccessPolicyB2BSettingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

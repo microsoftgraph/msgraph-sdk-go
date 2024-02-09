@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// InviteParticipantsOperation 
 type InviteParticipantsOperation struct {
     CommsOperation
 }
-// NewInviteParticipantsOperation instantiates a new inviteParticipantsOperation and sets the default values.
+// NewInviteParticipantsOperation instantiates a new InviteParticipantsOperation and sets the default values.
 func NewInviteParticipantsOperation()(*InviteParticipantsOperation) {
     m := &InviteParticipantsOperation{
         CommsOperation: *NewCommsOperation(),
@@ -16,10 +15,12 @@ func NewInviteParticipantsOperation()(*InviteParticipantsOperation) {
     return m
 }
 // CreateInviteParticipantsOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInviteParticipantsOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInviteParticipantsOperation(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InviteParticipantsOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CommsOperation.GetFieldDeserializers()
     res["participants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *InviteParticipantsOperation) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetParticipants gets the participants property value. The participants to invite.
+// returns a []InvitationParticipantInfoable when successful
 func (m *InviteParticipantsOperation) GetParticipants()([]InvitationParticipantInfoable) {
     val, err := m.GetBackingStore().Get("participants")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *InviteParticipantsOperation) SetParticipants(value []InvitationParticip
         panic(err)
     }
 }
-// InviteParticipantsOperationable 
 type InviteParticipantsOperationable interface {
     CommsOperationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

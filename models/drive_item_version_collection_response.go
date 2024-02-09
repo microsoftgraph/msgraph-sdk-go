@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DriveItemVersionCollectionResponse 
 type DriveItemVersionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDriveItemVersionCollectionResponse instantiates a new driveItemVersionCollectionResponse and sets the default values.
+// NewDriveItemVersionCollectionResponse instantiates a new DriveItemVersionCollectionResponse and sets the default values.
 func NewDriveItemVersionCollectionResponse()(*DriveItemVersionCollectionResponse) {
     m := &DriveItemVersionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewDriveItemVersionCollectionResponse()(*DriveItemVersionCollectionResponse
     return m
 }
 // CreateDriveItemVersionCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDriveItemVersionCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDriveItemVersionCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DriveItemVersionCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *DriveItemVersionCollectionResponse) GetFieldDeserializers()(map[string]
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []DriveItemVersionable when successful
 func (m *DriveItemVersionCollectionResponse) GetValue()([]DriveItemVersionable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *DriveItemVersionCollectionResponse) SetValue(value []DriveItemVersionab
         panic(err)
     }
 }
-// DriveItemVersionCollectionResponseable 
 type DriveItemVersionCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

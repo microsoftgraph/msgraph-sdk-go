@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CalendarGroup 
 type CalendarGroup struct {
     Entity
 }
-// NewCalendarGroup instantiates a new calendarGroup and sets the default values.
+// NewCalendarGroup instantiates a new CalendarGroup and sets the default values.
 func NewCalendarGroup()(*CalendarGroup) {
     m := &CalendarGroup{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewCalendarGroup()(*CalendarGroup) {
     return m
 }
 // CreateCalendarGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCalendarGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCalendarGroup(), nil
 }
 // GetCalendars gets the calendars property value. The calendars in the calendar group. Navigation property. Read-only. Nullable.
+// returns a []Calendarable when successful
 func (m *CalendarGroup) GetCalendars()([]Calendarable) {
     val, err := m.GetBackingStore().Get("calendars")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *CalendarGroup) GetCalendars()([]Calendarable) {
     return nil
 }
 // GetChangeKey gets the changeKey property value. Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
+// returns a *string when successful
 func (m *CalendarGroup) GetChangeKey()(*string) {
     val, err := m.GetBackingStore().Get("changeKey")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *CalendarGroup) GetChangeKey()(*string) {
     return nil
 }
 // GetClassId gets the classId property value. The class identifier. Read-only.
+// returns a *UUID when successful
 func (m *CalendarGroup) GetClassId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("classId")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *CalendarGroup) GetClassId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CalendarGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["calendars"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -105,6 +109,7 @@ func (m *CalendarGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetName gets the name property value. The group name.
+// returns a *string when successful
 func (m *CalendarGroup) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -181,7 +186,6 @@ func (m *CalendarGroup) SetName(value *string)() {
         panic(err)
     }
 }
-// CalendarGroupable 
 type CalendarGroupable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

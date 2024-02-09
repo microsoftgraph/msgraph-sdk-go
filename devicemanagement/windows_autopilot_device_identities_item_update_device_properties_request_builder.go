@@ -17,20 +17,21 @@ type WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilderPos
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewWindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilderInternal instantiates a new UpdateDevicePropertiesRequestBuilder and sets the default values.
+// NewWindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilderInternal instantiates a new WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilder and sets the default values.
 func NewWindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilder) {
     m := &WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity%2Did}/updateDeviceProperties", pathParameters),
     }
     return m
 }
-// NewWindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilder instantiates a new UpdateDevicePropertiesRequestBuilder and sets the default values.
+// NewWindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilder instantiates a new WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilder and sets the default values.
 func NewWindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post updates properties on Autopilot devices.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-enrollment-windowsautopilotdeviceidentity-updatedeviceproperties?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilde
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilde
     return nil
 }
 // ToPostRequestInformation updates properties on Autopilot devices.
+// returns a *RequestInformation when successful
 func (m *WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilder) ToPostRequestInformation(ctx context.Context, body WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesPostRequestBodyable, requestConfiguration *WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilde
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilder when successful
 func (m *WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilder) WithUrl(rawUrl string)(*WindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilder) {
     return NewWindowsAutopilotDeviceIdentitiesItemUpdateDevicePropertiesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MailAssessmentRequest 
 type MailAssessmentRequest struct {
     ThreatAssessmentRequest
 }
-// NewMailAssessmentRequest instantiates a new mailAssessmentRequest and sets the default values.
+// NewMailAssessmentRequest instantiates a new MailAssessmentRequest and sets the default values.
 func NewMailAssessmentRequest()(*MailAssessmentRequest) {
     m := &MailAssessmentRequest{
         ThreatAssessmentRequest: *NewThreatAssessmentRequest(),
@@ -18,10 +17,12 @@ func NewMailAssessmentRequest()(*MailAssessmentRequest) {
     return m
 }
 // CreateMailAssessmentRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMailAssessmentRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMailAssessmentRequest(), nil
 }
 // GetDestinationRoutingReason gets the destinationRoutingReason property value. The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
+// returns a *MailDestinationRoutingReason when successful
 func (m *MailAssessmentRequest) GetDestinationRoutingReason()(*MailDestinationRoutingReason) {
     val, err := m.GetBackingStore().Get("destinationRoutingReason")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *MailAssessmentRequest) GetDestinationRoutingReason()(*MailDestinationRo
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MailAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ThreatAssessmentRequest.GetFieldDeserializers()
     res["destinationRoutingReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,6 +70,7 @@ func (m *MailAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetMessageUri gets the messageUri property value. The resource URI of the mail message for assessment.
+// returns a *string when successful
 func (m *MailAssessmentRequest) GetMessageUri()(*string) {
     val, err := m.GetBackingStore().Get("messageUri")
     if err != nil {
@@ -79,6 +82,7 @@ func (m *MailAssessmentRequest) GetMessageUri()(*string) {
     return nil
 }
 // GetRecipientEmail gets the recipientEmail property value. The mail recipient whose policies are used to assess the mail.
+// returns a *string when successful
 func (m *MailAssessmentRequest) GetRecipientEmail()(*string) {
     val, err := m.GetBackingStore().Get("recipientEmail")
     if err != nil {
@@ -137,7 +141,6 @@ func (m *MailAssessmentRequest) SetRecipientEmail(value *string)() {
         panic(err)
     }
 }
-// MailAssessmentRequestable 
 type MailAssessmentRequestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ThreatAssessmentRequestable

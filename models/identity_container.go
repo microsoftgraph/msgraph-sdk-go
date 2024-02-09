@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityContainer 
 type IdentityContainer struct {
     Entity
 }
-// NewIdentityContainer instantiates a new identityContainer and sets the default values.
+// NewIdentityContainer instantiates a new IdentityContainer and sets the default values.
 func NewIdentityContainer()(*IdentityContainer) {
     m := &IdentityContainer{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewIdentityContainer()(*IdentityContainer) {
     return m
 }
 // CreateIdentityContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIdentityContainerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIdentityContainer(), nil
 }
 // GetApiConnectors gets the apiConnectors property value. Represents entry point for API connectors.
+// returns a []IdentityApiConnectorable when successful
 func (m *IdentityContainer) GetApiConnectors()([]IdentityApiConnectorable) {
     val, err := m.GetBackingStore().Get("apiConnectors")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *IdentityContainer) GetApiConnectors()([]IdentityApiConnectorable) {
     return nil
 }
 // GetB2xUserFlows gets the b2xUserFlows property value. Represents entry point for B2X/self-service sign-up identity userflows.
+// returns a []B2xIdentityUserFlowable when successful
 func (m *IdentityContainer) GetB2xUserFlows()([]B2xIdentityUserFlowable) {
     val, err := m.GetBackingStore().Get("b2xUserFlows")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *IdentityContainer) GetB2xUserFlows()([]B2xIdentityUserFlowable) {
     return nil
 }
 // GetConditionalAccess gets the conditionalAccess property value. the entry point for the Conditional Access (CA) object model.
+// returns a ConditionalAccessRootable when successful
 func (m *IdentityContainer) GetConditionalAccess()(ConditionalAccessRootable) {
     val, err := m.GetBackingStore().Get("conditionalAccess")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *IdentityContainer) GetConditionalAccess()(ConditionalAccessRootable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["apiConnectors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -132,6 +136,7 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetIdentityProviders gets the identityProviders property value. The identityProviders property
+// returns a []IdentityProviderBaseable when successful
 func (m *IdentityContainer) GetIdentityProviders()([]IdentityProviderBaseable) {
     val, err := m.GetBackingStore().Get("identityProviders")
     if err != nil {
@@ -143,6 +148,7 @@ func (m *IdentityContainer) GetIdentityProviders()([]IdentityProviderBaseable) {
     return nil
 }
 // GetUserFlowAttributes gets the userFlowAttributes property value. Represents entry point for identity userflow attributes.
+// returns a []IdentityUserFlowAttributeable when successful
 func (m *IdentityContainer) GetUserFlowAttributes()([]IdentityUserFlowAttributeable) {
     val, err := m.GetBackingStore().Get("userFlowAttributes")
     if err != nil {
@@ -250,7 +256,6 @@ func (m *IdentityContainer) SetUserFlowAttributes(value []IdentityUserFlowAttrib
         panic(err)
     }
 }
-// IdentityContainerable 
 type IdentityContainerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

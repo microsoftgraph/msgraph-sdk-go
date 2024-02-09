@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AmazonResourceEvidence 
 type AmazonResourceEvidence struct {
     AlertEvidence
 }
-// NewAmazonResourceEvidence instantiates a new amazonResourceEvidence and sets the default values.
+// NewAmazonResourceEvidence instantiates a new AmazonResourceEvidence and sets the default values.
 func NewAmazonResourceEvidence()(*AmazonResourceEvidence) {
     m := &AmazonResourceEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -18,10 +17,12 @@ func NewAmazonResourceEvidence()(*AmazonResourceEvidence) {
     return m
 }
 // CreateAmazonResourceEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAmazonResourceEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAmazonResourceEvidence(), nil
 }
 // GetAmazonAccountId gets the amazonAccountId property value. The unique identifier for the Amazon account.
+// returns a *string when successful
 func (m *AmazonResourceEvidence) GetAmazonAccountId()(*string) {
     val, err := m.GetBackingStore().Get("amazonAccountId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AmazonResourceEvidence) GetAmazonAccountId()(*string) {
     return nil
 }
 // GetAmazonResourceId gets the amazonResourceId property value. The Amazon resource identifier (ARN) for the cloud resource.
+// returns a *string when successful
 func (m *AmazonResourceEvidence) GetAmazonResourceId()(*string) {
     val, err := m.GetBackingStore().Get("amazonResourceId")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *AmazonResourceEvidence) GetAmazonResourceId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AmazonResourceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["amazonAccountId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -89,6 +92,7 @@ func (m *AmazonResourceEvidence) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetResourceName gets the resourceName property value. The name of the resource.
+// returns a *string when successful
 func (m *AmazonResourceEvidence) GetResourceName()(*string) {
     val, err := m.GetBackingStore().Get("resourceName")
     if err != nil {
@@ -100,6 +104,7 @@ func (m *AmazonResourceEvidence) GetResourceName()(*string) {
     return nil
 }
 // GetResourceType gets the resourceType property value. The type of the resource.
+// returns a *string when successful
 func (m *AmazonResourceEvidence) GetResourceType()(*string) {
     val, err := m.GetBackingStore().Get("resourceType")
     if err != nil {
@@ -170,7 +175,6 @@ func (m *AmazonResourceEvidence) SetResourceType(value *string)() {
         panic(err)
     }
 }
-// AmazonResourceEvidenceable 
 type AmazonResourceEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

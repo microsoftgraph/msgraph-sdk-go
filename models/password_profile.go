@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// PasswordProfile 
 type PasswordProfile struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPasswordProfile instantiates a new passwordProfile and sets the default values.
+// NewPasswordProfile instantiates a new PasswordProfile and sets the default values.
 func NewPasswordProfile()(*PasswordProfile) {
     m := &PasswordProfile{
     }
@@ -19,10 +18,12 @@ func NewPasswordProfile()(*PasswordProfile) {
     return m
 }
 // CreatePasswordProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePasswordProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPasswordProfile(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PasswordProfile) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *PasswordProfile) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *PasswordProfile) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PasswordProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["forceChangePasswordNextSignIn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -84,6 +87,7 @@ func (m *PasswordProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetForceChangePasswordNextSignIn gets the forceChangePasswordNextSignIn property value. true if the user must change her password on the next login; otherwise false.
+// returns a *bool when successful
 func (m *PasswordProfile) GetForceChangePasswordNextSignIn()(*bool) {
     val, err := m.GetBackingStore().Get("forceChangePasswordNextSignIn")
     if err != nil {
@@ -95,6 +99,7 @@ func (m *PasswordProfile) GetForceChangePasswordNextSignIn()(*bool) {
     return nil
 }
 // GetForceChangePasswordNextSignInWithMfa gets the forceChangePasswordNextSignInWithMfa property value. If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.
+// returns a *bool when successful
 func (m *PasswordProfile) GetForceChangePasswordNextSignInWithMfa()(*bool) {
     val, err := m.GetBackingStore().Get("forceChangePasswordNextSignInWithMfa")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *PasswordProfile) GetForceChangePasswordNextSignInWithMfa()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PasswordProfile) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *PasswordProfile) GetOdataType()(*string) {
     return nil
 }
 // GetPassword gets the password property value. The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user's passwordPolicies property. By default, a strong password is required.
+// returns a *string when successful
 func (m *PasswordProfile) GetPassword()(*string) {
     val, err := m.GetBackingStore().Get("password")
     if err != nil {
@@ -200,7 +207,6 @@ func (m *PasswordProfile) SetPassword(value *string)() {
         panic(err)
     }
 }
-// PasswordProfileable 
 type PasswordProfileable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

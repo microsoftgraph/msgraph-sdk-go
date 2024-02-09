@@ -6,11 +6,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// HostPair 
 type HostPair struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewHostPair instantiates a new hostPair and sets the default values.
+// NewHostPair instantiates a new HostPair and sets the default values.
 func NewHostPair()(*HostPair) {
     m := &HostPair{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -18,10 +17,12 @@ func NewHostPair()(*HostPair) {
     return m
 }
 // CreateHostPairFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateHostPairFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHostPair(), nil
 }
 // GetChildHost gets the childHost property value. The childHost property
+// returns a Hostable when successful
 func (m *HostPair) GetChildHost()(Hostable) {
     val, err := m.GetBackingStore().Get("childHost")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *HostPair) GetChildHost()(Hostable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *HostPair) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["childHost"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -88,6 +90,7 @@ func (m *HostPair) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetFirstSeenDateTime gets the firstSeenDateTime property value. The date and time when Microsoft Defender Threat Intelligence first observed the hostPair. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *HostPair) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstSeenDateTime")
     if err != nil {
@@ -99,6 +102,7 @@ func (m *HostPair) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
     return nil
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. The date and time when Microsoft Defender Threat Intelligence last observed the hostPair. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *HostPair) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSeenDateTime")
     if err != nil {
@@ -110,6 +114,7 @@ func (m *HostPair) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
     return nil
 }
 // GetLinkKind gets the linkKind property value. The reason that two hosts are identified as hostPair.
+// returns a *string when successful
 func (m *HostPair) GetLinkKind()(*string) {
     val, err := m.GetBackingStore().Get("linkKind")
     if err != nil {
@@ -121,6 +126,7 @@ func (m *HostPair) GetLinkKind()(*string) {
     return nil
 }
 // GetParentHost gets the parentHost property value. The parentHost property
+// returns a Hostable when successful
 func (m *HostPair) GetParentHost()(Hostable) {
     val, err := m.GetBackingStore().Get("parentHost")
     if err != nil {
@@ -204,7 +210,6 @@ func (m *HostPair) SetParentHost(value Hostable)() {
         panic(err)
     }
 }
-// HostPairable 
 type HostPairable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

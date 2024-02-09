@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ApplicationTemplateCollectionResponse 
 type ApplicationTemplateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewApplicationTemplateCollectionResponse instantiates a new applicationTemplateCollectionResponse and sets the default values.
+// NewApplicationTemplateCollectionResponse instantiates a new ApplicationTemplateCollectionResponse and sets the default values.
 func NewApplicationTemplateCollectionResponse()(*ApplicationTemplateCollectionResponse) {
     m := &ApplicationTemplateCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewApplicationTemplateCollectionResponse()(*ApplicationTemplateCollectionRe
     return m
 }
 // CreateApplicationTemplateCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateApplicationTemplateCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApplicationTemplateCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ApplicationTemplateCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ApplicationTemplateCollectionResponse) GetFieldDeserializers()(map[stri
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ApplicationTemplateable when successful
 func (m *ApplicationTemplateCollectionResponse) GetValue()([]ApplicationTemplateable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ApplicationTemplateCollectionResponse) SetValue(value []ApplicationTemp
         panic(err)
     }
 }
-// ApplicationTemplateCollectionResponseable 
 type ApplicationTemplateCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

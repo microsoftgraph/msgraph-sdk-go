@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource 
 type AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource struct {
     AccessReviewInstanceDecisionItemResource
 }
-// NewAccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource instantiates a new accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource and sets the default values.
+// NewAccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource instantiates a new AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource and sets the default values.
 func NewAccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource()(*AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) {
     m := &AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource{
         AccessReviewInstanceDecisionItemResource: *NewAccessReviewInstanceDecisionItemResource(),
@@ -18,10 +17,12 @@ func NewAccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource()(
     return m
 }
 // CreateAccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource(), nil
 }
 // GetAccessPackageDisplayName gets the accessPackageDisplayName property value. Display name of the access package to which access has been granted.
+// returns a *string when successful
 func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) GetAccessPackageDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("accessPackageDisplayName")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) 
     return nil
 }
 // GetAccessPackageId gets the accessPackageId property value. Identifier of the access package to which access has been granted.
+// returns a *string when successful
 func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) GetAccessPackageId()(*string) {
     val, err := m.GetBackingStore().Get("accessPackageId")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) 
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AccessReviewInstanceDecisionItemResource.GetFieldDeserializers()
     res["accessPackageDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -102,7 +105,6 @@ func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) 
         panic(err)
     }
 }
-// AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResourceable 
 type AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResourceable interface {
     AccessReviewInstanceDecisionItemResourceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

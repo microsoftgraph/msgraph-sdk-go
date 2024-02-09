@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudApplicationEvidence 
 type CloudApplicationEvidence struct {
     AlertEvidence
 }
-// NewCloudApplicationEvidence instantiates a new cloudApplicationEvidence and sets the default values.
+// NewCloudApplicationEvidence instantiates a new CloudApplicationEvidence and sets the default values.
 func NewCloudApplicationEvidence()(*CloudApplicationEvidence) {
     m := &CloudApplicationEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -18,10 +17,12 @@ func NewCloudApplicationEvidence()(*CloudApplicationEvidence) {
     return m
 }
 // CreateCloudApplicationEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudApplicationEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudApplicationEvidence(), nil
 }
 // GetAppId gets the appId property value. Unique identifier of the application.
+// returns a *int64 when successful
 func (m *CloudApplicationEvidence) GetAppId()(*int64) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *CloudApplicationEvidence) GetAppId()(*int64) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Name of the application.
+// returns a *string when successful
 func (m *CloudApplicationEvidence) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *CloudApplicationEvidence) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudApplicationEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -99,6 +102,7 @@ func (m *CloudApplicationEvidence) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetInstanceId gets the instanceId property value. Identifier of the instance of the Software as a Service (SaaS) application.
+// returns a *int64 when successful
 func (m *CloudApplicationEvidence) GetInstanceId()(*int64) {
     val, err := m.GetBackingStore().Get("instanceId")
     if err != nil {
@@ -110,6 +114,7 @@ func (m *CloudApplicationEvidence) GetInstanceId()(*int64) {
     return nil
 }
 // GetInstanceName gets the instanceName property value. Name of the instance of the SaaS application.
+// returns a *string when successful
 func (m *CloudApplicationEvidence) GetInstanceName()(*string) {
     val, err := m.GetBackingStore().Get("instanceName")
     if err != nil {
@@ -121,6 +126,7 @@ func (m *CloudApplicationEvidence) GetInstanceName()(*string) {
     return nil
 }
 // GetSaasAppId gets the saasAppId property value. The identifier of the SaaS application.
+// returns a *int64 when successful
 func (m *CloudApplicationEvidence) GetSaasAppId()(*int64) {
     val, err := m.GetBackingStore().Get("saasAppId")
     if err != nil {
@@ -204,7 +210,6 @@ func (m *CloudApplicationEvidence) SetSaasAppId(value *int64)() {
         panic(err)
     }
 }
-// CloudApplicationEvidenceable 
 type CloudApplicationEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

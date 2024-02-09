@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServiceUserAgent 
 type ServiceUserAgent struct {
     UserAgent
 }
-// NewServiceUserAgent instantiates a new serviceUserAgent and sets the default values.
+// NewServiceUserAgent instantiates a new ServiceUserAgent and sets the default values.
 func NewServiceUserAgent()(*ServiceUserAgent) {
     m := &ServiceUserAgent{
         UserAgent: *NewUserAgent(),
@@ -18,10 +17,12 @@ func NewServiceUserAgent()(*ServiceUserAgent) {
     return m
 }
 // CreateServiceUserAgentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateServiceUserAgentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServiceUserAgent(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ServiceUserAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UserAgent.GetFieldDeserializers()
     res["role"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *ServiceUserAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetRole gets the role property value. The role property
+// returns a *ServiceRole when successful
 func (m *ServiceUserAgent) GetRole()(*ServiceRole) {
     val, err := m.GetBackingStore().Get("role")
     if err != nil {
@@ -69,7 +71,6 @@ func (m *ServiceUserAgent) SetRole(value *ServiceRole)() {
         panic(err)
     }
 }
-// ServiceUserAgentable 
 type ServiceUserAgentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UserAgentable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OrganizationalBrandingProperties 
 type OrganizationalBrandingProperties struct {
     Entity
 }
-// NewOrganizationalBrandingProperties instantiates a new organizationalBrandingProperties and sets the default values.
+// NewOrganizationalBrandingProperties instantiates a new OrganizationalBrandingProperties and sets the default values.
 func NewOrganizationalBrandingProperties()(*OrganizationalBrandingProperties) {
     m := &OrganizationalBrandingProperties{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewOrganizationalBrandingProperties()(*OrganizationalBrandingProperties) {
     return m
 }
 // CreateOrganizationalBrandingPropertiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOrganizationalBrandingPropertiesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +40,7 @@ func CreateOrganizationalBrandingPropertiesFromDiscriminatorValue(parseNode i878
     return NewOrganizationalBrandingProperties(), nil
 }
 // GetBackgroundColor gets the backgroundColor property value. Color that appears in place of the background image in low-bandwidth connections. We recommend that you use the primary color of your banner logo or your organization color. Specify this in hexadecimal format, for example, white is #FFFFFF.
+// returns a *string when successful
 func (m *OrganizationalBrandingProperties) GetBackgroundColor()(*string) {
     val, err := m.GetBackingStore().Get("backgroundColor")
     if err != nil {
@@ -51,6 +52,7 @@ func (m *OrganizationalBrandingProperties) GetBackgroundColor()(*string) {
     return nil
 }
 // GetBackgroundImage gets the backgroundImage property value. Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
+// returns a []byte when successful
 func (m *OrganizationalBrandingProperties) GetBackgroundImage()([]byte) {
     val, err := m.GetBackingStore().Get("backgroundImage")
     if err != nil {
@@ -62,6 +64,7 @@ func (m *OrganizationalBrandingProperties) GetBackgroundImage()([]byte) {
     return nil
 }
 // GetBackgroundImageRelativeUrl gets the backgroundImageRelativeUrl property value. A relative URL for the backgroundImage property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
+// returns a *string when successful
 func (m *OrganizationalBrandingProperties) GetBackgroundImageRelativeUrl()(*string) {
     val, err := m.GetBackingStore().Get("backgroundImageRelativeUrl")
     if err != nil {
@@ -73,6 +76,7 @@ func (m *OrganizationalBrandingProperties) GetBackgroundImageRelativeUrl()(*stri
     return nil
 }
 // GetBannerLogo gets the bannerLogo property value. A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+// returns a []byte when successful
 func (m *OrganizationalBrandingProperties) GetBannerLogo()([]byte) {
     val, err := m.GetBackingStore().Get("bannerLogo")
     if err != nil {
@@ -84,6 +88,7 @@ func (m *OrganizationalBrandingProperties) GetBannerLogo()([]byte) {
     return nil
 }
 // GetBannerLogoRelativeUrl gets the bannerLogoRelativeUrl property value. A relative URL for the bannerLogo property that is combined with a CDN base URL from the cdnList to provide the read-only version served by a CDN. Read-only.
+// returns a *string when successful
 func (m *OrganizationalBrandingProperties) GetBannerLogoRelativeUrl()(*string) {
     val, err := m.GetBackingStore().Get("bannerLogoRelativeUrl")
     if err != nil {
@@ -95,6 +100,7 @@ func (m *OrganizationalBrandingProperties) GetBannerLogoRelativeUrl()(*string) {
     return nil
 }
 // GetCdnList gets the cdnList property value. A list of base URLs for all available CDN providers that are serving the assets of the current resource. Several CDN providers are used at the same time for high availability of read requests. Read-only.
+// returns a []string when successful
 func (m *OrganizationalBrandingProperties) GetCdnList()([]string) {
     val, err := m.GetBackingStore().Get("cdnList")
     if err != nil {
@@ -106,6 +112,7 @@ func (m *OrganizationalBrandingProperties) GetCdnList()([]string) {
     return nil
 }
 // GetCustomAccountResetCredentialsUrl gets the customAccountResetCredentialsUrl property value. A custom URL for resetting account credentials. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters.
+// returns a *string when successful
 func (m *OrganizationalBrandingProperties) GetCustomAccountResetCredentialsUrl()(*string) {
     val, err := m.GetBackingStore().Get("customAccountResetCredentialsUrl")
     if err != nil {
@@ -117,6 +124,7 @@ func (m *OrganizationalBrandingProperties) GetCustomAccountResetCredentialsUrl()
     return nil
 }
 // GetCustomCannotAccessYourAccountText gets the customCannotAccessYourAccountText property value. A string to replace the default 'Can't access your account?' self-service password reset (SSPR) hyperlink text on the sign-in page. This text must be in Unicode format and not exceed 256 characters.
+// returns a *string when successful
 func (m *OrganizationalBrandingProperties) GetCustomCannotAccessYourAccountText()(*string) {
     val, err := m.GetBackingStore().Get("customCannotAccessYourAccountText")
     if err != nil {
@@ -128,6 +136,7 @@ func (m *OrganizationalBrandingProperties) GetCustomCannotAccessYourAccountText(
     return nil
 }
 // GetCustomCannotAccessYourAccountUrl gets the customCannotAccessYourAccountUrl property value. A custom URL to replace the default URL of the self-service password reset (SSPR) 'Can't access your account?' hyperlink on the sign-in page. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters. DO NOT USE. Use customAccountResetCredentialsUrl instead.
+// returns a *string when successful
 func (m *OrganizationalBrandingProperties) GetCustomCannotAccessYourAccountUrl()(*string) {
     val, err := m.GetBackingStore().Get("customCannotAccessYourAccountUrl")
     if err != nil {
@@ -139,6 +148,7 @@ func (m *OrganizationalBrandingProperties) GetCustomCannotAccessYourAccountUrl()
     return nil
 }
 // GetCustomCSS gets the customCSS property value. CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
+// returns a []byte when successful
 func (m *OrganizationalBrandingProperties) GetCustomCSS()([]byte) {
     val, err := m.GetBackingStore().Get("customCSS")
     if err != nil {
@@ -150,6 +160,7 @@ func (m *OrganizationalBrandingProperties) GetCustomCSS()([]byte) {
     return nil
 }
 // GetCustomCSSRelativeUrl gets the customCSSRelativeUrl property value. A relative URL for the customCSS property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
+// returns a *string when successful
 func (m *OrganizationalBrandingProperties) GetCustomCSSRelativeUrl()(*string) {
     val, err := m.GetBackingStore().Get("customCSSRelativeUrl")
     if err != nil {
@@ -161,6 +172,7 @@ func (m *OrganizationalBrandingProperties) GetCustomCSSRelativeUrl()(*string) {
     return nil
 }
 // GetCustomForgotMyPasswordText gets the customForgotMyPasswordText property value. A string to replace the default 'Forgot my password' hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters.
+// returns a *string when successful
 func (m *OrganizationalBrandingProperties) GetCustomForgotMyPasswordText()(*string) {
     val, err := m.GetBackingStore().Get("customForgotMyPasswordText")
     if err != nil {
@@ -172,6 +184,7 @@ func (m *OrganizationalBrandingProperties) GetCustomForgotMyPasswordText()(*stri
     return nil
 }
 // GetCustomPrivacyAndCookiesText gets the customPrivacyAndCookiesText property value. A string to replace the default 'Privacy and Cookies' hyperlink text in the footer. This text must be in Unicode format and not exceed 256 characters.
+// returns a *string when successful
 func (m *OrganizationalBrandingProperties) GetCustomPrivacyAndCookiesText()(*string) {
     val, err := m.GetBackingStore().Get("customPrivacyAndCookiesText")
     if err != nil {
@@ -183,6 +196,7 @@ func (m *OrganizationalBrandingProperties) GetCustomPrivacyAndCookiesText()(*str
     return nil
 }
 // GetCustomPrivacyAndCookiesUrl gets the customPrivacyAndCookiesUrl property value. A custom URL to replace the default URL of the 'Privacy and Cookies' hyperlink in the footer. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters.
+// returns a *string when successful
 func (m *OrganizationalBrandingProperties) GetCustomPrivacyAndCookiesUrl()(*string) {
     val, err := m.GetBackingStore().Get("customPrivacyAndCookiesUrl")
     if err != nil {
@@ -194,6 +208,7 @@ func (m *OrganizationalBrandingProperties) GetCustomPrivacyAndCookiesUrl()(*stri
     return nil
 }
 // GetCustomResetItNowText gets the customResetItNowText property value. A string to replace the default 'reset it now' hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters. DO NOT USE: Customization of the 'reset it now' hyperlink text is currently not supported.
+// returns a *string when successful
 func (m *OrganizationalBrandingProperties) GetCustomResetItNowText()(*string) {
     val, err := m.GetBackingStore().Get("customResetItNowText")
     if err != nil {
@@ -205,6 +220,7 @@ func (m *OrganizationalBrandingProperties) GetCustomResetItNowText()(*string) {
     return nil
 }
 // GetCustomTermsOfUseText gets the customTermsOfUseText property value. A string to replace the the default 'Terms of Use' hyperlink text in the footer. This text must be in Unicode format and not exceed 256 characters.
+// returns a *string when successful
 func (m *OrganizationalBrandingProperties) GetCustomTermsOfUseText()(*string) {
     val, err := m.GetBackingStore().Get("customTermsOfUseText")
     if err != nil {
@@ -216,6 +232,7 @@ func (m *OrganizationalBrandingProperties) GetCustomTermsOfUseText()(*string) {
     return nil
 }
 // GetCustomTermsOfUseUrl gets the customTermsOfUseUrl property value. A custom URL to replace the default URL of the 'Terms of Use' hyperlink in the footer. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128characters.
+// returns a *string when successful
 func (m *OrganizationalBrandingProperties) GetCustomTermsOfUseUrl()(*string) {
     val, err := m.GetBackingStore().Get("customTermsOfUseUrl")
     if err != nil {
@@ -227,6 +244,7 @@ func (m *OrganizationalBrandingProperties) GetCustomTermsOfUseUrl()(*string) {
     return nil
 }
 // GetFavicon gets the favicon property value. A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+// returns a []byte when successful
 func (m *OrganizationalBrandingProperties) GetFavicon()([]byte) {
     val, err := m.GetBackingStore().Get("favicon")
     if err != nil {
@@ -238,6 +256,7 @@ func (m *OrganizationalBrandingProperties) GetFavicon()([]byte) {
     return nil
 }
 // GetFaviconRelativeUrl gets the faviconRelativeUrl property value. A relative url for the favicon above that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
+// returns a *string when successful
 func (m *OrganizationalBrandingProperties) GetFaviconRelativeUrl()(*string) {
     val, err := m.GetBackingStore().Get("faviconRelativeUrl")
     if err != nil {
@@ -249,6 +268,7 @@ func (m *OrganizationalBrandingProperties) GetFaviconRelativeUrl()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["backgroundColor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -560,6 +580,7 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetHeaderBackgroundColor gets the headerBackgroundColor property value. The RGB color to apply to customize the color of the header.
+// returns a *string when successful
 func (m *OrganizationalBrandingProperties) GetHeaderBackgroundColor()(*string) {
     val, err := m.GetBackingStore().Get("headerBackgroundColor")
     if err != nil {
@@ -571,6 +592,7 @@ func (m *OrganizationalBrandingProperties) GetHeaderBackgroundColor()(*string) {
     return nil
 }
 // GetHeaderLogo gets the headerLogo property value. A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+// returns a []byte when successful
 func (m *OrganizationalBrandingProperties) GetHeaderLogo()([]byte) {
     val, err := m.GetBackingStore().Get("headerLogo")
     if err != nil {
@@ -582,6 +604,7 @@ func (m *OrganizationalBrandingProperties) GetHeaderLogo()([]byte) {
     return nil
 }
 // GetHeaderLogoRelativeUrl gets the headerLogoRelativeUrl property value. A relative URL for the headerLogo property that is combined with a CDN base URL from the cdnList to provide the read-only version served by a CDN. Read-only.
+// returns a *string when successful
 func (m *OrganizationalBrandingProperties) GetHeaderLogoRelativeUrl()(*string) {
     val, err := m.GetBackingStore().Get("headerLogoRelativeUrl")
     if err != nil {
@@ -593,6 +616,7 @@ func (m *OrganizationalBrandingProperties) GetHeaderLogoRelativeUrl()(*string) {
     return nil
 }
 // GetLoginPageLayoutConfiguration gets the loginPageLayoutConfiguration property value. Represents the layout configuration to be displayed on the login page for a tenant.
+// returns a LoginPageLayoutConfigurationable when successful
 func (m *OrganizationalBrandingProperties) GetLoginPageLayoutConfiguration()(LoginPageLayoutConfigurationable) {
     val, err := m.GetBackingStore().Get("loginPageLayoutConfiguration")
     if err != nil {
@@ -604,6 +628,7 @@ func (m *OrganizationalBrandingProperties) GetLoginPageLayoutConfiguration()(Log
     return nil
 }
 // GetLoginPageTextVisibilitySettings gets the loginPageTextVisibilitySettings property value. Represents the various texts that can be hidden on the login page for a tenant.
+// returns a LoginPageTextVisibilitySettingsable when successful
 func (m *OrganizationalBrandingProperties) GetLoginPageTextVisibilitySettings()(LoginPageTextVisibilitySettingsable) {
     val, err := m.GetBackingStore().Get("loginPageTextVisibilitySettings")
     if err != nil {
@@ -615,6 +640,7 @@ func (m *OrganizationalBrandingProperties) GetLoginPageTextVisibilitySettings()(
     return nil
 }
 // GetSignInPageText gets the signInPageText property value. Text that appears at the bottom of the sign-in box. Use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be in Unicode format and not exceed 1024 characters.
+// returns a *string when successful
 func (m *OrganizationalBrandingProperties) GetSignInPageText()(*string) {
     val, err := m.GetBackingStore().Get("signInPageText")
     if err != nil {
@@ -626,6 +652,7 @@ func (m *OrganizationalBrandingProperties) GetSignInPageText()(*string) {
     return nil
 }
 // GetSquareLogo gets the squareLogo property value. A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+// returns a []byte when successful
 func (m *OrganizationalBrandingProperties) GetSquareLogo()([]byte) {
     val, err := m.GetBackingStore().Get("squareLogo")
     if err != nil {
@@ -637,6 +664,7 @@ func (m *OrganizationalBrandingProperties) GetSquareLogo()([]byte) {
     return nil
 }
 // GetSquareLogoDark gets the squareLogoDark property value. A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+// returns a []byte when successful
 func (m *OrganizationalBrandingProperties) GetSquareLogoDark()([]byte) {
     val, err := m.GetBackingStore().Get("squareLogoDark")
     if err != nil {
@@ -648,6 +676,7 @@ func (m *OrganizationalBrandingProperties) GetSquareLogoDark()([]byte) {
     return nil
 }
 // GetSquareLogoDarkRelativeUrl gets the squareLogoDarkRelativeUrl property value. A relative URL for the squareLogoDark property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
+// returns a *string when successful
 func (m *OrganizationalBrandingProperties) GetSquareLogoDarkRelativeUrl()(*string) {
     val, err := m.GetBackingStore().Get("squareLogoDarkRelativeUrl")
     if err != nil {
@@ -659,6 +688,7 @@ func (m *OrganizationalBrandingProperties) GetSquareLogoDarkRelativeUrl()(*strin
     return nil
 }
 // GetSquareLogoRelativeUrl gets the squareLogoRelativeUrl property value. A relative URL for the squareLogo property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
+// returns a *string when successful
 func (m *OrganizationalBrandingProperties) GetSquareLogoRelativeUrl()(*string) {
     val, err := m.GetBackingStore().Get("squareLogoRelativeUrl")
     if err != nil {
@@ -670,6 +700,7 @@ func (m *OrganizationalBrandingProperties) GetSquareLogoRelativeUrl()(*string) {
     return nil
 }
 // GetUsernameHintText gets the usernameHintText property value. A string that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can't exceed 64 characters.
+// returns a *string when successful
 func (m *OrganizationalBrandingProperties) GetUsernameHintText()(*string) {
     val, err := m.GetBackingStore().Get("usernameHintText")
     if err != nil {
@@ -1078,7 +1109,6 @@ func (m *OrganizationalBrandingProperties) SetUsernameHintText(value *string)() 
         panic(err)
     }
 }
-// OrganizationalBrandingPropertiesable 
 type OrganizationalBrandingPropertiesable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
