@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemRetentionLabel 
 type ItemRetentionLabel struct {
     Entity
 }
-// NewItemRetentionLabel instantiates a new itemRetentionLabel and sets the default values.
+// NewItemRetentionLabel instantiates a new ItemRetentionLabel and sets the default values.
 func NewItemRetentionLabel()(*ItemRetentionLabel) {
     m := &ItemRetentionLabel{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewItemRetentionLabel()(*ItemRetentionLabel) {
     return m
 }
 // CreateItemRetentionLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemRetentionLabelFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemRetentionLabel(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemRetentionLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["isLabelAppliedExplicitly"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -76,6 +77,7 @@ func (m *ItemRetentionLabel) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetIsLabelAppliedExplicitly gets the isLabelAppliedExplicitly property value. Specifies whether the label is applied explicitly on the item. True indicates that the label is applied explicitly; otherwise, the label is inherited from its parent. Read-only.
+// returns a *bool when successful
 func (m *ItemRetentionLabel) GetIsLabelAppliedExplicitly()(*bool) {
     val, err := m.GetBackingStore().Get("isLabelAppliedExplicitly")
     if err != nil {
@@ -87,6 +89,7 @@ func (m *ItemRetentionLabel) GetIsLabelAppliedExplicitly()(*bool) {
     return nil
 }
 // GetLabelAppliedBy gets the labelAppliedBy property value. Identity of the user who applied the label. Read-only.
+// returns a IdentitySetable when successful
 func (m *ItemRetentionLabel) GetLabelAppliedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("labelAppliedBy")
     if err != nil {
@@ -98,6 +101,7 @@ func (m *ItemRetentionLabel) GetLabelAppliedBy()(IdentitySetable) {
     return nil
 }
 // GetLabelAppliedDateTime gets the labelAppliedDateTime property value. The date and time when the label was applied on the item. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *ItemRetentionLabel) GetLabelAppliedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("labelAppliedDateTime")
     if err != nil {
@@ -109,6 +113,7 @@ func (m *ItemRetentionLabel) GetLabelAppliedDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetName gets the name property value. The retention label on the document. Read-write.
+// returns a *string when successful
 func (m *ItemRetentionLabel) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -120,6 +125,7 @@ func (m *ItemRetentionLabel) GetName()(*string) {
     return nil
 }
 // GetRetentionSettings gets the retentionSettings property value. The retention settings enforced on the item. Read-write.
+// returns a RetentionLabelSettingsable when successful
 func (m *ItemRetentionLabel) GetRetentionSettings()(RetentionLabelSettingsable) {
     val, err := m.GetBackingStore().Get("retentionSettings")
     if err != nil {
@@ -203,7 +209,6 @@ func (m *ItemRetentionLabel) SetRetentionSettings(value RetentionLabelSettingsab
         panic(err)
     }
 }
-// ItemRetentionLabelable 
 type ItemRetentionLabelable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

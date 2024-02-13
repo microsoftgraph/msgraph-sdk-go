@@ -40,6 +40,7 @@ type DetectedAppsItemManagedDevicesRequestBuilderGetRequestConfiguration struct 
     QueryParameters *DetectedAppsItemManagedDevicesRequestBuilderGetQueryParameters
 }
 // ByManagedDeviceId provides operations to manage the managedDevices property of the microsoft.graph.detectedApp entity.
+// returns a *DetectedAppsItemManagedDevicesManagedDeviceItemRequestBuilder when successful
 func (m *DetectedAppsItemManagedDevicesRequestBuilder) ByManagedDeviceId(managedDeviceId string)(*DetectedAppsItemManagedDevicesManagedDeviceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,32 +51,34 @@ func (m *DetectedAppsItemManagedDevicesRequestBuilder) ByManagedDeviceId(managed
     }
     return NewDetectedAppsItemManagedDevicesManagedDeviceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewDetectedAppsItemManagedDevicesRequestBuilderInternal instantiates a new ManagedDevicesRequestBuilder and sets the default values.
+// NewDetectedAppsItemManagedDevicesRequestBuilderInternal instantiates a new DetectedAppsItemManagedDevicesRequestBuilder and sets the default values.
 func NewDetectedAppsItemManagedDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DetectedAppsItemManagedDevicesRequestBuilder) {
     m := &DetectedAppsItemManagedDevicesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/detectedApps/{detectedApp%2Did}/managedDevices{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/detectedApps/{detectedApp%2Did}/managedDevices{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewDetectedAppsItemManagedDevicesRequestBuilder instantiates a new ManagedDevicesRequestBuilder and sets the default values.
+// NewDetectedAppsItemManagedDevicesRequestBuilder instantiates a new DetectedAppsItemManagedDevicesRequestBuilder and sets the default values.
 func NewDetectedAppsItemManagedDevicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DetectedAppsItemManagedDevicesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDetectedAppsItemManagedDevicesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *DetectedAppsItemManagedDevicesCountRequestBuilder when successful
 func (m *DetectedAppsItemManagedDevicesRequestBuilder) Count()(*DetectedAppsItemManagedDevicesCountRequestBuilder) {
     return NewDetectedAppsItemManagedDevicesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the devices that have the discovered application installed
+// returns a ManagedDeviceCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DetectedAppsItemManagedDevicesRequestBuilder) Get(ctx context.Context, requestConfiguration *DetectedAppsItemManagedDevicesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateManagedDeviceCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -87,6 +90,7 @@ func (m *DetectedAppsItemManagedDevicesRequestBuilder) Get(ctx context.Context, 
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceCollectionResponseable), nil
 }
 // ToGetRequestInformation the devices that have the discovered application installed
+// returns a *RequestInformation when successful
 func (m *DetectedAppsItemManagedDevicesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DetectedAppsItemManagedDevicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -100,6 +104,7 @@ func (m *DetectedAppsItemManagedDevicesRequestBuilder) ToGetRequestInformation(c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DetectedAppsItemManagedDevicesRequestBuilder when successful
 func (m *DetectedAppsItemManagedDevicesRequestBuilder) WithUrl(rawUrl string)(*DetectedAppsItemManagedDevicesRequestBuilder) {
     return NewDetectedAppsItemManagedDevicesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

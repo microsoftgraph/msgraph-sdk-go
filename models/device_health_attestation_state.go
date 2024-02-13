@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// DeviceHealthAttestationState 
 type DeviceHealthAttestationState struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDeviceHealthAttestationState instantiates a new deviceHealthAttestationState and sets the default values.
+// NewDeviceHealthAttestationState instantiates a new DeviceHealthAttestationState and sets the default values.
 func NewDeviceHealthAttestationState()(*DeviceHealthAttestationState) {
     m := &DeviceHealthAttestationState{
     }
@@ -20,10 +19,12 @@ func NewDeviceHealthAttestationState()(*DeviceHealthAttestationState) {
     return m
 }
 // CreateDeviceHealthAttestationStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceHealthAttestationStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceHealthAttestationState(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DeviceHealthAttestationState) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,6 +37,7 @@ func (m *DeviceHealthAttestationState) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAttestationIdentityKey gets the attestationIdentityKey property value. TWhen an Attestation Identity Key (AIK) is present on a device, it indicates that the device has an endorsement key (EK) certificate.
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetAttestationIdentityKey()(*string) {
     val, err := m.GetBackingStore().Get("attestationIdentityKey")
     if err != nil {
@@ -47,10 +49,12 @@ func (m *DeviceHealthAttestationState) GetAttestationIdentityKey()(*string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *DeviceHealthAttestationState) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBitLockerStatus gets the bitLockerStatus property value. On or Off of BitLocker Drive Encryption
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetBitLockerStatus()(*string) {
     val, err := m.GetBackingStore().Get("bitLockerStatus")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *DeviceHealthAttestationState) GetBitLockerStatus()(*string) {
     return nil
 }
 // GetBootAppSecurityVersion gets the bootAppSecurityVersion property value. The security version number of the Boot Application
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetBootAppSecurityVersion()(*string) {
     val, err := m.GetBackingStore().Get("bootAppSecurityVersion")
     if err != nil {
@@ -73,6 +78,7 @@ func (m *DeviceHealthAttestationState) GetBootAppSecurityVersion()(*string) {
     return nil
 }
 // GetBootDebugging gets the bootDebugging property value. When bootDebugging is enabled, the device is used in development and testing
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetBootDebugging()(*string) {
     val, err := m.GetBackingStore().Get("bootDebugging")
     if err != nil {
@@ -84,6 +90,7 @@ func (m *DeviceHealthAttestationState) GetBootDebugging()(*string) {
     return nil
 }
 // GetBootManagerSecurityVersion gets the bootManagerSecurityVersion property value. The security version number of the Boot Application
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetBootManagerSecurityVersion()(*string) {
     val, err := m.GetBackingStore().Get("bootManagerSecurityVersion")
     if err != nil {
@@ -95,6 +102,7 @@ func (m *DeviceHealthAttestationState) GetBootManagerSecurityVersion()(*string) 
     return nil
 }
 // GetBootManagerVersion gets the bootManagerVersion property value. The version of the Boot Manager
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetBootManagerVersion()(*string) {
     val, err := m.GetBackingStore().Get("bootManagerVersion")
     if err != nil {
@@ -106,6 +114,7 @@ func (m *DeviceHealthAttestationState) GetBootManagerVersion()(*string) {
     return nil
 }
 // GetBootRevisionListInfo gets the bootRevisionListInfo property value. The Boot Revision List that was loaded during initial boot on the attested device
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetBootRevisionListInfo()(*string) {
     val, err := m.GetBackingStore().Get("bootRevisionListInfo")
     if err != nil {
@@ -117,6 +126,7 @@ func (m *DeviceHealthAttestationState) GetBootRevisionListInfo()(*string) {
     return nil
 }
 // GetCodeIntegrity gets the codeIntegrity property value. When code integrity is enabled, code execution is restricted to integrity verified code
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetCodeIntegrity()(*string) {
     val, err := m.GetBackingStore().Get("codeIntegrity")
     if err != nil {
@@ -128,6 +138,7 @@ func (m *DeviceHealthAttestationState) GetCodeIntegrity()(*string) {
     return nil
 }
 // GetCodeIntegrityCheckVersion gets the codeIntegrityCheckVersion property value. The version of the Boot Manager
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetCodeIntegrityCheckVersion()(*string) {
     val, err := m.GetBackingStore().Get("codeIntegrityCheckVersion")
     if err != nil {
@@ -139,6 +150,7 @@ func (m *DeviceHealthAttestationState) GetCodeIntegrityCheckVersion()(*string) {
     return nil
 }
 // GetCodeIntegrityPolicy gets the codeIntegrityPolicy property value. The Code Integrity policy that is controlling the security of the boot environment
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetCodeIntegrityPolicy()(*string) {
     val, err := m.GetBackingStore().Get("codeIntegrityPolicy")
     if err != nil {
@@ -150,6 +162,7 @@ func (m *DeviceHealthAttestationState) GetCodeIntegrityPolicy()(*string) {
     return nil
 }
 // GetContentNamespaceUrl gets the contentNamespaceUrl property value. The DHA report version. (Namespace version)
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetContentNamespaceUrl()(*string) {
     val, err := m.GetBackingStore().Get("contentNamespaceUrl")
     if err != nil {
@@ -161,6 +174,7 @@ func (m *DeviceHealthAttestationState) GetContentNamespaceUrl()(*string) {
     return nil
 }
 // GetContentVersion gets the contentVersion property value. The HealthAttestation state schema version
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetContentVersion()(*string) {
     val, err := m.GetBackingStore().Get("contentVersion")
     if err != nil {
@@ -172,6 +186,7 @@ func (m *DeviceHealthAttestationState) GetContentVersion()(*string) {
     return nil
 }
 // GetDataExcutionPolicy gets the dataExcutionPolicy property value. DEP Policy defines a set of hardware and software technologies that perform additional checks on memory
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetDataExcutionPolicy()(*string) {
     val, err := m.GetBackingStore().Get("dataExcutionPolicy")
     if err != nil {
@@ -183,6 +198,7 @@ func (m *DeviceHealthAttestationState) GetDataExcutionPolicy()(*string) {
     return nil
 }
 // GetDeviceHealthAttestationStatus gets the deviceHealthAttestationStatus property value. The DHA report version. (Namespace version)
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetDeviceHealthAttestationStatus()(*string) {
     val, err := m.GetBackingStore().Get("deviceHealthAttestationStatus")
     if err != nil {
@@ -194,6 +210,7 @@ func (m *DeviceHealthAttestationState) GetDeviceHealthAttestationStatus()(*strin
     return nil
 }
 // GetEarlyLaunchAntiMalwareDriverProtection gets the earlyLaunchAntiMalwareDriverProtection property value. ELAM provides protection for the computers in your network when they start up
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetEarlyLaunchAntiMalwareDriverProtection()(*string) {
     val, err := m.GetBackingStore().Get("earlyLaunchAntiMalwareDriverProtection")
     if err != nil {
@@ -205,6 +222,7 @@ func (m *DeviceHealthAttestationState) GetEarlyLaunchAntiMalwareDriverProtection
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["attestationIdentityKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -540,6 +558,7 @@ func (m *DeviceHealthAttestationState) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetHealthAttestationSupportedStatus gets the healthAttestationSupportedStatus property value. This attribute indicates if DHA is supported for the device
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetHealthAttestationSupportedStatus()(*string) {
     val, err := m.GetBackingStore().Get("healthAttestationSupportedStatus")
     if err != nil {
@@ -551,6 +570,7 @@ func (m *DeviceHealthAttestationState) GetHealthAttestationSupportedStatus()(*st
     return nil
 }
 // GetHealthStatusMismatchInfo gets the healthStatusMismatchInfo property value. This attribute appears if DHA-Service detects an integrity issue
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetHealthStatusMismatchInfo()(*string) {
     val, err := m.GetBackingStore().Get("healthStatusMismatchInfo")
     if err != nil {
@@ -562,6 +582,7 @@ func (m *DeviceHealthAttestationState) GetHealthStatusMismatchInfo()(*string) {
     return nil
 }
 // GetIssuedDateTime gets the issuedDateTime property value. The DateTime when device was evaluated or issued to MDM
+// returns a *Time when successful
 func (m *DeviceHealthAttestationState) GetIssuedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("issuedDateTime")
     if err != nil {
@@ -573,6 +594,7 @@ func (m *DeviceHealthAttestationState) GetIssuedDateTime()(*i336074805fc853987ab
     return nil
 }
 // GetLastUpdateDateTime gets the lastUpdateDateTime property value. The Timestamp of the last update.
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetLastUpdateDateTime()(*string) {
     val, err := m.GetBackingStore().Get("lastUpdateDateTime")
     if err != nil {
@@ -584,6 +606,7 @@ func (m *DeviceHealthAttestationState) GetLastUpdateDateTime()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -595,6 +618,7 @@ func (m *DeviceHealthAttestationState) GetOdataType()(*string) {
     return nil
 }
 // GetOperatingSystemKernelDebugging gets the operatingSystemKernelDebugging property value. When operatingSystemKernelDebugging is enabled, the device is used in development and testing
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetOperatingSystemKernelDebugging()(*string) {
     val, err := m.GetBackingStore().Get("operatingSystemKernelDebugging")
     if err != nil {
@@ -606,6 +630,7 @@ func (m *DeviceHealthAttestationState) GetOperatingSystemKernelDebugging()(*stri
     return nil
 }
 // GetOperatingSystemRevListInfo gets the operatingSystemRevListInfo property value. The Operating System Revision List that was loaded during initial boot on the attested device
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetOperatingSystemRevListInfo()(*string) {
     val, err := m.GetBackingStore().Get("operatingSystemRevListInfo")
     if err != nil {
@@ -617,6 +642,7 @@ func (m *DeviceHealthAttestationState) GetOperatingSystemRevListInfo()(*string) 
     return nil
 }
 // GetPcr0 gets the pcr0 property value. The measurement that is captured in PCR[0]
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetPcr0()(*string) {
     val, err := m.GetBackingStore().Get("pcr0")
     if err != nil {
@@ -628,6 +654,7 @@ func (m *DeviceHealthAttestationState) GetPcr0()(*string) {
     return nil
 }
 // GetPcrHashAlgorithm gets the pcrHashAlgorithm property value. Informational attribute that identifies the HASH algorithm that was used by TPM
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetPcrHashAlgorithm()(*string) {
     val, err := m.GetBackingStore().Get("pcrHashAlgorithm")
     if err != nil {
@@ -639,6 +666,7 @@ func (m *DeviceHealthAttestationState) GetPcrHashAlgorithm()(*string) {
     return nil
 }
 // GetResetCount gets the resetCount property value. The number of times a PC device has hibernated or resumed
+// returns a *int64 when successful
 func (m *DeviceHealthAttestationState) GetResetCount()(*int64) {
     val, err := m.GetBackingStore().Get("resetCount")
     if err != nil {
@@ -650,6 +678,7 @@ func (m *DeviceHealthAttestationState) GetResetCount()(*int64) {
     return nil
 }
 // GetRestartCount gets the restartCount property value. The number of times a PC device has rebooted
+// returns a *int64 when successful
 func (m *DeviceHealthAttestationState) GetRestartCount()(*int64) {
     val, err := m.GetBackingStore().Get("restartCount")
     if err != nil {
@@ -661,6 +690,7 @@ func (m *DeviceHealthAttestationState) GetRestartCount()(*int64) {
     return nil
 }
 // GetSafeMode gets the safeMode property value. Safe mode is a troubleshooting option for Windows that starts your computer in a limited state
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetSafeMode()(*string) {
     val, err := m.GetBackingStore().Get("safeMode")
     if err != nil {
@@ -672,6 +702,7 @@ func (m *DeviceHealthAttestationState) GetSafeMode()(*string) {
     return nil
 }
 // GetSecureBoot gets the secureBoot property value. When Secure Boot is enabled, the core components must have the correct cryptographic signatures
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetSecureBoot()(*string) {
     val, err := m.GetBackingStore().Get("secureBoot")
     if err != nil {
@@ -683,6 +714,7 @@ func (m *DeviceHealthAttestationState) GetSecureBoot()(*string) {
     return nil
 }
 // GetSecureBootConfigurationPolicyFingerPrint gets the secureBootConfigurationPolicyFingerPrint property value. Fingerprint of the Custom Secure Boot Configuration Policy
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetSecureBootConfigurationPolicyFingerPrint()(*string) {
     val, err := m.GetBackingStore().Get("secureBootConfigurationPolicyFingerPrint")
     if err != nil {
@@ -694,6 +726,7 @@ func (m *DeviceHealthAttestationState) GetSecureBootConfigurationPolicyFingerPri
     return nil
 }
 // GetTestSigning gets the testSigning property value. When test signing is allowed, the device does not enforce signature validation during boot
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetTestSigning()(*string) {
     val, err := m.GetBackingStore().Get("testSigning")
     if err != nil {
@@ -705,6 +738,7 @@ func (m *DeviceHealthAttestationState) GetTestSigning()(*string) {
     return nil
 }
 // GetTpmVersion gets the tpmVersion property value. The security version number of the Boot Application
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetTpmVersion()(*string) {
     val, err := m.GetBackingStore().Get("tpmVersion")
     if err != nil {
@@ -716,6 +750,7 @@ func (m *DeviceHealthAttestationState) GetTpmVersion()(*string) {
     return nil
 }
 // GetVirtualSecureMode gets the virtualSecureMode property value. VSM is a container that protects high value assets from a compromised kernel
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetVirtualSecureMode()(*string) {
     val, err := m.GetBackingStore().Get("virtualSecureMode")
     if err != nil {
@@ -727,6 +762,7 @@ func (m *DeviceHealthAttestationState) GetVirtualSecureMode()(*string) {
     return nil
 }
 // GetWindowsPE gets the windowsPE property value. Operating system running with limited services that is used to prepare a computer for Windows
+// returns a *string when successful
 func (m *DeviceHealthAttestationState) GetWindowsPE()(*string) {
     val, err := m.GetBackingStore().Get("windowsPE")
     if err != nil {
@@ -1187,7 +1223,6 @@ func (m *DeviceHealthAttestationState) SetWindowsPE(value *string)() {
         panic(err)
     }
 }
-// DeviceHealthAttestationStateable 
 type DeviceHealthAttestationStateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

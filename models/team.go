@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Team 
 type Team struct {
     Entity
 }
-// NewTeam instantiates a new team and sets the default values.
+// NewTeam instantiates a new Team and sets the default values.
 func NewTeam()(*Team) {
     m := &Team{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewTeam()(*Team) {
     return m
 }
 // CreateTeamFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeam(), nil
 }
 // GetAllChannels gets the allChannels property value. List of channels either hosted in or shared with the team (incoming channels).
+// returns a []Channelable when successful
 func (m *Team) GetAllChannels()([]Channelable) {
     val, err := m.GetBackingStore().Get("allChannels")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *Team) GetAllChannels()([]Channelable) {
     return nil
 }
 // GetChannels gets the channels property value. The collection of channels and messages associated with the team.
+// returns a []Channelable when successful
 func (m *Team) GetChannels()([]Channelable) {
     val, err := m.GetBackingStore().Get("channels")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *Team) GetChannels()([]Channelable) {
     return nil
 }
 // GetClassification gets the classification property value. An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
+// returns a *string when successful
 func (m *Team) GetClassification()(*string) {
     val, err := m.GetBackingStore().Get("classification")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *Team) GetClassification()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Timestamp at which the team was created.
+// returns a *Time when successful
 func (m *Team) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *Team) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16
     return nil
 }
 // GetDescription gets the description property value. An optional description for the team. Maximum length: 1024 characters.
+// returns a *string when successful
 func (m *Team) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *Team) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of the team.
+// returns a *string when successful
 func (m *Team) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *Team) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Team) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["allChannels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -420,6 +427,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     return res
 }
 // GetFunSettings gets the funSettings property value. Settings to configure use of Giphy, memes, and stickers in the team.
+// returns a TeamFunSettingsable when successful
 func (m *Team) GetFunSettings()(TeamFunSettingsable) {
     val, err := m.GetBackingStore().Get("funSettings")
     if err != nil {
@@ -431,6 +439,7 @@ func (m *Team) GetFunSettings()(TeamFunSettingsable) {
     return nil
 }
 // GetGroup gets the group property value. The group property
+// returns a Groupable when successful
 func (m *Team) GetGroup()(Groupable) {
     val, err := m.GetBackingStore().Get("group")
     if err != nil {
@@ -442,6 +451,7 @@ func (m *Team) GetGroup()(Groupable) {
     return nil
 }
 // GetGuestSettings gets the guestSettings property value. Settings to configure whether guests can create, update, or delete channels in the team.
+// returns a TeamGuestSettingsable when successful
 func (m *Team) GetGuestSettings()(TeamGuestSettingsable) {
     val, err := m.GetBackingStore().Get("guestSettings")
     if err != nil {
@@ -453,6 +463,7 @@ func (m *Team) GetGuestSettings()(TeamGuestSettingsable) {
     return nil
 }
 // GetIncomingChannels gets the incomingChannels property value. List of channels shared with the team.
+// returns a []Channelable when successful
 func (m *Team) GetIncomingChannels()([]Channelable) {
     val, err := m.GetBackingStore().Get("incomingChannels")
     if err != nil {
@@ -464,6 +475,7 @@ func (m *Team) GetIncomingChannels()([]Channelable) {
     return nil
 }
 // GetInstalledApps gets the installedApps property value. The apps installed in this team.
+// returns a []TeamsAppInstallationable when successful
 func (m *Team) GetInstalledApps()([]TeamsAppInstallationable) {
     val, err := m.GetBackingStore().Get("installedApps")
     if err != nil {
@@ -475,6 +487,7 @@ func (m *Team) GetInstalledApps()([]TeamsAppInstallationable) {
     return nil
 }
 // GetInternalId gets the internalId property value. A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
+// returns a *string when successful
 func (m *Team) GetInternalId()(*string) {
     val, err := m.GetBackingStore().Get("internalId")
     if err != nil {
@@ -486,6 +499,7 @@ func (m *Team) GetInternalId()(*string) {
     return nil
 }
 // GetIsArchived gets the isArchived property value. Whether this team is in read-only mode.
+// returns a *bool when successful
 func (m *Team) GetIsArchived()(*bool) {
     val, err := m.GetBackingStore().Get("isArchived")
     if err != nil {
@@ -497,6 +511,7 @@ func (m *Team) GetIsArchived()(*bool) {
     return nil
 }
 // GetMembers gets the members property value. Members and owners of the team.
+// returns a []ConversationMemberable when successful
 func (m *Team) GetMembers()([]ConversationMemberable) {
     val, err := m.GetBackingStore().Get("members")
     if err != nil {
@@ -508,6 +523,7 @@ func (m *Team) GetMembers()([]ConversationMemberable) {
     return nil
 }
 // GetMemberSettings gets the memberSettings property value. Settings to configure whether members can perform certain actions, for example, create channels and add bots, in the team.
+// returns a TeamMemberSettingsable when successful
 func (m *Team) GetMemberSettings()(TeamMemberSettingsable) {
     val, err := m.GetBackingStore().Get("memberSettings")
     if err != nil {
@@ -519,6 +535,7 @@ func (m *Team) GetMemberSettings()(TeamMemberSettingsable) {
     return nil
 }
 // GetMessagingSettings gets the messagingSettings property value. Settings to configure messaging and mentions in the team.
+// returns a TeamMessagingSettingsable when successful
 func (m *Team) GetMessagingSettings()(TeamMessagingSettingsable) {
     val, err := m.GetBackingStore().Get("messagingSettings")
     if err != nil {
@@ -530,6 +547,7 @@ func (m *Team) GetMessagingSettings()(TeamMessagingSettingsable) {
     return nil
 }
 // GetOperations gets the operations property value. The async operations that ran or are running on this team.
+// returns a []TeamsAsyncOperationable when successful
 func (m *Team) GetOperations()([]TeamsAsyncOperationable) {
     val, err := m.GetBackingStore().Get("operations")
     if err != nil {
@@ -541,6 +559,7 @@ func (m *Team) GetOperations()([]TeamsAsyncOperationable) {
     return nil
 }
 // GetPermissionGrants gets the permissionGrants property value. A collection of permissions granted to apps to access the team.
+// returns a []ResourceSpecificPermissionGrantable when successful
 func (m *Team) GetPermissionGrants()([]ResourceSpecificPermissionGrantable) {
     val, err := m.GetBackingStore().Get("permissionGrants")
     if err != nil {
@@ -552,6 +571,7 @@ func (m *Team) GetPermissionGrants()([]ResourceSpecificPermissionGrantable) {
     return nil
 }
 // GetPhoto gets the photo property value. The profile photo for the team.
+// returns a ProfilePhotoable when successful
 func (m *Team) GetPhoto()(ProfilePhotoable) {
     val, err := m.GetBackingStore().Get("photo")
     if err != nil {
@@ -563,6 +583,7 @@ func (m *Team) GetPhoto()(ProfilePhotoable) {
     return nil
 }
 // GetPrimaryChannel gets the primaryChannel property value. The general channel for the team.
+// returns a Channelable when successful
 func (m *Team) GetPrimaryChannel()(Channelable) {
     val, err := m.GetBackingStore().Get("primaryChannel")
     if err != nil {
@@ -574,6 +595,7 @@ func (m *Team) GetPrimaryChannel()(Channelable) {
     return nil
 }
 // GetSchedule gets the schedule property value. The schedule of shifts for this team.
+// returns a Scheduleable when successful
 func (m *Team) GetSchedule()(Scheduleable) {
     val, err := m.GetBackingStore().Get("schedule")
     if err != nil {
@@ -585,6 +607,7 @@ func (m *Team) GetSchedule()(Scheduleable) {
     return nil
 }
 // GetSpecialization gets the specialization property value. Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.
+// returns a *TeamSpecialization when successful
 func (m *Team) GetSpecialization()(*TeamSpecialization) {
     val, err := m.GetBackingStore().Get("specialization")
     if err != nil {
@@ -596,6 +619,7 @@ func (m *Team) GetSpecialization()(*TeamSpecialization) {
     return nil
 }
 // GetSummary gets the summary property value. Contains summary information about the team, including number of owners, members, and guests.
+// returns a TeamSummaryable when successful
 func (m *Team) GetSummary()(TeamSummaryable) {
     val, err := m.GetBackingStore().Get("summary")
     if err != nil {
@@ -607,6 +631,7 @@ func (m *Team) GetSummary()(TeamSummaryable) {
     return nil
 }
 // GetTags gets the tags property value. The tags associated with the team.
+// returns a []TeamworkTagable when successful
 func (m *Team) GetTags()([]TeamworkTagable) {
     val, err := m.GetBackingStore().Get("tags")
     if err != nil {
@@ -618,6 +643,7 @@ func (m *Team) GetTags()([]TeamworkTagable) {
     return nil
 }
 // GetTemplate gets the template property value. The template this team was created from. See available templates.
+// returns a TeamsTemplateable when successful
 func (m *Team) GetTemplate()(TeamsTemplateable) {
     val, err := m.GetBackingStore().Get("template")
     if err != nil {
@@ -629,6 +655,7 @@ func (m *Team) GetTemplate()(TeamsTemplateable) {
     return nil
 }
 // GetTenantId gets the tenantId property value. The ID of the Microsoft Entra tenant.
+// returns a *string when successful
 func (m *Team) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -640,6 +667,7 @@ func (m *Team) GetTenantId()(*string) {
     return nil
 }
 // GetVisibility gets the visibility property value. The visibility of the group and team. Defaults to Public.
+// returns a *TeamVisibilityType when successful
 func (m *Team) GetVisibility()(*TeamVisibilityType) {
     val, err := m.GetBackingStore().Get("visibility")
     if err != nil {
@@ -651,6 +679,7 @@ func (m *Team) GetVisibility()(*TeamVisibilityType) {
     return nil
 }
 // GetWebUrl gets the webUrl property value. A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
+// returns a *string when successful
 func (m *Team) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -1083,7 +1112,6 @@ func (m *Team) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// Teamable 
 type Teamable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

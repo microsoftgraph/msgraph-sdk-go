@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// B2xIdentityUserFlow 
 type B2xIdentityUserFlow struct {
     IdentityUserFlow
 }
-// NewB2xIdentityUserFlow instantiates a new b2xIdentityUserFlow and sets the default values.
+// NewB2xIdentityUserFlow instantiates a new B2xIdentityUserFlow and sets the default values.
 func NewB2xIdentityUserFlow()(*B2xIdentityUserFlow) {
     m := &B2xIdentityUserFlow{
         IdentityUserFlow: *NewIdentityUserFlow(),
@@ -16,10 +15,12 @@ func NewB2xIdentityUserFlow()(*B2xIdentityUserFlow) {
     return m
 }
 // CreateB2xIdentityUserFlowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateB2xIdentityUserFlowFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewB2xIdentityUserFlow(), nil
 }
 // GetApiConnectorConfiguration gets the apiConnectorConfiguration property value. Configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
+// returns a UserFlowApiConnectorConfigurationable when successful
 func (m *B2xIdentityUserFlow) GetApiConnectorConfiguration()(UserFlowApiConnectorConfigurationable) {
     val, err := m.GetBackingStore().Get("apiConnectorConfiguration")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *B2xIdentityUserFlow) GetApiConnectorConfiguration()(UserFlowApiConnecto
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *B2xIdentityUserFlow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IdentityUserFlow.GetFieldDeserializers()
     res["apiConnectorConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -110,6 +112,7 @@ func (m *B2xIdentityUserFlow) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetIdentityProviders gets the identityProviders property value. The identity providers included in the user flow.
+// returns a []IdentityProviderable when successful
 func (m *B2xIdentityUserFlow) GetIdentityProviders()([]IdentityProviderable) {
     val, err := m.GetBackingStore().Get("identityProviders")
     if err != nil {
@@ -121,6 +124,7 @@ func (m *B2xIdentityUserFlow) GetIdentityProviders()([]IdentityProviderable) {
     return nil
 }
 // GetLanguages gets the languages property value. The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You can't create custom languages in self-service sign-up user flows.
+// returns a []UserFlowLanguageConfigurationable when successful
 func (m *B2xIdentityUserFlow) GetLanguages()([]UserFlowLanguageConfigurationable) {
     val, err := m.GetBackingStore().Get("languages")
     if err != nil {
@@ -132,6 +136,7 @@ func (m *B2xIdentityUserFlow) GetLanguages()([]UserFlowLanguageConfigurationable
     return nil
 }
 // GetUserAttributeAssignments gets the userAttributeAssignments property value. The user attribute assignments included in the user flow.
+// returns a []IdentityUserFlowAttributeAssignmentable when successful
 func (m *B2xIdentityUserFlow) GetUserAttributeAssignments()([]IdentityUserFlowAttributeAssignmentable) {
     val, err := m.GetBackingStore().Get("userAttributeAssignments")
     if err != nil {
@@ -143,6 +148,7 @@ func (m *B2xIdentityUserFlow) GetUserAttributeAssignments()([]IdentityUserFlowAt
     return nil
 }
 // GetUserFlowIdentityProviders gets the userFlowIdentityProviders property value. The userFlowIdentityProviders property
+// returns a []IdentityProviderBaseable when successful
 func (m *B2xIdentityUserFlow) GetUserFlowIdentityProviders()([]IdentityProviderBaseable) {
     val, err := m.GetBackingStore().Get("userFlowIdentityProviders")
     if err != nil {
@@ -250,7 +256,6 @@ func (m *B2xIdentityUserFlow) SetUserFlowIdentityProviders(value []IdentityProvi
         panic(err)
     }
 }
-// B2xIdentityUserFlowable 
 type B2xIdentityUserFlowable interface {
     IdentityUserFlowable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

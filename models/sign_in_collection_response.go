@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SignInCollectionResponse 
 type SignInCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSignInCollectionResponse instantiates a new signInCollectionResponse and sets the default values.
+// NewSignInCollectionResponse instantiates a new SignInCollectionResponse and sets the default values.
 func NewSignInCollectionResponse()(*SignInCollectionResponse) {
     m := &SignInCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewSignInCollectionResponse()(*SignInCollectionResponse) {
     return m
 }
 // CreateSignInCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSignInCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSignInCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SignInCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *SignInCollectionResponse) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []SignInable when successful
 func (m *SignInCollectionResponse) GetValue()([]SignInable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *SignInCollectionResponse) SetValue(value []SignInable)() {
         panic(err)
     }
 }
-// SignInCollectionResponseable 
 type SignInCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

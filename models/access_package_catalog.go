@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageCatalog 
 type AccessPackageCatalog struct {
     Entity
 }
-// NewAccessPackageCatalog instantiates a new accessPackageCatalog and sets the default values.
+// NewAccessPackageCatalog instantiates a new AccessPackageCatalog and sets the default values.
 func NewAccessPackageCatalog()(*AccessPackageCatalog) {
     m := &AccessPackageCatalog{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewAccessPackageCatalog()(*AccessPackageCatalog) {
     return m
 }
 // CreateAccessPackageCatalogFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessPackageCatalogFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageCatalog(), nil
 }
 // GetAccessPackages gets the accessPackages property value. The access packages in this catalog. Read-only. Nullable.
+// returns a []AccessPackageable when successful
 func (m *AccessPackageCatalog) GetAccessPackages()([]AccessPackageable) {
     val, err := m.GetBackingStore().Get("accessPackages")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *AccessPackageCatalog) GetAccessPackages()([]AccessPackageable) {
     return nil
 }
 // GetCatalogType gets the catalogType property value. Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
+// returns a *AccessPackageCatalogType when successful
 func (m *AccessPackageCatalog) GetCatalogType()(*AccessPackageCatalogType) {
     val, err := m.GetBackingStore().Get("catalogType")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *AccessPackageCatalog) GetCatalogType()(*AccessPackageCatalogType) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *AccessPackageCatalog) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *AccessPackageCatalog) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetCustomWorkflowExtensions gets the customWorkflowExtensions property value. The customWorkflowExtensions property
+// returns a []CustomCalloutExtensionable when successful
 func (m *AccessPackageCatalog) GetCustomWorkflowExtensions()([]CustomCalloutExtensionable) {
     val, err := m.GetBackingStore().Get("customWorkflowExtensions")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *AccessPackageCatalog) GetCustomWorkflowExtensions()([]CustomCalloutExte
     return nil
 }
 // GetDescription gets the description property value. The description of the access package catalog.
+// returns a *string when successful
 func (m *AccessPackageCatalog) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *AccessPackageCatalog) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the access package catalog.
+// returns a *string when successful
 func (m *AccessPackageCatalog) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *AccessPackageCatalog) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessPackageCatalog) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -242,6 +249,7 @@ func (m *AccessPackageCatalog) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetIsExternallyVisible gets the isExternallyVisible property value. Whether the access packages in this catalog can be requested by users outside of the tenant.
+// returns a *bool when successful
 func (m *AccessPackageCatalog) GetIsExternallyVisible()(*bool) {
     val, err := m.GetBackingStore().Get("isExternallyVisible")
     if err != nil {
@@ -253,6 +261,7 @@ func (m *AccessPackageCatalog) GetIsExternallyVisible()(*bool) {
     return nil
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *AccessPackageCatalog) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("modifiedDateTime")
     if err != nil {
@@ -264,6 +273,7 @@ func (m *AccessPackageCatalog) GetModifiedDateTime()(*i336074805fc853987abe6f7fe
     return nil
 }
 // GetResourceRoles gets the resourceRoles property value. The resourceRoles property
+// returns a []AccessPackageResourceRoleable when successful
 func (m *AccessPackageCatalog) GetResourceRoles()([]AccessPackageResourceRoleable) {
     val, err := m.GetBackingStore().Get("resourceRoles")
     if err != nil {
@@ -275,6 +285,7 @@ func (m *AccessPackageCatalog) GetResourceRoles()([]AccessPackageResourceRoleabl
     return nil
 }
 // GetResources gets the resources property value. Access package resources in this catalog.
+// returns a []AccessPackageResourceable when successful
 func (m *AccessPackageCatalog) GetResources()([]AccessPackageResourceable) {
     val, err := m.GetBackingStore().Get("resources")
     if err != nil {
@@ -286,6 +297,7 @@ func (m *AccessPackageCatalog) GetResources()([]AccessPackageResourceable) {
     return nil
 }
 // GetResourceScopes gets the resourceScopes property value. The resourceScopes property
+// returns a []AccessPackageResourceScopeable when successful
 func (m *AccessPackageCatalog) GetResourceScopes()([]AccessPackageResourceScopeable) {
     val, err := m.GetBackingStore().Get("resourceScopes")
     if err != nil {
@@ -297,6 +309,7 @@ func (m *AccessPackageCatalog) GetResourceScopes()([]AccessPackageResourceScopea
     return nil
 }
 // GetState gets the state property value. Has the value published if the access packages are available for management. The possible values are: unpublished, published, unknownFutureValue.
+// returns a *AccessPackageCatalogState when successful
 func (m *AccessPackageCatalog) GetState()(*AccessPackageCatalogState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -503,7 +516,6 @@ func (m *AccessPackageCatalog) SetState(value *AccessPackageCatalogState)() {
         panic(err)
     }
 }
-// AccessPackageCatalogable 
 type AccessPackageCatalogable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

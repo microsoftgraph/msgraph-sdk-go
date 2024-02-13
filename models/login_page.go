@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LoginPage 
 type LoginPage struct {
     Entity
 }
-// NewLoginPage instantiates a new loginPage and sets the default values.
+// NewLoginPage instantiates a new LoginPage and sets the default values.
 func NewLoginPage()(*LoginPage) {
     m := &LoginPage{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewLoginPage()(*LoginPage) {
     return m
 }
 // CreateLoginPageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateLoginPageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLoginPage(), nil
 }
 // GetContent gets the content property value. The HTML content of the login page.
+// returns a *string when successful
 func (m *LoginPage) GetContent()(*string) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *LoginPage) GetContent()(*string) {
     return nil
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user who created the login page.
+// returns a EmailIdentityable when successful
 func (m *LoginPage) GetCreatedBy()(EmailIdentityable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *LoginPage) GetCreatedBy()(EmailIdentityable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time when the login page was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *LoginPage) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *LoginPage) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
     return nil
 }
 // GetDescription gets the description property value. Description about the login page.
+// returns a *string when successful
 func (m *LoginPage) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *LoginPage) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Display name of the login page.
+// returns a *string when successful
 func (m *LoginPage) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *LoginPage) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *LoginPage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -181,6 +187,7 @@ func (m *LoginPage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetLanguage gets the language property value. The content language of the login page.
+// returns a *string when successful
 func (m *LoginPage) GetLanguage()(*string) {
     val, err := m.GetBackingStore().Get("language")
     if err != nil {
@@ -192,6 +199,7 @@ func (m *LoginPage) GetLanguage()(*string) {
     return nil
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who last modified the login page.
+// returns a EmailIdentityable when successful
 func (m *LoginPage) GetLastModifiedBy()(EmailIdentityable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -203,6 +211,7 @@ func (m *LoginPage) GetLastModifiedBy()(EmailIdentityable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time when the login page was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *LoginPage) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -214,6 +223,7 @@ func (m *LoginPage) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetSource gets the source property value. The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
+// returns a *SimulationContentSource when successful
 func (m *LoginPage) GetSource()(*SimulationContentSource) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
@@ -225,6 +235,7 @@ func (m *LoginPage) GetSource()(*SimulationContentSource) {
     return nil
 }
 // GetStatus gets the status property value. The login page status. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
+// returns a *SimulationContentStatus when successful
 func (m *LoginPage) GetStatus()(*SimulationContentStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -375,7 +386,6 @@ func (m *LoginPage) SetStatus(value *SimulationContentStatus)() {
         panic(err)
     }
 }
-// LoginPageable 
 type LoginPageable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

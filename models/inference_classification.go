@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// InferenceClassification 
 type InferenceClassification struct {
     Entity
 }
-// NewInferenceClassification instantiates a new inferenceClassification and sets the default values.
+// NewInferenceClassification instantiates a new InferenceClassification and sets the default values.
 func NewInferenceClassification()(*InferenceClassification) {
     m := &InferenceClassification{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewInferenceClassification()(*InferenceClassification) {
     return m
 }
 // CreateInferenceClassificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInferenceClassificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInferenceClassification(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InferenceClassification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["overrides"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *InferenceClassification) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetOverrides gets the overrides property value. A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
+// returns a []InferenceClassificationOverrideable when successful
 func (m *InferenceClassification) GetOverrides()([]InferenceClassificationOverrideable) {
     val, err := m.GetBackingStore().Get("overrides")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *InferenceClassification) SetOverrides(value []InferenceClassificationOv
         panic(err)
     }
 }
-// InferenceClassificationable 
 type InferenceClassificationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

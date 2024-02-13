@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// DocumentSetContent 
 type DocumentSetContent struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDocumentSetContent instantiates a new documentSetContent and sets the default values.
+// NewDocumentSetContent instantiates a new DocumentSetContent and sets the default values.
 func NewDocumentSetContent()(*DocumentSetContent) {
     m := &DocumentSetContent{
     }
@@ -19,10 +18,12 @@ func NewDocumentSetContent()(*DocumentSetContent) {
     return m
 }
 // CreateDocumentSetContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDocumentSetContentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDocumentSetContent(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DocumentSetContent) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *DocumentSetContent) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *DocumentSetContent) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetContentType gets the contentType property value. Content type information of the file.
+// returns a ContentTypeInfoable when successful
 func (m *DocumentSetContent) GetContentType()(ContentTypeInfoable) {
     val, err := m.GetBackingStore().Get("contentType")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *DocumentSetContent) GetContentType()(ContentTypeInfoable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DocumentSetContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["contentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,6 +99,7 @@ func (m *DocumentSetContent) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetFileName gets the fileName property value. Name of the file in resource folder that should be added as a default content or a template in the document set.
+// returns a *string when successful
 func (m *DocumentSetContent) GetFileName()(*string) {
     val, err := m.GetBackingStore().Get("fileName")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *DocumentSetContent) GetFileName()(*string) {
     return nil
 }
 // GetFolderName gets the folderName property value. Folder name in which the file will be placed when a new document set is created in the library.
+// returns a *string when successful
 func (m *DocumentSetContent) GetFolderName()(*string) {
     val, err := m.GetBackingStore().Get("folderName")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *DocumentSetContent) GetFolderName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *DocumentSetContent) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -200,7 +207,6 @@ func (m *DocumentSetContent) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// DocumentSetContentable 
 type DocumentSetContentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

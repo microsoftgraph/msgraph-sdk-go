@@ -17,20 +17,21 @@ type ItemPresenceSetStatusMessageRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemPresenceSetStatusMessageRequestBuilderInternal instantiates a new SetStatusMessageRequestBuilder and sets the default values.
+// NewItemPresenceSetStatusMessageRequestBuilderInternal instantiates a new ItemPresenceSetStatusMessageRequestBuilder and sets the default values.
 func NewItemPresenceSetStatusMessageRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPresenceSetStatusMessageRequestBuilder) {
     m := &ItemPresenceSetStatusMessageRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/presence/setStatusMessage", pathParameters),
     }
     return m
 }
-// NewItemPresenceSetStatusMessageRequestBuilder instantiates a new SetStatusMessageRequestBuilder and sets the default values.
+// NewItemPresenceSetStatusMessageRequestBuilder instantiates a new ItemPresenceSetStatusMessageRequestBuilder and sets the default values.
 func NewItemPresenceSetStatusMessageRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPresenceSetStatusMessageRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemPresenceSetStatusMessageRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post set a presence status message for a user. An optional expiration date and time can be supplied.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemPresenceSetStatusMessageRequestBuilder) Post(ctx context.Context, b
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemPresenceSetStatusMessageRequestBuilder) Post(ctx context.Context, b
     return nil
 }
 // ToPostRequestInformation set a presence status message for a user. An optional expiration date and time can be supplied.
+// returns a *RequestInformation when successful
 func (m *ItemPresenceSetStatusMessageRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPresenceSetStatusMessagePostRequestBodyable, requestConfiguration *ItemPresenceSetStatusMessageRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *ItemPresenceSetStatusMessageRequestBuilder) ToPostRequestInformation(ct
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemPresenceSetStatusMessageRequestBuilder when successful
 func (m *ItemPresenceSetStatusMessageRequestBuilder) WithUrl(rawUrl string)(*ItemPresenceSetStatusMessageRequestBuilder) {
     return NewItemPresenceSetStatusMessageRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

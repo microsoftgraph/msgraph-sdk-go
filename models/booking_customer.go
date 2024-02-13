@@ -8,7 +8,7 @@ import (
 type BookingCustomer struct {
     BookingCustomerBase
 }
-// NewBookingCustomer instantiates a new bookingCustomer and sets the default values.
+// NewBookingCustomer instantiates a new BookingCustomer and sets the default values.
 func NewBookingCustomer()(*BookingCustomer) {
     m := &BookingCustomer{
         BookingCustomerBase: *NewBookingCustomerBase(),
@@ -18,10 +18,12 @@ func NewBookingCustomer()(*BookingCustomer) {
     return m
 }
 // CreateBookingCustomerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBookingCustomerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBookingCustomer(), nil
 }
 // GetAddresses gets the addresses property value. Addresses associated with the customer. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
+// returns a []PhysicalAddressable when successful
 func (m *BookingCustomer) GetAddresses()([]PhysicalAddressable) {
     val, err := m.GetBackingStore().Get("addresses")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *BookingCustomer) GetAddresses()([]PhysicalAddressable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of the customer.
+// returns a *string when successful
 func (m *BookingCustomer) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *BookingCustomer) GetDisplayName()(*string) {
     return nil
 }
 // GetEmailAddress gets the emailAddress property value. The SMTP address of the customer.
+// returns a *string when successful
 func (m *BookingCustomer) GetEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("emailAddress")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *BookingCustomer) GetEmailAddress()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BookingCustomer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BookingCustomerBase.GetFieldDeserializers()
     res["addresses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -112,6 +117,7 @@ func (m *BookingCustomer) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetPhones gets the phones property value. Phone numbers associated with the customer, including home, business and mobile numbers.
+// returns a []Phoneable when successful
 func (m *BookingCustomer) GetPhones()([]Phoneable) {
     val, err := m.GetBackingStore().Get("phones")
     if err != nil {
@@ -194,7 +200,6 @@ func (m *BookingCustomer) SetPhones(value []Phoneable)() {
         panic(err)
     }
 }
-// BookingCustomerable 
 type BookingCustomerable interface {
     BookingCustomerBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

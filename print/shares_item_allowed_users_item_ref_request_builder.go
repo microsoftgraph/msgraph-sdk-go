@@ -17,20 +17,21 @@ type SharesItemAllowedUsersItemRefRequestBuilderDeleteRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewSharesItemAllowedUsersItemRefRequestBuilderInternal instantiates a new RefRequestBuilder and sets the default values.
+// NewSharesItemAllowedUsersItemRefRequestBuilderInternal instantiates a new SharesItemAllowedUsersItemRefRequestBuilder and sets the default values.
 func NewSharesItemAllowedUsersItemRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesItemAllowedUsersItemRefRequestBuilder) {
     m := &SharesItemAllowedUsersItemRefRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/allowedUsers/{user%2Did}/$ref", pathParameters),
     }
     return m
 }
-// NewSharesItemAllowedUsersItemRefRequestBuilder instantiates a new RefRequestBuilder and sets the default values.
+// NewSharesItemAllowedUsersItemRefRequestBuilder instantiates a new SharesItemAllowedUsersItemRefRequestBuilder and sets the default values.
 func NewSharesItemAllowedUsersItemRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesItemAllowedUsersItemRefRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSharesItemAllowedUsersItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete revoke the specified user's access to submit print jobs to the associated printerShare.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/printershare-delete-alloweduser?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *SharesItemAllowedUsersItemRefRequestBuilder) Delete(ctx context.Context
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *SharesItemAllowedUsersItemRefRequestBuilder) Delete(ctx context.Context
     return nil
 }
 // ToDeleteRequestInformation revoke the specified user's access to submit print jobs to the associated printerShare.
+// returns a *RequestInformation when successful
 func (m *SharesItemAllowedUsersItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SharesItemAllowedUsersItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *SharesItemAllowedUsersItemRefRequestBuilder) ToDeleteRequestInformation
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *SharesItemAllowedUsersItemRefRequestBuilder when successful
 func (m *SharesItemAllowedUsersItemRefRequestBuilder) WithUrl(rawUrl string)(*SharesItemAllowedUsersItemRefRequestBuilder) {
     return NewSharesItemAllowedUsersItemRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

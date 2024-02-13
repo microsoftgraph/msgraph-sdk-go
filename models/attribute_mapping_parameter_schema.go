@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AttributeMappingParameterSchema 
 type AttributeMappingParameterSchema struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAttributeMappingParameterSchema instantiates a new attributeMappingParameterSchema and sets the default values.
+// NewAttributeMappingParameterSchema instantiates a new AttributeMappingParameterSchema and sets the default values.
 func NewAttributeMappingParameterSchema()(*AttributeMappingParameterSchema) {
     m := &AttributeMappingParameterSchema{
     }
@@ -19,10 +18,12 @@ func NewAttributeMappingParameterSchema()(*AttributeMappingParameterSchema) {
     return m
 }
 // CreateAttributeMappingParameterSchemaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAttributeMappingParameterSchemaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAttributeMappingParameterSchema(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AttributeMappingParameterSchema) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *AttributeMappingParameterSchema) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAllowMultipleOccurrences gets the allowMultipleOccurrences property value. The given parameter can be provided multiple times (for example, multiple input strings in the Concatenate(string,string,...) function).
+// returns a *bool when successful
 func (m *AttributeMappingParameterSchema) GetAllowMultipleOccurrences()(*bool) {
     val, err := m.GetBackingStore().Get("allowMultipleOccurrences")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *AttributeMappingParameterSchema) GetAllowMultipleOccurrences()(*bool) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AttributeMappingParameterSchema) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AttributeMappingParameterSchema) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allowMultipleOccurrences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -105,6 +109,7 @@ func (m *AttributeMappingParameterSchema) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetName gets the name property value. Parameter name.
+// returns a *string when successful
 func (m *AttributeMappingParameterSchema) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -116,6 +121,7 @@ func (m *AttributeMappingParameterSchema) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AttributeMappingParameterSchema) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -127,6 +133,7 @@ func (m *AttributeMappingParameterSchema) GetOdataType()(*string) {
     return nil
 }
 // GetRequired gets the required property value. true if the parameter is required; otherwise false.
+// returns a *bool when successful
 func (m *AttributeMappingParameterSchema) GetRequired()(*bool) {
     val, err := m.GetBackingStore().Get("required")
     if err != nil {
@@ -138,6 +145,7 @@ func (m *AttributeMappingParameterSchema) GetRequired()(*bool) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *AttributeType when successful
 func (m *AttributeMappingParameterSchema) GetTypeEscaped()(*AttributeType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -235,7 +243,6 @@ func (m *AttributeMappingParameterSchema) SetTypeEscaped(value *AttributeType)()
         panic(err)
     }
 }
-// AttributeMappingParameterSchemaable 
 type AttributeMappingParameterSchemaable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

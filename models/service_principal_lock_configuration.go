@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ServicePrincipalLockConfiguration 
 type ServicePrincipalLockConfiguration struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewServicePrincipalLockConfiguration instantiates a new servicePrincipalLockConfiguration and sets the default values.
+// NewServicePrincipalLockConfiguration instantiates a new ServicePrincipalLockConfiguration and sets the default values.
 func NewServicePrincipalLockConfiguration()(*ServicePrincipalLockConfiguration) {
     m := &ServicePrincipalLockConfiguration{
     }
@@ -19,10 +18,12 @@ func NewServicePrincipalLockConfiguration()(*ServicePrincipalLockConfiguration) 
     return m
 }
 // CreateServicePrincipalLockConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateServicePrincipalLockConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServicePrincipalLockConfiguration(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ServicePrincipalLockConfiguration) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *ServicePrincipalLockConfiguration) GetAdditionalData()(map[string]any) 
     return val.(map[string]any)
 }
 // GetAllProperties gets the allProperties property value. Enables locking all sensitive properties. The sensitive properties are keyCredentials, passwordCredentials, and tokenEncryptionKeyId.
+// returns a *bool when successful
 func (m *ServicePrincipalLockConfiguration) GetAllProperties()(*bool) {
     val, err := m.GetBackingStore().Get("allProperties")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *ServicePrincipalLockConfiguration) GetAllProperties()(*bool) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ServicePrincipalLockConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCredentialsWithUsageSign gets the credentialsWithUsageSign property value. Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Sign.
+// returns a *bool when successful
 func (m *ServicePrincipalLockConfiguration) GetCredentialsWithUsageSign()(*bool) {
     val, err := m.GetBackingStore().Get("credentialsWithUsageSign")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *ServicePrincipalLockConfiguration) GetCredentialsWithUsageSign()(*bool)
     return nil
 }
 // GetCredentialsWithUsageVerify gets the credentialsWithUsageVerify property value. Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Verify. This locks OAuth service principals.
+// returns a *bool when successful
 func (m *ServicePrincipalLockConfiguration) GetCredentialsWithUsageVerify()(*bool) {
     val, err := m.GetBackingStore().Get("credentialsWithUsageVerify")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *ServicePrincipalLockConfiguration) GetCredentialsWithUsageVerify()(*boo
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ServicePrincipalLockConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -137,6 +143,7 @@ func (m *ServicePrincipalLockConfiguration) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetIsEnabled gets the isEnabled property value. Enables or disables service principal lock configuration. To allow the sensitive properties to be updated, update this property to false to disable the lock on the service principal.
+// returns a *bool when successful
 func (m *ServicePrincipalLockConfiguration) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -148,6 +155,7 @@ func (m *ServicePrincipalLockConfiguration) GetIsEnabled()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ServicePrincipalLockConfiguration) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -159,6 +167,7 @@ func (m *ServicePrincipalLockConfiguration) GetOdataType()(*string) {
     return nil
 }
 // GetTokenEncryptionKeyId gets the tokenEncryptionKeyId property value. Locks the tokenEncryptionKeyId property for modification on the service principal.
+// returns a *bool when successful
 func (m *ServicePrincipalLockConfiguration) GetTokenEncryptionKeyId()(*bool) {
     val, err := m.GetBackingStore().Get("tokenEncryptionKeyId")
     if err != nil {
@@ -268,7 +277,6 @@ func (m *ServicePrincipalLockConfiguration) SetTokenEncryptionKeyId(value *bool)
         panic(err)
     }
 }
-// ServicePrincipalLockConfigurationable 
 type ServicePrincipalLockConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

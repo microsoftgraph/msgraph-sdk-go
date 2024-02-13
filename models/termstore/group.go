@@ -6,11 +6,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Group 
 type Group struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewGroup instantiates a new group and sets the default values.
+// NewGroup instantiates a new Group and sets the default values.
 func NewGroup()(*Group) {
     m := &Group{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -18,10 +17,12 @@ func NewGroup()(*Group) {
     return m
 }
 // CreateGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroup(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time of the group creation. Read-only.
+// returns a *Time when successful
 func (m *Group) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *Group) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a1
     return nil
 }
 // GetDescription gets the description property value. Description that gives details on the term usage.
+// returns a *string when successful
 func (m *Group) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *Group) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Name of the group.
+// returns a *string when successful
 func (m *Group) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *Group) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -126,6 +130,7 @@ func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     return res
 }
 // GetParentSiteId gets the parentSiteId property value. ID of the parent site of this group.
+// returns a *string when successful
 func (m *Group) GetParentSiteId()(*string) {
     val, err := m.GetBackingStore().Get("parentSiteId")
     if err != nil {
@@ -137,6 +142,7 @@ func (m *Group) GetParentSiteId()(*string) {
     return nil
 }
 // GetScope gets the scope property value. Returns the type of the group. Possible values are: global, system, and siteCollection.
+// returns a *TermGroupScope when successful
 func (m *Group) GetScope()(*TermGroupScope) {
     val, err := m.GetBackingStore().Get("scope")
     if err != nil {
@@ -148,6 +154,7 @@ func (m *Group) GetScope()(*TermGroupScope) {
     return nil
 }
 // GetSets gets the sets property value. All sets under the group in a term [store].
+// returns a []Setable when successful
 func (m *Group) GetSets()([]Setable) {
     val, err := m.GetBackingStore().Get("sets")
     if err != nil {
@@ -251,7 +258,6 @@ func (m *Group) SetSets(value []Setable)() {
         panic(err)
     }
 }
-// Groupable 
 type Groupable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -40,6 +40,7 @@ type MobileAppsItemGraphWindowsAppXCategoriesRequestBuilderGetRequestConfigurati
     QueryParameters *MobileAppsItemGraphWindowsAppXCategoriesRequestBuilderGetQueryParameters
 }
 // ByMobileAppCategoryId provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+// returns a *MobileAppsItemGraphWindowsAppXCategoriesMobileAppCategoryItemRequestBuilder when successful
 func (m *MobileAppsItemGraphWindowsAppXCategoriesRequestBuilder) ByMobileAppCategoryId(mobileAppCategoryId string)(*MobileAppsItemGraphWindowsAppXCategoriesMobileAppCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,32 +51,34 @@ func (m *MobileAppsItemGraphWindowsAppXCategoriesRequestBuilder) ByMobileAppCate
     }
     return NewMobileAppsItemGraphWindowsAppXCategoriesMobileAppCategoryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewMobileAppsItemGraphWindowsAppXCategoriesRequestBuilderInternal instantiates a new CategoriesRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphWindowsAppXCategoriesRequestBuilderInternal instantiates a new MobileAppsItemGraphWindowsAppXCategoriesRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWindowsAppXCategoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWindowsAppXCategoriesRequestBuilder) {
     m := &MobileAppsItemGraphWindowsAppXCategoriesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsAppX/categories{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsAppX/categories{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewMobileAppsItemGraphWindowsAppXCategoriesRequestBuilder instantiates a new CategoriesRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphWindowsAppXCategoriesRequestBuilder instantiates a new MobileAppsItemGraphWindowsAppXCategoriesRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWindowsAppXCategoriesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWindowsAppXCategoriesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphWindowsAppXCategoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *MobileAppsItemGraphWindowsAppXCategoriesCountRequestBuilder when successful
 func (m *MobileAppsItemGraphWindowsAppXCategoriesRequestBuilder) Count()(*MobileAppsItemGraphWindowsAppXCategoriesCountRequestBuilder) {
     return NewMobileAppsItemGraphWindowsAppXCategoriesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the list of categories for this app.
+// returns a MobileAppCategoryCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphWindowsAppXCategoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphWindowsAppXCategoriesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCategoryCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateMobileAppCategoryCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -87,6 +90,7 @@ func (m *MobileAppsItemGraphWindowsAppXCategoriesRequestBuilder) Get(ctx context
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCategoryCollectionResponseable), nil
 }
 // ToGetRequestInformation the list of categories for this app.
+// returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphWindowsAppXCategoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphWindowsAppXCategoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -100,6 +104,7 @@ func (m *MobileAppsItemGraphWindowsAppXCategoriesRequestBuilder) ToGetRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MobileAppsItemGraphWindowsAppXCategoriesRequestBuilder when successful
 func (m *MobileAppsItemGraphWindowsAppXCategoriesRequestBuilder) WithUrl(rawUrl string)(*MobileAppsItemGraphWindowsAppXCategoriesRequestBuilder) {
     return NewMobileAppsItemGraphWindowsAppXCategoriesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

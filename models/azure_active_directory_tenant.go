@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AzureActiveDirectoryTenant 
 type AzureActiveDirectoryTenant struct {
     IdentitySource
 }
-// NewAzureActiveDirectoryTenant instantiates a new azureActiveDirectoryTenant and sets the default values.
+// NewAzureActiveDirectoryTenant instantiates a new AzureActiveDirectoryTenant and sets the default values.
 func NewAzureActiveDirectoryTenant()(*AzureActiveDirectoryTenant) {
     m := &AzureActiveDirectoryTenant{
         IdentitySource: *NewIdentitySource(),
@@ -18,10 +17,12 @@ func NewAzureActiveDirectoryTenant()(*AzureActiveDirectoryTenant) {
     return m
 }
 // CreateAzureActiveDirectoryTenantFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAzureActiveDirectoryTenantFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAzureActiveDirectoryTenant(), nil
 }
 // GetDisplayName gets the displayName property value. The name of the Microsoft Entra tenant. Read only.
+// returns a *string when successful
 func (m *AzureActiveDirectoryTenant) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AzureActiveDirectoryTenant) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AzureActiveDirectoryTenant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IdentitySource.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +60,7 @@ func (m *AzureActiveDirectoryTenant) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetTenantId gets the tenantId property value. The ID of the Microsoft Entra tenant. Read only.
+// returns a *string when successful
 func (m *AzureActiveDirectoryTenant) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *AzureActiveDirectoryTenant) SetTenantId(value *string)() {
         panic(err)
     }
 }
-// AzureActiveDirectoryTenantable 
 type AzureActiveDirectoryTenantable interface {
     IdentitySourceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

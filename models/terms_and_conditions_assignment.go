@@ -8,7 +8,7 @@ import (
 type TermsAndConditionsAssignment struct {
     Entity
 }
-// NewTermsAndConditionsAssignment instantiates a new termsAndConditionsAssignment and sets the default values.
+// NewTermsAndConditionsAssignment instantiates a new TermsAndConditionsAssignment and sets the default values.
 func NewTermsAndConditionsAssignment()(*TermsAndConditionsAssignment) {
     m := &TermsAndConditionsAssignment{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewTermsAndConditionsAssignment()(*TermsAndConditionsAssignment) {
     return m
 }
 // CreateTermsAndConditionsAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTermsAndConditionsAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTermsAndConditionsAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TermsAndConditionsAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["target"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +37,7 @@ func (m *TermsAndConditionsAssignment) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetTarget gets the target property value. Assignment target that the T&C policy is assigned to.
+// returns a DeviceAndAppManagementAssignmentTargetable when successful
 func (m *TermsAndConditionsAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
     val, err := m.GetBackingStore().Get("target")
     if err != nil {
@@ -66,7 +69,6 @@ func (m *TermsAndConditionsAssignment) SetTarget(value DeviceAndAppManagementAss
         panic(err)
     }
 }
-// TermsAndConditionsAssignmentable 
 type TermsAndConditionsAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

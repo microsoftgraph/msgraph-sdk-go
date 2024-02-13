@@ -40,6 +40,7 @@ type ItemSitesItemItemsRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemSitesItemItemsRequestBuilderGetQueryParameters
 }
 // ByBaseItemId provides operations to manage the items property of the microsoft.graph.site entity.
+// returns a *ItemSitesItemItemsBaseItemItemRequestBuilder when successful
 func (m *ItemSitesItemItemsRequestBuilder) ByBaseItemId(baseItemId string)(*ItemSitesItemItemsBaseItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,32 +51,34 @@ func (m *ItemSitesItemItemsRequestBuilder) ByBaseItemId(baseItemId string)(*Item
     }
     return NewItemSitesItemItemsBaseItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemSitesItemItemsRequestBuilderInternal instantiates a new ItemsRequestBuilder and sets the default values.
+// NewItemSitesItemItemsRequestBuilderInternal instantiates a new ItemSitesItemItemsRequestBuilder and sets the default values.
 func NewItemSitesItemItemsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemItemsRequestBuilder) {
     m := &ItemSitesItemItemsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/items{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/items{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemSitesItemItemsRequestBuilder instantiates a new ItemsRequestBuilder and sets the default values.
+// NewItemSitesItemItemsRequestBuilder instantiates a new ItemSitesItemItemsRequestBuilder and sets the default values.
 func NewItemSitesItemItemsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemItemsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemItemsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemSitesItemItemsCountRequestBuilder when successful
 func (m *ItemSitesItemItemsRequestBuilder) Count()(*ItemSitesItemItemsCountRequestBuilder) {
     return NewItemSitesItemItemsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get used to address any item contained in this site. This collection can't be enumerated.
+// returns a BaseItemCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemItemsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemItemsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseItemCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateBaseItemCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -87,6 +90,7 @@ func (m *ItemSitesItemItemsRequestBuilder) Get(ctx context.Context, requestConfi
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseItemCollectionResponseable), nil
 }
 // ToGetRequestInformation used to address any item contained in this site. This collection can't be enumerated.
+// returns a *RequestInformation when successful
 func (m *ItemSitesItemItemsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -100,6 +104,7 @@ func (m *ItemSitesItemItemsRequestBuilder) ToGetRequestInformation(ctx context.C
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemSitesItemItemsRequestBuilder when successful
 func (m *ItemSitesItemItemsRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemItemsRequestBuilder) {
     return NewItemSitesItemItemsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

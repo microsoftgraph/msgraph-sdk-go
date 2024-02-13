@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IntelligenceProfileIndicator 
 type IntelligenceProfileIndicator struct {
     Indicator
 }
-// NewIntelligenceProfileIndicator instantiates a new intelligenceProfileIndicator and sets the default values.
+// NewIntelligenceProfileIndicator instantiates a new IntelligenceProfileIndicator and sets the default values.
 func NewIntelligenceProfileIndicator()(*IntelligenceProfileIndicator) {
     m := &IntelligenceProfileIndicator{
         Indicator: *NewIndicator(),
@@ -19,10 +18,12 @@ func NewIntelligenceProfileIndicator()(*IntelligenceProfileIndicator) {
     return m
 }
 // CreateIntelligenceProfileIndicatorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIntelligenceProfileIndicatorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIntelligenceProfileIndicator(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IntelligenceProfileIndicator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Indicator.GetFieldDeserializers()
     res["firstSeenDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -48,6 +49,7 @@ func (m *IntelligenceProfileIndicator) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetFirstSeenDateTime gets the firstSeenDateTime property value. Designate when an artifact was first used actively in an attack, when a particular sample was compiled, or if neither of those could be ascertained when the file was first seen in public repositories (for example, VirusTotal, ANY.RUN, Hybrid Analysis) or reported publicly.
+// returns a *Time when successful
 func (m *IntelligenceProfileIndicator) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstSeenDateTime")
     if err != nil {
@@ -59,6 +61,7 @@ func (m *IntelligenceProfileIndicator) GetFirstSeenDateTime()(*i336074805fc85398
     return nil
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. Designate when an artifact was most recently used actively in an attack, when a particular sample was compiled, or if neither of those could be ascertained when the file was first seen in public repositories (for example, VirusTotal, ANY.RUN, Hybrid Analysis) or reported publicly.
+// returns a *Time when successful
 func (m *IntelligenceProfileIndicator) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSeenDateTime")
     if err != nil {
@@ -103,7 +106,6 @@ func (m *IntelligenceProfileIndicator) SetLastSeenDateTime(value *i336074805fc85
         panic(err)
     }
 }
-// IntelligenceProfileIndicatorable 
 type IntelligenceProfileIndicatorable interface {
     Indicatorable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

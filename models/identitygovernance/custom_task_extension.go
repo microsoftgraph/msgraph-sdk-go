@@ -6,11 +6,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// CustomTaskExtension 
 type CustomTaskExtension struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomCalloutExtension
 }
-// NewCustomTaskExtension instantiates a new customTaskExtension and sets the default values.
+// NewCustomTaskExtension instantiates a new CustomTaskExtension and sets the default values.
 func NewCustomTaskExtension()(*CustomTaskExtension) {
     m := &CustomTaskExtension{
         CustomCalloutExtension: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewCustomCalloutExtension(),
@@ -20,10 +19,12 @@ func NewCustomTaskExtension()(*CustomTaskExtension) {
     return m
 }
 // CreateCustomTaskExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCustomTaskExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomTaskExtension(), nil
 }
 // GetCallbackConfiguration gets the callbackConfiguration property value. The callback configuration for a custom task extension.
+// returns a CustomExtensionCallbackConfigurationable when successful
 func (m *CustomTaskExtension) GetCallbackConfiguration()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomExtensionCallbackConfigurationable) {
     val, err := m.GetBackingStore().Get("callbackConfiguration")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *CustomTaskExtension) GetCallbackConfiguration()(iadcd81124412c61e647227
     return nil
 }
 // GetCreatedBy gets the createdBy property value. The unique identifier of the Microsoft Entra user that created the custom task extension.Supports $filter(eq, ne) and $expand.
+// returns a Userable when successful
 func (m *CustomTaskExtension) GetCreatedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -46,6 +48,7 @@ func (m *CustomTaskExtension) GetCreatedBy()(iadcd81124412c61e647227ecfc4449d8bb
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. When the custom task extension was created.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
+// returns a *Time when successful
 func (m *CustomTaskExtension) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -57,6 +60,7 @@ func (m *CustomTaskExtension) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomTaskExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CustomCalloutExtension.GetFieldDeserializers()
     res["callbackConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -112,6 +116,7 @@ func (m *CustomTaskExtension) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The unique identifier of the Microsoft Entra user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.
+// returns a Userable when successful
 func (m *CustomTaskExtension) GetLastModifiedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -123,6 +128,7 @@ func (m *CustomTaskExtension) GetLastModifiedBy()(iadcd81124412c61e647227ecfc444
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. When the custom extension was last modified.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
+// returns a *Time when successful
 func (m *CustomTaskExtension) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -206,7 +212,6 @@ func (m *CustomTaskExtension) SetLastModifiedDateTime(value *i336074805fc853987a
         panic(err)
     }
 }
-// CustomTaskExtensionable 
 type CustomTaskExtensionable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomCalloutExtensionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

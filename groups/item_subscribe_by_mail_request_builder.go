@@ -17,20 +17,21 @@ type ItemSubscribeByMailRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemSubscribeByMailRequestBuilderInternal instantiates a new SubscribeByMailRequestBuilder and sets the default values.
+// NewItemSubscribeByMailRequestBuilderInternal instantiates a new ItemSubscribeByMailRequestBuilder and sets the default values.
 func NewItemSubscribeByMailRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSubscribeByMailRequestBuilder) {
     m := &ItemSubscribeByMailRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/subscribeByMail", pathParameters),
     }
     return m
 }
-// NewItemSubscribeByMailRequestBuilder instantiates a new SubscribeByMailRequestBuilder and sets the default values.
+// NewItemSubscribeByMailRequestBuilder instantiates a new ItemSubscribeByMailRequestBuilder and sets the default values.
 func NewItemSubscribeByMailRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSubscribeByMailRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSubscribeByMailRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post calling this method will enable the current user to receive email notifications for this group, about new posts, events, and files in that group. Supported for Microsoft 365 groups only.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/group-subscribebymail?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemSubscribeByMailRequestBuilder) Post(ctx context.Context, requestCon
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemSubscribeByMailRequestBuilder) Post(ctx context.Context, requestCon
     return nil
 }
 // ToPostRequestInformation calling this method will enable the current user to receive email notifications for this group, about new posts, events, and files in that group. Supported for Microsoft 365 groups only.
+// returns a *RequestInformation when successful
 func (m *ItemSubscribeByMailRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemSubscribeByMailRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *ItemSubscribeByMailRequestBuilder) ToPostRequestInformation(ctx context
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemSubscribeByMailRequestBuilder when successful
 func (m *ItemSubscribeByMailRequestBuilder) WithUrl(rawUrl string)(*ItemSubscribeByMailRequestBuilder) {
     return NewItemSubscribeByMailRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

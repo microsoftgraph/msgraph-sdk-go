@@ -6,7 +6,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// TargetedManagedAppConfigurationsItemAssignPostRequestBody 
 type TargetedManagedAppConfigurationsItemAssignPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -20,10 +19,12 @@ func NewTargetedManagedAppConfigurationsItemAssignPostRequestBody()(*TargetedMan
     return m
 }
 // CreateTargetedManagedAppConfigurationsItemAssignPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTargetedManagedAppConfigurationsItemAssignPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTargetedManagedAppConfigurationsItemAssignPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TargetedManagedAppConfigurationsItemAssignPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,6 +37,7 @@ func (m *TargetedManagedAppConfigurationsItemAssignPostRequestBody) GetAdditiona
     return val.(map[string]any)
 }
 // GetAssignments gets the assignments property value. The assignments property
+// returns a []TargetedManagedAppPolicyAssignmentable when successful
 func (m *TargetedManagedAppConfigurationsItemAssignPostRequestBody) GetAssignments()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TargetedManagedAppPolicyAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -47,10 +49,12 @@ func (m *TargetedManagedAppConfigurationsItemAssignPostRequestBody) GetAssignmen
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *TargetedManagedAppConfigurationsItemAssignPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TargetedManagedAppConfigurationsItemAssignPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -111,7 +115,6 @@ func (m *TargetedManagedAppConfigurationsItemAssignPostRequestBody) SetAssignmen
 func (m *TargetedManagedAppConfigurationsItemAssignPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// TargetedManagedAppConfigurationsItemAssignPostRequestBodyable 
 type TargetedManagedAppConfigurationsItemAssignPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

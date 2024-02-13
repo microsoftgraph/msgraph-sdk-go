@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationStrengthPolicy 
 type AuthenticationStrengthPolicy struct {
     Entity
 }
-// NewAuthenticationStrengthPolicy instantiates a new authenticationStrengthPolicy and sets the default values.
+// NewAuthenticationStrengthPolicy instantiates a new AuthenticationStrengthPolicy and sets the default values.
 func NewAuthenticationStrengthPolicy()(*AuthenticationStrengthPolicy) {
     m := &AuthenticationStrengthPolicy{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewAuthenticationStrengthPolicy()(*AuthenticationStrengthPolicy) {
     return m
 }
 // CreateAuthenticationStrengthPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthenticationStrengthPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationStrengthPolicy(), nil
 }
 // GetAllowedCombinations gets the allowedCombinations property value. A collection of authentication method modes that are required be used to satify this authentication strength.
+// returns a []AuthenticationMethodModes when successful
 func (m *AuthenticationStrengthPolicy) GetAllowedCombinations()([]AuthenticationMethodModes) {
     val, err := m.GetBackingStore().Get("allowedCombinations")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *AuthenticationStrengthPolicy) GetAllowedCombinations()([]Authentication
     return nil
 }
 // GetCombinationConfigurations gets the combinationConfigurations property value. Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
+// returns a []AuthenticationCombinationConfigurationable when successful
 func (m *AuthenticationStrengthPolicy) GetCombinationConfigurations()([]AuthenticationCombinationConfigurationable) {
     val, err := m.GetBackingStore().Get("combinationConfigurations")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *AuthenticationStrengthPolicy) GetCombinationConfigurations()([]Authenti
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The datetime when this policy was created.
+// returns a *Time when successful
 func (m *AuthenticationStrengthPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *AuthenticationStrengthPolicy) GetCreatedDateTime()(*i336074805fc853987a
     return nil
 }
 // GetDescription gets the description property value. The human-readable description of this policy.
+// returns a *string when successful
 func (m *AuthenticationStrengthPolicy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *AuthenticationStrengthPolicy) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The human-readable display name of this policy. Supports $filter (eq, ne, not , and in).
+// returns a *string when successful
 func (m *AuthenticationStrengthPolicy) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *AuthenticationStrengthPolicy) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationStrengthPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["allowedCombinations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -173,6 +179,7 @@ func (m *AuthenticationStrengthPolicy) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. The datetime when this policy was last modified.
+// returns a *Time when successful
 func (m *AuthenticationStrengthPolicy) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("modifiedDateTime")
     if err != nil {
@@ -184,6 +191,7 @@ func (m *AuthenticationStrengthPolicy) GetModifiedDateTime()(*i336074805fc853987
     return nil
 }
 // GetPolicyType gets the policyType property value. The policyType property
+// returns a *AuthenticationStrengthPolicyType when successful
 func (m *AuthenticationStrengthPolicy) GetPolicyType()(*AuthenticationStrengthPolicyType) {
     val, err := m.GetBackingStore().Get("policyType")
     if err != nil {
@@ -195,6 +203,7 @@ func (m *AuthenticationStrengthPolicy) GetPolicyType()(*AuthenticationStrengthPo
     return nil
 }
 // GetRequirementsSatisfied gets the requirementsSatisfied property value. The requirementsSatisfied property
+// returns a *AuthenticationStrengthRequirements when successful
 func (m *AuthenticationStrengthPolicy) GetRequirementsSatisfied()(*AuthenticationStrengthRequirements) {
     val, err := m.GetBackingStore().Get("requirementsSatisfied")
     if err != nil {
@@ -325,7 +334,6 @@ func (m *AuthenticationStrengthPolicy) SetRequirementsSatisfied(value *Authentic
         panic(err)
     }
 }
-// AuthenticationStrengthPolicyable 
 type AuthenticationStrengthPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

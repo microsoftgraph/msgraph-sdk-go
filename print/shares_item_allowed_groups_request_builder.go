@@ -40,6 +40,7 @@ type SharesItemAllowedGroupsRequestBuilderGetRequestConfiguration struct {
     QueryParameters *SharesItemAllowedGroupsRequestBuilderGetQueryParameters
 }
 // ByGroupId gets an item from the github.com/microsoftgraph/msgraph-sdk-go/.print.shares.item.allowedGroups.item collection
+// returns a *SharesItemAllowedGroupsGroupItemRequestBuilder when successful
 func (m *SharesItemAllowedGroupsRequestBuilder) ByGroupId(groupId string)(*SharesItemAllowedGroupsGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,24 +51,27 @@ func (m *SharesItemAllowedGroupsRequestBuilder) ByGroupId(groupId string)(*Share
     }
     return NewSharesItemAllowedGroupsGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewSharesItemAllowedGroupsRequestBuilderInternal instantiates a new AllowedGroupsRequestBuilder and sets the default values.
+// NewSharesItemAllowedGroupsRequestBuilderInternal instantiates a new SharesItemAllowedGroupsRequestBuilder and sets the default values.
 func NewSharesItemAllowedGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesItemAllowedGroupsRequestBuilder) {
     m := &SharesItemAllowedGroupsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/allowedGroups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/allowedGroups{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewSharesItemAllowedGroupsRequestBuilder instantiates a new AllowedGroupsRequestBuilder and sets the default values.
+// NewSharesItemAllowedGroupsRequestBuilder instantiates a new SharesItemAllowedGroupsRequestBuilder and sets the default values.
 func NewSharesItemAllowedGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesItemAllowedGroupsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSharesItemAllowedGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *SharesItemAllowedGroupsCountRequestBuilder when successful
 func (m *SharesItemAllowedGroupsRequestBuilder) Count()(*SharesItemAllowedGroupsCountRequestBuilder) {
     return NewSharesItemAllowedGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
+// returns a GroupCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0
@@ -77,8 +81,7 @@ func (m *SharesItemAllowedGroupsRequestBuilder) Get(ctx context.Context, request
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateGroupCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,10 +93,12 @@ func (m *SharesItemAllowedGroupsRequestBuilder) Get(ctx context.Context, request
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.GroupCollectionResponseable), nil
 }
 // Ref provides operations to manage the collection of print entities.
+// returns a *SharesItemAllowedGroupsRefRequestBuilder when successful
 func (m *SharesItemAllowedGroupsRequestBuilder) Ref()(*SharesItemAllowedGroupsRefRequestBuilder) {
     return NewSharesItemAllowedGroupsRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
+// returns a *RequestInformation when successful
 func (m *SharesItemAllowedGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SharesItemAllowedGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -107,6 +112,7 @@ func (m *SharesItemAllowedGroupsRequestBuilder) ToGetRequestInformation(ctx cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *SharesItemAllowedGroupsRequestBuilder when successful
 func (m *SharesItemAllowedGroupsRequestBuilder) WithUrl(rawUrl string)(*SharesItemAllowedGroupsRequestBuilder) {
     return NewSharesItemAllowedGroupsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

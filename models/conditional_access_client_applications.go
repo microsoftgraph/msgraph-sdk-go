@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ConditionalAccessClientApplications 
 type ConditionalAccessClientApplications struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewConditionalAccessClientApplications instantiates a new conditionalAccessClientApplications and sets the default values.
+// NewConditionalAccessClientApplications instantiates a new ConditionalAccessClientApplications and sets the default values.
 func NewConditionalAccessClientApplications()(*ConditionalAccessClientApplications) {
     m := &ConditionalAccessClientApplications{
     }
@@ -19,10 +18,12 @@ func NewConditionalAccessClientApplications()(*ConditionalAccessClientApplicatio
     return m
 }
 // CreateConditionalAccessClientApplicationsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConditionalAccessClientApplicationsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConditionalAccessClientApplications(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ConditionalAccessClientApplications) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ConditionalAccessClientApplications) GetAdditionalData()(map[string]any
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ConditionalAccessClientApplications) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetExcludeServicePrincipals gets the excludeServicePrincipals property value. Service principal IDs excluded from the policy scope.
+// returns a []string when successful
 func (m *ConditionalAccessClientApplications) GetExcludeServicePrincipals()([]string) {
     val, err := m.GetBackingStore().Get("excludeServicePrincipals")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *ConditionalAccessClientApplications) GetExcludeServicePrincipals()([]st
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConditionalAccessClientApplications) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["excludeServicePrincipals"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -107,6 +111,7 @@ func (m *ConditionalAccessClientApplications) GetFieldDeserializers()(map[string
     return res
 }
 // GetIncludeServicePrincipals gets the includeServicePrincipals property value. Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.
+// returns a []string when successful
 func (m *ConditionalAccessClientApplications) GetIncludeServicePrincipals()([]string) {
     val, err := m.GetBackingStore().Get("includeServicePrincipals")
     if err != nil {
@@ -118,6 +123,7 @@ func (m *ConditionalAccessClientApplications) GetIncludeServicePrincipals()([]st
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ConditionalAccessClientApplications) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -129,6 +135,7 @@ func (m *ConditionalAccessClientApplications) GetOdataType()(*string) {
     return nil
 }
 // GetServicePrincipalFilter gets the servicePrincipalFilter property value. The servicePrincipalFilter property
+// returns a ConditionalAccessFilterable when successful
 func (m *ConditionalAccessClientApplications) GetServicePrincipalFilter()(ConditionalAccessFilterable) {
     val, err := m.GetBackingStore().Get("servicePrincipalFilter")
     if err != nil {
@@ -212,7 +219,6 @@ func (m *ConditionalAccessClientApplications) SetServicePrincipalFilter(value Co
         panic(err)
     }
 }
-// ConditionalAccessClientApplicationsable 
 type ConditionalAccessClientApplicationsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -14,6 +14,8 @@ type DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder struct {
 type DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -36,29 +38,30 @@ type DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilderGetRequestConfigurat
     // Request query parameters
     QueryParameters *DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilderGetQueryParameters
 }
-// NewDeletedTeamsItemChannelsItemMessagesDeltaRequestBuilderInternal instantiates a new DeltaRequestBuilder and sets the default values.
+// NewDeletedTeamsItemChannelsItemMessagesDeltaRequestBuilderInternal instantiates a new DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder and sets the default values.
 func NewDeletedTeamsItemChannelsItemMessagesDeltaRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder) {
     m := &DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}/messages/delta(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}/messages/delta(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewDeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder instantiates a new DeltaRequestBuilder and sets the default values.
+// NewDeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder instantiates a new DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder and sets the default values.
 func NewDeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedTeamsItemChannelsItemMessagesDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function delta
-// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a DeletedTeamsItemChannelsItemMessagesDeltaResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilderGetRequestConfiguration)(DeletedTeamsItemChannelsItemMessagesDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDeletedTeamsItemChannelsItemMessagesDeltaResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -70,14 +73,15 @@ func (m *DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder) Get(ctx contex
     return res.(DeletedTeamsItemChannelsItemMessagesDeltaResponseable), nil
 }
 // GetAsDeltaGetResponse invoke function delta
+// returns a DeletedTeamsItemChannelsItemMessagesDeltaGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilderGetRequestConfiguration)(DeletedTeamsItemChannelsItemMessagesDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDeletedTeamsItemChannelsItemMessagesDeltaGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -89,6 +93,7 @@ func (m *DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder) GetAsDeltaGetR
     return res.(DeletedTeamsItemChannelsItemMessagesDeltaGetResponseable), nil
 }
 // ToGetRequestInformation invoke function delta
+// returns a *RequestInformation when successful
 func (m *DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -102,6 +107,7 @@ func (m *DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder) ToGetRequestIn
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder when successful
 func (m *DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder) WithUrl(rawUrl string)(*DeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder) {
     return NewDeletedTeamsItemChannelsItemMessagesDeltaRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

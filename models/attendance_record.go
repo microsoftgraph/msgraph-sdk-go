@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AttendanceRecord 
 type AttendanceRecord struct {
     Entity
 }
-// NewAttendanceRecord instantiates a new attendanceRecord and sets the default values.
+// NewAttendanceRecord instantiates a new AttendanceRecord and sets the default values.
 func NewAttendanceRecord()(*AttendanceRecord) {
     m := &AttendanceRecord{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewAttendanceRecord()(*AttendanceRecord) {
     return m
 }
 // CreateAttendanceRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAttendanceRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAttendanceRecord(), nil
 }
 // GetAttendanceIntervals gets the attendanceIntervals property value. List of time periods between joining and leaving a meeting.
+// returns a []AttendanceIntervalable when successful
 func (m *AttendanceRecord) GetAttendanceIntervals()([]AttendanceIntervalable) {
     val, err := m.GetBackingStore().Get("attendanceIntervals")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *AttendanceRecord) GetAttendanceIntervals()([]AttendanceIntervalable) {
     return nil
 }
 // GetEmailAddress gets the emailAddress property value. Email address of the user associated with this attendance record.
+// returns a *string when successful
 func (m *AttendanceRecord) GetEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("emailAddress")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *AttendanceRecord) GetEmailAddress()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AttendanceRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["attendanceIntervals"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -103,6 +106,7 @@ func (m *AttendanceRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetIdentity gets the identity property value. Identity of the user associated with this attendance record.
+// returns a Identityable when successful
 func (m *AttendanceRecord) GetIdentity()(Identityable) {
     val, err := m.GetBackingStore().Get("identity")
     if err != nil {
@@ -114,6 +118,7 @@ func (m *AttendanceRecord) GetIdentity()(Identityable) {
     return nil
 }
 // GetRole gets the role property value. Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
+// returns a *string when successful
 func (m *AttendanceRecord) GetRole()(*string) {
     val, err := m.GetBackingStore().Get("role")
     if err != nil {
@@ -125,6 +130,7 @@ func (m *AttendanceRecord) GetRole()(*string) {
     return nil
 }
 // GetTotalAttendanceInSeconds gets the totalAttendanceInSeconds property value. Total duration of the attendances in seconds.
+// returns a *int32 when successful
 func (m *AttendanceRecord) GetTotalAttendanceInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("totalAttendanceInSeconds")
     if err != nil {
@@ -214,7 +220,6 @@ func (m *AttendanceRecord) SetTotalAttendanceInSeconds(value *int32)() {
         panic(err)
     }
 }
-// AttendanceRecordable 
 type AttendanceRecordable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -26,28 +26,29 @@ type RoleDefinitionsItemRoleAssignmentsCountRequestBuilderGetRequestConfiguratio
     // Request query parameters
     QueryParameters *RoleDefinitionsItemRoleAssignmentsCountRequestBuilderGetQueryParameters
 }
-// NewRoleDefinitionsItemRoleAssignmentsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewRoleDefinitionsItemRoleAssignmentsCountRequestBuilderInternal instantiates a new RoleDefinitionsItemRoleAssignmentsCountRequestBuilder and sets the default values.
 func NewRoleDefinitionsItemRoleAssignmentsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleDefinitionsItemRoleAssignmentsCountRequestBuilder) {
     m := &RoleDefinitionsItemRoleAssignmentsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/roleDefinitions/{roleDefinition%2Did}/roleAssignments/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/roleDefinitions/{roleDefinition%2Did}/roleAssignments/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewRoleDefinitionsItemRoleAssignmentsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewRoleDefinitionsItemRoleAssignmentsCountRequestBuilder instantiates a new RoleDefinitionsItemRoleAssignmentsCountRequestBuilder and sets the default values.
 func NewRoleDefinitionsItemRoleAssignmentsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleDefinitionsItemRoleAssignmentsCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRoleDefinitionsItemRoleAssignmentsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RoleDefinitionsItemRoleAssignmentsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleDefinitionsItemRoleAssignmentsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *RoleDefinitionsItemRoleAssignmentsCountRequestBuilder) Get(ctx context.
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *RoleDefinitionsItemRoleAssignmentsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleDefinitionsItemRoleAssignmentsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *RoleDefinitionsItemRoleAssignmentsCountRequestBuilder) ToGetRequestInfo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *RoleDefinitionsItemRoleAssignmentsCountRequestBuilder when successful
 func (m *RoleDefinitionsItemRoleAssignmentsCountRequestBuilder) WithUrl(rawUrl string)(*RoleDefinitionsItemRoleAssignmentsCountRequestBuilder) {
     return NewRoleDefinitionsItemRoleAssignmentsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

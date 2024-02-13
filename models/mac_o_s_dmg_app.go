@@ -8,7 +8,7 @@ import (
 type MacOSDmgApp struct {
     MobileLobApp
 }
-// NewMacOSDmgApp instantiates a new macOSDmgApp and sets the default values.
+// NewMacOSDmgApp instantiates a new MacOSDmgApp and sets the default values.
 func NewMacOSDmgApp()(*MacOSDmgApp) {
     m := &MacOSDmgApp{
         MobileLobApp: *NewMobileLobApp(),
@@ -18,10 +18,12 @@ func NewMacOSDmgApp()(*MacOSDmgApp) {
     return m
 }
 // CreateMacOSDmgAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOSDmgAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSDmgApp(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSDmgApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileLobApp.GetFieldDeserializers()
     res["ignoreVersionDetection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -83,6 +85,7 @@ func (m *MacOSDmgApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetIgnoreVersionDetection gets the ignoreVersionDetection property value. When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature. The default value is FALSE.
+// returns a *bool when successful
 func (m *MacOSDmgApp) GetIgnoreVersionDetection()(*bool) {
     val, err := m.GetBackingStore().Get("ignoreVersionDetection")
     if err != nil {
@@ -94,6 +97,7 @@ func (m *MacOSDmgApp) GetIgnoreVersionDetection()(*bool) {
     return nil
 }
 // GetIncludedApps gets the includedApps property value. The list of .apps expected to be installed by the DMG (Apple Disk Image)
+// returns a []MacOSIncludedAppable when successful
 func (m *MacOSDmgApp) GetIncludedApps()([]MacOSIncludedAppable) {
     val, err := m.GetBackingStore().Get("includedApps")
     if err != nil {
@@ -105,6 +109,7 @@ func (m *MacOSDmgApp) GetIncludedApps()([]MacOSIncludedAppable) {
     return nil
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. ComplexType macOSMinimumOperatingSystem that indicates the minimum operating system applicable for the application.
+// returns a MacOSMinimumOperatingSystemable when successful
 func (m *MacOSDmgApp) GetMinimumSupportedOperatingSystem()(MacOSMinimumOperatingSystemable) {
     val, err := m.GetBackingStore().Get("minimumSupportedOperatingSystem")
     if err != nil {
@@ -116,6 +121,7 @@ func (m *MacOSDmgApp) GetMinimumSupportedOperatingSystem()(MacOSMinimumOperating
     return nil
 }
 // GetPrimaryBundleId gets the primaryBundleId property value. The bundleId of the primary .app in the DMG (Apple Disk Image). This maps to the CFBundleIdentifier in the app's bundle configuration.
+// returns a *string when successful
 func (m *MacOSDmgApp) GetPrimaryBundleId()(*string) {
     val, err := m.GetBackingStore().Get("primaryBundleId")
     if err != nil {
@@ -127,6 +133,7 @@ func (m *MacOSDmgApp) GetPrimaryBundleId()(*string) {
     return nil
 }
 // GetPrimaryBundleVersion gets the primaryBundleVersion property value. The version of the primary .app in the DMG (Apple Disk Image). This maps to the CFBundleShortVersion in the app's bundle configuration.
+// returns a *string when successful
 func (m *MacOSDmgApp) GetPrimaryBundleVersion()(*string) {
     val, err := m.GetBackingStore().Get("primaryBundleVersion")
     if err != nil {
@@ -216,7 +223,6 @@ func (m *MacOSDmgApp) SetPrimaryBundleVersion(value *string)() {
         panic(err)
     }
 }
-// MacOSDmgAppable 
 type MacOSDmgAppable interface {
     MobileLobAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

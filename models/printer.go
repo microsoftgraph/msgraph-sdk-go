@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Printer 
 type Printer struct {
     PrinterBase
 }
-// NewPrinter instantiates a new printer and sets the default values.
+// NewPrinter instantiates a new Printer and sets the default values.
 func NewPrinter()(*Printer) {
     m := &Printer{
         PrinterBase: *NewPrinterBase(),
@@ -19,10 +18,12 @@ func NewPrinter()(*Printer) {
     return m
 }
 // CreatePrinterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrinterFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrinter(), nil
 }
 // GetConnectors gets the connectors property value. The connectors that are associated with the printer.
+// returns a []PrintConnectorable when successful
 func (m *Printer) GetConnectors()([]PrintConnectorable) {
     val, err := m.GetBackingStore().Get("connectors")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *Printer) GetConnectors()([]PrintConnectorable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Printer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PrinterBase.GetFieldDeserializers()
     res["connectors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -127,6 +129,7 @@ func (m *Printer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetHasPhysicalDevice gets the hasPhysicalDevice property value. True if the printer has a physical device for printing. Read-only.
+// returns a *bool when successful
 func (m *Printer) GetHasPhysicalDevice()(*bool) {
     val, err := m.GetBackingStore().Get("hasPhysicalDevice")
     if err != nil {
@@ -138,6 +141,7 @@ func (m *Printer) GetHasPhysicalDevice()(*bool) {
     return nil
 }
 // GetIsShared gets the isShared property value. True if the printer is shared; false otherwise. Read-only.
+// returns a *bool when successful
 func (m *Printer) GetIsShared()(*bool) {
     val, err := m.GetBackingStore().Get("isShared")
     if err != nil {
@@ -149,6 +153,7 @@ func (m *Printer) GetIsShared()(*bool) {
     return nil
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.
+// returns a *Time when successful
 func (m *Printer) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSeenDateTime")
     if err != nil {
@@ -160,6 +165,7 @@ func (m *Printer) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     return nil
 }
 // GetRegisteredDateTime gets the registeredDateTime property value. The DateTimeOffset when the printer was registered. Read-only.
+// returns a *Time when successful
 func (m *Printer) GetRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("registeredDateTime")
     if err != nil {
@@ -171,6 +177,7 @@ func (m *Printer) GetRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
     return nil
 }
 // GetShares gets the shares property value. The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
+// returns a []PrinterShareable when successful
 func (m *Printer) GetShares()([]PrinterShareable) {
     val, err := m.GetBackingStore().Get("shares")
     if err != nil {
@@ -182,6 +189,7 @@ func (m *Printer) GetShares()([]PrinterShareable) {
     return nil
 }
 // GetTaskTriggers gets the taskTriggers property value. A list of task triggers that are associated with the printer.
+// returns a []PrintTaskTriggerable when successful
 func (m *Printer) GetTaskTriggers()([]PrintTaskTriggerable) {
     val, err := m.GetBackingStore().Get("taskTriggers")
     if err != nil {
@@ -309,7 +317,6 @@ func (m *Printer) SetTaskTriggers(value []PrintTaskTriggerable)() {
         panic(err)
     }
 }
-// Printerable 
 type Printerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PrinterBaseable

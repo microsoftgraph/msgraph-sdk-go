@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// OnPremisesExtensionAttributes 
 type OnPremisesExtensionAttributes struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewOnPremisesExtensionAttributes instantiates a new onPremisesExtensionAttributes and sets the default values.
+// NewOnPremisesExtensionAttributes instantiates a new OnPremisesExtensionAttributes and sets the default values.
 func NewOnPremisesExtensionAttributes()(*OnPremisesExtensionAttributes) {
     m := &OnPremisesExtensionAttributes{
     }
@@ -19,10 +18,12 @@ func NewOnPremisesExtensionAttributes()(*OnPremisesExtensionAttributes) {
     return m
 }
 // CreateOnPremisesExtensionAttributesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnPremisesExtensionAttributesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnPremisesExtensionAttributes(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OnPremisesExtensionAttributes) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *OnPremisesExtensionAttributes) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *OnPremisesExtensionAttributes) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetExtensionAttribute1 gets the extensionAttribute1 property value. First customizable extension attribute.
+// returns a *string when successful
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute1()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute1")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute1()(*string) {
     return nil
 }
 // GetExtensionAttribute10 gets the extensionAttribute10 property value. Tenth customizable extension attribute.
+// returns a *string when successful
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute10()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute10")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute10()(*string) {
     return nil
 }
 // GetExtensionAttribute11 gets the extensionAttribute11 property value. Eleventh customizable extension attribute.
+// returns a *string when successful
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute11()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute11")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute11()(*string) {
     return nil
 }
 // GetExtensionAttribute12 gets the extensionAttribute12 property value. Twelfth customizable extension attribute.
+// returns a *string when successful
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute12()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute12")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute12()(*string) {
     return nil
 }
 // GetExtensionAttribute13 gets the extensionAttribute13 property value. Thirteenth customizable extension attribute.
+// returns a *string when successful
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute13()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute13")
     if err != nil {
@@ -94,6 +101,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute13()(*string) {
     return nil
 }
 // GetExtensionAttribute14 gets the extensionAttribute14 property value. Fourteenth customizable extension attribute.
+// returns a *string when successful
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute14()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute14")
     if err != nil {
@@ -105,6 +113,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute14()(*string) {
     return nil
 }
 // GetExtensionAttribute15 gets the extensionAttribute15 property value. Fifteenth customizable extension attribute.
+// returns a *string when successful
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute15()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute15")
     if err != nil {
@@ -116,6 +125,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute15()(*string) {
     return nil
 }
 // GetExtensionAttribute2 gets the extensionAttribute2 property value. Second customizable extension attribute.
+// returns a *string when successful
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute2()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute2")
     if err != nil {
@@ -127,6 +137,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute2()(*string) {
     return nil
 }
 // GetExtensionAttribute3 gets the extensionAttribute3 property value. Third customizable extension attribute.
+// returns a *string when successful
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute3()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute3")
     if err != nil {
@@ -138,6 +149,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute3()(*string) {
     return nil
 }
 // GetExtensionAttribute4 gets the extensionAttribute4 property value. Fourth customizable extension attribute.
+// returns a *string when successful
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute4()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute4")
     if err != nil {
@@ -149,6 +161,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute4()(*string) {
     return nil
 }
 // GetExtensionAttribute5 gets the extensionAttribute5 property value. Fifth customizable extension attribute.
+// returns a *string when successful
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute5()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute5")
     if err != nil {
@@ -160,6 +173,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute5()(*string) {
     return nil
 }
 // GetExtensionAttribute6 gets the extensionAttribute6 property value. Sixth customizable extension attribute.
+// returns a *string when successful
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute6()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute6")
     if err != nil {
@@ -171,6 +185,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute6()(*string) {
     return nil
 }
 // GetExtensionAttribute7 gets the extensionAttribute7 property value. Seventh customizable extension attribute.
+// returns a *string when successful
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute7()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute7")
     if err != nil {
@@ -182,6 +197,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute7()(*string) {
     return nil
 }
 // GetExtensionAttribute8 gets the extensionAttribute8 property value. Eighth customizable extension attribute.
+// returns a *string when successful
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute8()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute8")
     if err != nil {
@@ -193,6 +209,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute8()(*string) {
     return nil
 }
 // GetExtensionAttribute9 gets the extensionAttribute9 property value. Ninth customizable extension attribute.
+// returns a *string when successful
 func (m *OnPremisesExtensionAttributes) GetExtensionAttribute9()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute9")
     if err != nil {
@@ -204,6 +221,7 @@ func (m *OnPremisesExtensionAttributes) GetExtensionAttribute9()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnPremisesExtensionAttributes) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["extensionAttribute1"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -369,6 +387,7 @@ func (m *OnPremisesExtensionAttributes) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *OnPremisesExtensionAttributes) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -608,7 +627,6 @@ func (m *OnPremisesExtensionAttributes) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// OnPremisesExtensionAttributesable 
 type OnPremisesExtensionAttributesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

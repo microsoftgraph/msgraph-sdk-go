@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServicePrincipalIdentity 
 type ServicePrincipalIdentity struct {
     Identity
 }
-// NewServicePrincipalIdentity instantiates a new servicePrincipalIdentity and sets the default values.
+// NewServicePrincipalIdentity instantiates a new ServicePrincipalIdentity and sets the default values.
 func NewServicePrincipalIdentity()(*ServicePrincipalIdentity) {
     m := &ServicePrincipalIdentity{
         Identity: *NewIdentity(),
@@ -18,10 +17,12 @@ func NewServicePrincipalIdentity()(*ServicePrincipalIdentity) {
     return m
 }
 // CreateServicePrincipalIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateServicePrincipalIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServicePrincipalIdentity(), nil
 }
 // GetAppId gets the appId property value. The application identifier of the service principal.
+// returns a *string when successful
 func (m *ServicePrincipalIdentity) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ServicePrincipalIdentity) GetAppId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ServicePrincipalIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Identity.GetFieldDeserializers()
     res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +70,6 @@ func (m *ServicePrincipalIdentity) SetAppId(value *string)() {
         panic(err)
     }
 }
-// ServicePrincipalIdentityable 
 type ServicePrincipalIdentityable interface {
     Identityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

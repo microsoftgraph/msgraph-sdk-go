@@ -17,20 +17,21 @@ type ItemSynchronizationJobsItemPauseRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemSynchronizationJobsItemPauseRequestBuilderInternal instantiates a new PauseRequestBuilder and sets the default values.
+// NewItemSynchronizationJobsItemPauseRequestBuilderInternal instantiates a new ItemSynchronizationJobsItemPauseRequestBuilder and sets the default values.
 func NewItemSynchronizationJobsItemPauseRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationJobsItemPauseRequestBuilder) {
     m := &ItemSynchronizationJobsItemPauseRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/jobs/{synchronizationJob%2Did}/pause", pathParameters),
     }
     return m
 }
-// NewItemSynchronizationJobsItemPauseRequestBuilder instantiates a new PauseRequestBuilder and sets the default values.
+// NewItemSynchronizationJobsItemPauseRequestBuilder instantiates a new ItemSynchronizationJobsItemPauseRequestBuilder and sets the default values.
 func NewItemSynchronizationJobsItemPauseRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationJobsItemPauseRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSynchronizationJobsItemPauseRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-pause?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemSynchronizationJobsItemPauseRequestBuilder) Post(ctx context.Contex
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemSynchronizationJobsItemPauseRequestBuilder) Post(ctx context.Contex
     return nil
 }
 // ToPostRequestInformation temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.
+// returns a *RequestInformation when successful
 func (m *ItemSynchronizationJobsItemPauseRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemPauseRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *ItemSynchronizationJobsItemPauseRequestBuilder) ToPostRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemSynchronizationJobsItemPauseRequestBuilder when successful
 func (m *ItemSynchronizationJobsItemPauseRequestBuilder) WithUrl(rawUrl string)(*ItemSynchronizationJobsItemPauseRequestBuilder) {
     return NewItemSynchronizationJobsItemPauseRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

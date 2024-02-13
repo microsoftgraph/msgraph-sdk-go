@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// Process 
 type Process struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewProcess instantiates a new process and sets the default values.
+// NewProcess instantiates a new Process and sets the default values.
 func NewProcess()(*Process) {
     m := &Process{
     }
@@ -20,10 +19,12 @@ func NewProcess()(*Process) {
     return m
 }
 // CreateProcessFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateProcessFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProcess(), nil
 }
 // GetAccountName gets the accountName property value. User account identifier (user account context the process ran under) for example, AccountName, SID, and so on.
+// returns a *string when successful
 func (m *Process) GetAccountName()(*string) {
     val, err := m.GetBackingStore().Get("accountName")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *Process) GetAccountName()(*string) {
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Process) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -47,10 +49,12 @@ func (m *Process) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *Process) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCommandLine gets the commandLine property value. The full process invocation commandline including all parameters.
+// returns a *string when successful
 func (m *Process) GetCommandLine()(*string) {
     val, err := m.GetBackingStore().Get("commandLine")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *Process) GetCommandLine()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Time at which the process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *Process) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -73,6 +78,7 @@ func (m *Process) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Process) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["accountName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -208,6 +214,7 @@ func (m *Process) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetFileHash gets the fileHash property value. Complex type containing file hashes (cryptographic and location-sensitive).
+// returns a FileHashable when successful
 func (m *Process) GetFileHash()(FileHashable) {
     val, err := m.GetBackingStore().Get("fileHash")
     if err != nil {
@@ -219,6 +226,7 @@ func (m *Process) GetFileHash()(FileHashable) {
     return nil
 }
 // GetIntegrityLevel gets the integrityLevel property value. The integrity level of the process. Possible values are: unknown, untrusted, low, medium, high, system.
+// returns a *ProcessIntegrityLevel when successful
 func (m *Process) GetIntegrityLevel()(*ProcessIntegrityLevel) {
     val, err := m.GetBackingStore().Get("integrityLevel")
     if err != nil {
@@ -230,6 +238,7 @@ func (m *Process) GetIntegrityLevel()(*ProcessIntegrityLevel) {
     return nil
 }
 // GetIsElevated gets the isElevated property value. True if the process is elevated.
+// returns a *bool when successful
 func (m *Process) GetIsElevated()(*bool) {
     val, err := m.GetBackingStore().Get("isElevated")
     if err != nil {
@@ -241,6 +250,7 @@ func (m *Process) GetIsElevated()(*bool) {
     return nil
 }
 // GetName gets the name property value. The name of the process' Image file.
+// returns a *string when successful
 func (m *Process) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -252,6 +262,7 @@ func (m *Process) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *Process) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -263,6 +274,7 @@ func (m *Process) GetOdataType()(*string) {
     return nil
 }
 // GetParentProcessCreatedDateTime gets the parentProcessCreatedDateTime property value. DateTime at which the parent process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *Process) GetParentProcessCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("parentProcessCreatedDateTime")
     if err != nil {
@@ -274,6 +286,7 @@ func (m *Process) GetParentProcessCreatedDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetParentProcessId gets the parentProcessId property value. The Process ID (PID) of the parent process.
+// returns a *int32 when successful
 func (m *Process) GetParentProcessId()(*int32) {
     val, err := m.GetBackingStore().Get("parentProcessId")
     if err != nil {
@@ -285,6 +298,7 @@ func (m *Process) GetParentProcessId()(*int32) {
     return nil
 }
 // GetParentProcessName gets the parentProcessName property value. The name of the image file of the parent process.
+// returns a *string when successful
 func (m *Process) GetParentProcessName()(*string) {
     val, err := m.GetBackingStore().Get("parentProcessName")
     if err != nil {
@@ -296,6 +310,7 @@ func (m *Process) GetParentProcessName()(*string) {
     return nil
 }
 // GetPath gets the path property value. Full path, including filename.
+// returns a *string when successful
 func (m *Process) GetPath()(*string) {
     val, err := m.GetBackingStore().Get("path")
     if err != nil {
@@ -307,6 +322,7 @@ func (m *Process) GetPath()(*string) {
     return nil
 }
 // GetProcessId gets the processId property value. The Process ID (PID) of the process.
+// returns a *int32 when successful
 func (m *Process) GetProcessId()(*int32) {
     val, err := m.GetBackingStore().Get("processId")
     if err != nil {
@@ -508,7 +524,6 @@ func (m *Process) SetProcessId(value *int32)() {
         panic(err)
     }
 }
-// Processable 
 type Processable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

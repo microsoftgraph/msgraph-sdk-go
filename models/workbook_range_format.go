@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookRangeFormat 
 type WorkbookRangeFormat struct {
     Entity
 }
-// NewWorkbookRangeFormat instantiates a new workbookRangeFormat and sets the default values.
+// NewWorkbookRangeFormat instantiates a new WorkbookRangeFormat and sets the default values.
 func NewWorkbookRangeFormat()(*WorkbookRangeFormat) {
     m := &WorkbookRangeFormat{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewWorkbookRangeFormat()(*WorkbookRangeFormat) {
     return m
 }
 // CreateWorkbookRangeFormatFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookRangeFormatFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookRangeFormat(), nil
 }
 // GetBorders gets the borders property value. Collection of border objects that apply to the overall range selected Read-only.
+// returns a []WorkbookRangeBorderable when successful
 func (m *WorkbookRangeFormat) GetBorders()([]WorkbookRangeBorderable) {
     val, err := m.GetBackingStore().Get("borders")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *WorkbookRangeFormat) GetBorders()([]WorkbookRangeBorderable) {
     return nil
 }
 // GetColumnWidth gets the columnWidth property value. Gets or sets the width of all columns within the range. If the column widths aren't uniform, null will be returned.
+// returns a *float64 when successful
 func (m *WorkbookRangeFormat) GetColumnWidth()(*float64) {
     val, err := m.GetBackingStore().Get("columnWidth")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *WorkbookRangeFormat) GetColumnWidth()(*float64) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookRangeFormat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["borders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -143,6 +146,7 @@ func (m *WorkbookRangeFormat) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetFill gets the fill property value. Returns the fill object defined on the overall range. Read-only.
+// returns a WorkbookRangeFillable when successful
 func (m *WorkbookRangeFormat) GetFill()(WorkbookRangeFillable) {
     val, err := m.GetBackingStore().Get("fill")
     if err != nil {
@@ -154,6 +158,7 @@ func (m *WorkbookRangeFormat) GetFill()(WorkbookRangeFillable) {
     return nil
 }
 // GetFont gets the font property value. Returns the font object defined on the overall range selected Read-only.
+// returns a WorkbookRangeFontable when successful
 func (m *WorkbookRangeFormat) GetFont()(WorkbookRangeFontable) {
     val, err := m.GetBackingStore().Get("font")
     if err != nil {
@@ -165,6 +170,7 @@ func (m *WorkbookRangeFormat) GetFont()(WorkbookRangeFontable) {
     return nil
 }
 // GetHorizontalAlignment gets the horizontalAlignment property value. Represents the horizontal alignment for the specified object. The possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
+// returns a *string when successful
 func (m *WorkbookRangeFormat) GetHorizontalAlignment()(*string) {
     val, err := m.GetBackingStore().Get("horizontalAlignment")
     if err != nil {
@@ -176,6 +182,7 @@ func (m *WorkbookRangeFormat) GetHorizontalAlignment()(*string) {
     return nil
 }
 // GetProtection gets the protection property value. Returns the format protection object for a range. Read-only.
+// returns a WorkbookFormatProtectionable when successful
 func (m *WorkbookRangeFormat) GetProtection()(WorkbookFormatProtectionable) {
     val, err := m.GetBackingStore().Get("protection")
     if err != nil {
@@ -187,6 +194,7 @@ func (m *WorkbookRangeFormat) GetProtection()(WorkbookFormatProtectionable) {
     return nil
 }
 // GetRowHeight gets the rowHeight property value. Gets or sets the height of all rows in the range. If the row heights aren't uniform null will be returned.
+// returns a *float64 when successful
 func (m *WorkbookRangeFormat) GetRowHeight()(*float64) {
     val, err := m.GetBackingStore().Get("rowHeight")
     if err != nil {
@@ -198,6 +206,7 @@ func (m *WorkbookRangeFormat) GetRowHeight()(*float64) {
     return nil
 }
 // GetVerticalAlignment gets the verticalAlignment property value. Represents the vertical alignment for the specified object. The possible values are: Top, Center, Bottom, Justify, Distributed.
+// returns a *string when successful
 func (m *WorkbookRangeFormat) GetVerticalAlignment()(*string) {
     val, err := m.GetBackingStore().Get("verticalAlignment")
     if err != nil {
@@ -209,6 +218,7 @@ func (m *WorkbookRangeFormat) GetVerticalAlignment()(*string) {
     return nil
 }
 // GetWrapText gets the wrapText property value. Indicates if Excel wraps the text in the object. A null value indicates that the entire range doesn't have uniform wrap setting
+// returns a *bool when successful
 func (m *WorkbookRangeFormat) GetWrapText()(*bool) {
     val, err := m.GetBackingStore().Get("wrapText")
     if err != nil {
@@ -350,7 +360,6 @@ func (m *WorkbookRangeFormat) SetWrapText(value *bool)() {
         panic(err)
     }
 }
-// WorkbookRangeFormatable 
 type WorkbookRangeFormatable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

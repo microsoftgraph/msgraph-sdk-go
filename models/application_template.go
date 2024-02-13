@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ApplicationTemplate 
 type ApplicationTemplate struct {
     Entity
 }
-// NewApplicationTemplate instantiates a new applicationTemplate and sets the default values.
+// NewApplicationTemplate instantiates a new ApplicationTemplate and sets the default values.
 func NewApplicationTemplate()(*ApplicationTemplate) {
     m := &ApplicationTemplate{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewApplicationTemplate()(*ApplicationTemplate) {
     return m
 }
 // CreateApplicationTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateApplicationTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApplicationTemplate(), nil
 }
 // GetCategories gets the categories property value. The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.
+// returns a []string when successful
 func (m *ApplicationTemplate) GetCategories()([]string) {
     val, err := m.GetBackingStore().Get("categories")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ApplicationTemplate) GetCategories()([]string) {
     return nil
 }
 // GetDescription gets the description property value. A description of the application.
+// returns a *string when successful
 func (m *ApplicationTemplate) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *ApplicationTemplate) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of the application.
+// returns a *string when successful
 func (m *ApplicationTemplate) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *ApplicationTemplate) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -156,6 +160,7 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetHomePageUrl gets the homePageUrl property value. The home page URL of the application.
+// returns a *string when successful
 func (m *ApplicationTemplate) GetHomePageUrl()(*string) {
     val, err := m.GetBackingStore().Get("homePageUrl")
     if err != nil {
@@ -167,6 +172,7 @@ func (m *ApplicationTemplate) GetHomePageUrl()(*string) {
     return nil
 }
 // GetLogoUrl gets the logoUrl property value. The URL to get the logo for this application.
+// returns a *string when successful
 func (m *ApplicationTemplate) GetLogoUrl()(*string) {
     val, err := m.GetBackingStore().Get("logoUrl")
     if err != nil {
@@ -178,6 +184,7 @@ func (m *ApplicationTemplate) GetLogoUrl()(*string) {
     return nil
 }
 // GetPublisher gets the publisher property value. The name of the publisher for this application.
+// returns a *string when successful
 func (m *ApplicationTemplate) GetPublisher()(*string) {
     val, err := m.GetBackingStore().Get("publisher")
     if err != nil {
@@ -189,6 +196,7 @@ func (m *ApplicationTemplate) GetPublisher()(*string) {
     return nil
 }
 // GetSupportedProvisioningTypes gets the supportedProvisioningTypes property value. The list of provisioning modes supported by this application. The only valid value is sync.
+// returns a []string when successful
 func (m *ApplicationTemplate) GetSupportedProvisioningTypes()([]string) {
     val, err := m.GetBackingStore().Get("supportedProvisioningTypes")
     if err != nil {
@@ -200,6 +208,7 @@ func (m *ApplicationTemplate) GetSupportedProvisioningTypes()([]string) {
     return nil
 }
 // GetSupportedSingleSignOnModes gets the supportedSingleSignOnModes property value. The list of single sign-on modes supported by this application. The supported values are oidc, password, saml, and notSupported.
+// returns a []string when successful
 func (m *ApplicationTemplate) GetSupportedSingleSignOnModes()([]string) {
     val, err := m.GetBackingStore().Get("supportedSingleSignOnModes")
     if err != nil {
@@ -322,7 +331,6 @@ func (m *ApplicationTemplate) SetSupportedSingleSignOnModes(value []string)() {
         panic(err)
     }
 }
-// ApplicationTemplateable 
 type ApplicationTemplateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

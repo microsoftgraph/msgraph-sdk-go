@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PronounsSettings 
 type PronounsSettings struct {
     Entity
 }
-// NewPronounsSettings instantiates a new pronounsSettings and sets the default values.
+// NewPronounsSettings instantiates a new PronounsSettings and sets the default values.
 func NewPronounsSettings()(*PronounsSettings) {
     m := &PronounsSettings{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewPronounsSettings()(*PronounsSettings) {
     return m
 }
 // CreatePronounsSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePronounsSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPronounsSettings(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PronounsSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["isEnabledInOrganization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +36,7 @@ func (m *PronounsSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetIsEnabledInOrganization gets the isEnabledInOrganization property value. true to enable pronouns in the organization; otherwise, false. The default value is false, and pronouns are disabled.
+// returns a *bool when successful
 func (m *PronounsSettings) GetIsEnabledInOrganization()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabledInOrganization")
     if err != nil {
@@ -66,7 +68,6 @@ func (m *PronounsSettings) SetIsEnabledInOrganization(value *bool)() {
         panic(err)
     }
 }
-// PronounsSettingsable 
 type PronounsSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

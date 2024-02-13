@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// StsPolicy 
 type StsPolicy struct {
     PolicyBase
 }
-// NewStsPolicy instantiates a new stsPolicy and sets the default values.
+// NewStsPolicy instantiates a new StsPolicy and sets the default values.
 func NewStsPolicy()(*StsPolicy) {
     m := &StsPolicy{
         PolicyBase: *NewPolicyBase(),
@@ -18,6 +17,7 @@ func NewStsPolicy()(*StsPolicy) {
     return m
 }
 // CreateStsPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateStsPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -48,6 +48,7 @@ func CreateStsPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
     return NewStsPolicy(), nil
 }
 // GetAppliesTo gets the appliesTo property value. The appliesTo property
+// returns a []DirectoryObjectable when successful
 func (m *StsPolicy) GetAppliesTo()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("appliesTo")
     if err != nil {
@@ -59,6 +60,7 @@ func (m *StsPolicy) GetAppliesTo()([]DirectoryObjectable) {
     return nil
 }
 // GetDefinition gets the definition property value. A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
+// returns a []string when successful
 func (m *StsPolicy) GetDefinition()([]string) {
     val, err := m.GetBackingStore().Get("definition")
     if err != nil {
@@ -70,6 +72,7 @@ func (m *StsPolicy) GetDefinition()([]string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *StsPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicyBase.GetFieldDeserializers()
     res["appliesTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -117,6 +120,7 @@ func (m *StsPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetIsOrganizationDefault gets the isOrganizationDefault property value. If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.
+// returns a *bool when successful
 func (m *StsPolicy) GetIsOrganizationDefault()(*bool) {
     val, err := m.GetBackingStore().Get("isOrganizationDefault")
     if err != nil {
@@ -180,7 +184,6 @@ func (m *StsPolicy) SetIsOrganizationDefault(value *bool)() {
         panic(err)
     }
 }
-// StsPolicyable 
 type StsPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicyBaseable

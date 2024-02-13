@@ -6,11 +6,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Set 
 type Set struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewSet instantiates a new set and sets the default values.
+// NewSet instantiates a new Set and sets the default values.
 func NewSet()(*Set) {
     m := &Set{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -18,10 +17,12 @@ func NewSet()(*Set) {
     return m
 }
 // CreateSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSet(), nil
 }
 // GetChildren gets the children property value. Children terms of set in term [store].
+// returns a []Termable when successful
 func (m *Set) GetChildren()([]Termable) {
     val, err := m.GetBackingStore().Get("children")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *Set) GetChildren()([]Termable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time of set creation. Read-only.
+// returns a *Time when successful
 func (m *Set) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *Set) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a163
     return nil
 }
 // GetDescription gets the description property value. Description that gives details on the term usage.
+// returns a *string when successful
 func (m *Set) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *Set) GetDescription()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Set) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["children"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -170,6 +174,7 @@ func (m *Set) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
     return res
 }
 // GetLocalizedNames gets the localizedNames property value. Name of the set for each languageTag.
+// returns a []LocalizedNameable when successful
 func (m *Set) GetLocalizedNames()([]LocalizedNameable) {
     val, err := m.GetBackingStore().Get("localizedNames")
     if err != nil {
@@ -181,6 +186,7 @@ func (m *Set) GetLocalizedNames()([]LocalizedNameable) {
     return nil
 }
 // GetParentGroup gets the parentGroup property value. The parentGroup property
+// returns a Groupable when successful
 func (m *Set) GetParentGroup()(Groupable) {
     val, err := m.GetBackingStore().Get("parentGroup")
     if err != nil {
@@ -192,6 +198,7 @@ func (m *Set) GetParentGroup()(Groupable) {
     return nil
 }
 // GetProperties gets the properties property value. Custom properties for the set.
+// returns a []KeyValueable when successful
 func (m *Set) GetProperties()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.KeyValueable) {
     val, err := m.GetBackingStore().Get("properties")
     if err != nil {
@@ -203,6 +210,7 @@ func (m *Set) GetProperties()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda
     return nil
 }
 // GetRelations gets the relations property value. Indicates which terms have been pinned or reused directly under the set.
+// returns a []Relationable when successful
 func (m *Set) GetRelations()([]Relationable) {
     val, err := m.GetBackingStore().Get("relations")
     if err != nil {
@@ -214,6 +222,7 @@ func (m *Set) GetRelations()([]Relationable) {
     return nil
 }
 // GetTerms gets the terms property value. All the terms under the set.
+// returns a []Termable when successful
 func (m *Set) GetTerms()([]Termable) {
     val, err := m.GetBackingStore().Get("terms")
     if err != nil {
@@ -366,7 +375,6 @@ func (m *Set) SetTerms(value []Termable)() {
         panic(err)
     }
 }
-// Setable 
 type Setable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,11 +5,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// ThreatIntelligence 
 type ThreatIntelligence struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewThreatIntelligence instantiates a new threatIntelligence and sets the default values.
+// NewThreatIntelligence instantiates a new ThreatIntelligence and sets the default values.
 func NewThreatIntelligence()(*ThreatIntelligence) {
     m := &ThreatIntelligence{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -17,10 +16,12 @@ func NewThreatIntelligence()(*ThreatIntelligence) {
     return m
 }
 // CreateThreatIntelligenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateThreatIntelligenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewThreatIntelligence(), nil
 }
 // GetArticleIndicators gets the articleIndicators property value. Refers to indicators of threat or compromise highlighted in an article.Note: List retrieval is not yet supported.
+// returns a []ArticleIndicatorable when successful
 func (m *ThreatIntelligence) GetArticleIndicators()([]ArticleIndicatorable) {
     val, err := m.GetBackingStore().Get("articleIndicators")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *ThreatIntelligence) GetArticleIndicators()([]ArticleIndicatorable) {
     return nil
 }
 // GetArticles gets the articles property value. A list of article objects.
+// returns a []Articleable when successful
 func (m *ThreatIntelligence) GetArticles()([]Articleable) {
     val, err := m.GetBackingStore().Get("articles")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *ThreatIntelligence) GetArticles()([]Articleable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ThreatIntelligence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["articleIndicators"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -320,6 +323,7 @@ func (m *ThreatIntelligence) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetHostComponents gets the hostComponents property value. Retrieve details about hostComponent objects.Note: List retrieval is not yet supported.
+// returns a []HostComponentable when successful
 func (m *ThreatIntelligence) GetHostComponents()([]HostComponentable) {
     val, err := m.GetBackingStore().Get("hostComponents")
     if err != nil {
@@ -331,6 +335,7 @@ func (m *ThreatIntelligence) GetHostComponents()([]HostComponentable) {
     return nil
 }
 // GetHostCookies gets the hostCookies property value. Retrieve details about hostCookie objects.Note: List retrieval is not yet supported.
+// returns a []HostCookieable when successful
 func (m *ThreatIntelligence) GetHostCookies()([]HostCookieable) {
     val, err := m.GetBackingStore().Get("hostCookies")
     if err != nil {
@@ -342,6 +347,7 @@ func (m *ThreatIntelligence) GetHostCookies()([]HostCookieable) {
     return nil
 }
 // GetHostPairs gets the hostPairs property value. Retrieve details about hostTracker objects.Note: List retrieval is not yet supported.
+// returns a []HostPairable when successful
 func (m *ThreatIntelligence) GetHostPairs()([]HostPairable) {
     val, err := m.GetBackingStore().Get("hostPairs")
     if err != nil {
@@ -353,6 +359,7 @@ func (m *ThreatIntelligence) GetHostPairs()([]HostPairable) {
     return nil
 }
 // GetHostPorts gets the hostPorts property value. Retrieve details about hostPort objects.Note: List retrieval is not yet supported.
+// returns a []HostPortable when successful
 func (m *ThreatIntelligence) GetHostPorts()([]HostPortable) {
     val, err := m.GetBackingStore().Get("hostPorts")
     if err != nil {
@@ -364,6 +371,7 @@ func (m *ThreatIntelligence) GetHostPorts()([]HostPortable) {
     return nil
 }
 // GetHosts gets the hosts property value. Refers to host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.
+// returns a []Hostable when successful
 func (m *ThreatIntelligence) GetHosts()([]Hostable) {
     val, err := m.GetBackingStore().Get("hosts")
     if err != nil {
@@ -375,6 +383,7 @@ func (m *ThreatIntelligence) GetHosts()([]Hostable) {
     return nil
 }
 // GetHostSslCertificates gets the hostSslCertificates property value. Retrieve details about hostSslCertificate objects.Note: List retrieval is not yet supported.
+// returns a []HostSslCertificateable when successful
 func (m *ThreatIntelligence) GetHostSslCertificates()([]HostSslCertificateable) {
     val, err := m.GetBackingStore().Get("hostSslCertificates")
     if err != nil {
@@ -386,6 +395,7 @@ func (m *ThreatIntelligence) GetHostSslCertificates()([]HostSslCertificateable) 
     return nil
 }
 // GetHostTrackers gets the hostTrackers property value. Retrieve details about hostTracker objects.Note: List retrieval is not yet supported.
+// returns a []HostTrackerable when successful
 func (m *ThreatIntelligence) GetHostTrackers()([]HostTrackerable) {
     val, err := m.GetBackingStore().Get("hostTrackers")
     if err != nil {
@@ -397,6 +407,7 @@ func (m *ThreatIntelligence) GetHostTrackers()([]HostTrackerable) {
     return nil
 }
 // GetIntelligenceProfileIndicators gets the intelligenceProfileIndicators property value. The intelligenceProfileIndicators property
+// returns a []IntelligenceProfileIndicatorable when successful
 func (m *ThreatIntelligence) GetIntelligenceProfileIndicators()([]IntelligenceProfileIndicatorable) {
     val, err := m.GetBackingStore().Get("intelligenceProfileIndicators")
     if err != nil {
@@ -408,6 +419,7 @@ func (m *ThreatIntelligence) GetIntelligenceProfileIndicators()([]IntelligencePr
     return nil
 }
 // GetIntelProfiles gets the intelProfiles property value. A list of intelligenceProfile objects.
+// returns a []IntelligenceProfileable when successful
 func (m *ThreatIntelligence) GetIntelProfiles()([]IntelligenceProfileable) {
     val, err := m.GetBackingStore().Get("intelProfiles")
     if err != nil {
@@ -419,6 +431,7 @@ func (m *ThreatIntelligence) GetIntelProfiles()([]IntelligenceProfileable) {
     return nil
 }
 // GetPassiveDnsRecords gets the passiveDnsRecords property value. Retrieve details about passiveDnsRecord objects.Note: List retrieval is not yet supported.
+// returns a []PassiveDnsRecordable when successful
 func (m *ThreatIntelligence) GetPassiveDnsRecords()([]PassiveDnsRecordable) {
     val, err := m.GetBackingStore().Get("passiveDnsRecords")
     if err != nil {
@@ -430,6 +443,7 @@ func (m *ThreatIntelligence) GetPassiveDnsRecords()([]PassiveDnsRecordable) {
     return nil
 }
 // GetSslCertificates gets the sslCertificates property value. Retrieve details about sslCertificate objects.Note: List retrieval is not yet supported.
+// returns a []SslCertificateable when successful
 func (m *ThreatIntelligence) GetSslCertificates()([]SslCertificateable) {
     val, err := m.GetBackingStore().Get("sslCertificates")
     if err != nil {
@@ -441,6 +455,7 @@ func (m *ThreatIntelligence) GetSslCertificates()([]SslCertificateable) {
     return nil
 }
 // GetSubdomains gets the subdomains property value. Retrieve details about the subdomain.Note: List retrieval is not yet supported.
+// returns a []Subdomainable when successful
 func (m *ThreatIntelligence) GetSubdomains()([]Subdomainable) {
     val, err := m.GetBackingStore().Get("subdomains")
     if err != nil {
@@ -452,6 +467,7 @@ func (m *ThreatIntelligence) GetSubdomains()([]Subdomainable) {
     return nil
 }
 // GetVulnerabilities gets the vulnerabilities property value. Retrieve details about vulnerabilities.Note: List retrieval is not yet supported.
+// returns a []Vulnerabilityable when successful
 func (m *ThreatIntelligence) GetVulnerabilities()([]Vulnerabilityable) {
     val, err := m.GetBackingStore().Get("vulnerabilities")
     if err != nil {
@@ -463,6 +479,7 @@ func (m *ThreatIntelligence) GetVulnerabilities()([]Vulnerabilityable) {
     return nil
 }
 // GetWhoisHistoryRecords gets the whoisHistoryRecords property value. Retrieve details about whoisHistoryRecord objects.Note: List retrieval is not yet supported.
+// returns a []WhoisHistoryRecordable when successful
 func (m *ThreatIntelligence) GetWhoisHistoryRecords()([]WhoisHistoryRecordable) {
     val, err := m.GetBackingStore().Get("whoisHistoryRecords")
     if err != nil {
@@ -474,6 +491,7 @@ func (m *ThreatIntelligence) GetWhoisHistoryRecords()([]WhoisHistoryRecordable) 
     return nil
 }
 // GetWhoisRecords gets the whoisRecords property value. A list of whoisRecord objects.
+// returns a []WhoisRecordable when successful
 func (m *ThreatIntelligence) GetWhoisRecords()([]WhoisRecordable) {
     val, err := m.GetBackingStore().Get("whoisRecords")
     if err != nil {
@@ -815,7 +833,6 @@ func (m *ThreatIntelligence) SetWhoisRecords(value []WhoisRecordable)() {
         panic(err)
     }
 }
-// ThreatIntelligenceable 
 type ThreatIntelligenceable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

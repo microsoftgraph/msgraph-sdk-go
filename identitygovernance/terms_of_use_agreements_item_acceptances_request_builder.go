@@ -47,6 +47,7 @@ type TermsOfUseAgreementsItemAcceptancesRequestBuilderPostRequestConfiguration s
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByAgreementAcceptanceId provides operations to manage the acceptances property of the microsoft.graph.agreement entity.
+// returns a *TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilder when successful
 func (m *TermsOfUseAgreementsItemAcceptancesRequestBuilder) ByAgreementAcceptanceId(agreementAcceptanceId string)(*TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *TermsOfUseAgreementsItemAcceptancesRequestBuilder) ByAgreementAcceptanc
     }
     return NewTermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewTermsOfUseAgreementsItemAcceptancesRequestBuilderInternal instantiates a new AcceptancesRequestBuilder and sets the default values.
+// NewTermsOfUseAgreementsItemAcceptancesRequestBuilderInternal instantiates a new TermsOfUseAgreementsItemAcceptancesRequestBuilder and sets the default values.
 func NewTermsOfUseAgreementsItemAcceptancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsOfUseAgreementsItemAcceptancesRequestBuilder) {
     m := &TermsOfUseAgreementsItemAcceptancesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/termsOfUse/agreements/{agreement%2Did}/acceptances{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/termsOfUse/agreements/{agreement%2Did}/acceptances{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewTermsOfUseAgreementsItemAcceptancesRequestBuilder instantiates a new AcceptancesRequestBuilder and sets the default values.
+// NewTermsOfUseAgreementsItemAcceptancesRequestBuilder instantiates a new TermsOfUseAgreementsItemAcceptancesRequestBuilder and sets the default values.
 func NewTermsOfUseAgreementsItemAcceptancesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsOfUseAgreementsItemAcceptancesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTermsOfUseAgreementsItemAcceptancesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *TermsOfUseAgreementsItemAcceptancesCountRequestBuilder when successful
 func (m *TermsOfUseAgreementsItemAcceptancesRequestBuilder) Count()(*TermsOfUseAgreementsItemAcceptancesCountRequestBuilder) {
     return NewTermsOfUseAgreementsItemAcceptancesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the details about the acceptance records for a specific agreement.
+// returns a AgreementAcceptanceCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/agreement-list-acceptances?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *TermsOfUseAgreementsItemAcceptancesRequestBuilder) Get(ctx context.Cont
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateAgreementAcceptanceCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,14 +100,15 @@ func (m *TermsOfUseAgreementsItemAcceptancesRequestBuilder) Get(ctx context.Cont
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AgreementAcceptanceCollectionResponseable), nil
 }
 // Post create new navigation property to acceptances for identityGovernance
+// returns a AgreementAcceptanceable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TermsOfUseAgreementsItemAcceptancesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AgreementAcceptanceable, requestConfiguration *TermsOfUseAgreementsItemAcceptancesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AgreementAcceptanceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateAgreementAcceptanceFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -116,6 +120,7 @@ func (m *TermsOfUseAgreementsItemAcceptancesRequestBuilder) Post(ctx context.Con
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AgreementAcceptanceable), nil
 }
 // ToGetRequestInformation get the details about the acceptance records for a specific agreement.
+// returns a *RequestInformation when successful
 func (m *TermsOfUseAgreementsItemAcceptancesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TermsOfUseAgreementsItemAcceptancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -129,8 +134,9 @@ func (m *TermsOfUseAgreementsItemAcceptancesRequestBuilder) ToGetRequestInformat
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to acceptances for identityGovernance
+// returns a *RequestInformation when successful
 func (m *TermsOfUseAgreementsItemAcceptancesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AgreementAcceptanceable, requestConfiguration *TermsOfUseAgreementsItemAcceptancesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/identityGovernance/termsOfUse/agreements/{agreement%2Did}/acceptances", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -143,6 +149,7 @@ func (m *TermsOfUseAgreementsItemAcceptancesRequestBuilder) ToPostRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *TermsOfUseAgreementsItemAcceptancesRequestBuilder when successful
 func (m *TermsOfUseAgreementsItemAcceptancesRequestBuilder) WithUrl(rawUrl string)(*TermsOfUseAgreementsItemAcceptancesRequestBuilder) {
     return NewTermsOfUseAgreementsItemAcceptancesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

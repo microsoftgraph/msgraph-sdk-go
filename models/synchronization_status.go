@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// SynchronizationStatus 
 type SynchronizationStatus struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSynchronizationStatus instantiates a new synchronizationStatus and sets the default values.
+// NewSynchronizationStatus instantiates a new SynchronizationStatus and sets the default values.
 func NewSynchronizationStatus()(*SynchronizationStatus) {
     m := &SynchronizationStatus{
     }
@@ -20,10 +19,12 @@ func NewSynchronizationStatus()(*SynchronizationStatus) {
     return m
 }
 // CreateSynchronizationStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSynchronizationStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSynchronizationStatus(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SynchronizationStatus) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *SynchronizationStatus) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *SynchronizationStatus) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCode gets the code property value. The code property
+// returns a *SynchronizationStatusCode when successful
 func (m *SynchronizationStatus) GetCode()(*SynchronizationStatusCode) {
     val, err := m.GetBackingStore().Get("code")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *SynchronizationStatus) GetCode()(*SynchronizationStatusCode) {
     return nil
 }
 // GetCountSuccessiveCompleteFailures gets the countSuccessiveCompleteFailures property value. Number of consecutive times this job failed.
+// returns a *int64 when successful
 func (m *SynchronizationStatus) GetCountSuccessiveCompleteFailures()(*int64) {
     val, err := m.GetBackingStore().Get("countSuccessiveCompleteFailures")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *SynchronizationStatus) GetCountSuccessiveCompleteFailures()(*int64) {
     return nil
 }
 // GetEscrowsPruned gets the escrowsPruned property value. true if the job's escrows (object-level errors) were pruned during initial synchronization. Escrows can be pruned if during the initial synchronization, you reach the threshold of errors that would normally put the job in quarantine. Instead of going into quarantine, the synchronization process clears the job's errors and continues until the initial synchronization is completed. When the initial synchronization is completed, the job will pause and wait for the customer to clean up the errors.
+// returns a *bool when successful
 func (m *SynchronizationStatus) GetEscrowsPruned()(*bool) {
     val, err := m.GetBackingStore().Get("escrowsPruned")
     if err != nil {
@@ -73,6 +78,7 @@ func (m *SynchronizationStatus) GetEscrowsPruned()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["code"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -220,6 +226,7 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetLastExecution gets the lastExecution property value. Details of the last execution of the job.
+// returns a SynchronizationTaskExecutionable when successful
 func (m *SynchronizationStatus) GetLastExecution()(SynchronizationTaskExecutionable) {
     val, err := m.GetBackingStore().Get("lastExecution")
     if err != nil {
@@ -231,6 +238,7 @@ func (m *SynchronizationStatus) GetLastExecution()(SynchronizationTaskExecutiona
     return nil
 }
 // GetLastSuccessfulExecution gets the lastSuccessfulExecution property value. Details of the last execution of this job, which didn't have any errors.
+// returns a SynchronizationTaskExecutionable when successful
 func (m *SynchronizationStatus) GetLastSuccessfulExecution()(SynchronizationTaskExecutionable) {
     val, err := m.GetBackingStore().Get("lastSuccessfulExecution")
     if err != nil {
@@ -242,6 +250,7 @@ func (m *SynchronizationStatus) GetLastSuccessfulExecution()(SynchronizationTask
     return nil
 }
 // GetLastSuccessfulExecutionWithExports gets the lastSuccessfulExecutionWithExports property value. Details of the last execution of the job, which exported objects into the target directory.
+// returns a SynchronizationTaskExecutionable when successful
 func (m *SynchronizationStatus) GetLastSuccessfulExecutionWithExports()(SynchronizationTaskExecutionable) {
     val, err := m.GetBackingStore().Get("lastSuccessfulExecutionWithExports")
     if err != nil {
@@ -253,6 +262,7 @@ func (m *SynchronizationStatus) GetLastSuccessfulExecutionWithExports()(Synchron
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *SynchronizationStatus) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -264,6 +274,7 @@ func (m *SynchronizationStatus) GetOdataType()(*string) {
     return nil
 }
 // GetProgress gets the progress property value. Details of the progress of a job toward completion.
+// returns a []SynchronizationProgressable when successful
 func (m *SynchronizationStatus) GetProgress()([]SynchronizationProgressable) {
     val, err := m.GetBackingStore().Get("progress")
     if err != nil {
@@ -275,6 +286,7 @@ func (m *SynchronizationStatus) GetProgress()([]SynchronizationProgressable) {
     return nil
 }
 // GetQuarantine gets the quarantine property value. If job is in quarantine, quarantine details.
+// returns a SynchronizationQuarantineable when successful
 func (m *SynchronizationStatus) GetQuarantine()(SynchronizationQuarantineable) {
     val, err := m.GetBackingStore().Get("quarantine")
     if err != nil {
@@ -286,6 +298,7 @@ func (m *SynchronizationStatus) GetQuarantine()(SynchronizationQuarantineable) {
     return nil
 }
 // GetSteadyStateFirstAchievedTime gets the steadyStateFirstAchievedTime property value. The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *SynchronizationStatus) GetSteadyStateFirstAchievedTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("steadyStateFirstAchievedTime")
     if err != nil {
@@ -297,6 +310,7 @@ func (m *SynchronizationStatus) GetSteadyStateFirstAchievedTime()(*i336074805fc8
     return nil
 }
 // GetSteadyStateLastAchievedTime gets the steadyStateLastAchievedTime property value. The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *SynchronizationStatus) GetSteadyStateLastAchievedTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("steadyStateLastAchievedTime")
     if err != nil {
@@ -308,6 +322,7 @@ func (m *SynchronizationStatus) GetSteadyStateLastAchievedTime()(*i336074805fc85
     return nil
 }
 // GetSynchronizedEntryCountByType gets the synchronizedEntryCountByType property value. Count of synchronized objects, listed by object type.
+// returns a []StringKeyLongValuePairable when successful
 func (m *SynchronizationStatus) GetSynchronizedEntryCountByType()([]StringKeyLongValuePairable) {
     val, err := m.GetBackingStore().Get("synchronizedEntryCountByType")
     if err != nil {
@@ -319,6 +334,7 @@ func (m *SynchronizationStatus) GetSynchronizedEntryCountByType()([]StringKeyLon
     return nil
 }
 // GetTroubleshootingUrl gets the troubleshootingUrl property value. In the event of an error, the URL with the troubleshooting steps for the issue.
+// returns a *string when successful
 func (m *SynchronizationStatus) GetTroubleshootingUrl()(*string) {
     val, err := m.GetBackingStore().Get("troubleshootingUrl")
     if err != nil {
@@ -532,7 +548,6 @@ func (m *SynchronizationStatus) SetTroubleshootingUrl(value *string)() {
         panic(err)
     }
 }
-// SynchronizationStatusable 
 type SynchronizationStatusable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

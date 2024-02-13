@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CommsOperation 
 type CommsOperation struct {
     Entity
 }
-// NewCommsOperation instantiates a new commsOperation and sets the default values.
+// NewCommsOperation instantiates a new CommsOperation and sets the default values.
 func NewCommsOperation()(*CommsOperation) {
     m := &CommsOperation{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewCommsOperation()(*CommsOperation) {
     return m
 }
 // CreateCommsOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCommsOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -60,6 +60,7 @@ func CreateCommsOperationFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewCommsOperation(), nil
 }
 // GetClientContext gets the clientContext property value. Unique Client Context string. Max limit is 256 chars.
+// returns a *string when successful
 func (m *CommsOperation) GetClientContext()(*string) {
     val, err := m.GetBackingStore().Get("clientContext")
     if err != nil {
@@ -71,6 +72,7 @@ func (m *CommsOperation) GetClientContext()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CommsOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["clientContext"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -106,6 +108,7 @@ func (m *CommsOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetResultInfo gets the resultInfo property value. The result information. Read-only.
+// returns a ResultInfoable when successful
 func (m *CommsOperation) GetResultInfo()(ResultInfoable) {
     val, err := m.GetBackingStore().Get("resultInfo")
     if err != nil {
@@ -117,6 +120,7 @@ func (m *CommsOperation) GetResultInfo()(ResultInfoable) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *OperationStatus when successful
 func (m *CommsOperation) GetStatus()(*OperationStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -175,7 +179,6 @@ func (m *CommsOperation) SetStatus(value *OperationStatus)() {
         panic(err)
     }
 }
-// CommsOperationable 
 type CommsOperationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

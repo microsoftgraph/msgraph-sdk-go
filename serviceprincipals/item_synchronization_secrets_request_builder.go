@@ -17,33 +17,35 @@ type ItemSynchronizationSecretsRequestBuilderPutRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemSynchronizationSecretsRequestBuilderInternal instantiates a new SecretsRequestBuilder and sets the default values.
+// NewItemSynchronizationSecretsRequestBuilderInternal instantiates a new ItemSynchronizationSecretsRequestBuilder and sets the default values.
 func NewItemSynchronizationSecretsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationSecretsRequestBuilder) {
     m := &ItemSynchronizationSecretsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/secrets", pathParameters),
     }
     return m
 }
-// NewItemSynchronizationSecretsRequestBuilder instantiates a new SecretsRequestBuilder and sets the default values.
+// NewItemSynchronizationSecretsRequestBuilder instantiates a new ItemSynchronizationSecretsRequestBuilder and sets the default values.
 func NewItemSynchronizationSecretsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationSecretsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSynchronizationSecretsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemSynchronizationSecretsCountRequestBuilder when successful
 func (m *ItemSynchronizationSecretsRequestBuilder) Count()(*ItemSynchronizationSecretsCountRequestBuilder) {
     return NewItemSynchronizationSecretsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Put update property secrets value.
-// Deprecated: This method is obsolete. Use PutAsSecretsPutResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ItemSynchronizationSecretsResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSynchronizationSecretsRequestBuilder) Put(ctx context.Context, body ItemSynchronizationSecretsPutRequestBodyable, requestConfiguration *ItemSynchronizationSecretsRequestBuilderPutRequestConfiguration)(ItemSynchronizationSecretsResponseable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSynchronizationSecretsResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -55,14 +57,15 @@ func (m *ItemSynchronizationSecretsRequestBuilder) Put(ctx context.Context, body
     return res.(ItemSynchronizationSecretsResponseable), nil
 }
 // PutAsSecretsPutResponse update property secrets value.
+// returns a ItemSynchronizationSecretsPutResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSynchronizationSecretsRequestBuilder) PutAsSecretsPutResponse(ctx context.Context, body ItemSynchronizationSecretsPutRequestBodyable, requestConfiguration *ItemSynchronizationSecretsRequestBuilderPutRequestConfiguration)(ItemSynchronizationSecretsPutResponseable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSynchronizationSecretsPutResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -74,6 +77,7 @@ func (m *ItemSynchronizationSecretsRequestBuilder) PutAsSecretsPutResponse(ctx c
     return res.(ItemSynchronizationSecretsPutResponseable), nil
 }
 // ToPutRequestInformation update property secrets value.
+// returns a *RequestInformation when successful
 func (m *ItemSynchronizationSecretsRequestBuilder) ToPutRequestInformation(ctx context.Context, body ItemSynchronizationSecretsPutRequestBodyable, requestConfiguration *ItemSynchronizationSecretsRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -88,6 +92,7 @@ func (m *ItemSynchronizationSecretsRequestBuilder) ToPutRequestInformation(ctx c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemSynchronizationSecretsRequestBuilder when successful
 func (m *ItemSynchronizationSecretsRequestBuilder) WithUrl(rawUrl string)(*ItemSynchronizationSecretsRequestBuilder) {
     return NewItemSynchronizationSecretsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

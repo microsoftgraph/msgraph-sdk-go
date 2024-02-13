@@ -39,32 +39,34 @@ type MobileAppsGraphManagedIOSLobAppRequestBuilderGetRequestConfiguration struct
     // Request query parameters
     QueryParameters *MobileAppsGraphManagedIOSLobAppRequestBuilderGetQueryParameters
 }
-// NewMobileAppsGraphManagedIOSLobAppRequestBuilderInternal instantiates a new GraphManagedIOSLobAppRequestBuilder and sets the default values.
+// NewMobileAppsGraphManagedIOSLobAppRequestBuilderInternal instantiates a new MobileAppsGraphManagedIOSLobAppRequestBuilder and sets the default values.
 func NewMobileAppsGraphManagedIOSLobAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsGraphManagedIOSLobAppRequestBuilder) {
     m := &MobileAppsGraphManagedIOSLobAppRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/graph.managedIOSLobApp{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/graph.managedIOSLobApp{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewMobileAppsGraphManagedIOSLobAppRequestBuilder instantiates a new GraphManagedIOSLobAppRequestBuilder and sets the default values.
+// NewMobileAppsGraphManagedIOSLobAppRequestBuilder instantiates a new MobileAppsGraphManagedIOSLobAppRequestBuilder and sets the default values.
 func NewMobileAppsGraphManagedIOSLobAppRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsGraphManagedIOSLobAppRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsGraphManagedIOSLobAppRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *MobileAppsGraphManagedIOSLobAppCountRequestBuilder when successful
 func (m *MobileAppsGraphManagedIOSLobAppRequestBuilder) Count()(*MobileAppsGraphManagedIOSLobAppCountRequestBuilder) {
     return NewMobileAppsGraphManagedIOSLobAppCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the items of type microsoft.graph.managedIOSLobApp in the microsoft.graph.mobileApp collection
+// returns a ManagedIOSLobAppCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsGraphManagedIOSLobAppRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsGraphManagedIOSLobAppRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedIOSLobAppCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateManagedIOSLobAppCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -76,6 +78,7 @@ func (m *MobileAppsGraphManagedIOSLobAppRequestBuilder) Get(ctx context.Context,
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedIOSLobAppCollectionResponseable), nil
 }
 // ToGetRequestInformation get the items of type microsoft.graph.managedIOSLobApp in the microsoft.graph.mobileApp collection
+// returns a *RequestInformation when successful
 func (m *MobileAppsGraphManagedIOSLobAppRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsGraphManagedIOSLobAppRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -89,6 +92,7 @@ func (m *MobileAppsGraphManagedIOSLobAppRequestBuilder) ToGetRequestInformation(
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MobileAppsGraphManagedIOSLobAppRequestBuilder when successful
 func (m *MobileAppsGraphManagedIOSLobAppRequestBuilder) WithUrl(rawUrl string)(*MobileAppsGraphManagedIOSLobAppRequestBuilder) {
     return NewMobileAppsGraphManagedIOSLobAppRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

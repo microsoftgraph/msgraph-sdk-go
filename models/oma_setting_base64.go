@@ -8,7 +8,7 @@ import (
 type OmaSettingBase64 struct {
     OmaSetting
 }
-// NewOmaSettingBase64 instantiates a new omaSettingBase64 and sets the default values.
+// NewOmaSettingBase64 instantiates a new OmaSettingBase64 and sets the default values.
 func NewOmaSettingBase64()(*OmaSettingBase64) {
     m := &OmaSettingBase64{
         OmaSetting: *NewOmaSetting(),
@@ -18,10 +18,12 @@ func NewOmaSettingBase64()(*OmaSettingBase64) {
     return m
 }
 // CreateOmaSettingBase64FromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOmaSettingBase64FromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOmaSettingBase64(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OmaSettingBase64) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OmaSetting.GetFieldDeserializers()
     res["fileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +49,7 @@ func (m *OmaSettingBase64) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetFileName gets the fileName property value. File name associated with the Value property (.cer
+// returns a *string when successful
 func (m *OmaSettingBase64) GetFileName()(*string) {
     val, err := m.GetBackingStore().Get("fileName")
     if err != nil {
@@ -58,6 +61,7 @@ func (m *OmaSettingBase64) GetFileName()(*string) {
     return nil
 }
 // GetValue gets the value property value. Value. (Base64 encoded string)
+// returns a *string when successful
 func (m *OmaSettingBase64) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -102,7 +106,6 @@ func (m *OmaSettingBase64) SetValue(value *string)() {
         panic(err)
     }
 }
-// OmaSettingBase64able 
 type OmaSettingBase64able interface {
     OmaSettingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProvisioningSystem 
 type ProvisioningSystem struct {
     Identity
 }
-// NewProvisioningSystem instantiates a new provisioningSystem and sets the default values.
+// NewProvisioningSystem instantiates a new ProvisioningSystem and sets the default values.
 func NewProvisioningSystem()(*ProvisioningSystem) {
     m := &ProvisioningSystem{
         Identity: *NewIdentity(),
@@ -18,10 +17,12 @@ func NewProvisioningSystem()(*ProvisioningSystem) {
     return m
 }
 // CreateProvisioningSystemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateProvisioningSystemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProvisioningSystem(), nil
 }
 // GetDetails gets the details property value. Details of the system.
+// returns a DetailsInfoable when successful
 func (m *ProvisioningSystem) GetDetails()(DetailsInfoable) {
     val, err := m.GetBackingStore().Get("details")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ProvisioningSystem) GetDetails()(DetailsInfoable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProvisioningSystem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Identity.GetFieldDeserializers()
     res["details"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +70,6 @@ func (m *ProvisioningSystem) SetDetails(value DetailsInfoable)() {
         panic(err)
     }
 }
-// ProvisioningSystemable 
 type ProvisioningSystemable interface {
     Identityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

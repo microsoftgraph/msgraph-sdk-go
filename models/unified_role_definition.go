@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleDefinition 
 type UnifiedRoleDefinition struct {
     Entity
 }
-// NewUnifiedRoleDefinition instantiates a new unifiedRoleDefinition and sets the default values.
+// NewUnifiedRoleDefinition instantiates a new UnifiedRoleDefinition and sets the default values.
 func NewUnifiedRoleDefinition()(*UnifiedRoleDefinition) {
     m := &UnifiedRoleDefinition{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewUnifiedRoleDefinition()(*UnifiedRoleDefinition) {
     return m
 }
 // CreateUnifiedRoleDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnifiedRoleDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleDefinition(), nil
 }
 // GetDescription gets the description property value. The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
+// returns a *string when successful
 func (m *UnifiedRoleDefinition) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *UnifiedRoleDefinition) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq, in).
+// returns a *string when successful
 func (m *UnifiedRoleDefinition) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *UnifiedRoleDefinition) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -155,6 +158,7 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetInheritsPermissionsFrom gets the inheritsPermissionsFrom property value. Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+// returns a []UnifiedRoleDefinitionable when successful
 func (m *UnifiedRoleDefinition) GetInheritsPermissionsFrom()([]UnifiedRoleDefinitionable) {
     val, err := m.GetBackingStore().Get("inheritsPermissionsFrom")
     if err != nil {
@@ -166,6 +170,7 @@ func (m *UnifiedRoleDefinition) GetInheritsPermissionsFrom()([]UnifiedRoleDefini
     return nil
 }
 // GetIsBuiltIn gets the isBuiltIn property value. Flag indicating whether the role definition is part of the default set included in Microsoft Entra or a custom definition. Read-only. Supports $filter (eq, in).
+// returns a *bool when successful
 func (m *UnifiedRoleDefinition) GetIsBuiltIn()(*bool) {
     val, err := m.GetBackingStore().Get("isBuiltIn")
     if err != nil {
@@ -177,6 +182,7 @@ func (m *UnifiedRoleDefinition) GetIsBuiltIn()(*bool) {
     return nil
 }
 // GetIsEnabled gets the isEnabled property value. Flag indicating whether the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
+// returns a *bool when successful
 func (m *UnifiedRoleDefinition) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -188,6 +194,7 @@ func (m *UnifiedRoleDefinition) GetIsEnabled()(*bool) {
     return nil
 }
 // GetResourceScopes gets the resourceScopes property value. List of the scopes or permissions the role definition applies to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
+// returns a []string when successful
 func (m *UnifiedRoleDefinition) GetResourceScopes()([]string) {
     val, err := m.GetBackingStore().Get("resourceScopes")
     if err != nil {
@@ -199,6 +206,7 @@ func (m *UnifiedRoleDefinition) GetResourceScopes()([]string) {
     return nil
 }
 // GetRolePermissions gets the rolePermissions property value. List of permissions included in the role. Read-only when isBuiltIn is true. Required.
+// returns a []UnifiedRolePermissionable when successful
 func (m *UnifiedRoleDefinition) GetRolePermissions()([]UnifiedRolePermissionable) {
     val, err := m.GetBackingStore().Get("rolePermissions")
     if err != nil {
@@ -210,6 +218,7 @@ func (m *UnifiedRoleDefinition) GetRolePermissions()([]UnifiedRolePermissionable
     return nil
 }
 // GetTemplateId gets the templateId property value. Custom template identifier that can be set when isBuiltIn is false but is read-only when isBuiltIn is true. This identifier is typically used if one needs an identifier to be the same across different directories.
+// returns a *string when successful
 func (m *UnifiedRoleDefinition) GetTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("templateId")
     if err != nil {
@@ -221,6 +230,7 @@ func (m *UnifiedRoleDefinition) GetTemplateId()(*string) {
     return nil
 }
 // GetVersion gets the version property value. Indicates version of the role definition. Read-only when isBuiltIn is true.
+// returns a *string when successful
 func (m *UnifiedRoleDefinition) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -368,7 +378,6 @@ func (m *UnifiedRoleDefinition) SetVersion(value *string)() {
         panic(err)
     }
 }
-// UnifiedRoleDefinitionable 
 type UnifiedRoleDefinitionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

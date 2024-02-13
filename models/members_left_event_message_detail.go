@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MembersLeftEventMessageDetail 
 type MembersLeftEventMessageDetail struct {
     EventMessageDetail
 }
-// NewMembersLeftEventMessageDetail instantiates a new membersLeftEventMessageDetail and sets the default values.
+// NewMembersLeftEventMessageDetail instantiates a new MembersLeftEventMessageDetail and sets the default values.
 func NewMembersLeftEventMessageDetail()(*MembersLeftEventMessageDetail) {
     m := &MembersLeftEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
@@ -18,10 +17,12 @@ func NewMembersLeftEventMessageDetail()(*MembersLeftEventMessageDetail) {
     return m
 }
 // CreateMembersLeftEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMembersLeftEventMessageDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMembersLeftEventMessageDetail(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MembersLeftEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EventMessageDetail.GetFieldDeserializers()
     res["initiator"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -53,6 +54,7 @@ func (m *MembersLeftEventMessageDetail) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
+// returns a IdentitySetable when successful
 func (m *MembersLeftEventMessageDetail) GetInitiator()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("initiator")
     if err != nil {
@@ -64,6 +66,7 @@ func (m *MembersLeftEventMessageDetail) GetInitiator()(IdentitySetable) {
     return nil
 }
 // GetMembers gets the members property value. List of members who left the chat.
+// returns a []TeamworkUserIdentityable when successful
 func (m *MembersLeftEventMessageDetail) GetMembers()([]TeamworkUserIdentityable) {
     val, err := m.GetBackingStore().Get("members")
     if err != nil {
@@ -114,7 +117,6 @@ func (m *MembersLeftEventMessageDetail) SetMembers(value []TeamworkUserIdentitya
         panic(err)
     }
 }
-// MembersLeftEventMessageDetailable 
 type MembersLeftEventMessageDetailable interface {
     EventMessageDetailable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

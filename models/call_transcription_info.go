@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CallTranscriptionInfo 
 type CallTranscriptionInfo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCallTranscriptionInfo instantiates a new callTranscriptionInfo and sets the default values.
+// NewCallTranscriptionInfo instantiates a new CallTranscriptionInfo and sets the default values.
 func NewCallTranscriptionInfo()(*CallTranscriptionInfo) {
     m := &CallTranscriptionInfo{
     }
@@ -20,10 +19,12 @@ func NewCallTranscriptionInfo()(*CallTranscriptionInfo) {
     return m
 }
 // CreateCallTranscriptionInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCallTranscriptionInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCallTranscriptionInfo(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CallTranscriptionInfo) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *CallTranscriptionInfo) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CallTranscriptionInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CallTranscriptionInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -75,6 +78,7 @@ func (m *CallTranscriptionInfo) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The state modified time in UTC.
+// returns a *Time when successful
 func (m *CallTranscriptionInfo) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -86,6 +90,7 @@ func (m *CallTranscriptionInfo) GetLastModifiedDateTime()(*i336074805fc853987abe
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *CallTranscriptionInfo) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -97,6 +102,7 @@ func (m *CallTranscriptionInfo) GetOdataType()(*string) {
     return nil
 }
 // GetState gets the state property value. The state property
+// returns a *CallTranscriptionState when successful
 func (m *CallTranscriptionInfo) GetState()(*CallTranscriptionState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -168,7 +174,6 @@ func (m *CallTranscriptionInfo) SetState(value *CallTranscriptionState)() {
         panic(err)
     }
 }
-// CallTranscriptionInfoable 
 type CallTranscriptionInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

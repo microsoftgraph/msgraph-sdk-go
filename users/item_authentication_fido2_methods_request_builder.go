@@ -40,6 +40,7 @@ type ItemAuthenticationFido2MethodsRequestBuilderGetRequestConfiguration struct 
     QueryParameters *ItemAuthenticationFido2MethodsRequestBuilderGetQueryParameters
 }
 // ByFido2AuthenticationMethodId provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.
+// returns a *ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilder when successful
 func (m *ItemAuthenticationFido2MethodsRequestBuilder) ByFido2AuthenticationMethodId(fido2AuthenticationMethodId string)(*ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,24 +51,27 @@ func (m *ItemAuthenticationFido2MethodsRequestBuilder) ByFido2AuthenticationMeth
     }
     return NewItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemAuthenticationFido2MethodsRequestBuilderInternal instantiates a new Fido2MethodsRequestBuilder and sets the default values.
+// NewItemAuthenticationFido2MethodsRequestBuilderInternal instantiates a new ItemAuthenticationFido2MethodsRequestBuilder and sets the default values.
 func NewItemAuthenticationFido2MethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationFido2MethodsRequestBuilder) {
     m := &ItemAuthenticationFido2MethodsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/authentication/fido2Methods{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/authentication/fido2Methods{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemAuthenticationFido2MethodsRequestBuilder instantiates a new Fido2MethodsRequestBuilder and sets the default values.
+// NewItemAuthenticationFido2MethodsRequestBuilder instantiates a new ItemAuthenticationFido2MethodsRequestBuilder and sets the default values.
 func NewItemAuthenticationFido2MethodsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationFido2MethodsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationFido2MethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemAuthenticationFido2MethodsCountRequestBuilder when successful
 func (m *ItemAuthenticationFido2MethodsRequestBuilder) Count()(*ItemAuthenticationFido2MethodsCountRequestBuilder) {
     return NewItemAuthenticationFido2MethodsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve a list of a user's FIDO2 Security Key Authentication Method objects and their properties.
+// returns a Fido2AuthenticationMethodCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/fido2authenticationmethod-list?view=graph-rest-1.0
@@ -77,8 +81,7 @@ func (m *ItemAuthenticationFido2MethodsRequestBuilder) Get(ctx context.Context, 
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateFido2AuthenticationMethodCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,6 +93,7 @@ func (m *ItemAuthenticationFido2MethodsRequestBuilder) Get(ctx context.Context, 
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Fido2AuthenticationMethodCollectionResponseable), nil
 }
 // ToGetRequestInformation retrieve a list of a user's FIDO2 Security Key Authentication Method objects and their properties.
+// returns a *RequestInformation when successful
 func (m *ItemAuthenticationFido2MethodsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationFido2MethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -103,6 +107,7 @@ func (m *ItemAuthenticationFido2MethodsRequestBuilder) ToGetRequestInformation(c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemAuthenticationFido2MethodsRequestBuilder when successful
 func (m *ItemAuthenticationFido2MethodsRequestBuilder) WithUrl(rawUrl string)(*ItemAuthenticationFido2MethodsRequestBuilder) {
     return NewItemAuthenticationFido2MethodsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CallTranscriptEventMessageDetail 
 type CallTranscriptEventMessageDetail struct {
     EventMessageDetail
 }
-// NewCallTranscriptEventMessageDetail instantiates a new callTranscriptEventMessageDetail and sets the default values.
+// NewCallTranscriptEventMessageDetail instantiates a new CallTranscriptEventMessageDetail and sets the default values.
 func NewCallTranscriptEventMessageDetail()(*CallTranscriptEventMessageDetail) {
     m := &CallTranscriptEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
@@ -18,10 +17,12 @@ func NewCallTranscriptEventMessageDetail()(*CallTranscriptEventMessageDetail) {
     return m
 }
 // CreateCallTranscriptEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCallTranscriptEventMessageDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCallTranscriptEventMessageDetail(), nil
 }
 // GetCallId gets the callId property value. Unique identifier of the call.
+// returns a *string when successful
 func (m *CallTranscriptEventMessageDetail) GetCallId()(*string) {
     val, err := m.GetBackingStore().Get("callId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *CallTranscriptEventMessageDetail) GetCallId()(*string) {
     return nil
 }
 // GetCallTranscriptICalUid gets the callTranscriptICalUid property value. Unique identifier for a call transcript.
+// returns a *string when successful
 func (m *CallTranscriptEventMessageDetail) GetCallTranscriptICalUid()(*string) {
     val, err := m.GetBackingStore().Get("callTranscriptICalUid")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *CallTranscriptEventMessageDetail) GetCallTranscriptICalUid()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CallTranscriptEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EventMessageDetail.GetFieldDeserializers()
     res["callId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -79,6 +82,7 @@ func (m *CallTranscriptEventMessageDetail) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetMeetingOrganizer gets the meetingOrganizer property value. The organizer of the meeting.
+// returns a IdentitySetable when successful
 func (m *CallTranscriptEventMessageDetail) GetMeetingOrganizer()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("meetingOrganizer")
     if err != nil {
@@ -136,7 +140,6 @@ func (m *CallTranscriptEventMessageDetail) SetMeetingOrganizer(value IdentitySet
         panic(err)
     }
 }
-// CallTranscriptEventMessageDetailable 
 type CallTranscriptEventMessageDetailable interface {
     EventMessageDetailable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

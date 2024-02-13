@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationMethodModeDetailCollectionResponse 
 type AuthenticationMethodModeDetailCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAuthenticationMethodModeDetailCollectionResponse instantiates a new authenticationMethodModeDetailCollectionResponse and sets the default values.
+// NewAuthenticationMethodModeDetailCollectionResponse instantiates a new AuthenticationMethodModeDetailCollectionResponse and sets the default values.
 func NewAuthenticationMethodModeDetailCollectionResponse()(*AuthenticationMethodModeDetailCollectionResponse) {
     m := &AuthenticationMethodModeDetailCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewAuthenticationMethodModeDetailCollectionResponse()(*AuthenticationMethod
     return m
 }
 // CreateAuthenticationMethodModeDetailCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthenticationMethodModeDetailCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationMethodModeDetailCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationMethodModeDetailCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *AuthenticationMethodModeDetailCollectionResponse) GetFieldDeserializers
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []AuthenticationMethodModeDetailable when successful
 func (m *AuthenticationMethodModeDetailCollectionResponse) GetValue()([]AuthenticationMethodModeDetailable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *AuthenticationMethodModeDetailCollectionResponse) SetValue(value []Auth
         panic(err)
     }
 }
-// AuthenticationMethodModeDetailCollectionResponseable 
 type AuthenticationMethodModeDetailCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

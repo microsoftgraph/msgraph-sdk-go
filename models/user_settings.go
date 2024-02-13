@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserSettings 
 type UserSettings struct {
     Entity
 }
-// NewUserSettings instantiates a new userSettings and sets the default values.
+// NewUserSettings instantiates a new UserSettings and sets the default values.
 func NewUserSettings()(*UserSettings) {
     m := &UserSettings{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewUserSettings()(*UserSettings) {
     return m
 }
 // CreateUserSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserSettings(), nil
 }
 // GetContributionToContentDiscoveryAsOrganizationDisabled gets the contributionToContentDiscoveryAsOrganizationDisabled property value. Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn't have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
+// returns a *bool when successful
 func (m *UserSettings) GetContributionToContentDiscoveryAsOrganizationDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("contributionToContentDiscoveryAsOrganizationDisabled")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *UserSettings) GetContributionToContentDiscoveryAsOrganizationDisabled()
     return nil
 }
 // GetContributionToContentDiscoveryDisabled gets the contributionToContentDiscoveryDisabled property value. When set to true, the delegate access to the user's trending API is disabled. When set to true, documents in the user's Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.
+// returns a *bool when successful
 func (m *UserSettings) GetContributionToContentDiscoveryDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("contributionToContentDiscoveryDisabled")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *UserSettings) GetContributionToContentDiscoveryDisabled()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["contributionToContentDiscoveryAsOrganizationDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -77,6 +80,7 @@ func (m *UserSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetShiftPreferences gets the shiftPreferences property value. The shiftPreferences property
+// returns a ShiftPreferencesable when successful
 func (m *UserSettings) GetShiftPreferences()(ShiftPreferencesable) {
     val, err := m.GetBackingStore().Get("shiftPreferences")
     if err != nil {
@@ -134,7 +138,6 @@ func (m *UserSettings) SetShiftPreferences(value ShiftPreferencesable)() {
         panic(err)
     }
 }
-// UserSettingsable 
 type UserSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

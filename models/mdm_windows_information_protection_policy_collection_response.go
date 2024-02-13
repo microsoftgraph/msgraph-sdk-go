@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MdmWindowsInformationProtectionPolicyCollectionResponse 
 type MdmWindowsInformationProtectionPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMdmWindowsInformationProtectionPolicyCollectionResponse instantiates a new mdmWindowsInformationProtectionPolicyCollectionResponse and sets the default values.
+// NewMdmWindowsInformationProtectionPolicyCollectionResponse instantiates a new MdmWindowsInformationProtectionPolicyCollectionResponse and sets the default values.
 func NewMdmWindowsInformationProtectionPolicyCollectionResponse()(*MdmWindowsInformationProtectionPolicyCollectionResponse) {
     m := &MdmWindowsInformationProtectionPolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewMdmWindowsInformationProtectionPolicyCollectionResponse()(*MdmWindowsInf
     return m
 }
 // CreateMdmWindowsInformationProtectionPolicyCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMdmWindowsInformationProtectionPolicyCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMdmWindowsInformationProtectionPolicyCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MdmWindowsInformationProtectionPolicyCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *MdmWindowsInformationProtectionPolicyCollectionResponse) GetFieldDeseri
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []MdmWindowsInformationProtectionPolicyable when successful
 func (m *MdmWindowsInformationProtectionPolicyCollectionResponse) GetValue()([]MdmWindowsInformationProtectionPolicyable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *MdmWindowsInformationProtectionPolicyCollectionResponse) SetValue(value
         panic(err)
     }
 }
-// MdmWindowsInformationProtectionPolicyCollectionResponseable 
 type MdmWindowsInformationProtectionPolicyCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// UserSimulationDetails 
 type UserSimulationDetails struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewUserSimulationDetails instantiates a new userSimulationDetails and sets the default values.
+// NewUserSimulationDetails instantiates a new UserSimulationDetails and sets the default values.
 func NewUserSimulationDetails()(*UserSimulationDetails) {
     m := &UserSimulationDetails{
     }
@@ -20,10 +19,12 @@ func NewUserSimulationDetails()(*UserSimulationDetails) {
     return m
 }
 // CreateUserSimulationDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserSimulationDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserSimulationDetails(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *UserSimulationDetails) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,6 +37,7 @@ func (m *UserSimulationDetails) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAssignedTrainingsCount gets the assignedTrainingsCount property value. Number of trainings assigned to a user in an attack simulation and training campaign.
+// returns a *int32 when successful
 func (m *UserSimulationDetails) GetAssignedTrainingsCount()(*int32) {
     val, err := m.GetBackingStore().Get("assignedTrainingsCount")
     if err != nil {
@@ -47,10 +49,12 @@ func (m *UserSimulationDetails) GetAssignedTrainingsCount()(*int32) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *UserSimulationDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCompletedTrainingsCount gets the completedTrainingsCount property value. Number of trainings completed by a user in an attack simulation and training campaign.
+// returns a *int32 when successful
 func (m *UserSimulationDetails) GetCompletedTrainingsCount()(*int32) {
     val, err := m.GetBackingStore().Get("completedTrainingsCount")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *UserSimulationDetails) GetCompletedTrainingsCount()(*int32) {
     return nil
 }
 // GetCompromisedDateTime gets the compromisedDateTime property value. Date and time of the compromising online action by a user in an attack simulation and training campaign.
+// returns a *Time when successful
 func (m *UserSimulationDetails) GetCompromisedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("compromisedDateTime")
     if err != nil {
@@ -73,6 +78,7 @@ func (m *UserSimulationDetails) GetCompromisedDateTime()(*i336074805fc853987abe6
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["assignedTrainingsCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -190,6 +196,7 @@ func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetInProgressTrainingsCount gets the inProgressTrainingsCount property value. Number of trainings in progress by a user in an attack simulation and training campaign.
+// returns a *int32 when successful
 func (m *UserSimulationDetails) GetInProgressTrainingsCount()(*int32) {
     val, err := m.GetBackingStore().Get("inProgressTrainingsCount")
     if err != nil {
@@ -201,6 +208,7 @@ func (m *UserSimulationDetails) GetInProgressTrainingsCount()(*int32) {
     return nil
 }
 // GetIsCompromised gets the isCompromised property value. Indicates whether a user was compromised in an attack simulation and training campaign.
+// returns a *bool when successful
 func (m *UserSimulationDetails) GetIsCompromised()(*bool) {
     val, err := m.GetBackingStore().Get("isCompromised")
     if err != nil {
@@ -212,6 +220,7 @@ func (m *UserSimulationDetails) GetIsCompromised()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *UserSimulationDetails) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -223,6 +232,7 @@ func (m *UserSimulationDetails) GetOdataType()(*string) {
     return nil
 }
 // GetReportedPhishDateTime gets the reportedPhishDateTime property value. Date and time when a user reported the delivered payload as phishing in the attack simulation and training campaign.
+// returns a *Time when successful
 func (m *UserSimulationDetails) GetReportedPhishDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("reportedPhishDateTime")
     if err != nil {
@@ -234,6 +244,7 @@ func (m *UserSimulationDetails) GetReportedPhishDateTime()(*i336074805fc853987ab
     return nil
 }
 // GetSimulationEvents gets the simulationEvents property value. List of simulation events of a user in the attack simulation and training campaign.
+// returns a []UserSimulationEventInfoable when successful
 func (m *UserSimulationDetails) GetSimulationEvents()([]UserSimulationEventInfoable) {
     val, err := m.GetBackingStore().Get("simulationEvents")
     if err != nil {
@@ -245,6 +256,7 @@ func (m *UserSimulationDetails) GetSimulationEvents()([]UserSimulationEventInfoa
     return nil
 }
 // GetSimulationUser gets the simulationUser property value. User in an attack simulation and training campaign.
+// returns a AttackSimulationUserable when successful
 func (m *UserSimulationDetails) GetSimulationUser()(AttackSimulationUserable) {
     val, err := m.GetBackingStore().Get("simulationUser")
     if err != nil {
@@ -256,6 +268,7 @@ func (m *UserSimulationDetails) GetSimulationUser()(AttackSimulationUserable) {
     return nil
 }
 // GetTrainingEvents gets the trainingEvents property value. List of training events of a user in the attack simulation and training campaign.
+// returns a []UserTrainingEventInfoable when successful
 func (m *UserSimulationDetails) GetTrainingEvents()([]UserTrainingEventInfoable) {
     val, err := m.GetBackingStore().Get("trainingEvents")
     if err != nil {
@@ -429,7 +442,6 @@ func (m *UserSimulationDetails) SetTrainingEvents(value []UserTrainingEventInfoa
         panic(err)
     }
 }
-// UserSimulationDetailsable 
 type UserSimulationDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

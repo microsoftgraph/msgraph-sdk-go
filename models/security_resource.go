@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// SecurityResource 
 type SecurityResource struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSecurityResource instantiates a new securityResource and sets the default values.
+// NewSecurityResource instantiates a new SecurityResource and sets the default values.
 func NewSecurityResource()(*SecurityResource) {
     m := &SecurityResource{
     }
@@ -19,10 +18,12 @@ func NewSecurityResource()(*SecurityResource) {
     return m
 }
 // CreateSecurityResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSecurityResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecurityResource(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SecurityResource) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *SecurityResource) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *SecurityResource) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SecurityResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +77,7 @@ func (m *SecurityResource) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *SecurityResource) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -85,6 +89,7 @@ func (m *SecurityResource) GetOdataType()(*string) {
     return nil
 }
 // GetResource gets the resource property value. Name of the resource that is related to current alert. Required.
+// returns a *string when successful
 func (m *SecurityResource) GetResource()(*string) {
     val, err := m.GetBackingStore().Get("resource")
     if err != nil {
@@ -96,6 +101,7 @@ func (m *SecurityResource) GetResource()(*string) {
     return nil
 }
 // GetResourceType gets the resourceType property value. Represents type of security resources related to an alert. Possible values are: attacked, related.
+// returns a *SecurityResourceType when successful
 func (m *SecurityResource) GetResourceType()(*SecurityResourceType) {
     val, err := m.GetBackingStore().Get("resourceType")
     if err != nil {
@@ -167,7 +173,6 @@ func (m *SecurityResource) SetResourceType(value *SecurityResourceType)() {
         panic(err)
     }
 }
-// SecurityResourceable 
 type SecurityResourceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Organization 
 type Organization struct {
     DirectoryObject
 }
-// NewOrganization instantiates a new organization and sets the default values.
+// NewOrganization instantiates a new Organization and sets the default values.
 func NewOrganization()(*Organization) {
     m := &Organization{
         DirectoryObject: *NewDirectoryObject(),
@@ -19,10 +18,12 @@ func NewOrganization()(*Organization) {
     return m
 }
 // CreateOrganizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOrganizationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOrganization(), nil
 }
 // GetAssignedPlans gets the assignedPlans property value. The collection of service plans associated with the tenant. Not nullable.
+// returns a []AssignedPlanable when successful
 func (m *Organization) GetAssignedPlans()([]AssignedPlanable) {
     val, err := m.GetBackingStore().Get("assignedPlans")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *Organization) GetAssignedPlans()([]AssignedPlanable) {
     return nil
 }
 // GetBranding gets the branding property value. Branding for the organization. Nullable.
+// returns a OrganizationalBrandingable when successful
 func (m *Organization) GetBranding()(OrganizationalBrandingable) {
     val, err := m.GetBackingStore().Get("branding")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *Organization) GetBranding()(OrganizationalBrandingable) {
     return nil
 }
 // GetBusinessPhones gets the businessPhones property value. Telephone number for the organization. Although this is a string collection, only one number can be set for this property.
+// returns a []string when successful
 func (m *Organization) GetBusinessPhones()([]string) {
     val, err := m.GetBackingStore().Get("businessPhones")
     if err != nil {
@@ -56,6 +59,7 @@ func (m *Organization) GetBusinessPhones()([]string) {
     return nil
 }
 // GetCertificateBasedAuthConfiguration gets the certificateBasedAuthConfiguration property value. Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
+// returns a []CertificateBasedAuthConfigurationable when successful
 func (m *Organization) GetCertificateBasedAuthConfiguration()([]CertificateBasedAuthConfigurationable) {
     val, err := m.GetBackingStore().Get("certificateBasedAuthConfiguration")
     if err != nil {
@@ -67,6 +71,7 @@ func (m *Organization) GetCertificateBasedAuthConfiguration()([]CertificateBased
     return nil
 }
 // GetCity gets the city property value. City name of the address for the organization.
+// returns a *string when successful
 func (m *Organization) GetCity()(*string) {
     val, err := m.GetBackingStore().Get("city")
     if err != nil {
@@ -78,6 +83,7 @@ func (m *Organization) GetCity()(*string) {
     return nil
 }
 // GetCountry gets the country property value. Country/region name of the address for the organization.
+// returns a *string when successful
 func (m *Organization) GetCountry()(*string) {
     val, err := m.GetBackingStore().Get("country")
     if err != nil {
@@ -89,6 +95,7 @@ func (m *Organization) GetCountry()(*string) {
     return nil
 }
 // GetCountryLetterCode gets the countryLetterCode property value. Country or region abbreviation for the organization in ISO 3166-2 format.
+// returns a *string when successful
 func (m *Organization) GetCountryLetterCode()(*string) {
     val, err := m.GetBackingStore().Get("countryLetterCode")
     if err != nil {
@@ -100,6 +107,7 @@ func (m *Organization) GetCountryLetterCode()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *Organization) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -111,6 +119,7 @@ func (m *Organization) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     return nil
 }
 // GetDefaultUsageLocation gets the defaultUsageLocation property value. Two-letter ISO 3166 country code indicating the default service usage location of an organization.
+// returns a *string when successful
 func (m *Organization) GetDefaultUsageLocation()(*string) {
     val, err := m.GetBackingStore().Get("defaultUsageLocation")
     if err != nil {
@@ -122,6 +131,7 @@ func (m *Organization) GetDefaultUsageLocation()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the tenant.
+// returns a *string when successful
 func (m *Organization) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -133,6 +143,7 @@ func (m *Organization) GetDisplayName()(*string) {
     return nil
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the organization. Read-only. Nullable.
+// returns a []Extensionable when successful
 func (m *Organization) GetExtensions()([]Extensionable) {
     val, err := m.GetBackingStore().Get("extensions")
     if err != nil {
@@ -144,6 +155,7 @@ func (m *Organization) GetExtensions()([]Extensionable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Organization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
     res["assignedPlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -479,6 +491,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetMarketingNotificationEmails gets the marketingNotificationEmails property value. Not nullable.
+// returns a []string when successful
 func (m *Organization) GetMarketingNotificationEmails()([]string) {
     val, err := m.GetBackingStore().Get("marketingNotificationEmails")
     if err != nil {
@@ -490,6 +503,7 @@ func (m *Organization) GetMarketingNotificationEmails()([]string) {
     return nil
 }
 // GetMobileDeviceManagementAuthority gets the mobileDeviceManagementAuthority property value. Mobile device management authority.
+// returns a *MdmAuthority when successful
 func (m *Organization) GetMobileDeviceManagementAuthority()(*MdmAuthority) {
     val, err := m.GetBackingStore().Get("mobileDeviceManagementAuthority")
     if err != nil {
@@ -501,6 +515,7 @@ func (m *Organization) GetMobileDeviceManagementAuthority()(*MdmAuthority) {
     return nil
 }
 // GetOnPremisesLastSyncDateTime gets the onPremisesLastSyncDateTime property value. The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *Organization) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("onPremisesLastSyncDateTime")
     if err != nil {
@@ -512,6 +527,7 @@ func (m *Organization) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
+// returns a *bool when successful
 func (m *Organization) GetOnPremisesSyncEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("onPremisesSyncEnabled")
     if err != nil {
@@ -523,6 +539,7 @@ func (m *Organization) GetOnPremisesSyncEnabled()(*bool) {
     return nil
 }
 // GetPartnerTenantType gets the partnerTenantType property value. The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.
+// returns a *PartnerTenantType when successful
 func (m *Organization) GetPartnerTenantType()(*PartnerTenantType) {
     val, err := m.GetBackingStore().Get("partnerTenantType")
     if err != nil {
@@ -534,6 +551,7 @@ func (m *Organization) GetPartnerTenantType()(*PartnerTenantType) {
     return nil
 }
 // GetPostalCode gets the postalCode property value. Postal code of the address for the organization.
+// returns a *string when successful
 func (m *Organization) GetPostalCode()(*string) {
     val, err := m.GetBackingStore().Get("postalCode")
     if err != nil {
@@ -545,6 +563,7 @@ func (m *Organization) GetPostalCode()(*string) {
     return nil
 }
 // GetPreferredLanguage gets the preferredLanguage property value. The preferred language for the organization. Should follow ISO 639-1 Code; for example, en.
+// returns a *string when successful
 func (m *Organization) GetPreferredLanguage()(*string) {
     val, err := m.GetBackingStore().Get("preferredLanguage")
     if err != nil {
@@ -556,6 +575,7 @@ func (m *Organization) GetPreferredLanguage()(*string) {
     return nil
 }
 // GetPrivacyProfile gets the privacyProfile property value. The privacy profile of an organization.
+// returns a PrivacyProfileable when successful
 func (m *Organization) GetPrivacyProfile()(PrivacyProfileable) {
     val, err := m.GetBackingStore().Get("privacyProfile")
     if err != nil {
@@ -567,6 +587,7 @@ func (m *Organization) GetPrivacyProfile()(PrivacyProfileable) {
     return nil
 }
 // GetProvisionedPlans gets the provisionedPlans property value. Not nullable.
+// returns a []ProvisionedPlanable when successful
 func (m *Organization) GetProvisionedPlans()([]ProvisionedPlanable) {
     val, err := m.GetBackingStore().Get("provisionedPlans")
     if err != nil {
@@ -578,6 +599,7 @@ func (m *Organization) GetProvisionedPlans()([]ProvisionedPlanable) {
     return nil
 }
 // GetSecurityComplianceNotificationMails gets the securityComplianceNotificationMails property value. Not nullable.
+// returns a []string when successful
 func (m *Organization) GetSecurityComplianceNotificationMails()([]string) {
     val, err := m.GetBackingStore().Get("securityComplianceNotificationMails")
     if err != nil {
@@ -589,6 +611,7 @@ func (m *Organization) GetSecurityComplianceNotificationMails()([]string) {
     return nil
 }
 // GetSecurityComplianceNotificationPhones gets the securityComplianceNotificationPhones property value. Not nullable.
+// returns a []string when successful
 func (m *Organization) GetSecurityComplianceNotificationPhones()([]string) {
     val, err := m.GetBackingStore().Get("securityComplianceNotificationPhones")
     if err != nil {
@@ -600,6 +623,7 @@ func (m *Organization) GetSecurityComplianceNotificationPhones()([]string) {
     return nil
 }
 // GetState gets the state property value. State name of the address for the organization.
+// returns a *string when successful
 func (m *Organization) GetState()(*string) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -611,6 +635,7 @@ func (m *Organization) GetState()(*string) {
     return nil
 }
 // GetStreet gets the street property value. Street name of the address for organization.
+// returns a *string when successful
 func (m *Organization) GetStreet()(*string) {
     val, err := m.GetBackingStore().Get("street")
     if err != nil {
@@ -622,6 +647,7 @@ func (m *Organization) GetStreet()(*string) {
     return nil
 }
 // GetTechnicalNotificationMails gets the technicalNotificationMails property value. Not nullable.
+// returns a []string when successful
 func (m *Organization) GetTechnicalNotificationMails()([]string) {
     val, err := m.GetBackingStore().Get("technicalNotificationMails")
     if err != nil {
@@ -633,6 +659,7 @@ func (m *Organization) GetTechnicalNotificationMails()([]string) {
     return nil
 }
 // GetTenantType gets the tenantType property value. Not nullable. The tenant type option that was selected when the tenant was created. The possible values are:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C A customer identity access management (CIAM) service that serves business-to-consumer (B2C) scenarios.
+// returns a *string when successful
 func (m *Organization) GetTenantType()(*string) {
     val, err := m.GetBackingStore().Get("tenantType")
     if err != nil {
@@ -644,6 +671,7 @@ func (m *Organization) GetTenantType()(*string) {
     return nil
 }
 // GetVerifiedDomains gets the verifiedDomains property value. The collection of domains associated with this tenant. Not nullable.
+// returns a []VerifiedDomainable when successful
 func (m *Organization) GetVerifiedDomains()([]VerifiedDomainable) {
     val, err := m.GetBackingStore().Get("verifiedDomains")
     if err != nil {
@@ -1045,7 +1073,6 @@ func (m *Organization) SetVerifiedDomains(value []VerifiedDomainable)() {
         panic(err)
     }
 }
-// Organizationable 
 type Organizationable interface {
     DirectoryObjectable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

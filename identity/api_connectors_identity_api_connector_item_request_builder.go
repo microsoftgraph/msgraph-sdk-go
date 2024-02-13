@@ -41,20 +41,21 @@ type ApiConnectorsIdentityApiConnectorItemRequestBuilderPatchRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewApiConnectorsIdentityApiConnectorItemRequestBuilderInternal instantiates a new IdentityApiConnectorItemRequestBuilder and sets the default values.
+// NewApiConnectorsIdentityApiConnectorItemRequestBuilderInternal instantiates a new ApiConnectorsIdentityApiConnectorItemRequestBuilder and sets the default values.
 func NewApiConnectorsIdentityApiConnectorItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApiConnectorsIdentityApiConnectorItemRequestBuilder) {
     m := &ApiConnectorsIdentityApiConnectorItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/apiConnectors/{identityApiConnector%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/apiConnectors/{identityApiConnector%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewApiConnectorsIdentityApiConnectorItemRequestBuilder instantiates a new IdentityApiConnectorItemRequestBuilder and sets the default values.
+// NewApiConnectorsIdentityApiConnectorItemRequestBuilder instantiates a new ApiConnectorsIdentityApiConnectorItemRequestBuilder and sets the default values.
 func NewApiConnectorsIdentityApiConnectorItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApiConnectorsIdentityApiConnectorItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewApiConnectorsIdentityApiConnectorItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete an identityApiConnector object.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identityapiconnector-delete?view=graph-rest-1.0
@@ -64,8 +65,7 @@ func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) Delete(ctx context
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -74,6 +74,8 @@ func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) Delete(ctx context
     return nil
 }
 // Get read the properties of an identityApiConnector object.
+// returns a IdentityApiConnectorable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identityapiconnector-get?view=graph-rest-1.0
@@ -83,8 +85,7 @@ func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) Get(ctx context.Co
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateIdentityApiConnectorFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -96,6 +97,8 @@ func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) Get(ctx context.Co
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable), nil
 }
 // Patch update the properties of an identityApiConnector object.
+// returns a IdentityApiConnectorable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identityapiconnector-update?view=graph-rest-1.0
@@ -105,8 +108,7 @@ func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) Patch(ctx context.
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateIdentityApiConnectorFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -118,8 +120,9 @@ func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) Patch(ctx context.
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable), nil
 }
 // ToDeleteRequestInformation delete an identityApiConnector object.
+// returns a *RequestInformation when successful
 func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ApiConnectorsIdentityApiConnectorItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/identity/apiConnectors/{identityApiConnector%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -128,6 +131,7 @@ func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) ToDeleteRequestInf
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties of an identityApiConnector object.
+// returns a *RequestInformation when successful
 func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApiConnectorsIdentityApiConnectorItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -141,8 +145,9 @@ func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) ToGetRequestInform
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of an identityApiConnector object.
+// returns a *RequestInformation when successful
 func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityApiConnectorable, requestConfiguration *ApiConnectorsIdentityApiConnectorItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/identity/apiConnectors/{identityApiConnector%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -155,10 +160,12 @@ func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) ToPatchRequestInfo
     return requestInfo, nil
 }
 // UploadClientCertificate provides operations to call the uploadClientCertificate method.
+// returns a *ApiConnectorsItemUploadClientCertificateRequestBuilder when successful
 func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) UploadClientCertificate()(*ApiConnectorsItemUploadClientCertificateRequestBuilder) {
     return NewApiConnectorsItemUploadClientCertificateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ApiConnectorsIdentityApiConnectorItemRequestBuilder when successful
 func (m *ApiConnectorsIdentityApiConnectorItemRequestBuilder) WithUrl(rawUrl string)(*ApiConnectorsIdentityApiConnectorItemRequestBuilder) {
     return NewApiConnectorsIdentityApiConnectorItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

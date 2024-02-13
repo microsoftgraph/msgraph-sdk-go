@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// OnPremisesAccidentalDeletionPrevention 
 type OnPremisesAccidentalDeletionPrevention struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewOnPremisesAccidentalDeletionPrevention instantiates a new onPremisesAccidentalDeletionPrevention and sets the default values.
+// NewOnPremisesAccidentalDeletionPrevention instantiates a new OnPremisesAccidentalDeletionPrevention and sets the default values.
 func NewOnPremisesAccidentalDeletionPrevention()(*OnPremisesAccidentalDeletionPrevention) {
     m := &OnPremisesAccidentalDeletionPrevention{
     }
@@ -19,10 +18,12 @@ func NewOnPremisesAccidentalDeletionPrevention()(*OnPremisesAccidentalDeletionPr
     return m
 }
 // CreateOnPremisesAccidentalDeletionPreventionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnPremisesAccidentalDeletionPreventionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnPremisesAccidentalDeletionPrevention(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OnPremisesAccidentalDeletionPrevention) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *OnPremisesAccidentalDeletionPrevention) GetAdditionalData()(map[string]
     return val.(map[string]any)
 }
 // GetAlertThreshold gets the alertThreshold property value. Threshold value which triggers accidental deletion prevention. The threshold is either an absolute number of objects or a percentage number of objects.
+// returns a *int32 when successful
 func (m *OnPremisesAccidentalDeletionPrevention) GetAlertThreshold()(*int32) {
     val, err := m.GetBackingStore().Get("alertThreshold")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *OnPremisesAccidentalDeletionPrevention) GetAlertThreshold()(*int32) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *OnPremisesAccidentalDeletionPrevention) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnPremisesAccidentalDeletionPrevention) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["alertThreshold"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -85,6 +89,7 @@ func (m *OnPremisesAccidentalDeletionPrevention) GetFieldDeserializers()(map[str
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *OnPremisesAccidentalDeletionPrevention) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -96,6 +101,7 @@ func (m *OnPremisesAccidentalDeletionPrevention) GetOdataType()(*string) {
     return nil
 }
 // GetSynchronizationPreventionType gets the synchronizationPreventionType property value. The status of the accidental deletion prevention feature. The possible values are: disabled, enabledForCount, enabledForPercentage, unknownFutureValue.
+// returns a *OnPremisesDirectorySynchronizationDeletionPreventionType when successful
 func (m *OnPremisesAccidentalDeletionPrevention) GetSynchronizationPreventionType()(*OnPremisesDirectorySynchronizationDeletionPreventionType) {
     val, err := m.GetBackingStore().Get("synchronizationPreventionType")
     if err != nil {
@@ -167,7 +173,6 @@ func (m *OnPremisesAccidentalDeletionPrevention) SetSynchronizationPreventionTyp
         panic(err)
     }
 }
-// OnPremisesAccidentalDeletionPreventionable 
 type OnPremisesAccidentalDeletionPreventionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

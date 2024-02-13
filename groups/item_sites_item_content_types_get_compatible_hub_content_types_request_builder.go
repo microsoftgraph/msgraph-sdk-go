@@ -14,6 +14,8 @@ type ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder struct 
 type ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -36,29 +38,30 @@ type ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilderGetReque
     // Request query parameters
     QueryParameters *ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilderGetQueryParameters
 }
-// NewItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilderInternal instantiates a new GetCompatibleHubContentTypesRequestBuilder and sets the default values.
+// NewItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilderInternal instantiates a new ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder and sets the default values.
 func NewItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder) {
     m := &ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/contentTypes/getCompatibleHubContentTypes(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/contentTypes/getCompatibleHubContentTypes(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder instantiates a new GetCompatibleHubContentTypesRequestBuilder and sets the default values.
+// NewItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder instantiates a new ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder and sets the default values.
 func NewItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getCompatibleHubContentTypes
-// Deprecated: This method is obsolete. Use GetAsGetCompatibleHubContentTypesGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ItemSitesItemContentTypesGetCompatibleHubContentTypesResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilderGetRequestConfiguration)(ItemSitesItemContentTypesGetCompatibleHubContentTypesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSitesItemContentTypesGetCompatibleHubContentTypesResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -70,14 +73,15 @@ func (m *ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder) Ge
     return res.(ItemSitesItemContentTypesGetCompatibleHubContentTypesResponseable), nil
 }
 // GetAsGetCompatibleHubContentTypesGetResponse invoke function getCompatibleHubContentTypes
+// returns a ItemSitesItemContentTypesGetCompatibleHubContentTypesGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder) GetAsGetCompatibleHubContentTypesGetResponse(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilderGetRequestConfiguration)(ItemSitesItemContentTypesGetCompatibleHubContentTypesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSitesItemContentTypesGetCompatibleHubContentTypesGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -89,6 +93,7 @@ func (m *ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder) Ge
     return res.(ItemSitesItemContentTypesGetCompatibleHubContentTypesGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getCompatibleHubContentTypes
+// returns a *RequestInformation when successful
 func (m *ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -102,6 +107,7 @@ func (m *ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder) To
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder when successful
 func (m *ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder) {
     return NewItemSitesItemContentTypesGetCompatibleHubContentTypesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

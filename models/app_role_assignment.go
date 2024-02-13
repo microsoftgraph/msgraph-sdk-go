@@ -6,11 +6,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AppRoleAssignment 
 type AppRoleAssignment struct {
     DirectoryObject
 }
-// NewAppRoleAssignment instantiates a new appRoleAssignment and sets the default values.
+// NewAppRoleAssignment instantiates a new AppRoleAssignment and sets the default values.
 func NewAppRoleAssignment()(*AppRoleAssignment) {
     m := &AppRoleAssignment{
         DirectoryObject: *NewDirectoryObject(),
@@ -20,10 +19,12 @@ func NewAppRoleAssignment()(*AppRoleAssignment) {
     return m
 }
 // CreateAppRoleAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAppRoleAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppRoleAssignment(), nil
 }
 // GetAppRoleId gets the appRoleId property value. The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
+// returns a *UUID when successful
 func (m *AppRoleAssignment) GetAppRoleId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("appRoleId")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *AppRoleAssignment) GetAppRoleId()(*i561e97a8befe7661a44c8f54600992b4207
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The time when the app role assignment was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *AppRoleAssignment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -46,6 +48,7 @@ func (m *AppRoleAssignment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad9
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AppRoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
     res["appRoleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -121,6 +124,7 @@ func (m *AppRoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetPrincipalDisplayName gets the principalDisplayName property value. The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).
+// returns a *string when successful
 func (m *AppRoleAssignment) GetPrincipalDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("principalDisplayName")
     if err != nil {
@@ -132,6 +136,7 @@ func (m *AppRoleAssignment) GetPrincipalDisplayName()(*string) {
     return nil
 }
 // GetPrincipalId gets the principalId property value. The unique identifier (id) for the user, security group, or service principal being granted the app role. Security groups with dynamic memberships are supported. Required on create.
+// returns a *UUID when successful
 func (m *AppRoleAssignment) GetPrincipalId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("principalId")
     if err != nil {
@@ -143,6 +148,7 @@ func (m *AppRoleAssignment) GetPrincipalId()(*i561e97a8befe7661a44c8f54600992b42
     return nil
 }
 // GetPrincipalType gets the principalType property value. The type of the assigned principal. This can either be User, Group, or ServicePrincipal. Read-only.
+// returns a *string when successful
 func (m *AppRoleAssignment) GetPrincipalType()(*string) {
     val, err := m.GetBackingStore().Get("principalType")
     if err != nil {
@@ -154,6 +160,7 @@ func (m *AppRoleAssignment) GetPrincipalType()(*string) {
     return nil
 }
 // GetResourceDisplayName gets the resourceDisplayName property value. The display name of the resource app's service principal to which the assignment is made.
+// returns a *string when successful
 func (m *AppRoleAssignment) GetResourceDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("resourceDisplayName")
     if err != nil {
@@ -165,6 +172,7 @@ func (m *AppRoleAssignment) GetResourceDisplayName()(*string) {
     return nil
 }
 // GetResourceId gets the resourceId property value. The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
+// returns a *UUID when successful
 func (m *AppRoleAssignment) GetResourceId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("resourceId")
     if err != nil {
@@ -274,7 +282,6 @@ func (m *AppRoleAssignment) SetResourceId(value *i561e97a8befe7661a44c8f54600992
         panic(err)
     }
 }
-// AppRoleAssignmentable 
 type AppRoleAssignmentable interface {
     DirectoryObjectable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

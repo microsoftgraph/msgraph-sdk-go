@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// RiskServicePrincipalActivity 
 type RiskServicePrincipalActivity struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewRiskServicePrincipalActivity instantiates a new riskServicePrincipalActivity and sets the default values.
+// NewRiskServicePrincipalActivity instantiates a new RiskServicePrincipalActivity and sets the default values.
 func NewRiskServicePrincipalActivity()(*RiskServicePrincipalActivity) {
     m := &RiskServicePrincipalActivity{
     }
@@ -19,10 +18,12 @@ func NewRiskServicePrincipalActivity()(*RiskServicePrincipalActivity) {
     return m
 }
 // CreateRiskServicePrincipalActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRiskServicePrincipalActivityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRiskServicePrincipalActivity(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RiskServicePrincipalActivity) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *RiskServicePrincipalActivity) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *RiskServicePrincipalActivity) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDetail gets the detail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
+// returns a *RiskDetail when successful
 func (m *RiskServicePrincipalActivity) GetDetail()(*RiskDetail) {
     val, err := m.GetBackingStore().Get("detail")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *RiskServicePrincipalActivity) GetDetail()(*RiskDetail) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RiskServicePrincipalActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["detail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -91,6 +95,7 @@ func (m *RiskServicePrincipalActivity) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *RiskServicePrincipalActivity) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -102,6 +107,7 @@ func (m *RiskServicePrincipalActivity) GetOdataType()(*string) {
     return nil
 }
 // GetRiskEventTypes gets the riskEventTypes property value. The riskEventTypes property
+// returns a []string when successful
 func (m *RiskServicePrincipalActivity) GetRiskEventTypes()([]string) {
     val, err := m.GetBackingStore().Get("riskEventTypes")
     if err != nil {
@@ -173,7 +179,6 @@ func (m *RiskServicePrincipalActivity) SetRiskEventTypes(value []string)() {
         panic(err)
     }
 }
-// RiskServicePrincipalActivityable 
 type RiskServicePrincipalActivityable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

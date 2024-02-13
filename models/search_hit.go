@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// SearchHit 
 type SearchHit struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSearchHit instantiates a new searchHit and sets the default values.
+// NewSearchHit instantiates a new SearchHit and sets the default values.
 func NewSearchHit()(*SearchHit) {
     m := &SearchHit{
     }
@@ -19,10 +18,12 @@ func NewSearchHit()(*SearchHit) {
     return m
 }
 // CreateSearchHitFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSearchHitFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSearchHit(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SearchHit) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *SearchHit) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *SearchHit) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetContentSource gets the contentSource property value. The name of the content source that the externalItem is part of.
+// returns a *string when successful
 func (m *SearchHit) GetContentSource()(*string) {
     val, err := m.GetBackingStore().Get("contentSource")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *SearchHit) GetContentSource()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SearchHit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["contentSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -135,6 +139,7 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetHitId gets the hitId property value. The internal identifier for the item. The format of the identifier varies based on the entity type. For details, see hitId format.
+// returns a *string when successful
 func (m *SearchHit) GetHitId()(*string) {
     val, err := m.GetBackingStore().Get("hitId")
     if err != nil {
@@ -146,6 +151,7 @@ func (m *SearchHit) GetHitId()(*string) {
     return nil
 }
 // GetIsCollapsed gets the isCollapsed property value. Indicates whether the current result is collapsed when the collapseProperties property in the searchRequest is used.
+// returns a *bool when successful
 func (m *SearchHit) GetIsCollapsed()(*bool) {
     val, err := m.GetBackingStore().Get("isCollapsed")
     if err != nil {
@@ -157,6 +163,7 @@ func (m *SearchHit) GetIsCollapsed()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *SearchHit) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -168,6 +175,7 @@ func (m *SearchHit) GetOdataType()(*string) {
     return nil
 }
 // GetRank gets the rank property value. The rank or the order of the result.
+// returns a *int32 when successful
 func (m *SearchHit) GetRank()(*int32) {
     val, err := m.GetBackingStore().Get("rank")
     if err != nil {
@@ -179,6 +187,7 @@ func (m *SearchHit) GetRank()(*int32) {
     return nil
 }
 // GetResource gets the resource property value. The resource property
+// returns a Entityable when successful
 func (m *SearchHit) GetResource()(Entityable) {
     val, err := m.GetBackingStore().Get("resource")
     if err != nil {
@@ -190,6 +199,7 @@ func (m *SearchHit) GetResource()(Entityable) {
     return nil
 }
 // GetResultTemplateId gets the resultTemplateId property value. ID of the result template used to render the search result. This ID must map to a display layout in the resultTemplates dictionary that is also included in the searchResponse.
+// returns a *string when successful
 func (m *SearchHit) GetResultTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("resultTemplateId")
     if err != nil {
@@ -201,6 +211,7 @@ func (m *SearchHit) GetResultTemplateId()(*string) {
     return nil
 }
 // GetSummary gets the summary property value. A summary of the result, if a summary is available.
+// returns a *string when successful
 func (m *SearchHit) GetSummary()(*string) {
     val, err := m.GetBackingStore().Get("summary")
     if err != nil {
@@ -336,7 +347,6 @@ func (m *SearchHit) SetSummary(value *string)() {
         panic(err)
     }
 }
-// SearchHitable 
 type SearchHitable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

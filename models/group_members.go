@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupMembers 
 type GroupMembers struct {
     SubjectSet
 }
-// NewGroupMembers instantiates a new groupMembers and sets the default values.
+// NewGroupMembers instantiates a new GroupMembers and sets the default values.
 func NewGroupMembers()(*GroupMembers) {
     m := &GroupMembers{
         SubjectSet: *NewSubjectSet(),
@@ -18,10 +17,12 @@ func NewGroupMembers()(*GroupMembers) {
     return m
 }
 // CreateGroupMembersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupMembersFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupMembers(), nil
 }
 // GetDescription gets the description property value. The name of the group in Microsoft Entra ID. Read only.
+// returns a *string when successful
 func (m *GroupMembers) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *GroupMembers) GetDescription()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupMembers) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.SubjectSet.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +60,7 @@ func (m *GroupMembers) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetGroupId gets the groupId property value. The ID of the group in Microsoft Entra ID.
+// returns a *string when successful
 func (m *GroupMembers) GetGroupId()(*string) {
     val, err := m.GetBackingStore().Get("groupId")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *GroupMembers) SetGroupId(value *string)() {
         panic(err)
     }
 }
-// GroupMembersable 
 type GroupMembersable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     SubjectSetable

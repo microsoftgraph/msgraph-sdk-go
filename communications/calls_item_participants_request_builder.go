@@ -47,6 +47,7 @@ type CallsItemParticipantsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByParticipantId provides operations to manage the participants property of the microsoft.graph.call entity.
+// returns a *CallsItemParticipantsParticipantItemRequestBuilder when successful
 func (m *CallsItemParticipantsRequestBuilder) ByParticipantId(participantId string)(*CallsItemParticipantsParticipantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *CallsItemParticipantsRequestBuilder) ByParticipantId(participantId stri
     }
     return NewCallsItemParticipantsParticipantItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewCallsItemParticipantsRequestBuilderInternal instantiates a new ParticipantsRequestBuilder and sets the default values.
+// NewCallsItemParticipantsRequestBuilderInternal instantiates a new CallsItemParticipantsRequestBuilder and sets the default values.
 func NewCallsItemParticipantsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemParticipantsRequestBuilder) {
     m := &CallsItemParticipantsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/calls/{call%2Did}/participants{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/calls/{call%2Did}/participants{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewCallsItemParticipantsRequestBuilder instantiates a new ParticipantsRequestBuilder and sets the default values.
+// NewCallsItemParticipantsRequestBuilder instantiates a new CallsItemParticipantsRequestBuilder and sets the default values.
 func NewCallsItemParticipantsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemParticipantsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCallsItemParticipantsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *CallsItemParticipantsCountRequestBuilder when successful
 func (m *CallsItemParticipantsRequestBuilder) Count()(*CallsItemParticipantsCountRequestBuilder) {
     return NewCallsItemParticipantsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve a list of participant objects in the call.
+// returns a ParticipantCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/call-list-participants?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *CallsItemParticipantsRequestBuilder) Get(ctx context.Context, requestCo
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateParticipantCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,18 +100,20 @@ func (m *CallsItemParticipantsRequestBuilder) Get(ctx context.Context, requestCo
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ParticipantCollectionResponseable), nil
 }
 // Invite provides operations to call the invite method.
+// returns a *CallsItemParticipantsInviteRequestBuilder when successful
 func (m *CallsItemParticipantsRequestBuilder) Invite()(*CallsItemParticipantsInviteRequestBuilder) {
     return NewCallsItemParticipantsInviteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to participants for communications
+// returns a Participantable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CallsItemParticipantsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Participantable, requestConfiguration *CallsItemParticipantsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Participantable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateParticipantFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -120,6 +125,7 @@ func (m *CallsItemParticipantsRequestBuilder) Post(ctx context.Context, body iad
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Participantable), nil
 }
 // ToGetRequestInformation retrieve a list of participant objects in the call.
+// returns a *RequestInformation when successful
 func (m *CallsItemParticipantsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CallsItemParticipantsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -133,8 +139,9 @@ func (m *CallsItemParticipantsRequestBuilder) ToGetRequestInformation(ctx contex
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to participants for communications
+// returns a *RequestInformation when successful
 func (m *CallsItemParticipantsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Participantable, requestConfiguration *CallsItemParticipantsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/communications/calls/{call%2Did}/participants", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -147,6 +154,7 @@ func (m *CallsItemParticipantsRequestBuilder) ToPostRequestInformation(ctx conte
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CallsItemParticipantsRequestBuilder when successful
 func (m *CallsItemParticipantsRequestBuilder) WithUrl(rawUrl string)(*CallsItemParticipantsRequestBuilder) {
     return NewCallsItemParticipantsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -41,28 +41,28 @@ type ItemEmployeeExperienceRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemEmployeeExperienceRequestBuilderInternal instantiates a new EmployeeExperienceRequestBuilder and sets the default values.
+// NewItemEmployeeExperienceRequestBuilderInternal instantiates a new ItemEmployeeExperienceRequestBuilder and sets the default values.
 func NewItemEmployeeExperienceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEmployeeExperienceRequestBuilder) {
     m := &ItemEmployeeExperienceRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/employeeExperience{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/employeeExperience{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemEmployeeExperienceRequestBuilder instantiates a new EmployeeExperienceRequestBuilder and sets the default values.
+// NewItemEmployeeExperienceRequestBuilder instantiates a new ItemEmployeeExperienceRequestBuilder and sets the default values.
 func NewItemEmployeeExperienceRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEmployeeExperienceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemEmployeeExperienceRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property employeeExperience for users
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemEmployeeExperienceRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemEmployeeExperienceRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,14 +71,15 @@ func (m *ItemEmployeeExperienceRequestBuilder) Delete(ctx context.Context, reque
     return nil
 }
 // Get get employeeExperience from users
+// returns a EmployeeExperienceUserable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemEmployeeExperienceRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemEmployeeExperienceRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmployeeExperienceUserable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateEmployeeExperienceUserFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,22 +91,25 @@ func (m *ItemEmployeeExperienceRequestBuilder) Get(ctx context.Context, requestC
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmployeeExperienceUserable), nil
 }
 // LearningCourseActivities provides operations to manage the learningCourseActivities property of the microsoft.graph.employeeExperienceUser entity.
+// returns a *ItemEmployeeExperienceLearningCourseActivitiesRequestBuilder when successful
 func (m *ItemEmployeeExperienceRequestBuilder) LearningCourseActivities()(*ItemEmployeeExperienceLearningCourseActivitiesRequestBuilder) {
     return NewItemEmployeeExperienceLearningCourseActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // LearningCourseActivitiesWithExternalcourseActivityId provides operations to manage the learningCourseActivities property of the microsoft.graph.employeeExperienceUser entity.
+// returns a *ItemEmployeeExperienceLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder when successful
 func (m *ItemEmployeeExperienceRequestBuilder) LearningCourseActivitiesWithExternalcourseActivityId(externalcourseActivityId *string)(*ItemEmployeeExperienceLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder) {
     return NewItemEmployeeExperienceLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, externalcourseActivityId)
 }
 // Patch update the navigation property employeeExperience in users
+// returns a EmployeeExperienceUserable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemEmployeeExperienceRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmployeeExperienceUserable, requestConfiguration *ItemEmployeeExperienceRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmployeeExperienceUserable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateEmployeeExperienceUserFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -117,8 +121,9 @@ func (m *ItemEmployeeExperienceRequestBuilder) Patch(ctx context.Context, body i
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmployeeExperienceUserable), nil
 }
 // ToDeleteRequestInformation delete navigation property employeeExperience for users
+// returns a *RequestInformation when successful
 func (m *ItemEmployeeExperienceRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemEmployeeExperienceRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/users/{user%2Did}/employeeExperience", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -127,6 +132,7 @@ func (m *ItemEmployeeExperienceRequestBuilder) ToDeleteRequestInformation(ctx co
     return requestInfo, nil
 }
 // ToGetRequestInformation get employeeExperience from users
+// returns a *RequestInformation when successful
 func (m *ItemEmployeeExperienceRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemEmployeeExperienceRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -140,8 +146,9 @@ func (m *ItemEmployeeExperienceRequestBuilder) ToGetRequestInformation(ctx conte
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property employeeExperience in users
+// returns a *RequestInformation when successful
 func (m *ItemEmployeeExperienceRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EmployeeExperienceUserable, requestConfiguration *ItemEmployeeExperienceRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/users/{user%2Did}/employeeExperience", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -154,6 +161,7 @@ func (m *ItemEmployeeExperienceRequestBuilder) ToPatchRequestInformation(ctx con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemEmployeeExperienceRequestBuilder when successful
 func (m *ItemEmployeeExperienceRequestBuilder) WithUrl(rawUrl string)(*ItemEmployeeExperienceRequestBuilder) {
     return NewItemEmployeeExperienceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

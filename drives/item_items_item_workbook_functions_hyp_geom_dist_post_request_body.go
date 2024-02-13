@@ -6,7 +6,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ItemItemsItemWorkbookFunctionsHypGeom_DistPostRequestBody 
 type ItemItemsItemWorkbookFunctionsHypGeom_DistPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -20,10 +19,12 @@ func NewItemItemsItemWorkbookFunctionsHypGeom_DistPostRequestBody()(*ItemItemsIt
     return m
 }
 // CreateItemItemsItemWorkbookFunctionsHypGeom_DistPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemsItemWorkbookFunctionsHypGeom_DistPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemsItemWorkbookFunctionsHypGeom_DistPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemsItemWorkbookFunctionsHypGeom_DistPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *ItemItemsItemWorkbookFunctionsHypGeom_DistPostRequestBody) GetAdditiona
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ItemItemsItemWorkbookFunctionsHypGeom_DistPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCumulative gets the cumulative property value. The cumulative property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsHypGeom_DistPostRequestBody) GetCumulative()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("cumulative")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *ItemItemsItemWorkbookFunctionsHypGeom_DistPostRequestBody) GetCumulativ
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemsItemWorkbookFunctionsHypGeom_DistPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["cumulative"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -106,6 +110,7 @@ func (m *ItemItemsItemWorkbookFunctionsHypGeom_DistPostRequestBody) GetFieldDese
     return res
 }
 // GetNumberPop gets the numberPop property value. The numberPop property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsHypGeom_DistPostRequestBody) GetNumberPop()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("numberPop")
     if err != nil {
@@ -117,6 +122,7 @@ func (m *ItemItemsItemWorkbookFunctionsHypGeom_DistPostRequestBody) GetNumberPop
     return nil
 }
 // GetNumberSample gets the numberSample property value. The numberSample property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsHypGeom_DistPostRequestBody) GetNumberSample()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("numberSample")
     if err != nil {
@@ -128,6 +134,7 @@ func (m *ItemItemsItemWorkbookFunctionsHypGeom_DistPostRequestBody) GetNumberSam
     return nil
 }
 // GetPopulationS gets the populationS property value. The populationS property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsHypGeom_DistPostRequestBody) GetPopulationS()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("populationS")
     if err != nil {
@@ -139,6 +146,7 @@ func (m *ItemItemsItemWorkbookFunctionsHypGeom_DistPostRequestBody) GetPopulatio
     return nil
 }
 // GetSampleS gets the sampleS property value. The sampleS property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsHypGeom_DistPostRequestBody) GetSampleS()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("sampleS")
     if err != nil {
@@ -235,7 +243,6 @@ func (m *ItemItemsItemWorkbookFunctionsHypGeom_DistPostRequestBody) SetSampleS(v
         panic(err)
     }
 }
-// ItemItemsItemWorkbookFunctionsHypGeom_DistPostRequestBodyable 
 type ItemItemsItemWorkbookFunctionsHypGeom_DistPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

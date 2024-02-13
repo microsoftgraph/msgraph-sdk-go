@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ArchivedPrintJob 
 type ArchivedPrintJob struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewArchivedPrintJob instantiates a new archivedPrintJob and sets the default values.
+// NewArchivedPrintJob instantiates a new ArchivedPrintJob and sets the default values.
 func NewArchivedPrintJob()(*ArchivedPrintJob) {
     m := &ArchivedPrintJob{
     }
@@ -20,10 +19,12 @@ func NewArchivedPrintJob()(*ArchivedPrintJob) {
     return m
 }
 // CreateArchivedPrintJobFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateArchivedPrintJobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewArchivedPrintJob(), nil
 }
 // GetAcquiredByPrinter gets the acquiredByPrinter property value. True if the job was acquired by a printer; false otherwise. Read-only.
+// returns a *bool when successful
 func (m *ArchivedPrintJob) GetAcquiredByPrinter()(*bool) {
     val, err := m.GetBackingStore().Get("acquiredByPrinter")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *ArchivedPrintJob) GetAcquiredByPrinter()(*bool) {
     return nil
 }
 // GetAcquiredDateTime gets the acquiredDateTime property value. The dateTimeOffset when the job was acquired by the printer, if any. Read-only.
+// returns a *Time when successful
 func (m *ArchivedPrintJob) GetAcquiredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("acquiredDateTime")
     if err != nil {
@@ -46,6 +48,7 @@ func (m *ArchivedPrintJob) GetAcquiredDateTime()(*i336074805fc853987abe6f7fe3ad9
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ArchivedPrintJob) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -58,10 +61,12 @@ func (m *ArchivedPrintJob) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ArchivedPrintJob) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCompletionDateTime gets the completionDateTime property value. The dateTimeOffset when the job was completed, canceled or aborted. Read-only.
+// returns a *Time when successful
 func (m *ArchivedPrintJob) GetCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("completionDateTime")
     if err != nil {
@@ -73,6 +78,7 @@ func (m *ArchivedPrintJob) GetCompletionDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetCopiesPrinted gets the copiesPrinted property value. The number of copies that were printed. Read-only.
+// returns a *int32 when successful
 func (m *ArchivedPrintJob) GetCopiesPrinted()(*int32) {
     val, err := m.GetBackingStore().Get("copiesPrinted")
     if err != nil {
@@ -84,6 +90,7 @@ func (m *ArchivedPrintJob) GetCopiesPrinted()(*int32) {
     return nil
 }
 // GetCreatedBy gets the createdBy property value. The user who created the print job. Read-only.
+// returns a UserIdentityable when successful
 func (m *ArchivedPrintJob) GetCreatedBy()(UserIdentityable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -95,6 +102,7 @@ func (m *ArchivedPrintJob) GetCreatedBy()(UserIdentityable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The dateTimeOffset when the job was created. Read-only.
+// returns a *Time when successful
 func (m *ArchivedPrintJob) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -106,6 +114,7 @@ func (m *ArchivedPrintJob) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ArchivedPrintJob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["acquiredByPrinter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -221,6 +230,7 @@ func (m *ArchivedPrintJob) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetId gets the id property value. The archived print job's GUID. Read-only.
+// returns a *string when successful
 func (m *ArchivedPrintJob) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -232,6 +242,7 @@ func (m *ArchivedPrintJob) GetId()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ArchivedPrintJob) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -243,6 +254,7 @@ func (m *ArchivedPrintJob) GetOdataType()(*string) {
     return nil
 }
 // GetPrinterId gets the printerId property value. The printer ID that the job was queued for. Read-only.
+// returns a *string when successful
 func (m *ArchivedPrintJob) GetPrinterId()(*string) {
     val, err := m.GetBackingStore().Get("printerId")
     if err != nil {
@@ -254,6 +266,7 @@ func (m *ArchivedPrintJob) GetPrinterId()(*string) {
     return nil
 }
 // GetPrinterName gets the printerName property value. The printer name that the job was queued for. Read-only.
+// returns a *string when successful
 func (m *ArchivedPrintJob) GetPrinterName()(*string) {
     val, err := m.GetBackingStore().Get("printerName")
     if err != nil {
@@ -265,6 +278,7 @@ func (m *ArchivedPrintJob) GetPrinterName()(*string) {
     return nil
 }
 // GetProcessingState gets the processingState property value. The processingState property
+// returns a *PrintJobProcessingState when successful
 func (m *ArchivedPrintJob) GetProcessingState()(*PrintJobProcessingState) {
     val, err := m.GetBackingStore().Get("processingState")
     if err != nil {
@@ -440,7 +454,6 @@ func (m *ArchivedPrintJob) SetProcessingState(value *PrintJobProcessingState)() 
         panic(err)
     }
 }
-// ArchivedPrintJobable 
 type ArchivedPrintJobable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

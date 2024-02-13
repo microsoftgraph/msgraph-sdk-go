@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CommunicationsApplicationIdentity 
 type CommunicationsApplicationIdentity struct {
     Identity
 }
-// NewCommunicationsApplicationIdentity instantiates a new communicationsApplicationIdentity and sets the default values.
+// NewCommunicationsApplicationIdentity instantiates a new CommunicationsApplicationIdentity and sets the default values.
 func NewCommunicationsApplicationIdentity()(*CommunicationsApplicationIdentity) {
     m := &CommunicationsApplicationIdentity{
         Identity: *NewIdentity(),
@@ -18,10 +17,12 @@ func NewCommunicationsApplicationIdentity()(*CommunicationsApplicationIdentity) 
     return m
 }
 // CreateCommunicationsApplicationIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCommunicationsApplicationIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCommunicationsApplicationIdentity(), nil
 }
 // GetApplicationType gets the applicationType property value. First-party Microsoft application that presents this identity.
+// returns a *string when successful
 func (m *CommunicationsApplicationIdentity) GetApplicationType()(*string) {
     val, err := m.GetBackingStore().Get("applicationType")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *CommunicationsApplicationIdentity) GetApplicationType()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CommunicationsApplicationIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Identity.GetFieldDeserializers()
     res["applicationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +60,7 @@ func (m *CommunicationsApplicationIdentity) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetHidden gets the hidden property value. True if the participant shouldn't be shown in other participants' rosters.
+// returns a *bool when successful
 func (m *CommunicationsApplicationIdentity) GetHidden()(*bool) {
     val, err := m.GetBackingStore().Get("hidden")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *CommunicationsApplicationIdentity) SetHidden(value *bool)() {
         panic(err)
     }
 }
-// CommunicationsApplicationIdentityable 
 type CommunicationsApplicationIdentityable interface {
     Identityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -41,28 +41,28 @@ type ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilderPatchRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilderInternal instantiates a new ProgressTaskBoardFormatRequestBuilder and sets the default values.
+// NewItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilderInternal instantiates a new ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder and sets the default values.
 func NewItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder) {
     m := &ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/planner/plans/{plannerPlan%2Did}/tasks/{plannerTask%2Did}/progressTaskBoardFormat{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/planner/plans/{plannerPlan%2Did}/tasks/{plannerTask%2Did}/progressTaskBoardFormat{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder instantiates a new ProgressTaskBoardFormatRequestBuilder and sets the default values.
+// NewItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder instantiates a new ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder and sets the default values.
 func NewItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property progressTaskBoardFormat for users
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,6 +71,8 @@ func (m *ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder) Del
     return nil
 }
 // Get retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
+// returns a PlannerProgressTaskBoardTaskFormatable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
@@ -80,8 +82,7 @@ func (m *ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder) Get
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreatePlannerProgressTaskBoardTaskFormatFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -93,6 +94,8 @@ func (m *ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder) Get
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable), nil
 }
 // Patch update the navigation property progressTaskBoardFormat in users
+// returns a PlannerProgressTaskBoardTaskFormatable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
@@ -102,8 +105,7 @@ func (m *ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder) Pat
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreatePlannerProgressTaskBoardTaskFormatFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -115,8 +117,9 @@ func (m *ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder) Pat
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable), nil
 }
 // ToDeleteRequestInformation delete navigation property progressTaskBoardFormat for users
+// returns a *RequestInformation when successful
 func (m *ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/users/{user%2Did}/planner/plans/{plannerPlan%2Did}/tasks/{plannerTask%2Did}/progressTaskBoardFormat", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -125,6 +128,7 @@ func (m *ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder) ToD
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
+// returns a *RequestInformation when successful
 func (m *ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -138,8 +142,9 @@ func (m *ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder) ToG
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property progressTaskBoardFormat in users
+// returns a *RequestInformation when successful
 func (m *ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerProgressTaskBoardTaskFormatable, requestConfiguration *ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/users/{user%2Did}/planner/plans/{plannerPlan%2Did}/tasks/{plannerTask%2Did}/progressTaskBoardFormat", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -152,6 +157,7 @@ func (m *ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder) ToP
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder when successful
 func (m *ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder) WithUrl(rawUrl string)(*ItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder) {
     return NewItemPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -27,20 +27,22 @@ type ItemTeamworkInstalledAppsItemChatRequestBuilderGetRequestConfiguration stru
     // Request query parameters
     QueryParameters *ItemTeamworkInstalledAppsItemChatRequestBuilderGetQueryParameters
 }
-// NewItemTeamworkInstalledAppsItemChatRequestBuilderInternal instantiates a new ChatRequestBuilder and sets the default values.
+// NewItemTeamworkInstalledAppsItemChatRequestBuilderInternal instantiates a new ItemTeamworkInstalledAppsItemChatRequestBuilder and sets the default values.
 func NewItemTeamworkInstalledAppsItemChatRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamworkInstalledAppsItemChatRequestBuilder) {
     m := &ItemTeamworkInstalledAppsItemChatRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/teamwork/installedApps/{userScopeTeamsAppInstallation%2Did}/chat{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/teamwork/installedApps/{userScopeTeamsAppInstallation%2Did}/chat{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemTeamworkInstalledAppsItemChatRequestBuilder instantiates a new ChatRequestBuilder and sets the default values.
+// NewItemTeamworkInstalledAppsItemChatRequestBuilder instantiates a new ItemTeamworkInstalledAppsItemChatRequestBuilder and sets the default values.
 func NewItemTeamworkInstalledAppsItemChatRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamworkInstalledAppsItemChatRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamworkInstalledAppsItemChatRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get retrieve the chat of the specified user and Teams app.
+// returns a Chatable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/userscopeteamsappinstallation-get-chat?view=graph-rest-1.0
@@ -50,8 +52,7 @@ func (m *ItemTeamworkInstalledAppsItemChatRequestBuilder) Get(ctx context.Contex
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateChatFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -63,6 +64,7 @@ func (m *ItemTeamworkInstalledAppsItemChatRequestBuilder) Get(ctx context.Contex
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Chatable), nil
 }
 // ToGetRequestInformation retrieve the chat of the specified user and Teams app.
+// returns a *RequestInformation when successful
 func (m *ItemTeamworkInstalledAppsItemChatRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamworkInstalledAppsItemChatRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -76,6 +78,7 @@ func (m *ItemTeamworkInstalledAppsItemChatRequestBuilder) ToGetRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemTeamworkInstalledAppsItemChatRequestBuilder when successful
 func (m *ItemTeamworkInstalledAppsItemChatRequestBuilder) WithUrl(rawUrl string)(*ItemTeamworkInstalledAppsItemChatRequestBuilder) {
     return NewItemTeamworkInstalledAppsItemChatRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

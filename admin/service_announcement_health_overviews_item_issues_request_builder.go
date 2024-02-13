@@ -47,6 +47,7 @@ type ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilderPostRequestConfig
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByServiceHealthIssueId provides operations to manage the issues property of the microsoft.graph.serviceHealth entity.
+// returns a *ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilder when successful
 func (m *ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder) ByServiceHealthIssueId(serviceHealthIssueId string)(*ServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,32 +58,34 @@ func (m *ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder) ByServiceHe
     }
     return NewServiceAnnouncementHealthOverviewsItemIssuesServiceHealthIssueItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewServiceAnnouncementHealthOverviewsItemIssuesRequestBuilderInternal instantiates a new IssuesRequestBuilder and sets the default values.
+// NewServiceAnnouncementHealthOverviewsItemIssuesRequestBuilderInternal instantiates a new ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder and sets the default values.
 func NewServiceAnnouncementHealthOverviewsItemIssuesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder) {
     m := &ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/serviceAnnouncement/healthOverviews/{serviceHealth%2Did}/issues{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/serviceAnnouncement/healthOverviews/{serviceHealth%2Did}/issues{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder instantiates a new IssuesRequestBuilder and sets the default values.
+// NewServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder instantiates a new ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder and sets the default values.
 func NewServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewServiceAnnouncementHealthOverviewsItemIssuesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ServiceAnnouncementHealthOverviewsItemIssuesCountRequestBuilder when successful
 func (m *ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder) Count()(*ServiceAnnouncementHealthOverviewsItemIssuesCountRequestBuilder) {
     return NewServiceAnnouncementHealthOverviewsItemIssuesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get a collection of issues that happened on the service, with detailed information for each issue.
+// returns a ServiceHealthIssueCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder) Get(ctx context.Context, requestConfiguration *ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceHealthIssueCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateServiceHealthIssueCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,14 +97,15 @@ func (m *ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder) Get(ctx con
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceHealthIssueCollectionResponseable), nil
 }
 // Post create new navigation property to issues for admin
+// returns a ServiceHealthIssueable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceHealthIssueable, requestConfiguration *ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceHealthIssueable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateServiceHealthIssueFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,6 +117,7 @@ func (m *ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder) Post(ctx co
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceHealthIssueable), nil
 }
 // ToGetRequestInformation a collection of issues that happened on the service, with detailed information for each issue.
+// returns a *RequestInformation when successful
 func (m *ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -126,8 +131,9 @@ func (m *ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder) ToGetReques
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to issues for admin
+// returns a *RequestInformation when successful
 func (m *ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServiceHealthIssueable, requestConfiguration *ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/admin/serviceAnnouncement/healthOverviews/{serviceHealth%2Did}/issues", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -140,6 +146,7 @@ func (m *ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder) ToPostReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder when successful
 func (m *ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder) WithUrl(rawUrl string)(*ServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder) {
     return NewServiceAnnouncementHealthOverviewsItemIssuesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

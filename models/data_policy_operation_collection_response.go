@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DataPolicyOperationCollectionResponse 
 type DataPolicyOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDataPolicyOperationCollectionResponse instantiates a new dataPolicyOperationCollectionResponse and sets the default values.
+// NewDataPolicyOperationCollectionResponse instantiates a new DataPolicyOperationCollectionResponse and sets the default values.
 func NewDataPolicyOperationCollectionResponse()(*DataPolicyOperationCollectionResponse) {
     m := &DataPolicyOperationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewDataPolicyOperationCollectionResponse()(*DataPolicyOperationCollectionRe
     return m
 }
 // CreateDataPolicyOperationCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDataPolicyOperationCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDataPolicyOperationCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DataPolicyOperationCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *DataPolicyOperationCollectionResponse) GetFieldDeserializers()(map[stri
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []DataPolicyOperationable when successful
 func (m *DataPolicyOperationCollectionResponse) GetValue()([]DataPolicyOperationable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *DataPolicyOperationCollectionResponse) SetValue(value []DataPolicyOpera
         panic(err)
     }
 }
-// DataPolicyOperationCollectionResponseable 
 type DataPolicyOperationCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConnectedOrganizationCollectionResponse 
 type ConnectedOrganizationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewConnectedOrganizationCollectionResponse instantiates a new connectedOrganizationCollectionResponse and sets the default values.
+// NewConnectedOrganizationCollectionResponse instantiates a new ConnectedOrganizationCollectionResponse and sets the default values.
 func NewConnectedOrganizationCollectionResponse()(*ConnectedOrganizationCollectionResponse) {
     m := &ConnectedOrganizationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewConnectedOrganizationCollectionResponse()(*ConnectedOrganizationCollecti
     return m
 }
 // CreateConnectedOrganizationCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConnectedOrganizationCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConnectedOrganizationCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConnectedOrganizationCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ConnectedOrganizationCollectionResponse) GetFieldDeserializers()(map[st
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ConnectedOrganizationable when successful
 func (m *ConnectedOrganizationCollectionResponse) GetValue()([]ConnectedOrganizationable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ConnectedOrganizationCollectionResponse) SetValue(value []ConnectedOrga
         panic(err)
     }
 }
-// ConnectedOrganizationCollectionResponseable 
 type ConnectedOrganizationCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

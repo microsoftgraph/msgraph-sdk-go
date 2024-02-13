@@ -7,12 +7,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// WorkflowBase 
 type WorkflowBase struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewWorkflowBase instantiates a new workflowBase and sets the default values.
+// NewWorkflowBase instantiates a new WorkflowBase and sets the default values.
 func NewWorkflowBase()(*WorkflowBase) {
     m := &WorkflowBase{
     }
@@ -21,6 +20,7 @@ func NewWorkflowBase()(*WorkflowBase) {
     return m
 }
 // CreateWorkflowBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkflowBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -45,6 +45,7 @@ func CreateWorkflowBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewWorkflowBase(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WorkflowBase) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -57,10 +58,12 @@ func (m *WorkflowBase) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *WorkflowBase) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCategory gets the category property value. The category property
+// returns a *LifecycleWorkflowCategory when successful
 func (m *WorkflowBase) GetCategory()(*LifecycleWorkflowCategory) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
@@ -72,6 +75,7 @@ func (m *WorkflowBase) GetCategory()(*LifecycleWorkflowCategory) {
     return nil
 }
 // GetCreatedBy gets the createdBy property value. The user who created the workflow.
+// returns a Userable when successful
 func (m *WorkflowBase) GetCreatedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -83,6 +87,7 @@ func (m *WorkflowBase) GetCreatedBy()(iadcd81124412c61e647227ecfc4449d8bba17de03
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. When a workflow was created.
+// returns a *Time when successful
 func (m *WorkflowBase) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -94,6 +99,7 @@ func (m *WorkflowBase) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     return nil
 }
 // GetDescription gets the description property value. A string that describes the purpose of the workflow.
+// returns a *string when successful
 func (m *WorkflowBase) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -105,6 +111,7 @@ func (m *WorkflowBase) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. A string to identify the workflow.
+// returns a *string when successful
 func (m *WorkflowBase) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -116,6 +123,7 @@ func (m *WorkflowBase) GetDisplayName()(*string) {
     return nil
 }
 // GetExecutionConditions gets the executionConditions property value. Defines when and for who the workflow will run.
+// returns a WorkflowExecutionConditionsable when successful
 func (m *WorkflowBase) GetExecutionConditions()(WorkflowExecutionConditionsable) {
     val, err := m.GetBackingStore().Get("executionConditions")
     if err != nil {
@@ -127,6 +135,7 @@ func (m *WorkflowBase) GetExecutionConditions()(WorkflowExecutionConditionsable)
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkflowBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -258,6 +267,7 @@ func (m *WorkflowBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetIsEnabled gets the isEnabled property value. Whether the workflow is enabled or disabled. If this setting is true, the workflow can be run on demand or on schedule when isSchedulingEnabled is true.
+// returns a *bool when successful
 func (m *WorkflowBase) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -269,6 +279,7 @@ func (m *WorkflowBase) GetIsEnabled()(*bool) {
     return nil
 }
 // GetIsSchedulingEnabled gets the isSchedulingEnabled property value. If true, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Can't be true for a disabled workflow (where isEnabled is false).
+// returns a *bool when successful
 func (m *WorkflowBase) GetIsSchedulingEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isSchedulingEnabled")
     if err != nil {
@@ -280,6 +291,7 @@ func (m *WorkflowBase) GetIsSchedulingEnabled()(*bool) {
     return nil
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The unique identifier of the Microsoft Entra identity that last modified the workflow.
+// returns a Userable when successful
 func (m *WorkflowBase) GetLastModifiedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -291,6 +303,7 @@ func (m *WorkflowBase) GetLastModifiedBy()(iadcd81124412c61e647227ecfc4449d8bba1
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. When the workflow was last modified.
+// returns a *Time when successful
 func (m *WorkflowBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -302,6 +315,7 @@ func (m *WorkflowBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad9
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *WorkflowBase) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -313,6 +327,7 @@ func (m *WorkflowBase) GetOdataType()(*string) {
     return nil
 }
 // GetTasks gets the tasks property value. The tasks in the workflow.
+// returns a []Taskable when successful
 func (m *WorkflowBase) GetTasks()([]Taskable) {
     val, err := m.GetBackingStore().Get("tasks")
     if err != nil {
@@ -507,7 +522,6 @@ func (m *WorkflowBase) SetTasks(value []Taskable)() {
         panic(err)
     }
 }
-// WorkflowBaseable 
 type WorkflowBaseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

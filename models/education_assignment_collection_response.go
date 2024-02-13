@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationAssignmentCollectionResponse 
 type EducationAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewEducationAssignmentCollectionResponse instantiates a new educationAssignmentCollectionResponse and sets the default values.
+// NewEducationAssignmentCollectionResponse instantiates a new EducationAssignmentCollectionResponse and sets the default values.
 func NewEducationAssignmentCollectionResponse()(*EducationAssignmentCollectionResponse) {
     m := &EducationAssignmentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewEducationAssignmentCollectionResponse()(*EducationAssignmentCollectionRe
     return m
 }
 // CreateEducationAssignmentCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationAssignmentCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationAssignmentCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationAssignmentCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *EducationAssignmentCollectionResponse) GetFieldDeserializers()(map[stri
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []EducationAssignmentable when successful
 func (m *EducationAssignmentCollectionResponse) GetValue()([]EducationAssignmentable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *EducationAssignmentCollectionResponse) SetValue(value []EducationAssign
         panic(err)
     }
 }
-// EducationAssignmentCollectionResponseable 
 type EducationAssignmentCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

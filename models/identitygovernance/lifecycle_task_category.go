@@ -1,23 +1,25 @@
 package identitygovernance
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type LifecycleTaskCategory int
 
 const (
-    JOINER_LIFECYCLETASKCATEGORY LifecycleTaskCategory = iota
-    LEAVER_LIFECYCLETASKCATEGORY
-    UNKNOWNFUTUREVALUE_LIFECYCLETASKCATEGORY
-    MOVER_LIFECYCLETASKCATEGORY
+    JOINER_LIFECYCLETASKCATEGORY = 1
+    LEAVER_LIFECYCLETASKCATEGORY = 2
+    UNKNOWNFUTUREVALUE_LIFECYCLETASKCATEGORY = 4
+    MOVER_LIFECYCLETASKCATEGORY = 8
 )
 
 func (i LifecycleTaskCategory) String() string {
     var values []string
-    for p := LifecycleTaskCategory(1); p <= MOVER_LIFECYCLETASKCATEGORY; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"joiner", "leaver", "unknownFutureValue", "mover"}[p])
+    options := []string{"joiner", "leaver", "unknownFutureValue", "mover"}
+    for p := 0; p < 4; p++ {
+        mantis := LifecycleTaskCategory(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

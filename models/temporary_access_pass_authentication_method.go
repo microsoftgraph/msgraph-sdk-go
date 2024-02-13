@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TemporaryAccessPassAuthenticationMethod 
 type TemporaryAccessPassAuthenticationMethod struct {
     AuthenticationMethod
 }
-// NewTemporaryAccessPassAuthenticationMethod instantiates a new temporaryAccessPassAuthenticationMethod and sets the default values.
+// NewTemporaryAccessPassAuthenticationMethod instantiates a new TemporaryAccessPassAuthenticationMethod and sets the default values.
 func NewTemporaryAccessPassAuthenticationMethod()(*TemporaryAccessPassAuthenticationMethod) {
     m := &TemporaryAccessPassAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),
@@ -19,10 +18,12 @@ func NewTemporaryAccessPassAuthenticationMethod()(*TemporaryAccessPassAuthentica
     return m
 }
 // CreateTemporaryAccessPassAuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTemporaryAccessPassAuthenticationMethodFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTemporaryAccessPassAuthenticationMethod(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the Temporary Access Pass was created.
+// returns a *Time when successful
 func (m *TemporaryAccessPassAuthenticationMethod) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *TemporaryAccessPassAuthenticationMethod) GetCreatedDateTime()(*i3360748
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TemporaryAccessPassAuthenticationMethod) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethod.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -109,6 +111,7 @@ func (m *TemporaryAccessPassAuthenticationMethod) GetFieldDeserializers()(map[st
     return res
 }
 // GetIsUsable gets the isUsable property value. The state of the authentication method that indicates whether it's currently usable by the user.
+// returns a *bool when successful
 func (m *TemporaryAccessPassAuthenticationMethod) GetIsUsable()(*bool) {
     val, err := m.GetBackingStore().Get("isUsable")
     if err != nil {
@@ -120,6 +123,7 @@ func (m *TemporaryAccessPassAuthenticationMethod) GetIsUsable()(*bool) {
     return nil
 }
 // GetIsUsableOnce gets the isUsableOnce property value. Determines whether the pass is limited to a one-time use. If true, the pass can be used once; if false, the pass can be used multiple times within the Temporary Access Pass lifetime.
+// returns a *bool when successful
 func (m *TemporaryAccessPassAuthenticationMethod) GetIsUsableOnce()(*bool) {
     val, err := m.GetBackingStore().Get("isUsableOnce")
     if err != nil {
@@ -131,6 +135,7 @@ func (m *TemporaryAccessPassAuthenticationMethod) GetIsUsableOnce()(*bool) {
     return nil
 }
 // GetLifetimeInMinutes gets the lifetimeInMinutes property value. The lifetime of the Temporary Access Pass in minutes starting at startDateTime. Must be between 10 and 43200 inclusive (equivalent to 30 days).
+// returns a *int32 when successful
 func (m *TemporaryAccessPassAuthenticationMethod) GetLifetimeInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("lifetimeInMinutes")
     if err != nil {
@@ -142,6 +147,7 @@ func (m *TemporaryAccessPassAuthenticationMethod) GetLifetimeInMinutes()(*int32)
     return nil
 }
 // GetMethodUsabilityReason gets the methodUsabilityReason property value. Details about the usability state (isUsable). Reasons can include: EnabledByPolicy, DisabledByPolicy, Expired, NotYetValid, OneTimeUsed.
+// returns a *string when successful
 func (m *TemporaryAccessPassAuthenticationMethod) GetMethodUsabilityReason()(*string) {
     val, err := m.GetBackingStore().Get("methodUsabilityReason")
     if err != nil {
@@ -153,6 +159,7 @@ func (m *TemporaryAccessPassAuthenticationMethod) GetMethodUsabilityReason()(*st
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. The date and time when the Temporary Access Pass becomes available to use and when isUsable is true is enforced.
+// returns a *Time when successful
 func (m *TemporaryAccessPassAuthenticationMethod) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -164,6 +171,7 @@ func (m *TemporaryAccessPassAuthenticationMethod) GetStartDateTime()(*i336074805
     return nil
 }
 // GetTemporaryAccessPass gets the temporaryAccessPass property value. The Temporary Access Pass used to authenticate. Returned only on creation of a new temporaryAccessPassAuthenticationMethod object; Hidden in subsequent read operations and returned as null with GET.
+// returns a *string when successful
 func (m *TemporaryAccessPassAuthenticationMethod) GetTemporaryAccessPass()(*string) {
     val, err := m.GetBackingStore().Get("temporaryAccessPass")
     if err != nil {
@@ -273,7 +281,6 @@ func (m *TemporaryAccessPassAuthenticationMethod) SetTemporaryAccessPass(value *
         panic(err)
     }
 }
-// TemporaryAccessPassAuthenticationMethodable 
 type TemporaryAccessPassAuthenticationMethodable interface {
     AuthenticationMethodable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

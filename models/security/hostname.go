@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Hostname 
 type Hostname struct {
     Host
 }
-// NewHostname instantiates a new hostname and sets the default values.
+// NewHostname instantiates a new Hostname and sets the default values.
 func NewHostname()(*Hostname) {
     m := &Hostname{
         Host: *NewHost(),
@@ -18,10 +17,12 @@ func NewHostname()(*Hostname) {
     return m
 }
 // CreateHostnameFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateHostnameFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHostname(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Hostname) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Host.GetFieldDeserializers()
     res["registrant"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +48,7 @@ func (m *Hostname) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetRegistrant gets the registrant property value. The company or individual who registered this hostname, from WHOIS data.
+// returns a *string when successful
 func (m *Hostname) GetRegistrant()(*string) {
     val, err := m.GetBackingStore().Get("registrant")
     if err != nil {
@@ -58,6 +60,7 @@ func (m *Hostname) GetRegistrant()(*string) {
     return nil
 }
 // GetRegistrar gets the registrar property value. The registrar for this hostname, from WHOIS data.
+// returns a *string when successful
 func (m *Hostname) GetRegistrar()(*string) {
     val, err := m.GetBackingStore().Get("registrar")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *Hostname) SetRegistrar(value *string)() {
         panic(err)
     }
 }
-// Hostnameable 
 type Hostnameable interface {
     Hostable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

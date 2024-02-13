@@ -41,28 +41,28 @@ type ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestB
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilderInternal instantiates a new ChatMessageItemRequestBuilder and sets the default values.
+// NewItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilderInternal instantiates a new ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilder) {
     m := &ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/primaryChannel/messages/{chatMessage%2Did}/replies/{chatMessage%2Did1}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/primaryChannel/messages/{chatMessage%2Did}/replies/{chatMessage%2Did1}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilder instantiates a new ChatMessageItemRequestBuilder and sets the default values.
+// NewItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilder instantiates a new ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property replies for users
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,6 +71,8 @@ func (m *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequ
     return nil
 }
 // Get retrieve a single message or a message reply in a channel or a chat.
+// returns a ChatMessageable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
@@ -80,8 +82,7 @@ func (m *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequ
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateChatMessageFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -93,18 +94,20 @@ func (m *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequ
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable), nil
 }
 // HostedContents provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
+// returns a *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesItemHostedContentsRequestBuilder when successful
 func (m *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilder) HostedContents()(*ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesItemHostedContentsRequestBuilder) {
     return NewItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesItemHostedContentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property replies in users
+// returns a ChatMessageable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, requestConfiguration *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateChatMessageFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -116,16 +119,19 @@ func (m *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequ
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable), nil
 }
 // SetReaction provides operations to call the setReaction method.
+// returns a *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilder when successful
 func (m *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilder) SetReaction()(*ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilder) {
     return NewItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SoftDelete provides operations to call the softDelete method.
+// returns a *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesItemSoftDeleteRequestBuilder when successful
 func (m *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilder) SoftDelete()(*ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesItemSoftDeleteRequestBuilder) {
     return NewItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesItemSoftDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property replies for users
+// returns a *RequestInformation when successful
 func (m *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/primaryChannel/messages/{chatMessage%2Did}/replies/{chatMessage%2Did1}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -134,6 +140,7 @@ func (m *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequ
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve a single message or a message reply in a channel or a chat.
+// returns a *RequestInformation when successful
 func (m *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -147,8 +154,9 @@ func (m *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequ
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property replies in users
+// returns a *RequestInformation when successful
 func (m *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, requestConfiguration *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/primaryChannel/messages/{chatMessage%2Did}/replies/{chatMessage%2Did1}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -161,14 +169,17 @@ func (m *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequ
     return requestInfo, nil
 }
 // UndoSoftDelete provides operations to call the undoSoftDelete method.
+// returns a *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesItemUndoSoftDeleteRequestBuilder when successful
 func (m *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilder) UndoSoftDelete()(*ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesItemUndoSoftDeleteRequestBuilder) {
     return NewItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesItemUndoSoftDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UnsetReaction provides operations to call the unsetReaction method.
+// returns a *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesItemUnsetReactionRequestBuilder when successful
 func (m *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilder) UnsetReaction()(*ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesItemUnsetReactionRequestBuilder) {
     return NewItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesItemUnsetReactionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilder when successful
 func (m *ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilder) WithUrl(rawUrl string)(*ItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilder) {
     return NewItemJoinedTeamsItemPrimaryChannelMessagesItemRepliesChatMessageItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

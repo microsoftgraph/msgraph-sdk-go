@@ -6,7 +6,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ItemItemsItemWorkbookTablesItemSortApplyPostRequestBody 
 type ItemItemsItemWorkbookTablesItemSortApplyPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -20,10 +19,12 @@ func NewItemItemsItemWorkbookTablesItemSortApplyPostRequestBody()(*ItemItemsItem
     return m
 }
 // CreateItemItemsItemWorkbookTablesItemSortApplyPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemsItemWorkbookTablesItemSortApplyPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemsItemWorkbookTablesItemSortApplyPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemsItemWorkbookTablesItemSortApplyPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *ItemItemsItemWorkbookTablesItemSortApplyPostRequestBody) GetAdditionalD
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ItemItemsItemWorkbookTablesItemSortApplyPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemsItemWorkbookTablesItemSortApplyPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["fields"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -81,6 +84,7 @@ func (m *ItemItemsItemWorkbookTablesItemSortApplyPostRequestBody) GetFieldDeseri
     return res
 }
 // GetFields gets the fields property value. The fields property
+// returns a []WorkbookSortFieldable when successful
 func (m *ItemItemsItemWorkbookTablesItemSortApplyPostRequestBody) GetFields()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookSortFieldable) {
     val, err := m.GetBackingStore().Get("fields")
     if err != nil {
@@ -92,6 +96,7 @@ func (m *ItemItemsItemWorkbookTablesItemSortApplyPostRequestBody) GetFields()([]
     return nil
 }
 // GetMatchCase gets the matchCase property value. The matchCase property
+// returns a *bool when successful
 func (m *ItemItemsItemWorkbookTablesItemSortApplyPostRequestBody) GetMatchCase()(*bool) {
     val, err := m.GetBackingStore().Get("matchCase")
     if err != nil {
@@ -103,6 +108,7 @@ func (m *ItemItemsItemWorkbookTablesItemSortApplyPostRequestBody) GetMatchCase()
     return nil
 }
 // GetMethod gets the method property value. The method property
+// returns a *string when successful
 func (m *ItemItemsItemWorkbookTablesItemSortApplyPostRequestBody) GetMethod()(*string) {
     val, err := m.GetBackingStore().Get("method")
     if err != nil {
@@ -179,7 +185,6 @@ func (m *ItemItemsItemWorkbookTablesItemSortApplyPostRequestBody) SetMethod(valu
         panic(err)
     }
 }
-// ItemItemsItemWorkbookTablesItemSortApplyPostRequestBodyable 
 type ItemItemsItemWorkbookTablesItemSortApplyPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

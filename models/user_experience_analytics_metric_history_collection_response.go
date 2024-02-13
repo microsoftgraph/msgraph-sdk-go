@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsMetricHistoryCollectionResponse 
 type UserExperienceAnalyticsMetricHistoryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUserExperienceAnalyticsMetricHistoryCollectionResponse instantiates a new userExperienceAnalyticsMetricHistoryCollectionResponse and sets the default values.
+// NewUserExperienceAnalyticsMetricHistoryCollectionResponse instantiates a new UserExperienceAnalyticsMetricHistoryCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsMetricHistoryCollectionResponse()(*UserExperienceAnalyticsMetricHistoryCollectionResponse) {
     m := &UserExperienceAnalyticsMetricHistoryCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewUserExperienceAnalyticsMetricHistoryCollectionResponse()(*UserExperience
     return m
 }
 // CreateUserExperienceAnalyticsMetricHistoryCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsMetricHistoryCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsMetricHistoryCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsMetricHistoryCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *UserExperienceAnalyticsMetricHistoryCollectionResponse) GetFieldDeseria
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []UserExperienceAnalyticsMetricHistoryable when successful
 func (m *UserExperienceAnalyticsMetricHistoryCollectionResponse) GetValue()([]UserExperienceAnalyticsMetricHistoryable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *UserExperienceAnalyticsMetricHistoryCollectionResponse) SetValue(value 
         panic(err)
     }
 }
-// UserExperienceAnalyticsMetricHistoryCollectionResponseable 
 type UserExperienceAnalyticsMetricHistoryCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

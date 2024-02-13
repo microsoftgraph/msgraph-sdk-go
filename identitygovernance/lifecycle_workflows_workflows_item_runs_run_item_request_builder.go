@@ -27,20 +27,22 @@ type LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilderGetRequestConfigura
     // Request query parameters
     QueryParameters *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilderGetQueryParameters
 }
-// NewLifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilderInternal instantiates a new RunItemRequestBuilder and sets the default values.
+// NewLifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilderInternal instantiates a new LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) {
     m := &LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/workflows/{workflow%2Did}/runs/{run%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/workflows/{workflow%2Did}/runs/{run%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewLifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder instantiates a new RunItemRequestBuilder and sets the default values.
+// NewLifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder instantiates a new LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get read the properties and relationships of a run object.
+// returns a Runable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-run-get?view=graph-rest-1.0
@@ -50,8 +52,7 @@ func (m *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) Get(ctx conte
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.CreateRunFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -63,10 +64,12 @@ func (m *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) Get(ctx conte
     return res.(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.Runable), nil
 }
 // TaskProcessingResults provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.run entity.
+// returns a *LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsRequestBuilder when successful
 func (m *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) TaskProcessingResults()(*LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation read the properties and relationships of a run object.
+// returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -80,10 +83,12 @@ func (m *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) ToGetRequestI
     return requestInfo, nil
 }
 // UserProcessingResults provides operations to manage the userProcessingResults property of the microsoft.graph.identityGovernance.run entity.
+// returns a *LifecycleWorkflowsWorkflowsItemRunsItemUserProcessingResultsRequestBuilder when successful
 func (m *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) UserProcessingResults()(*LifecycleWorkflowsWorkflowsItemRunsItemUserProcessingResultsRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemRunsItemUserProcessingResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder when successful
 func (m *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

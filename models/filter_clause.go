@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// FilterClause 
 type FilterClause struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewFilterClause instantiates a new filterClause and sets the default values.
+// NewFilterClause instantiates a new FilterClause and sets the default values.
 func NewFilterClause()(*FilterClause) {
     m := &FilterClause{
     }
@@ -19,10 +18,12 @@ func NewFilterClause()(*FilterClause) {
     return m
 }
 // CreateFilterClauseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFilterClauseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFilterClause(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *FilterClause) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *FilterClause) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *FilterClause) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FilterClause) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -84,6 +87,7 @@ func (m *FilterClause) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *FilterClause) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -95,6 +99,7 @@ func (m *FilterClause) GetOdataType()(*string) {
     return nil
 }
 // GetOperatorName gets the operatorName property value. Name of the operator to be applied to the source and target operands. Must be one of the supported operators. Supported operators can be discovered.
+// returns a *string when successful
 func (m *FilterClause) GetOperatorName()(*string) {
     val, err := m.GetBackingStore().Get("operatorName")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *FilterClause) GetOperatorName()(*string) {
     return nil
 }
 // GetSourceOperandName gets the sourceOperandName property value. Name of source operand (the operand being tested). The source operand name must match one of the attribute names on the source object.
+// returns a *string when successful
 func (m *FilterClause) GetSourceOperandName()(*string) {
     val, err := m.GetBackingStore().Get("sourceOperandName")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *FilterClause) GetSourceOperandName()(*string) {
     return nil
 }
 // GetTargetOperand gets the targetOperand property value. Values that the source operand will be tested against.
+// returns a FilterOperandable when successful
 func (m *FilterClause) GetTargetOperand()(FilterOperandable) {
     val, err := m.GetBackingStore().Get("targetOperand")
     if err != nil {
@@ -200,7 +207,6 @@ func (m *FilterClause) SetTargetOperand(value FilterOperandable)() {
         panic(err)
     }
 }
-// FilterClauseable 
 type FilterClauseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

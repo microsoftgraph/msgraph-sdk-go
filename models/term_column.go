@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// TermColumn 
 type TermColumn struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTermColumn instantiates a new termColumn and sets the default values.
+// NewTermColumn instantiates a new TermColumn and sets the default values.
 func NewTermColumn()(*TermColumn) {
     m := &TermColumn{
     }
@@ -19,10 +18,12 @@ func NewTermColumn()(*TermColumn) {
     return m
 }
 // CreateTermColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTermColumnFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTermColumn(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TermColumn) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *TermColumn) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAllowMultipleValues gets the allowMultipleValues property value. Specifies whether the column allows more than one value.
+// returns a *bool when successful
 func (m *TermColumn) GetAllowMultipleValues()(*bool) {
     val, err := m.GetBackingStore().Get("allowMultipleValues")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *TermColumn) GetAllowMultipleValues()(*bool) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *TermColumn) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TermColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allowMultipleValues"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -85,6 +89,7 @@ func (m *TermColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *TermColumn) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -96,6 +101,7 @@ func (m *TermColumn) GetOdataType()(*string) {
     return nil
 }
 // GetShowFullyQualifiedName gets the showFullyQualifiedName property value. Specifies whether to display the entire term path or only the term label.
+// returns a *bool when successful
 func (m *TermColumn) GetShowFullyQualifiedName()(*bool) {
     val, err := m.GetBackingStore().Get("showFullyQualifiedName")
     if err != nil {
@@ -166,7 +172,6 @@ func (m *TermColumn) SetShowFullyQualifiedName(value *bool)() {
         panic(err)
     }
 }
-// TermColumnable 
 type TermColumnable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

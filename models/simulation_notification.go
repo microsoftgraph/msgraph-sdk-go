@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SimulationNotification 
 type SimulationNotification struct {
     BaseEndUserNotification
 }
-// NewSimulationNotification instantiates a new simulationNotification and sets the default values.
+// NewSimulationNotification instantiates a new SimulationNotification and sets the default values.
 func NewSimulationNotification()(*SimulationNotification) {
     m := &SimulationNotification{
         BaseEndUserNotification: *NewBaseEndUserNotification(),
@@ -18,10 +17,12 @@ func NewSimulationNotification()(*SimulationNotification) {
     return m
 }
 // CreateSimulationNotificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSimulationNotificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSimulationNotification(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SimulationNotification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseEndUserNotification.GetFieldDeserializers()
     res["targettedUserType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *SimulationNotification) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetTargettedUserType gets the targettedUserType property value. Target user type. Possible values are: unknown, clicked, compromised, allUsers, unknownFutureValue.
+// returns a *TargettedUserType when successful
 func (m *SimulationNotification) GetTargettedUserType()(*TargettedUserType) {
     val, err := m.GetBackingStore().Get("targettedUserType")
     if err != nil {
@@ -69,7 +71,6 @@ func (m *SimulationNotification) SetTargettedUserType(value *TargettedUserType)(
         panic(err)
     }
 }
-// SimulationNotificationable 
 type SimulationNotificationable interface {
     BaseEndUserNotificationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

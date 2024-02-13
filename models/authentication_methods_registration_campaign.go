@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AuthenticationMethodsRegistrationCampaign 
 type AuthenticationMethodsRegistrationCampaign struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAuthenticationMethodsRegistrationCampaign instantiates a new authenticationMethodsRegistrationCampaign and sets the default values.
+// NewAuthenticationMethodsRegistrationCampaign instantiates a new AuthenticationMethodsRegistrationCampaign and sets the default values.
 func NewAuthenticationMethodsRegistrationCampaign()(*AuthenticationMethodsRegistrationCampaign) {
     m := &AuthenticationMethodsRegistrationCampaign{
     }
@@ -19,10 +18,12 @@ func NewAuthenticationMethodsRegistrationCampaign()(*AuthenticationMethodsRegist
     return m
 }
 // CreateAuthenticationMethodsRegistrationCampaignFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthenticationMethodsRegistrationCampaignFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationMethodsRegistrationCampaign(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AuthenticationMethodsRegistrationCampaign) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetAdditionalData()(map[stri
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AuthenticationMethodsRegistrationCampaign) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetExcludeTargets gets the excludeTargets property value. Users and groups of users that are excluded from being prompted to set up the authentication method.
+// returns a []ExcludeTargetable when successful
 func (m *AuthenticationMethodsRegistrationCampaign) GetExcludeTargets()([]ExcludeTargetable) {
     val, err := m.GetBackingStore().Get("excludeTargets")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetExcludeTargets()([]Exclud
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationMethodsRegistrationCampaign) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["excludeTargets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -117,6 +121,7 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetFieldDeserializers()(map[
     return res
 }
 // GetIncludeTargets gets the includeTargets property value. Users and groups of users that are prompted to set up the authentication method.
+// returns a []AuthenticationMethodsRegistrationCampaignIncludeTargetable when successful
 func (m *AuthenticationMethodsRegistrationCampaign) GetIncludeTargets()([]AuthenticationMethodsRegistrationCampaignIncludeTargetable) {
     val, err := m.GetBackingStore().Get("includeTargets")
     if err != nil {
@@ -128,6 +133,7 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetIncludeTargets()([]Authen
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AuthenticationMethodsRegistrationCampaign) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -139,6 +145,7 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetOdataType()(*string) {
     return nil
 }
 // GetSnoozeDurationInDays gets the snoozeDurationInDays property value. Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum: 0 days. Maximum: 14 days. If the value is '0', the user is prompted during every MFA attempt.
+// returns a *int32 when successful
 func (m *AuthenticationMethodsRegistrationCampaign) GetSnoozeDurationInDays()(*int32) {
     val, err := m.GetBackingStore().Get("snoozeDurationInDays")
     if err != nil {
@@ -150,6 +157,7 @@ func (m *AuthenticationMethodsRegistrationCampaign) GetSnoozeDurationInDays()(*i
     return nil
 }
 // GetState gets the state property value. The state property
+// returns a *AdvancedConfigState when successful
 func (m *AuthenticationMethodsRegistrationCampaign) GetState()(*AdvancedConfigState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -259,7 +267,6 @@ func (m *AuthenticationMethodsRegistrationCampaign) SetState(value *AdvancedConf
         panic(err)
     }
 }
-// AuthenticationMethodsRegistrationCampaignable 
 type AuthenticationMethodsRegistrationCampaignable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

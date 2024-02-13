@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MembersDeletedEventMessageDetail 
 type MembersDeletedEventMessageDetail struct {
     EventMessageDetail
 }
-// NewMembersDeletedEventMessageDetail instantiates a new membersDeletedEventMessageDetail and sets the default values.
+// NewMembersDeletedEventMessageDetail instantiates a new MembersDeletedEventMessageDetail and sets the default values.
 func NewMembersDeletedEventMessageDetail()(*MembersDeletedEventMessageDetail) {
     m := &MembersDeletedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
@@ -18,10 +17,12 @@ func NewMembersDeletedEventMessageDetail()(*MembersDeletedEventMessageDetail) {
     return m
 }
 // CreateMembersDeletedEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMembersDeletedEventMessageDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMembersDeletedEventMessageDetail(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MembersDeletedEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EventMessageDetail.GetFieldDeserializers()
     res["initiator"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -53,6 +54,7 @@ func (m *MembersDeletedEventMessageDetail) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
+// returns a IdentitySetable when successful
 func (m *MembersDeletedEventMessageDetail) GetInitiator()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("initiator")
     if err != nil {
@@ -64,6 +66,7 @@ func (m *MembersDeletedEventMessageDetail) GetInitiator()(IdentitySetable) {
     return nil
 }
 // GetMembers gets the members property value. List of members deleted.
+// returns a []TeamworkUserIdentityable when successful
 func (m *MembersDeletedEventMessageDetail) GetMembers()([]TeamworkUserIdentityable) {
     val, err := m.GetBackingStore().Get("members")
     if err != nil {
@@ -114,7 +117,6 @@ func (m *MembersDeletedEventMessageDetail) SetMembers(value []TeamworkUserIdenti
         panic(err)
     }
 }
-// MembersDeletedEventMessageDetailable 
 type MembersDeletedEventMessageDetailable interface {
     EventMessageDetailable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

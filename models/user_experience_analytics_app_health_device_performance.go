@@ -9,7 +9,7 @@ import (
 type UserExperienceAnalyticsAppHealthDevicePerformance struct {
     Entity
 }
-// NewUserExperienceAnalyticsAppHealthDevicePerformance instantiates a new userExperienceAnalyticsAppHealthDevicePerformance and sets the default values.
+// NewUserExperienceAnalyticsAppHealthDevicePerformance instantiates a new UserExperienceAnalyticsAppHealthDevicePerformance and sets the default values.
 func NewUserExperienceAnalyticsAppHealthDevicePerformance()(*UserExperienceAnalyticsAppHealthDevicePerformance) {
     m := &UserExperienceAnalyticsAppHealthDevicePerformance{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewUserExperienceAnalyticsAppHealthDevicePerformance()(*UserExperienceAnaly
     return m
 }
 // CreateUserExperienceAnalyticsAppHealthDevicePerformanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsAppHealthDevicePerformanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsAppHealthDevicePerformance(), nil
 }
 // GetAppCrashCount gets the appCrashCount property value. The number of application crashes for the device. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetAppCrashCount()(*int32) {
     val, err := m.GetBackingStore().Get("appCrashCount")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetAppCrashCount()(*
     return nil
 }
 // GetAppHangCount gets the appHangCount property value. The number of application hangs for the device. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetAppHangCount()(*int32) {
     val, err := m.GetBackingStore().Get("appHangCount")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetAppHangCount()(*i
     return nil
 }
 // GetCrashedAppCount gets the crashedAppCount property value. The number of distinct application crashes for the device. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetCrashedAppCount()(*int32) {
     val, err := m.GetBackingStore().Get("crashedAppCount")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetCrashedAppCount()
     return nil
 }
 // GetDeviceAppHealthScore gets the deviceAppHealthScore property value. The application health score of the device. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceAppHealthScore()(*float64) {
     val, err := m.GetBackingStore().Get("deviceAppHealthScore")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceAppHealthSc
     return nil
 }
 // GetDeviceDisplayName gets the deviceDisplayName property value. The name of the device. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("deviceDisplayName")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceDisplayName
     return nil
 }
 // GetDeviceId gets the deviceId property value. The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -87,6 +94,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceId()(*strin
     return nil
 }
 // GetDeviceManufacturer gets the deviceManufacturer property value. The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("deviceManufacturer")
     if err != nil {
@@ -98,6 +106,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceManufacture
     return nil
 }
 // GetDeviceModel gets the deviceModel property value. The model name of the device. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceModel()(*string) {
     val, err := m.GetBackingStore().Get("deviceModel")
     if err != nil {
@@ -109,6 +118,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceModel()(*st
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appCrashCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -224,6 +234,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetFieldDeserializer
     return res
 }
 // GetHealthStatus gets the healthStatus property value. The healthStatus property
+// returns a *UserExperienceAnalyticsHealthState when successful
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
     val, err := m.GetBackingStore().Get("healthStatus")
     if err != nil {
@@ -235,6 +246,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetHealthStatus()(*U
     return nil
 }
 // GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetMeanTimeToFailureInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("meanTimeToFailureInMinutes")
     if err != nil {
@@ -246,6 +258,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetMeanTimeToFailure
     return nil
 }
 // GetProcessedDateTime gets the processedDateTime property value. The date and time when the statistics were last computed. The value cannot be modified and is automatically populated when the statistics are computed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.
+// returns a *Time when successful
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetProcessedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("processedDateTime")
     if err != nil {
@@ -408,7 +421,6 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetProcessedDateTime
         panic(err)
     }
 }
-// UserExperienceAnalyticsAppHealthDevicePerformanceable 
 type UserExperienceAnalyticsAppHealthDevicePerformanceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

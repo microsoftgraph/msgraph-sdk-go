@@ -5,11 +5,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// CustomTaskExtensionCalloutData 
 type CustomTaskExtensionCalloutData struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomExtensionData
 }
-// NewCustomTaskExtensionCalloutData instantiates a new customTaskExtensionCalloutData and sets the default values.
+// NewCustomTaskExtensionCalloutData instantiates a new CustomTaskExtensionCalloutData and sets the default values.
 func NewCustomTaskExtensionCalloutData()(*CustomTaskExtensionCalloutData) {
     m := &CustomTaskExtensionCalloutData{
         CustomExtensionData: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewCustomExtensionData(),
@@ -19,10 +18,12 @@ func NewCustomTaskExtensionCalloutData()(*CustomTaskExtensionCalloutData) {
     return m
 }
 // CreateCustomTaskExtensionCalloutDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCustomTaskExtensionCalloutDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomTaskExtensionCalloutData(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomTaskExtensionCalloutData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CustomExtensionData.GetFieldDeserializers()
     res["subject"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,6 +69,7 @@ func (m *CustomTaskExtensionCalloutData) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetSubject gets the subject property value. The subject property
+// returns a Userable when successful
 func (m *CustomTaskExtensionCalloutData) GetSubject()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable) {
     val, err := m.GetBackingStore().Get("subject")
     if err != nil {
@@ -79,6 +81,7 @@ func (m *CustomTaskExtensionCalloutData) GetSubject()(iadcd81124412c61e647227ecf
     return nil
 }
 // GetTask gets the task property value. The task property
+// returns a Taskable when successful
 func (m *CustomTaskExtensionCalloutData) GetTask()(Taskable) {
     val, err := m.GetBackingStore().Get("task")
     if err != nil {
@@ -90,6 +93,7 @@ func (m *CustomTaskExtensionCalloutData) GetTask()(Taskable) {
     return nil
 }
 // GetTaskProcessingresult gets the taskProcessingresult property value. The taskProcessingresult property
+// returns a TaskProcessingResultable when successful
 func (m *CustomTaskExtensionCalloutData) GetTaskProcessingresult()(TaskProcessingResultable) {
     val, err := m.GetBackingStore().Get("taskProcessingresult")
     if err != nil {
@@ -101,6 +105,7 @@ func (m *CustomTaskExtensionCalloutData) GetTaskProcessingresult()(TaskProcessin
     return nil
 }
 // GetWorkflow gets the workflow property value. The workflow property
+// returns a Workflowable when successful
 func (m *CustomTaskExtensionCalloutData) GetWorkflow()(Workflowable) {
     val, err := m.GetBackingStore().Get("workflow")
     if err != nil {
@@ -171,7 +176,6 @@ func (m *CustomTaskExtensionCalloutData) SetWorkflow(value Workflowable)() {
         panic(err)
     }
 }
-// CustomTaskExtensionCalloutDataable 
 type CustomTaskExtensionCalloutDataable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CustomExtensionDataable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

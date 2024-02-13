@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// PrinterCapabilities 
 type PrinterCapabilities struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPrinterCapabilities instantiates a new printerCapabilities and sets the default values.
+// NewPrinterCapabilities instantiates a new PrinterCapabilities and sets the default values.
 func NewPrinterCapabilities()(*PrinterCapabilities) {
     m := &PrinterCapabilities{
     }
@@ -19,10 +18,12 @@ func NewPrinterCapabilities()(*PrinterCapabilities) {
     return m
 }
 // CreatePrinterCapabilitiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrinterCapabilitiesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrinterCapabilities(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PrinterCapabilities) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *PrinterCapabilities) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *PrinterCapabilities) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBottomMargins gets the bottomMargins property value. A list of supported bottom margins(in microns) for the printer.
+// returns a []int32 when successful
 func (m *PrinterCapabilities) GetBottomMargins()([]int32) {
     val, err := m.GetBackingStore().Get("bottomMargins")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *PrinterCapabilities) GetBottomMargins()([]int32) {
     return nil
 }
 // GetCollation gets the collation property value. True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
+// returns a *bool when successful
 func (m *PrinterCapabilities) GetCollation()(*bool) {
     val, err := m.GetBackingStore().Get("collation")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *PrinterCapabilities) GetCollation()(*bool) {
     return nil
 }
 // GetColorModes gets the colorModes property value. The color modes supported by the printer. Valid values are described in the following table.
+// returns a []PrintColorMode when successful
 func (m *PrinterCapabilities) GetColorModes()([]PrintColorMode) {
     val, err := m.GetBackingStore().Get("colorModes")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *PrinterCapabilities) GetColorModes()([]PrintColorMode) {
     return nil
 }
 // GetContentTypes gets the contentTypes property value. A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
+// returns a []string when successful
 func (m *PrinterCapabilities) GetContentTypes()([]string) {
     val, err := m.GetBackingStore().Get("contentTypes")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *PrinterCapabilities) GetContentTypes()([]string) {
     return nil
 }
 // GetCopiesPerJob gets the copiesPerJob property value. The range of copies per job supported by the printer.
+// returns a IntegerRangeable when successful
 func (m *PrinterCapabilities) GetCopiesPerJob()(IntegerRangeable) {
     val, err := m.GetBackingStore().Get("copiesPerJob")
     if err != nil {
@@ -94,6 +101,7 @@ func (m *PrinterCapabilities) GetCopiesPerJob()(IntegerRangeable) {
     return nil
 }
 // GetDpis gets the dpis property value. The list of print resolutions in DPI that are supported by the printer.
+// returns a []int32 when successful
 func (m *PrinterCapabilities) GetDpis()([]int32) {
     val, err := m.GetBackingStore().Get("dpis")
     if err != nil {
@@ -105,6 +113,7 @@ func (m *PrinterCapabilities) GetDpis()([]int32) {
     return nil
 }
 // GetDuplexModes gets the duplexModes property value. The list of duplex modes that are supported by the printer. Valid values are described in the following table.
+// returns a []PrintDuplexMode when successful
 func (m *PrinterCapabilities) GetDuplexModes()([]PrintDuplexMode) {
     val, err := m.GetBackingStore().Get("duplexModes")
     if err != nil {
@@ -116,6 +125,7 @@ func (m *PrinterCapabilities) GetDuplexModes()([]PrintDuplexMode) {
     return nil
 }
 // GetFeedOrientations gets the feedOrientations property value. The list of feed orientations that are supported by the printer.
+// returns a []PrinterFeedOrientation when successful
 func (m *PrinterCapabilities) GetFeedOrientations()([]PrinterFeedOrientation) {
     val, err := m.GetBackingStore().Get("feedOrientations")
     if err != nil {
@@ -127,6 +137,7 @@ func (m *PrinterCapabilities) GetFeedOrientations()([]PrinterFeedOrientation) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["bottomMargins"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -512,6 +523,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetFinishings gets the finishings property value. Finishing processes the printer supports for a printed document.
+// returns a []PrintFinishing when successful
 func (m *PrinterCapabilities) GetFinishings()([]PrintFinishing) {
     val, err := m.GetBackingStore().Get("finishings")
     if err != nil {
@@ -523,6 +535,7 @@ func (m *PrinterCapabilities) GetFinishings()([]PrintFinishing) {
     return nil
 }
 // GetInputBins gets the inputBins property value. Supported input bins for the printer.
+// returns a []string when successful
 func (m *PrinterCapabilities) GetInputBins()([]string) {
     val, err := m.GetBackingStore().Get("inputBins")
     if err != nil {
@@ -534,6 +547,7 @@ func (m *PrinterCapabilities) GetInputBins()([]string) {
     return nil
 }
 // GetIsColorPrintingSupported gets the isColorPrintingSupported property value. True if color printing is supported by the printer; false otherwise. Read-only.
+// returns a *bool when successful
 func (m *PrinterCapabilities) GetIsColorPrintingSupported()(*bool) {
     val, err := m.GetBackingStore().Get("isColorPrintingSupported")
     if err != nil {
@@ -545,6 +559,7 @@ func (m *PrinterCapabilities) GetIsColorPrintingSupported()(*bool) {
     return nil
 }
 // GetIsPageRangeSupported gets the isPageRangeSupported property value. True if the printer supports printing by page ranges; false otherwise.
+// returns a *bool when successful
 func (m *PrinterCapabilities) GetIsPageRangeSupported()(*bool) {
     val, err := m.GetBackingStore().Get("isPageRangeSupported")
     if err != nil {
@@ -556,6 +571,7 @@ func (m *PrinterCapabilities) GetIsPageRangeSupported()(*bool) {
     return nil
 }
 // GetLeftMargins gets the leftMargins property value. A list of supported left margins(in microns) for the printer.
+// returns a []int32 when successful
 func (m *PrinterCapabilities) GetLeftMargins()([]int32) {
     val, err := m.GetBackingStore().Get("leftMargins")
     if err != nil {
@@ -567,6 +583,7 @@ func (m *PrinterCapabilities) GetLeftMargins()([]int32) {
     return nil
 }
 // GetMediaColors gets the mediaColors property value. The media (i.e., paper) colors supported by the printer.
+// returns a []string when successful
 func (m *PrinterCapabilities) GetMediaColors()([]string) {
     val, err := m.GetBackingStore().Get("mediaColors")
     if err != nil {
@@ -578,6 +595,7 @@ func (m *PrinterCapabilities) GetMediaColors()([]string) {
     return nil
 }
 // GetMediaSizes gets the mediaSizes property value. The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
+// returns a []string when successful
 func (m *PrinterCapabilities) GetMediaSizes()([]string) {
     val, err := m.GetBackingStore().Get("mediaSizes")
     if err != nil {
@@ -589,6 +607,7 @@ func (m *PrinterCapabilities) GetMediaSizes()([]string) {
     return nil
 }
 // GetMediaTypes gets the mediaTypes property value. The media types supported by the printer.
+// returns a []string when successful
 func (m *PrinterCapabilities) GetMediaTypes()([]string) {
     val, err := m.GetBackingStore().Get("mediaTypes")
     if err != nil {
@@ -600,6 +619,7 @@ func (m *PrinterCapabilities) GetMediaTypes()([]string) {
     return nil
 }
 // GetMultipageLayouts gets the multipageLayouts property value. The presentation directions supported by the printer. Supported values are described in the following table.
+// returns a []PrintMultipageLayout when successful
 func (m *PrinterCapabilities) GetMultipageLayouts()([]PrintMultipageLayout) {
     val, err := m.GetBackingStore().Get("multipageLayouts")
     if err != nil {
@@ -611,6 +631,7 @@ func (m *PrinterCapabilities) GetMultipageLayouts()([]PrintMultipageLayout) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PrinterCapabilities) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -622,6 +643,7 @@ func (m *PrinterCapabilities) GetOdataType()(*string) {
     return nil
 }
 // GetOrientations gets the orientations property value. The print orientations supported by the printer. Valid values are described in the following table.
+// returns a []PrintOrientation when successful
 func (m *PrinterCapabilities) GetOrientations()([]PrintOrientation) {
     val, err := m.GetBackingStore().Get("orientations")
     if err != nil {
@@ -633,6 +655,7 @@ func (m *PrinterCapabilities) GetOrientations()([]PrintOrientation) {
     return nil
 }
 // GetOutputBins gets the outputBins property value. The printer's supported output bins (trays).
+// returns a []string when successful
 func (m *PrinterCapabilities) GetOutputBins()([]string) {
     val, err := m.GetBackingStore().Get("outputBins")
     if err != nil {
@@ -644,6 +667,7 @@ func (m *PrinterCapabilities) GetOutputBins()([]string) {
     return nil
 }
 // GetPagesPerSheet gets the pagesPerSheet property value. Supported number of Input Pages to impose upon a single Impression.
+// returns a []int32 when successful
 func (m *PrinterCapabilities) GetPagesPerSheet()([]int32) {
     val, err := m.GetBackingStore().Get("pagesPerSheet")
     if err != nil {
@@ -655,6 +679,7 @@ func (m *PrinterCapabilities) GetPagesPerSheet()([]int32) {
     return nil
 }
 // GetQualities gets the qualities property value. The print qualities supported by the printer.
+// returns a []PrintQuality when successful
 func (m *PrinterCapabilities) GetQualities()([]PrintQuality) {
     val, err := m.GetBackingStore().Get("qualities")
     if err != nil {
@@ -666,6 +691,7 @@ func (m *PrinterCapabilities) GetQualities()([]PrintQuality) {
     return nil
 }
 // GetRightMargins gets the rightMargins property value. A list of supported right margins(in microns) for the printer.
+// returns a []int32 when successful
 func (m *PrinterCapabilities) GetRightMargins()([]int32) {
     val, err := m.GetBackingStore().Get("rightMargins")
     if err != nil {
@@ -677,6 +703,7 @@ func (m *PrinterCapabilities) GetRightMargins()([]int32) {
     return nil
 }
 // GetScalings gets the scalings property value. Supported print scalings.
+// returns a []PrintScaling when successful
 func (m *PrinterCapabilities) GetScalings()([]PrintScaling) {
     val, err := m.GetBackingStore().Get("scalings")
     if err != nil {
@@ -688,6 +715,7 @@ func (m *PrinterCapabilities) GetScalings()([]PrintScaling) {
     return nil
 }
 // GetSupportsFitPdfToPage gets the supportsFitPdfToPage property value. True if the printer supports scaling PDF pages to match the print media size; false otherwise.
+// returns a *bool when successful
 func (m *PrinterCapabilities) GetSupportsFitPdfToPage()(*bool) {
     val, err := m.GetBackingStore().Get("supportsFitPdfToPage")
     if err != nil {
@@ -699,6 +727,7 @@ func (m *PrinterCapabilities) GetSupportsFitPdfToPage()(*bool) {
     return nil
 }
 // GetTopMargins gets the topMargins property value. A list of supported top margins(in microns) for the printer.
+// returns a []int32 when successful
 func (m *PrinterCapabilities) GetTopMargins()([]int32) {
     val, err := m.GetBackingStore().Get("topMargins")
     if err != nil {
@@ -1068,7 +1097,6 @@ func (m *PrinterCapabilities) SetTopMargins(value []int32)() {
         panic(err)
     }
 }
-// PrinterCapabilitiesable 
 type PrinterCapabilitiesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

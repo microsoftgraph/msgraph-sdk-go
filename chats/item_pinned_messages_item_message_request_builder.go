@@ -27,28 +27,29 @@ type ItemPinnedMessagesItemMessageRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemPinnedMessagesItemMessageRequestBuilderGetQueryParameters
 }
-// NewItemPinnedMessagesItemMessageRequestBuilderInternal instantiates a new MessageRequestBuilder and sets the default values.
+// NewItemPinnedMessagesItemMessageRequestBuilderInternal instantiates a new ItemPinnedMessagesItemMessageRequestBuilder and sets the default values.
 func NewItemPinnedMessagesItemMessageRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPinnedMessagesItemMessageRequestBuilder) {
     m := &ItemPinnedMessagesItemMessageRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/chats/{chat%2Did}/pinnedMessages/{pinnedChatMessageInfo%2Did}/message{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/chats/{chat%2Did}/pinnedMessages/{pinnedChatMessageInfo%2Did}/message{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemPinnedMessagesItemMessageRequestBuilder instantiates a new MessageRequestBuilder and sets the default values.
+// NewItemPinnedMessagesItemMessageRequestBuilder instantiates a new ItemPinnedMessagesItemMessageRequestBuilder and sets the default values.
 func NewItemPinnedMessagesItemMessageRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPinnedMessagesItemMessageRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemPinnedMessagesItemMessageRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get represents details about the chat message that is pinned.
+// returns a ChatMessageable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPinnedMessagesItemMessageRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPinnedMessagesItemMessageRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateChatMessageFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *ItemPinnedMessagesItemMessageRequestBuilder) Get(ctx context.Context, r
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChatMessageable), nil
 }
 // ToGetRequestInformation represents details about the chat message that is pinned.
+// returns a *RequestInformation when successful
 func (m *ItemPinnedMessagesItemMessageRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPinnedMessagesItemMessageRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *ItemPinnedMessagesItemMessageRequestBuilder) ToGetRequestInformation(ct
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemPinnedMessagesItemMessageRequestBuilder when successful
 func (m *ItemPinnedMessagesItemMessageRequestBuilder) WithUrl(rawUrl string)(*ItemPinnedMessagesItemMessageRequestBuilder) {
     return NewItemPinnedMessagesItemMessageRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

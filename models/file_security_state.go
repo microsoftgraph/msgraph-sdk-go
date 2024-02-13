@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// FileSecurityState 
 type FileSecurityState struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewFileSecurityState instantiates a new fileSecurityState and sets the default values.
+// NewFileSecurityState instantiates a new FileSecurityState and sets the default values.
 func NewFileSecurityState()(*FileSecurityState) {
     m := &FileSecurityState{
     }
@@ -19,10 +18,12 @@ func NewFileSecurityState()(*FileSecurityState) {
     return m
 }
 // CreateFileSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFileSecurityStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFileSecurityState(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *FileSecurityState) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *FileSecurityState) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *FileSecurityState) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FileSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["fileHash"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -94,6 +97,7 @@ func (m *FileSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetFileHash gets the fileHash property value. Complex type containing file hashes (cryptographic and location-sensitive).
+// returns a FileHashable when successful
 func (m *FileSecurityState) GetFileHash()(FileHashable) {
     val, err := m.GetBackingStore().Get("fileHash")
     if err != nil {
@@ -105,6 +109,7 @@ func (m *FileSecurityState) GetFileHash()(FileHashable) {
     return nil
 }
 // GetName gets the name property value. File name (without path).
+// returns a *string when successful
 func (m *FileSecurityState) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -116,6 +121,7 @@ func (m *FileSecurityState) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *FileSecurityState) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -127,6 +133,7 @@ func (m *FileSecurityState) GetOdataType()(*string) {
     return nil
 }
 // GetPath gets the path property value. Full file path of the file/imageFile.
+// returns a *string when successful
 func (m *FileSecurityState) GetPath()(*string) {
     val, err := m.GetBackingStore().Get("path")
     if err != nil {
@@ -138,6 +145,7 @@ func (m *FileSecurityState) GetPath()(*string) {
     return nil
 }
 // GetRiskScore gets the riskScore property value. Provider generated/calculated risk score of the alert file. Recommended value range of 0-1, which equates to a percentage.
+// returns a *string when successful
 func (m *FileSecurityState) GetRiskScore()(*string) {
     val, err := m.GetBackingStore().Get("riskScore")
     if err != nil {
@@ -234,7 +242,6 @@ func (m *FileSecurityState) SetRiskScore(value *string)() {
         panic(err)
     }
 }
-// FileSecurityStateable 
 type FileSecurityStateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

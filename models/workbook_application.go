@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookApplication 
 type WorkbookApplication struct {
     Entity
 }
-// NewWorkbookApplication instantiates a new workbookApplication and sets the default values.
+// NewWorkbookApplication instantiates a new WorkbookApplication and sets the default values.
 func NewWorkbookApplication()(*WorkbookApplication) {
     m := &WorkbookApplication{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewWorkbookApplication()(*WorkbookApplication) {
     return m
 }
 // CreateWorkbookApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookApplicationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookApplication(), nil
 }
 // GetCalculationMode gets the calculationMode property value. Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.
+// returns a *string when successful
 func (m *WorkbookApplication) GetCalculationMode()(*string) {
     val, err := m.GetBackingStore().Get("calculationMode")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *WorkbookApplication) GetCalculationMode()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["calculationMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,7 +68,6 @@ func (m *WorkbookApplication) SetCalculationMode(value *string)() {
         panic(err)
     }
 }
-// WorkbookApplicationable 
 type WorkbookApplicationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SkypeForBusinessUserConversationMember 
 type SkypeForBusinessUserConversationMember struct {
     ConversationMember
 }
-// NewSkypeForBusinessUserConversationMember instantiates a new skypeForBusinessUserConversationMember and sets the default values.
+// NewSkypeForBusinessUserConversationMember instantiates a new SkypeForBusinessUserConversationMember and sets the default values.
 func NewSkypeForBusinessUserConversationMember()(*SkypeForBusinessUserConversationMember) {
     m := &SkypeForBusinessUserConversationMember{
         ConversationMember: *NewConversationMember(),
@@ -18,10 +17,12 @@ func NewSkypeForBusinessUserConversationMember()(*SkypeForBusinessUserConversati
     return m
 }
 // CreateSkypeForBusinessUserConversationMemberFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSkypeForBusinessUserConversationMemberFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSkypeForBusinessUserConversationMember(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SkypeForBusinessUserConversationMember) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ConversationMember.GetFieldDeserializers()
     res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +48,7 @@ func (m *SkypeForBusinessUserConversationMember) GetFieldDeserializers()(map[str
     return res
 }
 // GetTenantId gets the tenantId property value. ID of the tenant that the user belongs to.
+// returns a *string when successful
 func (m *SkypeForBusinessUserConversationMember) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -58,6 +60,7 @@ func (m *SkypeForBusinessUserConversationMember) GetTenantId()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. Microsoft Entra ID of the user.
+// returns a *string when successful
 func (m *SkypeForBusinessUserConversationMember) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *SkypeForBusinessUserConversationMember) SetUserId(value *string)() {
         panic(err)
     }
 }
-// SkypeForBusinessUserConversationMemberable 
 type SkypeForBusinessUserConversationMemberable interface {
     ConversationMemberable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

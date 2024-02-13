@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric struct {
     Entity
 }
-// NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric instantiates a new userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric and sets the default values.
+// NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric instantiates a new UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric()(*UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) {
     m := &UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric()(*UserEx
     return m
 }
 // CreateUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["osCheckFailedPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -135,6 +137,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFiel
     return res
 }
 // GetOsCheckFailedPercentage gets the osCheckFailedPercentage property value. The percentage of devices for which OS check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetOsCheckFailedPercentage()(*float64) {
     val, err := m.GetBackingStore().Get("osCheckFailedPercentage")
     if err != nil {
@@ -146,6 +149,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetOsCh
     return nil
 }
 // GetProcessor64BitCheckFailedPercentage gets the processor64BitCheckFailedPercentage property value. The percentage of devices for which processor hardware 64-bit architecture check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetProcessor64BitCheckFailedPercentage()(*float64) {
     val, err := m.GetBackingStore().Get("processor64BitCheckFailedPercentage")
     if err != nil {
@@ -157,6 +161,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetProc
     return nil
 }
 // GetProcessorCoreCountCheckFailedPercentage gets the processorCoreCountCheckFailedPercentage property value. The percentage of devices for which processor hardware core count check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetProcessorCoreCountCheckFailedPercentage()(*float64) {
     val, err := m.GetBackingStore().Get("processorCoreCountCheckFailedPercentage")
     if err != nil {
@@ -168,6 +173,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetProc
     return nil
 }
 // GetProcessorFamilyCheckFailedPercentage gets the processorFamilyCheckFailedPercentage property value. The percentage of devices for which processor hardware family check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetProcessorFamilyCheckFailedPercentage()(*float64) {
     val, err := m.GetBackingStore().Get("processorFamilyCheckFailedPercentage")
     if err != nil {
@@ -179,6 +185,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetProc
     return nil
 }
 // GetProcessorSpeedCheckFailedPercentage gets the processorSpeedCheckFailedPercentage property value. The percentage of devices for which processor hardware speed check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetProcessorSpeedCheckFailedPercentage()(*float64) {
     val, err := m.GetBackingStore().Get("processorSpeedCheckFailedPercentage")
     if err != nil {
@@ -190,6 +197,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetProc
     return nil
 }
 // GetRamCheckFailedPercentage gets the ramCheckFailedPercentage property value. The percentage of devices for which RAM hardware check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetRamCheckFailedPercentage()(*float64) {
     val, err := m.GetBackingStore().Get("ramCheckFailedPercentage")
     if err != nil {
@@ -201,6 +209,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetRamC
     return nil
 }
 // GetSecureBootCheckFailedPercentage gets the secureBootCheckFailedPercentage property value. The percentage of devices for which secure boot hardware check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetSecureBootCheckFailedPercentage()(*float64) {
     val, err := m.GetBackingStore().Get("secureBootCheckFailedPercentage")
     if err != nil {
@@ -212,6 +221,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetSecu
     return nil
 }
 // GetStorageCheckFailedPercentage gets the storageCheckFailedPercentage property value. The percentage of devices for which storage hardware check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetStorageCheckFailedPercentage()(*float64) {
     val, err := m.GetBackingStore().Get("storageCheckFailedPercentage")
     if err != nil {
@@ -223,6 +233,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetStor
     return nil
 }
 // GetTotalDeviceCount gets the totalDeviceCount property value. The count of total devices in an organization. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetTotalDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalDeviceCount")
     if err != nil {
@@ -234,6 +245,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetTota
     return nil
 }
 // GetTpmCheckFailedPercentage gets the tpmCheckFailedPercentage property value. The percentage of devices for which Trusted Platform Module (TPM) hardware check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetTpmCheckFailedPercentage()(*float64) {
     val, err := m.GetBackingStore().Get("tpmCheckFailedPercentage")
     if err != nil {
@@ -245,6 +257,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetTpmC
     return nil
 }
 // GetUpgradeEligibleDeviceCount gets the upgradeEligibleDeviceCount property value. The count of devices in an organization eligible for windows upgrade. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetUpgradeEligibleDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("upgradeEligibleDeviceCount")
     if err != nil {
@@ -406,7 +419,6 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) SetUpgr
         panic(err)
     }
 }
-// UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricable 
 type UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

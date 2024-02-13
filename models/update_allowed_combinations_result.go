@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// UpdateAllowedCombinationsResult 
 type UpdateAllowedCombinationsResult struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewUpdateAllowedCombinationsResult instantiates a new updateAllowedCombinationsResult and sets the default values.
+// NewUpdateAllowedCombinationsResult instantiates a new UpdateAllowedCombinationsResult and sets the default values.
 func NewUpdateAllowedCombinationsResult()(*UpdateAllowedCombinationsResult) {
     m := &UpdateAllowedCombinationsResult{
     }
@@ -19,10 +18,12 @@ func NewUpdateAllowedCombinationsResult()(*UpdateAllowedCombinationsResult) {
     return m
 }
 // CreateUpdateAllowedCombinationsResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUpdateAllowedCombinationsResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUpdateAllowedCombinationsResult(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *UpdateAllowedCombinationsResult) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *UpdateAllowedCombinationsResult) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAdditionalInformation gets the additionalInformation property value. Information about why the updateAllowedCombinations action was successful or failed.
+// returns a *string when successful
 func (m *UpdateAllowedCombinationsResult) GetAdditionalInformation()(*string) {
     val, err := m.GetBackingStore().Get("additionalInformation")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *UpdateAllowedCombinationsResult) GetAdditionalInformation()(*string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *UpdateAllowedCombinationsResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetConditionalAccessReferences gets the conditionalAccessReferences property value. References to existing Conditional Access policies that use this authentication strength.
+// returns a []string when successful
 func (m *UpdateAllowedCombinationsResult) GetConditionalAccessReferences()([]string) {
     val, err := m.GetBackingStore().Get("conditionalAccessReferences")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *UpdateAllowedCombinationsResult) GetConditionalAccessReferences()([]str
     return nil
 }
 // GetCurrentCombinations gets the currentCombinations property value. The list of current authentication method combinations allowed by the authentication strength.
+// returns a []AuthenticationMethodModes when successful
 func (m *UpdateAllowedCombinationsResult) GetCurrentCombinations()([]AuthenticationMethodModes) {
     val, err := m.GetBackingStore().Get("currentCombinations")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *UpdateAllowedCombinationsResult) GetCurrentCombinations()([]Authenticat
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UpdateAllowedCombinationsResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["additionalInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -145,6 +151,7 @@ func (m *UpdateAllowedCombinationsResult) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *UpdateAllowedCombinationsResult) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -156,6 +163,7 @@ func (m *UpdateAllowedCombinationsResult) GetOdataType()(*string) {
     return nil
 }
 // GetPreviousCombinations gets the previousCombinations property value. The list of former authentication method combinations allowed by the authentication strength before they were updated through the updateAllowedCombinations action.
+// returns a []AuthenticationMethodModes when successful
 func (m *UpdateAllowedCombinationsResult) GetPreviousCombinations()([]AuthenticationMethodModes) {
     val, err := m.GetBackingStore().Get("previousCombinations")
     if err != nil {
@@ -252,7 +260,6 @@ func (m *UpdateAllowedCombinationsResult) SetPreviousCombinations(value []Authen
         panic(err)
     }
 }
-// UpdateAllowedCombinationsResultable 
 type UpdateAllowedCombinationsResultable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

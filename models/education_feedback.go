@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// EducationFeedback 
 type EducationFeedback struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewEducationFeedback instantiates a new educationFeedback and sets the default values.
+// NewEducationFeedback instantiates a new EducationFeedback and sets the default values.
 func NewEducationFeedback()(*EducationFeedback) {
     m := &EducationFeedback{
     }
@@ -20,10 +19,12 @@ func NewEducationFeedback()(*EducationFeedback) {
     return m
 }
 // CreateEducationFeedbackFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationFeedbackFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationFeedback(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *EducationFeedback) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *EducationFeedback) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *EducationFeedback) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFeedbackBy gets the feedbackBy property value. User who created the feedback.
+// returns a IdentitySetable when successful
 func (m *EducationFeedback) GetFeedbackBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("feedbackBy")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *EducationFeedback) GetFeedbackBy()(IdentitySetable) {
     return nil
 }
 // GetFeedbackDateTime gets the feedbackDateTime property value. Moment in time when the feedback was given. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *EducationFeedback) GetFeedbackDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("feedbackDateTime")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *EducationFeedback) GetFeedbackDateTime()(*i336074805fc853987abe6f7fe3ad
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationFeedback) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["feedbackBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -107,6 +112,7 @@ func (m *EducationFeedback) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *EducationFeedback) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -118,6 +124,7 @@ func (m *EducationFeedback) GetOdataType()(*string) {
     return nil
 }
 // GetText gets the text property value. Feedback.
+// returns a EducationItemBodyable when successful
 func (m *EducationFeedback) GetText()(EducationItemBodyable) {
     val, err := m.GetBackingStore().Get("text")
     if err != nil {
@@ -201,7 +208,6 @@ func (m *EducationFeedback) SetText(value EducationItemBodyable)() {
         panic(err)
     }
 }
-// EducationFeedbackable 
 type EducationFeedbackable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

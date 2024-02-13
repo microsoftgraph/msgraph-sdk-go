@@ -6,7 +6,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBody 
 type ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -20,10 +19,12 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBody()(*ItemItems
     return m
 }
 // CreateItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBody) GetAdditio
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["seriesBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -75,6 +78,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBody) GetFieldDe
     return res
 }
 // GetSeriesBy gets the seriesBy property value. The seriesBy property
+// returns a *string when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBody) GetSeriesBy()(*string) {
     val, err := m.GetBackingStore().Get("seriesBy")
     if err != nil {
@@ -86,6 +90,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBody) GetSeriesB
     return nil
 }
 // GetSourceData gets the sourceData property value. The sourceData property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBody) GetSourceData()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("sourceData")
     if err != nil {
@@ -97,6 +102,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBody) GetSourceD
     return nil
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *string when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBody) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -167,7 +173,6 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBody) SetTypeEsc
         panic(err)
     }
 }
-// ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBodyable 
 type ItemItemsItemWorkbookWorksheetsItemChartsAddPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// Reminder 
 type Reminder struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewReminder instantiates a new reminder and sets the default values.
+// NewReminder instantiates a new Reminder and sets the default values.
 func NewReminder()(*Reminder) {
     m := &Reminder{
     }
@@ -19,10 +18,12 @@ func NewReminder()(*Reminder) {
     return m
 }
 // CreateReminderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateReminderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewReminder(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Reminder) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *Reminder) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *Reminder) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetChangeKey gets the changeKey property value. Identifies the version of the reminder. Every time the reminder is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object.
+// returns a *string when successful
 func (m *Reminder) GetChangeKey()(*string) {
     val, err := m.GetBackingStore().Get("changeKey")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *Reminder) GetChangeKey()(*string) {
     return nil
 }
 // GetEventEndTime gets the eventEndTime property value. The date, time and time zone that the event ends.
+// returns a DateTimeTimeZoneable when successful
 func (m *Reminder) GetEventEndTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("eventEndTime")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *Reminder) GetEventEndTime()(DateTimeTimeZoneable) {
     return nil
 }
 // GetEventId gets the eventId property value. The unique ID of the event. Read only.
+// returns a *string when successful
 func (m *Reminder) GetEventId()(*string) {
     val, err := m.GetBackingStore().Get("eventId")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *Reminder) GetEventId()(*string) {
     return nil
 }
 // GetEventLocation gets the eventLocation property value. The location of the event.
+// returns a Locationable when successful
 func (m *Reminder) GetEventLocation()(Locationable) {
     val, err := m.GetBackingStore().Get("eventLocation")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *Reminder) GetEventLocation()(Locationable) {
     return nil
 }
 // GetEventStartTime gets the eventStartTime property value. The date, time, and time zone that the event starts.
+// returns a DateTimeTimeZoneable when successful
 func (m *Reminder) GetEventStartTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("eventStartTime")
     if err != nil {
@@ -94,6 +101,7 @@ func (m *Reminder) GetEventStartTime()(DateTimeTimeZoneable) {
     return nil
 }
 // GetEventSubject gets the eventSubject property value. The text of the event's subject line.
+// returns a *string when successful
 func (m *Reminder) GetEventSubject()(*string) {
     val, err := m.GetBackingStore().Get("eventSubject")
     if err != nil {
@@ -105,6 +113,7 @@ func (m *Reminder) GetEventSubject()(*string) {
     return nil
 }
 // GetEventWebLink gets the eventWebLink property value. The URL to open the event in Outlook on the web.The event opens in the browser if you're logged in to your mailbox via Outlook on the web. You're prompted to log in if you aren't already logged in with the browser.This URL can't be accessed from within an iFrame.
+// returns a *string when successful
 func (m *Reminder) GetEventWebLink()(*string) {
     val, err := m.GetBackingStore().Get("eventWebLink")
     if err != nil {
@@ -116,6 +125,7 @@ func (m *Reminder) GetEventWebLink()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Reminder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["changeKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -211,6 +221,7 @@ func (m *Reminder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *Reminder) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -222,6 +233,7 @@ func (m *Reminder) GetOdataType()(*string) {
     return nil
 }
 // GetReminderFireTime gets the reminderFireTime property value. The date, time, and time zone that the reminder is set to occur.
+// returns a DateTimeTimeZoneable when successful
 func (m *Reminder) GetReminderFireTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("reminderFireTime")
     if err != nil {
@@ -370,7 +382,6 @@ func (m *Reminder) SetReminderFireTime(value DateTimeTimeZoneable)() {
         panic(err)
     }
 }
-// Reminderable 
 type Reminderable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

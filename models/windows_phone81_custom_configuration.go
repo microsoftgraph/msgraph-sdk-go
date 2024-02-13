@@ -8,7 +8,7 @@ import (
 type WindowsPhone81CustomConfiguration struct {
     DeviceConfiguration
 }
-// NewWindowsPhone81CustomConfiguration instantiates a new windowsPhone81CustomConfiguration and sets the default values.
+// NewWindowsPhone81CustomConfiguration instantiates a new WindowsPhone81CustomConfiguration and sets the default values.
 func NewWindowsPhone81CustomConfiguration()(*WindowsPhone81CustomConfiguration) {
     m := &WindowsPhone81CustomConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewWindowsPhone81CustomConfiguration()(*WindowsPhone81CustomConfiguration) 
     return m
 }
 // CreateWindowsPhone81CustomConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsPhone81CustomConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsPhone81CustomConfiguration(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsPhone81CustomConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["omaSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -43,6 +45,7 @@ func (m *WindowsPhone81CustomConfiguration) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetOmaSettings gets the omaSettings property value. OMA settings. This collection can contain a maximum of 1000 elements.
+// returns a []OmaSettingable when successful
 func (m *WindowsPhone81CustomConfiguration) GetOmaSettings()([]OmaSettingable) {
     val, err := m.GetBackingStore().Get("omaSettings")
     if err != nil {
@@ -80,7 +83,6 @@ func (m *WindowsPhone81CustomConfiguration) SetOmaSettings(value []OmaSettingabl
         panic(err)
     }
 }
-// WindowsPhone81CustomConfigurationable 
 type WindowsPhone81CustomConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

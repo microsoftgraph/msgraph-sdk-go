@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GitHubOrganizationEvidence 
 type GitHubOrganizationEvidence struct {
     AlertEvidence
 }
-// NewGitHubOrganizationEvidence instantiates a new gitHubOrganizationEvidence and sets the default values.
+// NewGitHubOrganizationEvidence instantiates a new GitHubOrganizationEvidence and sets the default values.
 func NewGitHubOrganizationEvidence()(*GitHubOrganizationEvidence) {
     m := &GitHubOrganizationEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -18,10 +17,12 @@ func NewGitHubOrganizationEvidence()(*GitHubOrganizationEvidence) {
     return m
 }
 // CreateGitHubOrganizationEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGitHubOrganizationEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGitHubOrganizationEvidence(), nil
 }
 // GetCompany gets the company property value. The company property
+// returns a *string when successful
 func (m *GitHubOrganizationEvidence) GetCompany()(*string) {
     val, err := m.GetBackingStore().Get("company")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *GitHubOrganizationEvidence) GetCompany()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
 func (m *GitHubOrganizationEvidence) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *GitHubOrganizationEvidence) GetDisplayName()(*string) {
     return nil
 }
 // GetEmail gets the email property value. The email property
+// returns a *string when successful
 func (m *GitHubOrganizationEvidence) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *GitHubOrganizationEvidence) GetEmail()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GitHubOrganizationEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["company"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -120,6 +124,7 @@ func (m *GitHubOrganizationEvidence) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetLogin gets the login property value. The login property
+// returns a *string when successful
 func (m *GitHubOrganizationEvidence) GetLogin()(*string) {
     val, err := m.GetBackingStore().Get("login")
     if err != nil {
@@ -131,6 +136,7 @@ func (m *GitHubOrganizationEvidence) GetLogin()(*string) {
     return nil
 }
 // GetOrgId gets the orgId property value. The orgId property
+// returns a *string when successful
 func (m *GitHubOrganizationEvidence) GetOrgId()(*string) {
     val, err := m.GetBackingStore().Get("orgId")
     if err != nil {
@@ -142,6 +148,7 @@ func (m *GitHubOrganizationEvidence) GetOrgId()(*string) {
     return nil
 }
 // GetWebUrl gets the webUrl property value. The webUrl property
+// returns a *string when successful
 func (m *GitHubOrganizationEvidence) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -238,7 +245,6 @@ func (m *GitHubOrganizationEvidence) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// GitHubOrganizationEvidenceable 
 type GitHubOrganizationEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

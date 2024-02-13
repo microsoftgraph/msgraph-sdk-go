@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Workflow 
 type Workflow struct {
     WorkflowBase
 }
-// NewWorkflow instantiates a new workflow and sets the default values.
+// NewWorkflow instantiates a new Workflow and sets the default values.
 func NewWorkflow()(*Workflow) {
     m := &Workflow{
         WorkflowBase: *NewWorkflowBase(),
@@ -19,10 +18,12 @@ func NewWorkflow()(*Workflow) {
     return m
 }
 // CreateWorkflowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkflowFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkflow(), nil
 }
 // GetDeletedDateTime gets the deletedDateTime property value. When the workflow was deleted.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
+// returns a *Time when successful
 func (m *Workflow) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("deletedDateTime")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *Workflow) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     return nil
 }
 // GetExecutionScope gets the executionScope property value. The unique identifier of the Microsoft Entra identity that last modified the workflow object.
+// returns a []UserProcessingResultable when successful
 func (m *Workflow) GetExecutionScope()([]UserProcessingResultable) {
     val, err := m.GetBackingStore().Get("executionScope")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *Workflow) GetExecutionScope()([]UserProcessingResultable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Workflow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WorkflowBase.GetFieldDeserializers()
     res["deletedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -170,6 +173,7 @@ func (m *Workflow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetId gets the id property value. Identifier used for individually addressing a specific workflow.Supports $filter(eq, ne) and $orderby.
+// returns a *string when successful
 func (m *Workflow) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -181,6 +185,7 @@ func (m *Workflow) GetId()(*string) {
     return nil
 }
 // GetNextScheduleRunDateTime gets the nextScheduleRunDateTime property value. The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderby.
+// returns a *Time when successful
 func (m *Workflow) GetNextScheduleRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("nextScheduleRunDateTime")
     if err != nil {
@@ -192,6 +197,7 @@ func (m *Workflow) GetNextScheduleRunDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetRuns gets the runs property value. Workflow runs.
+// returns a []Runable when successful
 func (m *Workflow) GetRuns()([]Runable) {
     val, err := m.GetBackingStore().Get("runs")
     if err != nil {
@@ -203,6 +209,7 @@ func (m *Workflow) GetRuns()([]Runable) {
     return nil
 }
 // GetTaskReports gets the taskReports property value. Represents the aggregation of task execution data for tasks within a workflow object.
+// returns a []TaskReportable when successful
 func (m *Workflow) GetTaskReports()([]TaskReportable) {
     val, err := m.GetBackingStore().Get("taskReports")
     if err != nil {
@@ -214,6 +221,7 @@ func (m *Workflow) GetTaskReports()([]TaskReportable) {
     return nil
 }
 // GetUserProcessingResults gets the userProcessingResults property value. Per-user workflow execution results.
+// returns a []UserProcessingResultable when successful
 func (m *Workflow) GetUserProcessingResults()([]UserProcessingResultable) {
     val, err := m.GetBackingStore().Get("userProcessingResults")
     if err != nil {
@@ -225,6 +233,7 @@ func (m *Workflow) GetUserProcessingResults()([]UserProcessingResultable) {
     return nil
 }
 // GetVersion gets the version property value. The current version number of the workflow. Value is 1 when the workflow is first created.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
+// returns a *int32 when successful
 func (m *Workflow) GetVersion()(*int32) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -236,6 +245,7 @@ func (m *Workflow) GetVersion()(*int32) {
     return nil
 }
 // GetVersions gets the versions property value. The workflow versions that are available.
+// returns a []WorkflowVersionable when successful
 func (m *Workflow) GetVersions()([]WorkflowVersionable) {
     val, err := m.GetBackingStore().Get("versions")
     if err != nil {
@@ -401,7 +411,6 @@ func (m *Workflow) SetVersions(value []WorkflowVersionable)() {
         panic(err)
     }
 }
-// Workflowable 
 type Workflowable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WorkflowBaseable

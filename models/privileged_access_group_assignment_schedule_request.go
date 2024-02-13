@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivilegedAccessGroupAssignmentScheduleRequest 
 type PrivilegedAccessGroupAssignmentScheduleRequest struct {
     PrivilegedAccessScheduleRequest
 }
-// NewPrivilegedAccessGroupAssignmentScheduleRequest instantiates a new privilegedAccessGroupAssignmentScheduleRequest and sets the default values.
+// NewPrivilegedAccessGroupAssignmentScheduleRequest instantiates a new PrivilegedAccessGroupAssignmentScheduleRequest and sets the default values.
 func NewPrivilegedAccessGroupAssignmentScheduleRequest()(*PrivilegedAccessGroupAssignmentScheduleRequest) {
     m := &PrivilegedAccessGroupAssignmentScheduleRequest{
         PrivilegedAccessScheduleRequest: *NewPrivilegedAccessScheduleRequest(),
@@ -18,10 +17,12 @@ func NewPrivilegedAccessGroupAssignmentScheduleRequest()(*PrivilegedAccessGroupA
     return m
 }
 // CreatePrivilegedAccessGroupAssignmentScheduleRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrivilegedAccessGroupAssignmentScheduleRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivilegedAccessGroupAssignmentScheduleRequest(), nil
 }
 // GetAccessId gets the accessId property value. The identifier of a membership or ownership assignment relationship to the group. Required. The possible values are: owner, member, unknownFutureValue.
+// returns a *PrivilegedAccessGroupRelationships when successful
 func (m *PrivilegedAccessGroupAssignmentScheduleRequest) GetAccessId()(*PrivilegedAccessGroupRelationships) {
     val, err := m.GetBackingStore().Get("accessId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequest) GetAccessId()(*Privileg
     return nil
 }
 // GetActivatedUsing gets the activatedUsing property value. When the request activates a membership or ownership assignment in PIM for groups, this object represents the eligibility policy for the group. Otherwise, it is null. Supports $expand.
+// returns a PrivilegedAccessGroupEligibilityScheduleable when successful
 func (m *PrivilegedAccessGroupAssignmentScheduleRequest) GetActivatedUsing()(PrivilegedAccessGroupEligibilityScheduleable) {
     val, err := m.GetBackingStore().Get("activatedUsing")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequest) GetActivatedUsing()(Pri
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrivilegedAccessGroupAssignmentScheduleRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PrivilegedAccessScheduleRequest.GetFieldDeserializers()
     res["accessId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -129,6 +132,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequest) GetFieldDeserializers()
     return res
 }
 // GetGroup gets the group property value. References the group that is the scope of the membership or ownership assignment request through PIM for groups. Supports $expand.
+// returns a Groupable when successful
 func (m *PrivilegedAccessGroupAssignmentScheduleRequest) GetGroup()(Groupable) {
     val, err := m.GetBackingStore().Get("group")
     if err != nil {
@@ -140,6 +144,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequest) GetGroup()(Groupable) {
     return nil
 }
 // GetGroupId gets the groupId property value. The identifier of the group representing the scope of the membership or ownership assignment through PIM for groups. Required.
+// returns a *string when successful
 func (m *PrivilegedAccessGroupAssignmentScheduleRequest) GetGroupId()(*string) {
     val, err := m.GetBackingStore().Get("groupId")
     if err != nil {
@@ -151,6 +156,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequest) GetGroupId()(*string) {
     return nil
 }
 // GetPrincipal gets the principal property value. References the principal that's in the scope of this membership or ownership assignment request through the group that's governed by PIM. Supports $expand.
+// returns a DirectoryObjectable when successful
 func (m *PrivilegedAccessGroupAssignmentScheduleRequest) GetPrincipal()(DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("principal")
     if err != nil {
@@ -162,6 +168,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequest) GetPrincipal()(Director
     return nil
 }
 // GetPrincipalId gets the principalId property value. The identifier of the principal whose membership or ownership assignment to the group is managed through PIM for groups. Supports $filter (eq, ne).
+// returns a *string when successful
 func (m *PrivilegedAccessGroupAssignmentScheduleRequest) GetPrincipalId()(*string) {
     val, err := m.GetBackingStore().Get("principalId")
     if err != nil {
@@ -173,6 +180,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequest) GetPrincipalId()(*strin
     return nil
 }
 // GetTargetSchedule gets the targetSchedule property value. Schedule created by this request. Supports $expand.
+// returns a PrivilegedAccessGroupEligibilityScheduleable when successful
 func (m *PrivilegedAccessGroupAssignmentScheduleRequest) GetTargetSchedule()(PrivilegedAccessGroupEligibilityScheduleable) {
     val, err := m.GetBackingStore().Get("targetSchedule")
     if err != nil {
@@ -184,6 +192,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequest) GetTargetSchedule()(Pri
     return nil
 }
 // GetTargetScheduleId gets the targetScheduleId property value. The identifier of the schedule that's created from the membership or ownership assignment request. Supports $filter (eq, ne).
+// returns a *string when successful
 func (m *PrivilegedAccessGroupAssignmentScheduleRequest) GetTargetScheduleId()(*string) {
     val, err := m.GetBackingStore().Get("targetScheduleId")
     if err != nil {
@@ -307,7 +316,6 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequest) SetTargetScheduleId(val
         panic(err)
     }
 }
-// PrivilegedAccessGroupAssignmentScheduleRequestable 
 type PrivilegedAccessGroupAssignmentScheduleRequestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PrivilegedAccessScheduleRequestable

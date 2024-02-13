@@ -10,7 +10,7 @@ type Win32LobAppReturnCode struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewWin32LobAppReturnCode instantiates a new win32LobAppReturnCode and sets the default values.
+// NewWin32LobAppReturnCode instantiates a new Win32LobAppReturnCode and sets the default values.
 func NewWin32LobAppReturnCode()(*Win32LobAppReturnCode) {
     m := &Win32LobAppReturnCode{
     }
@@ -19,10 +19,12 @@ func NewWin32LobAppReturnCode()(*Win32LobAppReturnCode) {
     return m
 }
 // CreateWin32LobAppReturnCodeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWin32LobAppReturnCodeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWin32LobAppReturnCode(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Win32LobAppReturnCode) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *Win32LobAppReturnCode) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *Win32LobAppReturnCode) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Win32LobAppReturnCode) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +78,7 @@ func (m *Win32LobAppReturnCode) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *Win32LobAppReturnCode) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -85,6 +90,7 @@ func (m *Win32LobAppReturnCode) GetOdataType()(*string) {
     return nil
 }
 // GetReturnCode gets the returnCode property value. Return code.
+// returns a *int32 when successful
 func (m *Win32LobAppReturnCode) GetReturnCode()(*int32) {
     val, err := m.GetBackingStore().Get("returnCode")
     if err != nil {
@@ -96,6 +102,7 @@ func (m *Win32LobAppReturnCode) GetReturnCode()(*int32) {
     return nil
 }
 // GetTypeEscaped gets the type property value. Indicates the type of return code.
+// returns a *Win32LobAppReturnCodeType when successful
 func (m *Win32LobAppReturnCode) GetTypeEscaped()(*Win32LobAppReturnCodeType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -167,7 +174,6 @@ func (m *Win32LobAppReturnCode) SetTypeEscaped(value *Win32LobAppReturnCodeType)
         panic(err)
     }
 }
-// Win32LobAppReturnCodeable 
 type Win32LobAppReturnCodeable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

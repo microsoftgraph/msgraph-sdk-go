@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AuditActivityInitiator 
 type AuditActivityInitiator struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAuditActivityInitiator instantiates a new auditActivityInitiator and sets the default values.
+// NewAuditActivityInitiator instantiates a new AuditActivityInitiator and sets the default values.
 func NewAuditActivityInitiator()(*AuditActivityInitiator) {
     m := &AuditActivityInitiator{
     }
@@ -19,10 +18,12 @@ func NewAuditActivityInitiator()(*AuditActivityInitiator) {
     return m
 }
 // CreateAuditActivityInitiatorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuditActivityInitiatorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuditActivityInitiator(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AuditActivityInitiator) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *AuditActivityInitiator) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetApp gets the app property value. If the resource initiating the activity is an app, this property indicates all the app related information like appId, Name, servicePrincipalId, Name.
+// returns a AppIdentityable when successful
 func (m *AuditActivityInitiator) GetApp()(AppIdentityable) {
     val, err := m.GetBackingStore().Get("app")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *AuditActivityInitiator) GetApp()(AppIdentityable) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AuditActivityInitiator) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuditActivityInitiator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["app"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -85,6 +89,7 @@ func (m *AuditActivityInitiator) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AuditActivityInitiator) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -96,6 +101,7 @@ func (m *AuditActivityInitiator) GetOdataType()(*string) {
     return nil
 }
 // GetUser gets the user property value. If the resource initiating the activity is a user, this property Indicates all the user related information like userId, Name, UserPrinicpalName.
+// returns a UserIdentityable when successful
 func (m *AuditActivityInitiator) GetUser()(UserIdentityable) {
     val, err := m.GetBackingStore().Get("user")
     if err != nil {
@@ -166,7 +172,6 @@ func (m *AuditActivityInitiator) SetUser(value UserIdentityable)() {
         panic(err)
     }
 }
-// AuditActivityInitiatorable 
 type AuditActivityInitiatorable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

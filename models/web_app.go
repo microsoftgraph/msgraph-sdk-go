@@ -8,7 +8,7 @@ import (
 type WebApp struct {
     MobileApp
 }
-// NewWebApp instantiates a new webApp and sets the default values.
+// NewWebApp instantiates a new WebApp and sets the default values.
 func NewWebApp()(*WebApp) {
     m := &WebApp{
         MobileApp: *NewMobileApp(),
@@ -18,10 +18,12 @@ func NewWebApp()(*WebApp) {
     return m
 }
 // CreateWebAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWebAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWebApp(), nil
 }
 // GetAppUrl gets the appUrl property value. The web app URL. This property cannot be PATCHed.
+// returns a *string when successful
 func (m *WebApp) GetAppUrl()(*string) {
     val, err := m.GetBackingStore().Get("appUrl")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *WebApp) GetAppUrl()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WebApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileApp.GetFieldDeserializers()
     res["appUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +61,7 @@ func (m *WebApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     return res
 }
 // GetUseManagedBrowser gets the useManagedBrowser property value. Whether or not to use managed browser. This property is only applicable for Android and IOS.
+// returns a *bool when successful
 func (m *WebApp) GetUseManagedBrowser()(*bool) {
     val, err := m.GetBackingStore().Get("useManagedBrowser")
     if err != nil {
@@ -102,7 +106,6 @@ func (m *WebApp) SetUseManagedBrowser(value *bool)() {
         panic(err)
     }
 }
-// WebAppable 
 type WebAppable interface {
     MobileAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

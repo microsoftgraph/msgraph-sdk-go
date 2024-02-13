@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageAssignment 
 type AccessPackageAssignment struct {
     Entity
 }
-// NewAccessPackageAssignment instantiates a new accessPackageAssignment and sets the default values.
+// NewAccessPackageAssignment instantiates a new AccessPackageAssignment and sets the default values.
 func NewAccessPackageAssignment()(*AccessPackageAssignment) {
     m := &AccessPackageAssignment{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewAccessPackageAssignment()(*AccessPackageAssignment) {
     return m
 }
 // CreateAccessPackageAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessPackageAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageAssignment(), nil
 }
 // GetAccessPackage gets the accessPackage property value. Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
+// returns a AccessPackageable when successful
 func (m *AccessPackageAssignment) GetAccessPackage()(AccessPackageable) {
     val, err := m.GetBackingStore().Get("accessPackage")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *AccessPackageAssignment) GetAccessPackage()(AccessPackageable) {
     return nil
 }
 // GetAssignmentPolicy gets the assignmentPolicy property value. Read-only. Supports $filter (eq) on the id property and $expand query parameters.
+// returns a AccessPackageAssignmentPolicyable when successful
 func (m *AccessPackageAssignment) GetAssignmentPolicy()(AccessPackageAssignmentPolicyable) {
     val, err := m.GetBackingStore().Get("assignmentPolicy")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *AccessPackageAssignment) GetAssignmentPolicy()(AccessPackageAssignmentP
     return nil
 }
 // GetCustomExtensionCalloutInstances gets the customExtensionCalloutInstances property value. Information about all the custom extension calls that were made during the access package assignment workflow.
+// returns a []CustomExtensionCalloutInstanceable when successful
 func (m *AccessPackageAssignment) GetCustomExtensionCalloutInstances()([]CustomExtensionCalloutInstanceable) {
     val, err := m.GetBackingStore().Get("customExtensionCalloutInstances")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *AccessPackageAssignment) GetCustomExtensionCalloutInstances()([]CustomE
     return nil
 }
 // GetExpiredDateTime gets the expiredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *AccessPackageAssignment) GetExpiredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expiredDateTime")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *AccessPackageAssignment) GetExpiredDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -156,6 +161,7 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetSchedule gets the schedule property value. When the access assignment is to be in place. Read-only.
+// returns a EntitlementManagementScheduleable when successful
 func (m *AccessPackageAssignment) GetSchedule()(EntitlementManagementScheduleable) {
     val, err := m.GetBackingStore().Get("schedule")
     if err != nil {
@@ -167,6 +173,7 @@ func (m *AccessPackageAssignment) GetSchedule()(EntitlementManagementScheduleabl
     return nil
 }
 // GetState gets the state property value. The state of the access package assignment. The possible values are: delivering, partiallyDelivered, delivered, expired, deliveryFailed, unknownFutureValue. Read-only. Supports $filter (eq).
+// returns a *AccessPackageAssignmentState when successful
 func (m *AccessPackageAssignment) GetState()(*AccessPackageAssignmentState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -178,6 +185,7 @@ func (m *AccessPackageAssignment) GetState()(*AccessPackageAssignmentState) {
     return nil
 }
 // GetStatus gets the status property value. More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.
+// returns a *string when successful
 func (m *AccessPackageAssignment) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -189,6 +197,7 @@ func (m *AccessPackageAssignment) GetStatus()(*string) {
     return nil
 }
 // GetTarget gets the target property value. The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
+// returns a AccessPackageSubjectable when successful
 func (m *AccessPackageAssignment) GetTarget()(AccessPackageSubjectable) {
     val, err := m.GetBackingStore().Get("target")
     if err != nil {
@@ -318,7 +327,6 @@ func (m *AccessPackageAssignment) SetTarget(value AccessPackageSubjectable)() {
         panic(err)
     }
 }
-// AccessPackageAssignmentable 
 type AccessPackageAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

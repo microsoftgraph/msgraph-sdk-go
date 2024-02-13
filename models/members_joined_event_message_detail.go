@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MembersJoinedEventMessageDetail 
 type MembersJoinedEventMessageDetail struct {
     EventMessageDetail
 }
-// NewMembersJoinedEventMessageDetail instantiates a new membersJoinedEventMessageDetail and sets the default values.
+// NewMembersJoinedEventMessageDetail instantiates a new MembersJoinedEventMessageDetail and sets the default values.
 func NewMembersJoinedEventMessageDetail()(*MembersJoinedEventMessageDetail) {
     m := &MembersJoinedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
@@ -18,10 +17,12 @@ func NewMembersJoinedEventMessageDetail()(*MembersJoinedEventMessageDetail) {
     return m
 }
 // CreateMembersJoinedEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMembersJoinedEventMessageDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMembersJoinedEventMessageDetail(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MembersJoinedEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EventMessageDetail.GetFieldDeserializers()
     res["initiator"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -53,6 +54,7 @@ func (m *MembersJoinedEventMessageDetail) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
+// returns a IdentitySetable when successful
 func (m *MembersJoinedEventMessageDetail) GetInitiator()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("initiator")
     if err != nil {
@@ -64,6 +66,7 @@ func (m *MembersJoinedEventMessageDetail) GetInitiator()(IdentitySetable) {
     return nil
 }
 // GetMembers gets the members property value. List of members who joined the chat.
+// returns a []TeamworkUserIdentityable when successful
 func (m *MembersJoinedEventMessageDetail) GetMembers()([]TeamworkUserIdentityable) {
     val, err := m.GetBackingStore().Get("members")
     if err != nil {
@@ -114,7 +117,6 @@ func (m *MembersJoinedEventMessageDetail) SetMembers(value []TeamworkUserIdentit
         panic(err)
     }
 }
-// MembersJoinedEventMessageDetailable 
 type MembersJoinedEventMessageDetailable interface {
     EventMessageDetailable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

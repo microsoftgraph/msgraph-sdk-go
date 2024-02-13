@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintOperation 
 type PrintOperation struct {
     Entity
 }
-// NewPrintOperation instantiates a new printOperation and sets the default values.
+// NewPrintOperation instantiates a new PrintOperation and sets the default values.
 func NewPrintOperation()(*PrintOperation) {
     m := &PrintOperation{
         Entity: *NewEntity(),
@@ -17,6 +16,7 @@ func NewPrintOperation()(*PrintOperation) {
     return m
 }
 // CreatePrintOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrintOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -39,6 +39,7 @@ func CreatePrintOperationFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewPrintOperation(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The DateTimeOffset when the operation was created. Read-only.
+// returns a *Time when successful
 func (m *PrintOperation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -50,6 +51,7 @@ func (m *PrintOperation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrintOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -75,6 +77,7 @@ func (m *PrintOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetStatus gets the status property value. The status property
+// returns a PrintOperationStatusable when successful
 func (m *PrintOperation) GetStatus()(PrintOperationStatusable) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -119,7 +122,6 @@ func (m *PrintOperation) SetStatus(value PrintOperationStatusable)() {
         panic(err)
     }
 }
-// PrintOperationable 
 type PrintOperationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -9,7 +9,7 @@ import (
 type UserExperienceAnalyticsMetricHistory struct {
     Entity
 }
-// NewUserExperienceAnalyticsMetricHistory instantiates a new userExperienceAnalyticsMetricHistory and sets the default values.
+// NewUserExperienceAnalyticsMetricHistory instantiates a new UserExperienceAnalyticsMetricHistory and sets the default values.
 func NewUserExperienceAnalyticsMetricHistory()(*UserExperienceAnalyticsMetricHistory) {
     m := &UserExperienceAnalyticsMetricHistory{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewUserExperienceAnalyticsMetricHistory()(*UserExperienceAnalyticsMetricHis
     return m
 }
 // CreateUserExperienceAnalyticsMetricHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsMetricHistoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsMetricHistory(), nil
 }
 // GetDeviceId gets the deviceId property value. The Intune device id of the device.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsMetricHistory) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *UserExperienceAnalyticsMetricHistory) GetDeviceId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsMetricHistory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -67,6 +70,7 @@ func (m *UserExperienceAnalyticsMetricHistory) GetFieldDeserializers()(map[strin
     return res
 }
 // GetMetricDateTime gets the metricDateTime property value. The metric date time. The value cannot be modified and is automatically populated when the metric is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default.
+// returns a *Time when successful
 func (m *UserExperienceAnalyticsMetricHistory) GetMetricDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("metricDateTime")
     if err != nil {
@@ -78,6 +82,7 @@ func (m *UserExperienceAnalyticsMetricHistory) GetMetricDateTime()(*i336074805fc
     return nil
 }
 // GetMetricType gets the metricType property value. The user experience analytics metric type.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsMetricHistory) GetMetricType()(*string) {
     val, err := m.GetBackingStore().Get("metricType")
     if err != nil {
@@ -135,7 +140,6 @@ func (m *UserExperienceAnalyticsMetricHistory) SetMetricType(value *string)() {
         panic(err)
     }
 }
-// UserExperienceAnalyticsMetricHistoryable 
 type UserExperienceAnalyticsMetricHistoryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

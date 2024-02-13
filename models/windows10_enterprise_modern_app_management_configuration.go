@@ -8,7 +8,7 @@ import (
 type Windows10EnterpriseModernAppManagementConfiguration struct {
     DeviceConfiguration
 }
-// NewWindows10EnterpriseModernAppManagementConfiguration instantiates a new windows10EnterpriseModernAppManagementConfiguration and sets the default values.
+// NewWindows10EnterpriseModernAppManagementConfiguration instantiates a new Windows10EnterpriseModernAppManagementConfiguration and sets the default values.
 func NewWindows10EnterpriseModernAppManagementConfiguration()(*Windows10EnterpriseModernAppManagementConfiguration) {
     m := &Windows10EnterpriseModernAppManagementConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewWindows10EnterpriseModernAppManagementConfiguration()(*Windows10Enterpri
     return m
 }
 // CreateWindows10EnterpriseModernAppManagementConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindows10EnterpriseModernAppManagementConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows10EnterpriseModernAppManagementConfiguration(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Windows10EnterpriseModernAppManagementConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["uninstallBuiltInApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *Windows10EnterpriseModernAppManagementConfiguration) GetFieldDeserializ
     return res
 }
 // GetUninstallBuiltInApps gets the uninstallBuiltInApps property value. Indicates whether or not to uninstall a fixed list of built-in Windows apps.
+// returns a *bool when successful
 func (m *Windows10EnterpriseModernAppManagementConfiguration) GetUninstallBuiltInApps()(*bool) {
     val, err := m.GetBackingStore().Get("uninstallBuiltInApps")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *Windows10EnterpriseModernAppManagementConfiguration) SetUninstallBuiltI
         panic(err)
     }
 }
-// Windows10EnterpriseModernAppManagementConfigurationable 
 type Windows10EnterpriseModernAppManagementConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -32,20 +32,21 @@ type UsersItemAssignmentsItemRubricRefRequestBuilderPutRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewUsersItemAssignmentsItemRubricRefRequestBuilderInternal instantiates a new RefRequestBuilder and sets the default values.
+// NewUsersItemAssignmentsItemRubricRefRequestBuilderInternal instantiates a new UsersItemAssignmentsItemRubricRefRequestBuilder and sets the default values.
 func NewUsersItemAssignmentsItemRubricRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsersItemAssignmentsItemRubricRefRequestBuilder) {
     m := &UsersItemAssignmentsItemRubricRefRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}/rubric/$ref", pathParameters),
     }
     return m
 }
-// NewUsersItemAssignmentsItemRubricRefRequestBuilder instantiates a new RefRequestBuilder and sets the default values.
+// NewUsersItemAssignmentsItemRubricRefRequestBuilder instantiates a new UsersItemAssignmentsItemRubricRefRequestBuilder and sets the default values.
 func NewUsersItemAssignmentsItemRubricRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsersItemAssignmentsItemRubricRefRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUsersItemAssignmentsItemRubricRefRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete remove an educationRubric from an educationAssignment. This method doesn't delete the rubric itself and can only be performed by teachers.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-delete-rubric?view=graph-rest-1.0
@@ -55,8 +56,7 @@ func (m *UsersItemAssignmentsItemRubricRefRequestBuilder) Delete(ctx context.Con
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -65,6 +65,8 @@ func (m *UsersItemAssignmentsItemRubricRefRequestBuilder) Delete(ctx context.Con
     return nil
 }
 // Get get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
+// returns a *string when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-1.0
@@ -74,8 +76,7 @@ func (m *UsersItemAssignmentsItemRubricRefRequestBuilder) Get(ctx context.Contex
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "string", errorMapping)
     if err != nil {
@@ -87,6 +88,7 @@ func (m *UsersItemAssignmentsItemRubricRefRequestBuilder) Get(ctx context.Contex
     return res.(*string), nil
 }
 // Put attach an existing educationRubric object to an educationAssignment. Only teachers can perform this operation.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-put-rubric?view=graph-rest-1.0
@@ -96,8 +98,7 @@ func (m *UsersItemAssignmentsItemRubricRefRequestBuilder) Put(ctx context.Contex
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -106,6 +107,7 @@ func (m *UsersItemAssignmentsItemRubricRefRequestBuilder) Put(ctx context.Contex
     return nil
 }
 // ToDeleteRequestInformation remove an educationRubric from an educationAssignment. This method doesn't delete the rubric itself and can only be performed by teachers.
+// returns a *RequestInformation when successful
 func (m *UsersItemAssignmentsItemRubricRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemRubricRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -116,6 +118,7 @@ func (m *UsersItemAssignmentsItemRubricRefRequestBuilder) ToDeleteRequestInforma
     return requestInfo, nil
 }
 // ToGetRequestInformation get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
+// returns a *RequestInformation when successful
 func (m *UsersItemAssignmentsItemRubricRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemRubricRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -126,6 +129,7 @@ func (m *UsersItemAssignmentsItemRubricRefRequestBuilder) ToGetRequestInformatio
     return requestInfo, nil
 }
 // ToPutRequestInformation attach an existing educationRubric object to an educationAssignment. Only teachers can perform this operation.
+// returns a *RequestInformation when successful
 func (m *UsersItemAssignmentsItemRubricRefRequestBuilder) ToPutRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceUpdateable, requestConfiguration *UsersItemAssignmentsItemRubricRefRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -140,6 +144,7 @@ func (m *UsersItemAssignmentsItemRubricRefRequestBuilder) ToPutRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *UsersItemAssignmentsItemRubricRefRequestBuilder when successful
 func (m *UsersItemAssignmentsItemRubricRefRequestBuilder) WithUrl(rawUrl string)(*UsersItemAssignmentsItemRubricRefRequestBuilder) {
     return NewUsersItemAssignmentsItemRubricRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

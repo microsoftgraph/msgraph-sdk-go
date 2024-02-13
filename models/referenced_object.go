@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ReferencedObject 
 type ReferencedObject struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewReferencedObject instantiates a new referencedObject and sets the default values.
+// NewReferencedObject instantiates a new ReferencedObject and sets the default values.
 func NewReferencedObject()(*ReferencedObject) {
     m := &ReferencedObject{
     }
@@ -19,10 +18,12 @@ func NewReferencedObject()(*ReferencedObject) {
     return m
 }
 // CreateReferencedObjectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateReferencedObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewReferencedObject(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ReferencedObject) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ReferencedObject) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ReferencedObject) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ReferencedObject) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +77,7 @@ func (m *ReferencedObject) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ReferencedObject) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -85,6 +89,7 @@ func (m *ReferencedObject) GetOdataType()(*string) {
     return nil
 }
 // GetReferencedObjectName gets the referencedObjectName property value. Name of the referenced object. Must match one of the objects in the directory definition.
+// returns a *string when successful
 func (m *ReferencedObject) GetReferencedObjectName()(*string) {
     val, err := m.GetBackingStore().Get("referencedObjectName")
     if err != nil {
@@ -96,6 +101,7 @@ func (m *ReferencedObject) GetReferencedObjectName()(*string) {
     return nil
 }
 // GetReferencedProperty gets the referencedProperty property value. Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
+// returns a *string when successful
 func (m *ReferencedObject) GetReferencedProperty()(*string) {
     val, err := m.GetBackingStore().Get("referencedProperty")
     if err != nil {
@@ -166,7 +172,6 @@ func (m *ReferencedObject) SetReferencedProperty(value *string)() {
         panic(err)
     }
 }
-// ReferencedObjectable 
 type ReferencedObjectable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

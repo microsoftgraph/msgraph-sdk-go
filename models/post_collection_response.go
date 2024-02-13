@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PostCollectionResponse 
 type PostCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPostCollectionResponse instantiates a new postCollectionResponse and sets the default values.
+// NewPostCollectionResponse instantiates a new PostCollectionResponse and sets the default values.
 func NewPostCollectionResponse()(*PostCollectionResponse) {
     m := &PostCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewPostCollectionResponse()(*PostCollectionResponse) {
     return m
 }
 // CreatePostCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePostCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPostCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PostCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *PostCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []Postable when successful
 func (m *PostCollectionResponse) GetValue()([]Postable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *PostCollectionResponse) SetValue(value []Postable)() {
         panic(err)
     }
 }
-// PostCollectionResponseable 
 type PostCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleAssignmentSchedule 
 type UnifiedRoleAssignmentSchedule struct {
     UnifiedRoleScheduleBase
 }
-// NewUnifiedRoleAssignmentSchedule instantiates a new unifiedRoleAssignmentSchedule and sets the default values.
+// NewUnifiedRoleAssignmentSchedule instantiates a new UnifiedRoleAssignmentSchedule and sets the default values.
 func NewUnifiedRoleAssignmentSchedule()(*UnifiedRoleAssignmentSchedule) {
     m := &UnifiedRoleAssignmentSchedule{
         UnifiedRoleScheduleBase: *NewUnifiedRoleScheduleBase(),
@@ -16,10 +15,12 @@ func NewUnifiedRoleAssignmentSchedule()(*UnifiedRoleAssignmentSchedule) {
     return m
 }
 // CreateUnifiedRoleAssignmentScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnifiedRoleAssignmentScheduleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleAssignmentSchedule(), nil
 }
 // GetActivatedUsing gets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.
+// returns a UnifiedRoleEligibilityScheduleable when successful
 func (m *UnifiedRoleAssignmentSchedule) GetActivatedUsing()(UnifiedRoleEligibilityScheduleable) {
     val, err := m.GetBackingStore().Get("activatedUsing")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *UnifiedRoleAssignmentSchedule) GetActivatedUsing()(UnifiedRoleEligibili
     return nil
 }
 // GetAssignmentType gets the assignmentType property value. Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
+// returns a *string when successful
 func (m *UnifiedRoleAssignmentSchedule) GetAssignmentType()(*string) {
     val, err := m.GetBackingStore().Get("assignmentType")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *UnifiedRoleAssignmentSchedule) GetAssignmentType()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnifiedRoleAssignmentSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UnifiedRoleScheduleBase.GetFieldDeserializers()
     res["activatedUsing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -87,6 +90,7 @@ func (m *UnifiedRoleAssignmentSchedule) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetMemberType gets the memberType property value. How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
+// returns a *string when successful
 func (m *UnifiedRoleAssignmentSchedule) GetMemberType()(*string) {
     val, err := m.GetBackingStore().Get("memberType")
     if err != nil {
@@ -98,6 +102,7 @@ func (m *UnifiedRoleAssignmentSchedule) GetMemberType()(*string) {
     return nil
 }
 // GetScheduleInfo gets the scheduleInfo property value. The period of the role assignment. It can represent a single occurrence or multiple recurrences.
+// returns a RequestScheduleable when successful
 func (m *UnifiedRoleAssignmentSchedule) GetScheduleInfo()(RequestScheduleable) {
     val, err := m.GetBackingStore().Get("scheduleInfo")
     if err != nil {
@@ -168,7 +173,6 @@ func (m *UnifiedRoleAssignmentSchedule) SetScheduleInfo(value RequestScheduleabl
         panic(err)
     }
 }
-// UnifiedRoleAssignmentScheduleable 
 type UnifiedRoleAssignmentScheduleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UnifiedRoleScheduleBaseable

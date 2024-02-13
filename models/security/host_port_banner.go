@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// HostPortBanner 
 type HostPortBanner struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewHostPortBanner instantiates a new hostPortBanner and sets the default values.
+// NewHostPortBanner instantiates a new HostPortBanner and sets the default values.
 func NewHostPortBanner()(*HostPortBanner) {
     m := &HostPortBanner{
     }
@@ -20,10 +19,12 @@ func NewHostPortBanner()(*HostPortBanner) {
     return m
 }
 // CreateHostPortBannerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateHostPortBannerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHostPortBanner(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *HostPortBanner) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *HostPortBanner) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *HostPortBanner) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBanner gets the banner property value. The text response received from a web component when scanning a hostPort.
+// returns a *string when successful
 func (m *HostPortBanner) GetBanner()(*string) {
     val, err := m.GetBackingStore().Get("banner")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *HostPortBanner) GetBanner()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *HostPortBanner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["banner"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +120,7 @@ func (m *HostPortBanner) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetFirstSeenDateTime gets the firstSeenDateTime property value. The first date and time when Microsoft Defender Threat Intelligence observed the hostPortBanner. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *HostPortBanner) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstSeenDateTime")
     if err != nil {
@@ -127,6 +132,7 @@ func (m *HostPortBanner) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. The last date and time when Microsoft Defender Threat Intelligence observed the hostPortBanner. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *HostPortBanner) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSeenDateTime")
     if err != nil {
@@ -138,6 +144,7 @@ func (m *HostPortBanner) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *HostPortBanner) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -149,6 +156,7 @@ func (m *HostPortBanner) GetOdataType()(*string) {
     return nil
 }
 // GetScanProtocol gets the scanProtocol property value. The specific protocol used to scan the hostPort.
+// returns a *string when successful
 func (m *HostPortBanner) GetScanProtocol()(*string) {
     val, err := m.GetBackingStore().Get("scanProtocol")
     if err != nil {
@@ -160,6 +168,7 @@ func (m *HostPortBanner) GetScanProtocol()(*string) {
     return nil
 }
 // GetTimesObserved gets the timesObserved property value. The total amount of times that Microsoft Defender Threat Intelligence has observed the hostPortBanner in all its scans.
+// returns a *int32 when successful
 func (m *HostPortBanner) GetTimesObserved()(*int32) {
     val, err := m.GetBackingStore().Get("timesObserved")
     if err != nil {
@@ -269,7 +278,6 @@ func (m *HostPortBanner) SetTimesObserved(value *int32)() {
         panic(err)
     }
 }
-// HostPortBannerable 
 type HostPortBannerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

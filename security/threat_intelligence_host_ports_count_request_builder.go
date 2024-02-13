@@ -26,28 +26,29 @@ type ThreatIntelligenceHostPortsCountRequestBuilderGetRequestConfiguration struc
     // Request query parameters
     QueryParameters *ThreatIntelligenceHostPortsCountRequestBuilderGetQueryParameters
 }
-// NewThreatIntelligenceHostPortsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewThreatIntelligenceHostPortsCountRequestBuilderInternal instantiates a new ThreatIntelligenceHostPortsCountRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostPortsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostPortsCountRequestBuilder) {
     m := &ThreatIntelligenceHostPortsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hostPorts/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hostPorts/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewThreatIntelligenceHostPortsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewThreatIntelligenceHostPortsCountRequestBuilder instantiates a new ThreatIntelligenceHostPortsCountRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostPortsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostPortsCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewThreatIntelligenceHostPortsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ThreatIntelligenceHostPortsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostPortsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *ThreatIntelligenceHostPortsCountRequestBuilder) Get(ctx context.Context
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostPortsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostPortsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *ThreatIntelligenceHostPortsCountRequestBuilder) ToGetRequestInformation
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ThreatIntelligenceHostPortsCountRequestBuilder when successful
 func (m *ThreatIntelligenceHostPortsCountRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceHostPortsCountRequestBuilder) {
     return NewThreatIntelligenceHostPortsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

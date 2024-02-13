@@ -45,6 +45,7 @@ type ItemScheduleShiftsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByShiftId provides operations to manage the shifts property of the microsoft.graph.schedule entity.
+// returns a *ItemScheduleShiftsShiftItemRequestBuilder when successful
 func (m *ItemScheduleShiftsRequestBuilder) ByShiftId(shiftId string)(*ItemScheduleShiftsShiftItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -55,24 +56,27 @@ func (m *ItemScheduleShiftsRequestBuilder) ByShiftId(shiftId string)(*ItemSchedu
     }
     return NewItemScheduleShiftsShiftItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemScheduleShiftsRequestBuilderInternal instantiates a new ShiftsRequestBuilder and sets the default values.
+// NewItemScheduleShiftsRequestBuilderInternal instantiates a new ItemScheduleShiftsRequestBuilder and sets the default values.
 func NewItemScheduleShiftsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemScheduleShiftsRequestBuilder) {
     m := &ItemScheduleShiftsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/shifts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/shifts{?%24count,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemScheduleShiftsRequestBuilder instantiates a new ShiftsRequestBuilder and sets the default values.
+// NewItemScheduleShiftsRequestBuilder instantiates a new ItemScheduleShiftsRequestBuilder and sets the default values.
 func NewItemScheduleShiftsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemScheduleShiftsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemScheduleShiftsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemScheduleShiftsCountRequestBuilder when successful
 func (m *ItemScheduleShiftsRequestBuilder) Count()(*ItemScheduleShiftsCountRequestBuilder) {
     return NewItemScheduleShiftsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the list of shift instances in a schedule.
+// returns a ShiftCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/schedule-list-shifts?view=graph-rest-1.0
@@ -82,8 +86,7 @@ func (m *ItemScheduleShiftsRequestBuilder) Get(ctx context.Context, requestConfi
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateShiftCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -95,6 +98,8 @@ func (m *ItemScheduleShiftsRequestBuilder) Get(ctx context.Context, requestConfi
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ShiftCollectionResponseable), nil
 }
 // Post create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
+// returns a Shiftable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/schedule-post-shifts?view=graph-rest-1.0
@@ -104,8 +109,7 @@ func (m *ItemScheduleShiftsRequestBuilder) Post(ctx context.Context, body iadcd8
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateShiftFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -117,6 +121,7 @@ func (m *ItemScheduleShiftsRequestBuilder) Post(ctx context.Context, body iadcd8
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Shiftable), nil
 }
 // ToGetRequestInformation get the list of shift instances in a schedule.
+// returns a *RequestInformation when successful
 func (m *ItemScheduleShiftsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemScheduleShiftsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -130,8 +135,9 @@ func (m *ItemScheduleShiftsRequestBuilder) ToGetRequestInformation(ctx context.C
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
+// returns a *RequestInformation when successful
 func (m *ItemScheduleShiftsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Shiftable, requestConfiguration *ItemScheduleShiftsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/teams/{team%2Did}/schedule/shifts", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -144,6 +150,7 @@ func (m *ItemScheduleShiftsRequestBuilder) ToPostRequestInformation(ctx context.
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemScheduleShiftsRequestBuilder when successful
 func (m *ItemScheduleShiftsRequestBuilder) WithUrl(rawUrl string)(*ItemScheduleShiftsRequestBuilder) {
     return NewItemScheduleShiftsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

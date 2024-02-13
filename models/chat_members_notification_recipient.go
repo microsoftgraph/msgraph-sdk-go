@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChatMembersNotificationRecipient 
 type ChatMembersNotificationRecipient struct {
     TeamworkNotificationRecipient
 }
-// NewChatMembersNotificationRecipient instantiates a new chatMembersNotificationRecipient and sets the default values.
+// NewChatMembersNotificationRecipient instantiates a new ChatMembersNotificationRecipient and sets the default values.
 func NewChatMembersNotificationRecipient()(*ChatMembersNotificationRecipient) {
     m := &ChatMembersNotificationRecipient{
         TeamworkNotificationRecipient: *NewTeamworkNotificationRecipient(),
@@ -18,10 +17,12 @@ func NewChatMembersNotificationRecipient()(*ChatMembersNotificationRecipient) {
     return m
 }
 // CreateChatMembersNotificationRecipientFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateChatMembersNotificationRecipientFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChatMembersNotificationRecipient(), nil
 }
 // GetChatId gets the chatId property value. The unique identifier for the chat whose members should receive the notifications.
+// returns a *string when successful
 func (m *ChatMembersNotificationRecipient) GetChatId()(*string) {
     val, err := m.GetBackingStore().Get("chatId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ChatMembersNotificationRecipient) GetChatId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ChatMembersNotificationRecipient) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.TeamworkNotificationRecipient.GetFieldDeserializers()
     res["chatId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +70,6 @@ func (m *ChatMembersNotificationRecipient) SetChatId(value *string)() {
         panic(err)
     }
 }
-// ChatMembersNotificationRecipientable 
 type ChatMembersNotificationRecipientable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     TeamworkNotificationRecipientable

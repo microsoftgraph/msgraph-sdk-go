@@ -5,11 +5,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// WorkflowCollectionResponse 
 type WorkflowCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
 }
-// NewWorkflowCollectionResponse instantiates a new workflowCollectionResponse and sets the default values.
+// NewWorkflowCollectionResponse instantiates a new WorkflowCollectionResponse and sets the default values.
 func NewWorkflowCollectionResponse()(*WorkflowCollectionResponse) {
     m := &WorkflowCollectionResponse{
         BaseCollectionPaginationCountResponse: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewBaseCollectionPaginationCountResponse(),
@@ -17,10 +16,12 @@ func NewWorkflowCollectionResponse()(*WorkflowCollectionResponse) {
     return m
 }
 // CreateWorkflowCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkflowCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkflowCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkflowCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +43,7 @@ func (m *WorkflowCollectionResponse) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []Workflowable when successful
 func (m *WorkflowCollectionResponse) GetValue()([]Workflowable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -79,7 +81,6 @@ func (m *WorkflowCollectionResponse) SetValue(value []Workflowable)() {
         panic(err)
     }
 }
-// WorkflowCollectionResponseable 
 type WorkflowCollectionResponseable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -10,12 +10,19 @@ import (
 type ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderGetQueryParameters get media content for the navigation property photo from users
+type ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderGetQueryParameters struct {
+    // Format of the content
+    Format *string `uriparametername:"%24format"`
+}
 // ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderGetQueryParameters
 }
 // ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderPutRequestConfiguration struct {
@@ -24,28 +31,29 @@ type ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderPutRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderInternal instantiates a new ContentRequestBuilder and sets the default values.
+// NewItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderInternal instantiates a new ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder and sets the default values.
 func NewItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) {
     m := &ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/contactFolders/{contactFolder%2Did}/contacts/{contact%2Did}/photo/$value", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/contactFolders/{contactFolder%2Did}/contacts/{contact%2Did}/photo/$value{?%24format*}", pathParameters),
     }
     return m
 }
-// NewItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder instantiates a new ContentRequestBuilder and sets the default values.
+// NewItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder instantiates a new ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder and sets the default values.
 func NewItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get media content for the navigation property photo from users
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -57,14 +65,15 @@ func (m *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) Get(
     return res.([]byte), nil
 }
 // Put update media content for the navigation property photo in users
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -76,9 +85,13 @@ func (m *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) Put(
     return res.([]byte), nil
 }
 // ToGetRequestInformation get media content for the navigation property photo from users
+// returns a *RequestInformation when successful
 func (m *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
@@ -86,8 +99,9 @@ func (m *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) ToGe
     return requestInfo, nil
 }
 // ToPutRequestInformation update media content for the navigation property photo in users
+// returns a *RequestInformation when successful
 func (m *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, "{+baseurl}/users/{user%2Did}/contactFolders/{contactFolder%2Did}/contacts/{contact%2Did}/photo/$value", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -97,6 +111,7 @@ func (m *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) ToPu
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder when successful
 func (m *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) WithUrl(rawUrl string)(*ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) {
     return NewItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

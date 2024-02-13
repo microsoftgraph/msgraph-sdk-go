@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Room 
 type Room struct {
     Place
 }
-// NewRoom instantiates a new room and sets the default values.
+// NewRoom instantiates a new Room and sets the default values.
 func NewRoom()(*Room) {
     m := &Room{
         Place: *NewPlace(),
@@ -18,10 +17,12 @@ func NewRoom()(*Room) {
     return m
 }
 // CreateRoomFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRoomFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRoom(), nil
 }
 // GetAudioDeviceName gets the audioDeviceName property value. Specifies the name of the audio device in the room.
+// returns a *string when successful
 func (m *Room) GetAudioDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("audioDeviceName")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *Room) GetAudioDeviceName()(*string) {
     return nil
 }
 // GetBookingType gets the bookingType property value. Type of room. Possible values are standard, and reserved.
+// returns a *BookingType when successful
 func (m *Room) GetBookingType()(*BookingType) {
     val, err := m.GetBackingStore().Get("bookingType")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *Room) GetBookingType()(*BookingType) {
     return nil
 }
 // GetBuilding gets the building property value. Specifies the building name or building number that the room is in.
+// returns a *string when successful
 func (m *Room) GetBuilding()(*string) {
     val, err := m.GetBackingStore().Get("building")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *Room) GetBuilding()(*string) {
     return nil
 }
 // GetCapacity gets the capacity property value. Specifies the capacity of the room.
+// returns a *int32 when successful
 func (m *Room) GetCapacity()(*int32) {
     val, err := m.GetBackingStore().Get("capacity")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *Room) GetCapacity()(*int32) {
     return nil
 }
 // GetDisplayDeviceName gets the displayDeviceName property value. Specifies the name of the display device in the room.
+// returns a *string when successful
 func (m *Room) GetDisplayDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("displayDeviceName")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *Room) GetDisplayDeviceName()(*string) {
     return nil
 }
 // GetEmailAddress gets the emailAddress property value. Email address of the room.
+// returns a *string when successful
 func (m *Room) GetEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("emailAddress")
     if err != nil {
@@ -88,6 +94,7 @@ func (m *Room) GetEmailAddress()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Room) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Place.GetFieldDeserializers()
     res["audioDeviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -229,6 +236,7 @@ func (m *Room) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     return res
 }
 // GetFloorLabel gets the floorLabel property value. Specifies a descriptive label for the floor, for example, P.
+// returns a *string when successful
 func (m *Room) GetFloorLabel()(*string) {
     val, err := m.GetBackingStore().Get("floorLabel")
     if err != nil {
@@ -240,6 +248,7 @@ func (m *Room) GetFloorLabel()(*string) {
     return nil
 }
 // GetFloorNumber gets the floorNumber property value. Specifies the floor number that the room is on.
+// returns a *int32 when successful
 func (m *Room) GetFloorNumber()(*int32) {
     val, err := m.GetBackingStore().Get("floorNumber")
     if err != nil {
@@ -251,6 +260,7 @@ func (m *Room) GetFloorNumber()(*int32) {
     return nil
 }
 // GetIsWheelChairAccessible gets the isWheelChairAccessible property value. Specifies whether the room is wheelchair accessible.
+// returns a *bool when successful
 func (m *Room) GetIsWheelChairAccessible()(*bool) {
     val, err := m.GetBackingStore().Get("isWheelChairAccessible")
     if err != nil {
@@ -262,6 +272,7 @@ func (m *Room) GetIsWheelChairAccessible()(*bool) {
     return nil
 }
 // GetLabel gets the label property value. Specifies a descriptive label for the room, for example, a number or name.
+// returns a *string when successful
 func (m *Room) GetLabel()(*string) {
     val, err := m.GetBackingStore().Get("label")
     if err != nil {
@@ -273,6 +284,7 @@ func (m *Room) GetLabel()(*string) {
     return nil
 }
 // GetNickname gets the nickname property value. Specifies a nickname for the room, for example, 'conf room'.
+// returns a *string when successful
 func (m *Room) GetNickname()(*string) {
     val, err := m.GetBackingStore().Get("nickname")
     if err != nil {
@@ -284,6 +296,7 @@ func (m *Room) GetNickname()(*string) {
     return nil
 }
 // GetTags gets the tags property value. Specifies additional features of the room, for example, details like the type of view or furniture type.
+// returns a []string when successful
 func (m *Room) GetTags()([]string) {
     val, err := m.GetBackingStore().Get("tags")
     if err != nil {
@@ -295,6 +308,7 @@ func (m *Room) GetTags()([]string) {
     return nil
 }
 // GetVideoDeviceName gets the videoDeviceName property value. Specifies the name of the video device in the room.
+// returns a *string when successful
 func (m *Room) GetVideoDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("videoDeviceName")
     if err != nil {
@@ -483,7 +497,6 @@ func (m *Room) SetVideoDeviceName(value *string)() {
         panic(err)
     }
 }
-// Roomable 
 type Roomable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Placeable

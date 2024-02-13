@@ -5,11 +5,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// TriggerAndScopeBasedConditions 
 type TriggerAndScopeBasedConditions struct {
     WorkflowExecutionConditions
 }
-// NewTriggerAndScopeBasedConditions instantiates a new triggerAndScopeBasedConditions and sets the default values.
+// NewTriggerAndScopeBasedConditions instantiates a new TriggerAndScopeBasedConditions and sets the default values.
 func NewTriggerAndScopeBasedConditions()(*TriggerAndScopeBasedConditions) {
     m := &TriggerAndScopeBasedConditions{
         WorkflowExecutionConditions: *NewWorkflowExecutionConditions(),
@@ -19,10 +18,12 @@ func NewTriggerAndScopeBasedConditions()(*TriggerAndScopeBasedConditions) {
     return m
 }
 // CreateTriggerAndScopeBasedConditionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTriggerAndScopeBasedConditionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTriggerAndScopeBasedConditions(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TriggerAndScopeBasedConditions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WorkflowExecutionConditions.GetFieldDeserializers()
     res["scope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -48,6 +49,7 @@ func (m *TriggerAndScopeBasedConditions) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetScope gets the scope property value. Defines who the workflow runs for.
+// returns a SubjectSetable when successful
 func (m *TriggerAndScopeBasedConditions) GetScope()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubjectSetable) {
     val, err := m.GetBackingStore().Get("scope")
     if err != nil {
@@ -59,6 +61,7 @@ func (m *TriggerAndScopeBasedConditions) GetScope()(iadcd81124412c61e647227ecfc4
     return nil
 }
 // GetTrigger gets the trigger property value. What triggers a workflow to run.
+// returns a WorkflowExecutionTriggerable when successful
 func (m *TriggerAndScopeBasedConditions) GetTrigger()(WorkflowExecutionTriggerable) {
     val, err := m.GetBackingStore().Get("trigger")
     if err != nil {
@@ -103,7 +106,6 @@ func (m *TriggerAndScopeBasedConditions) SetTrigger(value WorkflowExecutionTrigg
         panic(err)
     }
 }
-// TriggerAndScopeBasedConditionsable 
 type TriggerAndScopeBasedConditionsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WorkflowExecutionConditionsable

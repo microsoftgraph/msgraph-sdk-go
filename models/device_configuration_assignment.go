@@ -8,7 +8,7 @@ import (
 type DeviceConfigurationAssignment struct {
     Entity
 }
-// NewDeviceConfigurationAssignment instantiates a new deviceConfigurationAssignment and sets the default values.
+// NewDeviceConfigurationAssignment instantiates a new DeviceConfigurationAssignment and sets the default values.
 func NewDeviceConfigurationAssignment()(*DeviceConfigurationAssignment) {
     m := &DeviceConfigurationAssignment{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewDeviceConfigurationAssignment()(*DeviceConfigurationAssignment) {
     return m
 }
 // CreateDeviceConfigurationAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceConfigurationAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceConfigurationAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceConfigurationAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["target"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +37,7 @@ func (m *DeviceConfigurationAssignment) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetTarget gets the target property value. The assignment target for the device configuration.
+// returns a DeviceAndAppManagementAssignmentTargetable when successful
 func (m *DeviceConfigurationAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
     val, err := m.GetBackingStore().Get("target")
     if err != nil {
@@ -66,7 +69,6 @@ func (m *DeviceConfigurationAssignment) SetTarget(value DeviceAndAppManagementAs
         panic(err)
     }
 }
-// DeviceConfigurationAssignmentable 
 type DeviceConfigurationAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

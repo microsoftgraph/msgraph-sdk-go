@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceEvidence 
 type DeviceEvidence struct {
     AlertEvidence
 }
-// NewDeviceEvidence instantiates a new deviceEvidence and sets the default values.
+// NewDeviceEvidence instantiates a new DeviceEvidence and sets the default values.
 func NewDeviceEvidence()(*DeviceEvidence) {
     m := &DeviceEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -19,10 +18,12 @@ func NewDeviceEvidence()(*DeviceEvidence) {
     return m
 }
 // CreateDeviceEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceEvidence(), nil
 }
 // GetAzureAdDeviceId gets the azureAdDeviceId property value. A unique identifier assigned to a device by Microsoft Entra ID when device is Microsoft Entra joined.
+// returns a *string when successful
 func (m *DeviceEvidence) GetAzureAdDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("azureAdDeviceId")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *DeviceEvidence) GetAzureAdDeviceId()(*string) {
     return nil
 }
 // GetDefenderAvStatus gets the defenderAvStatus property value. State of the Defender AntiMalware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.
+// returns a *DefenderAvStatus when successful
 func (m *DeviceEvidence) GetDefenderAvStatus()(*DefenderAvStatus) {
     val, err := m.GetBackingStore().Get("defenderAvStatus")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *DeviceEvidence) GetDefenderAvStatus()(*DefenderAvStatus) {
     return nil
 }
 // GetDeviceDnsName gets the deviceDnsName property value. The fully qualified domain name (FQDN) for the device.
+// returns a *string when successful
 func (m *DeviceEvidence) GetDeviceDnsName()(*string) {
     val, err := m.GetBackingStore().Get("deviceDnsName")
     if err != nil {
@@ -56,6 +59,7 @@ func (m *DeviceEvidence) GetDeviceDnsName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["azureAdDeviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -233,6 +237,7 @@ func (m *DeviceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetFirstSeenDateTime gets the firstSeenDateTime property value. The date and time when the device was first seen.
+// returns a *Time when successful
 func (m *DeviceEvidence) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstSeenDateTime")
     if err != nil {
@@ -244,6 +249,7 @@ func (m *DeviceEvidence) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetHealthStatus gets the healthStatus property value. The health state of the device. The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
+// returns a *DeviceHealthStatus when successful
 func (m *DeviceEvidence) GetHealthStatus()(*DeviceHealthStatus) {
     val, err := m.GetBackingStore().Get("healthStatus")
     if err != nil {
@@ -255,6 +261,7 @@ func (m *DeviceEvidence) GetHealthStatus()(*DeviceHealthStatus) {
     return nil
 }
 // GetIpInterfaces gets the ipInterfaces property value. Ip interfaces of the device during the time of the alert.
+// returns a []string when successful
 func (m *DeviceEvidence) GetIpInterfaces()([]string) {
     val, err := m.GetBackingStore().Get("ipInterfaces")
     if err != nil {
@@ -266,6 +273,7 @@ func (m *DeviceEvidence) GetIpInterfaces()([]string) {
     return nil
 }
 // GetLoggedOnUsers gets the loggedOnUsers property value. Users that were logged on the machine during the time of the alert.
+// returns a []LoggedOnUserable when successful
 func (m *DeviceEvidence) GetLoggedOnUsers()([]LoggedOnUserable) {
     val, err := m.GetBackingStore().Get("loggedOnUsers")
     if err != nil {
@@ -277,6 +285,7 @@ func (m *DeviceEvidence) GetLoggedOnUsers()([]LoggedOnUserable) {
     return nil
 }
 // GetMdeDeviceId gets the mdeDeviceId property value. A unique identifier assigned to a device by Microsoft Defender for Endpoint.
+// returns a *string when successful
 func (m *DeviceEvidence) GetMdeDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("mdeDeviceId")
     if err != nil {
@@ -288,6 +297,7 @@ func (m *DeviceEvidence) GetMdeDeviceId()(*string) {
     return nil
 }
 // GetOnboardingStatus gets the onboardingStatus property value. The status of the machine onboarding to Microsoft Defender for Endpoint. The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
+// returns a *OnboardingStatus when successful
 func (m *DeviceEvidence) GetOnboardingStatus()(*OnboardingStatus) {
     val, err := m.GetBackingStore().Get("onboardingStatus")
     if err != nil {
@@ -299,6 +309,7 @@ func (m *DeviceEvidence) GetOnboardingStatus()(*OnboardingStatus) {
     return nil
 }
 // GetOsBuild gets the osBuild property value. The build version for the operating system the device is running.
+// returns a *int64 when successful
 func (m *DeviceEvidence) GetOsBuild()(*int64) {
     val, err := m.GetBackingStore().Get("osBuild")
     if err != nil {
@@ -310,6 +321,7 @@ func (m *DeviceEvidence) GetOsBuild()(*int64) {
     return nil
 }
 // GetOsPlatform gets the osPlatform property value. The operating system platform the device is running.
+// returns a *string when successful
 func (m *DeviceEvidence) GetOsPlatform()(*string) {
     val, err := m.GetBackingStore().Get("osPlatform")
     if err != nil {
@@ -321,6 +333,7 @@ func (m *DeviceEvidence) GetOsPlatform()(*string) {
     return nil
 }
 // GetRbacGroupId gets the rbacGroupId property value. The ID of the role-based access control (RBAC) device group.
+// returns a *int32 when successful
 func (m *DeviceEvidence) GetRbacGroupId()(*int32) {
     val, err := m.GetBackingStore().Get("rbacGroupId")
     if err != nil {
@@ -332,6 +345,7 @@ func (m *DeviceEvidence) GetRbacGroupId()(*int32) {
     return nil
 }
 // GetRbacGroupName gets the rbacGroupName property value. The name of the RBAC device group.
+// returns a *string when successful
 func (m *DeviceEvidence) GetRbacGroupName()(*string) {
     val, err := m.GetBackingStore().Get("rbacGroupName")
     if err != nil {
@@ -343,6 +357,7 @@ func (m *DeviceEvidence) GetRbacGroupName()(*string) {
     return nil
 }
 // GetRiskScore gets the riskScore property value. Risk score as evaluated by Microsoft Defender for Endpoint. The possible values are: none, informational, low, medium, high, unknownFutureValue.
+// returns a *DeviceRiskScore when successful
 func (m *DeviceEvidence) GetRiskScore()(*DeviceRiskScore) {
     val, err := m.GetBackingStore().Get("riskScore")
     if err != nil {
@@ -354,6 +369,7 @@ func (m *DeviceEvidence) GetRiskScore()(*DeviceRiskScore) {
     return nil
 }
 // GetVersion gets the version property value. The version of the operating system platform.
+// returns a *string when successful
 func (m *DeviceEvidence) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -365,6 +381,7 @@ func (m *DeviceEvidence) GetVersion()(*string) {
     return nil
 }
 // GetVmMetadata gets the vmMetadata property value. Metadata of the virtual machine (VM) on which Microsoft Defender for Endpoint is running.
+// returns a VmMetadataable when successful
 func (m *DeviceEvidence) GetVmMetadata()(VmMetadataable) {
     val, err := m.GetBackingStore().Get("vmMetadata")
     if err != nil {
@@ -601,7 +618,6 @@ func (m *DeviceEvidence) SetVmMetadata(value VmMetadataable)() {
         panic(err)
     }
 }
-// DeviceEvidenceable 
 type DeviceEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SubjectRightsRequestEnumeratedMailboxLocation 
 type SubjectRightsRequestEnumeratedMailboxLocation struct {
     SubjectRightsRequestMailboxLocation
 }
-// NewSubjectRightsRequestEnumeratedMailboxLocation instantiates a new subjectRightsRequestEnumeratedMailboxLocation and sets the default values.
+// NewSubjectRightsRequestEnumeratedMailboxLocation instantiates a new SubjectRightsRequestEnumeratedMailboxLocation and sets the default values.
 func NewSubjectRightsRequestEnumeratedMailboxLocation()(*SubjectRightsRequestEnumeratedMailboxLocation) {
     m := &SubjectRightsRequestEnumeratedMailboxLocation{
         SubjectRightsRequestMailboxLocation: *NewSubjectRightsRequestMailboxLocation(),
@@ -18,10 +17,12 @@ func NewSubjectRightsRequestEnumeratedMailboxLocation()(*SubjectRightsRequestEnu
     return m
 }
 // CreateSubjectRightsRequestEnumeratedMailboxLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSubjectRightsRequestEnumeratedMailboxLocationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSubjectRightsRequestEnumeratedMailboxLocation(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SubjectRightsRequestEnumeratedMailboxLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.SubjectRightsRequestMailboxLocation.GetFieldDeserializers()
     res["userPrincipalNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -43,6 +44,7 @@ func (m *SubjectRightsRequestEnumeratedMailboxLocation) GetFieldDeserializers()(
     return res
 }
 // GetUserPrincipalNames gets the userPrincipalNames property value. Collection of mailboxes that should be included in the search. Includes the user principal name (UPN) of each mailbox, for example, Monica.Thompson@contoso.com.
+// returns a []string when successful
 func (m *SubjectRightsRequestEnumeratedMailboxLocation) GetUserPrincipalNames()([]string) {
     val, err := m.GetBackingStore().Get("userPrincipalNames")
     if err != nil {
@@ -74,7 +76,6 @@ func (m *SubjectRightsRequestEnumeratedMailboxLocation) SetUserPrincipalNames(va
         panic(err)
     }
 }
-// SubjectRightsRequestEnumeratedMailboxLocationable 
 type SubjectRightsRequestEnumeratedMailboxLocationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     SubjectRightsRequestMailboxLocationable

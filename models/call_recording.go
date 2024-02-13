@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CallRecording 
 type CallRecording struct {
     Entity
 }
-// NewCallRecording instantiates a new callRecording and sets the default values.
+// NewCallRecording instantiates a new CallRecording and sets the default values.
 func NewCallRecording()(*CallRecording) {
     m := &CallRecording{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewCallRecording()(*CallRecording) {
     return m
 }
 // CreateCallRecordingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCallRecordingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCallRecording(), nil
 }
 // GetContent gets the content property value. The content of the recording. Read-only.
+// returns a []byte when successful
 func (m *CallRecording) GetContent()([]byte) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *CallRecording) GetContent()([]byte) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time at which the recording was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *CallRecording) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *CallRecording) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CallRecording) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -98,6 +101,7 @@ func (m *CallRecording) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetMeetingId gets the meetingId property value. The unique identifier of the onlineMeeting related to this recording. Read-only.
+// returns a *string when successful
 func (m *CallRecording) GetMeetingId()(*string) {
     val, err := m.GetBackingStore().Get("meetingId")
     if err != nil {
@@ -109,6 +113,7 @@ func (m *CallRecording) GetMeetingId()(*string) {
     return nil
 }
 // GetMeetingOrganizer gets the meetingOrganizer property value. The identity information of the organizer of the onlineMeeting related to this recording. Read-only.
+// returns a IdentitySetable when successful
 func (m *CallRecording) GetMeetingOrganizer()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("meetingOrganizer")
     if err != nil {
@@ -120,6 +125,7 @@ func (m *CallRecording) GetMeetingOrganizer()(IdentitySetable) {
     return nil
 }
 // GetRecordingContentUrl gets the recordingContentUrl property value. The URL that can be used to access the content of the recording. Read-only.
+// returns a *string when successful
 func (m *CallRecording) GetRecordingContentUrl()(*string) {
     val, err := m.GetBackingStore().Get("recordingContentUrl")
     if err != nil {
@@ -203,7 +209,6 @@ func (m *CallRecording) SetRecordingContentUrl(value *string)() {
         panic(err)
     }
 }
-// CallRecordingable 
 type CallRecordingable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

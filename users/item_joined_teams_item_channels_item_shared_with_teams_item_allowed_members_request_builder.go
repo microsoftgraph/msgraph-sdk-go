@@ -40,6 +40,7 @@ type ItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuil
     QueryParameters *ItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilderGetQueryParameters
 }
 // ByConversationMemberId provides operations to manage the allowedMembers property of the microsoft.graph.sharedWithChannelTeamInfo entity.
+// returns a *ItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersConversationMemberItemRequestBuilder when successful
 func (m *ItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilder) ByConversationMemberId(conversationMemberId string)(*ItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersConversationMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,24 +51,27 @@ func (m *ItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequest
     }
     return NewItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersConversationMemberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilderInternal instantiates a new AllowedMembersRequestBuilder and sets the default values.
+// NewItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilderInternal instantiates a new ItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilder) {
     m := &ItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/channels/{channel%2Did}/sharedWithTeams/{sharedWithChannelTeamInfo%2Did}/allowedMembers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/channels/{channel%2Did}/sharedWithTeams/{sharedWithChannelTeamInfo%2Did}/allowedMembers{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilder instantiates a new AllowedMembersRequestBuilder and sets the default values.
+// NewItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilder instantiates a new ItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilder when successful
 func (m *ItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilder) Count()(*ItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilder) {
     return NewItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the list of conversationMembers who can access a shared channel. This method does not return the following conversationMembers from the team:- Users with Guest role- Users who are externally authenticated in the tenant
+// returns a ConversationMemberCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/sharedwithchannelteaminfo-list-allowedmembers?view=graph-rest-1.0
@@ -77,8 +81,7 @@ func (m *ItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequest
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateConversationMemberCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,6 +93,7 @@ func (m *ItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequest
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConversationMemberCollectionResponseable), nil
 }
 // ToGetRequestInformation get the list of conversationMembers who can access a shared channel. This method does not return the following conversationMembers from the team:- Users with Guest role- Users who are externally authenticated in the tenant
+// returns a *RequestInformation when successful
 func (m *ItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -103,6 +107,7 @@ func (m *ItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequest
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilder when successful
 func (m *ItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilder) WithUrl(rawUrl string)(*ItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilder) {
     return NewItemJoinedTeamsItemChannelsItemSharedWithTeamsItemAllowedMembersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

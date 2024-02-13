@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LongRunningOperation 
 type LongRunningOperation struct {
     Entity
 }
-// NewLongRunningOperation instantiates a new longRunningOperation and sets the default values.
+// NewLongRunningOperation instantiates a new LongRunningOperation and sets the default values.
 func NewLongRunningOperation()(*LongRunningOperation) {
     m := &LongRunningOperation{
         Entity: *NewEntity(),
@@ -17,6 +16,7 @@ func NewLongRunningOperation()(*LongRunningOperation) {
     return m
 }
 // CreateLongRunningOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateLongRunningOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -41,6 +41,7 @@ func CreateLongRunningOperationFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewLongRunningOperation(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *LongRunningOperation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -52,6 +53,7 @@ func (m *LongRunningOperation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *LongRunningOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -107,6 +109,7 @@ func (m *LongRunningOperation) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *LongRunningOperation) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastActionDateTime")
     if err != nil {
@@ -118,6 +121,7 @@ func (m *LongRunningOperation) GetLastActionDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetResourceLocation gets the resourceLocation property value. URI of the resource that the operation is performed on.
+// returns a *string when successful
 func (m *LongRunningOperation) GetResourceLocation()(*string) {
     val, err := m.GetBackingStore().Get("resourceLocation")
     if err != nil {
@@ -129,6 +133,7 @@ func (m *LongRunningOperation) GetResourceLocation()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The status of the operation. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue.
+// returns a *LongRunningOperationStatus when successful
 func (m *LongRunningOperation) GetStatus()(*LongRunningOperationStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -140,6 +145,7 @@ func (m *LongRunningOperation) GetStatus()(*LongRunningOperationStatus) {
     return nil
 }
 // GetStatusDetail gets the statusDetail property value. Details about the status of the operation.
+// returns a *string when successful
 func (m *LongRunningOperation) GetStatusDetail()(*string) {
     val, err := m.GetBackingStore().Get("statusDetail")
     if err != nil {
@@ -224,7 +230,6 @@ func (m *LongRunningOperation) SetStatusDetail(value *string)() {
         panic(err)
     }
 }
-// LongRunningOperationable 
 type LongRunningOperationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

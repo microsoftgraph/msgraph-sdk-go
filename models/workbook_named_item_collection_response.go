@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookNamedItemCollectionResponse 
 type WorkbookNamedItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWorkbookNamedItemCollectionResponse instantiates a new workbookNamedItemCollectionResponse and sets the default values.
+// NewWorkbookNamedItemCollectionResponse instantiates a new WorkbookNamedItemCollectionResponse and sets the default values.
 func NewWorkbookNamedItemCollectionResponse()(*WorkbookNamedItemCollectionResponse) {
     m := &WorkbookNamedItemCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewWorkbookNamedItemCollectionResponse()(*WorkbookNamedItemCollectionRespon
     return m
 }
 // CreateWorkbookNamedItemCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookNamedItemCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookNamedItemCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookNamedItemCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *WorkbookNamedItemCollectionResponse) GetFieldDeserializers()(map[string
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []WorkbookNamedItemable when successful
 func (m *WorkbookNamedItemCollectionResponse) GetValue()([]WorkbookNamedItemable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *WorkbookNamedItemCollectionResponse) SetValue(value []WorkbookNamedItem
         panic(err)
     }
 }
-// WorkbookNamedItemCollectionResponseable 
 type WorkbookNamedItemCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

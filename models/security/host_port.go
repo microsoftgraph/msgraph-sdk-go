@@ -6,11 +6,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// HostPort 
 type HostPort struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewHostPort instantiates a new hostPort and sets the default values.
+// NewHostPort instantiates a new HostPort and sets the default values.
 func NewHostPort()(*HostPort) {
     m := &HostPort{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -18,10 +17,12 @@ func NewHostPort()(*HostPort) {
     return m
 }
 // CreateHostPortFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateHostPortFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHostPort(), nil
 }
 // GetBanners gets the banners property value. The hostPortBanners retrieved from scanning the port.
+// returns a []HostPortBannerable when successful
 func (m *HostPort) GetBanners()([]HostPortBannerable) {
     val, err := m.GetBackingStore().Get("banners")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *HostPort) GetBanners()([]HostPortBannerable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *HostPort) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["banners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -160,6 +162,7 @@ func (m *HostPort) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetFirstSeenDateTime gets the firstSeenDateTime property value. The first date and time when Microsoft Defender Threat Intelligence observed the hostPort. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *HostPort) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstSeenDateTime")
     if err != nil {
@@ -171,6 +174,7 @@ func (m *HostPort) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
     return nil
 }
 // GetHost gets the host property value. The host property
+// returns a Hostable when successful
 func (m *HostPort) GetHost()(Hostable) {
     val, err := m.GetBackingStore().Get("host")
     if err != nil {
@@ -182,6 +186,7 @@ func (m *HostPort) GetHost()(Hostable) {
     return nil
 }
 // GetLastScanDateTime gets the lastScanDateTime property value. The last date and time when Microsoft Defender Threat Intelligence scanned the hostPort. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *HostPort) GetLastScanDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastScanDateTime")
     if err != nil {
@@ -193,6 +198,7 @@ func (m *HostPort) GetLastScanDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
     return nil
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. The last date and time when Microsoft Defender Threat Intelligence observed the hostPort. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *HostPort) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSeenDateTime")
     if err != nil {
@@ -204,6 +210,7 @@ func (m *HostPort) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
     return nil
 }
 // GetMostRecentSslCertificate gets the mostRecentSslCertificate property value. The most recent sslCertificate used to communicate on the port.
+// returns a SslCertificateable when successful
 func (m *HostPort) GetMostRecentSslCertificate()(SslCertificateable) {
     val, err := m.GetBackingStore().Get("mostRecentSslCertificate")
     if err != nil {
@@ -215,6 +222,7 @@ func (m *HostPort) GetMostRecentSslCertificate()(SslCertificateable) {
     return nil
 }
 // GetPort gets the port property value. The numerical identifier of the port which is standardized across the internet.
+// returns a *int32 when successful
 func (m *HostPort) GetPort()(*int32) {
     val, err := m.GetBackingStore().Get("port")
     if err != nil {
@@ -226,6 +234,7 @@ func (m *HostPort) GetPort()(*int32) {
     return nil
 }
 // GetProtocol gets the protocol property value. The general protocol used to scan the port. The possible values are: tcp, udp, unknownFutureValue.
+// returns a *HostPortProtocol when successful
 func (m *HostPort) GetProtocol()(*HostPortProtocol) {
     val, err := m.GetBackingStore().Get("protocol")
     if err != nil {
@@ -237,6 +246,7 @@ func (m *HostPort) GetProtocol()(*HostPortProtocol) {
     return nil
 }
 // GetServices gets the services property value. The hostPortComponents retrieved from scanning the port.
+// returns a []HostPortComponentable when successful
 func (m *HostPort) GetServices()([]HostPortComponentable) {
     val, err := m.GetBackingStore().Get("services")
     if err != nil {
@@ -248,6 +258,7 @@ func (m *HostPort) GetServices()([]HostPortComponentable) {
     return nil
 }
 // GetStatus gets the status property value. The status of the port. The possible values are: open, filtered, closed, unknownFutureValue.
+// returns a *HostPortStatus when successful
 func (m *HostPort) GetStatus()(*HostPortStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -259,6 +270,7 @@ func (m *HostPort) GetStatus()(*HostPortStatus) {
     return nil
 }
 // GetTimesObserved gets the timesObserved property value. The total amount of times that Microsoft Defender Threat Intelligence has observed the hostPort in all its scans.
+// returns a *int32 when successful
 func (m *HostPort) GetTimesObserved()(*int32) {
     val, err := m.GetBackingStore().Get("timesObserved")
     if err != nil {
@@ -434,7 +446,6 @@ func (m *HostPort) SetTimesObserved(value *int32)() {
         panic(err)
     }
 }
-// HostPortable 
 type HostPortable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

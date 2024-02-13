@@ -47,6 +47,7 @@ type ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilderPostRequestCo
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByTermId1 provides operations to manage the children property of the microsoft.graph.termStore.term entity.
+// returns a *ItemTermStoreGroupsItemSetsItemTermsItemChildrenTermItemRequestBuilder when successful
 func (m *ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder) ByTermId1(termId1 string)(*ItemTermStoreGroupsItemSetsItemTermsItemChildrenTermItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,32 +58,34 @@ func (m *ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder) ByTermI
     }
     return NewItemTermStoreGroupsItemSetsItemTermsItemChildrenTermItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilderInternal instantiates a new ChildrenRequestBuilder and sets the default values.
+// NewItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilderInternal instantiates a new ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder and sets the default values.
 func NewItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder) {
     m := &ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/termStore/groups/{group%2Did}/sets/{set%2Did}/terms/{term%2Did}/children{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/termStore/groups/{group%2Did}/sets/{set%2Did}/terms/{term%2Did}/children{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder instantiates a new ChildrenRequestBuilder and sets the default values.
+// NewItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder instantiates a new ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder and sets the default values.
 func NewItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemTermStoreGroupsItemSetsItemTermsItemChildrenCountRequestBuilder when successful
 func (m *ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder) Count()(*ItemTermStoreGroupsItemSetsItemTermsItemChildrenCountRequestBuilder) {
     return NewItemTermStoreGroupsItemSetsItemTermsItemChildrenCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get children of current term.
+// returns a TermCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.TermCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.CreateTermCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,14 +97,15 @@ func (m *ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder) Get(ctx
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.TermCollectionResponseable), nil
 }
 // Post create new navigation property to children for sites
+// returns a Termable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder) Post(ctx context.Context, body ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable, requestConfiguration *ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilderPostRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.CreateTermFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,6 +117,7 @@ func (m *ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder) Post(ct
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable), nil
 }
 // ToGetRequestInformation children of current term.
+// returns a *RequestInformation when successful
 func (m *ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -126,8 +131,9 @@ func (m *ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder) ToGetRe
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to children for sites
+// returns a *RequestInformation when successful
 func (m *ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder) ToPostRequestInformation(ctx context.Context, body ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable, requestConfiguration *ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/sites/{site%2Did}/termStore/groups/{group%2Did}/sets/{set%2Did}/terms/{term%2Did}/children", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -140,6 +146,7 @@ func (m *ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder) ToPostR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder when successful
 func (m *ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder) WithUrl(rawUrl string)(*ItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder) {
     return NewItemTermStoreGroupsItemSetsItemTermsItemChildrenRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

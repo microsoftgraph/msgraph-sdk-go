@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamsApp 
 type TeamsApp struct {
     Entity
 }
-// NewTeamsApp instantiates a new teamsApp and sets the default values.
+// NewTeamsApp instantiates a new TeamsApp and sets the default values.
 func NewTeamsApp()(*TeamsApp) {
     m := &TeamsApp{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewTeamsApp()(*TeamsApp) {
     return m
 }
 // CreateTeamsAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamsAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamsApp(), nil
 }
 // GetAppDefinitions gets the appDefinitions property value. The details for each version of the app.
+// returns a []TeamsAppDefinitionable when successful
 func (m *TeamsApp) GetAppDefinitions()([]TeamsAppDefinitionable) {
     val, err := m.GetBackingStore().Get("appDefinitions")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *TeamsApp) GetAppDefinitions()([]TeamsAppDefinitionable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
+// returns a *string when successful
 func (m *TeamsApp) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *TeamsApp) GetDisplayName()(*string) {
     return nil
 }
 // GetDistributionMethod gets the distributionMethod property value. The method of distribution for the app. Read-only.
+// returns a *TeamsAppDistributionMethod when successful
 func (m *TeamsApp) GetDistributionMethod()(*TeamsAppDistributionMethod) {
     val, err := m.GetBackingStore().Get("distributionMethod")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *TeamsApp) GetDistributionMethod()(*TeamsAppDistributionMethod) {
     return nil
 }
 // GetExternalId gets the externalId property value. The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
+// returns a *string when successful
 func (m *TeamsApp) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *TeamsApp) GetExternalId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamsApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appDefinitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -181,7 +186,6 @@ func (m *TeamsApp) SetExternalId(value *string)() {
         panic(err)
     }
 }
-// TeamsAppable 
 type TeamsAppable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRbacResourceAction 
 type UnifiedRbacResourceAction struct {
     Entity
 }
-// NewUnifiedRbacResourceAction instantiates a new unifiedRbacResourceAction and sets the default values.
+// NewUnifiedRbacResourceAction instantiates a new UnifiedRbacResourceAction and sets the default values.
 func NewUnifiedRbacResourceAction()(*UnifiedRbacResourceAction) {
     m := &UnifiedRbacResourceAction{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewUnifiedRbacResourceAction()(*UnifiedRbacResourceAction) {
     return m
 }
 // CreateUnifiedRbacResourceActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnifiedRbacResourceActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRbacResourceAction(), nil
 }
 // GetActionVerb gets the actionVerb property value. The actionVerb property
+// returns a *string when successful
 func (m *UnifiedRbacResourceAction) GetActionVerb()(*string) {
     val, err := m.GetBackingStore().Get("actionVerb")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *UnifiedRbacResourceAction) GetActionVerb()(*string) {
     return nil
 }
 // GetAuthenticationContextId gets the authenticationContextId property value. The authenticationContextId property
+// returns a *string when successful
 func (m *UnifiedRbacResourceAction) GetAuthenticationContextId()(*string) {
     val, err := m.GetBackingStore().Get("authenticationContextId")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *UnifiedRbacResourceAction) GetAuthenticationContextId()(*string) {
     return nil
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *UnifiedRbacResourceAction) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *UnifiedRbacResourceAction) GetDescription()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnifiedRbacResourceAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["actionVerb"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -118,6 +122,7 @@ func (m *UnifiedRbacResourceAction) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetIsAuthenticationContextSettable gets the isAuthenticationContextSettable property value. The isAuthenticationContextSettable property
+// returns a *bool when successful
 func (m *UnifiedRbacResourceAction) GetIsAuthenticationContextSettable()(*bool) {
     val, err := m.GetBackingStore().Get("isAuthenticationContextSettable")
     if err != nil {
@@ -129,6 +134,7 @@ func (m *UnifiedRbacResourceAction) GetIsAuthenticationContextSettable()(*bool) 
     return nil
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *UnifiedRbacResourceAction) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -140,6 +146,7 @@ func (m *UnifiedRbacResourceAction) GetName()(*string) {
     return nil
 }
 // GetResourceScopeId gets the resourceScopeId property value. The resourceScopeId property
+// returns a *string when successful
 func (m *UnifiedRbacResourceAction) GetResourceScopeId()(*string) {
     val, err := m.GetBackingStore().Get("resourceScopeId")
     if err != nil {
@@ -236,7 +243,6 @@ func (m *UnifiedRbacResourceAction) SetResourceScopeId(value *string)() {
         panic(err)
     }
 }
-// UnifiedRbacResourceActionable 
 type UnifiedRbacResourceActionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

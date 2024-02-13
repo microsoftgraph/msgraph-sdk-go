@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ListItemVersionCollectionResponse 
 type ListItemVersionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewListItemVersionCollectionResponse instantiates a new listItemVersionCollectionResponse and sets the default values.
+// NewListItemVersionCollectionResponse instantiates a new ListItemVersionCollectionResponse and sets the default values.
 func NewListItemVersionCollectionResponse()(*ListItemVersionCollectionResponse) {
     m := &ListItemVersionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewListItemVersionCollectionResponse()(*ListItemVersionCollectionResponse) 
     return m
 }
 // CreateListItemVersionCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateListItemVersionCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewListItemVersionCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ListItemVersionCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ListItemVersionCollectionResponse) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ListItemVersionable when successful
 func (m *ListItemVersionCollectionResponse) GetValue()([]ListItemVersionable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ListItemVersionCollectionResponse) SetValue(value []ListItemVersionable
         panic(err)
     }
 }
-// ListItemVersionCollectionResponseable 
 type ListItemVersionCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

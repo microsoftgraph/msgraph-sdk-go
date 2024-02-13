@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintUsageByPrinter 
 type PrintUsageByPrinter struct {
     PrintUsage
 }
-// NewPrintUsageByPrinter instantiates a new printUsageByPrinter and sets the default values.
+// NewPrintUsageByPrinter instantiates a new PrintUsageByPrinter and sets the default values.
 func NewPrintUsageByPrinter()(*PrintUsageByPrinter) {
     m := &PrintUsageByPrinter{
         PrintUsage: *NewPrintUsage(),
@@ -18,10 +17,12 @@ func NewPrintUsageByPrinter()(*PrintUsageByPrinter) {
     return m
 }
 // CreatePrintUsageByPrinterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrintUsageByPrinterFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrintUsageByPrinter(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrintUsageByPrinter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PrintUsage.GetFieldDeserializers()
     res["printerId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +48,7 @@ func (m *PrintUsageByPrinter) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetPrinterId gets the printerId property value. The printerId property
+// returns a *string when successful
 func (m *PrintUsageByPrinter) GetPrinterId()(*string) {
     val, err := m.GetBackingStore().Get("printerId")
     if err != nil {
@@ -58,6 +60,7 @@ func (m *PrintUsageByPrinter) GetPrinterId()(*string) {
     return nil
 }
 // GetPrinterName gets the printerName property value. The name of the printer represented by these statistics.
+// returns a *string when successful
 func (m *PrintUsageByPrinter) GetPrinterName()(*string) {
     val, err := m.GetBackingStore().Get("printerName")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *PrintUsageByPrinter) SetPrinterName(value *string)() {
         panic(err)
     }
 }
-// PrintUsageByPrinterable 
 type PrintUsageByPrinterable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PrintUsageable

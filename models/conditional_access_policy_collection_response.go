@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConditionalAccessPolicyCollectionResponse 
 type ConditionalAccessPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewConditionalAccessPolicyCollectionResponse instantiates a new conditionalAccessPolicyCollectionResponse and sets the default values.
+// NewConditionalAccessPolicyCollectionResponse instantiates a new ConditionalAccessPolicyCollectionResponse and sets the default values.
 func NewConditionalAccessPolicyCollectionResponse()(*ConditionalAccessPolicyCollectionResponse) {
     m := &ConditionalAccessPolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewConditionalAccessPolicyCollectionResponse()(*ConditionalAccessPolicyColl
     return m
 }
 // CreateConditionalAccessPolicyCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConditionalAccessPolicyCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConditionalAccessPolicyCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConditionalAccessPolicyCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ConditionalAccessPolicyCollectionResponse) GetFieldDeserializers()(map[
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ConditionalAccessPolicyable when successful
 func (m *ConditionalAccessPolicyCollectionResponse) GetValue()([]ConditionalAccessPolicyable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ConditionalAccessPolicyCollectionResponse) SetValue(value []Conditional
         panic(err)
     }
 }
-// ConditionalAccessPolicyCollectionResponseable 
 type ConditionalAccessPolicyCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

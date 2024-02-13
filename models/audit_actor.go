@@ -10,7 +10,7 @@ type AuditActor struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAuditActor instantiates a new auditActor and sets the default values.
+// NewAuditActor instantiates a new AuditActor and sets the default values.
 func NewAuditActor()(*AuditActor) {
     m := &AuditActor{
     }
@@ -19,10 +19,12 @@ func NewAuditActor()(*AuditActor) {
     return m
 }
 // CreateAuditActorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuditActorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuditActor(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AuditActor) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +37,7 @@ func (m *AuditActor) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetApplicationDisplayName gets the applicationDisplayName property value. Name of the Application.
+// returns a *string when successful
 func (m *AuditActor) GetApplicationDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("applicationDisplayName")
     if err != nil {
@@ -46,6 +49,7 @@ func (m *AuditActor) GetApplicationDisplayName()(*string) {
     return nil
 }
 // GetApplicationId gets the applicationId property value. AAD Application Id.
+// returns a *string when successful
 func (m *AuditActor) GetApplicationId()(*string) {
     val, err := m.GetBackingStore().Get("applicationId")
     if err != nil {
@@ -57,6 +61,7 @@ func (m *AuditActor) GetApplicationId()(*string) {
     return nil
 }
 // GetAuditActorType gets the auditActorType property value. Actor Type.
+// returns a *string when successful
 func (m *AuditActor) GetAuditActorType()(*string) {
     val, err := m.GetBackingStore().Get("auditActorType")
     if err != nil {
@@ -68,10 +73,12 @@ func (m *AuditActor) GetAuditActorType()(*string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AuditActor) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuditActor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["applicationDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -173,6 +180,7 @@ func (m *AuditActor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetIpAddress gets the ipAddress property value. IPAddress.
+// returns a *string when successful
 func (m *AuditActor) GetIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("ipAddress")
     if err != nil {
@@ -184,6 +192,7 @@ func (m *AuditActor) GetIpAddress()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AuditActor) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -195,6 +204,7 @@ func (m *AuditActor) GetOdataType()(*string) {
     return nil
 }
 // GetServicePrincipalName gets the servicePrincipalName property value. Service Principal Name (SPN).
+// returns a *string when successful
 func (m *AuditActor) GetServicePrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalName")
     if err != nil {
@@ -206,6 +216,7 @@ func (m *AuditActor) GetServicePrincipalName()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. User Id.
+// returns a *string when successful
 func (m *AuditActor) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -217,6 +228,7 @@ func (m *AuditActor) GetUserId()(*string) {
     return nil
 }
 // GetUserPermissions gets the userPermissions property value. List of user permissions when the audit was performed.
+// returns a []string when successful
 func (m *AuditActor) GetUserPermissions()([]string) {
     val, err := m.GetBackingStore().Get("userPermissions")
     if err != nil {
@@ -228,6 +240,7 @@ func (m *AuditActor) GetUserPermissions()([]string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User Principal Name (UPN).
+// returns a *string when successful
 func (m *AuditActor) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -376,7 +389,6 @@ func (m *AuditActor) SetUserPrincipalName(value *string)() {
         panic(err)
     }
 }
-// AuditActorable 
 type AuditActorable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AttributeMappingFunctionSchema 
 type AttributeMappingFunctionSchema struct {
     Entity
 }
-// NewAttributeMappingFunctionSchema instantiates a new attributeMappingFunctionSchema and sets the default values.
+// NewAttributeMappingFunctionSchema instantiates a new AttributeMappingFunctionSchema and sets the default values.
 func NewAttributeMappingFunctionSchema()(*AttributeMappingFunctionSchema) {
     m := &AttributeMappingFunctionSchema{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewAttributeMappingFunctionSchema()(*AttributeMappingFunctionSchema) {
     return m
 }
 // CreateAttributeMappingFunctionSchemaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAttributeMappingFunctionSchemaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAttributeMappingFunctionSchema(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AttributeMappingFunctionSchema) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["parameters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *AttributeMappingFunctionSchema) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetParameters gets the parameters property value. Collection of function parameters.
+// returns a []AttributeMappingParameterSchemaable when successful
 func (m *AttributeMappingFunctionSchema) GetParameters()([]AttributeMappingParameterSchemaable) {
     val, err := m.GetBackingStore().Get("parameters")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *AttributeMappingFunctionSchema) SetParameters(value []AttributeMappingP
         panic(err)
     }
 }
-// AttributeMappingFunctionSchemaable 
 type AttributeMappingFunctionSchemaable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

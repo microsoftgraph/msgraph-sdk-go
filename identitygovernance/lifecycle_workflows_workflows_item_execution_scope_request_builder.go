@@ -40,6 +40,7 @@ type LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilderGetRequestConfig
     QueryParameters *LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilderGetQueryParameters
 }
 // ByUserProcessingResultId provides operations to manage the executionScope property of the microsoft.graph.identityGovernance.workflow entity.
+// returns a *LifecycleWorkflowsWorkflowsItemExecutionScopeUserProcessingResultItemRequestBuilder when successful
 func (m *LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder) ByUserProcessingResultId(userProcessingResultId string)(*LifecycleWorkflowsWorkflowsItemExecutionScopeUserProcessingResultItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,32 +51,34 @@ func (m *LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder) ByUserProc
     }
     return NewLifecycleWorkflowsWorkflowsItemExecutionScopeUserProcessingResultItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewLifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilderInternal instantiates a new ExecutionScopeRequestBuilder and sets the default values.
+// NewLifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilderInternal instantiates a new LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder) {
     m := &LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/workflows/{workflow%2Did}/executionScope{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/workflows/{workflow%2Did}/executionScope{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewLifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder instantiates a new ExecutionScopeRequestBuilder and sets the default values.
+// NewLifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder instantiates a new LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *LifecycleWorkflowsWorkflowsItemExecutionScopeCountRequestBuilder when successful
 func (m *LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder) Count()(*LifecycleWorkflowsWorkflowsItemExecutionScopeCountRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemExecutionScopeCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the unique identifier of the Microsoft Entra identity that last modified the workflow object.
+// returns a UserProcessingResultCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilderGetRequestConfiguration)(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.UserProcessingResultCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.CreateUserProcessingResultCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -87,6 +90,7 @@ func (m *LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder) Get(ctx co
     return res.(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.UserProcessingResultCollectionResponseable), nil
 }
 // ToGetRequestInformation the unique identifier of the Microsoft Entra identity that last modified the workflow object.
+// returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -100,6 +104,7 @@ func (m *LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder) ToGetReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder when successful
 func (m *LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemExecutionScopeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

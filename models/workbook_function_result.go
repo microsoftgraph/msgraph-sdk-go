@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookFunctionResult 
 type WorkbookFunctionResult struct {
     Entity
 }
-// NewWorkbookFunctionResult instantiates a new workbookFunctionResult and sets the default values.
+// NewWorkbookFunctionResult instantiates a new WorkbookFunctionResult and sets the default values.
 func NewWorkbookFunctionResult()(*WorkbookFunctionResult) {
     m := &WorkbookFunctionResult{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewWorkbookFunctionResult()(*WorkbookFunctionResult) {
     return m
 }
 // CreateWorkbookFunctionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookFunctionResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookFunctionResult(), nil
 }
 // GetError gets the error property value. The error property
+// returns a *string when successful
 func (m *WorkbookFunctionResult) GetError()(*string) {
     val, err := m.GetBackingStore().Get("error")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *WorkbookFunctionResult) GetError()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookFunctionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["error"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -56,6 +58,7 @@ func (m *WorkbookFunctionResult) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a Jsonable when successful
 func (m *WorkbookFunctionResult) GetValue()(Jsonable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -100,7 +103,6 @@ func (m *WorkbookFunctionResult) SetValue(value Jsonable)() {
         panic(err)
     }
 }
-// WorkbookFunctionResultable 
 type WorkbookFunctionResultable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

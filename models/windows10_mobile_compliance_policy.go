@@ -8,7 +8,7 @@ import (
 type Windows10MobileCompliancePolicy struct {
     DeviceCompliancePolicy
 }
-// NewWindows10MobileCompliancePolicy instantiates a new windows10MobileCompliancePolicy and sets the default values.
+// NewWindows10MobileCompliancePolicy instantiates a new Windows10MobileCompliancePolicy and sets the default values.
 func NewWindows10MobileCompliancePolicy()(*Windows10MobileCompliancePolicy) {
     m := &Windows10MobileCompliancePolicy{
         DeviceCompliancePolicy: *NewDeviceCompliancePolicy(),
@@ -18,10 +18,12 @@ func NewWindows10MobileCompliancePolicy()(*Windows10MobileCompliancePolicy) {
     return m
 }
 // CreateWindows10MobileCompliancePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindows10MobileCompliancePolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows10MobileCompliancePolicy(), nil
 }
 // GetBitLockerEnabled gets the bitLockerEnabled property value. Require devices to be reported healthy by Windows Device Health Attestation - bit locker is enabled
+// returns a *bool when successful
 func (m *Windows10MobileCompliancePolicy) GetBitLockerEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("bitLockerEnabled")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *Windows10MobileCompliancePolicy) GetBitLockerEnabled()(*bool) {
     return nil
 }
 // GetCodeIntegrityEnabled gets the codeIntegrityEnabled property value. Require devices to be reported as healthy by Windows Device Health Attestation.
+// returns a *bool when successful
 func (m *Windows10MobileCompliancePolicy) GetCodeIntegrityEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("codeIntegrityEnabled")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *Windows10MobileCompliancePolicy) GetCodeIntegrityEnabled()(*bool) {
     return nil
 }
 // GetEarlyLaunchAntiMalwareDriverEnabled gets the earlyLaunchAntiMalwareDriverEnabled property value. Require devices to be reported as healthy by Windows Device Health Attestation - early launch antimalware driver is enabled.
+// returns a *bool when successful
 func (m *Windows10MobileCompliancePolicy) GetEarlyLaunchAntiMalwareDriverEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("earlyLaunchAntiMalwareDriverEnabled")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *Windows10MobileCompliancePolicy) GetEarlyLaunchAntiMalwareDriverEnabled
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Windows10MobileCompliancePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceCompliancePolicy.GetFieldDeserializers()
     res["bitLockerEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -220,6 +225,7 @@ func (m *Windows10MobileCompliancePolicy) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetOsMaximumVersion gets the osMaximumVersion property value. Maximum Windows Phone version.
+// returns a *string when successful
 func (m *Windows10MobileCompliancePolicy) GetOsMaximumVersion()(*string) {
     val, err := m.GetBackingStore().Get("osMaximumVersion")
     if err != nil {
@@ -231,6 +237,7 @@ func (m *Windows10MobileCompliancePolicy) GetOsMaximumVersion()(*string) {
     return nil
 }
 // GetOsMinimumVersion gets the osMinimumVersion property value. Minimum Windows Phone version.
+// returns a *string when successful
 func (m *Windows10MobileCompliancePolicy) GetOsMinimumVersion()(*string) {
     val, err := m.GetBackingStore().Get("osMinimumVersion")
     if err != nil {
@@ -242,6 +249,7 @@ func (m *Windows10MobileCompliancePolicy) GetOsMinimumVersion()(*string) {
     return nil
 }
 // GetPasswordBlockSimple gets the passwordBlockSimple property value. Whether or not to block syncing the calendar.
+// returns a *bool when successful
 func (m *Windows10MobileCompliancePolicy) GetPasswordBlockSimple()(*bool) {
     val, err := m.GetBackingStore().Get("passwordBlockSimple")
     if err != nil {
@@ -253,6 +261,7 @@ func (m *Windows10MobileCompliancePolicy) GetPasswordBlockSimple()(*bool) {
     return nil
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Number of days before password expiration. Valid values 1 to 255
+// returns a *int32 when successful
 func (m *Windows10MobileCompliancePolicy) GetPasswordExpirationDays()(*int32) {
     val, err := m.GetBackingStore().Get("passwordExpirationDays")
     if err != nil {
@@ -264,6 +273,7 @@ func (m *Windows10MobileCompliancePolicy) GetPasswordExpirationDays()(*int32) {
     return nil
 }
 // GetPasswordMinimumCharacterSetCount gets the passwordMinimumCharacterSetCount property value. The number of character sets required in the password.
+// returns a *int32 when successful
 func (m *Windows10MobileCompliancePolicy) GetPasswordMinimumCharacterSetCount()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinimumCharacterSetCount")
     if err != nil {
@@ -275,6 +285,7 @@ func (m *Windows10MobileCompliancePolicy) GetPasswordMinimumCharacterSetCount()(
     return nil
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Minimum password length. Valid values 4 to 16
+// returns a *int32 when successful
 func (m *Windows10MobileCompliancePolicy) GetPasswordMinimumLength()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinimumLength")
     if err != nil {
@@ -286,6 +297,7 @@ func (m *Windows10MobileCompliancePolicy) GetPasswordMinimumLength()(*int32) {
     return nil
 }
 // GetPasswordMinutesOfInactivityBeforeLock gets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required.
+// returns a *int32 when successful
 func (m *Windows10MobileCompliancePolicy) GetPasswordMinutesOfInactivityBeforeLock()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinutesOfInactivityBeforeLock")
     if err != nil {
@@ -297,6 +309,7 @@ func (m *Windows10MobileCompliancePolicy) GetPasswordMinutesOfInactivityBeforeLo
     return nil
 }
 // GetPasswordPreviousPasswordBlockCount gets the passwordPreviousPasswordBlockCount property value. The number of previous passwords to prevent re-use of.
+// returns a *int32 when successful
 func (m *Windows10MobileCompliancePolicy) GetPasswordPreviousPasswordBlockCount()(*int32) {
     val, err := m.GetBackingStore().Get("passwordPreviousPasswordBlockCount")
     if err != nil {
@@ -308,6 +321,7 @@ func (m *Windows10MobileCompliancePolicy) GetPasswordPreviousPasswordBlockCount(
     return nil
 }
 // GetPasswordRequired gets the passwordRequired property value. Require a password to unlock Windows Phone device.
+// returns a *bool when successful
 func (m *Windows10MobileCompliancePolicy) GetPasswordRequired()(*bool) {
     val, err := m.GetBackingStore().Get("passwordRequired")
     if err != nil {
@@ -319,6 +333,7 @@ func (m *Windows10MobileCompliancePolicy) GetPasswordRequired()(*bool) {
     return nil
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Possible values of required passwords.
+// returns a *RequiredPasswordType when successful
 func (m *Windows10MobileCompliancePolicy) GetPasswordRequiredType()(*RequiredPasswordType) {
     val, err := m.GetBackingStore().Get("passwordRequiredType")
     if err != nil {
@@ -330,6 +345,7 @@ func (m *Windows10MobileCompliancePolicy) GetPasswordRequiredType()(*RequiredPas
     return nil
 }
 // GetPasswordRequireToUnlockFromIdle gets the passwordRequireToUnlockFromIdle property value. Require a password to unlock an idle device.
+// returns a *bool when successful
 func (m *Windows10MobileCompliancePolicy) GetPasswordRequireToUnlockFromIdle()(*bool) {
     val, err := m.GetBackingStore().Get("passwordRequireToUnlockFromIdle")
     if err != nil {
@@ -341,6 +357,7 @@ func (m *Windows10MobileCompliancePolicy) GetPasswordRequireToUnlockFromIdle()(*
     return nil
 }
 // GetSecureBootEnabled gets the secureBootEnabled property value. Require devices to be reported as healthy by Windows Device Health Attestation - secure boot is enabled.
+// returns a *bool when successful
 func (m *Windows10MobileCompliancePolicy) GetSecureBootEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("secureBootEnabled")
     if err != nil {
@@ -352,6 +369,7 @@ func (m *Windows10MobileCompliancePolicy) GetSecureBootEnabled()(*bool) {
     return nil
 }
 // GetStorageRequireEncryption gets the storageRequireEncryption property value. Require encryption on windows devices.
+// returns a *bool when successful
 func (m *Windows10MobileCompliancePolicy) GetStorageRequireEncryption()(*bool) {
     val, err := m.GetBackingStore().Get("storageRequireEncryption")
     if err != nil {
@@ -579,7 +597,6 @@ func (m *Windows10MobileCompliancePolicy) SetStorageRequireEncryption(value *boo
         panic(err)
     }
 }
-// Windows10MobileCompliancePolicyable 
 type Windows10MobileCompliancePolicyable interface {
     DeviceCompliancePolicyable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

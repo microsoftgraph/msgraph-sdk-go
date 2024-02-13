@@ -6,7 +6,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ItemItemsItemWorkbookFunctionsZ_TestPostRequestBody 
 type ItemItemsItemWorkbookFunctionsZ_TestPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -20,10 +19,12 @@ func NewItemItemsItemWorkbookFunctionsZ_TestPostRequestBody()(*ItemItemsItemWork
     return m
 }
 // CreateItemItemsItemWorkbookFunctionsZ_TestPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemsItemWorkbookFunctionsZ_TestPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemsItemWorkbookFunctionsZ_TestPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemsItemWorkbookFunctionsZ_TestPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,6 +37,7 @@ func (m *ItemItemsItemWorkbookFunctionsZ_TestPostRequestBody) GetAdditionalData(
     return val.(map[string]any)
 }
 // GetArray gets the array property value. The array property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsZ_TestPostRequestBody) GetArray()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("array")
     if err != nil {
@@ -47,10 +49,12 @@ func (m *ItemItemsItemWorkbookFunctionsZ_TestPostRequestBody) GetArray()(iadcd81
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ItemItemsItemWorkbookFunctionsZ_TestPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemsItemWorkbookFunctionsZ_TestPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["array"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -86,6 +90,7 @@ func (m *ItemItemsItemWorkbookFunctionsZ_TestPostRequestBody) GetFieldDeserializ
     return res
 }
 // GetSigma gets the sigma property value. The sigma property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsZ_TestPostRequestBody) GetSigma()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("sigma")
     if err != nil {
@@ -97,6 +102,7 @@ func (m *ItemItemsItemWorkbookFunctionsZ_TestPostRequestBody) GetSigma()(iadcd81
     return nil
 }
 // GetX gets the x property value. The x property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsZ_TestPostRequestBody) GetX()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("x")
     if err != nil {
@@ -167,7 +173,6 @@ func (m *ItemItemsItemWorkbookFunctionsZ_TestPostRequestBody) SetX(value iadcd81
         panic(err)
     }
 }
-// ItemItemsItemWorkbookFunctionsZ_TestPostRequestBodyable 
 type ItemItemsItemWorkbookFunctionsZ_TestPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

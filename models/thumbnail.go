@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// Thumbnail 
 type Thumbnail struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewThumbnail instantiates a new thumbnail and sets the default values.
+// NewThumbnail instantiates a new Thumbnail and sets the default values.
 func NewThumbnail()(*Thumbnail) {
     m := &Thumbnail{
     }
@@ -19,10 +18,12 @@ func NewThumbnail()(*Thumbnail) {
     return m
 }
 // CreateThumbnailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateThumbnailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewThumbnail(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Thumbnail) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *Thumbnail) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *Thumbnail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetContent gets the content property value. The content stream for the thumbnail.
+// returns a []byte when successful
 func (m *Thumbnail) GetContent()([]byte) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *Thumbnail) GetContent()([]byte) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Thumbnail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -115,6 +119,7 @@ func (m *Thumbnail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetHeight gets the height property value. The height of the thumbnail, in pixels.
+// returns a *int32 when successful
 func (m *Thumbnail) GetHeight()(*int32) {
     val, err := m.GetBackingStore().Get("height")
     if err != nil {
@@ -126,6 +131,7 @@ func (m *Thumbnail) GetHeight()(*int32) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *Thumbnail) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -137,6 +143,7 @@ func (m *Thumbnail) GetOdataType()(*string) {
     return nil
 }
 // GetSourceItemId gets the sourceItemId property value. The unique identifier of the item that provided the thumbnail. This is only available when a folder thumbnail is requested.
+// returns a *string when successful
 func (m *Thumbnail) GetSourceItemId()(*string) {
     val, err := m.GetBackingStore().Get("sourceItemId")
     if err != nil {
@@ -148,6 +155,7 @@ func (m *Thumbnail) GetSourceItemId()(*string) {
     return nil
 }
 // GetUrl gets the url property value. The URL used to fetch the thumbnail content.
+// returns a *string when successful
 func (m *Thumbnail) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -159,6 +167,7 @@ func (m *Thumbnail) GetUrl()(*string) {
     return nil
 }
 // GetWidth gets the width property value. The width of the thumbnail, in pixels.
+// returns a *int32 when successful
 func (m *Thumbnail) GetWidth()(*int32) {
     val, err := m.GetBackingStore().Get("width")
     if err != nil {
@@ -268,7 +277,6 @@ func (m *Thumbnail) SetWidth(value *int32)() {
         panic(err)
     }
 }
-// Thumbnailable 
 type Thumbnailable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

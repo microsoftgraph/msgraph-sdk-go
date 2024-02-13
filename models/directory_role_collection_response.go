@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DirectoryRoleCollectionResponse 
 type DirectoryRoleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDirectoryRoleCollectionResponse instantiates a new directoryRoleCollectionResponse and sets the default values.
+// NewDirectoryRoleCollectionResponse instantiates a new DirectoryRoleCollectionResponse and sets the default values.
 func NewDirectoryRoleCollectionResponse()(*DirectoryRoleCollectionResponse) {
     m := &DirectoryRoleCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewDirectoryRoleCollectionResponse()(*DirectoryRoleCollectionResponse) {
     return m
 }
 // CreateDirectoryRoleCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDirectoryRoleCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDirectoryRoleCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DirectoryRoleCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *DirectoryRoleCollectionResponse) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []DirectoryRoleable when successful
 func (m *DirectoryRoleCollectionResponse) GetValue()([]DirectoryRoleable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *DirectoryRoleCollectionResponse) SetValue(value []DirectoryRoleable)() 
         panic(err)
     }
 }
-// DirectoryRoleCollectionResponseable 
 type DirectoryRoleCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConversationMember 
 type ConversationMember struct {
     Entity
 }
-// NewConversationMember instantiates a new conversationMember and sets the default values.
+// NewConversationMember instantiates a new ConversationMember and sets the default values.
 func NewConversationMember()(*ConversationMember) {
     m := &ConversationMember{
         Entity: *NewEntity(),
@@ -17,6 +16,7 @@ func NewConversationMember()(*ConversationMember) {
     return m
 }
 // CreateConversationMemberFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConversationMemberFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -49,6 +49,7 @@ func CreateConversationMemberFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewConversationMember(), nil
 }
 // GetDisplayName gets the displayName property value. The display name of the user.
+// returns a *string when successful
 func (m *ConversationMember) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -60,6 +61,7 @@ func (m *ConversationMember) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConversationMember) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -101,6 +103,7 @@ func (m *ConversationMember) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetRoles gets the roles property value. The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.
+// returns a []string when successful
 func (m *ConversationMember) GetRoles()([]string) {
     val, err := m.GetBackingStore().Get("roles")
     if err != nil {
@@ -112,6 +115,7 @@ func (m *ConversationMember) GetRoles()([]string) {
     return nil
 }
 // GetVisibleHistoryStartDateTime gets the visibleHistoryStartDateTime property value. The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
+// returns a *Time when successful
 func (m *ConversationMember) GetVisibleHistoryStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("visibleHistoryStartDateTime")
     if err != nil {
@@ -169,7 +173,6 @@ func (m *ConversationMember) SetVisibleHistoryStartDateTime(value *i336074805fc8
         panic(err)
     }
 }
-// ConversationMemberable 
 type ConversationMemberable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

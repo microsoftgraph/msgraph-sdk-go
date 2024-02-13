@@ -41,28 +41,28 @@ type EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewEntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilderInternal instantiates a new ResourceRequestBuilder and sets the default values.
+// NewEntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilderInternal instantiates a new EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilder) {
     m := &EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/resourceRoleScopes/{accessPackageResourceRoleScope%2Did}/role/resource{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/resourceRoleScopes/{accessPackageResourceRoleScope%2Did}/role/resource{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewEntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilder instantiates a new ResourceRequestBuilder and sets the default values.
+// NewEntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilder instantiates a new EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property resource for identityGovernance
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,18 +71,20 @@ func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResour
     return nil
 }
 // Environment provides operations to manage the environment property of the microsoft.graph.accessPackageResource entity.
+// returns a *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceEnvironmentRequestBuilder when successful
 func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilder) Environment()(*EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceEnvironmentRequestBuilder) {
     return NewEntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceEnvironmentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get resource from identityGovernance
+// returns a AccessPackageResourceable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateAccessPackageResourceFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,14 +96,15 @@ func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResour
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceable), nil
 }
 // Patch update the navigation property resource in identityGovernance
+// returns a AccessPackageResourceable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceable, requestConfiguration *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateAccessPackageResourceFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,16 +116,19 @@ func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResour
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceable), nil
 }
 // Roles provides operations to manage the roles property of the microsoft.graph.accessPackageResource entity.
+// returns a *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRolesRequestBuilder when successful
 func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilder) Roles()(*EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRolesRequestBuilder) {
     return NewEntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRolesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Scopes provides operations to manage the scopes property of the microsoft.graph.accessPackageResource entity.
+// returns a *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceScopesRequestBuilder when successful
 func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilder) Scopes()(*EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceScopesRequestBuilder) {
     return NewEntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceScopesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property resource for identityGovernance
+// returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/resourceRoleScopes/{accessPackageResourceRoleScope%2Did}/role/resource", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -131,6 +137,7 @@ func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResour
     return requestInfo, nil
 }
 // ToGetRequestInformation get resource from identityGovernance
+// returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -144,8 +151,9 @@ func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResour
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property resource in identityGovernance
+// returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AccessPackageResourceable, requestConfiguration *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/resourceRoleScopes/{accessPackageResourceRoleScope%2Did}/role/resource", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -158,6 +166,7 @@ func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResour
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilder when successful
 func (m *EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilder) {
     return NewEntitlementManagementAccessPackagesItemResourceRoleScopesItemRoleResourceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

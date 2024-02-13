@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// NoTrainingNotificationSetting 
 type NoTrainingNotificationSetting struct {
     EndUserNotificationSetting
 }
-// NewNoTrainingNotificationSetting instantiates a new noTrainingNotificationSetting and sets the default values.
+// NewNoTrainingNotificationSetting instantiates a new NoTrainingNotificationSetting and sets the default values.
 func NewNoTrainingNotificationSetting()(*NoTrainingNotificationSetting) {
     m := &NoTrainingNotificationSetting{
         EndUserNotificationSetting: *NewEndUserNotificationSetting(),
@@ -18,10 +17,12 @@ func NewNoTrainingNotificationSetting()(*NoTrainingNotificationSetting) {
     return m
 }
 // CreateNoTrainingNotificationSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateNoTrainingNotificationSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNoTrainingNotificationSetting(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *NoTrainingNotificationSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EndUserNotificationSetting.GetFieldDeserializers()
     res["simulationNotification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *NoTrainingNotificationSetting) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetSimulationNotification gets the simulationNotification property value. The notification for the user who is part of the simulation.
+// returns a SimulationNotificationable when successful
 func (m *NoTrainingNotificationSetting) GetSimulationNotification()(SimulationNotificationable) {
     val, err := m.GetBackingStore().Get("simulationNotification")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *NoTrainingNotificationSetting) SetSimulationNotification(value Simulati
         panic(err)
     }
 }
-// NoTrainingNotificationSettingable 
 type NoTrainingNotificationSettingable interface {
     EndUserNotificationSettingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

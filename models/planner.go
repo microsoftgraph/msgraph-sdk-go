@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Planner 
 type Planner struct {
     Entity
 }
-// NewPlanner instantiates a new planner and sets the default values.
+// NewPlanner instantiates a new Planner and sets the default values.
 func NewPlanner()(*Planner) {
     m := &Planner{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewPlanner()(*Planner) {
     return m
 }
 // CreatePlannerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlannerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlanner(), nil
 }
 // GetBuckets gets the buckets property value. Read-only. Nullable. Returns a collection of the specified buckets
+// returns a []PlannerBucketable when successful
 func (m *Planner) GetBuckets()([]PlannerBucketable) {
     val, err := m.GetBackingStore().Get("buckets")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Planner) GetBuckets()([]PlannerBucketable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Planner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["buckets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -84,6 +86,7 @@ func (m *Planner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetPlans gets the plans property value. Read-only. Nullable. Returns a collection of the specified plans
+// returns a []PlannerPlanable when successful
 func (m *Planner) GetPlans()([]PlannerPlanable) {
     val, err := m.GetBackingStore().Get("plans")
     if err != nil {
@@ -95,6 +98,7 @@ func (m *Planner) GetPlans()([]PlannerPlanable) {
     return nil
 }
 // GetTasks gets the tasks property value. Read-only. Nullable. Returns a collection of the specified tasks
+// returns a []PlannerTaskable when successful
 func (m *Planner) GetTasks()([]PlannerTaskable) {
     val, err := m.GetBackingStore().Get("tasks")
     if err != nil {
@@ -170,7 +174,6 @@ func (m *Planner) SetTasks(value []PlannerTaskable)() {
         panic(err)
     }
 }
-// Plannerable 
 type Plannerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

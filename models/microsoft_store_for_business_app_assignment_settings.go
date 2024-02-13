@@ -8,7 +8,7 @@ import (
 type MicrosoftStoreForBusinessAppAssignmentSettings struct {
     MobileAppAssignmentSettings
 }
-// NewMicrosoftStoreForBusinessAppAssignmentSettings instantiates a new microsoftStoreForBusinessAppAssignmentSettings and sets the default values.
+// NewMicrosoftStoreForBusinessAppAssignmentSettings instantiates a new MicrosoftStoreForBusinessAppAssignmentSettings and sets the default values.
 func NewMicrosoftStoreForBusinessAppAssignmentSettings()(*MicrosoftStoreForBusinessAppAssignmentSettings) {
     m := &MicrosoftStoreForBusinessAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
@@ -18,10 +18,12 @@ func NewMicrosoftStoreForBusinessAppAssignmentSettings()(*MicrosoftStoreForBusin
     return m
 }
 // CreateMicrosoftStoreForBusinessAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMicrosoftStoreForBusinessAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMicrosoftStoreForBusinessAppAssignmentSettings(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MicrosoftStoreForBusinessAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileAppAssignmentSettings.GetFieldDeserializers()
     res["useDeviceContext"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *MicrosoftStoreForBusinessAppAssignmentSettings) GetFieldDeserializers()
     return res
 }
 // GetUseDeviceContext gets the useDeviceContext property value. Whether or not to use device execution context for Microsoft Store for Business mobile app.
+// returns a *bool when successful
 func (m *MicrosoftStoreForBusinessAppAssignmentSettings) GetUseDeviceContext()(*bool) {
     val, err := m.GetBackingStore().Get("useDeviceContext")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *MicrosoftStoreForBusinessAppAssignmentSettings) SetUseDeviceContext(val
         panic(err)
     }
 }
-// MicrosoftStoreForBusinessAppAssignmentSettingsable 
 type MicrosoftStoreForBusinessAppAssignmentSettingsable interface {
     MobileAppAssignmentSettingsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

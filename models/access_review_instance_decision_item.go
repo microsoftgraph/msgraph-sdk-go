@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewInstanceDecisionItem 
 type AccessReviewInstanceDecisionItem struct {
     Entity
 }
-// NewAccessReviewInstanceDecisionItem instantiates a new accessReviewInstanceDecisionItem and sets the default values.
+// NewAccessReviewInstanceDecisionItem instantiates a new AccessReviewInstanceDecisionItem and sets the default values.
 func NewAccessReviewInstanceDecisionItem()(*AccessReviewInstanceDecisionItem) {
     m := &AccessReviewInstanceDecisionItem{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewAccessReviewInstanceDecisionItem()(*AccessReviewInstanceDecisionItem) {
     return m
 }
 // CreateAccessReviewInstanceDecisionItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessReviewInstanceDecisionItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewInstanceDecisionItem(), nil
 }
 // GetAccessReviewId gets the accessReviewId property value. The identifier of the accessReviewInstance parent. Supports $select. Read-only.
+// returns a *string when successful
 func (m *AccessReviewInstanceDecisionItem) GetAccessReviewId()(*string) {
     val, err := m.GetBackingStore().Get("accessReviewId")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *AccessReviewInstanceDecisionItem) GetAccessReviewId()(*string) {
     return nil
 }
 // GetAppliedBy gets the appliedBy property value. The identifier of the user who applied the decision. Read-only.
+// returns a UserIdentityable when successful
 func (m *AccessReviewInstanceDecisionItem) GetAppliedBy()(UserIdentityable) {
     val, err := m.GetBackingStore().Get("appliedBy")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *AccessReviewInstanceDecisionItem) GetAppliedBy()(UserIdentityable) {
     return nil
 }
 // GetAppliedDateTime gets the appliedDateTime property value. The timestamp when the approval decision was applied.00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn't applied the decision or it was automatically applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
+// returns a *Time when successful
 func (m *AccessReviewInstanceDecisionItem) GetAppliedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("appliedDateTime")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *AccessReviewInstanceDecisionItem) GetAppliedDateTime()(*i336074805fc853
     return nil
 }
 // GetApplyResult gets the applyResult property value. The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.
+// returns a *string when successful
 func (m *AccessReviewInstanceDecisionItem) GetApplyResult()(*string) {
     val, err := m.GetBackingStore().Get("applyResult")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *AccessReviewInstanceDecisionItem) GetApplyResult()(*string) {
     return nil
 }
 // GetDecision gets the decision property value. Result of the review. Possible values: Approve, Deny, NotReviewed, or DontKnow. Supports $select, $orderby, and $filter (eq only).
+// returns a *string when successful
 func (m *AccessReviewInstanceDecisionItem) GetDecision()(*string) {
     val, err := m.GetBackingStore().Get("decision")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *AccessReviewInstanceDecisionItem) GetDecision()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessReviewId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -227,6 +233,7 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetInsights gets the insights property value. Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
+// returns a []GovernanceInsightable when successful
 func (m *AccessReviewInstanceDecisionItem) GetInsights()([]GovernanceInsightable) {
     val, err := m.GetBackingStore().Get("insights")
     if err != nil {
@@ -238,6 +245,7 @@ func (m *AccessReviewInstanceDecisionItem) GetInsights()([]GovernanceInsightable
     return nil
 }
 // GetJustification gets the justification property value. Justification left by the reviewer when they made the decision.
+// returns a *string when successful
 func (m *AccessReviewInstanceDecisionItem) GetJustification()(*string) {
     val, err := m.GetBackingStore().Get("justification")
     if err != nil {
@@ -249,6 +257,7 @@ func (m *AccessReviewInstanceDecisionItem) GetJustification()(*string) {
     return nil
 }
 // GetPrincipal gets the principal property value. Every decision item in an access review represents a principal's access to a resource. This property represents details of the principal. For example, if a decision item represents access of User 'Bob' to Group 'Sales' - The principal is 'Bob' and the resource is 'Sales'. Principals can be of two types - userIdentity and servicePrincipalIdentity. Supports $select. Read-only.
+// returns a Identityable when successful
 func (m *AccessReviewInstanceDecisionItem) GetPrincipal()(Identityable) {
     val, err := m.GetBackingStore().Get("principal")
     if err != nil {
@@ -260,6 +269,7 @@ func (m *AccessReviewInstanceDecisionItem) GetPrincipal()(Identityable) {
     return nil
 }
 // GetPrincipalLink gets the principalLink property value. A link to the principal object. For example, https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.
+// returns a *string when successful
 func (m *AccessReviewInstanceDecisionItem) GetPrincipalLink()(*string) {
     val, err := m.GetBackingStore().Get("principalLink")
     if err != nil {
@@ -271,6 +281,7 @@ func (m *AccessReviewInstanceDecisionItem) GetPrincipalLink()(*string) {
     return nil
 }
 // GetRecommendation gets the recommendation property value. A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within thirty days of start of review. Recommend deny if sign-in is greater than thirty days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.
+// returns a *string when successful
 func (m *AccessReviewInstanceDecisionItem) GetRecommendation()(*string) {
     val, err := m.GetBackingStore().Get("recommendation")
     if err != nil {
@@ -282,6 +293,7 @@ func (m *AccessReviewInstanceDecisionItem) GetRecommendation()(*string) {
     return nil
 }
 // GetResource gets the resource property value. Every decision item in an access review represents a principal's access to a resource. This property represents details of the resource. For example, if a decision item represents access of User 'Bob' to Group 'Sales' - The principal is Bob and the resource is 'Sales'. Resources can be of multiple types. See accessReviewInstanceDecisionItemResource. Read-only.
+// returns a AccessReviewInstanceDecisionItemResourceable when successful
 func (m *AccessReviewInstanceDecisionItem) GetResource()(AccessReviewInstanceDecisionItemResourceable) {
     val, err := m.GetBackingStore().Get("resource")
     if err != nil {
@@ -293,6 +305,7 @@ func (m *AccessReviewInstanceDecisionItem) GetResource()(AccessReviewInstanceDec
     return nil
 }
 // GetResourceLink gets the resourceLink property value. A link to the resource. For example, https://graph.microsoft.com/v1.0/servicePrincipals/c86300f3-8695-4320-9f6e-32a2555f5ff8. Supports $select. Read-only.
+// returns a *string when successful
 func (m *AccessReviewInstanceDecisionItem) GetResourceLink()(*string) {
     val, err := m.GetBackingStore().Get("resourceLink")
     if err != nil {
@@ -304,6 +317,7 @@ func (m *AccessReviewInstanceDecisionItem) GetResourceLink()(*string) {
     return nil
 }
 // GetReviewedBy gets the reviewedBy property value. The identifier of the reviewer.00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn't reviewed. Supports $select. Read-only.
+// returns a UserIdentityable when successful
 func (m *AccessReviewInstanceDecisionItem) GetReviewedBy()(UserIdentityable) {
     val, err := m.GetBackingStore().Get("reviewedBy")
     if err != nil {
@@ -315,6 +329,7 @@ func (m *AccessReviewInstanceDecisionItem) GetReviewedBy()(UserIdentityable) {
     return nil
 }
 // GetReviewedDateTime gets the reviewedDateTime property value. The timestamp when the review decision occurred. Supports $select. Read-only.
+// returns a *Time when successful
 func (m *AccessReviewInstanceDecisionItem) GetReviewedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("reviewedDateTime")
     if err != nil {
@@ -521,7 +536,6 @@ func (m *AccessReviewInstanceDecisionItem) SetReviewedDateTime(value *i336074805
         panic(err)
     }
 }
-// AccessReviewInstanceDecisionItemable 
 type AccessReviewInstanceDecisionItemable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

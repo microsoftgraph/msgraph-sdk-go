@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TrainingLanguageDetail 
 type TrainingLanguageDetail struct {
     Entity
 }
-// NewTrainingLanguageDetail instantiates a new trainingLanguageDetail and sets the default values.
+// NewTrainingLanguageDetail instantiates a new TrainingLanguageDetail and sets the default values.
 func NewTrainingLanguageDetail()(*TrainingLanguageDetail) {
     m := &TrainingLanguageDetail{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewTrainingLanguageDetail()(*TrainingLanguageDetail) {
     return m
 }
 // CreateTrainingLanguageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTrainingLanguageDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTrainingLanguageDetail(), nil
 }
 // GetContent gets the content property value. Language specific content for the training.
+// returns a *string when successful
 func (m *TrainingLanguageDetail) GetContent()(*string) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *TrainingLanguageDetail) GetContent()(*string) {
     return nil
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user who created the language details.
+// returns a EmailIdentityable when successful
 func (m *TrainingLanguageDetail) GetCreatedBy()(EmailIdentityable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *TrainingLanguageDetail) GetCreatedBy()(EmailIdentityable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time when the language details were created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *TrainingLanguageDetail) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *TrainingLanguageDetail) GetCreatedDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetDescription gets the description property value. Description as defined by the user.
+// returns a *string when successful
 func (m *TrainingLanguageDetail) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *TrainingLanguageDetail) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Display name as defined by the user.
+// returns a *string when successful
 func (m *TrainingLanguageDetail) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *TrainingLanguageDetail) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TrainingLanguageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -171,6 +177,7 @@ func (m *TrainingLanguageDetail) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetIsDefaultLangauge gets the isDefaultLangauge property value. Indicates whether the training has a default language.
+// returns a *bool when successful
 func (m *TrainingLanguageDetail) GetIsDefaultLangauge()(*bool) {
     val, err := m.GetBackingStore().Get("isDefaultLangauge")
     if err != nil {
@@ -182,6 +189,7 @@ func (m *TrainingLanguageDetail) GetIsDefaultLangauge()(*bool) {
     return nil
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who last modified the details.
+// returns a EmailIdentityable when successful
 func (m *TrainingLanguageDetail) GetLastModifiedBy()(EmailIdentityable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -193,6 +201,7 @@ func (m *TrainingLanguageDetail) GetLastModifiedBy()(EmailIdentityable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time when the trainingLanguageDetail was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *TrainingLanguageDetail) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -204,6 +213,7 @@ func (m *TrainingLanguageDetail) GetLastModifiedDateTime()(*i336074805fc853987ab
     return nil
 }
 // GetLocale gets the locale property value. Content locale for the training detail.
+// returns a *string when successful
 func (m *TrainingLanguageDetail) GetLocale()(*string) {
     val, err := m.GetBackingStore().Get("locale")
     if err != nil {
@@ -339,7 +349,6 @@ func (m *TrainingLanguageDetail) SetLocale(value *string)() {
         panic(err)
     }
 }
-// TrainingLanguageDetailable 
 type TrainingLanguageDetailable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

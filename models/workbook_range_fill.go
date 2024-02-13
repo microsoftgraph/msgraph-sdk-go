@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookRangeFill 
 type WorkbookRangeFill struct {
     Entity
 }
-// NewWorkbookRangeFill instantiates a new workbookRangeFill and sets the default values.
+// NewWorkbookRangeFill instantiates a new WorkbookRangeFill and sets the default values.
 func NewWorkbookRangeFill()(*WorkbookRangeFill) {
     m := &WorkbookRangeFill{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewWorkbookRangeFill()(*WorkbookRangeFill) {
     return m
 }
 // CreateWorkbookRangeFillFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookRangeFillFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookRangeFill(), nil
 }
 // GetColor gets the color property value. HTML color code representing the color of the border line, of the form #RRGGBB (for example 'FFA500') or as a named HTML color (for example 'orange')
+// returns a *string when successful
 func (m *WorkbookRangeFill) GetColor()(*string) {
     val, err := m.GetBackingStore().Get("color")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *WorkbookRangeFill) GetColor()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookRangeFill) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["color"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,7 +68,6 @@ func (m *WorkbookRangeFill) SetColor(value *string)() {
         panic(err)
     }
 }
-// WorkbookRangeFillable 
 type WorkbookRangeFillable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

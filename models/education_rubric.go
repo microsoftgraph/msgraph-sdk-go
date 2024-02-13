@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationRubric 
 type EducationRubric struct {
     Entity
 }
-// NewEducationRubric instantiates a new educationRubric and sets the default values.
+// NewEducationRubric instantiates a new EducationRubric and sets the default values.
 func NewEducationRubric()(*EducationRubric) {
     m := &EducationRubric{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewEducationRubric()(*EducationRubric) {
     return m
 }
 // CreateEducationRubricFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationRubricFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationRubric(), nil
 }
 // GetCreatedBy gets the createdBy property value. The user who created this resource.
+// returns a IdentitySetable when successful
 func (m *EducationRubric) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *EducationRubric) GetCreatedBy()(IdentitySetable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *EducationRubric) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *EducationRubric) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetDescription gets the description property value. The description of this rubric.
+// returns a EducationItemBodyable when successful
 func (m *EducationRubric) GetDescription()(EducationItemBodyable) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *EducationRubric) GetDescription()(EducationItemBodyable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of this rubric.
+// returns a *string when successful
 func (m *EducationRubric) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *EducationRubric) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationRubric) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -172,6 +177,7 @@ func (m *EducationRubric) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetGrading gets the grading property value. The grading type of this rubric -- null for a no-points rubric, or educationAssignmentPointsGradeType for a points rubric.
+// returns a EducationAssignmentGradeTypeable when successful
 func (m *EducationRubric) GetGrading()(EducationAssignmentGradeTypeable) {
     val, err := m.GetBackingStore().Get("grading")
     if err != nil {
@@ -183,6 +189,7 @@ func (m *EducationRubric) GetGrading()(EducationAssignmentGradeTypeable) {
     return nil
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The last user to modify the resource.
+// returns a IdentitySetable when successful
 func (m *EducationRubric) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -194,6 +201,7 @@ func (m *EducationRubric) GetLastModifiedBy()(IdentitySetable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *EducationRubric) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -205,6 +213,7 @@ func (m *EducationRubric) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetLevels gets the levels property value. The collection of levels making up this rubric.
+// returns a []RubricLevelable when successful
 func (m *EducationRubric) GetLevels()([]RubricLevelable) {
     val, err := m.GetBackingStore().Get("levels")
     if err != nil {
@@ -216,6 +225,7 @@ func (m *EducationRubric) GetLevels()([]RubricLevelable) {
     return nil
 }
 // GetQualities gets the qualities property value. The collection of qualities making up this rubric.
+// returns a []RubricQualityable when successful
 func (m *EducationRubric) GetQualities()([]RubricQualityable) {
     val, err := m.GetBackingStore().Get("qualities")
     if err != nil {
@@ -339,7 +349,6 @@ func (m *EducationRubric) SetQualities(value []RubricQualityable)() {
         panic(err)
     }
 }
-// EducationRubricable 
 type EducationRubricable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

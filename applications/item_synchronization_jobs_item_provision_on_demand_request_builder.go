@@ -18,20 +18,22 @@ type ItemSynchronizationJobsItemProvisionOnDemandRequestBuilderPostRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemSynchronizationJobsItemProvisionOnDemandRequestBuilderInternal instantiates a new ProvisionOnDemandRequestBuilder and sets the default values.
+// NewItemSynchronizationJobsItemProvisionOnDemandRequestBuilderInternal instantiates a new ItemSynchronizationJobsItemProvisionOnDemandRequestBuilder and sets the default values.
 func NewItemSynchronizationJobsItemProvisionOnDemandRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationJobsItemProvisionOnDemandRequestBuilder) {
     m := &ItemSynchronizationJobsItemProvisionOnDemandRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/applications/{application%2Did}/synchronization/jobs/{synchronizationJob%2Did}/provisionOnDemand", pathParameters),
     }
     return m
 }
-// NewItemSynchronizationJobsItemProvisionOnDemandRequestBuilder instantiates a new ProvisionOnDemandRequestBuilder and sets the default values.
+// NewItemSynchronizationJobsItemProvisionOnDemandRequestBuilder instantiates a new ItemSynchronizationJobsItemProvisionOnDemandRequestBuilder and sets the default values.
 func NewItemSynchronizationJobsItemProvisionOnDemandRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationJobsItemProvisionOnDemandRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSynchronizationJobsItemProvisionOnDemandRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds. 
+// returns a StringKeyStringValuePairable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *ItemSynchronizationJobsItemProvisionOnDemandRequestBuilder) Post(ctx co
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateStringKeyStringValuePairFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,7 @@ func (m *ItemSynchronizationJobsItemProvisionOnDemandRequestBuilder) Post(ctx co
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringKeyStringValuePairable), nil
 }
 // ToPostRequestInformation select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds. 
+// returns a *RequestInformation when successful
 func (m *ItemSynchronizationJobsItemProvisionOnDemandRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSynchronizationJobsItemProvisionOnDemandPostRequestBodyable, requestConfiguration *ItemSynchronizationJobsItemProvisionOnDemandRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -68,6 +70,7 @@ func (m *ItemSynchronizationJobsItemProvisionOnDemandRequestBuilder) ToPostReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemSynchronizationJobsItemProvisionOnDemandRequestBuilder when successful
 func (m *ItemSynchronizationJobsItemProvisionOnDemandRequestBuilder) WithUrl(rawUrl string)(*ItemSynchronizationJobsItemProvisionOnDemandRequestBuilder) {
     return NewItemSynchronizationJobsItemProvisionOnDemandRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

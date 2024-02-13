@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityProviderBase 
 type IdentityProviderBase struct {
     Entity
 }
-// NewIdentityProviderBase instantiates a new identityProviderBase and sets the default values.
+// NewIdentityProviderBase instantiates a new IdentityProviderBase and sets the default values.
 func NewIdentityProviderBase()(*IdentityProviderBase) {
     m := &IdentityProviderBase{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewIdentityProviderBase()(*IdentityProviderBase) {
     return m
 }
 // CreateIdentityProviderBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIdentityProviderBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -48,6 +48,7 @@ func CreateIdentityProviderBaseFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewIdentityProviderBase(), nil
 }
 // GetDisplayName gets the displayName property value. The display name of the identity provider.
+// returns a *string when successful
 func (m *IdentityProviderBase) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -59,6 +60,7 @@ func (m *IdentityProviderBase) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IdentityProviderBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -94,7 +96,6 @@ func (m *IdentityProviderBase) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// IdentityProviderBaseable 
 type IdentityProviderBaseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

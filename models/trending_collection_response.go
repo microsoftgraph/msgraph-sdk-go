@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TrendingCollectionResponse 
 type TrendingCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTrendingCollectionResponse instantiates a new trendingCollectionResponse and sets the default values.
+// NewTrendingCollectionResponse instantiates a new TrendingCollectionResponse and sets the default values.
 func NewTrendingCollectionResponse()(*TrendingCollectionResponse) {
     m := &TrendingCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewTrendingCollectionResponse()(*TrendingCollectionResponse) {
     return m
 }
 // CreateTrendingCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTrendingCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTrendingCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TrendingCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *TrendingCollectionResponse) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []Trendingable when successful
 func (m *TrendingCollectionResponse) GetValue()([]Trendingable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *TrendingCollectionResponse) SetValue(value []Trendingable)() {
         panic(err)
     }
 }
-// TrendingCollectionResponseable 
 type TrendingCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

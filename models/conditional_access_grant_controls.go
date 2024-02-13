@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ConditionalAccessGrantControls 
 type ConditionalAccessGrantControls struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewConditionalAccessGrantControls instantiates a new conditionalAccessGrantControls and sets the default values.
+// NewConditionalAccessGrantControls instantiates a new ConditionalAccessGrantControls and sets the default values.
 func NewConditionalAccessGrantControls()(*ConditionalAccessGrantControls) {
     m := &ConditionalAccessGrantControls{
     }
@@ -19,10 +18,12 @@ func NewConditionalAccessGrantControls()(*ConditionalAccessGrantControls) {
     return m
 }
 // CreateConditionalAccessGrantControlsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConditionalAccessGrantControlsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConditionalAccessGrantControls(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ConditionalAccessGrantControls) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *ConditionalAccessGrantControls) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAuthenticationStrength gets the authenticationStrength property value. The authenticationStrength property
+// returns a AuthenticationStrengthPolicyable when successful
 func (m *ConditionalAccessGrantControls) GetAuthenticationStrength()(AuthenticationStrengthPolicyable) {
     val, err := m.GetBackingStore().Get("authenticationStrength")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *ConditionalAccessGrantControls) GetAuthenticationStrength()(Authenticat
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ConditionalAccessGrantControls) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBuiltInControls gets the builtInControls property value. List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
+// returns a []ConditionalAccessGrantControl when successful
 func (m *ConditionalAccessGrantControls) GetBuiltInControls()([]ConditionalAccessGrantControl) {
     val, err := m.GetBackingStore().Get("builtInControls")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *ConditionalAccessGrantControls) GetBuiltInControls()([]ConditionalAcces
     return nil
 }
 // GetCustomAuthenticationFactors gets the customAuthenticationFactors property value. List of custom controls IDs required by the policy. For more information, see Custom controls.
+// returns a []string when successful
 func (m *ConditionalAccessGrantControls) GetCustomAuthenticationFactors()([]string) {
     val, err := m.GetBackingStore().Get("customAuthenticationFactors")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *ConditionalAccessGrantControls) GetCustomAuthenticationFactors()([]stri
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["authenticationStrength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -155,6 +161,7 @@ func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ConditionalAccessGrantControls) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -166,6 +173,7 @@ func (m *ConditionalAccessGrantControls) GetOdataType()(*string) {
     return nil
 }
 // GetOperator gets the operator property value. Defines the relationship of the grant controls. Possible values: AND, OR.
+// returns a *string when successful
 func (m *ConditionalAccessGrantControls) GetOperator()(*string) {
     val, err := m.GetBackingStore().Get("operator")
     if err != nil {
@@ -177,6 +185,7 @@ func (m *ConditionalAccessGrantControls) GetOperator()(*string) {
     return nil
 }
 // GetTermsOfUse gets the termsOfUse property value. List of terms of use IDs required by the policy.
+// returns a []string when successful
 func (m *ConditionalAccessGrantControls) GetTermsOfUse()([]string) {
     val, err := m.GetBackingStore().Get("termsOfUse")
     if err != nil {
@@ -286,7 +295,6 @@ func (m *ConditionalAccessGrantControls) SetTermsOfUse(value []string)() {
         panic(err)
     }
 }
-// ConditionalAccessGrantControlsable 
 type ConditionalAccessGrantControlsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

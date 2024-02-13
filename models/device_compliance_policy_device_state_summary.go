@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceCompliancePolicyDeviceStateSummary 
 type DeviceCompliancePolicyDeviceStateSummary struct {
     Entity
 }
-// NewDeviceCompliancePolicyDeviceStateSummary instantiates a new deviceCompliancePolicyDeviceStateSummary and sets the default values.
+// NewDeviceCompliancePolicyDeviceStateSummary instantiates a new DeviceCompliancePolicyDeviceStateSummary and sets the default values.
 func NewDeviceCompliancePolicyDeviceStateSummary()(*DeviceCompliancePolicyDeviceStateSummary) {
     m := &DeviceCompliancePolicyDeviceStateSummary{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewDeviceCompliancePolicyDeviceStateSummary()(*DeviceCompliancePolicyDevice
     return m
 }
 // CreateDeviceCompliancePolicyDeviceStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceCompliancePolicyDeviceStateSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceCompliancePolicyDeviceStateSummary(), nil
 }
 // GetCompliantDeviceCount gets the compliantDeviceCount property value. Number of compliant devices
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetCompliantDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("compliantDeviceCount")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) GetCompliantDeviceCount()(*in
     return nil
 }
 // GetConfigManagerCount gets the configManagerCount property value. Number of devices that have compliance managed by System Center Configuration Manager
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetConfigManagerCount()(*int32) {
     val, err := m.GetBackingStore().Get("configManagerCount")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) GetConfigManagerCount()(*int3
     return nil
 }
 // GetConflictDeviceCount gets the conflictDeviceCount property value. Number of conflict devices
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetConflictDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("conflictDeviceCount")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) GetConflictDeviceCount()(*int
     return nil
 }
 // GetErrorDeviceCount gets the errorDeviceCount property value. Number of error devices
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetErrorDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("errorDeviceCount")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) GetErrorDeviceCount()(*int32)
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["compliantDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -159,6 +164,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) GetFieldDeserializers()(map[s
     return res
 }
 // GetInGracePeriodCount gets the inGracePeriodCount property value. Number of devices that are in grace period
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetInGracePeriodCount()(*int32) {
     val, err := m.GetBackingStore().Get("inGracePeriodCount")
     if err != nil {
@@ -170,6 +176,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) GetInGracePeriodCount()(*int3
     return nil
 }
 // GetNonCompliantDeviceCount gets the nonCompliantDeviceCount property value. Number of NonCompliant devices
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetNonCompliantDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("nonCompliantDeviceCount")
     if err != nil {
@@ -181,6 +188,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) GetNonCompliantDeviceCount()(
     return nil
 }
 // GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. Number of not applicable devices
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetNotApplicableDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("notApplicableDeviceCount")
     if err != nil {
@@ -192,6 +200,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) GetNotApplicableDeviceCount()
     return nil
 }
 // GetRemediatedDeviceCount gets the remediatedDeviceCount property value. Number of remediated devices
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetRemediatedDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("remediatedDeviceCount")
     if err != nil {
@@ -203,6 +212,7 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) GetRemediatedDeviceCount()(*i
     return nil
 }
 // GetUnknownDeviceCount gets the unknownDeviceCount property value. Number of unknown devices
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetUnknownDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("unknownDeviceCount")
     if err != nil {
@@ -338,7 +348,6 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) SetUnknownDeviceCount(value *
         panic(err)
     }
 }
-// DeviceCompliancePolicyDeviceStateSummaryable 
 type DeviceCompliancePolicyDeviceStateSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

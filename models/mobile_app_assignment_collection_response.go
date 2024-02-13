@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileAppAssignmentCollectionResponse 
 type MobileAppAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMobileAppAssignmentCollectionResponse instantiates a new mobileAppAssignmentCollectionResponse and sets the default values.
+// NewMobileAppAssignmentCollectionResponse instantiates a new MobileAppAssignmentCollectionResponse and sets the default values.
 func NewMobileAppAssignmentCollectionResponse()(*MobileAppAssignmentCollectionResponse) {
     m := &MobileAppAssignmentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewMobileAppAssignmentCollectionResponse()(*MobileAppAssignmentCollectionRe
     return m
 }
 // CreateMobileAppAssignmentCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMobileAppAssignmentCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileAppAssignmentCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MobileAppAssignmentCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *MobileAppAssignmentCollectionResponse) GetFieldDeserializers()(map[stri
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []MobileAppAssignmentable when successful
 func (m *MobileAppAssignmentCollectionResponse) GetValue()([]MobileAppAssignmentable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *MobileAppAssignmentCollectionResponse) SetValue(value []MobileAppAssign
         panic(err)
     }
 }
-// MobileAppAssignmentCollectionResponseable 
 type MobileAppAssignmentCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

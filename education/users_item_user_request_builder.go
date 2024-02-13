@@ -27,20 +27,22 @@ type UsersItemUserRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *UsersItemUserRequestBuilderGetQueryParameters
 }
-// NewUsersItemUserRequestBuilderInternal instantiates a new UserRequestBuilder and sets the default values.
+// NewUsersItemUserRequestBuilderInternal instantiates a new UsersItemUserRequestBuilder and sets the default values.
 func NewUsersItemUserRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsersItemUserRequestBuilder) {
     m := &UsersItemUserRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/users/{educationUser%2Did}/user{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/users/{educationUser%2Did}/user{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewUsersItemUserRequestBuilder instantiates a new UserRequestBuilder and sets the default values.
+// NewUsersItemUserRequestBuilder instantiates a new UsersItemUserRequestBuilder and sets the default values.
 func NewUsersItemUserRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsersItemUserRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUsersItemUserRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get retrieve the simple directory user that corresponds to this educationUser.
+// returns a Userable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-get-user?view=graph-rest-1.0
@@ -50,8 +52,7 @@ func (m *UsersItemUserRequestBuilder) Get(ctx context.Context, requestConfigurat
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateUserFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -63,14 +64,17 @@ func (m *UsersItemUserRequestBuilder) Get(ctx context.Context, requestConfigurat
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable), nil
 }
 // MailboxSettings the mailboxSettings property
+// returns a *UsersItemUserMailboxSettingsRequestBuilder when successful
 func (m *UsersItemUserRequestBuilder) MailboxSettings()(*UsersItemUserMailboxSettingsRequestBuilder) {
     return NewUsersItemUserMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ServiceProvisioningErrors the serviceProvisioningErrors property
+// returns a *UsersItemUserServiceProvisioningErrorsRequestBuilder when successful
 func (m *UsersItemUserRequestBuilder) ServiceProvisioningErrors()(*UsersItemUserServiceProvisioningErrorsRequestBuilder) {
     return NewUsersItemUserServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation retrieve the simple directory user that corresponds to this educationUser.
+// returns a *RequestInformation when successful
 func (m *UsersItemUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersItemUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -84,6 +88,7 @@ func (m *UsersItemUserRequestBuilder) ToGetRequestInformation(ctx context.Contex
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *UsersItemUserRequestBuilder when successful
 func (m *UsersItemUserRequestBuilder) WithUrl(rawUrl string)(*UsersItemUserRequestBuilder) {
     return NewUsersItemUserRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

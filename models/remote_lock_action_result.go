@@ -8,7 +8,7 @@ import (
 type RemoteLockActionResult struct {
     DeviceActionResult
 }
-// NewRemoteLockActionResult instantiates a new remoteLockActionResult and sets the default values.
+// NewRemoteLockActionResult instantiates a new RemoteLockActionResult and sets the default values.
 func NewRemoteLockActionResult()(*RemoteLockActionResult) {
     m := &RemoteLockActionResult{
         DeviceActionResult: *NewDeviceActionResult(),
@@ -16,10 +16,12 @@ func NewRemoteLockActionResult()(*RemoteLockActionResult) {
     return m
 }
 // CreateRemoteLockActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRemoteLockActionResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRemoteLockActionResult(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RemoteLockActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceActionResult.GetFieldDeserializers()
     res["unlockPin"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +37,7 @@ func (m *RemoteLockActionResult) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetUnlockPin gets the unlockPin property value. Pin to unlock the client
+// returns a *string when successful
 func (m *RemoteLockActionResult) GetUnlockPin()(*string) {
     val, err := m.GetBackingStore().Get("unlockPin")
     if err != nil {
@@ -66,7 +69,6 @@ func (m *RemoteLockActionResult) SetUnlockPin(value *string)() {
         panic(err)
     }
 }
-// RemoteLockActionResultable 
 type RemoteLockActionResultable interface {
     DeviceActionResultable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

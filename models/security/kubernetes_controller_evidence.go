@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// KubernetesControllerEvidence 
 type KubernetesControllerEvidence struct {
     AlertEvidence
 }
-// NewKubernetesControllerEvidence instantiates a new kubernetesControllerEvidence and sets the default values.
+// NewKubernetesControllerEvidence instantiates a new KubernetesControllerEvidence and sets the default values.
 func NewKubernetesControllerEvidence()(*KubernetesControllerEvidence) {
     m := &KubernetesControllerEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -18,10 +17,12 @@ func NewKubernetesControllerEvidence()(*KubernetesControllerEvidence) {
     return m
 }
 // CreateKubernetesControllerEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateKubernetesControllerEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewKubernetesControllerEvidence(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *KubernetesControllerEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["labels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -67,6 +68,7 @@ func (m *KubernetesControllerEvidence) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetLabels gets the labels property value. The labels for the Kubernetes pod.
+// returns a Dictionaryable when successful
 func (m *KubernetesControllerEvidence) GetLabels()(Dictionaryable) {
     val, err := m.GetBackingStore().Get("labels")
     if err != nil {
@@ -78,6 +80,7 @@ func (m *KubernetesControllerEvidence) GetLabels()(Dictionaryable) {
     return nil
 }
 // GetName gets the name property value. The controller name.
+// returns a *string when successful
 func (m *KubernetesControllerEvidence) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -89,6 +92,7 @@ func (m *KubernetesControllerEvidence) GetName()(*string) {
     return nil
 }
 // GetNamespace gets the namespace property value. The service account namespace.
+// returns a KubernetesNamespaceEvidenceable when successful
 func (m *KubernetesControllerEvidence) GetNamespace()(KubernetesNamespaceEvidenceable) {
     val, err := m.GetBackingStore().Get("namespace")
     if err != nil {
@@ -100,6 +104,7 @@ func (m *KubernetesControllerEvidence) GetNamespace()(KubernetesNamespaceEvidenc
     return nil
 }
 // GetTypeEscaped gets the type property value. The controller type.
+// returns a *string when successful
 func (m *KubernetesControllerEvidence) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -170,7 +175,6 @@ func (m *KubernetesControllerEvidence) SetTypeEscaped(value *string)() {
         panic(err)
     }
 }
-// KubernetesControllerEvidenceable 
 type KubernetesControllerEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

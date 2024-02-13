@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BuiltInIdentityProvider 
 type BuiltInIdentityProvider struct {
     IdentityProviderBase
 }
-// NewBuiltInIdentityProvider instantiates a new builtInIdentityProvider and sets the default values.
+// NewBuiltInIdentityProvider instantiates a new BuiltInIdentityProvider and sets the default values.
 func NewBuiltInIdentityProvider()(*BuiltInIdentityProvider) {
     m := &BuiltInIdentityProvider{
         IdentityProviderBase: *NewIdentityProviderBase(),
@@ -18,10 +17,12 @@ func NewBuiltInIdentityProvider()(*BuiltInIdentityProvider) {
     return m
 }
 // CreateBuiltInIdentityProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBuiltInIdentityProviderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBuiltInIdentityProvider(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BuiltInIdentityProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IdentityProviderBase.GetFieldDeserializers()
     res["identityProviderType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *BuiltInIdentityProvider) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetIdentityProviderType gets the identityProviderType property value. The identity provider type. For a B2B scenario, possible values: AADSignup, MicrosoftAccount, EmailOTP. Required.
+// returns a *string when successful
 func (m *BuiltInIdentityProvider) GetIdentityProviderType()(*string) {
     val, err := m.GetBackingStore().Get("identityProviderType")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *BuiltInIdentityProvider) SetIdentityProviderType(value *string)() {
         panic(err)
     }
 }
-// BuiltInIdentityProviderable 
 type BuiltInIdentityProviderable interface {
     IdentityProviderBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

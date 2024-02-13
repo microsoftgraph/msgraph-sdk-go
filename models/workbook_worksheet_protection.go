@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookWorksheetProtection 
 type WorkbookWorksheetProtection struct {
     Entity
 }
-// NewWorkbookWorksheetProtection instantiates a new workbookWorksheetProtection and sets the default values.
+// NewWorkbookWorksheetProtection instantiates a new WorkbookWorksheetProtection and sets the default values.
 func NewWorkbookWorksheetProtection()(*WorkbookWorksheetProtection) {
     m := &WorkbookWorksheetProtection{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewWorkbookWorksheetProtection()(*WorkbookWorksheetProtection) {
     return m
 }
 // CreateWorkbookWorksheetProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookWorksheetProtectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookWorksheetProtection(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookWorksheetProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["options"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -45,6 +46,7 @@ func (m *WorkbookWorksheetProtection) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetOptions gets the options property value. Sheet protection options. Read-only.
+// returns a WorkbookWorksheetProtectionOptionsable when successful
 func (m *WorkbookWorksheetProtection) GetOptions()(WorkbookWorksheetProtectionOptionsable) {
     val, err := m.GetBackingStore().Get("options")
     if err != nil {
@@ -56,6 +58,7 @@ func (m *WorkbookWorksheetProtection) GetOptions()(WorkbookWorksheetProtectionOp
     return nil
 }
 // GetProtected gets the protected property value. Indicates if the worksheet is protected.  Read-only.
+// returns a *bool when successful
 func (m *WorkbookWorksheetProtection) GetProtected()(*bool) {
     val, err := m.GetBackingStore().Get("protected")
     if err != nil {
@@ -100,7 +103,6 @@ func (m *WorkbookWorksheetProtection) SetProtected(value *bool)() {
         panic(err)
     }
 }
-// WorkbookWorksheetProtectionable 
 type WorkbookWorksheetProtectionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TrainingNotificationSetting 
 type TrainingNotificationSetting struct {
     EndUserNotificationSetting
 }
-// NewTrainingNotificationSetting instantiates a new trainingNotificationSetting and sets the default values.
+// NewTrainingNotificationSetting instantiates a new TrainingNotificationSetting and sets the default values.
 func NewTrainingNotificationSetting()(*TrainingNotificationSetting) {
     m := &TrainingNotificationSetting{
         EndUserNotificationSetting: *NewEndUserNotificationSetting(),
@@ -18,10 +17,12 @@ func NewTrainingNotificationSetting()(*TrainingNotificationSetting) {
     return m
 }
 // CreateTrainingNotificationSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTrainingNotificationSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTrainingNotificationSetting(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TrainingNotificationSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EndUserNotificationSetting.GetFieldDeserializers()
     res["trainingAssignment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +48,7 @@ func (m *TrainingNotificationSetting) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetTrainingAssignment gets the trainingAssignment property value. Training assignment details.
+// returns a BaseEndUserNotificationable when successful
 func (m *TrainingNotificationSetting) GetTrainingAssignment()(BaseEndUserNotificationable) {
     val, err := m.GetBackingStore().Get("trainingAssignment")
     if err != nil {
@@ -58,6 +60,7 @@ func (m *TrainingNotificationSetting) GetTrainingAssignment()(BaseEndUserNotific
     return nil
 }
 // GetTrainingReminder gets the trainingReminder property value. Training reminder details.
+// returns a TrainingReminderNotificationable when successful
 func (m *TrainingNotificationSetting) GetTrainingReminder()(TrainingReminderNotificationable) {
     val, err := m.GetBackingStore().Get("trainingReminder")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *TrainingNotificationSetting) SetTrainingReminder(value TrainingReminder
         panic(err)
     }
 }
-// TrainingNotificationSettingable 
 type TrainingNotificationSettingable interface {
     EndUserNotificationSettingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

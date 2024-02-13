@@ -8,7 +8,7 @@ import (
 type WindowsUniversalAppX struct {
     MobileLobApp
 }
-// NewWindowsUniversalAppX instantiates a new windowsUniversalAppX and sets the default values.
+// NewWindowsUniversalAppX instantiates a new WindowsUniversalAppX and sets the default values.
 func NewWindowsUniversalAppX()(*WindowsUniversalAppX) {
     m := &WindowsUniversalAppX{
         MobileLobApp: *NewMobileLobApp(),
@@ -18,10 +18,12 @@ func NewWindowsUniversalAppX()(*WindowsUniversalAppX) {
     return m
 }
 // CreateWindowsUniversalAppXFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsUniversalAppXFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsUniversalAppX(), nil
 }
 // GetApplicableArchitectures gets the applicableArchitectures property value. Contains properties for Windows architecture.
+// returns a *WindowsArchitecture when successful
 func (m *WindowsUniversalAppX) GetApplicableArchitectures()(*WindowsArchitecture) {
     val, err := m.GetBackingStore().Get("applicableArchitectures")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *WindowsUniversalAppX) GetApplicableArchitectures()(*WindowsArchitecture
     return nil
 }
 // GetApplicableDeviceTypes gets the applicableDeviceTypes property value. Contains properties for Windows device type. Multiple values can be selected. Default value is `none`.
+// returns a *WindowsDeviceType when successful
 func (m *WindowsUniversalAppX) GetApplicableDeviceTypes()(*WindowsDeviceType) {
     val, err := m.GetBackingStore().Get("applicableDeviceTypes")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *WindowsUniversalAppX) GetApplicableDeviceTypes()(*WindowsDeviceType) {
     return nil
 }
 // GetCommittedContainedApps gets the committedContainedApps property value. The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
+// returns a []MobileContainedAppable when successful
 func (m *WindowsUniversalAppX) GetCommittedContainedApps()([]MobileContainedAppable) {
     val, err := m.GetBackingStore().Get("committedContainedApps")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *WindowsUniversalAppX) GetCommittedContainedApps()([]MobileContainedAppa
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsUniversalAppX) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileLobApp.GetFieldDeserializers()
     res["applicableArchitectures"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -156,6 +161,7 @@ func (m *WindowsUniversalAppX) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetIdentityName gets the identityName property value. The Identity Name.
+// returns a *string when successful
 func (m *WindowsUniversalAppX) GetIdentityName()(*string) {
     val, err := m.GetBackingStore().Get("identityName")
     if err != nil {
@@ -167,6 +173,7 @@ func (m *WindowsUniversalAppX) GetIdentityName()(*string) {
     return nil
 }
 // GetIdentityPublisherHash gets the identityPublisherHash property value. The Identity Publisher Hash.
+// returns a *string when successful
 func (m *WindowsUniversalAppX) GetIdentityPublisherHash()(*string) {
     val, err := m.GetBackingStore().Get("identityPublisherHash")
     if err != nil {
@@ -178,6 +185,7 @@ func (m *WindowsUniversalAppX) GetIdentityPublisherHash()(*string) {
     return nil
 }
 // GetIdentityResourceIdentifier gets the identityResourceIdentifier property value. The Identity Resource Identifier.
+// returns a *string when successful
 func (m *WindowsUniversalAppX) GetIdentityResourceIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("identityResourceIdentifier")
     if err != nil {
@@ -189,6 +197,7 @@ func (m *WindowsUniversalAppX) GetIdentityResourceIdentifier()(*string) {
     return nil
 }
 // GetIdentityVersion gets the identityVersion property value. The identity version.
+// returns a *string when successful
 func (m *WindowsUniversalAppX) GetIdentityVersion()(*string) {
     val, err := m.GetBackingStore().Get("identityVersion")
     if err != nil {
@@ -200,6 +209,7 @@ func (m *WindowsUniversalAppX) GetIdentityVersion()(*string) {
     return nil
 }
 // GetIsBundle gets the isBundle property value. Whether or not the app is a bundle.
+// returns a *bool when successful
 func (m *WindowsUniversalAppX) GetIsBundle()(*bool) {
     val, err := m.GetBackingStore().Get("isBundle")
     if err != nil {
@@ -211,6 +221,7 @@ func (m *WindowsUniversalAppX) GetIsBundle()(*bool) {
     return nil
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. The minimum operating system required for a Windows mobile app.
+// returns a WindowsMinimumOperatingSystemable when successful
 func (m *WindowsUniversalAppX) GetMinimumSupportedOperatingSystem()(WindowsMinimumOperatingSystemable) {
     val, err := m.GetBackingStore().Get("minimumSupportedOperatingSystem")
     if err != nil {
@@ -354,7 +365,6 @@ func (m *WindowsUniversalAppX) SetMinimumSupportedOperatingSystem(value WindowsM
         panic(err)
     }
 }
-// WindowsUniversalAppXable 
 type WindowsUniversalAppXable interface {
     MobileLobAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

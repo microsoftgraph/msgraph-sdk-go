@@ -8,7 +8,7 @@ import (
 type WindowsUniversalAppXAppAssignmentSettings struct {
     MobileAppAssignmentSettings
 }
-// NewWindowsUniversalAppXAppAssignmentSettings instantiates a new windowsUniversalAppXAppAssignmentSettings and sets the default values.
+// NewWindowsUniversalAppXAppAssignmentSettings instantiates a new WindowsUniversalAppXAppAssignmentSettings and sets the default values.
 func NewWindowsUniversalAppXAppAssignmentSettings()(*WindowsUniversalAppXAppAssignmentSettings) {
     m := &WindowsUniversalAppXAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
@@ -18,10 +18,12 @@ func NewWindowsUniversalAppXAppAssignmentSettings()(*WindowsUniversalAppXAppAssi
     return m
 }
 // CreateWindowsUniversalAppXAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsUniversalAppXAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsUniversalAppXAppAssignmentSettings(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsUniversalAppXAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileAppAssignmentSettings.GetFieldDeserializers()
     res["useDeviceContext"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *WindowsUniversalAppXAppAssignmentSettings) GetFieldDeserializers()(map[
     return res
 }
 // GetUseDeviceContext gets the useDeviceContext property value. If true, uses device execution context for Windows Universal AppX mobile app. Device-context install is not allowed when this type of app is targeted with Available intent. Defaults to false.
+// returns a *bool when successful
 func (m *WindowsUniversalAppXAppAssignmentSettings) GetUseDeviceContext()(*bool) {
     val, err := m.GetBackingStore().Get("useDeviceContext")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *WindowsUniversalAppXAppAssignmentSettings) SetUseDeviceContext(value *b
         panic(err)
     }
 }
-// WindowsUniversalAppXAppAssignmentSettingsable 
 type WindowsUniversalAppXAppAssignmentSettingsable interface {
     MobileAppAssignmentSettingsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

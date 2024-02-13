@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AudioRoutingGroup 
 type AudioRoutingGroup struct {
     Entity
 }
-// NewAudioRoutingGroup instantiates a new audioRoutingGroup and sets the default values.
+// NewAudioRoutingGroup instantiates a new AudioRoutingGroup and sets the default values.
 func NewAudioRoutingGroup()(*AudioRoutingGroup) {
     m := &AudioRoutingGroup{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewAudioRoutingGroup()(*AudioRoutingGroup) {
     return m
 }
 // CreateAudioRoutingGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAudioRoutingGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAudioRoutingGroup(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AudioRoutingGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["receivers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -67,6 +68,7 @@ func (m *AudioRoutingGroup) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetReceivers gets the receivers property value. List of receiving participant ids.
+// returns a []string when successful
 func (m *AudioRoutingGroup) GetReceivers()([]string) {
     val, err := m.GetBackingStore().Get("receivers")
     if err != nil {
@@ -78,6 +80,7 @@ func (m *AudioRoutingGroup) GetReceivers()([]string) {
     return nil
 }
 // GetRoutingMode gets the routingMode property value. The routingMode property
+// returns a *RoutingMode when successful
 func (m *AudioRoutingGroup) GetRoutingMode()(*RoutingMode) {
     val, err := m.GetBackingStore().Get("routingMode")
     if err != nil {
@@ -89,6 +92,7 @@ func (m *AudioRoutingGroup) GetRoutingMode()(*RoutingMode) {
     return nil
 }
 // GetSources gets the sources property value. List of source participant ids.
+// returns a []string when successful
 func (m *AudioRoutingGroup) GetSources()([]string) {
     val, err := m.GetBackingStore().Get("sources")
     if err != nil {
@@ -147,7 +151,6 @@ func (m *AudioRoutingGroup) SetSources(value []string)() {
         panic(err)
     }
 }
-// AudioRoutingGroupable 
 type AudioRoutingGroupable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DelegatedAdminServiceManagementDetailCollectionResponse 
 type DelegatedAdminServiceManagementDetailCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDelegatedAdminServiceManagementDetailCollectionResponse instantiates a new delegatedAdminServiceManagementDetailCollectionResponse and sets the default values.
+// NewDelegatedAdminServiceManagementDetailCollectionResponse instantiates a new DelegatedAdminServiceManagementDetailCollectionResponse and sets the default values.
 func NewDelegatedAdminServiceManagementDetailCollectionResponse()(*DelegatedAdminServiceManagementDetailCollectionResponse) {
     m := &DelegatedAdminServiceManagementDetailCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewDelegatedAdminServiceManagementDetailCollectionResponse()(*DelegatedAdmi
     return m
 }
 // CreateDelegatedAdminServiceManagementDetailCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDelegatedAdminServiceManagementDetailCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDelegatedAdminServiceManagementDetailCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DelegatedAdminServiceManagementDetailCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *DelegatedAdminServiceManagementDetailCollectionResponse) GetFieldDeseri
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []DelegatedAdminServiceManagementDetailable when successful
 func (m *DelegatedAdminServiceManagementDetailCollectionResponse) GetValue()([]DelegatedAdminServiceManagementDetailable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *DelegatedAdminServiceManagementDetailCollectionResponse) SetValue(value
         panic(err)
     }
 }
-// DelegatedAdminServiceManagementDetailCollectionResponseable 
 type DelegatedAdminServiceManagementDetailCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

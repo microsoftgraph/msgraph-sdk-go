@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AttributeMappingSource 
 type AttributeMappingSource struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAttributeMappingSource instantiates a new attributeMappingSource and sets the default values.
+// NewAttributeMappingSource instantiates a new AttributeMappingSource and sets the default values.
 func NewAttributeMappingSource()(*AttributeMappingSource) {
     m := &AttributeMappingSource{
     }
@@ -19,10 +18,12 @@ func NewAttributeMappingSource()(*AttributeMappingSource) {
     return m
 }
 // CreateAttributeMappingSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAttributeMappingSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAttributeMappingSource(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AttributeMappingSource) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *AttributeMappingSource) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AttributeMappingSource) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetExpression gets the expression property value. Equivalent expression representation of this attributeMappingSource object.
+// returns a *string when successful
 func (m *AttributeMappingSource) GetExpression()(*string) {
     val, err := m.GetBackingStore().Get("expression")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *AttributeMappingSource) GetExpression()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AttributeMappingSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["expression"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -111,6 +115,7 @@ func (m *AttributeMappingSource) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetName gets the name property value. Name parameter of the mapping source. Depending on the type property value, this can be the name of the function, the name of the source attribute, or a constant value to be used.
+// returns a *string when successful
 func (m *AttributeMappingSource) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -122,6 +127,7 @@ func (m *AttributeMappingSource) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AttributeMappingSource) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -133,6 +139,7 @@ func (m *AttributeMappingSource) GetOdataType()(*string) {
     return nil
 }
 // GetParameters gets the parameters property value. If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type isn't Function, this property is null/empty array.
+// returns a []StringKeyAttributeMappingSourceValuePairable when successful
 func (m *AttributeMappingSource) GetParameters()([]StringKeyAttributeMappingSourceValuePairable) {
     val, err := m.GetBackingStore().Get("parameters")
     if err != nil {
@@ -144,6 +151,7 @@ func (m *AttributeMappingSource) GetParameters()([]StringKeyAttributeMappingSour
     return nil
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *AttributeMappingSourceType when successful
 func (m *AttributeMappingSource) GetTypeEscaped()(*AttributeMappingSourceType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -247,7 +255,6 @@ func (m *AttributeMappingSource) SetTypeEscaped(value *AttributeMappingSourceTyp
         panic(err)
     }
 }
-// AttributeMappingSourceable 
 type AttributeMappingSourceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

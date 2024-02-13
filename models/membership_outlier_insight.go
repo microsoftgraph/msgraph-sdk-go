@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MembershipOutlierInsight 
 type MembershipOutlierInsight struct {
     GovernanceInsight
 }
-// NewMembershipOutlierInsight instantiates a new membershipOutlierInsight and sets the default values.
+// NewMembershipOutlierInsight instantiates a new MembershipOutlierInsight and sets the default values.
 func NewMembershipOutlierInsight()(*MembershipOutlierInsight) {
     m := &MembershipOutlierInsight{
         GovernanceInsight: *NewGovernanceInsight(),
@@ -18,10 +17,12 @@ func NewMembershipOutlierInsight()(*MembershipOutlierInsight) {
     return m
 }
 // CreateMembershipOutlierInsightFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMembershipOutlierInsightFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMembershipOutlierInsight(), nil
 }
 // GetContainer gets the container property value. Navigation link to the container directory object. For example, to a group.
+// returns a DirectoryObjectable when successful
 func (m *MembershipOutlierInsight) GetContainer()(DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("container")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *MembershipOutlierInsight) GetContainer()(DirectoryObjectable) {
     return nil
 }
 // GetContainerId gets the containerId property value. Indicates the identifier of the container, for example, a group ID.
+// returns a *string when successful
 func (m *MembershipOutlierInsight) GetContainerId()(*string) {
     val, err := m.GetBackingStore().Get("containerId")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *MembershipOutlierInsight) GetContainerId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MembershipOutlierInsight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.GovernanceInsight.GetFieldDeserializers()
     res["container"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -119,6 +122,7 @@ func (m *MembershipOutlierInsight) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Navigation link to a member object who modified the record. For example, to a user.
+// returns a Userable when successful
 func (m *MembershipOutlierInsight) GetLastModifiedBy()(Userable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -130,6 +134,7 @@ func (m *MembershipOutlierInsight) GetLastModifiedBy()(Userable) {
     return nil
 }
 // GetMember gets the member property value. Navigation link to a member object. For example, to a user.
+// returns a DirectoryObjectable when successful
 func (m *MembershipOutlierInsight) GetMember()(DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("member")
     if err != nil {
@@ -141,6 +146,7 @@ func (m *MembershipOutlierInsight) GetMember()(DirectoryObjectable) {
     return nil
 }
 // GetMemberId gets the memberId property value. Indicates the identifier of the user.
+// returns a *string when successful
 func (m *MembershipOutlierInsight) GetMemberId()(*string) {
     val, err := m.GetBackingStore().Get("memberId")
     if err != nil {
@@ -152,6 +158,7 @@ func (m *MembershipOutlierInsight) GetMemberId()(*string) {
     return nil
 }
 // GetOutlierContainerType gets the outlierContainerType property value. The outlierContainerType property
+// returns a *OutlierContainerType when successful
 func (m *MembershipOutlierInsight) GetOutlierContainerType()(*OutlierContainerType) {
     val, err := m.GetBackingStore().Get("outlierContainerType")
     if err != nil {
@@ -163,6 +170,7 @@ func (m *MembershipOutlierInsight) GetOutlierContainerType()(*OutlierContainerTy
     return nil
 }
 // GetOutlierMemberType gets the outlierMemberType property value. The outlierMemberType property
+// returns a *OutlierMemberType when successful
 func (m *MembershipOutlierInsight) GetOutlierMemberType()(*OutlierMemberType) {
     val, err := m.GetBackingStore().Get("outlierMemberType")
     if err != nil {
@@ -274,7 +282,6 @@ func (m *MembershipOutlierInsight) SetOutlierMemberType(value *OutlierMemberType
         panic(err)
     }
 }
-// MembershipOutlierInsightable 
 type MembershipOutlierInsightable interface {
     GovernanceInsightable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// Fido2KeyRestrictions 
 type Fido2KeyRestrictions struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewFido2KeyRestrictions instantiates a new fido2KeyRestrictions and sets the default values.
+// NewFido2KeyRestrictions instantiates a new Fido2KeyRestrictions and sets the default values.
 func NewFido2KeyRestrictions()(*Fido2KeyRestrictions) {
     m := &Fido2KeyRestrictions{
     }
@@ -19,10 +18,12 @@ func NewFido2KeyRestrictions()(*Fido2KeyRestrictions) {
     return m
 }
 // CreateFido2KeyRestrictionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFido2KeyRestrictionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFido2KeyRestrictions(), nil
 }
 // GetAaGuids gets the aaGuids property value. A collection of Authenticator Attestation GUIDs. AADGUIDs define key types and manufacturers.
+// returns a []string when successful
 func (m *Fido2KeyRestrictions) GetAaGuids()([]string) {
     val, err := m.GetBackingStore().Get("aaGuids")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *Fido2KeyRestrictions) GetAaGuids()([]string) {
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Fido2KeyRestrictions) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *Fido2KeyRestrictions) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *Fido2KeyRestrictions) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetEnforcementType gets the enforcementType property value. Enforcement type. Possible values are: allow, block.
+// returns a *Fido2RestrictionEnforcementType when successful
 func (m *Fido2KeyRestrictions) GetEnforcementType()(*Fido2RestrictionEnforcementType) {
     val, err := m.GetBackingStore().Get("enforcementType")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *Fido2KeyRestrictions) GetEnforcementType()(*Fido2RestrictionEnforcement
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Fido2KeyRestrictions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["aaGuids"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -112,6 +117,7 @@ func (m *Fido2KeyRestrictions) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetIsEnforced gets the isEnforced property value. Determines if the configured key enforcement is enabled.
+// returns a *bool when successful
 func (m *Fido2KeyRestrictions) GetIsEnforced()(*bool) {
     val, err := m.GetBackingStore().Get("isEnforced")
     if err != nil {
@@ -123,6 +129,7 @@ func (m *Fido2KeyRestrictions) GetIsEnforced()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *Fido2KeyRestrictions) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -207,7 +214,6 @@ func (m *Fido2KeyRestrictions) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// Fido2KeyRestrictionsable 
 type Fido2KeyRestrictionsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

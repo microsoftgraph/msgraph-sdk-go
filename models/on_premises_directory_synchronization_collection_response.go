@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnPremisesDirectorySynchronizationCollectionResponse 
 type OnPremisesDirectorySynchronizationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewOnPremisesDirectorySynchronizationCollectionResponse instantiates a new onPremisesDirectorySynchronizationCollectionResponse and sets the default values.
+// NewOnPremisesDirectorySynchronizationCollectionResponse instantiates a new OnPremisesDirectorySynchronizationCollectionResponse and sets the default values.
 func NewOnPremisesDirectorySynchronizationCollectionResponse()(*OnPremisesDirectorySynchronizationCollectionResponse) {
     m := &OnPremisesDirectorySynchronizationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewOnPremisesDirectorySynchronizationCollectionResponse()(*OnPremisesDirect
     return m
 }
 // CreateOnPremisesDirectorySynchronizationCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnPremisesDirectorySynchronizationCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnPremisesDirectorySynchronizationCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnPremisesDirectorySynchronizationCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *OnPremisesDirectorySynchronizationCollectionResponse) GetFieldDeseriali
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []OnPremisesDirectorySynchronizationable when successful
 func (m *OnPremisesDirectorySynchronizationCollectionResponse) GetValue()([]OnPremisesDirectorySynchronizationable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *OnPremisesDirectorySynchronizationCollectionResponse) SetValue(value []
         panic(err)
     }
 }
-// OnPremisesDirectorySynchronizationCollectionResponseable 
 type OnPremisesDirectorySynchronizationCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

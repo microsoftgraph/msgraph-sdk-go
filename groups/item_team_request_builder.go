@@ -42,47 +42,52 @@ type ItemTeamRequestBuilderPutRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AllChannels provides operations to manage the allChannels property of the microsoft.graph.team entity.
+// returns a *ItemTeamAllChannelsRequestBuilder when successful
 func (m *ItemTeamRequestBuilder) AllChannels()(*ItemTeamAllChannelsRequestBuilder) {
     return NewItemTeamAllChannelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Archive provides operations to call the archive method.
+// returns a *ItemTeamArchiveRequestBuilder when successful
 func (m *ItemTeamRequestBuilder) Archive()(*ItemTeamArchiveRequestBuilder) {
     return NewItemTeamArchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Channels provides operations to manage the channels property of the microsoft.graph.team entity.
+// returns a *ItemTeamChannelsRequestBuilder when successful
 func (m *ItemTeamRequestBuilder) Channels()(*ItemTeamChannelsRequestBuilder) {
     return NewItemTeamChannelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Clone provides operations to call the clone method.
+// returns a *ItemTeamCloneRequestBuilder when successful
 func (m *ItemTeamRequestBuilder) Clone()(*ItemTeamCloneRequestBuilder) {
     return NewItemTeamCloneRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CompleteMigration provides operations to call the completeMigration method.
+// returns a *ItemTeamCompleteMigrationRequestBuilder when successful
 func (m *ItemTeamRequestBuilder) CompleteMigration()(*ItemTeamCompleteMigrationRequestBuilder) {
     return NewItemTeamCompleteMigrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemTeamRequestBuilderInternal instantiates a new TeamRequestBuilder and sets the default values.
+// NewItemTeamRequestBuilderInternal instantiates a new ItemTeamRequestBuilder and sets the default values.
 func NewItemTeamRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamRequestBuilder) {
     m := &ItemTeamRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemTeamRequestBuilder instantiates a new TeamRequestBuilder and sets the default values.
+// NewItemTeamRequestBuilder instantiates a new ItemTeamRequestBuilder and sets the default values.
 func NewItemTeamRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property team for groups
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -91,14 +96,15 @@ func (m *ItemTeamRequestBuilder) Delete(ctx context.Context, requestConfiguratio
     return nil
 }
 // Get the team associated with this group.
+// returns a Teamable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateTeamFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -110,46 +116,55 @@ func (m *ItemTeamRequestBuilder) Get(ctx context.Context, requestConfiguration *
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable), nil
 }
 // Group provides operations to manage the group property of the microsoft.graph.team entity.
+// returns a *ItemTeamGroupRequestBuilder when successful
 func (m *ItemTeamRequestBuilder) Group()(*ItemTeamGroupRequestBuilder) {
     return NewItemTeamGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // IncomingChannels provides operations to manage the incomingChannels property of the microsoft.graph.team entity.
+// returns a *ItemTeamIncomingChannelsRequestBuilder when successful
 func (m *ItemTeamRequestBuilder) IncomingChannels()(*ItemTeamIncomingChannelsRequestBuilder) {
     return NewItemTeamIncomingChannelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // InstalledApps provides operations to manage the installedApps property of the microsoft.graph.team entity.
+// returns a *ItemTeamInstalledAppsRequestBuilder when successful
 func (m *ItemTeamRequestBuilder) InstalledApps()(*ItemTeamInstalledAppsRequestBuilder) {
     return NewItemTeamInstalledAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Members provides operations to manage the members property of the microsoft.graph.team entity.
+// returns a *ItemTeamMembersRequestBuilder when successful
 func (m *ItemTeamRequestBuilder) Members()(*ItemTeamMembersRequestBuilder) {
     return NewItemTeamMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.team entity.
+// returns a *ItemTeamOperationsRequestBuilder when successful
 func (m *ItemTeamRequestBuilder) Operations()(*ItemTeamOperationsRequestBuilder) {
     return NewItemTeamOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PermissionGrants provides operations to manage the permissionGrants property of the microsoft.graph.team entity.
+// returns a *ItemTeamPermissionGrantsRequestBuilder when successful
 func (m *ItemTeamRequestBuilder) PermissionGrants()(*ItemTeamPermissionGrantsRequestBuilder) {
     return NewItemTeamPermissionGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Photo provides operations to manage the photo property of the microsoft.graph.team entity.
+// returns a *ItemTeamPhotoRequestBuilder when successful
 func (m *ItemTeamRequestBuilder) Photo()(*ItemTeamPhotoRequestBuilder) {
     return NewItemTeamPhotoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PrimaryChannel provides operations to manage the primaryChannel property of the microsoft.graph.team entity.
+// returns a *ItemTeamPrimaryChannelRequestBuilder when successful
 func (m *ItemTeamRequestBuilder) PrimaryChannel()(*ItemTeamPrimaryChannelRequestBuilder) {
     return NewItemTeamPrimaryChannelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Put update the navigation property team in groups
+// returns a Teamable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamRequestBuilder) Put(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, requestConfiguration *ItemTeamRequestBuilderPutRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateTeamFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -161,24 +176,29 @@ func (m *ItemTeamRequestBuilder) Put(ctx context.Context, body iadcd81124412c61e
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable), nil
 }
 // Schedule provides operations to manage the schedule property of the microsoft.graph.team entity.
+// returns a *ItemTeamScheduleRequestBuilder when successful
 func (m *ItemTeamRequestBuilder) Schedule()(*ItemTeamScheduleRequestBuilder) {
     return NewItemTeamScheduleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SendActivityNotification provides operations to call the sendActivityNotification method.
+// returns a *ItemTeamSendActivityNotificationRequestBuilder when successful
 func (m *ItemTeamRequestBuilder) SendActivityNotification()(*ItemTeamSendActivityNotificationRequestBuilder) {
     return NewItemTeamSendActivityNotificationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Tags provides operations to manage the tags property of the microsoft.graph.team entity.
+// returns a *ItemTeamTagsRequestBuilder when successful
 func (m *ItemTeamRequestBuilder) Tags()(*ItemTeamTagsRequestBuilder) {
     return NewItemTeamTagsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Template provides operations to manage the template property of the microsoft.graph.team entity.
+// returns a *ItemTeamTemplateRequestBuilder when successful
 func (m *ItemTeamRequestBuilder) Template()(*ItemTeamTemplateRequestBuilder) {
     return NewItemTeamTemplateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property team for groups
+// returns a *RequestInformation when successful
 func (m *ItemTeamRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/groups/{group%2Did}/team", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -187,6 +207,7 @@ func (m *ItemTeamRequestBuilder) ToDeleteRequestInformation(ctx context.Context,
     return requestInfo, nil
 }
 // ToGetRequestInformation the team associated with this group.
+// returns a *RequestInformation when successful
 func (m *ItemTeamRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -200,8 +221,9 @@ func (m *ItemTeamRequestBuilder) ToGetRequestInformation(ctx context.Context, re
     return requestInfo, nil
 }
 // ToPutRequestInformation update the navigation property team in groups
+// returns a *RequestInformation when successful
 func (m *ItemTeamRequestBuilder) ToPutRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, requestConfiguration *ItemTeamRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, "{+baseurl}/groups/{group%2Did}/team", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -214,10 +236,12 @@ func (m *ItemTeamRequestBuilder) ToPutRequestInformation(ctx context.Context, bo
     return requestInfo, nil
 }
 // Unarchive provides operations to call the unarchive method.
+// returns a *ItemTeamUnarchiveRequestBuilder when successful
 func (m *ItemTeamRequestBuilder) Unarchive()(*ItemTeamUnarchiveRequestBuilder) {
     return NewItemTeamUnarchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemTeamRequestBuilder when successful
 func (m *ItemTeamRequestBuilder) WithUrl(rawUrl string)(*ItemTeamRequestBuilder) {
     return NewItemTeamRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

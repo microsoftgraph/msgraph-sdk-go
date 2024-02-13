@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Type of managed browser
@@ -8,16 +9,18 @@ type ManagedBrowserType int
 
 const (
     // Not configured
-    NOTCONFIGURED_MANAGEDBROWSERTYPE ManagedBrowserType = iota
+    NOTCONFIGURED_MANAGEDBROWSERTYPE = 1
     // Microsoft Edge
-    MICROSOFTEDGE_MANAGEDBROWSERTYPE
+    MICROSOFTEDGE_MANAGEDBROWSERTYPE = 2
 )
 
 func (i ManagedBrowserType) String() string {
     var values []string
-    for p := ManagedBrowserType(1); p <= MICROSOFTEDGE_MANAGEDBROWSERTYPE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"notConfigured", "microsoftEdge"}[p])
+    options := []string{"notConfigured", "microsoftEdge"}
+    for p := 0; p < 2; p++ {
+        mantis := ManagedBrowserType(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

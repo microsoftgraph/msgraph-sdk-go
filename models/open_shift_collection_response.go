@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OpenShiftCollectionResponse 
 type OpenShiftCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewOpenShiftCollectionResponse instantiates a new openShiftCollectionResponse and sets the default values.
+// NewOpenShiftCollectionResponse instantiates a new OpenShiftCollectionResponse and sets the default values.
 func NewOpenShiftCollectionResponse()(*OpenShiftCollectionResponse) {
     m := &OpenShiftCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewOpenShiftCollectionResponse()(*OpenShiftCollectionResponse) {
     return m
 }
 // CreateOpenShiftCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOpenShiftCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOpenShiftCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OpenShiftCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *OpenShiftCollectionResponse) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []OpenShiftable when successful
 func (m *OpenShiftCollectionResponse) GetValue()([]OpenShiftable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *OpenShiftCollectionResponse) SetValue(value []OpenShiftable)() {
         panic(err)
     }
 }
-// OpenShiftCollectionResponseable 
 type OpenShiftCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

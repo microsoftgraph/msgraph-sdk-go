@@ -17,20 +17,21 @@ type ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsRequestBuilderPostR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsRequestBuilderInternal instantiates a new TargetAppsRequestBuilder and sets the default values.
+// NewManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsRequestBuilderInternal instantiates a new ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsRequestBuilder and sets the default values.
 func NewManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsRequestBuilder) {
     m := &ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/managedAppRegistrations/{managedAppRegistration%2Did}/appliedPolicies/{managedAppPolicy%2Did}/targetApps", pathParameters),
     }
     return m
 }
-// NewManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsRequestBuilder instantiates a new TargetAppsRequestBuilder and sets the default values.
+// NewManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsRequestBuilder instantiates a new ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsRequestBuilder and sets the default values.
 func NewManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post not yet documented
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-mam-managedapppolicy-targetapps?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsRequestBuilder)
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsRequestBuilder)
     return nil
 }
 // ToPostRequestInformation not yet documented
+// returns a *RequestInformation when successful
 func (m *ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsPostRequestBodyable, requestConfiguration *ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsRequestBuilder)
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsRequestBuilder when successful
 func (m *ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsRequestBuilder) WithUrl(rawUrl string)(*ManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsRequestBuilder) {
     return NewManagedAppRegistrationsItemAppliedPoliciesItemTargetAppsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

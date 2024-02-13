@@ -24,20 +24,22 @@ type ItemBrandingCustomCSSRequestBuilderPutRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemBrandingCustomCSSRequestBuilderInternal instantiates a new CustomCSSRequestBuilder and sets the default values.
+// NewItemBrandingCustomCSSRequestBuilderInternal instantiates a new ItemBrandingCustomCSSRequestBuilder and sets the default values.
 func NewItemBrandingCustomCSSRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBrandingCustomCSSRequestBuilder) {
     m := &ItemBrandingCustomCSSRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/organization/{organization%2Did}/branding/customCSS", pathParameters),
     }
     return m
 }
-// NewItemBrandingCustomCSSRequestBuilder instantiates a new CustomCSSRequestBuilder and sets the default values.
+// NewItemBrandingCustomCSSRequestBuilder instantiates a new ItemBrandingCustomCSSRequestBuilder and sets the default values.
 func NewItemBrandingCustomCSSRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBrandingCustomCSSRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemBrandingCustomCSSRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get cSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
@@ -47,8 +49,7 @@ func (m *ItemBrandingCustomCSSRequestBuilder) Get(ctx context.Context, requestCo
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -60,14 +61,15 @@ func (m *ItemBrandingCustomCSSRequestBuilder) Get(ctx context.Context, requestCo
     return res.([]byte), nil
 }
 // Put cSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemBrandingCustomCSSRequestBuilder) Put(ctx context.Context, body []byte, contentType *string, requestConfiguration *ItemBrandingCustomCSSRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, contentType, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -79,6 +81,7 @@ func (m *ItemBrandingCustomCSSRequestBuilder) Put(ctx context.Context, body []by
     return res.([]byte), nil
 }
 // ToGetRequestInformation cSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
+// returns a *RequestInformation when successful
 func (m *ItemBrandingCustomCSSRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemBrandingCustomCSSRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -89,6 +92,7 @@ func (m *ItemBrandingCustomCSSRequestBuilder) ToGetRequestInformation(ctx contex
     return requestInfo, nil
 }
 // ToPutRequestInformation cSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
+// returns a *RequestInformation when successful
 func (m *ItemBrandingCustomCSSRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, contentType *string, requestConfiguration *ItemBrandingCustomCSSRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -100,6 +104,7 @@ func (m *ItemBrandingCustomCSSRequestBuilder) ToPutRequestInformation(ctx contex
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemBrandingCustomCSSRequestBuilder when successful
 func (m *ItemBrandingCustomCSSRequestBuilder) WithUrl(rawUrl string)(*ItemBrandingCustomCSSRequestBuilder) {
     return NewItemBrandingCustomCSSRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

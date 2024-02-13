@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ChatMessagePolicyViolationPolicyTip 
 type ChatMessagePolicyViolationPolicyTip struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewChatMessagePolicyViolationPolicyTip instantiates a new chatMessagePolicyViolationPolicyTip and sets the default values.
+// NewChatMessagePolicyViolationPolicyTip instantiates a new ChatMessagePolicyViolationPolicyTip and sets the default values.
 func NewChatMessagePolicyViolationPolicyTip()(*ChatMessagePolicyViolationPolicyTip) {
     m := &ChatMessagePolicyViolationPolicyTip{
     }
@@ -19,10 +18,12 @@ func NewChatMessagePolicyViolationPolicyTip()(*ChatMessagePolicyViolationPolicyT
     return m
 }
 // CreateChatMessagePolicyViolationPolicyTipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateChatMessagePolicyViolationPolicyTipFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChatMessagePolicyViolationPolicyTip(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ChatMessagePolicyViolationPolicyTip) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ChatMessagePolicyViolationPolicyTip) GetAdditionalData()(map[string]any
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ChatMessagePolicyViolationPolicyTip) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetComplianceUrl gets the complianceUrl property value. The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn't say in chats)
+// returns a *string when successful
 func (m *ChatMessagePolicyViolationPolicyTip) GetComplianceUrl()(*string) {
     val, err := m.GetBackingStore().Get("complianceUrl")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *ChatMessagePolicyViolationPolicyTip) GetComplianceUrl()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ChatMessagePolicyViolationPolicyTip) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["complianceUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -101,6 +105,7 @@ func (m *ChatMessagePolicyViolationPolicyTip) GetFieldDeserializers()(map[string
     return res
 }
 // GetGeneralText gets the generalText property value. Explanatory text shown to the sender of the message.
+// returns a *string when successful
 func (m *ChatMessagePolicyViolationPolicyTip) GetGeneralText()(*string) {
     val, err := m.GetBackingStore().Get("generalText")
     if err != nil {
@@ -112,6 +117,7 @@ func (m *ChatMessagePolicyViolationPolicyTip) GetGeneralText()(*string) {
     return nil
 }
 // GetMatchedConditionDescriptions gets the matchedConditionDescriptions property value. The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include 'Credit Card Number' and 'Social Security Number'.
+// returns a []string when successful
 func (m *ChatMessagePolicyViolationPolicyTip) GetMatchedConditionDescriptions()([]string) {
     val, err := m.GetBackingStore().Get("matchedConditionDescriptions")
     if err != nil {
@@ -123,6 +129,7 @@ func (m *ChatMessagePolicyViolationPolicyTip) GetMatchedConditionDescriptions()(
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ChatMessagePolicyViolationPolicyTip) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -206,7 +213,6 @@ func (m *ChatMessagePolicyViolationPolicyTip) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// ChatMessagePolicyViolationPolicyTipable 
 type ChatMessagePolicyViolationPolicyTipable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

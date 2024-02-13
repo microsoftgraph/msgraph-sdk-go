@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OpenShiftChangeRequestCollectionResponse 
 type OpenShiftChangeRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewOpenShiftChangeRequestCollectionResponse instantiates a new openShiftChangeRequestCollectionResponse and sets the default values.
+// NewOpenShiftChangeRequestCollectionResponse instantiates a new OpenShiftChangeRequestCollectionResponse and sets the default values.
 func NewOpenShiftChangeRequestCollectionResponse()(*OpenShiftChangeRequestCollectionResponse) {
     m := &OpenShiftChangeRequestCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewOpenShiftChangeRequestCollectionResponse()(*OpenShiftChangeRequestCollec
     return m
 }
 // CreateOpenShiftChangeRequestCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOpenShiftChangeRequestCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOpenShiftChangeRequestCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OpenShiftChangeRequestCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *OpenShiftChangeRequestCollectionResponse) GetFieldDeserializers()(map[s
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []OpenShiftChangeRequestable when successful
 func (m *OpenShiftChangeRequestCollectionResponse) GetValue()([]OpenShiftChangeRequestable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *OpenShiftChangeRequestCollectionResponse) SetValue(value []OpenShiftCha
         panic(err)
     }
 }
-// OpenShiftChangeRequestCollectionResponseable 
 type OpenShiftChangeRequestCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

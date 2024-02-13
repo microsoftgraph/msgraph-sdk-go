@@ -6,7 +6,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ItemItemsItemWorkbookFunctionsAccrIntPostRequestBody 
 type ItemItemsItemWorkbookFunctionsAccrIntPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -20,10 +19,12 @@ func NewItemItemsItemWorkbookFunctionsAccrIntPostRequestBody()(*ItemItemsItemWor
     return m
 }
 // CreateItemItemsItemWorkbookFunctionsAccrIntPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemsItemWorkbookFunctionsAccrIntPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemsItemWorkbookFunctionsAccrIntPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemsItemWorkbookFunctionsAccrIntPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *ItemItemsItemWorkbookFunctionsAccrIntPostRequestBody) GetAdditionalData
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ItemItemsItemWorkbookFunctionsAccrIntPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBasis gets the basis property value. The basis property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsAccrIntPostRequestBody) GetBasis()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("basis")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *ItemItemsItemWorkbookFunctionsAccrIntPostRequestBody) GetBasis()(iadcd8
     return nil
 }
 // GetCalcMethod gets the calcMethod property value. The calcMethod property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsAccrIntPostRequestBody) GetCalcMethod()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("calcMethod")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *ItemItemsItemWorkbookFunctionsAccrIntPostRequestBody) GetCalcMethod()(i
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemsItemWorkbookFunctionsAccrIntPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["basis"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -147,6 +152,7 @@ func (m *ItemItemsItemWorkbookFunctionsAccrIntPostRequestBody) GetFieldDeseriali
     return res
 }
 // GetFirstInterest gets the firstInterest property value. The firstInterest property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsAccrIntPostRequestBody) GetFirstInterest()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("firstInterest")
     if err != nil {
@@ -158,6 +164,7 @@ func (m *ItemItemsItemWorkbookFunctionsAccrIntPostRequestBody) GetFirstInterest(
     return nil
 }
 // GetFrequency gets the frequency property value. The frequency property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsAccrIntPostRequestBody) GetFrequency()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("frequency")
     if err != nil {
@@ -169,6 +176,7 @@ func (m *ItemItemsItemWorkbookFunctionsAccrIntPostRequestBody) GetFrequency()(ia
     return nil
 }
 // GetIssue gets the issue property value. The issue property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsAccrIntPostRequestBody) GetIssue()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("issue")
     if err != nil {
@@ -180,6 +188,7 @@ func (m *ItemItemsItemWorkbookFunctionsAccrIntPostRequestBody) GetIssue()(iadcd8
     return nil
 }
 // GetPar gets the par property value. The par property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsAccrIntPostRequestBody) GetPar()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("par")
     if err != nil {
@@ -191,6 +200,7 @@ func (m *ItemItemsItemWorkbookFunctionsAccrIntPostRequestBody) GetPar()(iadcd811
     return nil
 }
 // GetRate gets the rate property value. The rate property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsAccrIntPostRequestBody) GetRate()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("rate")
     if err != nil {
@@ -202,6 +212,7 @@ func (m *ItemItemsItemWorkbookFunctionsAccrIntPostRequestBody) GetRate()(iadcd81
     return nil
 }
 // GetSettlement gets the settlement property value. The settlement property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsAccrIntPostRequestBody) GetSettlement()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("settlement")
     if err != nil {
@@ -337,7 +348,6 @@ func (m *ItemItemsItemWorkbookFunctionsAccrIntPostRequestBody) SetSettlement(val
         panic(err)
     }
 }
-// ItemItemsItemWorkbookFunctionsAccrIntPostRequestBodyable 
 type ItemItemsItemWorkbookFunctionsAccrIntPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewReviewer 
 type AccessReviewReviewer struct {
     Entity
 }
-// NewAccessReviewReviewer instantiates a new accessReviewReviewer and sets the default values.
+// NewAccessReviewReviewer instantiates a new AccessReviewReviewer and sets the default values.
 func NewAccessReviewReviewer()(*AccessReviewReviewer) {
     m := &AccessReviewReviewer{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewAccessReviewReviewer()(*AccessReviewReviewer) {
     return m
 }
 // CreateAccessReviewReviewerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessReviewReviewerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewReviewer(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date when the reviewer was added for the access review.
+// returns a *Time when successful
 func (m *AccessReviewReviewer) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *AccessReviewReviewer) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetDisplayName gets the displayName property value. Name of reviewer.
+// returns a *string when successful
 func (m *AccessReviewReviewer) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *AccessReviewReviewer) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessReviewReviewer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,6 +81,7 @@ func (m *AccessReviewReviewer) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User principal name of the reviewer.
+// returns a *string when successful
 func (m *AccessReviewReviewer) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -135,7 +139,6 @@ func (m *AccessReviewReviewer) SetUserPrincipalName(value *string)() {
         panic(err)
     }
 }
-// AccessReviewReviewerable 
 type AccessReviewReviewerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

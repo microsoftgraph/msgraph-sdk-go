@@ -27,28 +27,29 @@ type ItemListsItemColumnsItemSourceColumnRequestBuilderGetRequestConfiguration s
     // Request query parameters
     QueryParameters *ItemListsItemColumnsItemSourceColumnRequestBuilderGetQueryParameters
 }
-// NewItemListsItemColumnsItemSourceColumnRequestBuilderInternal instantiates a new SourceColumnRequestBuilder and sets the default values.
+// NewItemListsItemColumnsItemSourceColumnRequestBuilderInternal instantiates a new ItemListsItemColumnsItemSourceColumnRequestBuilder and sets the default values.
 func NewItemListsItemColumnsItemSourceColumnRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemColumnsItemSourceColumnRequestBuilder) {
     m := &ItemListsItemColumnsItemSourceColumnRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/columns/{columnDefinition%2Did}/sourceColumn{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/columns/{columnDefinition%2Did}/sourceColumn{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemListsItemColumnsItemSourceColumnRequestBuilder instantiates a new SourceColumnRequestBuilder and sets the default values.
+// NewItemListsItemColumnsItemSourceColumnRequestBuilder instantiates a new ItemListsItemColumnsItemSourceColumnRequestBuilder and sets the default values.
 func NewItemListsItemColumnsItemSourceColumnRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemColumnsItemSourceColumnRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemListsItemColumnsItemSourceColumnRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the source column for the content type column.
+// returns a ColumnDefinitionable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemListsItemColumnsItemSourceColumnRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListsItemColumnsItemSourceColumnRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateColumnDefinitionFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *ItemListsItemColumnsItemSourceColumnRequestBuilder) Get(ctx context.Con
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionable), nil
 }
 // ToGetRequestInformation the source column for the content type column.
+// returns a *RequestInformation when successful
 func (m *ItemListsItemColumnsItemSourceColumnRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListsItemColumnsItemSourceColumnRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *ItemListsItemColumnsItemSourceColumnRequestBuilder) ToGetRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemListsItemColumnsItemSourceColumnRequestBuilder when successful
 func (m *ItemListsItemColumnsItemSourceColumnRequestBuilder) WithUrl(rawUrl string)(*ItemListsItemColumnsItemSourceColumnRequestBuilder) {
     return NewItemListsItemColumnsItemSourceColumnRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

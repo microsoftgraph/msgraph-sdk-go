@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CallRecordingEventMessageDetail 
 type CallRecordingEventMessageDetail struct {
     EventMessageDetail
 }
-// NewCallRecordingEventMessageDetail instantiates a new callRecordingEventMessageDetail and sets the default values.
+// NewCallRecordingEventMessageDetail instantiates a new CallRecordingEventMessageDetail and sets the default values.
 func NewCallRecordingEventMessageDetail()(*CallRecordingEventMessageDetail) {
     m := &CallRecordingEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
@@ -18,10 +17,12 @@ func NewCallRecordingEventMessageDetail()(*CallRecordingEventMessageDetail) {
     return m
 }
 // CreateCallRecordingEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCallRecordingEventMessageDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCallRecordingEventMessageDetail(), nil
 }
 // GetCallId gets the callId property value. Unique identifier of the call.
+// returns a *string when successful
 func (m *CallRecordingEventMessageDetail) GetCallId()(*string) {
     val, err := m.GetBackingStore().Get("callId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *CallRecordingEventMessageDetail) GetCallId()(*string) {
     return nil
 }
 // GetCallRecordingDisplayName gets the callRecordingDisplayName property value. Display name for the call recording.
+// returns a *string when successful
 func (m *CallRecordingEventMessageDetail) GetCallRecordingDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("callRecordingDisplayName")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *CallRecordingEventMessageDetail) GetCallRecordingDisplayName()(*string)
     return nil
 }
 // GetCallRecordingDuration gets the callRecordingDuration property value. Duration of the call recording.
+// returns a *ISODuration when successful
 func (m *CallRecordingEventMessageDetail) GetCallRecordingDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("callRecordingDuration")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *CallRecordingEventMessageDetail) GetCallRecordingDuration()(*i878a80d23
     return nil
 }
 // GetCallRecordingStatus gets the callRecordingStatus property value. Status of the call recording. Possible values are: success, failure, initial, chunkFinished, unknownFutureValue.
+// returns a *CallRecordingStatus when successful
 func (m *CallRecordingEventMessageDetail) GetCallRecordingStatus()(*CallRecordingStatus) {
     val, err := m.GetBackingStore().Get("callRecordingStatus")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *CallRecordingEventMessageDetail) GetCallRecordingStatus()(*CallRecordin
     return nil
 }
 // GetCallRecordingUrl gets the callRecordingUrl property value. Call recording URL.
+// returns a *string when successful
 func (m *CallRecordingEventMessageDetail) GetCallRecordingUrl()(*string) {
     val, err := m.GetBackingStore().Get("callRecordingUrl")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *CallRecordingEventMessageDetail) GetCallRecordingUrl()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CallRecordingEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EventMessageDetail.GetFieldDeserializers()
     res["callId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -152,6 +158,7 @@ func (m *CallRecordingEventMessageDetail) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
+// returns a IdentitySetable when successful
 func (m *CallRecordingEventMessageDetail) GetInitiator()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("initiator")
     if err != nil {
@@ -163,6 +170,7 @@ func (m *CallRecordingEventMessageDetail) GetInitiator()(IdentitySetable) {
     return nil
 }
 // GetMeetingOrganizer gets the meetingOrganizer property value. Organizer of the meeting.
+// returns a IdentitySetable when successful
 func (m *CallRecordingEventMessageDetail) GetMeetingOrganizer()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("meetingOrganizer")
     if err != nil {
@@ -273,7 +281,6 @@ func (m *CallRecordingEventMessageDetail) SetMeetingOrganizer(value IdentitySeta
         panic(err)
     }
 }
-// CallRecordingEventMessageDetailable 
 type CallRecordingEventMessageDetailable interface {
     EventMessageDetailable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

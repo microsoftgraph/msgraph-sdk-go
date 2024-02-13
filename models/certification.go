@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// Certification 
 type Certification struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCertification instantiates a new certification and sets the default values.
+// NewCertification instantiates a new Certification and sets the default values.
 func NewCertification()(*Certification) {
     m := &Certification{
     }
@@ -20,10 +19,12 @@ func NewCertification()(*Certification) {
     return m
 }
 // CreateCertificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCertificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCertification(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Certification) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *Certification) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *Certification) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCertificationDetailsUrl gets the certificationDetailsUrl property value. URL that shows certification details for the application.
+// returns a *string when successful
 func (m *Certification) GetCertificationDetailsUrl()(*string) {
     val, err := m.GetBackingStore().Get("certificationDetailsUrl")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *Certification) GetCertificationDetailsUrl()(*string) {
     return nil
 }
 // GetCertificationExpirationDateTime gets the certificationExpirationDateTime property value. The timestamp when the current certification for the application expires.
+// returns a *Time when successful
 func (m *Certification) GetCertificationExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("certificationExpirationDateTime")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *Certification) GetCertificationExpirationDateTime()(*i336074805fc853987
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Certification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["certificationDetailsUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -127,6 +132,7 @@ func (m *Certification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetIsCertifiedByMicrosoft gets the isCertifiedByMicrosoft property value. Indicates whether the application is certified by Microsoft.
+// returns a *bool when successful
 func (m *Certification) GetIsCertifiedByMicrosoft()(*bool) {
     val, err := m.GetBackingStore().Get("isCertifiedByMicrosoft")
     if err != nil {
@@ -138,6 +144,7 @@ func (m *Certification) GetIsCertifiedByMicrosoft()(*bool) {
     return nil
 }
 // GetIsPublisherAttested gets the isPublisherAttested property value. Indicates whether the application has been self-attested by the application developer or the publisher.
+// returns a *bool when successful
 func (m *Certification) GetIsPublisherAttested()(*bool) {
     val, err := m.GetBackingStore().Get("isPublisherAttested")
     if err != nil {
@@ -149,6 +156,7 @@ func (m *Certification) GetIsPublisherAttested()(*bool) {
     return nil
 }
 // GetLastCertificationDateTime gets the lastCertificationDateTime property value. The timestamp when the certification for the application was most recently added or updated.
+// returns a *Time when successful
 func (m *Certification) GetLastCertificationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastCertificationDateTime")
     if err != nil {
@@ -160,6 +168,7 @@ func (m *Certification) GetLastCertificationDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *Certification) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -257,7 +266,6 @@ func (m *Certification) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// Certificationable 
 type Certificationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -17,20 +17,21 @@ type LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequestBuilderInternal instantiates a new MicrosoftGraphIdentityGovernanceActivateRequestBuilder and sets the default values.
+// NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequestBuilderInternal instantiates a new LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequestBuilder) {
     m := &LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/workflows/{workflow%2Did}/microsoft.graph.identityGovernance.activate", pathParameters),
     }
     return m
 }
-// NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequestBuilder instantiates a new MicrosoftGraphIdentityGovernanceActivateRequestBuilder and sets the default values.
+// NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequestBuilder instantiates a new LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post run a workflow object on-demand. You can run any workflow on-demand, including scheduled workflows. Workflows created from the 'Real-time employee termination' template are run on-demand only. When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-workflow-activate?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivate
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivate
     return nil
 }
 // ToPostRequestInformation run a workflow object on-demand. You can run any workflow on-demand, including scheduled workflows. Workflows created from the 'Real-time employee termination' template are run on-demand only. When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions.
+// returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequestBuilder) ToPostRequestInformation(ctx context.Context, body LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateActivatePostRequestBodyable, requestConfiguration *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivate
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequestBuilder when successful
 func (m *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

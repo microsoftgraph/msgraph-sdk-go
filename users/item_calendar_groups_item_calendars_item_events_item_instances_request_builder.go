@@ -40,6 +40,7 @@ type ItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilderGetRequ
     QueryParameters *ItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilderGetQueryParameters
 }
 // ByEventId1 provides operations to manage the instances property of the microsoft.graph.event entity.
+// returns a *ItemCalendarGroupsItemCalendarsItemEventsItemInstancesEventItemRequestBuilder when successful
 func (m *ItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilder) ByEventId1(eventId1 string)(*ItemCalendarGroupsItemCalendarsItemEventsItemInstancesEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,28 +51,32 @@ func (m *ItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilder) B
     }
     return NewItemCalendarGroupsItemCalendarsItemEventsItemInstancesEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilderInternal instantiates a new InstancesRequestBuilder and sets the default values.
+// NewItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilderInternal instantiates a new ItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilder and sets the default values.
 func NewItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilder) {
     m := &ItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/events/{event%2Did}/instances{?startDateTime*,endDateTime*,%24top,%24skip,%24filter,%24count,%24orderby,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/events/{event%2Did}/instances?endDateTime={endDateTime}&startDateTime={startDateTime}{&%24count,%24filter,%24orderby,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilder instantiates a new InstancesRequestBuilder and sets the default values.
+// NewItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilder instantiates a new ItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilder and sets the default values.
 func NewItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemCalendarGroupsItemCalendarsItemEventsItemInstancesCountRequestBuilder when successful
 func (m *ItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilder) Count()(*ItemCalendarGroupsItemCalendarsItemEventsItemInstancesCountRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemEventsItemInstancesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delta provides operations to call the delta method.
+// returns a *ItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltaRequestBuilder when successful
 func (m *ItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilder) Delta()(*ItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltaRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemEventsItemInstancesDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+// returns a EventCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -81,8 +86,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilder) G
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateEventCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,6 +98,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilder) G
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EventCollectionResponseable), nil
 }
 // ToGetRequestInformation the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+// returns a *RequestInformation when successful
 func (m *ItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -107,6 +112,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilder) T
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilder when successful
 func (m *ItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemEventsItemInstancesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

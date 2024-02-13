@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServiceHealthIssue 
 type ServiceHealthIssue struct {
     ServiceAnnouncementBase
 }
-// NewServiceHealthIssue instantiates a new serviceHealthIssue and sets the default values.
+// NewServiceHealthIssue instantiates a new ServiceHealthIssue and sets the default values.
 func NewServiceHealthIssue()(*ServiceHealthIssue) {
     m := &ServiceHealthIssue{
         ServiceAnnouncementBase: *NewServiceAnnouncementBase(),
@@ -18,10 +17,12 @@ func NewServiceHealthIssue()(*ServiceHealthIssue) {
     return m
 }
 // CreateServiceHealthIssueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateServiceHealthIssueFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServiceHealthIssue(), nil
 }
 // GetClassification gets the classification property value. The classification property
+// returns a *ServiceHealthClassificationType when successful
 func (m *ServiceHealthIssue) GetClassification()(*ServiceHealthClassificationType) {
     val, err := m.GetBackingStore().Get("classification")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ServiceHealthIssue) GetClassification()(*ServiceHealthClassificationTyp
     return nil
 }
 // GetFeature gets the feature property value. The feature name of the service issue.
+// returns a *string when successful
 func (m *ServiceHealthIssue) GetFeature()(*string) {
     val, err := m.GetBackingStore().Get("feature")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ServiceHealthIssue) GetFeature()(*string) {
     return nil
 }
 // GetFeatureGroup gets the featureGroup property value. The feature group name of the service issue.
+// returns a *string when successful
 func (m *ServiceHealthIssue) GetFeatureGroup()(*string) {
     val, err := m.GetBackingStore().Get("featureGroup")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *ServiceHealthIssue) GetFeatureGroup()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ServiceAnnouncementBase.GetFieldDeserializers()
     res["classification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -156,6 +160,7 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetImpactDescription gets the impactDescription property value. The description of the service issue impact.
+// returns a *string when successful
 func (m *ServiceHealthIssue) GetImpactDescription()(*string) {
     val, err := m.GetBackingStore().Get("impactDescription")
     if err != nil {
@@ -167,6 +172,7 @@ func (m *ServiceHealthIssue) GetImpactDescription()(*string) {
     return nil
 }
 // GetIsResolved gets the isResolved property value. Indicates whether the issue is resolved.
+// returns a *bool when successful
 func (m *ServiceHealthIssue) GetIsResolved()(*bool) {
     val, err := m.GetBackingStore().Get("isResolved")
     if err != nil {
@@ -178,6 +184,7 @@ func (m *ServiceHealthIssue) GetIsResolved()(*bool) {
     return nil
 }
 // GetOrigin gets the origin property value. The origin property
+// returns a *ServiceHealthOrigin when successful
 func (m *ServiceHealthIssue) GetOrigin()(*ServiceHealthOrigin) {
     val, err := m.GetBackingStore().Get("origin")
     if err != nil {
@@ -189,6 +196,7 @@ func (m *ServiceHealthIssue) GetOrigin()(*ServiceHealthOrigin) {
     return nil
 }
 // GetPosts gets the posts property value. Collection of historical posts for the service issue.
+// returns a []ServiceHealthIssuePostable when successful
 func (m *ServiceHealthIssue) GetPosts()([]ServiceHealthIssuePostable) {
     val, err := m.GetBackingStore().Get("posts")
     if err != nil {
@@ -200,6 +208,7 @@ func (m *ServiceHealthIssue) GetPosts()([]ServiceHealthIssuePostable) {
     return nil
 }
 // GetService gets the service property value. Indicates the service affected by the issue.
+// returns a *string when successful
 func (m *ServiceHealthIssue) GetService()(*string) {
     val, err := m.GetBackingStore().Get("service")
     if err != nil {
@@ -211,6 +220,7 @@ func (m *ServiceHealthIssue) GetService()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *ServiceHealthStatus when successful
 func (m *ServiceHealthIssue) GetStatus()(*ServiceHealthStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -355,7 +365,6 @@ func (m *ServiceHealthIssue) SetStatus(value *ServiceHealthStatus)() {
         panic(err)
     }
 }
-// ServiceHealthIssueable 
 type ServiceHealthIssueable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ServiceAnnouncementBaseable

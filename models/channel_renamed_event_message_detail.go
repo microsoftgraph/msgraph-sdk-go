@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChannelRenamedEventMessageDetail 
 type ChannelRenamedEventMessageDetail struct {
     EventMessageDetail
 }
-// NewChannelRenamedEventMessageDetail instantiates a new channelRenamedEventMessageDetail and sets the default values.
+// NewChannelRenamedEventMessageDetail instantiates a new ChannelRenamedEventMessageDetail and sets the default values.
 func NewChannelRenamedEventMessageDetail()(*ChannelRenamedEventMessageDetail) {
     m := &ChannelRenamedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
@@ -18,10 +17,12 @@ func NewChannelRenamedEventMessageDetail()(*ChannelRenamedEventMessageDetail) {
     return m
 }
 // CreateChannelRenamedEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateChannelRenamedEventMessageDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChannelRenamedEventMessageDetail(), nil
 }
 // GetChannelDisplayName gets the channelDisplayName property value. The updated name of the channel.
+// returns a *string when successful
 func (m *ChannelRenamedEventMessageDetail) GetChannelDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("channelDisplayName")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ChannelRenamedEventMessageDetail) GetChannelDisplayName()(*string) {
     return nil
 }
 // GetChannelId gets the channelId property value. Unique identifier of the channel.
+// returns a *string when successful
 func (m *ChannelRenamedEventMessageDetail) GetChannelId()(*string) {
     val, err := m.GetBackingStore().Get("channelId")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ChannelRenamedEventMessageDetail) GetChannelId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ChannelRenamedEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EventMessageDetail.GetFieldDeserializers()
     res["channelDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -79,6 +82,7 @@ func (m *ChannelRenamedEventMessageDetail) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
+// returns a IdentitySetable when successful
 func (m *ChannelRenamedEventMessageDetail) GetInitiator()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("initiator")
     if err != nil {
@@ -136,7 +140,6 @@ func (m *ChannelRenamedEventMessageDetail) SetInitiator(value IdentitySetable)()
         panic(err)
     }
 }
-// ChannelRenamedEventMessageDetailable 
 type ChannelRenamedEventMessageDetailable interface {
     EventMessageDetailable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

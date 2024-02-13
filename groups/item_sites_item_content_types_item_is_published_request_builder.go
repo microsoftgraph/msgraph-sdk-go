@@ -17,29 +17,30 @@ type ItemSitesItemContentTypesItemIsPublishedRequestBuilderGetRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemSitesItemContentTypesItemIsPublishedRequestBuilderInternal instantiates a new IsPublishedRequestBuilder and sets the default values.
+// NewItemSitesItemContentTypesItemIsPublishedRequestBuilderInternal instantiates a new ItemSitesItemContentTypesItemIsPublishedRequestBuilder and sets the default values.
 func NewItemSitesItemContentTypesItemIsPublishedRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemContentTypesItemIsPublishedRequestBuilder) {
     m := &ItemSitesItemContentTypesItemIsPublishedRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/contentTypes/{contentType%2Did}/isPublished()", pathParameters),
     }
     return m
 }
-// NewItemSitesItemContentTypesItemIsPublishedRequestBuilder instantiates a new IsPublishedRequestBuilder and sets the default values.
+// NewItemSitesItemContentTypesItemIsPublishedRequestBuilder instantiates a new ItemSitesItemContentTypesItemIsPublishedRequestBuilder and sets the default values.
 func NewItemSitesItemContentTypesItemIsPublishedRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemContentTypesItemIsPublishedRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemContentTypesItemIsPublishedRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function isPublished
-// Deprecated: This method is obsolete. Use GetAsIsPublishedGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ItemSitesItemContentTypesItemIsPublishedResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemContentTypesItemIsPublishedRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesItemIsPublishedRequestBuilderGetRequestConfiguration)(ItemSitesItemContentTypesItemIsPublishedResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSitesItemContentTypesItemIsPublishedResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,14 +52,15 @@ func (m *ItemSitesItemContentTypesItemIsPublishedRequestBuilder) Get(ctx context
     return res.(ItemSitesItemContentTypesItemIsPublishedResponseable), nil
 }
 // GetAsIsPublishedGetResponse invoke function isPublished
+// returns a ItemSitesItemContentTypesItemIsPublishedGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemContentTypesItemIsPublishedRequestBuilder) GetAsIsPublishedGetResponse(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesItemIsPublishedRequestBuilderGetRequestConfiguration)(ItemSitesItemContentTypesItemIsPublishedGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSitesItemContentTypesItemIsPublishedGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -70,6 +72,7 @@ func (m *ItemSitesItemContentTypesItemIsPublishedRequestBuilder) GetAsIsPublishe
     return res.(ItemSitesItemContentTypesItemIsPublishedGetResponseable), nil
 }
 // ToGetRequestInformation invoke function isPublished
+// returns a *RequestInformation when successful
 func (m *ItemSitesItemContentTypesItemIsPublishedRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesItemIsPublishedRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -80,6 +83,7 @@ func (m *ItemSitesItemContentTypesItemIsPublishedRequestBuilder) ToGetRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemSitesItemContentTypesItemIsPublishedRequestBuilder when successful
 func (m *ItemSitesItemContentTypesItemIsPublishedRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemContentTypesItemIsPublishedRequestBuilder) {
     return NewItemSitesItemContentTypesItemIsPublishedRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

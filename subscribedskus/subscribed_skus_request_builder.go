@@ -37,6 +37,7 @@ type SubscribedSkusRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BySubscribedSkuId provides operations to manage the collection of subscribedSku entities.
+// returns a *SubscribedSkuItemRequestBuilder when successful
 func (m *SubscribedSkusRequestBuilder) BySubscribedSkuId(subscribedSkuId string)(*SubscribedSkuItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,7 +51,7 @@ func (m *SubscribedSkusRequestBuilder) BySubscribedSkuId(subscribedSkuId string)
 // NewSubscribedSkusRequestBuilderInternal instantiates a new SubscribedSkusRequestBuilder and sets the default values.
 func NewSubscribedSkusRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SubscribedSkusRequestBuilder) {
     m := &SubscribedSkusRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/subscribedSkus{?%24search,%24orderby,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/subscribedSkus{?%24orderby,%24search,%24select}", pathParameters),
     }
     return m
 }
@@ -61,6 +62,8 @@ func NewSubscribedSkusRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewSubscribedSkusRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Microsoft Entra admin center or the Microsoft 365 admin center against their Microsoft Graph skuId and skuPartNumber properties, see Product names and service plan identifiers for licensing.
+// returns a SubscribedSkuCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/subscribedsku-list?view=graph-rest-1.0
@@ -70,8 +73,7 @@ func (m *SubscribedSkusRequestBuilder) Get(ctx context.Context, requestConfigura
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateSubscribedSkuCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -83,14 +85,15 @@ func (m *SubscribedSkusRequestBuilder) Get(ctx context.Context, requestConfigura
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubscribedSkuCollectionResponseable), nil
 }
 // Post add new entity to subscribedSkus
+// returns a SubscribedSkuable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SubscribedSkusRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubscribedSkuable, requestConfiguration *SubscribedSkusRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubscribedSkuable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateSubscribedSkuFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -102,6 +105,7 @@ func (m *SubscribedSkusRequestBuilder) Post(ctx context.Context, body iadcd81124
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubscribedSkuable), nil
 }
 // ToGetRequestInformation get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Microsoft Entra admin center or the Microsoft 365 admin center against their Microsoft Graph skuId and skuPartNumber properties, see Product names and service plan identifiers for licensing.
+// returns a *RequestInformation when successful
 func (m *SubscribedSkusRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubscribedSkusRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -115,8 +119,9 @@ func (m *SubscribedSkusRequestBuilder) ToGetRequestInformation(ctx context.Conte
     return requestInfo, nil
 }
 // ToPostRequestInformation add new entity to subscribedSkus
+// returns a *RequestInformation when successful
 func (m *SubscribedSkusRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SubscribedSkuable, requestConfiguration *SubscribedSkusRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/subscribedSkus", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -129,6 +134,7 @@ func (m *SubscribedSkusRequestBuilder) ToPostRequestInformation(ctx context.Cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *SubscribedSkusRequestBuilder when successful
 func (m *SubscribedSkusRequestBuilder) WithUrl(rawUrl string)(*SubscribedSkusRequestBuilder) {
     return NewSubscribedSkusRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

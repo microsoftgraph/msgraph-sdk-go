@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OutlookCategory 
 type OutlookCategory struct {
     Entity
 }
-// NewOutlookCategory instantiates a new outlookCategory and sets the default values.
+// NewOutlookCategory instantiates a new OutlookCategory and sets the default values.
 func NewOutlookCategory()(*OutlookCategory) {
     m := &OutlookCategory{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewOutlookCategory()(*OutlookCategory) {
     return m
 }
 // CreateOutlookCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOutlookCategoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOutlookCategory(), nil
 }
 // GetColor gets the color property value. A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. For more details, see the following note.
+// returns a *CategoryColor when successful
 func (m *OutlookCategory) GetColor()(*CategoryColor) {
     val, err := m.GetBackingStore().Get("color")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *OutlookCategory) GetColor()(*CategoryColor) {
     return nil
 }
 // GetDisplayName gets the displayName property value. A unique name that identifies a category in the user's mailbox. After a category is created, the name cannot be changed. Read-only.
+// returns a *string when successful
 func (m *OutlookCategory) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *OutlookCategory) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OutlookCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["color"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -101,7 +104,6 @@ func (m *OutlookCategory) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// OutlookCategoryable 
 type OutlookCategoryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

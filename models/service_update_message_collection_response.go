@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServiceUpdateMessageCollectionResponse 
 type ServiceUpdateMessageCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewServiceUpdateMessageCollectionResponse instantiates a new serviceUpdateMessageCollectionResponse and sets the default values.
+// NewServiceUpdateMessageCollectionResponse instantiates a new ServiceUpdateMessageCollectionResponse and sets the default values.
 func NewServiceUpdateMessageCollectionResponse()(*ServiceUpdateMessageCollectionResponse) {
     m := &ServiceUpdateMessageCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewServiceUpdateMessageCollectionResponse()(*ServiceUpdateMessageCollection
     return m
 }
 // CreateServiceUpdateMessageCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateServiceUpdateMessageCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServiceUpdateMessageCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ServiceUpdateMessageCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ServiceUpdateMessageCollectionResponse) GetFieldDeserializers()(map[str
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ServiceUpdateMessageable when successful
 func (m *ServiceUpdateMessageCollectionResponse) GetValue()([]ServiceUpdateMessageable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ServiceUpdateMessageCollectionResponse) SetValue(value []ServiceUpdateM
         panic(err)
     }
 }
-// ServiceUpdateMessageCollectionResponseable 
 type ServiceUpdateMessageCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

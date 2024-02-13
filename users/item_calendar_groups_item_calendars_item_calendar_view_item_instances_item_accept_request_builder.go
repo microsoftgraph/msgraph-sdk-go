@@ -17,20 +17,21 @@ type ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAcceptReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAcceptRequestBuilderInternal instantiates a new AcceptRequestBuilder and sets the default values.
+// NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAcceptRequestBuilderInternal instantiates a new ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAcceptRequestBuilder and sets the default values.
 func NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAcceptRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAcceptRequestBuilder) {
     m := &ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAcceptRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}/instances/{event%2Did1}/accept", pathParameters),
     }
     return m
 }
-// NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAcceptRequestBuilder instantiates a new AcceptRequestBuilder and sets the default values.
+// NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAcceptRequestBuilder instantiates a new ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAcceptRequestBuilder and sets the default values.
 func NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAcceptRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAcceptRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAcceptRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post accept the specified event in a user calendar.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAcceptR
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAcceptR
     return nil
 }
 // ToPostRequestInformation accept the specified event in a user calendar.
+// returns a *RequestInformation when successful
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAcceptRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAcceptPostRequestBodyable, requestConfiguration *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAcceptRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAcceptR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAcceptRequestBuilder when successful
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAcceptRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAcceptRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemAcceptRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

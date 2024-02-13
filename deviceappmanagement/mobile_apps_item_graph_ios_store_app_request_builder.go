@@ -28,35 +28,38 @@ type MobileAppsItemGraphIosStoreAppRequestBuilderGetRequestConfiguration struct 
     QueryParameters *MobileAppsItemGraphIosStoreAppRequestBuilderGetQueryParameters
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
+// returns a *MobileAppsItemGraphIosStoreAppAssignmentsRequestBuilder when successful
 func (m *MobileAppsItemGraphIosStoreAppRequestBuilder) Assignments()(*MobileAppsItemGraphIosStoreAppAssignmentsRequestBuilder) {
     return NewMobileAppsItemGraphIosStoreAppAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+// returns a *MobileAppsItemGraphIosStoreAppCategoriesRequestBuilder when successful
 func (m *MobileAppsItemGraphIosStoreAppRequestBuilder) Categories()(*MobileAppsItemGraphIosStoreAppCategoriesRequestBuilder) {
     return NewMobileAppsItemGraphIosStoreAppCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewMobileAppsItemGraphIosStoreAppRequestBuilderInternal instantiates a new GraphIosStoreAppRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphIosStoreAppRequestBuilderInternal instantiates a new MobileAppsItemGraphIosStoreAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphIosStoreAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphIosStoreAppRequestBuilder) {
     m := &MobileAppsItemGraphIosStoreAppRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.iosStoreApp{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.iosStoreApp{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewMobileAppsItemGraphIosStoreAppRequestBuilder instantiates a new GraphIosStoreAppRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphIosStoreAppRequestBuilder instantiates a new MobileAppsItemGraphIosStoreAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphIosStoreAppRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphIosStoreAppRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphIosStoreAppRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the item of type microsoft.graph.mobileApp as microsoft.graph.iosStoreApp
+// returns a IosStoreAppable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphIosStoreAppRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphIosStoreAppRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosStoreAppable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateIosStoreAppFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -68,6 +71,7 @@ func (m *MobileAppsItemGraphIosStoreAppRequestBuilder) Get(ctx context.Context, 
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IosStoreAppable), nil
 }
 // ToGetRequestInformation get the item of type microsoft.graph.mobileApp as microsoft.graph.iosStoreApp
+// returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphIosStoreAppRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphIosStoreAppRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -81,6 +85,7 @@ func (m *MobileAppsItemGraphIosStoreAppRequestBuilder) ToGetRequestInformation(c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MobileAppsItemGraphIosStoreAppRequestBuilder when successful
 func (m *MobileAppsItemGraphIosStoreAppRequestBuilder) WithUrl(rawUrl string)(*MobileAppsItemGraphIosStoreAppRequestBuilder) {
     return NewMobileAppsItemGraphIosStoreAppRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

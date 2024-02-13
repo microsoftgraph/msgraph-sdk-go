@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidManagedAppProtectionCollectionResponse 
 type AndroidManagedAppProtectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAndroidManagedAppProtectionCollectionResponse instantiates a new androidManagedAppProtectionCollectionResponse and sets the default values.
+// NewAndroidManagedAppProtectionCollectionResponse instantiates a new AndroidManagedAppProtectionCollectionResponse and sets the default values.
 func NewAndroidManagedAppProtectionCollectionResponse()(*AndroidManagedAppProtectionCollectionResponse) {
     m := &AndroidManagedAppProtectionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewAndroidManagedAppProtectionCollectionResponse()(*AndroidManagedAppProtec
     return m
 }
 // CreateAndroidManagedAppProtectionCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidManagedAppProtectionCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidManagedAppProtectionCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidManagedAppProtectionCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *AndroidManagedAppProtectionCollectionResponse) GetFieldDeserializers()(
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []AndroidManagedAppProtectionable when successful
 func (m *AndroidManagedAppProtectionCollectionResponse) GetValue()([]AndroidManagedAppProtectionable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *AndroidManagedAppProtectionCollectionResponse) SetValue(value []Android
         panic(err)
     }
 }
-// AndroidManagedAppProtectionCollectionResponseable 
 type AndroidManagedAppProtectionCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

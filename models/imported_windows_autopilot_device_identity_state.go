@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ImportedWindowsAutopilotDeviceIdentityState 
 type ImportedWindowsAutopilotDeviceIdentityState struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewImportedWindowsAutopilotDeviceIdentityState instantiates a new importedWindowsAutopilotDeviceIdentityState and sets the default values.
+// NewImportedWindowsAutopilotDeviceIdentityState instantiates a new ImportedWindowsAutopilotDeviceIdentityState and sets the default values.
 func NewImportedWindowsAutopilotDeviceIdentityState()(*ImportedWindowsAutopilotDeviceIdentityState) {
     m := &ImportedWindowsAutopilotDeviceIdentityState{
     }
@@ -19,10 +18,12 @@ func NewImportedWindowsAutopilotDeviceIdentityState()(*ImportedWindowsAutopilotD
     return m
 }
 // CreateImportedWindowsAutopilotDeviceIdentityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateImportedWindowsAutopilotDeviceIdentityStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewImportedWindowsAutopilotDeviceIdentityState(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ImportedWindowsAutopilotDeviceIdentityState) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) GetAdditionalData()(map[st
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ImportedWindowsAutopilotDeviceIdentityState) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDeviceErrorCode gets the deviceErrorCode property value. Device error code reported by Device Directory Service(DDS).
+// returns a *int32 when successful
 func (m *ImportedWindowsAutopilotDeviceIdentityState) GetDeviceErrorCode()(*int32) {
     val, err := m.GetBackingStore().Get("deviceErrorCode")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) GetDeviceErrorCode()(*int3
     return nil
 }
 // GetDeviceErrorName gets the deviceErrorName property value. Device error name reported by Device Directory Service(DDS).
+// returns a *string when successful
 func (m *ImportedWindowsAutopilotDeviceIdentityState) GetDeviceErrorName()(*string) {
     val, err := m.GetBackingStore().Get("deviceErrorName")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) GetDeviceErrorName()(*stri
     return nil
 }
 // GetDeviceImportStatus gets the deviceImportStatus property value. The deviceImportStatus property
+// returns a *ImportedWindowsAutopilotDeviceIdentityImportStatus when successful
 func (m *ImportedWindowsAutopilotDeviceIdentityState) GetDeviceImportStatus()(*ImportedWindowsAutopilotDeviceIdentityImportStatus) {
     val, err := m.GetBackingStore().Get("deviceImportStatus")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) GetDeviceImportStatus()(*I
     return nil
 }
 // GetDeviceRegistrationId gets the deviceRegistrationId property value. Device Registration ID for successfully added device reported by Device Directory Service(DDS).
+// returns a *string when successful
 func (m *ImportedWindowsAutopilotDeviceIdentityState) GetDeviceRegistrationId()(*string) {
     val, err := m.GetBackingStore().Get("deviceRegistrationId")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) GetDeviceRegistrationId()(
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ImportedWindowsAutopilotDeviceIdentityState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["deviceErrorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -138,6 +145,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) GetFieldDeserializers()(ma
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ImportedWindowsAutopilotDeviceIdentityState) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -235,7 +243,6 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) SetOdataType(value *string
         panic(err)
     }
 }
-// ImportedWindowsAutopilotDeviceIdentityStateable 
 type ImportedWindowsAutopilotDeviceIdentityStateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

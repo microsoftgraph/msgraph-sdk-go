@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// SearchHitsContainer 
 type SearchHitsContainer struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSearchHitsContainer instantiates a new searchHitsContainer and sets the default values.
+// NewSearchHitsContainer instantiates a new SearchHitsContainer and sets the default values.
 func NewSearchHitsContainer()(*SearchHitsContainer) {
     m := &SearchHitsContainer{
     }
@@ -19,10 +18,12 @@ func NewSearchHitsContainer()(*SearchHitsContainer) {
     return m
 }
 // CreateSearchHitsContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSearchHitsContainerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSearchHitsContainer(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SearchHitsContainer) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *SearchHitsContainer) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAggregations gets the aggregations property value. The aggregations property
+// returns a []SearchAggregationable when successful
 func (m *SearchHitsContainer) GetAggregations()([]SearchAggregationable) {
     val, err := m.GetBackingStore().Get("aggregations")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *SearchHitsContainer) GetAggregations()([]SearchAggregationable) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *SearchHitsContainer) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SearchHitsContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["aggregations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -117,6 +121,7 @@ func (m *SearchHitsContainer) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetHits gets the hits property value. A collection of the search results.
+// returns a []SearchHitable when successful
 func (m *SearchHitsContainer) GetHits()([]SearchHitable) {
     val, err := m.GetBackingStore().Get("hits")
     if err != nil {
@@ -128,6 +133,7 @@ func (m *SearchHitsContainer) GetHits()([]SearchHitable) {
     return nil
 }
 // GetMoreResultsAvailable gets the moreResultsAvailable property value. Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.
+// returns a *bool when successful
 func (m *SearchHitsContainer) GetMoreResultsAvailable()(*bool) {
     val, err := m.GetBackingStore().Get("moreResultsAvailable")
     if err != nil {
@@ -139,6 +145,7 @@ func (m *SearchHitsContainer) GetMoreResultsAvailable()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *SearchHitsContainer) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -150,6 +157,7 @@ func (m *SearchHitsContainer) GetOdataType()(*string) {
     return nil
 }
 // GetTotal gets the total property value. The total number of results. Note this isn't the number of results on the page, but the total number of results satisfying the query.
+// returns a *int32 when successful
 func (m *SearchHitsContainer) GetTotal()(*int32) {
     val, err := m.GetBackingStore().Get("total")
     if err != nil {
@@ -258,7 +266,6 @@ func (m *SearchHitsContainer) SetTotal(value *int32)() {
         panic(err)
     }
 }
-// SearchHitsContainerable 
 type SearchHitsContainerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

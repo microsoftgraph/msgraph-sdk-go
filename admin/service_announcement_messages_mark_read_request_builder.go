@@ -17,21 +17,23 @@ type ServiceAnnouncementMessagesMarkReadRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewServiceAnnouncementMessagesMarkReadRequestBuilderInternal instantiates a new MarkReadRequestBuilder and sets the default values.
+// NewServiceAnnouncementMessagesMarkReadRequestBuilderInternal instantiates a new ServiceAnnouncementMessagesMarkReadRequestBuilder and sets the default values.
 func NewServiceAnnouncementMessagesMarkReadRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServiceAnnouncementMessagesMarkReadRequestBuilder) {
     m := &ServiceAnnouncementMessagesMarkReadRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/serviceAnnouncement/messages/markRead", pathParameters),
     }
     return m
 }
-// NewServiceAnnouncementMessagesMarkReadRequestBuilder instantiates a new MarkReadRequestBuilder and sets the default values.
+// NewServiceAnnouncementMessagesMarkReadRequestBuilder instantiates a new ServiceAnnouncementMessagesMarkReadRequestBuilder and sets the default values.
 func NewServiceAnnouncementMessagesMarkReadRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServiceAnnouncementMessagesMarkReadRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewServiceAnnouncementMessagesMarkReadRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post mark a list of serviceUpdateMessages as read for the signed in user.
-// Deprecated: This method is obsolete. Use PostAsMarkReadPostResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ServiceAnnouncementMessagesMarkReadResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-markread?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *ServiceAnnouncementMessagesMarkReadRequestBuilder) Post(ctx context.Con
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateServiceAnnouncementMessagesMarkReadResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,8 @@ func (m *ServiceAnnouncementMessagesMarkReadRequestBuilder) Post(ctx context.Con
     return res.(ServiceAnnouncementMessagesMarkReadResponseable), nil
 }
 // PostAsMarkReadPostResponse mark a list of serviceUpdateMessages as read for the signed in user.
+// returns a ServiceAnnouncementMessagesMarkReadPostResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-markread?view=graph-rest-1.0
@@ -63,8 +66,7 @@ func (m *ServiceAnnouncementMessagesMarkReadRequestBuilder) PostAsMarkReadPostRe
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateServiceAnnouncementMessagesMarkReadPostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -76,6 +78,7 @@ func (m *ServiceAnnouncementMessagesMarkReadRequestBuilder) PostAsMarkReadPostRe
     return res.(ServiceAnnouncementMessagesMarkReadPostResponseable), nil
 }
 // ToPostRequestInformation mark a list of serviceUpdateMessages as read for the signed in user.
+// returns a *RequestInformation when successful
 func (m *ServiceAnnouncementMessagesMarkReadRequestBuilder) ToPostRequestInformation(ctx context.Context, body ServiceAnnouncementMessagesMarkReadPostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesMarkReadRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -90,6 +93,7 @@ func (m *ServiceAnnouncementMessagesMarkReadRequestBuilder) ToPostRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ServiceAnnouncementMessagesMarkReadRequestBuilder when successful
 func (m *ServiceAnnouncementMessagesMarkReadRequestBuilder) WithUrl(rawUrl string)(*ServiceAnnouncementMessagesMarkReadRequestBuilder) {
     return NewServiceAnnouncementMessagesMarkReadRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -7,12 +7,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AssignedPlan 
 type AssignedPlan struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAssignedPlan instantiates a new assignedPlan and sets the default values.
+// NewAssignedPlan instantiates a new AssignedPlan and sets the default values.
 func NewAssignedPlan()(*AssignedPlan) {
     m := &AssignedPlan{
     }
@@ -21,10 +20,12 @@ func NewAssignedPlan()(*AssignedPlan) {
     return m
 }
 // CreateAssignedPlanFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAssignedPlanFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAssignedPlan(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AssignedPlan) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -37,6 +38,7 @@ func (m *AssignedPlan) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAssignedDateTime gets the assignedDateTime property value. The date and time at which the plan was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *AssignedPlan) GetAssignedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("assignedDateTime")
     if err != nil {
@@ -48,10 +50,12 @@ func (m *AssignedPlan) GetAssignedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AssignedPlan) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCapabilityStatus gets the capabilityStatus property value. Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
+// returns a *string when successful
 func (m *AssignedPlan) GetCapabilityStatus()(*string) {
     val, err := m.GetBackingStore().Get("capabilityStatus")
     if err != nil {
@@ -63,6 +67,7 @@ func (m *AssignedPlan) GetCapabilityStatus()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AssignedPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["assignedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -118,6 +123,7 @@ func (m *AssignedPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AssignedPlan) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -129,6 +135,7 @@ func (m *AssignedPlan) GetOdataType()(*string) {
     return nil
 }
 // GetService gets the service property value. The name of the service; for example, exchange.
+// returns a *string when successful
 func (m *AssignedPlan) GetService()(*string) {
     val, err := m.GetBackingStore().Get("service")
     if err != nil {
@@ -140,6 +147,7 @@ func (m *AssignedPlan) GetService()(*string) {
     return nil
 }
 // GetServicePlanId gets the servicePlanId property value. A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
+// returns a *UUID when successful
 func (m *AssignedPlan) GetServicePlanId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("servicePlanId")
     if err != nil {
@@ -236,7 +244,6 @@ func (m *AssignedPlan) SetServicePlanId(value *i561e97a8befe7661a44c8f54600992b4
         panic(err)
     }
 }
-// AssignedPlanable 
 type AssignedPlanable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DirectoryObjectPartnerReference 
 type DirectoryObjectPartnerReference struct {
     DirectoryObject
 }
-// NewDirectoryObjectPartnerReference instantiates a new directoryObjectPartnerReference and sets the default values.
+// NewDirectoryObjectPartnerReference instantiates a new DirectoryObjectPartnerReference and sets the default values.
 func NewDirectoryObjectPartnerReference()(*DirectoryObjectPartnerReference) {
     m := &DirectoryObjectPartnerReference{
         DirectoryObject: *NewDirectoryObject(),
@@ -19,10 +18,12 @@ func NewDirectoryObjectPartnerReference()(*DirectoryObjectPartnerReference) {
     return m
 }
 // CreateDirectoryObjectPartnerReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDirectoryObjectPartnerReferenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDirectoryObjectPartnerReference(), nil
 }
 // GetDescription gets the description property value. Description of the object returned. Read-only.
+// returns a *string when successful
 func (m *DirectoryObjectPartnerReference) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *DirectoryObjectPartnerReference) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Name of directory object being returned, like group or application. Read-only.
+// returns a *string when successful
 func (m *DirectoryObjectPartnerReference) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *DirectoryObjectPartnerReference) GetDisplayName()(*string) {
     return nil
 }
 // GetExternalPartnerTenantId gets the externalPartnerTenantId property value. The tenant identifier for the partner tenant. Read-only.
+// returns a *UUID when successful
 func (m *DirectoryObjectPartnerReference) GetExternalPartnerTenantId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("externalPartnerTenantId")
     if err != nil {
@@ -56,6 +59,7 @@ func (m *DirectoryObjectPartnerReference) GetExternalPartnerTenantId()(*i561e97a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DirectoryObjectPartnerReference) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -101,6 +105,7 @@ func (m *DirectoryObjectPartnerReference) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetObjectType gets the objectType property value. The type of the referenced object in the partner tenant. Read-only.
+// returns a *string when successful
 func (m *DirectoryObjectPartnerReference) GetObjectType()(*string) {
     val, err := m.GetBackingStore().Get("objectType")
     if err != nil {
@@ -171,7 +176,6 @@ func (m *DirectoryObjectPartnerReference) SetObjectType(value *string)() {
         panic(err)
     }
 }
-// DirectoryObjectPartnerReferenceable 
 type DirectoryObjectPartnerReferenceable interface {
     DirectoryObjectable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

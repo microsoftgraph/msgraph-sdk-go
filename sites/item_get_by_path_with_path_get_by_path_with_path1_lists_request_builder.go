@@ -46,20 +46,22 @@ type ItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilderPostRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilderInternal instantiates a new ListsRequestBuilder and sets the default values.
+// NewItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilderInternal instantiates a new ItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilder and sets the default values.
 func NewItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilder) {
     m := &ItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/getByPath(path='{path1}')/lists{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/getByPath(path='{path1}')/lists{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilder instantiates a new ListsRequestBuilder and sets the default values.
+// NewItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilder instantiates a new ItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilder and sets the default values.
 func NewItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the collection of [lists][] for a [site][]. Lists with the [system][] facet are hidden by default.To list them, include system in your $select statement.
+// returns a ListCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/list-list?view=graph-rest-1.0
@@ -69,8 +71,7 @@ func (m *ItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilder) Get(ctx con
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateListCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -82,6 +83,8 @@ func (m *ItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilder) Get(ctx con
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListCollectionResponseable), nil
 }
 // Post create a new [list][] in a [site][].
+// returns a Listable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/list-create?view=graph-rest-1.0
@@ -91,8 +94,7 @@ func (m *ItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilder) Post(ctx co
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateListFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -104,6 +106,7 @@ func (m *ItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilder) Post(ctx co
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Listable), nil
 }
 // ToGetRequestInformation get the collection of [lists][] for a [site][]. Lists with the [system][] facet are hidden by default.To list them, include system in your $select statement.
+// returns a *RequestInformation when successful
 func (m *ItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -117,8 +120,9 @@ func (m *ItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilder) ToGetReques
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new [list][] in a [site][].
+// returns a *RequestInformation when successful
 func (m *ItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Listable, requestConfiguration *ItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/getByPath(path='{path1}')/lists", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -131,6 +135,7 @@ func (m *ItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilder) ToPostReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilder when successful
 func (m *ItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilder) WithUrl(rawUrl string)(*ItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilder) {
     return NewItemGetByPathWithPathGetByPathWithPath1ListsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

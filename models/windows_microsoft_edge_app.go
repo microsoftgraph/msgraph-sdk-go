@@ -8,7 +8,7 @@ import (
 type WindowsMicrosoftEdgeApp struct {
     MobileApp
 }
-// NewWindowsMicrosoftEdgeApp instantiates a new windowsMicrosoftEdgeApp and sets the default values.
+// NewWindowsMicrosoftEdgeApp instantiates a new WindowsMicrosoftEdgeApp and sets the default values.
 func NewWindowsMicrosoftEdgeApp()(*WindowsMicrosoftEdgeApp) {
     m := &WindowsMicrosoftEdgeApp{
         MobileApp: *NewMobileApp(),
@@ -18,10 +18,12 @@ func NewWindowsMicrosoftEdgeApp()(*WindowsMicrosoftEdgeApp) {
     return m
 }
 // CreateWindowsMicrosoftEdgeAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsMicrosoftEdgeAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsMicrosoftEdgeApp(), nil
 }
 // GetChannel gets the channel property value. The enum to specify the channels for Microsoft Edge apps.
+// returns a *MicrosoftEdgeChannel when successful
 func (m *WindowsMicrosoftEdgeApp) GetChannel()(*MicrosoftEdgeChannel) {
     val, err := m.GetBackingStore().Get("channel")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *WindowsMicrosoftEdgeApp) GetChannel()(*MicrosoftEdgeChannel) {
     return nil
 }
 // GetDisplayLanguageLocale gets the displayLanguageLocale property value. The language locale to use when the Edge app displays text to the user.
+// returns a *string when successful
 func (m *WindowsMicrosoftEdgeApp) GetDisplayLanguageLocale()(*string) {
     val, err := m.GetBackingStore().Get("displayLanguageLocale")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *WindowsMicrosoftEdgeApp) GetDisplayLanguageLocale()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsMicrosoftEdgeApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileApp.GetFieldDeserializers()
     res["channel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -103,7 +107,6 @@ func (m *WindowsMicrosoftEdgeApp) SetDisplayLanguageLocale(value *string)() {
         panic(err)
     }
 }
-// WindowsMicrosoftEdgeAppable 
 type WindowsMicrosoftEdgeAppable interface {
     MobileAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RoomList 
 type RoomList struct {
     Place
 }
-// NewRoomList instantiates a new roomList and sets the default values.
+// NewRoomList instantiates a new RoomList and sets the default values.
 func NewRoomList()(*RoomList) {
     m := &RoomList{
         Place: *NewPlace(),
@@ -18,10 +17,12 @@ func NewRoomList()(*RoomList) {
     return m
 }
 // CreateRoomListFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRoomListFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRoomList(), nil
 }
 // GetEmailAddress gets the emailAddress property value. The email address of the room list.
+// returns a *string when successful
 func (m *RoomList) GetEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("emailAddress")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *RoomList) GetEmailAddress()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RoomList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Place.GetFieldDeserializers()
     res["emailAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -64,6 +66,7 @@ func (m *RoomList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetRooms gets the rooms property value. The rooms property
+// returns a []Roomable when successful
 func (m *RoomList) GetRooms()([]Roomable) {
     val, err := m.GetBackingStore().Get("rooms")
     if err != nil {
@@ -114,7 +117,6 @@ func (m *RoomList) SetRooms(value []Roomable)() {
         panic(err)
     }
 }
-// RoomListable 
 type RoomListable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Placeable

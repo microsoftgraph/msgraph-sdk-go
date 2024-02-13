@@ -41,28 +41,28 @@ type ItemListsItemSubscriptionsSubscriptionItemRequestBuilderPatchRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemListsItemSubscriptionsSubscriptionItemRequestBuilderInternal instantiates a new SubscriptionItemRequestBuilder and sets the default values.
+// NewItemListsItemSubscriptionsSubscriptionItemRequestBuilderInternal instantiates a new ItemListsItemSubscriptionsSubscriptionItemRequestBuilder and sets the default values.
 func NewItemListsItemSubscriptionsSubscriptionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) {
     m := &ItemListsItemSubscriptionsSubscriptionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/subscriptions/{subscription%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/subscriptions/{subscription%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemListsItemSubscriptionsSubscriptionItemRequestBuilder instantiates a new SubscriptionItemRequestBuilder and sets the default values.
+// NewItemListsItemSubscriptionsSubscriptionItemRequestBuilder instantiates a new ItemListsItemSubscriptionsSubscriptionItemRequestBuilder and sets the default values.
 func NewItemListsItemSubscriptionsSubscriptionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemListsItemSubscriptionsSubscriptionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property subscriptions for sites
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemListsItemSubscriptionsSubscriptionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,14 +71,15 @@ func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) Delete(ctx co
     return nil
 }
 // Get the set of subscriptions on the list.
+// returns a Subscriptionable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListsItemSubscriptionsSubscriptionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateSubscriptionFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,14 +91,15 @@ func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) Get(ctx conte
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable), nil
 }
 // Patch update the navigation property subscriptions in sites
+// returns a Subscriptionable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable, requestConfiguration *ItemListsItemSubscriptionsSubscriptionItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateSubscriptionFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -109,12 +111,14 @@ func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) Patch(ctx con
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable), nil
 }
 // Reauthorize provides operations to call the reauthorize method.
+// returns a *ItemListsItemSubscriptionsItemReauthorizeRequestBuilder when successful
 func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) Reauthorize()(*ItemListsItemSubscriptionsItemReauthorizeRequestBuilder) {
     return NewItemListsItemSubscriptionsItemReauthorizeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property subscriptions for sites
+// returns a *RequestInformation when successful
 func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemListsItemSubscriptionsSubscriptionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/subscriptions/{subscription%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -123,6 +127,7 @@ func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) ToDeleteReque
     return requestInfo, nil
 }
 // ToGetRequestInformation the set of subscriptions on the list.
+// returns a *RequestInformation when successful
 func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListsItemSubscriptionsSubscriptionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -136,8 +141,9 @@ func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) ToGetRequestI
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property subscriptions in sites
+// returns a *RequestInformation when successful
 func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Subscriptionable, requestConfiguration *ItemListsItemSubscriptionsSubscriptionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/subscriptions/{subscription%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -150,6 +156,7 @@ func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) ToPatchReques
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder when successful
 func (m *ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) WithUrl(rawUrl string)(*ItemListsItemSubscriptionsSubscriptionItemRequestBuilder) {
     return NewItemListsItemSubscriptionsSubscriptionItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -30,59 +30,68 @@ type ItemCalendarEventsItemInstancesEventItemRequestBuilderGetRequestConfigurati
     QueryParameters *ItemCalendarEventsItemInstancesEventItemRequestBuilderGetQueryParameters
 }
 // Accept provides operations to call the accept method.
+// returns a *ItemCalendarEventsItemInstancesItemAcceptRequestBuilder when successful
 func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) Accept()(*ItemCalendarEventsItemInstancesItemAcceptRequestBuilder) {
     return NewItemCalendarEventsItemInstancesItemAcceptRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Attachments provides operations to manage the attachments property of the microsoft.graph.event entity.
+// returns a *ItemCalendarEventsItemInstancesItemAttachmentsRequestBuilder when successful
 func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) Attachments()(*ItemCalendarEventsItemInstancesItemAttachmentsRequestBuilder) {
     return NewItemCalendarEventsItemInstancesItemAttachmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Calendar provides operations to manage the calendar property of the microsoft.graph.event entity.
+// returns a *ItemCalendarEventsItemInstancesItemCalendarRequestBuilder when successful
 func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) Calendar()(*ItemCalendarEventsItemInstancesItemCalendarRequestBuilder) {
     return NewItemCalendarEventsItemInstancesItemCalendarRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Cancel provides operations to call the cancel method.
+// returns a *ItemCalendarEventsItemInstancesItemCancelRequestBuilder when successful
 func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) Cancel()(*ItemCalendarEventsItemInstancesItemCancelRequestBuilder) {
     return NewItemCalendarEventsItemInstancesItemCancelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemCalendarEventsItemInstancesEventItemRequestBuilderInternal instantiates a new EventItemRequestBuilder and sets the default values.
+// NewItemCalendarEventsItemInstancesEventItemRequestBuilderInternal instantiates a new ItemCalendarEventsItemInstancesEventItemRequestBuilder and sets the default values.
 func NewItemCalendarEventsItemInstancesEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarEventsItemInstancesEventItemRequestBuilder) {
     m := &ItemCalendarEventsItemInstancesEventItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendar/events/{event%2Did}/instances/{event%2Did1}{?startDateTime*,endDateTime*,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendar/events/{event%2Did}/instances/{event%2Did1}?endDateTime={endDateTime}&startDateTime={startDateTime}{&%24select}", pathParameters),
     }
     return m
 }
-// NewItemCalendarEventsItemInstancesEventItemRequestBuilder instantiates a new EventItemRequestBuilder and sets the default values.
+// NewItemCalendarEventsItemInstancesEventItemRequestBuilder instantiates a new ItemCalendarEventsItemInstancesEventItemRequestBuilder and sets the default values.
 func NewItemCalendarEventsItemInstancesEventItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarEventsItemInstancesEventItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarEventsItemInstancesEventItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Decline provides operations to call the decline method.
+// returns a *ItemCalendarEventsItemInstancesItemDeclineRequestBuilder when successful
 func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) Decline()(*ItemCalendarEventsItemInstancesItemDeclineRequestBuilder) {
     return NewItemCalendarEventsItemInstancesItemDeclineRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DismissReminder provides operations to call the dismissReminder method.
+// returns a *ItemCalendarEventsItemInstancesItemDismissReminderRequestBuilder when successful
 func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) DismissReminder()(*ItemCalendarEventsItemInstancesItemDismissReminderRequestBuilder) {
     return NewItemCalendarEventsItemInstancesItemDismissReminderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Extensions provides operations to manage the extensions property of the microsoft.graph.event entity.
+// returns a *ItemCalendarEventsItemInstancesItemExtensionsRequestBuilder when successful
 func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) Extensions()(*ItemCalendarEventsItemInstancesItemExtensionsRequestBuilder) {
     return NewItemCalendarEventsItemInstancesItemExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Forward provides operations to call the forward method.
+// returns a *ItemCalendarEventsItemInstancesItemForwardRequestBuilder when successful
 func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) Forward()(*ItemCalendarEventsItemInstancesItemForwardRequestBuilder) {
     return NewItemCalendarEventsItemInstancesItemForwardRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+// returns a Eventable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarEventsItemInstancesEventItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateEventFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,14 +103,17 @@ func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) Get(ctx context
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Eventable), nil
 }
 // SnoozeReminder provides operations to call the snoozeReminder method.
+// returns a *ItemCalendarEventsItemInstancesItemSnoozeReminderRequestBuilder when successful
 func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) SnoozeReminder()(*ItemCalendarEventsItemInstancesItemSnoozeReminderRequestBuilder) {
     return NewItemCalendarEventsItemInstancesItemSnoozeReminderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TentativelyAccept provides operations to call the tentativelyAccept method.
+// returns a *ItemCalendarEventsItemInstancesItemTentativelyAcceptRequestBuilder when successful
 func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) TentativelyAccept()(*ItemCalendarEventsItemInstancesItemTentativelyAcceptRequestBuilder) {
     return NewItemCalendarEventsItemInstancesItemTentativelyAcceptRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+// returns a *RequestInformation when successful
 func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarEventsItemInstancesEventItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -115,6 +127,7 @@ func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) ToGetRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemCalendarEventsItemInstancesEventItemRequestBuilder when successful
 func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarEventsItemInstancesEventItemRequestBuilder) {
     return NewItemCalendarEventsItemInstancesEventItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

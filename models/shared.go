@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// Shared 
 type Shared struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewShared instantiates a new shared and sets the default values.
+// NewShared instantiates a new Shared and sets the default values.
 func NewShared()(*Shared) {
     m := &Shared{
     }
@@ -20,10 +19,12 @@ func NewShared()(*Shared) {
     return m
 }
 // CreateSharedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSharedFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewShared(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Shared) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *Shared) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *Shared) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Shared) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,6 +98,7 @@ func (m *Shared) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *Shared) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -106,6 +110,7 @@ func (m *Shared) GetOdataType()(*string) {
     return nil
 }
 // GetOwner gets the owner property value. The identity of the owner of the shared item. Read-only.
+// returns a IdentitySetable when successful
 func (m *Shared) GetOwner()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("owner")
     if err != nil {
@@ -117,6 +122,7 @@ func (m *Shared) GetOwner()(IdentitySetable) {
     return nil
 }
 // GetScope gets the scope property value. Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only.
+// returns a *string when successful
 func (m *Shared) GetScope()(*string) {
     val, err := m.GetBackingStore().Get("scope")
     if err != nil {
@@ -128,6 +134,7 @@ func (m *Shared) GetScope()(*string) {
     return nil
 }
 // GetSharedBy gets the sharedBy property value. The identity of the user who shared the item. Read-only.
+// returns a IdentitySetable when successful
 func (m *Shared) GetSharedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("sharedBy")
     if err != nil {
@@ -139,6 +146,7 @@ func (m *Shared) GetSharedBy()(IdentitySetable) {
     return nil
 }
 // GetSharedDateTime gets the sharedDateTime property value. The UTC date and time when the item was shared. Read-only.
+// returns a *Time when successful
 func (m *Shared) GetSharedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("sharedDateTime")
     if err != nil {
@@ -235,7 +243,6 @@ func (m *Shared) SetSharedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f30
         panic(err)
     }
 }
-// Sharedable 
 type Sharedable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

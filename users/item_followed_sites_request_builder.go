@@ -40,6 +40,7 @@ type ItemFollowedSitesRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemFollowedSitesRequestBuilderGetQueryParameters
 }
 // BySiteId provides operations to manage the followedSites property of the microsoft.graph.user entity.
+// returns a *ItemFollowedSitesSiteItemRequestBuilder when successful
 func (m *ItemFollowedSitesRequestBuilder) BySiteId(siteId string)(*ItemFollowedSitesSiteItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,24 +51,27 @@ func (m *ItemFollowedSitesRequestBuilder) BySiteId(siteId string)(*ItemFollowedS
     }
     return NewItemFollowedSitesSiteItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemFollowedSitesRequestBuilderInternal instantiates a new FollowedSitesRequestBuilder and sets the default values.
+// NewItemFollowedSitesRequestBuilderInternal instantiates a new ItemFollowedSitesRequestBuilder and sets the default values.
 func NewItemFollowedSitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemFollowedSitesRequestBuilder) {
     m := &ItemFollowedSitesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/followedSites{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/followedSites{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemFollowedSitesRequestBuilder instantiates a new FollowedSitesRequestBuilder and sets the default values.
+// NewItemFollowedSitesRequestBuilder instantiates a new ItemFollowedSitesRequestBuilder and sets the default values.
 func NewItemFollowedSitesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemFollowedSitesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemFollowedSitesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemFollowedSitesCountRequestBuilder when successful
 func (m *ItemFollowedSitesRequestBuilder) Count()(*ItemFollowedSitesCountRequestBuilder) {
     return NewItemFollowedSitesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get list the sites that have been followed by the signed in user.
+// returns a SiteCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/sites-list-followed?view=graph-rest-1.0
@@ -77,8 +81,7 @@ func (m *ItemFollowedSitesRequestBuilder) Get(ctx context.Context, requestConfig
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateSiteCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,6 +93,7 @@ func (m *ItemFollowedSitesRequestBuilder) Get(ctx context.Context, requestConfig
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SiteCollectionResponseable), nil
 }
 // ToGetRequestInformation list the sites that have been followed by the signed in user.
+// returns a *RequestInformation when successful
 func (m *ItemFollowedSitesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemFollowedSitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -103,6 +107,7 @@ func (m *ItemFollowedSitesRequestBuilder) ToGetRequestInformation(ctx context.Co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemFollowedSitesRequestBuilder when successful
 func (m *ItemFollowedSitesRequestBuilder) WithUrl(rawUrl string)(*ItemFollowedSitesRequestBuilder) {
     return NewItemFollowedSitesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -47,6 +47,7 @@ type ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilderPostRequestConf
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByWorkbookPivotTableId provides operations to manage the pivotTables property of the microsoft.graph.workbookWorksheet entity.
+// returns a *ItemItemsItemWorkbookWorksheetsItemPivotTablesWorkbookPivotTableItemRequestBuilder when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) ByWorkbookPivotTableId(workbookPivotTableId string)(*ItemItemsItemWorkbookWorksheetsItemPivotTablesWorkbookPivotTableItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) ByWorkboo
     }
     return NewItemItemsItemWorkbookWorksheetsItemPivotTablesWorkbookPivotTableItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilderInternal instantiates a new PivotTablesRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilderInternal instantiates a new ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/pivotTables{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/pivotTables{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder instantiates a new PivotTablesRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder instantiates a new ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemItemsItemWorkbookWorksheetsItemPivotTablesCountRequestBuilder when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) Count()(*ItemItemsItemWorkbookWorksheetsItemPivotTablesCountRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemPivotTablesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve a list of workbookpivottable objects.
+// returns a WorkbookPivotTableCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/workbookworksheet-list-pivottables?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) Get(ctx c
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateWorkbookPivotTableCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,14 +100,15 @@ func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) Get(ctx c
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookPivotTableCollectionResponseable), nil
 }
 // Post create new navigation property to pivotTables for drives
+// returns a WorkbookPivotTableable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookPivotTableable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookPivotTableable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateWorkbookPivotTableFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -116,10 +120,12 @@ func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) Post(ctx 
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookPivotTableable), nil
 }
 // RefreshAll provides operations to call the refreshAll method.
+// returns a *ItemItemsItemWorkbookWorksheetsItemPivotTablesRefreshAllRequestBuilder when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) RefreshAll()(*ItemItemsItemWorkbookWorksheetsItemPivotTablesRefreshAllRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemPivotTablesRefreshAllRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation retrieve a list of workbookpivottable objects.
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -133,8 +139,9 @@ func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) ToGetRequ
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to pivotTables for drives
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookPivotTableable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/pivotTables", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -147,6 +154,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) ToPostReq
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemPivotTablesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

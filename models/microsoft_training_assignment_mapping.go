@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MicrosoftTrainingAssignmentMapping 
 type MicrosoftTrainingAssignmentMapping struct {
     TrainingSetting
 }
-// NewMicrosoftTrainingAssignmentMapping instantiates a new microsoftTrainingAssignmentMapping and sets the default values.
+// NewMicrosoftTrainingAssignmentMapping instantiates a new MicrosoftTrainingAssignmentMapping and sets the default values.
 func NewMicrosoftTrainingAssignmentMapping()(*MicrosoftTrainingAssignmentMapping) {
     m := &MicrosoftTrainingAssignmentMapping{
         TrainingSetting: *NewTrainingSetting(),
@@ -18,10 +17,12 @@ func NewMicrosoftTrainingAssignmentMapping()(*MicrosoftTrainingAssignmentMapping
     return m
 }
 // CreateMicrosoftTrainingAssignmentMappingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMicrosoftTrainingAssignmentMappingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMicrosoftTrainingAssignmentMapping(), nil
 }
 // GetAssignedTo gets the assignedTo property value. A user collection that specifies to whom the training should be assigned. Possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.
+// returns a []TrainingAssignedTo when successful
 func (m *MicrosoftTrainingAssignmentMapping) GetAssignedTo()([]TrainingAssignedTo) {
     val, err := m.GetBackingStore().Get("assignedTo")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *MicrosoftTrainingAssignmentMapping) GetAssignedTo()([]TrainingAssignedT
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MicrosoftTrainingAssignmentMapping) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.TrainingSetting.GetFieldDeserializers()
     res["assignedTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -64,6 +66,7 @@ func (m *MicrosoftTrainingAssignmentMapping) GetFieldDeserializers()(map[string]
     return res
 }
 // GetTraining gets the training property value. The training property
+// returns a Trainingable when successful
 func (m *MicrosoftTrainingAssignmentMapping) GetTraining()(Trainingable) {
     val, err := m.GetBackingStore().Get("training")
     if err != nil {
@@ -108,7 +111,6 @@ func (m *MicrosoftTrainingAssignmentMapping) SetTraining(value Trainingable)() {
         panic(err)
     }
 }
-// MicrosoftTrainingAssignmentMappingable 
 type MicrosoftTrainingAssignmentMappingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     TrainingSettingable

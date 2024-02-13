@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SasTokenEvidence 
 type SasTokenEvidence struct {
     AlertEvidence
 }
-// NewSasTokenEvidence instantiates a new sasTokenEvidence and sets the default values.
+// NewSasTokenEvidence instantiates a new SasTokenEvidence and sets the default values.
 func NewSasTokenEvidence()(*SasTokenEvidence) {
     m := &SasTokenEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -19,10 +18,12 @@ func NewSasTokenEvidence()(*SasTokenEvidence) {
     return m
 }
 // CreateSasTokenEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSasTokenEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSasTokenEvidence(), nil
 }
 // GetAllowedIpAddresses gets the allowedIpAddresses property value. The allowedIpAddresses property
+// returns a *string when successful
 func (m *SasTokenEvidence) GetAllowedIpAddresses()(*string) {
     val, err := m.GetBackingStore().Get("allowedIpAddresses")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *SasTokenEvidence) GetAllowedIpAddresses()(*string) {
     return nil
 }
 // GetAllowedResourceTypes gets the allowedResourceTypes property value. The allowedResourceTypes property
+// returns a []string when successful
 func (m *SasTokenEvidence) GetAllowedResourceTypes()([]string) {
     val, err := m.GetBackingStore().Get("allowedResourceTypes")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *SasTokenEvidence) GetAllowedResourceTypes()([]string) {
     return nil
 }
 // GetAllowedServices gets the allowedServices property value. The allowedServices property
+// returns a []string when successful
 func (m *SasTokenEvidence) GetAllowedServices()([]string) {
     val, err := m.GetBackingStore().Get("allowedServices")
     if err != nil {
@@ -56,6 +59,7 @@ func (m *SasTokenEvidence) GetAllowedServices()([]string) {
     return nil
 }
 // GetExpiryDateTime gets the expiryDateTime property value. The expiryDateTime property
+// returns a *Time when successful
 func (m *SasTokenEvidence) GetExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expiryDateTime")
     if err != nil {
@@ -67,6 +71,7 @@ func (m *SasTokenEvidence) GetExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SasTokenEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["allowedIpAddresses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -190,6 +195,7 @@ func (m *SasTokenEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetPermissions gets the permissions property value. The permissions property
+// returns a []string when successful
 func (m *SasTokenEvidence) GetPermissions()([]string) {
     val, err := m.GetBackingStore().Get("permissions")
     if err != nil {
@@ -201,6 +207,7 @@ func (m *SasTokenEvidence) GetPermissions()([]string) {
     return nil
 }
 // GetProtocol gets the protocol property value. The protocol property
+// returns a *string when successful
 func (m *SasTokenEvidence) GetProtocol()(*string) {
     val, err := m.GetBackingStore().Get("protocol")
     if err != nil {
@@ -212,6 +219,7 @@ func (m *SasTokenEvidence) GetProtocol()(*string) {
     return nil
 }
 // GetSignatureHash gets the signatureHash property value. The signatureHash property
+// returns a *string when successful
 func (m *SasTokenEvidence) GetSignatureHash()(*string) {
     val, err := m.GetBackingStore().Get("signatureHash")
     if err != nil {
@@ -223,6 +231,7 @@ func (m *SasTokenEvidence) GetSignatureHash()(*string) {
     return nil
 }
 // GetSignedWith gets the signedWith property value. The signedWith property
+// returns a *string when successful
 func (m *SasTokenEvidence) GetSignedWith()(*string) {
     val, err := m.GetBackingStore().Get("signedWith")
     if err != nil {
@@ -234,6 +243,7 @@ func (m *SasTokenEvidence) GetSignedWith()(*string) {
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. The startDateTime property
+// returns a *Time when successful
 func (m *SasTokenEvidence) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -245,6 +255,7 @@ func (m *SasTokenEvidence) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetStorageResource gets the storageResource property value. The storageResource property
+// returns a AzureResourceEvidenceable when successful
 func (m *SasTokenEvidence) GetStorageResource()(AzureResourceEvidenceable) {
     val, err := m.GetBackingStore().Get("storageResource")
     if err != nil {
@@ -393,7 +404,6 @@ func (m *SasTokenEvidence) SetStorageResource(value AzureResourceEvidenceable)()
         panic(err)
     }
 }
-// SasTokenEvidenceable 
 type SasTokenEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

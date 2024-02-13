@@ -8,7 +8,7 @@ import (
 type MacOSMicrosoftEdgeApp struct {
     MobileApp
 }
-// NewMacOSMicrosoftEdgeApp instantiates a new macOSMicrosoftEdgeApp and sets the default values.
+// NewMacOSMicrosoftEdgeApp instantiates a new MacOSMicrosoftEdgeApp and sets the default values.
 func NewMacOSMicrosoftEdgeApp()(*MacOSMicrosoftEdgeApp) {
     m := &MacOSMicrosoftEdgeApp{
         MobileApp: *NewMobileApp(),
@@ -18,10 +18,12 @@ func NewMacOSMicrosoftEdgeApp()(*MacOSMicrosoftEdgeApp) {
     return m
 }
 // CreateMacOSMicrosoftEdgeAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOSMicrosoftEdgeAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSMicrosoftEdgeApp(), nil
 }
 // GetChannel gets the channel property value. The enum to specify the channels for Microsoft Edge apps.
+// returns a *MicrosoftEdgeChannel when successful
 func (m *MacOSMicrosoftEdgeApp) GetChannel()(*MicrosoftEdgeChannel) {
     val, err := m.GetBackingStore().Get("channel")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *MacOSMicrosoftEdgeApp) GetChannel()(*MicrosoftEdgeChannel) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSMicrosoftEdgeApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileApp.GetFieldDeserializers()
     res["channel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -69,7 +72,6 @@ func (m *MacOSMicrosoftEdgeApp) SetChannel(value *MicrosoftEdgeChannel)() {
         panic(err)
     }
 }
-// MacOSMicrosoftEdgeAppable 
 type MacOSMicrosoftEdgeAppable interface {
     MobileAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

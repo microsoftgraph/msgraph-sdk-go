@@ -5,11 +5,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// TaskDefinition 
 type TaskDefinition struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewTaskDefinition instantiates a new taskDefinition and sets the default values.
+// NewTaskDefinition instantiates a new TaskDefinition and sets the default values.
 func NewTaskDefinition()(*TaskDefinition) {
     m := &TaskDefinition{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -17,10 +16,12 @@ func NewTaskDefinition()(*TaskDefinition) {
     return m
 }
 // CreateTaskDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTaskDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTaskDefinition(), nil
 }
 // GetCategory gets the category property value. The category property
+// returns a *LifecycleTaskCategory when successful
 func (m *TaskDefinition) GetCategory()(*LifecycleTaskCategory) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *TaskDefinition) GetCategory()(*LifecycleTaskCategory) {
     return nil
 }
 // GetContinueOnError gets the continueOnError property value. The continueOnError property
+// returns a *bool when successful
 func (m *TaskDefinition) GetContinueOnError()(*bool) {
     val, err := m.GetBackingStore().Get("continueOnError")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *TaskDefinition) GetContinueOnError()(*bool) {
     return nil
 }
 // GetDescription gets the description property value. The description of the taskDefinition.
+// returns a *string when successful
 func (m *TaskDefinition) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *TaskDefinition) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the taskDefinition.Supports $filter(eq, ne) and $orderby.
+// returns a *string when successful
 func (m *TaskDefinition) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *TaskDefinition) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TaskDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -136,6 +141,7 @@ func (m *TaskDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetParameters gets the parameters property value. The parameters that must be supplied when creating a workflow task object.Supports $filter(any).
+// returns a []Parameterable when successful
 func (m *TaskDefinition) GetParameters()([]Parameterable) {
     val, err := m.GetBackingStore().Get("parameters")
     if err != nil {
@@ -147,6 +153,7 @@ func (m *TaskDefinition) GetParameters()([]Parameterable) {
     return nil
 }
 // GetVersion gets the version property value. The version number of the taskDefinition. New records are pushed when we add support for new parameters.Supports $filter(ge, gt, le, lt, eq, ne) and $orderby.
+// returns a *int32 when successful
 func (m *TaskDefinition) GetVersion()(*int32) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -250,7 +257,6 @@ func (m *TaskDefinition) SetVersion(value *int32)() {
         panic(err)
     }
 }
-// TaskDefinitionable 
 type TaskDefinitionable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

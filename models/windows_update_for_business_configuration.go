@@ -9,7 +9,7 @@ import (
 type WindowsUpdateForBusinessConfiguration struct {
     DeviceConfiguration
 }
-// NewWindowsUpdateForBusinessConfiguration instantiates a new windowsUpdateForBusinessConfiguration and sets the default values.
+// NewWindowsUpdateForBusinessConfiguration instantiates a new WindowsUpdateForBusinessConfiguration and sets the default values.
 func NewWindowsUpdateForBusinessConfiguration()(*WindowsUpdateForBusinessConfiguration) {
     m := &WindowsUpdateForBusinessConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -19,10 +19,12 @@ func NewWindowsUpdateForBusinessConfiguration()(*WindowsUpdateForBusinessConfigu
     return m
 }
 // CreateWindowsUpdateForBusinessConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsUpdateForBusinessConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsUpdateForBusinessConfiguration(), nil
 }
 // GetAllowWindows11Upgrade gets the allowWindows11Upgrade property value. When TRUE, allows eligible Windows 10 devices to upgrade to Windows 11. When FALSE, implies the device stays on the existing operating system. Returned by default. Query parameters are not supported.
+// returns a *bool when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetAllowWindows11Upgrade()(*bool) {
     val, err := m.GetBackingStore().Get("allowWindows11Upgrade")
     if err != nil {
@@ -34,6 +36,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetAllowWindows11Upgrade()(*bool
     return nil
 }
 // GetAutomaticUpdateMode gets the automaticUpdateMode property value. Possible values for automatic update mode.
+// returns a *AutomaticUpdateMode when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetAutomaticUpdateMode()(*AutomaticUpdateMode) {
     val, err := m.GetBackingStore().Get("automaticUpdateMode")
     if err != nil {
@@ -45,6 +48,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetAutomaticUpdateMode()(*Automa
     return nil
 }
 // GetAutoRestartNotificationDismissal gets the autoRestartNotificationDismissal property value. Auto restart required notification dismissal method
+// returns a *AutoRestartNotificationDismissalMethod when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetAutoRestartNotificationDismissal()(*AutoRestartNotificationDismissalMethod) {
     val, err := m.GetBackingStore().Get("autoRestartNotificationDismissal")
     if err != nil {
@@ -56,6 +60,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetAutoRestartNotificationDismis
     return nil
 }
 // GetBusinessReadyUpdatesOnly gets the businessReadyUpdatesOnly property value. Which branch devices will receive their updates from
+// returns a *WindowsUpdateType when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetBusinessReadyUpdatesOnly()(*WindowsUpdateType) {
     val, err := m.GetBackingStore().Get("businessReadyUpdatesOnly")
     if err != nil {
@@ -67,6 +72,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetBusinessReadyUpdatesOnly()(*W
     return nil
 }
 // GetDeadlineForFeatureUpdatesInDays gets the deadlineForFeatureUpdatesInDays property value. Number of days before feature updates are installed automatically with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.
+// returns a *int32 when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetDeadlineForFeatureUpdatesInDays()(*int32) {
     val, err := m.GetBackingStore().Get("deadlineForFeatureUpdatesInDays")
     if err != nil {
@@ -78,6 +84,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetDeadlineForFeatureUpdatesInDa
     return nil
 }
 // GetDeadlineForQualityUpdatesInDays gets the deadlineForQualityUpdatesInDays property value. Number of days before quality updates are installed automatically with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.
+// returns a *int32 when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetDeadlineForQualityUpdatesInDays()(*int32) {
     val, err := m.GetBackingStore().Get("deadlineForQualityUpdatesInDays")
     if err != nil {
@@ -89,6 +96,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetDeadlineForQualityUpdatesInDa
     return nil
 }
 // GetDeadlineGracePeriodInDays gets the deadlineGracePeriodInDays property value. Number of days after deadline until restarts occur automatically with valid range from 0 to 7 days. Returned by default. Query parameters are not supported.
+// returns a *int32 when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetDeadlineGracePeriodInDays()(*int32) {
     val, err := m.GetBackingStore().Get("deadlineGracePeriodInDays")
     if err != nil {
@@ -100,6 +108,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetDeadlineGracePeriodInDays()(*
     return nil
 }
 // GetDeliveryOptimizationMode gets the deliveryOptimizationMode property value. Delivery optimization mode for peer distribution
+// returns a *WindowsDeliveryOptimizationMode when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetDeliveryOptimizationMode()(*WindowsDeliveryOptimizationMode) {
     val, err := m.GetBackingStore().Get("deliveryOptimizationMode")
     if err != nil {
@@ -111,6 +120,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetDeliveryOptimizationMode()(*W
     return nil
 }
 // GetDriversExcluded gets the driversExcluded property value. When TRUE, excludes Windows update Drivers. When FALSE, does not exclude Windows update Drivers. Returned by default. Query parameters are not supported.
+// returns a *bool when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetDriversExcluded()(*bool) {
     val, err := m.GetBackingStore().Get("driversExcluded")
     if err != nil {
@@ -122,6 +132,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetDriversExcluded()(*bool) {
     return nil
 }
 // GetEngagedRestartDeadlineInDays gets the engagedRestartDeadlineInDays property value. Deadline in days before automatically scheduling and executing a pending restart outside of active hours, with valid range from 2 to 30 days. Returned by default. Query parameters are not supported.
+// returns a *int32 when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetEngagedRestartDeadlineInDays()(*int32) {
     val, err := m.GetBackingStore().Get("engagedRestartDeadlineInDays")
     if err != nil {
@@ -133,6 +144,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetEngagedRestartDeadlineInDays(
     return nil
 }
 // GetEngagedRestartSnoozeScheduleInDays gets the engagedRestartSnoozeScheduleInDays property value. Number of days a user can snooze Engaged Restart reminder notifications with valid range from 1 to 3 days. Returned by default. Query parameters are not supported.
+// returns a *int32 when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetEngagedRestartSnoozeScheduleInDays()(*int32) {
     val, err := m.GetBackingStore().Get("engagedRestartSnoozeScheduleInDays")
     if err != nil {
@@ -144,6 +156,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetEngagedRestartSnoozeScheduleI
     return nil
 }
 // GetEngagedRestartTransitionScheduleInDays gets the engagedRestartTransitionScheduleInDays property value. Number of days before transitioning from Auto Restarts scheduled outside of active hours to Engaged Restart, which requires the user to schedule, with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.
+// returns a *int32 when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetEngagedRestartTransitionScheduleInDays()(*int32) {
     val, err := m.GetBackingStore().Get("engagedRestartTransitionScheduleInDays")
     if err != nil {
@@ -155,6 +168,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetEngagedRestartTransitionSched
     return nil
 }
 // GetFeatureUpdatesDeferralPeriodInDays gets the featureUpdatesDeferralPeriodInDays property value. Defer Feature Updates by these many days with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.
+// returns a *int32 when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesDeferralPeriodInDays()(*int32) {
     val, err := m.GetBackingStore().Get("featureUpdatesDeferralPeriodInDays")
     if err != nil {
@@ -166,6 +180,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesDeferralPeriodI
     return nil
 }
 // GetFeatureUpdatesPaused gets the featureUpdatesPaused property value. When TRUE, assigned devices are paused from receiving feature updates for up to 35 days from the time you pause the ring. When FALSE, does not pause Feature Updates. Returned by default. Query parameters are not supported.s
+// returns a *bool when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesPaused()(*bool) {
     val, err := m.GetBackingStore().Get("featureUpdatesPaused")
     if err != nil {
@@ -177,6 +192,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesPaused()(*bool)
     return nil
 }
 // GetFeatureUpdatesPauseExpiryDateTime gets the featureUpdatesPauseExpiryDateTime property value. The Feature Updates Pause Expiry datetime. This value is 35 days from the time admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported.
+// returns a *Time when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesPauseExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("featureUpdatesPauseExpiryDateTime")
     if err != nil {
@@ -188,6 +204,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesPauseExpiryDate
     return nil
 }
 // GetFeatureUpdatesPauseStartDate gets the featureUpdatesPauseStartDate property value. The Feature Updates Pause start date. This value is the time when the admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported. This property is read-only.
+// returns a *DateOnly when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesPauseStartDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("featureUpdatesPauseStartDate")
     if err != nil {
@@ -199,6 +216,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesPauseStartDate(
     return nil
 }
 // GetFeatureUpdatesRollbackStartDateTime gets the featureUpdatesRollbackStartDateTime property value. The Feature Updates Rollback Start datetime.This value is the time when the admin rolled back the Feature update for the ring.Returned by default.Query parameters are not supported.
+// returns a *Time when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesRollbackStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("featureUpdatesRollbackStartDateTime")
     if err != nil {
@@ -210,6 +228,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesRollbackStartDa
     return nil
 }
 // GetFeatureUpdatesRollbackWindowInDays gets the featureUpdatesRollbackWindowInDays property value. The number of days after a Feature Update for which a rollback is valid with valid range from 2 to 60 days. Returned by default. Query parameters are not supported.
+// returns a *int32 when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesRollbackWindowInDays()(*int32) {
     val, err := m.GetBackingStore().Get("featureUpdatesRollbackWindowInDays")
     if err != nil {
@@ -221,6 +240,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesRollbackWindowI
     return nil
 }
 // GetFeatureUpdatesWillBeRolledBack gets the featureUpdatesWillBeRolledBack property value. When TRUE, rollback Feature Updates on the next device check in. When FALSE, do not rollback Feature Updates on the next device check in. Returned by default.Query parameters are not supported.
+// returns a *bool when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesWillBeRolledBack()(*bool) {
     val, err := m.GetBackingStore().Get("featureUpdatesWillBeRolledBack")
     if err != nil {
@@ -232,6 +252,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetFeatureUpdatesWillBeRolledBac
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["allowWindows11Upgrade"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -597,6 +618,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetFieldDeserializers()(map[stri
     return res
 }
 // GetInstallationSchedule gets the installationSchedule property value. The Installation Schedule. Possible values are: ActiveHoursStart, ActiveHoursEnd, ScheduledInstallDay, ScheduledInstallTime. Returned by default. Query parameters are not supported.
+// returns a WindowsUpdateInstallScheduleTypeable when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetInstallationSchedule()(WindowsUpdateInstallScheduleTypeable) {
     val, err := m.GetBackingStore().Get("installationSchedule")
     if err != nil {
@@ -608,6 +630,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetInstallationSchedule()(Window
     return nil
 }
 // GetMicrosoftUpdateServiceAllowed gets the microsoftUpdateServiceAllowed property value. When TRUE, allows Microsoft Update Service. When FALSE, does not allow Microsoft Update Service. Returned by default. Query parameters are not supported.
+// returns a *bool when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetMicrosoftUpdateServiceAllowed()(*bool) {
     val, err := m.GetBackingStore().Get("microsoftUpdateServiceAllowed")
     if err != nil {
@@ -619,6 +642,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetMicrosoftUpdateServiceAllowed
     return nil
 }
 // GetPostponeRebootUntilAfterDeadline gets the postponeRebootUntilAfterDeadline property value. When TRUE the device should wait until deadline for rebooting outside of active hours. When FALSE the device should not wait until deadline for rebooting outside of active hours. Returned by default. Query parameters are not supported.
+// returns a *bool when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetPostponeRebootUntilAfterDeadline()(*bool) {
     val, err := m.GetBackingStore().Get("postponeRebootUntilAfterDeadline")
     if err != nil {
@@ -630,6 +654,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetPostponeRebootUntilAfterDeadl
     return nil
 }
 // GetPrereleaseFeatures gets the prereleaseFeatures property value. Possible values for pre-release features.
+// returns a *PrereleaseFeatures when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetPrereleaseFeatures()(*PrereleaseFeatures) {
     val, err := m.GetBackingStore().Get("prereleaseFeatures")
     if err != nil {
@@ -641,6 +666,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetPrereleaseFeatures()(*Prerele
     return nil
 }
 // GetQualityUpdatesDeferralPeriodInDays gets the qualityUpdatesDeferralPeriodInDays property value. Defer Quality Updates by these many days with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.
+// returns a *int32 when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesDeferralPeriodInDays()(*int32) {
     val, err := m.GetBackingStore().Get("qualityUpdatesDeferralPeriodInDays")
     if err != nil {
@@ -652,6 +678,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesDeferralPeriodI
     return nil
 }
 // GetQualityUpdatesPaused gets the qualityUpdatesPaused property value. When TRUE, assigned devices are paused from receiving quality updates for up to 35 days from the time you pause the ring. When FALSE, does not pause Quality Updates. Returned by default. Query parameters are not supported.
+// returns a *bool when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesPaused()(*bool) {
     val, err := m.GetBackingStore().Get("qualityUpdatesPaused")
     if err != nil {
@@ -663,6 +690,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesPaused()(*bool)
     return nil
 }
 // GetQualityUpdatesPauseExpiryDateTime gets the qualityUpdatesPauseExpiryDateTime property value. The Quality Updates Pause Expiry datetime. This value is 35 days from the time admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported.
+// returns a *Time when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesPauseExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("qualityUpdatesPauseExpiryDateTime")
     if err != nil {
@@ -674,6 +702,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesPauseExpiryDate
     return nil
 }
 // GetQualityUpdatesPauseStartDate gets the qualityUpdatesPauseStartDate property value. The Quality Updates Pause start date. This value is the time when the admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported. This property is read-only.
+// returns a *DateOnly when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesPauseStartDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("qualityUpdatesPauseStartDate")
     if err != nil {
@@ -685,6 +714,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesPauseStartDate(
     return nil
 }
 // GetQualityUpdatesRollbackStartDateTime gets the qualityUpdatesRollbackStartDateTime property value. The Quality Updates Rollback Start datetime. This value is the time when the admin rolled back the Quality update for the ring. Returned by default. Query parameters are not supported.
+// returns a *Time when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesRollbackStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("qualityUpdatesRollbackStartDateTime")
     if err != nil {
@@ -696,6 +726,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesRollbackStartDa
     return nil
 }
 // GetQualityUpdatesWillBeRolledBack gets the qualityUpdatesWillBeRolledBack property value. When TRUE, rollback Quality Updates on the next device check in. When FALSE, do not rollback Quality Updates on the next device check in. Returned by default. Query parameters are not supported.
+// returns a *bool when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesWillBeRolledBack()(*bool) {
     val, err := m.GetBackingStore().Get("qualityUpdatesWillBeRolledBack")
     if err != nil {
@@ -707,6 +738,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetQualityUpdatesWillBeRolledBac
     return nil
 }
 // GetScheduleImminentRestartWarningInMinutes gets the scheduleImminentRestartWarningInMinutes property value. Specify the period for auto-restart imminent warning notifications. Supported values: 15, 30 or 60 (minutes). Returned by default. Query parameters are not supported.
+// returns a *int32 when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetScheduleImminentRestartWarningInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("scheduleImminentRestartWarningInMinutes")
     if err != nil {
@@ -718,6 +750,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetScheduleImminentRestartWarnin
     return nil
 }
 // GetScheduleRestartWarningInHours gets the scheduleRestartWarningInHours property value. Specify the period for auto-restart warning reminder notifications. Supported values: 2, 4, 8, 12 or 24 (hours). Returned by default. Query parameters are not supported.
+// returns a *int32 when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetScheduleRestartWarningInHours()(*int32) {
     val, err := m.GetBackingStore().Get("scheduleRestartWarningInHours")
     if err != nil {
@@ -729,6 +762,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetScheduleRestartWarningInHours
     return nil
 }
 // GetSkipChecksBeforeRestart gets the skipChecksBeforeRestart property value. When TRUE, skips all checks before restart: Battery level = 40%, User presence, Display Needed, Presentation mode, Full screen mode, phone call state, game mode etc. When FALSE, does not skip all checks before restart. Returned by default. Query parameters are not supported.
+// returns a *bool when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetSkipChecksBeforeRestart()(*bool) {
     val, err := m.GetBackingStore().Get("skipChecksBeforeRestart")
     if err != nil {
@@ -740,6 +774,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetSkipChecksBeforeRestart()(*bo
     return nil
 }
 // GetUpdateNotificationLevel gets the updateNotificationLevel property value. Windows Update Notification Display Options
+// returns a *WindowsUpdateNotificationDisplayOption when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetUpdateNotificationLevel()(*WindowsUpdateNotificationDisplayOption) {
     val, err := m.GetBackingStore().Get("updateNotificationLevel")
     if err != nil {
@@ -751,6 +786,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetUpdateNotificationLevel()(*Wi
     return nil
 }
 // GetUpdateWeeks gets the updateWeeks property value. Schedule the update installation on the weeks of the month. Possible values are: UserDefined, FirstWeek, SecondWeek, ThirdWeek, FourthWeek, EveryWeek. Returned by default. Query parameters are not supported. Possible values are: userDefined, firstWeek, secondWeek, thirdWeek, fourthWeek, everyWeek, unknownFutureValue.
+// returns a *WindowsUpdateForBusinessUpdateWeeks when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetUpdateWeeks()(*WindowsUpdateForBusinessUpdateWeeks) {
     val, err := m.GetBackingStore().Get("updateWeeks")
     if err != nil {
@@ -762,6 +798,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetUpdateWeeks()(*WindowsUpdateF
     return nil
 }
 // GetUserPauseAccess gets the userPauseAccess property value. Possible values of a property
+// returns a *Enablement when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetUserPauseAccess()(*Enablement) {
     val, err := m.GetBackingStore().Get("userPauseAccess")
     if err != nil {
@@ -773,6 +810,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetUserPauseAccess()(*Enablement
     return nil
 }
 // GetUserWindowsUpdateScanAccess gets the userWindowsUpdateScanAccess property value. Possible values of a property
+// returns a *Enablement when successful
 func (m *WindowsUpdateForBusinessConfiguration) GetUserWindowsUpdateScanAccess()(*Enablement) {
     val, err := m.GetBackingStore().Get("userWindowsUpdateScanAccess")
     if err != nil {
@@ -1256,7 +1294,6 @@ func (m *WindowsUpdateForBusinessConfiguration) SetUserWindowsUpdateScanAccess(v
         panic(err)
     }
 }
-// WindowsUpdateForBusinessConfigurationable 
 type WindowsUpdateForBusinessConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

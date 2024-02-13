@@ -27,28 +27,29 @@ type ItemTeamworkAssociatedTeamsItemTeamRequestBuilderGetRequestConfiguration st
     // Request query parameters
     QueryParameters *ItemTeamworkAssociatedTeamsItemTeamRequestBuilderGetQueryParameters
 }
-// NewItemTeamworkAssociatedTeamsItemTeamRequestBuilderInternal instantiates a new TeamRequestBuilder and sets the default values.
+// NewItemTeamworkAssociatedTeamsItemTeamRequestBuilderInternal instantiates a new ItemTeamworkAssociatedTeamsItemTeamRequestBuilder and sets the default values.
 func NewItemTeamworkAssociatedTeamsItemTeamRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamworkAssociatedTeamsItemTeamRequestBuilder) {
     m := &ItemTeamworkAssociatedTeamsItemTeamRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/teamwork/associatedTeams/{associatedTeamInfo%2Did}/team{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/teamwork/associatedTeams/{associatedTeamInfo%2Did}/team{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemTeamworkAssociatedTeamsItemTeamRequestBuilder instantiates a new TeamRequestBuilder and sets the default values.
+// NewItemTeamworkAssociatedTeamsItemTeamRequestBuilder instantiates a new ItemTeamworkAssociatedTeamsItemTeamRequestBuilder and sets the default values.
 func NewItemTeamworkAssociatedTeamsItemTeamRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamworkAssociatedTeamsItemTeamRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamworkAssociatedTeamsItemTeamRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get team from users
+// returns a Teamable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamworkAssociatedTeamsItemTeamRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamworkAssociatedTeamsItemTeamRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateTeamFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *ItemTeamworkAssociatedTeamsItemTeamRequestBuilder) Get(ctx context.Cont
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Teamable), nil
 }
 // ToGetRequestInformation get team from users
+// returns a *RequestInformation when successful
 func (m *ItemTeamworkAssociatedTeamsItemTeamRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamworkAssociatedTeamsItemTeamRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *ItemTeamworkAssociatedTeamsItemTeamRequestBuilder) ToGetRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemTeamworkAssociatedTeamsItemTeamRequestBuilder when successful
 func (m *ItemTeamworkAssociatedTeamsItemTeamRequestBuilder) WithUrl(rawUrl string)(*ItemTeamworkAssociatedTeamsItemTeamRequestBuilder) {
     return NewItemTeamworkAssociatedTeamsItemTeamRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

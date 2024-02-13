@@ -9,7 +9,7 @@ import (
 type TelecomExpenseManagementPartner struct {
     Entity
 }
-// NewTelecomExpenseManagementPartner instantiates a new telecomExpenseManagementPartner and sets the default values.
+// NewTelecomExpenseManagementPartner instantiates a new TelecomExpenseManagementPartner and sets the default values.
 func NewTelecomExpenseManagementPartner()(*TelecomExpenseManagementPartner) {
     m := &TelecomExpenseManagementPartner{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewTelecomExpenseManagementPartner()(*TelecomExpenseManagementPartner) {
     return m
 }
 // CreateTelecomExpenseManagementPartnerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTelecomExpenseManagementPartnerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTelecomExpenseManagementPartner(), nil
 }
 // GetAppAuthorized gets the appAuthorized property value. Whether the partner's AAD app has been authorized to access Intune.
+// returns a *bool when successful
 func (m *TelecomExpenseManagementPartner) GetAppAuthorized()(*bool) {
     val, err := m.GetBackingStore().Get("appAuthorized")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *TelecomExpenseManagementPartner) GetAppAuthorized()(*bool) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Display name of the TEM partner.
+// returns a *string when successful
 func (m *TelecomExpenseManagementPartner) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *TelecomExpenseManagementPartner) GetDisplayName()(*string) {
     return nil
 }
 // GetEnabled gets the enabled property value. Whether Intune's connection to the TEM service is currently enabled or disabled.
+// returns a *bool when successful
 func (m *TelecomExpenseManagementPartner) GetEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("enabled")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *TelecomExpenseManagementPartner) GetEnabled()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TelecomExpenseManagementPartner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appAuthorized"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -109,6 +114,7 @@ func (m *TelecomExpenseManagementPartner) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetLastConnectionDateTime gets the lastConnectionDateTime property value. Timestamp of the last request sent to Intune by the TEM partner.
+// returns a *Time when successful
 func (m *TelecomExpenseManagementPartner) GetLastConnectionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastConnectionDateTime")
     if err != nil {
@@ -120,6 +126,7 @@ func (m *TelecomExpenseManagementPartner) GetLastConnectionDateTime()(*i33607480
     return nil
 }
 // GetUrl gets the url property value. URL of the TEM partner's administrative control panel, where an administrator can configure their TEM service.
+// returns a *string when successful
 func (m *TelecomExpenseManagementPartner) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -203,7 +210,6 @@ func (m *TelecomExpenseManagementPartner) SetUrl(value *string)() {
         panic(err)
     }
 }
-// TelecomExpenseManagementPartnerable 
 type TelecomExpenseManagementPartnerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

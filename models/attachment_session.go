@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AttachmentSession 
 type AttachmentSession struct {
     Entity
 }
-// NewAttachmentSession instantiates a new attachmentSession and sets the default values.
+// NewAttachmentSession instantiates a new AttachmentSession and sets the default values.
 func NewAttachmentSession()(*AttachmentSession) {
     m := &AttachmentSession{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewAttachmentSession()(*AttachmentSession) {
     return m
 }
 // CreateAttachmentSessionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAttachmentSessionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAttachmentSession(), nil
 }
 // GetContent gets the content property value. The content streams that are uploaded.
+// returns a []byte when successful
 func (m *AttachmentSession) GetContent()([]byte) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *AttachmentSession) GetContent()([]byte) {
     return nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+// returns a *Time when successful
 func (m *AttachmentSession) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *AttachmentSession) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AttachmentSession) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -84,6 +87,7 @@ func (m *AttachmentSession) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetNextExpectedRanges gets the nextExpectedRanges property value. Indicates a single value {start} that represents the location in the file where the next upload should begin.
+// returns a []string when successful
 func (m *AttachmentSession) GetNextExpectedRanges()([]string) {
     val, err := m.GetBackingStore().Get("nextExpectedRanges")
     if err != nil {
@@ -141,7 +145,6 @@ func (m *AttachmentSession) SetNextExpectedRanges(value []string)() {
         panic(err)
     }
 }
-// AttachmentSessionable 
 type AttachmentSessionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

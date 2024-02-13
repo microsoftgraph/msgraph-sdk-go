@@ -27,28 +27,29 @@ type ThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilderGetRequestConfig
     // Request query parameters
     QueryParameters *ThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilderGetQueryParameters
 }
-// NewThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilderInternal instantiates a new HostRequestBuilder and sets the default values.
+// NewThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilderInternal instantiates a new ThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilder and sets the default values.
 func NewThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilder) {
     m := &ThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/whoisHistoryRecords/{whoisHistoryRecord%2Did}/host{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/whoisHistoryRecords/{whoisHistoryRecord%2Did}/host{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilder instantiates a new HostRequestBuilder and sets the default values.
+// NewThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilder instantiates a new ThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilder and sets the default values.
 func NewThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the host associated to this WHOIS object.
+// returns a Hostable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.Hostable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.CreateHostFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *ThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilder) Get(ctx co
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.Hostable), nil
 }
 // ToGetRequestInformation the host associated to this WHOIS object.
+// returns a *RequestInformation when successful
 func (m *ThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *ThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilder) ToGetReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilder when successful
 func (m *ThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilder) {
     return NewThreatIntelligenceWhoisHistoryRecordsItemHostRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

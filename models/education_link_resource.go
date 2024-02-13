@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationLinkResource 
 type EducationLinkResource struct {
     EducationResource
 }
-// NewEducationLinkResource instantiates a new educationLinkResource and sets the default values.
+// NewEducationLinkResource instantiates a new EducationLinkResource and sets the default values.
 func NewEducationLinkResource()(*EducationLinkResource) {
     m := &EducationLinkResource{
         EducationResource: *NewEducationResource(),
@@ -18,10 +17,12 @@ func NewEducationLinkResource()(*EducationLinkResource) {
     return m
 }
 // CreateEducationLinkResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationLinkResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationLinkResource(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationLinkResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EducationResource.GetFieldDeserializers()
     res["link"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *EducationLinkResource) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetLink gets the link property value. URL to the resource.
+// returns a *string when successful
 func (m *EducationLinkResource) GetLink()(*string) {
     val, err := m.GetBackingStore().Get("link")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *EducationLinkResource) SetLink(value *string)() {
         panic(err)
     }
 }
-// EducationLinkResourceable 
 type EducationLinkResourceable interface {
     EducationResourceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

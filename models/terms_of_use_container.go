@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TermsOfUseContainer 
 type TermsOfUseContainer struct {
     Entity
 }
-// NewTermsOfUseContainer instantiates a new termsOfUseContainer and sets the default values.
+// NewTermsOfUseContainer instantiates a new TermsOfUseContainer and sets the default values.
 func NewTermsOfUseContainer()(*TermsOfUseContainer) {
     m := &TermsOfUseContainer{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewTermsOfUseContainer()(*TermsOfUseContainer) {
     return m
 }
 // CreateTermsOfUseContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTermsOfUseContainerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTermsOfUseContainer(), nil
 }
 // GetAgreementAcceptances gets the agreementAcceptances property value. Represents the current status of a user's response to a company's customizable terms of use agreement.
+// returns a []AgreementAcceptanceable when successful
 func (m *TermsOfUseContainer) GetAgreementAcceptances()([]AgreementAcceptanceable) {
     val, err := m.GetBackingStore().Get("agreementAcceptances")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *TermsOfUseContainer) GetAgreementAcceptances()([]AgreementAcceptanceabl
     return nil
 }
 // GetAgreements gets the agreements property value. Represents a tenant's customizable terms of use agreement that's created and managed with Microsoft Entra ID Governance.
+// returns a []Agreementable when successful
 func (m *TermsOfUseContainer) GetAgreements()([]Agreementable) {
     val, err := m.GetBackingStore().Get("agreements")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *TermsOfUseContainer) GetAgreements()([]Agreementable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TermsOfUseContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["agreementAcceptances"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -124,7 +127,6 @@ func (m *TermsOfUseContainer) SetAgreements(value []Agreementable)() {
         panic(err)
     }
 }
-// TermsOfUseContainerable 
 type TermsOfUseContainerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

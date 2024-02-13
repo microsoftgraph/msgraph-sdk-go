@@ -7,12 +7,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// KeyCredential 
 type KeyCredential struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewKeyCredential instantiates a new keyCredential and sets the default values.
+// NewKeyCredential instantiates a new KeyCredential and sets the default values.
 func NewKeyCredential()(*KeyCredential) {
     m := &KeyCredential{
     }
@@ -21,10 +20,12 @@ func NewKeyCredential()(*KeyCredential) {
     return m
 }
 // CreateKeyCredentialFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateKeyCredentialFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewKeyCredential(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *KeyCredential) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -37,10 +38,12 @@ func (m *KeyCredential) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *KeyCredential) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCustomKeyIdentifier gets the customKeyIdentifier property value. A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.
+// returns a []byte when successful
 func (m *KeyCredential) GetCustomKeyIdentifier()([]byte) {
     val, err := m.GetBackingStore().Get("customKeyIdentifier")
     if err != nil {
@@ -52,6 +55,7 @@ func (m *KeyCredential) GetCustomKeyIdentifier()([]byte) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Friendly name for the key. Optional.
+// returns a *string when successful
 func (m *KeyCredential) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -63,6 +67,7 @@ func (m *KeyCredential) GetDisplayName()(*string) {
     return nil
 }
 // GetEndDateTime gets the endDateTime property value. The date and time at which the credential expires. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *KeyCredential) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -74,6 +79,7 @@ func (m *KeyCredential) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *KeyCredential) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["customKeyIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -169,6 +175,7 @@ func (m *KeyCredential) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetKey gets the key property value. The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.
+// returns a []byte when successful
 func (m *KeyCredential) GetKey()([]byte) {
     val, err := m.GetBackingStore().Get("key")
     if err != nil {
@@ -180,6 +187,7 @@ func (m *KeyCredential) GetKey()([]byte) {
     return nil
 }
 // GetKeyId gets the keyId property value. The unique identifier (GUID) for the key.
+// returns a *UUID when successful
 func (m *KeyCredential) GetKeyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("keyId")
     if err != nil {
@@ -191,6 +199,7 @@ func (m *KeyCredential) GetKeyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf67
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *KeyCredential) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -202,6 +211,7 @@ func (m *KeyCredential) GetOdataType()(*string) {
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *KeyCredential) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -213,6 +223,7 @@ func (m *KeyCredential) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     return nil
 }
 // GetTypeEscaped gets the type property value. The type of key credential; for example, Symmetric, AsymmetricX509Cert.
+// returns a *string when successful
 func (m *KeyCredential) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -224,6 +235,7 @@ func (m *KeyCredential) GetTypeEscaped()(*string) {
     return nil
 }
 // GetUsage gets the usage property value. A string that describes the purpose for which the key can be used; for example, Verify.
+// returns a *string when successful
 func (m *KeyCredential) GetUsage()(*string) {
     val, err := m.GetBackingStore().Get("usage")
     if err != nil {
@@ -372,7 +384,6 @@ func (m *KeyCredential) SetUsage(value *string)() {
         panic(err)
     }
 }
-// KeyCredentialable 
 type KeyCredentialable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -8,7 +8,7 @@ import (
 type MacOsLobAppAssignmentSettings struct {
     MobileAppAssignmentSettings
 }
-// NewMacOsLobAppAssignmentSettings instantiates a new macOsLobAppAssignmentSettings and sets the default values.
+// NewMacOsLobAppAssignmentSettings instantiates a new MacOsLobAppAssignmentSettings and sets the default values.
 func NewMacOsLobAppAssignmentSettings()(*MacOsLobAppAssignmentSettings) {
     m := &MacOsLobAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
@@ -18,10 +18,12 @@ func NewMacOsLobAppAssignmentSettings()(*MacOsLobAppAssignmentSettings) {
     return m
 }
 // CreateMacOsLobAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOsLobAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOsLobAppAssignmentSettings(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOsLobAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileAppAssignmentSettings.GetFieldDeserializers()
     res["uninstallOnDeviceRemoval"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *MacOsLobAppAssignmentSettings) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetUninstallOnDeviceRemoval gets the uninstallOnDeviceRemoval property value. When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune.
+// returns a *bool when successful
 func (m *MacOsLobAppAssignmentSettings) GetUninstallOnDeviceRemoval()(*bool) {
     val, err := m.GetBackingStore().Get("uninstallOnDeviceRemoval")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *MacOsLobAppAssignmentSettings) SetUninstallOnDeviceRemoval(value *bool)
         panic(err)
     }
 }
-// MacOsLobAppAssignmentSettingsable 
 type MacOsLobAppAssignmentSettingsable interface {
     MobileAppAssignmentSettingsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

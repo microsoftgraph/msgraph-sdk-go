@@ -8,7 +8,7 @@ import (
 type Windows10TeamGeneralConfiguration struct {
     DeviceConfiguration
 }
-// NewWindows10TeamGeneralConfiguration instantiates a new windows10TeamGeneralConfiguration and sets the default values.
+// NewWindows10TeamGeneralConfiguration instantiates a new Windows10TeamGeneralConfiguration and sets the default values.
 func NewWindows10TeamGeneralConfiguration()(*Windows10TeamGeneralConfiguration) {
     m := &Windows10TeamGeneralConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewWindows10TeamGeneralConfiguration()(*Windows10TeamGeneralConfiguration) 
     return m
 }
 // CreateWindows10TeamGeneralConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindows10TeamGeneralConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows10TeamGeneralConfiguration(), nil
 }
 // GetAzureOperationalInsightsBlockTelemetry gets the azureOperationalInsightsBlockTelemetry property value. Indicates whether or not to Block Azure Operational Insights.
+// returns a *bool when successful
 func (m *Windows10TeamGeneralConfiguration) GetAzureOperationalInsightsBlockTelemetry()(*bool) {
     val, err := m.GetBackingStore().Get("azureOperationalInsightsBlockTelemetry")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *Windows10TeamGeneralConfiguration) GetAzureOperationalInsightsBlockTele
     return nil
 }
 // GetAzureOperationalInsightsWorkspaceId gets the azureOperationalInsightsWorkspaceId property value. The Azure Operational Insights workspace id.
+// returns a *string when successful
 func (m *Windows10TeamGeneralConfiguration) GetAzureOperationalInsightsWorkspaceId()(*string) {
     val, err := m.GetBackingStore().Get("azureOperationalInsightsWorkspaceId")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *Windows10TeamGeneralConfiguration) GetAzureOperationalInsightsWorkspace
     return nil
 }
 // GetAzureOperationalInsightsWorkspaceKey gets the azureOperationalInsightsWorkspaceKey property value. The Azure Operational Insights Workspace key.
+// returns a *string when successful
 func (m *Windows10TeamGeneralConfiguration) GetAzureOperationalInsightsWorkspaceKey()(*string) {
     val, err := m.GetBackingStore().Get("azureOperationalInsightsWorkspaceKey")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *Windows10TeamGeneralConfiguration) GetAzureOperationalInsightsWorkspace
     return nil
 }
 // GetConnectAppBlockAutoLaunch gets the connectAppBlockAutoLaunch property value. Specifies whether to automatically launch the Connect app whenever a projection is initiated.
+// returns a *bool when successful
 func (m *Windows10TeamGeneralConfiguration) GetConnectAppBlockAutoLaunch()(*bool) {
     val, err := m.GetBackingStore().Get("connectAppBlockAutoLaunch")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *Windows10TeamGeneralConfiguration) GetConnectAppBlockAutoLaunch()(*bool
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Windows10TeamGeneralConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["azureOperationalInsightsBlockTelemetry"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -271,6 +277,7 @@ func (m *Windows10TeamGeneralConfiguration) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetMaintenanceWindowBlocked gets the maintenanceWindowBlocked property value. Indicates whether or not to Block setting a maintenance window for device updates.
+// returns a *bool when successful
 func (m *Windows10TeamGeneralConfiguration) GetMaintenanceWindowBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("maintenanceWindowBlocked")
     if err != nil {
@@ -282,6 +289,7 @@ func (m *Windows10TeamGeneralConfiguration) GetMaintenanceWindowBlocked()(*bool)
     return nil
 }
 // GetMaintenanceWindowDurationInHours gets the maintenanceWindowDurationInHours property value. Maintenance window duration for device updates. Valid values 0 to 5
+// returns a *int32 when successful
 func (m *Windows10TeamGeneralConfiguration) GetMaintenanceWindowDurationInHours()(*int32) {
     val, err := m.GetBackingStore().Get("maintenanceWindowDurationInHours")
     if err != nil {
@@ -293,6 +301,7 @@ func (m *Windows10TeamGeneralConfiguration) GetMaintenanceWindowDurationInHours(
     return nil
 }
 // GetMaintenanceWindowStartTime gets the maintenanceWindowStartTime property value. Maintenance window start time for device updates.
+// returns a *TimeOnly when successful
 func (m *Windows10TeamGeneralConfiguration) GetMaintenanceWindowStartTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
     val, err := m.GetBackingStore().Get("maintenanceWindowStartTime")
     if err != nil {
@@ -304,6 +313,7 @@ func (m *Windows10TeamGeneralConfiguration) GetMaintenanceWindowStartTime()(*i87
     return nil
 }
 // GetMiracastBlocked gets the miracastBlocked property value. Indicates whether or not to Block wireless projection.
+// returns a *bool when successful
 func (m *Windows10TeamGeneralConfiguration) GetMiracastBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("miracastBlocked")
     if err != nil {
@@ -315,6 +325,7 @@ func (m *Windows10TeamGeneralConfiguration) GetMiracastBlocked()(*bool) {
     return nil
 }
 // GetMiracastChannel gets the miracastChannel property value. Possible values for Miracast channel.
+// returns a *MiracastChannel when successful
 func (m *Windows10TeamGeneralConfiguration) GetMiracastChannel()(*MiracastChannel) {
     val, err := m.GetBackingStore().Get("miracastChannel")
     if err != nil {
@@ -326,6 +337,7 @@ func (m *Windows10TeamGeneralConfiguration) GetMiracastChannel()(*MiracastChanne
     return nil
 }
 // GetMiracastRequirePin gets the miracastRequirePin property value. Indicates whether or not to require a pin for wireless projection.
+// returns a *bool when successful
 func (m *Windows10TeamGeneralConfiguration) GetMiracastRequirePin()(*bool) {
     val, err := m.GetBackingStore().Get("miracastRequirePin")
     if err != nil {
@@ -337,6 +349,7 @@ func (m *Windows10TeamGeneralConfiguration) GetMiracastRequirePin()(*bool) {
     return nil
 }
 // GetSettingsBlockMyMeetingsAndFiles gets the settingsBlockMyMeetingsAndFiles property value. Specifies whether to disable the 'My meetings and files' feature in the Start menu, which shows the signed-in user's meetings and files from Office 365.
+// returns a *bool when successful
 func (m *Windows10TeamGeneralConfiguration) GetSettingsBlockMyMeetingsAndFiles()(*bool) {
     val, err := m.GetBackingStore().Get("settingsBlockMyMeetingsAndFiles")
     if err != nil {
@@ -348,6 +361,7 @@ func (m *Windows10TeamGeneralConfiguration) GetSettingsBlockMyMeetingsAndFiles()
     return nil
 }
 // GetSettingsBlockSessionResume gets the settingsBlockSessionResume property value. Specifies whether to allow the ability to resume a session when the session times out.
+// returns a *bool when successful
 func (m *Windows10TeamGeneralConfiguration) GetSettingsBlockSessionResume()(*bool) {
     val, err := m.GetBackingStore().Get("settingsBlockSessionResume")
     if err != nil {
@@ -359,6 +373,7 @@ func (m *Windows10TeamGeneralConfiguration) GetSettingsBlockSessionResume()(*boo
     return nil
 }
 // GetSettingsBlockSigninSuggestions gets the settingsBlockSigninSuggestions property value. Specifies whether to disable auto-populating of the sign-in dialog with invitees from scheduled meetings.
+// returns a *bool when successful
 func (m *Windows10TeamGeneralConfiguration) GetSettingsBlockSigninSuggestions()(*bool) {
     val, err := m.GetBackingStore().Get("settingsBlockSigninSuggestions")
     if err != nil {
@@ -370,6 +385,7 @@ func (m *Windows10TeamGeneralConfiguration) GetSettingsBlockSigninSuggestions()(
     return nil
 }
 // GetSettingsDefaultVolume gets the settingsDefaultVolume property value. Specifies the default volume value for a new session. Permitted values are 0-100. The default is 45. Valid values 0 to 100
+// returns a *int32 when successful
 func (m *Windows10TeamGeneralConfiguration) GetSettingsDefaultVolume()(*int32) {
     val, err := m.GetBackingStore().Get("settingsDefaultVolume")
     if err != nil {
@@ -381,6 +397,7 @@ func (m *Windows10TeamGeneralConfiguration) GetSettingsDefaultVolume()(*int32) {
     return nil
 }
 // GetSettingsScreenTimeoutInMinutes gets the settingsScreenTimeoutInMinutes property value. Specifies the number of minutes until the Hub screen turns off.
+// returns a *int32 when successful
 func (m *Windows10TeamGeneralConfiguration) GetSettingsScreenTimeoutInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("settingsScreenTimeoutInMinutes")
     if err != nil {
@@ -392,6 +409,7 @@ func (m *Windows10TeamGeneralConfiguration) GetSettingsScreenTimeoutInMinutes()(
     return nil
 }
 // GetSettingsSessionTimeoutInMinutes gets the settingsSessionTimeoutInMinutes property value. Specifies the number of minutes until the session times out.
+// returns a *int32 when successful
 func (m *Windows10TeamGeneralConfiguration) GetSettingsSessionTimeoutInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("settingsSessionTimeoutInMinutes")
     if err != nil {
@@ -403,6 +421,7 @@ func (m *Windows10TeamGeneralConfiguration) GetSettingsSessionTimeoutInMinutes()
     return nil
 }
 // GetSettingsSleepTimeoutInMinutes gets the settingsSleepTimeoutInMinutes property value. Specifies the number of minutes until the Hub enters sleep mode.
+// returns a *int32 when successful
 func (m *Windows10TeamGeneralConfiguration) GetSettingsSleepTimeoutInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("settingsSleepTimeoutInMinutes")
     if err != nil {
@@ -414,6 +433,7 @@ func (m *Windows10TeamGeneralConfiguration) GetSettingsSleepTimeoutInMinutes()(*
     return nil
 }
 // GetWelcomeScreenBackgroundImageUrl gets the welcomeScreenBackgroundImageUrl property value. The welcome screen background image URL. The URL must use the HTTPS protocol and return a PNG image.
+// returns a *string when successful
 func (m *Windows10TeamGeneralConfiguration) GetWelcomeScreenBackgroundImageUrl()(*string) {
     val, err := m.GetBackingStore().Get("welcomeScreenBackgroundImageUrl")
     if err != nil {
@@ -425,6 +445,7 @@ func (m *Windows10TeamGeneralConfiguration) GetWelcomeScreenBackgroundImageUrl()
     return nil
 }
 // GetWelcomeScreenBlockAutomaticWakeUp gets the welcomeScreenBlockAutomaticWakeUp property value. Indicates whether or not to Block the welcome screen from waking up automatically when someone enters the room.
+// returns a *bool when successful
 func (m *Windows10TeamGeneralConfiguration) GetWelcomeScreenBlockAutomaticWakeUp()(*bool) {
     val, err := m.GetBackingStore().Get("welcomeScreenBlockAutomaticWakeUp")
     if err != nil {
@@ -436,6 +457,7 @@ func (m *Windows10TeamGeneralConfiguration) GetWelcomeScreenBlockAutomaticWakeUp
     return nil
 }
 // GetWelcomeScreenMeetingInformation gets the welcomeScreenMeetingInformation property value. Possible values for welcome screen meeting information.
+// returns a *WelcomeScreenMeetingInformation when successful
 func (m *Windows10TeamGeneralConfiguration) GetWelcomeScreenMeetingInformation()(*WelcomeScreenMeetingInformation) {
     val, err := m.GetBackingStore().Get("welcomeScreenMeetingInformation")
     if err != nil {
@@ -716,7 +738,6 @@ func (m *Windows10TeamGeneralConfiguration) SetWelcomeScreenMeetingInformation(v
         panic(err)
     }
 }
-// Windows10TeamGeneralConfigurationable 
 type Windows10TeamGeneralConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// SimulationReportOverview 
 type SimulationReportOverview struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSimulationReportOverview instantiates a new simulationReportOverview and sets the default values.
+// NewSimulationReportOverview instantiates a new SimulationReportOverview and sets the default values.
 func NewSimulationReportOverview()(*SimulationReportOverview) {
     m := &SimulationReportOverview{
     }
@@ -19,10 +18,12 @@ func NewSimulationReportOverview()(*SimulationReportOverview) {
     return m
 }
 // CreateSimulationReportOverviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSimulationReportOverviewFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSimulationReportOverview(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SimulationReportOverview) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *SimulationReportOverview) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *SimulationReportOverview) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SimulationReportOverview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -100,6 +103,7 @@ func (m *SimulationReportOverview) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *SimulationReportOverview) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -111,6 +115,7 @@ func (m *SimulationReportOverview) GetOdataType()(*string) {
     return nil
 }
 // GetRecommendedActions gets the recommendedActions property value. List of recommended actions for a tenant to improve its security posture based on the attack simulation and training campaign attack type.
+// returns a []RecommendedActionable when successful
 func (m *SimulationReportOverview) GetRecommendedActions()([]RecommendedActionable) {
     val, err := m.GetBackingStore().Get("recommendedActions")
     if err != nil {
@@ -122,6 +127,7 @@ func (m *SimulationReportOverview) GetRecommendedActions()([]RecommendedActionab
     return nil
 }
 // GetResolvedTargetsCount gets the resolvedTargetsCount property value. Number of valid users in the attack simulation and training campaign.
+// returns a *int32 when successful
 func (m *SimulationReportOverview) GetResolvedTargetsCount()(*int32) {
     val, err := m.GetBackingStore().Get("resolvedTargetsCount")
     if err != nil {
@@ -133,6 +139,7 @@ func (m *SimulationReportOverview) GetResolvedTargetsCount()(*int32) {
     return nil
 }
 // GetSimulationEventsContent gets the simulationEventsContent property value. Summary of simulation events in the attack simulation and training campaign.
+// returns a SimulationEventsContentable when successful
 func (m *SimulationReportOverview) GetSimulationEventsContent()(SimulationEventsContentable) {
     val, err := m.GetBackingStore().Get("simulationEventsContent")
     if err != nil {
@@ -144,6 +151,7 @@ func (m *SimulationReportOverview) GetSimulationEventsContent()(SimulationEvents
     return nil
 }
 // GetTrainingEventsContent gets the trainingEventsContent property value. Summary of assigned trainings in the attack simulation and training campaign.
+// returns a TrainingEventsContentable when successful
 func (m *SimulationReportOverview) GetTrainingEventsContent()(TrainingEventsContentable) {
     val, err := m.GetBackingStore().Get("trainingEventsContent")
     if err != nil {
@@ -246,7 +254,6 @@ func (m *SimulationReportOverview) SetTrainingEventsContent(value TrainingEvents
         panic(err)
     }
 }
-// SimulationReportOverviewable 
 type SimulationReportOverviewable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

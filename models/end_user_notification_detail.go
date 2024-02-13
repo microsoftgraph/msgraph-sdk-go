@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EndUserNotificationDetail 
 type EndUserNotificationDetail struct {
     Entity
 }
-// NewEndUserNotificationDetail instantiates a new endUserNotificationDetail and sets the default values.
+// NewEndUserNotificationDetail instantiates a new EndUserNotificationDetail and sets the default values.
 func NewEndUserNotificationDetail()(*EndUserNotificationDetail) {
     m := &EndUserNotificationDetail{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewEndUserNotificationDetail()(*EndUserNotificationDetail) {
     return m
 }
 // CreateEndUserNotificationDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEndUserNotificationDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEndUserNotificationDetail(), nil
 }
 // GetEmailContent gets the emailContent property value. Email HTML content.
+// returns a *string when successful
 func (m *EndUserNotificationDetail) GetEmailContent()(*string) {
     val, err := m.GetBackingStore().Get("emailContent")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *EndUserNotificationDetail) GetEmailContent()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EndUserNotificationDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["emailContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -96,6 +98,7 @@ func (m *EndUserNotificationDetail) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetIsDefaultLangauge gets the isDefaultLangauge property value. Indicates whether this language is default.
+// returns a *bool when successful
 func (m *EndUserNotificationDetail) GetIsDefaultLangauge()(*bool) {
     val, err := m.GetBackingStore().Get("isDefaultLangauge")
     if err != nil {
@@ -107,6 +110,7 @@ func (m *EndUserNotificationDetail) GetIsDefaultLangauge()(*bool) {
     return nil
 }
 // GetLanguage gets the language property value. Notification language.
+// returns a *string when successful
 func (m *EndUserNotificationDetail) GetLanguage()(*string) {
     val, err := m.GetBackingStore().Get("language")
     if err != nil {
@@ -118,6 +122,7 @@ func (m *EndUserNotificationDetail) GetLanguage()(*string) {
     return nil
 }
 // GetLocale gets the locale property value. Notification locale.
+// returns a *string when successful
 func (m *EndUserNotificationDetail) GetLocale()(*string) {
     val, err := m.GetBackingStore().Get("locale")
     if err != nil {
@@ -129,6 +134,7 @@ func (m *EndUserNotificationDetail) GetLocale()(*string) {
     return nil
 }
 // GetSentFrom gets the sentFrom property value. The sentFrom property
+// returns a EmailIdentityable when successful
 func (m *EndUserNotificationDetail) GetSentFrom()(EmailIdentityable) {
     val, err := m.GetBackingStore().Get("sentFrom")
     if err != nil {
@@ -140,6 +146,7 @@ func (m *EndUserNotificationDetail) GetSentFrom()(EmailIdentityable) {
     return nil
 }
 // GetSubject gets the subject property value. Mail subject.
+// returns a *string when successful
 func (m *EndUserNotificationDetail) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
     if err != nil {
@@ -236,7 +243,6 @@ func (m *EndUserNotificationDetail) SetSubject(value *string)() {
         panic(err)
     }
 }
-// EndUserNotificationDetailable 
 type EndUserNotificationDetailable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

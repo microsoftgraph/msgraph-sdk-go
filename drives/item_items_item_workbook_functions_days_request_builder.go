@@ -18,28 +18,29 @@ type ItemItemsItemWorkbookFunctionsDaysRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemItemsItemWorkbookFunctionsDaysRequestBuilderInternal instantiates a new DaysRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookFunctionsDaysRequestBuilderInternal instantiates a new ItemItemsItemWorkbookFunctionsDaysRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookFunctionsDaysRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookFunctionsDaysRequestBuilder) {
     m := &ItemItemsItemWorkbookFunctionsDaysRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions/days", pathParameters),
     }
     return m
 }
-// NewItemItemsItemWorkbookFunctionsDaysRequestBuilder instantiates a new DaysRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookFunctionsDaysRequestBuilder instantiates a new ItemItemsItemWorkbookFunctionsDaysRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookFunctionsDaysRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookFunctionsDaysRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookFunctionsDaysRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action days
+// returns a WorkbookFunctionResultable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookFunctionsDaysRequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookFunctionsDaysPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookFunctionsDaysRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookFunctionResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateWorkbookFunctionResultFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,6 +52,7 @@ func (m *ItemItemsItemWorkbookFunctionsDaysRequestBuilder) Post(ctx context.Cont
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookFunctionResultable), nil
 }
 // ToPostRequestInformation invoke action days
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookFunctionsDaysRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemWorkbookFunctionsDaysPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookFunctionsDaysRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -65,6 +67,7 @@ func (m *ItemItemsItemWorkbookFunctionsDaysRequestBuilder) ToPostRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemsItemWorkbookFunctionsDaysRequestBuilder when successful
 func (m *ItemItemsItemWorkbookFunctionsDaysRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookFunctionsDaysRequestBuilder) {
     return NewItemItemsItemWorkbookFunctionsDaysRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

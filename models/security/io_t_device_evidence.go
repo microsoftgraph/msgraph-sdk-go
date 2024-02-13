@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IoTDeviceEvidence 
 type IoTDeviceEvidence struct {
     AlertEvidence
 }
-// NewIoTDeviceEvidence instantiates a new ioTDeviceEvidence and sets the default values.
+// NewIoTDeviceEvidence instantiates a new IoTDeviceEvidence and sets the default values.
 func NewIoTDeviceEvidence()(*IoTDeviceEvidence) {
     m := &IoTDeviceEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -18,10 +17,12 @@ func NewIoTDeviceEvidence()(*IoTDeviceEvidence) {
     return m
 }
 // CreateIoTDeviceEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIoTDeviceEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIoTDeviceEvidence(), nil
 }
 // GetDeviceId gets the deviceId property value. The deviceId property
+// returns a *string when successful
 func (m *IoTDeviceEvidence) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *IoTDeviceEvidence) GetDeviceId()(*string) {
     return nil
 }
 // GetDeviceName gets the deviceName property value. The deviceName property
+// returns a *string when successful
 func (m *IoTDeviceEvidence) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *IoTDeviceEvidence) GetDeviceName()(*string) {
     return nil
 }
 // GetDevicePageLink gets the devicePageLink property value. The devicePageLink property
+// returns a *string when successful
 func (m *IoTDeviceEvidence) GetDevicePageLink()(*string) {
     val, err := m.GetBackingStore().Get("devicePageLink")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *IoTDeviceEvidence) GetDevicePageLink()(*string) {
     return nil
 }
 // GetDeviceSubType gets the deviceSubType property value. The deviceSubType property
+// returns a *string when successful
 func (m *IoTDeviceEvidence) GetDeviceSubType()(*string) {
     val, err := m.GetBackingStore().Get("deviceSubType")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *IoTDeviceEvidence) GetDeviceSubType()(*string) {
     return nil
 }
 // GetDeviceType gets the deviceType property value. The deviceType property
+// returns a *string when successful
 func (m *IoTDeviceEvidence) GetDeviceType()(*string) {
     val, err := m.GetBackingStore().Get("deviceType")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *IoTDeviceEvidence) GetDeviceType()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IoTDeviceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["deviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -354,6 +360,7 @@ func (m *IoTDeviceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetImportance gets the importance property value. The importance property
+// returns a *IoTDeviceImportanceType when successful
 func (m *IoTDeviceEvidence) GetImportance()(*IoTDeviceImportanceType) {
     val, err := m.GetBackingStore().Get("importance")
     if err != nil {
@@ -365,6 +372,7 @@ func (m *IoTDeviceEvidence) GetImportance()(*IoTDeviceImportanceType) {
     return nil
 }
 // GetIoTHub gets the ioTHub property value. The ioTHub property
+// returns a AzureResourceEvidenceable when successful
 func (m *IoTDeviceEvidence) GetIoTHub()(AzureResourceEvidenceable) {
     val, err := m.GetBackingStore().Get("ioTHub")
     if err != nil {
@@ -376,6 +384,7 @@ func (m *IoTDeviceEvidence) GetIoTHub()(AzureResourceEvidenceable) {
     return nil
 }
 // GetIoTSecurityAgentId gets the ioTSecurityAgentId property value. The ioTSecurityAgentId property
+// returns a *string when successful
 func (m *IoTDeviceEvidence) GetIoTSecurityAgentId()(*string) {
     val, err := m.GetBackingStore().Get("ioTSecurityAgentId")
     if err != nil {
@@ -387,6 +396,7 @@ func (m *IoTDeviceEvidence) GetIoTSecurityAgentId()(*string) {
     return nil
 }
 // GetIpAddress gets the ipAddress property value. The ipAddress property
+// returns a IpEvidenceable when successful
 func (m *IoTDeviceEvidence) GetIpAddress()(IpEvidenceable) {
     val, err := m.GetBackingStore().Get("ipAddress")
     if err != nil {
@@ -398,6 +408,7 @@ func (m *IoTDeviceEvidence) GetIpAddress()(IpEvidenceable) {
     return nil
 }
 // GetIsAuthorized gets the isAuthorized property value. The isAuthorized property
+// returns a *bool when successful
 func (m *IoTDeviceEvidence) GetIsAuthorized()(*bool) {
     val, err := m.GetBackingStore().Get("isAuthorized")
     if err != nil {
@@ -409,6 +420,7 @@ func (m *IoTDeviceEvidence) GetIsAuthorized()(*bool) {
     return nil
 }
 // GetIsProgramming gets the isProgramming property value. The isProgramming property
+// returns a *bool when successful
 func (m *IoTDeviceEvidence) GetIsProgramming()(*bool) {
     val, err := m.GetBackingStore().Get("isProgramming")
     if err != nil {
@@ -420,6 +432,7 @@ func (m *IoTDeviceEvidence) GetIsProgramming()(*bool) {
     return nil
 }
 // GetIsScanner gets the isScanner property value. The isScanner property
+// returns a *bool when successful
 func (m *IoTDeviceEvidence) GetIsScanner()(*bool) {
     val, err := m.GetBackingStore().Get("isScanner")
     if err != nil {
@@ -431,6 +444,7 @@ func (m *IoTDeviceEvidence) GetIsScanner()(*bool) {
     return nil
 }
 // GetMacAddress gets the macAddress property value. The macAddress property
+// returns a *string when successful
 func (m *IoTDeviceEvidence) GetMacAddress()(*string) {
     val, err := m.GetBackingStore().Get("macAddress")
     if err != nil {
@@ -442,6 +456,7 @@ func (m *IoTDeviceEvidence) GetMacAddress()(*string) {
     return nil
 }
 // GetManufacturer gets the manufacturer property value. The manufacturer property
+// returns a *string when successful
 func (m *IoTDeviceEvidence) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
     if err != nil {
@@ -453,6 +468,7 @@ func (m *IoTDeviceEvidence) GetManufacturer()(*string) {
     return nil
 }
 // GetModel gets the model property value. The model property
+// returns a *string when successful
 func (m *IoTDeviceEvidence) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
     if err != nil {
@@ -464,6 +480,7 @@ func (m *IoTDeviceEvidence) GetModel()(*string) {
     return nil
 }
 // GetNics gets the nics property value. The nics property
+// returns a NicEvidenceable when successful
 func (m *IoTDeviceEvidence) GetNics()(NicEvidenceable) {
     val, err := m.GetBackingStore().Get("nics")
     if err != nil {
@@ -475,6 +492,7 @@ func (m *IoTDeviceEvidence) GetNics()(NicEvidenceable) {
     return nil
 }
 // GetOperatingSystem gets the operatingSystem property value. The operatingSystem property
+// returns a *string when successful
 func (m *IoTDeviceEvidence) GetOperatingSystem()(*string) {
     val, err := m.GetBackingStore().Get("operatingSystem")
     if err != nil {
@@ -486,6 +504,7 @@ func (m *IoTDeviceEvidence) GetOperatingSystem()(*string) {
     return nil
 }
 // GetOwners gets the owners property value. The owners property
+// returns a []string when successful
 func (m *IoTDeviceEvidence) GetOwners()([]string) {
     val, err := m.GetBackingStore().Get("owners")
     if err != nil {
@@ -497,6 +516,7 @@ func (m *IoTDeviceEvidence) GetOwners()([]string) {
     return nil
 }
 // GetProtocols gets the protocols property value. The protocols property
+// returns a []string when successful
 func (m *IoTDeviceEvidence) GetProtocols()([]string) {
     val, err := m.GetBackingStore().Get("protocols")
     if err != nil {
@@ -508,6 +528,7 @@ func (m *IoTDeviceEvidence) GetProtocols()([]string) {
     return nil
 }
 // GetPurdueLayer gets the purdueLayer property value. The purdueLayer property
+// returns a *string when successful
 func (m *IoTDeviceEvidence) GetPurdueLayer()(*string) {
     val, err := m.GetBackingStore().Get("purdueLayer")
     if err != nil {
@@ -519,6 +540,7 @@ func (m *IoTDeviceEvidence) GetPurdueLayer()(*string) {
     return nil
 }
 // GetSensor gets the sensor property value. The sensor property
+// returns a *string when successful
 func (m *IoTDeviceEvidence) GetSensor()(*string) {
     val, err := m.GetBackingStore().Get("sensor")
     if err != nil {
@@ -530,6 +552,7 @@ func (m *IoTDeviceEvidence) GetSensor()(*string) {
     return nil
 }
 // GetSerialNumber gets the serialNumber property value. The serialNumber property
+// returns a *string when successful
 func (m *IoTDeviceEvidence) GetSerialNumber()(*string) {
     val, err := m.GetBackingStore().Get("serialNumber")
     if err != nil {
@@ -541,6 +564,7 @@ func (m *IoTDeviceEvidence) GetSerialNumber()(*string) {
     return nil
 }
 // GetSite gets the site property value. The site property
+// returns a *string when successful
 func (m *IoTDeviceEvidence) GetSite()(*string) {
     val, err := m.GetBackingStore().Get("site")
     if err != nil {
@@ -552,6 +576,7 @@ func (m *IoTDeviceEvidence) GetSite()(*string) {
     return nil
 }
 // GetSource gets the source property value. The source property
+// returns a *string when successful
 func (m *IoTDeviceEvidence) GetSource()(*string) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
@@ -563,6 +588,7 @@ func (m *IoTDeviceEvidence) GetSource()(*string) {
     return nil
 }
 // GetSourceRef gets the sourceRef property value. The sourceRef property
+// returns a UrlEvidenceable when successful
 func (m *IoTDeviceEvidence) GetSourceRef()(UrlEvidenceable) {
     val, err := m.GetBackingStore().Get("sourceRef")
     if err != nil {
@@ -574,6 +600,7 @@ func (m *IoTDeviceEvidence) GetSourceRef()(UrlEvidenceable) {
     return nil
 }
 // GetZone gets the zone property value. The zone property
+// returns a *string when successful
 func (m *IoTDeviceEvidence) GetZone()(*string) {
     val, err := m.GetBackingStore().Get("zone")
     if err != nil {
@@ -931,7 +958,6 @@ func (m *IoTDeviceEvidence) SetZone(value *string)() {
         panic(err)
     }
 }
-// IoTDeviceEvidenceable 
 type IoTDeviceEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

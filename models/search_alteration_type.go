@@ -2,7 +2,6 @@ package models
 import (
     "errors"
 )
-// 
 type SearchAlterationType int
 
 const (

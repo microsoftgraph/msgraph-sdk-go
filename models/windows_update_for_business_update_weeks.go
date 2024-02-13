@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Scheduled the update installation on the weeks of the month
@@ -8,26 +9,28 @@ type WindowsUpdateForBusinessUpdateWeeks int
 
 const (
     // Allow the user to set.
-    USERDEFINED_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS WindowsUpdateForBusinessUpdateWeeks = iota
+    USERDEFINED_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS = 1
     // Scheduled the update installation on the first week of the month
-    FIRSTWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
+    FIRSTWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS = 2
     // Scheduled the update installation on the second week of the month
-    SECONDWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
+    SECONDWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS = 4
     // Scheduled the update installation on the third week of the month
-    THIRDWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
+    THIRDWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS = 8
     // Scheduled the update installation on the fourth week of the month
-    FOURTHWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
+    FOURTHWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS = 16
     // Scheduled the update installation on every week of the month
-    EVERYWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
+    EVERYWEEK_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS = 32
     // Evolvable enum member
-    UNKNOWNFUTUREVALUE_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS
+    UNKNOWNFUTUREVALUE_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS = 64
 )
 
 func (i WindowsUpdateForBusinessUpdateWeeks) String() string {
     var values []string
-    for p := WindowsUpdateForBusinessUpdateWeeks(1); p <= UNKNOWNFUTUREVALUE_WINDOWSUPDATEFORBUSINESSUPDATEWEEKS; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"userDefined", "firstWeek", "secondWeek", "thirdWeek", "fourthWeek", "everyWeek", "unknownFutureValue"}[p])
+    options := []string{"userDefined", "firstWeek", "secondWeek", "thirdWeek", "fourthWeek", "everyWeek", "unknownFutureValue"}
+    for p := 0; p < 7; p++ {
+        mantis := WindowsUpdateForBusinessUpdateWeeks(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

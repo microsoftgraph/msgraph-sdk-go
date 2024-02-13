@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookTableSort 
 type WorkbookTableSort struct {
     Entity
 }
-// NewWorkbookTableSort instantiates a new workbookTableSort and sets the default values.
+// NewWorkbookTableSort instantiates a new WorkbookTableSort and sets the default values.
 func NewWorkbookTableSort()(*WorkbookTableSort) {
     m := &WorkbookTableSort{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewWorkbookTableSort()(*WorkbookTableSort) {
     return m
 }
 // CreateWorkbookTableSortFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookTableSortFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookTableSort(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookTableSort) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["fields"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -61,6 +62,7 @@ func (m *WorkbookTableSort) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetFields gets the fields property value. Represents the current conditions used to last sort the table. Read-only.
+// returns a []WorkbookSortFieldable when successful
 func (m *WorkbookTableSort) GetFields()([]WorkbookSortFieldable) {
     val, err := m.GetBackingStore().Get("fields")
     if err != nil {
@@ -72,6 +74,7 @@ func (m *WorkbookTableSort) GetFields()([]WorkbookSortFieldable) {
     return nil
 }
 // GetMatchCase gets the matchCase property value. Represents whether the casing impacted the last sort of the table. Read-only.
+// returns a *bool when successful
 func (m *WorkbookTableSort) GetMatchCase()(*bool) {
     val, err := m.GetBackingStore().Get("matchCase")
     if err != nil {
@@ -83,6 +86,7 @@ func (m *WorkbookTableSort) GetMatchCase()(*bool) {
     return nil
 }
 // GetMethod gets the method property value. Represents Chinese character ordering method last used to sort the table. The possible values are: PinYin, StrokeCount. Read-only.
+// returns a *string when successful
 func (m *WorkbookTableSort) GetMethod()(*string) {
     val, err := m.GetBackingStore().Get("method")
     if err != nil {
@@ -146,7 +150,6 @@ func (m *WorkbookTableSort) SetMethod(value *string)() {
         panic(err)
     }
 }
-// WorkbookTableSortable 
 type WorkbookTableSortable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EventMessageRequest 
 type EventMessageRequest struct {
     EventMessage
 }
-// NewEventMessageRequest instantiates a new eventMessageRequest and sets the default values.
+// NewEventMessageRequest instantiates a new EventMessageRequest and sets the default values.
 func NewEventMessageRequest()(*EventMessageRequest) {
     m := &EventMessageRequest{
         EventMessage: *NewEventMessage(),
@@ -18,10 +17,12 @@ func NewEventMessageRequest()(*EventMessageRequest) {
     return m
 }
 // CreateEventMessageRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEventMessageRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEventMessageRequest(), nil
 }
 // GetAllowNewTimeProposals gets the allowNewTimeProposals property value. True if the meeting organizer allows invitees to propose a new time when responding, false otherwise. Optional. Default is true.
+// returns a *bool when successful
 func (m *EventMessageRequest) GetAllowNewTimeProposals()(*bool) {
     val, err := m.GetBackingStore().Get("allowNewTimeProposals")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *EventMessageRequest) GetAllowNewTimeProposals()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EventMessageRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EventMessage.GetFieldDeserializers()
     res["allowNewTimeProposals"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -98,6 +100,7 @@ func (m *EventMessageRequest) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetMeetingRequestType gets the meetingRequestType property value. The meetingRequestType property
+// returns a *MeetingRequestType when successful
 func (m *EventMessageRequest) GetMeetingRequestType()(*MeetingRequestType) {
     val, err := m.GetBackingStore().Get("meetingRequestType")
     if err != nil {
@@ -109,6 +112,7 @@ func (m *EventMessageRequest) GetMeetingRequestType()(*MeetingRequestType) {
     return nil
 }
 // GetPreviousEndDateTime gets the previousEndDateTime property value. If the meeting update changes the meeting end time, this property specifies the previous meeting end time.
+// returns a DateTimeTimeZoneable when successful
 func (m *EventMessageRequest) GetPreviousEndDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("previousEndDateTime")
     if err != nil {
@@ -120,6 +124,7 @@ func (m *EventMessageRequest) GetPreviousEndDateTime()(DateTimeTimeZoneable) {
     return nil
 }
 // GetPreviousLocation gets the previousLocation property value. If the meeting update changes the meeting location, this property specifies the previous meeting location.
+// returns a Locationable when successful
 func (m *EventMessageRequest) GetPreviousLocation()(Locationable) {
     val, err := m.GetBackingStore().Get("previousLocation")
     if err != nil {
@@ -131,6 +136,7 @@ func (m *EventMessageRequest) GetPreviousLocation()(Locationable) {
     return nil
 }
 // GetPreviousStartDateTime gets the previousStartDateTime property value. If the meeting update changes the meeting start time, this property specifies the previous meeting start time.
+// returns a DateTimeTimeZoneable when successful
 func (m *EventMessageRequest) GetPreviousStartDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("previousStartDateTime")
     if err != nil {
@@ -142,6 +148,7 @@ func (m *EventMessageRequest) GetPreviousStartDateTime()(DateTimeTimeZoneable) {
     return nil
 }
 // GetResponseRequested gets the responseRequested property value. Set to true if the sender would like the invitee to send a response to the requested meeting.
+// returns a *bool when successful
 func (m *EventMessageRequest) GetResponseRequested()(*bool) {
     val, err := m.GetBackingStore().Get("responseRequested")
     if err != nil {
@@ -239,7 +246,6 @@ func (m *EventMessageRequest) SetResponseRequested(value *bool)() {
         panic(err)
     }
 }
-// EventMessageRequestable 
 type EventMessageRequestable interface {
     EventMessageable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

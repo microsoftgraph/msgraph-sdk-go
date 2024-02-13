@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PolicyBase 
 type PolicyBase struct {
     DirectoryObject
 }
-// NewPolicyBase instantiates a new policyBase and sets the default values.
+// NewPolicyBase instantiates a new PolicyBase and sets the default values.
 func NewPolicyBase()(*PolicyBase) {
     m := &PolicyBase{
         DirectoryObject: *NewDirectoryObject(),
@@ -18,6 +17,7 @@ func NewPolicyBase()(*PolicyBase) {
     return m
 }
 // CreatePolicyBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePolicyBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -62,6 +62,7 @@ func CreatePolicyBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewPolicyBase(), nil
 }
 // GetDescription gets the description property value. Description for this policy. Required.
+// returns a *string when successful
 func (m *PolicyBase) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -73,6 +74,7 @@ func (m *PolicyBase) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Display name for this policy. Required.
+// returns a *string when successful
 func (m *PolicyBase) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -84,6 +86,7 @@ func (m *PolicyBase) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PolicyBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -142,7 +145,6 @@ func (m *PolicyBase) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// PolicyBaseable 
 type PolicyBaseable interface {
     DirectoryObjectable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

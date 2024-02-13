@@ -8,7 +8,7 @@ import (
 type IosHomeScreenApp struct {
     IosHomeScreenItem
 }
-// NewIosHomeScreenApp instantiates a new iosHomeScreenApp and sets the default values.
+// NewIosHomeScreenApp instantiates a new IosHomeScreenApp and sets the default values.
 func NewIosHomeScreenApp()(*IosHomeScreenApp) {
     m := &IosHomeScreenApp{
         IosHomeScreenItem: *NewIosHomeScreenItem(),
@@ -18,10 +18,12 @@ func NewIosHomeScreenApp()(*IosHomeScreenApp) {
     return m
 }
 // CreateIosHomeScreenAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosHomeScreenAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosHomeScreenApp(), nil
 }
 // GetBundleID gets the bundleID property value. BundleID of the app if isWebClip is false or the URL of a web clip if isWebClip is true.
+// returns a *string when successful
 func (m *IosHomeScreenApp) GetBundleID()(*string) {
     val, err := m.GetBackingStore().Get("bundleID")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *IosHomeScreenApp) GetBundleID()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosHomeScreenApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IosHomeScreenItem.GetFieldDeserializers()
     res["bundleID"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +71,6 @@ func (m *IosHomeScreenApp) SetBundleID(value *string)() {
         panic(err)
     }
 }
-// IosHomeScreenAppable 
 type IosHomeScreenAppable interface {
     IosHomeScreenItemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

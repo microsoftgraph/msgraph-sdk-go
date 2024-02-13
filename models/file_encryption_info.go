@@ -10,7 +10,7 @@ type FileEncryptionInfo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewFileEncryptionInfo instantiates a new fileEncryptionInfo and sets the default values.
+// NewFileEncryptionInfo instantiates a new FileEncryptionInfo and sets the default values.
 func NewFileEncryptionInfo()(*FileEncryptionInfo) {
     m := &FileEncryptionInfo{
     }
@@ -19,10 +19,12 @@ func NewFileEncryptionInfo()(*FileEncryptionInfo) {
     return m
 }
 // CreateFileEncryptionInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFileEncryptionInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFileEncryptionInfo(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *FileEncryptionInfo) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *FileEncryptionInfo) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *FileEncryptionInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetEncryptionKey gets the encryptionKey property value. The key used to encrypt the file content.
+// returns a []byte when successful
 func (m *FileEncryptionInfo) GetEncryptionKey()([]byte) {
     val, err := m.GetBackingStore().Get("encryptionKey")
     if err != nil {
@@ -50,6 +54,7 @@ func (m *FileEncryptionInfo) GetEncryptionKey()([]byte) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FileEncryptionInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["encryptionKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -135,6 +140,7 @@ func (m *FileEncryptionInfo) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetFileDigest gets the fileDigest property value. The file digest prior to encryption. ProfileVersion1 requires a non-null FileDigest.
+// returns a []byte when successful
 func (m *FileEncryptionInfo) GetFileDigest()([]byte) {
     val, err := m.GetBackingStore().Get("fileDigest")
     if err != nil {
@@ -146,6 +152,7 @@ func (m *FileEncryptionInfo) GetFileDigest()([]byte) {
     return nil
 }
 // GetFileDigestAlgorithm gets the fileDigestAlgorithm property value. The file digest algorithm. ProfileVersion1 currently only supports SHA256 for the FileDigestAlgorithm.
+// returns a *string when successful
 func (m *FileEncryptionInfo) GetFileDigestAlgorithm()(*string) {
     val, err := m.GetBackingStore().Get("fileDigestAlgorithm")
     if err != nil {
@@ -157,6 +164,7 @@ func (m *FileEncryptionInfo) GetFileDigestAlgorithm()(*string) {
     return nil
 }
 // GetInitializationVector gets the initializationVector property value. The initialization vector (IV) used for the encryption algorithm. Must be 16 bytes.
+// returns a []byte when successful
 func (m *FileEncryptionInfo) GetInitializationVector()([]byte) {
     val, err := m.GetBackingStore().Get("initializationVector")
     if err != nil {
@@ -168,6 +176,7 @@ func (m *FileEncryptionInfo) GetInitializationVector()([]byte) {
     return nil
 }
 // GetMac gets the mac property value. The hash of the concatenation of the IV and encrypted file content. Must be 32 bytes.
+// returns a []byte when successful
 func (m *FileEncryptionInfo) GetMac()([]byte) {
     val, err := m.GetBackingStore().Get("mac")
     if err != nil {
@@ -179,6 +188,7 @@ func (m *FileEncryptionInfo) GetMac()([]byte) {
     return nil
 }
 // GetMacKey gets the macKey property value. The key used to compute the message authentication code of the concatenation of the IV and encrypted file content. Must be 32 bytes.
+// returns a []byte when successful
 func (m *FileEncryptionInfo) GetMacKey()([]byte) {
     val, err := m.GetBackingStore().Get("macKey")
     if err != nil {
@@ -190,6 +200,7 @@ func (m *FileEncryptionInfo) GetMacKey()([]byte) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *FileEncryptionInfo) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -201,6 +212,7 @@ func (m *FileEncryptionInfo) GetOdataType()(*string) {
     return nil
 }
 // GetProfileIdentifier gets the profileIdentifier property value. The profile identifier. Maps to the strategy used to encrypt the file. Currently, only ProfileVersion1 is supported.
+// returns a *string when successful
 func (m *FileEncryptionInfo) GetProfileIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("profileIdentifier")
     if err != nil {
@@ -336,7 +348,6 @@ func (m *FileEncryptionInfo) SetProfileIdentifier(value *string)() {
         panic(err)
     }
 }
-// FileEncryptionInfoable 
 type FileEncryptionInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

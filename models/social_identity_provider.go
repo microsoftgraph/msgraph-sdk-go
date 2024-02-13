@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SocialIdentityProvider 
 type SocialIdentityProvider struct {
     IdentityProviderBase
 }
-// NewSocialIdentityProvider instantiates a new socialIdentityProvider and sets the default values.
+// NewSocialIdentityProvider instantiates a new SocialIdentityProvider and sets the default values.
 func NewSocialIdentityProvider()(*SocialIdentityProvider) {
     m := &SocialIdentityProvider{
         IdentityProviderBase: *NewIdentityProviderBase(),
@@ -18,10 +17,12 @@ func NewSocialIdentityProvider()(*SocialIdentityProvider) {
     return m
 }
 // CreateSocialIdentityProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSocialIdentityProviderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSocialIdentityProvider(), nil
 }
 // GetClientId gets the clientId property value. The identifier for the client application obtained when registering the application with the identity provider. Required.
+// returns a *string when successful
 func (m *SocialIdentityProvider) GetClientId()(*string) {
     val, err := m.GetBackingStore().Get("clientId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *SocialIdentityProvider) GetClientId()(*string) {
     return nil
 }
 // GetClientSecret gets the clientSecret property value. The client secret for the application that is obtained when the application is registered with the identity provider. This is write-only. A read operation returns . Required.
+// returns a *string when successful
 func (m *SocialIdentityProvider) GetClientSecret()(*string) {
     val, err := m.GetBackingStore().Get("clientSecret")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *SocialIdentityProvider) GetClientSecret()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SocialIdentityProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IdentityProviderBase.GetFieldDeserializers()
     res["clientId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -79,6 +82,7 @@ func (m *SocialIdentityProvider) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetIdentityProviderType gets the identityProviderType property value. For a B2B scenario, possible values: Google, Facebook. For a B2C scenario, possible values: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat. Required.
+// returns a *string when successful
 func (m *SocialIdentityProvider) GetIdentityProviderType()(*string) {
     val, err := m.GetBackingStore().Get("identityProviderType")
     if err != nil {
@@ -136,7 +140,6 @@ func (m *SocialIdentityProvider) SetIdentityProviderType(value *string)() {
         panic(err)
     }
 }
-// SocialIdentityProviderable 
 type SocialIdentityProviderable interface {
     IdentityProviderBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

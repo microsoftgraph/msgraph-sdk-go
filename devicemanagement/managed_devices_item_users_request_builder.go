@@ -39,20 +39,22 @@ type ManagedDevicesItemUsersRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ManagedDevicesItemUsersRequestBuilderGetQueryParameters
 }
-// NewManagedDevicesItemUsersRequestBuilderInternal instantiates a new UsersRequestBuilder and sets the default values.
+// NewManagedDevicesItemUsersRequestBuilderInternal instantiates a new ManagedDevicesItemUsersRequestBuilder and sets the default values.
 func NewManagedDevicesItemUsersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDevicesItemUsersRequestBuilder) {
     m := &ManagedDevicesItemUsersRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/users{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/users{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewManagedDevicesItemUsersRequestBuilder instantiates a new UsersRequestBuilder and sets the default values.
+// NewManagedDevicesItemUsersRequestBuilder instantiates a new ManagedDevicesItemUsersRequestBuilder and sets the default values.
 func NewManagedDevicesItemUsersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDevicesItemUsersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDevicesItemUsersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get list properties and relationships of the user objects.
+// returns a UserCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-user-list?view=graph-rest-1.0
@@ -62,8 +64,7 @@ func (m *ManagedDevicesItemUsersRequestBuilder) Get(ctx context.Context, request
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateUserCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -75,6 +76,7 @@ func (m *ManagedDevicesItemUsersRequestBuilder) Get(ctx context.Context, request
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserCollectionResponseable), nil
 }
 // ToGetRequestInformation list properties and relationships of the user objects.
+// returns a *RequestInformation when successful
 func (m *ManagedDevicesItemUsersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedDevicesItemUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -88,6 +90,7 @@ func (m *ManagedDevicesItemUsersRequestBuilder) ToGetRequestInformation(ctx cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ManagedDevicesItemUsersRequestBuilder when successful
 func (m *ManagedDevicesItemUsersRequestBuilder) WithUrl(rawUrl string)(*ManagedDevicesItemUsersRequestBuilder) {
     return NewManagedDevicesItemUsersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

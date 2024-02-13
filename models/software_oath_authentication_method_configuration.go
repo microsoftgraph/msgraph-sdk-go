@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SoftwareOathAuthenticationMethodConfiguration 
 type SoftwareOathAuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
 }
-// NewSoftwareOathAuthenticationMethodConfiguration instantiates a new softwareOathAuthenticationMethodConfiguration and sets the default values.
+// NewSoftwareOathAuthenticationMethodConfiguration instantiates a new SoftwareOathAuthenticationMethodConfiguration and sets the default values.
 func NewSoftwareOathAuthenticationMethodConfiguration()(*SoftwareOathAuthenticationMethodConfiguration) {
     m := &SoftwareOathAuthenticationMethodConfiguration{
         AuthenticationMethodConfiguration: *NewAuthenticationMethodConfiguration(),
@@ -18,10 +17,12 @@ func NewSoftwareOathAuthenticationMethodConfiguration()(*SoftwareOathAuthenticat
     return m
 }
 // CreateSoftwareOathAuthenticationMethodConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSoftwareOathAuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSoftwareOathAuthenticationMethodConfiguration(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SoftwareOathAuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethodConfiguration.GetFieldDeserializers()
     res["includeTargets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -43,6 +44,7 @@ func (m *SoftwareOathAuthenticationMethodConfiguration) GetFieldDeserializers()(
     return res
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to use the authentication method. Expanded by default.
+// returns a []AuthenticationMethodTargetable when successful
 func (m *SoftwareOathAuthenticationMethodConfiguration) GetIncludeTargets()([]AuthenticationMethodTargetable) {
     val, err := m.GetBackingStore().Get("includeTargets")
     if err != nil {
@@ -80,7 +82,6 @@ func (m *SoftwareOathAuthenticationMethodConfiguration) SetIncludeTargets(value 
         panic(err)
     }
 }
-// SoftwareOathAuthenticationMethodConfigurationable 
 type SoftwareOathAuthenticationMethodConfigurationable interface {
     AuthenticationMethodConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

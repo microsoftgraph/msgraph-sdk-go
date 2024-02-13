@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// KubernetesNamespaceEvidence 
 type KubernetesNamespaceEvidence struct {
     AlertEvidence
 }
-// NewKubernetesNamespaceEvidence instantiates a new kubernetesNamespaceEvidence and sets the default values.
+// NewKubernetesNamespaceEvidence instantiates a new KubernetesNamespaceEvidence and sets the default values.
 func NewKubernetesNamespaceEvidence()(*KubernetesNamespaceEvidence) {
     m := &KubernetesNamespaceEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -18,10 +17,12 @@ func NewKubernetesNamespaceEvidence()(*KubernetesNamespaceEvidence) {
     return m
 }
 // CreateKubernetesNamespaceEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateKubernetesNamespaceEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewKubernetesNamespaceEvidence(), nil
 }
 // GetCluster gets the cluster property value. The namespace cluster.
+// returns a KubernetesClusterEvidenceable when successful
 func (m *KubernetesNamespaceEvidence) GetCluster()(KubernetesClusterEvidenceable) {
     val, err := m.GetBackingStore().Get("cluster")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *KubernetesNamespaceEvidence) GetCluster()(KubernetesClusterEvidenceable
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *KubernetesNamespaceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["cluster"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,6 +70,7 @@ func (m *KubernetesNamespaceEvidence) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetLabels gets the labels property value. The labels for the Kubernetes pod.
+// returns a Dictionaryable when successful
 func (m *KubernetesNamespaceEvidence) GetLabels()(Dictionaryable) {
     val, err := m.GetBackingStore().Get("labels")
     if err != nil {
@@ -79,6 +82,7 @@ func (m *KubernetesNamespaceEvidence) GetLabels()(Dictionaryable) {
     return nil
 }
 // GetName gets the name property value. The namespace name.
+// returns a *string when successful
 func (m *KubernetesNamespaceEvidence) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -136,7 +140,6 @@ func (m *KubernetesNamespaceEvidence) SetName(value *string)() {
         panic(err)
     }
 }
-// KubernetesNamespaceEvidenceable 
 type KubernetesNamespaceEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

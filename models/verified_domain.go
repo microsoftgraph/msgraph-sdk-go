@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// VerifiedDomain 
 type VerifiedDomain struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewVerifiedDomain instantiates a new verifiedDomain and sets the default values.
+// NewVerifiedDomain instantiates a new VerifiedDomain and sets the default values.
 func NewVerifiedDomain()(*VerifiedDomain) {
     m := &VerifiedDomain{
     }
@@ -19,10 +18,12 @@ func NewVerifiedDomain()(*VerifiedDomain) {
     return m
 }
 // CreateVerifiedDomainFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVerifiedDomainFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVerifiedDomain(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *VerifiedDomain) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *VerifiedDomain) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *VerifiedDomain) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCapabilities gets the capabilities property value. For example, Email, OfficeCommunicationsOnline.
+// returns a *string when successful
 func (m *VerifiedDomain) GetCapabilities()(*string) {
     val, err := m.GetBackingStore().Get("capabilities")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *VerifiedDomain) GetCapabilities()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VerifiedDomain) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["capabilities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -115,6 +119,7 @@ func (m *VerifiedDomain) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetIsDefault gets the isDefault property value. true if this is the default domain associated with the tenant; otherwise, false.
+// returns a *bool when successful
 func (m *VerifiedDomain) GetIsDefault()(*bool) {
     val, err := m.GetBackingStore().Get("isDefault")
     if err != nil {
@@ -126,6 +131,7 @@ func (m *VerifiedDomain) GetIsDefault()(*bool) {
     return nil
 }
 // GetIsInitial gets the isInitial property value. true if this is the initial domain associated with the tenant; otherwise, false.
+// returns a *bool when successful
 func (m *VerifiedDomain) GetIsInitial()(*bool) {
     val, err := m.GetBackingStore().Get("isInitial")
     if err != nil {
@@ -137,6 +143,7 @@ func (m *VerifiedDomain) GetIsInitial()(*bool) {
     return nil
 }
 // GetName gets the name property value. The domain name; for example, contoso.onmicrosoft.com.
+// returns a *string when successful
 func (m *VerifiedDomain) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -148,6 +155,7 @@ func (m *VerifiedDomain) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *VerifiedDomain) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -159,6 +167,7 @@ func (m *VerifiedDomain) GetOdataType()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. For example, Managed.
+// returns a *string when successful
 func (m *VerifiedDomain) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -268,7 +277,6 @@ func (m *VerifiedDomain) SetTypeEscaped(value *string)() {
         panic(err)
     }
 }
-// VerifiedDomainable 
 type VerifiedDomainable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

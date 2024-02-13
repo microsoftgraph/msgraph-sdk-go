@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TrainingReminderNotification 
 type TrainingReminderNotification struct {
     BaseEndUserNotification
 }
-// NewTrainingReminderNotification instantiates a new trainingReminderNotification and sets the default values.
+// NewTrainingReminderNotification instantiates a new TrainingReminderNotification and sets the default values.
 func NewTrainingReminderNotification()(*TrainingReminderNotification) {
     m := &TrainingReminderNotification{
         BaseEndUserNotification: *NewBaseEndUserNotification(),
@@ -18,10 +17,12 @@ func NewTrainingReminderNotification()(*TrainingReminderNotification) {
     return m
 }
 // CreateTrainingReminderNotificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTrainingReminderNotificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTrainingReminderNotification(), nil
 }
 // GetDeliveryFrequency gets the deliveryFrequency property value. Configurable frequency for the reminder email introduced during simulation creation. Possible values are: unknown, weekly, biWeekly, unknownFutureValue.
+// returns a *NotificationDeliveryFrequency when successful
 func (m *TrainingReminderNotification) GetDeliveryFrequency()(*NotificationDeliveryFrequency) {
     val, err := m.GetBackingStore().Get("deliveryFrequency")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *TrainingReminderNotification) GetDeliveryFrequency()(*NotificationDeliv
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TrainingReminderNotification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseEndUserNotification.GetFieldDeserializers()
     res["deliveryFrequency"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -69,7 +71,6 @@ func (m *TrainingReminderNotification) SetDeliveryFrequency(value *NotificationD
         panic(err)
     }
 }
-// TrainingReminderNotificationable 
 type TrainingReminderNotificationable interface {
     BaseEndUserNotificationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

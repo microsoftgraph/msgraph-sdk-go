@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationMethodModeDetail 
 type AuthenticationMethodModeDetail struct {
     Entity
 }
-// NewAuthenticationMethodModeDetail instantiates a new authenticationMethodModeDetail and sets the default values.
+// NewAuthenticationMethodModeDetail instantiates a new AuthenticationMethodModeDetail and sets the default values.
 func NewAuthenticationMethodModeDetail()(*AuthenticationMethodModeDetail) {
     m := &AuthenticationMethodModeDetail{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewAuthenticationMethodModeDetail()(*AuthenticationMethodModeDetail) {
     return m
 }
 // CreateAuthenticationMethodModeDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthenticationMethodModeDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationMethodModeDetail(), nil
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. The authenticationMethod property
+// returns a *BaseAuthenticationMethod when successful
 func (m *AuthenticationMethodModeDetail) GetAuthenticationMethod()(*BaseAuthenticationMethod) {
     val, err := m.GetBackingStore().Get("authenticationMethod")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *AuthenticationMethodModeDetail) GetAuthenticationMethod()(*BaseAuthenti
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of this mode
+// returns a *string when successful
 func (m *AuthenticationMethodModeDetail) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *AuthenticationMethodModeDetail) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationMethodModeDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["authenticationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -101,7 +104,6 @@ func (m *AuthenticationMethodModeDetail) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// AuthenticationMethodModeDetailable 
 type AuthenticationMethodModeDetailable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

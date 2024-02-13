@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Trending 
 type Trending struct {
     Entity
 }
-// NewTrending instantiates a new trending and sets the default values.
+// NewTrending instantiates a new Trending and sets the default values.
 func NewTrending()(*Trending) {
     m := &Trending{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewTrending()(*Trending) {
     return m
 }
 // CreateTrendingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTrendingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTrending(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Trending) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -76,6 +77,7 @@ func (m *Trending) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// returns a *Time when successful
 func (m *Trending) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -87,6 +89,7 @@ func (m *Trending) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetResource gets the resource property value. Used for navigating to the trending document.
+// returns a Entityable when successful
 func (m *Trending) GetResource()(Entityable) {
     val, err := m.GetBackingStore().Get("resource")
     if err != nil {
@@ -98,6 +101,7 @@ func (m *Trending) GetResource()(Entityable) {
     return nil
 }
 // GetResourceReference gets the resourceReference property value. Reference properties of the trending document, such as the url and type of the document.
+// returns a ResourceReferenceable when successful
 func (m *Trending) GetResourceReference()(ResourceReferenceable) {
     val, err := m.GetBackingStore().Get("resourceReference")
     if err != nil {
@@ -109,6 +113,7 @@ func (m *Trending) GetResourceReference()(ResourceReferenceable) {
     return nil
 }
 // GetResourceVisualization gets the resourceVisualization property value. Properties that you can use to visualize the document in your experience.
+// returns a ResourceVisualizationable when successful
 func (m *Trending) GetResourceVisualization()(ResourceVisualizationable) {
     val, err := m.GetBackingStore().Get("resourceVisualization")
     if err != nil {
@@ -120,6 +125,7 @@ func (m *Trending) GetResourceVisualization()(ResourceVisualizationable) {
     return nil
 }
 // GetWeight gets the weight property value. Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
+// returns a *float64 when successful
 func (m *Trending) GetWeight()(*float64) {
     val, err := m.GetBackingStore().Get("weight")
     if err != nil {
@@ -191,7 +197,6 @@ func (m *Trending) SetWeight(value *float64)() {
         panic(err)
     }
 }
-// Trendingable 
 type Trendingable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

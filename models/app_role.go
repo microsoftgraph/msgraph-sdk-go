@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AppRole 
 type AppRole struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAppRole instantiates a new appRole and sets the default values.
+// NewAppRole instantiates a new AppRole and sets the default values.
 func NewAppRole()(*AppRole) {
     m := &AppRole{
     }
@@ -20,10 +19,12 @@ func NewAppRole()(*AppRole) {
     return m
 }
 // CreateAppRoleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAppRoleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppRole(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AppRole) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,6 +37,7 @@ func (m *AppRole) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAllowedMemberTypes gets the allowedMemberTypes property value. Specifies whether this app role can be assigned to users and groups (by setting to ['User']), to other application's (by setting to ['Application'], or both (by setting to ['User', 'Application']). App roles supporting assignment to other applications' service principals are also known as application permissions. The 'Application' value is only supported for app roles defined on application entities.
+// returns a []string when successful
 func (m *AppRole) GetAllowedMemberTypes()([]string) {
     val, err := m.GetBackingStore().Get("allowedMemberTypes")
     if err != nil {
@@ -47,10 +49,12 @@ func (m *AppRole) GetAllowedMemberTypes()([]string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AppRole) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDescription gets the description property value. The description for the app role. This is displayed when the app role is being assigned and, if the app role functions as an application permission, during  consent experiences.
+// returns a *string when successful
 func (m *AppRole) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *AppRole) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Display name for the permission that appears in the app role assignment and consent experiences.
+// returns a *string when successful
 func (m *AppRole) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -73,6 +78,7 @@ func (m *AppRole) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AppRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allowedMemberTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -164,6 +170,7 @@ func (m *AppRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetId gets the id property value. Unique role identifier inside the appRoles collection. When creating a new app role, a new GUID identifier must be provided.
+// returns a *UUID when successful
 func (m *AppRole) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -175,6 +182,7 @@ func (m *AppRole) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e555994
     return nil
 }
 // GetIsEnabled gets the isEnabled property value. When creating or updating an app role, this must be set to true (which is the default). To delete a role, this must first be set to false.  At that point, in a subsequent call, this role may be removed.
+// returns a *bool when successful
 func (m *AppRole) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -186,6 +194,7 @@ func (m *AppRole) GetIsEnabled()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AppRole) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -197,6 +206,7 @@ func (m *AppRole) GetOdataType()(*string) {
     return nil
 }
 // GetOrigin gets the origin property value. Specifies if the app role is defined on the application object or on the servicePrincipal entity. Must not be included in any POST or PATCH requests. Read-only.
+// returns a *string when successful
 func (m *AppRole) GetOrigin()(*string) {
     val, err := m.GetBackingStore().Get("origin")
     if err != nil {
@@ -208,6 +218,7 @@ func (m *AppRole) GetOrigin()(*string) {
     return nil
 }
 // GetValue gets the value property value. Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, aren't allowed. May not begin with ..
+// returns a *string when successful
 func (m *AppRole) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -343,7 +354,6 @@ func (m *AppRole) SetValue(value *string)() {
         panic(err)
     }
 }
-// AppRoleable 
 type AppRoleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

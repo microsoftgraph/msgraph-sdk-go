@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Presence 
 type Presence struct {
     Entity
 }
-// NewPresence instantiates a new presence and sets the default values.
+// NewPresence instantiates a new Presence and sets the default values.
 func NewPresence()(*Presence) {
     m := &Presence{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewPresence()(*Presence) {
     return m
 }
 // CreatePresenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePresenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPresence(), nil
 }
 // GetActivity gets the activity property value. The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.
+// returns a *string when successful
 func (m *Presence) GetActivity()(*string) {
     val, err := m.GetBackingStore().Get("activity")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Presence) GetActivity()(*string) {
     return nil
 }
 // GetAvailability gets the availability property value. The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown
+// returns a *string when successful
 func (m *Presence) GetAvailability()(*string) {
     val, err := m.GetBackingStore().Get("availability")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *Presence) GetAvailability()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Presence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -77,6 +80,7 @@ func (m *Presence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetStatusMessage gets the statusMessage property value. The presence status message of a user.
+// returns a PresenceStatusMessageable when successful
 func (m *Presence) GetStatusMessage()(PresenceStatusMessageable) {
     val, err := m.GetBackingStore().Get("statusMessage")
     if err != nil {
@@ -134,7 +138,6 @@ func (m *Presence) SetStatusMessage(value PresenceStatusMessageable)() {
         panic(err)
     }
 }
-// Presenceable 
 type Presenceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

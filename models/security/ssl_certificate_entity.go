@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// SslCertificateEntity 
 type SslCertificateEntity struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSslCertificateEntity instantiates a new sslCertificateEntity and sets the default values.
+// NewSslCertificateEntity instantiates a new SslCertificateEntity and sets the default values.
 func NewSslCertificateEntity()(*SslCertificateEntity) {
     m := &SslCertificateEntity{
     }
@@ -20,10 +19,12 @@ func NewSslCertificateEntity()(*SslCertificateEntity) {
     return m
 }
 // CreateSslCertificateEntityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSslCertificateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSslCertificateEntity(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SslCertificateEntity) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,6 +37,7 @@ func (m *SslCertificateEntity) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAddress gets the address property value. A physical address of the entity.
+// returns a PhysicalAddressable when successful
 func (m *SslCertificateEntity) GetAddress()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PhysicalAddressable) {
     val, err := m.GetBackingStore().Get("address")
     if err != nil {
@@ -47,6 +49,7 @@ func (m *SslCertificateEntity) GetAddress()(iadcd81124412c61e647227ecfc4449d8bba
     return nil
 }
 // GetAlternateNames gets the alternateNames property value. Alternate names for this entity that are part of the certificate.
+// returns a []string when successful
 func (m *SslCertificateEntity) GetAlternateNames()([]string) {
     val, err := m.GetBackingStore().Get("alternateNames")
     if err != nil {
@@ -58,10 +61,12 @@ func (m *SslCertificateEntity) GetAlternateNames()([]string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *SslCertificateEntity) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCommonName gets the commonName property value. A common name for this entity.
+// returns a *string when successful
 func (m *SslCertificateEntity) GetCommonName()(*string) {
     val, err := m.GetBackingStore().Get("commonName")
     if err != nil {
@@ -73,6 +78,7 @@ func (m *SslCertificateEntity) GetCommonName()(*string) {
     return nil
 }
 // GetEmail gets the email property value. An email for this entity.
+// returns a *string when successful
 func (m *SslCertificateEntity) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
     if err != nil {
@@ -84,6 +90,7 @@ func (m *SslCertificateEntity) GetEmail()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SslCertificateEntity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["address"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -195,6 +202,7 @@ func (m *SslCertificateEntity) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetGivenName gets the givenName property value. If the entity is a person, this is the person's given name (first name).
+// returns a *string when successful
 func (m *SslCertificateEntity) GetGivenName()(*string) {
     val, err := m.GetBackingStore().Get("givenName")
     if err != nil {
@@ -206,6 +214,7 @@ func (m *SslCertificateEntity) GetGivenName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *SslCertificateEntity) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -217,6 +226,7 @@ func (m *SslCertificateEntity) GetOdataType()(*string) {
     return nil
 }
 // GetOrganizationName gets the organizationName property value. If the entity is an organization, this is the name of the organization.
+// returns a *string when successful
 func (m *SslCertificateEntity) GetOrganizationName()(*string) {
     val, err := m.GetBackingStore().Get("organizationName")
     if err != nil {
@@ -228,6 +238,7 @@ func (m *SslCertificateEntity) GetOrganizationName()(*string) {
     return nil
 }
 // GetOrganizationUnitName gets the organizationUnitName property value. If the entity is an organization, this communicates if a unit in the organization is named on the entity.
+// returns a *string when successful
 func (m *SslCertificateEntity) GetOrganizationUnitName()(*string) {
     val, err := m.GetBackingStore().Get("organizationUnitName")
     if err != nil {
@@ -239,6 +250,7 @@ func (m *SslCertificateEntity) GetOrganizationUnitName()(*string) {
     return nil
 }
 // GetSerialNumber gets the serialNumber property value. A serial number assigned to the entity; usually only available if the entity is the issuer.
+// returns a *string when successful
 func (m *SslCertificateEntity) GetSerialNumber()(*string) {
     val, err := m.GetBackingStore().Get("serialNumber")
     if err != nil {
@@ -250,6 +262,7 @@ func (m *SslCertificateEntity) GetSerialNumber()(*string) {
     return nil
 }
 // GetSurname gets the surname property value. If the entity is a person, this is the person's surname (last name).
+// returns a *string when successful
 func (m *SslCertificateEntity) GetSurname()(*string) {
     val, err := m.GetBackingStore().Get("surname")
     if err != nil {
@@ -411,7 +424,6 @@ func (m *SslCertificateEntity) SetSurname(value *string)() {
         panic(err)
     }
 }
-// SslCertificateEntityable 
 type SslCertificateEntityable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

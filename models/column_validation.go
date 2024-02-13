@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ColumnValidation 
 type ColumnValidation struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewColumnValidation instantiates a new columnValidation and sets the default values.
+// NewColumnValidation instantiates a new ColumnValidation and sets the default values.
 func NewColumnValidation()(*ColumnValidation) {
     m := &ColumnValidation{
     }
@@ -19,10 +18,12 @@ func NewColumnValidation()(*ColumnValidation) {
     return m
 }
 // CreateColumnValidationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateColumnValidationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewColumnValidation(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ColumnValidation) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ColumnValidation) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ColumnValidation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDefaultLanguage gets the defaultLanguage property value. Default BCP 47 language tag for the description.
+// returns a *string when successful
 func (m *ColumnValidation) GetDefaultLanguage()(*string) {
     val, err := m.GetBackingStore().Get("defaultLanguage")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *ColumnValidation) GetDefaultLanguage()(*string) {
     return nil
 }
 // GetDescriptions gets the descriptions property value. Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
+// returns a []DisplayNameLocalizationable when successful
 func (m *ColumnValidation) GetDescriptions()([]DisplayNameLocalizationable) {
     val, err := m.GetBackingStore().Get("descriptions")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *ColumnValidation) GetDescriptions()([]DisplayNameLocalizationable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ColumnValidation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["defaultLanguage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -112,6 +117,7 @@ func (m *ColumnValidation) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetFormula gets the formula property value. The formula to validate column value. For examples, see Examples of common formulas in lists.
+// returns a *string when successful
 func (m *ColumnValidation) GetFormula()(*string) {
     val, err := m.GetBackingStore().Get("formula")
     if err != nil {
@@ -123,6 +129,7 @@ func (m *ColumnValidation) GetFormula()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ColumnValidation) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -212,7 +219,6 @@ func (m *ColumnValidation) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// ColumnValidationable 
 type ColumnValidationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -8,7 +8,7 @@ import (
 type WindowsWebApp struct {
     MobileApp
 }
-// NewWindowsWebApp instantiates a new windowsWebApp and sets the default values.
+// NewWindowsWebApp instantiates a new WindowsWebApp and sets the default values.
 func NewWindowsWebApp()(*WindowsWebApp) {
     m := &WindowsWebApp{
         MobileApp: *NewMobileApp(),
@@ -18,10 +18,12 @@ func NewWindowsWebApp()(*WindowsWebApp) {
     return m
 }
 // CreateWindowsWebAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsWebAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsWebApp(), nil
 }
 // GetAppUrl gets the appUrl property value. Indicates the Windows web app URL. Example: 'https://www.contoso.com'
+// returns a *string when successful
 func (m *WindowsWebApp) GetAppUrl()(*string) {
     val, err := m.GetBackingStore().Get("appUrl")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *WindowsWebApp) GetAppUrl()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsWebApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileApp.GetFieldDeserializers()
     res["appUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +71,6 @@ func (m *WindowsWebApp) SetAppUrl(value *string)() {
         panic(err)
     }
 }
-// WindowsWebAppable 
 type WindowsWebAppable interface {
     MobileAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookRangeView 
 type WorkbookRangeView struct {
     Entity
 }
-// NewWorkbookRangeView instantiates a new workbookRangeView and sets the default values.
+// NewWorkbookRangeView instantiates a new WorkbookRangeView and sets the default values.
 func NewWorkbookRangeView()(*WorkbookRangeView) {
     m := &WorkbookRangeView{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewWorkbookRangeView()(*WorkbookRangeView) {
     return m
 }
 // CreateWorkbookRangeViewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookRangeViewFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookRangeView(), nil
 }
 // GetCellAddresses gets the cellAddresses property value. Represents the cell addresses
+// returns a Jsonable when successful
 func (m *WorkbookRangeView) GetCellAddresses()(Jsonable) {
     val, err := m.GetBackingStore().Get("cellAddresses")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *WorkbookRangeView) GetCellAddresses()(Jsonable) {
     return nil
 }
 // GetColumnCount gets the columnCount property value. Returns the number of visible columns. Read-only.
+// returns a *int32 when successful
 func (m *WorkbookRangeView) GetColumnCount()(*int32) {
     val, err := m.GetBackingStore().Get("columnCount")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *WorkbookRangeView) GetColumnCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookRangeView) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["cellAddresses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -173,6 +176,7 @@ func (m *WorkbookRangeView) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetFormulas gets the formulas property value. Represents the formula in A1-style notation.
+// returns a Jsonable when successful
 func (m *WorkbookRangeView) GetFormulas()(Jsonable) {
     val, err := m.GetBackingStore().Get("formulas")
     if err != nil {
@@ -184,6 +188,7 @@ func (m *WorkbookRangeView) GetFormulas()(Jsonable) {
     return nil
 }
 // GetFormulasLocal gets the formulasLocal property value. Represents the formula in A1-style notation, in the user's language and number-formatting locale. For example, the English '=SUM(A1, 1.5)' formula would become '=SUMME(A1; 1,5)' in German.
+// returns a Jsonable when successful
 func (m *WorkbookRangeView) GetFormulasLocal()(Jsonable) {
     val, err := m.GetBackingStore().Get("formulasLocal")
     if err != nil {
@@ -195,6 +200,7 @@ func (m *WorkbookRangeView) GetFormulasLocal()(Jsonable) {
     return nil
 }
 // GetFormulasR1C1 gets the formulasR1C1 property value. Represents the formula in R1C1-style notation.
+// returns a Jsonable when successful
 func (m *WorkbookRangeView) GetFormulasR1C1()(Jsonable) {
     val, err := m.GetBackingStore().Get("formulasR1C1")
     if err != nil {
@@ -206,6 +212,7 @@ func (m *WorkbookRangeView) GetFormulasR1C1()(Jsonable) {
     return nil
 }
 // GetIndex gets the index property value. Index of the range.
+// returns a *int32 when successful
 func (m *WorkbookRangeView) GetIndex()(*int32) {
     val, err := m.GetBackingStore().Get("index")
     if err != nil {
@@ -217,6 +224,7 @@ func (m *WorkbookRangeView) GetIndex()(*int32) {
     return nil
 }
 // GetNumberFormat gets the numberFormat property value. Represents Excel's number format code for the given cell. Read-only.
+// returns a Jsonable when successful
 func (m *WorkbookRangeView) GetNumberFormat()(Jsonable) {
     val, err := m.GetBackingStore().Get("numberFormat")
     if err != nil {
@@ -228,6 +236,7 @@ func (m *WorkbookRangeView) GetNumberFormat()(Jsonable) {
     return nil
 }
 // GetRowCount gets the rowCount property value. Returns the number of visible rows. Read-only.
+// returns a *int32 when successful
 func (m *WorkbookRangeView) GetRowCount()(*int32) {
     val, err := m.GetBackingStore().Get("rowCount")
     if err != nil {
@@ -239,6 +248,7 @@ func (m *WorkbookRangeView) GetRowCount()(*int32) {
     return nil
 }
 // GetRows gets the rows property value. Represents a collection of range views associated with the range. Read-only. Read-only.
+// returns a []WorkbookRangeViewable when successful
 func (m *WorkbookRangeView) GetRows()([]WorkbookRangeViewable) {
     val, err := m.GetBackingStore().Get("rows")
     if err != nil {
@@ -250,6 +260,7 @@ func (m *WorkbookRangeView) GetRows()([]WorkbookRangeViewable) {
     return nil
 }
 // GetText gets the text property value. Text values of the specified range. The Text value won't depend on the cell width. The # sign substitution that happens in Excel UI won't affect the text value returned by the API. Read-only.
+// returns a Jsonable when successful
 func (m *WorkbookRangeView) GetText()(Jsonable) {
     val, err := m.GetBackingStore().Get("text")
     if err != nil {
@@ -261,6 +272,7 @@ func (m *WorkbookRangeView) GetText()(Jsonable) {
     return nil
 }
 // GetValues gets the values property value. Represents the raw values of the specified range view. The data returned could be of type string, number, or a boolean. Cell that contains an error returns the error string.
+// returns a Jsonable when successful
 func (m *WorkbookRangeView) GetValues()(Jsonable) {
     val, err := m.GetBackingStore().Get("values")
     if err != nil {
@@ -272,6 +284,7 @@ func (m *WorkbookRangeView) GetValues()(Jsonable) {
     return nil
 }
 // GetValueTypes gets the valueTypes property value. Represents the type of data of each cell. Read-only. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
+// returns a Jsonable when successful
 func (m *WorkbookRangeView) GetValueTypes()(Jsonable) {
     val, err := m.GetBackingStore().Get("valueTypes")
     if err != nil {
@@ -452,7 +465,6 @@ func (m *WorkbookRangeView) SetValueTypes(value Jsonable)() {
         panic(err)
     }
 }
-// WorkbookRangeViewable 
 type WorkbookRangeViewable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

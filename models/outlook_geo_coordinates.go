@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// OutlookGeoCoordinates 
 type OutlookGeoCoordinates struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewOutlookGeoCoordinates instantiates a new outlookGeoCoordinates and sets the default values.
+// NewOutlookGeoCoordinates instantiates a new OutlookGeoCoordinates and sets the default values.
 func NewOutlookGeoCoordinates()(*OutlookGeoCoordinates) {
     m := &OutlookGeoCoordinates{
     }
@@ -19,10 +18,12 @@ func NewOutlookGeoCoordinates()(*OutlookGeoCoordinates) {
     return m
 }
 // CreateOutlookGeoCoordinatesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOutlookGeoCoordinatesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOutlookGeoCoordinates(), nil
 }
 // GetAccuracy gets the accuracy property value. The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
+// returns a *float64 when successful
 func (m *OutlookGeoCoordinates) GetAccuracy()(*float64) {
     val, err := m.GetBackingStore().Get("accuracy")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *OutlookGeoCoordinates) GetAccuracy()(*float64) {
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OutlookGeoCoordinates) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -46,6 +48,7 @@ func (m *OutlookGeoCoordinates) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAltitude gets the altitude property value. The altitude of the location.
+// returns a *float64 when successful
 func (m *OutlookGeoCoordinates) GetAltitude()(*float64) {
     val, err := m.GetBackingStore().Get("altitude")
     if err != nil {
@@ -57,6 +60,7 @@ func (m *OutlookGeoCoordinates) GetAltitude()(*float64) {
     return nil
 }
 // GetAltitudeAccuracy gets the altitudeAccuracy property value. The accuracy of the altitude.
+// returns a *float64 when successful
 func (m *OutlookGeoCoordinates) GetAltitudeAccuracy()(*float64) {
     val, err := m.GetBackingStore().Get("altitudeAccuracy")
     if err != nil {
@@ -68,10 +72,12 @@ func (m *OutlookGeoCoordinates) GetAltitudeAccuracy()(*float64) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *OutlookGeoCoordinates) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OutlookGeoCoordinates) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["accuracy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -137,6 +143,7 @@ func (m *OutlookGeoCoordinates) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetLatitude gets the latitude property value. The latitude of the location.
+// returns a *float64 when successful
 func (m *OutlookGeoCoordinates) GetLatitude()(*float64) {
     val, err := m.GetBackingStore().Get("latitude")
     if err != nil {
@@ -148,6 +155,7 @@ func (m *OutlookGeoCoordinates) GetLatitude()(*float64) {
     return nil
 }
 // GetLongitude gets the longitude property value. The longitude of the location.
+// returns a *float64 when successful
 func (m *OutlookGeoCoordinates) GetLongitude()(*float64) {
     val, err := m.GetBackingStore().Get("longitude")
     if err != nil {
@@ -159,6 +167,7 @@ func (m *OutlookGeoCoordinates) GetLongitude()(*float64) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *OutlookGeoCoordinates) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -268,7 +277,6 @@ func (m *OutlookGeoCoordinates) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// OutlookGeoCoordinatesable 
 type OutlookGeoCoordinatesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

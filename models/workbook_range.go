@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookRange 
 type WorkbookRange struct {
     Entity
 }
-// NewWorkbookRange instantiates a new workbookRange and sets the default values.
+// NewWorkbookRange instantiates a new WorkbookRange and sets the default values.
 func NewWorkbookRange()(*WorkbookRange) {
     m := &WorkbookRange{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewWorkbookRange()(*WorkbookRange) {
     return m
 }
 // CreateWorkbookRangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookRangeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookRange(), nil
 }
 // GetAddress gets the address property value. Represents the range reference in A1-style. Address value contains the Sheet reference (for example, Sheet1!A1:B4). Read-only.
+// returns a *string when successful
 func (m *WorkbookRange) GetAddress()(*string) {
     val, err := m.GetBackingStore().Get("address")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *WorkbookRange) GetAddress()(*string) {
     return nil
 }
 // GetAddressLocal gets the addressLocal property value. Represents range reference for the specified range in the language of the user. Read-only.
+// returns a *string when successful
 func (m *WorkbookRange) GetAddressLocal()(*string) {
     val, err := m.GetBackingStore().Get("addressLocal")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *WorkbookRange) GetAddressLocal()(*string) {
     return nil
 }
 // GetCellCount gets the cellCount property value. Number of cells in the range. Read-only.
+// returns a *int32 when successful
 func (m *WorkbookRange) GetCellCount()(*int32) {
     val, err := m.GetBackingStore().Get("cellCount")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *WorkbookRange) GetCellCount()(*int32) {
     return nil
 }
 // GetColumnCount gets the columnCount property value. Represents the total number of columns in the range. Read-only.
+// returns a *int32 when successful
 func (m *WorkbookRange) GetColumnCount()(*int32) {
     val, err := m.GetBackingStore().Get("columnCount")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *WorkbookRange) GetColumnCount()(*int32) {
     return nil
 }
 // GetColumnHidden gets the columnHidden property value. Represents if all columns of the current range are hidden.
+// returns a *bool when successful
 func (m *WorkbookRange) GetColumnHidden()(*bool) {
     val, err := m.GetBackingStore().Get("columnHidden")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *WorkbookRange) GetColumnHidden()(*bool) {
     return nil
 }
 // GetColumnIndex gets the columnIndex property value. Represents the column number of the first cell in the range. Zero-indexed. Read-only.
+// returns a *int32 when successful
 func (m *WorkbookRange) GetColumnIndex()(*int32) {
     val, err := m.GetBackingStore().Get("columnIndex")
     if err != nil {
@@ -86,6 +92,7 @@ func (m *WorkbookRange) GetColumnIndex()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookRange) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["address"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -291,6 +298,7 @@ func (m *WorkbookRange) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetFormat gets the format property value. Returns a format object, encapsulating the range's font, fill, borders, alignment, and other properties. Read-only.
+// returns a WorkbookRangeFormatable when successful
 func (m *WorkbookRange) GetFormat()(WorkbookRangeFormatable) {
     val, err := m.GetBackingStore().Get("format")
     if err != nil {
@@ -302,6 +310,7 @@ func (m *WorkbookRange) GetFormat()(WorkbookRangeFormatable) {
     return nil
 }
 // GetFormulas gets the formulas property value. Represents the formula in A1-style notation.
+// returns a Jsonable when successful
 func (m *WorkbookRange) GetFormulas()(Jsonable) {
     val, err := m.GetBackingStore().Get("formulas")
     if err != nil {
@@ -313,6 +322,7 @@ func (m *WorkbookRange) GetFormulas()(Jsonable) {
     return nil
 }
 // GetFormulasLocal gets the formulasLocal property value. Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English '=SUM(A1, 1.5)' formula would become '=SUMME(A1; 1,5)' in German.
+// returns a Jsonable when successful
 func (m *WorkbookRange) GetFormulasLocal()(Jsonable) {
     val, err := m.GetBackingStore().Get("formulasLocal")
     if err != nil {
@@ -324,6 +334,7 @@ func (m *WorkbookRange) GetFormulasLocal()(Jsonable) {
     return nil
 }
 // GetFormulasR1C1 gets the formulasR1C1 property value. Represents the formula in R1C1-style notation.
+// returns a Jsonable when successful
 func (m *WorkbookRange) GetFormulasR1C1()(Jsonable) {
     val, err := m.GetBackingStore().Get("formulasR1C1")
     if err != nil {
@@ -335,6 +346,7 @@ func (m *WorkbookRange) GetFormulasR1C1()(Jsonable) {
     return nil
 }
 // GetHidden gets the hidden property value. Represents if all cells of the current range are hidden. Read-only.
+// returns a *bool when successful
 func (m *WorkbookRange) GetHidden()(*bool) {
     val, err := m.GetBackingStore().Get("hidden")
     if err != nil {
@@ -346,6 +358,7 @@ func (m *WorkbookRange) GetHidden()(*bool) {
     return nil
 }
 // GetNumberFormat gets the numberFormat property value. Represents Excel's number format code for the given cell.
+// returns a Jsonable when successful
 func (m *WorkbookRange) GetNumberFormat()(Jsonable) {
     val, err := m.GetBackingStore().Get("numberFormat")
     if err != nil {
@@ -357,6 +370,7 @@ func (m *WorkbookRange) GetNumberFormat()(Jsonable) {
     return nil
 }
 // GetRowCount gets the rowCount property value. Returns the total number of rows in the range. Read-only.
+// returns a *int32 when successful
 func (m *WorkbookRange) GetRowCount()(*int32) {
     val, err := m.GetBackingStore().Get("rowCount")
     if err != nil {
@@ -368,6 +382,7 @@ func (m *WorkbookRange) GetRowCount()(*int32) {
     return nil
 }
 // GetRowHidden gets the rowHidden property value. Represents if all rows of the current range are hidden.
+// returns a *bool when successful
 func (m *WorkbookRange) GetRowHidden()(*bool) {
     val, err := m.GetBackingStore().Get("rowHidden")
     if err != nil {
@@ -379,6 +394,7 @@ func (m *WorkbookRange) GetRowHidden()(*bool) {
     return nil
 }
 // GetRowIndex gets the rowIndex property value. Returns the row number of the first cell in the range. Zero-indexed. Read-only.
+// returns a *int32 when successful
 func (m *WorkbookRange) GetRowIndex()(*int32) {
     val, err := m.GetBackingStore().Get("rowIndex")
     if err != nil {
@@ -390,6 +406,7 @@ func (m *WorkbookRange) GetRowIndex()(*int32) {
     return nil
 }
 // GetSort gets the sort property value. The worksheet containing the current range. Read-only.
+// returns a WorkbookRangeSortable when successful
 func (m *WorkbookRange) GetSort()(WorkbookRangeSortable) {
     val, err := m.GetBackingStore().Get("sort")
     if err != nil {
@@ -401,6 +418,7 @@ func (m *WorkbookRange) GetSort()(WorkbookRangeSortable) {
     return nil
 }
 // GetText gets the text property value. Text values of the specified range. The Text value doesn't depend on the cell width. The # sign substitution that happens in Excel UI doesn't affect the text value returned by the API. Read-only.
+// returns a Jsonable when successful
 func (m *WorkbookRange) GetText()(Jsonable) {
     val, err := m.GetBackingStore().Get("text")
     if err != nil {
@@ -412,6 +430,7 @@ func (m *WorkbookRange) GetText()(Jsonable) {
     return nil
 }
 // GetValues gets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contains an error returns the error string.
+// returns a Jsonable when successful
 func (m *WorkbookRange) GetValues()(Jsonable) {
     val, err := m.GetBackingStore().Get("values")
     if err != nil {
@@ -423,6 +442,7 @@ func (m *WorkbookRange) GetValues()(Jsonable) {
     return nil
 }
 // GetValueTypes gets the valueTypes property value. Represents the type of data of each cell. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error. Read-only.
+// returns a Jsonable when successful
 func (m *WorkbookRange) GetValueTypes()(Jsonable) {
     val, err := m.GetBackingStore().Get("valueTypes")
     if err != nil {
@@ -434,6 +454,7 @@ func (m *WorkbookRange) GetValueTypes()(Jsonable) {
     return nil
 }
 // GetWorksheet gets the worksheet property value. The worksheet containing the current range. Read-only.
+// returns a WorkbookWorksheetable when successful
 func (m *WorkbookRange) GetWorksheet()(WorkbookWorksheetable) {
     val, err := m.GetBackingStore().Get("worksheet")
     if err != nil {
@@ -712,7 +733,6 @@ func (m *WorkbookRange) SetWorksheet(value WorkbookWorksheetable)() {
         panic(err)
     }
 }
-// WorkbookRangeable 
 type WorkbookRangeable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

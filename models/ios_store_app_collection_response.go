@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosStoreAppCollectionResponse 
 type IosStoreAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewIosStoreAppCollectionResponse instantiates a new iosStoreAppCollectionResponse and sets the default values.
+// NewIosStoreAppCollectionResponse instantiates a new IosStoreAppCollectionResponse and sets the default values.
 func NewIosStoreAppCollectionResponse()(*IosStoreAppCollectionResponse) {
     m := &IosStoreAppCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewIosStoreAppCollectionResponse()(*IosStoreAppCollectionResponse) {
     return m
 }
 // CreateIosStoreAppCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosStoreAppCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosStoreAppCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosStoreAppCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *IosStoreAppCollectionResponse) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []IosStoreAppable when successful
 func (m *IosStoreAppCollectionResponse) GetValue()([]IosStoreAppable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *IosStoreAppCollectionResponse) SetValue(value []IosStoreAppable)() {
         panic(err)
     }
 }
-// IosStoreAppCollectionResponseable 
 type IosStoreAppCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

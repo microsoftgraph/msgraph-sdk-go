@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AlternativeSecurityId 
 type AlternativeSecurityId struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAlternativeSecurityId instantiates a new alternativeSecurityId and sets the default values.
+// NewAlternativeSecurityId instantiates a new AlternativeSecurityId and sets the default values.
 func NewAlternativeSecurityId()(*AlternativeSecurityId) {
     m := &AlternativeSecurityId{
     }
@@ -19,10 +18,12 @@ func NewAlternativeSecurityId()(*AlternativeSecurityId) {
     return m
 }
 // CreateAlternativeSecurityIdFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAlternativeSecurityIdFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAlternativeSecurityId(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AlternativeSecurityId) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *AlternativeSecurityId) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AlternativeSecurityId) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AlternativeSecurityId) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["identityProvider"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -84,6 +87,7 @@ func (m *AlternativeSecurityId) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetIdentityProvider gets the identityProvider property value. For internal use only.
+// returns a *string when successful
 func (m *AlternativeSecurityId) GetIdentityProvider()(*string) {
     val, err := m.GetBackingStore().Get("identityProvider")
     if err != nil {
@@ -95,6 +99,7 @@ func (m *AlternativeSecurityId) GetIdentityProvider()(*string) {
     return nil
 }
 // GetKey gets the key property value. For internal use only.
+// returns a []byte when successful
 func (m *AlternativeSecurityId) GetKey()([]byte) {
     val, err := m.GetBackingStore().Get("key")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *AlternativeSecurityId) GetKey()([]byte) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AlternativeSecurityId) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *AlternativeSecurityId) GetOdataType()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. For internal use only.
+// returns a *int32 when successful
 func (m *AlternativeSecurityId) GetTypeEscaped()(*int32) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -200,7 +207,6 @@ func (m *AlternativeSecurityId) SetTypeEscaped(value *int32)() {
         panic(err)
     }
 }
-// AlternativeSecurityIdable 
 type AlternativeSecurityIdable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

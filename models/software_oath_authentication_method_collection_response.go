@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SoftwareOathAuthenticationMethodCollectionResponse 
 type SoftwareOathAuthenticationMethodCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSoftwareOathAuthenticationMethodCollectionResponse instantiates a new softwareOathAuthenticationMethodCollectionResponse and sets the default values.
+// NewSoftwareOathAuthenticationMethodCollectionResponse instantiates a new SoftwareOathAuthenticationMethodCollectionResponse and sets the default values.
 func NewSoftwareOathAuthenticationMethodCollectionResponse()(*SoftwareOathAuthenticationMethodCollectionResponse) {
     m := &SoftwareOathAuthenticationMethodCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewSoftwareOathAuthenticationMethodCollectionResponse()(*SoftwareOathAuthen
     return m
 }
 // CreateSoftwareOathAuthenticationMethodCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSoftwareOathAuthenticationMethodCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSoftwareOathAuthenticationMethodCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SoftwareOathAuthenticationMethodCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *SoftwareOathAuthenticationMethodCollectionResponse) GetFieldDeserialize
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []SoftwareOathAuthenticationMethodable when successful
 func (m *SoftwareOathAuthenticationMethodCollectionResponse) GetValue()([]SoftwareOathAuthenticationMethodable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *SoftwareOathAuthenticationMethodCollectionResponse) SetValue(value []So
         panic(err)
     }
 }
-// SoftwareOathAuthenticationMethodCollectionResponseable 
 type SoftwareOathAuthenticationMethodCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

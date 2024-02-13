@@ -6,7 +6,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// BookingBusinessesItemGetStaffAvailabilityPostRequestBody 
 type BookingBusinessesItemGetStaffAvailabilityPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -20,10 +19,12 @@ func NewBookingBusinessesItemGetStaffAvailabilityPostRequestBody()(*BookingBusin
     return m
 }
 // CreateBookingBusinessesItemGetStaffAvailabilityPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBookingBusinessesItemGetStaffAvailabilityPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBookingBusinessesItemGetStaffAvailabilityPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *BookingBusinessesItemGetStaffAvailabilityPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *BookingBusinessesItemGetStaffAvailabilityPostRequestBody) GetAdditional
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *BookingBusinessesItemGetStaffAvailabilityPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetEndDateTime gets the endDateTime property value. The endDateTime property
+// returns a DateTimeTimeZoneable when successful
 func (m *BookingBusinessesItemGetStaffAvailabilityPostRequestBody) GetEndDateTime()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *BookingBusinessesItemGetStaffAvailabilityPostRequestBody) GetEndDateTim
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BookingBusinessesItemGetStaffAvailabilityPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["endDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -92,6 +96,7 @@ func (m *BookingBusinessesItemGetStaffAvailabilityPostRequestBody) GetFieldDeser
     return res
 }
 // GetStaffIds gets the staffIds property value. The staffIds property
+// returns a []string when successful
 func (m *BookingBusinessesItemGetStaffAvailabilityPostRequestBody) GetStaffIds()([]string) {
     val, err := m.GetBackingStore().Get("staffIds")
     if err != nil {
@@ -103,6 +108,7 @@ func (m *BookingBusinessesItemGetStaffAvailabilityPostRequestBody) GetStaffIds()
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. The startDateTime property
+// returns a DateTimeTimeZoneable when successful
 func (m *BookingBusinessesItemGetStaffAvailabilityPostRequestBody) GetStartDateTime()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -173,7 +179,6 @@ func (m *BookingBusinessesItemGetStaffAvailabilityPostRequestBody) SetStartDateT
         panic(err)
     }
 }
-// BookingBusinessesItemGetStaffAvailabilityPostRequestBodyable 
 type BookingBusinessesItemGetStaffAvailabilityPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

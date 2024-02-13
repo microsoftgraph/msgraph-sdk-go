@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// List 
 type List struct {
     BaseItem
 }
-// NewList instantiates a new list and sets the default values.
+// NewList instantiates a new List and sets the default values.
 func NewList()(*List) {
     m := &List{
         BaseItem: *NewBaseItem(),
@@ -18,10 +17,12 @@ func NewList()(*List) {
     return m
 }
 // CreateListFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateListFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewList(), nil
 }
 // GetColumns gets the columns property value. The collection of field definitions for this list.
+// returns a []ColumnDefinitionable when successful
 func (m *List) GetColumns()([]ColumnDefinitionable) {
     val, err := m.GetBackingStore().Get("columns")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *List) GetColumns()([]ColumnDefinitionable) {
     return nil
 }
 // GetContentTypes gets the contentTypes property value. The collection of content types present in this list.
+// returns a []ContentTypeable when successful
 func (m *List) GetContentTypes()([]ContentTypeable) {
     val, err := m.GetBackingStore().Get("contentTypes")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *List) GetContentTypes()([]ContentTypeable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The displayable title of the list.
+// returns a *string when successful
 func (m *List) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *List) GetDisplayName()(*string) {
     return nil
 }
 // GetDrive gets the drive property value. Allows access to the list as a drive resource with driveItems. Only present on document libraries.
+// returns a Driveable when successful
 func (m *List) GetDrive()(Driveable) {
     val, err := m.GetBackingStore().Get("drive")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *List) GetDrive()(Driveable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *List) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseItem.GetFieldDeserializers()
     res["columns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -201,6 +206,7 @@ func (m *List) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     return res
 }
 // GetItems gets the items property value. All items contained in the list.
+// returns a []ListItemable when successful
 func (m *List) GetItems()([]ListItemable) {
     val, err := m.GetBackingStore().Get("items")
     if err != nil {
@@ -212,6 +218,7 @@ func (m *List) GetItems()([]ListItemable) {
     return nil
 }
 // GetList gets the list property value. Contains more details about the list.
+// returns a ListInfoable when successful
 func (m *List) GetList()(ListInfoable) {
     val, err := m.GetBackingStore().Get("list")
     if err != nil {
@@ -223,6 +230,7 @@ func (m *List) GetList()(ListInfoable) {
     return nil
 }
 // GetOperations gets the operations property value. The collection of long-running operations on the list.
+// returns a []RichLongRunningOperationable when successful
 func (m *List) GetOperations()([]RichLongRunningOperationable) {
     val, err := m.GetBackingStore().Get("operations")
     if err != nil {
@@ -234,6 +242,7 @@ func (m *List) GetOperations()([]RichLongRunningOperationable) {
     return nil
 }
 // GetSharepointIds gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
+// returns a SharepointIdsable when successful
 func (m *List) GetSharepointIds()(SharepointIdsable) {
     val, err := m.GetBackingStore().Get("sharepointIds")
     if err != nil {
@@ -245,6 +254,7 @@ func (m *List) GetSharepointIds()(SharepointIdsable) {
     return nil
 }
 // GetSubscriptions gets the subscriptions property value. The set of subscriptions on the list.
+// returns a []Subscriptionable when successful
 func (m *List) GetSubscriptions()([]Subscriptionable) {
     val, err := m.GetBackingStore().Get("subscriptions")
     if err != nil {
@@ -256,6 +266,7 @@ func (m *List) GetSubscriptions()([]Subscriptionable) {
     return nil
 }
 // GetSystem gets the system property value. If present, indicates that the list is system-managed. Read-only.
+// returns a SystemFacetable when successful
 func (m *List) GetSystem()(SystemFacetable) {
     val, err := m.GetBackingStore().Get("system")
     if err != nil {
@@ -434,7 +445,6 @@ func (m *List) SetSystem(value SystemFacetable)() {
         panic(err)
     }
 }
-// Listable 
 type Listable interface {
     BaseItemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

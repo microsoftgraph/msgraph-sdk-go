@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationRubricOutcome 
 type EducationRubricOutcome struct {
     EducationOutcome
 }
-// NewEducationRubricOutcome instantiates a new educationRubricOutcome and sets the default values.
+// NewEducationRubricOutcome instantiates a new EducationRubricOutcome and sets the default values.
 func NewEducationRubricOutcome()(*EducationRubricOutcome) {
     m := &EducationRubricOutcome{
         EducationOutcome: *NewEducationOutcome(),
@@ -18,10 +17,12 @@ func NewEducationRubricOutcome()(*EducationRubricOutcome) {
     return m
 }
 // CreateEducationRubricOutcomeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationRubricOutcomeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationRubricOutcome(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationRubricOutcome) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EducationOutcome.GetFieldDeserializers()
     res["publishedRubricQualityFeedback"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -91,6 +92,7 @@ func (m *EducationRubricOutcome) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetPublishedRubricQualityFeedback gets the publishedRubricQualityFeedback property value. A copy of the rubricQualityFeedback property that is made when the grade is released to the student.
+// returns a []RubricQualityFeedbackModelable when successful
 func (m *EducationRubricOutcome) GetPublishedRubricQualityFeedback()([]RubricQualityFeedbackModelable) {
     val, err := m.GetBackingStore().Get("publishedRubricQualityFeedback")
     if err != nil {
@@ -102,6 +104,7 @@ func (m *EducationRubricOutcome) GetPublishedRubricQualityFeedback()([]RubricQua
     return nil
 }
 // GetPublishedRubricQualitySelectedLevels gets the publishedRubricQualitySelectedLevels property value. A copy of the rubricQualitySelectedLevels property that is made when the grade is released to the student.
+// returns a []RubricQualitySelectedColumnModelable when successful
 func (m *EducationRubricOutcome) GetPublishedRubricQualitySelectedLevels()([]RubricQualitySelectedColumnModelable) {
     val, err := m.GetBackingStore().Get("publishedRubricQualitySelectedLevels")
     if err != nil {
@@ -113,6 +116,7 @@ func (m *EducationRubricOutcome) GetPublishedRubricQualitySelectedLevels()([]Rub
     return nil
 }
 // GetRubricQualityFeedback gets the rubricQualityFeedback property value. A collection of specific feedback for each quality of this rubric.
+// returns a []RubricQualityFeedbackModelable when successful
 func (m *EducationRubricOutcome) GetRubricQualityFeedback()([]RubricQualityFeedbackModelable) {
     val, err := m.GetBackingStore().Get("rubricQualityFeedback")
     if err != nil {
@@ -124,6 +128,7 @@ func (m *EducationRubricOutcome) GetRubricQualityFeedback()([]RubricQualityFeedb
     return nil
 }
 // GetRubricQualitySelectedLevels gets the rubricQualitySelectedLevels property value. The level that the teacher has selected for each quality while grading this assignment.
+// returns a []RubricQualitySelectedColumnModelable when successful
 func (m *EducationRubricOutcome) GetRubricQualitySelectedLevels()([]RubricQualitySelectedColumnModelable) {
     val, err := m.GetBackingStore().Get("rubricQualitySelectedLevels")
     if err != nil {
@@ -218,7 +223,6 @@ func (m *EducationRubricOutcome) SetRubricQualitySelectedLevels(value []RubricQu
         panic(err)
     }
 }
-// EducationRubricOutcomeable 
 type EducationRubricOutcomeable interface {
     EducationOutcomeable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

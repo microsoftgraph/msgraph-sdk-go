@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ParentalControlSettings 
 type ParentalControlSettings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewParentalControlSettings instantiates a new parentalControlSettings and sets the default values.
+// NewParentalControlSettings instantiates a new ParentalControlSettings and sets the default values.
 func NewParentalControlSettings()(*ParentalControlSettings) {
     m := &ParentalControlSettings{
     }
@@ -19,10 +18,12 @@ func NewParentalControlSettings()(*ParentalControlSettings) {
     return m
 }
 // CreateParentalControlSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateParentalControlSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewParentalControlSettings(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ParentalControlSettings) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ParentalControlSettings) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ParentalControlSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCountriesBlockedForMinors gets the countriesBlockedForMinors property value. Specifies the two-letter ISO country codes. Access to the application will be blocked for minors from the countries specified in this list.
+// returns a []string when successful
 func (m *ParentalControlSettings) GetCountriesBlockedForMinors()([]string) {
     val, err := m.GetBackingStore().Get("countriesBlockedForMinors")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *ParentalControlSettings) GetCountriesBlockedForMinors()([]string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ParentalControlSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["countriesBlockedForMinors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -91,6 +95,7 @@ func (m *ParentalControlSettings) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetLegalAgeGroupRule gets the legalAgeGroupRule property value. Specifies the legal age group rule that applies to users of the app. Can be set to one of the following values: ValueDescriptionAllowDefault. Enforces the legal minimum. This means parental consent is required for minors in the European Union and Korea.RequireConsentForPrivacyServicesEnforces the user to specify date of birth to comply with COPPA rules. RequireConsentForMinorsRequires parental consent for ages below 18, regardless of country minor rules.RequireConsentForKidsRequires parental consent for ages below 14, regardless of country minor rules.BlockMinorsBlocks minors from using the app.
+// returns a *string when successful
 func (m *ParentalControlSettings) GetLegalAgeGroupRule()(*string) {
     val, err := m.GetBackingStore().Get("legalAgeGroupRule")
     if err != nil {
@@ -102,6 +107,7 @@ func (m *ParentalControlSettings) GetLegalAgeGroupRule()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ParentalControlSettings) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -172,7 +178,6 @@ func (m *ParentalControlSettings) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// ParentalControlSettingsable 
 type ParentalControlSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

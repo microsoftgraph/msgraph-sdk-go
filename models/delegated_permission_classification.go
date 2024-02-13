@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DelegatedPermissionClassification 
 type DelegatedPermissionClassification struct {
     Entity
 }
-// NewDelegatedPermissionClassification instantiates a new delegatedPermissionClassification and sets the default values.
+// NewDelegatedPermissionClassification instantiates a new DelegatedPermissionClassification and sets the default values.
 func NewDelegatedPermissionClassification()(*DelegatedPermissionClassification) {
     m := &DelegatedPermissionClassification{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewDelegatedPermissionClassification()(*DelegatedPermissionClassification) 
     return m
 }
 // CreateDelegatedPermissionClassificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDelegatedPermissionClassificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDelegatedPermissionClassification(), nil
 }
 // GetClassification gets the classification property value. The classification value being given. Possible value: low. Doesn't support $filter.
+// returns a *PermissionClassificationType when successful
 func (m *DelegatedPermissionClassification) GetClassification()(*PermissionClassificationType) {
     val, err := m.GetBackingStore().Get("classification")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *DelegatedPermissionClassification) GetClassification()(*PermissionClass
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DelegatedPermissionClassification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["classification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,6 +68,7 @@ func (m *DelegatedPermissionClassification) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetPermissionId gets the permissionId property value. The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Doesn't support $filter.
+// returns a *string when successful
 func (m *DelegatedPermissionClassification) GetPermissionId()(*string) {
     val, err := m.GetBackingStore().Get("permissionId")
     if err != nil {
@@ -77,6 +80,7 @@ func (m *DelegatedPermissionClassification) GetPermissionId()(*string) {
     return nil
 }
 // GetPermissionName gets the permissionName property value. The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Doesn't support $filter.
+// returns a *string when successful
 func (m *DelegatedPermissionClassification) GetPermissionName()(*string) {
     val, err := m.GetBackingStore().Get("permissionName")
     if err != nil {
@@ -135,7 +139,6 @@ func (m *DelegatedPermissionClassification) SetPermissionName(value *string)() {
         panic(err)
     }
 }
-// DelegatedPermissionClassificationable 
 type DelegatedPermissionClassificationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

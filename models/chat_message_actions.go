@@ -1,23 +1,25 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type ChatMessageActions int
 
 const (
-    REACTIONADDED_CHATMESSAGEACTIONS ChatMessageActions = iota
-    REACTIONREMOVED_CHATMESSAGEACTIONS
-    ACTIONUNDEFINED_CHATMESSAGEACTIONS
-    UNKNOWNFUTUREVALUE_CHATMESSAGEACTIONS
+    REACTIONADDED_CHATMESSAGEACTIONS = 1
+    REACTIONREMOVED_CHATMESSAGEACTIONS = 2
+    ACTIONUNDEFINED_CHATMESSAGEACTIONS = 4
+    UNKNOWNFUTUREVALUE_CHATMESSAGEACTIONS = 8
 )
 
 func (i ChatMessageActions) String() string {
     var values []string
-    for p := ChatMessageActions(1); p <= UNKNOWNFUTUREVALUE_CHATMESSAGEACTIONS; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"reactionAdded", "reactionRemoved", "actionUndefined", "unknownFutureValue"}[p])
+    options := []string{"reactionAdded", "reactionRemoved", "actionUndefined", "unknownFutureValue"}
+    for p := 0; p < 4; p++ {
+        mantis := ChatMessageActions(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

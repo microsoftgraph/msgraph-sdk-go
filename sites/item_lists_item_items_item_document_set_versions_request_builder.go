@@ -47,6 +47,7 @@ type ItemListsItemItemsItemDocumentSetVersionsRequestBuilderPostRequestConfigura
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByDocumentSetVersionId provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
+// returns a *ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder when successful
 func (m *ItemListsItemItemsItemDocumentSetVersionsRequestBuilder) ByDocumentSetVersionId(documentSetVersionId string)(*ItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *ItemListsItemItemsItemDocumentSetVersionsRequestBuilder) ByDocumentSetV
     }
     return NewItemListsItemItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemListsItemItemsItemDocumentSetVersionsRequestBuilderInternal instantiates a new DocumentSetVersionsRequestBuilder and sets the default values.
+// NewItemListsItemItemsItemDocumentSetVersionsRequestBuilderInternal instantiates a new ItemListsItemItemsItemDocumentSetVersionsRequestBuilder and sets the default values.
 func NewItemListsItemItemsItemDocumentSetVersionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemItemsItemDocumentSetVersionsRequestBuilder) {
     m := &ItemListsItemItemsItemDocumentSetVersionsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}/documentSetVersions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}/documentSetVersions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemListsItemItemsItemDocumentSetVersionsRequestBuilder instantiates a new DocumentSetVersionsRequestBuilder and sets the default values.
+// NewItemListsItemItemsItemDocumentSetVersionsRequestBuilder instantiates a new ItemListsItemItemsItemDocumentSetVersionsRequestBuilder and sets the default values.
 func NewItemListsItemItemsItemDocumentSetVersionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemItemsItemDocumentSetVersionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemListsItemItemsItemDocumentSetVersionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemListsItemItemsItemDocumentSetVersionsCountRequestBuilder when successful
 func (m *ItemListsItemItemsItemDocumentSetVersionsRequestBuilder) Count()(*ItemListsItemItemsItemDocumentSetVersionsCountRequestBuilder) {
     return NewItemListsItemItemsItemDocumentSetVersionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of the versions of a document set item in a list.
+// returns a DocumentSetVersionCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/listitem-list-documentsetversions?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *ItemListsItemItemsItemDocumentSetVersionsRequestBuilder) Get(ctx contex
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDocumentSetVersionCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,6 +100,8 @@ func (m *ItemListsItemItemsItemDocumentSetVersionsRequestBuilder) Get(ctx contex
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DocumentSetVersionCollectionResponseable), nil
 }
 // Post create a new version of a document set item in a list.
+// returns a DocumentSetVersionable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/listitem-post-documentsetversions?view=graph-rest-1.0
@@ -106,8 +111,7 @@ func (m *ItemListsItemItemsItemDocumentSetVersionsRequestBuilder) Post(ctx conte
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDocumentSetVersionFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -119,6 +123,7 @@ func (m *ItemListsItemItemsItemDocumentSetVersionsRequestBuilder) Post(ctx conte
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DocumentSetVersionable), nil
 }
 // ToGetRequestInformation get a list of the versions of a document set item in a list.
+// returns a *RequestInformation when successful
 func (m *ItemListsItemItemsItemDocumentSetVersionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListsItemItemsItemDocumentSetVersionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +137,9 @@ func (m *ItemListsItemItemsItemDocumentSetVersionsRequestBuilder) ToGetRequestIn
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new version of a document set item in a list.
+// returns a *RequestInformation when successful
 func (m *ItemListsItemItemsItemDocumentSetVersionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DocumentSetVersionable, requestConfiguration *ItemListsItemItemsItemDocumentSetVersionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}/documentSetVersions", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +152,7 @@ func (m *ItemListsItemItemsItemDocumentSetVersionsRequestBuilder) ToPostRequestI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemListsItemItemsItemDocumentSetVersionsRequestBuilder when successful
 func (m *ItemListsItemItemsItemDocumentSetVersionsRequestBuilder) WithUrl(rawUrl string)(*ItemListsItemItemsItemDocumentSetVersionsRequestBuilder) {
     return NewItemListsItemItemsItemDocumentSetVersionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

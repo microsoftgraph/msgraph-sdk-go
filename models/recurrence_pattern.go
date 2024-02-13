@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// RecurrencePattern 
 type RecurrencePattern struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewRecurrencePattern instantiates a new recurrencePattern and sets the default values.
+// NewRecurrencePattern instantiates a new RecurrencePattern and sets the default values.
 func NewRecurrencePattern()(*RecurrencePattern) {
     m := &RecurrencePattern{
     }
@@ -19,10 +18,12 @@ func NewRecurrencePattern()(*RecurrencePattern) {
     return m
 }
 // CreateRecurrencePatternFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRecurrencePatternFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRecurrencePattern(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RecurrencePattern) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *RecurrencePattern) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *RecurrencePattern) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDayOfMonth gets the dayOfMonth property value. The day of the month on which the event occurs. Required if type is absoluteMonthly or absoluteYearly.
+// returns a *int32 when successful
 func (m *RecurrencePattern) GetDayOfMonth()(*int32) {
     val, err := m.GetBackingStore().Get("dayOfMonth")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *RecurrencePattern) GetDayOfMonth()(*int32) {
     return nil
 }
 // GetDaysOfWeek gets the daysOfWeek property value. A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
+// returns a []DayOfWeek when successful
 func (m *RecurrencePattern) GetDaysOfWeek()([]DayOfWeek) {
     val, err := m.GetBackingStore().Get("daysOfWeek")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *RecurrencePattern) GetDaysOfWeek()([]DayOfWeek) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["dayOfMonth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -152,6 +157,7 @@ func (m *RecurrencePattern) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetFirstDayOfWeek gets the firstDayOfWeek property value. The first day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. Default is sunday. Required if type is weekly.
+// returns a *DayOfWeek when successful
 func (m *RecurrencePattern) GetFirstDayOfWeek()(*DayOfWeek) {
     val, err := m.GetBackingStore().Get("firstDayOfWeek")
     if err != nil {
@@ -163,6 +169,7 @@ func (m *RecurrencePattern) GetFirstDayOfWeek()(*DayOfWeek) {
     return nil
 }
 // GetIndex gets the index property value. Specifies on which instance of the allowed days specified in daysOfWeek the event occurs, counted from the first instance in the month. The possible values are: first, second, third, fourth, last. Default is first. Optional and used if type is relativeMonthly or relativeYearly.
+// returns a *WeekIndex when successful
 func (m *RecurrencePattern) GetIndex()(*WeekIndex) {
     val, err := m.GetBackingStore().Get("index")
     if err != nil {
@@ -174,6 +181,7 @@ func (m *RecurrencePattern) GetIndex()(*WeekIndex) {
     return nil
 }
 // GetInterval gets the interval property value. The number of units between occurrences, where units can be in days, weeks, months, or years, depending on the type. Required.
+// returns a *int32 when successful
 func (m *RecurrencePattern) GetInterval()(*int32) {
     val, err := m.GetBackingStore().Get("interval")
     if err != nil {
@@ -185,6 +193,7 @@ func (m *RecurrencePattern) GetInterval()(*int32) {
     return nil
 }
 // GetMonth gets the month property value. The month in which the event occurs.  This is a number from 1 to 12.
+// returns a *int32 when successful
 func (m *RecurrencePattern) GetMonth()(*int32) {
     val, err := m.GetBackingStore().Get("month")
     if err != nil {
@@ -196,6 +205,7 @@ func (m *RecurrencePattern) GetMonth()(*int32) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *RecurrencePattern) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -207,6 +217,7 @@ func (m *RecurrencePattern) GetOdataType()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.
+// returns a *RecurrencePatternType when successful
 func (m *RecurrencePattern) GetTypeEscaped()(*RecurrencePatternType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -345,7 +356,6 @@ func (m *RecurrencePattern) SetTypeEscaped(value *RecurrencePatternType)() {
         panic(err)
     }
 }
-// RecurrencePatternable 
 type RecurrencePatternable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

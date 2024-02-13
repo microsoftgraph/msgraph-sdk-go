@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CallTranscript 
 type CallTranscript struct {
     Entity
 }
-// NewCallTranscript instantiates a new callTranscript and sets the default values.
+// NewCallTranscript instantiates a new CallTranscript and sets the default values.
 func NewCallTranscript()(*CallTranscript) {
     m := &CallTranscript{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewCallTranscript()(*CallTranscript) {
     return m
 }
 // CreateCallTranscriptFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCallTranscriptFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCallTranscript(), nil
 }
 // GetContent gets the content property value. The content of the transcript. Read-only.
+// returns a []byte when successful
 func (m *CallTranscript) GetContent()([]byte) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *CallTranscript) GetContent()([]byte) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *CallTranscript) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *CallTranscript) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CallTranscript) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -108,6 +111,7 @@ func (m *CallTranscript) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetMeetingId gets the meetingId property value. The unique identifier of the online meeting related to this transcript. Read-only.
+// returns a *string when successful
 func (m *CallTranscript) GetMeetingId()(*string) {
     val, err := m.GetBackingStore().Get("meetingId")
     if err != nil {
@@ -119,6 +123,7 @@ func (m *CallTranscript) GetMeetingId()(*string) {
     return nil
 }
 // GetMeetingOrganizer gets the meetingOrganizer property value. The identity information of the organizer of the onlineMeeting related to this transcript. Read-only.
+// returns a IdentitySetable when successful
 func (m *CallTranscript) GetMeetingOrganizer()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("meetingOrganizer")
     if err != nil {
@@ -130,6 +135,7 @@ func (m *CallTranscript) GetMeetingOrganizer()(IdentitySetable) {
     return nil
 }
 // GetMetadataContent gets the metadataContent property value. The time-aligned metadata of the utterances in the transcript. Read-only.
+// returns a []byte when successful
 func (m *CallTranscript) GetMetadataContent()([]byte) {
     val, err := m.GetBackingStore().Get("metadataContent")
     if err != nil {
@@ -141,6 +147,7 @@ func (m *CallTranscript) GetMetadataContent()([]byte) {
     return nil
 }
 // GetTranscriptContentUrl gets the transcriptContentUrl property value. The URL that can be used to access the content of the transcript. Read-only.
+// returns a *string when successful
 func (m *CallTranscript) GetTranscriptContentUrl()(*string) {
     val, err := m.GetBackingStore().Get("transcriptContentUrl")
     if err != nil {
@@ -237,7 +244,6 @@ func (m *CallTranscript) SetTranscriptContentUrl(value *string)() {
         panic(err)
     }
 }
-// CallTranscriptable 
 type CallTranscriptable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

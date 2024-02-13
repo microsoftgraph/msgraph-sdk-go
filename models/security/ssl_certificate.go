@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SslCertificate 
 type SslCertificate struct {
     Artifact
 }
-// NewSslCertificate instantiates a new sslCertificate and sets the default values.
+// NewSslCertificate instantiates a new SslCertificate and sets the default values.
 func NewSslCertificate()(*SslCertificate) {
     m := &SslCertificate{
         Artifact: *NewArtifact(),
@@ -19,10 +18,12 @@ func NewSslCertificate()(*SslCertificate) {
     return m
 }
 // CreateSslCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSslCertificateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSslCertificate(), nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The date and time when a certificate expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *SslCertificate) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *SslCertificate) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad9
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SslCertificate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Artifact.GetFieldDeserializers()
     res["expirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -145,6 +147,7 @@ func (m *SslCertificate) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetFingerprint gets the fingerprint property value. A hash of the certificate calculated on the data and signature.
+// returns a *string when successful
 func (m *SslCertificate) GetFingerprint()(*string) {
     val, err := m.GetBackingStore().Get("fingerprint")
     if err != nil {
@@ -156,6 +159,7 @@ func (m *SslCertificate) GetFingerprint()(*string) {
     return nil
 }
 // GetFirstSeenDateTime gets the firstSeenDateTime property value. The first date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *SslCertificate) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstSeenDateTime")
     if err != nil {
@@ -167,6 +171,7 @@ func (m *SslCertificate) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetIssueDateTime gets the issueDateTime property value. The date and time when a certificate was issued. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *SslCertificate) GetIssueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("issueDateTime")
     if err != nil {
@@ -178,6 +183,7 @@ func (m *SslCertificate) GetIssueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     return nil
 }
 // GetIssuer gets the issuer property value. The entity that grants this certificate.
+// returns a SslCertificateEntityable when successful
 func (m *SslCertificate) GetIssuer()(SslCertificateEntityable) {
     val, err := m.GetBackingStore().Get("issuer")
     if err != nil {
@@ -189,6 +195,7 @@ func (m *SslCertificate) GetIssuer()(SslCertificateEntityable) {
     return nil
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. The most recent date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *SslCertificate) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSeenDateTime")
     if err != nil {
@@ -200,6 +207,7 @@ func (m *SslCertificate) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetRelatedHosts gets the relatedHosts property value. The hosts related with this sslCertificate.
+// returns a []Hostable when successful
 func (m *SslCertificate) GetRelatedHosts()([]Hostable) {
     val, err := m.GetBackingStore().Get("relatedHosts")
     if err != nil {
@@ -211,6 +219,7 @@ func (m *SslCertificate) GetRelatedHosts()([]Hostable) {
     return nil
 }
 // GetSerialNumber gets the serialNumber property value. The serial number associated with an SSL certificate.
+// returns a *string when successful
 func (m *SslCertificate) GetSerialNumber()(*string) {
     val, err := m.GetBackingStore().Get("serialNumber")
     if err != nil {
@@ -222,6 +231,7 @@ func (m *SslCertificate) GetSerialNumber()(*string) {
     return nil
 }
 // GetSha1 gets the sha1 property value. A SHA-1 hash of the certificate. Note: This is not the signature.
+// returns a *string when successful
 func (m *SslCertificate) GetSha1()(*string) {
     val, err := m.GetBackingStore().Get("sha1")
     if err != nil {
@@ -233,6 +243,7 @@ func (m *SslCertificate) GetSha1()(*string) {
     return nil
 }
 // GetSubject gets the subject property value. The person, site, machine, and so on, this certificate is for.
+// returns a SslCertificateEntityable when successful
 func (m *SslCertificate) GetSubject()(SslCertificateEntityable) {
     val, err := m.GetBackingStore().Get("subject")
     if err != nil {
@@ -387,7 +398,6 @@ func (m *SslCertificate) SetSubject(value SslCertificateEntityable)() {
         panic(err)
     }
 }
-// SslCertificateable 
 type SslCertificateable interface {
     Artifactable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

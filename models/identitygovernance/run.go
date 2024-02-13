@@ -6,11 +6,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Run 
 type Run struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewRun instantiates a new run and sets the default values.
+// NewRun instantiates a new Run and sets the default values.
 func NewRun()(*Run) {
     m := &Run{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -18,10 +17,12 @@ func NewRun()(*Run) {
     return m
 }
 // CreateRunFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRunFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRun(), nil
 }
 // GetCompletedDateTime gets the completedDateTime property value. The date time that the run completed. Value is null if the workflow hasn't completed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
+// returns a *Time when successful
 func (m *Run) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("completedDateTime")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *Run) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a1
     return nil
 }
 // GetFailedTasksCount gets the failedTasksCount property value. The number of tasks that failed in the run execution.
+// returns a *int32 when successful
 func (m *Run) GetFailedTasksCount()(*int32) {
     val, err := m.GetBackingStore().Get("failedTasksCount")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *Run) GetFailedTasksCount()(*int32) {
     return nil
 }
 // GetFailedUsersCount gets the failedUsersCount property value. The number of users that failed in the run execution.
+// returns a *int32 when successful
 func (m *Run) GetFailedUsersCount()(*int32) {
     val, err := m.GetBackingStore().Get("failedUsersCount")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *Run) GetFailedUsersCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Run) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["completedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -212,6 +216,7 @@ func (m *Run) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
     return res
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The datetime that the run was last updated.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
+// returns a *Time when successful
 func (m *Run) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
     if err != nil {
@@ -223,6 +228,7 @@ func (m *Run) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077
     return nil
 }
 // GetProcessingStatus gets the processingStatus property value. The processingStatus property
+// returns a *LifecycleWorkflowProcessingStatus when successful
 func (m *Run) GetProcessingStatus()(*LifecycleWorkflowProcessingStatus) {
     val, err := m.GetBackingStore().Get("processingStatus")
     if err != nil {
@@ -234,6 +240,7 @@ func (m *Run) GetProcessingStatus()(*LifecycleWorkflowProcessingStatus) {
     return nil
 }
 // GetScheduledDateTime gets the scheduledDateTime property value. The date time that the run is scheduled to be executed for a workflow.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
+// returns a *Time when successful
 func (m *Run) GetScheduledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("scheduledDateTime")
     if err != nil {
@@ -245,6 +252,7 @@ func (m *Run) GetScheduledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a1
     return nil
 }
 // GetStartedDateTime gets the startedDateTime property value. The date time that the run execution started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
+// returns a *Time when successful
 func (m *Run) GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startedDateTime")
     if err != nil {
@@ -256,6 +264,7 @@ func (m *Run) GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a163
     return nil
 }
 // GetSuccessfulUsersCount gets the successfulUsersCount property value. The number of successfully completed users in the run.
+// returns a *int32 when successful
 func (m *Run) GetSuccessfulUsersCount()(*int32) {
     val, err := m.GetBackingStore().Get("successfulUsersCount")
     if err != nil {
@@ -267,6 +276,7 @@ func (m *Run) GetSuccessfulUsersCount()(*int32) {
     return nil
 }
 // GetTaskProcessingResults gets the taskProcessingResults property value. The related taskProcessingResults.
+// returns a []TaskProcessingResultable when successful
 func (m *Run) GetTaskProcessingResults()([]TaskProcessingResultable) {
     val, err := m.GetBackingStore().Get("taskProcessingResults")
     if err != nil {
@@ -278,6 +288,7 @@ func (m *Run) GetTaskProcessingResults()([]TaskProcessingResultable) {
     return nil
 }
 // GetTotalTasksCount gets the totalTasksCount property value. The totalTasksCount property
+// returns a *int32 when successful
 func (m *Run) GetTotalTasksCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalTasksCount")
     if err != nil {
@@ -289,6 +300,7 @@ func (m *Run) GetTotalTasksCount()(*int32) {
     return nil
 }
 // GetTotalUnprocessedTasksCount gets the totalUnprocessedTasksCount property value. The total number of unprocessed tasks in the run execution.
+// returns a *int32 when successful
 func (m *Run) GetTotalUnprocessedTasksCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalUnprocessedTasksCount")
     if err != nil {
@@ -300,6 +312,7 @@ func (m *Run) GetTotalUnprocessedTasksCount()(*int32) {
     return nil
 }
 // GetTotalUsersCount gets the totalUsersCount property value. The total number of users in the workflow execution.
+// returns a *int32 when successful
 func (m *Run) GetTotalUsersCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalUsersCount")
     if err != nil {
@@ -311,6 +324,7 @@ func (m *Run) GetTotalUsersCount()(*int32) {
     return nil
 }
 // GetUserProcessingResults gets the userProcessingResults property value. The associated individual user execution.
+// returns a []UserProcessingResultable when successful
 func (m *Run) GetUserProcessingResults()([]UserProcessingResultable) {
     val, err := m.GetBackingStore().Get("userProcessingResults")
     if err != nil {
@@ -322,6 +336,7 @@ func (m *Run) GetUserProcessingResults()([]UserProcessingResultable) {
     return nil
 }
 // GetWorkflowExecutionType gets the workflowExecutionType property value. The workflowExecutionType property
+// returns a *WorkflowExecutionType when successful
 func (m *Run) GetWorkflowExecutionType()(*WorkflowExecutionType) {
     val, err := m.GetBackingStore().Get("workflowExecutionType")
     if err != nil {
@@ -536,7 +551,6 @@ func (m *Run) SetWorkflowExecutionType(value *WorkflowExecutionType)() {
         panic(err)
     }
 }
-// Runable 
 type Runable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

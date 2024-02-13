@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// MessageSecurityState 
 type MessageSecurityState struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewMessageSecurityState instantiates a new messageSecurityState and sets the default values.
+// NewMessageSecurityState instantiates a new MessageSecurityState and sets the default values.
 func NewMessageSecurityState()(*MessageSecurityState) {
     m := &MessageSecurityState{
     }
@@ -20,10 +19,12 @@ func NewMessageSecurityState()(*MessageSecurityState) {
     return m
 }
 // CreateMessageSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMessageSecurityStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMessageSecurityState(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *MessageSecurityState) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *MessageSecurityState) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *MessageSecurityState) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetConnectingIP gets the connectingIP property value. The connectingIP property
+// returns a *string when successful
 func (m *MessageSecurityState) GetConnectingIP()(*string) {
     val, err := m.GetBackingStore().Get("connectingIP")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *MessageSecurityState) GetConnectingIP()(*string) {
     return nil
 }
 // GetDeliveryAction gets the deliveryAction property value. The deliveryAction property
+// returns a *string when successful
 func (m *MessageSecurityState) GetDeliveryAction()(*string) {
     val, err := m.GetBackingStore().Get("deliveryAction")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *MessageSecurityState) GetDeliveryAction()(*string) {
     return nil
 }
 // GetDeliveryLocation gets the deliveryLocation property value. The deliveryLocation property
+// returns a *string when successful
 func (m *MessageSecurityState) GetDeliveryLocation()(*string) {
     val, err := m.GetBackingStore().Get("deliveryLocation")
     if err != nil {
@@ -73,6 +78,7 @@ func (m *MessageSecurityState) GetDeliveryLocation()(*string) {
     return nil
 }
 // GetDirectionality gets the directionality property value. The directionality property
+// returns a *string when successful
 func (m *MessageSecurityState) GetDirectionality()(*string) {
     val, err := m.GetBackingStore().Get("directionality")
     if err != nil {
@@ -84,6 +90,7 @@ func (m *MessageSecurityState) GetDirectionality()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MessageSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["connectingIP"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -189,6 +196,7 @@ func (m *MessageSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetInternetMessageId gets the internetMessageId property value. The internetMessageId property
+// returns a *string when successful
 func (m *MessageSecurityState) GetInternetMessageId()(*string) {
     val, err := m.GetBackingStore().Get("internetMessageId")
     if err != nil {
@@ -200,6 +208,7 @@ func (m *MessageSecurityState) GetInternetMessageId()(*string) {
     return nil
 }
 // GetMessageFingerprint gets the messageFingerprint property value. The messageFingerprint property
+// returns a *string when successful
 func (m *MessageSecurityState) GetMessageFingerprint()(*string) {
     val, err := m.GetBackingStore().Get("messageFingerprint")
     if err != nil {
@@ -211,6 +220,7 @@ func (m *MessageSecurityState) GetMessageFingerprint()(*string) {
     return nil
 }
 // GetMessageReceivedDateTime gets the messageReceivedDateTime property value. The messageReceivedDateTime property
+// returns a *Time when successful
 func (m *MessageSecurityState) GetMessageReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("messageReceivedDateTime")
     if err != nil {
@@ -222,6 +232,7 @@ func (m *MessageSecurityState) GetMessageReceivedDateTime()(*i336074805fc853987a
     return nil
 }
 // GetMessageSubject gets the messageSubject property value. The messageSubject property
+// returns a *string when successful
 func (m *MessageSecurityState) GetMessageSubject()(*string) {
     val, err := m.GetBackingStore().Get("messageSubject")
     if err != nil {
@@ -233,6 +244,7 @@ func (m *MessageSecurityState) GetMessageSubject()(*string) {
     return nil
 }
 // GetNetworkMessageId gets the networkMessageId property value. The networkMessageId property
+// returns a *string when successful
 func (m *MessageSecurityState) GetNetworkMessageId()(*string) {
     val, err := m.GetBackingStore().Get("networkMessageId")
     if err != nil {
@@ -244,6 +256,7 @@ func (m *MessageSecurityState) GetNetworkMessageId()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *MessageSecurityState) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -405,7 +418,6 @@ func (m *MessageSecurityState) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// MessageSecurityStateable 
 type MessageSecurityStateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

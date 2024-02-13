@@ -17,21 +17,23 @@ type ItemRemoveGroupRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemRemoveGroupRequestBuilderInternal instantiates a new RemoveGroupRequestBuilder and sets the default values.
+// NewItemRemoveGroupRequestBuilderInternal instantiates a new ItemRemoveGroupRequestBuilder and sets the default values.
 func NewItemRemoveGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRemoveGroupRequestBuilder) {
     m := &ItemRemoveGroupRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groupLifecyclePolicies/{groupLifecyclePolicy%2Did}/removeGroup", pathParameters),
     }
     return m
 }
-// NewItemRemoveGroupRequestBuilder instantiates a new RemoveGroupRequestBuilder and sets the default values.
+// NewItemRemoveGroupRequestBuilder instantiates a new ItemRemoveGroupRequestBuilder and sets the default values.
 func NewItemRemoveGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRemoveGroupRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemRemoveGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post removes a group from a lifecycle policy.
-// Deprecated: This method is obsolete. Use PostAsRemoveGroupPostResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ItemRemoveGroupResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-removegroup?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *ItemRemoveGroupRequestBuilder) Post(ctx context.Context, body ItemRemov
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemRemoveGroupResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,8 @@ func (m *ItemRemoveGroupRequestBuilder) Post(ctx context.Context, body ItemRemov
     return res.(ItemRemoveGroupResponseable), nil
 }
 // PostAsRemoveGroupPostResponse removes a group from a lifecycle policy.
+// returns a ItemRemoveGroupPostResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-removegroup?view=graph-rest-1.0
@@ -63,8 +66,7 @@ func (m *ItemRemoveGroupRequestBuilder) PostAsRemoveGroupPostResponse(ctx contex
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemRemoveGroupPostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -76,6 +78,7 @@ func (m *ItemRemoveGroupRequestBuilder) PostAsRemoveGroupPostResponse(ctx contex
     return res.(ItemRemoveGroupPostResponseable), nil
 }
 // ToPostRequestInformation removes a group from a lifecycle policy.
+// returns a *RequestInformation when successful
 func (m *ItemRemoveGroupRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemRemoveGroupPostRequestBodyable, requestConfiguration *ItemRemoveGroupRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -90,6 +93,7 @@ func (m *ItemRemoveGroupRequestBuilder) ToPostRequestInformation(ctx context.Con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemRemoveGroupRequestBuilder when successful
 func (m *ItemRemoveGroupRequestBuilder) WithUrl(rawUrl string)(*ItemRemoveGroupRequestBuilder) {
     return NewItemRemoveGroupRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

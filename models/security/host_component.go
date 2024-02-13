@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// HostComponent 
 type HostComponent struct {
     Artifact
 }
-// NewHostComponent instantiates a new hostComponent and sets the default values.
+// NewHostComponent instantiates a new HostComponent and sets the default values.
 func NewHostComponent()(*HostComponent) {
     m := &HostComponent{
         Artifact: *NewArtifact(),
@@ -19,10 +18,12 @@ func NewHostComponent()(*HostComponent) {
     return m
 }
 // CreateHostComponentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateHostComponentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHostComponent(), nil
 }
 // GetCategory gets the category property value. The type of component that was detected (for example, Operating System, Framework, Remote Access, or Server).
+// returns a *string when successful
 func (m *HostComponent) GetCategory()(*string) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *HostComponent) GetCategory()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *HostComponent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Artifact.GetFieldDeserializers()
     res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -99,6 +101,7 @@ func (m *HostComponent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetFirstSeenDateTime gets the firstSeenDateTime property value. The first date and time when Microsoft Defender Threat Intelligence observed this web component. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *HostComponent) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstSeenDateTime")
     if err != nil {
@@ -110,6 +113,7 @@ func (m *HostComponent) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetHost gets the host property value. The host property
+// returns a Hostable when successful
 func (m *HostComponent) GetHost()(Hostable) {
     val, err := m.GetBackingStore().Get("host")
     if err != nil {
@@ -121,6 +125,7 @@ func (m *HostComponent) GetHost()(Hostable) {
     return nil
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. The most recent date and time when Microsoft Defender Threat Intelligence observed this web component. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *HostComponent) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSeenDateTime")
     if err != nil {
@@ -132,6 +137,7 @@ func (m *HostComponent) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetName gets the name property value. A name running on the artifact, for example, Microsoft IIS.
+// returns a *string when successful
 func (m *HostComponent) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -143,6 +149,7 @@ func (m *HostComponent) GetName()(*string) {
     return nil
 }
 // GetVersion gets the version property value. The component version running on the artifact, for example, v8.5. This shouldn't be assumed to be strictly numerical.
+// returns a *string when successful
 func (m *HostComponent) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -239,7 +246,6 @@ func (m *HostComponent) SetVersion(value *string)() {
         panic(err)
     }
 }
-// HostComponentable 
 type HostComponentable interface {
     Artifactable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RiskyServicePrincipal 
 type RiskyServicePrincipal struct {
     Entity
 }
-// NewRiskyServicePrincipal instantiates a new riskyServicePrincipal and sets the default values.
+// NewRiskyServicePrincipal instantiates a new RiskyServicePrincipal and sets the default values.
 func NewRiskyServicePrincipal()(*RiskyServicePrincipal) {
     m := &RiskyServicePrincipal{
         Entity: *NewEntity(),
@@ -17,6 +16,7 @@ func NewRiskyServicePrincipal()(*RiskyServicePrincipal) {
     return m
 }
 // CreateRiskyServicePrincipalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRiskyServicePrincipalFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -39,6 +39,7 @@ func CreateRiskyServicePrincipalFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewRiskyServicePrincipal(), nil
 }
 // GetAppId gets the appId property value. The globally unique identifier for the associated application (its appId property), if any.
+// returns a *string when successful
 func (m *RiskyServicePrincipal) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -50,6 +51,7 @@ func (m *RiskyServicePrincipal) GetAppId()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the service principal.
+// returns a *string when successful
 func (m *RiskyServicePrincipal) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -61,6 +63,7 @@ func (m *RiskyServicePrincipal) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RiskyServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -172,6 +175,7 @@ func (m *RiskyServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetHistory gets the history property value. Represents the risk history of Microsoft Entra service principals.
+// returns a []RiskyServicePrincipalHistoryItemable when successful
 func (m *RiskyServicePrincipal) GetHistory()([]RiskyServicePrincipalHistoryItemable) {
     val, err := m.GetBackingStore().Get("history")
     if err != nil {
@@ -183,6 +187,7 @@ func (m *RiskyServicePrincipal) GetHistory()([]RiskyServicePrincipalHistoryItema
     return nil
 }
 // GetIsEnabled gets the isEnabled property value. true if the service principal account is enabled; otherwise, false.
+// returns a *bool when successful
 func (m *RiskyServicePrincipal) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -194,6 +199,7 @@ func (m *RiskyServicePrincipal) GetIsEnabled()(*bool) {
     return nil
 }
 // GetIsProcessing gets the isProcessing property value. Indicates whether Microsoft Entra ID is currently processing the service principal's risky state.
+// returns a *bool when successful
 func (m *RiskyServicePrincipal) GetIsProcessing()(*bool) {
     val, err := m.GetBackingStore().Get("isProcessing")
     if err != nil {
@@ -205,6 +211,7 @@ func (m *RiskyServicePrincipal) GetIsProcessing()(*bool) {
     return nil
 }
 // GetRiskDetail gets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden,  unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
+// returns a *RiskDetail when successful
 func (m *RiskyServicePrincipal) GetRiskDetail()(*RiskDetail) {
     val, err := m.GetBackingStore().Get("riskDetail")
     if err != nil {
@@ -216,6 +223,7 @@ func (m *RiskyServicePrincipal) GetRiskDetail()(*RiskDetail) {
     return nil
 }
 // GetRiskLastUpdatedDateTime gets the riskLastUpdatedDateTime property value. The date and time that the risk state was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z. Supports $filter (eq).
+// returns a *Time when successful
 func (m *RiskyServicePrincipal) GetRiskLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("riskLastUpdatedDateTime")
     if err != nil {
@@ -227,6 +235,7 @@ func (m *RiskyServicePrincipal) GetRiskLastUpdatedDateTime()(*i336074805fc853987
     return nil
 }
 // GetRiskLevel gets the riskLevel property value. Level of the detected risky workload identity. The possible values are: low, medium, high, hidden, none, unknownFutureValue. Supports $filter (eq).
+// returns a *RiskLevel when successful
 func (m *RiskyServicePrincipal) GetRiskLevel()(*RiskLevel) {
     val, err := m.GetBackingStore().Get("riskLevel")
     if err != nil {
@@ -238,6 +247,7 @@ func (m *RiskyServicePrincipal) GetRiskLevel()(*RiskLevel) {
     return nil
 }
 // GetRiskState gets the riskState property value. State of the service principal's risk. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
+// returns a *RiskState when successful
 func (m *RiskyServicePrincipal) GetRiskState()(*RiskState) {
     val, err := m.GetBackingStore().Get("riskState")
     if err != nil {
@@ -249,6 +259,7 @@ func (m *RiskyServicePrincipal) GetRiskState()(*RiskState) {
     return nil
 }
 // GetServicePrincipalType gets the servicePrincipalType property value. Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Microsoft Entra ID internally and is inherited from servicePrincipal.
+// returns a *string when successful
 func (m *RiskyServicePrincipal) GetServicePrincipalType()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalType")
     if err != nil {
@@ -406,7 +417,6 @@ func (m *RiskyServicePrincipal) SetServicePrincipalType(value *string)() {
         panic(err)
     }
 }
-// RiskyServicePrincipalable 
 type RiskyServicePrincipalable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

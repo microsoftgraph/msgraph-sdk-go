@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SubjectRightsRequestCollectionResponse 
 type SubjectRightsRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSubjectRightsRequestCollectionResponse instantiates a new subjectRightsRequestCollectionResponse and sets the default values.
+// NewSubjectRightsRequestCollectionResponse instantiates a new SubjectRightsRequestCollectionResponse and sets the default values.
 func NewSubjectRightsRequestCollectionResponse()(*SubjectRightsRequestCollectionResponse) {
     m := &SubjectRightsRequestCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewSubjectRightsRequestCollectionResponse()(*SubjectRightsRequestCollection
     return m
 }
 // CreateSubjectRightsRequestCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSubjectRightsRequestCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSubjectRightsRequestCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SubjectRightsRequestCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *SubjectRightsRequestCollectionResponse) GetFieldDeserializers()(map[str
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []SubjectRightsRequestable when successful
 func (m *SubjectRightsRequestCollectionResponse) GetValue()([]SubjectRightsRequestable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *SubjectRightsRequestCollectionResponse) SetValue(value []SubjectRightsR
         panic(err)
     }
 }
-// SubjectRightsRequestCollectionResponseable 
 type SubjectRightsRequestCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

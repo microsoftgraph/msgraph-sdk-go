@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrincipalResourceMembershipsScope 
 type PrincipalResourceMembershipsScope struct {
     AccessReviewScope
 }
-// NewPrincipalResourceMembershipsScope instantiates a new principalResourceMembershipsScope and sets the default values.
+// NewPrincipalResourceMembershipsScope instantiates a new PrincipalResourceMembershipsScope and sets the default values.
 func NewPrincipalResourceMembershipsScope()(*PrincipalResourceMembershipsScope) {
     m := &PrincipalResourceMembershipsScope{
         AccessReviewScope: *NewAccessReviewScope(),
@@ -18,10 +17,12 @@ func NewPrincipalResourceMembershipsScope()(*PrincipalResourceMembershipsScope) 
     return m
 }
 // CreatePrincipalResourceMembershipsScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrincipalResourceMembershipsScopeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrincipalResourceMembershipsScope(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrincipalResourceMembershipsScope) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AccessReviewScope.GetFieldDeserializers()
     res["principalScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -59,6 +60,7 @@ func (m *PrincipalResourceMembershipsScope) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetPrincipalScopes gets the principalScopes property value. Defines the scopes of the principals whose access to resources are reviewed in the access review.
+// returns a []AccessReviewScopeable when successful
 func (m *PrincipalResourceMembershipsScope) GetPrincipalScopes()([]AccessReviewScopeable) {
     val, err := m.GetBackingStore().Get("principalScopes")
     if err != nil {
@@ -70,6 +72,7 @@ func (m *PrincipalResourceMembershipsScope) GetPrincipalScopes()([]AccessReviewS
     return nil
 }
 // GetResourceScopes gets the resourceScopes property value. Defines the scopes of the resources for which access is reviewed.
+// returns a []AccessReviewScopeable when successful
 func (m *PrincipalResourceMembershipsScope) GetResourceScopes()([]AccessReviewScopeable) {
     val, err := m.GetBackingStore().Get("resourceScopes")
     if err != nil {
@@ -126,7 +129,6 @@ func (m *PrincipalResourceMembershipsScope) SetResourceScopes(value []AccessRevi
         panic(err)
     }
 }
-// PrincipalResourceMembershipsScopeable 
 type PrincipalResourceMembershipsScopeable interface {
     AccessReviewScopeable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

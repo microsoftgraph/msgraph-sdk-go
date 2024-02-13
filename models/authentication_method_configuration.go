@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationMethodConfiguration 
 type AuthenticationMethodConfiguration struct {
     Entity
 }
-// NewAuthenticationMethodConfiguration instantiates a new authenticationMethodConfiguration and sets the default values.
+// NewAuthenticationMethodConfiguration instantiates a new AuthenticationMethodConfiguration and sets the default values.
 func NewAuthenticationMethodConfiguration()(*AuthenticationMethodConfiguration) {
     m := &AuthenticationMethodConfiguration{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewAuthenticationMethodConfiguration()(*AuthenticationMethodConfiguration) 
     return m
 }
 // CreateAuthenticationMethodConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -52,6 +52,7 @@ func CreateAuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i87
     return NewAuthenticationMethodConfiguration(), nil
 }
 // GetExcludeTargets gets the excludeTargets property value. Groups of users that are excluded from a policy.
+// returns a []ExcludeTargetable when successful
 func (m *AuthenticationMethodConfiguration) GetExcludeTargets()([]ExcludeTargetable) {
     val, err := m.GetBackingStore().Get("excludeTargets")
     if err != nil {
@@ -63,6 +64,7 @@ func (m *AuthenticationMethodConfiguration) GetExcludeTargets()([]ExcludeTargeta
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["excludeTargets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -94,6 +96,7 @@ func (m *AuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetState gets the state property value. The state of the policy. Possible values are: enabled, disabled.
+// returns a *AuthenticationMethodState when successful
 func (m *AuthenticationMethodConfiguration) GetState()(*AuthenticationMethodState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -145,7 +148,6 @@ func (m *AuthenticationMethodConfiguration) SetState(value *AuthenticationMethod
         panic(err)
     }
 }
-// AuthenticationMethodConfigurationable 
 type AuthenticationMethodConfigurationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

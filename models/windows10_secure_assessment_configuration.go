@@ -8,7 +8,7 @@ import (
 type Windows10SecureAssessmentConfiguration struct {
     DeviceConfiguration
 }
-// NewWindows10SecureAssessmentConfiguration instantiates a new windows10SecureAssessmentConfiguration and sets the default values.
+// NewWindows10SecureAssessmentConfiguration instantiates a new Windows10SecureAssessmentConfiguration and sets the default values.
 func NewWindows10SecureAssessmentConfiguration()(*Windows10SecureAssessmentConfiguration) {
     m := &Windows10SecureAssessmentConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewWindows10SecureAssessmentConfiguration()(*Windows10SecureAssessmentConfi
     return m
 }
 // CreateWindows10SecureAssessmentConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindows10SecureAssessmentConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows10SecureAssessmentConfiguration(), nil
 }
 // GetAllowPrinting gets the allowPrinting property value. Indicates whether or not to allow the app from printing during the test.
+// returns a *bool when successful
 func (m *Windows10SecureAssessmentConfiguration) GetAllowPrinting()(*bool) {
     val, err := m.GetBackingStore().Get("allowPrinting")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *Windows10SecureAssessmentConfiguration) GetAllowPrinting()(*bool) {
     return nil
 }
 // GetAllowScreenCapture gets the allowScreenCapture property value. Indicates whether or not to allow screen capture capability during a test.
+// returns a *bool when successful
 func (m *Windows10SecureAssessmentConfiguration) GetAllowScreenCapture()(*bool) {
     val, err := m.GetBackingStore().Get("allowScreenCapture")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *Windows10SecureAssessmentConfiguration) GetAllowScreenCapture()(*bool) 
     return nil
 }
 // GetAllowTextSuggestion gets the allowTextSuggestion property value. Indicates whether or not to allow text suggestions during the test.
+// returns a *bool when successful
 func (m *Windows10SecureAssessmentConfiguration) GetAllowTextSuggestion()(*bool) {
     val, err := m.GetBackingStore().Get("allowTextSuggestion")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *Windows10SecureAssessmentConfiguration) GetAllowTextSuggestion()(*bool)
     return nil
 }
 // GetConfigurationAccount gets the configurationAccount property value. The account used to configure the Windows device for taking the test. The user can be a domain account (domain/user), an AAD account (username@tenant.com) or a local account (username).
+// returns a *string when successful
 func (m *Windows10SecureAssessmentConfiguration) GetConfigurationAccount()(*string) {
     val, err := m.GetBackingStore().Get("configurationAccount")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *Windows10SecureAssessmentConfiguration) GetConfigurationAccount()(*stri
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Windows10SecureAssessmentConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["allowPrinting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -121,6 +127,7 @@ func (m *Windows10SecureAssessmentConfiguration) GetFieldDeserializers()(map[str
     return res
 }
 // GetLaunchUri gets the launchUri property value. Url link to an assessment that's automatically loaded when the secure assessment browser is launched. It has to be a valid Url (http[s]://msdn.microsoft.com/).
+// returns a *string when successful
 func (m *Windows10SecureAssessmentConfiguration) GetLaunchUri()(*string) {
     val, err := m.GetBackingStore().Get("launchUri")
     if err != nil {
@@ -204,7 +211,6 @@ func (m *Windows10SecureAssessmentConfiguration) SetLaunchUri(value *string)() {
         panic(err)
     }
 }
-// Windows10SecureAssessmentConfigurationable 
 type Windows10SecureAssessmentConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

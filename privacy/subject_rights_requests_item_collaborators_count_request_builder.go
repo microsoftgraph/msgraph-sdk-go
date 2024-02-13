@@ -26,14 +26,14 @@ type SubjectRightsRequestsItemCollaboratorsCountRequestBuilderGetRequestConfigur
     // Request query parameters
     QueryParameters *SubjectRightsRequestsItemCollaboratorsCountRequestBuilderGetQueryParameters
 }
-// NewSubjectRightsRequestsItemCollaboratorsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewSubjectRightsRequestsItemCollaboratorsCountRequestBuilderInternal instantiates a new SubjectRightsRequestsItemCollaboratorsCountRequestBuilder and sets the default values.
 func NewSubjectRightsRequestsItemCollaboratorsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SubjectRightsRequestsItemCollaboratorsCountRequestBuilder) {
     m := &SubjectRightsRequestsItemCollaboratorsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privacy/subjectRightsRequests/{subjectRightsRequest%2Did}/collaborators/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privacy/subjectRightsRequests/{subjectRightsRequest%2Did}/collaborators/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewSubjectRightsRequestsItemCollaboratorsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewSubjectRightsRequestsItemCollaboratorsCountRequestBuilder instantiates a new SubjectRightsRequestsItemCollaboratorsCountRequestBuilder and sets the default values.
 func NewSubjectRightsRequestsItemCollaboratorsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SubjectRightsRequestsItemCollaboratorsCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -41,14 +41,15 @@ func NewSubjectRightsRequestsItemCollaboratorsCountRequestBuilder(rawUrl string,
 }
 // Get get the number of the resource
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SubjectRightsRequestsItemCollaboratorsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemCollaboratorsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -61,6 +62,7 @@ func (m *SubjectRightsRequestsItemCollaboratorsCountRequestBuilder) Get(ctx cont
 }
 // ToGetRequestInformation get the number of the resource
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
+// returns a *RequestInformation when successful
 func (m *SubjectRightsRequestsItemCollaboratorsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemCollaboratorsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -75,6 +77,7 @@ func (m *SubjectRightsRequestsItemCollaboratorsCountRequestBuilder) ToGetRequest
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
+// returns a *SubjectRightsRequestsItemCollaboratorsCountRequestBuilder when successful
 func (m *SubjectRightsRequestsItemCollaboratorsCountRequestBuilder) WithUrl(rawUrl string)(*SubjectRightsRequestsItemCollaboratorsCountRequestBuilder) {
     return NewSubjectRightsRequestsItemCollaboratorsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

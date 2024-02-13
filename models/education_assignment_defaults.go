@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationAssignmentDefaults 
 type EducationAssignmentDefaults struct {
     Entity
 }
-// NewEducationAssignmentDefaults instantiates a new educationAssignmentDefaults and sets the default values.
+// NewEducationAssignmentDefaults instantiates a new EducationAssignmentDefaults and sets the default values.
 func NewEducationAssignmentDefaults()(*EducationAssignmentDefaults) {
     m := &EducationAssignmentDefaults{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewEducationAssignmentDefaults()(*EducationAssignmentDefaults) {
     return m
 }
 // CreateEducationAssignmentDefaultsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationAssignmentDefaultsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationAssignmentDefaults(), nil
 }
 // GetAddedStudentAction gets the addedStudentAction property value. Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
+// returns a *EducationAddedStudentAction when successful
 func (m *EducationAssignmentDefaults) GetAddedStudentAction()(*EducationAddedStudentAction) {
     val, err := m.GetBackingStore().Get("addedStudentAction")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *EducationAssignmentDefaults) GetAddedStudentAction()(*EducationAddedStu
     return nil
 }
 // GetAddToCalendarAction gets the addToCalendarAction property value. Optional field to control adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
+// returns a *EducationAddToCalendarOptions when successful
 func (m *EducationAssignmentDefaults) GetAddToCalendarAction()(*EducationAddToCalendarOptions) {
     val, err := m.GetBackingStore().Get("addToCalendarAction")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *EducationAssignmentDefaults) GetAddToCalendarAction()(*EducationAddToCa
     return nil
 }
 // GetDueTime gets the dueTime property value. Class-level default value for due time field. Default value is 23:59:00.
+// returns a *TimeOnly when successful
 func (m *EducationAssignmentDefaults) GetDueTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
     val, err := m.GetBackingStore().Get("dueTime")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *EducationAssignmentDefaults) GetDueTime()(*i878a80d2330e89d26896388a3f4
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationAssignmentDefaults) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["addedStudentAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -98,6 +102,7 @@ func (m *EducationAssignmentDefaults) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetNotificationChannelUrl gets the notificationChannelUrl property value. Default Teams channel to which notifications will be sent. Default value is null.
+// returns a *string when successful
 func (m *EducationAssignmentDefaults) GetNotificationChannelUrl()(*string) {
     val, err := m.GetBackingStore().Get("notificationChannelUrl")
     if err != nil {
@@ -170,7 +175,6 @@ func (m *EducationAssignmentDefaults) SetNotificationChannelUrl(value *string)()
         panic(err)
     }
 }
-// EducationAssignmentDefaultsable 
 type EducationAssignmentDefaultsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

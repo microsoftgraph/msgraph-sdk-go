@@ -17,20 +17,21 @@ type ItemJoinedTeamsItemCompleteMigrationRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemJoinedTeamsItemCompleteMigrationRequestBuilderInternal instantiates a new CompleteMigrationRequestBuilder and sets the default values.
+// NewItemJoinedTeamsItemCompleteMigrationRequestBuilderInternal instantiates a new ItemJoinedTeamsItemCompleteMigrationRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemCompleteMigrationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemCompleteMigrationRequestBuilder) {
     m := &ItemJoinedTeamsItemCompleteMigrationRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/completeMigration", pathParameters),
     }
     return m
 }
-// NewItemJoinedTeamsItemCompleteMigrationRequestBuilder instantiates a new CompleteMigrationRequestBuilder and sets the default values.
+// NewItemJoinedTeamsItemCompleteMigrationRequestBuilder instantiates a new ItemJoinedTeamsItemCompleteMigrationRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemCompleteMigrationRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemCompleteMigrationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemJoinedTeamsItemCompleteMigrationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post complete the message migration process by removing migration mode from a team. Migration mode is a special state where certain operations are barred, like message POST and membership operations during the data migration process. After a completeMigration request is made, you can't import additional messages into the team. You can add members to the team after the request returns a successful response.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-completemigration?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemJoinedTeamsItemCompleteMigrationRequestBuilder) Post(ctx context.Co
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemJoinedTeamsItemCompleteMigrationRequestBuilder) Post(ctx context.Co
     return nil
 }
 // ToPostRequestInformation complete the message migration process by removing migration mode from a team. Migration mode is a special state where certain operations are barred, like message POST and membership operations during the data migration process. After a completeMigration request is made, you can't import additional messages into the team. You can add members to the team after the request returns a successful response.
+// returns a *RequestInformation when successful
 func (m *ItemJoinedTeamsItemCompleteMigrationRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemCompleteMigrationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *ItemJoinedTeamsItemCompleteMigrationRequestBuilder) ToPostRequestInform
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemJoinedTeamsItemCompleteMigrationRequestBuilder when successful
 func (m *ItemJoinedTeamsItemCompleteMigrationRequestBuilder) WithUrl(rawUrl string)(*ItemJoinedTeamsItemCompleteMigrationRequestBuilder) {
     return NewItemJoinedTeamsItemCompleteMigrationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExternalDomainFederation 
 type ExternalDomainFederation struct {
     IdentitySource
 }
-// NewExternalDomainFederation instantiates a new externalDomainFederation and sets the default values.
+// NewExternalDomainFederation instantiates a new ExternalDomainFederation and sets the default values.
 func NewExternalDomainFederation()(*ExternalDomainFederation) {
     m := &ExternalDomainFederation{
         IdentitySource: *NewIdentitySource(),
@@ -18,10 +17,12 @@ func NewExternalDomainFederation()(*ExternalDomainFederation) {
     return m
 }
 // CreateExternalDomainFederationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExternalDomainFederationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExternalDomainFederation(), nil
 }
 // GetDisplayName gets the displayName property value. The name of the identity source, typically also the domain name. Read only.
+// returns a *string when successful
 func (m *ExternalDomainFederation) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ExternalDomainFederation) GetDisplayName()(*string) {
     return nil
 }
 // GetDomainName gets the domainName property value. The domain name. Read only.
+// returns a *string when successful
 func (m *ExternalDomainFederation) GetDomainName()(*string) {
     val, err := m.GetBackingStore().Get("domainName")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ExternalDomainFederation) GetDomainName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExternalDomainFederation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IdentitySource.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -79,6 +82,7 @@ func (m *ExternalDomainFederation) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetIssuerUri gets the issuerUri property value. The issuerURI of the incoming federation. Read only.
+// returns a *string when successful
 func (m *ExternalDomainFederation) GetIssuerUri()(*string) {
     val, err := m.GetBackingStore().Get("issuerUri")
     if err != nil {
@@ -136,7 +140,6 @@ func (m *ExternalDomainFederation) SetIssuerUri(value *string)() {
         panic(err)
     }
 }
-// ExternalDomainFederationable 
 type ExternalDomainFederationable interface {
     IdentitySourceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

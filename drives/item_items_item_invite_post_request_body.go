@@ -6,7 +6,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ItemItemsItemInvitePostRequestBody 
 type ItemItemsItemInvitePostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -20,10 +19,12 @@ func NewItemItemsItemInvitePostRequestBody()(*ItemItemsItemInvitePostRequestBody
     return m
 }
 // CreateItemItemsItemInvitePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemsItemInvitePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemsItemInvitePostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemsItemInvitePostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *ItemItemsItemInvitePostRequestBody) GetAdditionalData()(map[string]any)
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ItemItemsItemInvitePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
+// returns a *string when successful
 func (m *ItemItemsItemInvitePostRequestBody) GetExpirationDateTime()(*string) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *ItemItemsItemInvitePostRequestBody) GetExpirationDateTime()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemsItemInvitePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["expirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -148,6 +152,7 @@ func (m *ItemItemsItemInvitePostRequestBody) GetFieldDeserializers()(map[string]
     return res
 }
 // GetMessage gets the message property value. The message property
+// returns a *string when successful
 func (m *ItemItemsItemInvitePostRequestBody) GetMessage()(*string) {
     val, err := m.GetBackingStore().Get("message")
     if err != nil {
@@ -159,6 +164,7 @@ func (m *ItemItemsItemInvitePostRequestBody) GetMessage()(*string) {
     return nil
 }
 // GetPassword gets the password property value. The password property
+// returns a *string when successful
 func (m *ItemItemsItemInvitePostRequestBody) GetPassword()(*string) {
     val, err := m.GetBackingStore().Get("password")
     if err != nil {
@@ -170,6 +176,7 @@ func (m *ItemItemsItemInvitePostRequestBody) GetPassword()(*string) {
     return nil
 }
 // GetRecipients gets the recipients property value. The recipients property
+// returns a []DriveRecipientable when successful
 func (m *ItemItemsItemInvitePostRequestBody) GetRecipients()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveRecipientable) {
     val, err := m.GetBackingStore().Get("recipients")
     if err != nil {
@@ -181,6 +188,7 @@ func (m *ItemItemsItemInvitePostRequestBody) GetRecipients()([]iadcd81124412c61e
     return nil
 }
 // GetRequireSignIn gets the requireSignIn property value. The requireSignIn property
+// returns a *bool when successful
 func (m *ItemItemsItemInvitePostRequestBody) GetRequireSignIn()(*bool) {
     val, err := m.GetBackingStore().Get("requireSignIn")
     if err != nil {
@@ -192,6 +200,7 @@ func (m *ItemItemsItemInvitePostRequestBody) GetRequireSignIn()(*bool) {
     return nil
 }
 // GetRetainInheritedPermissions gets the retainInheritedPermissions property value. The retainInheritedPermissions property
+// returns a *bool when successful
 func (m *ItemItemsItemInvitePostRequestBody) GetRetainInheritedPermissions()(*bool) {
     val, err := m.GetBackingStore().Get("retainInheritedPermissions")
     if err != nil {
@@ -203,6 +212,7 @@ func (m *ItemItemsItemInvitePostRequestBody) GetRetainInheritedPermissions()(*bo
     return nil
 }
 // GetRoles gets the roles property value. The roles property
+// returns a []string when successful
 func (m *ItemItemsItemInvitePostRequestBody) GetRoles()([]string) {
     val, err := m.GetBackingStore().Get("roles")
     if err != nil {
@@ -214,6 +224,7 @@ func (m *ItemItemsItemInvitePostRequestBody) GetRoles()([]string) {
     return nil
 }
 // GetSendInvitation gets the sendInvitation property value. The sendInvitation property
+// returns a *bool when successful
 func (m *ItemItemsItemInvitePostRequestBody) GetSendInvitation()(*bool) {
     val, err := m.GetBackingStore().Get("sendInvitation")
     if err != nil {
@@ -355,7 +366,6 @@ func (m *ItemItemsItemInvitePostRequestBody) SetSendInvitation(value *bool)() {
         panic(err)
     }
 }
-// ItemItemsItemInvitePostRequestBodyable 
 type ItemItemsItemInvitePostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

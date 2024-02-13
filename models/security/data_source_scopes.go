@@ -1,25 +1,27 @@
 package security
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type DataSourceScopes int
 
 const (
-    NONE_DATASOURCESCOPES DataSourceScopes = iota
-    ALLTENANTMAILBOXES_DATASOURCESCOPES
-    ALLTENANTSITES_DATASOURCESCOPES
-    ALLCASECUSTODIANS_DATASOURCESCOPES
-    ALLCASENONCUSTODIALDATASOURCES_DATASOURCESCOPES
-    UNKNOWNFUTUREVALUE_DATASOURCESCOPES
+    NONE_DATASOURCESCOPES = 1
+    ALLTENANTMAILBOXES_DATASOURCESCOPES = 2
+    ALLTENANTSITES_DATASOURCESCOPES = 4
+    ALLCASECUSTODIANS_DATASOURCESCOPES = 8
+    ALLCASENONCUSTODIALDATASOURCES_DATASOURCESCOPES = 16
+    UNKNOWNFUTUREVALUE_DATASOURCESCOPES = 32
 )
 
 func (i DataSourceScopes) String() string {
     var values []string
-    for p := DataSourceScopes(1); p <= UNKNOWNFUTUREVALUE_DATASOURCESCOPES; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "allTenantMailboxes", "allTenantSites", "allCaseCustodians", "allCaseNoncustodialDataSources", "unknownFutureValue"}[p])
+    options := []string{"none", "allTenantMailboxes", "allTenantSites", "allCaseCustodians", "allCaseNoncustodialDataSources", "unknownFutureValue"}
+    for p := 0; p < 6; p++ {
+        mantis := DataSourceScopes(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

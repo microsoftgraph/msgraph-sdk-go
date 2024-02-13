@@ -2,7 +2,6 @@ package externalconnectors
 import (
     "errors"
 )
-// 
 type AclType int
 
 const (

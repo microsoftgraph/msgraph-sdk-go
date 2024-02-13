@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConditionalAccessTemplateCollectionResponse 
 type ConditionalAccessTemplateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewConditionalAccessTemplateCollectionResponse instantiates a new conditionalAccessTemplateCollectionResponse and sets the default values.
+// NewConditionalAccessTemplateCollectionResponse instantiates a new ConditionalAccessTemplateCollectionResponse and sets the default values.
 func NewConditionalAccessTemplateCollectionResponse()(*ConditionalAccessTemplateCollectionResponse) {
     m := &ConditionalAccessTemplateCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewConditionalAccessTemplateCollectionResponse()(*ConditionalAccessTemplate
     return m
 }
 // CreateConditionalAccessTemplateCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConditionalAccessTemplateCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConditionalAccessTemplateCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConditionalAccessTemplateCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ConditionalAccessTemplateCollectionResponse) GetFieldDeserializers()(ma
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ConditionalAccessTemplateable when successful
 func (m *ConditionalAccessTemplateCollectionResponse) GetValue()([]ConditionalAccessTemplateable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ConditionalAccessTemplateCollectionResponse) SetValue(value []Condition
         panic(err)
     }
 }
-// ConditionalAccessTemplateCollectionResponseable 
 type ConditionalAccessTemplateCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

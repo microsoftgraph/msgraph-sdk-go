@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceConfigurationCollectionResponse 
 type DeviceConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceConfigurationCollectionResponse instantiates a new deviceConfigurationCollectionResponse and sets the default values.
+// NewDeviceConfigurationCollectionResponse instantiates a new DeviceConfigurationCollectionResponse and sets the default values.
 func NewDeviceConfigurationCollectionResponse()(*DeviceConfigurationCollectionResponse) {
     m := &DeviceConfigurationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewDeviceConfigurationCollectionResponse()(*DeviceConfigurationCollectionRe
     return m
 }
 // CreateDeviceConfigurationCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceConfigurationCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceConfigurationCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceConfigurationCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *DeviceConfigurationCollectionResponse) GetFieldDeserializers()(map[stri
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []DeviceConfigurationable when successful
 func (m *DeviceConfigurationCollectionResponse) GetValue()([]DeviceConfigurationable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *DeviceConfigurationCollectionResponse) SetValue(value []DeviceConfigura
         panic(err)
     }
 }
-// DeviceConfigurationCollectionResponseable 
 type DeviceConfigurationCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

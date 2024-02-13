@@ -9,7 +9,7 @@ import (
 type TermsAndConditions struct {
     Entity
 }
-// NewTermsAndConditions instantiates a new termsAndConditions and sets the default values.
+// NewTermsAndConditions instantiates a new TermsAndConditions and sets the default values.
 func NewTermsAndConditions()(*TermsAndConditions) {
     m := &TermsAndConditions{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewTermsAndConditions()(*TermsAndConditions) {
     return m
 }
 // CreateTermsAndConditionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTermsAndConditionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTermsAndConditions(), nil
 }
 // GetAcceptanceStatement gets the acceptanceStatement property value. Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&C policy. This is shown to the user on prompts to accept the T&C policy.
+// returns a *string when successful
 func (m *TermsAndConditions) GetAcceptanceStatement()(*string) {
     val, err := m.GetBackingStore().Get("acceptanceStatement")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *TermsAndConditions) GetAcceptanceStatement()(*string) {
     return nil
 }
 // GetAcceptanceStatuses gets the acceptanceStatuses property value. The list of acceptance statuses for this T&C policy.
+// returns a []TermsAndConditionsAcceptanceStatusable when successful
 func (m *TermsAndConditions) GetAcceptanceStatuses()([]TermsAndConditionsAcceptanceStatusable) {
     val, err := m.GetBackingStore().Get("acceptanceStatuses")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *TermsAndConditions) GetAcceptanceStatuses()([]TermsAndConditionsAccepta
     return nil
 }
 // GetAssignments gets the assignments property value. The list of assignments for this T&C policy.
+// returns a []TermsAndConditionsAssignmentable when successful
 func (m *TermsAndConditions) GetAssignments()([]TermsAndConditionsAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *TermsAndConditions) GetAssignments()([]TermsAndConditionsAssignmentable
     return nil
 }
 // GetBodyText gets the bodyText property value. Administrator-supplied body text of the terms and conditions, typically the terms themselves. This is shown to the user on prompts to accept the T&C policy.
+// returns a *string when successful
 func (m *TermsAndConditions) GetBodyText()(*string) {
     val, err := m.GetBackingStore().Get("bodyText")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *TermsAndConditions) GetBodyText()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. DateTime the object was created.
+// returns a *Time when successful
 func (m *TermsAndConditions) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *TermsAndConditions) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad
     return nil
 }
 // GetDescription gets the description property value. Administrator-supplied description of the T&C policy.
+// returns a *string when successful
 func (m *TermsAndConditions) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -87,6 +94,7 @@ func (m *TermsAndConditions) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Administrator-supplied name for the T&C policy.
+// returns a *string when successful
 func (m *TermsAndConditions) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -98,6 +106,7 @@ func (m *TermsAndConditions) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TermsAndConditions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["acceptanceStatement"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -215,6 +224,7 @@ func (m *TermsAndConditions) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
+// returns a *Time when successful
 func (m *TermsAndConditions) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -226,6 +236,7 @@ func (m *TermsAndConditions) GetLastModifiedDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetTitle gets the title property value. Administrator-supplied title of the terms and conditions. This is shown to the user on prompts to accept the T&C policy.
+// returns a *string when successful
 func (m *TermsAndConditions) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -237,6 +248,7 @@ func (m *TermsAndConditions) GetTitle()(*string) {
     return nil
 }
 // GetVersion gets the version property value. Integer indicating the current version of the terms. Incremented when an administrator makes a change to the terms and wishes to require users to re-accept the modified T&C policy.
+// returns a *int32 when successful
 func (m *TermsAndConditions) GetVersion()(*int32) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -397,7 +409,6 @@ func (m *TermsAndConditions) SetVersion(value *int32)() {
         panic(err)
     }
 }
-// TermsAndConditionsable 
 type TermsAndConditionsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

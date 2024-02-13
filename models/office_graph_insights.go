@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OfficeGraphInsights 
 type OfficeGraphInsights struct {
     Entity
 }
-// NewOfficeGraphInsights instantiates a new officeGraphInsights and sets the default values.
+// NewOfficeGraphInsights instantiates a new OfficeGraphInsights and sets the default values.
 func NewOfficeGraphInsights()(*OfficeGraphInsights) {
     m := &OfficeGraphInsights{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewOfficeGraphInsights()(*OfficeGraphInsights) {
     return m
 }
 // CreateOfficeGraphInsightsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOfficeGraphInsightsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOfficeGraphInsights(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OfficeGraphInsights) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["shared"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -73,6 +74,7 @@ func (m *OfficeGraphInsights) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetShared gets the shared property value. Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.
+// returns a []SharedInsightable when successful
 func (m *OfficeGraphInsights) GetShared()([]SharedInsightable) {
     val, err := m.GetBackingStore().Get("shared")
     if err != nil {
@@ -84,6 +86,7 @@ func (m *OfficeGraphInsights) GetShared()([]SharedInsightable) {
     return nil
 }
 // GetTrending gets the trending property value. Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
+// returns a []Trendingable when successful
 func (m *OfficeGraphInsights) GetTrending()([]Trendingable) {
     val, err := m.GetBackingStore().Get("trending")
     if err != nil {
@@ -95,6 +98,7 @@ func (m *OfficeGraphInsights) GetTrending()([]Trendingable) {
     return nil
 }
 // GetUsed gets the used property value. Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
+// returns a []UsedInsightable when successful
 func (m *OfficeGraphInsights) GetUsed()([]UsedInsightable) {
     val, err := m.GetBackingStore().Get("used")
     if err != nil {
@@ -170,7 +174,6 @@ func (m *OfficeGraphInsights) SetUsed(value []UsedInsightable)() {
         panic(err)
     }
 }
-// OfficeGraphInsightsable 
 type OfficeGraphInsightsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

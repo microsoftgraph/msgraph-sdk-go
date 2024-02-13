@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RemoteAssistancePartnerCollectionResponse 
 type RemoteAssistancePartnerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewRemoteAssistancePartnerCollectionResponse instantiates a new remoteAssistancePartnerCollectionResponse and sets the default values.
+// NewRemoteAssistancePartnerCollectionResponse instantiates a new RemoteAssistancePartnerCollectionResponse and sets the default values.
 func NewRemoteAssistancePartnerCollectionResponse()(*RemoteAssistancePartnerCollectionResponse) {
     m := &RemoteAssistancePartnerCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewRemoteAssistancePartnerCollectionResponse()(*RemoteAssistancePartnerColl
     return m
 }
 // CreateRemoteAssistancePartnerCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRemoteAssistancePartnerCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRemoteAssistancePartnerCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RemoteAssistancePartnerCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *RemoteAssistancePartnerCollectionResponse) GetFieldDeserializers()(map[
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []RemoteAssistancePartnerable when successful
 func (m *RemoteAssistancePartnerCollectionResponse) GetValue()([]RemoteAssistancePartnerable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *RemoteAssistancePartnerCollectionResponse) SetValue(value []RemoteAssis
         panic(err)
     }
 }
-// RemoteAssistancePartnerCollectionResponseable 
 type RemoteAssistancePartnerCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -40,10 +40,12 @@ type SitesRequestBuilderGetRequestConfiguration struct {
     QueryParameters *SitesRequestBuilderGetQueryParameters
 }
 // Add provides operations to call the add method.
+// returns a *AddRequestBuilder when successful
 func (m *SitesRequestBuilder) Add()(*AddRequestBuilder) {
     return NewAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // BySiteId provides operations to manage the collection of site entities.
+// returns a *SiteItemRequestBuilder when successful
 func (m *SitesRequestBuilder) BySiteId(siteId string)(*SiteItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,7 +59,7 @@ func (m *SitesRequestBuilder) BySiteId(siteId string)(*SiteItemRequestBuilder) {
 // NewSitesRequestBuilderInternal instantiates a new SitesRequestBuilder and sets the default values.
 func NewSitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SitesRequestBuilder) {
     m := &SitesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
@@ -68,14 +70,18 @@ func NewSitesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     return NewSitesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *CountRequestBuilder when successful
 func (m *SitesRequestBuilder) Count()(*CountRequestBuilder) {
     return NewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delta provides operations to call the delta method.
+// returns a *DeltaRequestBuilder when successful
 func (m *SitesRequestBuilder) Delta()(*DeltaRequestBuilder) {
     return NewDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get list all available [sites][] in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a [$search][] query against the /sites collection to find sites matching given keywords.If you want to list all sites across all geographies, refer to getAllSites][]. For more guidance about building applications that use site discovery for scanning purposes, see [Best practices for discovering files and detecting changes at scale.
+// returns a SiteCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/site-list?view=graph-rest-1.0
@@ -85,8 +91,7 @@ func (m *SitesRequestBuilder) Get(ctx context.Context, requestConfiguration *Sit
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateSiteCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -98,14 +103,17 @@ func (m *SitesRequestBuilder) Get(ctx context.Context, requestConfiguration *Sit
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SiteCollectionResponseable), nil
 }
 // GetAllSites provides operations to call the getAllSites method.
+// returns a *GetAllSitesRequestBuilder when successful
 func (m *SitesRequestBuilder) GetAllSites()(*GetAllSitesRequestBuilder) {
     return NewGetAllSitesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Remove provides operations to call the remove method.
+// returns a *RemoveRequestBuilder when successful
 func (m *SitesRequestBuilder) Remove()(*RemoveRequestBuilder) {
     return NewRemoveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation list all available [sites][] in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a [$search][] query against the /sites collection to find sites matching given keywords.If you want to list all sites across all geographies, refer to getAllSites][]. For more guidance about building applications that use site discovery for scanning purposes, see [Best practices for discovering files and detecting changes at scale.
+// returns a *RequestInformation when successful
 func (m *SitesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -119,6 +127,7 @@ func (m *SitesRequestBuilder) ToGetRequestInformation(ctx context.Context, reque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *SitesRequestBuilder when successful
 func (m *SitesRequestBuilder) WithUrl(rawUrl string)(*SitesRequestBuilder) {
     return NewSitesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -17,21 +17,23 @@ type ItemSetMobileDeviceManagementAuthorityRequestBuilderPostRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemSetMobileDeviceManagementAuthorityRequestBuilderInternal instantiates a new SetMobileDeviceManagementAuthorityRequestBuilder and sets the default values.
+// NewItemSetMobileDeviceManagementAuthorityRequestBuilderInternal instantiates a new ItemSetMobileDeviceManagementAuthorityRequestBuilder and sets the default values.
 func NewItemSetMobileDeviceManagementAuthorityRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSetMobileDeviceManagementAuthorityRequestBuilder) {
     m := &ItemSetMobileDeviceManagementAuthorityRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/organization/{organization%2Did}/setMobileDeviceManagementAuthority", pathParameters),
     }
     return m
 }
-// NewItemSetMobileDeviceManagementAuthorityRequestBuilder instantiates a new SetMobileDeviceManagementAuthorityRequestBuilder and sets the default values.
+// NewItemSetMobileDeviceManagementAuthorityRequestBuilder instantiates a new ItemSetMobileDeviceManagementAuthorityRequestBuilder and sets the default values.
 func NewItemSetMobileDeviceManagementAuthorityRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSetMobileDeviceManagementAuthorityRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSetMobileDeviceManagementAuthorityRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post set mobile device management authority
-// Deprecated: This method is obsolete. Use PostAsSetMobileDeviceManagementAuthorityPostResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ItemSetMobileDeviceManagementAuthorityResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-organization-setmobiledevicemanagementauthority?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *ItemSetMobileDeviceManagementAuthorityRequestBuilder) Post(ctx context.
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSetMobileDeviceManagementAuthorityResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,8 @@ func (m *ItemSetMobileDeviceManagementAuthorityRequestBuilder) Post(ctx context.
     return res.(ItemSetMobileDeviceManagementAuthorityResponseable), nil
 }
 // PostAsSetMobileDeviceManagementAuthorityPostResponse set mobile device management authority
+// returns a ItemSetMobileDeviceManagementAuthorityPostResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-organization-setmobiledevicemanagementauthority?view=graph-rest-1.0
@@ -63,8 +66,7 @@ func (m *ItemSetMobileDeviceManagementAuthorityRequestBuilder) PostAsSetMobileDe
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSetMobileDeviceManagementAuthorityPostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -76,6 +78,7 @@ func (m *ItemSetMobileDeviceManagementAuthorityRequestBuilder) PostAsSetMobileDe
     return res.(ItemSetMobileDeviceManagementAuthorityPostResponseable), nil
 }
 // ToPostRequestInformation set mobile device management authority
+// returns a *RequestInformation when successful
 func (m *ItemSetMobileDeviceManagementAuthorityRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemSetMobileDeviceManagementAuthorityRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -86,6 +89,7 @@ func (m *ItemSetMobileDeviceManagementAuthorityRequestBuilder) ToPostRequestInfo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemSetMobileDeviceManagementAuthorityRequestBuilder when successful
 func (m *ItemSetMobileDeviceManagementAuthorityRequestBuilder) WithUrl(rawUrl string)(*ItemSetMobileDeviceManagementAuthorityRequestBuilder) {
     return NewItemSetMobileDeviceManagementAuthorityRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

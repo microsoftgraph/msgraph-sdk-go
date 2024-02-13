@@ -47,6 +47,7 @@ type ItemFederationConfigurationRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByInternalDomainFederationId provides operations to manage the federationConfiguration property of the microsoft.graph.domain entity.
+// returns a *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder when successful
 func (m *ItemFederationConfigurationRequestBuilder) ByInternalDomainFederationId(internalDomainFederationId string)(*ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *ItemFederationConfigurationRequestBuilder) ByInternalDomainFederationId
     }
     return NewItemFederationConfigurationInternalDomainFederationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemFederationConfigurationRequestBuilderInternal instantiates a new FederationConfigurationRequestBuilder and sets the default values.
+// NewItemFederationConfigurationRequestBuilderInternal instantiates a new ItemFederationConfigurationRequestBuilder and sets the default values.
 func NewItemFederationConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemFederationConfigurationRequestBuilder) {
     m := &ItemFederationConfigurationRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/domains/{domain%2Did}/federationConfiguration{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/domains/{domain%2Did}/federationConfiguration{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemFederationConfigurationRequestBuilder instantiates a new FederationConfigurationRequestBuilder and sets the default values.
+// NewItemFederationConfigurationRequestBuilder instantiates a new ItemFederationConfigurationRequestBuilder and sets the default values.
 func NewItemFederationConfigurationRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemFederationConfigurationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemFederationConfigurationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemFederationConfigurationCountRequestBuilder when successful
 func (m *ItemFederationConfigurationRequestBuilder) Count()(*ItemFederationConfigurationCountRequestBuilder) {
     return NewItemFederationConfigurationCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection.
+// returns a InternalDomainFederationCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/domain-list-federationconfiguration?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *ItemFederationConfigurationRequestBuilder) Get(ctx context.Context, req
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateInternalDomainFederationCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,6 +100,8 @@ func (m *ItemFederationConfigurationRequestBuilder) Get(ctx context.Context, req
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationCollectionResponseable), nil
 }
 // Post create a new internalDomainFederation object.
+// returns a InternalDomainFederationable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/domain-post-federationconfiguration?view=graph-rest-1.0
@@ -106,8 +111,7 @@ func (m *ItemFederationConfigurationRequestBuilder) Post(ctx context.Context, bo
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateInternalDomainFederationFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -119,6 +123,7 @@ func (m *ItemFederationConfigurationRequestBuilder) Post(ctx context.Context, bo
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable), nil
 }
 // ToGetRequestInformation read the properties of the internalDomainFederation objects for the domain. This API returns only one object in the collection.
+// returns a *RequestInformation when successful
 func (m *ItemFederationConfigurationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemFederationConfigurationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +137,9 @@ func (m *ItemFederationConfigurationRequestBuilder) ToGetRequestInformation(ctx 
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new internalDomainFederation object.
+// returns a *RequestInformation when successful
 func (m *ItemFederationConfigurationRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable, requestConfiguration *ItemFederationConfigurationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/domains/{domain%2Did}/federationConfiguration", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +152,7 @@ func (m *ItemFederationConfigurationRequestBuilder) ToPostRequestInformation(ctx
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemFederationConfigurationRequestBuilder when successful
 func (m *ItemFederationConfigurationRequestBuilder) WithUrl(rawUrl string)(*ItemFederationConfigurationRequestBuilder) {
     return NewItemFederationConfigurationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

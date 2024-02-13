@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EmailAuthenticationMethodConfiguration 
 type EmailAuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
 }
-// NewEmailAuthenticationMethodConfiguration instantiates a new emailAuthenticationMethodConfiguration and sets the default values.
+// NewEmailAuthenticationMethodConfiguration instantiates a new EmailAuthenticationMethodConfiguration and sets the default values.
 func NewEmailAuthenticationMethodConfiguration()(*EmailAuthenticationMethodConfiguration) {
     m := &EmailAuthenticationMethodConfiguration{
         AuthenticationMethodConfiguration: *NewAuthenticationMethodConfiguration(),
@@ -18,10 +17,12 @@ func NewEmailAuthenticationMethodConfiguration()(*EmailAuthenticationMethodConfi
     return m
 }
 // CreateEmailAuthenticationMethodConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEmailAuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEmailAuthenticationMethodConfiguration(), nil
 }
 // GetAllowExternalIdToUseEmailOtp gets the allowExternalIdToUseEmailOtp property value. Determines whether email OTP is usable by external users for authentication. Possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who didn't use public preview have email OTP enabled beginning in October 2021.
+// returns a *ExternalEmailOtpState when successful
 func (m *EmailAuthenticationMethodConfiguration) GetAllowExternalIdToUseEmailOtp()(*ExternalEmailOtpState) {
     val, err := m.GetBackingStore().Get("allowExternalIdToUseEmailOtp")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *EmailAuthenticationMethodConfiguration) GetAllowExternalIdToUseEmailOtp
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EmailAuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethodConfiguration.GetFieldDeserializers()
     res["allowExternalIdToUseEmailOtp"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -64,6 +66,7 @@ func (m *EmailAuthenticationMethodConfiguration) GetFieldDeserializers()(map[str
     return res
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
+// returns a []AuthenticationMethodTargetable when successful
 func (m *EmailAuthenticationMethodConfiguration) GetIncludeTargets()([]AuthenticationMethodTargetable) {
     val, err := m.GetBackingStore().Get("includeTargets")
     if err != nil {
@@ -115,7 +118,6 @@ func (m *EmailAuthenticationMethodConfiguration) SetIncludeTargets(value []Authe
         panic(err)
     }
 }
-// EmailAuthenticationMethodConfigurationable 
 type EmailAuthenticationMethodConfigurationable interface {
     AuthenticationMethodConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

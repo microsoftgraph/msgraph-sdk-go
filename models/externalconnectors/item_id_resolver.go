@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemIdResolver 
 type ItemIdResolver struct {
     UrlToItemResolverBase
 }
-// NewItemIdResolver instantiates a new itemIdResolver and sets the default values.
+// NewItemIdResolver instantiates a new ItemIdResolver and sets the default values.
 func NewItemIdResolver()(*ItemIdResolver) {
     m := &ItemIdResolver{
         UrlToItemResolverBase: *NewUrlToItemResolverBase(),
@@ -18,10 +17,12 @@ func NewItemIdResolver()(*ItemIdResolver) {
     return m
 }
 // CreateItemIdResolverFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemIdResolverFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemIdResolver(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemIdResolver) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UrlToItemResolverBase.GetFieldDeserializers()
     res["itemId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +48,7 @@ func (m *ItemIdResolver) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetItemId gets the itemId property value. Pattern that specifies how to form the ID of the external item that the URL represents. The named groups from the regular expression in urlPattern within the urlMatchInfo can be referenced by inserting the group name inside curly brackets.
+// returns a *string when successful
 func (m *ItemIdResolver) GetItemId()(*string) {
     val, err := m.GetBackingStore().Get("itemId")
     if err != nil {
@@ -58,6 +60,7 @@ func (m *ItemIdResolver) GetItemId()(*string) {
     return nil
 }
 // GetUrlMatchInfo gets the urlMatchInfo property value. Configurations to match and resolve URL.
+// returns a UrlMatchInfoable when successful
 func (m *ItemIdResolver) GetUrlMatchInfo()(UrlMatchInfoable) {
     val, err := m.GetBackingStore().Get("urlMatchInfo")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *ItemIdResolver) SetUrlMatchInfo(value UrlMatchInfoable)() {
         panic(err)
     }
 }
-// ItemIdResolverable 
 type ItemIdResolverable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UrlToItemResolverBaseable

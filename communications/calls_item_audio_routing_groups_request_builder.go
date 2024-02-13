@@ -47,6 +47,7 @@ type CallsItemAudioRoutingGroupsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByAudioRoutingGroupId provides operations to manage the audioRoutingGroups property of the microsoft.graph.call entity.
+// returns a *CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder when successful
 func (m *CallsItemAudioRoutingGroupsRequestBuilder) ByAudioRoutingGroupId(audioRoutingGroupId string)(*CallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *CallsItemAudioRoutingGroupsRequestBuilder) ByAudioRoutingGroupId(audioR
     }
     return NewCallsItemAudioRoutingGroupsAudioRoutingGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewCallsItemAudioRoutingGroupsRequestBuilderInternal instantiates a new AudioRoutingGroupsRequestBuilder and sets the default values.
+// NewCallsItemAudioRoutingGroupsRequestBuilderInternal instantiates a new CallsItemAudioRoutingGroupsRequestBuilder and sets the default values.
 func NewCallsItemAudioRoutingGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemAudioRoutingGroupsRequestBuilder) {
     m := &CallsItemAudioRoutingGroupsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/calls/{call%2Did}/audioRoutingGroups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/calls/{call%2Did}/audioRoutingGroups{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewCallsItemAudioRoutingGroupsRequestBuilder instantiates a new AudioRoutingGroupsRequestBuilder and sets the default values.
+// NewCallsItemAudioRoutingGroupsRequestBuilder instantiates a new CallsItemAudioRoutingGroupsRequestBuilder and sets the default values.
 func NewCallsItemAudioRoutingGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemAudioRoutingGroupsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCallsItemAudioRoutingGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *CallsItemAudioRoutingGroupsCountRequestBuilder when successful
 func (m *CallsItemAudioRoutingGroupsRequestBuilder) Count()(*CallsItemAudioRoutingGroupsCountRequestBuilder) {
     return NewCallsItemAudioRoutingGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve a list of audioRoutingGroup objects.
+// returns a AudioRoutingGroupCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/call-list-audioroutinggroups?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *CallsItemAudioRoutingGroupsRequestBuilder) Get(ctx context.Context, req
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateAudioRoutingGroupCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,6 +100,8 @@ func (m *CallsItemAudioRoutingGroupsRequestBuilder) Get(ctx context.Context, req
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AudioRoutingGroupCollectionResponseable), nil
 }
 // Post create a new audioRoutingGroup.
+// returns a AudioRoutingGroupable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/call-post-audioroutinggroups?view=graph-rest-1.0
@@ -106,8 +111,7 @@ func (m *CallsItemAudioRoutingGroupsRequestBuilder) Post(ctx context.Context, bo
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateAudioRoutingGroupFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -119,6 +123,7 @@ func (m *CallsItemAudioRoutingGroupsRequestBuilder) Post(ctx context.Context, bo
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AudioRoutingGroupable), nil
 }
 // ToGetRequestInformation retrieve a list of audioRoutingGroup objects.
+// returns a *RequestInformation when successful
 func (m *CallsItemAudioRoutingGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CallsItemAudioRoutingGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +137,9 @@ func (m *CallsItemAudioRoutingGroupsRequestBuilder) ToGetRequestInformation(ctx 
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new audioRoutingGroup.
+// returns a *RequestInformation when successful
 func (m *CallsItemAudioRoutingGroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AudioRoutingGroupable, requestConfiguration *CallsItemAudioRoutingGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/communications/calls/{call%2Did}/audioRoutingGroups", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +152,7 @@ func (m *CallsItemAudioRoutingGroupsRequestBuilder) ToPostRequestInformation(ctx
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CallsItemAudioRoutingGroupsRequestBuilder when successful
 func (m *CallsItemAudioRoutingGroupsRequestBuilder) WithUrl(rawUrl string)(*CallsItemAudioRoutingGroupsRequestBuilder) {
     return NewCallsItemAudioRoutingGroupsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

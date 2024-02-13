@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServicePrincipalEvidence 
 type ServicePrincipalEvidence struct {
     AlertEvidence
 }
-// NewServicePrincipalEvidence instantiates a new servicePrincipalEvidence and sets the default values.
+// NewServicePrincipalEvidence instantiates a new ServicePrincipalEvidence and sets the default values.
 func NewServicePrincipalEvidence()(*ServicePrincipalEvidence) {
     m := &ServicePrincipalEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -18,10 +17,12 @@ func NewServicePrincipalEvidence()(*ServicePrincipalEvidence) {
     return m
 }
 // CreateServicePrincipalEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateServicePrincipalEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServicePrincipalEvidence(), nil
 }
 // GetAppId gets the appId property value. The appId property
+// returns a *string when successful
 func (m *ServicePrincipalEvidence) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ServicePrincipalEvidence) GetAppId()(*string) {
     return nil
 }
 // GetAppOwnerTenantId gets the appOwnerTenantId property value. The appOwnerTenantId property
+// returns a *string when successful
 func (m *ServicePrincipalEvidence) GetAppOwnerTenantId()(*string) {
     val, err := m.GetBackingStore().Get("appOwnerTenantId")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ServicePrincipalEvidence) GetAppOwnerTenantId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ServicePrincipalEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -109,6 +112,7 @@ func (m *ServicePrincipalEvidence) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetServicePrincipalName gets the servicePrincipalName property value. The servicePrincipalName property
+// returns a *string when successful
 func (m *ServicePrincipalEvidence) GetServicePrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalName")
     if err != nil {
@@ -120,6 +124,7 @@ func (m *ServicePrincipalEvidence) GetServicePrincipalName()(*string) {
     return nil
 }
 // GetServicePrincipalObjectId gets the servicePrincipalObjectId property value. The servicePrincipalObjectId property
+// returns a *string when successful
 func (m *ServicePrincipalEvidence) GetServicePrincipalObjectId()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalObjectId")
     if err != nil {
@@ -131,6 +136,7 @@ func (m *ServicePrincipalEvidence) GetServicePrincipalObjectId()(*string) {
     return nil
 }
 // GetServicePrincipalType gets the servicePrincipalType property value. The servicePrincipalType property
+// returns a *ServicePrincipalType when successful
 func (m *ServicePrincipalEvidence) GetServicePrincipalType()(*ServicePrincipalType) {
     val, err := m.GetBackingStore().Get("servicePrincipalType")
     if err != nil {
@@ -142,6 +148,7 @@ func (m *ServicePrincipalEvidence) GetServicePrincipalType()(*ServicePrincipalTy
     return nil
 }
 // GetTenantId gets the tenantId property value. The tenantId property
+// returns a *string when successful
 func (m *ServicePrincipalEvidence) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -239,7 +246,6 @@ func (m *ServicePrincipalEvidence) SetTenantId(value *string)() {
         panic(err)
     }
 }
-// ServicePrincipalEvidenceable 
 type ServicePrincipalEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

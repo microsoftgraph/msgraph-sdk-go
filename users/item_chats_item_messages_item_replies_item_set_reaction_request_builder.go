@@ -17,28 +17,28 @@ type ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilderInternal instantiates a new SetReactionRequestBuilder and sets the default values.
+// NewItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilderInternal instantiates a new ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder and sets the default values.
 func NewItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder) {
     m := &ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}/messages/{chatMessage%2Did}/replies/{chatMessage%2Did1}/setReaction", pathParameters),
     }
     return m
 }
-// NewItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder instantiates a new SetReactionRequestBuilder and sets the default values.
+// NewItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder instantiates a new ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder and sets the default values.
 func NewItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action setReaction
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder) Post(ctx context.Context, body ItemChatsItemMessagesItemRepliesItemSetReactionPostRequestBodyable, requestConfiguration *ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder) Post(ctx
     return nil
 }
 // ToPostRequestInformation invoke action setReaction
+// returns a *RequestInformation when successful
 func (m *ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemChatsItemMessagesItemRepliesItemSetReactionPostRequestBodyable, requestConfiguration *ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -61,6 +62,7 @@ func (m *ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder) ToPostRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder when successful
 func (m *ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder) WithUrl(rawUrl string)(*ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder) {
     return NewItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

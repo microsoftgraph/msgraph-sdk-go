@@ -6,7 +6,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ItemItemsItemWorkbookFunctionsCumPrincPostRequestBody 
 type ItemItemsItemWorkbookFunctionsCumPrincPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -20,10 +19,12 @@ func NewItemItemsItemWorkbookFunctionsCumPrincPostRequestBody()(*ItemItemsItemWo
     return m
 }
 // CreateItemItemsItemWorkbookFunctionsCumPrincPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemsItemWorkbookFunctionsCumPrincPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemsItemWorkbookFunctionsCumPrincPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemsItemWorkbookFunctionsCumPrincPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *ItemItemsItemWorkbookFunctionsCumPrincPostRequestBody) GetAdditionalDat
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ItemItemsItemWorkbookFunctionsCumPrincPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetEndPeriod gets the endPeriod property value. The endPeriod property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsCumPrincPostRequestBody) GetEndPeriod()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("endPeriod")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *ItemItemsItemWorkbookFunctionsCumPrincPostRequestBody) GetEndPeriod()(i
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemsItemWorkbookFunctionsCumPrincPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["endPeriod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +120,7 @@ func (m *ItemItemsItemWorkbookFunctionsCumPrincPostRequestBody) GetFieldDeserial
     return res
 }
 // GetNper gets the nper property value. The nper property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsCumPrincPostRequestBody) GetNper()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("nper")
     if err != nil {
@@ -127,6 +132,7 @@ func (m *ItemItemsItemWorkbookFunctionsCumPrincPostRequestBody) GetNper()(iadcd8
     return nil
 }
 // GetPv gets the pv property value. The pv property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsCumPrincPostRequestBody) GetPv()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("pv")
     if err != nil {
@@ -138,6 +144,7 @@ func (m *ItemItemsItemWorkbookFunctionsCumPrincPostRequestBody) GetPv()(iadcd811
     return nil
 }
 // GetRate gets the rate property value. The rate property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsCumPrincPostRequestBody) GetRate()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("rate")
     if err != nil {
@@ -149,6 +156,7 @@ func (m *ItemItemsItemWorkbookFunctionsCumPrincPostRequestBody) GetRate()(iadcd8
     return nil
 }
 // GetStartPeriod gets the startPeriod property value. The startPeriod property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsCumPrincPostRequestBody) GetStartPeriod()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("startPeriod")
     if err != nil {
@@ -160,6 +168,7 @@ func (m *ItemItemsItemWorkbookFunctionsCumPrincPostRequestBody) GetStartPeriod()
     return nil
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsCumPrincPostRequestBody) GetTypeEscaped()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -269,7 +278,6 @@ func (m *ItemItemsItemWorkbookFunctionsCumPrincPostRequestBody) SetTypeEscaped(v
         panic(err)
     }
 }
-// ItemItemsItemWorkbookFunctionsCumPrincPostRequestBodyable 
 type ItemItemsItemWorkbookFunctionsCumPrincPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

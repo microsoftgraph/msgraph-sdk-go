@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceComplianceUserStatus 
 type DeviceComplianceUserStatus struct {
     Entity
 }
-// NewDeviceComplianceUserStatus instantiates a new deviceComplianceUserStatus and sets the default values.
+// NewDeviceComplianceUserStatus instantiates a new DeviceComplianceUserStatus and sets the default values.
 func NewDeviceComplianceUserStatus()(*DeviceComplianceUserStatus) {
     m := &DeviceComplianceUserStatus{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewDeviceComplianceUserStatus()(*DeviceComplianceUserStatus) {
     return m
 }
 // CreateDeviceComplianceUserStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceComplianceUserStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceComplianceUserStatus(), nil
 }
 // GetDevicesCount gets the devicesCount property value. Devices count for that user.
+// returns a *int32 when successful
 func (m *DeviceComplianceUserStatus) GetDevicesCount()(*int32) {
     val, err := m.GetBackingStore().Get("devicesCount")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *DeviceComplianceUserStatus) GetDevicesCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceComplianceUserStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["devicesCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -87,6 +89,7 @@ func (m *DeviceComplianceUserStatus) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetLastReportedDateTime gets the lastReportedDateTime property value. Last modified date time of the policy report.
+// returns a *Time when successful
 func (m *DeviceComplianceUserStatus) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastReportedDateTime")
     if err != nil {
@@ -98,6 +101,7 @@ func (m *DeviceComplianceUserStatus) GetLastReportedDateTime()(*i336074805fc8539
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *ComplianceStatus when successful
 func (m *DeviceComplianceUserStatus) GetStatus()(*ComplianceStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -109,6 +113,7 @@ func (m *DeviceComplianceUserStatus) GetStatus()(*ComplianceStatus) {
     return nil
 }
 // GetUserDisplayName gets the userDisplayName property value. User name of the DevicePolicyStatus.
+// returns a *string when successful
 func (m *DeviceComplianceUserStatus) GetUserDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("userDisplayName")
     if err != nil {
@@ -120,6 +125,7 @@ func (m *DeviceComplianceUserStatus) GetUserDisplayName()(*string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName.
+// returns a *string when successful
 func (m *DeviceComplianceUserStatus) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -204,7 +210,6 @@ func (m *DeviceComplianceUserStatus) SetUserPrincipalName(value *string)() {
         panic(err)
     }
 }
-// DeviceComplianceUserStatusable 
 type DeviceComplianceUserStatusable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -27,28 +27,29 @@ type MobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBuilder
     // Request query parameters
     QueryParameters *MobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBuilderGetQueryParameters
 }
-// NewMobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBuilderInternal instantiates a new MobileAppCategoryItemRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBuilderInternal instantiates a new MobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBuilder) {
     m := &MobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.win32LobApp/categories/{mobileAppCategory%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.win32LobApp/categories/{mobileAppCategory%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewMobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBuilder instantiates a new MobileAppCategoryItemRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBuilder instantiates a new MobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the list of categories for this app.
+// returns a MobileAppCategoryable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCategoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateMobileAppCategoryFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *MobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBui
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MobileAppCategoryable), nil
 }
 // ToGetRequestInformation the list of categories for this app.
+// returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *MobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBui
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBuilder when successful
 func (m *MobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBuilder) WithUrl(rawUrl string)(*MobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBuilder) {
     return NewMobileAppsItemGraphWin32LobAppCategoriesMobileAppCategoryItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

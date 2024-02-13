@@ -8,7 +8,7 @@ import (
 type ManagedMobileLobApp struct {
     ManagedApp
 }
-// NewManagedMobileLobApp instantiates a new managedMobileLobApp and sets the default values.
+// NewManagedMobileLobApp instantiates a new ManagedMobileLobApp and sets the default values.
 func NewManagedMobileLobApp()(*ManagedMobileLobApp) {
     m := &ManagedMobileLobApp{
         ManagedApp: *NewManagedApp(),
@@ -18,6 +18,7 @@ func NewManagedMobileLobApp()(*ManagedMobileLobApp) {
     return m
 }
 // CreateManagedMobileLobAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedMobileLobAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -42,6 +43,7 @@ func CreateManagedMobileLobAppFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewManagedMobileLobApp(), nil
 }
 // GetCommittedContentVersion gets the committedContentVersion property value. The internal committed content version.
+// returns a *string when successful
 func (m *ManagedMobileLobApp) GetCommittedContentVersion()(*string) {
     val, err := m.GetBackingStore().Get("committedContentVersion")
     if err != nil {
@@ -53,6 +55,7 @@ func (m *ManagedMobileLobApp) GetCommittedContentVersion()(*string) {
     return nil
 }
 // GetContentVersions gets the contentVersions property value. The list of content versions for this app.
+// returns a []MobileAppContentable when successful
 func (m *ManagedMobileLobApp) GetContentVersions()([]MobileAppContentable) {
     val, err := m.GetBackingStore().Get("contentVersions")
     if err != nil {
@@ -64,6 +67,7 @@ func (m *ManagedMobileLobApp) GetContentVersions()([]MobileAppContentable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedMobileLobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedApp.GetFieldDeserializers()
     res["committedContentVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -115,6 +119,7 @@ func (m *ManagedMobileLobApp) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetFileName gets the fileName property value. The name of the main Lob application file.
+// returns a *string when successful
 func (m *ManagedMobileLobApp) GetFileName()(*string) {
     val, err := m.GetBackingStore().Get("fileName")
     if err != nil {
@@ -126,6 +131,7 @@ func (m *ManagedMobileLobApp) GetFileName()(*string) {
     return nil
 }
 // GetSize gets the size property value. The total size, including all uploaded files.
+// returns a *int64 when successful
 func (m *ManagedMobileLobApp) GetSize()(*int64) {
     val, err := m.GetBackingStore().Get("size")
     if err != nil {
@@ -202,7 +208,6 @@ func (m *ManagedMobileLobApp) SetSize(value *int64)() {
         panic(err)
     }
 }
-// ManagedMobileLobAppable 
 type ManagedMobileLobAppable interface {
     ManagedAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

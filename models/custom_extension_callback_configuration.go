@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CustomExtensionCallbackConfiguration 
 type CustomExtensionCallbackConfiguration struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCustomExtensionCallbackConfiguration instantiates a new customExtensionCallbackConfiguration and sets the default values.
+// NewCustomExtensionCallbackConfiguration instantiates a new CustomExtensionCallbackConfiguration and sets the default values.
 func NewCustomExtensionCallbackConfiguration()(*CustomExtensionCallbackConfiguration) {
     m := &CustomExtensionCallbackConfiguration{
     }
@@ -19,10 +18,12 @@ func NewCustomExtensionCallbackConfiguration()(*CustomExtensionCallbackConfigura
     return m
 }
 // CreateCustomExtensionCallbackConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCustomExtensionCallbackConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomExtensionCallbackConfiguration(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CustomExtensionCallbackConfiguration) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *CustomExtensionCallbackConfiguration) GetAdditionalData()(map[string]an
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CustomExtensionCallbackConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomExtensionCallbackConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -64,6 +67,7 @@ func (m *CustomExtensionCallbackConfiguration) GetFieldDeserializers()(map[strin
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *CustomExtensionCallbackConfiguration) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -75,6 +79,7 @@ func (m *CustomExtensionCallbackConfiguration) GetOdataType()(*string) {
     return nil
 }
 // GetTimeoutDuration gets the timeoutDuration property value. The maximum duration in ISO 8601 format that Microsoft Entra ID will wait for a resume action for the callout it sent to the logic app. The valid range for custom extensions in lifecycle workflows is five minutes to three hours. The valid range for custom extensions in entitlement management is between 5 minutes and 14 days. For example, PT3H refers to three hours, P3D refers to three days, PT10M refers to ten minutes.
+// returns a *ISODuration when successful
 func (m *CustomExtensionCallbackConfiguration) GetTimeoutDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("timeoutDuration")
     if err != nil {
@@ -132,7 +137,6 @@ func (m *CustomExtensionCallbackConfiguration) SetTimeoutDuration(value *i878a80
         panic(err)
     }
 }
-// CustomExtensionCallbackConfigurationable 
 type CustomExtensionCallbackConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TargetDeviceGroup 
 type TargetDeviceGroup struct {
     Entity
 }
-// NewTargetDeviceGroup instantiates a new targetDeviceGroup and sets the default values.
+// NewTargetDeviceGroup instantiates a new TargetDeviceGroup and sets the default values.
 func NewTargetDeviceGroup()(*TargetDeviceGroup) {
     m := &TargetDeviceGroup{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewTargetDeviceGroup()(*TargetDeviceGroup) {
     return m
 }
 // CreateTargetDeviceGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTargetDeviceGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTargetDeviceGroup(), nil
 }
 // GetDisplayName gets the displayName property value. Display name for the target device group.
+// returns a *string when successful
 func (m *TargetDeviceGroup) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *TargetDeviceGroup) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TargetDeviceGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,7 +68,6 @@ func (m *TargetDeviceGroup) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// TargetDeviceGroupable 
 type TargetDeviceGroupable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SimulationCollectionResponse 
 type SimulationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSimulationCollectionResponse instantiates a new simulationCollectionResponse and sets the default values.
+// NewSimulationCollectionResponse instantiates a new SimulationCollectionResponse and sets the default values.
 func NewSimulationCollectionResponse()(*SimulationCollectionResponse) {
     m := &SimulationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewSimulationCollectionResponse()(*SimulationCollectionResponse) {
     return m
 }
 // CreateSimulationCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSimulationCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSimulationCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SimulationCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *SimulationCollectionResponse) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []Simulationable when successful
 func (m *SimulationCollectionResponse) GetValue()([]Simulationable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *SimulationCollectionResponse) SetValue(value []Simulationable)() {
         panic(err)
     }
 }
-// SimulationCollectionResponseable 
 type SimulationCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

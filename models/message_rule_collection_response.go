@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MessageRuleCollectionResponse 
 type MessageRuleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMessageRuleCollectionResponse instantiates a new messageRuleCollectionResponse and sets the default values.
+// NewMessageRuleCollectionResponse instantiates a new MessageRuleCollectionResponse and sets the default values.
 func NewMessageRuleCollectionResponse()(*MessageRuleCollectionResponse) {
     m := &MessageRuleCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewMessageRuleCollectionResponse()(*MessageRuleCollectionResponse) {
     return m
 }
 // CreateMessageRuleCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMessageRuleCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMessageRuleCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MessageRuleCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *MessageRuleCollectionResponse) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []MessageRuleable when successful
 func (m *MessageRuleCollectionResponse) GetValue()([]MessageRuleable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *MessageRuleCollectionResponse) SetValue(value []MessageRuleable)() {
         panic(err)
     }
 }
-// MessageRuleCollectionResponseable 
 type MessageRuleCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

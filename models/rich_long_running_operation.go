@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RichLongRunningOperation 
 type RichLongRunningOperation struct {
     LongRunningOperation
 }
-// NewRichLongRunningOperation instantiates a new richLongRunningOperation and sets the default values.
+// NewRichLongRunningOperation instantiates a new RichLongRunningOperation and sets the default values.
 func NewRichLongRunningOperation()(*RichLongRunningOperation) {
     m := &RichLongRunningOperation{
         LongRunningOperation: *NewLongRunningOperation(),
@@ -16,10 +15,12 @@ func NewRichLongRunningOperation()(*RichLongRunningOperation) {
     return m
 }
 // CreateRichLongRunningOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRichLongRunningOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRichLongRunningOperation(), nil
 }
 // GetError gets the error property value. Error that caused the operation to fail.
+// returns a PublicErrorable when successful
 func (m *RichLongRunningOperation) GetError()(PublicErrorable) {
     val, err := m.GetBackingStore().Get("error")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *RichLongRunningOperation) GetError()(PublicErrorable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RichLongRunningOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.LongRunningOperation.GetFieldDeserializers()
     res["error"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -76,6 +78,7 @@ func (m *RichLongRunningOperation) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetPercentageComplete gets the percentageComplete property value. A value between 0 and 100 that indicates the progress of the operation.
+// returns a *int32 when successful
 func (m *RichLongRunningOperation) GetPercentageComplete()(*int32) {
     val, err := m.GetBackingStore().Get("percentageComplete")
     if err != nil {
@@ -87,6 +90,7 @@ func (m *RichLongRunningOperation) GetPercentageComplete()(*int32) {
     return nil
 }
 // GetResourceId gets the resourceId property value. The unique identifier for the result.
+// returns a *string when successful
 func (m *RichLongRunningOperation) GetResourceId()(*string) {
     val, err := m.GetBackingStore().Get("resourceId")
     if err != nil {
@@ -98,6 +102,7 @@ func (m *RichLongRunningOperation) GetResourceId()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type of the operation.
+// returns a *string when successful
 func (m *RichLongRunningOperation) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -168,7 +173,6 @@ func (m *RichLongRunningOperation) SetTypeEscaped(value *string)() {
         panic(err)
     }
 }
-// RichLongRunningOperationable 
 type RichLongRunningOperationable interface {
     LongRunningOperationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

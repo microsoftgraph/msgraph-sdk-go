@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ColumnLinkCollectionResponse 
 type ColumnLinkCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewColumnLinkCollectionResponse instantiates a new columnLinkCollectionResponse and sets the default values.
+// NewColumnLinkCollectionResponse instantiates a new ColumnLinkCollectionResponse and sets the default values.
 func NewColumnLinkCollectionResponse()(*ColumnLinkCollectionResponse) {
     m := &ColumnLinkCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewColumnLinkCollectionResponse()(*ColumnLinkCollectionResponse) {
     return m
 }
 // CreateColumnLinkCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateColumnLinkCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewColumnLinkCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ColumnLinkCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ColumnLinkCollectionResponse) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ColumnLinkable when successful
 func (m *ColumnLinkCollectionResponse) GetValue()([]ColumnLinkable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ColumnLinkCollectionResponse) SetValue(value []ColumnLinkable)() {
         panic(err)
     }
 }
-// ColumnLinkCollectionResponseable 
 type ColumnLinkCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

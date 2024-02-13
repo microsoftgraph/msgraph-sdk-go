@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CommsOperationCollectionResponse 
 type CommsOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCommsOperationCollectionResponse instantiates a new commsOperationCollectionResponse and sets the default values.
+// NewCommsOperationCollectionResponse instantiates a new CommsOperationCollectionResponse and sets the default values.
 func NewCommsOperationCollectionResponse()(*CommsOperationCollectionResponse) {
     m := &CommsOperationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewCommsOperationCollectionResponse()(*CommsOperationCollectionResponse) {
     return m
 }
 // CreateCommsOperationCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCommsOperationCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCommsOperationCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CommsOperationCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *CommsOperationCollectionResponse) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []CommsOperationable when successful
 func (m *CommsOperationCollectionResponse) GetValue()([]CommsOperationable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *CommsOperationCollectionResponse) SetValue(value []CommsOperationable)(
         panic(err)
     }
 }
-// CommsOperationCollectionResponseable 
 type CommsOperationCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

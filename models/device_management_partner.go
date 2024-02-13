@@ -9,7 +9,7 @@ import (
 type DeviceManagementPartner struct {
     Entity
 }
-// NewDeviceManagementPartner instantiates a new deviceManagementPartner and sets the default values.
+// NewDeviceManagementPartner instantiates a new DeviceManagementPartner and sets the default values.
 func NewDeviceManagementPartner()(*DeviceManagementPartner) {
     m := &DeviceManagementPartner{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewDeviceManagementPartner()(*DeviceManagementPartner) {
     return m
 }
 // CreateDeviceManagementPartnerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementPartnerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementPartner(), nil
 }
 // GetDisplayName gets the displayName property value. Partner display name
+// returns a *string when successful
 func (m *DeviceManagementPartner) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *DeviceManagementPartner) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementPartner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -133,6 +136,7 @@ func (m *DeviceManagementPartner) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetGroupsRequiringPartnerEnrollment gets the groupsRequiringPartnerEnrollment property value. User groups that specifies whether enrollment is through partner.
+// returns a []DeviceManagementPartnerAssignmentable when successful
 func (m *DeviceManagementPartner) GetGroupsRequiringPartnerEnrollment()([]DeviceManagementPartnerAssignmentable) {
     val, err := m.GetBackingStore().Get("groupsRequiringPartnerEnrollment")
     if err != nil {
@@ -144,6 +148,7 @@ func (m *DeviceManagementPartner) GetGroupsRequiringPartnerEnrollment()([]Device
     return nil
 }
 // GetIsConfigured gets the isConfigured property value. Whether device management partner is configured or not
+// returns a *bool when successful
 func (m *DeviceManagementPartner) GetIsConfigured()(*bool) {
     val, err := m.GetBackingStore().Get("isConfigured")
     if err != nil {
@@ -155,6 +160,7 @@ func (m *DeviceManagementPartner) GetIsConfigured()(*bool) {
     return nil
 }
 // GetLastHeartbeatDateTime gets the lastHeartbeatDateTime property value. Timestamp of last heartbeat after admin enabled option Connect to Device management Partner
+// returns a *Time when successful
 func (m *DeviceManagementPartner) GetLastHeartbeatDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastHeartbeatDateTime")
     if err != nil {
@@ -166,6 +172,7 @@ func (m *DeviceManagementPartner) GetLastHeartbeatDateTime()(*i336074805fc853987
     return nil
 }
 // GetPartnerAppType gets the partnerAppType property value. Partner App Type.
+// returns a *DeviceManagementPartnerAppType when successful
 func (m *DeviceManagementPartner) GetPartnerAppType()(*DeviceManagementPartnerAppType) {
     val, err := m.GetBackingStore().Get("partnerAppType")
     if err != nil {
@@ -177,6 +184,7 @@ func (m *DeviceManagementPartner) GetPartnerAppType()(*DeviceManagementPartnerAp
     return nil
 }
 // GetPartnerState gets the partnerState property value. Partner state of this tenant.
+// returns a *DeviceManagementPartnerTenantState when successful
 func (m *DeviceManagementPartner) GetPartnerState()(*DeviceManagementPartnerTenantState) {
     val, err := m.GetBackingStore().Get("partnerState")
     if err != nil {
@@ -188,6 +196,7 @@ func (m *DeviceManagementPartner) GetPartnerState()(*DeviceManagementPartnerTena
     return nil
 }
 // GetSingleTenantAppId gets the singleTenantAppId property value. Partner Single tenant App id
+// returns a *string when successful
 func (m *DeviceManagementPartner) GetSingleTenantAppId()(*string) {
     val, err := m.GetBackingStore().Get("singleTenantAppId")
     if err != nil {
@@ -199,6 +208,7 @@ func (m *DeviceManagementPartner) GetSingleTenantAppId()(*string) {
     return nil
 }
 // GetWhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime gets the whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime property value. DateTime in UTC when PartnerDevices will be marked as NonCompliant
+// returns a *Time when successful
 func (m *DeviceManagementPartner) GetWhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime")
     if err != nil {
@@ -210,6 +220,7 @@ func (m *DeviceManagementPartner) GetWhenPartnerDevicesWillBeMarkedAsNonComplian
     return nil
 }
 // GetWhenPartnerDevicesWillBeRemovedDateTime gets the whenPartnerDevicesWillBeRemovedDateTime property value. DateTime in UTC when PartnerDevices will be removed
+// returns a *Time when successful
 func (m *DeviceManagementPartner) GetWhenPartnerDevicesWillBeRemovedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("whenPartnerDevicesWillBeRemovedDateTime")
     if err != nil {
@@ -353,7 +364,6 @@ func (m *DeviceManagementPartner) SetWhenPartnerDevicesWillBeRemovedDateTime(val
         panic(err)
     }
 }
-// DeviceManagementPartnerable 
 type DeviceManagementPartnerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

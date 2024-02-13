@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// SynchronizationLinkedObjects 
 type SynchronizationLinkedObjects struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSynchronizationLinkedObjects instantiates a new synchronizationLinkedObjects and sets the default values.
+// NewSynchronizationLinkedObjects instantiates a new SynchronizationLinkedObjects and sets the default values.
 func NewSynchronizationLinkedObjects()(*SynchronizationLinkedObjects) {
     m := &SynchronizationLinkedObjects{
     }
@@ -19,10 +18,12 @@ func NewSynchronizationLinkedObjects()(*SynchronizationLinkedObjects) {
     return m
 }
 // CreateSynchronizationLinkedObjectsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSynchronizationLinkedObjectsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSynchronizationLinkedObjects(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SynchronizationLinkedObjects) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *SynchronizationLinkedObjects) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *SynchronizationLinkedObjects) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SynchronizationLinkedObjects) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["manager"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -96,6 +99,7 @@ func (m *SynchronizationLinkedObjects) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetManager gets the manager property value. The manager property
+// returns a SynchronizationJobSubjectable when successful
 func (m *SynchronizationLinkedObjects) GetManager()(SynchronizationJobSubjectable) {
     val, err := m.GetBackingStore().Get("manager")
     if err != nil {
@@ -107,6 +111,7 @@ func (m *SynchronizationLinkedObjects) GetManager()(SynchronizationJobSubjectabl
     return nil
 }
 // GetMembers gets the members property value. All group members that you would like to provision.
+// returns a []SynchronizationJobSubjectable when successful
 func (m *SynchronizationLinkedObjects) GetMembers()([]SynchronizationJobSubjectable) {
     val, err := m.GetBackingStore().Get("members")
     if err != nil {
@@ -118,6 +123,7 @@ func (m *SynchronizationLinkedObjects) GetMembers()([]SynchronizationJobSubjecta
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *SynchronizationLinkedObjects) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -129,6 +135,7 @@ func (m *SynchronizationLinkedObjects) GetOdataType()(*string) {
     return nil
 }
 // GetOwners gets the owners property value. The owners property
+// returns a []SynchronizationJobSubjectable when successful
 func (m *SynchronizationLinkedObjects) GetOwners()([]SynchronizationJobSubjectable) {
     val, err := m.GetBackingStore().Get("owners")
     if err != nil {
@@ -224,7 +231,6 @@ func (m *SynchronizationLinkedObjects) SetOwners(value []SynchronizationJobSubje
         panic(err)
     }
 }
-// SynchronizationLinkedObjectsable 
 type SynchronizationLinkedObjectsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

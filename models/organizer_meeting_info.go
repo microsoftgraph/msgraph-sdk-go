@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OrganizerMeetingInfo 
 type OrganizerMeetingInfo struct {
     MeetingInfo
 }
-// NewOrganizerMeetingInfo instantiates a new organizerMeetingInfo and sets the default values.
+// NewOrganizerMeetingInfo instantiates a new OrganizerMeetingInfo and sets the default values.
 func NewOrganizerMeetingInfo()(*OrganizerMeetingInfo) {
     m := &OrganizerMeetingInfo{
         MeetingInfo: *NewMeetingInfo(),
@@ -18,10 +17,12 @@ func NewOrganizerMeetingInfo()(*OrganizerMeetingInfo) {
     return m
 }
 // CreateOrganizerMeetingInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOrganizerMeetingInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOrganizerMeetingInfo(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OrganizerMeetingInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MeetingInfo.GetFieldDeserializers()
     res["organizer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *OrganizerMeetingInfo) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetOrganizer gets the organizer property value. The organizer property
+// returns a IdentitySetable when successful
 func (m *OrganizerMeetingInfo) GetOrganizer()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("organizer")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *OrganizerMeetingInfo) SetOrganizer(value IdentitySetable)() {
         panic(err)
     }
 }
-// OrganizerMeetingInfoable 
 type OrganizerMeetingInfoable interface {
     MeetingInfoable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

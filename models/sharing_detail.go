@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// SharingDetail 
 type SharingDetail struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSharingDetail instantiates a new sharingDetail and sets the default values.
+// NewSharingDetail instantiates a new SharingDetail and sets the default values.
 func NewSharingDetail()(*SharingDetail) {
     m := &SharingDetail{
     }
@@ -20,10 +19,12 @@ func NewSharingDetail()(*SharingDetail) {
     return m
 }
 // CreateSharingDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSharingDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSharingDetail(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SharingDetail) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *SharingDetail) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *SharingDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SharingDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -105,6 +108,7 @@ func (m *SharingDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *SharingDetail) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -116,6 +120,7 @@ func (m *SharingDetail) GetOdataType()(*string) {
     return nil
 }
 // GetSharedBy gets the sharedBy property value. The user who shared the document.
+// returns a InsightIdentityable when successful
 func (m *SharingDetail) GetSharedBy()(InsightIdentityable) {
     val, err := m.GetBackingStore().Get("sharedBy")
     if err != nil {
@@ -127,6 +132,7 @@ func (m *SharingDetail) GetSharedBy()(InsightIdentityable) {
     return nil
 }
 // GetSharedDateTime gets the sharedDateTime property value. The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *SharingDetail) GetSharedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("sharedDateTime")
     if err != nil {
@@ -138,6 +144,7 @@ func (m *SharingDetail) GetSharedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     return nil
 }
 // GetSharingReference gets the sharingReference property value. The sharingReference property
+// returns a ResourceReferenceable when successful
 func (m *SharingDetail) GetSharingReference()(ResourceReferenceable) {
     val, err := m.GetBackingStore().Get("sharingReference")
     if err != nil {
@@ -149,6 +156,7 @@ func (m *SharingDetail) GetSharingReference()(ResourceReferenceable) {
     return nil
 }
 // GetSharingSubject gets the sharingSubject property value. The subject with which the document was shared.
+// returns a *string when successful
 func (m *SharingDetail) GetSharingSubject()(*string) {
     val, err := m.GetBackingStore().Get("sharingSubject")
     if err != nil {
@@ -160,6 +168,7 @@ func (m *SharingDetail) GetSharingSubject()(*string) {
     return nil
 }
 // GetSharingType gets the sharingType property value. Determines the way the document was shared, can be by a 'Link', 'Attachment', 'Group', 'Site'.
+// returns a *string when successful
 func (m *SharingDetail) GetSharingType()(*string) {
     val, err := m.GetBackingStore().Get("sharingType")
     if err != nil {
@@ -263,7 +272,6 @@ func (m *SharingDetail) SetSharingType(value *string)() {
         panic(err)
     }
 }
-// SharingDetailable 
 type SharingDetailable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

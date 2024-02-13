@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookChartSeries 
 type WorkbookChartSeries struct {
     Entity
 }
-// NewWorkbookChartSeries instantiates a new workbookChartSeries and sets the default values.
+// NewWorkbookChartSeries instantiates a new WorkbookChartSeries and sets the default values.
 func NewWorkbookChartSeries()(*WorkbookChartSeries) {
     m := &WorkbookChartSeries{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewWorkbookChartSeries()(*WorkbookChartSeries) {
     return m
 }
 // CreateWorkbookChartSeriesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookChartSeriesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookChartSeries(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookChartSeries) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["format"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -61,6 +62,7 @@ func (m *WorkbookChartSeries) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetFormat gets the format property value. Represents the formatting of a chart series, which includes fill and line formatting. Read-only.
+// returns a WorkbookChartSeriesFormatable when successful
 func (m *WorkbookChartSeries) GetFormat()(WorkbookChartSeriesFormatable) {
     val, err := m.GetBackingStore().Get("format")
     if err != nil {
@@ -72,6 +74,7 @@ func (m *WorkbookChartSeries) GetFormat()(WorkbookChartSeriesFormatable) {
     return nil
 }
 // GetName gets the name property value. Represents the name of a series in a chart.
+// returns a *string when successful
 func (m *WorkbookChartSeries) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -83,6 +86,7 @@ func (m *WorkbookChartSeries) GetName()(*string) {
     return nil
 }
 // GetPoints gets the points property value. Represents a collection of all points in the series. Read-only.
+// returns a []WorkbookChartPointable when successful
 func (m *WorkbookChartSeries) GetPoints()([]WorkbookChartPointable) {
     val, err := m.GetBackingStore().Get("points")
     if err != nil {
@@ -146,7 +150,6 @@ func (m *WorkbookChartSeries) SetPoints(value []WorkbookChartPointable)() {
         panic(err)
     }
 }
-// WorkbookChartSeriesable 
 type WorkbookChartSeriesable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

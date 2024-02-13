@@ -11,13 +11,6 @@ import (
 type ItemManagerRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemManagerRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemManagerRequestBuilderDeleteRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // ItemManagerRequestBuilderGetQueryParameters returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
 type ItemManagerRequestBuilderGetQueryParameters struct {
     // Expand related entities
@@ -34,39 +27,22 @@ type ItemManagerRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemManagerRequestBuilderGetQueryParameters
 }
-// NewItemManagerRequestBuilderInternal instantiates a new ManagerRequestBuilder and sets the default values.
+// NewItemManagerRequestBuilderInternal instantiates a new ItemManagerRequestBuilder and sets the default values.
 func NewItemManagerRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemManagerRequestBuilder) {
     m := &ItemManagerRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/manager{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/manager{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemManagerRequestBuilder instantiates a new ManagerRequestBuilder and sets the default values.
+// NewItemManagerRequestBuilder instantiates a new ItemManagerRequestBuilder and sets the default values.
 func NewItemManagerRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemManagerRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemManagerRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a user's manager.
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-delete-manager?view=graph-rest-1.0
-func (m *ItemManagerRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemManagerRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
-}
 // Get returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
+// returns a DirectoryObjectable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
@@ -76,8 +52,7 @@ func (m *ItemManagerRequestBuilder) Get(ctx context.Context, requestConfiguratio
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDirectoryObjectFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -89,20 +64,12 @@ func (m *ItemManagerRequestBuilder) Get(ctx context.Context, requestConfiguratio
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
 }
 // Ref provides operations to manage the collection of user entities.
+// returns a *ItemManagerRefRequestBuilder when successful
 func (m *ItemManagerRequestBuilder) Ref()(*ItemManagerRefRequestBuilder) {
     return NewItemManagerRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation remove a user's manager.
-func (m *ItemManagerRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemManagerRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    requestInfo.Headers.TryAdd("Accept", "application/json")
-    return requestInfo, nil
-}
 // ToGetRequestInformation returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
+// returns a *RequestInformation when successful
 func (m *ItemManagerRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemManagerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -116,6 +83,7 @@ func (m *ItemManagerRequestBuilder) ToGetRequestInformation(ctx context.Context,
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemManagerRequestBuilder when successful
 func (m *ItemManagerRequestBuilder) WithUrl(rawUrl string)(*ItemManagerRequestBuilder) {
     return NewItemManagerRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileAppTroubleshootingEvent 
 type MobileAppTroubleshootingEvent struct {
     Entity
 }
-// NewMobileAppTroubleshootingEvent instantiates a new mobileAppTroubleshootingEvent and sets the default values.
+// NewMobileAppTroubleshootingEvent instantiates a new MobileAppTroubleshootingEvent and sets the default values.
 func NewMobileAppTroubleshootingEvent()(*MobileAppTroubleshootingEvent) {
     m := &MobileAppTroubleshootingEvent{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewMobileAppTroubleshootingEvent()(*MobileAppTroubleshootingEvent) {
     return m
 }
 // CreateMobileAppTroubleshootingEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMobileAppTroubleshootingEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileAppTroubleshootingEvent(), nil
 }
 // GetAppLogCollectionRequests gets the appLogCollectionRequests property value. Indicates collection of App Log Upload Request.
+// returns a []AppLogCollectionRequestable when successful
 func (m *MobileAppTroubleshootingEvent) GetAppLogCollectionRequests()([]AppLogCollectionRequestable) {
     val, err := m.GetBackingStore().Get("appLogCollectionRequests")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *MobileAppTroubleshootingEvent) GetAppLogCollectionRequests()([]AppLogCo
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MobileAppTroubleshootingEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appLogCollectionRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,7 +80,6 @@ func (m *MobileAppTroubleshootingEvent) SetAppLogCollectionRequests(value []AppL
         panic(err)
     }
 }
-// MobileAppTroubleshootingEventable 
 type MobileAppTroubleshootingEventable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

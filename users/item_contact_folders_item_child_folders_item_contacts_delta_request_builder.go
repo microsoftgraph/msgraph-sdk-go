@@ -14,6 +14,8 @@ type ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder struct {
 type ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -36,21 +38,23 @@ type ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilderGetRequest
     // Request query parameters
     QueryParameters *ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilderGetQueryParameters
 }
-// NewItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilderInternal instantiates a new DeltaRequestBuilder and sets the default values.
+// NewItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilderInternal instantiates a new ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder and sets the default values.
 func NewItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder) {
     m := &ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/contactFolders/{contactFolder%2Did}/childFolders/{contactFolder%2Did1}/contacts/delta(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/contactFolders/{contactFolder%2Did}/childFolders/{contactFolder%2Did1}/contacts/delta(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder instantiates a new DeltaRequestBuilder and sets the default values.
+// NewItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder instantiates a new ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder and sets the default values.
 func NewItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contacts in that folder. This allows you to maintain and synchronize a local store of a user's contacts without having to fetch the entire set of contacts from the server every time.  
-// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ItemContactFoldersItemChildFoldersItemContactsDeltaResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
@@ -60,8 +64,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder) Get(
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemContactFoldersItemChildFoldersItemContactsDeltaResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -73,6 +76,8 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder) Get(
     return res.(ItemContactFoldersItemChildFoldersItemContactsDeltaResponseable), nil
 }
 // GetAsDeltaGetResponse get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contacts in that folder. This allows you to maintain and synchronize a local store of a user's contacts without having to fetch the entire set of contacts from the server every time.  
+// returns a ItemContactFoldersItemChildFoldersItemContactsDeltaGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
@@ -82,8 +87,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder) GetA
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemContactFoldersItemChildFoldersItemContactsDeltaGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -95,6 +99,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder) GetA
     return res.(ItemContactFoldersItemChildFoldersItemContactsDeltaGetResponseable), nil
 }
 // ToGetRequestInformation get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contacts in that folder. This allows you to maintain and synchronize a local store of a user's contacts without having to fetch the entire set of contacts from the server every time.  
+// returns a *RequestInformation when successful
 func (m *ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -108,6 +113,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder) ToGe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder when successful
 func (m *ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder) WithUrl(rawUrl string)(*ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder) {
     return NewItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

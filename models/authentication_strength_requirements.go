@@ -1,22 +1,24 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type AuthenticationStrengthRequirements int
 
 const (
-    NONE_AUTHENTICATIONSTRENGTHREQUIREMENTS AuthenticationStrengthRequirements = iota
-    MFA_AUTHENTICATIONSTRENGTHREQUIREMENTS
-    UNKNOWNFUTUREVALUE_AUTHENTICATIONSTRENGTHREQUIREMENTS
+    NONE_AUTHENTICATIONSTRENGTHREQUIREMENTS = 1
+    MFA_AUTHENTICATIONSTRENGTHREQUIREMENTS = 2
+    UNKNOWNFUTUREVALUE_AUTHENTICATIONSTRENGTHREQUIREMENTS = 4
 )
 
 func (i AuthenticationStrengthRequirements) String() string {
     var values []string
-    for p := AuthenticationStrengthRequirements(1); p <= UNKNOWNFUTUREVALUE_AUTHENTICATIONSTRENGTHREQUIREMENTS; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "mfa", "unknownFutureValue"}[p])
+    options := []string{"none", "mfa", "unknownFutureValue"}
+    for p := 0; p < 3; p++ {
+        mantis := AuthenticationStrengthRequirements(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

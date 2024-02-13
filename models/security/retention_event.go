@@ -6,11 +6,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// RetentionEvent 
 type RetentionEvent struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewRetentionEvent instantiates a new retentionEvent and sets the default values.
+// NewRetentionEvent instantiates a new RetentionEvent and sets the default values.
 func NewRetentionEvent()(*RetentionEvent) {
     m := &RetentionEvent{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -18,10 +17,12 @@ func NewRetentionEvent()(*RetentionEvent) {
     return m
 }
 // CreateRetentionEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRetentionEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRetentionEvent(), nil
 }
 // GetCreatedBy gets the createdBy property value. The user who created the retentionEvent.
+// returns a IdentitySetable when successful
 func (m *RetentionEvent) GetCreatedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *RetentionEvent) GetCreatedBy()(iadcd81124412c61e647227ecfc4449d8bba17de
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date time when the retentionEvent was created.
+// returns a *Time when successful
 func (m *RetentionEvent) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *RetentionEvent) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetDescription gets the description property value. Optional information about the event.
+// returns a *string when successful
 func (m *RetentionEvent) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *RetentionEvent) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Name of the event.
+// returns a *string when successful
 func (m *RetentionEvent) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *RetentionEvent) GetDisplayName()(*string) {
     return nil
 }
 // GetEventPropagationResults gets the eventPropagationResults property value. The eventPropagationResults property
+// returns a []EventPropagationResultable when successful
 func (m *RetentionEvent) GetEventPropagationResults()([]EventPropagationResultable) {
     val, err := m.GetBackingStore().Get("eventPropagationResults")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *RetentionEvent) GetEventPropagationResults()([]EventPropagationResultab
     return nil
 }
 // GetEventQueries gets the eventQueries property value. Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.
+// returns a []EventQueryable when successful
 func (m *RetentionEvent) GetEventQueries()([]EventQueryable) {
     val, err := m.GetBackingStore().Get("eventQueries")
     if err != nil {
@@ -88,6 +94,7 @@ func (m *RetentionEvent) GetEventQueries()([]EventQueryable) {
     return nil
 }
 // GetEventStatus gets the eventStatus property value. The eventStatus property
+// returns a RetentionEventStatusable when successful
 func (m *RetentionEvent) GetEventStatus()(RetentionEventStatusable) {
     val, err := m.GetBackingStore().Get("eventStatus")
     if err != nil {
@@ -99,6 +106,7 @@ func (m *RetentionEvent) GetEventStatus()(RetentionEventStatusable) {
     return nil
 }
 // GetEventTriggerDateTime gets the eventTriggerDateTime property value. Optional time when the event should be triggered.
+// returns a *Time when successful
 func (m *RetentionEvent) GetEventTriggerDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("eventTriggerDateTime")
     if err != nil {
@@ -110,6 +118,7 @@ func (m *RetentionEvent) GetEventTriggerDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RetentionEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -247,6 +256,7 @@ func (m *RetentionEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The user who last modified the retentionEvent.
+// returns a IdentitySetable when successful
 func (m *RetentionEvent) GetLastModifiedBy()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -258,6 +268,7 @@ func (m *RetentionEvent) GetLastModifiedBy()(iadcd81124412c61e647227ecfc4449d8bb
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The latest date time when the retentionEvent was modified.
+// returns a *Time when successful
 func (m *RetentionEvent) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -269,6 +280,7 @@ func (m *RetentionEvent) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetLastStatusUpdateDateTime gets the lastStatusUpdateDateTime property value. Last time the status of the event was updated.
+// returns a *Time when successful
 func (m *RetentionEvent) GetLastStatusUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastStatusUpdateDateTime")
     if err != nil {
@@ -280,6 +292,7 @@ func (m *RetentionEvent) GetLastStatusUpdateDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetRetentionEventType gets the retentionEventType property value. Specifies the event that will start the retention period for labels that use this event type when an event is created.
+// returns a RetentionEventTypeable when successful
 func (m *RetentionEvent) GetRetentionEventType()(RetentionEventTypeable) {
     val, err := m.GetBackingStore().Get("retentionEventType")
     if err != nil {
@@ -466,7 +479,6 @@ func (m *RetentionEvent) SetRetentionEventType(value RetentionEventTypeable)() {
         panic(err)
     }
 }
-// RetentionEventable 
 type RetentionEventable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

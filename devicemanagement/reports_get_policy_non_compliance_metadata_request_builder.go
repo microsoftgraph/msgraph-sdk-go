@@ -17,20 +17,22 @@ type ReportsGetPolicyNonComplianceMetadataRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewReportsGetPolicyNonComplianceMetadataRequestBuilderInternal instantiates a new GetPolicyNonComplianceMetadataRequestBuilder and sets the default values.
+// NewReportsGetPolicyNonComplianceMetadataRequestBuilderInternal instantiates a new ReportsGetPolicyNonComplianceMetadataRequestBuilder and sets the default values.
 func NewReportsGetPolicyNonComplianceMetadataRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsGetPolicyNonComplianceMetadataRequestBuilder) {
     m := &ReportsGetPolicyNonComplianceMetadataRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/reports/getPolicyNonComplianceMetadata", pathParameters),
     }
     return m
 }
-// NewReportsGetPolicyNonComplianceMetadataRequestBuilder instantiates a new GetPolicyNonComplianceMetadataRequestBuilder and sets the default values.
+// NewReportsGetPolicyNonComplianceMetadataRequestBuilder instantiates a new ReportsGetPolicyNonComplianceMetadataRequestBuilder and sets the default values.
 func NewReportsGetPolicyNonComplianceMetadataRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsGetPolicyNonComplianceMetadataRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewReportsGetPolicyNonComplianceMetadataRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post not yet documented
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getpolicynoncompliancemetadata?view=graph-rest-1.0
@@ -40,8 +42,7 @@ func (m *ReportsGetPolicyNonComplianceMetadataRequestBuilder) Post(ctx context.C
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -53,6 +54,7 @@ func (m *ReportsGetPolicyNonComplianceMetadataRequestBuilder) Post(ctx context.C
     return res.([]byte), nil
 }
 // ToPostRequestInformation not yet documented
+// returns a *RequestInformation when successful
 func (m *ReportsGetPolicyNonComplianceMetadataRequestBuilder) ToPostRequestInformation(ctx context.Context, body ReportsGetPolicyNonComplianceMetadataPostRequestBodyable, requestConfiguration *ReportsGetPolicyNonComplianceMetadataRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -67,6 +69,7 @@ func (m *ReportsGetPolicyNonComplianceMetadataRequestBuilder) ToPostRequestInfor
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ReportsGetPolicyNonComplianceMetadataRequestBuilder when successful
 func (m *ReportsGetPolicyNonComplianceMetadataRequestBuilder) WithUrl(rawUrl string)(*ReportsGetPolicyNonComplianceMetadataRequestBuilder) {
     return NewReportsGetPolicyNonComplianceMetadataRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

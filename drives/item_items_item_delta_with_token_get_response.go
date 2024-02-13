@@ -5,7 +5,6 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// ItemItemsItemDeltaWithTokenGetResponse 
 type ItemItemsItemDeltaWithTokenGetResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseDeltaFunctionResponse
 }
@@ -17,10 +16,12 @@ func NewItemItemsItemDeltaWithTokenGetResponse()(*ItemItemsItemDeltaWithTokenGet
     return m
 }
 // CreateItemItemsItemDeltaWithTokenGetResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemsItemDeltaWithTokenGetResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemsItemDeltaWithTokenGetResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemsItemDeltaWithTokenGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseDeltaFunctionResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +43,7 @@ func (m *ItemItemsItemDeltaWithTokenGetResponse) GetFieldDeserializers()(map[str
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []DriveItemable when successful
 func (m *ItemItemsItemDeltaWithTokenGetResponse) GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -79,7 +81,6 @@ func (m *ItemItemsItemDeltaWithTokenGetResponse) SetValue(value []iadcd81124412c
         panic(err)
     }
 }
-// ItemItemsItemDeltaWithTokenGetResponseable 
 type ItemItemsItemDeltaWithTokenGetResponseable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseDeltaFunctionResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

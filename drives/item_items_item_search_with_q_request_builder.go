@@ -14,6 +14,8 @@ type ItemItemsItemSearchWithQRequestBuilder struct {
 type ItemItemsItemSearchWithQRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -36,32 +38,33 @@ type ItemItemsItemSearchWithQRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemItemsItemSearchWithQRequestBuilderGetQueryParameters
 }
-// NewItemItemsItemSearchWithQRequestBuilderInternal instantiates a new SearchWithQRequestBuilder and sets the default values.
+// NewItemItemsItemSearchWithQRequestBuilderInternal instantiates a new ItemItemsItemSearchWithQRequestBuilder and sets the default values.
 func NewItemItemsItemSearchWithQRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, q *string)(*ItemItemsItemSearchWithQRequestBuilder) {
     m := &ItemItemsItemSearchWithQRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/search(q='{q}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/search(q='{q}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     if q != nil {
         m.BaseRequestBuilder.PathParameters["q"] = *q
     }
     return m
 }
-// NewItemItemsItemSearchWithQRequestBuilder instantiates a new SearchWithQRequestBuilder and sets the default values.
+// NewItemItemsItemSearchWithQRequestBuilder instantiates a new ItemItemsItemSearchWithQRequestBuilder and sets the default values.
 func NewItemItemsItemSearchWithQRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemSearchWithQRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemSearchWithQRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function search
-// Deprecated: This method is obsolete. Use GetAsSearchWithQGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ItemItemsItemSearchWithQResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemSearchWithQRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemSearchWithQRequestBuilderGetRequestConfiguration)(ItemItemsItemSearchWithQResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemsItemSearchWithQResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -73,14 +76,15 @@ func (m *ItemItemsItemSearchWithQRequestBuilder) Get(ctx context.Context, reques
     return res.(ItemItemsItemSearchWithQResponseable), nil
 }
 // GetAsSearchWithQGetResponse invoke function search
+// returns a ItemItemsItemSearchWithQGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemSearchWithQRequestBuilder) GetAsSearchWithQGetResponse(ctx context.Context, requestConfiguration *ItemItemsItemSearchWithQRequestBuilderGetRequestConfiguration)(ItemItemsItemSearchWithQGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemsItemSearchWithQGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -92,6 +96,7 @@ func (m *ItemItemsItemSearchWithQRequestBuilder) GetAsSearchWithQGetResponse(ctx
     return res.(ItemItemsItemSearchWithQGetResponseable), nil
 }
 // ToGetRequestInformation invoke function search
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemSearchWithQRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemSearchWithQRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -105,6 +110,7 @@ func (m *ItemItemsItemSearchWithQRequestBuilder) ToGetRequestInformation(ctx con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemsItemSearchWithQRequestBuilder when successful
 func (m *ItemItemsItemSearchWithQRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemSearchWithQRequestBuilder) {
     return NewItemItemsItemSearchWithQRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

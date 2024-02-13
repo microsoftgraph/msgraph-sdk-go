@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ServicePlanInfo 
 type ServicePlanInfo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewServicePlanInfo instantiates a new servicePlanInfo and sets the default values.
+// NewServicePlanInfo instantiates a new ServicePlanInfo and sets the default values.
 func NewServicePlanInfo()(*ServicePlanInfo) {
     m := &ServicePlanInfo{
     }
@@ -20,10 +19,12 @@ func NewServicePlanInfo()(*ServicePlanInfo) {
     return m
 }
 // CreateServicePlanInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateServicePlanInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServicePlanInfo(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ServicePlanInfo) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,6 +37,7 @@ func (m *ServicePlanInfo) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAppliesTo gets the appliesTo property value. The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
+// returns a *string when successful
 func (m *ServicePlanInfo) GetAppliesTo()(*string) {
     val, err := m.GetBackingStore().Get("appliesTo")
     if err != nil {
@@ -47,10 +49,12 @@ func (m *ServicePlanInfo) GetAppliesTo()(*string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ServicePlanInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ServicePlanInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["appliesTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -106,6 +110,7 @@ func (m *ServicePlanInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ServicePlanInfo) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -117,6 +122,7 @@ func (m *ServicePlanInfo) GetOdataType()(*string) {
     return nil
 }
 // GetProvisioningStatus gets the provisioningStatus property value. The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service is disabled.Error - The service plan isn't provisioned and is in an error state.PendingInput - The service isn't provisioned and is awaiting service confirmation.PendingActivation - The service is provisioned but requires explicit activation by an administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it isn't activated in the tenant.
+// returns a *string when successful
 func (m *ServicePlanInfo) GetProvisioningStatus()(*string) {
     val, err := m.GetBackingStore().Get("provisioningStatus")
     if err != nil {
@@ -128,6 +134,7 @@ func (m *ServicePlanInfo) GetProvisioningStatus()(*string) {
     return nil
 }
 // GetServicePlanId gets the servicePlanId property value. The unique identifier of the service plan.
+// returns a *UUID when successful
 func (m *ServicePlanInfo) GetServicePlanId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("servicePlanId")
     if err != nil {
@@ -139,6 +146,7 @@ func (m *ServicePlanInfo) GetServicePlanId()(*i561e97a8befe7661a44c8f54600992b42
     return nil
 }
 // GetServicePlanName gets the servicePlanName property value. The name of the service plan.
+// returns a *string when successful
 func (m *ServicePlanInfo) GetServicePlanName()(*string) {
     val, err := m.GetBackingStore().Get("servicePlanName")
     if err != nil {
@@ -235,7 +243,6 @@ func (m *ServicePlanInfo) SetServicePlanName(value *string)() {
         panic(err)
     }
 }
-// ServicePlanInfoable 
 type ServicePlanInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

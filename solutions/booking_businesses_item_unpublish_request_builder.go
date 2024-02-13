@@ -17,20 +17,21 @@ type BookingBusinessesItemUnpublishRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewBookingBusinessesItemUnpublishRequestBuilderInternal instantiates a new UnpublishRequestBuilder and sets the default values.
+// NewBookingBusinessesItemUnpublishRequestBuilderInternal instantiates a new BookingBusinessesItemUnpublishRequestBuilder and sets the default values.
 func NewBookingBusinessesItemUnpublishRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BookingBusinessesItemUnpublishRequestBuilder) {
     m := &BookingBusinessesItemUnpublishRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/unpublish", pathParameters),
     }
     return m
 }
-// NewBookingBusinessesItemUnpublishRequestBuilder instantiates a new UnpublishRequestBuilder and sets the default values.
+// NewBookingBusinessesItemUnpublishRequestBuilder instantiates a new BookingBusinessesItemUnpublishRequestBuilder and sets the default values.
 func NewBookingBusinessesItemUnpublishRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BookingBusinessesItemUnpublishRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBookingBusinessesItemUnpublishRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post make the scheduling page of this business not available to external customers. Set the isPublished property to false, and the publicUrl property to null.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *BookingBusinessesItemUnpublishRequestBuilder) Post(ctx context.Context,
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *BookingBusinessesItemUnpublishRequestBuilder) Post(ctx context.Context,
     return nil
 }
 // ToPostRequestInformation make the scheduling page of this business not available to external customers. Set the isPublished property to false, and the publicUrl property to null.
+// returns a *RequestInformation when successful
 func (m *BookingBusinessesItemUnpublishRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemUnpublishRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *BookingBusinessesItemUnpublishRequestBuilder) ToPostRequestInformation(
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *BookingBusinessesItemUnpublishRequestBuilder when successful
 func (m *BookingBusinessesItemUnpublishRequestBuilder) WithUrl(rawUrl string)(*BookingBusinessesItemUnpublishRequestBuilder) {
     return NewBookingBusinessesItemUnpublishRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

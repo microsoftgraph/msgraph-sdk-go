@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// VisualInfo 
 type VisualInfo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewVisualInfo instantiates a new visualInfo and sets the default values.
+// NewVisualInfo instantiates a new VisualInfo and sets the default values.
 func NewVisualInfo()(*VisualInfo) {
     m := &VisualInfo{
     }
@@ -19,10 +18,12 @@ func NewVisualInfo()(*VisualInfo) {
     return m
 }
 // CreateVisualInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVisualInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVisualInfo(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *VisualInfo) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *VisualInfo) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAttribution gets the attribution property value. Optional. JSON object used to represent an icon which represents the application used to generate the activity
+// returns a ImageInfoable when successful
 func (m *VisualInfo) GetAttribution()(ImageInfoable) {
     val, err := m.GetBackingStore().Get("attribution")
     if err != nil {
@@ -46,6 +48,7 @@ func (m *VisualInfo) GetAttribution()(ImageInfoable) {
     return nil
 }
 // GetBackgroundColor gets the backgroundColor property value. Optional. Background color used to render the activity in the UI - brand color for the application source of the activity. Must be a valid hex color
+// returns a *string when successful
 func (m *VisualInfo) GetBackgroundColor()(*string) {
     val, err := m.GetBackingStore().Get("backgroundColor")
     if err != nil {
@@ -57,10 +60,12 @@ func (m *VisualInfo) GetBackgroundColor()(*string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *VisualInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetContent gets the content property value. Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI
+// returns a Jsonable when successful
 func (m *VisualInfo) GetContent()(Jsonable) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *VisualInfo) GetContent()(Jsonable) {
     return nil
 }
 // GetDescription gets the description property value. Optional. Longer text description of the user's unique activity (example: document name, first sentence, and/or metadata)
+// returns a *string when successful
 func (m *VisualInfo) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *VisualInfo) GetDescription()(*string) {
     return nil
 }
 // GetDisplayText gets the displayText property value. Required. Short text description of the user's unique activity (for example, document name in cases where an activity refers to document creation)
+// returns a *string when successful
 func (m *VisualInfo) GetDisplayText()(*string) {
     val, err := m.GetBackingStore().Get("displayText")
     if err != nil {
@@ -94,6 +101,7 @@ func (m *VisualInfo) GetDisplayText()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VisualInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["attribution"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -159,6 +167,7 @@ func (m *VisualInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *VisualInfo) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -268,7 +277,6 @@ func (m *VisualInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// VisualInfoable 
 type VisualInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

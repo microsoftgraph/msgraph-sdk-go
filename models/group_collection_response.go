@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupCollectionResponse 
 type GroupCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewGroupCollectionResponse instantiates a new groupCollectionResponse and sets the default values.
+// NewGroupCollectionResponse instantiates a new GroupCollectionResponse and sets the default values.
 func NewGroupCollectionResponse()(*GroupCollectionResponse) {
     m := &GroupCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewGroupCollectionResponse()(*GroupCollectionResponse) {
     return m
 }
 // CreateGroupCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *GroupCollectionResponse) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []Groupable when successful
 func (m *GroupCollectionResponse) GetValue()([]Groupable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *GroupCollectionResponse) SetValue(value []Groupable)() {
         panic(err)
     }
 }
-// GroupCollectionResponseable 
 type GroupCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

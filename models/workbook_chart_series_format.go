@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookChartSeriesFormat 
 type WorkbookChartSeriesFormat struct {
     Entity
 }
-// NewWorkbookChartSeriesFormat instantiates a new workbookChartSeriesFormat and sets the default values.
+// NewWorkbookChartSeriesFormat instantiates a new WorkbookChartSeriesFormat and sets the default values.
 func NewWorkbookChartSeriesFormat()(*WorkbookChartSeriesFormat) {
     m := &WorkbookChartSeriesFormat{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewWorkbookChartSeriesFormat()(*WorkbookChartSeriesFormat) {
     return m
 }
 // CreateWorkbookChartSeriesFormatFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookChartSeriesFormatFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookChartSeriesFormat(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookChartSeriesFormat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["fill"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -45,6 +46,7 @@ func (m *WorkbookChartSeriesFormat) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetFill gets the fill property value. Represents the fill format of a chart series, which includes background formatting information. Read-only.
+// returns a WorkbookChartFillable when successful
 func (m *WorkbookChartSeriesFormat) GetFill()(WorkbookChartFillable) {
     val, err := m.GetBackingStore().Get("fill")
     if err != nil {
@@ -56,6 +58,7 @@ func (m *WorkbookChartSeriesFormat) GetFill()(WorkbookChartFillable) {
     return nil
 }
 // GetLine gets the line property value. Represents line formatting. Read-only.
+// returns a WorkbookChartLineFormatable when successful
 func (m *WorkbookChartSeriesFormat) GetLine()(WorkbookChartLineFormatable) {
     val, err := m.GetBackingStore().Get("line")
     if err != nil {
@@ -100,7 +103,6 @@ func (m *WorkbookChartSeriesFormat) SetLine(value WorkbookChartLineFormatable)()
         panic(err)
     }
 }
-// WorkbookChartSeriesFormatable 
 type WorkbookChartSeriesFormatable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

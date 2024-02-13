@@ -17,21 +17,23 @@ type ItemSitesItemPermissionsItemGrantRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemSitesItemPermissionsItemGrantRequestBuilderInternal instantiates a new GrantRequestBuilder and sets the default values.
+// NewItemSitesItemPermissionsItemGrantRequestBuilderInternal instantiates a new ItemSitesItemPermissionsItemGrantRequestBuilder and sets the default values.
 func NewItemSitesItemPermissionsItemGrantRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemPermissionsItemGrantRequestBuilder) {
     m := &ItemSitesItemPermissionsItemGrantRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/permissions/{permission%2Did}/grant", pathParameters),
     }
     return m
 }
-// NewItemSitesItemPermissionsItemGrantRequestBuilder instantiates a new GrantRequestBuilder and sets the default values.
+// NewItemSitesItemPermissionsItemGrantRequestBuilder instantiates a new ItemSitesItemPermissionsItemGrantRequestBuilder and sets the default values.
 func NewItemSitesItemPermissionsItemGrantRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemPermissionsItemGrantRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemPermissionsItemGrantRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post grant users access to a link represented by a [permission][].
-// Deprecated: This method is obsolete. Use PostAsGrantPostResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ItemSitesItemPermissionsItemGrantResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *ItemSitesItemPermissionsItemGrantRequestBuilder) Post(ctx context.Conte
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSitesItemPermissionsItemGrantResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,8 @@ func (m *ItemSitesItemPermissionsItemGrantRequestBuilder) Post(ctx context.Conte
     return res.(ItemSitesItemPermissionsItemGrantResponseable), nil
 }
 // PostAsGrantPostResponse grant users access to a link represented by a [permission][].
+// returns a ItemSitesItemPermissionsItemGrantPostResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
@@ -63,8 +66,7 @@ func (m *ItemSitesItemPermissionsItemGrantRequestBuilder) PostAsGrantPostRespons
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSitesItemPermissionsItemGrantPostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -76,6 +78,7 @@ func (m *ItemSitesItemPermissionsItemGrantRequestBuilder) PostAsGrantPostRespons
     return res.(ItemSitesItemPermissionsItemGrantPostResponseable), nil
 }
 // ToPostRequestInformation grant users access to a link represented by a [permission][].
+// returns a *RequestInformation when successful
 func (m *ItemSitesItemPermissionsItemGrantRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSitesItemPermissionsItemGrantPostRequestBodyable, requestConfiguration *ItemSitesItemPermissionsItemGrantRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -90,6 +93,7 @@ func (m *ItemSitesItemPermissionsItemGrantRequestBuilder) ToPostRequestInformati
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemSitesItemPermissionsItemGrantRequestBuilder when successful
 func (m *ItemSitesItemPermissionsItemGrantRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemPermissionsItemGrantRequestBuilder) {
     return NewItemSitesItemPermissionsItemGrantRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

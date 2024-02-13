@@ -8,7 +8,7 @@ import (
 type TargetedManagedAppProtection struct {
     ManagedAppProtection
 }
-// NewTargetedManagedAppProtection instantiates a new targetedManagedAppProtection and sets the default values.
+// NewTargetedManagedAppProtection instantiates a new TargetedManagedAppProtection and sets the default values.
 func NewTargetedManagedAppProtection()(*TargetedManagedAppProtection) {
     m := &TargetedManagedAppProtection{
         ManagedAppProtection: *NewManagedAppProtection(),
@@ -18,6 +18,7 @@ func NewTargetedManagedAppProtection()(*TargetedManagedAppProtection) {
     return m
 }
 // CreateTargetedManagedAppProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTargetedManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -42,6 +43,7 @@ func CreateTargetedManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d
     return NewTargetedManagedAppProtection(), nil
 }
 // GetAssignments gets the assignments property value. Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
+// returns a []TargetedManagedAppPolicyAssignmentable when successful
 func (m *TargetedManagedAppProtection) GetAssignments()([]TargetedManagedAppPolicyAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -53,6 +55,7 @@ func (m *TargetedManagedAppProtection) GetAssignments()([]TargetedManagedAppPoli
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TargetedManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedAppProtection.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -84,6 +87,7 @@ func (m *TargetedManagedAppProtection) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetIsAssigned gets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
+// returns a *bool when successful
 func (m *TargetedManagedAppProtection) GetIsAssigned()(*bool) {
     val, err := m.GetBackingStore().Get("isAssigned")
     if err != nil {
@@ -134,7 +138,6 @@ func (m *TargetedManagedAppProtection) SetIsAssigned(value *bool)() {
         panic(err)
     }
 }
-// TargetedManagedAppProtectionable 
 type TargetedManagedAppProtectionable interface {
     ManagedAppProtectionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

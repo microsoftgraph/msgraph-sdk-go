@@ -47,6 +47,7 @@ type CasesEdiscoveryCasesItemCustodiansRequestBuilderPostRequestConfiguration st
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByEdiscoveryCustodianId provides operations to manage the custodians property of the microsoft.graph.security.ediscoveryCase entity.
+// returns a *CasesEdiscoveryCasesItemCustodiansEdiscoveryCustodianItemRequestBuilder when successful
 func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) ByEdiscoveryCustodianId(ediscoveryCustodianId string)(*CasesEdiscoveryCasesItemCustodiansEdiscoveryCustodianItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) ByEdiscoveryCustodian
     }
     return NewCasesEdiscoveryCasesItemCustodiansEdiscoveryCustodianItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewCasesEdiscoveryCasesItemCustodiansRequestBuilderInternal instantiates a new CustodiansRequestBuilder and sets the default values.
+// NewCasesEdiscoveryCasesItemCustodiansRequestBuilderInternal instantiates a new CasesEdiscoveryCasesItemCustodiansRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemCustodiansRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemCustodiansRequestBuilder) {
     m := &CasesEdiscoveryCasesItemCustodiansRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/custodians{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/custodians{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewCasesEdiscoveryCasesItemCustodiansRequestBuilder instantiates a new CustodiansRequestBuilder and sets the default values.
+// NewCasesEdiscoveryCasesItemCustodiansRequestBuilder instantiates a new CasesEdiscoveryCasesItemCustodiansRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemCustodiansRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemCustodiansRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemCustodiansRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *CasesEdiscoveryCasesItemCustodiansCountRequestBuilder when successful
 func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) Count()(*CasesEdiscoveryCasesItemCustodiansCountRequestBuilder) {
     return NewCasesEdiscoveryCasesItemCustodiansCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of the custodian objects and their properties.
+// returns a EdiscoveryCustodianCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycase-list-custodians?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) Get(ctx context.Conte
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.CreateEdiscoveryCustodianCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,14 +100,18 @@ func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) Get(ctx context.Conte
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCustodianCollectionResponseable), nil
 }
 // MicrosoftGraphSecurityApplyHold provides operations to call the applyHold method.
+// returns a *CasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityApplyHoldRequestBuilder when successful
 func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) MicrosoftGraphSecurityApplyHold()(*CasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityApplyHoldRequestBuilder) {
     return NewCasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityApplyHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MicrosoftGraphSecurityRemoveHold provides operations to call the removeHold method.
+// returns a *CasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityRemoveHoldRequestBuilder when successful
 func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) MicrosoftGraphSecurityRemoveHold()(*CasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityRemoveHoldRequestBuilder) {
     return NewCasesEdiscoveryCasesItemCustodiansMicrosoftGraphSecurityRemoveHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create a new ediscoveryCustodian object.After the custodian object is created, you will need to create the custodian's userSource to reference their mailbox and OneDrive for Business site.
+// returns a EdiscoveryCustodianable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycase-post-custodians?view=graph-rest-1.0
@@ -114,8 +121,7 @@ func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) Post(ctx context.Cont
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.CreateEdiscoveryCustodianFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -127,6 +133,7 @@ func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) Post(ctx context.Cont
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCustodianable), nil
 }
 // ToGetRequestInformation get a list of the custodian objects and their properties.
+// returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCustodiansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -140,8 +147,9 @@ func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) ToGetRequestInformati
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new ediscoveryCustodian object.After the custodian object is created, you will need to create the custodian's userSource to reference their mailbox and OneDrive for Business site.
+// returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) ToPostRequestInformation(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryCustodianable, requestConfiguration *CasesEdiscoveryCasesItemCustodiansRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/custodians", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -154,6 +162,7 @@ func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) ToPostRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CasesEdiscoveryCasesItemCustodiansRequestBuilder when successful
 func (m *CasesEdiscoveryCasesItemCustodiansRequestBuilder) WithUrl(rawUrl string)(*CasesEdiscoveryCasesItemCustodiansRequestBuilder) {
     return NewCasesEdiscoveryCasesItemCustodiansRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

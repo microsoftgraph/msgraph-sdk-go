@@ -27,28 +27,29 @@ type UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilde
     // Request query parameters
     QueryParameters *UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilderGetQueryParameters
 }
-// NewUserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilderInternal instantiates a new ResourcePerformanceMetricsRequestBuilder and sets the default values.
+// NewUserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilderInternal instantiates a new UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilder) {
     m := &UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsBaselines/{userExperienceAnalyticsBaseline%2Did}/resourcePerformanceMetrics{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsBaselines/{userExperienceAnalyticsBaseline%2Did}/resourcePerformanceMetrics{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewUserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilder instantiates a new ResourcePerformanceMetricsRequestBuilder and sets the default values.
+// NewUserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilder instantiates a new UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the scores and insights for the resource performance metrics.
+// returns a UserExperienceAnalyticsCategoryable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilder) Get(ctx context.Context, requestConfiguration *UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserExperienceAnalyticsCategoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateUserExperienceAnalyticsCategoryFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBu
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserExperienceAnalyticsCategoryable), nil
 }
 // ToGetRequestInformation the scores and insights for the resource performance metrics.
+// returns a *RequestInformation when successful
 func (m *UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBu
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilder when successful
 func (m *UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilder) WithUrl(rawUrl string)(*UserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilder) {
     return NewUserExperienceAnalyticsBaselinesItemResourcePerformanceMetricsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

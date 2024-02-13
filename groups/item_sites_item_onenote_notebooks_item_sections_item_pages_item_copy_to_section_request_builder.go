@@ -18,20 +18,22 @@ type ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestB
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestBuilderInternal instantiates a new CopyToSectionRequestBuilder and sets the default values.
+// NewItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestBuilderInternal instantiates a new ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestBuilder and sets the default values.
 func NewItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestBuilder) {
     m := &ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/onenote/notebooks/{notebook%2Did}/sections/{onenoteSection%2Did}/pages/{onenotePage%2Did}/copyToSection", pathParameters),
     }
     return m
 }
-// NewItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestBuilder instantiates a new CopyToSectionRequestBuilder and sets the default values.
+// NewItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestBuilder instantiates a new ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestBuilder and sets the default values.
 func NewItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+// returns a OnenoteOperationable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequ
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateOnenoteOperationFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,7 @@ func (m *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequ
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OnenoteOperationable), nil
 }
 // ToPostRequestInformation copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+// returns a *RequestInformation when successful
 func (m *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionPostRequestBodyable, requestConfiguration *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -68,6 +70,7 @@ func (m *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestBuilder when successful
 func (m *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestBuilder) {
     return NewItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemCopyToSectionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

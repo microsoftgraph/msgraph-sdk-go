@@ -8,7 +8,7 @@ import (
 type IosMobileAppIdentifier struct {
     MobileAppIdentifier
 }
-// NewIosMobileAppIdentifier instantiates a new iosMobileAppIdentifier and sets the default values.
+// NewIosMobileAppIdentifier instantiates a new IosMobileAppIdentifier and sets the default values.
 func NewIosMobileAppIdentifier()(*IosMobileAppIdentifier) {
     m := &IosMobileAppIdentifier{
         MobileAppIdentifier: *NewMobileAppIdentifier(),
@@ -18,10 +18,12 @@ func NewIosMobileAppIdentifier()(*IosMobileAppIdentifier) {
     return m
 }
 // CreateIosMobileAppIdentifierFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosMobileAppIdentifierFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosMobileAppIdentifier(), nil
 }
 // GetBundleId gets the bundleId property value. The identifier for an app, as specified in the app store.
+// returns a *string when successful
 func (m *IosMobileAppIdentifier) GetBundleId()(*string) {
     val, err := m.GetBackingStore().Get("bundleId")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *IosMobileAppIdentifier) GetBundleId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosMobileAppIdentifier) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileAppIdentifier.GetFieldDeserializers()
     res["bundleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +71,6 @@ func (m *IosMobileAppIdentifier) SetBundleId(value *string)() {
         panic(err)
     }
 }
-// IosMobileAppIdentifierable 
 type IosMobileAppIdentifierable interface {
     MobileAppIdentifierable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

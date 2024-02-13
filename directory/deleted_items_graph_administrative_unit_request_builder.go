@@ -39,32 +39,34 @@ type DeletedItemsGraphAdministrativeUnitRequestBuilderGetRequestConfiguration st
     // Request query parameters
     QueryParameters *DeletedItemsGraphAdministrativeUnitRequestBuilderGetQueryParameters
 }
-// NewDeletedItemsGraphAdministrativeUnitRequestBuilderInternal instantiates a new GraphAdministrativeUnitRequestBuilder and sets the default values.
+// NewDeletedItemsGraphAdministrativeUnitRequestBuilderInternal instantiates a new DeletedItemsGraphAdministrativeUnitRequestBuilder and sets the default values.
 func NewDeletedItemsGraphAdministrativeUnitRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedItemsGraphAdministrativeUnitRequestBuilder) {
     m := &DeletedItemsGraphAdministrativeUnitRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/deletedItems/graph.administrativeUnit{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/deletedItems/graph.administrativeUnit{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewDeletedItemsGraphAdministrativeUnitRequestBuilder instantiates a new GraphAdministrativeUnitRequestBuilder and sets the default values.
+// NewDeletedItemsGraphAdministrativeUnitRequestBuilder instantiates a new DeletedItemsGraphAdministrativeUnitRequestBuilder and sets the default values.
 func NewDeletedItemsGraphAdministrativeUnitRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedItemsGraphAdministrativeUnitRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedItemsGraphAdministrativeUnitRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *DeletedItemsGraphAdministrativeUnitCountRequestBuilder when successful
 func (m *DeletedItemsGraphAdministrativeUnitRequestBuilder) Count()(*DeletedItemsGraphAdministrativeUnitCountRequestBuilder) {
     return NewDeletedItemsGraphAdministrativeUnitCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
+// returns a AdministrativeUnitCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeletedItemsGraphAdministrativeUnitRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedItemsGraphAdministrativeUnitRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdministrativeUnitCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateAdministrativeUnitCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -76,6 +78,7 @@ func (m *DeletedItemsGraphAdministrativeUnitRequestBuilder) Get(ctx context.Cont
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AdministrativeUnitCollectionResponseable), nil
 }
 // ToGetRequestInformation get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
+// returns a *RequestInformation when successful
 func (m *DeletedItemsGraphAdministrativeUnitRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedItemsGraphAdministrativeUnitRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -89,6 +92,7 @@ func (m *DeletedItemsGraphAdministrativeUnitRequestBuilder) ToGetRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DeletedItemsGraphAdministrativeUnitRequestBuilder when successful
 func (m *DeletedItemsGraphAdministrativeUnitRequestBuilder) WithUrl(rawUrl string)(*DeletedItemsGraphAdministrativeUnitRequestBuilder) {
     return NewDeletedItemsGraphAdministrativeUnitRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -17,21 +17,23 @@ type ServiceAnnouncementMessagesMarkUnreadRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewServiceAnnouncementMessagesMarkUnreadRequestBuilderInternal instantiates a new MarkUnreadRequestBuilder and sets the default values.
+// NewServiceAnnouncementMessagesMarkUnreadRequestBuilderInternal instantiates a new ServiceAnnouncementMessagesMarkUnreadRequestBuilder and sets the default values.
 func NewServiceAnnouncementMessagesMarkUnreadRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServiceAnnouncementMessagesMarkUnreadRequestBuilder) {
     m := &ServiceAnnouncementMessagesMarkUnreadRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/serviceAnnouncement/messages/markUnread", pathParameters),
     }
     return m
 }
-// NewServiceAnnouncementMessagesMarkUnreadRequestBuilder instantiates a new MarkUnreadRequestBuilder and sets the default values.
+// NewServiceAnnouncementMessagesMarkUnreadRequestBuilder instantiates a new ServiceAnnouncementMessagesMarkUnreadRequestBuilder and sets the default values.
 func NewServiceAnnouncementMessagesMarkUnreadRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServiceAnnouncementMessagesMarkUnreadRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewServiceAnnouncementMessagesMarkUnreadRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post mark a list of serviceUpdateMessages as unread for the signed in user.
-// Deprecated: This method is obsolete. Use PostAsMarkUnreadPostResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ServiceAnnouncementMessagesMarkUnreadResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *ServiceAnnouncementMessagesMarkUnreadRequestBuilder) Post(ctx context.C
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateServiceAnnouncementMessagesMarkUnreadResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,8 @@ func (m *ServiceAnnouncementMessagesMarkUnreadRequestBuilder) Post(ctx context.C
     return res.(ServiceAnnouncementMessagesMarkUnreadResponseable), nil
 }
 // PostAsMarkUnreadPostResponse mark a list of serviceUpdateMessages as unread for the signed in user.
+// returns a ServiceAnnouncementMessagesMarkUnreadPostResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-1.0
@@ -63,8 +66,7 @@ func (m *ServiceAnnouncementMessagesMarkUnreadRequestBuilder) PostAsMarkUnreadPo
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateServiceAnnouncementMessagesMarkUnreadPostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -76,6 +78,7 @@ func (m *ServiceAnnouncementMessagesMarkUnreadRequestBuilder) PostAsMarkUnreadPo
     return res.(ServiceAnnouncementMessagesMarkUnreadPostResponseable), nil
 }
 // ToPostRequestInformation mark a list of serviceUpdateMessages as unread for the signed in user.
+// returns a *RequestInformation when successful
 func (m *ServiceAnnouncementMessagesMarkUnreadRequestBuilder) ToPostRequestInformation(ctx context.Context, body ServiceAnnouncementMessagesMarkUnreadPostRequestBodyable, requestConfiguration *ServiceAnnouncementMessagesMarkUnreadRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -90,6 +93,7 @@ func (m *ServiceAnnouncementMessagesMarkUnreadRequestBuilder) ToPostRequestInfor
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ServiceAnnouncementMessagesMarkUnreadRequestBuilder when successful
 func (m *ServiceAnnouncementMessagesMarkUnreadRequestBuilder) WithUrl(rawUrl string)(*ServiceAnnouncementMessagesMarkUnreadRequestBuilder) {
     return NewServiceAnnouncementMessagesMarkUnreadRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

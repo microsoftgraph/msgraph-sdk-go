@@ -27,28 +27,29 @@ type EntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalRequestBu
     // Request query parameters
     QueryParameters *EntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalRequestBuilderGetQueryParameters
 }
-// NewEntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalRequestBuilderInternal instantiates a new PrincipalRequestBuilder and sets the default values.
+// NewEntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalRequestBuilderInternal instantiates a new EntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalRequestBuilder and sets the default values.
 func NewEntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalRequestBuilder) {
     m := &EntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance%2Did}/principal{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/entitlementManagement/roleEligibilityScheduleInstances/{unifiedRoleEligibilityScheduleInstance%2Did}/principal{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewEntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalRequestBuilder instantiates a new PrincipalRequestBuilder and sets the default values.
+// NewEntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalRequestBuilder instantiates a new EntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalRequestBuilder and sets the default values.
 func NewEntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the principal that's getting a role assignment or role eligibility through the request.
+// returns a DirectoryObjectable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDirectoryObjectFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *EntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalReque
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
 }
 // ToGetRequestInformation the principal that's getting a role assignment or role eligibility through the request.
+// returns a *RequestInformation when successful
 func (m *EntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *EntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *EntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalRequestBuilder when successful
 func (m *EntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalRequestBuilder) {
     return NewEntitlementManagementRoleEligibilityScheduleInstancesItemPrincipalRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

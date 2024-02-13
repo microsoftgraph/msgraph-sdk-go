@@ -40,6 +40,7 @@ type ItemCreatedObjectsRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemCreatedObjectsRequestBuilderGetQueryParameters
 }
 // ByDirectoryObjectId provides operations to manage the createdObjects property of the microsoft.graph.user entity.
+// returns a *ItemCreatedObjectsDirectoryObjectItemRequestBuilder when successful
 func (m *ItemCreatedObjectsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemCreatedObjectsDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,24 +51,27 @@ func (m *ItemCreatedObjectsRequestBuilder) ByDirectoryObjectId(directoryObjectId
     }
     return NewItemCreatedObjectsDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemCreatedObjectsRequestBuilderInternal instantiates a new CreatedObjectsRequestBuilder and sets the default values.
+// NewItemCreatedObjectsRequestBuilderInternal instantiates a new ItemCreatedObjectsRequestBuilder and sets the default values.
 func NewItemCreatedObjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCreatedObjectsRequestBuilder) {
     m := &ItemCreatedObjectsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/createdObjects{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/createdObjects{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemCreatedObjectsRequestBuilder instantiates a new CreatedObjectsRequestBuilder and sets the default values.
+// NewItemCreatedObjectsRequestBuilder instantiates a new ItemCreatedObjectsRequestBuilder and sets the default values.
 func NewItemCreatedObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCreatedObjectsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCreatedObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemCreatedObjectsCountRequestBuilder when successful
 func (m *ItemCreatedObjectsRequestBuilder) Count()(*ItemCreatedObjectsCountRequestBuilder) {
     return NewItemCreatedObjectsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn't in any administrator role; otherwise, it returns an empty object.
+// returns a DirectoryObjectCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/user-list-createdobjects?view=graph-rest-1.0
@@ -77,8 +81,7 @@ func (m *ItemCreatedObjectsRequestBuilder) Get(ctx context.Context, requestConfi
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDirectoryObjectCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,10 +93,12 @@ func (m *ItemCreatedObjectsRequestBuilder) Get(ctx context.Context, requestConfi
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable), nil
 }
 // GraphServicePrincipal casts the previous resource to servicePrincipal.
+// returns a *ItemCreatedObjectsGraphServicePrincipalRequestBuilder when successful
 func (m *ItemCreatedObjectsRequestBuilder) GraphServicePrincipal()(*ItemCreatedObjectsGraphServicePrincipalRequestBuilder) {
     return NewItemCreatedObjectsGraphServicePrincipalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn't in any administrator role; otherwise, it returns an empty object.
+// returns a *RequestInformation when successful
 func (m *ItemCreatedObjectsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCreatedObjectsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -107,6 +112,7 @@ func (m *ItemCreatedObjectsRequestBuilder) ToGetRequestInformation(ctx context.C
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemCreatedObjectsRequestBuilder when successful
 func (m *ItemCreatedObjectsRequestBuilder) WithUrl(rawUrl string)(*ItemCreatedObjectsRequestBuilder) {
     return NewItemCreatedObjectsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

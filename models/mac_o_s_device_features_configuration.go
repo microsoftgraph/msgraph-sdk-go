@@ -8,7 +8,7 @@ import (
 type MacOSDeviceFeaturesConfiguration struct {
     AppleDeviceFeaturesConfigurationBase
 }
-// NewMacOSDeviceFeaturesConfiguration instantiates a new macOSDeviceFeaturesConfiguration and sets the default values.
+// NewMacOSDeviceFeaturesConfiguration instantiates a new MacOSDeviceFeaturesConfiguration and sets the default values.
 func NewMacOSDeviceFeaturesConfiguration()(*MacOSDeviceFeaturesConfiguration) {
     m := &MacOSDeviceFeaturesConfiguration{
         AppleDeviceFeaturesConfigurationBase: *NewAppleDeviceFeaturesConfigurationBase(),
@@ -18,10 +18,12 @@ func NewMacOSDeviceFeaturesConfiguration()(*MacOSDeviceFeaturesConfiguration) {
     return m
 }
 // CreateMacOSDeviceFeaturesConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOSDeviceFeaturesConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSDeviceFeaturesConfiguration(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AppleDeviceFeaturesConfigurationBase.GetFieldDeserializers()
     return res
@@ -34,7 +36,6 @@ func (m *MacOSDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// MacOSDeviceFeaturesConfigurationable 
 type MacOSDeviceFeaturesConfigurationable interface {
     AppleDeviceFeaturesConfigurationBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

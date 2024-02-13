@@ -5,11 +5,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// TriggersRoot 
 type TriggersRoot struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewTriggersRoot instantiates a new triggersRoot and sets the default values.
+// NewTriggersRoot instantiates a new TriggersRoot and sets the default values.
 func NewTriggersRoot()(*TriggersRoot) {
     m := &TriggersRoot{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -17,10 +16,12 @@ func NewTriggersRoot()(*TriggersRoot) {
     return m
 }
 // CreateTriggersRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTriggersRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTriggersRoot(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TriggersRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["retentionEvents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +43,7 @@ func (m *TriggersRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetRetentionEvents gets the retentionEvents property value. The retentionEvents property
+// returns a []RetentionEventable when successful
 func (m *TriggersRoot) GetRetentionEvents()([]RetentionEventable) {
     val, err := m.GetBackingStore().Get("retentionEvents")
     if err != nil {
@@ -79,7 +81,6 @@ func (m *TriggersRoot) SetRetentionEvents(value []RetentionEventable)() {
         panic(err)
     }
 }
-// TriggersRootable 
 type TriggersRootable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

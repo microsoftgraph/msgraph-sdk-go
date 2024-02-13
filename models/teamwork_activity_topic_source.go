@@ -2,7 +2,6 @@ package models
 import (
     "errors"
 )
-// 
 type TeamworkActivityTopicSource int
 
 const (

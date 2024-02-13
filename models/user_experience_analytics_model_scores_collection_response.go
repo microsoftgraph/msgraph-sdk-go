@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsModelScoresCollectionResponse 
 type UserExperienceAnalyticsModelScoresCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUserExperienceAnalyticsModelScoresCollectionResponse instantiates a new userExperienceAnalyticsModelScoresCollectionResponse and sets the default values.
+// NewUserExperienceAnalyticsModelScoresCollectionResponse instantiates a new UserExperienceAnalyticsModelScoresCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsModelScoresCollectionResponse()(*UserExperienceAnalyticsModelScoresCollectionResponse) {
     m := &UserExperienceAnalyticsModelScoresCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewUserExperienceAnalyticsModelScoresCollectionResponse()(*UserExperienceAn
     return m
 }
 // CreateUserExperienceAnalyticsModelScoresCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsModelScoresCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsModelScoresCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsModelScoresCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *UserExperienceAnalyticsModelScoresCollectionResponse) GetFieldDeseriali
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []UserExperienceAnalyticsModelScoresable when successful
 func (m *UserExperienceAnalyticsModelScoresCollectionResponse) GetValue()([]UserExperienceAnalyticsModelScoresable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *UserExperienceAnalyticsModelScoresCollectionResponse) SetValue(value []
         panic(err)
     }
 }
-// UserExperienceAnalyticsModelScoresCollectionResponseable 
 type UserExperienceAnalyticsModelScoresCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookChartTitle 
 type WorkbookChartTitle struct {
     Entity
 }
-// NewWorkbookChartTitle instantiates a new workbookChartTitle and sets the default values.
+// NewWorkbookChartTitle instantiates a new WorkbookChartTitle and sets the default values.
 func NewWorkbookChartTitle()(*WorkbookChartTitle) {
     m := &WorkbookChartTitle{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewWorkbookChartTitle()(*WorkbookChartTitle) {
     return m
 }
 // CreateWorkbookChartTitleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookChartTitleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookChartTitle(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookChartTitle) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["format"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -65,6 +66,7 @@ func (m *WorkbookChartTitle) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetFormat gets the format property value. Represents the formatting of a chart title, which includes fill and font formatting. Read-only.
+// returns a WorkbookChartTitleFormatable when successful
 func (m *WorkbookChartTitle) GetFormat()(WorkbookChartTitleFormatable) {
     val, err := m.GetBackingStore().Get("format")
     if err != nil {
@@ -76,6 +78,7 @@ func (m *WorkbookChartTitle) GetFormat()(WorkbookChartTitleFormatable) {
     return nil
 }
 // GetOverlay gets the overlay property value. Boolean value representing if the chart title will overlay the chart or not.
+// returns a *bool when successful
 func (m *WorkbookChartTitle) GetOverlay()(*bool) {
     val, err := m.GetBackingStore().Get("overlay")
     if err != nil {
@@ -87,6 +90,7 @@ func (m *WorkbookChartTitle) GetOverlay()(*bool) {
     return nil
 }
 // GetText gets the text property value. Represents the title text of a chart.
+// returns a *string when successful
 func (m *WorkbookChartTitle) GetText()(*string) {
     val, err := m.GetBackingStore().Get("text")
     if err != nil {
@@ -98,6 +102,7 @@ func (m *WorkbookChartTitle) GetText()(*string) {
     return nil
 }
 // GetVisible gets the visible property value. A boolean value that represents the visibility of a chart title object.
+// returns a *bool when successful
 func (m *WorkbookChartTitle) GetVisible()(*bool) {
     val, err := m.GetBackingStore().Get("visible")
     if err != nil {
@@ -168,7 +173,6 @@ func (m *WorkbookChartTitle) SetVisible(value *bool)() {
         panic(err)
     }
 }
-// WorkbookChartTitleable 
 type WorkbookChartTitleable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
