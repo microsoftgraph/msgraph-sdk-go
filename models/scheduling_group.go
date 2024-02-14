@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SchedulingGroup 
 type SchedulingGroup struct {
     ChangeTrackedEntity
 }
-// NewSchedulingGroup instantiates a new schedulingGroup and sets the default values.
+// NewSchedulingGroup instantiates a new SchedulingGroup and sets the default values.
 func NewSchedulingGroup()(*SchedulingGroup) {
     m := &SchedulingGroup{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
@@ -18,10 +17,12 @@ func NewSchedulingGroup()(*SchedulingGroup) {
     return m
 }
 // CreateSchedulingGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSchedulingGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSchedulingGroup(), nil
 }
 // GetDisplayName gets the displayName property value. The display name for the schedulingGroup. Required.
+// returns a *string when successful
 func (m *SchedulingGroup) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *SchedulingGroup) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SchedulingGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ChangeTrackedEntity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +76,7 @@ func (m *SchedulingGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetIsActive gets the isActive property value. Indicates whether the schedulingGroup can be used when creating new entities or updating existing ones. Required.
+// returns a *bool when successful
 func (m *SchedulingGroup) GetIsActive()(*bool) {
     val, err := m.GetBackingStore().Get("isActive")
     if err != nil {
@@ -85,6 +88,7 @@ func (m *SchedulingGroup) GetIsActive()(*bool) {
     return nil
 }
 // GetUserIds gets the userIds property value. The list of user IDs that are a member of the schedulingGroup. Required.
+// returns a []string when successful
 func (m *SchedulingGroup) GetUserIds()([]string) {
     val, err := m.GetBackingStore().Get("userIds")
     if err != nil {
@@ -136,7 +140,6 @@ func (m *SchedulingGroup) SetUserIds(value []string)() {
         panic(err)
     }
 }
-// SchedulingGroupable 
 type SchedulingGroupable interface {
     ChangeTrackedEntityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

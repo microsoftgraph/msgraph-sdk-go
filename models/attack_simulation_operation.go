@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AttackSimulationOperation 
 type AttackSimulationOperation struct {
     LongRunningOperation
 }
-// NewAttackSimulationOperation instantiates a new attackSimulationOperation and sets the default values.
+// NewAttackSimulationOperation instantiates a new AttackSimulationOperation and sets the default values.
 func NewAttackSimulationOperation()(*AttackSimulationOperation) {
     m := &AttackSimulationOperation{
         LongRunningOperation: *NewLongRunningOperation(),
@@ -16,10 +15,12 @@ func NewAttackSimulationOperation()(*AttackSimulationOperation) {
     return m
 }
 // CreateAttackSimulationOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAttackSimulationOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAttackSimulationOperation(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AttackSimulationOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.LongRunningOperation.GetFieldDeserializers()
     res["percentageCompleted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -55,6 +56,7 @@ func (m *AttackSimulationOperation) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetPercentageCompleted gets the percentageCompleted property value. Percentage of completion of the respective operation.
+// returns a *int32 when successful
 func (m *AttackSimulationOperation) GetPercentageCompleted()(*int32) {
     val, err := m.GetBackingStore().Get("percentageCompleted")
     if err != nil {
@@ -66,6 +68,7 @@ func (m *AttackSimulationOperation) GetPercentageCompleted()(*int32) {
     return nil
 }
 // GetTenantId gets the tenantId property value. Tenant identifier.
+// returns a *string when successful
 func (m *AttackSimulationOperation) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -77,6 +80,7 @@ func (m *AttackSimulationOperation) GetTenantId()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The attack simulation operation type. Possible values are: createSimulation, updateSimulation, unknownFutureValue.
+// returns a *AttackSimulationOperationType when successful
 func (m *AttackSimulationOperation) GetTypeEscaped()(*AttackSimulationOperationType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -135,7 +139,6 @@ func (m *AttackSimulationOperation) SetTypeEscaped(value *AttackSimulationOperat
         panic(err)
     }
 }
-// AttackSimulationOperationable 
 type AttackSimulationOperationable interface {
     LongRunningOperationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

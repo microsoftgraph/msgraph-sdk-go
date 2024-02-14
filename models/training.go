@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Training 
 type Training struct {
     Entity
 }
-// NewTraining instantiates a new training and sets the default values.
+// NewTraining instantiates a new Training and sets the default values.
 func NewTraining()(*Training) {
     m := &Training{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewTraining()(*Training) {
     return m
 }
 // CreateTrainingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTrainingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTraining(), nil
 }
 // GetAvailabilityStatus gets the availabilityStatus property value. Training availability status. Possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.
+// returns a *TrainingAvailabilityStatus when successful
 func (m *Training) GetAvailabilityStatus()(*TrainingAvailabilityStatus) {
     val, err := m.GetBackingStore().Get("availabilityStatus")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *Training) GetAvailabilityStatus()(*TrainingAvailabilityStatus) {
     return nil
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user who created the training.
+// returns a EmailIdentityable when successful
 func (m *Training) GetCreatedBy()(EmailIdentityable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *Training) GetCreatedBy()(EmailIdentityable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time when the training was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *Training) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *Training) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     return nil
 }
 // GetDescription gets the description property value. The description for the training.
+// returns a *string when successful
 func (m *Training) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *Training) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the training.
+// returns a *string when successful
 func (m *Training) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *Training) GetDisplayName()(*string) {
     return nil
 }
 // GetDurationInMinutes gets the durationInMinutes property value. Training duration.
+// returns a *int32 when successful
 func (m *Training) GetDurationInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("durationInMinutes")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *Training) GetDurationInMinutes()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Training) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["availabilityStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -250,6 +257,7 @@ func (m *Training) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetHasEvaluation gets the hasEvaluation property value. Indicates whether the training has any evaluation.
+// returns a *bool when successful
 func (m *Training) GetHasEvaluation()(*bool) {
     val, err := m.GetBackingStore().Get("hasEvaluation")
     if err != nil {
@@ -261,6 +269,7 @@ func (m *Training) GetHasEvaluation()(*bool) {
     return nil
 }
 // GetLanguageDetails gets the languageDetails property value. Language specific details on a training.
+// returns a []TrainingLanguageDetailable when successful
 func (m *Training) GetLanguageDetails()([]TrainingLanguageDetailable) {
     val, err := m.GetBackingStore().Get("languageDetails")
     if err != nil {
@@ -272,6 +281,7 @@ func (m *Training) GetLanguageDetails()([]TrainingLanguageDetailable) {
     return nil
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who last modified the training.
+// returns a EmailIdentityable when successful
 func (m *Training) GetLastModifiedBy()(EmailIdentityable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -283,6 +293,7 @@ func (m *Training) GetLastModifiedBy()(EmailIdentityable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time when the training was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *Training) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -294,6 +305,7 @@ func (m *Training) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetSource gets the source property value. Training content source. Possible values are: unknown, global, tenant, unknownFutureValue.
+// returns a *SimulationContentSource when successful
 func (m *Training) GetSource()(*SimulationContentSource) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
@@ -305,6 +317,7 @@ func (m *Training) GetSource()(*SimulationContentSource) {
     return nil
 }
 // GetSupportedLocales gets the supportedLocales property value. Supported locales for content for the associated training.
+// returns a []string when successful
 func (m *Training) GetSupportedLocales()([]string) {
     val, err := m.GetBackingStore().Get("supportedLocales")
     if err != nil {
@@ -316,6 +329,7 @@ func (m *Training) GetSupportedLocales()([]string) {
     return nil
 }
 // GetTags gets the tags property value. Training tags.
+// returns a []string when successful
 func (m *Training) GetTags()([]string) {
     val, err := m.GetBackingStore().Get("tags")
     if err != nil {
@@ -327,6 +341,7 @@ func (m *Training) GetTags()([]string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type of training. Possible values are: unknown, phishing, unknownFutureValue.
+// returns a *TrainingType when successful
 func (m *Training) GetTypeEscaped()(*TrainingType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -536,7 +551,6 @@ func (m *Training) SetTypeEscaped(value *TrainingType)() {
         panic(err)
     }
 }
-// Trainingable 
 type Trainingable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleManagementPolicyAssignment 
 type UnifiedRoleManagementPolicyAssignment struct {
     Entity
 }
-// NewUnifiedRoleManagementPolicyAssignment instantiates a new unifiedRoleManagementPolicyAssignment and sets the default values.
+// NewUnifiedRoleManagementPolicyAssignment instantiates a new UnifiedRoleManagementPolicyAssignment and sets the default values.
 func NewUnifiedRoleManagementPolicyAssignment()(*UnifiedRoleManagementPolicyAssignment) {
     m := &UnifiedRoleManagementPolicyAssignment{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewUnifiedRoleManagementPolicyAssignment()(*UnifiedRoleManagementPolicyAssi
     return m
 }
 // CreateUnifiedRoleManagementPolicyAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnifiedRoleManagementPolicyAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleManagementPolicyAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnifiedRoleManagementPolicyAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["policy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -75,6 +76,7 @@ func (m *UnifiedRoleManagementPolicyAssignment) GetFieldDeserializers()(map[stri
     return res
 }
 // GetPolicy gets the policy property value. The policy that's associated with a policy assignment. Supports $expand and a nested $expand of the rules and effectiveRules relationships for the policy.
+// returns a UnifiedRoleManagementPolicyable when successful
 func (m *UnifiedRoleManagementPolicyAssignment) GetPolicy()(UnifiedRoleManagementPolicyable) {
     val, err := m.GetBackingStore().Get("policy")
     if err != nil {
@@ -86,6 +88,7 @@ func (m *UnifiedRoleManagementPolicyAssignment) GetPolicy()(UnifiedRoleManagemen
     return nil
 }
 // GetPolicyId gets the policyId property value. The id of the policy. Inherited from entity.
+// returns a *string when successful
 func (m *UnifiedRoleManagementPolicyAssignment) GetPolicyId()(*string) {
     val, err := m.GetBackingStore().Get("policyId")
     if err != nil {
@@ -97,6 +100,7 @@ func (m *UnifiedRoleManagementPolicyAssignment) GetPolicyId()(*string) {
     return nil
 }
 // GetRoleDefinitionId gets the roleDefinitionId property value. For Microsoft Entra roles policy, it's the identifier of the role definition object where the policy applies. For PIM for groups membership and ownership, it's either member or owner. Supports $filter (eq).
+// returns a *string when successful
 func (m *UnifiedRoleManagementPolicyAssignment) GetRoleDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("roleDefinitionId")
     if err != nil {
@@ -108,6 +112,7 @@ func (m *UnifiedRoleManagementPolicyAssignment) GetRoleDefinitionId()(*string) {
     return nil
 }
 // GetScopeId gets the scopeId property value. The identifier of the scope where the policy is assigned.  Can be / for the tenant or a group ID. Required.
+// returns a *string when successful
 func (m *UnifiedRoleManagementPolicyAssignment) GetScopeId()(*string) {
     val, err := m.GetBackingStore().Get("scopeId")
     if err != nil {
@@ -119,6 +124,7 @@ func (m *UnifiedRoleManagementPolicyAssignment) GetScopeId()(*string) {
     return nil
 }
 // GetScopeType gets the scopeType property value. The type of the scope where the policy is assigned. One of Directory, DirectoryRole, Group. Required.
+// returns a *string when successful
 func (m *UnifiedRoleManagementPolicyAssignment) GetScopeType()(*string) {
     val, err := m.GetBackingStore().Get("scopeType")
     if err != nil {
@@ -202,7 +208,6 @@ func (m *UnifiedRoleManagementPolicyAssignment) SetScopeType(value *string)() {
         panic(err)
     }
 }
-// UnifiedRoleManagementPolicyAssignmentable 
 type UnifiedRoleManagementPolicyAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

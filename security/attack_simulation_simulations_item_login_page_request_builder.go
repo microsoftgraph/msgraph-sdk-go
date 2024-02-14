@@ -27,28 +27,29 @@ type AttackSimulationSimulationsItemLoginPageRequestBuilderGetRequestConfigurati
     // Request query parameters
     QueryParameters *AttackSimulationSimulationsItemLoginPageRequestBuilderGetQueryParameters
 }
-// NewAttackSimulationSimulationsItemLoginPageRequestBuilderInternal instantiates a new LoginPageRequestBuilder and sets the default values.
+// NewAttackSimulationSimulationsItemLoginPageRequestBuilderInternal instantiates a new AttackSimulationSimulationsItemLoginPageRequestBuilder and sets the default values.
 func NewAttackSimulationSimulationsItemLoginPageRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttackSimulationSimulationsItemLoginPageRequestBuilder) {
     m := &AttackSimulationSimulationsItemLoginPageRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/attackSimulation/simulations/{simulation%2Did}/loginPage{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/attackSimulation/simulations/{simulation%2Did}/loginPage{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewAttackSimulationSimulationsItemLoginPageRequestBuilder instantiates a new LoginPageRequestBuilder and sets the default values.
+// NewAttackSimulationSimulationsItemLoginPageRequestBuilder instantiates a new AttackSimulationSimulationsItemLoginPageRequestBuilder and sets the default values.
 func NewAttackSimulationSimulationsItemLoginPageRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttackSimulationSimulationsItemLoginPageRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAttackSimulationSimulationsItemLoginPageRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the login page associated with a simulation during its creation.
+// returns a LoginPageable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AttackSimulationSimulationsItemLoginPageRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationSimulationsItemLoginPageRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LoginPageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateLoginPageFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *AttackSimulationSimulationsItemLoginPageRequestBuilder) Get(ctx context
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LoginPageable), nil
 }
 // ToGetRequestInformation the login page associated with a simulation during its creation.
+// returns a *RequestInformation when successful
 func (m *AttackSimulationSimulationsItemLoginPageRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationSimulationsItemLoginPageRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *AttackSimulationSimulationsItemLoginPageRequestBuilder) ToGetRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *AttackSimulationSimulationsItemLoginPageRequestBuilder when successful
 func (m *AttackSimulationSimulationsItemLoginPageRequestBuilder) WithUrl(rawUrl string)(*AttackSimulationSimulationsItemLoginPageRequestBuilder) {
     return NewAttackSimulationSimulationsItemLoginPageRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

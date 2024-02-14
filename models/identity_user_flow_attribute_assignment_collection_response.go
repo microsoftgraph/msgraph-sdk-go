@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityUserFlowAttributeAssignmentCollectionResponse 
 type IdentityUserFlowAttributeAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewIdentityUserFlowAttributeAssignmentCollectionResponse instantiates a new identityUserFlowAttributeAssignmentCollectionResponse and sets the default values.
+// NewIdentityUserFlowAttributeAssignmentCollectionResponse instantiates a new IdentityUserFlowAttributeAssignmentCollectionResponse and sets the default values.
 func NewIdentityUserFlowAttributeAssignmentCollectionResponse()(*IdentityUserFlowAttributeAssignmentCollectionResponse) {
     m := &IdentityUserFlowAttributeAssignmentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewIdentityUserFlowAttributeAssignmentCollectionResponse()(*IdentityUserFlo
     return m
 }
 // CreateIdentityUserFlowAttributeAssignmentCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIdentityUserFlowAttributeAssignmentCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIdentityUserFlowAttributeAssignmentCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IdentityUserFlowAttributeAssignmentCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *IdentityUserFlowAttributeAssignmentCollectionResponse) GetFieldDeserial
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []IdentityUserFlowAttributeAssignmentable when successful
 func (m *IdentityUserFlowAttributeAssignmentCollectionResponse) GetValue()([]IdentityUserFlowAttributeAssignmentable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *IdentityUserFlowAttributeAssignmentCollectionResponse) SetValue(value [
         panic(err)
     }
 }
-// IdentityUserFlowAttributeAssignmentCollectionResponseable 
 type IdentityUserFlowAttributeAssignmentCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

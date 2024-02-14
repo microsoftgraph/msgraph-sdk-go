@@ -26,28 +26,29 @@ type MeAssignmentsItemSubmissionsItemResourcesCountRequestBuilderGetRequestConfi
     // Request query parameters
     QueryParameters *MeAssignmentsItemSubmissionsItemResourcesCountRequestBuilderGetQueryParameters
 }
-// NewMeAssignmentsItemSubmissionsItemResourcesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewMeAssignmentsItemSubmissionsItemResourcesCountRequestBuilderInternal instantiates a new MeAssignmentsItemSubmissionsItemResourcesCountRequestBuilder and sets the default values.
 func NewMeAssignmentsItemSubmissionsItemResourcesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MeAssignmentsItemSubmissionsItemResourcesCountRequestBuilder) {
     m := &MeAssignmentsItemSubmissionsItemResourcesCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/resources/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/resources/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewMeAssignmentsItemSubmissionsItemResourcesCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewMeAssignmentsItemSubmissionsItemResourcesCountRequestBuilder instantiates a new MeAssignmentsItemSubmissionsItemResourcesCountRequestBuilder and sets the default values.
 func NewMeAssignmentsItemSubmissionsItemResourcesCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MeAssignmentsItemSubmissionsItemResourcesCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMeAssignmentsItemSubmissionsItemResourcesCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MeAssignmentsItemSubmissionsItemResourcesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *MeAssignmentsItemSubmissionsItemResourcesCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *MeAssignmentsItemSubmissionsItemResourcesCountRequestBuilder) Get(ctx c
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *MeAssignmentsItemSubmissionsItemResourcesCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MeAssignmentsItemSubmissionsItemResourcesCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *MeAssignmentsItemSubmissionsItemResourcesCountRequestBuilder) ToGetRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MeAssignmentsItemSubmissionsItemResourcesCountRequestBuilder when successful
 func (m *MeAssignmentsItemSubmissionsItemResourcesCountRequestBuilder) WithUrl(rawUrl string)(*MeAssignmentsItemSubmissionsItemResourcesCountRequestBuilder) {
     return NewMeAssignmentsItemSubmissionsItemResourcesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

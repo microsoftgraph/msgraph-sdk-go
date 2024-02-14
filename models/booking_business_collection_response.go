@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BookingBusinessCollectionResponse 
 type BookingBusinessCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewBookingBusinessCollectionResponse instantiates a new bookingBusinessCollectionResponse and sets the default values.
+// NewBookingBusinessCollectionResponse instantiates a new BookingBusinessCollectionResponse and sets the default values.
 func NewBookingBusinessCollectionResponse()(*BookingBusinessCollectionResponse) {
     m := &BookingBusinessCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewBookingBusinessCollectionResponse()(*BookingBusinessCollectionResponse) 
     return m
 }
 // CreateBookingBusinessCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBookingBusinessCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBookingBusinessCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BookingBusinessCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *BookingBusinessCollectionResponse) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []BookingBusinessable when successful
 func (m *BookingBusinessCollectionResponse) GetValue()([]BookingBusinessable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *BookingBusinessCollectionResponse) SetValue(value []BookingBusinessable
         panic(err)
     }
 }
-// BookingBusinessCollectionResponseable 
 type BookingBusinessCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

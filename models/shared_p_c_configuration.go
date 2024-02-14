@@ -8,7 +8,7 @@ import (
 type SharedPCConfiguration struct {
     DeviceConfiguration
 }
-// NewSharedPCConfiguration instantiates a new sharedPCConfiguration and sets the default values.
+// NewSharedPCConfiguration instantiates a new SharedPCConfiguration and sets the default values.
 func NewSharedPCConfiguration()(*SharedPCConfiguration) {
     m := &SharedPCConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewSharedPCConfiguration()(*SharedPCConfiguration) {
     return m
 }
 // CreateSharedPCConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSharedPCConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSharedPCConfiguration(), nil
 }
 // GetAccountManagerPolicy gets the accountManagerPolicy property value. Specifies how accounts are managed on a shared PC. Only applies when disableAccountManager is false.
+// returns a SharedPCAccountManagerPolicyable when successful
 func (m *SharedPCConfiguration) GetAccountManagerPolicy()(SharedPCAccountManagerPolicyable) {
     val, err := m.GetBackingStore().Get("accountManagerPolicy")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *SharedPCConfiguration) GetAccountManagerPolicy()(SharedPCAccountManager
     return nil
 }
 // GetAllowedAccounts gets the allowedAccounts property value. Type of accounts that are allowed to share the PC.
+// returns a *SharedPCAllowedAccountType when successful
 func (m *SharedPCConfiguration) GetAllowedAccounts()(*SharedPCAllowedAccountType) {
     val, err := m.GetBackingStore().Get("allowedAccounts")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *SharedPCConfiguration) GetAllowedAccounts()(*SharedPCAllowedAccountType
     return nil
 }
 // GetAllowLocalStorage gets the allowLocalStorage property value. Specifies whether local storage is allowed on a shared PC.
+// returns a *bool when successful
 func (m *SharedPCConfiguration) GetAllowLocalStorage()(*bool) {
     val, err := m.GetBackingStore().Get("allowLocalStorage")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *SharedPCConfiguration) GetAllowLocalStorage()(*bool) {
     return nil
 }
 // GetDisableAccountManager gets the disableAccountManager property value. Disables the account manager for shared PC mode.
+// returns a *bool when successful
 func (m *SharedPCConfiguration) GetDisableAccountManager()(*bool) {
     val, err := m.GetBackingStore().Get("disableAccountManager")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *SharedPCConfiguration) GetDisableAccountManager()(*bool) {
     return nil
 }
 // GetDisableEduPolicies gets the disableEduPolicies property value. Specifies whether the default shared PC education environment policies should be disabled. For Windows 10 RS2 and later, this policy will be applied without setting Enabled to true.
+// returns a *bool when successful
 func (m *SharedPCConfiguration) GetDisableEduPolicies()(*bool) {
     val, err := m.GetBackingStore().Get("disableEduPolicies")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *SharedPCConfiguration) GetDisableEduPolicies()(*bool) {
     return nil
 }
 // GetDisablePowerPolicies gets the disablePowerPolicies property value. Specifies whether the default shared PC power policies should be disabled.
+// returns a *bool when successful
 func (m *SharedPCConfiguration) GetDisablePowerPolicies()(*bool) {
     val, err := m.GetBackingStore().Get("disablePowerPolicies")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *SharedPCConfiguration) GetDisablePowerPolicies()(*bool) {
     return nil
 }
 // GetDisableSignInOnResume gets the disableSignInOnResume property value. Disables the requirement to sign in whenever the device wakes up from sleep mode.
+// returns a *bool when successful
 func (m *SharedPCConfiguration) GetDisableSignInOnResume()(*bool) {
     val, err := m.GetBackingStore().Get("disableSignInOnResume")
     if err != nil {
@@ -99,6 +107,7 @@ func (m *SharedPCConfiguration) GetDisableSignInOnResume()(*bool) {
     return nil
 }
 // GetEnabled gets the enabled property value. Enables shared PC mode and applies the shared pc policies.
+// returns a *bool when successful
 func (m *SharedPCConfiguration) GetEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("enabled")
     if err != nil {
@@ -110,6 +119,7 @@ func (m *SharedPCConfiguration) GetEnabled()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SharedPCConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["accountManagerPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -235,6 +245,7 @@ func (m *SharedPCConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetIdleTimeBeforeSleepInSeconds gets the idleTimeBeforeSleepInSeconds property value. Specifies the time in seconds that a device must sit idle before the PC goes to sleep. Setting this value to 0 prevents the sleep timeout from occurring.
+// returns a *int32 when successful
 func (m *SharedPCConfiguration) GetIdleTimeBeforeSleepInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("idleTimeBeforeSleepInSeconds")
     if err != nil {
@@ -246,6 +257,7 @@ func (m *SharedPCConfiguration) GetIdleTimeBeforeSleepInSeconds()(*int32) {
     return nil
 }
 // GetKioskAppDisplayName gets the kioskAppDisplayName property value. Specifies the display text for the account shown on the sign-in screen which launches the app specified by SetKioskAppUserModelId. Only applies when KioskAppUserModelId is set.
+// returns a *string when successful
 func (m *SharedPCConfiguration) GetKioskAppDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("kioskAppDisplayName")
     if err != nil {
@@ -257,6 +269,7 @@ func (m *SharedPCConfiguration) GetKioskAppDisplayName()(*string) {
     return nil
 }
 // GetKioskAppUserModelId gets the kioskAppUserModelId property value. Specifies the application user model ID of the app to use with assigned access.
+// returns a *string when successful
 func (m *SharedPCConfiguration) GetKioskAppUserModelId()(*string) {
     val, err := m.GetBackingStore().Get("kioskAppUserModelId")
     if err != nil {
@@ -268,6 +281,7 @@ func (m *SharedPCConfiguration) GetKioskAppUserModelId()(*string) {
     return nil
 }
 // GetMaintenanceStartTime gets the maintenanceStartTime property value. Specifies the daily start time of maintenance hour.
+// returns a *TimeOnly when successful
 func (m *SharedPCConfiguration) GetMaintenanceStartTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
     val, err := m.GetBackingStore().Get("maintenanceStartTime")
     if err != nil {
@@ -443,7 +457,6 @@ func (m *SharedPCConfiguration) SetMaintenanceStartTime(value *i878a80d2330e89d2
         panic(err)
     }
 }
-// SharedPCConfigurationable 
 type SharedPCConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

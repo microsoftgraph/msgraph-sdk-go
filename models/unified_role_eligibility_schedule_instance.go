@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleEligibilityScheduleInstance 
 type UnifiedRoleEligibilityScheduleInstance struct {
     UnifiedRoleScheduleInstanceBase
 }
-// NewUnifiedRoleEligibilityScheduleInstance instantiates a new unifiedRoleEligibilityScheduleInstance and sets the default values.
+// NewUnifiedRoleEligibilityScheduleInstance instantiates a new UnifiedRoleEligibilityScheduleInstance and sets the default values.
 func NewUnifiedRoleEligibilityScheduleInstance()(*UnifiedRoleEligibilityScheduleInstance) {
     m := &UnifiedRoleEligibilityScheduleInstance{
         UnifiedRoleScheduleInstanceBase: *NewUnifiedRoleScheduleInstanceBase(),
@@ -17,10 +16,12 @@ func NewUnifiedRoleEligibilityScheduleInstance()(*UnifiedRoleEligibilitySchedule
     return m
 }
 // CreateUnifiedRoleEligibilityScheduleInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnifiedRoleEligibilityScheduleInstanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleEligibilityScheduleInstance(), nil
 }
 // GetEndDateTime gets the endDateTime property value. The end date of the schedule instance.
+// returns a *Time when successful
 func (m *UnifiedRoleEligibilityScheduleInstance) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *UnifiedRoleEligibilityScheduleInstance) GetEndDateTime()(*i336074805fc8
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnifiedRoleEligibilityScheduleInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UnifiedRoleScheduleInstanceBase.GetFieldDeserializers()
     res["endDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -77,6 +79,7 @@ func (m *UnifiedRoleEligibilityScheduleInstance) GetFieldDeserializers()(map[str
     return res
 }
 // GetMemberType gets the memberType property value. How the role eligibility is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleEligibilitySchedule can be managed by the caller. Supports $filter (eq, ne).
+// returns a *string when successful
 func (m *UnifiedRoleEligibilityScheduleInstance) GetMemberType()(*string) {
     val, err := m.GetBackingStore().Get("memberType")
     if err != nil {
@@ -88,6 +91,7 @@ func (m *UnifiedRoleEligibilityScheduleInstance) GetMemberType()(*string) {
     return nil
 }
 // GetRoleEligibilityScheduleId gets the roleEligibilityScheduleId property value. The identifier of the unifiedRoleEligibilitySchedule object from which this instance was created. Supports $filter (eq, ne).
+// returns a *string when successful
 func (m *UnifiedRoleEligibilityScheduleInstance) GetRoleEligibilityScheduleId()(*string) {
     val, err := m.GetBackingStore().Get("roleEligibilityScheduleId")
     if err != nil {
@@ -99,6 +103,7 @@ func (m *UnifiedRoleEligibilityScheduleInstance) GetRoleEligibilityScheduleId()(
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. When this instance starts.
+// returns a *Time when successful
 func (m *UnifiedRoleEligibilityScheduleInstance) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -169,7 +174,6 @@ func (m *UnifiedRoleEligibilityScheduleInstance) SetStartDateTime(value *i336074
         panic(err)
     }
 }
-// UnifiedRoleEligibilityScheduleInstanceable 
 type UnifiedRoleEligibilityScheduleInstanceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UnifiedRoleScheduleInstanceBaseable

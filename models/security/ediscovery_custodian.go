@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EdiscoveryCustodian 
 type EdiscoveryCustodian struct {
     DataSourceContainer
 }
-// NewEdiscoveryCustodian instantiates a new ediscoveryCustodian and sets the default values.
+// NewEdiscoveryCustodian instantiates a new EdiscoveryCustodian and sets the default values.
 func NewEdiscoveryCustodian()(*EdiscoveryCustodian) {
     m := &EdiscoveryCustodian{
         DataSourceContainer: *NewDataSourceContainer(),
@@ -19,10 +18,12 @@ func NewEdiscoveryCustodian()(*EdiscoveryCustodian) {
     return m
 }
 // CreateEdiscoveryCustodianFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEdiscoveryCustodianFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryCustodian(), nil
 }
 // GetAcknowledgedDateTime gets the acknowledgedDateTime property value. Date and time the custodian acknowledged a hold notification.
+// returns a *Time when successful
 func (m *EdiscoveryCustodian) GetAcknowledgedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("acknowledgedDateTime")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *EdiscoveryCustodian) GetAcknowledgedDateTime()(*i336074805fc853987abe6f
     return nil
 }
 // GetEmail gets the email property value. Email address of the custodian.
+// returns a *string when successful
 func (m *EdiscoveryCustodian) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *EdiscoveryCustodian) GetEmail()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EdiscoveryCustodian) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DataSourceContainer.GetFieldDeserializers()
     res["acknowledgedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -128,6 +131,7 @@ func (m *EdiscoveryCustodian) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetLastIndexOperation gets the lastIndexOperation property value. Operation entity that represents the latest indexing for the custodian.
+// returns a EdiscoveryIndexOperationable when successful
 func (m *EdiscoveryCustodian) GetLastIndexOperation()(EdiscoveryIndexOperationable) {
     val, err := m.GetBackingStore().Get("lastIndexOperation")
     if err != nil {
@@ -139,6 +143,7 @@ func (m *EdiscoveryCustodian) GetLastIndexOperation()(EdiscoveryIndexOperationab
     return nil
 }
 // GetSiteSources gets the siteSources property value. Data source entity for SharePoint sites associated with the custodian.
+// returns a []SiteSourceable when successful
 func (m *EdiscoveryCustodian) GetSiteSources()([]SiteSourceable) {
     val, err := m.GetBackingStore().Get("siteSources")
     if err != nil {
@@ -150,6 +155,7 @@ func (m *EdiscoveryCustodian) GetSiteSources()([]SiteSourceable) {
     return nil
 }
 // GetUnifiedGroupSources gets the unifiedGroupSources property value. Data source entity for groups associated with the custodian.
+// returns a []UnifiedGroupSourceable when successful
 func (m *EdiscoveryCustodian) GetUnifiedGroupSources()([]UnifiedGroupSourceable) {
     val, err := m.GetBackingStore().Get("unifiedGroupSources")
     if err != nil {
@@ -161,6 +167,7 @@ func (m *EdiscoveryCustodian) GetUnifiedGroupSources()([]UnifiedGroupSourceable)
     return nil
 }
 // GetUserSources gets the userSources property value. Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+// returns a []UserSourceable when successful
 func (m *EdiscoveryCustodian) GetUserSources()([]UserSourceable) {
     val, err := m.GetBackingStore().Get("userSources")
     if err != nil {
@@ -275,7 +282,6 @@ func (m *EdiscoveryCustodian) SetUserSources(value []UserSourceable)() {
         panic(err)
     }
 }
-// EdiscoveryCustodianable 
 type EdiscoveryCustodianable interface {
     DataSourceContainerable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// SubjectRightsRequestHistory 
 type SubjectRightsRequestHistory struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSubjectRightsRequestHistory instantiates a new subjectRightsRequestHistory and sets the default values.
+// NewSubjectRightsRequestHistory instantiates a new SubjectRightsRequestHistory and sets the default values.
 func NewSubjectRightsRequestHistory()(*SubjectRightsRequestHistory) {
     m := &SubjectRightsRequestHistory{
     }
@@ -20,10 +19,12 @@ func NewSubjectRightsRequestHistory()(*SubjectRightsRequestHistory) {
     return m
 }
 // CreateSubjectRightsRequestHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSubjectRightsRequestHistoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSubjectRightsRequestHistory(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SubjectRightsRequestHistory) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *SubjectRightsRequestHistory) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *SubjectRightsRequestHistory) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetChangedBy gets the changedBy property value. Identity of the user who changed the  subject rights request.
+// returns a IdentitySetable when successful
 func (m *SubjectRightsRequestHistory) GetChangedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("changedBy")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *SubjectRightsRequestHistory) GetChangedBy()(IdentitySetable) {
     return nil
 }
 // GetEventDateTime gets the eventDateTime property value. Data and time when the entity was changed.
+// returns a *Time when successful
 func (m *SubjectRightsRequestHistory) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("eventDateTime")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *SubjectRightsRequestHistory) GetEventDateTime()(*i336074805fc853987abe6
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SubjectRightsRequestHistory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["changedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -127,6 +132,7 @@ func (m *SubjectRightsRequestHistory) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *SubjectRightsRequestHistory) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -138,6 +144,7 @@ func (m *SubjectRightsRequestHistory) GetOdataType()(*string) {
     return nil
 }
 // GetStage gets the stage property value. The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue, approval. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: approval.
+// returns a *SubjectRightsRequestStage when successful
 func (m *SubjectRightsRequestHistory) GetStage()(*SubjectRightsRequestStage) {
     val, err := m.GetBackingStore().Get("stage")
     if err != nil {
@@ -149,6 +156,7 @@ func (m *SubjectRightsRequestHistory) GetStage()(*SubjectRightsRequestStage) {
     return nil
 }
 // GetStageStatus gets the stageStatus property value. The status of the stage when the entity was changed. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
+// returns a *SubjectRightsRequestStageStatus when successful
 func (m *SubjectRightsRequestHistory) GetStageStatus()(*SubjectRightsRequestStageStatus) {
     val, err := m.GetBackingStore().Get("stageStatus")
     if err != nil {
@@ -160,6 +168,7 @@ func (m *SubjectRightsRequestHistory) GetStageStatus()(*SubjectRightsRequestStag
     return nil
 }
 // GetTypeEscaped gets the type property value. Type of history.
+// returns a *string when successful
 func (m *SubjectRightsRequestHistory) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -271,7 +280,6 @@ func (m *SubjectRightsRequestHistory) SetTypeEscaped(value *string)() {
         panic(err)
     }
 }
-// SubjectRightsRequestHistoryable 
 type SubjectRightsRequestHistoryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

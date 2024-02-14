@@ -26,28 +26,29 @@ type ClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilderGetRequest
     // Request query parameters
     QueryParameters *ClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilderGetQueryParameters
 }
-// NewClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilderInternal instantiates a new ClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilder and sets the default values.
 func NewClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilder) {
     m := &ClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/assignmentSettings/gradingCategories/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/assignmentSettings/gradingCategories/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilder instantiates a new ClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilder and sets the default values.
 func NewClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *ClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilder) Get(
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *ClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *ClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilder) ToGe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilder when successful
 func (m *ClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilder) WithUrl(rawUrl string)(*ClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilder) {
     return NewClassesItemAssignmentSettingsGradingCategoriesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

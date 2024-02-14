@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnPremisesDirectorySynchronization 
 type OnPremisesDirectorySynchronization struct {
     Entity
 }
-// NewOnPremisesDirectorySynchronization instantiates a new onPremisesDirectorySynchronization and sets the default values.
+// NewOnPremisesDirectorySynchronization instantiates a new OnPremisesDirectorySynchronization and sets the default values.
 func NewOnPremisesDirectorySynchronization()(*OnPremisesDirectorySynchronization) {
     m := &OnPremisesDirectorySynchronization{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewOnPremisesDirectorySynchronization()(*OnPremisesDirectorySynchronization
     return m
 }
 // CreateOnPremisesDirectorySynchronizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnPremisesDirectorySynchronizationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnPremisesDirectorySynchronization(), nil
 }
 // GetConfiguration gets the configuration property value. Consists of configurations that can be fine-tuned and impact the on-premises directory synchronization process for a tenant.
+// returns a OnPremisesDirectorySynchronizationConfigurationable when successful
 func (m *OnPremisesDirectorySynchronization) GetConfiguration()(OnPremisesDirectorySynchronizationConfigurationable) {
     val, err := m.GetBackingStore().Get("configuration")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *OnPremisesDirectorySynchronization) GetConfiguration()(OnPremisesDirect
     return nil
 }
 // GetFeatures gets the features property value. The features property
+// returns a OnPremisesDirectorySynchronizationFeatureable when successful
 func (m *OnPremisesDirectorySynchronization) GetFeatures()(OnPremisesDirectorySynchronizationFeatureable) {
     val, err := m.GetBackingStore().Get("features")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *OnPremisesDirectorySynchronization) GetFeatures()(OnPremisesDirectorySy
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnPremisesDirectorySynchronization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["configuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -100,7 +103,6 @@ func (m *OnPremisesDirectorySynchronization) SetFeatures(value OnPremisesDirecto
         panic(err)
     }
 }
-// OnPremisesDirectorySynchronizationable 
 type OnPremisesDirectorySynchronizationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

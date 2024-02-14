@@ -8,7 +8,7 @@ import (
 type ManagedIOSStoreApp struct {
     ManagedApp
 }
-// NewManagedIOSStoreApp instantiates a new managedIOSStoreApp and sets the default values.
+// NewManagedIOSStoreApp instantiates a new ManagedIOSStoreApp and sets the default values.
 func NewManagedIOSStoreApp()(*ManagedIOSStoreApp) {
     m := &ManagedIOSStoreApp{
         ManagedApp: *NewManagedApp(),
@@ -18,10 +18,12 @@ func NewManagedIOSStoreApp()(*ManagedIOSStoreApp) {
     return m
 }
 // CreateManagedIOSStoreAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedIOSStoreAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedIOSStoreApp(), nil
 }
 // GetApplicableDeviceType gets the applicableDeviceType property value. Contains properties of the possible iOS device types the mobile app can run on.
+// returns a IosDeviceTypeable when successful
 func (m *ManagedIOSStoreApp) GetApplicableDeviceType()(IosDeviceTypeable) {
     val, err := m.GetBackingStore().Get("applicableDeviceType")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *ManagedIOSStoreApp) GetApplicableDeviceType()(IosDeviceTypeable) {
     return nil
 }
 // GetAppStoreUrl gets the appStoreUrl property value. The Apple AppStoreUrl.
+// returns a *string when successful
 func (m *ManagedIOSStoreApp) GetAppStoreUrl()(*string) {
     val, err := m.GetBackingStore().Get("appStoreUrl")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *ManagedIOSStoreApp) GetAppStoreUrl()(*string) {
     return nil
 }
 // GetBundleId gets the bundleId property value. The app's Bundle ID.
+// returns a *string when successful
 func (m *ManagedIOSStoreApp) GetBundleId()(*string) {
     val, err := m.GetBackingStore().Get("bundleId")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *ManagedIOSStoreApp) GetBundleId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedIOSStoreApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedApp.GetFieldDeserializers()
     res["applicableDeviceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -100,6 +105,7 @@ func (m *ManagedIOSStoreApp) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. Contains properties of the minimum operating system required for an iOS mobile app.
+// returns a IosMinimumOperatingSystemable when successful
 func (m *ManagedIOSStoreApp) GetMinimumSupportedOperatingSystem()(IosMinimumOperatingSystemable) {
     val, err := m.GetBackingStore().Get("minimumSupportedOperatingSystem")
     if err != nil {
@@ -170,7 +176,6 @@ func (m *ManagedIOSStoreApp) SetMinimumSupportedOperatingSystem(value IosMinimum
         panic(err)
     }
 }
-// ManagedIOSStoreAppable 
 type ManagedIOSStoreAppable interface {
     ManagedAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// InternalDomainFederation 
 type InternalDomainFederation struct {
     SamlOrWsFedProvider
 }
-// NewInternalDomainFederation instantiates a new internalDomainFederation and sets the default values.
+// NewInternalDomainFederation instantiates a new InternalDomainFederation and sets the default values.
 func NewInternalDomainFederation()(*InternalDomainFederation) {
     m := &InternalDomainFederation{
         SamlOrWsFedProvider: *NewSamlOrWsFedProvider(),
@@ -18,10 +17,12 @@ func NewInternalDomainFederation()(*InternalDomainFederation) {
     return m
 }
 // CreateInternalDomainFederationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInternalDomainFederationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInternalDomainFederation(), nil
 }
 // GetActiveSignInUri gets the activeSignInUri property value. URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Microsoft Entra ID. Corresponds to the ActiveLogOnUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.
+// returns a *string when successful
 func (m *InternalDomainFederation) GetActiveSignInUri()(*string) {
     val, err := m.GetBackingStore().Get("activeSignInUri")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *InternalDomainFederation) GetActiveSignInUri()(*string) {
     return nil
 }
 // GetFederatedIdpMfaBehavior gets the federatedIdpMfaBehavior property value. Determines whether Microsoft Entra ID accepts the MFA performed by the federated IdP when a federated user accesses an application that is governed by a conditional access policy that requires MFA. The possible values are: acceptIfMfaDoneByFederatedIdp, enforceMfaByFederatedIdp, rejectMfaByFederatedIdp, unknownFutureValue. For more information, see federatedIdpMfaBehavior values.
+// returns a *FederatedIdpMfaBehavior when successful
 func (m *InternalDomainFederation) GetFederatedIdpMfaBehavior()(*FederatedIdpMfaBehavior) {
     val, err := m.GetBackingStore().Get("federatedIdpMfaBehavior")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *InternalDomainFederation) GetFederatedIdpMfaBehavior()(*FederatedIdpMfa
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InternalDomainFederation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.SamlOrWsFedProvider.GetFieldDeserializers()
     res["activeSignInUri"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -119,6 +122,7 @@ func (m *InternalDomainFederation) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetIsSignedAuthenticationRequestRequired gets the isSignedAuthenticationRequestRequired property value. If true, when SAML authentication requests are sent to the federated SAML IdP, Microsoft Entra ID will sign those requests using the OrgID signing key. If false (default), the SAML authentication requests sent to the federated IdP aren't signed.
+// returns a *bool when successful
 func (m *InternalDomainFederation) GetIsSignedAuthenticationRequestRequired()(*bool) {
     val, err := m.GetBackingStore().Get("isSignedAuthenticationRequestRequired")
     if err != nil {
@@ -130,6 +134,7 @@ func (m *InternalDomainFederation) GetIsSignedAuthenticationRequestRequired()(*b
     return nil
 }
 // GetNextSigningCertificate gets the nextSigningCertificate property value. Fallback token signing certificate that can also be used to sign tokens, for example when the primary signing certificate expires. Formatted as Base64 encoded strings of the public portion of the federated IdP's token signing certificate. Needs to be compatible with the X509Certificate2 class. Much like the signingCertificate, the nextSigningCertificate property is used if a rollover is required outside of the auto-rollover update, a new federation service is being set up, or if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.
+// returns a *string when successful
 func (m *InternalDomainFederation) GetNextSigningCertificate()(*string) {
     val, err := m.GetBackingStore().Get("nextSigningCertificate")
     if err != nil {
@@ -141,6 +146,7 @@ func (m *InternalDomainFederation) GetNextSigningCertificate()(*string) {
     return nil
 }
 // GetPromptLoginBehavior gets the promptLoginBehavior property value. Sets the preferred behavior for the sign-in prompt. The possible values are: translateToFreshPasswordAuthentication, nativeSupport, disabled, unknownFutureValue.
+// returns a *PromptLoginBehavior when successful
 func (m *InternalDomainFederation) GetPromptLoginBehavior()(*PromptLoginBehavior) {
     val, err := m.GetBackingStore().Get("promptLoginBehavior")
     if err != nil {
@@ -152,6 +158,7 @@ func (m *InternalDomainFederation) GetPromptLoginBehavior()(*PromptLoginBehavior
     return nil
 }
 // GetSigningCertificateUpdateStatus gets the signingCertificateUpdateStatus property value. Provides status and timestamp of the last update of the signing certificate.
+// returns a SigningCertificateUpdateStatusable when successful
 func (m *InternalDomainFederation) GetSigningCertificateUpdateStatus()(SigningCertificateUpdateStatusable) {
     val, err := m.GetBackingStore().Get("signingCertificateUpdateStatus")
     if err != nil {
@@ -163,6 +170,7 @@ func (m *InternalDomainFederation) GetSigningCertificateUpdateStatus()(SigningCe
     return nil
 }
 // GetSignOutUri gets the signOutUri property value. URI that clients are redirected to when they sign out of Microsoft Entra services. Corresponds to the LogOffUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.
+// returns a *string when successful
 func (m *InternalDomainFederation) GetSignOutUri()(*string) {
     val, err := m.GetBackingStore().Get("signOutUri")
     if err != nil {
@@ -274,7 +282,6 @@ func (m *InternalDomainFederation) SetSignOutUri(value *string)() {
         panic(err)
     }
 }
-// InternalDomainFederationable 
 type InternalDomainFederationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     SamlOrWsFedProviderable

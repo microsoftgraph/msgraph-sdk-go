@@ -2,7 +2,6 @@ package security
 import (
     "errors"
 )
-// 
 type ContainerPortProtocol int
 
 const (

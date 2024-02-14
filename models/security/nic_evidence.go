@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// NicEvidence 
 type NicEvidence struct {
     AlertEvidence
 }
-// NewNicEvidence instantiates a new nicEvidence and sets the default values.
+// NewNicEvidence instantiates a new NicEvidence and sets the default values.
 func NewNicEvidence()(*NicEvidence) {
     m := &NicEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -18,10 +17,12 @@ func NewNicEvidence()(*NicEvidence) {
     return m
 }
 // CreateNicEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateNicEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNicEvidence(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *NicEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["ipAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -63,6 +64,7 @@ func (m *NicEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetIpAddress gets the ipAddress property value. The ipAddress property
+// returns a IpEvidenceable when successful
 func (m *NicEvidence) GetIpAddress()(IpEvidenceable) {
     val, err := m.GetBackingStore().Get("ipAddress")
     if err != nil {
@@ -74,6 +76,7 @@ func (m *NicEvidence) GetIpAddress()(IpEvidenceable) {
     return nil
 }
 // GetMacAddress gets the macAddress property value. The macAddress property
+// returns a *string when successful
 func (m *NicEvidence) GetMacAddress()(*string) {
     val, err := m.GetBackingStore().Get("macAddress")
     if err != nil {
@@ -85,6 +88,7 @@ func (m *NicEvidence) GetMacAddress()(*string) {
     return nil
 }
 // GetVlans gets the vlans property value. The vlans property
+// returns a []string when successful
 func (m *NicEvidence) GetVlans()([]string) {
     val, err := m.GetBackingStore().Get("vlans")
     if err != nil {
@@ -142,7 +146,6 @@ func (m *NicEvidence) SetVlans(value []string)() {
         panic(err)
     }
 }
-// NicEvidenceable 
 type NicEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

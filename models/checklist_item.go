@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChecklistItem 
 type ChecklistItem struct {
     Entity
 }
-// NewChecklistItem instantiates a new checklistItem and sets the default values.
+// NewChecklistItem instantiates a new ChecklistItem and sets the default values.
 func NewChecklistItem()(*ChecklistItem) {
     m := &ChecklistItem{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewChecklistItem()(*ChecklistItem) {
     return m
 }
 // CreateChecklistItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateChecklistItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChecklistItem(), nil
 }
 // GetCheckedDateTime gets the checkedDateTime property value. The date and time when the checklistItem was finished.
+// returns a *Time when successful
 func (m *ChecklistItem) GetCheckedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("checkedDateTime")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *ChecklistItem) GetCheckedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the checklistItem was created.
+// returns a *Time when successful
 func (m *ChecklistItem) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *ChecklistItem) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetDisplayName gets the displayName property value. Field indicating the title of checklistItem.
+// returns a *string when successful
 func (m *ChecklistItem) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *ChecklistItem) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ChecklistItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["checkedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -99,6 +103,7 @@ func (m *ChecklistItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetIsChecked gets the isChecked property value. State indicating whether the item is checked off or not.
+// returns a *bool when successful
 func (m *ChecklistItem) GetIsChecked()(*bool) {
     val, err := m.GetBackingStore().Get("isChecked")
     if err != nil {
@@ -169,7 +174,6 @@ func (m *ChecklistItem) SetIsChecked(value *bool)() {
         panic(err)
     }
 }
-// ChecklistItemable 
 type ChecklistItemable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

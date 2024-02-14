@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// OptionalClaim 
 type OptionalClaim struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewOptionalClaim instantiates a new optionalClaim and sets the default values.
+// NewOptionalClaim instantiates a new OptionalClaim and sets the default values.
 func NewOptionalClaim()(*OptionalClaim) {
     m := &OptionalClaim{
     }
@@ -19,10 +18,12 @@ func NewOptionalClaim()(*OptionalClaim) {
     return m
 }
 // CreateOptionalClaimFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOptionalClaimFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOptionalClaim(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OptionalClaim) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *OptionalClaim) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAdditionalProperties gets the additionalProperties property value. Additional properties of the claim. If a property exists in this collection, it modifies the behavior of the optional claim specified in the name property.
+// returns a []string when successful
 func (m *OptionalClaim) GetAdditionalProperties()([]string) {
     val, err := m.GetBackingStore().Get("additionalProperties")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *OptionalClaim) GetAdditionalProperties()([]string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *OptionalClaim) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetEssential gets the essential property value. If the value is true, the claim specified by the client is necessary to ensure a smooth authorization experience for the specific task requested by the end user. The default value is false.
+// returns a *bool when successful
 func (m *OptionalClaim) GetEssential()(*bool) {
     val, err := m.GetBackingStore().Get("essential")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *OptionalClaim) GetEssential()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OptionalClaim) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["additionalProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -122,6 +127,7 @@ func (m *OptionalClaim) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetName gets the name property value. The name of the optional claim.
+// returns a *string when successful
 func (m *OptionalClaim) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -133,6 +139,7 @@ func (m *OptionalClaim) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *OptionalClaim) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -144,6 +151,7 @@ func (m *OptionalClaim) GetOdataType()(*string) {
     return nil
 }
 // GetSource gets the source property value. The source (directory object) of the claim. There are predefined claims and user-defined claims from extension properties. If the source value is null, the claim is a predefined optional claim. If the source value is user, the value in the name property is the extension property from the user object.
+// returns a *string when successful
 func (m *OptionalClaim) GetSource()(*string) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
@@ -240,7 +248,6 @@ func (m *OptionalClaim) SetSource(value *string)() {
         panic(err)
     }
 }
-// OptionalClaimable 
 type OptionalClaimable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageAssignmentPolicy 
 type AccessPackageAssignmentPolicy struct {
     Entity
 }
-// NewAccessPackageAssignmentPolicy instantiates a new accessPackageAssignmentPolicy and sets the default values.
+// NewAccessPackageAssignmentPolicy instantiates a new AccessPackageAssignmentPolicy and sets the default values.
 func NewAccessPackageAssignmentPolicy()(*AccessPackageAssignmentPolicy) {
     m := &AccessPackageAssignmentPolicy{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewAccessPackageAssignmentPolicy()(*AccessPackageAssignmentPolicy) {
     return m
 }
 // CreateAccessPackageAssignmentPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessPackageAssignmentPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageAssignmentPolicy(), nil
 }
 // GetAccessPackage gets the accessPackage property value. Access package containing this policy. Read-only.  Supports $expand.
+// returns a AccessPackageable when successful
 func (m *AccessPackageAssignmentPolicy) GetAccessPackage()(AccessPackageable) {
     val, err := m.GetBackingStore().Get("accessPackage")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *AccessPackageAssignmentPolicy) GetAccessPackage()(AccessPackageable) {
     return nil
 }
 // GetAllowedTargetScope gets the allowedTargetScope property value. Principals that can be assigned the access package through this policy. The possible values are: notSpecified, specificDirectoryUsers, specificConnectedOrganizationUsers, specificDirectoryServicePrincipals, allMemberUsers, allDirectoryUsers, allDirectoryServicePrincipals, allConfiguredConnectedOrganizationUsers, allExternalUsers, unknownFutureValue.
+// returns a *AllowedTargetScope when successful
 func (m *AccessPackageAssignmentPolicy) GetAllowedTargetScope()(*AllowedTargetScope) {
     val, err := m.GetBackingStore().Get("allowedTargetScope")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *AccessPackageAssignmentPolicy) GetAllowedTargetScope()(*AllowedTargetSc
     return nil
 }
 // GetAutomaticRequestSettings gets the automaticRequestSettings property value. This property is only present for an auto assignment policy; if absent, this is a request-based policy.
+// returns a AccessPackageAutomaticRequestSettingsable when successful
 func (m *AccessPackageAssignmentPolicy) GetAutomaticRequestSettings()(AccessPackageAutomaticRequestSettingsable) {
     val, err := m.GetBackingStore().Get("automaticRequestSettings")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *AccessPackageAssignmentPolicy) GetAutomaticRequestSettings()(AccessPack
     return nil
 }
 // GetCatalog gets the catalog property value. Catalog of the access package containing this policy. Read-only.
+// returns a AccessPackageCatalogable when successful
 func (m *AccessPackageAssignmentPolicy) GetCatalog()(AccessPackageCatalogable) {
     val, err := m.GetBackingStore().Get("catalog")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *AccessPackageAssignmentPolicy) GetCatalog()(AccessPackageCatalogable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *AccessPackageAssignmentPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *AccessPackageAssignmentPolicy) GetCreatedDateTime()(*i336074805fc853987
     return nil
 }
 // GetCustomExtensionStageSettings gets the customExtensionStageSettings property value. The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
+// returns a []CustomExtensionStageSettingable when successful
 func (m *AccessPackageAssignmentPolicy) GetCustomExtensionStageSettings()([]CustomExtensionStageSettingable) {
     val, err := m.GetBackingStore().Get("customExtensionStageSettings")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *AccessPackageAssignmentPolicy) GetCustomExtensionStageSettings()([]Cust
     return nil
 }
 // GetDescription gets the description property value. The description of the policy.
+// returns a *string when successful
 func (m *AccessPackageAssignmentPolicy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *AccessPackageAssignmentPolicy) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the policy.
+// returns a *string when successful
 func (m *AccessPackageAssignmentPolicy) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -109,6 +117,7 @@ func (m *AccessPackageAssignmentPolicy) GetDisplayName()(*string) {
     return nil
 }
 // GetExpiration gets the expiration property value. The expiration date for assignments created in this policy.
+// returns a ExpirationPatternable when successful
 func (m *AccessPackageAssignmentPolicy) GetExpiration()(ExpirationPatternable) {
     val, err := m.GetBackingStore().Get("expiration")
     if err != nil {
@@ -120,6 +129,7 @@ func (m *AccessPackageAssignmentPolicy) GetExpiration()(ExpirationPatternable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessPackageAssignmentPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -293,6 +303,7 @@ func (m *AccessPackageAssignmentPolicy) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *AccessPackageAssignmentPolicy) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("modifiedDateTime")
     if err != nil {
@@ -304,6 +315,7 @@ func (m *AccessPackageAssignmentPolicy) GetModifiedDateTime()(*i336074805fc85398
     return nil
 }
 // GetQuestions gets the questions property value. Questions that are posed to the  requestor.
+// returns a []AccessPackageQuestionable when successful
 func (m *AccessPackageAssignmentPolicy) GetQuestions()([]AccessPackageQuestionable) {
     val, err := m.GetBackingStore().Get("questions")
     if err != nil {
@@ -315,6 +327,7 @@ func (m *AccessPackageAssignmentPolicy) GetQuestions()([]AccessPackageQuestionab
     return nil
 }
 // GetRequestApprovalSettings gets the requestApprovalSettings property value. Specifies the settings for approval of requests for an access package assignment through this policy. For example, if approval is required for new requests.
+// returns a AccessPackageAssignmentApprovalSettingsable when successful
 func (m *AccessPackageAssignmentPolicy) GetRequestApprovalSettings()(AccessPackageAssignmentApprovalSettingsable) {
     val, err := m.GetBackingStore().Get("requestApprovalSettings")
     if err != nil {
@@ -326,6 +339,7 @@ func (m *AccessPackageAssignmentPolicy) GetRequestApprovalSettings()(AccessPacka
     return nil
 }
 // GetRequestorSettings gets the requestorSettings property value. Provides additional settings to select who can create a request for an access package assignment through this policy, and what they can include in their request.
+// returns a AccessPackageAssignmentRequestorSettingsable when successful
 func (m *AccessPackageAssignmentPolicy) GetRequestorSettings()(AccessPackageAssignmentRequestorSettingsable) {
     val, err := m.GetBackingStore().Get("requestorSettings")
     if err != nil {
@@ -337,6 +351,7 @@ func (m *AccessPackageAssignmentPolicy) GetRequestorSettings()(AccessPackageAssi
     return nil
 }
 // GetReviewSettings gets the reviewSettings property value. Settings for access reviews of assignments through this policy.
+// returns a AccessPackageAssignmentReviewSettingsable when successful
 func (m *AccessPackageAssignmentPolicy) GetReviewSettings()(AccessPackageAssignmentReviewSettingsable) {
     val, err := m.GetBackingStore().Get("reviewSettings")
     if err != nil {
@@ -348,6 +363,7 @@ func (m *AccessPackageAssignmentPolicy) GetReviewSettings()(AccessPackageAssignm
     return nil
 }
 // GetSpecificAllowedTargets gets the specificAllowedTargets property value. The principals that can be assigned access from an access package through this policy.
+// returns a []SubjectSetable when successful
 func (m *AccessPackageAssignmentPolicy) GetSpecificAllowedTargets()([]SubjectSetable) {
     val, err := m.GetBackingStore().Get("specificAllowedTargets")
     if err != nil {
@@ -580,7 +596,6 @@ func (m *AccessPackageAssignmentPolicy) SetSpecificAllowedTargets(value []Subjec
         panic(err)
     }
 }
-// AccessPackageAssignmentPolicyable 
 type AccessPackageAssignmentPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

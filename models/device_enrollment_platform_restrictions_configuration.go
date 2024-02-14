@@ -8,7 +8,7 @@ import (
 type DeviceEnrollmentPlatformRestrictionsConfiguration struct {
     DeviceEnrollmentConfiguration
 }
-// NewDeviceEnrollmentPlatformRestrictionsConfiguration instantiates a new deviceEnrollmentPlatformRestrictionsConfiguration and sets the default values.
+// NewDeviceEnrollmentPlatformRestrictionsConfiguration instantiates a new DeviceEnrollmentPlatformRestrictionsConfiguration and sets the default values.
 func NewDeviceEnrollmentPlatformRestrictionsConfiguration()(*DeviceEnrollmentPlatformRestrictionsConfiguration) {
     m := &DeviceEnrollmentPlatformRestrictionsConfiguration{
         DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),
@@ -18,10 +18,12 @@ func NewDeviceEnrollmentPlatformRestrictionsConfiguration()(*DeviceEnrollmentPla
     return m
 }
 // CreateDeviceEnrollmentPlatformRestrictionsConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceEnrollmentPlatformRestrictionsConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceEnrollmentPlatformRestrictionsConfiguration(), nil
 }
 // GetAndroidRestriction gets the androidRestriction property value. Android restrictions based on platform, platform operating system version, and device ownership
+// returns a DeviceEnrollmentPlatformRestrictionable when successful
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetAndroidRestriction()(DeviceEnrollmentPlatformRestrictionable) {
     val, err := m.GetBackingStore().Get("androidRestriction")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetAndroidRestrictio
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceEnrollmentConfiguration.GetFieldDeserializers()
     res["androidRestriction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -88,6 +91,7 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetFieldDeserializer
     return res
 }
 // GetIosRestriction gets the iosRestriction property value. Ios restrictions based on platform, platform operating system version, and device ownership
+// returns a DeviceEnrollmentPlatformRestrictionable when successful
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetIosRestriction()(DeviceEnrollmentPlatformRestrictionable) {
     val, err := m.GetBackingStore().Get("iosRestriction")
     if err != nil {
@@ -99,6 +103,7 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetIosRestriction()(
     return nil
 }
 // GetMacOSRestriction gets the macOSRestriction property value. Mac restrictions based on platform, platform operating system version, and device ownership
+// returns a DeviceEnrollmentPlatformRestrictionable when successful
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetMacOSRestriction()(DeviceEnrollmentPlatformRestrictionable) {
     val, err := m.GetBackingStore().Get("macOSRestriction")
     if err != nil {
@@ -110,6 +115,7 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetMacOSRestriction(
     return nil
 }
 // GetWindowsMobileRestriction gets the windowsMobileRestriction property value. Windows mobile restrictions based on platform, platform operating system version, and device ownership
+// returns a DeviceEnrollmentPlatformRestrictionable when successful
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetWindowsMobileRestriction()(DeviceEnrollmentPlatformRestrictionable) {
     val, err := m.GetBackingStore().Get("windowsMobileRestriction")
     if err != nil {
@@ -121,6 +127,7 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetWindowsMobileRest
     return nil
 }
 // GetWindowsRestriction gets the windowsRestriction property value. Windows restrictions based on platform, platform operating system version, and device ownership
+// returns a DeviceEnrollmentPlatformRestrictionable when successful
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetWindowsRestriction()(DeviceEnrollmentPlatformRestrictionable) {
     val, err := m.GetBackingStore().Get("windowsRestriction")
     if err != nil {
@@ -204,7 +211,6 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetWindowsRestrictio
         panic(err)
     }
 }
-// DeviceEnrollmentPlatformRestrictionsConfigurationable 
 type DeviceEnrollmentPlatformRestrictionsConfigurationable interface {
     DeviceEnrollmentConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

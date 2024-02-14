@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// MediaContentRatingNewZealand 
 type MediaContentRatingNewZealand struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewMediaContentRatingNewZealand instantiates a new mediaContentRatingNewZealand and sets the default values.
+// NewMediaContentRatingNewZealand instantiates a new MediaContentRatingNewZealand and sets the default values.
 func NewMediaContentRatingNewZealand()(*MediaContentRatingNewZealand) {
     m := &MediaContentRatingNewZealand{
     }
@@ -19,10 +18,12 @@ func NewMediaContentRatingNewZealand()(*MediaContentRatingNewZealand) {
     return m
 }
 // CreateMediaContentRatingNewZealandFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMediaContentRatingNewZealandFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMediaContentRatingNewZealand(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *MediaContentRatingNewZealand) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *MediaContentRatingNewZealand) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *MediaContentRatingNewZealand) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MediaContentRatingNewZealand) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["movieRating"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +77,7 @@ func (m *MediaContentRatingNewZealand) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetMovieRating gets the movieRating property value. Movies rating labels in New Zealand
+// returns a *RatingNewZealandMoviesType when successful
 func (m *MediaContentRatingNewZealand) GetMovieRating()(*RatingNewZealandMoviesType) {
     val, err := m.GetBackingStore().Get("movieRating")
     if err != nil {
@@ -85,6 +89,7 @@ func (m *MediaContentRatingNewZealand) GetMovieRating()(*RatingNewZealandMoviesT
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *MediaContentRatingNewZealand) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -96,6 +101,7 @@ func (m *MediaContentRatingNewZealand) GetOdataType()(*string) {
     return nil
 }
 // GetTvRating gets the tvRating property value. TV content rating labels in New Zealand
+// returns a *RatingNewZealandTelevisionType when successful
 func (m *MediaContentRatingNewZealand) GetTvRating()(*RatingNewZealandTelevisionType) {
     val, err := m.GetBackingStore().Get("tvRating")
     if err != nil {
@@ -168,7 +174,6 @@ func (m *MediaContentRatingNewZealand) SetTvRating(value *RatingNewZealandTelevi
         panic(err)
     }
 }
-// MediaContentRatingNewZealandable 
 type MediaContentRatingNewZealandable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

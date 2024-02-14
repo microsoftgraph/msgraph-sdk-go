@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Product Status of Windows Defender
@@ -8,64 +9,66 @@ type WindowsDefenderProductStatus int
 
 const (
     // No status
-    NOSTATUS_WINDOWSDEFENDERPRODUCTSTATUS WindowsDefenderProductStatus = iota
+    NOSTATUS_WINDOWSDEFENDERPRODUCTSTATUS = 1
     // Service not running
-    SERVICENOTRUNNING_WINDOWSDEFENDERPRODUCTSTATUS
+    SERVICENOTRUNNING_WINDOWSDEFENDERPRODUCTSTATUS = 2
     // Service started without any malware protection engine
-    SERVICESTARTEDWITHOUTMALWAREPROTECTION_WINDOWSDEFENDERPRODUCTSTATUS
+    SERVICESTARTEDWITHOUTMALWAREPROTECTION_WINDOWSDEFENDERPRODUCTSTATUS = 4
     // Pending full scan due to threat action
-    PENDINGFULLSCANDUETOTHREATACTION_WINDOWSDEFENDERPRODUCTSTATUS
+    PENDINGFULLSCANDUETOTHREATACTION_WINDOWSDEFENDERPRODUCTSTATUS = 8
     // Pending reboot due to threat action
-    PENDINGREBOOTDUETOTHREATACTION_WINDOWSDEFENDERPRODUCTSTATUS
+    PENDINGREBOOTDUETOTHREATACTION_WINDOWSDEFENDERPRODUCTSTATUS = 16
     // Pending manual steps due to threat action 
-    PENDINGMANUALSTEPSDUETOTHREATACTION_WINDOWSDEFENDERPRODUCTSTATUS
+    PENDINGMANUALSTEPSDUETOTHREATACTION_WINDOWSDEFENDERPRODUCTSTATUS = 32
     // AV signatures out of date
-    AVSIGNATURESOUTOFDATE_WINDOWSDEFENDERPRODUCTSTATUS
+    AVSIGNATURESOUTOFDATE_WINDOWSDEFENDERPRODUCTSTATUS = 64
     // AS signatures out of date
-    ASSIGNATURESOUTOFDATE_WINDOWSDEFENDERPRODUCTSTATUS
+    ASSIGNATURESOUTOFDATE_WINDOWSDEFENDERPRODUCTSTATUS = 128
     // No quick scan has happened for a specified period
-    NOQUICKSCANHAPPENEDFORSPECIFIEDPERIOD_WINDOWSDEFENDERPRODUCTSTATUS
+    NOQUICKSCANHAPPENEDFORSPECIFIEDPERIOD_WINDOWSDEFENDERPRODUCTSTATUS = 256
     // No full scan has happened for a specified period
-    NOFULLSCANHAPPENEDFORSPECIFIEDPERIOD_WINDOWSDEFENDERPRODUCTSTATUS
+    NOFULLSCANHAPPENEDFORSPECIFIEDPERIOD_WINDOWSDEFENDERPRODUCTSTATUS = 512
     // System initiated scan in progress
-    SYSTEMINITIATEDSCANINPROGRESS_WINDOWSDEFENDERPRODUCTSTATUS
+    SYSTEMINITIATEDSCANINPROGRESS_WINDOWSDEFENDERPRODUCTSTATUS = 1024
     // System initiated clean in progress
-    SYSTEMINITIATEDCLEANINPROGRESS_WINDOWSDEFENDERPRODUCTSTATUS
+    SYSTEMINITIATEDCLEANINPROGRESS_WINDOWSDEFENDERPRODUCTSTATUS = 2048
     // There are samples pending submission
-    SAMPLESPENDINGSUBMISSION_WINDOWSDEFENDERPRODUCTSTATUS
+    SAMPLESPENDINGSUBMISSION_WINDOWSDEFENDERPRODUCTSTATUS = 4096
     // Product running in evaluation mode
-    PRODUCTRUNNINGINEVALUATIONMODE_WINDOWSDEFENDERPRODUCTSTATUS
+    PRODUCTRUNNINGINEVALUATIONMODE_WINDOWSDEFENDERPRODUCTSTATUS = 8192
     // Product running in non-genuine Windows mode
-    PRODUCTRUNNINGINNONGENUINEMODE_WINDOWSDEFENDERPRODUCTSTATUS
+    PRODUCTRUNNINGINNONGENUINEMODE_WINDOWSDEFENDERPRODUCTSTATUS = 16384
     // Product expired
-    PRODUCTEXPIRED_WINDOWSDEFENDERPRODUCTSTATUS
+    PRODUCTEXPIRED_WINDOWSDEFENDERPRODUCTSTATUS = 32768
     // Off-line scan required
-    OFFLINESCANREQUIRED_WINDOWSDEFENDERPRODUCTSTATUS
+    OFFLINESCANREQUIRED_WINDOWSDEFENDERPRODUCTSTATUS = 65536
     // Service is shutting down as part of system shutdown
-    SERVICESHUTDOWNASPARTOFSYSTEMSHUTDOWN_WINDOWSDEFENDERPRODUCTSTATUS
+    SERVICESHUTDOWNASPARTOFSYSTEMSHUTDOWN_WINDOWSDEFENDERPRODUCTSTATUS = 131072
     // Threat remediation failed critically
-    THREATREMEDIATIONFAILEDCRITICALLY_WINDOWSDEFENDERPRODUCTSTATUS
+    THREATREMEDIATIONFAILEDCRITICALLY_WINDOWSDEFENDERPRODUCTSTATUS = 262144
     // Threat remediation failed non-critically
-    THREATREMEDIATIONFAILEDNONCRITICALLY_WINDOWSDEFENDERPRODUCTSTATUS
+    THREATREMEDIATIONFAILEDNONCRITICALLY_WINDOWSDEFENDERPRODUCTSTATUS = 524288
     // No status flags set (well initialized state)
-    NOSTATUSFLAGSSET_WINDOWSDEFENDERPRODUCTSTATUS
+    NOSTATUSFLAGSSET_WINDOWSDEFENDERPRODUCTSTATUS = 1048576
     // Platform is out of date
-    PLATFORMOUTOFDATE_WINDOWSDEFENDERPRODUCTSTATUS
+    PLATFORMOUTOFDATE_WINDOWSDEFENDERPRODUCTSTATUS = 2097152
     // Platform update is in progress
-    PLATFORMUPDATEINPROGRESS_WINDOWSDEFENDERPRODUCTSTATUS
+    PLATFORMUPDATEINPROGRESS_WINDOWSDEFENDERPRODUCTSTATUS = 4194304
     // Platform is about to be outdated
-    PLATFORMABOUTTOBEOUTDATED_WINDOWSDEFENDERPRODUCTSTATUS
+    PLATFORMABOUTTOBEOUTDATED_WINDOWSDEFENDERPRODUCTSTATUS = 8388608
     // Signature or platform end of life is past or is impending
-    SIGNATUREORPLATFORMENDOFLIFEISPASTORISIMPENDING_WINDOWSDEFENDERPRODUCTSTATUS
+    SIGNATUREORPLATFORMENDOFLIFEISPASTORISIMPENDING_WINDOWSDEFENDERPRODUCTSTATUS = 16777216
     // Windows SMode signatures still in use on non-Win10S install
-    WINDOWSSMODESIGNATURESINUSEONNONWIN10SINSTALL_WINDOWSDEFENDERPRODUCTSTATUS
+    WINDOWSSMODESIGNATURESINUSEONNONWIN10SINSTALL_WINDOWSDEFENDERPRODUCTSTATUS = 33554432
 )
 
 func (i WindowsDefenderProductStatus) String() string {
     var values []string
-    for p := WindowsDefenderProductStatus(1); p <= WINDOWSSMODESIGNATURESINUSEONNONWIN10SINSTALL_WINDOWSDEFENDERPRODUCTSTATUS; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"noStatus", "serviceNotRunning", "serviceStartedWithoutMalwareProtection", "pendingFullScanDueToThreatAction", "pendingRebootDueToThreatAction", "pendingManualStepsDueToThreatAction", "avSignaturesOutOfDate", "asSignaturesOutOfDate", "noQuickScanHappenedForSpecifiedPeriod", "noFullScanHappenedForSpecifiedPeriod", "systemInitiatedScanInProgress", "systemInitiatedCleanInProgress", "samplesPendingSubmission", "productRunningInEvaluationMode", "productRunningInNonGenuineMode", "productExpired", "offlineScanRequired", "serviceShutdownAsPartOfSystemShutdown", "threatRemediationFailedCritically", "threatRemediationFailedNonCritically", "noStatusFlagsSet", "platformOutOfDate", "platformUpdateInProgress", "platformAboutToBeOutdated", "signatureOrPlatformEndOfLifeIsPastOrIsImpending", "windowsSModeSignaturesInUseOnNonWin10SInstall"}[p])
+    options := []string{"noStatus", "serviceNotRunning", "serviceStartedWithoutMalwareProtection", "pendingFullScanDueToThreatAction", "pendingRebootDueToThreatAction", "pendingManualStepsDueToThreatAction", "avSignaturesOutOfDate", "asSignaturesOutOfDate", "noQuickScanHappenedForSpecifiedPeriod", "noFullScanHappenedForSpecifiedPeriod", "systemInitiatedScanInProgress", "systemInitiatedCleanInProgress", "samplesPendingSubmission", "productRunningInEvaluationMode", "productRunningInNonGenuineMode", "productExpired", "offlineScanRequired", "serviceShutdownAsPartOfSystemShutdown", "threatRemediationFailedCritically", "threatRemediationFailedNonCritically", "noStatusFlagsSet", "platformOutOfDate", "platformUpdateInProgress", "platformAboutToBeOutdated", "signatureOrPlatformEndOfLifeIsPastOrIsImpending", "windowsSModeSignaturesInUseOnNonWin10SInstall"}
+    for p := 0; p < 26; p++ {
+        mantis := WindowsDefenderProductStatus(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

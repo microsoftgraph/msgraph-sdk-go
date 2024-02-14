@@ -1,27 +1,29 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type ConditionalAccessGuestOrExternalUserTypes int
 
 const (
-    NONE_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES ConditionalAccessGuestOrExternalUserTypes = iota
-    INTERNALGUEST_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
-    B2BCOLLABORATIONGUEST_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
-    B2BCOLLABORATIONMEMBER_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
-    B2BDIRECTCONNECTUSER_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
-    OTHEREXTERNALUSER_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
-    SERVICEPROVIDER_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
-    UNKNOWNFUTUREVALUE_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES
+    NONE_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES = 1
+    INTERNALGUEST_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES = 2
+    B2BCOLLABORATIONGUEST_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES = 4
+    B2BCOLLABORATIONMEMBER_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES = 8
+    B2BDIRECTCONNECTUSER_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES = 16
+    OTHEREXTERNALUSER_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES = 32
+    SERVICEPROVIDER_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES = 64
+    UNKNOWNFUTUREVALUE_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES = 128
 )
 
 func (i ConditionalAccessGuestOrExternalUserTypes) String() string {
     var values []string
-    for p := ConditionalAccessGuestOrExternalUserTypes(1); p <= UNKNOWNFUTUREVALUE_CONDITIONALACCESSGUESTOREXTERNALUSERTYPES; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "internalGuest", "b2bCollaborationGuest", "b2bCollaborationMember", "b2bDirectConnectUser", "otherExternalUser", "serviceProvider", "unknownFutureValue"}[p])
+    options := []string{"none", "internalGuest", "b2bCollaborationGuest", "b2bCollaborationMember", "b2bDirectConnectUser", "otherExternalUser", "serviceProvider", "unknownFutureValue"}
+    for p := 0; p < 8; p++ {
+        mantis := ConditionalAccessGuestOrExternalUserTypes(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

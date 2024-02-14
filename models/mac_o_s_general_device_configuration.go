@@ -8,7 +8,7 @@ import (
 type MacOSGeneralDeviceConfiguration struct {
     DeviceConfiguration
 }
-// NewMacOSGeneralDeviceConfiguration instantiates a new macOSGeneralDeviceConfiguration and sets the default values.
+// NewMacOSGeneralDeviceConfiguration instantiates a new MacOSGeneralDeviceConfiguration and sets the default values.
 func NewMacOSGeneralDeviceConfiguration()(*MacOSGeneralDeviceConfiguration) {
     m := &MacOSGeneralDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewMacOSGeneralDeviceConfiguration()(*MacOSGeneralDeviceConfiguration) {
     return m
 }
 // CreateMacOSGeneralDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOSGeneralDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSGeneralDeviceConfiguration(), nil
 }
 // GetCompliantAppListType gets the compliantAppListType property value. Possible values of the compliance app list.
+// returns a *AppListType when successful
 func (m *MacOSGeneralDeviceConfiguration) GetCompliantAppListType()(*AppListType) {
     val, err := m.GetBackingStore().Get("compliantAppListType")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *MacOSGeneralDeviceConfiguration) GetCompliantAppListType()(*AppListType
     return nil
 }
 // GetCompliantAppsList gets the compliantAppsList property value. List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
+// returns a []AppListItemable when successful
 func (m *MacOSGeneralDeviceConfiguration) GetCompliantAppsList()([]AppListItemable) {
     val, err := m.GetBackingStore().Get("compliantAppsList")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *MacOSGeneralDeviceConfiguration) GetCompliantAppsList()([]AppListItemab
     return nil
 }
 // GetEmailInDomainSuffixes gets the emailInDomainSuffixes property value. An email address lacking a suffix that matches any of these strings will be considered out-of-domain.
+// returns a []string when successful
 func (m *MacOSGeneralDeviceConfiguration) GetEmailInDomainSuffixes()([]string) {
     val, err := m.GetBackingStore().Get("emailInDomainSuffixes")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *MacOSGeneralDeviceConfiguration) GetEmailInDomainSuffixes()([]string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["compliantAppListType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -192,6 +197,7 @@ func (m *MacOSGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetPasswordBlockSimple gets the passwordBlockSimple property value. Block simple passwords.
+// returns a *bool when successful
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordBlockSimple()(*bool) {
     val, err := m.GetBackingStore().Get("passwordBlockSimple")
     if err != nil {
@@ -203,6 +209,7 @@ func (m *MacOSGeneralDeviceConfiguration) GetPasswordBlockSimple()(*bool) {
     return nil
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Number of days before the password expires.
+// returns a *int32 when successful
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordExpirationDays()(*int32) {
     val, err := m.GetBackingStore().Get("passwordExpirationDays")
     if err != nil {
@@ -214,6 +221,7 @@ func (m *MacOSGeneralDeviceConfiguration) GetPasswordExpirationDays()(*int32) {
     return nil
 }
 // GetPasswordMinimumCharacterSetCount gets the passwordMinimumCharacterSetCount property value. Number of character sets a password must contain. Valid values 0 to 4
+// returns a *int32 when successful
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordMinimumCharacterSetCount()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinimumCharacterSetCount")
     if err != nil {
@@ -225,6 +233,7 @@ func (m *MacOSGeneralDeviceConfiguration) GetPasswordMinimumCharacterSetCount()(
     return nil
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Minimum length of passwords.
+// returns a *int32 when successful
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordMinimumLength()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinimumLength")
     if err != nil {
@@ -236,6 +245,7 @@ func (m *MacOSGeneralDeviceConfiguration) GetPasswordMinimumLength()(*int32) {
     return nil
 }
 // GetPasswordMinutesOfInactivityBeforeLock gets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity required before a password is required.
+// returns a *int32 when successful
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordMinutesOfInactivityBeforeLock()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinutesOfInactivityBeforeLock")
     if err != nil {
@@ -247,6 +257,7 @@ func (m *MacOSGeneralDeviceConfiguration) GetPasswordMinutesOfInactivityBeforeLo
     return nil
 }
 // GetPasswordMinutesOfInactivityBeforeScreenTimeout gets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity required before the screen times out.
+// returns a *int32 when successful
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordMinutesOfInactivityBeforeScreenTimeout()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinutesOfInactivityBeforeScreenTimeout")
     if err != nil {
@@ -258,6 +269,7 @@ func (m *MacOSGeneralDeviceConfiguration) GetPasswordMinutesOfInactivityBeforeSc
     return nil
 }
 // GetPasswordPreviousPasswordBlockCount gets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block.
+// returns a *int32 when successful
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordPreviousPasswordBlockCount()(*int32) {
     val, err := m.GetBackingStore().Get("passwordPreviousPasswordBlockCount")
     if err != nil {
@@ -269,6 +281,7 @@ func (m *MacOSGeneralDeviceConfiguration) GetPasswordPreviousPasswordBlockCount(
     return nil
 }
 // GetPasswordRequired gets the passwordRequired property value. Whether or not to require a password.
+// returns a *bool when successful
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordRequired()(*bool) {
     val, err := m.GetBackingStore().Get("passwordRequired")
     if err != nil {
@@ -280,6 +293,7 @@ func (m *MacOSGeneralDeviceConfiguration) GetPasswordRequired()(*bool) {
     return nil
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Possible values of required passwords.
+// returns a *RequiredPasswordType when successful
 func (m *MacOSGeneralDeviceConfiguration) GetPasswordRequiredType()(*RequiredPasswordType) {
     val, err := m.GetBackingStore().Get("passwordRequiredType")
     if err != nil {
@@ -462,7 +476,6 @@ func (m *MacOSGeneralDeviceConfiguration) SetPasswordRequiredType(value *Require
         panic(err)
     }
 }
-// MacOSGeneralDeviceConfigurationable 
 type MacOSGeneralDeviceConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

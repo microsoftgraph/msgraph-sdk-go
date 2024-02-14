@@ -8,7 +8,7 @@ import (
 type WindowsInformationProtectionNetworkLearningSummary struct {
     Entity
 }
-// NewWindowsInformationProtectionNetworkLearningSummary instantiates a new windowsInformationProtectionNetworkLearningSummary and sets the default values.
+// NewWindowsInformationProtectionNetworkLearningSummary instantiates a new WindowsInformationProtectionNetworkLearningSummary and sets the default values.
 func NewWindowsInformationProtectionNetworkLearningSummary()(*WindowsInformationProtectionNetworkLearningSummary) {
     m := &WindowsInformationProtectionNetworkLearningSummary{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewWindowsInformationProtectionNetworkLearningSummary()(*WindowsInformation
     return m
 }
 // CreateWindowsInformationProtectionNetworkLearningSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsInformationProtectionNetworkLearningSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsInformationProtectionNetworkLearningSummary(), nil
 }
 // GetDeviceCount gets the deviceCount property value. Device Count
+// returns a *int32 when successful
 func (m *WindowsInformationProtectionNetworkLearningSummary) GetDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("deviceCount")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *WindowsInformationProtectionNetworkLearningSummary) GetDeviceCount()(*i
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsInformationProtectionNetworkLearningSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -56,6 +59,7 @@ func (m *WindowsInformationProtectionNetworkLearningSummary) GetFieldDeserialize
     return res
 }
 // GetUrl gets the url property value. Website url
+// returns a *string when successful
 func (m *WindowsInformationProtectionNetworkLearningSummary) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -100,7 +104,6 @@ func (m *WindowsInformationProtectionNetworkLearningSummary) SetUrl(value *strin
         panic(err)
     }
 }
-// WindowsInformationProtectionNetworkLearningSummaryable 
 type WindowsInformationProtectionNetworkLearningSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

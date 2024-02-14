@@ -8,7 +8,7 @@ import (
 type DeviceCompliancePolicySettingStateSummary struct {
     Entity
 }
-// NewDeviceCompliancePolicySettingStateSummary instantiates a new deviceCompliancePolicySettingStateSummary and sets the default values.
+// NewDeviceCompliancePolicySettingStateSummary instantiates a new DeviceCompliancePolicySettingStateSummary and sets the default values.
 func NewDeviceCompliancePolicySettingStateSummary()(*DeviceCompliancePolicySettingStateSummary) {
     m := &DeviceCompliancePolicySettingStateSummary{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewDeviceCompliancePolicySettingStateSummary()(*DeviceCompliancePolicySetti
     return m
 }
 // CreateDeviceCompliancePolicySettingStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceCompliancePolicySettingStateSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceCompliancePolicySettingStateSummary(), nil
 }
 // GetCompliantDeviceCount gets the compliantDeviceCount property value. Number of compliant devices
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetCompliantDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("compliantDeviceCount")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetCompliantDeviceCount()(*i
     return nil
 }
 // GetConflictDeviceCount gets the conflictDeviceCount property value. Number of conflict devices
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetConflictDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("conflictDeviceCount")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetConflictDeviceCount()(*in
     return nil
 }
 // GetDeviceComplianceSettingStates gets the deviceComplianceSettingStates property value. Not yet documented
+// returns a []DeviceComplianceSettingStateable when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetDeviceComplianceSettingStates()([]DeviceComplianceSettingStateable) {
     val, err := m.GetBackingStore().Get("deviceComplianceSettingStates")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetDeviceComplianceSettingSt
     return nil
 }
 // GetErrorDeviceCount gets the errorDeviceCount property value. Number of error devices
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetErrorDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("errorDeviceCount")
     if err != nil {
@@ -64,6 +69,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetErrorDeviceCount()(*int32
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["compliantDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -185,6 +191,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
     return res
 }
 // GetNonCompliantDeviceCount gets the nonCompliantDeviceCount property value. Number of NonCompliant devices
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetNonCompliantDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("nonCompliantDeviceCount")
     if err != nil {
@@ -196,6 +203,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetNonCompliantDeviceCount()
     return nil
 }
 // GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. Number of not applicable devices
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetNotApplicableDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("notApplicableDeviceCount")
     if err != nil {
@@ -207,6 +215,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetNotApplicableDeviceCount(
     return nil
 }
 // GetPlatformType gets the platformType property value. Supported platform types for policies.
+// returns a *PolicyPlatformType when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetPlatformType()(*PolicyPlatformType) {
     val, err := m.GetBackingStore().Get("platformType")
     if err != nil {
@@ -218,6 +227,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetPlatformType()(*PolicyPla
     return nil
 }
 // GetRemediatedDeviceCount gets the remediatedDeviceCount property value. Number of remediated devices
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetRemediatedDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("remediatedDeviceCount")
     if err != nil {
@@ -229,6 +239,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetRemediatedDeviceCount()(*
     return nil
 }
 // GetSetting gets the setting property value. The setting class name and property name.
+// returns a *string when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetSetting()(*string) {
     val, err := m.GetBackingStore().Get("setting")
     if err != nil {
@@ -240,6 +251,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetSetting()(*string) {
     return nil
 }
 // GetSettingName gets the settingName property value. Name of the setting.
+// returns a *string when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetSettingName()(*string) {
     val, err := m.GetBackingStore().Get("settingName")
     if err != nil {
@@ -251,6 +263,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetSettingName()(*string) {
     return nil
 }
 // GetUnknownDeviceCount gets the unknownDeviceCount property value. Number of unknown devices
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetUnknownDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("unknownDeviceCount")
     if err != nil {
@@ -419,7 +432,6 @@ func (m *DeviceCompliancePolicySettingStateSummary) SetUnknownDeviceCount(value 
         panic(err)
     }
 }
-// DeviceCompliancePolicySettingStateSummaryable 
 type DeviceCompliancePolicySettingStateSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

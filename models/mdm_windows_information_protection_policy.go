@@ -8,7 +8,7 @@ import (
 type MdmWindowsInformationProtectionPolicy struct {
     WindowsInformationProtection
 }
-// NewMdmWindowsInformationProtectionPolicy instantiates a new mdmWindowsInformationProtectionPolicy and sets the default values.
+// NewMdmWindowsInformationProtectionPolicy instantiates a new MdmWindowsInformationProtectionPolicy and sets the default values.
 func NewMdmWindowsInformationProtectionPolicy()(*MdmWindowsInformationProtectionPolicy) {
     m := &MdmWindowsInformationProtectionPolicy{
         WindowsInformationProtection: *NewWindowsInformationProtection(),
@@ -18,10 +18,12 @@ func NewMdmWindowsInformationProtectionPolicy()(*MdmWindowsInformationProtection
     return m
 }
 // CreateMdmWindowsInformationProtectionPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMdmWindowsInformationProtectionPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMdmWindowsInformationProtectionPolicy(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MdmWindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsInformationProtection.GetFieldDeserializers()
     return res
@@ -34,7 +36,6 @@ func (m *MdmWindowsInformationProtectionPolicy) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// MdmWindowsInformationProtectionPolicyable 
 type MdmWindowsInformationProtectionPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsInformationProtectionable

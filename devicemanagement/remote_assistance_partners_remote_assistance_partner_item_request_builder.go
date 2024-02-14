@@ -42,23 +42,25 @@ type RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderPatchReque
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BeginOnboarding provides operations to call the beginOnboarding method.
+// returns a *RemoteAssistancePartnersItemBeginOnboardingRequestBuilder when successful
 func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) BeginOnboarding()(*RemoteAssistancePartnersItemBeginOnboardingRequestBuilder) {
     return NewRemoteAssistancePartnersItemBeginOnboardingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewRemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderInternal instantiates a new RemoteAssistancePartnerItemRequestBuilder and sets the default values.
+// NewRemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderInternal instantiates a new RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder and sets the default values.
 func NewRemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) {
     m := &RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/remoteAssistancePartners/{remoteAssistancePartner%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/remoteAssistancePartners/{remoteAssistancePartner%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewRemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder instantiates a new RemoteAssistancePartnerItemRequestBuilder and sets the default values.
+// NewRemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder instantiates a new RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder and sets the default values.
 func NewRemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete deletes a remoteAssistancePartner.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-delete?view=graph-rest-1.0
@@ -68,8 +70,7 @@ func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) Dele
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -78,10 +79,13 @@ func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) Dele
     return nil
 }
 // Disconnect provides operations to call the disconnect method.
+// returns a *RemoteAssistancePartnersItemDisconnectRequestBuilder when successful
 func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) Disconnect()(*RemoteAssistancePartnersItemDisconnectRequestBuilder) {
     return NewRemoteAssistancePartnersItemDisconnectRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get read properties and relationships of the remoteAssistancePartner object.
+// returns a RemoteAssistancePartnerable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-get?view=graph-rest-1.0
@@ -91,8 +95,7 @@ func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) Get(
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateRemoteAssistancePartnerFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -104,6 +107,8 @@ func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) Get(
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable), nil
 }
 // Patch update the properties of a remoteAssistancePartner object.
+// returns a RemoteAssistancePartnerable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-update?view=graph-rest-1.0
@@ -113,8 +118,7 @@ func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) Patc
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateRemoteAssistancePartnerFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -126,8 +130,9 @@ func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) Patc
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable), nil
 }
 // ToDeleteRequestInformation deletes a remoteAssistancePartner.
+// returns a *RequestInformation when successful
 func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/deviceManagement/remoteAssistancePartners/{remoteAssistancePartner%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -136,6 +141,7 @@ func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) ToDe
     return requestInfo, nil
 }
 // ToGetRequestInformation read properties and relationships of the remoteAssistancePartner object.
+// returns a *RequestInformation when successful
 func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -149,8 +155,9 @@ func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) ToGe
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of a remoteAssistancePartner object.
+// returns a *RequestInformation when successful
 func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RemoteAssistancePartnerable, requestConfiguration *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/deviceManagement/remoteAssistancePartners/{remoteAssistancePartner%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -163,6 +170,7 @@ func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) ToPa
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder when successful
 func (m *RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) WithUrl(rawUrl string)(*RemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder) {
     return NewRemoteAssistancePartnersRemoteAssistancePartnerItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

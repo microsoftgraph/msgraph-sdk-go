@@ -9,7 +9,7 @@ import (
 type AppLogCollectionRequest struct {
     Entity
 }
-// NewAppLogCollectionRequest instantiates a new appLogCollectionRequest and sets the default values.
+// NewAppLogCollectionRequest instantiates a new AppLogCollectionRequest and sets the default values.
 func NewAppLogCollectionRequest()(*AppLogCollectionRequest) {
     m := &AppLogCollectionRequest{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewAppLogCollectionRequest()(*AppLogCollectionRequest) {
     return m
 }
 // CreateAppLogCollectionRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAppLogCollectionRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppLogCollectionRequest(), nil
 }
 // GetCompletedDateTime gets the completedDateTime property value. Time at which the upload log request reached a completed state if not completed yet NULL will be returned.
+// returns a *Time when successful
 func (m *AppLogCollectionRequest) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("completedDateTime")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *AppLogCollectionRequest) GetCompletedDateTime()(*i336074805fc853987abe6
     return nil
 }
 // GetCustomLogFolders gets the customLogFolders property value. List of log folders.
+// returns a []string when successful
 func (m *AppLogCollectionRequest) GetCustomLogFolders()([]string) {
     val, err := m.GetBackingStore().Get("customLogFolders")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *AppLogCollectionRequest) GetCustomLogFolders()([]string) {
     return nil
 }
 // GetErrorMessage gets the errorMessage property value. Indicates error message if any during the upload process.
+// returns a *string when successful
 func (m *AppLogCollectionRequest) GetErrorMessage()(*string) {
     val, err := m.GetBackingStore().Get("errorMessage")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *AppLogCollectionRequest) GetErrorMessage()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AppLogCollectionRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["completedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -105,6 +110,7 @@ func (m *AppLogCollectionRequest) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetStatus gets the status property value. AppLogUploadStatus
+// returns a *AppLogUploadState when successful
 func (m *AppLogCollectionRequest) GetStatus()(*AppLogUploadState) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -176,7 +182,6 @@ func (m *AppLogCollectionRequest) SetStatus(value *AppLogUploadState)() {
         panic(err)
     }
 }
-// AppLogCollectionRequestable 
 type AppLogCollectionRequestable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -7,12 +7,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// LicenseAssignmentState 
 type LicenseAssignmentState struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewLicenseAssignmentState instantiates a new licenseAssignmentState and sets the default values.
+// NewLicenseAssignmentState instantiates a new LicenseAssignmentState and sets the default values.
 func NewLicenseAssignmentState()(*LicenseAssignmentState) {
     m := &LicenseAssignmentState{
     }
@@ -21,10 +20,12 @@ func NewLicenseAssignmentState()(*LicenseAssignmentState) {
     return m
 }
 // CreateLicenseAssignmentStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateLicenseAssignmentStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLicenseAssignmentState(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *LicenseAssignmentState) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -37,6 +38,7 @@ func (m *LicenseAssignmentState) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAssignedByGroup gets the assignedByGroup property value. The assignedByGroup property
+// returns a *string when successful
 func (m *LicenseAssignmentState) GetAssignedByGroup()(*string) {
     val, err := m.GetBackingStore().Get("assignedByGroup")
     if err != nil {
@@ -48,10 +50,12 @@ func (m *LicenseAssignmentState) GetAssignedByGroup()(*string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *LicenseAssignmentState) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDisabledPlans gets the disabledPlans property value. The disabledPlans property
+// returns a []UUID when successful
 func (m *LicenseAssignmentState) GetDisabledPlans()([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("disabledPlans")
     if err != nil {
@@ -63,6 +67,7 @@ func (m *LicenseAssignmentState) GetDisabledPlans()([]i561e97a8befe7661a44c8f546
     return nil
 }
 // GetError gets the error property value. The error property
+// returns a *string when successful
 func (m *LicenseAssignmentState) GetError()(*string) {
     val, err := m.GetBackingStore().Get("error")
     if err != nil {
@@ -74,6 +79,7 @@ func (m *LicenseAssignmentState) GetError()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["assignedByGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -155,6 +161,7 @@ func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// returns a *Time when successful
 func (m *LicenseAssignmentState) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
     if err != nil {
@@ -166,6 +173,7 @@ func (m *LicenseAssignmentState) GetLastUpdatedDateTime()(*i336074805fc853987abe
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *LicenseAssignmentState) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -177,6 +185,7 @@ func (m *LicenseAssignmentState) GetOdataType()(*string) {
     return nil
 }
 // GetSkuId gets the skuId property value. The skuId property
+// returns a *UUID when successful
 func (m *LicenseAssignmentState) GetSkuId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("skuId")
     if err != nil {
@@ -188,6 +197,7 @@ func (m *LicenseAssignmentState) GetSkuId()(*i561e97a8befe7661a44c8f54600992b420
     return nil
 }
 // GetState gets the state property value. The state property
+// returns a *string when successful
 func (m *LicenseAssignmentState) GetState()(*string) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -310,7 +320,6 @@ func (m *LicenseAssignmentState) SetState(value *string)() {
         panic(err)
     }
 }
-// LicenseAssignmentStateable 
 type LicenseAssignmentStateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

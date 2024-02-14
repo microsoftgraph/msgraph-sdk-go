@@ -5,11 +5,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// PassiveDnsRecordCollectionResponse 
 type PassiveDnsRecordCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
 }
-// NewPassiveDnsRecordCollectionResponse instantiates a new passiveDnsRecordCollectionResponse and sets the default values.
+// NewPassiveDnsRecordCollectionResponse instantiates a new PassiveDnsRecordCollectionResponse and sets the default values.
 func NewPassiveDnsRecordCollectionResponse()(*PassiveDnsRecordCollectionResponse) {
     m := &PassiveDnsRecordCollectionResponse{
         BaseCollectionPaginationCountResponse: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewBaseCollectionPaginationCountResponse(),
@@ -17,10 +16,12 @@ func NewPassiveDnsRecordCollectionResponse()(*PassiveDnsRecordCollectionResponse
     return m
 }
 // CreatePassiveDnsRecordCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePassiveDnsRecordCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPassiveDnsRecordCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PassiveDnsRecordCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +43,7 @@ func (m *PassiveDnsRecordCollectionResponse) GetFieldDeserializers()(map[string]
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []PassiveDnsRecordable when successful
 func (m *PassiveDnsRecordCollectionResponse) GetValue()([]PassiveDnsRecordable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -79,7 +81,6 @@ func (m *PassiveDnsRecordCollectionResponse) SetValue(value []PassiveDnsRecordab
         panic(err)
     }
 }
-// PassiveDnsRecordCollectionResponseable 
 type PassiveDnsRecordCollectionResponseable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

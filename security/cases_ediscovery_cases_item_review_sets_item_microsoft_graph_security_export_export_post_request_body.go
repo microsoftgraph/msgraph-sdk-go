@@ -6,7 +6,6 @@ import (
     idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae "github.com/microsoftgraph/msgraph-sdk-go/models/security"
 )
 
-// CasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportExportPostRequestBody 
 type CasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportExportPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -20,10 +19,12 @@ func NewCasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportExport
     return m
 }
 // CreateCasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportExportPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportExportPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportExportPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportExportPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportExpor
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportExportPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *CasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportExportPostRequestBody) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportExpor
     return nil
 }
 // GetExportOptions gets the exportOptions property value. The exportOptions property
+// returns a *ExportOptions when successful
 func (m *CasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportExportPostRequestBody) GetExportOptions()(*idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.ExportOptions) {
     val, err := m.GetBackingStore().Get("exportOptions")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportExpor
     return nil
 }
 // GetExportStructure gets the exportStructure property value. The exportStructure property
+// returns a *ExportFileStructure when successful
 func (m *CasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportExportPostRequestBody) GetExportStructure()(*idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.ExportFileStructure) {
     val, err := m.GetBackingStore().Get("exportStructure")
     if err != nil {
@@ -73,6 +78,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportExpor
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportExportPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -118,6 +124,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportExpor
     return res
 }
 // GetOutputName gets the outputName property value. The outputName property
+// returns a *string when successful
 func (m *CasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportExportPostRequestBody) GetOutputName()(*string) {
     val, err := m.GetBackingStore().Get("outputName")
     if err != nil {
@@ -203,7 +210,6 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportExpor
         panic(err)
     }
 }
-// CasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportExportPostRequestBodyable 
 type CasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportExportPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

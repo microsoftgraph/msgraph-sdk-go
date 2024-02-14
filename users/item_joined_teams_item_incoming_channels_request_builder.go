@@ -40,6 +40,7 @@ type ItemJoinedTeamsItemIncomingChannelsRequestBuilderGetRequestConfiguration st
     QueryParameters *ItemJoinedTeamsItemIncomingChannelsRequestBuilderGetQueryParameters
 }
 // ByChannelId provides operations to manage the incomingChannels property of the microsoft.graph.team entity.
+// returns a *ItemJoinedTeamsItemIncomingChannelsChannelItemRequestBuilder when successful
 func (m *ItemJoinedTeamsItemIncomingChannelsRequestBuilder) ByChannelId(channelId string)(*ItemJoinedTeamsItemIncomingChannelsChannelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,24 +51,27 @@ func (m *ItemJoinedTeamsItemIncomingChannelsRequestBuilder) ByChannelId(channelI
     }
     return NewItemJoinedTeamsItemIncomingChannelsChannelItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemJoinedTeamsItemIncomingChannelsRequestBuilderInternal instantiates a new IncomingChannelsRequestBuilder and sets the default values.
+// NewItemJoinedTeamsItemIncomingChannelsRequestBuilderInternal instantiates a new ItemJoinedTeamsItemIncomingChannelsRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemIncomingChannelsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemIncomingChannelsRequestBuilder) {
     m := &ItemJoinedTeamsItemIncomingChannelsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/incomingChannels{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/incomingChannels{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemJoinedTeamsItemIncomingChannelsRequestBuilder instantiates a new IncomingChannelsRequestBuilder and sets the default values.
+// NewItemJoinedTeamsItemIncomingChannelsRequestBuilder instantiates a new ItemJoinedTeamsItemIncomingChannelsRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemIncomingChannelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemIncomingChannelsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemJoinedTeamsItemIncomingChannelsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemJoinedTeamsItemIncomingChannelsCountRequestBuilder when successful
 func (m *ItemJoinedTeamsItemIncomingChannelsRequestBuilder) Count()(*ItemJoinedTeamsItemIncomingChannelsCountRequestBuilder) {
     return NewItemJoinedTeamsItemIncomingChannelsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the list of incoming channels (channels shared with a team).
+// returns a ChannelCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-list-incomingchannels?view=graph-rest-1.0
@@ -77,8 +81,7 @@ func (m *ItemJoinedTeamsItemIncomingChannelsRequestBuilder) Get(ctx context.Cont
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateChannelCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,6 +93,7 @@ func (m *ItemJoinedTeamsItemIncomingChannelsRequestBuilder) Get(ctx context.Cont
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChannelCollectionResponseable), nil
 }
 // ToGetRequestInformation get the list of incoming channels (channels shared with a team).
+// returns a *RequestInformation when successful
 func (m *ItemJoinedTeamsItemIncomingChannelsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemIncomingChannelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -103,6 +107,7 @@ func (m *ItemJoinedTeamsItemIncomingChannelsRequestBuilder) ToGetRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemJoinedTeamsItemIncomingChannelsRequestBuilder when successful
 func (m *ItemJoinedTeamsItemIncomingChannelsRequestBuilder) WithUrl(rawUrl string)(*ItemJoinedTeamsItemIncomingChannelsRequestBuilder) {
     return NewItemJoinedTeamsItemIncomingChannelsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

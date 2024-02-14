@@ -8,7 +8,7 @@ import (
 type WindowsDefenderAdvancedThreatProtectionConfiguration struct {
     DeviceConfiguration
 }
-// NewWindowsDefenderAdvancedThreatProtectionConfiguration instantiates a new windowsDefenderAdvancedThreatProtectionConfiguration and sets the default values.
+// NewWindowsDefenderAdvancedThreatProtectionConfiguration instantiates a new WindowsDefenderAdvancedThreatProtectionConfiguration and sets the default values.
 func NewWindowsDefenderAdvancedThreatProtectionConfiguration()(*WindowsDefenderAdvancedThreatProtectionConfiguration) {
     m := &WindowsDefenderAdvancedThreatProtectionConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewWindowsDefenderAdvancedThreatProtectionConfiguration()(*WindowsDefenderA
     return m
 }
 // CreateWindowsDefenderAdvancedThreatProtectionConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsDefenderAdvancedThreatProtectionConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsDefenderAdvancedThreatProtectionConfiguration(), nil
 }
 // GetAllowSampleSharing gets the allowSampleSharing property value. Windows Defender AdvancedThreatProtection 'Allow Sample Sharing' Rule
+// returns a *bool when successful
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) GetAllowSampleSharing()(*bool) {
     val, err := m.GetBackingStore().Get("allowSampleSharing")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) GetAllowSampleSha
     return nil
 }
 // GetEnableExpeditedTelemetryReporting gets the enableExpeditedTelemetryReporting property value. Expedite Windows Defender Advanced Threat Protection telemetry reporting frequency.
+// returns a *bool when successful
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) GetEnableExpeditedTelemetryReporting()(*bool) {
     val, err := m.GetBackingStore().Get("enableExpeditedTelemetryReporting")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) GetEnableExpedite
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["allowSampleSharing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -102,7 +106,6 @@ func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) SetEnableExpedite
         panic(err)
     }
 }
-// WindowsDefenderAdvancedThreatProtectionConfigurationable 
 type WindowsDefenderAdvancedThreatProtectionConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

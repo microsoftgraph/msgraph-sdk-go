@@ -17,20 +17,21 @@ type ItemChangePasswordRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemChangePasswordRequestBuilderInternal instantiates a new ChangePasswordRequestBuilder and sets the default values.
+// NewItemChangePasswordRequestBuilderInternal instantiates a new ItemChangePasswordRequestBuilder and sets the default values.
 func NewItemChangePasswordRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChangePasswordRequestBuilder) {
     m := &ItemChangePasswordRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/changePassword", pathParameters),
     }
     return m
 }
-// NewItemChangePasswordRequestBuilder instantiates a new ChangePasswordRequestBuilder and sets the default values.
+// NewItemChangePasswordRequestBuilder instantiates a new ItemChangePasswordRequestBuilder and sets the default values.
 func NewItemChangePasswordRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChangePasswordRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemChangePasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post enable the user to update their password. Any user can update their password without belonging to any administrator role.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/user-changepassword?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemChangePasswordRequestBuilder) Post(ctx context.Context, body ItemCh
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemChangePasswordRequestBuilder) Post(ctx context.Context, body ItemCh
     return nil
 }
 // ToPostRequestInformation enable the user to update their password. Any user can update their password without belonging to any administrator role.
+// returns a *RequestInformation when successful
 func (m *ItemChangePasswordRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemChangePasswordPostRequestBodyable, requestConfiguration *ItemChangePasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *ItemChangePasswordRequestBuilder) ToPostRequestInformation(ctx context.
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemChangePasswordRequestBuilder when successful
 func (m *ItemChangePasswordRequestBuilder) WithUrl(rawUrl string)(*ItemChangePasswordRequestBuilder) {
     return NewItemChangePasswordRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

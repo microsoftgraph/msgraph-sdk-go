@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CommunicationsIdentitySet 
 type CommunicationsIdentitySet struct {
     IdentitySet
 }
-// NewCommunicationsIdentitySet instantiates a new communicationsIdentitySet and sets the default values.
+// NewCommunicationsIdentitySet instantiates a new CommunicationsIdentitySet and sets the default values.
 func NewCommunicationsIdentitySet()(*CommunicationsIdentitySet) {
     m := &CommunicationsIdentitySet{
         IdentitySet: *NewIdentitySet(),
@@ -18,10 +17,12 @@ func NewCommunicationsIdentitySet()(*CommunicationsIdentitySet) {
     return m
 }
 // CreateCommunicationsIdentitySetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCommunicationsIdentitySetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCommunicationsIdentitySet(), nil
 }
 // GetApplicationInstance gets the applicationInstance property value. The application instance associated with this action.
+// returns a Identityable when successful
 func (m *CommunicationsIdentitySet) GetApplicationInstance()(Identityable) {
     val, err := m.GetBackingStore().Get("applicationInstance")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *CommunicationsIdentitySet) GetApplicationInstance()(Identityable) {
     return nil
 }
 // GetAssertedIdentity gets the assertedIdentity property value. An identity the participant would like to present itself as to the other participants in the call.
+// returns a Identityable when successful
 func (m *CommunicationsIdentitySet) GetAssertedIdentity()(Identityable) {
     val, err := m.GetBackingStore().Get("assertedIdentity")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *CommunicationsIdentitySet) GetAssertedIdentity()(Identityable) {
     return nil
 }
 // GetAzureCommunicationServicesUser gets the azureCommunicationServicesUser property value. The Azure Communication Services user associated with this action.
+// returns a Identityable when successful
 func (m *CommunicationsIdentitySet) GetAzureCommunicationServicesUser()(Identityable) {
     val, err := m.GetBackingStore().Get("azureCommunicationServicesUser")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *CommunicationsIdentitySet) GetAzureCommunicationServicesUser()(Identity
     return nil
 }
 // GetEncrypted gets the encrypted property value. The encrypted user associated with this action.
+// returns a Identityable when successful
 func (m *CommunicationsIdentitySet) GetEncrypted()(Identityable) {
     val, err := m.GetBackingStore().Get("encrypted")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *CommunicationsIdentitySet) GetEncrypted()(Identityable) {
     return nil
 }
 // GetEndpointType gets the endpointType property value. Type of endpoint that the participant uses. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone, unknownFutureValue.
+// returns a *EndpointType when successful
 func (m *CommunicationsIdentitySet) GetEndpointType()(*EndpointType) {
     val, err := m.GetBackingStore().Get("endpointType")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *CommunicationsIdentitySet) GetEndpointType()(*EndpointType) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CommunicationsIdentitySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IdentitySet.GetFieldDeserializers()
     res["applicationInstance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -162,6 +168,7 @@ func (m *CommunicationsIdentitySet) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetGuest gets the guest property value. The guest user associated with this action.
+// returns a Identityable when successful
 func (m *CommunicationsIdentitySet) GetGuest()(Identityable) {
     val, err := m.GetBackingStore().Get("guest")
     if err != nil {
@@ -173,6 +180,7 @@ func (m *CommunicationsIdentitySet) GetGuest()(Identityable) {
     return nil
 }
 // GetOnPremises gets the onPremises property value. The Skype for Business on-premises user associated with this action.
+// returns a Identityable when successful
 func (m *CommunicationsIdentitySet) GetOnPremises()(Identityable) {
     val, err := m.GetBackingStore().Get("onPremises")
     if err != nil {
@@ -184,6 +192,7 @@ func (m *CommunicationsIdentitySet) GetOnPremises()(Identityable) {
     return nil
 }
 // GetPhone gets the phone property value. The phone user associated with this action.
+// returns a Identityable when successful
 func (m *CommunicationsIdentitySet) GetPhone()(Identityable) {
     val, err := m.GetBackingStore().Get("phone")
     if err != nil {
@@ -307,7 +316,6 @@ func (m *CommunicationsIdentitySet) SetPhone(value Identityable)() {
         panic(err)
     }
 }
-// CommunicationsIdentitySetable 
 type CommunicationsIdentitySetable interface {
     IdentitySetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

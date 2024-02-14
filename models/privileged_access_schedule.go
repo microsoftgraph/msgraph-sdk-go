@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivilegedAccessSchedule 
 type PrivilegedAccessSchedule struct {
     Entity
 }
-// NewPrivilegedAccessSchedule instantiates a new privilegedAccessSchedule and sets the default values.
+// NewPrivilegedAccessSchedule instantiates a new PrivilegedAccessSchedule and sets the default values.
 func NewPrivilegedAccessSchedule()(*PrivilegedAccessSchedule) {
     m := &PrivilegedAccessSchedule{
         Entity: *NewEntity(),
@@ -17,6 +16,7 @@ func NewPrivilegedAccessSchedule()(*PrivilegedAccessSchedule) {
     return m
 }
 // CreatePrivilegedAccessScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrivilegedAccessScheduleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -41,6 +41,7 @@ func CreatePrivilegedAccessScheduleFromDiscriminatorValue(parseNode i878a80d2330
     return NewPrivilegedAccessSchedule(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. When the schedule was created. Optional.
+// returns a *Time when successful
 func (m *PrivilegedAccessSchedule) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -52,6 +53,7 @@ func (m *PrivilegedAccessSchedule) GetCreatedDateTime()(*i336074805fc853987abe6f
     return nil
 }
 // GetCreatedUsing gets the createdUsing property value. The identifier of the access assignment or eligibility request that created this schedule. Optional.
+// returns a *string when successful
 func (m *PrivilegedAccessSchedule) GetCreatedUsing()(*string) {
     val, err := m.GetBackingStore().Get("createdUsing")
     if err != nil {
@@ -63,6 +65,7 @@ func (m *PrivilegedAccessSchedule) GetCreatedUsing()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrivilegedAccessSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -118,6 +121,7 @@ func (m *PrivilegedAccessSchedule) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. When the schedule was last modified. Optional.
+// returns a *Time when successful
 func (m *PrivilegedAccessSchedule) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("modifiedDateTime")
     if err != nil {
@@ -129,6 +133,7 @@ func (m *PrivilegedAccessSchedule) GetModifiedDateTime()(*i336074805fc853987abe6
     return nil
 }
 // GetScheduleInfo gets the scheduleInfo property value. Represents the period of the access assignment or eligibility. The scheduleInfo can represent a single occurrence or multiple recurring instances. Required.
+// returns a RequestScheduleable when successful
 func (m *PrivilegedAccessSchedule) GetScheduleInfo()(RequestScheduleable) {
     val, err := m.GetBackingStore().Get("scheduleInfo")
     if err != nil {
@@ -140,6 +145,7 @@ func (m *PrivilegedAccessSchedule) GetScheduleInfo()(RequestScheduleable) {
     return nil
 }
 // GetStatus gets the status property value. The status of the access assignment or eligibility request. The possible values are: Canceled, Denied, Failed, Granted, PendingAdminDecision, PendingApproval, PendingProvisioning, PendingScheduleCreation, Provisioned, Revoked, and ScheduleCreated. Not nullable. Optional.
+// returns a *string when successful
 func (m *PrivilegedAccessSchedule) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -223,7 +229,6 @@ func (m *PrivilegedAccessSchedule) SetStatus(value *string)() {
         panic(err)
     }
 }
-// PrivilegedAccessScheduleable 
 type PrivilegedAccessScheduleable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ContactFolder 
 type ContactFolder struct {
     Entity
 }
-// NewContactFolder instantiates a new contactFolder and sets the default values.
+// NewContactFolder instantiates a new ContactFolder and sets the default values.
 func NewContactFolder()(*ContactFolder) {
     m := &ContactFolder{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewContactFolder()(*ContactFolder) {
     return m
 }
 // CreateContactFolderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateContactFolderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewContactFolder(), nil
 }
 // GetChildFolders gets the childFolders property value. The collection of child folders in the folder. Navigation property. Read-only. Nullable.
+// returns a []ContactFolderable when successful
 func (m *ContactFolder) GetChildFolders()([]ContactFolderable) {
     val, err := m.GetBackingStore().Get("childFolders")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ContactFolder) GetChildFolders()([]ContactFolderable) {
     return nil
 }
 // GetContacts gets the contacts property value. The contacts in the folder. Navigation property. Read-only. Nullable.
+// returns a []Contactable when successful
 func (m *ContactFolder) GetContacts()([]Contactable) {
     val, err := m.GetBackingStore().Get("contacts")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *ContactFolder) GetContacts()([]Contactable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The folder's display name.
+// returns a *string when successful
 func (m *ContactFolder) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *ContactFolder) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ContactFolder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["childFolders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -142,6 +146,7 @@ func (m *ContactFolder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
+// returns a []MultiValueLegacyExtendedPropertyable when successful
 func (m *ContactFolder) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("multiValueExtendedProperties")
     if err != nil {
@@ -153,6 +158,7 @@ func (m *ContactFolder) GetMultiValueExtendedProperties()([]MultiValueLegacyExte
     return nil
 }
 // GetParentFolderId gets the parentFolderId property value. The ID of the folder's parent folder.
+// returns a *string when successful
 func (m *ContactFolder) GetParentFolderId()(*string) {
     val, err := m.GetBackingStore().Get("parentFolderId")
     if err != nil {
@@ -164,6 +170,7 @@ func (m *ContactFolder) GetParentFolderId()(*string) {
     return nil
 }
 // GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
+// returns a []SingleValueLegacyExtendedPropertyable when successful
 func (m *ContactFolder) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("singleValueExtendedProperties")
     if err != nil {
@@ -284,7 +291,6 @@ func (m *ContactFolder) SetSingleValueExtendedProperties(value []SingleValueLega
         panic(err)
     }
 }
-// ContactFolderable 
 type ContactFolderable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationGradingCategoryCollectionResponse 
 type EducationGradingCategoryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewEducationGradingCategoryCollectionResponse instantiates a new educationGradingCategoryCollectionResponse and sets the default values.
+// NewEducationGradingCategoryCollectionResponse instantiates a new EducationGradingCategoryCollectionResponse and sets the default values.
 func NewEducationGradingCategoryCollectionResponse()(*EducationGradingCategoryCollectionResponse) {
     m := &EducationGradingCategoryCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewEducationGradingCategoryCollectionResponse()(*EducationGradingCategoryCo
     return m
 }
 // CreateEducationGradingCategoryCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationGradingCategoryCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationGradingCategoryCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationGradingCategoryCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *EducationGradingCategoryCollectionResponse) GetFieldDeserializers()(map
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []EducationGradingCategoryable when successful
 func (m *EducationGradingCategoryCollectionResponse) GetValue()([]EducationGradingCategoryable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *EducationGradingCategoryCollectionResponse) SetValue(value []EducationG
         panic(err)
     }
 }
-// EducationGradingCategoryCollectionResponseable 
 type EducationGradingCategoryCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

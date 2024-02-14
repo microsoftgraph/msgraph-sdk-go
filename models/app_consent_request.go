@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AppConsentRequest 
 type AppConsentRequest struct {
     Entity
 }
-// NewAppConsentRequest instantiates a new appConsentRequest and sets the default values.
+// NewAppConsentRequest instantiates a new AppConsentRequest and sets the default values.
 func NewAppConsentRequest()(*AppConsentRequest) {
     m := &AppConsentRequest{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewAppConsentRequest()(*AppConsentRequest) {
     return m
 }
 // CreateAppConsentRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAppConsentRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppConsentRequest(), nil
 }
 // GetAppDisplayName gets the appDisplayName property value. The display name of the app for which consent is requested. Required. Supports $filter (eq only) and $orderby.
+// returns a *string when successful
 func (m *AppConsentRequest) GetAppDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("appDisplayName")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *AppConsentRequest) GetAppDisplayName()(*string) {
     return nil
 }
 // GetAppId gets the appId property value. The identifier of the application. Required. Supports $filter (eq only) and $orderby.
+// returns a *string when successful
 func (m *AppConsentRequest) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *AppConsentRequest) GetAppId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AppConsentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -99,6 +102,7 @@ func (m *AppConsentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetPendingScopes gets the pendingScopes property value. A list of pending scopes waiting for approval. Required.
+// returns a []AppConsentRequestScopeable when successful
 func (m *AppConsentRequest) GetPendingScopes()([]AppConsentRequestScopeable) {
     val, err := m.GetBackingStore().Get("pendingScopes")
     if err != nil {
@@ -110,6 +114,7 @@ func (m *AppConsentRequest) GetPendingScopes()([]AppConsentRequestScopeable) {
     return nil
 }
 // GetUserConsentRequests gets the userConsentRequests property value. A list of pending user consent requests. Supports $filter (eq).
+// returns a []UserConsentRequestable when successful
 func (m *AppConsentRequest) GetUserConsentRequests()([]UserConsentRequestable) {
     val, err := m.GetBackingStore().Get("userConsentRequests")
     if err != nil {
@@ -192,7 +197,6 @@ func (m *AppConsentRequest) SetUserConsentRequests(value []UserConsentRequestabl
         panic(err)
     }
 }
-// AppConsentRequestable 
 type AppConsentRequestable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

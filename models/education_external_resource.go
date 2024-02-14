@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationExternalResource 
 type EducationExternalResource struct {
     EducationResource
 }
-// NewEducationExternalResource instantiates a new educationExternalResource and sets the default values.
+// NewEducationExternalResource instantiates a new EducationExternalResource and sets the default values.
 func NewEducationExternalResource()(*EducationExternalResource) {
     m := &EducationExternalResource{
         EducationResource: *NewEducationResource(),
@@ -18,10 +17,12 @@ func NewEducationExternalResource()(*EducationExternalResource) {
     return m
 }
 // CreateEducationExternalResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationExternalResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationExternalResource(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationExternalResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EducationResource.GetFieldDeserializers()
     res["webUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *EducationExternalResource) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetWebUrl gets the webUrl property value. Location of the resource. Required
+// returns a *string when successful
 func (m *EducationExternalResource) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *EducationExternalResource) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// EducationExternalResourceable 
 type EducationExternalResourceable interface {
     EducationResourceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

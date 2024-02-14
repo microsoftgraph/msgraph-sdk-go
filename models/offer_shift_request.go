@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OfferShiftRequest 
 type OfferShiftRequest struct {
     ScheduleChangeRequest
 }
-// NewOfferShiftRequest instantiates a new offerShiftRequest and sets the default values.
+// NewOfferShiftRequest instantiates a new OfferShiftRequest and sets the default values.
 func NewOfferShiftRequest()(*OfferShiftRequest) {
     m := &OfferShiftRequest{
         ScheduleChangeRequest: *NewScheduleChangeRequest(),
@@ -19,6 +18,7 @@ func NewOfferShiftRequest()(*OfferShiftRequest) {
     return m
 }
 // CreateOfferShiftRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOfferShiftRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -41,6 +41,7 @@ func CreateOfferShiftRequestFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewOfferShiftRequest(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OfferShiftRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ScheduleChangeRequest.GetFieldDeserializers()
     res["recipientActionDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -86,6 +87,7 @@ func (m *OfferShiftRequest) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetRecipientActionDateTime gets the recipientActionDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *OfferShiftRequest) GetRecipientActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("recipientActionDateTime")
     if err != nil {
@@ -97,6 +99,7 @@ func (m *OfferShiftRequest) GetRecipientActionDateTime()(*i336074805fc853987abe6
     return nil
 }
 // GetRecipientActionMessage gets the recipientActionMessage property value. Custom message sent by recipient of the offer shift request.
+// returns a *string when successful
 func (m *OfferShiftRequest) GetRecipientActionMessage()(*string) {
     val, err := m.GetBackingStore().Get("recipientActionMessage")
     if err != nil {
@@ -108,6 +111,7 @@ func (m *OfferShiftRequest) GetRecipientActionMessage()(*string) {
     return nil
 }
 // GetRecipientUserId gets the recipientUserId property value. User ID of the recipient of the offer shift request.
+// returns a *string when successful
 func (m *OfferShiftRequest) GetRecipientUserId()(*string) {
     val, err := m.GetBackingStore().Get("recipientUserId")
     if err != nil {
@@ -119,6 +123,7 @@ func (m *OfferShiftRequest) GetRecipientUserId()(*string) {
     return nil
 }
 // GetSenderShiftId gets the senderShiftId property value. User ID of the sender of the offer shift request.
+// returns a *string when successful
 func (m *OfferShiftRequest) GetSenderShiftId()(*string) {
     val, err := m.GetBackingStore().Get("senderShiftId")
     if err != nil {
@@ -183,7 +188,6 @@ func (m *OfferShiftRequest) SetSenderShiftId(value *string)() {
         panic(err)
     }
 }
-// OfferShiftRequestable 
 type OfferShiftRequestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ScheduleChangeRequestable

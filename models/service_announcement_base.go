@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServiceAnnouncementBase 
 type ServiceAnnouncementBase struct {
     Entity
 }
-// NewServiceAnnouncementBase instantiates a new serviceAnnouncementBase and sets the default values.
+// NewServiceAnnouncementBase instantiates a new ServiceAnnouncementBase and sets the default values.
 func NewServiceAnnouncementBase()(*ServiceAnnouncementBase) {
     m := &ServiceAnnouncementBase{
         Entity: *NewEntity(),
@@ -17,6 +16,7 @@ func NewServiceAnnouncementBase()(*ServiceAnnouncementBase) {
     return m
 }
 // CreateServiceAnnouncementBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateServiceAnnouncementBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -41,6 +41,7 @@ func CreateServiceAnnouncementBaseFromDiscriminatorValue(parseNode i878a80d2330e
     return NewServiceAnnouncementBase(), nil
 }
 // GetDetails gets the details property value. More details about service event. This property doesn't support filters.
+// returns a []KeyValuePairable when successful
 func (m *ServiceAnnouncementBase) GetDetails()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("details")
     if err != nil {
@@ -52,6 +53,7 @@ func (m *ServiceAnnouncementBase) GetDetails()([]KeyValuePairable) {
     return nil
 }
 // GetEndDateTime gets the endDateTime property value. The end time of the service event.
+// returns a *Time when successful
 func (m *ServiceAnnouncementBase) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -63,6 +65,7 @@ func (m *ServiceAnnouncementBase) GetEndDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ServiceAnnouncementBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["details"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -124,6 +127,7 @@ func (m *ServiceAnnouncementBase) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The last modified time of the service event.
+// returns a *Time when successful
 func (m *ServiceAnnouncementBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -135,6 +139,7 @@ func (m *ServiceAnnouncementBase) GetLastModifiedDateTime()(*i336074805fc853987a
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. The start time of the service event.
+// returns a *Time when successful
 func (m *ServiceAnnouncementBase) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -146,6 +151,7 @@ func (m *ServiceAnnouncementBase) GetStartDateTime()(*i336074805fc853987abe6f7fe
     return nil
 }
 // GetTitle gets the title property value. The title of the service event.
+// returns a *string when successful
 func (m *ServiceAnnouncementBase) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -235,7 +241,6 @@ func (m *ServiceAnnouncementBase) SetTitle(value *string)() {
         panic(err)
     }
 }
-// ServiceAnnouncementBaseable 
 type ServiceAnnouncementBaseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -8,7 +8,7 @@ import (
 type ManagedAndroidStoreApp struct {
     ManagedApp
 }
-// NewManagedAndroidStoreApp instantiates a new managedAndroidStoreApp and sets the default values.
+// NewManagedAndroidStoreApp instantiates a new ManagedAndroidStoreApp and sets the default values.
 func NewManagedAndroidStoreApp()(*ManagedAndroidStoreApp) {
     m := &ManagedAndroidStoreApp{
         ManagedApp: *NewManagedApp(),
@@ -18,10 +18,12 @@ func NewManagedAndroidStoreApp()(*ManagedAndroidStoreApp) {
     return m
 }
 // CreateManagedAndroidStoreAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedAndroidStoreAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedAndroidStoreApp(), nil
 }
 // GetAppStoreUrl gets the appStoreUrl property value. The Android AppStoreUrl.
+// returns a *string when successful
 func (m *ManagedAndroidStoreApp) GetAppStoreUrl()(*string) {
     val, err := m.GetBackingStore().Get("appStoreUrl")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *ManagedAndroidStoreApp) GetAppStoreUrl()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedAndroidStoreApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedApp.GetFieldDeserializers()
     res["appStoreUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,6 +71,7 @@ func (m *ManagedAndroidStoreApp) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. Contains properties for the minimum operating system required for an Android mobile app.
+// returns a AndroidMinimumOperatingSystemable when successful
 func (m *ManagedAndroidStoreApp) GetMinimumSupportedOperatingSystem()(AndroidMinimumOperatingSystemable) {
     val, err := m.GetBackingStore().Get("minimumSupportedOperatingSystem")
     if err != nil {
@@ -79,6 +83,7 @@ func (m *ManagedAndroidStoreApp) GetMinimumSupportedOperatingSystem()(AndroidMin
     return nil
 }
 // GetPackageId gets the packageId property value. The app's package ID.
+// returns a *string when successful
 func (m *ManagedAndroidStoreApp) GetPackageId()(*string) {
     val, err := m.GetBackingStore().Get("packageId")
     if err != nil {
@@ -136,7 +141,6 @@ func (m *ManagedAndroidStoreApp) SetPackageId(value *string)() {
         panic(err)
     }
 }
-// ManagedAndroidStoreAppable 
 type ManagedAndroidStoreAppable interface {
     ManagedAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

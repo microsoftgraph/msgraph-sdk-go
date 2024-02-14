@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LandingPage 
 type LandingPage struct {
     Entity
 }
-// NewLandingPage instantiates a new landingPage and sets the default values.
+// NewLandingPage instantiates a new LandingPage and sets the default values.
 func NewLandingPage()(*LandingPage) {
     m := &LandingPage{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewLandingPage()(*LandingPage) {
     return m
 }
 // CreateLandingPageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateLandingPageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLandingPage(), nil
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user who created the landing page.
+// returns a EmailIdentityable when successful
 func (m *LandingPage) GetCreatedBy()(EmailIdentityable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *LandingPage) GetCreatedBy()(EmailIdentityable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time when the landing page was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *LandingPage) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *LandingPage) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     return nil
 }
 // GetDescription gets the description property value. Description of the landing page as defined by the user.
+// returns a *string when successful
 func (m *LandingPage) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *LandingPage) GetDescription()(*string) {
     return nil
 }
 // GetDetails gets the details property value. The detail information for a landing page associated with a simulation during its creation.
+// returns a []LandingPageDetailable when successful
 func (m *LandingPage) GetDetails()([]LandingPageDetailable) {
     val, err := m.GetBackingStore().Get("details")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *LandingPage) GetDetails()([]LandingPageDetailable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the landing page.
+// returns a *string when successful
 func (m *LandingPage) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *LandingPage) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *LandingPage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -203,6 +209,7 @@ func (m *LandingPage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Email identity of the user who last modified the landing page.
+// returns a EmailIdentityable when successful
 func (m *LandingPage) GetLastModifiedBy()(EmailIdentityable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -214,6 +221,7 @@ func (m *LandingPage) GetLastModifiedBy()(EmailIdentityable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time when the landing page was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *LandingPage) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -225,6 +233,7 @@ func (m *LandingPage) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetLocale gets the locale property value. Content locale.
+// returns a *string when successful
 func (m *LandingPage) GetLocale()(*string) {
     val, err := m.GetBackingStore().Get("locale")
     if err != nil {
@@ -236,6 +245,7 @@ func (m *LandingPage) GetLocale()(*string) {
     return nil
 }
 // GetSource gets the source property value. The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.
+// returns a *SimulationContentSource when successful
 func (m *LandingPage) GetSource()(*SimulationContentSource) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
@@ -247,6 +257,7 @@ func (m *LandingPage) GetSource()(*SimulationContentSource) {
     return nil
 }
 // GetStatus gets the status property value. The status of the simulation. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
+// returns a *SimulationContentStatus when successful
 func (m *LandingPage) GetStatus()(*SimulationContentStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -258,6 +269,7 @@ func (m *LandingPage) GetStatus()(*SimulationContentStatus) {
     return nil
 }
 // GetSupportedLocales gets the supportedLocales property value. Supported locales.
+// returns a []string when successful
 func (m *LandingPage) GetSupportedLocales()([]string) {
     val, err := m.GetBackingStore().Get("supportedLocales")
     if err != nil {
@@ -427,7 +439,6 @@ func (m *LandingPage) SetSupportedLocales(value []string)() {
         panic(err)
     }
 }
-// LandingPageable 
 type LandingPageable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

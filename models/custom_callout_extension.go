@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CustomCalloutExtension 
 type CustomCalloutExtension struct {
     Entity
 }
-// NewCustomCalloutExtension instantiates a new customCalloutExtension and sets the default values.
+// NewCustomCalloutExtension instantiates a new CustomCalloutExtension and sets the default values.
 func NewCustomCalloutExtension()(*CustomCalloutExtension) {
     m := &CustomCalloutExtension{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewCustomCalloutExtension()(*CustomCalloutExtension) {
     return m
 }
 // CreateCustomCalloutExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCustomCalloutExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +40,7 @@ func CreateCustomCalloutExtensionFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewCustomCalloutExtension(), nil
 }
 // GetAuthenticationConfiguration gets the authenticationConfiguration property value. Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.
+// returns a CustomExtensionAuthenticationConfigurationable when successful
 func (m *CustomCalloutExtension) GetAuthenticationConfiguration()(CustomExtensionAuthenticationConfigurationable) {
     val, err := m.GetBackingStore().Get("authenticationConfiguration")
     if err != nil {
@@ -51,6 +52,7 @@ func (m *CustomCalloutExtension) GetAuthenticationConfiguration()(CustomExtensio
     return nil
 }
 // GetClientConfiguration gets the clientConfiguration property value. HTTP connection settings that define how long Microsoft Entra ID can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.
+// returns a CustomExtensionClientConfigurationable when successful
 func (m *CustomCalloutExtension) GetClientConfiguration()(CustomExtensionClientConfigurationable) {
     val, err := m.GetBackingStore().Get("clientConfiguration")
     if err != nil {
@@ -62,6 +64,7 @@ func (m *CustomCalloutExtension) GetClientConfiguration()(CustomExtensionClientC
     return nil
 }
 // GetDescription gets the description property value. Description for the customCalloutExtension object.
+// returns a *string when successful
 func (m *CustomCalloutExtension) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -73,6 +76,7 @@ func (m *CustomCalloutExtension) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Display name for the customCalloutExtension object.
+// returns a *string when successful
 func (m *CustomCalloutExtension) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -84,6 +88,7 @@ func (m *CustomCalloutExtension) GetDisplayName()(*string) {
     return nil
 }
 // GetEndpointConfiguration gets the endpointConfiguration property value. The type and details for configuring the endpoint to call the logic app's workflow.
+// returns a CustomExtensionEndpointConfigurationable when successful
 func (m *CustomCalloutExtension) GetEndpointConfiguration()(CustomExtensionEndpointConfigurationable) {
     val, err := m.GetBackingStore().Get("endpointConfiguration")
     if err != nil {
@@ -95,6 +100,7 @@ func (m *CustomCalloutExtension) GetEndpointConfiguration()(CustomExtensionEndpo
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomCalloutExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["authenticationConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -222,7 +228,6 @@ func (m *CustomCalloutExtension) SetEndpointConfiguration(value CustomExtensionE
         panic(err)
     }
 }
-// CustomCalloutExtensionable 
 type CustomCalloutExtensionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

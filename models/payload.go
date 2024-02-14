@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Payload 
 type Payload struct {
     Entity
 }
-// NewPayload instantiates a new payload and sets the default values.
+// NewPayload instantiates a new Payload and sets the default values.
 func NewPayload()(*Payload) {
     m := &Payload{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewPayload()(*Payload) {
     return m
 }
 // CreatePayloadFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePayloadFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPayload(), nil
 }
 // GetBrand gets the brand property value. The branch of a payload. Possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, sendGrid, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.
+// returns a *PayloadBrand when successful
 func (m *Payload) GetBrand()(*PayloadBrand) {
     val, err := m.GetBackingStore().Get("brand")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *Payload) GetBrand()(*PayloadBrand) {
     return nil
 }
 // GetComplexity gets the complexity property value. The complexity of a payload. Possible values are: unknown, low, medium, high, unknownFutureValue.
+// returns a *PayloadComplexity when successful
 func (m *Payload) GetComplexity()(*PayloadComplexity) {
     val, err := m.GetBackingStore().Get("complexity")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *Payload) GetComplexity()(*PayloadComplexity) {
     return nil
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user who created the attack simulation and training campaign payload.
+// returns a EmailIdentityable when successful
 func (m *Payload) GetCreatedBy()(EmailIdentityable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *Payload) GetCreatedBy()(EmailIdentityable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time when the attack simulation and training campaign payload. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *Payload) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *Payload) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077
     return nil
 }
 // GetDescription gets the description property value. Description of the attack simulation and training campaign payload.
+// returns a *string when successful
 func (m *Payload) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *Payload) GetDescription()(*string) {
     return nil
 }
 // GetDetail gets the detail property value. Additional details about the payload.
+// returns a PayloadDetailable when successful
 func (m *Payload) GetDetail()(PayloadDetailable) {
     val, err := m.GetBackingStore().Get("detail")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *Payload) GetDetail()(PayloadDetailable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Display name of the attack simulation and training campaign payload. Supports $filter and $orderby.
+// returns a *string when successful
 func (m *Payload) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *Payload) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Payload) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["brand"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -329,6 +337,7 @@ func (m *Payload) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetIndustry gets the industry property value. Industry of a payload. Possible values are: unknown, other, banking, businessServices, consumerServices, education, energy, construction, consulting, financialServices, government, hospitality, insurance, legal, courierServices, IT, healthcare, manufacturing, retail, telecom, realEstate, unknownFutureValue.
+// returns a *PayloadIndustry when successful
 func (m *Payload) GetIndustry()(*PayloadIndustry) {
     val, err := m.GetBackingStore().Get("industry")
     if err != nil {
@@ -340,6 +349,7 @@ func (m *Payload) GetIndustry()(*PayloadIndustry) {
     return nil
 }
 // GetIsAutomated gets the isAutomated property value. Indicates whether the attack simulation and training campaign payload was created from an automation flow. Supports $filter and $orderby.
+// returns a *bool when successful
 func (m *Payload) GetIsAutomated()(*bool) {
     val, err := m.GetBackingStore().Get("isAutomated")
     if err != nil {
@@ -351,6 +361,7 @@ func (m *Payload) GetIsAutomated()(*bool) {
     return nil
 }
 // GetIsControversial gets the isControversial property value. Indicates whether the payload is controversial.
+// returns a *bool when successful
 func (m *Payload) GetIsControversial()(*bool) {
     val, err := m.GetBackingStore().Get("isControversial")
     if err != nil {
@@ -362,6 +373,7 @@ func (m *Payload) GetIsControversial()(*bool) {
     return nil
 }
 // GetIsCurrentEvent gets the isCurrentEvent property value. Indicates whether the payload is from any recent event.
+// returns a *bool when successful
 func (m *Payload) GetIsCurrentEvent()(*bool) {
     val, err := m.GetBackingStore().Get("isCurrentEvent")
     if err != nil {
@@ -373,6 +385,7 @@ func (m *Payload) GetIsCurrentEvent()(*bool) {
     return nil
 }
 // GetLanguage gets the language property value. Payload language.
+// returns a *string when successful
 func (m *Payload) GetLanguage()(*string) {
     val, err := m.GetBackingStore().Get("language")
     if err != nil {
@@ -384,6 +397,7 @@ func (m *Payload) GetLanguage()(*string) {
     return nil
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who most recently modified the attack simulation and training campaign payload.
+// returns a EmailIdentityable when successful
 func (m *Payload) GetLastModifiedBy()(EmailIdentityable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -395,6 +409,7 @@ func (m *Payload) GetLastModifiedBy()(EmailIdentityable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time when the attack simulation and training campaign payload was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *Payload) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -406,6 +421,7 @@ func (m *Payload) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     return nil
 }
 // GetPayloadTags gets the payloadTags property value. Free text tags for a payload.
+// returns a []string when successful
 func (m *Payload) GetPayloadTags()([]string) {
     val, err := m.GetBackingStore().Get("payloadTags")
     if err != nil {
@@ -417,6 +433,7 @@ func (m *Payload) GetPayloadTags()([]string) {
     return nil
 }
 // GetPlatform gets the platform property value. The payload delivery platform for a simulation. Possible values are: unknown, sms, email, teams, unknownFutureValue.
+// returns a *PayloadDeliveryPlatform when successful
 func (m *Payload) GetPlatform()(*PayloadDeliveryPlatform) {
     val, err := m.GetBackingStore().Get("platform")
     if err != nil {
@@ -428,6 +445,7 @@ func (m *Payload) GetPlatform()(*PayloadDeliveryPlatform) {
     return nil
 }
 // GetPredictedCompromiseRate gets the predictedCompromiseRate property value. Predicted probability for a payload to phish a targeted user.
+// returns a *float64 when successful
 func (m *Payload) GetPredictedCompromiseRate()(*float64) {
     val, err := m.GetBackingStore().Get("predictedCompromiseRate")
     if err != nil {
@@ -439,6 +457,7 @@ func (m *Payload) GetPredictedCompromiseRate()(*float64) {
     return nil
 }
 // GetSimulationAttackType gets the simulationAttackType property value. Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.
+// returns a *SimulationAttackType when successful
 func (m *Payload) GetSimulationAttackType()(*SimulationAttackType) {
     val, err := m.GetBackingStore().Get("simulationAttackType")
     if err != nil {
@@ -450,6 +469,7 @@ func (m *Payload) GetSimulationAttackType()(*SimulationAttackType) {
     return nil
 }
 // GetSource gets the source property value. The source property
+// returns a *SimulationContentSource when successful
 func (m *Payload) GetSource()(*SimulationContentSource) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
@@ -461,6 +481,7 @@ func (m *Payload) GetSource()(*SimulationContentSource) {
     return nil
 }
 // GetStatus gets the status property value. Simulation content status. Supports $filter and $orderby. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.
+// returns a *SimulationContentStatus when successful
 func (m *Payload) GetStatus()(*SimulationContentStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -472,6 +493,7 @@ func (m *Payload) GetStatus()(*SimulationContentStatus) {
     return nil
 }
 // GetTechnique gets the technique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.
+// returns a *SimulationAttackTechnique when successful
 func (m *Payload) GetTechnique()(*SimulationAttackTechnique) {
     val, err := m.GetBackingStore().Get("technique")
     if err != nil {
@@ -483,6 +505,7 @@ func (m *Payload) GetTechnique()(*SimulationAttackTechnique) {
     return nil
 }
 // GetTheme gets the theme property value. The theme of a payload. Possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, fax, financeReport, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.
+// returns a *PayloadTheme when successful
 func (m *Payload) GetTheme()(*PayloadTheme) {
     val, err := m.GetBackingStore().Get("theme")
     if err != nil {
@@ -796,7 +819,6 @@ func (m *Payload) SetTheme(value *PayloadTheme)() {
         panic(err)
     }
 }
-// Payloadable 
 type Payloadable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -2,7 +2,6 @@ package models
 import (
     "errors"
 )
-// 
 type X509CertificateRuleType int
 
 const (

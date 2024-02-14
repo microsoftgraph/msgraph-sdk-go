@@ -8,7 +8,7 @@ import (
 type IosMobileAppConfiguration struct {
     ManagedDeviceMobileAppConfiguration
 }
-// NewIosMobileAppConfiguration instantiates a new iosMobileAppConfiguration and sets the default values.
+// NewIosMobileAppConfiguration instantiates a new IosMobileAppConfiguration and sets the default values.
 func NewIosMobileAppConfiguration()(*IosMobileAppConfiguration) {
     m := &IosMobileAppConfiguration{
         ManagedDeviceMobileAppConfiguration: *NewManagedDeviceMobileAppConfiguration(),
@@ -18,10 +18,12 @@ func NewIosMobileAppConfiguration()(*IosMobileAppConfiguration) {
     return m
 }
 // CreateIosMobileAppConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosMobileAppConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosMobileAppConfiguration(), nil
 }
 // GetEncodedSettingXml gets the encodedSettingXml property value. mdm app configuration Base64 binary.
+// returns a []byte when successful
 func (m *IosMobileAppConfiguration) GetEncodedSettingXml()([]byte) {
     val, err := m.GetBackingStore().Get("encodedSettingXml")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *IosMobileAppConfiguration) GetEncodedSettingXml()([]byte) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosMobileAppConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedDeviceMobileAppConfiguration.GetFieldDeserializers()
     res["encodedSettingXml"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -64,6 +67,7 @@ func (m *IosMobileAppConfiguration) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetSettings gets the settings property value. app configuration setting items.
+// returns a []AppConfigurationSettingItemable when successful
 func (m *IosMobileAppConfiguration) GetSettings()([]AppConfigurationSettingItemable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -114,7 +118,6 @@ func (m *IosMobileAppConfiguration) SetSettings(value []AppConfigurationSettingI
         panic(err)
     }
 }
-// IosMobileAppConfigurationable 
 type IosMobileAppConfigurationable interface {
     ManagedDeviceMobileAppConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

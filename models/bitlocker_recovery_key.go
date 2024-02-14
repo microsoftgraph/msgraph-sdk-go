@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BitlockerRecoveryKey 
 type BitlockerRecoveryKey struct {
     Entity
 }
-// NewBitlockerRecoveryKey instantiates a new bitlockerRecoveryKey and sets the default values.
+// NewBitlockerRecoveryKey instantiates a new BitlockerRecoveryKey and sets the default values.
 func NewBitlockerRecoveryKey()(*BitlockerRecoveryKey) {
     m := &BitlockerRecoveryKey{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewBitlockerRecoveryKey()(*BitlockerRecoveryKey) {
     return m
 }
 // CreateBitlockerRecoveryKeyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBitlockerRecoveryKeyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBitlockerRecoveryKey(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the key was originally backed up to Microsoft Entra ID. Not nullable.
+// returns a *Time when successful
 func (m *BitlockerRecoveryKey) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *BitlockerRecoveryKey) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetDeviceId gets the deviceId property value. Identifier of the device the BitLocker key is originally backed up from. Supports $filter (eq).
+// returns a *string when successful
 func (m *BitlockerRecoveryKey) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *BitlockerRecoveryKey) GetDeviceId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BitlockerRecoveryKey) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -88,6 +91,7 @@ func (m *BitlockerRecoveryKey) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetKey gets the key property value. The BitLocker recovery key. Returned only on $select. Not nullable.
+// returns a *string when successful
 func (m *BitlockerRecoveryKey) GetKey()(*string) {
     val, err := m.GetBackingStore().Get("key")
     if err != nil {
@@ -99,6 +103,7 @@ func (m *BitlockerRecoveryKey) GetKey()(*string) {
     return nil
 }
 // GetVolumeType gets the volumeType property value. Indicates the type of volume the BitLocker key is associated with. The possible values are: 1 (for operatingSystemVolume), 2 (for fixedDataVolume), 3 (for removableDataVolume), and 4 (for unknownFutureValue).
+// returns a *VolumeType when successful
 func (m *BitlockerRecoveryKey) GetVolumeType()(*VolumeType) {
     val, err := m.GetBackingStore().Get("volumeType")
     if err != nil {
@@ -170,7 +175,6 @@ func (m *BitlockerRecoveryKey) SetVolumeType(value *VolumeType)() {
         panic(err)
     }
 }
-// BitlockerRecoveryKeyable 
 type BitlockerRecoveryKeyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

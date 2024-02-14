@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// SimulationEventsContent 
 type SimulationEventsContent struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSimulationEventsContent instantiates a new simulationEventsContent and sets the default values.
+// NewSimulationEventsContent instantiates a new SimulationEventsContent and sets the default values.
 func NewSimulationEventsContent()(*SimulationEventsContent) {
     m := &SimulationEventsContent{
     }
@@ -19,10 +18,12 @@ func NewSimulationEventsContent()(*SimulationEventsContent) {
     return m
 }
 // CreateSimulationEventsContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSimulationEventsContentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSimulationEventsContent(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SimulationEventsContent) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *SimulationEventsContent) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *SimulationEventsContent) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCompromisedRate gets the compromisedRate property value. Actual percentage of users who fell for the simulated attack in an attack simulation and training campaign.
+// returns a *float64 when successful
 func (m *SimulationEventsContent) GetCompromisedRate()(*float64) {
     val, err := m.GetBackingStore().Get("compromisedRate")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *SimulationEventsContent) GetCompromisedRate()(*float64) {
     return nil
 }
 // GetEvents gets the events property value. List of simulation events in an attack simulation and training campaign.
+// returns a []SimulationEventable when successful
 func (m *SimulationEventsContent) GetEvents()([]SimulationEventable) {
     val, err := m.GetBackingStore().Get("events")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *SimulationEventsContent) GetEvents()([]SimulationEventable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SimulationEventsContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["compromisedRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -102,6 +107,7 @@ func (m *SimulationEventsContent) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *SimulationEventsContent) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -178,7 +184,6 @@ func (m *SimulationEventsContent) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SimulationEventsContentable 
 type SimulationEventsContentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

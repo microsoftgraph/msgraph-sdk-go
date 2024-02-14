@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleAssignmentScheduleInstanceCollectionResponse 
 type UnifiedRoleAssignmentScheduleInstanceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUnifiedRoleAssignmentScheduleInstanceCollectionResponse instantiates a new unifiedRoleAssignmentScheduleInstanceCollectionResponse and sets the default values.
+// NewUnifiedRoleAssignmentScheduleInstanceCollectionResponse instantiates a new UnifiedRoleAssignmentScheduleInstanceCollectionResponse and sets the default values.
 func NewUnifiedRoleAssignmentScheduleInstanceCollectionResponse()(*UnifiedRoleAssignmentScheduleInstanceCollectionResponse) {
     m := &UnifiedRoleAssignmentScheduleInstanceCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewUnifiedRoleAssignmentScheduleInstanceCollectionResponse()(*UnifiedRoleAs
     return m
 }
 // CreateUnifiedRoleAssignmentScheduleInstanceCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnifiedRoleAssignmentScheduleInstanceCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleAssignmentScheduleInstanceCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnifiedRoleAssignmentScheduleInstanceCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *UnifiedRoleAssignmentScheduleInstanceCollectionResponse) GetFieldDeseri
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []UnifiedRoleAssignmentScheduleInstanceable when successful
 func (m *UnifiedRoleAssignmentScheduleInstanceCollectionResponse) GetValue()([]UnifiedRoleAssignmentScheduleInstanceable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *UnifiedRoleAssignmentScheduleInstanceCollectionResponse) SetValue(value
         panic(err)
     }
 }
-// UnifiedRoleAssignmentScheduleInstanceCollectionResponseable 
 type UnifiedRoleAssignmentScheduleInstanceCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

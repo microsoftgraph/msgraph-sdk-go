@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageMultipleChoiceQuestion 
 type AccessPackageMultipleChoiceQuestion struct {
     AccessPackageQuestion
 }
-// NewAccessPackageMultipleChoiceQuestion instantiates a new accessPackageMultipleChoiceQuestion and sets the default values.
+// NewAccessPackageMultipleChoiceQuestion instantiates a new AccessPackageMultipleChoiceQuestion and sets the default values.
 func NewAccessPackageMultipleChoiceQuestion()(*AccessPackageMultipleChoiceQuestion) {
     m := &AccessPackageMultipleChoiceQuestion{
         AccessPackageQuestion: *NewAccessPackageQuestion(),
@@ -18,10 +17,12 @@ func NewAccessPackageMultipleChoiceQuestion()(*AccessPackageMultipleChoiceQuesti
     return m
 }
 // CreateAccessPackageMultipleChoiceQuestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessPackageMultipleChoiceQuestionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageMultipleChoiceQuestion(), nil
 }
 // GetChoices gets the choices property value. List of answer choices.
+// returns a []AccessPackageAnswerChoiceable when successful
 func (m *AccessPackageMultipleChoiceQuestion) GetChoices()([]AccessPackageAnswerChoiceable) {
     val, err := m.GetBackingStore().Get("choices")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AccessPackageMultipleChoiceQuestion) GetChoices()([]AccessPackageAnswer
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessPackageMultipleChoiceQuestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AccessPackageQuestion.GetFieldDeserializers()
     res["choices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -64,6 +66,7 @@ func (m *AccessPackageMultipleChoiceQuestion) GetFieldDeserializers()(map[string
     return res
 }
 // GetIsMultipleSelectionAllowed gets the isMultipleSelectionAllowed property value. Indicates whether requestor can select multiple choices as their answer.
+// returns a *bool when successful
 func (m *AccessPackageMultipleChoiceQuestion) GetIsMultipleSelectionAllowed()(*bool) {
     val, err := m.GetBackingStore().Get("isMultipleSelectionAllowed")
     if err != nil {
@@ -114,7 +117,6 @@ func (m *AccessPackageMultipleChoiceQuestion) SetIsMultipleSelectionAllowed(valu
         panic(err)
     }
 }
-// AccessPackageMultipleChoiceQuestionable 
 type AccessPackageMultipleChoiceQuestionable interface {
     AccessPackageQuestionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

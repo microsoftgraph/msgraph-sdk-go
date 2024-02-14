@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupSettingTemplate 
 type GroupSettingTemplate struct {
     DirectoryObject
 }
-// NewGroupSettingTemplate instantiates a new groupSettingTemplate and sets the default values.
+// NewGroupSettingTemplate instantiates a new GroupSettingTemplate and sets the default values.
 func NewGroupSettingTemplate()(*GroupSettingTemplate) {
     m := &GroupSettingTemplate{
         DirectoryObject: *NewDirectoryObject(),
@@ -18,10 +17,12 @@ func NewGroupSettingTemplate()(*GroupSettingTemplate) {
     return m
 }
 // CreateGroupSettingTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupSettingTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupSettingTemplate(), nil
 }
 // GetDescription gets the description property value. Description of the template.
+// returns a *string when successful
 func (m *GroupSettingTemplate) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *GroupSettingTemplate) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Display name of the template. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
+// returns a *string when successful
 func (m *GroupSettingTemplate) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *GroupSettingTemplate) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupSettingTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -85,6 +88,7 @@ func (m *GroupSettingTemplate) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetValues gets the values property value. Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.
+// returns a []SettingTemplateValueable when successful
 func (m *GroupSettingTemplate) GetValues()([]SettingTemplateValueable) {
     val, err := m.GetBackingStore().Get("values")
     if err != nil {
@@ -148,7 +152,6 @@ func (m *GroupSettingTemplate) SetValues(value []SettingTemplateValueable)() {
         panic(err)
     }
 }
-// GroupSettingTemplateable 
 type GroupSettingTemplateable interface {
     DirectoryObjectable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

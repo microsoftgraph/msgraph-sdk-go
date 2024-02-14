@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamRenamedEventMessageDetail 
 type TeamRenamedEventMessageDetail struct {
     EventMessageDetail
 }
-// NewTeamRenamedEventMessageDetail instantiates a new teamRenamedEventMessageDetail and sets the default values.
+// NewTeamRenamedEventMessageDetail instantiates a new TeamRenamedEventMessageDetail and sets the default values.
 func NewTeamRenamedEventMessageDetail()(*TeamRenamedEventMessageDetail) {
     m := &TeamRenamedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
@@ -18,10 +17,12 @@ func NewTeamRenamedEventMessageDetail()(*TeamRenamedEventMessageDetail) {
     return m
 }
 // CreateTeamRenamedEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamRenamedEventMessageDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamRenamedEventMessageDetail(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamRenamedEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EventMessageDetail.GetFieldDeserializers()
     res["initiator"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -57,6 +58,7 @@ func (m *TeamRenamedEventMessageDetail) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
+// returns a IdentitySetable when successful
 func (m *TeamRenamedEventMessageDetail) GetInitiator()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("initiator")
     if err != nil {
@@ -68,6 +70,7 @@ func (m *TeamRenamedEventMessageDetail) GetInitiator()(IdentitySetable) {
     return nil
 }
 // GetTeamDisplayName gets the teamDisplayName property value. The updated name of the team.
+// returns a *string when successful
 func (m *TeamRenamedEventMessageDetail) GetTeamDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("teamDisplayName")
     if err != nil {
@@ -79,6 +82,7 @@ func (m *TeamRenamedEventMessageDetail) GetTeamDisplayName()(*string) {
     return nil
 }
 // GetTeamId gets the teamId property value. Unique identifier of the team.
+// returns a *string when successful
 func (m *TeamRenamedEventMessageDetail) GetTeamId()(*string) {
     val, err := m.GetBackingStore().Get("teamId")
     if err != nil {
@@ -136,7 +140,6 @@ func (m *TeamRenamedEventMessageDetail) SetTeamId(value *string)() {
         panic(err)
     }
 }
-// TeamRenamedEventMessageDetailable 
 type TeamRenamedEventMessageDetailable interface {
     EventMessageDetailable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,11 +5,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Indicator 
 type Indicator struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewIndicator instantiates a new indicator and sets the default values.
+// NewIndicator instantiates a new Indicator and sets the default values.
 func NewIndicator()(*Indicator) {
     m := &Indicator{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -17,6 +16,7 @@ func NewIndicator()(*Indicator) {
     return m
 }
 // CreateIndicatorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIndicatorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -41,6 +41,7 @@ func CreateIndicatorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
     return NewIndicator(), nil
 }
 // GetArtifact gets the artifact property value. The artifact property
+// returns a Artifactable when successful
 func (m *Indicator) GetArtifact()(Artifactable) {
     val, err := m.GetBackingStore().Get("artifact")
     if err != nil {
@@ -52,6 +53,7 @@ func (m *Indicator) GetArtifact()(Artifactable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Indicator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["artifact"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -77,6 +79,7 @@ func (m *Indicator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetSource gets the source property value. The source property
+// returns a *IndicatorSource when successful
 func (m *Indicator) GetSource()(*IndicatorSource) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
@@ -122,7 +125,6 @@ func (m *Indicator) SetSource(value *IndicatorSource)() {
         panic(err)
     }
 }
-// Indicatorable 
 type Indicatorable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

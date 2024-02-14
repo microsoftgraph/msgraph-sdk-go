@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// Print 
 type Print struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPrint instantiates a new print and sets the default values.
+// NewPrint instantiates a new Print and sets the default values.
 func NewPrint()(*Print) {
     m := &Print{
     }
@@ -19,10 +18,12 @@ func NewPrint()(*Print) {
     return m
 }
 // CreatePrintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrintFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrint(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Print) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *Print) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *Print) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetConnectors gets the connectors property value. The list of available print connectors.
+// returns a []PrintConnectorable when successful
 func (m *Print) GetConnectors()([]PrintConnectorable) {
     val, err := m.GetBackingStore().Get("connectors")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *Print) GetConnectors()([]PrintConnectorable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Print) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["connectors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -171,6 +175,7 @@ func (m *Print) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *Print) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -182,6 +187,7 @@ func (m *Print) GetOdataType()(*string) {
     return nil
 }
 // GetOperations gets the operations property value. The list of print long running operations.
+// returns a []PrintOperationable when successful
 func (m *Print) GetOperations()([]PrintOperationable) {
     val, err := m.GetBackingStore().Get("operations")
     if err != nil {
@@ -193,6 +199,7 @@ func (m *Print) GetOperations()([]PrintOperationable) {
     return nil
 }
 // GetPrinters gets the printers property value. The list of printers registered in the tenant.
+// returns a []Printerable when successful
 func (m *Print) GetPrinters()([]Printerable) {
     val, err := m.GetBackingStore().Get("printers")
     if err != nil {
@@ -204,6 +211,7 @@ func (m *Print) GetPrinters()([]Printerable) {
     return nil
 }
 // GetServices gets the services property value. The list of available Universal Print service endpoints.
+// returns a []PrintServiceable when successful
 func (m *Print) GetServices()([]PrintServiceable) {
     val, err := m.GetBackingStore().Get("services")
     if err != nil {
@@ -215,6 +223,7 @@ func (m *Print) GetServices()([]PrintServiceable) {
     return nil
 }
 // GetSettings gets the settings property value. Tenant-wide settings for the Universal Print service.
+// returns a PrintSettingsable when successful
 func (m *Print) GetSettings()(PrintSettingsable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -226,6 +235,7 @@ func (m *Print) GetSettings()(PrintSettingsable) {
     return nil
 }
 // GetShares gets the shares property value. The list of printer shares registered in the tenant.
+// returns a []PrinterShareable when successful
 func (m *Print) GetShares()([]PrinterShareable) {
     val, err := m.GetBackingStore().Get("shares")
     if err != nil {
@@ -237,6 +247,7 @@ func (m *Print) GetShares()([]PrinterShareable) {
     return nil
 }
 // GetTaskDefinitions gets the taskDefinitions property value. List of abstract definition for a task that can be triggered when various events occur within Universal Print.
+// returns a []PrintTaskDefinitionable when successful
 func (m *Print) GetTaskDefinitions()([]PrintTaskDefinitionable) {
     val, err := m.GetBackingStore().Get("taskDefinitions")
     if err != nil {
@@ -408,7 +419,6 @@ func (m *Print) SetTaskDefinitions(value []PrintTaskDefinitionable)() {
         panic(err)
     }
 }
-// Printable 
 type Printable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

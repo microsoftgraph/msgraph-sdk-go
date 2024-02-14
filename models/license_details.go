@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LicenseDetails 
 type LicenseDetails struct {
     Entity
 }
-// NewLicenseDetails instantiates a new licenseDetails and sets the default values.
+// NewLicenseDetails instantiates a new LicenseDetails and sets the default values.
 func NewLicenseDetails()(*LicenseDetails) {
     m := &LicenseDetails{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewLicenseDetails()(*LicenseDetails) {
     return m
 }
 // CreateLicenseDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateLicenseDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLicenseDetails(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *LicenseDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["servicePlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -62,6 +63,7 @@ func (m *LicenseDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetServicePlans gets the servicePlans property value. Information about the service plans assigned with the license. Read-only, Not nullable
+// returns a []ServicePlanInfoable when successful
 func (m *LicenseDetails) GetServicePlans()([]ServicePlanInfoable) {
     val, err := m.GetBackingStore().Get("servicePlans")
     if err != nil {
@@ -73,6 +75,7 @@ func (m *LicenseDetails) GetServicePlans()([]ServicePlanInfoable) {
     return nil
 }
 // GetSkuId gets the skuId property value. Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
+// returns a *UUID when successful
 func (m *LicenseDetails) GetSkuId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("skuId")
     if err != nil {
@@ -84,6 +87,7 @@ func (m *LicenseDetails) GetSkuId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6
     return nil
 }
 // GetSkuPartNumber gets the skuPartNumber property value. Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: 'AAD_Premium'. Read-only
+// returns a *string when successful
 func (m *LicenseDetails) GetSkuPartNumber()(*string) {
     val, err := m.GetBackingStore().Get("skuPartNumber")
     if err != nil {
@@ -147,7 +151,6 @@ func (m *LicenseDetails) SetSkuPartNumber(value *string)() {
         panic(err)
     }
 }
-// LicenseDetailsable 
 type LicenseDetailsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

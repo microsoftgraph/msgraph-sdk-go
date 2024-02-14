@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AccessReviewStageSettings 
 type AccessReviewStageSettings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAccessReviewStageSettings instantiates a new accessReviewStageSettings and sets the default values.
+// NewAccessReviewStageSettings instantiates a new AccessReviewStageSettings and sets the default values.
 func NewAccessReviewStageSettings()(*AccessReviewStageSettings) {
     m := &AccessReviewStageSettings{
     }
@@ -19,10 +18,12 @@ func NewAccessReviewStageSettings()(*AccessReviewStageSettings) {
     return m
 }
 // CreateAccessReviewStageSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessReviewStageSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewStageSettings(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AccessReviewStageSettings) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *AccessReviewStageSettings) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AccessReviewStageSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDecisionsThatWillMoveToNextStage gets the decisionsThatWillMoveToNextStage property value. Indicate which decisions will go to the next stage. Can be a subset of Approve, Deny, Recommendation, or NotReviewed. If not provided, all decisions will go to the next stage. Optional.
+// returns a []string when successful
 func (m *AccessReviewStageSettings) GetDecisionsThatWillMoveToNextStage()([]string) {
     val, err := m.GetBackingStore().Get("decisionsThatWillMoveToNextStage")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *AccessReviewStageSettings) GetDecisionsThatWillMoveToNextStage()([]stri
     return nil
 }
 // GetDependsOn gets the dependsOn property value. Defines the sequential or parallel order of the stages and depends on the stageId. Only sequential stages are currently supported. For example, if stageId is 2, then dependsOn must be 1. If stageId is 1, don't specify dependsOn. Required if stageId isn't 1.
+// returns a []string when successful
 func (m *AccessReviewStageSettings) GetDependsOn()([]string) {
     val, err := m.GetBackingStore().Get("dependsOn")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *AccessReviewStageSettings) GetDependsOn()([]string) {
     return nil
 }
 // GetDurationInDays gets the durationInDays property value. The duration of the stage. Required.  NOTE: The cumulative value of this property across all stages  1. Will override the instanceDurationInDays setting on the accessReviewScheduleDefinition object. 2. Can't exceed the length of one recurrence. That is, if the review recurs weekly, the cumulative durationInDays can't exceed 7.
+// returns a *int32 when successful
 func (m *AccessReviewStageSettings) GetDurationInDays()(*int32) {
     val, err := m.GetBackingStore().Get("durationInDays")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *AccessReviewStageSettings) GetDurationInDays()(*int32) {
     return nil
 }
 // GetFallbackReviewers gets the fallbackReviewers property value. If provided, the fallback reviewers are asked to complete a review if the primary reviewers don't exist. For example, if managers are selected as reviewers and a principal under review doesn't have a manager in Microsoft Entra ID, the fallback reviewers are asked to review that principal. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.
+// returns a []AccessReviewReviewerScopeable when successful
 func (m *AccessReviewStageSettings) GetFallbackReviewers()([]AccessReviewReviewerScopeable) {
     val, err := m.GetBackingStore().Get("fallbackReviewers")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *AccessReviewStageSettings) GetFallbackReviewers()([]AccessReviewReviewe
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessReviewStageSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["decisionsThatWillMoveToNextStage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -208,6 +215,7 @@ func (m *AccessReviewStageSettings) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AccessReviewStageSettings) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -219,6 +227,7 @@ func (m *AccessReviewStageSettings) GetOdataType()(*string) {
     return nil
 }
 // GetRecommendationInsightSettings gets the recommendationInsightSettings property value. The recommendationInsightSettings property
+// returns a []AccessReviewRecommendationInsightSettingable when successful
 func (m *AccessReviewStageSettings) GetRecommendationInsightSettings()([]AccessReviewRecommendationInsightSettingable) {
     val, err := m.GetBackingStore().Get("recommendationInsightSettings")
     if err != nil {
@@ -230,6 +239,7 @@ func (m *AccessReviewStageSettings) GetRecommendationInsightSettings()([]AccessR
     return nil
 }
 // GetRecommendationsEnabled gets the recommendationsEnabled property value. Indicates whether showing recommendations to reviewers is enabled. Required. NOTE: The value of this property overrides override the corresponding setting on the accessReviewScheduleDefinition object.
+// returns a *bool when successful
 func (m *AccessReviewStageSettings) GetRecommendationsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("recommendationsEnabled")
     if err != nil {
@@ -241,6 +251,7 @@ func (m *AccessReviewStageSettings) GetRecommendationsEnabled()(*bool) {
     return nil
 }
 // GetReviewers gets the reviewers property value. Defines who the reviewers are. If none is specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition.
+// returns a []AccessReviewReviewerScopeable when successful
 func (m *AccessReviewStageSettings) GetReviewers()([]AccessReviewReviewerScopeable) {
     val, err := m.GetBackingStore().Get("reviewers")
     if err != nil {
@@ -252,6 +263,7 @@ func (m *AccessReviewStageSettings) GetReviewers()([]AccessReviewReviewerScopeab
     return nil
 }
 // GetStageId gets the stageId property value. Unique identifier of the accessReviewStageSettings object. The stageId is used by the dependsOn property to indicate the order of the stages. Required.
+// returns a *string when successful
 func (m *AccessReviewStageSettings) GetStageId()(*string) {
     val, err := m.GetBackingStore().Get("stageId")
     if err != nil {
@@ -418,7 +430,6 @@ func (m *AccessReviewStageSettings) SetStageId(value *string)() {
         panic(err)
     }
 }
-// AccessReviewStageSettingsable 
 type AccessReviewStageSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

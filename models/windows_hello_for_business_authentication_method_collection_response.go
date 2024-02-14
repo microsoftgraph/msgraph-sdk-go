@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsHelloForBusinessAuthenticationMethodCollectionResponse 
 type WindowsHelloForBusinessAuthenticationMethodCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWindowsHelloForBusinessAuthenticationMethodCollectionResponse instantiates a new windowsHelloForBusinessAuthenticationMethodCollectionResponse and sets the default values.
+// NewWindowsHelloForBusinessAuthenticationMethodCollectionResponse instantiates a new WindowsHelloForBusinessAuthenticationMethodCollectionResponse and sets the default values.
 func NewWindowsHelloForBusinessAuthenticationMethodCollectionResponse()(*WindowsHelloForBusinessAuthenticationMethodCollectionResponse) {
     m := &WindowsHelloForBusinessAuthenticationMethodCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewWindowsHelloForBusinessAuthenticationMethodCollectionResponse()(*Windows
     return m
 }
 // CreateWindowsHelloForBusinessAuthenticationMethodCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsHelloForBusinessAuthenticationMethodCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsHelloForBusinessAuthenticationMethodCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsHelloForBusinessAuthenticationMethodCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *WindowsHelloForBusinessAuthenticationMethodCollectionResponse) GetField
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []WindowsHelloForBusinessAuthenticationMethodable when successful
 func (m *WindowsHelloForBusinessAuthenticationMethodCollectionResponse) GetValue()([]WindowsHelloForBusinessAuthenticationMethodable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *WindowsHelloForBusinessAuthenticationMethodCollectionResponse) SetValue
         panic(err)
     }
 }
-// WindowsHelloForBusinessAuthenticationMethodCollectionResponseable 
 type WindowsHelloForBusinessAuthenticationMethodCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

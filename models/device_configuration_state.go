@@ -8,7 +8,7 @@ import (
 type DeviceConfigurationState struct {
     Entity
 }
-// NewDeviceConfigurationState instantiates a new deviceConfigurationState and sets the default values.
+// NewDeviceConfigurationState instantiates a new DeviceConfigurationState and sets the default values.
 func NewDeviceConfigurationState()(*DeviceConfigurationState) {
     m := &DeviceConfigurationState{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewDeviceConfigurationState()(*DeviceConfigurationState) {
     return m
 }
 // CreateDeviceConfigurationStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceConfigurationStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceConfigurationState(), nil
 }
 // GetDisplayName gets the displayName property value. The name of the policy for this policyBase
+// returns a *string when successful
 func (m *DeviceConfigurationState) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *DeviceConfigurationState) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceConfigurationState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -102,6 +105,7 @@ func (m *DeviceConfigurationState) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetPlatformType gets the platformType property value. Supported platform types for policies.
+// returns a *PolicyPlatformType when successful
 func (m *DeviceConfigurationState) GetPlatformType()(*PolicyPlatformType) {
     val, err := m.GetBackingStore().Get("platformType")
     if err != nil {
@@ -113,6 +117,7 @@ func (m *DeviceConfigurationState) GetPlatformType()(*PolicyPlatformType) {
     return nil
 }
 // GetSettingCount gets the settingCount property value. Count of how many setting a policy holds
+// returns a *int32 when successful
 func (m *DeviceConfigurationState) GetSettingCount()(*int32) {
     val, err := m.GetBackingStore().Get("settingCount")
     if err != nil {
@@ -124,6 +129,7 @@ func (m *DeviceConfigurationState) GetSettingCount()(*int32) {
     return nil
 }
 // GetSettingStates gets the settingStates property value. The settingStates property
+// returns a []DeviceConfigurationSettingStateable when successful
 func (m *DeviceConfigurationState) GetSettingStates()([]DeviceConfigurationSettingStateable) {
     val, err := m.GetBackingStore().Get("settingStates")
     if err != nil {
@@ -135,6 +141,7 @@ func (m *DeviceConfigurationState) GetSettingStates()([]DeviceConfigurationSetti
     return nil
 }
 // GetState gets the state property value. The state property
+// returns a *ComplianceStatus when successful
 func (m *DeviceConfigurationState) GetState()(*ComplianceStatus) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -146,6 +153,7 @@ func (m *DeviceConfigurationState) GetState()(*ComplianceStatus) {
     return nil
 }
 // GetVersion gets the version property value. The version of the policy
+// returns a *int32 when successful
 func (m *DeviceConfigurationState) GetVersion()(*int32) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -250,7 +258,6 @@ func (m *DeviceConfigurationState) SetVersion(value *int32)() {
         panic(err)
     }
 }
-// DeviceConfigurationStateable 
 type DeviceConfigurationStateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

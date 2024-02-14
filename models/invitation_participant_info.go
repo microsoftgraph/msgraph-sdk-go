@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// InvitationParticipantInfo 
 type InvitationParticipantInfo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewInvitationParticipantInfo instantiates a new invitationParticipantInfo and sets the default values.
+// NewInvitationParticipantInfo instantiates a new InvitationParticipantInfo and sets the default values.
 func NewInvitationParticipantInfo()(*InvitationParticipantInfo) {
     m := &InvitationParticipantInfo{
     }
@@ -19,10 +18,12 @@ func NewInvitationParticipantInfo()(*InvitationParticipantInfo) {
     return m
 }
 // CreateInvitationParticipantInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInvitationParticipantInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInvitationParticipantInfo(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *InvitationParticipantInfo) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *InvitationParticipantInfo) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *InvitationParticipantInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InvitationParticipantInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["hidden"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -104,6 +107,7 @@ func (m *InvitationParticipantInfo) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetHidden gets the hidden property value. Optional. Whether to hide the participant from the roster.
+// returns a *bool when successful
 func (m *InvitationParticipantInfo) GetHidden()(*bool) {
     val, err := m.GetBackingStore().Get("hidden")
     if err != nil {
@@ -115,6 +119,7 @@ func (m *InvitationParticipantInfo) GetHidden()(*bool) {
     return nil
 }
 // GetIdentity gets the identity property value. The identity property
+// returns a IdentitySetable when successful
 func (m *InvitationParticipantInfo) GetIdentity()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("identity")
     if err != nil {
@@ -126,6 +131,7 @@ func (m *InvitationParticipantInfo) GetIdentity()(IdentitySetable) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *InvitationParticipantInfo) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -137,6 +143,7 @@ func (m *InvitationParticipantInfo) GetOdataType()(*string) {
     return nil
 }
 // GetParticipantId gets the participantId property value. Optional. The ID of the target participant.
+// returns a *string when successful
 func (m *InvitationParticipantInfo) GetParticipantId()(*string) {
     val, err := m.GetBackingStore().Get("participantId")
     if err != nil {
@@ -148,6 +155,7 @@ func (m *InvitationParticipantInfo) GetParticipantId()(*string) {
     return nil
 }
 // GetRemoveFromDefaultAudioRoutingGroup gets the removeFromDefaultAudioRoutingGroup property value. Optional. Whether to remove them from the main mixer.
+// returns a *bool when successful
 func (m *InvitationParticipantInfo) GetRemoveFromDefaultAudioRoutingGroup()(*bool) {
     val, err := m.GetBackingStore().Get("removeFromDefaultAudioRoutingGroup")
     if err != nil {
@@ -159,6 +167,7 @@ func (m *InvitationParticipantInfo) GetRemoveFromDefaultAudioRoutingGroup()(*boo
     return nil
 }
 // GetReplacesCallId gets the replacesCallId property value. Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.
+// returns a *string when successful
 func (m *InvitationParticipantInfo) GetReplacesCallId()(*string) {
     val, err := m.GetBackingStore().Get("replacesCallId")
     if err != nil {
@@ -268,7 +277,6 @@ func (m *InvitationParticipantInfo) SetReplacesCallId(value *string)() {
         panic(err)
     }
 }
-// InvitationParticipantInfoable 
 type InvitationParticipantInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

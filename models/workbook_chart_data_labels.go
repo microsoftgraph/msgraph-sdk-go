@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookChartDataLabels 
 type WorkbookChartDataLabels struct {
     Entity
 }
-// NewWorkbookChartDataLabels instantiates a new workbookChartDataLabels and sets the default values.
+// NewWorkbookChartDataLabels instantiates a new WorkbookChartDataLabels and sets the default values.
 func NewWorkbookChartDataLabels()(*WorkbookChartDataLabels) {
     m := &WorkbookChartDataLabels{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewWorkbookChartDataLabels()(*WorkbookChartDataLabels) {
     return m
 }
 // CreateWorkbookChartDataLabelsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookChartDataLabelsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookChartDataLabels(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookChartDataLabels) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["format"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -115,6 +116,7 @@ func (m *WorkbookChartDataLabels) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetFormat gets the format property value. Represents the format of chart data labels, which includes fill and font formatting. Read-only.
+// returns a WorkbookChartDataLabelFormatable when successful
 func (m *WorkbookChartDataLabels) GetFormat()(WorkbookChartDataLabelFormatable) {
     val, err := m.GetBackingStore().Get("format")
     if err != nil {
@@ -126,6 +128,7 @@ func (m *WorkbookChartDataLabels) GetFormat()(WorkbookChartDataLabelFormatable) 
     return nil
 }
 // GetPosition gets the position property value. DataLabelPosition value that represents the position of the data label. The possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.
+// returns a *string when successful
 func (m *WorkbookChartDataLabels) GetPosition()(*string) {
     val, err := m.GetBackingStore().Get("position")
     if err != nil {
@@ -137,6 +140,7 @@ func (m *WorkbookChartDataLabels) GetPosition()(*string) {
     return nil
 }
 // GetSeparator gets the separator property value. String representing the separator used for the data labels on a chart.
+// returns a *string when successful
 func (m *WorkbookChartDataLabels) GetSeparator()(*string) {
     val, err := m.GetBackingStore().Get("separator")
     if err != nil {
@@ -148,6 +152,7 @@ func (m *WorkbookChartDataLabels) GetSeparator()(*string) {
     return nil
 }
 // GetShowBubbleSize gets the showBubbleSize property value. Boolean value representing if the data label bubble size is visible or not.
+// returns a *bool when successful
 func (m *WorkbookChartDataLabels) GetShowBubbleSize()(*bool) {
     val, err := m.GetBackingStore().Get("showBubbleSize")
     if err != nil {
@@ -159,6 +164,7 @@ func (m *WorkbookChartDataLabels) GetShowBubbleSize()(*bool) {
     return nil
 }
 // GetShowCategoryName gets the showCategoryName property value. Boolean value representing if the data label category name is visible or not.
+// returns a *bool when successful
 func (m *WorkbookChartDataLabels) GetShowCategoryName()(*bool) {
     val, err := m.GetBackingStore().Get("showCategoryName")
     if err != nil {
@@ -170,6 +176,7 @@ func (m *WorkbookChartDataLabels) GetShowCategoryName()(*bool) {
     return nil
 }
 // GetShowLegendKey gets the showLegendKey property value. Boolean value representing if the data label legend key is visible or not.
+// returns a *bool when successful
 func (m *WorkbookChartDataLabels) GetShowLegendKey()(*bool) {
     val, err := m.GetBackingStore().Get("showLegendKey")
     if err != nil {
@@ -181,6 +188,7 @@ func (m *WorkbookChartDataLabels) GetShowLegendKey()(*bool) {
     return nil
 }
 // GetShowPercentage gets the showPercentage property value. Boolean value representing if the data label percentage is visible or not.
+// returns a *bool when successful
 func (m *WorkbookChartDataLabels) GetShowPercentage()(*bool) {
     val, err := m.GetBackingStore().Get("showPercentage")
     if err != nil {
@@ -192,6 +200,7 @@ func (m *WorkbookChartDataLabels) GetShowPercentage()(*bool) {
     return nil
 }
 // GetShowSeriesName gets the showSeriesName property value. Boolean value representing if the data label series name is visible or not.
+// returns a *bool when successful
 func (m *WorkbookChartDataLabels) GetShowSeriesName()(*bool) {
     val, err := m.GetBackingStore().Get("showSeriesName")
     if err != nil {
@@ -203,6 +212,7 @@ func (m *WorkbookChartDataLabels) GetShowSeriesName()(*bool) {
     return nil
 }
 // GetShowValue gets the showValue property value. Boolean value representing if the data label value is visible or not.
+// returns a *bool when successful
 func (m *WorkbookChartDataLabels) GetShowValue()(*bool) {
     val, err := m.GetBackingStore().Get("showValue")
     if err != nil {
@@ -338,7 +348,6 @@ func (m *WorkbookChartDataLabels) SetShowValue(value *bool)() {
         panic(err)
     }
 }
-// WorkbookChartDataLabelsable 
 type WorkbookChartDataLabelsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

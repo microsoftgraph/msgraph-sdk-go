@@ -17,20 +17,21 @@ type DeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilderPostReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewDeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilderInternal instantiates a new ScheduleActionsForRulesRequestBuilder and sets the default values.
+// NewDeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilderInternal instantiates a new DeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilder and sets the default values.
 func NewDeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilder) {
     m := &DeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy%2Did}/scheduleActionsForRules", pathParameters),
     }
     return m
 }
-// NewDeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilder instantiates a new ScheduleActionsForRulesRequestBuilder and sets the default values.
+// NewDeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilder instantiates a new DeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilder and sets the default values.
 func NewDeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post not yet documented
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicy-scheduleactionsforrules?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *DeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilder) Post
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *DeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilder) Post
     return nil
 }
 // ToPostRequestInformation not yet documented
+// returns a *RequestInformation when successful
 func (m *DeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilder) ToPostRequestInformation(ctx context.Context, body DeviceCompliancePoliciesItemScheduleActionsForRulesPostRequestBodyable, requestConfiguration *DeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *DeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilder) ToPo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilder when successful
 func (m *DeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilder) WithUrl(rawUrl string)(*DeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilder) {
     return NewDeviceCompliancePoliciesItemScheduleActionsForRulesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

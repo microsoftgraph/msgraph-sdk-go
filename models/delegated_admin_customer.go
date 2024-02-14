@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DelegatedAdminCustomer 
 type DelegatedAdminCustomer struct {
     Entity
 }
-// NewDelegatedAdminCustomer instantiates a new delegatedAdminCustomer and sets the default values.
+// NewDelegatedAdminCustomer instantiates a new DelegatedAdminCustomer and sets the default values.
 func NewDelegatedAdminCustomer()(*DelegatedAdminCustomer) {
     m := &DelegatedAdminCustomer{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewDelegatedAdminCustomer()(*DelegatedAdminCustomer) {
     return m
 }
 // CreateDelegatedAdminCustomerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDelegatedAdminCustomerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDelegatedAdminCustomer(), nil
 }
 // GetDisplayName gets the displayName property value. The Microsoft Entra ID display name of the customer tenant. Read-only. Supports $orderby.
+// returns a *string when successful
 func (m *DelegatedAdminCustomer) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *DelegatedAdminCustomer) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DelegatedAdminCustomer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -72,6 +74,7 @@ func (m *DelegatedAdminCustomer) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetServiceManagementDetails gets the serviceManagementDetails property value. Contains the management details of a service in the customer tenant that's managed by delegated administration.
+// returns a []DelegatedAdminServiceManagementDetailable when successful
 func (m *DelegatedAdminCustomer) GetServiceManagementDetails()([]DelegatedAdminServiceManagementDetailable) {
     val, err := m.GetBackingStore().Get("serviceManagementDetails")
     if err != nil {
@@ -83,6 +86,7 @@ func (m *DelegatedAdminCustomer) GetServiceManagementDetails()([]DelegatedAdminS
     return nil
 }
 // GetTenantId gets the tenantId property value. The Microsoft Entra ID-assigned tenant ID of the customer. Read-only.
+// returns a *string when successful
 func (m *DelegatedAdminCustomer) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -146,7 +150,6 @@ func (m *DelegatedAdminCustomer) SetTenantId(value *string)() {
         panic(err)
     }
 }
-// DelegatedAdminCustomerable 
 type DelegatedAdminCustomerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

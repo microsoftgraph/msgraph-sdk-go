@@ -40,6 +40,7 @@ type LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilderGetRequestConfiguratio
     QueryParameters *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilderGetQueryParameters
 }
 // ByWorkflowId provides operations to manage the workflows property of the microsoft.graph.deletedItemContainer entity.
+// returns a *LifecycleWorkflowsDeletedItemsWorkflowsWorkflowItemRequestBuilder when successful
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) ByWorkflowId(workflowId string)(*LifecycleWorkflowsDeletedItemsWorkflowsWorkflowItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,24 +51,27 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) ByWorkflowId(wor
     }
     return NewLifecycleWorkflowsDeletedItemsWorkflowsWorkflowItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewLifecycleWorkflowsDeletedItemsWorkflowsRequestBuilderInternal instantiates a new WorkflowsRequestBuilder and sets the default values.
+// NewLifecycleWorkflowsDeletedItemsWorkflowsRequestBuilderInternal instantiates a new LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsDeletedItemsWorkflowsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) {
     m := &LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/deletedItems/workflows{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/deletedItems/workflows{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewLifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder instantiates a new WorkflowsRequestBuilder and sets the default values.
+// NewLifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder instantiates a new LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLifecycleWorkflowsDeletedItemsWorkflowsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *LifecycleWorkflowsDeletedItemsWorkflowsCountRequestBuilder when successful
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) Count()(*LifecycleWorkflowsDeletedItemsWorkflowsCountRequestBuilder) {
     return NewLifecycleWorkflowsDeletedItemsWorkflowsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of the deleted workflow objects and their properties.
+// returns a WorkflowCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-deleteditems?view=graph-rest-1.0
@@ -77,8 +81,7 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) Get(ctx context.
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.CreateWorkflowCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,6 +93,7 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) Get(ctx context.
     return res.(ibf6ed4fc8e373ed2600905053a507c004671ad1749cb4b6b77078a908490c430.WorkflowCollectionResponseable), nil
 }
 // ToGetRequestInformation get a list of the deleted workflow objects and their properties.
+// returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -103,6 +107,7 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) ToGetRequestInfo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder when successful
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder) {
     return NewLifecycleWorkflowsDeletedItemsWorkflowsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

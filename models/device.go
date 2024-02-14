@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Device 
 type Device struct {
     DirectoryObject
 }
-// NewDevice instantiates a new device and sets the default values.
+// NewDevice instantiates a new Device and sets the default values.
 func NewDevice()(*Device) {
     m := &Device{
         DirectoryObject: *NewDirectoryObject(),
@@ -19,10 +18,12 @@ func NewDevice()(*Device) {
     return m
 }
 // CreateDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDevice(), nil
 }
 // GetAccountEnabled gets the accountEnabled property value. true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
+// returns a *bool when successful
 func (m *Device) GetAccountEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("accountEnabled")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *Device) GetAccountEnabled()(*bool) {
     return nil
 }
 // GetAlternativeSecurityIds gets the alternativeSecurityIds property value. For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
+// returns a []AlternativeSecurityIdable when successful
 func (m *Device) GetAlternativeSecurityIds()([]AlternativeSecurityIdable) {
     val, err := m.GetBackingStore().Get("alternativeSecurityIds")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *Device) GetAlternativeSecurityIds()([]AlternativeSecurityIdable) {
     return nil
 }
 // GetApproximateLastSignInDateTime gets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderby.
+// returns a *Time when successful
 func (m *Device) GetApproximateLastSignInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("approximateLastSignInDateTime")
     if err != nil {
@@ -56,6 +59,7 @@ func (m *Device) GetApproximateLastSignInDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetComplianceExpirationDateTime gets the complianceExpirationDateTime property value. The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *Device) GetComplianceExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("complianceExpirationDateTime")
     if err != nil {
@@ -67,6 +71,7 @@ func (m *Device) GetComplianceExpirationDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetDeviceCategory gets the deviceCategory property value. User-defined property set by Intune to automatically add devices to groups and simplify managing devices.
+// returns a *string when successful
 func (m *Device) GetDeviceCategory()(*string) {
     val, err := m.GetBackingStore().Get("deviceCategory")
     if err != nil {
@@ -78,6 +83,7 @@ func (m *Device) GetDeviceCategory()(*string) {
     return nil
 }
 // GetDeviceId gets the deviceId property value. Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
+// returns a *string when successful
 func (m *Device) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -89,6 +95,7 @@ func (m *Device) GetDeviceId()(*string) {
     return nil
 }
 // GetDeviceMetadata gets the deviceMetadata property value. For internal use only. Set to null.
+// returns a *string when successful
 func (m *Device) GetDeviceMetadata()(*string) {
     val, err := m.GetBackingStore().Get("deviceMetadata")
     if err != nil {
@@ -100,6 +107,7 @@ func (m *Device) GetDeviceMetadata()(*string) {
     return nil
 }
 // GetDeviceOwnership gets the deviceOwnership property value. Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.
+// returns a *string when successful
 func (m *Device) GetDeviceOwnership()(*string) {
     val, err := m.GetBackingStore().Get("deviceOwnership")
     if err != nil {
@@ -111,6 +119,7 @@ func (m *Device) GetDeviceOwnership()(*string) {
     return nil
 }
 // GetDeviceVersion gets the deviceVersion property value. For internal use only.
+// returns a *int32 when successful
 func (m *Device) GetDeviceVersion()(*int32) {
     val, err := m.GetBackingStore().Get("deviceVersion")
     if err != nil {
@@ -122,6 +131,7 @@ func (m *Device) GetDeviceVersion()(*int32) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
+// returns a *string when successful
 func (m *Device) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -133,6 +143,7 @@ func (m *Device) GetDisplayName()(*string) {
     return nil
 }
 // GetEnrollmentProfileName gets the enrollmentProfileName property value. Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.
+// returns a *string when successful
 func (m *Device) GetEnrollmentProfileName()(*string) {
     val, err := m.GetBackingStore().Get("enrollmentProfileName")
     if err != nil {
@@ -144,6 +155,7 @@ func (m *Device) GetEnrollmentProfileName()(*string) {
     return nil
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the device. Read-only. Nullable.
+// returns a []Extensionable when successful
 func (m *Device) GetExtensions()([]Extensionable) {
     val, err := m.GetBackingStore().Get("extensions")
     if err != nil {
@@ -155,6 +167,7 @@ func (m *Device) GetExtensions()([]Extensionable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Device) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
     res["accountEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -345,6 +358,16 @@ func (m *Device) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["onPremisesSecurityIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnPremisesSecurityIdentifier(val)
+        }
+        return nil
+    }
     res["onPremisesSyncEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -488,6 +511,7 @@ func (m *Device) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     return res
 }
 // GetIsCompliant gets the isCompliant property value. true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
+// returns a *bool when successful
 func (m *Device) GetIsCompliant()(*bool) {
     val, err := m.GetBackingStore().Get("isCompliant")
     if err != nil {
@@ -499,6 +523,7 @@ func (m *Device) GetIsCompliant()(*bool) {
     return nil
 }
 // GetIsManaged gets the isManaged property value. true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
+// returns a *bool when successful
 func (m *Device) GetIsManaged()(*bool) {
     val, err := m.GetBackingStore().Get("isManaged")
     if err != nil {
@@ -510,6 +535,7 @@ func (m *Device) GetIsManaged()(*bool) {
     return nil
 }
 // GetMdmAppId gets the mdmAppId property value. Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
+// returns a *string when successful
 func (m *Device) GetMdmAppId()(*string) {
     val, err := m.GetBackingStore().Get("mdmAppId")
     if err != nil {
@@ -521,6 +547,7 @@ func (m *Device) GetMdmAppId()(*string) {
     return nil
 }
 // GetMemberOf gets the memberOf property value. Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
+// returns a []DirectoryObjectable when successful
 func (m *Device) GetMemberOf()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("memberOf")
     if err != nil {
@@ -532,6 +559,7 @@ func (m *Device) GetMemberOf()([]DirectoryObjectable) {
     return nil
 }
 // GetOnPremisesLastSyncDateTime gets the onPremisesLastSyncDateTime property value. The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
+// returns a *Time when successful
 func (m *Device) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("onPremisesLastSyncDateTime")
     if err != nil {
@@ -542,7 +570,20 @@ func (m *Device) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad9
     }
     return nil
 }
+// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. The onPremisesSecurityIdentifier property
+// returns a *string when successful
+func (m *Device) GetOnPremisesSecurityIdentifier()(*string) {
+    val, err := m.GetBackingStore().Get("onPremisesSecurityIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+// returns a *bool when successful
 func (m *Device) GetOnPremisesSyncEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("onPremisesSyncEnabled")
     if err != nil {
@@ -554,6 +595,7 @@ func (m *Device) GetOnPremisesSyncEnabled()(*bool) {
     return nil
 }
 // GetOperatingSystem gets the operatingSystem property value. The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
+// returns a *string when successful
 func (m *Device) GetOperatingSystem()(*string) {
     val, err := m.GetBackingStore().Get("operatingSystem")
     if err != nil {
@@ -565,6 +607,7 @@ func (m *Device) GetOperatingSystem()(*string) {
     return nil
 }
 // GetOperatingSystemVersion gets the operatingSystemVersion property value. The version of the operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
+// returns a *string when successful
 func (m *Device) GetOperatingSystemVersion()(*string) {
     val, err := m.GetBackingStore().Get("operatingSystemVersion")
     if err != nil {
@@ -576,6 +619,7 @@ func (m *Device) GetOperatingSystemVersion()(*string) {
     return nil
 }
 // GetPhysicalIds gets the physicalIds property value. For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith,/$count eq 0, /$count ne 0).
+// returns a []string when successful
 func (m *Device) GetPhysicalIds()([]string) {
     val, err := m.GetBackingStore().Get("physicalIds")
     if err != nil {
@@ -587,6 +631,7 @@ func (m *Device) GetPhysicalIds()([]string) {
     return nil
 }
 // GetProfileType gets the profileType property value. The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
+// returns a *string when successful
 func (m *Device) GetProfileType()(*string) {
     val, err := m.GetBackingStore().Get("profileType")
     if err != nil {
@@ -598,6 +643,7 @@ func (m *Device) GetProfileType()(*string) {
     return nil
 }
 // GetRegisteredOwners gets the registeredOwners property value. The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
+// returns a []DirectoryObjectable when successful
 func (m *Device) GetRegisteredOwners()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("registeredOwners")
     if err != nil {
@@ -609,6 +655,7 @@ func (m *Device) GetRegisteredOwners()([]DirectoryObjectable) {
     return nil
 }
 // GetRegisteredUsers gets the registeredUsers property value. Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
+// returns a []DirectoryObjectable when successful
 func (m *Device) GetRegisteredUsers()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("registeredUsers")
     if err != nil {
@@ -620,6 +667,7 @@ func (m *Device) GetRegisteredUsers()([]DirectoryObjectable) {
     return nil
 }
 // GetRegistrationDateTime gets the registrationDateTime property value. Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *Device) GetRegistrationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("registrationDateTime")
     if err != nil {
@@ -631,6 +679,7 @@ func (m *Device) GetRegistrationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     return nil
 }
 // GetSystemLabels gets the systemLabels property value. List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
+// returns a []string when successful
 func (m *Device) GetSystemLabels()([]string) {
     val, err := m.GetBackingStore().Get("systemLabels")
     if err != nil {
@@ -642,6 +691,7 @@ func (m *Device) GetSystemLabels()([]string) {
     return nil
 }
 // GetTransitiveMemberOf gets the transitiveMemberOf property value. Groups and administrative units that the device is a member of. This operation is transitive. Supports $expand.
+// returns a []DirectoryObjectable when successful
 func (m *Device) GetTransitiveMemberOf()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("transitiveMemberOf")
     if err != nil {
@@ -653,6 +703,7 @@ func (m *Device) GetTransitiveMemberOf()([]DirectoryObjectable) {
     return nil
 }
 // GetTrustType gets the trustType property value. Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.
+// returns a *string when successful
 func (m *Device) GetTrustType()(*string) {
     val, err := m.GetBackingStore().Get("trustType")
     if err != nil {
@@ -785,6 +836,12 @@ func (m *Device) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     }
     {
         err = writer.WriteTimeValue("onPremisesLastSyncDateTime", m.GetOnPremisesLastSyncDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("onPremisesSecurityIdentifier", m.GetOnPremisesSecurityIdentifier())
         if err != nil {
             return err
         }
@@ -994,6 +1051,13 @@ func (m *Device) SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe
         panic(err)
     }
 }
+// SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. The onPremisesSecurityIdentifier property
+func (m *Device) SetOnPremisesSecurityIdentifier(value *string)() {
+    err := m.GetBackingStore().Set("onPremisesSecurityIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
 func (m *Device) SetOnPremisesSyncEnabled(value *bool)() {
     err := m.GetBackingStore().Set("onPremisesSyncEnabled", value)
@@ -1071,7 +1135,6 @@ func (m *Device) SetTrustType(value *string)() {
         panic(err)
     }
 }
-// Deviceable 
 type Deviceable interface {
     DirectoryObjectable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -1092,6 +1155,7 @@ type Deviceable interface {
     GetMdmAppId()(*string)
     GetMemberOf()([]DirectoryObjectable)
     GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOnPremisesSecurityIdentifier()(*string)
     GetOnPremisesSyncEnabled()(*bool)
     GetOperatingSystem()(*string)
     GetOperatingSystemVersion()(*string)
@@ -1120,6 +1184,7 @@ type Deviceable interface {
     SetMdmAppId(value *string)()
     SetMemberOf(value []DirectoryObjectable)()
     SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOnPremisesSecurityIdentifier(value *string)()
     SetOnPremisesSyncEnabled(value *bool)()
     SetOperatingSystem(value *string)()
     SetOperatingSystemVersion(value *string)()

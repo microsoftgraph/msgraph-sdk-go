@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EventMessageResponse 
 type EventMessageResponse struct {
     EventMessage
 }
-// NewEventMessageResponse instantiates a new eventMessageResponse and sets the default values.
+// NewEventMessageResponse instantiates a new EventMessageResponse and sets the default values.
 func NewEventMessageResponse()(*EventMessageResponse) {
     m := &EventMessageResponse{
         EventMessage: *NewEventMessage(),
@@ -18,10 +17,12 @@ func NewEventMessageResponse()(*EventMessageResponse) {
     return m
 }
 // CreateEventMessageResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEventMessageResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEventMessageResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EventMessageResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EventMessage.GetFieldDeserializers()
     res["proposedNewTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +48,7 @@ func (m *EventMessageResponse) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetProposedNewTime gets the proposedNewTime property value. The proposedNewTime property
+// returns a TimeSlotable when successful
 func (m *EventMessageResponse) GetProposedNewTime()(TimeSlotable) {
     val, err := m.GetBackingStore().Get("proposedNewTime")
     if err != nil {
@@ -58,6 +60,7 @@ func (m *EventMessageResponse) GetProposedNewTime()(TimeSlotable) {
     return nil
 }
 // GetResponseType gets the responseType property value. The responseType property
+// returns a *ResponseType when successful
 func (m *EventMessageResponse) GetResponseType()(*ResponseType) {
     val, err := m.GetBackingStore().Get("responseType")
     if err != nil {
@@ -103,7 +106,6 @@ func (m *EventMessageResponse) SetResponseType(value *ResponseType)() {
         panic(err)
     }
 }
-// EventMessageResponseable 
 type EventMessageResponseable interface {
     EventMessageable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

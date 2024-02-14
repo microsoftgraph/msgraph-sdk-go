@@ -5,11 +5,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// UnifiedGroupSource 
 type UnifiedGroupSource struct {
     DataSource
 }
-// NewUnifiedGroupSource instantiates a new unifiedGroupSource and sets the default values.
+// NewUnifiedGroupSource instantiates a new UnifiedGroupSource and sets the default values.
 func NewUnifiedGroupSource()(*UnifiedGroupSource) {
     m := &UnifiedGroupSource{
         DataSource: *NewDataSource(),
@@ -19,10 +18,12 @@ func NewUnifiedGroupSource()(*UnifiedGroupSource) {
     return m
 }
 // CreateUnifiedGroupSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnifiedGroupSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedGroupSource(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnifiedGroupSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DataSource.GetFieldDeserializers()
     res["group"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -48,6 +49,7 @@ func (m *UnifiedGroupSource) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetGroup gets the group property value. The group property
+// returns a Groupable when successful
 func (m *UnifiedGroupSource) GetGroup()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable) {
     val, err := m.GetBackingStore().Get("group")
     if err != nil {
@@ -59,6 +61,7 @@ func (m *UnifiedGroupSource) GetGroup()(iadcd81124412c61e647227ecfc4449d8bba17de
     return nil
 }
 // GetIncludedSources gets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
+// returns a *SourceType when successful
 func (m *UnifiedGroupSource) GetIncludedSources()(*SourceType) {
     val, err := m.GetBackingStore().Get("includedSources")
     if err != nil {
@@ -104,7 +107,6 @@ func (m *UnifiedGroupSource) SetIncludedSources(value *SourceType)() {
         panic(err)
     }
 }
-// UnifiedGroupSourceable 
 type UnifiedGroupSourceable interface {
     DataSourceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

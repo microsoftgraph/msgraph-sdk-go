@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServiceHealth 
 type ServiceHealth struct {
     Entity
 }
-// NewServiceHealth instantiates a new serviceHealth and sets the default values.
+// NewServiceHealth instantiates a new ServiceHealth and sets the default values.
 func NewServiceHealth()(*ServiceHealth) {
     m := &ServiceHealth{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewServiceHealth()(*ServiceHealth) {
     return m
 }
 // CreateServiceHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateServiceHealthFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServiceHealth(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ServiceHealth) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["issues"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -61,6 +62,7 @@ func (m *ServiceHealth) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetIssues gets the issues property value. A collection of issues that happened on the service, with detailed information for each issue.
+// returns a []ServiceHealthIssueable when successful
 func (m *ServiceHealth) GetIssues()([]ServiceHealthIssueable) {
     val, err := m.GetBackingStore().Get("issues")
     if err != nil {
@@ -72,6 +74,7 @@ func (m *ServiceHealth) GetIssues()([]ServiceHealthIssueable) {
     return nil
 }
 // GetService gets the service property value. The service name. Use the list healthOverviews operation to get exact string names for services subscribed by the tenant.
+// returns a *string when successful
 func (m *ServiceHealth) GetService()(*string) {
     val, err := m.GetBackingStore().Get("service")
     if err != nil {
@@ -83,6 +86,7 @@ func (m *ServiceHealth) GetService()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *ServiceHealthStatus when successful
 func (m *ServiceHealth) GetStatus()(*ServiceHealthStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -147,7 +151,6 @@ func (m *ServiceHealth) SetStatus(value *ServiceHealthStatus)() {
         panic(err)
     }
 }
-// ServiceHealthable 
 type ServiceHealthable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

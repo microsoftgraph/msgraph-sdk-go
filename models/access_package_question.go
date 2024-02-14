@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageQuestion 
 type AccessPackageQuestion struct {
     Entity
 }
-// NewAccessPackageQuestion instantiates a new accessPackageQuestion and sets the default values.
+// NewAccessPackageQuestion instantiates a new AccessPackageQuestion and sets the default values.
 func NewAccessPackageQuestion()(*AccessPackageQuestion) {
     m := &AccessPackageQuestion{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewAccessPackageQuestion()(*AccessPackageQuestion) {
     return m
 }
 // CreateAccessPackageQuestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessPackageQuestionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +40,7 @@ func CreateAccessPackageQuestionFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewAccessPackageQuestion(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessPackageQuestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["isAnswerEditable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -101,6 +102,7 @@ func (m *AccessPackageQuestion) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetIsAnswerEditable gets the isAnswerEditable property value. Specifies whether the requestor is allowed to edit answers to questions for an assignment by posting an update to accessPackageAssignmentRequest.
+// returns a *bool when successful
 func (m *AccessPackageQuestion) GetIsAnswerEditable()(*bool) {
     val, err := m.GetBackingStore().Get("isAnswerEditable")
     if err != nil {
@@ -112,6 +114,7 @@ func (m *AccessPackageQuestion) GetIsAnswerEditable()(*bool) {
     return nil
 }
 // GetIsRequired gets the isRequired property value. Whether the requestor is required to supply an answer or not.
+// returns a *bool when successful
 func (m *AccessPackageQuestion) GetIsRequired()(*bool) {
     val, err := m.GetBackingStore().Get("isRequired")
     if err != nil {
@@ -123,6 +126,7 @@ func (m *AccessPackageQuestion) GetIsRequired()(*bool) {
     return nil
 }
 // GetLocalizations gets the localizations property value. The text of the question represented in a format for a specific locale.
+// returns a []AccessPackageLocalizedTextable when successful
 func (m *AccessPackageQuestion) GetLocalizations()([]AccessPackageLocalizedTextable) {
     val, err := m.GetBackingStore().Get("localizations")
     if err != nil {
@@ -134,6 +138,7 @@ func (m *AccessPackageQuestion) GetLocalizations()([]AccessPackageLocalizedTexta
     return nil
 }
 // GetSequence gets the sequence property value. Relative position of this question when displaying a list of questions to the requestor.
+// returns a *int32 when successful
 func (m *AccessPackageQuestion) GetSequence()(*int32) {
     val, err := m.GetBackingStore().Get("sequence")
     if err != nil {
@@ -145,6 +150,7 @@ func (m *AccessPackageQuestion) GetSequence()(*int32) {
     return nil
 }
 // GetText gets the text property value. The text of the question to show to the requestor.
+// returns a *string when successful
 func (m *AccessPackageQuestion) GetText()(*string) {
     val, err := m.GetBackingStore().Get("text")
     if err != nil {
@@ -234,7 +240,6 @@ func (m *AccessPackageQuestion) SetText(value *string)() {
         panic(err)
     }
 }
-// AccessPackageQuestionable 
 type AccessPackageQuestionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

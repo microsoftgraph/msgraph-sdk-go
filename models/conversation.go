@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Conversation 
 type Conversation struct {
     Entity
 }
-// NewConversation instantiates a new conversation and sets the default values.
+// NewConversation instantiates a new Conversation and sets the default values.
 func NewConversation()(*Conversation) {
     m := &Conversation{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewConversation()(*Conversation) {
     return m
 }
 // CreateConversationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConversationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConversation(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Conversation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["hasAttachments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -98,6 +99,7 @@ func (m *Conversation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetHasAttachments gets the hasAttachments property value. Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.
+// returns a *bool when successful
 func (m *Conversation) GetHasAttachments()(*bool) {
     val, err := m.GetBackingStore().Get("hasAttachments")
     if err != nil {
@@ -109,6 +111,7 @@ func (m *Conversation) GetHasAttachments()(*bool) {
     return nil
 }
 // GetLastDeliveredDateTime gets the lastDeliveredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *Conversation) GetLastDeliveredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastDeliveredDateTime")
     if err != nil {
@@ -120,6 +123,7 @@ func (m *Conversation) GetLastDeliveredDateTime()(*i336074805fc853987abe6f7fe3ad
     return nil
 }
 // GetPreview gets the preview property value. A short summary from the body of the latest post in this conversation. Supports $filter (eq, ne, le, ge).
+// returns a *string when successful
 func (m *Conversation) GetPreview()(*string) {
     val, err := m.GetBackingStore().Get("preview")
     if err != nil {
@@ -131,6 +135,7 @@ func (m *Conversation) GetPreview()(*string) {
     return nil
 }
 // GetThreads gets the threads property value. A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+// returns a []ConversationThreadable when successful
 func (m *Conversation) GetThreads()([]ConversationThreadable) {
     val, err := m.GetBackingStore().Get("threads")
     if err != nil {
@@ -142,6 +147,7 @@ func (m *Conversation) GetThreads()([]ConversationThreadable) {
     return nil
 }
 // GetTopic gets the topic property value. The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
+// returns a *string when successful
 func (m *Conversation) GetTopic()(*string) {
     val, err := m.GetBackingStore().Get("topic")
     if err != nil {
@@ -153,6 +159,7 @@ func (m *Conversation) GetTopic()(*string) {
     return nil
 }
 // GetUniqueSenders gets the uniqueSenders property value. All the users that sent a message to this Conversation.
+// returns a []string when successful
 func (m *Conversation) GetUniqueSenders()([]string) {
     val, err := m.GetBackingStore().Get("uniqueSenders")
     if err != nil {
@@ -255,7 +262,6 @@ func (m *Conversation) SetUniqueSenders(value []string)() {
         panic(err)
     }
 }
-// Conversationable 
 type Conversationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

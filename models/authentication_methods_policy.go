@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationMethodsPolicy 
 type AuthenticationMethodsPolicy struct {
     Entity
 }
-// NewAuthenticationMethodsPolicy instantiates a new authenticationMethodsPolicy and sets the default values.
+// NewAuthenticationMethodsPolicy instantiates a new AuthenticationMethodsPolicy and sets the default values.
 func NewAuthenticationMethodsPolicy()(*AuthenticationMethodsPolicy) {
     m := &AuthenticationMethodsPolicy{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewAuthenticationMethodsPolicy()(*AuthenticationMethodsPolicy) {
     return m
 }
 // CreateAuthenticationMethodsPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthenticationMethodsPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationMethodsPolicy(), nil
 }
 // GetAuthenticationMethodConfigurations gets the authenticationMethodConfigurations property value. Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+// returns a []AuthenticationMethodConfigurationable when successful
 func (m *AuthenticationMethodsPolicy) GetAuthenticationMethodConfigurations()([]AuthenticationMethodConfigurationable) {
     val, err := m.GetBackingStore().Get("authenticationMethodConfigurations")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *AuthenticationMethodsPolicy) GetAuthenticationMethodConfigurations()([]
     return nil
 }
 // GetDescription gets the description property value. A description of the policy. Read-only.
+// returns a *string when successful
 func (m *AuthenticationMethodsPolicy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *AuthenticationMethodsPolicy) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of the policy. Read-only.
+// returns a *string when successful
 func (m *AuthenticationMethodsPolicy) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *AuthenticationMethodsPolicy) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["authenticationMethodConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -145,6 +149,7 @@ func (m *AuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time of the last update to the policy. Read-only.
+// returns a *Time when successful
 func (m *AuthenticationMethodsPolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -156,6 +161,7 @@ func (m *AuthenticationMethodsPolicy) GetLastModifiedDateTime()(*i336074805fc853
     return nil
 }
 // GetPolicyMigrationState gets the policyMigrationState property value. The state of migration of the authentication methods policy from the legacy multifactor authentication and self-service password reset (SSPR) policies. The possible values are: premigration - means the authentication methods policy is used for authentication only, legacy policies are respected. migrationInProgress - means the authentication methods policy is used for both authentication and SSPR, legacy policies are respected. migrationComplete - means the authentication methods policy is used for authentication and SSPR, legacy policies are ignored. unknownFutureValue - Evolvable enumeration sentinel value. Do not use.
+// returns a *AuthenticationMethodsPolicyMigrationState when successful
 func (m *AuthenticationMethodsPolicy) GetPolicyMigrationState()(*AuthenticationMethodsPolicyMigrationState) {
     val, err := m.GetBackingStore().Get("policyMigrationState")
     if err != nil {
@@ -167,6 +173,7 @@ func (m *AuthenticationMethodsPolicy) GetPolicyMigrationState()(*AuthenticationM
     return nil
 }
 // GetPolicyVersion gets the policyVersion property value. The version of the policy in use. Read-only.
+// returns a *string when successful
 func (m *AuthenticationMethodsPolicy) GetPolicyVersion()(*string) {
     val, err := m.GetBackingStore().Get("policyVersion")
     if err != nil {
@@ -178,6 +185,7 @@ func (m *AuthenticationMethodsPolicy) GetPolicyVersion()(*string) {
     return nil
 }
 // GetReconfirmationInDays gets the reconfirmationInDays property value. The reconfirmationInDays property
+// returns a *int32 when successful
 func (m *AuthenticationMethodsPolicy) GetReconfirmationInDays()(*int32) {
     val, err := m.GetBackingStore().Get("reconfirmationInDays")
     if err != nil {
@@ -189,6 +197,7 @@ func (m *AuthenticationMethodsPolicy) GetReconfirmationInDays()(*int32) {
     return nil
 }
 // GetRegistrationEnforcement gets the registrationEnforcement property value. Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.
+// returns a RegistrationEnforcementable when successful
 func (m *AuthenticationMethodsPolicy) GetRegistrationEnforcement()(RegistrationEnforcementable) {
     val, err := m.GetBackingStore().Get("registrationEnforcement")
     if err != nil {
@@ -318,7 +327,6 @@ func (m *AuthenticationMethodsPolicy) SetRegistrationEnforcement(value Registrat
         panic(err)
     }
 }
-// AuthenticationMethodsPolicyable 
 type AuthenticationMethodsPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

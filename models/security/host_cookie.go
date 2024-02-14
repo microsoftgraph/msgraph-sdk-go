@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// HostCookie 
 type HostCookie struct {
     Artifact
 }
-// NewHostCookie instantiates a new hostCookie and sets the default values.
+// NewHostCookie instantiates a new HostCookie and sets the default values.
 func NewHostCookie()(*HostCookie) {
     m := &HostCookie{
         Artifact: *NewArtifact(),
@@ -19,10 +18,12 @@ func NewHostCookie()(*HostCookie) {
     return m
 }
 // CreateHostCookieFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateHostCookieFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHostCookie(), nil
 }
 // GetDomain gets the domain property value. The URI for which the cookie is valid.
+// returns a *string when successful
 func (m *HostCookie) GetDomain()(*string) {
     val, err := m.GetBackingStore().Get("domain")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *HostCookie) GetDomain()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *HostCookie) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Artifact.GetFieldDeserializers()
     res["domain"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -89,6 +91,7 @@ func (m *HostCookie) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetFirstSeenDateTime gets the firstSeenDateTime property value. The first date and time when this hostCookie was observed by Microsoft Defender Threat Intelligence. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *HostCookie) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstSeenDateTime")
     if err != nil {
@@ -100,6 +103,7 @@ func (m *HostCookie) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     return nil
 }
 // GetHost gets the host property value. The host property
+// returns a Hostable when successful
 func (m *HostCookie) GetHost()(Hostable) {
     val, err := m.GetBackingStore().Get("host")
     if err != nil {
@@ -111,6 +115,7 @@ func (m *HostCookie) GetHost()(Hostable) {
     return nil
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. The most recent date and time when this hostCookie was observed by Microsoft Defender Threat Intelligence. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *HostCookie) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSeenDateTime")
     if err != nil {
@@ -122,6 +127,7 @@ func (m *HostCookie) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     return nil
 }
 // GetName gets the name property value. The name of the cookie, for example, JSESSIONID or SEARCH_NAMESITE.
+// returns a *string when successful
 func (m *HostCookie) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -205,7 +211,6 @@ func (m *HostCookie) SetName(value *string)() {
         panic(err)
     }
 }
-// HostCookieable 
 type HostCookieable interface {
     Artifactable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

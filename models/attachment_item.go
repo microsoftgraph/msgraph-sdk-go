@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AttachmentItem 
 type AttachmentItem struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAttachmentItem instantiates a new attachmentItem and sets the default values.
+// NewAttachmentItem instantiates a new AttachmentItem and sets the default values.
 func NewAttachmentItem()(*AttachmentItem) {
     m := &AttachmentItem{
     }
@@ -19,10 +18,12 @@ func NewAttachmentItem()(*AttachmentItem) {
     return m
 }
 // CreateAttachmentItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAttachmentItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAttachmentItem(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AttachmentItem) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *AttachmentItem) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAttachmentType gets the attachmentType property value. The type of attachment. Possible values are: file, item, reference. Required.
+// returns a *AttachmentType when successful
 func (m *AttachmentItem) GetAttachmentType()(*AttachmentType) {
     val, err := m.GetBackingStore().Get("attachmentType")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *AttachmentItem) GetAttachmentType()(*AttachmentType) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AttachmentItem) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetContentId gets the contentId property value. The CID or Content-Id of the attachment for referencing for the in-line attachments using the <img src='cid:contentId'> tag in HTML messages. Optional.
+// returns a *string when successful
 func (m *AttachmentItem) GetContentId()(*string) {
     val, err := m.GetBackingStore().Get("contentId")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *AttachmentItem) GetContentId()(*string) {
     return nil
 }
 // GetContentType gets the contentType property value. The nature of the data in the attachment. Optional.
+// returns a *string when successful
 func (m *AttachmentItem) GetContentType()(*string) {
     val, err := m.GetBackingStore().Get("contentType")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *AttachmentItem) GetContentType()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AttachmentItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["attachmentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -147,6 +153,7 @@ func (m *AttachmentItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetIsInline gets the isInline property value. true if the attachment is an inline attachment; otherwise, false. Optional.
+// returns a *bool when successful
 func (m *AttachmentItem) GetIsInline()(*bool) {
     val, err := m.GetBackingStore().Get("isInline")
     if err != nil {
@@ -158,6 +165,7 @@ func (m *AttachmentItem) GetIsInline()(*bool) {
     return nil
 }
 // GetName gets the name property value. The display name of the attachment. This can be a descriptive string and doesn't have to be the actual file name. Required.
+// returns a *string when successful
 func (m *AttachmentItem) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -169,6 +177,7 @@ func (m *AttachmentItem) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AttachmentItem) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -180,6 +189,7 @@ func (m *AttachmentItem) GetOdataType()(*string) {
     return nil
 }
 // GetSize gets the size property value. The length of the attachment in bytes. Required.
+// returns a *int64 when successful
 func (m *AttachmentItem) GetSize()(*int64) {
     val, err := m.GetBackingStore().Get("size")
     if err != nil {
@@ -303,7 +313,6 @@ func (m *AttachmentItem) SetSize(value *int64)() {
         panic(err)
     }
 }
-// AttachmentItemable 
 type AttachmentItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

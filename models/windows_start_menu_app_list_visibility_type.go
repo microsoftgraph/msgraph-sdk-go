@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Type of start menu app list visibility.
@@ -8,20 +9,22 @@ type WindowsStartMenuAppListVisibilityType int
 
 const (
     // User defined. Default value.
-    USERDEFINED_WINDOWSSTARTMENUAPPLISTVISIBILITYTYPE WindowsStartMenuAppListVisibilityType = iota
+    USERDEFINED_WINDOWSSTARTMENUAPPLISTVISIBILITYTYPE = 1
     // Collapse the app list on the start menu.
-    COLLAPSE_WINDOWSSTARTMENUAPPLISTVISIBILITYTYPE
+    COLLAPSE_WINDOWSSTARTMENUAPPLISTVISIBILITYTYPE = 2
     // Removes the app list entirely from the start menu.
-    REMOVE_WINDOWSSTARTMENUAPPLISTVISIBILITYTYPE
+    REMOVE_WINDOWSSTARTMENUAPPLISTVISIBILITYTYPE = 4
     // Disables the corresponding toggle (Collapse or Remove) in the Settings app.
-    DISABLESETTINGSAPP_WINDOWSSTARTMENUAPPLISTVISIBILITYTYPE
+    DISABLESETTINGSAPP_WINDOWSSTARTMENUAPPLISTVISIBILITYTYPE = 8
 )
 
 func (i WindowsStartMenuAppListVisibilityType) String() string {
     var values []string
-    for p := WindowsStartMenuAppListVisibilityType(1); p <= DISABLESETTINGSAPP_WINDOWSSTARTMENUAPPLISTVISIBILITYTYPE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"userDefined", "collapse", "remove", "disableSettingsApp"}[p])
+    options := []string{"userDefined", "collapse", "remove", "disableSettingsApp"}
+    for p := 0; p < 4; p++ {
+        mantis := WindowsStartMenuAppListVisibilityType(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

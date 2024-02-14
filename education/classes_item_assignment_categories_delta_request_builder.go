@@ -14,6 +14,8 @@ type ClassesItemAssignmentCategoriesDeltaRequestBuilder struct {
 type ClassesItemAssignmentCategoriesDeltaRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -36,29 +38,30 @@ type ClassesItemAssignmentCategoriesDeltaRequestBuilderGetRequestConfiguration s
     // Request query parameters
     QueryParameters *ClassesItemAssignmentCategoriesDeltaRequestBuilderGetQueryParameters
 }
-// NewClassesItemAssignmentCategoriesDeltaRequestBuilderInternal instantiates a new DeltaRequestBuilder and sets the default values.
+// NewClassesItemAssignmentCategoriesDeltaRequestBuilderInternal instantiates a new ClassesItemAssignmentCategoriesDeltaRequestBuilder and sets the default values.
 func NewClassesItemAssignmentCategoriesDeltaRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesItemAssignmentCategoriesDeltaRequestBuilder) {
     m := &ClassesItemAssignmentCategoriesDeltaRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/assignmentCategories/delta(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/assignmentCategories/delta(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewClassesItemAssignmentCategoriesDeltaRequestBuilder instantiates a new DeltaRequestBuilder and sets the default values.
+// NewClassesItemAssignmentCategoriesDeltaRequestBuilder instantiates a new ClassesItemAssignmentCategoriesDeltaRequestBuilder and sets the default values.
 func NewClassesItemAssignmentCategoriesDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesItemAssignmentCategoriesDeltaRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemAssignmentCategoriesDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function delta
-// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ClassesItemAssignmentCategoriesDeltaResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ClassesItemAssignmentCategoriesDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemAssignmentCategoriesDeltaRequestBuilderGetRequestConfiguration)(ClassesItemAssignmentCategoriesDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateClassesItemAssignmentCategoriesDeltaResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -70,14 +73,15 @@ func (m *ClassesItemAssignmentCategoriesDeltaRequestBuilder) Get(ctx context.Con
     return res.(ClassesItemAssignmentCategoriesDeltaResponseable), nil
 }
 // GetAsDeltaGetResponse invoke function delta
+// returns a ClassesItemAssignmentCategoriesDeltaGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ClassesItemAssignmentCategoriesDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ClassesItemAssignmentCategoriesDeltaRequestBuilderGetRequestConfiguration)(ClassesItemAssignmentCategoriesDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateClassesItemAssignmentCategoriesDeltaGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -89,6 +93,7 @@ func (m *ClassesItemAssignmentCategoriesDeltaRequestBuilder) GetAsDeltaGetRespon
     return res.(ClassesItemAssignmentCategoriesDeltaGetResponseable), nil
 }
 // ToGetRequestInformation invoke function delta
+// returns a *RequestInformation when successful
 func (m *ClassesItemAssignmentCategoriesDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentCategoriesDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -102,6 +107,7 @@ func (m *ClassesItemAssignmentCategoriesDeltaRequestBuilder) ToGetRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ClassesItemAssignmentCategoriesDeltaRequestBuilder when successful
 func (m *ClassesItemAssignmentCategoriesDeltaRequestBuilder) WithUrl(rawUrl string)(*ClassesItemAssignmentCategoriesDeltaRequestBuilder) {
     return NewClassesItemAssignmentCategoriesDeltaRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

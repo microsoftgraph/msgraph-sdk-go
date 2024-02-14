@@ -9,7 +9,7 @@ import (
 type DeviceEnrollmentConfiguration struct {
     Entity
 }
-// NewDeviceEnrollmentConfiguration instantiates a new deviceEnrollmentConfiguration and sets the default values.
+// NewDeviceEnrollmentConfiguration instantiates a new DeviceEnrollmentConfiguration and sets the default values.
 func NewDeviceEnrollmentConfiguration()(*DeviceEnrollmentConfiguration) {
     m := &DeviceEnrollmentConfiguration{
         Entity: *NewEntity(),
@@ -17,6 +17,7 @@ func NewDeviceEnrollmentConfiguration()(*DeviceEnrollmentConfiguration) {
     return m
 }
 // CreateDeviceEnrollmentConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceEnrollmentConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -43,6 +44,7 @@ func CreateDeviceEnrollmentConfigurationFromDiscriminatorValue(parseNode i878a80
     return NewDeviceEnrollmentConfiguration(), nil
 }
 // GetAssignments gets the assignments property value. The list of group assignments for the device configuration profile
+// returns a []EnrollmentConfigurationAssignmentable when successful
 func (m *DeviceEnrollmentConfiguration) GetAssignments()([]EnrollmentConfigurationAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -54,6 +56,7 @@ func (m *DeviceEnrollmentConfiguration) GetAssignments()([]EnrollmentConfigurati
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Created date time in UTC of the device enrollment configuration
+// returns a *Time when successful
 func (m *DeviceEnrollmentConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -65,6 +68,7 @@ func (m *DeviceEnrollmentConfiguration) GetCreatedDateTime()(*i336074805fc853987
     return nil
 }
 // GetDescription gets the description property value. The description of the device enrollment configuration
+// returns a *string when successful
 func (m *DeviceEnrollmentConfiguration) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -76,6 +80,7 @@ func (m *DeviceEnrollmentConfiguration) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the device enrollment configuration
+// returns a *string when successful
 func (m *DeviceEnrollmentConfiguration) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -87,6 +92,7 @@ func (m *DeviceEnrollmentConfiguration) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceEnrollmentConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -168,6 +174,7 @@ func (m *DeviceEnrollmentConfiguration) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified date time in UTC of the device enrollment configuration
+// returns a *Time when successful
 func (m *DeviceEnrollmentConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -179,6 +186,7 @@ func (m *DeviceEnrollmentConfiguration) GetLastModifiedDateTime()(*i336074805fc8
     return nil
 }
 // GetPriority gets the priority property value. Priority is used when a user exists in multiple groups that are assigned enrollment configuration. Users are subject only to the configuration with the lowest priority value.
+// returns a *int32 when successful
 func (m *DeviceEnrollmentConfiguration) GetPriority()(*int32) {
     val, err := m.GetBackingStore().Get("priority")
     if err != nil {
@@ -190,6 +198,7 @@ func (m *DeviceEnrollmentConfiguration) GetPriority()(*int32) {
     return nil
 }
 // GetVersion gets the version property value. The version of the device enrollment configuration
+// returns a *int32 when successful
 func (m *DeviceEnrollmentConfiguration) GetVersion()(*int32) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -305,7 +314,6 @@ func (m *DeviceEnrollmentConfiguration) SetVersion(value *int32)() {
         panic(err)
     }
 }
-// DeviceEnrollmentConfigurationable 
 type DeviceEnrollmentConfigurationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FeatureRolloutPolicyCollectionResponse 
 type FeatureRolloutPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewFeatureRolloutPolicyCollectionResponse instantiates a new featureRolloutPolicyCollectionResponse and sets the default values.
+// NewFeatureRolloutPolicyCollectionResponse instantiates a new FeatureRolloutPolicyCollectionResponse and sets the default values.
 func NewFeatureRolloutPolicyCollectionResponse()(*FeatureRolloutPolicyCollectionResponse) {
     m := &FeatureRolloutPolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewFeatureRolloutPolicyCollectionResponse()(*FeatureRolloutPolicyCollection
     return m
 }
 // CreateFeatureRolloutPolicyCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFeatureRolloutPolicyCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFeatureRolloutPolicyCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FeatureRolloutPolicyCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *FeatureRolloutPolicyCollectionResponse) GetFieldDeserializers()(map[str
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []FeatureRolloutPolicyable when successful
 func (m *FeatureRolloutPolicyCollectionResponse) GetValue()([]FeatureRolloutPolicyable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *FeatureRolloutPolicyCollectionResponse) SetValue(value []FeatureRollout
         panic(err)
     }
 }
-// FeatureRolloutPolicyCollectionResponseable 
 type FeatureRolloutPolicyCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

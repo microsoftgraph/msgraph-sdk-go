@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EventMessage 
 type EventMessage struct {
     Message
 }
-// NewEventMessage instantiates a new eventMessage and sets the default values.
+// NewEventMessage instantiates a new EventMessage and sets the default values.
 func NewEventMessage()(*EventMessage) {
     m := &EventMessage{
         Message: *NewMessage(),
@@ -18,6 +17,7 @@ func NewEventMessage()(*EventMessage) {
     return m
 }
 // CreateEventMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEventMessageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -42,6 +42,7 @@ func CreateEventMessageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewEventMessage(), nil
 }
 // GetEndDateTime gets the endDateTime property value. The endDateTime property
+// returns a DateTimeTimeZoneable when successful
 func (m *EventMessage) GetEndDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -53,6 +54,7 @@ func (m *EventMessage) GetEndDateTime()(DateTimeTimeZoneable) {
     return nil
 }
 // GetEvent gets the event property value. The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property.  Read-only.
+// returns a Eventable when successful
 func (m *EventMessage) GetEvent()(Eventable) {
     val, err := m.GetBackingStore().Get("event")
     if err != nil {
@@ -64,6 +66,7 @@ func (m *EventMessage) GetEvent()(Eventable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EventMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Message.GetFieldDeserializers()
     res["endDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -169,6 +172,7 @@ func (m *EventMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetIsAllDay gets the isAllDay property value. The isAllDay property
+// returns a *bool when successful
 func (m *EventMessage) GetIsAllDay()(*bool) {
     val, err := m.GetBackingStore().Get("isAllDay")
     if err != nil {
@@ -180,6 +184,7 @@ func (m *EventMessage) GetIsAllDay()(*bool) {
     return nil
 }
 // GetIsDelegated gets the isDelegated property value. The isDelegated property
+// returns a *bool when successful
 func (m *EventMessage) GetIsDelegated()(*bool) {
     val, err := m.GetBackingStore().Get("isDelegated")
     if err != nil {
@@ -191,6 +196,7 @@ func (m *EventMessage) GetIsDelegated()(*bool) {
     return nil
 }
 // GetIsOutOfDate gets the isOutOfDate property value. The isOutOfDate property
+// returns a *bool when successful
 func (m *EventMessage) GetIsOutOfDate()(*bool) {
     val, err := m.GetBackingStore().Get("isOutOfDate")
     if err != nil {
@@ -202,6 +208,7 @@ func (m *EventMessage) GetIsOutOfDate()(*bool) {
     return nil
 }
 // GetLocation gets the location property value. The location property
+// returns a Locationable when successful
 func (m *EventMessage) GetLocation()(Locationable) {
     val, err := m.GetBackingStore().Get("location")
     if err != nil {
@@ -213,6 +220,7 @@ func (m *EventMessage) GetLocation()(Locationable) {
     return nil
 }
 // GetMeetingMessageType gets the meetingMessageType property value. The meetingMessageType property
+// returns a *MeetingMessageType when successful
 func (m *EventMessage) GetMeetingMessageType()(*MeetingMessageType) {
     val, err := m.GetBackingStore().Get("meetingMessageType")
     if err != nil {
@@ -224,6 +232,7 @@ func (m *EventMessage) GetMeetingMessageType()(*MeetingMessageType) {
     return nil
 }
 // GetRecurrence gets the recurrence property value. The recurrence property
+// returns a PatternedRecurrenceable when successful
 func (m *EventMessage) GetRecurrence()(PatternedRecurrenceable) {
     val, err := m.GetBackingStore().Get("recurrence")
     if err != nil {
@@ -235,6 +244,7 @@ func (m *EventMessage) GetRecurrence()(PatternedRecurrenceable) {
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. The startDateTime property
+// returns a DateTimeTimeZoneable when successful
 func (m *EventMessage) GetStartDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -246,6 +256,7 @@ func (m *EventMessage) GetStartDateTime()(DateTimeTimeZoneable) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *EventType when successful
 func (m *EventMessage) GetTypeEscaped()(*EventType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -396,7 +407,6 @@ func (m *EventMessage) SetTypeEscaped(value *EventType)() {
         panic(err)
     }
 }
-// EventMessageable 
 type EventMessageable interface {
     Messageable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

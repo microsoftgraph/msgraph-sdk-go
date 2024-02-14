@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// FileDetails 
 type FileDetails struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewFileDetails instantiates a new fileDetails and sets the default values.
+// NewFileDetails instantiates a new FileDetails and sets the default values.
 func NewFileDetails()(*FileDetails) {
     m := &FileDetails{
     }
@@ -19,10 +18,12 @@ func NewFileDetails()(*FileDetails) {
     return m
 }
 // CreateFileDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFileDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFileDetails(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *FileDetails) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *FileDetails) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *FileDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FileDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["fileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -134,6 +137,7 @@ func (m *FileDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetFileName gets the fileName property value. The name of the file.
+// returns a *string when successful
 func (m *FileDetails) GetFileName()(*string) {
     val, err := m.GetBackingStore().Get("fileName")
     if err != nil {
@@ -145,6 +149,7 @@ func (m *FileDetails) GetFileName()(*string) {
     return nil
 }
 // GetFilePath gets the filePath property value. The file path (location) of the file instance.
+// returns a *string when successful
 func (m *FileDetails) GetFilePath()(*string) {
     val, err := m.GetBackingStore().Get("filePath")
     if err != nil {
@@ -156,6 +161,7 @@ func (m *FileDetails) GetFilePath()(*string) {
     return nil
 }
 // GetFilePublisher gets the filePublisher property value. The publisher of the file.
+// returns a *string when successful
 func (m *FileDetails) GetFilePublisher()(*string) {
     val, err := m.GetBackingStore().Get("filePublisher")
     if err != nil {
@@ -167,6 +173,7 @@ func (m *FileDetails) GetFilePublisher()(*string) {
     return nil
 }
 // GetFileSize gets the fileSize property value. The size of the file in bytes.
+// returns a *int64 when successful
 func (m *FileDetails) GetFileSize()(*int64) {
     val, err := m.GetBackingStore().Get("fileSize")
     if err != nil {
@@ -178,6 +185,7 @@ func (m *FileDetails) GetFileSize()(*int64) {
     return nil
 }
 // GetIssuer gets the issuer property value. The certificate authority (CA) that issued the certificate.
+// returns a *string when successful
 func (m *FileDetails) GetIssuer()(*string) {
     val, err := m.GetBackingStore().Get("issuer")
     if err != nil {
@@ -189,6 +197,7 @@ func (m *FileDetails) GetIssuer()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *FileDetails) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -200,6 +209,7 @@ func (m *FileDetails) GetOdataType()(*string) {
     return nil
 }
 // GetSha1 gets the sha1 property value. The Sha1 cryptographic hash of the file content.
+// returns a *string when successful
 func (m *FileDetails) GetSha1()(*string) {
     val, err := m.GetBackingStore().Get("sha1")
     if err != nil {
@@ -211,6 +221,7 @@ func (m *FileDetails) GetSha1()(*string) {
     return nil
 }
 // GetSha256 gets the sha256 property value. The Sha256 cryptographic hash of the file content.
+// returns a *string when successful
 func (m *FileDetails) GetSha256()(*string) {
     val, err := m.GetBackingStore().Get("sha256")
     if err != nil {
@@ -222,6 +233,7 @@ func (m *FileDetails) GetSha256()(*string) {
     return nil
 }
 // GetSigner gets the signer property value. The signer of the signed file.
+// returns a *string when successful
 func (m *FileDetails) GetSigner()(*string) {
     val, err := m.GetBackingStore().Get("signer")
     if err != nil {
@@ -370,7 +382,6 @@ func (m *FileDetails) SetSigner(value *string)() {
         panic(err)
     }
 }
-// FileDetailsable 
 type FileDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -39,28 +39,28 @@ type DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderPatchReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewDeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderInternal instantiates a new DeviceLocalCredentialInfoItemRequestBuilder and sets the default values.
+// NewDeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderInternal instantiates a new DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder and sets the default values.
 func NewDeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder) {
     m := &DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/deviceLocalCredentials/{deviceLocalCredentialInfo%2Did}{?%24select}", pathParameters),
     }
     return m
 }
-// NewDeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder instantiates a new DeviceLocalCredentialInfoItemRequestBuilder and sets the default values.
+// NewDeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder instantiates a new DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder and sets the default values.
 func NewDeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property deviceLocalCredentials for directory
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -69,6 +69,8 @@ func (m *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder) Dele
     return nil
 }
 // Get retrieve the properties of a deviceLocalCredentialInfo for a specified device object. 
+// returns a DeviceLocalCredentialInfoable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/devicelocalcredentialinfo-get?view=graph-rest-1.0
@@ -78,8 +80,7 @@ func (m *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder) Get(
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDeviceLocalCredentialInfoFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -91,14 +92,15 @@ func (m *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder) Get(
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceLocalCredentialInfoable), nil
 }
 // Patch update the navigation property deviceLocalCredentials in directory
+// returns a DeviceLocalCredentialInfoable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceLocalCredentialInfoable, requestConfiguration *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceLocalCredentialInfoable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDeviceLocalCredentialInfoFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -110,8 +112,9 @@ func (m *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder) Patc
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceLocalCredentialInfoable), nil
 }
 // ToDeleteRequestInformation delete navigation property deviceLocalCredentials for directory
+// returns a *RequestInformation when successful
 func (m *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/directory/deviceLocalCredentials/{deviceLocalCredentialInfo%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -120,6 +123,7 @@ func (m *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder) ToDe
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve the properties of a deviceLocalCredentialInfo for a specified device object. 
+// returns a *RequestInformation when successful
 func (m *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -133,8 +137,9 @@ func (m *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder) ToGe
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property deviceLocalCredentials in directory
+// returns a *RequestInformation when successful
 func (m *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceLocalCredentialInfoable, requestConfiguration *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/directory/deviceLocalCredentials/{deviceLocalCredentialInfo%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -147,6 +152,7 @@ func (m *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder) ToPa
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder when successful
 func (m *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder) WithUrl(rawUrl string)(*DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder) {
     return NewDeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

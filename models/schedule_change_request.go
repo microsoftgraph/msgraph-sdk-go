@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ScheduleChangeRequest 
 type ScheduleChangeRequest struct {
     ChangeTrackedEntity
 }
-// NewScheduleChangeRequest instantiates a new scheduleChangeRequest and sets the default values.
+// NewScheduleChangeRequest instantiates a new ScheduleChangeRequest and sets the default values.
 func NewScheduleChangeRequest()(*ScheduleChangeRequest) {
     m := &ScheduleChangeRequest{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
@@ -19,6 +18,7 @@ func NewScheduleChangeRequest()(*ScheduleChangeRequest) {
     return m
 }
 // CreateScheduleChangeRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateScheduleChangeRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -47,6 +47,7 @@ func CreateScheduleChangeRequestFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewScheduleChangeRequest(), nil
 }
 // GetAssignedTo gets the assignedTo property value. The assignedTo property
+// returns a *ScheduleChangeRequestActor when successful
 func (m *ScheduleChangeRequest) GetAssignedTo()(*ScheduleChangeRequestActor) {
     val, err := m.GetBackingStore().Get("assignedTo")
     if err != nil {
@@ -58,6 +59,7 @@ func (m *ScheduleChangeRequest) GetAssignedTo()(*ScheduleChangeRequestActor) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ScheduleChangeRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ChangeTrackedEntity.GetFieldDeserializers()
     res["assignedTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -143,6 +145,7 @@ func (m *ScheduleChangeRequest) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetManagerActionDateTime gets the managerActionDateTime property value. The managerActionDateTime property
+// returns a *Time when successful
 func (m *ScheduleChangeRequest) GetManagerActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("managerActionDateTime")
     if err != nil {
@@ -154,6 +157,7 @@ func (m *ScheduleChangeRequest) GetManagerActionDateTime()(*i336074805fc853987ab
     return nil
 }
 // GetManagerActionMessage gets the managerActionMessage property value. The managerActionMessage property
+// returns a *string when successful
 func (m *ScheduleChangeRequest) GetManagerActionMessage()(*string) {
     val, err := m.GetBackingStore().Get("managerActionMessage")
     if err != nil {
@@ -165,6 +169,7 @@ func (m *ScheduleChangeRequest) GetManagerActionMessage()(*string) {
     return nil
 }
 // GetManagerUserId gets the managerUserId property value. The managerUserId property
+// returns a *string when successful
 func (m *ScheduleChangeRequest) GetManagerUserId()(*string) {
     val, err := m.GetBackingStore().Get("managerUserId")
     if err != nil {
@@ -176,6 +181,7 @@ func (m *ScheduleChangeRequest) GetManagerUserId()(*string) {
     return nil
 }
 // GetSenderDateTime gets the senderDateTime property value. The senderDateTime property
+// returns a *Time when successful
 func (m *ScheduleChangeRequest) GetSenderDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("senderDateTime")
     if err != nil {
@@ -187,6 +193,7 @@ func (m *ScheduleChangeRequest) GetSenderDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetSenderMessage gets the senderMessage property value. The senderMessage property
+// returns a *string when successful
 func (m *ScheduleChangeRequest) GetSenderMessage()(*string) {
     val, err := m.GetBackingStore().Get("senderMessage")
     if err != nil {
@@ -198,6 +205,7 @@ func (m *ScheduleChangeRequest) GetSenderMessage()(*string) {
     return nil
 }
 // GetSenderUserId gets the senderUserId property value. The senderUserId property
+// returns a *string when successful
 func (m *ScheduleChangeRequest) GetSenderUserId()(*string) {
     val, err := m.GetBackingStore().Get("senderUserId")
     if err != nil {
@@ -209,6 +217,7 @@ func (m *ScheduleChangeRequest) GetSenderUserId()(*string) {
     return nil
 }
 // GetState gets the state property value. The state property
+// returns a *ScheduleChangeState when successful
 func (m *ScheduleChangeRequest) GetState()(*ScheduleChangeState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -309,7 +318,6 @@ func (m *ScheduleChangeRequest) SetState(value *ScheduleChangeState)() {
         panic(err)
     }
 }
-// ScheduleChangeRequestable 
 type ScheduleChangeRequestable interface {
     ChangeTrackedEntityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

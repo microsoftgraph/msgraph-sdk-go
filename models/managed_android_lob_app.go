@@ -8,7 +8,7 @@ import (
 type ManagedAndroidLobApp struct {
     ManagedMobileLobApp
 }
-// NewManagedAndroidLobApp instantiates a new managedAndroidLobApp and sets the default values.
+// NewManagedAndroidLobApp instantiates a new ManagedAndroidLobApp and sets the default values.
 func NewManagedAndroidLobApp()(*ManagedAndroidLobApp) {
     m := &ManagedAndroidLobApp{
         ManagedMobileLobApp: *NewManagedMobileLobApp(),
@@ -18,10 +18,12 @@ func NewManagedAndroidLobApp()(*ManagedAndroidLobApp) {
     return m
 }
 // CreateManagedAndroidLobAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedAndroidLobAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedAndroidLobApp(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedAndroidLobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedMobileLobApp.GetFieldDeserializers()
     res["minimumSupportedOperatingSystem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -67,6 +69,7 @@ func (m *ManagedAndroidLobApp) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
+// returns a AndroidMinimumOperatingSystemable when successful
 func (m *ManagedAndroidLobApp) GetMinimumSupportedOperatingSystem()(AndroidMinimumOperatingSystemable) {
     val, err := m.GetBackingStore().Get("minimumSupportedOperatingSystem")
     if err != nil {
@@ -78,6 +81,7 @@ func (m *ManagedAndroidLobApp) GetMinimumSupportedOperatingSystem()(AndroidMinim
     return nil
 }
 // GetPackageId gets the packageId property value. The package identifier.
+// returns a *string when successful
 func (m *ManagedAndroidLobApp) GetPackageId()(*string) {
     val, err := m.GetBackingStore().Get("packageId")
     if err != nil {
@@ -89,6 +93,7 @@ func (m *ManagedAndroidLobApp) GetPackageId()(*string) {
     return nil
 }
 // GetVersionCode gets the versionCode property value. The version code of managed Android Line of Business (LoB) app.
+// returns a *string when successful
 func (m *ManagedAndroidLobApp) GetVersionCode()(*string) {
     val, err := m.GetBackingStore().Get("versionCode")
     if err != nil {
@@ -100,6 +105,7 @@ func (m *ManagedAndroidLobApp) GetVersionCode()(*string) {
     return nil
 }
 // GetVersionName gets the versionName property value. The version name of managed Android Line of Business (LoB) app.
+// returns a *string when successful
 func (m *ManagedAndroidLobApp) GetVersionName()(*string) {
     val, err := m.GetBackingStore().Get("versionName")
     if err != nil {
@@ -170,7 +176,6 @@ func (m *ManagedAndroidLobApp) SetVersionName(value *string)() {
         panic(err)
     }
 }
-// ManagedAndroidLobAppable 
 type ManagedAndroidLobAppable interface {
     ManagedMobileLobAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

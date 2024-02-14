@@ -10,7 +10,7 @@ type UserExperienceAnalyticsInsight struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewUserExperienceAnalyticsInsight instantiates a new userExperienceAnalyticsInsight and sets the default values.
+// NewUserExperienceAnalyticsInsight instantiates a new UserExperienceAnalyticsInsight and sets the default values.
 func NewUserExperienceAnalyticsInsight()(*UserExperienceAnalyticsInsight) {
     m := &UserExperienceAnalyticsInsight{
     }
@@ -19,10 +19,12 @@ func NewUserExperienceAnalyticsInsight()(*UserExperienceAnalyticsInsight) {
     return m
 }
 // CreateUserExperienceAnalyticsInsightFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsInsightFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsInsight(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *UserExperienceAnalyticsInsight) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *UserExperienceAnalyticsInsight) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *UserExperienceAnalyticsInsight) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsInsight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["insightId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -100,6 +104,7 @@ func (m *UserExperienceAnalyticsInsight) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetInsightId gets the insightId property value. The unique identifier of the user experience analytics insight.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsInsight) GetInsightId()(*string) {
     val, err := m.GetBackingStore().Get("insightId")
     if err != nil {
@@ -111,6 +116,7 @@ func (m *UserExperienceAnalyticsInsight) GetInsightId()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *UserExperienceAnalyticsInsight) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -122,6 +128,7 @@ func (m *UserExperienceAnalyticsInsight) GetOdataType()(*string) {
     return nil
 }
 // GetSeverity gets the severity property value. Indicates severity of insights. Possible values are: None, Informational, Warning, Error.
+// returns a *UserExperienceAnalyticsInsightSeverity when successful
 func (m *UserExperienceAnalyticsInsight) GetSeverity()(*UserExperienceAnalyticsInsightSeverity) {
     val, err := m.GetBackingStore().Get("severity")
     if err != nil {
@@ -133,6 +140,7 @@ func (m *UserExperienceAnalyticsInsight) GetSeverity()(*UserExperienceAnalyticsI
     return nil
 }
 // GetUserExperienceAnalyticsMetricId gets the userExperienceAnalyticsMetricId property value. The unique identifier of the user experience analytics metric.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsInsight) GetUserExperienceAnalyticsMetricId()(*string) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsMetricId")
     if err != nil {
@@ -144,6 +152,7 @@ func (m *UserExperienceAnalyticsInsight) GetUserExperienceAnalyticsMetricId()(*s
     return nil
 }
 // GetValues gets the values property value. The value of the user experience analytics insight.
+// returns a []UserExperienceAnalyticsInsightValueable when successful
 func (m *UserExperienceAnalyticsInsight) GetValues()([]UserExperienceAnalyticsInsightValueable) {
     val, err := m.GetBackingStore().Get("values")
     if err != nil {
@@ -247,7 +256,6 @@ func (m *UserExperienceAnalyticsInsight) SetValues(value []UserExperienceAnalyti
         panic(err)
     }
 }
-// UserExperienceAnalyticsInsightable 
 type UserExperienceAnalyticsInsightable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

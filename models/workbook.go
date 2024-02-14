@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Workbook 
 type Workbook struct {
     Entity
 }
-// NewWorkbook instantiates a new workbook and sets the default values.
+// NewWorkbook instantiates a new Workbook and sets the default values.
 func NewWorkbook()(*Workbook) {
     m := &Workbook{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewWorkbook()(*Workbook) {
     return m
 }
 // CreateWorkbookFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbook(), nil
 }
 // GetApplication gets the application property value. The application property
+// returns a WorkbookApplicationable when successful
 func (m *Workbook) GetApplication()(WorkbookApplicationable) {
     val, err := m.GetBackingStore().Get("application")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Workbook) GetApplication()(WorkbookApplicationable) {
     return nil
 }
 // GetComments gets the comments property value. Represents a collection of comments in a workbook.
+// returns a []WorkbookCommentable when successful
 func (m *Workbook) GetComments()([]WorkbookCommentable) {
     val, err := m.GetBackingStore().Get("comments")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *Workbook) GetComments()([]WorkbookCommentable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Workbook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["application"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -147,6 +150,7 @@ func (m *Workbook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetFunctions gets the functions property value. The functions property
+// returns a WorkbookFunctionsable when successful
 func (m *Workbook) GetFunctions()(WorkbookFunctionsable) {
     val, err := m.GetBackingStore().Get("functions")
     if err != nil {
@@ -158,6 +162,7 @@ func (m *Workbook) GetFunctions()(WorkbookFunctionsable) {
     return nil
 }
 // GetNames gets the names property value. Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
+// returns a []WorkbookNamedItemable when successful
 func (m *Workbook) GetNames()([]WorkbookNamedItemable) {
     val, err := m.GetBackingStore().Get("names")
     if err != nil {
@@ -169,6 +174,7 @@ func (m *Workbook) GetNames()([]WorkbookNamedItemable) {
     return nil
 }
 // GetOperations gets the operations property value. The status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.
+// returns a []WorkbookOperationable when successful
 func (m *Workbook) GetOperations()([]WorkbookOperationable) {
     val, err := m.GetBackingStore().Get("operations")
     if err != nil {
@@ -180,6 +186,7 @@ func (m *Workbook) GetOperations()([]WorkbookOperationable) {
     return nil
 }
 // GetTables gets the tables property value. Represents a collection of tables associated with the workbook. Read-only.
+// returns a []WorkbookTableable when successful
 func (m *Workbook) GetTables()([]WorkbookTableable) {
     val, err := m.GetBackingStore().Get("tables")
     if err != nil {
@@ -191,6 +198,7 @@ func (m *Workbook) GetTables()([]WorkbookTableable) {
     return nil
 }
 // GetWorksheets gets the worksheets property value. Represents a collection of worksheets associated with the workbook. Read-only.
+// returns a []WorkbookWorksheetable when successful
 func (m *Workbook) GetWorksheets()([]WorkbookWorksheetable) {
     val, err := m.GetBackingStore().Get("worksheets")
     if err != nil {
@@ -330,7 +338,6 @@ func (m *Workbook) SetWorksheets(value []WorkbookWorksheetable)() {
         panic(err)
     }
 }
-// Workbookable 
 type Workbookable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

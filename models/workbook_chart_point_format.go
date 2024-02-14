@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookChartPointFormat 
 type WorkbookChartPointFormat struct {
     Entity
 }
-// NewWorkbookChartPointFormat instantiates a new workbookChartPointFormat and sets the default values.
+// NewWorkbookChartPointFormat instantiates a new WorkbookChartPointFormat and sets the default values.
 func NewWorkbookChartPointFormat()(*WorkbookChartPointFormat) {
     m := &WorkbookChartPointFormat{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewWorkbookChartPointFormat()(*WorkbookChartPointFormat) {
     return m
 }
 // CreateWorkbookChartPointFormatFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookChartPointFormatFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookChartPointFormat(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookChartPointFormat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["fill"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +36,7 @@ func (m *WorkbookChartPointFormat) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetFill gets the fill property value. Represents the fill format of a chart, which includes background formatting information. Read-only.
+// returns a WorkbookChartFillable when successful
 func (m *WorkbookChartPointFormat) GetFill()(WorkbookChartFillable) {
     val, err := m.GetBackingStore().Get("fill")
     if err != nil {
@@ -66,7 +68,6 @@ func (m *WorkbookChartPointFormat) SetFill(value WorkbookChartFillable)() {
         panic(err)
     }
 }
-// WorkbookChartPointFormatable 
 type WorkbookChartPointFormatable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

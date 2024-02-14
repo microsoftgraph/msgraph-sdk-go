@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Directory 
 type Directory struct {
     Entity
 }
-// NewDirectory instantiates a new directory and sets the default values.
+// NewDirectory instantiates a new Directory and sets the default values.
 func NewDirectory()(*Directory) {
     m := &Directory{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewDirectory()(*Directory) {
     return m
 }
 // CreateDirectoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDirectoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDirectory(), nil
 }
 // GetAdministrativeUnits gets the administrativeUnits property value. Conceptual container for user and group directory objects.
+// returns a []AdministrativeUnitable when successful
 func (m *Directory) GetAdministrativeUnits()([]AdministrativeUnitable) {
     val, err := m.GetBackingStore().Get("administrativeUnits")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Directory) GetAdministrativeUnits()([]AdministrativeUnitable) {
     return nil
 }
 // GetAttributeSets gets the attributeSets property value. Group of related custom security attribute definitions.
+// returns a []AttributeSetable when successful
 func (m *Directory) GetAttributeSets()([]AttributeSetable) {
     val, err := m.GetBackingStore().Get("attributeSets")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *Directory) GetAttributeSets()([]AttributeSetable) {
     return nil
 }
 // GetCustomSecurityAttributeDefinitions gets the customSecurityAttributeDefinitions property value. Schema of a custom security attributes (key-value pairs).
+// returns a []CustomSecurityAttributeDefinitionable when successful
 func (m *Directory) GetCustomSecurityAttributeDefinitions()([]CustomSecurityAttributeDefinitionable) {
     val, err := m.GetBackingStore().Get("customSecurityAttributeDefinitions")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *Directory) GetCustomSecurityAttributeDefinitions()([]CustomSecurityAttr
     return nil
 }
 // GetDeletedItems gets the deletedItems property value. Recently deleted items. Read-only. Nullable.
+// returns a []DirectoryObjectable when successful
 func (m *Directory) GetDeletedItems()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("deletedItems")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *Directory) GetDeletedItems()([]DirectoryObjectable) {
     return nil
 }
 // GetDeviceLocalCredentials gets the deviceLocalCredentials property value. The credentials of the device's local administrator account backed up to Microsoft Entra ID.
+// returns a []DeviceLocalCredentialInfoable when successful
 func (m *Directory) GetDeviceLocalCredentials()([]DeviceLocalCredentialInfoable) {
     val, err := m.GetBackingStore().Get("deviceLocalCredentials")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *Directory) GetDeviceLocalCredentials()([]DeviceLocalCredentialInfoable)
     return nil
 }
 // GetFederationConfigurations gets the federationConfigurations property value. Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
+// returns a []IdentityProviderBaseable when successful
 func (m *Directory) GetFederationConfigurations()([]IdentityProviderBaseable) {
     val, err := m.GetBackingStore().Get("federationConfigurations")
     if err != nil {
@@ -86,6 +92,7 @@ func (m *Directory) GetFederationConfigurations()([]IdentityProviderBaseable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["administrativeUnits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -203,6 +210,7 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetOnPremisesSynchronization gets the onPremisesSynchronization property value. A container for on-premises directory synchronization functionalities that are available for the organization.
+// returns a []OnPremisesDirectorySynchronizationable when successful
 func (m *Directory) GetOnPremisesSynchronization()([]OnPremisesDirectorySynchronizationable) {
     val, err := m.GetBackingStore().Get("onPremisesSynchronization")
     if err != nil {
@@ -354,7 +362,6 @@ func (m *Directory) SetOnPremisesSynchronization(value []OnPremisesDirectorySync
         panic(err)
     }
 }
-// Directoryable 
 type Directoryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

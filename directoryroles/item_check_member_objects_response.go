@@ -4,8 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemCheckMemberObjectsResponse 
-// Deprecated: This class is obsolete. Use checkMemberObjectsPostResponse instead.
+// Deprecated: This class is obsolete. Use {TypeName} instead.
 type ItemCheckMemberObjectsResponse struct {
     ItemCheckMemberObjectsPostResponse
 }
@@ -17,11 +16,11 @@ func NewItemCheckMemberObjectsResponse()(*ItemCheckMemberObjectsResponse) {
     return m
 }
 // CreateItemCheckMemberObjectsResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemCheckMemberObjectsResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemCheckMemberObjectsResponse(), nil
 }
-// ItemCheckMemberObjectsResponseable 
-// Deprecated: This class is obsolete. Use checkMemberObjectsPostResponse instead.
+// Deprecated: This class is obsolete. Use {TypeName} instead.
 type ItemCheckMemberObjectsResponseable interface {
     ItemCheckMemberObjectsPostResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChatMessage 
 type ChatMessage struct {
     Entity
 }
-// NewChatMessage instantiates a new chatMessage and sets the default values.
+// NewChatMessage instantiates a new ChatMessage and sets the default values.
 func NewChatMessage()(*ChatMessage) {
     m := &ChatMessage{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewChatMessage()(*ChatMessage) {
     return m
 }
 // CreateChatMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateChatMessageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChatMessage(), nil
 }
 // GetAttachments gets the attachments property value. References to attached objects like files, tabs, meetings etc.
+// returns a []ChatMessageAttachmentable when successful
 func (m *ChatMessage) GetAttachments()([]ChatMessageAttachmentable) {
     val, err := m.GetBackingStore().Get("attachments")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *ChatMessage) GetAttachments()([]ChatMessageAttachmentable) {
     return nil
 }
 // GetBody gets the body property value. The body property
+// returns a ItemBodyable when successful
 func (m *ChatMessage) GetBody()(ItemBodyable) {
     val, err := m.GetBackingStore().Get("body")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *ChatMessage) GetBody()(ItemBodyable) {
     return nil
 }
 // GetChannelIdentity gets the channelIdentity property value. If the message was sent in a channel, represents identity of the channel.
+// returns a ChannelIdentityable when successful
 func (m *ChatMessage) GetChannelIdentity()(ChannelIdentityable) {
     val, err := m.GetBackingStore().Get("channelIdentity")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *ChatMessage) GetChannelIdentity()(ChannelIdentityable) {
     return nil
 }
 // GetChatId gets the chatId property value. If the message was sent in a chat, represents the identity of the chat.
+// returns a *string when successful
 func (m *ChatMessage) GetChatId()(*string) {
     val, err := m.GetBackingStore().Get("chatId")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *ChatMessage) GetChatId()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Timestamp of when the chat message was created.
+// returns a *Time when successful
 func (m *ChatMessage) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *ChatMessage) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     return nil
 }
 // GetDeletedDateTime gets the deletedDateTime property value. Read only. Timestamp at which the chat message was deleted, or null if not deleted.
+// returns a *Time when successful
 func (m *ChatMessage) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("deletedDateTime")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *ChatMessage) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     return nil
 }
 // GetEtag gets the etag property value. Read-only. Version number of the chat message.
+// returns a *string when successful
 func (m *ChatMessage) GetEtag()(*string) {
     val, err := m.GetBackingStore().Get("etag")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *ChatMessage) GetEtag()(*string) {
     return nil
 }
 // GetEventDetail gets the eventDetail property value. Read-only. If present, represents details of an event that happened in a chat, a channel, or a team, for example, adding new members. For event messages, the messageType property will be set to systemEventMessage.
+// returns a EventMessageDetailable when successful
 func (m *ChatMessage) GetEventDetail()(EventMessageDetailable) {
     val, err := m.GetBackingStore().Get("eventDetail")
     if err != nil {
@@ -109,6 +117,7 @@ func (m *ChatMessage) GetEventDetail()(EventMessageDetailable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ChatMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["attachments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -390,6 +399,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetFrom gets the from property value. Details of the sender of the chat message. Can only be set during migration.
+// returns a ChatMessageFromIdentitySetable when successful
 func (m *ChatMessage) GetFrom()(ChatMessageFromIdentitySetable) {
     val, err := m.GetBackingStore().Get("from")
     if err != nil {
@@ -401,6 +411,7 @@ func (m *ChatMessage) GetFrom()(ChatMessageFromIdentitySetable) {
     return nil
 }
 // GetHostedContents gets the hostedContents property value. Content in a message hosted by Microsoft Teams - for example, images or code snippets.
+// returns a []ChatMessageHostedContentable when successful
 func (m *ChatMessage) GetHostedContents()([]ChatMessageHostedContentable) {
     val, err := m.GetBackingStore().Get("hostedContents")
     if err != nil {
@@ -412,6 +423,7 @@ func (m *ChatMessage) GetHostedContents()([]ChatMessageHostedContentable) {
     return nil
 }
 // GetImportance gets the importance property value. The importance property
+// returns a *ChatMessageImportance when successful
 func (m *ChatMessage) GetImportance()(*ChatMessageImportance) {
     val, err := m.GetBackingStore().Get("importance")
     if err != nil {
@@ -423,6 +435,7 @@ func (m *ChatMessage) GetImportance()(*ChatMessageImportance) {
     return nil
 }
 // GetLastEditedDateTime gets the lastEditedDateTime property value. Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
+// returns a *Time when successful
 func (m *ChatMessage) GetLastEditedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastEditedDateTime")
     if err != nil {
@@ -434,6 +447,7 @@ func (m *ChatMessage) GetLastEditedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.
+// returns a *Time when successful
 func (m *ChatMessage) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -445,6 +459,7 @@ func (m *ChatMessage) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetLocale gets the locale property value. Locale of the chat message set by the client. Always set to en-us.
+// returns a *string when successful
 func (m *ChatMessage) GetLocale()(*string) {
     val, err := m.GetBackingStore().Get("locale")
     if err != nil {
@@ -456,6 +471,7 @@ func (m *ChatMessage) GetLocale()(*string) {
     return nil
 }
 // GetMentions gets the mentions property value. List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.
+// returns a []ChatMessageMentionable when successful
 func (m *ChatMessage) GetMentions()([]ChatMessageMentionable) {
     val, err := m.GetBackingStore().Get("mentions")
     if err != nil {
@@ -467,6 +483,7 @@ func (m *ChatMessage) GetMentions()([]ChatMessageMentionable) {
     return nil
 }
 // GetMessageHistory gets the messageHistory property value. List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
+// returns a []ChatMessageHistoryItemable when successful
 func (m *ChatMessage) GetMessageHistory()([]ChatMessageHistoryItemable) {
     val, err := m.GetBackingStore().Get("messageHistory")
     if err != nil {
@@ -478,6 +495,7 @@ func (m *ChatMessage) GetMessageHistory()([]ChatMessageHistoryItemable) {
     return nil
 }
 // GetMessageType gets the messageType property value. The messageType property
+// returns a *ChatMessageType when successful
 func (m *ChatMessage) GetMessageType()(*ChatMessageType) {
     val, err := m.GetBackingStore().Get("messageType")
     if err != nil {
@@ -489,6 +507,7 @@ func (m *ChatMessage) GetMessageType()(*ChatMessageType) {
     return nil
 }
 // GetPolicyViolation gets the policyViolation property value. Defines the properties of a policy violation set by a data loss prevention (DLP) application.
+// returns a ChatMessagePolicyViolationable when successful
 func (m *ChatMessage) GetPolicyViolation()(ChatMessagePolicyViolationable) {
     val, err := m.GetBackingStore().Get("policyViolation")
     if err != nil {
@@ -500,6 +519,7 @@ func (m *ChatMessage) GetPolicyViolation()(ChatMessagePolicyViolationable) {
     return nil
 }
 // GetReactions gets the reactions property value. Reactions for this chat message (for example, Like).
+// returns a []ChatMessageReactionable when successful
 func (m *ChatMessage) GetReactions()([]ChatMessageReactionable) {
     val, err := m.GetBackingStore().Get("reactions")
     if err != nil {
@@ -511,6 +531,7 @@ func (m *ChatMessage) GetReactions()([]ChatMessageReactionable) {
     return nil
 }
 // GetReplies gets the replies property value. Replies for a specified message. Supports $expand for channel messages.
+// returns a []ChatMessageable when successful
 func (m *ChatMessage) GetReplies()([]ChatMessageable) {
     val, err := m.GetBackingStore().Get("replies")
     if err != nil {
@@ -522,6 +543,7 @@ func (m *ChatMessage) GetReplies()([]ChatMessageable) {
     return nil
 }
 // GetReplyToId gets the replyToId property value. Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
+// returns a *string when successful
 func (m *ChatMessage) GetReplyToId()(*string) {
     val, err := m.GetBackingStore().Get("replyToId")
     if err != nil {
@@ -533,6 +555,7 @@ func (m *ChatMessage) GetReplyToId()(*string) {
     return nil
 }
 // GetSubject gets the subject property value. The subject of the chat message, in plaintext.
+// returns a *string when successful
 func (m *ChatMessage) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
     if err != nil {
@@ -544,6 +567,7 @@ func (m *ChatMessage) GetSubject()(*string) {
     return nil
 }
 // GetSummary gets the summary property value. Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
+// returns a *string when successful
 func (m *ChatMessage) GetSummary()(*string) {
     val, err := m.GetBackingStore().Get("summary")
     if err != nil {
@@ -555,6 +579,7 @@ func (m *ChatMessage) GetSummary()(*string) {
     return nil
 }
 // GetWebUrl gets the webUrl property value. Read-only. Link to the message in Microsoft Teams.
+// returns a *string when successful
 func (m *ChatMessage) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -923,7 +948,6 @@ func (m *ChatMessage) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// ChatMessageable 
 type ChatMessageable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

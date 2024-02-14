@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// SignInLocation 
 type SignInLocation struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSignInLocation instantiates a new signInLocation and sets the default values.
+// NewSignInLocation instantiates a new SignInLocation and sets the default values.
 func NewSignInLocation()(*SignInLocation) {
     m := &SignInLocation{
     }
@@ -19,10 +18,12 @@ func NewSignInLocation()(*SignInLocation) {
     return m
 }
 // CreateSignInLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSignInLocationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSignInLocation(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SignInLocation) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *SignInLocation) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *SignInLocation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCity gets the city property value. Provides the city where the sign-in originated and is determined using latitude/longitude information from the sign-in activity.
+// returns a *string when successful
 func (m *SignInLocation) GetCity()(*string) {
     val, err := m.GetBackingStore().Get("city")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *SignInLocation) GetCity()(*string) {
     return nil
 }
 // GetCountryOrRegion gets the countryOrRegion property value. Provides the country code info (two letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
+// returns a *string when successful
 func (m *SignInLocation) GetCountryOrRegion()(*string) {
     val, err := m.GetBackingStore().Get("countryOrRegion")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *SignInLocation) GetCountryOrRegion()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SignInLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["city"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +121,7 @@ func (m *SignInLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetGeoCoordinates gets the geoCoordinates property value. Provides the latitude, longitude and altitude where the sign-in originated.
+// returns a GeoCoordinatesable when successful
 func (m *SignInLocation) GetGeoCoordinates()(GeoCoordinatesable) {
     val, err := m.GetBackingStore().Get("geoCoordinates")
     if err != nil {
@@ -127,6 +133,7 @@ func (m *SignInLocation) GetGeoCoordinates()(GeoCoordinatesable) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *SignInLocation) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -138,6 +145,7 @@ func (m *SignInLocation) GetOdataType()(*string) {
     return nil
 }
 // GetState gets the state property value. Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
+// returns a *string when successful
 func (m *SignInLocation) GetState()(*string) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -234,7 +242,6 @@ func (m *SignInLocation) SetState(value *string)() {
         panic(err)
     }
 }
-// SignInLocationable 
 type SignInLocationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

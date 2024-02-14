@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewHistoryDefinition 
 type AccessReviewHistoryDefinition struct {
     Entity
 }
-// NewAccessReviewHistoryDefinition instantiates a new accessReviewHistoryDefinition and sets the default values.
+// NewAccessReviewHistoryDefinition instantiates a new AccessReviewHistoryDefinition and sets the default values.
 func NewAccessReviewHistoryDefinition()(*AccessReviewHistoryDefinition) {
     m := &AccessReviewHistoryDefinition{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewAccessReviewHistoryDefinition()(*AccessReviewHistoryDefinition) {
     return m
 }
 // CreateAccessReviewHistoryDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessReviewHistoryDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewHistoryDefinition(), nil
 }
 // GetCreatedBy gets the createdBy property value. The createdBy property
+// returns a UserIdentityable when successful
 func (m *AccessReviewHistoryDefinition) GetCreatedBy()(UserIdentityable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *AccessReviewHistoryDefinition) GetCreatedBy()(UserIdentityable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Timestamp when the access review definition was created.
+// returns a *Time when successful
 func (m *AccessReviewHistoryDefinition) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *AccessReviewHistoryDefinition) GetCreatedDateTime()(*i336074805fc853987
     return nil
 }
 // GetDecisions gets the decisions property value. Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions are included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
+// returns a []AccessReviewHistoryDecisionFilter when successful
 func (m *AccessReviewHistoryDefinition) GetDecisions()([]AccessReviewHistoryDecisionFilter) {
     val, err := m.GetBackingStore().Get("decisions")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *AccessReviewHistoryDefinition) GetDecisions()([]AccessReviewHistoryDeci
     return nil
 }
 // GetDisplayName gets the displayName property value. Name for the access review history data collection. Required.
+// returns a *string when successful
 func (m *AccessReviewHistoryDefinition) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *AccessReviewHistoryDefinition) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -188,6 +193,7 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetInstances gets the instances property value. If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that doesn't recur will have exactly one instance.
+// returns a []AccessReviewHistoryInstanceable when successful
 func (m *AccessReviewHistoryDefinition) GetInstances()([]AccessReviewHistoryInstanceable) {
     val, err := m.GetBackingStore().Get("instances")
     if err != nil {
@@ -199,6 +205,7 @@ func (m *AccessReviewHistoryDefinition) GetInstances()([]AccessReviewHistoryInst
     return nil
 }
 // GetReviewHistoryPeriodEndDateTime gets the reviewHistoryPeriodEndDateTime property value. A timestamp. Reviews ending on or before this date will be included in the fetched history data. Only required if scheduleSettings isn't defined.
+// returns a *Time when successful
 func (m *AccessReviewHistoryDefinition) GetReviewHistoryPeriodEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("reviewHistoryPeriodEndDateTime")
     if err != nil {
@@ -210,6 +217,7 @@ func (m *AccessReviewHistoryDefinition) GetReviewHistoryPeriodEndDateTime()(*i33
     return nil
 }
 // GetReviewHistoryPeriodStartDateTime gets the reviewHistoryPeriodStartDateTime property value. A timestamp. Reviews starting on or before this date will be included in the fetched history data. Only required if scheduleSettings isn't defined.
+// returns a *Time when successful
 func (m *AccessReviewHistoryDefinition) GetReviewHistoryPeriodStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("reviewHistoryPeriodStartDateTime")
     if err != nil {
@@ -221,6 +229,7 @@ func (m *AccessReviewHistoryDefinition) GetReviewHistoryPeriodStartDateTime()(*i
     return nil
 }
 // GetScheduleSettings gets the scheduleSettings property value. The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime aren't defined. Not supported yet.
+// returns a AccessReviewHistoryScheduleSettingsable when successful
 func (m *AccessReviewHistoryDefinition) GetScheduleSettings()(AccessReviewHistoryScheduleSettingsable) {
     val, err := m.GetBackingStore().Get("scheduleSettings")
     if err != nil {
@@ -232,6 +241,7 @@ func (m *AccessReviewHistoryDefinition) GetScheduleSettings()(AccessReviewHistor
     return nil
 }
 // GetScopes gets the scopes property value. Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. Required.
+// returns a []AccessReviewScopeable when successful
 func (m *AccessReviewHistoryDefinition) GetScopes()([]AccessReviewScopeable) {
     val, err := m.GetBackingStore().Get("scopes")
     if err != nil {
@@ -243,6 +253,7 @@ func (m *AccessReviewHistoryDefinition) GetScopes()([]AccessReviewScopeable) {
     return nil
 }
 // GetStatus gets the status property value. Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue.
+// returns a *AccessReviewHistoryStatus when successful
 func (m *AccessReviewHistoryDefinition) GetStatus()(*AccessReviewHistoryStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -404,7 +415,6 @@ func (m *AccessReviewHistoryDefinition) SetStatus(value *AccessReviewHistoryStat
         panic(err)
     }
 }
-// AccessReviewHistoryDefinitionable 
 type AccessReviewHistoryDefinitionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

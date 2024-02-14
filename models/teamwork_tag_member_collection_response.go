@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkTagMemberCollectionResponse 
 type TeamworkTagMemberCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTeamworkTagMemberCollectionResponse instantiates a new teamworkTagMemberCollectionResponse and sets the default values.
+// NewTeamworkTagMemberCollectionResponse instantiates a new TeamworkTagMemberCollectionResponse and sets the default values.
 func NewTeamworkTagMemberCollectionResponse()(*TeamworkTagMemberCollectionResponse) {
     m := &TeamworkTagMemberCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewTeamworkTagMemberCollectionResponse()(*TeamworkTagMemberCollectionRespon
     return m
 }
 // CreateTeamworkTagMemberCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamworkTagMemberCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkTagMemberCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamworkTagMemberCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *TeamworkTagMemberCollectionResponse) GetFieldDeserializers()(map[string
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []TeamworkTagMemberable when successful
 func (m *TeamworkTagMemberCollectionResponse) GetValue()([]TeamworkTagMemberable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *TeamworkTagMemberCollectionResponse) SetValue(value []TeamworkTagMember
         panic(err)
     }
 }
-// TeamworkTagMemberCollectionResponseable 
 type TeamworkTagMemberCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

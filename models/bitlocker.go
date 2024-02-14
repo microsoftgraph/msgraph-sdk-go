@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Bitlocker 
 type Bitlocker struct {
     Entity
 }
-// NewBitlocker instantiates a new bitlocker and sets the default values.
+// NewBitlocker instantiates a new Bitlocker and sets the default values.
 func NewBitlocker()(*Bitlocker) {
     m := &Bitlocker{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewBitlocker()(*Bitlocker) {
     return m
 }
 // CreateBitlockerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBitlockerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBitlocker(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Bitlocker) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["recoveryKeys"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *Bitlocker) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetRecoveryKeys gets the recoveryKeys property value. The recovery keys associated with the bitlocker entity.
+// returns a []BitlockerRecoveryKeyable when successful
 func (m *Bitlocker) GetRecoveryKeys()([]BitlockerRecoveryKeyable) {
     val, err := m.GetBackingStore().Get("recoveryKeys")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *Bitlocker) SetRecoveryKeys(value []BitlockerRecoveryKeyable)() {
         panic(err)
     }
 }
-// Bitlockerable 
 type Bitlockerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

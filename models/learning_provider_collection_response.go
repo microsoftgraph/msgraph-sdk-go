@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LearningProviderCollectionResponse 
 type LearningProviderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewLearningProviderCollectionResponse instantiates a new learningProviderCollectionResponse and sets the default values.
+// NewLearningProviderCollectionResponse instantiates a new LearningProviderCollectionResponse and sets the default values.
 func NewLearningProviderCollectionResponse()(*LearningProviderCollectionResponse) {
     m := &LearningProviderCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewLearningProviderCollectionResponse()(*LearningProviderCollectionResponse
     return m
 }
 // CreateLearningProviderCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateLearningProviderCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLearningProviderCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *LearningProviderCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *LearningProviderCollectionResponse) GetFieldDeserializers()(map[string]
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []LearningProviderable when successful
 func (m *LearningProviderCollectionResponse) GetValue()([]LearningProviderable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *LearningProviderCollectionResponse) SetValue(value []LearningProviderab
         panic(err)
     }
 }
-// LearningProviderCollectionResponseable 
 type LearningProviderCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

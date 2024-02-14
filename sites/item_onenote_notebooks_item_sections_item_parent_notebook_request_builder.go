@@ -27,28 +27,29 @@ type ItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilderGetRequestC
     // Request query parameters
     QueryParameters *ItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilderGetQueryParameters
 }
-// NewItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilderInternal instantiates a new ParentNotebookRequestBuilder and sets the default values.
+// NewItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilderInternal instantiates a new ItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilder and sets the default values.
 func NewItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilder) {
     m := &ItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/onenote/notebooks/{notebook%2Did}/sections/{onenoteSection%2Did}/parentNotebook{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/onenote/notebooks/{notebook%2Did}/sections/{onenoteSection%2Did}/parentNotebook{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilder instantiates a new ParentNotebookRequestBuilder and sets the default values.
+// NewItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilder instantiates a new ItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilder and sets the default values.
 func NewItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the notebook that contains the section.  Read-only.
+// returns a Notebookable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Notebookable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateNotebookFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *ItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilder) Get(c
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Notebookable), nil
 }
 // ToGetRequestInformation the notebook that contains the section.  Read-only.
+// returns a *RequestInformation when successful
 func (m *ItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *ItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilder) ToGet
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilder when successful
 func (m *ItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilder) WithUrl(rawUrl string)(*ItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilder) {
     return NewItemOnenoteNotebooksItemSectionsItemParentNotebookRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

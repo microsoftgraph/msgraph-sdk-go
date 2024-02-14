@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OrganizationalBranding 
 type OrganizationalBranding struct {
     OrganizationalBrandingProperties
 }
-// NewOrganizationalBranding instantiates a new organizationalBranding and sets the default values.
+// NewOrganizationalBranding instantiates a new OrganizationalBranding and sets the default values.
 func NewOrganizationalBranding()(*OrganizationalBranding) {
     m := &OrganizationalBranding{
         OrganizationalBrandingProperties: *NewOrganizationalBrandingProperties(),
@@ -18,10 +17,12 @@ func NewOrganizationalBranding()(*OrganizationalBranding) {
     return m
 }
 // CreateOrganizationalBrandingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOrganizationalBrandingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOrganizationalBranding(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OrganizationalBranding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OrganizationalBrandingProperties.GetFieldDeserializers()
     res["localizations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -43,6 +44,7 @@ func (m *OrganizationalBranding) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetLocalizations gets the localizations property value. Add different branding based on a locale.
+// returns a []OrganizationalBrandingLocalizationable when successful
 func (m *OrganizationalBranding) GetLocalizations()([]OrganizationalBrandingLocalizationable) {
     val, err := m.GetBackingStore().Get("localizations")
     if err != nil {
@@ -80,7 +82,6 @@ func (m *OrganizationalBranding) SetLocalizations(value []OrganizationalBranding
         panic(err)
     }
 }
-// OrganizationalBrandingable 
 type OrganizationalBrandingable interface {
     OrganizationalBrandingPropertiesable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsCategory struct {
     Entity
 }
-// NewUserExperienceAnalyticsCategory instantiates a new userExperienceAnalyticsCategory and sets the default values.
+// NewUserExperienceAnalyticsCategory instantiates a new UserExperienceAnalyticsCategory and sets the default values.
 func NewUserExperienceAnalyticsCategory()(*UserExperienceAnalyticsCategory) {
     m := &UserExperienceAnalyticsCategory{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewUserExperienceAnalyticsCategory()(*UserExperienceAnalyticsCategory) {
     return m
 }
 // CreateUserExperienceAnalyticsCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsCategoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsCategory(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["insights"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -57,6 +59,7 @@ func (m *UserExperienceAnalyticsCategory) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetInsights gets the insights property value. The insights for the category. Read-only.
+// returns a []UserExperienceAnalyticsInsightable when successful
 func (m *UserExperienceAnalyticsCategory) GetInsights()([]UserExperienceAnalyticsInsightable) {
     val, err := m.GetBackingStore().Get("insights")
     if err != nil {
@@ -68,6 +71,7 @@ func (m *UserExperienceAnalyticsCategory) GetInsights()([]UserExperienceAnalytic
     return nil
 }
 // GetMetricValues gets the metricValues property value. The metric values for the user experience analytics category. Read-only.
+// returns a []UserExperienceAnalyticsMetricable when successful
 func (m *UserExperienceAnalyticsCategory) GetMetricValues()([]UserExperienceAnalyticsMetricable) {
     val, err := m.GetBackingStore().Get("metricValues")
     if err != nil {
@@ -124,7 +128,6 @@ func (m *UserExperienceAnalyticsCategory) SetMetricValues(value []UserExperience
         panic(err)
     }
 }
-// UserExperienceAnalyticsCategoryable 
 type UserExperienceAnalyticsCategoryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintJob 
 type PrintJob struct {
     Entity
 }
-// NewPrintJob instantiates a new printJob and sets the default values.
+// NewPrintJob instantiates a new PrintJob and sets the default values.
 func NewPrintJob()(*PrintJob) {
     m := &PrintJob{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewPrintJob()(*PrintJob) {
     return m
 }
 // CreatePrintJobFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrintJobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrintJob(), nil
 }
 // GetConfiguration gets the configuration property value. The configuration property
+// returns a PrintJobConfigurationable when successful
 func (m *PrintJob) GetConfiguration()(PrintJobConfigurationable) {
     val, err := m.GetBackingStore().Get("configuration")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *PrintJob) GetConfiguration()(PrintJobConfigurationable) {
     return nil
 }
 // GetCreatedBy gets the createdBy property value. The createdBy property
+// returns a UserIdentityable when successful
 func (m *PrintJob) GetCreatedBy()(UserIdentityable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *PrintJob) GetCreatedBy()(UserIdentityable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The DateTimeOffset when the job was created. Read-only.
+// returns a *Time when successful
 func (m *PrintJob) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *PrintJob) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     return nil
 }
 // GetDocuments gets the documents property value. The documents property
+// returns a []PrintDocumentable when successful
 func (m *PrintJob) GetDocuments()([]PrintDocumentable) {
     val, err := m.GetBackingStore().Get("documents")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *PrintJob) GetDocuments()([]PrintDocumentable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrintJob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["configuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -172,6 +177,7 @@ func (m *PrintJob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetIsFetchable gets the isFetchable property value. If true, document can be fetched by printer.
+// returns a *bool when successful
 func (m *PrintJob) GetIsFetchable()(*bool) {
     val, err := m.GetBackingStore().Get("isFetchable")
     if err != nil {
@@ -183,6 +189,7 @@ func (m *PrintJob) GetIsFetchable()(*bool) {
     return nil
 }
 // GetRedirectedFrom gets the redirectedFrom property value. Contains the source job URL, if the job has been redirected from another printer.
+// returns a *string when successful
 func (m *PrintJob) GetRedirectedFrom()(*string) {
     val, err := m.GetBackingStore().Get("redirectedFrom")
     if err != nil {
@@ -194,6 +201,7 @@ func (m *PrintJob) GetRedirectedFrom()(*string) {
     return nil
 }
 // GetRedirectedTo gets the redirectedTo property value. Contains the destination job URL, if the job has been redirected to another printer.
+// returns a *string when successful
 func (m *PrintJob) GetRedirectedTo()(*string) {
     val, err := m.GetBackingStore().Get("redirectedTo")
     if err != nil {
@@ -205,6 +213,7 @@ func (m *PrintJob) GetRedirectedTo()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a PrintJobStatusable when successful
 func (m *PrintJob) GetStatus()(PrintJobStatusable) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -216,6 +225,7 @@ func (m *PrintJob) GetStatus()(PrintJobStatusable) {
     return nil
 }
 // GetTasks gets the tasks property value. A list of printTasks that were triggered by this print job.
+// returns a []PrintTaskable when successful
 func (m *PrintJob) GetTasks()([]PrintTaskable) {
     val, err := m.GetBackingStore().Get("tasks")
     if err != nil {
@@ -363,7 +373,6 @@ func (m *PrintJob) SetTasks(value []PrintTaskable)() {
         panic(err)
     }
 }
-// PrintJobable 
 type PrintJobable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

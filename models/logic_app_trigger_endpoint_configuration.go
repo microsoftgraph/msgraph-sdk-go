@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LogicAppTriggerEndpointConfiguration 
 type LogicAppTriggerEndpointConfiguration struct {
     CustomExtensionEndpointConfiguration
 }
-// NewLogicAppTriggerEndpointConfiguration instantiates a new logicAppTriggerEndpointConfiguration and sets the default values.
+// NewLogicAppTriggerEndpointConfiguration instantiates a new LogicAppTriggerEndpointConfiguration and sets the default values.
 func NewLogicAppTriggerEndpointConfiguration()(*LogicAppTriggerEndpointConfiguration) {
     m := &LogicAppTriggerEndpointConfiguration{
         CustomExtensionEndpointConfiguration: *NewCustomExtensionEndpointConfiguration(),
@@ -18,10 +17,12 @@ func NewLogicAppTriggerEndpointConfiguration()(*LogicAppTriggerEndpointConfigura
     return m
 }
 // CreateLogicAppTriggerEndpointConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateLogicAppTriggerEndpointConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLogicAppTriggerEndpointConfiguration(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *LogicAppTriggerEndpointConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CustomExtensionEndpointConfiguration.GetFieldDeserializers()
     res["logicAppWorkflowName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -67,6 +68,7 @@ func (m *LogicAppTriggerEndpointConfiguration) GetFieldDeserializers()(map[strin
     return res
 }
 // GetLogicAppWorkflowName gets the logicAppWorkflowName property value. The name of the logic app.
+// returns a *string when successful
 func (m *LogicAppTriggerEndpointConfiguration) GetLogicAppWorkflowName()(*string) {
     val, err := m.GetBackingStore().Get("logicAppWorkflowName")
     if err != nil {
@@ -78,6 +80,7 @@ func (m *LogicAppTriggerEndpointConfiguration) GetLogicAppWorkflowName()(*string
     return nil
 }
 // GetResourceGroupName gets the resourceGroupName property value. The Azure resource group name for the logic app.
+// returns a *string when successful
 func (m *LogicAppTriggerEndpointConfiguration) GetResourceGroupName()(*string) {
     val, err := m.GetBackingStore().Get("resourceGroupName")
     if err != nil {
@@ -89,6 +92,7 @@ func (m *LogicAppTriggerEndpointConfiguration) GetResourceGroupName()(*string) {
     return nil
 }
 // GetSubscriptionId gets the subscriptionId property value. Identifier of the Azure subscription for the logic app.
+// returns a *string when successful
 func (m *LogicAppTriggerEndpointConfiguration) GetSubscriptionId()(*string) {
     val, err := m.GetBackingStore().Get("subscriptionId")
     if err != nil {
@@ -100,6 +104,7 @@ func (m *LogicAppTriggerEndpointConfiguration) GetSubscriptionId()(*string) {
     return nil
 }
 // GetUrl gets the url property value. The URL to the logic app endpoint that will be triggered. Only required for app-only token scenarios where app is creating a customCalloutExtension without a signed-in user.
+// returns a *string when successful
 func (m *LogicAppTriggerEndpointConfiguration) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -170,7 +175,6 @@ func (m *LogicAppTriggerEndpointConfiguration) SetUrl(value *string)() {
         panic(err)
     }
 }
-// LogicAppTriggerEndpointConfigurationable 
 type LogicAppTriggerEndpointConfigurationable interface {
     CustomExtensionEndpointConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

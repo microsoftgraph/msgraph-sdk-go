@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ChatMessageReaction 
 type ChatMessageReaction struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewChatMessageReaction instantiates a new chatMessageReaction and sets the default values.
+// NewChatMessageReaction instantiates a new ChatMessageReaction and sets the default values.
 func NewChatMessageReaction()(*ChatMessageReaction) {
     m := &ChatMessageReaction{
     }
@@ -20,10 +19,12 @@ func NewChatMessageReaction()(*ChatMessageReaction) {
     return m
 }
 // CreateChatMessageReactionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateChatMessageReactionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChatMessageReaction(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ChatMessageReaction) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *ChatMessageReaction) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ChatMessageReaction) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *ChatMessageReaction) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *ChatMessageReaction) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ChatMessageReaction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -96,6 +100,7 @@ func (m *ChatMessageReaction) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ChatMessageReaction) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -107,6 +112,7 @@ func (m *ChatMessageReaction) GetOdataType()(*string) {
     return nil
 }
 // GetReactionType gets the reactionType property value. Supported values are like, angry, sad, laugh, heart, surprised.
+// returns a *string when successful
 func (m *ChatMessageReaction) GetReactionType()(*string) {
     val, err := m.GetBackingStore().Get("reactionType")
     if err != nil {
@@ -118,6 +124,7 @@ func (m *ChatMessageReaction) GetReactionType()(*string) {
     return nil
 }
 // GetUser gets the user property value. The user property
+// returns a ChatMessageReactionIdentitySetable when successful
 func (m *ChatMessageReaction) GetUser()(ChatMessageReactionIdentitySetable) {
     val, err := m.GetBackingStore().Get("user")
     if err != nil {
@@ -201,7 +208,6 @@ func (m *ChatMessageReaction) SetUser(value ChatMessageReactionIdentitySetable)(
         panic(err)
     }
 }
-// ChatMessageReactionable 
 type ChatMessageReactionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

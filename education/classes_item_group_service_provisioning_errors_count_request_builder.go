@@ -26,28 +26,29 @@ type ClassesItemGroupServiceProvisioningErrorsCountRequestBuilderGetRequestConfi
     // Request query parameters
     QueryParameters *ClassesItemGroupServiceProvisioningErrorsCountRequestBuilderGetQueryParameters
 }
-// NewClassesItemGroupServiceProvisioningErrorsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewClassesItemGroupServiceProvisioningErrorsCountRequestBuilderInternal instantiates a new ClassesItemGroupServiceProvisioningErrorsCountRequestBuilder and sets the default values.
 func NewClassesItemGroupServiceProvisioningErrorsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesItemGroupServiceProvisioningErrorsCountRequestBuilder) {
     m := &ClassesItemGroupServiceProvisioningErrorsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/group/serviceProvisioningErrors/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/group/serviceProvisioningErrors/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewClassesItemGroupServiceProvisioningErrorsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewClassesItemGroupServiceProvisioningErrorsCountRequestBuilder instantiates a new ClassesItemGroupServiceProvisioningErrorsCountRequestBuilder and sets the default values.
 func NewClassesItemGroupServiceProvisioningErrorsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesItemGroupServiceProvisioningErrorsCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemGroupServiceProvisioningErrorsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ClassesItemGroupServiceProvisioningErrorsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemGroupServiceProvisioningErrorsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *ClassesItemGroupServiceProvisioningErrorsCountRequestBuilder) Get(ctx c
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *ClassesItemGroupServiceProvisioningErrorsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemGroupServiceProvisioningErrorsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *ClassesItemGroupServiceProvisioningErrorsCountRequestBuilder) ToGetRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ClassesItemGroupServiceProvisioningErrorsCountRequestBuilder when successful
 func (m *ClassesItemGroupServiceProvisioningErrorsCountRequestBuilder) WithUrl(rawUrl string)(*ClassesItemGroupServiceProvisioningErrorsCountRequestBuilder) {
     return NewClassesItemGroupServiceProvisioningErrorsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

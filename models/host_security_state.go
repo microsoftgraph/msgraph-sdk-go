@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// HostSecurityState 
 type HostSecurityState struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewHostSecurityState instantiates a new hostSecurityState and sets the default values.
+// NewHostSecurityState instantiates a new HostSecurityState and sets the default values.
 func NewHostSecurityState()(*HostSecurityState) {
     m := &HostSecurityState{
     }
@@ -19,10 +18,12 @@ func NewHostSecurityState()(*HostSecurityState) {
     return m
 }
 // CreateHostSecurityStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateHostSecurityStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHostSecurityState(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *HostSecurityState) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *HostSecurityState) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *HostSecurityState) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *HostSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["fqdn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -144,6 +147,7 @@ func (m *HostSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetFqdn gets the fqdn property value. Host FQDN (Fully Qualified Domain Name) (for example, machine.company.com).
+// returns a *string when successful
 func (m *HostSecurityState) GetFqdn()(*string) {
     val, err := m.GetBackingStore().Get("fqdn")
     if err != nil {
@@ -155,6 +159,7 @@ func (m *HostSecurityState) GetFqdn()(*string) {
     return nil
 }
 // GetIsAzureAdJoined gets the isAzureAdJoined property value. The isAzureAdJoined property
+// returns a *bool when successful
 func (m *HostSecurityState) GetIsAzureAdJoined()(*bool) {
     val, err := m.GetBackingStore().Get("isAzureAdJoined")
     if err != nil {
@@ -166,6 +171,7 @@ func (m *HostSecurityState) GetIsAzureAdJoined()(*bool) {
     return nil
 }
 // GetIsAzureAdRegistered gets the isAzureAdRegistered property value. The isAzureAdRegistered property
+// returns a *bool when successful
 func (m *HostSecurityState) GetIsAzureAdRegistered()(*bool) {
     val, err := m.GetBackingStore().Get("isAzureAdRegistered")
     if err != nil {
@@ -177,6 +183,7 @@ func (m *HostSecurityState) GetIsAzureAdRegistered()(*bool) {
     return nil
 }
 // GetIsHybridAzureDomainJoined gets the isHybridAzureDomainJoined property value. True if the host is domain joined to an on-premises Active Directory domain.
+// returns a *bool when successful
 func (m *HostSecurityState) GetIsHybridAzureDomainJoined()(*bool) {
     val, err := m.GetBackingStore().Get("isHybridAzureDomainJoined")
     if err != nil {
@@ -188,6 +195,7 @@ func (m *HostSecurityState) GetIsHybridAzureDomainJoined()(*bool) {
     return nil
 }
 // GetNetBiosName gets the netBiosName property value. The local host name, without the DNS domain name.
+// returns a *string when successful
 func (m *HostSecurityState) GetNetBiosName()(*string) {
     val, err := m.GetBackingStore().Get("netBiosName")
     if err != nil {
@@ -199,6 +207,7 @@ func (m *HostSecurityState) GetNetBiosName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *HostSecurityState) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -210,6 +219,7 @@ func (m *HostSecurityState) GetOdataType()(*string) {
     return nil
 }
 // GetOs gets the os property value. Host Operating System. (For example, Windows 10, macOS, RHEL, etc.).
+// returns a *string when successful
 func (m *HostSecurityState) GetOs()(*string) {
     val, err := m.GetBackingStore().Get("os")
     if err != nil {
@@ -221,6 +231,7 @@ func (m *HostSecurityState) GetOs()(*string) {
     return nil
 }
 // GetPrivateIpAddress gets the privateIpAddress property value. Private (not routable) IPv4 or IPv6 address (see RFC 1918) at the time of the alert.
+// returns a *string when successful
 func (m *HostSecurityState) GetPrivateIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("privateIpAddress")
     if err != nil {
@@ -232,6 +243,7 @@ func (m *HostSecurityState) GetPrivateIpAddress()(*string) {
     return nil
 }
 // GetPublicIpAddress gets the publicIpAddress property value. Publicly routable IPv4 or IPv6 address (see RFC 1918) at time of the alert.
+// returns a *string when successful
 func (m *HostSecurityState) GetPublicIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("publicIpAddress")
     if err != nil {
@@ -243,6 +255,7 @@ func (m *HostSecurityState) GetPublicIpAddress()(*string) {
     return nil
 }
 // GetRiskScore gets the riskScore property value. Provider-generated/calculated risk score of the host.  Recommended value range of 0-1, which equates to a percentage.
+// returns a *string when successful
 func (m *HostSecurityState) GetRiskScore()(*string) {
     val, err := m.GetBackingStore().Get("riskScore")
     if err != nil {
@@ -404,7 +417,6 @@ func (m *HostSecurityState) SetRiskScore(value *string)() {
         panic(err)
     }
 }
-// HostSecurityStateable 
 type HostSecurityStateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

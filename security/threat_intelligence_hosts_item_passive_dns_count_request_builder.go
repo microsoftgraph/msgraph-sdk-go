@@ -26,28 +26,29 @@ type ThreatIntelligenceHostsItemPassiveDnsCountRequestBuilderGetRequestConfigura
     // Request query parameters
     QueryParameters *ThreatIntelligenceHostsItemPassiveDnsCountRequestBuilderGetQueryParameters
 }
-// NewThreatIntelligenceHostsItemPassiveDnsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewThreatIntelligenceHostsItemPassiveDnsCountRequestBuilderInternal instantiates a new ThreatIntelligenceHostsItemPassiveDnsCountRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostsItemPassiveDnsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostsItemPassiveDnsCountRequestBuilder) {
     m := &ThreatIntelligenceHostsItemPassiveDnsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/passiveDns/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/passiveDns/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewThreatIntelligenceHostsItemPassiveDnsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewThreatIntelligenceHostsItemPassiveDnsCountRequestBuilder instantiates a new ThreatIntelligenceHostsItemPassiveDnsCountRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostsItemPassiveDnsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostsItemPassiveDnsCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewThreatIntelligenceHostsItemPassiveDnsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ThreatIntelligenceHostsItemPassiveDnsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemPassiveDnsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *ThreatIntelligenceHostsItemPassiveDnsCountRequestBuilder) Get(ctx conte
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostsItemPassiveDnsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemPassiveDnsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *ThreatIntelligenceHostsItemPassiveDnsCountRequestBuilder) ToGetRequestI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ThreatIntelligenceHostsItemPassiveDnsCountRequestBuilder when successful
 func (m *ThreatIntelligenceHostsItemPassiveDnsCountRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceHostsItemPassiveDnsCountRequestBuilder) {
     return NewThreatIntelligenceHostsItemPassiveDnsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

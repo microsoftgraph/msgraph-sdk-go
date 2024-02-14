@@ -2,12 +2,11 @@ package models
 import (
     "errors"
 )
-// 
 type BrowserSiteCompatibilityMode int
 
 const (
     // Loads the site using default compatibility mode.
-    DEFAULTESCAPED_BROWSERSITECOMPATIBILITYMODE BrowserSiteCompatibilityMode = iota
+    DEFAULT_BROWSERSITECOMPATIBILITYMODE BrowserSiteCompatibilityMode = iota
     // Loads the site in internetExplorer8 Enterprise Mode
     INTERNETEXPLORER8ENTERPRISE_BROWSERSITECOMPATIBILITYMODE
     // Loads the site in internetExplorer7 Enterprise Mode
@@ -32,10 +31,10 @@ func (i BrowserSiteCompatibilityMode) String() string {
     return []string{"default", "internetExplorer8Enterprise", "internetExplorer7Enterprise", "internetExplorer11", "internetExplorer10", "internetExplorer9", "internetExplorer8", "internetExplorer7", "internetExplorer5", "unknownFutureValue"}[i]
 }
 func ParseBrowserSiteCompatibilityMode(v string) (any, error) {
-    result := DEFAULTESCAPED_BROWSERSITECOMPATIBILITYMODE
+    result := DEFAULT_BROWSERSITECOMPATIBILITYMODE
     switch v {
         case "default":
-            result = DEFAULTESCAPED_BROWSERSITECOMPATIBILITYMODE
+            result = DEFAULT_BROWSERSITECOMPATIBILITYMODE
         case "internetExplorer8Enterprise":
             result = INTERNETEXPLORER8ENTERPRISE_BROWSERSITECOMPATIBILITYMODE
         case "internetExplorer7Enterprise":

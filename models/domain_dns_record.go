@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DomainDnsRecord 
 type DomainDnsRecord struct {
     Entity
 }
-// NewDomainDnsRecord instantiates a new domainDnsRecord and sets the default values.
+// NewDomainDnsRecord instantiates a new DomainDnsRecord and sets the default values.
 func NewDomainDnsRecord()(*DomainDnsRecord) {
     m := &DomainDnsRecord{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewDomainDnsRecord()(*DomainDnsRecord) {
     return m
 }
 // CreateDomainDnsRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDomainDnsRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -46,6 +46,7 @@ func CreateDomainDnsRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewDomainDnsRecord(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DomainDnsRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["isOptional"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -101,6 +102,7 @@ func (m *DomainDnsRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetIsOptional gets the isOptional property value. If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.
+// returns a *bool when successful
 func (m *DomainDnsRecord) GetIsOptional()(*bool) {
     val, err := m.GetBackingStore().Get("isOptional")
     if err != nil {
@@ -112,6 +114,7 @@ func (m *DomainDnsRecord) GetIsOptional()(*bool) {
     return nil
 }
 // GetLabel gets the label property value. Value used when configuring the name of the DNS record at the DNS host.
+// returns a *string when successful
 func (m *DomainDnsRecord) GetLabel()(*string) {
     val, err := m.GetBackingStore().Get("label")
     if err != nil {
@@ -123,6 +126,7 @@ func (m *DomainDnsRecord) GetLabel()(*string) {
     return nil
 }
 // GetRecordType gets the recordType property value. Indicates what type of DNS record this entity represents. The value can be CName, Mx, Srv, or Txt.
+// returns a *string when successful
 func (m *DomainDnsRecord) GetRecordType()(*string) {
     val, err := m.GetBackingStore().Get("recordType")
     if err != nil {
@@ -134,6 +138,7 @@ func (m *DomainDnsRecord) GetRecordType()(*string) {
     return nil
 }
 // GetSupportedService gets the supportedService property value. Microsoft Online Service or feature that has a dependency on this DNS record. Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.
+// returns a *string when successful
 func (m *DomainDnsRecord) GetSupportedService()(*string) {
     val, err := m.GetBackingStore().Get("supportedService")
     if err != nil {
@@ -145,6 +150,7 @@ func (m *DomainDnsRecord) GetSupportedService()(*string) {
     return nil
 }
 // GetTtl gets the ttl property value. Value to use when configuring the time-to-live (ttl) property of the DNS record at the DNS host. Not nullable.
+// returns a *int32 when successful
 func (m *DomainDnsRecord) GetTtl()(*int32) {
     val, err := m.GetBackingStore().Get("ttl")
     if err != nil {
@@ -228,7 +234,6 @@ func (m *DomainDnsRecord) SetTtl(value *int32)() {
         panic(err)
     }
 }
-// DomainDnsRecordable 
 type DomainDnsRecordable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

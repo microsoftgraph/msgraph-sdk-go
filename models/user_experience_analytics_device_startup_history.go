@@ -9,7 +9,7 @@ import (
 type UserExperienceAnalyticsDeviceStartupHistory struct {
     Entity
 }
-// NewUserExperienceAnalyticsDeviceStartupHistory instantiates a new userExperienceAnalyticsDeviceStartupHistory and sets the default values.
+// NewUserExperienceAnalyticsDeviceStartupHistory instantiates a new UserExperienceAnalyticsDeviceStartupHistory and sets the default values.
 func NewUserExperienceAnalyticsDeviceStartupHistory()(*UserExperienceAnalyticsDeviceStartupHistory) {
     m := &UserExperienceAnalyticsDeviceStartupHistory{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewUserExperienceAnalyticsDeviceStartupHistory()(*UserExperienceAnalyticsDe
     return m
 }
 // CreateUserExperienceAnalyticsDeviceStartupHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsDeviceStartupHistoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsDeviceStartupHistory(), nil
 }
 // GetCoreBootTimeInMs gets the coreBootTimeInMs property value. The device core boot time in milliseconds. Supports: $select, $OrderBy. Read-only.
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsDeviceStartupHistory) GetCoreBootTimeInMs()(*int32) {
     val, err := m.GetBackingStore().Get("coreBootTimeInMs")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetCoreBootTimeInMs()(*int
     return nil
 }
 // GetCoreLoginTimeInMs gets the coreLoginTimeInMs property value. The device core login time in milliseconds. Supports: $select, $OrderBy. Read-only.
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsDeviceStartupHistory) GetCoreLoginTimeInMs()(*int32) {
     val, err := m.GetBackingStore().Get("coreLoginTimeInMs")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetCoreLoginTimeInMs()(*in
     return nil
 }
 // GetDeviceId gets the deviceId property value. The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsDeviceStartupHistory) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetDeviceId()(*string) {
     return nil
 }
 // GetFeatureUpdateBootTimeInMs gets the featureUpdateBootTimeInMs property value. The impact of device feature updates on boot time in milliseconds. Supports: $select, $OrderBy. Read-only.
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsDeviceStartupHistory) GetFeatureUpdateBootTimeInMs()(*int32) {
     val, err := m.GetBackingStore().Get("featureUpdateBootTimeInMs")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetFeatureUpdateBootTimeIn
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsDeviceStartupHistory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["coreBootTimeInMs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -230,6 +236,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetFieldDeserializers()(ma
     return res
 }
 // GetGroupPolicyBootTimeInMs gets the groupPolicyBootTimeInMs property value. The impact of device group policy client on boot time in milliseconds. Supports: $select, $OrderBy. Read-only.
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsDeviceStartupHistory) GetGroupPolicyBootTimeInMs()(*int32) {
     val, err := m.GetBackingStore().Get("groupPolicyBootTimeInMs")
     if err != nil {
@@ -241,6 +248,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetGroupPolicyBootTimeInMs
     return nil
 }
 // GetGroupPolicyLoginTimeInMs gets the groupPolicyLoginTimeInMs property value. The impact of device group policy client on login time in milliseconds. Supports: $select, $OrderBy. Read-only.
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsDeviceStartupHistory) GetGroupPolicyLoginTimeInMs()(*int32) {
     val, err := m.GetBackingStore().Get("groupPolicyLoginTimeInMs")
     if err != nil {
@@ -252,6 +260,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetGroupPolicyLoginTimeInM
     return nil
 }
 // GetIsFeatureUpdate gets the isFeatureUpdate property value. When TRUE, indicates the device boot record is associated with feature updates. When FALSE, indicates the device boot record is not associated with feature updates. Supports: $select, $OrderBy. Read-only.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsDeviceStartupHistory) GetIsFeatureUpdate()(*bool) {
     val, err := m.GetBackingStore().Get("isFeatureUpdate")
     if err != nil {
@@ -263,6 +272,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetIsFeatureUpdate()(*bool
     return nil
 }
 // GetIsFirstLogin gets the isFirstLogin property value. When TRUE, indicates the device login is the first login after a reboot. When FALSE, indicates the device login is not the first login after a reboot. Supports: $select, $OrderBy. Read-only.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsDeviceStartupHistory) GetIsFirstLogin()(*bool) {
     val, err := m.GetBackingStore().Get("isFirstLogin")
     if err != nil {
@@ -274,6 +284,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetIsFirstLogin()(*bool) {
     return nil
 }
 // GetOperatingSystemVersion gets the operatingSystemVersion property value. The user experience analytics device boot record's operating system version. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsDeviceStartupHistory) GetOperatingSystemVersion()(*string) {
     val, err := m.GetBackingStore().Get("operatingSystemVersion")
     if err != nil {
@@ -285,6 +296,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetOperatingSystemVersion(
     return nil
 }
 // GetResponsiveDesktopTimeInMs gets the responsiveDesktopTimeInMs property value. The time for desktop to become responsive during login process in milliseconds. Supports: $select, $OrderBy. Read-only.
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsDeviceStartupHistory) GetResponsiveDesktopTimeInMs()(*int32) {
     val, err := m.GetBackingStore().Get("responsiveDesktopTimeInMs")
     if err != nil {
@@ -296,6 +308,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetResponsiveDesktopTimeIn
     return nil
 }
 // GetRestartCategory gets the restartCategory property value. Operating System restart category.
+// returns a *UserExperienceAnalyticsOperatingSystemRestartCategory when successful
 func (m *UserExperienceAnalyticsDeviceStartupHistory) GetRestartCategory()(*UserExperienceAnalyticsOperatingSystemRestartCategory) {
     val, err := m.GetBackingStore().Get("restartCategory")
     if err != nil {
@@ -307,6 +320,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetRestartCategory()(*User
     return nil
 }
 // GetRestartFaultBucket gets the restartFaultBucket property value. OS restart fault bucket. The fault bucket is used to find additional information about a system crash. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsDeviceStartupHistory) GetRestartFaultBucket()(*string) {
     val, err := m.GetBackingStore().Get("restartFaultBucket")
     if err != nil {
@@ -318,6 +332,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetRestartFaultBucket()(*s
     return nil
 }
 // GetRestartStopCode gets the restartStopCode property value. OS restart stop code. This shows the bug check code which can be used to look up the blue screen reason. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsDeviceStartupHistory) GetRestartStopCode()(*string) {
     val, err := m.GetBackingStore().Get("restartStopCode")
     if err != nil {
@@ -329,6 +344,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetRestartStopCode()(*stri
     return nil
 }
 // GetStartTime gets the startTime property value. The device boot start time. The value cannot be modified and is automatically populated when the device performs a reboot. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.
+// returns a *Time when successful
 func (m *UserExperienceAnalyticsDeviceStartupHistory) GetStartTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startTime")
     if err != nil {
@@ -340,6 +356,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetStartTime()(*i336074805
     return nil
 }
 // GetTotalBootTimeInMs gets the totalBootTimeInMs property value. The device total boot time in milliseconds. Supports: $select, $OrderBy. Read-only.
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsDeviceStartupHistory) GetTotalBootTimeInMs()(*int32) {
     val, err := m.GetBackingStore().Get("totalBootTimeInMs")
     if err != nil {
@@ -351,6 +368,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetTotalBootTimeInMs()(*in
     return nil
 }
 // GetTotalLoginTimeInMs gets the totalLoginTimeInMs property value. The device total login time in milliseconds. Supports: $select, $OrderBy. Read-only.
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsDeviceStartupHistory) GetTotalLoginTimeInMs()(*int32) {
     val, err := m.GetBackingStore().Get("totalLoginTimeInMs")
     if err != nil {
@@ -578,7 +596,6 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) SetTotalLoginTimeInMs(valu
         panic(err)
     }
 }
-// UserExperienceAnalyticsDeviceStartupHistoryable 
 type UserExperienceAnalyticsDeviceStartupHistoryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

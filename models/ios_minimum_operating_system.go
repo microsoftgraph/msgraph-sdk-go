@@ -10,7 +10,7 @@ type IosMinimumOperatingSystem struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewIosMinimumOperatingSystem instantiates a new iosMinimumOperatingSystem and sets the default values.
+// NewIosMinimumOperatingSystem instantiates a new IosMinimumOperatingSystem and sets the default values.
 func NewIosMinimumOperatingSystem()(*IosMinimumOperatingSystem) {
     m := &IosMinimumOperatingSystem{
     }
@@ -19,10 +19,12 @@ func NewIosMinimumOperatingSystem()(*IosMinimumOperatingSystem) {
     return m
 }
 // CreateIosMinimumOperatingSystemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosMinimumOperatingSystemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosMinimumOperatingSystem(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *IosMinimumOperatingSystem) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *IosMinimumOperatingSystem) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *IosMinimumOperatingSystem) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -134,6 +138,7 @@ func (m *IosMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *IosMinimumOperatingSystem) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -145,6 +150,7 @@ func (m *IosMinimumOperatingSystem) GetOdataType()(*string) {
     return nil
 }
 // GetV100 gets the v10_0 property value. When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// returns a *bool when successful
 func (m *IosMinimumOperatingSystem) GetV100()(*bool) {
     val, err := m.GetBackingStore().Get("v10_0")
     if err != nil {
@@ -156,6 +162,7 @@ func (m *IosMinimumOperatingSystem) GetV100()(*bool) {
     return nil
 }
 // GetV110 gets the v11_0 property value. When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// returns a *bool when successful
 func (m *IosMinimumOperatingSystem) GetV110()(*bool) {
     val, err := m.GetBackingStore().Get("v11_0")
     if err != nil {
@@ -167,6 +174,7 @@ func (m *IosMinimumOperatingSystem) GetV110()(*bool) {
     return nil
 }
 // GetV120 gets the v12_0 property value. When TRUE, only Version 12.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// returns a *bool when successful
 func (m *IosMinimumOperatingSystem) GetV120()(*bool) {
     val, err := m.GetBackingStore().Get("v12_0")
     if err != nil {
@@ -178,6 +186,7 @@ func (m *IosMinimumOperatingSystem) GetV120()(*bool) {
     return nil
 }
 // GetV130 gets the v13_0 property value. When TRUE, only Version 13.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// returns a *bool when successful
 func (m *IosMinimumOperatingSystem) GetV130()(*bool) {
     val, err := m.GetBackingStore().Get("v13_0")
     if err != nil {
@@ -189,6 +198,7 @@ func (m *IosMinimumOperatingSystem) GetV130()(*bool) {
     return nil
 }
 // GetV140 gets the v14_0 property value. When TRUE, only Version 14.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// returns a *bool when successful
 func (m *IosMinimumOperatingSystem) GetV140()(*bool) {
     val, err := m.GetBackingStore().Get("v14_0")
     if err != nil {
@@ -200,6 +210,7 @@ func (m *IosMinimumOperatingSystem) GetV140()(*bool) {
     return nil
 }
 // GetV150 gets the v15_0 property value. When TRUE, only Version 15.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// returns a *bool when successful
 func (m *IosMinimumOperatingSystem) GetV150()(*bool) {
     val, err := m.GetBackingStore().Get("v15_0")
     if err != nil {
@@ -211,6 +222,7 @@ func (m *IosMinimumOperatingSystem) GetV150()(*bool) {
     return nil
 }
 // GetV80 gets the v8_0 property value. When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// returns a *bool when successful
 func (m *IosMinimumOperatingSystem) GetV80()(*bool) {
     val, err := m.GetBackingStore().Get("v8_0")
     if err != nil {
@@ -222,6 +234,7 @@ func (m *IosMinimumOperatingSystem) GetV80()(*bool) {
     return nil
 }
 // GetV90 gets the v9_0 property value. When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// returns a *bool when successful
 func (m *IosMinimumOperatingSystem) GetV90()(*bool) {
     val, err := m.GetBackingStore().Get("v9_0")
     if err != nil {
@@ -370,7 +383,6 @@ func (m *IosMinimumOperatingSystem) SetV90(value *bool)() {
         panic(err)
     }
 }
-// IosMinimumOperatingSystemable 
 type IosMinimumOperatingSystemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ParticipantLeftNotification 
 type ParticipantLeftNotification struct {
     Entity
 }
-// NewParticipantLeftNotification instantiates a new participantLeftNotification and sets the default values.
+// NewParticipantLeftNotification instantiates a new ParticipantLeftNotification and sets the default values.
 func NewParticipantLeftNotification()(*ParticipantLeftNotification) {
     m := &ParticipantLeftNotification{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewParticipantLeftNotification()(*ParticipantLeftNotification) {
     return m
 }
 // CreateParticipantLeftNotificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateParticipantLeftNotificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewParticipantLeftNotification(), nil
 }
 // GetCall gets the call property value. The call property
+// returns a Callable when successful
 func (m *ParticipantLeftNotification) GetCall()(Callable) {
     val, err := m.GetBackingStore().Get("call")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ParticipantLeftNotification) GetCall()(Callable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ParticipantLeftNotification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["call"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -56,6 +58,7 @@ func (m *ParticipantLeftNotification) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetParticipantId gets the participantId property value. ID of the participant under the policy who has left the meeting.
+// returns a *string when successful
 func (m *ParticipantLeftNotification) GetParticipantId()(*string) {
     val, err := m.GetBackingStore().Get("participantId")
     if err != nil {
@@ -100,7 +103,6 @@ func (m *ParticipantLeftNotification) SetParticipantId(value *string)() {
         panic(err)
     }
 }
-// ParticipantLeftNotificationable 
 type ParticipantLeftNotificationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

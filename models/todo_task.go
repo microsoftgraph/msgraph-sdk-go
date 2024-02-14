@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TodoTask 
 type TodoTask struct {
     Entity
 }
-// NewTodoTask instantiates a new todoTask and sets the default values.
+// NewTodoTask instantiates a new TodoTask and sets the default values.
 func NewTodoTask()(*TodoTask) {
     m := &TodoTask{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewTodoTask()(*TodoTask) {
     return m
 }
 // CreateTodoTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTodoTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTodoTask(), nil
 }
 // GetAttachments gets the attachments property value. A collection of file attachments for the task.
+// returns a []AttachmentBaseable when successful
 func (m *TodoTask) GetAttachments()([]AttachmentBaseable) {
     val, err := m.GetBackingStore().Get("attachments")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *TodoTask) GetAttachments()([]AttachmentBaseable) {
     return nil
 }
 // GetAttachmentSessions gets the attachmentSessions property value. The attachmentSessions property
+// returns a []AttachmentSessionable when successful
 func (m *TodoTask) GetAttachmentSessions()([]AttachmentSessionable) {
     val, err := m.GetBackingStore().Get("attachmentSessions")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *TodoTask) GetAttachmentSessions()([]AttachmentSessionable) {
     return nil
 }
 // GetBody gets the body property value. The task body that typically contains information about the task.
+// returns a ItemBodyable when successful
 func (m *TodoTask) GetBody()(ItemBodyable) {
     val, err := m.GetBackingStore().Get("body")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *TodoTask) GetBody()(ItemBodyable) {
     return nil
 }
 // GetBodyLastModifiedDateTime gets the bodyLastModifiedDateTime property value. The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
+// returns a *Time when successful
 func (m *TodoTask) GetBodyLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("bodyLastModifiedDateTime")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *TodoTask) GetBodyLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad9
     return nil
 }
 // GetCategories gets the categories property value. The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
+// returns a []string when successful
 func (m *TodoTask) GetCategories()([]string) {
     val, err := m.GetBackingStore().Get("categories")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *TodoTask) GetCategories()([]string) {
     return nil
 }
 // GetChecklistItems gets the checklistItems property value. A collection of checklistItems linked to a task.
+// returns a []ChecklistItemable when successful
 func (m *TodoTask) GetChecklistItems()([]ChecklistItemable) {
     val, err := m.GetBackingStore().Get("checklistItems")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *TodoTask) GetChecklistItems()([]ChecklistItemable) {
     return nil
 }
 // GetCompletedDateTime gets the completedDateTime property value. The date and time in the specified time zone that the task was finished.
+// returns a DateTimeTimeZoneable when successful
 func (m *TodoTask) GetCompletedDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("completedDateTime")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *TodoTask) GetCompletedDateTime()(DateTimeTimeZoneable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
+// returns a *Time when successful
 func (m *TodoTask) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -109,6 +117,7 @@ func (m *TodoTask) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     return nil
 }
 // GetDueDateTime gets the dueDateTime property value. The date and time in the specified time zone that the task is to be finished.
+// returns a DateTimeTimeZoneable when successful
 func (m *TodoTask) GetDueDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("dueDateTime")
     if err != nil {
@@ -120,6 +129,7 @@ func (m *TodoTask) GetDueDateTime()(DateTimeTimeZoneable) {
     return nil
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the task. Nullable.
+// returns a []Extensionable when successful
 func (m *TodoTask) GetExtensions()([]Extensionable) {
     val, err := m.GetBackingStore().Get("extensions")
     if err != nil {
@@ -131,6 +141,7 @@ func (m *TodoTask) GetExtensions()([]Extensionable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TodoTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["attachments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -372,6 +383,7 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetHasAttachments gets the hasAttachments property value. Indicates whether the task has attachments.
+// returns a *bool when successful
 func (m *TodoTask) GetHasAttachments()(*bool) {
     val, err := m.GetBackingStore().Get("hasAttachments")
     if err != nil {
@@ -383,6 +395,7 @@ func (m *TodoTask) GetHasAttachments()(*bool) {
     return nil
 }
 // GetImportance gets the importance property value. The importance property
+// returns a *Importance when successful
 func (m *TodoTask) GetImportance()(*Importance) {
     val, err := m.GetBackingStore().Get("importance")
     if err != nil {
@@ -394,6 +407,7 @@ func (m *TodoTask) GetImportance()(*Importance) {
     return nil
 }
 // GetIsReminderOn gets the isReminderOn property value. Set to true if an alert is set to remind the user of the task.
+// returns a *bool when successful
 func (m *TodoTask) GetIsReminderOn()(*bool) {
     val, err := m.GetBackingStore().Get("isReminderOn")
     if err != nil {
@@ -405,6 +419,7 @@ func (m *TodoTask) GetIsReminderOn()(*bool) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
+// returns a *Time when successful
 func (m *TodoTask) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -416,6 +431,7 @@ func (m *TodoTask) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetLinkedResources gets the linkedResources property value. A collection of resources linked to the task.
+// returns a []LinkedResourceable when successful
 func (m *TodoTask) GetLinkedResources()([]LinkedResourceable) {
     val, err := m.GetBackingStore().Get("linkedResources")
     if err != nil {
@@ -427,6 +443,7 @@ func (m *TodoTask) GetLinkedResources()([]LinkedResourceable) {
     return nil
 }
 // GetRecurrence gets the recurrence property value. The recurrence pattern for the task.
+// returns a PatternedRecurrenceable when successful
 func (m *TodoTask) GetRecurrence()(PatternedRecurrenceable) {
     val, err := m.GetBackingStore().Get("recurrence")
     if err != nil {
@@ -438,6 +455,7 @@ func (m *TodoTask) GetRecurrence()(PatternedRecurrenceable) {
     return nil
 }
 // GetReminderDateTime gets the reminderDateTime property value. The date and time in the specified time zone for a reminder alert of the task to occur.
+// returns a DateTimeTimeZoneable when successful
 func (m *TodoTask) GetReminderDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("reminderDateTime")
     if err != nil {
@@ -449,6 +467,7 @@ func (m *TodoTask) GetReminderDateTime()(DateTimeTimeZoneable) {
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. The date and time in the specified time zone at which the task is scheduled to start.
+// returns a DateTimeTimeZoneable when successful
 func (m *TodoTask) GetStartDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -460,6 +479,7 @@ func (m *TodoTask) GetStartDateTime()(DateTimeTimeZoneable) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *TaskStatus when successful
 func (m *TodoTask) GetStatus()(*TaskStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -471,6 +491,7 @@ func (m *TodoTask) GetStatus()(*TaskStatus) {
     return nil
 }
 // GetTitle gets the title property value. A brief description of the task.
+// returns a *string when successful
 func (m *TodoTask) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -781,7 +802,6 @@ func (m *TodoTask) SetTitle(value *string)() {
         panic(err)
     }
 }
-// TodoTaskable 
 type TodoTaskable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

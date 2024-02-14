@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LinkedResource 
 type LinkedResource struct {
     Entity
 }
-// NewLinkedResource instantiates a new linkedResource and sets the default values.
+// NewLinkedResource instantiates a new LinkedResource and sets the default values.
 func NewLinkedResource()(*LinkedResource) {
     m := &LinkedResource{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewLinkedResource()(*LinkedResource) {
     return m
 }
 // CreateLinkedResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateLinkedResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLinkedResource(), nil
 }
 // GetApplicationName gets the applicationName property value. The app name of the source that sends the linkedResource.
+// returns a *string when successful
 func (m *LinkedResource) GetApplicationName()(*string) {
     val, err := m.GetBackingStore().Get("applicationName")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *LinkedResource) GetApplicationName()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The title of the linkedResource.
+// returns a *string when successful
 func (m *LinkedResource) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *LinkedResource) GetDisplayName()(*string) {
     return nil
 }
 // GetExternalId gets the externalId property value. ID of the object that is associated with this task on the third-party/partner system.
+// returns a *string when successful
 func (m *LinkedResource) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *LinkedResource) GetExternalId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *LinkedResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["applicationName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -98,6 +102,7 @@ func (m *LinkedResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetWebUrl gets the webUrl property value. Deep link to the linkedResource.
+// returns a *string when successful
 func (m *LinkedResource) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -168,7 +173,6 @@ func (m *LinkedResource) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// LinkedResourceable 
 type LinkedResourceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

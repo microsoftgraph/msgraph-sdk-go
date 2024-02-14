@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookPivotTable 
 type WorkbookPivotTable struct {
     Entity
 }
-// NewWorkbookPivotTable instantiates a new workbookPivotTable and sets the default values.
+// NewWorkbookPivotTable instantiates a new WorkbookPivotTable and sets the default values.
 func NewWorkbookPivotTable()(*WorkbookPivotTable) {
     m := &WorkbookPivotTable{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewWorkbookPivotTable()(*WorkbookPivotTable) {
     return m
 }
 // CreateWorkbookPivotTableFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookPivotTableFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookPivotTable(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookPivotTable) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -45,6 +46,7 @@ func (m *WorkbookPivotTable) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetName gets the name property value. Name of the PivotTable.
+// returns a *string when successful
 func (m *WorkbookPivotTable) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -56,6 +58,7 @@ func (m *WorkbookPivotTable) GetName()(*string) {
     return nil
 }
 // GetWorksheet gets the worksheet property value. The worksheet containing the current PivotTable. Read-only.
+// returns a WorkbookWorksheetable when successful
 func (m *WorkbookPivotTable) GetWorksheet()(WorkbookWorksheetable) {
     val, err := m.GetBackingStore().Get("worksheet")
     if err != nil {
@@ -100,7 +103,6 @@ func (m *WorkbookPivotTable) SetWorksheet(value WorkbookWorksheetable)() {
         panic(err)
     }
 }
-// WorkbookPivotTableable 
 type WorkbookPivotTableable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

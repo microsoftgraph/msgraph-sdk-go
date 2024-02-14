@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TargetDeviceGroupCollectionResponse 
 type TargetDeviceGroupCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTargetDeviceGroupCollectionResponse instantiates a new targetDeviceGroupCollectionResponse and sets the default values.
+// NewTargetDeviceGroupCollectionResponse instantiates a new TargetDeviceGroupCollectionResponse and sets the default values.
 func NewTargetDeviceGroupCollectionResponse()(*TargetDeviceGroupCollectionResponse) {
     m := &TargetDeviceGroupCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewTargetDeviceGroupCollectionResponse()(*TargetDeviceGroupCollectionRespon
     return m
 }
 // CreateTargetDeviceGroupCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTargetDeviceGroupCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTargetDeviceGroupCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TargetDeviceGroupCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *TargetDeviceGroupCollectionResponse) GetFieldDeserializers()(map[string
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []TargetDeviceGroupable when successful
 func (m *TargetDeviceGroupCollectionResponse) GetValue()([]TargetDeviceGroupable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *TargetDeviceGroupCollectionResponse) SetValue(value []TargetDeviceGroup
         panic(err)
     }
 }
-// TargetDeviceGroupCollectionResponseable 
 type TargetDeviceGroupCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

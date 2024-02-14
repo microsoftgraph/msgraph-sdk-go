@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// TeleconferenceDeviceQuality 
 type TeleconferenceDeviceQuality struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTeleconferenceDeviceQuality instantiates a new teleconferenceDeviceQuality and sets the default values.
+// NewTeleconferenceDeviceQuality instantiates a new TeleconferenceDeviceQuality and sets the default values.
 func NewTeleconferenceDeviceQuality()(*TeleconferenceDeviceQuality) {
     m := &TeleconferenceDeviceQuality{
     }
@@ -20,10 +19,12 @@ func NewTeleconferenceDeviceQuality()(*TeleconferenceDeviceQuality) {
     return m
 }
 // CreateTeleconferenceDeviceQualityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeleconferenceDeviceQualityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeleconferenceDeviceQuality(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TeleconferenceDeviceQuality) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *TeleconferenceDeviceQuality) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *TeleconferenceDeviceQuality) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCallChainId gets the callChainId property value. A unique identifier for all  the participant calls in a conference or a unique identifier for two participant calls in P2P call. This needs to be copied over from Microsoft.Graph.Call.CallChainId.
+// returns a *UUID when successful
 func (m *TeleconferenceDeviceQuality) GetCallChainId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("callChainId")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *TeleconferenceDeviceQuality) GetCallChainId()(*i561e97a8befe7661a44c8f5
     return nil
 }
 // GetCloudServiceDeploymentEnvironment gets the cloudServiceDeploymentEnvironment property value. A geo-region where the service is deployed, such as ProdNoam.
+// returns a *string when successful
 func (m *TeleconferenceDeviceQuality) GetCloudServiceDeploymentEnvironment()(*string) {
     val, err := m.GetBackingStore().Get("cloudServiceDeploymentEnvironment")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *TeleconferenceDeviceQuality) GetCloudServiceDeploymentEnvironment()(*st
     return nil
 }
 // GetCloudServiceDeploymentId gets the cloudServiceDeploymentId property value. A unique deployment identifier assigned by Azure.
+// returns a *string when successful
 func (m *TeleconferenceDeviceQuality) GetCloudServiceDeploymentId()(*string) {
     val, err := m.GetBackingStore().Get("cloudServiceDeploymentId")
     if err != nil {
@@ -73,6 +78,7 @@ func (m *TeleconferenceDeviceQuality) GetCloudServiceDeploymentId()(*string) {
     return nil
 }
 // GetCloudServiceInstanceName gets the cloudServiceInstanceName property value. The Azure deployed cloud service instance name, such as FrontEndIN3.
+// returns a *string when successful
 func (m *TeleconferenceDeviceQuality) GetCloudServiceInstanceName()(*string) {
     val, err := m.GetBackingStore().Get("cloudServiceInstanceName")
     if err != nil {
@@ -84,6 +90,7 @@ func (m *TeleconferenceDeviceQuality) GetCloudServiceInstanceName()(*string) {
     return nil
 }
 // GetCloudServiceName gets the cloudServiceName property value. The Azure deployed cloud service name, such as contoso.cloudapp.net.
+// returns a *string when successful
 func (m *TeleconferenceDeviceQuality) GetCloudServiceName()(*string) {
     val, err := m.GetBackingStore().Get("cloudServiceName")
     if err != nil {
@@ -95,6 +102,7 @@ func (m *TeleconferenceDeviceQuality) GetCloudServiceName()(*string) {
     return nil
 }
 // GetDeviceDescription gets the deviceDescription property value. Any additional description, such as VTC Bldg 30/21.
+// returns a *string when successful
 func (m *TeleconferenceDeviceQuality) GetDeviceDescription()(*string) {
     val, err := m.GetBackingStore().Get("deviceDescription")
     if err != nil {
@@ -106,6 +114,7 @@ func (m *TeleconferenceDeviceQuality) GetDeviceDescription()(*string) {
     return nil
 }
 // GetDeviceName gets the deviceName property value. The user media agent name, such as Cisco SX80.
+// returns a *string when successful
 func (m *TeleconferenceDeviceQuality) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -117,6 +126,7 @@ func (m *TeleconferenceDeviceQuality) GetDeviceName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["callChainId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -238,6 +248,7 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetMediaLegId gets the mediaLegId property value. A unique identifier for a specific media leg of a participant in a conference.  One participant can have multiple media leg identifiers if retargeting happens. CVI partner assigns this value.
+// returns a *UUID when successful
 func (m *TeleconferenceDeviceQuality) GetMediaLegId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("mediaLegId")
     if err != nil {
@@ -249,6 +260,7 @@ func (m *TeleconferenceDeviceQuality) GetMediaLegId()(*i561e97a8befe7661a44c8f54
     return nil
 }
 // GetMediaQualityList gets the mediaQualityList property value. The list of media qualities in a media session (call), such as audio quality, video quality, and/or screen sharing quality.
+// returns a []TeleconferenceDeviceMediaQualityable when successful
 func (m *TeleconferenceDeviceQuality) GetMediaQualityList()([]TeleconferenceDeviceMediaQualityable) {
     val, err := m.GetBackingStore().Get("mediaQualityList")
     if err != nil {
@@ -260,6 +272,7 @@ func (m *TeleconferenceDeviceQuality) GetMediaQualityList()([]TeleconferenceDevi
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *TeleconferenceDeviceQuality) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -271,6 +284,7 @@ func (m *TeleconferenceDeviceQuality) GetOdataType()(*string) {
     return nil
 }
 // GetParticipantId gets the participantId property value. A unique identifier for a specific participant in a conference. The CVI partner needs to copy over Call.MyParticipantId to this property.
+// returns a *UUID when successful
 func (m *TeleconferenceDeviceQuality) GetParticipantId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("participantId")
     if err != nil {
@@ -451,7 +465,6 @@ func (m *TeleconferenceDeviceQuality) SetParticipantId(value *i561e97a8befe7661a
         panic(err)
     }
 }
-// TeleconferenceDeviceQualityable 
 type TeleconferenceDeviceQualityable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

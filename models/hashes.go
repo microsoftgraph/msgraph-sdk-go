@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// Hashes 
 type Hashes struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewHashes instantiates a new hashes and sets the default values.
+// NewHashes instantiates a new Hashes and sets the default values.
 func NewHashes()(*Hashes) {
     m := &Hashes{
     }
@@ -19,10 +18,12 @@ func NewHashes()(*Hashes) {
     return m
 }
 // CreateHashesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateHashesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHashes(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Hashes) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *Hashes) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *Hashes) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCrc32Hash gets the crc32Hash property value. The CRC32 value of the file in little endian (if available). Read-only.
+// returns a *string when successful
 func (m *Hashes) GetCrc32Hash()(*string) {
     val, err := m.GetBackingStore().Get("crc32Hash")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *Hashes) GetCrc32Hash()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Hashes) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["crc32Hash"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -105,6 +109,7 @@ func (m *Hashes) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *Hashes) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -116,6 +121,7 @@ func (m *Hashes) GetOdataType()(*string) {
     return nil
 }
 // GetQuickXorHash gets the quickXorHash property value. A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
+// returns a *string when successful
 func (m *Hashes) GetQuickXorHash()(*string) {
     val, err := m.GetBackingStore().Get("quickXorHash")
     if err != nil {
@@ -127,6 +133,7 @@ func (m *Hashes) GetQuickXorHash()(*string) {
     return nil
 }
 // GetSha1Hash gets the sha1Hash property value. SHA1 hash for the contents of the file (if available). Read-only.
+// returns a *string when successful
 func (m *Hashes) GetSha1Hash()(*string) {
     val, err := m.GetBackingStore().Get("sha1Hash")
     if err != nil {
@@ -138,6 +145,7 @@ func (m *Hashes) GetSha1Hash()(*string) {
     return nil
 }
 // GetSha256Hash gets the sha256Hash property value. SHA256 hash for the contents of the file (if available). Read-only.
+// returns a *string when successful
 func (m *Hashes) GetSha256Hash()(*string) {
     val, err := m.GetBackingStore().Get("sha256Hash")
     if err != nil {
@@ -234,7 +242,6 @@ func (m *Hashes) SetSha256Hash(value *string)() {
         panic(err)
     }
 }
-// Hashesable 
 type Hashesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

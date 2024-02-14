@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SimulationAutomationRunCollectionResponse 
 type SimulationAutomationRunCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSimulationAutomationRunCollectionResponse instantiates a new simulationAutomationRunCollectionResponse and sets the default values.
+// NewSimulationAutomationRunCollectionResponse instantiates a new SimulationAutomationRunCollectionResponse and sets the default values.
 func NewSimulationAutomationRunCollectionResponse()(*SimulationAutomationRunCollectionResponse) {
     m := &SimulationAutomationRunCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewSimulationAutomationRunCollectionResponse()(*SimulationAutomationRunColl
     return m
 }
 // CreateSimulationAutomationRunCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSimulationAutomationRunCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSimulationAutomationRunCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SimulationAutomationRunCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *SimulationAutomationRunCollectionResponse) GetFieldDeserializers()(map[
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []SimulationAutomationRunable when successful
 func (m *SimulationAutomationRunCollectionResponse) GetValue()([]SimulationAutomationRunable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *SimulationAutomationRunCollectionResponse) SetValue(value []SimulationA
         panic(err)
     }
 }
-// SimulationAutomationRunCollectionResponseable 
 type SimulationAutomationRunCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

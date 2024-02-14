@@ -8,7 +8,7 @@ import (
 type EBookInstallSummary struct {
     Entity
 }
-// NewEBookInstallSummary instantiates a new eBookInstallSummary and sets the default values.
+// NewEBookInstallSummary instantiates a new EBookInstallSummary and sets the default values.
 func NewEBookInstallSummary()(*EBookInstallSummary) {
     m := &EBookInstallSummary{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewEBookInstallSummary()(*EBookInstallSummary) {
     return m
 }
 // CreateEBookInstallSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEBookInstallSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEBookInstallSummary(), nil
 }
 // GetFailedDeviceCount gets the failedDeviceCount property value. Number of Devices that have failed to install this book.
+// returns a *int32 when successful
 func (m *EBookInstallSummary) GetFailedDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("failedDeviceCount")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *EBookInstallSummary) GetFailedDeviceCount()(*int32) {
     return nil
 }
 // GetFailedUserCount gets the failedUserCount property value. Number of Users that have 1 or more device that failed to install this book.
+// returns a *int32 when successful
 func (m *EBookInstallSummary) GetFailedUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("failedUserCount")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *EBookInstallSummary) GetFailedUserCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EBookInstallSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["failedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -107,6 +111,7 @@ func (m *EBookInstallSummary) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetInstalledDeviceCount gets the installedDeviceCount property value. Number of Devices that have successfully installed this book.
+// returns a *int32 when successful
 func (m *EBookInstallSummary) GetInstalledDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("installedDeviceCount")
     if err != nil {
@@ -118,6 +123,7 @@ func (m *EBookInstallSummary) GetInstalledDeviceCount()(*int32) {
     return nil
 }
 // GetInstalledUserCount gets the installedUserCount property value. Number of Users whose devices have all succeeded to install this book.
+// returns a *int32 when successful
 func (m *EBookInstallSummary) GetInstalledUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("installedUserCount")
     if err != nil {
@@ -129,6 +135,7 @@ func (m *EBookInstallSummary) GetInstalledUserCount()(*int32) {
     return nil
 }
 // GetNotInstalledDeviceCount gets the notInstalledDeviceCount property value. Number of Devices that does not have this book installed.
+// returns a *int32 when successful
 func (m *EBookInstallSummary) GetNotInstalledDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("notInstalledDeviceCount")
     if err != nil {
@@ -140,6 +147,7 @@ func (m *EBookInstallSummary) GetNotInstalledDeviceCount()(*int32) {
     return nil
 }
 // GetNotInstalledUserCount gets the notInstalledUserCount property value. Number of Users that did not install this book.
+// returns a *int32 when successful
 func (m *EBookInstallSummary) GetNotInstalledUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("notInstalledUserCount")
     if err != nil {
@@ -236,7 +244,6 @@ func (m *EBookInstallSummary) SetNotInstalledUserCount(value *int32)() {
         panic(err)
     }
 }
-// EBookInstallSummaryable 
 type EBookInstallSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

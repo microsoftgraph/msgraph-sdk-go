@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// BroadcastMeetingSettings 
 type BroadcastMeetingSettings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewBroadcastMeetingSettings instantiates a new broadcastMeetingSettings and sets the default values.
+// NewBroadcastMeetingSettings instantiates a new BroadcastMeetingSettings and sets the default values.
 func NewBroadcastMeetingSettings()(*BroadcastMeetingSettings) {
     m := &BroadcastMeetingSettings{
     }
@@ -19,10 +18,12 @@ func NewBroadcastMeetingSettings()(*BroadcastMeetingSettings) {
     return m
 }
 // CreateBroadcastMeetingSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBroadcastMeetingSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBroadcastMeetingSettings(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *BroadcastMeetingSettings) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *BroadcastMeetingSettings) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAllowedAudience gets the allowedAudience property value. Defines who can join the Teams live event. Possible values are listed in the following table.
+// returns a *BroadcastMeetingAudience when successful
 func (m *BroadcastMeetingSettings) GetAllowedAudience()(*BroadcastMeetingAudience) {
     val, err := m.GetBackingStore().Get("allowedAudience")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *BroadcastMeetingSettings) GetAllowedAudience()(*BroadcastMeetingAudienc
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *BroadcastMeetingSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCaptions gets the captions property value. Caption settings of a Teams live event.
+// returns a BroadcastMeetingCaptionSettingsable when successful
 func (m *BroadcastMeetingSettings) GetCaptions()(BroadcastMeetingCaptionSettingsable) {
     val, err := m.GetBackingStore().Get("captions")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *BroadcastMeetingSettings) GetCaptions()(BroadcastMeetingCaptionSettings
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BroadcastMeetingSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allowedAudience"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -136,6 +141,7 @@ func (m *BroadcastMeetingSettings) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetIsAttendeeReportEnabled gets the isAttendeeReportEnabled property value. Indicates whether attendee report is enabled for this Teams live event. Default value is false.
+// returns a *bool when successful
 func (m *BroadcastMeetingSettings) GetIsAttendeeReportEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isAttendeeReportEnabled")
     if err != nil {
@@ -147,6 +153,7 @@ func (m *BroadcastMeetingSettings) GetIsAttendeeReportEnabled()(*bool) {
     return nil
 }
 // GetIsQuestionAndAnswerEnabled gets the isQuestionAndAnswerEnabled property value. Indicates whether Q&A is enabled for this Teams live event. Default value is false.
+// returns a *bool when successful
 func (m *BroadcastMeetingSettings) GetIsQuestionAndAnswerEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isQuestionAndAnswerEnabled")
     if err != nil {
@@ -158,6 +165,7 @@ func (m *BroadcastMeetingSettings) GetIsQuestionAndAnswerEnabled()(*bool) {
     return nil
 }
 // GetIsRecordingEnabled gets the isRecordingEnabled property value. Indicates whether recording is enabled for this Teams live event. Default value is false.
+// returns a *bool when successful
 func (m *BroadcastMeetingSettings) GetIsRecordingEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isRecordingEnabled")
     if err != nil {
@@ -169,6 +177,7 @@ func (m *BroadcastMeetingSettings) GetIsRecordingEnabled()(*bool) {
     return nil
 }
 // GetIsVideoOnDemandEnabled gets the isVideoOnDemandEnabled property value. Indicates whether video on demand is enabled for this Teams live event. Default value is false.
+// returns a *bool when successful
 func (m *BroadcastMeetingSettings) GetIsVideoOnDemandEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isVideoOnDemandEnabled")
     if err != nil {
@@ -180,6 +189,7 @@ func (m *BroadcastMeetingSettings) GetIsVideoOnDemandEnabled()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *BroadcastMeetingSettings) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -303,7 +313,6 @@ func (m *BroadcastMeetingSettings) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// BroadcastMeetingSettingsable 
 type BroadcastMeetingSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

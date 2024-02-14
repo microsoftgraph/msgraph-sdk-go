@@ -6,7 +6,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ItemItemsItemWorkbookFunctionsDdbPostRequestBody 
 type ItemItemsItemWorkbookFunctionsDdbPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -20,10 +19,12 @@ func NewItemItemsItemWorkbookFunctionsDdbPostRequestBody()(*ItemItemsItemWorkboo
     return m
 }
 // CreateItemItemsItemWorkbookFunctionsDdbPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemsItemWorkbookFunctionsDdbPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemsItemWorkbookFunctionsDdbPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemsItemWorkbookFunctionsDdbPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *ItemItemsItemWorkbookFunctionsDdbPostRequestBody) GetAdditionalData()(m
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ItemItemsItemWorkbookFunctionsDdbPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCost gets the cost property value. The cost property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsDdbPostRequestBody) GetCost()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("cost")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *ItemItemsItemWorkbookFunctionsDdbPostRequestBody) GetCost()(iadcd811244
     return nil
 }
 // GetFactor gets the factor property value. The factor property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsDdbPostRequestBody) GetFactor()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("factor")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *ItemItemsItemWorkbookFunctionsDdbPostRequestBody) GetFactor()(iadcd8112
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemsItemWorkbookFunctionsDdbPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["cost"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -117,6 +122,7 @@ func (m *ItemItemsItemWorkbookFunctionsDdbPostRequestBody) GetFieldDeserializers
     return res
 }
 // GetLife gets the life property value. The life property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsDdbPostRequestBody) GetLife()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("life")
     if err != nil {
@@ -128,6 +134,7 @@ func (m *ItemItemsItemWorkbookFunctionsDdbPostRequestBody) GetLife()(iadcd811244
     return nil
 }
 // GetPeriod gets the period property value. The period property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsDdbPostRequestBody) GetPeriod()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("period")
     if err != nil {
@@ -139,6 +146,7 @@ func (m *ItemItemsItemWorkbookFunctionsDdbPostRequestBody) GetPeriod()(iadcd8112
     return nil
 }
 // GetSalvage gets the salvage property value. The salvage property
+// returns a Jsonable when successful
 func (m *ItemItemsItemWorkbookFunctionsDdbPostRequestBody) GetSalvage()(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Jsonable) {
     val, err := m.GetBackingStore().Get("salvage")
     if err != nil {
@@ -235,7 +243,6 @@ func (m *ItemItemsItemWorkbookFunctionsDdbPostRequestBody) SetSalvage(value iadc
         panic(err)
     }
 }
-// ItemItemsItemWorkbookFunctionsDdbPostRequestBodyable 
 type ItemItemsItemWorkbookFunctionsDdbPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

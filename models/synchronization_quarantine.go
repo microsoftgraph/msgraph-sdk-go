@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// SynchronizationQuarantine 
 type SynchronizationQuarantine struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSynchronizationQuarantine instantiates a new synchronizationQuarantine and sets the default values.
+// NewSynchronizationQuarantine instantiates a new SynchronizationQuarantine and sets the default values.
 func NewSynchronizationQuarantine()(*SynchronizationQuarantine) {
     m := &SynchronizationQuarantine{
     }
@@ -20,10 +19,12 @@ func NewSynchronizationQuarantine()(*SynchronizationQuarantine) {
     return m
 }
 // CreateSynchronizationQuarantineFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSynchronizationQuarantineFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSynchronizationQuarantine(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SynchronizationQuarantine) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *SynchronizationQuarantine) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *SynchronizationQuarantine) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCurrentBegan gets the currentBegan property value. Date and time when the quarantine was last evaluated and imposed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *SynchronizationQuarantine) GetCurrentBegan()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("currentBegan")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *SynchronizationQuarantine) GetCurrentBegan()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetError gets the error property value. Describes the error(s) that occurred when putting the synchronization job into quarantine.
+// returns a SynchronizationErrorable when successful
 func (m *SynchronizationQuarantine) GetError()(SynchronizationErrorable) {
     val, err := m.GetBackingStore().Get("error")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *SynchronizationQuarantine) GetError()(SynchronizationErrorable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SynchronizationQuarantine) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["currentBegan"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -137,6 +142,7 @@ func (m *SynchronizationQuarantine) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetNextAttempt gets the nextAttempt property value. Date and time when the next attempt to re-evaluate the quarantine will be made. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *SynchronizationQuarantine) GetNextAttempt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("nextAttempt")
     if err != nil {
@@ -148,6 +154,7 @@ func (m *SynchronizationQuarantine) GetNextAttempt()(*i336074805fc853987abe6f7fe
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *SynchronizationQuarantine) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -159,6 +166,7 @@ func (m *SynchronizationQuarantine) GetOdataType()(*string) {
     return nil
 }
 // GetReason gets the reason property value. The reason property
+// returns a *QuarantineReason when successful
 func (m *SynchronizationQuarantine) GetReason()(*QuarantineReason) {
     val, err := m.GetBackingStore().Get("reason")
     if err != nil {
@@ -170,6 +178,7 @@ func (m *SynchronizationQuarantine) GetReason()(*QuarantineReason) {
     return nil
 }
 // GetSeriesBegan gets the seriesBegan property value. Date and time when the quarantine was first imposed in this series (a series starts when a quarantine is first imposed, and is reset as soon as the quarantine is lifted). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *SynchronizationQuarantine) GetSeriesBegan()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("seriesBegan")
     if err != nil {
@@ -181,6 +190,7 @@ func (m *SynchronizationQuarantine) GetSeriesBegan()(*i336074805fc853987abe6f7fe
     return nil
 }
 // GetSeriesCount gets the seriesCount property value. Number of times in this series the quarantine was re-evaluated and left in effect (a series starts when quarantine is first imposed, and is reset as soon as quarantine is lifted).
+// returns a *int64 when successful
 func (m *SynchronizationQuarantine) GetSeriesCount()(*int64) {
     val, err := m.GetBackingStore().Get("seriesCount")
     if err != nil {
@@ -304,7 +314,6 @@ func (m *SynchronizationQuarantine) SetSeriesCount(value *int64)() {
         panic(err)
     }
 }
-// SynchronizationQuarantineable 
 type SynchronizationQuarantineable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

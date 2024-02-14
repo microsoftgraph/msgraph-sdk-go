@@ -10,7 +10,7 @@ type DeviceProtectionOverview struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDeviceProtectionOverview instantiates a new deviceProtectionOverview and sets the default values.
+// NewDeviceProtectionOverview instantiates a new DeviceProtectionOverview and sets the default values.
 func NewDeviceProtectionOverview()(*DeviceProtectionOverview) {
     m := &DeviceProtectionOverview{
     }
@@ -19,10 +19,12 @@ func NewDeviceProtectionOverview()(*DeviceProtectionOverview) {
     return m
 }
 // CreateDeviceProtectionOverviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceProtectionOverviewFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceProtectionOverview(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DeviceProtectionOverview) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *DeviceProtectionOverview) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *DeviceProtectionOverview) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCleanDeviceCount gets the cleanDeviceCount property value. Indicates number of devices reporting as clean
+// returns a *int32 when successful
 func (m *DeviceProtectionOverview) GetCleanDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("cleanDeviceCount")
     if err != nil {
@@ -50,6 +54,7 @@ func (m *DeviceProtectionOverview) GetCleanDeviceCount()(*int32) {
     return nil
 }
 // GetCriticalFailuresDeviceCount gets the criticalFailuresDeviceCount property value. Indicates number of devices with critical failures
+// returns a *int32 when successful
 func (m *DeviceProtectionOverview) GetCriticalFailuresDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("criticalFailuresDeviceCount")
     if err != nil {
@@ -61,6 +66,7 @@ func (m *DeviceProtectionOverview) GetCriticalFailuresDeviceCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceProtectionOverview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["cleanDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -186,6 +192,7 @@ func (m *DeviceProtectionOverview) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetInactiveThreatAgentDeviceCount gets the inactiveThreatAgentDeviceCount property value. Indicates number of devices with inactive threat agent
+// returns a *int32 when successful
 func (m *DeviceProtectionOverview) GetInactiveThreatAgentDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("inactiveThreatAgentDeviceCount")
     if err != nil {
@@ -197,6 +204,7 @@ func (m *DeviceProtectionOverview) GetInactiveThreatAgentDeviceCount()(*int32) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *DeviceProtectionOverview) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -208,6 +216,7 @@ func (m *DeviceProtectionOverview) GetOdataType()(*string) {
     return nil
 }
 // GetPendingFullScanDeviceCount gets the pendingFullScanDeviceCount property value. Indicates number of devices pending full scan
+// returns a *int32 when successful
 func (m *DeviceProtectionOverview) GetPendingFullScanDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("pendingFullScanDeviceCount")
     if err != nil {
@@ -219,6 +228,7 @@ func (m *DeviceProtectionOverview) GetPendingFullScanDeviceCount()(*int32) {
     return nil
 }
 // GetPendingManualStepsDeviceCount gets the pendingManualStepsDeviceCount property value. Indicates number of devices with pending manual steps
+// returns a *int32 when successful
 func (m *DeviceProtectionOverview) GetPendingManualStepsDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("pendingManualStepsDeviceCount")
     if err != nil {
@@ -230,6 +240,7 @@ func (m *DeviceProtectionOverview) GetPendingManualStepsDeviceCount()(*int32) {
     return nil
 }
 // GetPendingOfflineScanDeviceCount gets the pendingOfflineScanDeviceCount property value. Indicates number of pending offline scan devices
+// returns a *int32 when successful
 func (m *DeviceProtectionOverview) GetPendingOfflineScanDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("pendingOfflineScanDeviceCount")
     if err != nil {
@@ -241,6 +252,7 @@ func (m *DeviceProtectionOverview) GetPendingOfflineScanDeviceCount()(*int32) {
     return nil
 }
 // GetPendingQuickScanDeviceCount gets the pendingQuickScanDeviceCount property value. Indicates the number of devices that have a pending full scan. Valid values -2147483648 to 2147483647
+// returns a *int32 when successful
 func (m *DeviceProtectionOverview) GetPendingQuickScanDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("pendingQuickScanDeviceCount")
     if err != nil {
@@ -252,6 +264,7 @@ func (m *DeviceProtectionOverview) GetPendingQuickScanDeviceCount()(*int32) {
     return nil
 }
 // GetPendingRestartDeviceCount gets the pendingRestartDeviceCount property value. Indicates number of devices pending restart
+// returns a *int32 when successful
 func (m *DeviceProtectionOverview) GetPendingRestartDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("pendingRestartDeviceCount")
     if err != nil {
@@ -263,6 +276,7 @@ func (m *DeviceProtectionOverview) GetPendingRestartDeviceCount()(*int32) {
     return nil
 }
 // GetPendingSignatureUpdateDeviceCount gets the pendingSignatureUpdateDeviceCount property value. Indicates number of devices with an old signature
+// returns a *int32 when successful
 func (m *DeviceProtectionOverview) GetPendingSignatureUpdateDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("pendingSignatureUpdateDeviceCount")
     if err != nil {
@@ -274,6 +288,7 @@ func (m *DeviceProtectionOverview) GetPendingSignatureUpdateDeviceCount()(*int32
     return nil
 }
 // GetTotalReportedDeviceCount gets the totalReportedDeviceCount property value. Total device count.
+// returns a *int32 when successful
 func (m *DeviceProtectionOverview) GetTotalReportedDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalReportedDeviceCount")
     if err != nil {
@@ -285,6 +300,7 @@ func (m *DeviceProtectionOverview) GetTotalReportedDeviceCount()(*int32) {
     return nil
 }
 // GetUnknownStateThreatAgentDeviceCount gets the unknownStateThreatAgentDeviceCount property value. Indicates number of devices with threat agent state as unknown
+// returns a *int32 when successful
 func (m *DeviceProtectionOverview) GetUnknownStateThreatAgentDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("unknownStateThreatAgentDeviceCount")
     if err != nil {
@@ -472,7 +488,6 @@ func (m *DeviceProtectionOverview) SetUnknownStateThreatAgentDeviceCount(value *
         panic(err)
     }
 }
-// DeviceProtectionOverviewable 
 type DeviceProtectionOverviewable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

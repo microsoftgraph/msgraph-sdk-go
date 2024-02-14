@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConditionalAccessRoot 
 type ConditionalAccessRoot struct {
     Entity
 }
-// NewConditionalAccessRoot instantiates a new conditionalAccessRoot and sets the default values.
+// NewConditionalAccessRoot instantiates a new ConditionalAccessRoot and sets the default values.
 func NewConditionalAccessRoot()(*ConditionalAccessRoot) {
     m := &ConditionalAccessRoot{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewConditionalAccessRoot()(*ConditionalAccessRoot) {
     return m
 }
 // CreateConditionalAccessRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConditionalAccessRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConditionalAccessRoot(), nil
 }
 // GetAuthenticationContextClassReferences gets the authenticationContextClassReferences property value. Read-only. Nullable. Returns a collection of the specified authentication context class references.
+// returns a []AuthenticationContextClassReferenceable when successful
 func (m *ConditionalAccessRoot) GetAuthenticationContextClassReferences()([]AuthenticationContextClassReferenceable) {
     val, err := m.GetBackingStore().Get("authenticationContextClassReferences")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ConditionalAccessRoot) GetAuthenticationContextClassReferences()([]Auth
     return nil
 }
 // GetAuthenticationStrength gets the authenticationStrength property value. The authenticationStrength property
+// returns a AuthenticationStrengthRootable when successful
 func (m *ConditionalAccessRoot) GetAuthenticationStrength()(AuthenticationStrengthRootable) {
     val, err := m.GetBackingStore().Get("authenticationStrength")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *ConditionalAccessRoot) GetAuthenticationStrength()(AuthenticationStreng
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["authenticationContextClassReferences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -121,6 +124,7 @@ func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetNamedLocations gets the namedLocations property value. Read-only. Nullable. Returns a collection of the specified named locations.
+// returns a []NamedLocationable when successful
 func (m *ConditionalAccessRoot) GetNamedLocations()([]NamedLocationable) {
     val, err := m.GetBackingStore().Get("namedLocations")
     if err != nil {
@@ -132,6 +136,7 @@ func (m *ConditionalAccessRoot) GetNamedLocations()([]NamedLocationable) {
     return nil
 }
 // GetPolicies gets the policies property value. Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
+// returns a []ConditionalAccessPolicyable when successful
 func (m *ConditionalAccessRoot) GetPolicies()([]ConditionalAccessPolicyable) {
     val, err := m.GetBackingStore().Get("policies")
     if err != nil {
@@ -143,6 +148,7 @@ func (m *ConditionalAccessRoot) GetPolicies()([]ConditionalAccessPolicyable) {
     return nil
 }
 // GetTemplates gets the templates property value. Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
+// returns a []ConditionalAccessTemplateable when successful
 func (m *ConditionalAccessRoot) GetTemplates()([]ConditionalAccessTemplateable) {
     val, err := m.GetBackingStore().Get("templates")
     if err != nil {
@@ -250,7 +256,6 @@ func (m *ConditionalAccessRoot) SetTemplates(value []ConditionalAccessTemplateab
         panic(err)
     }
 }
-// ConditionalAccessRootable 
 type ConditionalAccessRootable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

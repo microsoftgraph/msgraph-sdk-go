@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// TextColumn 
 type TextColumn struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTextColumn instantiates a new textColumn and sets the default values.
+// NewTextColumn instantiates a new TextColumn and sets the default values.
 func NewTextColumn()(*TextColumn) {
     m := &TextColumn{
     }
@@ -19,10 +18,12 @@ func NewTextColumn()(*TextColumn) {
     return m
 }
 // CreateTextColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTextColumnFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTextColumn(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TextColumn) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *TextColumn) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAllowMultipleLines gets the allowMultipleLines property value. Whether to allow multiple lines of text.
+// returns a *bool when successful
 func (m *TextColumn) GetAllowMultipleLines()(*bool) {
     val, err := m.GetBackingStore().Get("allowMultipleLines")
     if err != nil {
@@ -46,6 +48,7 @@ func (m *TextColumn) GetAllowMultipleLines()(*bool) {
     return nil
 }
 // GetAppendChangesToExistingText gets the appendChangesToExistingText property value. Whether updates to this column should replace existing text, or append to it.
+// returns a *bool when successful
 func (m *TextColumn) GetAppendChangesToExistingText()(*bool) {
     val, err := m.GetBackingStore().Get("appendChangesToExistingText")
     if err != nil {
@@ -57,10 +60,12 @@ func (m *TextColumn) GetAppendChangesToExistingText()(*bool) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *TextColumn) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TextColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allowMultipleLines"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -126,6 +131,7 @@ func (m *TextColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetLinesForEditing gets the linesForEditing property value. The size of the text box.
+// returns a *int32 when successful
 func (m *TextColumn) GetLinesForEditing()(*int32) {
     val, err := m.GetBackingStore().Get("linesForEditing")
     if err != nil {
@@ -137,6 +143,7 @@ func (m *TextColumn) GetLinesForEditing()(*int32) {
     return nil
 }
 // GetMaxLength gets the maxLength property value. The maximum number of characters for the value.
+// returns a *int32 when successful
 func (m *TextColumn) GetMaxLength()(*int32) {
     val, err := m.GetBackingStore().Get("maxLength")
     if err != nil {
@@ -148,6 +155,7 @@ func (m *TextColumn) GetMaxLength()(*int32) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *TextColumn) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -159,6 +167,7 @@ func (m *TextColumn) GetOdataType()(*string) {
     return nil
 }
 // GetTextType gets the textType property value. The type of text being stored. Must be one of plain or richText
+// returns a *string when successful
 func (m *TextColumn) GetTextType()(*string) {
     val, err := m.GetBackingStore().Get("textType")
     if err != nil {
@@ -268,7 +277,6 @@ func (m *TextColumn) SetTextType(value *string)() {
         panic(err)
     }
 }
-// TextColumnable 
 type TextColumnable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

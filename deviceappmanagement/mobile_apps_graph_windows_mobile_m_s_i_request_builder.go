@@ -39,32 +39,34 @@ type MobileAppsGraphWindowsMobileMSIRequestBuilderGetRequestConfiguration struct
     // Request query parameters
     QueryParameters *MobileAppsGraphWindowsMobileMSIRequestBuilderGetQueryParameters
 }
-// NewMobileAppsGraphWindowsMobileMSIRequestBuilderInternal instantiates a new GraphWindowsMobileMSIRequestBuilder and sets the default values.
+// NewMobileAppsGraphWindowsMobileMSIRequestBuilderInternal instantiates a new MobileAppsGraphWindowsMobileMSIRequestBuilder and sets the default values.
 func NewMobileAppsGraphWindowsMobileMSIRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsGraphWindowsMobileMSIRequestBuilder) {
     m := &MobileAppsGraphWindowsMobileMSIRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/graph.windowsMobileMSI{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/graph.windowsMobileMSI{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewMobileAppsGraphWindowsMobileMSIRequestBuilder instantiates a new GraphWindowsMobileMSIRequestBuilder and sets the default values.
+// NewMobileAppsGraphWindowsMobileMSIRequestBuilder instantiates a new MobileAppsGraphWindowsMobileMSIRequestBuilder and sets the default values.
 func NewMobileAppsGraphWindowsMobileMSIRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsGraphWindowsMobileMSIRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsGraphWindowsMobileMSIRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *MobileAppsGraphWindowsMobileMSICountRequestBuilder when successful
 func (m *MobileAppsGraphWindowsMobileMSIRequestBuilder) Count()(*MobileAppsGraphWindowsMobileMSICountRequestBuilder) {
     return NewMobileAppsGraphWindowsMobileMSICountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the items of type microsoft.graph.windowsMobileMSI in the microsoft.graph.mobileApp collection
+// returns a WindowsMobileMSICollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsGraphWindowsMobileMSIRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsGraphWindowsMobileMSIRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsMobileMSICollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateWindowsMobileMSICollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -76,6 +78,7 @@ func (m *MobileAppsGraphWindowsMobileMSIRequestBuilder) Get(ctx context.Context,
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsMobileMSICollectionResponseable), nil
 }
 // ToGetRequestInformation get the items of type microsoft.graph.windowsMobileMSI in the microsoft.graph.mobileApp collection
+// returns a *RequestInformation when successful
 func (m *MobileAppsGraphWindowsMobileMSIRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsGraphWindowsMobileMSIRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -89,6 +92,7 @@ func (m *MobileAppsGraphWindowsMobileMSIRequestBuilder) ToGetRequestInformation(
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MobileAppsGraphWindowsMobileMSIRequestBuilder when successful
 func (m *MobileAppsGraphWindowsMobileMSIRequestBuilder) WithUrl(rawUrl string)(*MobileAppsGraphWindowsMobileMSIRequestBuilder) {
     return NewMobileAppsGraphWindowsMobileMSIRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

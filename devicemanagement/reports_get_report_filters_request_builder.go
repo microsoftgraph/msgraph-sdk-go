@@ -17,20 +17,22 @@ type ReportsGetReportFiltersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewReportsGetReportFiltersRequestBuilderInternal instantiates a new GetReportFiltersRequestBuilder and sets the default values.
+// NewReportsGetReportFiltersRequestBuilderInternal instantiates a new ReportsGetReportFiltersRequestBuilder and sets the default values.
 func NewReportsGetReportFiltersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsGetReportFiltersRequestBuilder) {
     m := &ReportsGetReportFiltersRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/reports/getReportFilters", pathParameters),
     }
     return m
 }
-// NewReportsGetReportFiltersRequestBuilder instantiates a new GetReportFiltersRequestBuilder and sets the default values.
+// NewReportsGetReportFiltersRequestBuilder instantiates a new ReportsGetReportFiltersRequestBuilder and sets the default values.
 func NewReportsGetReportFiltersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsGetReportFiltersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewReportsGetReportFiltersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post not yet documented
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getreportfilters?view=graph-rest-1.0
@@ -40,8 +42,7 @@ func (m *ReportsGetReportFiltersRequestBuilder) Post(ctx context.Context, body R
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -53,6 +54,7 @@ func (m *ReportsGetReportFiltersRequestBuilder) Post(ctx context.Context, body R
     return res.([]byte), nil
 }
 // ToPostRequestInformation not yet documented
+// returns a *RequestInformation when successful
 func (m *ReportsGetReportFiltersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ReportsGetReportFiltersPostRequestBodyable, requestConfiguration *ReportsGetReportFiltersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -67,6 +69,7 @@ func (m *ReportsGetReportFiltersRequestBuilder) ToPostRequestInformation(ctx con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ReportsGetReportFiltersRequestBuilder when successful
 func (m *ReportsGetReportFiltersRequestBuilder) WithUrl(rawUrl string)(*ReportsGetReportFiltersRequestBuilder) {
     return NewReportsGetReportFiltersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

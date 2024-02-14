@@ -6,7 +6,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CallsItemRecordResponsePostRequestBody 
 type CallsItemRecordResponsePostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -20,10 +19,12 @@ func NewCallsItemRecordResponsePostRequestBody()(*CallsItemRecordResponsePostReq
     return m
 }
 // CreateCallsItemRecordResponsePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCallsItemRecordResponsePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCallsItemRecordResponsePostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CallsItemRecordResponsePostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *CallsItemRecordResponsePostRequestBody) GetAdditionalData()(map[string]
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CallsItemRecordResponsePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBargeInAllowed gets the bargeInAllowed property value. The bargeInAllowed property
+// returns a *bool when successful
 func (m *CallsItemRecordResponsePostRequestBody) GetBargeInAllowed()(*bool) {
     val, err := m.GetBackingStore().Get("bargeInAllowed")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *CallsItemRecordResponsePostRequestBody) GetBargeInAllowed()(*bool) {
     return nil
 }
 // GetClientContext gets the clientContext property value. The clientContext property
+// returns a *string when successful
 func (m *CallsItemRecordResponsePostRequestBody) GetClientContext()(*string) {
     val, err := m.GetBackingStore().Get("clientContext")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *CallsItemRecordResponsePostRequestBody) GetClientContext()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CallsItemRecordResponsePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["bargeInAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -159,6 +164,7 @@ func (m *CallsItemRecordResponsePostRequestBody) GetFieldDeserializers()(map[str
     return res
 }
 // GetInitialSilenceTimeoutInSeconds gets the initialSilenceTimeoutInSeconds property value. The initialSilenceTimeoutInSeconds property
+// returns a *int32 when successful
 func (m *CallsItemRecordResponsePostRequestBody) GetInitialSilenceTimeoutInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("initialSilenceTimeoutInSeconds")
     if err != nil {
@@ -170,6 +176,7 @@ func (m *CallsItemRecordResponsePostRequestBody) GetInitialSilenceTimeoutInSecon
     return nil
 }
 // GetMaxRecordDurationInSeconds gets the maxRecordDurationInSeconds property value. The maxRecordDurationInSeconds property
+// returns a *int32 when successful
 func (m *CallsItemRecordResponsePostRequestBody) GetMaxRecordDurationInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("maxRecordDurationInSeconds")
     if err != nil {
@@ -181,6 +188,7 @@ func (m *CallsItemRecordResponsePostRequestBody) GetMaxRecordDurationInSeconds()
     return nil
 }
 // GetMaxSilenceTimeoutInSeconds gets the maxSilenceTimeoutInSeconds property value. The maxSilenceTimeoutInSeconds property
+// returns a *int32 when successful
 func (m *CallsItemRecordResponsePostRequestBody) GetMaxSilenceTimeoutInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("maxSilenceTimeoutInSeconds")
     if err != nil {
@@ -192,6 +200,7 @@ func (m *CallsItemRecordResponsePostRequestBody) GetMaxSilenceTimeoutInSeconds()
     return nil
 }
 // GetPlayBeep gets the playBeep property value. The playBeep property
+// returns a *bool when successful
 func (m *CallsItemRecordResponsePostRequestBody) GetPlayBeep()(*bool) {
     val, err := m.GetBackingStore().Get("playBeep")
     if err != nil {
@@ -203,6 +212,7 @@ func (m *CallsItemRecordResponsePostRequestBody) GetPlayBeep()(*bool) {
     return nil
 }
 // GetPrompts gets the prompts property value. The prompts property
+// returns a []Promptable when successful
 func (m *CallsItemRecordResponsePostRequestBody) GetPrompts()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Promptable) {
     val, err := m.GetBackingStore().Get("prompts")
     if err != nil {
@@ -214,6 +224,7 @@ func (m *CallsItemRecordResponsePostRequestBody) GetPrompts()([]iadcd81124412c61
     return nil
 }
 // GetStopTones gets the stopTones property value. The stopTones property
+// returns a []string when successful
 func (m *CallsItemRecordResponsePostRequestBody) GetStopTones()([]string) {
     val, err := m.GetBackingStore().Get("stopTones")
     if err != nil {
@@ -355,7 +366,6 @@ func (m *CallsItemRecordResponsePostRequestBody) SetStopTones(value []string)() 
         panic(err)
     }
 }
-// CallsItemRecordResponsePostRequestBodyable 
 type CallsItemRecordResponsePostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

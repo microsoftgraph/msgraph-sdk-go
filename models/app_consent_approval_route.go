@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AppConsentApprovalRoute 
 type AppConsentApprovalRoute struct {
     Entity
 }
-// NewAppConsentApprovalRoute instantiates a new appConsentApprovalRoute and sets the default values.
+// NewAppConsentApprovalRoute instantiates a new AppConsentApprovalRoute and sets the default values.
 func NewAppConsentApprovalRoute()(*AppConsentApprovalRoute) {
     m := &AppConsentApprovalRoute{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewAppConsentApprovalRoute()(*AppConsentApprovalRoute) {
     return m
 }
 // CreateAppConsentApprovalRouteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAppConsentApprovalRouteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppConsentApprovalRoute(), nil
 }
 // GetAppConsentRequests gets the appConsentRequests property value. A collection of appConsentRequest objects representing apps for which admin consent has been requested by one or more users.
+// returns a []AppConsentRequestable when successful
 func (m *AppConsentApprovalRoute) GetAppConsentRequests()([]AppConsentRequestable) {
     val, err := m.GetBackingStore().Get("appConsentRequests")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *AppConsentApprovalRoute) GetAppConsentRequests()([]AppConsentRequestabl
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AppConsentApprovalRoute) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appConsentRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,7 +80,6 @@ func (m *AppConsentApprovalRoute) SetAppConsentRequests(value []AppConsentReques
         panic(err)
     }
 }
-// AppConsentApprovalRouteable 
 type AppConsentApprovalRouteable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

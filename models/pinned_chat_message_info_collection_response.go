@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PinnedChatMessageInfoCollectionResponse 
 type PinnedChatMessageInfoCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPinnedChatMessageInfoCollectionResponse instantiates a new pinnedChatMessageInfoCollectionResponse and sets the default values.
+// NewPinnedChatMessageInfoCollectionResponse instantiates a new PinnedChatMessageInfoCollectionResponse and sets the default values.
 func NewPinnedChatMessageInfoCollectionResponse()(*PinnedChatMessageInfoCollectionResponse) {
     m := &PinnedChatMessageInfoCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewPinnedChatMessageInfoCollectionResponse()(*PinnedChatMessageInfoCollecti
     return m
 }
 // CreatePinnedChatMessageInfoCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePinnedChatMessageInfoCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPinnedChatMessageInfoCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PinnedChatMessageInfoCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *PinnedChatMessageInfoCollectionResponse) GetFieldDeserializers()(map[st
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []PinnedChatMessageInfoable when successful
 func (m *PinnedChatMessageInfoCollectionResponse) GetValue()([]PinnedChatMessageInfoable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *PinnedChatMessageInfoCollectionResponse) SetValue(value []PinnedChatMes
         panic(err)
     }
 }
-// PinnedChatMessageInfoCollectionResponseable 
 type PinnedChatMessageInfoCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SubscribedSkuCollectionResponse 
 type SubscribedSkuCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSubscribedSkuCollectionResponse instantiates a new subscribedSkuCollectionResponse and sets the default values.
+// NewSubscribedSkuCollectionResponse instantiates a new SubscribedSkuCollectionResponse and sets the default values.
 func NewSubscribedSkuCollectionResponse()(*SubscribedSkuCollectionResponse) {
     m := &SubscribedSkuCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewSubscribedSkuCollectionResponse()(*SubscribedSkuCollectionResponse) {
     return m
 }
 // CreateSubscribedSkuCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSubscribedSkuCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSubscribedSkuCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SubscribedSkuCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *SubscribedSkuCollectionResponse) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []SubscribedSkuable when successful
 func (m *SubscribedSkuCollectionResponse) GetValue()([]SubscribedSkuable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *SubscribedSkuCollectionResponse) SetValue(value []SubscribedSkuable)() 
         panic(err)
     }
 }
-// SubscribedSkuCollectionResponseable 
 type SubscribedSkuCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

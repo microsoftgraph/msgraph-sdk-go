@@ -17,20 +17,21 @@ type ManagedDevicesItemWindowsDefenderScanRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewManagedDevicesItemWindowsDefenderScanRequestBuilderInternal instantiates a new WindowsDefenderScanRequestBuilder and sets the default values.
+// NewManagedDevicesItemWindowsDefenderScanRequestBuilderInternal instantiates a new ManagedDevicesItemWindowsDefenderScanRequestBuilder and sets the default values.
 func NewManagedDevicesItemWindowsDefenderScanRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDevicesItemWindowsDefenderScanRequestBuilder) {
     m := &ManagedDevicesItemWindowsDefenderScanRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/windowsDefenderScan", pathParameters),
     }
     return m
 }
-// NewManagedDevicesItemWindowsDefenderScanRequestBuilder instantiates a new WindowsDefenderScanRequestBuilder and sets the default values.
+// NewManagedDevicesItemWindowsDefenderScanRequestBuilder instantiates a new ManagedDevicesItemWindowsDefenderScanRequestBuilder and sets the default values.
 func NewManagedDevicesItemWindowsDefenderScanRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDevicesItemWindowsDefenderScanRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDevicesItemWindowsDefenderScanRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post not yet documented
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-devices-manageddevice-windowsdefenderscan?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ManagedDevicesItemWindowsDefenderScanRequestBuilder) Post(ctx context.C
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ManagedDevicesItemWindowsDefenderScanRequestBuilder) Post(ctx context.C
     return nil
 }
 // ToPostRequestInformation not yet documented
+// returns a *RequestInformation when successful
 func (m *ManagedDevicesItemWindowsDefenderScanRequestBuilder) ToPostRequestInformation(ctx context.Context, body ManagedDevicesItemWindowsDefenderScanPostRequestBodyable, requestConfiguration *ManagedDevicesItemWindowsDefenderScanRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *ManagedDevicesItemWindowsDefenderScanRequestBuilder) ToPostRequestInfor
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ManagedDevicesItemWindowsDefenderScanRequestBuilder when successful
 func (m *ManagedDevicesItemWindowsDefenderScanRequestBuilder) WithUrl(rawUrl string)(*ManagedDevicesItemWindowsDefenderScanRequestBuilder) {
     return NewManagedDevicesItemWindowsDefenderScanRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

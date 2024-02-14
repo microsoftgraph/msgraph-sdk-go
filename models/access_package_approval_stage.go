@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AccessPackageApprovalStage 
 type AccessPackageApprovalStage struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAccessPackageApprovalStage instantiates a new accessPackageApprovalStage and sets the default values.
+// NewAccessPackageApprovalStage instantiates a new AccessPackageApprovalStage and sets the default values.
 func NewAccessPackageApprovalStage()(*AccessPackageApprovalStage) {
     m := &AccessPackageApprovalStage{
     }
@@ -19,10 +18,12 @@ func NewAccessPackageApprovalStage()(*AccessPackageApprovalStage) {
     return m
 }
 // CreateAccessPackageApprovalStageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessPackageApprovalStageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageApprovalStage(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AccessPackageApprovalStage) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *AccessPackageApprovalStage) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AccessPackageApprovalStage) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDurationBeforeAutomaticDenial gets the durationBeforeAutomaticDenial property value. The number of days that a request can be pending a response before it is automatically denied.
+// returns a *ISODuration when successful
 func (m *AccessPackageApprovalStage) GetDurationBeforeAutomaticDenial()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("durationBeforeAutomaticDenial")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *AccessPackageApprovalStage) GetDurationBeforeAutomaticDenial()(*i878a80
     return nil
 }
 // GetDurationBeforeEscalation gets the durationBeforeEscalation property value. If escalation is required, the time a request can be pending a response from a primary approver.
+// returns a *ISODuration when successful
 func (m *AccessPackageApprovalStage) GetDurationBeforeEscalation()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("durationBeforeEscalation")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *AccessPackageApprovalStage) GetDurationBeforeEscalation()(*i878a80d2330
     return nil
 }
 // GetEscalationApprovers gets the escalationApprovers property value. If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests.
+// returns a []SubjectSetable when successful
 func (m *AccessPackageApprovalStage) GetEscalationApprovers()([]SubjectSetable) {
     val, err := m.GetBackingStore().Get("escalationApprovers")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *AccessPackageApprovalStage) GetEscalationApprovers()([]SubjectSetable) 
     return nil
 }
 // GetFallbackEscalationApprovers gets the fallbackEscalationApprovers property value. The subjects, typically users, who are the fallback escalation approvers.
+// returns a []SubjectSetable when successful
 func (m *AccessPackageApprovalStage) GetFallbackEscalationApprovers()([]SubjectSetable) {
     val, err := m.GetBackingStore().Get("fallbackEscalationApprovers")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *AccessPackageApprovalStage) GetFallbackEscalationApprovers()([]SubjectS
     return nil
 }
 // GetFallbackPrimaryApprovers gets the fallbackPrimaryApprovers property value. The subjects, typically users, who are the fallback primary approvers.
+// returns a []SubjectSetable when successful
 func (m *AccessPackageApprovalStage) GetFallbackPrimaryApprovers()([]SubjectSetable) {
     val, err := m.GetBackingStore().Get("fallbackPrimaryApprovers")
     if err != nil {
@@ -94,6 +101,7 @@ func (m *AccessPackageApprovalStage) GetFallbackPrimaryApprovers()([]SubjectSeta
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessPackageApprovalStage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["durationBeforeAutomaticDenial"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -213,6 +221,7 @@ func (m *AccessPackageApprovalStage) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetIsApproverJustificationRequired gets the isApproverJustificationRequired property value. Indicates whether the approver is required to provide a justification for approving a request.
+// returns a *bool when successful
 func (m *AccessPackageApprovalStage) GetIsApproverJustificationRequired()(*bool) {
     val, err := m.GetBackingStore().Get("isApproverJustificationRequired")
     if err != nil {
@@ -224,6 +233,7 @@ func (m *AccessPackageApprovalStage) GetIsApproverJustificationRequired()(*bool)
     return nil
 }
 // GetIsEscalationEnabled gets the isEscalationEnabled property value. If true, then one or more escalationApprovers are configured in this approval stage.
+// returns a *bool when successful
 func (m *AccessPackageApprovalStage) GetIsEscalationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEscalationEnabled")
     if err != nil {
@@ -235,6 +245,7 @@ func (m *AccessPackageApprovalStage) GetIsEscalationEnabled()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AccessPackageApprovalStage) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -246,6 +257,7 @@ func (m *AccessPackageApprovalStage) GetOdataType()(*string) {
     return nil
 }
 // GetPrimaryApprovers gets the primaryApprovers property value. The subjects, typically users, who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors or externalSponsors.
+// returns a []SubjectSetable when successful
 func (m *AccessPackageApprovalStage) GetPrimaryApprovers()([]SubjectSetable) {
     val, err := m.GetBackingStore().Get("primaryApprovers")
     if err != nil {
@@ -418,7 +430,6 @@ func (m *AccessPackageApprovalStage) SetPrimaryApprovers(value []SubjectSetable)
         panic(err)
     }
 }
-// AccessPackageApprovalStageable 
 type AccessPackageApprovalStageable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

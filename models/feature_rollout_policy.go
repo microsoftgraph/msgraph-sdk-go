@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FeatureRolloutPolicy 
 type FeatureRolloutPolicy struct {
     Entity
 }
-// NewFeatureRolloutPolicy instantiates a new featureRolloutPolicy and sets the default values.
+// NewFeatureRolloutPolicy instantiates a new FeatureRolloutPolicy and sets the default values.
 func NewFeatureRolloutPolicy()(*FeatureRolloutPolicy) {
     m := &FeatureRolloutPolicy{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewFeatureRolloutPolicy()(*FeatureRolloutPolicy) {
     return m
 }
 // CreateFeatureRolloutPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFeatureRolloutPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFeatureRolloutPolicy(), nil
 }
 // GetAppliesTo gets the appliesTo property value. Nullable. Specifies a list of directoryObjects that feature is enabled for.
+// returns a []DirectoryObjectable when successful
 func (m *FeatureRolloutPolicy) GetAppliesTo()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("appliesTo")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *FeatureRolloutPolicy) GetAppliesTo()([]DirectoryObjectable) {
     return nil
 }
 // GetDescription gets the description property value. A description for this feature rollout policy.
+// returns a *string when successful
 func (m *FeatureRolloutPolicy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *FeatureRolloutPolicy) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name for this  feature rollout policy.
+// returns a *string when successful
 func (m *FeatureRolloutPolicy) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *FeatureRolloutPolicy) GetDisplayName()(*string) {
     return nil
 }
 // GetFeature gets the feature property value. The feature property
+// returns a *StagedFeatureName when successful
 func (m *FeatureRolloutPolicy) GetFeature()(*StagedFeatureName) {
     val, err := m.GetBackingStore().Get("feature")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *FeatureRolloutPolicy) GetFeature()(*StagedFeatureName) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FeatureRolloutPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appliesTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -135,6 +140,7 @@ func (m *FeatureRolloutPolicy) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetIsAppliedToOrganization gets the isAppliedToOrganization property value. Indicates whether this feature rollout policy should be applied to the entire organization.
+// returns a *bool when successful
 func (m *FeatureRolloutPolicy) GetIsAppliedToOrganization()(*bool) {
     val, err := m.GetBackingStore().Get("isAppliedToOrganization")
     if err != nil {
@@ -146,6 +152,7 @@ func (m *FeatureRolloutPolicy) GetIsAppliedToOrganization()(*bool) {
     return nil
 }
 // GetIsEnabled gets the isEnabled property value. Indicates whether the feature rollout is enabled.
+// returns a *bool when successful
 func (m *FeatureRolloutPolicy) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -249,7 +256,6 @@ func (m *FeatureRolloutPolicy) SetIsEnabled(value *bool)() {
         panic(err)
     }
 }
-// FeatureRolloutPolicyable 
 type FeatureRolloutPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

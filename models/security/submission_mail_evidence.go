@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SubmissionMailEvidence 
 type SubmissionMailEvidence struct {
     AlertEvidence
 }
-// NewSubmissionMailEvidence instantiates a new submissionMailEvidence and sets the default values.
+// NewSubmissionMailEvidence instantiates a new SubmissionMailEvidence and sets the default values.
 func NewSubmissionMailEvidence()(*SubmissionMailEvidence) {
     m := &SubmissionMailEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -19,10 +18,12 @@ func NewSubmissionMailEvidence()(*SubmissionMailEvidence) {
     return m
 }
 // CreateSubmissionMailEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSubmissionMailEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSubmissionMailEvidence(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SubmissionMailEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["networkMessageId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -118,6 +119,7 @@ func (m *SubmissionMailEvidence) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetNetworkMessageId gets the networkMessageId property value. The networkMessageId property
+// returns a *string when successful
 func (m *SubmissionMailEvidence) GetNetworkMessageId()(*string) {
     val, err := m.GetBackingStore().Get("networkMessageId")
     if err != nil {
@@ -129,6 +131,7 @@ func (m *SubmissionMailEvidence) GetNetworkMessageId()(*string) {
     return nil
 }
 // GetRecipient gets the recipient property value. The recipient property
+// returns a *string when successful
 func (m *SubmissionMailEvidence) GetRecipient()(*string) {
     val, err := m.GetBackingStore().Get("recipient")
     if err != nil {
@@ -140,6 +143,7 @@ func (m *SubmissionMailEvidence) GetRecipient()(*string) {
     return nil
 }
 // GetReportType gets the reportType property value. The reportType property
+// returns a *string when successful
 func (m *SubmissionMailEvidence) GetReportType()(*string) {
     val, err := m.GetBackingStore().Get("reportType")
     if err != nil {
@@ -151,6 +155,7 @@ func (m *SubmissionMailEvidence) GetReportType()(*string) {
     return nil
 }
 // GetSender gets the sender property value. The sender property
+// returns a *string when successful
 func (m *SubmissionMailEvidence) GetSender()(*string) {
     val, err := m.GetBackingStore().Get("sender")
     if err != nil {
@@ -162,6 +167,7 @@ func (m *SubmissionMailEvidence) GetSender()(*string) {
     return nil
 }
 // GetSenderIp gets the senderIp property value. The senderIp property
+// returns a *string when successful
 func (m *SubmissionMailEvidence) GetSenderIp()(*string) {
     val, err := m.GetBackingStore().Get("senderIp")
     if err != nil {
@@ -173,6 +179,7 @@ func (m *SubmissionMailEvidence) GetSenderIp()(*string) {
     return nil
 }
 // GetSubject gets the subject property value. The subject property
+// returns a *string when successful
 func (m *SubmissionMailEvidence) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
     if err != nil {
@@ -184,6 +191,7 @@ func (m *SubmissionMailEvidence) GetSubject()(*string) {
     return nil
 }
 // GetSubmissionDateTime gets the submissionDateTime property value. The submissionDateTime property
+// returns a *Time when successful
 func (m *SubmissionMailEvidence) GetSubmissionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("submissionDateTime")
     if err != nil {
@@ -195,6 +203,7 @@ func (m *SubmissionMailEvidence) GetSubmissionDateTime()(*i336074805fc853987abe6
     return nil
 }
 // GetSubmissionId gets the submissionId property value. The submissionId property
+// returns a *string when successful
 func (m *SubmissionMailEvidence) GetSubmissionId()(*string) {
     val, err := m.GetBackingStore().Get("submissionId")
     if err != nil {
@@ -206,6 +215,7 @@ func (m *SubmissionMailEvidence) GetSubmissionId()(*string) {
     return nil
 }
 // GetSubmitter gets the submitter property value. The submitter property
+// returns a *string when successful
 func (m *SubmissionMailEvidence) GetSubmitter()(*string) {
     val, err := m.GetBackingStore().Get("submitter")
     if err != nil {
@@ -341,7 +351,6 @@ func (m *SubmissionMailEvidence) SetSubmitter(value *string)() {
         panic(err)
     }
 }
-// SubmissionMailEvidenceable 
 type SubmissionMailEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

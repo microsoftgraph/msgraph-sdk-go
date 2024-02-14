@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// Quota 
 type Quota struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewQuota instantiates a new quota and sets the default values.
+// NewQuota instantiates a new Quota and sets the default values.
 func NewQuota()(*Quota) {
     m := &Quota{
     }
@@ -19,10 +18,12 @@ func NewQuota()(*Quota) {
     return m
 }
 // CreateQuotaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateQuotaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewQuota(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Quota) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *Quota) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *Quota) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDeleted gets the deleted property value. Total space consumed by files in the recycle bin, in bytes. Read-only.
+// returns a *int64 when successful
 func (m *Quota) GetDeleted()(*int64) {
     val, err := m.GetBackingStore().Get("deleted")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *Quota) GetDeleted()(*int64) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Quota) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["deleted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -125,6 +129,7 @@ func (m *Quota) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *Quota) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -136,6 +141,7 @@ func (m *Quota) GetOdataType()(*string) {
     return nil
 }
 // GetRemaining gets the remaining property value. Total space remaining before reaching the quota limit, in bytes. Read-only.
+// returns a *int64 when successful
 func (m *Quota) GetRemaining()(*int64) {
     val, err := m.GetBackingStore().Get("remaining")
     if err != nil {
@@ -147,6 +153,7 @@ func (m *Quota) GetRemaining()(*int64) {
     return nil
 }
 // GetState gets the state property value. Enumeration value that indicates the state of the storage space. Read-only.
+// returns a *string when successful
 func (m *Quota) GetState()(*string) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -158,6 +165,7 @@ func (m *Quota) GetState()(*string) {
     return nil
 }
 // GetStoragePlanInformation gets the storagePlanInformation property value. Information about the drive's storage quota plans. Only in Personal OneDrive.
+// returns a StoragePlanInformationable when successful
 func (m *Quota) GetStoragePlanInformation()(StoragePlanInformationable) {
     val, err := m.GetBackingStore().Get("storagePlanInformation")
     if err != nil {
@@ -169,6 +177,7 @@ func (m *Quota) GetStoragePlanInformation()(StoragePlanInformationable) {
     return nil
 }
 // GetTotal gets the total property value. Total allowed storage space, in bytes. Read-only.
+// returns a *int64 when successful
 func (m *Quota) GetTotal()(*int64) {
     val, err := m.GetBackingStore().Get("total")
     if err != nil {
@@ -180,6 +189,7 @@ func (m *Quota) GetTotal()(*int64) {
     return nil
 }
 // GetUsed gets the used property value. Total space used, in bytes. Read-only.
+// returns a *int64 when successful
 func (m *Quota) GetUsed()(*int64) {
     val, err := m.GetBackingStore().Get("used")
     if err != nil {
@@ -302,7 +312,6 @@ func (m *Quota) SetUsed(value *int64)() {
         panic(err)
     }
 }
-// Quotaable 
 type Quotaable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

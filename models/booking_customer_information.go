@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BookingCustomerInformation 
 type BookingCustomerInformation struct {
     BookingCustomerInformationBase
 }
-// NewBookingCustomerInformation instantiates a new bookingCustomerInformation and sets the default values.
+// NewBookingCustomerInformation instantiates a new BookingCustomerInformation and sets the default values.
 func NewBookingCustomerInformation()(*BookingCustomerInformation) {
     m := &BookingCustomerInformation{
         BookingCustomerInformationBase: *NewBookingCustomerInformationBase(),
@@ -18,10 +17,12 @@ func NewBookingCustomerInformation()(*BookingCustomerInformation) {
     return m
 }
 // CreateBookingCustomerInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBookingCustomerInformationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBookingCustomerInformation(), nil
 }
 // GetCustomerId gets the customerId property value. The ID of the bookingCustomer for this appointment. If no ID is specified when an appointment is created, then a new bookingCustomer object is created. Once set, you should consider the customerId immutable.
+// returns a *string when successful
 func (m *BookingCustomerInformation) GetCustomerId()(*string) {
     val, err := m.GetBackingStore().Get("customerId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *BookingCustomerInformation) GetCustomerId()(*string) {
     return nil
 }
 // GetCustomQuestionAnswers gets the customQuestionAnswers property value. It consists of the list of custom questions and answers given by the customer as part of the appointment
+// returns a []BookingQuestionAnswerable when successful
 func (m *BookingCustomerInformation) GetCustomQuestionAnswers()([]BookingQuestionAnswerable) {
     val, err := m.GetBackingStore().Get("customQuestionAnswers")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *BookingCustomerInformation) GetCustomQuestionAnswers()([]BookingQuestio
     return nil
 }
 // GetEmailAddress gets the emailAddress property value. The SMTP address of the bookingCustomer who is booking the appointment
+// returns a *string when successful
 func (m *BookingCustomerInformation) GetEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("emailAddress")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *BookingCustomerInformation) GetEmailAddress()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BookingCustomerInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BookingCustomerInformationBase.GetFieldDeserializers()
     res["customerId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -146,6 +150,7 @@ func (m *BookingCustomerInformation) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetLocation gets the location property value. Represents location information for the bookingCustomer who is booking the appointment.
+// returns a Locationable when successful
 func (m *BookingCustomerInformation) GetLocation()(Locationable) {
     val, err := m.GetBackingStore().Get("location")
     if err != nil {
@@ -157,6 +162,7 @@ func (m *BookingCustomerInformation) GetLocation()(Locationable) {
     return nil
 }
 // GetName gets the name property value. The customer's name.
+// returns a *string when successful
 func (m *BookingCustomerInformation) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -168,6 +174,7 @@ func (m *BookingCustomerInformation) GetName()(*string) {
     return nil
 }
 // GetNotes gets the notes property value. Notes from the customer associated with this appointment. You can get the value only when reading this bookingAppointment by its ID. You can set this property only when initially creating an appointment with a new customer. After that point, the value is computed from the customer represented by the customerId.
+// returns a *string when successful
 func (m *BookingCustomerInformation) GetNotes()(*string) {
     val, err := m.GetBackingStore().Get("notes")
     if err != nil {
@@ -179,6 +186,7 @@ func (m *BookingCustomerInformation) GetNotes()(*string) {
     return nil
 }
 // GetPhone gets the phone property value. The customer's phone number.
+// returns a *string when successful
 func (m *BookingCustomerInformation) GetPhone()(*string) {
     val, err := m.GetBackingStore().Get("phone")
     if err != nil {
@@ -190,6 +198,7 @@ func (m *BookingCustomerInformation) GetPhone()(*string) {
     return nil
 }
 // GetTimeZone gets the timeZone property value. The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
+// returns a *string when successful
 func (m *BookingCustomerInformation) GetTimeZone()(*string) {
     val, err := m.GetBackingStore().Get("timeZone")
     if err != nil {
@@ -318,7 +327,6 @@ func (m *BookingCustomerInformation) SetTimeZone(value *string)() {
         panic(err)
     }
 }
-// BookingCustomerInformationable 
 type BookingCustomerInformationable interface {
     BookingCustomerInformationBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

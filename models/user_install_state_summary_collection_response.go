@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserInstallStateSummaryCollectionResponse 
 type UserInstallStateSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUserInstallStateSummaryCollectionResponse instantiates a new userInstallStateSummaryCollectionResponse and sets the default values.
+// NewUserInstallStateSummaryCollectionResponse instantiates a new UserInstallStateSummaryCollectionResponse and sets the default values.
 func NewUserInstallStateSummaryCollectionResponse()(*UserInstallStateSummaryCollectionResponse) {
     m := &UserInstallStateSummaryCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewUserInstallStateSummaryCollectionResponse()(*UserInstallStateSummaryColl
     return m
 }
 // CreateUserInstallStateSummaryCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserInstallStateSummaryCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserInstallStateSummaryCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserInstallStateSummaryCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *UserInstallStateSummaryCollectionResponse) GetFieldDeserializers()(map[
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []UserInstallStateSummaryable when successful
 func (m *UserInstallStateSummaryCollectionResponse) GetValue()([]UserInstallStateSummaryable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *UserInstallStateSummaryCollectionResponse) SetValue(value []UserInstall
         panic(err)
     }
 }
-// UserInstallStateSummaryCollectionResponseable 
 type UserInstallStateSummaryCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

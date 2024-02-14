@@ -27,28 +27,29 @@ type ItemMembersItemGraphGroupRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemMembersItemGraphGroupRequestBuilderGetQueryParameters
 }
-// NewItemMembersItemGraphGroupRequestBuilderInternal instantiates a new GraphGroupRequestBuilder and sets the default values.
+// NewItemMembersItemGraphGroupRequestBuilderInternal instantiates a new ItemMembersItemGraphGroupRequestBuilder and sets the default values.
 func NewItemMembersItemGraphGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMembersItemGraphGroupRequestBuilder) {
     m := &ItemMembersItemGraphGroupRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directoryRoles/{directoryRole%2Did}/members/{directoryObject%2Did}/graph.group{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directoryRoles/{directoryRole%2Did}/members/{directoryObject%2Did}/graph.group{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemMembersItemGraphGroupRequestBuilder instantiates a new GraphGroupRequestBuilder and sets the default values.
+// NewItemMembersItemGraphGroupRequestBuilder instantiates a new ItemMembersItemGraphGroupRequestBuilder and sets the default values.
 func NewItemMembersItemGraphGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMembersItemGraphGroupRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemMembersItemGraphGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+// returns a Groupable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemMembersItemGraphGroupRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMembersItemGraphGroupRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateGroupFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *ItemMembersItemGraphGroupRequestBuilder) Get(ctx context.Context, reque
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Groupable), nil
 }
 // ToGetRequestInformation get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+// returns a *RequestInformation when successful
 func (m *ItemMembersItemGraphGroupRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMembersItemGraphGroupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *ItemMembersItemGraphGroupRequestBuilder) ToGetRequestInformation(ctx co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemMembersItemGraphGroupRequestBuilder when successful
 func (m *ItemMembersItemGraphGroupRequestBuilder) WithUrl(rawUrl string)(*ItemMembersItemGraphGroupRequestBuilder) {
     return NewItemMembersItemGraphGroupRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

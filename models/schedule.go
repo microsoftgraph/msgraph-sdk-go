@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Schedule 
 type Schedule struct {
     Entity
 }
-// NewSchedule instantiates a new schedule and sets the default values.
+// NewSchedule instantiates a new Schedule and sets the default values.
 func NewSchedule()(*Schedule) {
     m := &Schedule{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewSchedule()(*Schedule) {
     return m
 }
 // CreateScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateScheduleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSchedule(), nil
 }
 // GetEnabled gets the enabled property value. Indicates whether the schedule is enabled for the team. Required.
+// returns a *bool when successful
 func (m *Schedule) GetEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("enabled")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Schedule) GetEnabled()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Schedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["enabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -286,6 +288,7 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetOfferShiftRequests gets the offerShiftRequests property value. The offer requests for shifts in the schedule.
+// returns a []OfferShiftRequestable when successful
 func (m *Schedule) GetOfferShiftRequests()([]OfferShiftRequestable) {
     val, err := m.GetBackingStore().Get("offerShiftRequests")
     if err != nil {
@@ -297,6 +300,7 @@ func (m *Schedule) GetOfferShiftRequests()([]OfferShiftRequestable) {
     return nil
 }
 // GetOfferShiftRequestsEnabled gets the offerShiftRequestsEnabled property value. Indicates whether offer shift requests are enabled for the schedule.
+// returns a *bool when successful
 func (m *Schedule) GetOfferShiftRequestsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("offerShiftRequestsEnabled")
     if err != nil {
@@ -308,6 +312,7 @@ func (m *Schedule) GetOfferShiftRequestsEnabled()(*bool) {
     return nil
 }
 // GetOpenShiftChangeRequests gets the openShiftChangeRequests property value. The open shift requests in the schedule.
+// returns a []OpenShiftChangeRequestable when successful
 func (m *Schedule) GetOpenShiftChangeRequests()([]OpenShiftChangeRequestable) {
     val, err := m.GetBackingStore().Get("openShiftChangeRequests")
     if err != nil {
@@ -319,6 +324,7 @@ func (m *Schedule) GetOpenShiftChangeRequests()([]OpenShiftChangeRequestable) {
     return nil
 }
 // GetOpenShifts gets the openShifts property value. The set of open shifts in a scheduling group in the schedule.
+// returns a []OpenShiftable when successful
 func (m *Schedule) GetOpenShifts()([]OpenShiftable) {
     val, err := m.GetBackingStore().Get("openShifts")
     if err != nil {
@@ -330,6 +336,7 @@ func (m *Schedule) GetOpenShifts()([]OpenShiftable) {
     return nil
 }
 // GetOpenShiftsEnabled gets the openShiftsEnabled property value. Indicates whether open shifts are enabled for the schedule.
+// returns a *bool when successful
 func (m *Schedule) GetOpenShiftsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("openShiftsEnabled")
     if err != nil {
@@ -341,6 +348,7 @@ func (m *Schedule) GetOpenShiftsEnabled()(*bool) {
     return nil
 }
 // GetProvisionStatus gets the provisionStatus property value. The status of the schedule provisioning. The possible values are notStarted, running, completed, failed.
+// returns a *OperationStatus when successful
 func (m *Schedule) GetProvisionStatus()(*OperationStatus) {
     val, err := m.GetBackingStore().Get("provisionStatus")
     if err != nil {
@@ -352,6 +360,7 @@ func (m *Schedule) GetProvisionStatus()(*OperationStatus) {
     return nil
 }
 // GetProvisionStatusCode gets the provisionStatusCode property value. Additional information about why schedule provisioning failed.
+// returns a *string when successful
 func (m *Schedule) GetProvisionStatusCode()(*string) {
     val, err := m.GetBackingStore().Get("provisionStatusCode")
     if err != nil {
@@ -363,6 +372,7 @@ func (m *Schedule) GetProvisionStatusCode()(*string) {
     return nil
 }
 // GetSchedulingGroups gets the schedulingGroups property value. The logical grouping of users in the schedule (usually by role).
+// returns a []SchedulingGroupable when successful
 func (m *Schedule) GetSchedulingGroups()([]SchedulingGroupable) {
     val, err := m.GetBackingStore().Get("schedulingGroups")
     if err != nil {
@@ -374,6 +384,7 @@ func (m *Schedule) GetSchedulingGroups()([]SchedulingGroupable) {
     return nil
 }
 // GetShifts gets the shifts property value. The shifts in the schedule.
+// returns a []Shiftable when successful
 func (m *Schedule) GetShifts()([]Shiftable) {
     val, err := m.GetBackingStore().Get("shifts")
     if err != nil {
@@ -385,6 +396,7 @@ func (m *Schedule) GetShifts()([]Shiftable) {
     return nil
 }
 // GetSwapShiftsChangeRequests gets the swapShiftsChangeRequests property value. The swap requests for shifts in the schedule.
+// returns a []SwapShiftsChangeRequestable when successful
 func (m *Schedule) GetSwapShiftsChangeRequests()([]SwapShiftsChangeRequestable) {
     val, err := m.GetBackingStore().Get("swapShiftsChangeRequests")
     if err != nil {
@@ -396,6 +408,7 @@ func (m *Schedule) GetSwapShiftsChangeRequests()([]SwapShiftsChangeRequestable) 
     return nil
 }
 // GetSwapShiftsRequestsEnabled gets the swapShiftsRequestsEnabled property value. Indicates whether swap shifts requests are enabled for the schedule.
+// returns a *bool when successful
 func (m *Schedule) GetSwapShiftsRequestsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("swapShiftsRequestsEnabled")
     if err != nil {
@@ -407,6 +420,7 @@ func (m *Schedule) GetSwapShiftsRequestsEnabled()(*bool) {
     return nil
 }
 // GetTimeClockEnabled gets the timeClockEnabled property value. Indicates whether time clock is enabled for the schedule.
+// returns a *bool when successful
 func (m *Schedule) GetTimeClockEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("timeClockEnabled")
     if err != nil {
@@ -418,6 +432,7 @@ func (m *Schedule) GetTimeClockEnabled()(*bool) {
     return nil
 }
 // GetTimeOffReasons gets the timeOffReasons property value. The set of reasons for a time off in the schedule.
+// returns a []TimeOffReasonable when successful
 func (m *Schedule) GetTimeOffReasons()([]TimeOffReasonable) {
     val, err := m.GetBackingStore().Get("timeOffReasons")
     if err != nil {
@@ -429,6 +444,7 @@ func (m *Schedule) GetTimeOffReasons()([]TimeOffReasonable) {
     return nil
 }
 // GetTimeOffRequests gets the timeOffRequests property value. The time off requests in the schedule.
+// returns a []TimeOffRequestable when successful
 func (m *Schedule) GetTimeOffRequests()([]TimeOffRequestable) {
     val, err := m.GetBackingStore().Get("timeOffRequests")
     if err != nil {
@@ -440,6 +456,7 @@ func (m *Schedule) GetTimeOffRequests()([]TimeOffRequestable) {
     return nil
 }
 // GetTimeOffRequestsEnabled gets the timeOffRequestsEnabled property value. Indicates whether time off requests are enabled for the schedule.
+// returns a *bool when successful
 func (m *Schedule) GetTimeOffRequestsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("timeOffRequestsEnabled")
     if err != nil {
@@ -451,6 +468,7 @@ func (m *Schedule) GetTimeOffRequestsEnabled()(*bool) {
     return nil
 }
 // GetTimesOff gets the timesOff property value. The instances of times off in the schedule.
+// returns a []TimeOffable when successful
 func (m *Schedule) GetTimesOff()([]TimeOffable) {
     val, err := m.GetBackingStore().Get("timesOff")
     if err != nil {
@@ -462,6 +480,7 @@ func (m *Schedule) GetTimesOff()([]TimeOffable) {
     return nil
 }
 // GetTimeZone gets the timeZone property value. Indicates the time zone of the schedule team using tz database format. Required.
+// returns a *string when successful
 func (m *Schedule) GetTimeZone()(*string) {
     val, err := m.GetBackingStore().Get("timeZone")
     if err != nil {
@@ -473,6 +492,7 @@ func (m *Schedule) GetTimeZone()(*string) {
     return nil
 }
 // GetWorkforceIntegrationIds gets the workforceIntegrationIds property value. The workforceIntegrationIds property
+// returns a []string when successful
 func (m *Schedule) GetWorkforceIntegrationIds()([]string) {
     val, err := m.GetBackingStore().Get("workforceIntegrationIds")
     if err != nil {
@@ -780,7 +800,6 @@ func (m *Schedule) SetWorkforceIntegrationIds(value []string)() {
         panic(err)
     }
 }
-// Scheduleable 
 type Scheduleable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

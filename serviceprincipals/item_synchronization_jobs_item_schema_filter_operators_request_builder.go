@@ -14,6 +14,8 @@ type ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder struct {
 type ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -36,29 +38,30 @@ type ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderGetRequestCon
     // Request query parameters
     QueryParameters *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderGetQueryParameters
 }
-// NewItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderInternal instantiates a new FilterOperatorsRequestBuilder and sets the default values.
+// NewItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderInternal instantiates a new ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder and sets the default values.
 func NewItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) {
     m := &ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/jobs/{synchronizationJob%2Did}/schema/filterOperators(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/jobs/{synchronizationJob%2Did}/schema/filterOperators(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder instantiates a new FilterOperatorsRequestBuilder and sets the default values.
+// NewItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder instantiates a new ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder and sets the default values.
 func NewItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function filterOperators
-// Deprecated: This method is obsolete. Use GetAsFilterOperatorsGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ItemSynchronizationJobsItemSchemaFilterOperatorsResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderGetRequestConfiguration)(ItemSynchronizationJobsItemSchemaFilterOperatorsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSynchronizationJobsItemSchemaFilterOperatorsResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -70,14 +73,15 @@ func (m *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) Get(ctx
     return res.(ItemSynchronizationJobsItemSchemaFilterOperatorsResponseable), nil
 }
 // GetAsFilterOperatorsGetResponse invoke function filterOperators
+// returns a ItemSynchronizationJobsItemSchemaFilterOperatorsGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) GetAsFilterOperatorsGetResponse(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderGetRequestConfiguration)(ItemSynchronizationJobsItemSchemaFilterOperatorsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemSynchronizationJobsItemSchemaFilterOperatorsGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -89,6 +93,7 @@ func (m *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) GetAsFi
     return res.(ItemSynchronizationJobsItemSchemaFilterOperatorsGetResponseable), nil
 }
 // ToGetRequestInformation invoke function filterOperators
+// returns a *RequestInformation when successful
 func (m *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -102,6 +107,7 @@ func (m *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) ToGetRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder when successful
 func (m *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) WithUrl(rawUrl string)(*ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) {
     return NewItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

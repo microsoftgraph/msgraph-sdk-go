@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsUniversalAppXCollectionResponse 
 type WindowsUniversalAppXCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWindowsUniversalAppXCollectionResponse instantiates a new windowsUniversalAppXCollectionResponse and sets the default values.
+// NewWindowsUniversalAppXCollectionResponse instantiates a new WindowsUniversalAppXCollectionResponse and sets the default values.
 func NewWindowsUniversalAppXCollectionResponse()(*WindowsUniversalAppXCollectionResponse) {
     m := &WindowsUniversalAppXCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewWindowsUniversalAppXCollectionResponse()(*WindowsUniversalAppXCollection
     return m
 }
 // CreateWindowsUniversalAppXCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsUniversalAppXCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsUniversalAppXCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsUniversalAppXCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *WindowsUniversalAppXCollectionResponse) GetFieldDeserializers()(map[str
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []WindowsUniversalAppXable when successful
 func (m *WindowsUniversalAppXCollectionResponse) GetValue()([]WindowsUniversalAppXable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *WindowsUniversalAppXCollectionResponse) SetValue(value []WindowsUnivers
         panic(err)
     }
 }
-// WindowsUniversalAppXCollectionResponseable 
 type WindowsUniversalAppXCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

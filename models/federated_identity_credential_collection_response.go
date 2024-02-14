@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FederatedIdentityCredentialCollectionResponse 
 type FederatedIdentityCredentialCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewFederatedIdentityCredentialCollectionResponse instantiates a new federatedIdentityCredentialCollectionResponse and sets the default values.
+// NewFederatedIdentityCredentialCollectionResponse instantiates a new FederatedIdentityCredentialCollectionResponse and sets the default values.
 func NewFederatedIdentityCredentialCollectionResponse()(*FederatedIdentityCredentialCollectionResponse) {
     m := &FederatedIdentityCredentialCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewFederatedIdentityCredentialCollectionResponse()(*FederatedIdentityCreden
     return m
 }
 // CreateFederatedIdentityCredentialCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFederatedIdentityCredentialCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFederatedIdentityCredentialCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FederatedIdentityCredentialCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *FederatedIdentityCredentialCollectionResponse) GetFieldDeserializers()(
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []FederatedIdentityCredentialable when successful
 func (m *FederatedIdentityCredentialCollectionResponse) GetValue()([]FederatedIdentityCredentialable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *FederatedIdentityCredentialCollectionResponse) SetValue(value []Federat
         panic(err)
     }
 }
-// FederatedIdentityCredentialCollectionResponseable 
 type FederatedIdentityCredentialCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

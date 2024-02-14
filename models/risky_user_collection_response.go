@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RiskyUserCollectionResponse 
 type RiskyUserCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewRiskyUserCollectionResponse instantiates a new riskyUserCollectionResponse and sets the default values.
+// NewRiskyUserCollectionResponse instantiates a new RiskyUserCollectionResponse and sets the default values.
 func NewRiskyUserCollectionResponse()(*RiskyUserCollectionResponse) {
     m := &RiskyUserCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewRiskyUserCollectionResponse()(*RiskyUserCollectionResponse) {
     return m
 }
 // CreateRiskyUserCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRiskyUserCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRiskyUserCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RiskyUserCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *RiskyUserCollectionResponse) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []RiskyUserable when successful
 func (m *RiskyUserCollectionResponse) GetValue()([]RiskyUserable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *RiskyUserCollectionResponse) SetValue(value []RiskyUserable)() {
         panic(err)
     }
 }
-// RiskyUserCollectionResponseable 
 type RiskyUserCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

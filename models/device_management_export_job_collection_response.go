@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementExportJobCollectionResponse 
 type DeviceManagementExportJobCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceManagementExportJobCollectionResponse instantiates a new deviceManagementExportJobCollectionResponse and sets the default values.
+// NewDeviceManagementExportJobCollectionResponse instantiates a new DeviceManagementExportJobCollectionResponse and sets the default values.
 func NewDeviceManagementExportJobCollectionResponse()(*DeviceManagementExportJobCollectionResponse) {
     m := &DeviceManagementExportJobCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewDeviceManagementExportJobCollectionResponse()(*DeviceManagementExportJob
     return m
 }
 // CreateDeviceManagementExportJobCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementExportJobCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementExportJobCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementExportJobCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *DeviceManagementExportJobCollectionResponse) GetFieldDeserializers()(ma
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []DeviceManagementExportJobable when successful
 func (m *DeviceManagementExportJobCollectionResponse) GetValue()([]DeviceManagementExportJobable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *DeviceManagementExportJobCollectionResponse) SetValue(value []DeviceMan
         panic(err)
     }
 }
-// DeviceManagementExportJobCollectionResponseable 
 type DeviceManagementExportJobCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

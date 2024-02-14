@@ -41,6 +41,7 @@ type SubjectRightsRequestsItemApproversRequestBuilderGetRequestConfiguration str
 }
 // ByUserId provides operations to manage the approvers property of the microsoft.graph.subjectRightsRequest entity.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
+// returns a *SubjectRightsRequestsItemApproversUserItemRequestBuilder when successful
 func (m *SubjectRightsRequestsItemApproversRequestBuilder) ByUserId(userId string)(*SubjectRightsRequestsItemApproversUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -51,33 +52,35 @@ func (m *SubjectRightsRequestsItemApproversRequestBuilder) ByUserId(userId strin
     }
     return NewSubjectRightsRequestsItemApproversUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewSubjectRightsRequestsItemApproversRequestBuilderInternal instantiates a new ApproversRequestBuilder and sets the default values.
+// NewSubjectRightsRequestsItemApproversRequestBuilderInternal instantiates a new SubjectRightsRequestsItemApproversRequestBuilder and sets the default values.
 func NewSubjectRightsRequestsItemApproversRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SubjectRightsRequestsItemApproversRequestBuilder) {
     m := &SubjectRightsRequestsItemApproversRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privacy/subjectRightsRequests/{subjectRightsRequest%2Did}/approvers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privacy/subjectRightsRequests/{subjectRightsRequest%2Did}/approvers{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewSubjectRightsRequestsItemApproversRequestBuilder instantiates a new ApproversRequestBuilder and sets the default values.
+// NewSubjectRightsRequestsItemApproversRequestBuilder instantiates a new SubjectRightsRequestsItemApproversRequestBuilder and sets the default values.
 func NewSubjectRightsRequestsItemApproversRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SubjectRightsRequestsItemApproversRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSubjectRightsRequestsItemApproversRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *SubjectRightsRequestsItemApproversCountRequestBuilder when successful
 func (m *SubjectRightsRequestsItemApproversRequestBuilder) Count()(*SubjectRightsRequestsItemApproversCountRequestBuilder) {
     return NewSubjectRightsRequestsItemApproversCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get collection of users who can approve the request. Currently only supported for requests of type delete.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
+// returns a UserCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SubjectRightsRequestsItemApproversRequestBuilder) Get(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemApproversRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.UserCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateUserCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,6 +93,7 @@ func (m *SubjectRightsRequestsItemApproversRequestBuilder) Get(ctx context.Conte
 }
 // ToGetRequestInformation collection of users who can approve the request. Currently only supported for requests of type delete.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
+// returns a *RequestInformation when successful
 func (m *SubjectRightsRequestsItemApproversRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemApproversRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -104,6 +108,7 @@ func (m *SubjectRightsRequestsItemApproversRequestBuilder) ToGetRequestInformati
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
+// returns a *SubjectRightsRequestsItemApproversRequestBuilder when successful
 func (m *SubjectRightsRequestsItemApproversRequestBuilder) WithUrl(rawUrl string)(*SubjectRightsRequestsItemApproversRequestBuilder) {
     return NewSubjectRightsRequestsItemApproversRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

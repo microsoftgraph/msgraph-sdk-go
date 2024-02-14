@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AlertEvidence 
 type AlertEvidence struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAlertEvidence instantiates a new alertEvidence and sets the default values.
+// NewAlertEvidence instantiates a new AlertEvidence and sets the default values.
 func NewAlertEvidence()(*AlertEvidence) {
     m := &AlertEvidence{
     }
@@ -20,6 +19,7 @@ func NewAlertEvidence()(*AlertEvidence) {
     return m
 }
 // CreateAlertEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAlertEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -53,8 +53,12 @@ func CreateAlertEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
                         return NewContainerRegistryEvidence(), nil
                     case "#microsoft.graph.security.deviceEvidence":
                         return NewDeviceEvidence(), nil
+                    case "#microsoft.graph.security.dnsEvidence":
+                        return NewDnsEvidence(), nil
                     case "#microsoft.graph.security.fileEvidence":
                         return NewFileEvidence(), nil
+                    case "#microsoft.graph.security.fileHashEvidence":
+                        return NewFileHashEvidence(), nil
                     case "#microsoft.graph.security.gitHubOrganizationEvidence":
                         return NewGitHubOrganizationEvidence(), nil
                     case "#microsoft.graph.security.gitHubRepoEvidence":
@@ -120,6 +124,7 @@ func CreateAlertEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewAlertEvidence(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AlertEvidence) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -132,10 +137,12 @@ func (m *AlertEvidence) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AlertEvidence) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the evidence was created and added to the alert. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *AlertEvidence) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -147,6 +154,7 @@ func (m *AlertEvidence) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetDetailedRoles gets the detailedRoles property value. Detailed description of the entity role/s in an alert. Values are free-form.
+// returns a []string when successful
 func (m *AlertEvidence) GetDetailedRoles()([]string) {
     val, err := m.GetBackingStore().Get("detailedRoles")
     if err != nil {
@@ -158,6 +166,7 @@ func (m *AlertEvidence) GetDetailedRoles()([]string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AlertEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -261,6 +270,7 @@ func (m *AlertEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AlertEvidence) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -272,6 +282,7 @@ func (m *AlertEvidence) GetOdataType()(*string) {
     return nil
 }
 // GetRemediationStatus gets the remediationStatus property value. The remediationStatus property
+// returns a *EvidenceRemediationStatus when successful
 func (m *AlertEvidence) GetRemediationStatus()(*EvidenceRemediationStatus) {
     val, err := m.GetBackingStore().Get("remediationStatus")
     if err != nil {
@@ -283,6 +294,7 @@ func (m *AlertEvidence) GetRemediationStatus()(*EvidenceRemediationStatus) {
     return nil
 }
 // GetRemediationStatusDetails gets the remediationStatusDetails property value. Details about the remediation status.
+// returns a *string when successful
 func (m *AlertEvidence) GetRemediationStatusDetails()(*string) {
     val, err := m.GetBackingStore().Get("remediationStatusDetails")
     if err != nil {
@@ -294,6 +306,7 @@ func (m *AlertEvidence) GetRemediationStatusDetails()(*string) {
     return nil
 }
 // GetRoles gets the roles property value. The role/s that an evidence entity represents in an alert, for example, an IP address that is associated with an attacker has the evidence role Attacker.
+// returns a []EvidenceRole when successful
 func (m *AlertEvidence) GetRoles()([]EvidenceRole) {
     val, err := m.GetBackingStore().Get("roles")
     if err != nil {
@@ -305,6 +318,7 @@ func (m *AlertEvidence) GetRoles()([]EvidenceRole) {
     return nil
 }
 // GetTags gets the tags property value. Array of custom tags associated with an evidence instance, for example, to denote a group of devices, high-value assets, etc.
+// returns a []string when successful
 func (m *AlertEvidence) GetTags()([]string) {
     val, err := m.GetBackingStore().Get("tags")
     if err != nil {
@@ -316,6 +330,7 @@ func (m *AlertEvidence) GetTags()([]string) {
     return nil
 }
 // GetVerdict gets the verdict property value. The verdict property
+// returns a *EvidenceVerdict when successful
 func (m *AlertEvidence) GetVerdict()(*EvidenceVerdict) {
     val, err := m.GetBackingStore().Get("verdict")
     if err != nil {
@@ -453,7 +468,6 @@ func (m *AlertEvidence) SetVerdict(value *EvidenceVerdict)() {
         panic(err)
     }
 }
-// AlertEvidenceable 
 type AlertEvidenceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

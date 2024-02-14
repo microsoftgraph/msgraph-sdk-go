@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Fido2AuthenticationMethodConfiguration 
 type Fido2AuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
 }
-// NewFido2AuthenticationMethodConfiguration instantiates a new fido2AuthenticationMethodConfiguration and sets the default values.
+// NewFido2AuthenticationMethodConfiguration instantiates a new Fido2AuthenticationMethodConfiguration and sets the default values.
 func NewFido2AuthenticationMethodConfiguration()(*Fido2AuthenticationMethodConfiguration) {
     m := &Fido2AuthenticationMethodConfiguration{
         AuthenticationMethodConfiguration: *NewAuthenticationMethodConfiguration(),
@@ -18,10 +17,12 @@ func NewFido2AuthenticationMethodConfiguration()(*Fido2AuthenticationMethodConfi
     return m
 }
 // CreateFido2AuthenticationMethodConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFido2AuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFido2AuthenticationMethodConfiguration(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Fido2AuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethodConfiguration.GetFieldDeserializers()
     res["includeTargets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -73,6 +74,7 @@ func (m *Fido2AuthenticationMethodConfiguration) GetFieldDeserializers()(map[str
     return res
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
+// returns a []AuthenticationMethodTargetable when successful
 func (m *Fido2AuthenticationMethodConfiguration) GetIncludeTargets()([]AuthenticationMethodTargetable) {
     val, err := m.GetBackingStore().Get("includeTargets")
     if err != nil {
@@ -84,6 +86,7 @@ func (m *Fido2AuthenticationMethodConfiguration) GetIncludeTargets()([]Authentic
     return nil
 }
 // GetIsAttestationEnforced gets the isAttestationEnforced property value. Determines whether attestation must be enforced for FIDO2 security key registration.
+// returns a *bool when successful
 func (m *Fido2AuthenticationMethodConfiguration) GetIsAttestationEnforced()(*bool) {
     val, err := m.GetBackingStore().Get("isAttestationEnforced")
     if err != nil {
@@ -95,6 +98,7 @@ func (m *Fido2AuthenticationMethodConfiguration) GetIsAttestationEnforced()(*boo
     return nil
 }
 // GetIsSelfServiceRegistrationAllowed gets the isSelfServiceRegistrationAllowed property value. Determines if users can register new FIDO2 security keys.
+// returns a *bool when successful
 func (m *Fido2AuthenticationMethodConfiguration) GetIsSelfServiceRegistrationAllowed()(*bool) {
     val, err := m.GetBackingStore().Get("isSelfServiceRegistrationAllowed")
     if err != nil {
@@ -106,6 +110,7 @@ func (m *Fido2AuthenticationMethodConfiguration) GetIsSelfServiceRegistrationAll
     return nil
 }
 // GetKeyRestrictions gets the keyRestrictions property value. Controls whether key restrictions are enforced on FIDO2 security keys, either allowing or disallowing certain key types as defined by Authenticator Attestation GUID (AAGUID), an identifier that indicates the type (e.g. make and model) of the authenticator.
+// returns a Fido2KeyRestrictionsable when successful
 func (m *Fido2AuthenticationMethodConfiguration) GetKeyRestrictions()(Fido2KeyRestrictionsable) {
     val, err := m.GetBackingStore().Get("keyRestrictions")
     if err != nil {
@@ -182,7 +187,6 @@ func (m *Fido2AuthenticationMethodConfiguration) SetKeyRestrictions(value Fido2K
         panic(err)
     }
 }
-// Fido2AuthenticationMethodConfigurationable 
 type Fido2AuthenticationMethodConfigurationable interface {
     AuthenticationMethodConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

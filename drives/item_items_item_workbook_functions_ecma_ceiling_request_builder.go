@@ -18,28 +18,29 @@ type ItemItemsItemWorkbookFunctionsEcma_CeilingRequestBuilderPostRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemItemsItemWorkbookFunctionsEcma_CeilingRequestBuilderInternal instantiates a new Ecma_CeilingRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookFunctionsEcma_CeilingRequestBuilderInternal instantiates a new ItemItemsItemWorkbookFunctionsEcma_CeilingRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookFunctionsEcma_CeilingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookFunctionsEcma_CeilingRequestBuilder) {
     m := &ItemItemsItemWorkbookFunctionsEcma_CeilingRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions/ecma_Ceiling", pathParameters),
     }
     return m
 }
-// NewItemItemsItemWorkbookFunctionsEcma_CeilingRequestBuilder instantiates a new Ecma_CeilingRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookFunctionsEcma_CeilingRequestBuilder instantiates a new ItemItemsItemWorkbookFunctionsEcma_CeilingRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookFunctionsEcma_CeilingRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookFunctionsEcma_CeilingRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookFunctionsEcma_CeilingRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action ecma_Ceiling
+// returns a WorkbookFunctionResultable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookFunctionsEcma_CeilingRequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookFunctionsEcma_CeilingPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookFunctionsEcma_CeilingRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookFunctionResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateWorkbookFunctionResultFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,6 +52,7 @@ func (m *ItemItemsItemWorkbookFunctionsEcma_CeilingRequestBuilder) Post(ctx cont
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookFunctionResultable), nil
 }
 // ToPostRequestInformation invoke action ecma_Ceiling
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookFunctionsEcma_CeilingRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemWorkbookFunctionsEcma_CeilingPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookFunctionsEcma_CeilingRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -65,6 +67,7 @@ func (m *ItemItemsItemWorkbookFunctionsEcma_CeilingRequestBuilder) ToPostRequest
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemsItemWorkbookFunctionsEcma_CeilingRequestBuilder when successful
 func (m *ItemItemsItemWorkbookFunctionsEcma_CeilingRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookFunctionsEcma_CeilingRequestBuilder) {
     return NewItemItemsItemWorkbookFunctionsEcma_CeilingRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

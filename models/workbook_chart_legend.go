@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookChartLegend 
 type WorkbookChartLegend struct {
     Entity
 }
-// NewWorkbookChartLegend instantiates a new workbookChartLegend and sets the default values.
+// NewWorkbookChartLegend instantiates a new WorkbookChartLegend and sets the default values.
 func NewWorkbookChartLegend()(*WorkbookChartLegend) {
     m := &WorkbookChartLegend{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewWorkbookChartLegend()(*WorkbookChartLegend) {
     return m
 }
 // CreateWorkbookChartLegendFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookChartLegendFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookChartLegend(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookChartLegend) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["format"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -65,6 +66,7 @@ func (m *WorkbookChartLegend) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetFormat gets the format property value. Represents the formatting of a chart legend, which includes fill and font formatting. Read-only.
+// returns a WorkbookChartLegendFormatable when successful
 func (m *WorkbookChartLegend) GetFormat()(WorkbookChartLegendFormatable) {
     val, err := m.GetBackingStore().Get("format")
     if err != nil {
@@ -76,6 +78,7 @@ func (m *WorkbookChartLegend) GetFormat()(WorkbookChartLegendFormatable) {
     return nil
 }
 // GetOverlay gets the overlay property value. Boolean value for whether the chart legend should overlap with the main body of the chart.
+// returns a *bool when successful
 func (m *WorkbookChartLegend) GetOverlay()(*bool) {
     val, err := m.GetBackingStore().Get("overlay")
     if err != nil {
@@ -87,6 +90,7 @@ func (m *WorkbookChartLegend) GetOverlay()(*bool) {
     return nil
 }
 // GetPosition gets the position property value. Represents the position of the legend on the chart. The possible values are: Top, Bottom, Left, Right, Corner, Custom.
+// returns a *string when successful
 func (m *WorkbookChartLegend) GetPosition()(*string) {
     val, err := m.GetBackingStore().Get("position")
     if err != nil {
@@ -98,6 +102,7 @@ func (m *WorkbookChartLegend) GetPosition()(*string) {
     return nil
 }
 // GetVisible gets the visible property value. A boolean value the represents the visibility of a ChartLegend object.
+// returns a *bool when successful
 func (m *WorkbookChartLegend) GetVisible()(*bool) {
     val, err := m.GetBackingStore().Get("visible")
     if err != nil {
@@ -168,7 +173,6 @@ func (m *WorkbookChartLegend) SetVisible(value *bool)() {
         panic(err)
     }
 }
-// WorkbookChartLegendable 
 type WorkbookChartLegendable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

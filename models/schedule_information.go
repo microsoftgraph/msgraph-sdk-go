@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ScheduleInformation 
 type ScheduleInformation struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewScheduleInformation instantiates a new scheduleInformation and sets the default values.
+// NewScheduleInformation instantiates a new ScheduleInformation and sets the default values.
 func NewScheduleInformation()(*ScheduleInformation) {
     m := &ScheduleInformation{
     }
@@ -19,10 +18,12 @@ func NewScheduleInformation()(*ScheduleInformation) {
     return m
 }
 // CreateScheduleInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateScheduleInformationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewScheduleInformation(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ScheduleInformation) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *ScheduleInformation) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAvailabilityView gets the availabilityView property value. Represents a merged view of availability of all the items in scheduleItems. The view consists of time slots. Availability during each time slot is indicated with: 0= free, 1= tentative, 2= busy, 3= out of office, 4= working elsewhere.
+// returns a *string when successful
 func (m *ScheduleInformation) GetAvailabilityView()(*string) {
     val, err := m.GetBackingStore().Get("availabilityView")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *ScheduleInformation) GetAvailabilityView()(*string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ScheduleInformation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetError gets the error property value. Error information from attempting to get the availability of the user, distribution list, or resource.
+// returns a FreeBusyErrorable when successful
 func (m *ScheduleInformation) GetError()(FreeBusyErrorable) {
     val, err := m.GetBackingStore().Get("error")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *ScheduleInformation) GetError()(FreeBusyErrorable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ScheduleInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["availabilityView"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -132,6 +137,7 @@ func (m *ScheduleInformation) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ScheduleInformation) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -143,6 +149,7 @@ func (m *ScheduleInformation) GetOdataType()(*string) {
     return nil
 }
 // GetScheduleId gets the scheduleId property value. An SMTP address of the user, distribution list, or resource, identifying an instance of scheduleInformation.
+// returns a *string when successful
 func (m *ScheduleInformation) GetScheduleId()(*string) {
     val, err := m.GetBackingStore().Get("scheduleId")
     if err != nil {
@@ -154,6 +161,7 @@ func (m *ScheduleInformation) GetScheduleId()(*string) {
     return nil
 }
 // GetScheduleItems gets the scheduleItems property value. Contains the items that describe the availability of the user or resource.
+// returns a []ScheduleItemable when successful
 func (m *ScheduleInformation) GetScheduleItems()([]ScheduleItemable) {
     val, err := m.GetBackingStore().Get("scheduleItems")
     if err != nil {
@@ -165,6 +173,7 @@ func (m *ScheduleInformation) GetScheduleItems()([]ScheduleItemable) {
     return nil
 }
 // GetWorkingHours gets the workingHours property value. The days of the week and hours in a specific time zone that the user works. These are set as part of the user's mailboxSettings.
+// returns a WorkingHoursable when successful
 func (m *ScheduleInformation) GetWorkingHours()(WorkingHoursable) {
     val, err := m.GetBackingStore().Get("workingHours")
     if err != nil {
@@ -280,7 +289,6 @@ func (m *ScheduleInformation) SetWorkingHours(value WorkingHoursable)() {
         panic(err)
     }
 }
-// ScheduleInformationable 
 type ScheduleInformationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -39,32 +39,34 @@ type MobileAppsGraphMacOSLobAppRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *MobileAppsGraphMacOSLobAppRequestBuilderGetQueryParameters
 }
-// NewMobileAppsGraphMacOSLobAppRequestBuilderInternal instantiates a new GraphMacOSLobAppRequestBuilder and sets the default values.
+// NewMobileAppsGraphMacOSLobAppRequestBuilderInternal instantiates a new MobileAppsGraphMacOSLobAppRequestBuilder and sets the default values.
 func NewMobileAppsGraphMacOSLobAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsGraphMacOSLobAppRequestBuilder) {
     m := &MobileAppsGraphMacOSLobAppRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/graph.macOSLobApp{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/graph.macOSLobApp{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewMobileAppsGraphMacOSLobAppRequestBuilder instantiates a new GraphMacOSLobAppRequestBuilder and sets the default values.
+// NewMobileAppsGraphMacOSLobAppRequestBuilder instantiates a new MobileAppsGraphMacOSLobAppRequestBuilder and sets the default values.
 func NewMobileAppsGraphMacOSLobAppRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsGraphMacOSLobAppRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsGraphMacOSLobAppRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *MobileAppsGraphMacOSLobAppCountRequestBuilder when successful
 func (m *MobileAppsGraphMacOSLobAppRequestBuilder) Count()(*MobileAppsGraphMacOSLobAppCountRequestBuilder) {
     return NewMobileAppsGraphMacOSLobAppCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the items of type microsoft.graph.macOSLobApp in the microsoft.graph.mobileApp collection
+// returns a MacOSLobAppCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsGraphMacOSLobAppRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsGraphMacOSLobAppRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MacOSLobAppCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateMacOSLobAppCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -76,6 +78,7 @@ func (m *MobileAppsGraphMacOSLobAppRequestBuilder) Get(ctx context.Context, requ
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MacOSLobAppCollectionResponseable), nil
 }
 // ToGetRequestInformation get the items of type microsoft.graph.macOSLobApp in the microsoft.graph.mobileApp collection
+// returns a *RequestInformation when successful
 func (m *MobileAppsGraphMacOSLobAppRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsGraphMacOSLobAppRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -89,6 +92,7 @@ func (m *MobileAppsGraphMacOSLobAppRequestBuilder) ToGetRequestInformation(ctx c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MobileAppsGraphMacOSLobAppRequestBuilder when successful
 func (m *MobileAppsGraphMacOSLobAppRequestBuilder) WithUrl(rawUrl string)(*MobileAppsGraphMacOSLobAppRequestBuilder) {
     return NewMobileAppsGraphMacOSLobAppRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

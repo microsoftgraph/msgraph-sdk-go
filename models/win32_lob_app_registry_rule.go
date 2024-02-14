@@ -8,7 +8,7 @@ import (
 type Win32LobAppRegistryRule struct {
     Win32LobAppRule
 }
-// NewWin32LobAppRegistryRule instantiates a new win32LobAppRegistryRule and sets the default values.
+// NewWin32LobAppRegistryRule instantiates a new Win32LobAppRegistryRule and sets the default values.
 func NewWin32LobAppRegistryRule()(*Win32LobAppRegistryRule) {
     m := &Win32LobAppRegistryRule{
         Win32LobAppRule: *NewWin32LobAppRule(),
@@ -18,10 +18,12 @@ func NewWin32LobAppRegistryRule()(*Win32LobAppRegistryRule) {
     return m
 }
 // CreateWin32LobAppRegistryRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWin32LobAppRegistryRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWin32LobAppRegistryRule(), nil
 }
 // GetCheck32BitOn64System gets the check32BitOn64System property value. A value indicating whether to search the 32-bit registry on 64-bit systems.
+// returns a *bool when successful
 func (m *Win32LobAppRegistryRule) GetCheck32BitOn64System()(*bool) {
     val, err := m.GetBackingStore().Get("check32BitOn64System")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *Win32LobAppRegistryRule) GetCheck32BitOn64System()(*bool) {
     return nil
 }
 // GetComparisonValue gets the comparisonValue property value. The registry comparison value.
+// returns a *string when successful
 func (m *Win32LobAppRegistryRule) GetComparisonValue()(*string) {
     val, err := m.GetBackingStore().Get("comparisonValue")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *Win32LobAppRegistryRule) GetComparisonValue()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Win32LobAppRegistryRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Win32LobAppRule.GetFieldDeserializers()
     res["check32BitOn64System"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -109,6 +113,7 @@ func (m *Win32LobAppRegistryRule) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetKeyPath gets the keyPath property value. The full path of the registry entry containing the value to detect.
+// returns a *string when successful
 func (m *Win32LobAppRegistryRule) GetKeyPath()(*string) {
     val, err := m.GetBackingStore().Get("keyPath")
     if err != nil {
@@ -120,6 +125,7 @@ func (m *Win32LobAppRegistryRule) GetKeyPath()(*string) {
     return nil
 }
 // GetOperationType gets the operationType property value. Contains all supported registry data detection type.
+// returns a *Win32LobAppRegistryRuleOperationType when successful
 func (m *Win32LobAppRegistryRule) GetOperationType()(*Win32LobAppRegistryRuleOperationType) {
     val, err := m.GetBackingStore().Get("operationType")
     if err != nil {
@@ -131,6 +137,7 @@ func (m *Win32LobAppRegistryRule) GetOperationType()(*Win32LobAppRegistryRuleOpe
     return nil
 }
 // GetOperator gets the operator property value. Contains properties for detection operator.
+// returns a *Win32LobAppRuleOperator when successful
 func (m *Win32LobAppRegistryRule) GetOperator()(*Win32LobAppRuleOperator) {
     val, err := m.GetBackingStore().Get("operator")
     if err != nil {
@@ -142,6 +149,7 @@ func (m *Win32LobAppRegistryRule) GetOperator()(*Win32LobAppRuleOperator) {
     return nil
 }
 // GetValueName gets the valueName property value. The name of the registry value to detect.
+// returns a *string when successful
 func (m *Win32LobAppRegistryRule) GetValueName()(*string) {
     val, err := m.GetBackingStore().Get("valueName")
     if err != nil {
@@ -240,7 +248,6 @@ func (m *Win32LobAppRegistryRule) SetValueName(value *string)() {
         panic(err)
     }
 }
-// Win32LobAppRegistryRuleable 
 type Win32LobAppRegistryRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Win32LobAppRuleable

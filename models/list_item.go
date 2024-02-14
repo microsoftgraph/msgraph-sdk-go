@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ListItem 
 type ListItem struct {
     BaseItem
 }
-// NewListItem instantiates a new listItem and sets the default values.
+// NewListItem instantiates a new ListItem and sets the default values.
 func NewListItem()(*ListItem) {
     m := &ListItem{
         BaseItem: *NewBaseItem(),
@@ -18,10 +17,12 @@ func NewListItem()(*ListItem) {
     return m
 }
 // CreateListItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateListItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewListItem(), nil
 }
 // GetAnalytics gets the analytics property value. Analytics about the view activities that took place on this item.
+// returns a ItemAnalyticsable when successful
 func (m *ListItem) GetAnalytics()(ItemAnalyticsable) {
     val, err := m.GetBackingStore().Get("analytics")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ListItem) GetAnalytics()(ItemAnalyticsable) {
     return nil
 }
 // GetContentType gets the contentType property value. The content type of this list item
+// returns a ContentTypeInfoable when successful
 func (m *ListItem) GetContentType()(ContentTypeInfoable) {
     val, err := m.GetBackingStore().Get("contentType")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ListItem) GetContentType()(ContentTypeInfoable) {
     return nil
 }
 // GetDocumentSetVersions gets the documentSetVersions property value. Version information for a document set version created by a user.
+// returns a []DocumentSetVersionable when successful
 func (m *ListItem) GetDocumentSetVersions()([]DocumentSetVersionable) {
     val, err := m.GetBackingStore().Get("documentSetVersions")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *ListItem) GetDocumentSetVersions()([]DocumentSetVersionable) {
     return nil
 }
 // GetDriveItem gets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
+// returns a DriveItemable when successful
 func (m *ListItem) GetDriveItem()(DriveItemable) {
     val, err := m.GetBackingStore().Get("driveItem")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *ListItem) GetDriveItem()(DriveItemable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ListItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseItem.GetFieldDeserializers()
     res["analytics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -153,6 +158,7 @@ func (m *ListItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetFields gets the fields property value. The values of the columns set on this list item.
+// returns a FieldValueSetable when successful
 func (m *ListItem) GetFields()(FieldValueSetable) {
     val, err := m.GetBackingStore().Get("fields")
     if err != nil {
@@ -164,6 +170,7 @@ func (m *ListItem) GetFields()(FieldValueSetable) {
     return nil
 }
 // GetSharepointIds gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
+// returns a SharepointIdsable when successful
 func (m *ListItem) GetSharepointIds()(SharepointIdsable) {
     val, err := m.GetBackingStore().Get("sharepointIds")
     if err != nil {
@@ -175,6 +182,7 @@ func (m *ListItem) GetSharepointIds()(SharepointIdsable) {
     return nil
 }
 // GetVersions gets the versions property value. The list of previous versions of the list item.
+// returns a []ListItemVersionable when successful
 func (m *ListItem) GetVersions()([]ListItemVersionable) {
     val, err := m.GetBackingStore().Get("versions")
     if err != nil {
@@ -296,7 +304,6 @@ func (m *ListItem) SetVersions(value []ListItemVersionable)() {
         panic(err)
     }
 }
-// ListItemable 
 type ListItemable interface {
     BaseItemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

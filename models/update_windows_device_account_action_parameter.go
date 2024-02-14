@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// UpdateWindowsDeviceAccountActionParameter 
 type UpdateWindowsDeviceAccountActionParameter struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewUpdateWindowsDeviceAccountActionParameter instantiates a new updateWindowsDeviceAccountActionParameter and sets the default values.
+// NewUpdateWindowsDeviceAccountActionParameter instantiates a new UpdateWindowsDeviceAccountActionParameter and sets the default values.
 func NewUpdateWindowsDeviceAccountActionParameter()(*UpdateWindowsDeviceAccountActionParameter) {
     m := &UpdateWindowsDeviceAccountActionParameter{
     }
@@ -19,10 +18,12 @@ func NewUpdateWindowsDeviceAccountActionParameter()(*UpdateWindowsDeviceAccountA
     return m
 }
 // CreateUpdateWindowsDeviceAccountActionParameterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUpdateWindowsDeviceAccountActionParameterFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUpdateWindowsDeviceAccountActionParameter(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *UpdateWindowsDeviceAccountActionParameter) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetAdditionalData()(map[stri
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *UpdateWindowsDeviceAccountActionParameter) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCalendarSyncEnabled gets the calendarSyncEnabled property value. Not yet documented
+// returns a *bool when successful
 func (m *UpdateWindowsDeviceAccountActionParameter) GetCalendarSyncEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("calendarSyncEnabled")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetCalendarSyncEnabled()(*bo
     return nil
 }
 // GetDeviceAccount gets the deviceAccount property value. Not yet documented
+// returns a WindowsDeviceAccountable when successful
 func (m *UpdateWindowsDeviceAccountActionParameter) GetDeviceAccount()(WindowsDeviceAccountable) {
     val, err := m.GetBackingStore().Get("deviceAccount")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetDeviceAccount()(WindowsDe
     return nil
 }
 // GetDeviceAccountEmail gets the deviceAccountEmail property value. Not yet documented
+// returns a *string when successful
 func (m *UpdateWindowsDeviceAccountActionParameter) GetDeviceAccountEmail()(*string) {
     val, err := m.GetBackingStore().Get("deviceAccountEmail")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetDeviceAccountEmail()(*str
     return nil
 }
 // GetExchangeServer gets the exchangeServer property value. Not yet documented
+// returns a *string when successful
 func (m *UpdateWindowsDeviceAccountActionParameter) GetExchangeServer()(*string) {
     val, err := m.GetBackingStore().Get("exchangeServer")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetExchangeServer()(*string)
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UpdateWindowsDeviceAccountActionParameter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["calendarSyncEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -158,6 +165,7 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetFieldDeserializers()(map[
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *UpdateWindowsDeviceAccountActionParameter) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -169,6 +177,7 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetOdataType()(*string) {
     return nil
 }
 // GetPasswordRotationEnabled gets the passwordRotationEnabled property value. Not yet documented
+// returns a *bool when successful
 func (m *UpdateWindowsDeviceAccountActionParameter) GetPasswordRotationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("passwordRotationEnabled")
     if err != nil {
@@ -180,6 +189,7 @@ func (m *UpdateWindowsDeviceAccountActionParameter) GetPasswordRotationEnabled()
     return nil
 }
 // GetSessionInitiationProtocalAddress gets the sessionInitiationProtocalAddress property value. Not yet documented
+// returns a *string when successful
 func (m *UpdateWindowsDeviceAccountActionParameter) GetSessionInitiationProtocalAddress()(*string) {
     val, err := m.GetBackingStore().Get("sessionInitiationProtocalAddress")
     if err != nil {
@@ -302,7 +312,6 @@ func (m *UpdateWindowsDeviceAccountActionParameter) SetSessionInitiationProtocal
         panic(err)
     }
 }
-// UpdateWindowsDeviceAccountActionParameterable 
 type UpdateWindowsDeviceAccountActionParameterable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

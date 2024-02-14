@@ -8,7 +8,7 @@ import (
 type WindowsInformationProtectionAppLearningSummary struct {
     Entity
 }
-// NewWindowsInformationProtectionAppLearningSummary instantiates a new windowsInformationProtectionAppLearningSummary and sets the default values.
+// NewWindowsInformationProtectionAppLearningSummary instantiates a new WindowsInformationProtectionAppLearningSummary and sets the default values.
 func NewWindowsInformationProtectionAppLearningSummary()(*WindowsInformationProtectionAppLearningSummary) {
     m := &WindowsInformationProtectionAppLearningSummary{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewWindowsInformationProtectionAppLearningSummary()(*WindowsInformationProt
     return m
 }
 // CreateWindowsInformationProtectionAppLearningSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsInformationProtectionAppLearningSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsInformationProtectionAppLearningSummary(), nil
 }
 // GetApplicationName gets the applicationName property value. Application Name
+// returns a *string when successful
 func (m *WindowsInformationProtectionAppLearningSummary) GetApplicationName()(*string) {
     val, err := m.GetBackingStore().Get("applicationName")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *WindowsInformationProtectionAppLearningSummary) GetApplicationName()(*s
     return nil
 }
 // GetApplicationType gets the applicationType property value. Possible types of Application
+// returns a *ApplicationType when successful
 func (m *WindowsInformationProtectionAppLearningSummary) GetApplicationType()(*ApplicationType) {
     val, err := m.GetBackingStore().Get("applicationType")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *WindowsInformationProtectionAppLearningSummary) GetApplicationType()(*A
     return nil
 }
 // GetDeviceCount gets the deviceCount property value. Device Count
+// returns a *int32 when successful
 func (m *WindowsInformationProtectionAppLearningSummary) GetDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("deviceCount")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *WindowsInformationProtectionAppLearningSummary) GetDeviceCount()(*int32
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsInformationProtectionAppLearningSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["applicationName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -135,7 +140,6 @@ func (m *WindowsInformationProtectionAppLearningSummary) SetDeviceCount(value *i
         panic(err)
     }
 }
-// WindowsInformationProtectionAppLearningSummaryable 
 type WindowsInformationProtectionAppLearningSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// RecommendedAction 
 type RecommendedAction struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewRecommendedAction instantiates a new recommendedAction and sets the default values.
+// NewRecommendedAction instantiates a new RecommendedAction and sets the default values.
 func NewRecommendedAction()(*RecommendedAction) {
     m := &RecommendedAction{
     }
@@ -19,10 +18,12 @@ func NewRecommendedAction()(*RecommendedAction) {
     return m
 }
 // CreateRecommendedActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRecommendedActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRecommendedAction(), nil
 }
 // GetActionWebUrl gets the actionWebUrl property value. Web URL to the recommended action.
+// returns a *string when successful
 func (m *RecommendedAction) GetActionWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("actionWebUrl")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *RecommendedAction) GetActionWebUrl()(*string) {
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RecommendedAction) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *RecommendedAction) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *RecommendedAction) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RecommendedAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["actionWebUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,6 +99,7 @@ func (m *RecommendedAction) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *RecommendedAction) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *RecommendedAction) GetOdataType()(*string) {
     return nil
 }
 // GetPotentialScoreImpact gets the potentialScoreImpact property value. Potential improvement in the tenant security score from the recommended action.
+// returns a *float64 when successful
 func (m *RecommendedAction) GetPotentialScoreImpact()(*float64) {
     val, err := m.GetBackingStore().Get("potentialScoreImpact")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *RecommendedAction) GetPotentialScoreImpact()(*float64) {
     return nil
 }
 // GetTitle gets the title property value. Title of the recommended action.
+// returns a *string when successful
 func (m *RecommendedAction) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -200,7 +207,6 @@ func (m *RecommendedAction) SetTitle(value *string)() {
         panic(err)
     }
 }
-// RecommendedActionable 
 type RecommendedActionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

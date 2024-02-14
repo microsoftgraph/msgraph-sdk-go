@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Person 
 type Person struct {
     Entity
 }
-// NewPerson instantiates a new person and sets the default values.
+// NewPerson instantiates a new Person and sets the default values.
 func NewPerson()(*Person) {
     m := &Person{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewPerson()(*Person) {
     return m
 }
 // CreatePersonFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePersonFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPerson(), nil
 }
 // GetBirthday gets the birthday property value. The person's birthday.
+// returns a *string when successful
 func (m *Person) GetBirthday()(*string) {
     val, err := m.GetBackingStore().Get("birthday")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Person) GetBirthday()(*string) {
     return nil
 }
 // GetCompanyName gets the companyName property value. The name of the person's company.
+// returns a *string when successful
 func (m *Person) GetCompanyName()(*string) {
     val, err := m.GetBackingStore().Get("companyName")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *Person) GetCompanyName()(*string) {
     return nil
 }
 // GetDepartment gets the department property value. The person's department.
+// returns a *string when successful
 func (m *Person) GetDepartment()(*string) {
     val, err := m.GetBackingStore().Get("department")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *Person) GetDepartment()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The person's display name.
+// returns a *string when successful
 func (m *Person) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *Person) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Person) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["birthday"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -283,6 +288,7 @@ func (m *Person) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     return res
 }
 // GetGivenName gets the givenName property value. The person's given name.
+// returns a *string when successful
 func (m *Person) GetGivenName()(*string) {
     val, err := m.GetBackingStore().Get("givenName")
     if err != nil {
@@ -294,6 +300,7 @@ func (m *Person) GetGivenName()(*string) {
     return nil
 }
 // GetImAddress gets the imAddress property value. The instant message voice over IP (VOIP) session initiation protocol (SIP) address for the user. Read-only.
+// returns a *string when successful
 func (m *Person) GetImAddress()(*string) {
     val, err := m.GetBackingStore().Get("imAddress")
     if err != nil {
@@ -305,6 +312,7 @@ func (m *Person) GetImAddress()(*string) {
     return nil
 }
 // GetIsFavorite gets the isFavorite property value. True if the user has flagged this person as a favorite.
+// returns a *bool when successful
 func (m *Person) GetIsFavorite()(*bool) {
     val, err := m.GetBackingStore().Get("isFavorite")
     if err != nil {
@@ -316,6 +324,7 @@ func (m *Person) GetIsFavorite()(*bool) {
     return nil
 }
 // GetJobTitle gets the jobTitle property value. The person's job title.
+// returns a *string when successful
 func (m *Person) GetJobTitle()(*string) {
     val, err := m.GetBackingStore().Get("jobTitle")
     if err != nil {
@@ -327,6 +336,7 @@ func (m *Person) GetJobTitle()(*string) {
     return nil
 }
 // GetOfficeLocation gets the officeLocation property value. The location of the person's office.
+// returns a *string when successful
 func (m *Person) GetOfficeLocation()(*string) {
     val, err := m.GetBackingStore().Get("officeLocation")
     if err != nil {
@@ -338,6 +348,7 @@ func (m *Person) GetOfficeLocation()(*string) {
     return nil
 }
 // GetPersonNotes gets the personNotes property value. Free-form notes that the user has taken about this person.
+// returns a *string when successful
 func (m *Person) GetPersonNotes()(*string) {
     val, err := m.GetBackingStore().Get("personNotes")
     if err != nil {
@@ -349,6 +360,7 @@ func (m *Person) GetPersonNotes()(*string) {
     return nil
 }
 // GetPersonType gets the personType property value. The type of person.
+// returns a PersonTypeable when successful
 func (m *Person) GetPersonType()(PersonTypeable) {
     val, err := m.GetBackingStore().Get("personType")
     if err != nil {
@@ -360,6 +372,7 @@ func (m *Person) GetPersonType()(PersonTypeable) {
     return nil
 }
 // GetPhones gets the phones property value. The person's phone numbers.
+// returns a []Phoneable when successful
 func (m *Person) GetPhones()([]Phoneable) {
     val, err := m.GetBackingStore().Get("phones")
     if err != nil {
@@ -371,6 +384,7 @@ func (m *Person) GetPhones()([]Phoneable) {
     return nil
 }
 // GetPostalAddresses gets the postalAddresses property value. The person's addresses.
+// returns a []Locationable when successful
 func (m *Person) GetPostalAddresses()([]Locationable) {
     val, err := m.GetBackingStore().Get("postalAddresses")
     if err != nil {
@@ -382,6 +396,7 @@ func (m *Person) GetPostalAddresses()([]Locationable) {
     return nil
 }
 // GetProfession gets the profession property value. The person's profession.
+// returns a *string when successful
 func (m *Person) GetProfession()(*string) {
     val, err := m.GetBackingStore().Get("profession")
     if err != nil {
@@ -393,6 +408,7 @@ func (m *Person) GetProfession()(*string) {
     return nil
 }
 // GetScoredEmailAddresses gets the scoredEmailAddresses property value. The person's email addresses.
+// returns a []ScoredEmailAddressable when successful
 func (m *Person) GetScoredEmailAddresses()([]ScoredEmailAddressable) {
     val, err := m.GetBackingStore().Get("scoredEmailAddresses")
     if err != nil {
@@ -404,6 +420,7 @@ func (m *Person) GetScoredEmailAddresses()([]ScoredEmailAddressable) {
     return nil
 }
 // GetSurname gets the surname property value. The person's surname.
+// returns a *string when successful
 func (m *Person) GetSurname()(*string) {
     val, err := m.GetBackingStore().Get("surname")
     if err != nil {
@@ -415,6 +432,7 @@ func (m *Person) GetSurname()(*string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) of the person. The UPN is an Internet-style login name for the person based on the Internet standard RFC 822. By convention, this should map to the person's email name. The general format is alias@domain.
+// returns a *string when successful
 func (m *Person) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -426,6 +444,7 @@ func (m *Person) GetUserPrincipalName()(*string) {
     return nil
 }
 // GetWebsites gets the websites property value. The person's websites.
+// returns a []Websiteable when successful
 func (m *Person) GetWebsites()([]Websiteable) {
     val, err := m.GetBackingStore().Get("websites")
     if err != nil {
@@ -437,6 +456,7 @@ func (m *Person) GetWebsites()([]Websiteable) {
     return nil
 }
 // GetYomiCompany gets the yomiCompany property value. The phonetic Japanese name of the person's company.
+// returns a *string when successful
 func (m *Person) GetYomiCompany()(*string) {
     val, err := m.GetBackingStore().Get("yomiCompany")
     if err != nil {
@@ -726,7 +746,6 @@ func (m *Person) SetYomiCompany(value *string)() {
         panic(err)
     }
 }
-// Personable 
 type Personable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

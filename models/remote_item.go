@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// RemoteItem 
 type RemoteItem struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewRemoteItem instantiates a new remoteItem and sets the default values.
+// NewRemoteItem instantiates a new RemoteItem and sets the default values.
 func NewRemoteItem()(*RemoteItem) {
     m := &RemoteItem{
     }
@@ -20,10 +19,12 @@ func NewRemoteItem()(*RemoteItem) {
     return m
 }
 // CreateRemoteItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRemoteItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRemoteItem(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RemoteItem) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *RemoteItem) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *RemoteItem) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user, device, and application which created the item. Read-only.
+// returns a IdentitySetable when successful
 func (m *RemoteItem) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *RemoteItem) GetCreatedBy()(IdentitySetable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time of item creation. Read-only.
+// returns a *Time when successful
 func (m *RemoteItem) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *RemoteItem) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RemoteItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -267,6 +272,7 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetFile gets the file property value. Indicates that the remote item is a file. Read-only.
+// returns a Fileable when successful
 func (m *RemoteItem) GetFile()(Fileable) {
     val, err := m.GetBackingStore().Get("file")
     if err != nil {
@@ -278,6 +284,7 @@ func (m *RemoteItem) GetFile()(Fileable) {
     return nil
 }
 // GetFileSystemInfo gets the fileSystemInfo property value. Information about the remote item from the local file system. Read-only.
+// returns a FileSystemInfoable when successful
 func (m *RemoteItem) GetFileSystemInfo()(FileSystemInfoable) {
     val, err := m.GetBackingStore().Get("fileSystemInfo")
     if err != nil {
@@ -289,6 +296,7 @@ func (m *RemoteItem) GetFileSystemInfo()(FileSystemInfoable) {
     return nil
 }
 // GetFolder gets the folder property value. Indicates that the remote item is a folder. Read-only.
+// returns a Folderable when successful
 func (m *RemoteItem) GetFolder()(Folderable) {
     val, err := m.GetBackingStore().Get("folder")
     if err != nil {
@@ -300,6 +308,7 @@ func (m *RemoteItem) GetFolder()(Folderable) {
     return nil
 }
 // GetId gets the id property value. Unique identifier for the remote item in its drive. Read-only.
+// returns a *string when successful
 func (m *RemoteItem) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -311,6 +320,7 @@ func (m *RemoteItem) GetId()(*string) {
     return nil
 }
 // GetImage gets the image property value. Image metadata, if the item is an image. Read-only.
+// returns a Imageable when successful
 func (m *RemoteItem) GetImage()(Imageable) {
     val, err := m.GetBackingStore().Get("image")
     if err != nil {
@@ -322,6 +332,7 @@ func (m *RemoteItem) GetImage()(Imageable) {
     return nil
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user, device, and application which last modified the item. Read-only.
+// returns a IdentitySetable when successful
 func (m *RemoteItem) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -333,6 +344,7 @@ func (m *RemoteItem) GetLastModifiedBy()(IdentitySetable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time the item was last modified. Read-only.
+// returns a *Time when successful
 func (m *RemoteItem) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -344,6 +356,7 @@ func (m *RemoteItem) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetName gets the name property value. Optional. Filename of the remote item. Read-only.
+// returns a *string when successful
 func (m *RemoteItem) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -355,6 +368,7 @@ func (m *RemoteItem) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *RemoteItem) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -366,6 +380,7 @@ func (m *RemoteItem) GetOdataType()(*string) {
     return nil
 }
 // GetPackageEscaped gets the package property value. If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
+// returns a PackageEscapedable when successful
 func (m *RemoteItem) GetPackageEscaped()(PackageEscapedable) {
     val, err := m.GetBackingStore().Get("packageEscaped")
     if err != nil {
@@ -377,6 +392,7 @@ func (m *RemoteItem) GetPackageEscaped()(PackageEscapedable) {
     return nil
 }
 // GetParentReference gets the parentReference property value. Properties of the parent of the remote item. Read-only.
+// returns a ItemReferenceable when successful
 func (m *RemoteItem) GetParentReference()(ItemReferenceable) {
     val, err := m.GetBackingStore().Get("parentReference")
     if err != nil {
@@ -388,6 +404,7 @@ func (m *RemoteItem) GetParentReference()(ItemReferenceable) {
     return nil
 }
 // GetShared gets the shared property value. Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
+// returns a Sharedable when successful
 func (m *RemoteItem) GetShared()(Sharedable) {
     val, err := m.GetBackingStore().Get("shared")
     if err != nil {
@@ -399,6 +416,7 @@ func (m *RemoteItem) GetShared()(Sharedable) {
     return nil
 }
 // GetSharepointIds gets the sharepointIds property value. Provides interop between items in OneDrive for Business and SharePoint with the full set of item identifiers. Read-only.
+// returns a SharepointIdsable when successful
 func (m *RemoteItem) GetSharepointIds()(SharepointIdsable) {
     val, err := m.GetBackingStore().Get("sharepointIds")
     if err != nil {
@@ -410,6 +428,7 @@ func (m *RemoteItem) GetSharepointIds()(SharepointIdsable) {
     return nil
 }
 // GetSize gets the size property value. Size of the remote item. Read-only.
+// returns a *int64 when successful
 func (m *RemoteItem) GetSize()(*int64) {
     val, err := m.GetBackingStore().Get("size")
     if err != nil {
@@ -421,6 +440,7 @@ func (m *RemoteItem) GetSize()(*int64) {
     return nil
 }
 // GetSpecialFolder gets the specialFolder property value. If the current item is also available as a special folder, this facet is returned. Read-only.
+// returns a SpecialFolderable when successful
 func (m *RemoteItem) GetSpecialFolder()(SpecialFolderable) {
     val, err := m.GetBackingStore().Get("specialFolder")
     if err != nil {
@@ -432,6 +452,7 @@ func (m *RemoteItem) GetSpecialFolder()(SpecialFolderable) {
     return nil
 }
 // GetVideo gets the video property value. Video metadata, if the item is a video. Read-only.
+// returns a Videoable when successful
 func (m *RemoteItem) GetVideo()(Videoable) {
     val, err := m.GetBackingStore().Get("video")
     if err != nil {
@@ -443,6 +464,7 @@ func (m *RemoteItem) GetVideo()(Videoable) {
     return nil
 }
 // GetWebDavUrl gets the webDavUrl property value. DAV compatible URL for the item.
+// returns a *string when successful
 func (m *RemoteItem) GetWebDavUrl()(*string) {
     val, err := m.GetBackingStore().Get("webDavUrl")
     if err != nil {
@@ -454,6 +476,7 @@ func (m *RemoteItem) GetWebDavUrl()(*string) {
     return nil
 }
 // GetWebUrl gets the webUrl property value. URL that displays the resource in the browser. Read-only.
+// returns a *string when successful
 func (m *RemoteItem) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -745,7 +768,6 @@ func (m *RemoteItem) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// RemoteItemable 
 type RemoteItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

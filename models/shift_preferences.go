@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ShiftPreferences 
 type ShiftPreferences struct {
     ChangeTrackedEntity
 }
-// NewShiftPreferences instantiates a new shiftPreferences and sets the default values.
+// NewShiftPreferences instantiates a new ShiftPreferences and sets the default values.
 func NewShiftPreferences()(*ShiftPreferences) {
     m := &ShiftPreferences{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
@@ -18,10 +17,12 @@ func NewShiftPreferences()(*ShiftPreferences) {
     return m
 }
 // CreateShiftPreferencesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateShiftPreferencesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewShiftPreferences(), nil
 }
 // GetAvailability gets the availability property value. Availability of the user to be scheduled for work and its recurrence pattern.
+// returns a []ShiftAvailabilityable when successful
 func (m *ShiftPreferences) GetAvailability()([]ShiftAvailabilityable) {
     val, err := m.GetBackingStore().Get("availability")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ShiftPreferences) GetAvailability()([]ShiftAvailabilityable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ShiftPreferences) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ChangeTrackedEntity.GetFieldDeserializers()
     res["availability"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -80,7 +82,6 @@ func (m *ShiftPreferences) SetAvailability(value []ShiftAvailabilityable)() {
         panic(err)
     }
 }
-// ShiftPreferencesable 
 type ShiftPreferencesable interface {
     ChangeTrackedEntityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

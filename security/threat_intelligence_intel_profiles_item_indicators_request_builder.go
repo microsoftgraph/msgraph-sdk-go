@@ -40,6 +40,7 @@ type ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilderGetRequestConfig
     QueryParameters *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilderGetQueryParameters
 }
 // ByIntelligenceProfileIndicatorId provides operations to manage the indicators property of the microsoft.graph.security.intelligenceProfile entity.
+// returns a *ThreatIntelligenceIntelProfilesItemIndicatorsIntelligenceProfileIndicatorItemRequestBuilder when successful
 func (m *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) ByIntelligenceProfileIndicatorId(intelligenceProfileIndicatorId string)(*ThreatIntelligenceIntelProfilesItemIndicatorsIntelligenceProfileIndicatorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,24 +51,27 @@ func (m *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) ByIntellig
     }
     return NewThreatIntelligenceIntelProfilesItemIndicatorsIntelligenceProfileIndicatorItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilderInternal instantiates a new IndicatorsRequestBuilder and sets the default values.
+// NewThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilderInternal instantiates a new ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder and sets the default values.
 func NewThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) {
     m := &ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/intelProfiles/{intelligenceProfile%2Did}/indicators{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/intelProfiles/{intelligenceProfile%2Did}/indicators{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder instantiates a new IndicatorsRequestBuilder and sets the default values.
+// NewThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder instantiates a new ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder and sets the default values.
 func NewThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ThreatIntelligenceIntelProfilesItemIndicatorsCountRequestBuilder when successful
 func (m *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) Count()(*ThreatIntelligenceIntelProfilesItemIndicatorsCountRequestBuilder) {
     return NewThreatIntelligenceIntelProfilesItemIndicatorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the intelligenceProfileIndicator resources from the indicators navigation property of an intelligenceProfile.
+// returns a IntelligenceProfileIndicatorCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-intelligenceprofile-list-indicators?view=graph-rest-1.0
@@ -77,8 +81,7 @@ func (m *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) Get(ctx co
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.CreateIntelligenceProfileIndicatorCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,6 +93,7 @@ func (m *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) Get(ctx co
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.IntelligenceProfileIndicatorCollectionResponseable), nil
 }
 // ToGetRequestInformation get the intelligenceProfileIndicator resources from the indicators navigation property of an intelligenceProfile.
+// returns a *RequestInformation when successful
 func (m *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -103,6 +107,7 @@ func (m *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) ToGetReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder when successful
 func (m *ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder) {
     return NewThreatIntelligenceIntelProfilesItemIndicatorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

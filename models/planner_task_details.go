@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerTaskDetails 
 type PlannerTaskDetails struct {
     Entity
 }
-// NewPlannerTaskDetails instantiates a new plannerTaskDetails and sets the default values.
+// NewPlannerTaskDetails instantiates a new PlannerTaskDetails and sets the default values.
 func NewPlannerTaskDetails()(*PlannerTaskDetails) {
     m := &PlannerTaskDetails{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewPlannerTaskDetails()(*PlannerTaskDetails) {
     return m
 }
 // CreatePlannerTaskDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlannerTaskDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerTaskDetails(), nil
 }
 // GetChecklist gets the checklist property value. The collection of checklist items on the task.
+// returns a PlannerChecklistItemsable when successful
 func (m *PlannerTaskDetails) GetChecklist()(PlannerChecklistItemsable) {
     val, err := m.GetBackingStore().Get("checklist")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *PlannerTaskDetails) GetChecklist()(PlannerChecklistItemsable) {
     return nil
 }
 // GetDescription gets the description property value. Description of the task.
+// returns a *string when successful
 func (m *PlannerTaskDetails) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *PlannerTaskDetails) GetDescription()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlannerTaskDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["checklist"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -87,6 +90,7 @@ func (m *PlannerTaskDetails) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetPreviewType gets the previewType property value. This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
+// returns a *PlannerPreviewType when successful
 func (m *PlannerTaskDetails) GetPreviewType()(*PlannerPreviewType) {
     val, err := m.GetBackingStore().Get("previewType")
     if err != nil {
@@ -98,6 +102,7 @@ func (m *PlannerTaskDetails) GetPreviewType()(*PlannerPreviewType) {
     return nil
 }
 // GetReferences gets the references property value. The collection of references on the task.
+// returns a PlannerExternalReferencesable when successful
 func (m *PlannerTaskDetails) GetReferences()(PlannerExternalReferencesable) {
     val, err := m.GetBackingStore().Get("references")
     if err != nil {
@@ -169,7 +174,6 @@ func (m *PlannerTaskDetails) SetReferences(value PlannerExternalReferencesable)(
         panic(err)
     }
 }
-// PlannerTaskDetailsable 
 type PlannerTaskDetailsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

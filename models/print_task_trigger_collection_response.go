@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintTaskTriggerCollectionResponse 
 type PrintTaskTriggerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPrintTaskTriggerCollectionResponse instantiates a new printTaskTriggerCollectionResponse and sets the default values.
+// NewPrintTaskTriggerCollectionResponse instantiates a new PrintTaskTriggerCollectionResponse and sets the default values.
 func NewPrintTaskTriggerCollectionResponse()(*PrintTaskTriggerCollectionResponse) {
     m := &PrintTaskTriggerCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewPrintTaskTriggerCollectionResponse()(*PrintTaskTriggerCollectionResponse
     return m
 }
 // CreatePrintTaskTriggerCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrintTaskTriggerCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrintTaskTriggerCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrintTaskTriggerCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *PrintTaskTriggerCollectionResponse) GetFieldDeserializers()(map[string]
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []PrintTaskTriggerable when successful
 func (m *PrintTaskTriggerCollectionResponse) GetValue()([]PrintTaskTriggerable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *PrintTaskTriggerCollectionResponse) SetValue(value []PrintTaskTriggerab
         panic(err)
     }
 }
-// PrintTaskTriggerCollectionResponseable 
 type PrintTaskTriggerCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

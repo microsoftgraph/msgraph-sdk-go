@@ -10,7 +10,7 @@ type MacOSMinimumOperatingSystem struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewMacOSMinimumOperatingSystem instantiates a new macOSMinimumOperatingSystem and sets the default values.
+// NewMacOSMinimumOperatingSystem instantiates a new MacOSMinimumOperatingSystem and sets the default values.
 func NewMacOSMinimumOperatingSystem()(*MacOSMinimumOperatingSystem) {
     m := &MacOSMinimumOperatingSystem{
     }
@@ -19,10 +19,12 @@ func NewMacOSMinimumOperatingSystem()(*MacOSMinimumOperatingSystem) {
     return m
 }
 // CreateMacOSMinimumOperatingSystemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOSMinimumOperatingSystemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSMinimumOperatingSystem(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *MacOSMinimumOperatingSystem) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *MacOSMinimumOperatingSystem) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *MacOSMinimumOperatingSystem) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -174,6 +178,7 @@ func (m *MacOSMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *MacOSMinimumOperatingSystem) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -185,6 +190,7 @@ func (m *MacOSMinimumOperatingSystem) GetOdataType()(*string) {
     return nil
 }
 // GetV1010 gets the v10_10 property value. When TRUE, indicates OS X 10.10 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV1010()(*bool) {
     val, err := m.GetBackingStore().Get("v10_10")
     if err != nil {
@@ -196,6 +202,7 @@ func (m *MacOSMinimumOperatingSystem) GetV1010()(*bool) {
     return nil
 }
 // GetV1011 gets the v10_11 property value. When TRUE, indicates OS X 10.11 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV1011()(*bool) {
     val, err := m.GetBackingStore().Get("v10_11")
     if err != nil {
@@ -207,6 +214,7 @@ func (m *MacOSMinimumOperatingSystem) GetV1011()(*bool) {
     return nil
 }
 // GetV1012 gets the v10_12 property value. When TRUE, indicates macOS 10.12 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV1012()(*bool) {
     val, err := m.GetBackingStore().Get("v10_12")
     if err != nil {
@@ -218,6 +226,7 @@ func (m *MacOSMinimumOperatingSystem) GetV1012()(*bool) {
     return nil
 }
 // GetV1013 gets the v10_13 property value. When TRUE, indicates macOS 10.13 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV1013()(*bool) {
     val, err := m.GetBackingStore().Get("v10_13")
     if err != nil {
@@ -229,6 +238,7 @@ func (m *MacOSMinimumOperatingSystem) GetV1013()(*bool) {
     return nil
 }
 // GetV1014 gets the v10_14 property value. When TRUE, indicates macOS 10.14 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV1014()(*bool) {
     val, err := m.GetBackingStore().Get("v10_14")
     if err != nil {
@@ -240,6 +250,7 @@ func (m *MacOSMinimumOperatingSystem) GetV1014()(*bool) {
     return nil
 }
 // GetV1015 gets the v10_15 property value. When TRUE, indicates macOS 10.15 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV1015()(*bool) {
     val, err := m.GetBackingStore().Get("v10_15")
     if err != nil {
@@ -251,6 +262,7 @@ func (m *MacOSMinimumOperatingSystem) GetV1015()(*bool) {
     return nil
 }
 // GetV107 gets the v10_7 property value. When TRUE, indicates Mac OS X 10.7 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV107()(*bool) {
     val, err := m.GetBackingStore().Get("v10_7")
     if err != nil {
@@ -262,6 +274,7 @@ func (m *MacOSMinimumOperatingSystem) GetV107()(*bool) {
     return nil
 }
 // GetV108 gets the v10_8 property value. When TRUE, indicates OS X 10.8 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV108()(*bool) {
     val, err := m.GetBackingStore().Get("v10_8")
     if err != nil {
@@ -273,6 +286,7 @@ func (m *MacOSMinimumOperatingSystem) GetV108()(*bool) {
     return nil
 }
 // GetV109 gets the v10_9 property value. When TRUE, indicates OS X 10.9 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV109()(*bool) {
     val, err := m.GetBackingStore().Get("v10_9")
     if err != nil {
@@ -284,6 +298,7 @@ func (m *MacOSMinimumOperatingSystem) GetV109()(*bool) {
     return nil
 }
 // GetV110 gets the v11_0 property value. When TRUE, indicates macOS 11.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV110()(*bool) {
     val, err := m.GetBackingStore().Get("v11_0")
     if err != nil {
@@ -295,6 +310,7 @@ func (m *MacOSMinimumOperatingSystem) GetV110()(*bool) {
     return nil
 }
 // GetV120 gets the v12_0 property value. When TRUE, indicates macOS 12.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV120()(*bool) {
     val, err := m.GetBackingStore().Get("v12_0")
     if err != nil {
@@ -306,6 +322,7 @@ func (m *MacOSMinimumOperatingSystem) GetV120()(*bool) {
     return nil
 }
 // GetV130 gets the v13_0 property value. When TRUE, indicates macOS 13.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+// returns a *bool when successful
 func (m *MacOSMinimumOperatingSystem) GetV130()(*bool) {
     val, err := m.GetBackingStore().Get("v13_0")
     if err != nil {
@@ -506,7 +523,6 @@ func (m *MacOSMinimumOperatingSystem) SetV130(value *bool)() {
         panic(err)
     }
 }
-// MacOSMinimumOperatingSystemable 
 type MacOSMinimumOperatingSystemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

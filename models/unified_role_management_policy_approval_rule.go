@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleManagementPolicyApprovalRule 
 type UnifiedRoleManagementPolicyApprovalRule struct {
     UnifiedRoleManagementPolicyRule
 }
-// NewUnifiedRoleManagementPolicyApprovalRule instantiates a new unifiedRoleManagementPolicyApprovalRule and sets the default values.
+// NewUnifiedRoleManagementPolicyApprovalRule instantiates a new UnifiedRoleManagementPolicyApprovalRule and sets the default values.
 func NewUnifiedRoleManagementPolicyApprovalRule()(*UnifiedRoleManagementPolicyApprovalRule) {
     m := &UnifiedRoleManagementPolicyApprovalRule{
         UnifiedRoleManagementPolicyRule: *NewUnifiedRoleManagementPolicyRule(),
@@ -18,10 +17,12 @@ func NewUnifiedRoleManagementPolicyApprovalRule()(*UnifiedRoleManagementPolicyAp
     return m
 }
 // CreateUnifiedRoleManagementPolicyApprovalRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnifiedRoleManagementPolicyApprovalRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleManagementPolicyApprovalRule(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnifiedRoleManagementPolicyApprovalRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UnifiedRoleManagementPolicyRule.GetFieldDeserializers()
     res["setting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *UnifiedRoleManagementPolicyApprovalRule) GetFieldDeserializers()(map[st
     return res
 }
 // GetSetting gets the setting property value. The settings for approval of the role assignment.
+// returns a ApprovalSettingsable when successful
 func (m *UnifiedRoleManagementPolicyApprovalRule) GetSetting()(ApprovalSettingsable) {
     val, err := m.GetBackingStore().Get("setting")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *UnifiedRoleManagementPolicyApprovalRule) SetSetting(value ApprovalSetti
         panic(err)
     }
 }
-// UnifiedRoleManagementPolicyApprovalRuleable 
 type UnifiedRoleManagementPolicyApprovalRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UnifiedRoleManagementPolicyRuleable

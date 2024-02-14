@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AttributeDefinition 
 type AttributeDefinition struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAttributeDefinition instantiates a new attributeDefinition and sets the default values.
+// NewAttributeDefinition instantiates a new AttributeDefinition and sets the default values.
 func NewAttributeDefinition()(*AttributeDefinition) {
     m := &AttributeDefinition{
     }
@@ -19,10 +18,12 @@ func NewAttributeDefinition()(*AttributeDefinition) {
     return m
 }
 // CreateAttributeDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAttributeDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAttributeDefinition(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AttributeDefinition) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *AttributeDefinition) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAnchor gets the anchor property value. true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
+// returns a *bool when successful
 func (m *AttributeDefinition) GetAnchor()(*bool) {
     val, err := m.GetBackingStore().Get("anchor")
     if err != nil {
@@ -46,6 +48,7 @@ func (m *AttributeDefinition) GetAnchor()(*bool) {
     return nil
 }
 // GetApiExpressions gets the apiExpressions property value. The apiExpressions property
+// returns a []StringKeyStringValuePairable when successful
 func (m *AttributeDefinition) GetApiExpressions()([]StringKeyStringValuePairable) {
     val, err := m.GetBackingStore().Get("apiExpressions")
     if err != nil {
@@ -57,10 +60,12 @@ func (m *AttributeDefinition) GetApiExpressions()([]StringKeyStringValuePairable
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AttributeDefinition) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCaseExact gets the caseExact property value. true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
+// returns a *bool when successful
 func (m *AttributeDefinition) GetCaseExact()(*bool) {
     val, err := m.GetBackingStore().Get("caseExact")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *AttributeDefinition) GetCaseExact()(*bool) {
     return nil
 }
 // GetDefaultValue gets the defaultValue property value. The defaultValue property
+// returns a *string when successful
 func (m *AttributeDefinition) GetDefaultValue()(*string) {
     val, err := m.GetBackingStore().Get("defaultValue")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *AttributeDefinition) GetDefaultValue()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["anchor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -236,6 +243,7 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetFlowNullValues gets the flowNullValues property value. 'true' to allow null values for attributes.
+// returns a *bool when successful
 func (m *AttributeDefinition) GetFlowNullValues()(*bool) {
     val, err := m.GetBackingStore().Get("flowNullValues")
     if err != nil {
@@ -247,6 +255,7 @@ func (m *AttributeDefinition) GetFlowNullValues()(*bool) {
     return nil
 }
 // GetMetadata gets the metadata property value. Metadata for the given object.
+// returns a []AttributeDefinitionMetadataEntryable when successful
 func (m *AttributeDefinition) GetMetadata()([]AttributeDefinitionMetadataEntryable) {
     val, err := m.GetBackingStore().Get("metadata")
     if err != nil {
@@ -258,6 +267,7 @@ func (m *AttributeDefinition) GetMetadata()([]AttributeDefinitionMetadataEntryab
     return nil
 }
 // GetMultivalued gets the multivalued property value. true if an attribute can have multiple values. Default is false.
+// returns a *bool when successful
 func (m *AttributeDefinition) GetMultivalued()(*bool) {
     val, err := m.GetBackingStore().Get("multivalued")
     if err != nil {
@@ -269,6 +279,7 @@ func (m *AttributeDefinition) GetMultivalued()(*bool) {
     return nil
 }
 // GetMutability gets the mutability property value. The mutability property
+// returns a *Mutability when successful
 func (m *AttributeDefinition) GetMutability()(*Mutability) {
     val, err := m.GetBackingStore().Get("mutability")
     if err != nil {
@@ -280,6 +291,7 @@ func (m *AttributeDefinition) GetMutability()(*Mutability) {
     return nil
 }
 // GetName gets the name property value. Name of the attribute. Must be unique within the object definition. Not nullable.
+// returns a *string when successful
 func (m *AttributeDefinition) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -291,6 +303,7 @@ func (m *AttributeDefinition) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AttributeDefinition) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -302,6 +315,7 @@ func (m *AttributeDefinition) GetOdataType()(*string) {
     return nil
 }
 // GetReferencedObjects gets the referencedObjects property value. For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).
+// returns a []ReferencedObjectable when successful
 func (m *AttributeDefinition) GetReferencedObjects()([]ReferencedObjectable) {
     val, err := m.GetBackingStore().Get("referencedObjects")
     if err != nil {
@@ -313,6 +327,7 @@ func (m *AttributeDefinition) GetReferencedObjects()([]ReferencedObjectable) {
     return nil
 }
 // GetRequired gets the required property value. true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
+// returns a *bool when successful
 func (m *AttributeDefinition) GetRequired()(*bool) {
     val, err := m.GetBackingStore().Get("required")
     if err != nil {
@@ -324,6 +339,7 @@ func (m *AttributeDefinition) GetRequired()(*bool) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *AttributeType when successful
 func (m *AttributeDefinition) GetTypeEscaped()(*AttributeType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -544,7 +560,6 @@ func (m *AttributeDefinition) SetTypeEscaped(value *AttributeType)() {
         panic(err)
     }
 }
-// AttributeDefinitionable 
 type AttributeDefinitionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

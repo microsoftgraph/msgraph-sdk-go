@@ -18,28 +18,29 @@ type ItemItemsItemWorkbookFunctionsNorm_S_InvRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemItemsItemWorkbookFunctionsNorm_S_InvRequestBuilderInternal instantiates a new Norm_S_InvRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookFunctionsNorm_S_InvRequestBuilderInternal instantiates a new ItemItemsItemWorkbookFunctionsNorm_S_InvRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookFunctionsNorm_S_InvRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookFunctionsNorm_S_InvRequestBuilder) {
     m := &ItemItemsItemWorkbookFunctionsNorm_S_InvRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions/norm_S_Inv", pathParameters),
     }
     return m
 }
-// NewItemItemsItemWorkbookFunctionsNorm_S_InvRequestBuilder instantiates a new Norm_S_InvRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookFunctionsNorm_S_InvRequestBuilder instantiates a new ItemItemsItemWorkbookFunctionsNorm_S_InvRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookFunctionsNorm_S_InvRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookFunctionsNorm_S_InvRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookFunctionsNorm_S_InvRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action norm_S_Inv
+// returns a WorkbookFunctionResultable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookFunctionsNorm_S_InvRequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookFunctionsNorm_S_InvPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookFunctionsNorm_S_InvRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookFunctionResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateWorkbookFunctionResultFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,6 +52,7 @@ func (m *ItemItemsItemWorkbookFunctionsNorm_S_InvRequestBuilder) Post(ctx contex
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookFunctionResultable), nil
 }
 // ToPostRequestInformation invoke action norm_S_Inv
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookFunctionsNorm_S_InvRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemWorkbookFunctionsNorm_S_InvPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookFunctionsNorm_S_InvRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -65,6 +67,7 @@ func (m *ItemItemsItemWorkbookFunctionsNorm_S_InvRequestBuilder) ToPostRequestIn
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemsItemWorkbookFunctionsNorm_S_InvRequestBuilder when successful
 func (m *ItemItemsItemWorkbookFunctionsNorm_S_InvRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookFunctionsNorm_S_InvRequestBuilder) {
     return NewItemItemsItemWorkbookFunctionsNorm_S_InvRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

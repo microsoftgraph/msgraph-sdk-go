@@ -9,7 +9,7 @@ import (
 type DeviceAppManagement struct {
     Entity
 }
-// NewDeviceAppManagement instantiates a new deviceAppManagement and sets the default values.
+// NewDeviceAppManagement instantiates a new DeviceAppManagement and sets the default values.
 func NewDeviceAppManagement()(*DeviceAppManagement) {
     m := &DeviceAppManagement{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewDeviceAppManagement()(*DeviceAppManagement) {
     return m
 }
 // CreateDeviceAppManagementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceAppManagementFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceAppManagement(), nil
 }
 // GetAndroidManagedAppProtections gets the androidManagedAppProtections property value. Android managed app policies.
+// returns a []AndroidManagedAppProtectionable when successful
 func (m *DeviceAppManagement) GetAndroidManagedAppProtections()([]AndroidManagedAppProtectionable) {
     val, err := m.GetBackingStore().Get("androidManagedAppProtections")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *DeviceAppManagement) GetAndroidManagedAppProtections()([]AndroidManaged
     return nil
 }
 // GetDefaultManagedAppProtections gets the defaultManagedAppProtections property value. Default managed app policies.
+// returns a []DefaultManagedAppProtectionable when successful
 func (m *DeviceAppManagement) GetDefaultManagedAppProtections()([]DefaultManagedAppProtectionable) {
     val, err := m.GetBackingStore().Get("defaultManagedAppProtections")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *DeviceAppManagement) GetDefaultManagedAppProtections()([]DefaultManaged
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["androidManagedAppProtections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -312,6 +316,7 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetIosManagedAppProtections gets the iosManagedAppProtections property value. iOS managed app policies.
+// returns a []IosManagedAppProtectionable when successful
 func (m *DeviceAppManagement) GetIosManagedAppProtections()([]IosManagedAppProtectionable) {
     val, err := m.GetBackingStore().Get("iosManagedAppProtections")
     if err != nil {
@@ -323,6 +328,7 @@ func (m *DeviceAppManagement) GetIosManagedAppProtections()([]IosManagedAppProte
     return nil
 }
 // GetIsEnabledForMicrosoftStoreForBusiness gets the isEnabledForMicrosoftStoreForBusiness property value. Whether the account is enabled for syncing applications from the Microsoft Store for Business.
+// returns a *bool when successful
 func (m *DeviceAppManagement) GetIsEnabledForMicrosoftStoreForBusiness()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabledForMicrosoftStoreForBusiness")
     if err != nil {
@@ -334,6 +340,7 @@ func (m *DeviceAppManagement) GetIsEnabledForMicrosoftStoreForBusiness()(*bool) 
     return nil
 }
 // GetManagedAppPolicies gets the managedAppPolicies property value. Managed app policies.
+// returns a []ManagedAppPolicyable when successful
 func (m *DeviceAppManagement) GetManagedAppPolicies()([]ManagedAppPolicyable) {
     val, err := m.GetBackingStore().Get("managedAppPolicies")
     if err != nil {
@@ -345,6 +352,7 @@ func (m *DeviceAppManagement) GetManagedAppPolicies()([]ManagedAppPolicyable) {
     return nil
 }
 // GetManagedAppRegistrations gets the managedAppRegistrations property value. The managed app registrations.
+// returns a []ManagedAppRegistrationable when successful
 func (m *DeviceAppManagement) GetManagedAppRegistrations()([]ManagedAppRegistrationable) {
     val, err := m.GetBackingStore().Get("managedAppRegistrations")
     if err != nil {
@@ -356,6 +364,7 @@ func (m *DeviceAppManagement) GetManagedAppRegistrations()([]ManagedAppRegistrat
     return nil
 }
 // GetManagedAppStatuses gets the managedAppStatuses property value. The managed app statuses.
+// returns a []ManagedAppStatusable when successful
 func (m *DeviceAppManagement) GetManagedAppStatuses()([]ManagedAppStatusable) {
     val, err := m.GetBackingStore().Get("managedAppStatuses")
     if err != nil {
@@ -367,6 +376,7 @@ func (m *DeviceAppManagement) GetManagedAppStatuses()([]ManagedAppStatusable) {
     return nil
 }
 // GetManagedEBooks gets the managedEBooks property value. The Managed eBook.
+// returns a []ManagedEBookable when successful
 func (m *DeviceAppManagement) GetManagedEBooks()([]ManagedEBookable) {
     val, err := m.GetBackingStore().Get("managedEBooks")
     if err != nil {
@@ -378,6 +388,7 @@ func (m *DeviceAppManagement) GetManagedEBooks()([]ManagedEBookable) {
     return nil
 }
 // GetMdmWindowsInformationProtectionPolicies gets the mdmWindowsInformationProtectionPolicies property value. Windows information protection for apps running on devices which are MDM enrolled.
+// returns a []MdmWindowsInformationProtectionPolicyable when successful
 func (m *DeviceAppManagement) GetMdmWindowsInformationProtectionPolicies()([]MdmWindowsInformationProtectionPolicyable) {
     val, err := m.GetBackingStore().Get("mdmWindowsInformationProtectionPolicies")
     if err != nil {
@@ -389,6 +400,7 @@ func (m *DeviceAppManagement) GetMdmWindowsInformationProtectionPolicies()([]Mdm
     return nil
 }
 // GetMicrosoftStoreForBusinessLanguage gets the microsoftStoreForBusinessLanguage property value. The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is -<country/regioncode2>, where  is a lowercase two-letter code derived from ISO 639-1 and <country/regioncode2> is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.
+// returns a *string when successful
 func (m *DeviceAppManagement) GetMicrosoftStoreForBusinessLanguage()(*string) {
     val, err := m.GetBackingStore().Get("microsoftStoreForBusinessLanguage")
     if err != nil {
@@ -400,6 +412,7 @@ func (m *DeviceAppManagement) GetMicrosoftStoreForBusinessLanguage()(*string) {
     return nil
 }
 // GetMicrosoftStoreForBusinessLastCompletedApplicationSyncTime gets the microsoftStoreForBusinessLastCompletedApplicationSyncTime property value. The last time an application sync from the Microsoft Store for Business was completed.
+// returns a *Time when successful
 func (m *DeviceAppManagement) GetMicrosoftStoreForBusinessLastCompletedApplicationSyncTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("microsoftStoreForBusinessLastCompletedApplicationSyncTime")
     if err != nil {
@@ -411,6 +424,7 @@ func (m *DeviceAppManagement) GetMicrosoftStoreForBusinessLastCompletedApplicati
     return nil
 }
 // GetMicrosoftStoreForBusinessLastSuccessfulSyncDateTime gets the microsoftStoreForBusinessLastSuccessfulSyncDateTime property value. The last time the apps from the Microsoft Store for Business were synced successfully for the account.
+// returns a *Time when successful
 func (m *DeviceAppManagement) GetMicrosoftStoreForBusinessLastSuccessfulSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("microsoftStoreForBusinessLastSuccessfulSyncDateTime")
     if err != nil {
@@ -422,6 +436,7 @@ func (m *DeviceAppManagement) GetMicrosoftStoreForBusinessLastSuccessfulSyncDate
     return nil
 }
 // GetMobileAppCategories gets the mobileAppCategories property value. The mobile app categories.
+// returns a []MobileAppCategoryable when successful
 func (m *DeviceAppManagement) GetMobileAppCategories()([]MobileAppCategoryable) {
     val, err := m.GetBackingStore().Get("mobileAppCategories")
     if err != nil {
@@ -433,6 +448,7 @@ func (m *DeviceAppManagement) GetMobileAppCategories()([]MobileAppCategoryable) 
     return nil
 }
 // GetMobileAppConfigurations gets the mobileAppConfigurations property value. The Managed Device Mobile Application Configurations.
+// returns a []ManagedDeviceMobileAppConfigurationable when successful
 func (m *DeviceAppManagement) GetMobileAppConfigurations()([]ManagedDeviceMobileAppConfigurationable) {
     val, err := m.GetBackingStore().Get("mobileAppConfigurations")
     if err != nil {
@@ -444,6 +460,7 @@ func (m *DeviceAppManagement) GetMobileAppConfigurations()([]ManagedDeviceMobile
     return nil
 }
 // GetMobileApps gets the mobileApps property value. The mobile apps.
+// returns a []MobileAppable when successful
 func (m *DeviceAppManagement) GetMobileApps()([]MobileAppable) {
     val, err := m.GetBackingStore().Get("mobileApps")
     if err != nil {
@@ -455,6 +472,7 @@ func (m *DeviceAppManagement) GetMobileApps()([]MobileAppable) {
     return nil
 }
 // GetTargetedManagedAppConfigurations gets the targetedManagedAppConfigurations property value. Targeted managed app configurations.
+// returns a []TargetedManagedAppConfigurationable when successful
 func (m *DeviceAppManagement) GetTargetedManagedAppConfigurations()([]TargetedManagedAppConfigurationable) {
     val, err := m.GetBackingStore().Get("targetedManagedAppConfigurations")
     if err != nil {
@@ -466,6 +484,7 @@ func (m *DeviceAppManagement) GetTargetedManagedAppConfigurations()([]TargetedMa
     return nil
 }
 // GetVppTokens gets the vppTokens property value. List of Vpp tokens for this organization.
+// returns a []VppTokenable when successful
 func (m *DeviceAppManagement) GetVppTokens()([]VppTokenable) {
     val, err := m.GetBackingStore().Get("vppTokens")
     if err != nil {
@@ -477,6 +496,7 @@ func (m *DeviceAppManagement) GetVppTokens()([]VppTokenable) {
     return nil
 }
 // GetWindowsInformationProtectionPolicies gets the windowsInformationProtectionPolicies property value. Windows information protection for apps running on devices which are not MDM enrolled.
+// returns a []WindowsInformationProtectionPolicyable when successful
 func (m *DeviceAppManagement) GetWindowsInformationProtectionPolicies()([]WindowsInformationProtectionPolicyable) {
     val, err := m.GetBackingStore().Get("windowsInformationProtectionPolicies")
     if err != nil {
@@ -813,7 +833,6 @@ func (m *DeviceAppManagement) SetWindowsInformationProtectionPolicies(value []Wi
         panic(err)
     }
 }
-// DeviceAppManagementable 
 type DeviceAppManagementable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

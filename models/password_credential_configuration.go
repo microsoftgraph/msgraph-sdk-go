@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// PasswordCredentialConfiguration 
 type PasswordCredentialConfiguration struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPasswordCredentialConfiguration instantiates a new passwordCredentialConfiguration and sets the default values.
+// NewPasswordCredentialConfiguration instantiates a new PasswordCredentialConfiguration and sets the default values.
 func NewPasswordCredentialConfiguration()(*PasswordCredentialConfiguration) {
     m := &PasswordCredentialConfiguration{
     }
@@ -20,10 +19,12 @@ func NewPasswordCredentialConfiguration()(*PasswordCredentialConfiguration) {
     return m
 }
 // CreatePasswordCredentialConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePasswordCredentialConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPasswordCredentialConfiguration(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PasswordCredentialConfiguration) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *PasswordCredentialConfiguration) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *PasswordCredentialConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PasswordCredentialConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["maxLifetime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -85,6 +88,7 @@ func (m *PasswordCredentialConfiguration) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetMaxLifetime gets the maxLifetime property value. The maxLifetime property
+// returns a *ISODuration when successful
 func (m *PasswordCredentialConfiguration) GetMaxLifetime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("maxLifetime")
     if err != nil {
@@ -96,6 +100,7 @@ func (m *PasswordCredentialConfiguration) GetMaxLifetime()(*i878a80d2330e89d2689
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PasswordCredentialConfiguration) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -107,6 +112,7 @@ func (m *PasswordCredentialConfiguration) GetOdataType()(*string) {
     return nil
 }
 // GetRestrictForAppsCreatedAfterDateTime gets the restrictForAppsCreatedAfterDateTime property value. Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.
+// returns a *Time when successful
 func (m *PasswordCredentialConfiguration) GetRestrictForAppsCreatedAfterDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("restrictForAppsCreatedAfterDateTime")
     if err != nil {
@@ -118,6 +124,7 @@ func (m *PasswordCredentialConfiguration) GetRestrictForAppsCreatedAfterDateTime
     return nil
 }
 // GetRestrictionType gets the restrictionType property value. The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime,customPasswordAddition, unknownFutureValue. Each value of restrictionType can be used only once per policy.
+// returns a *AppCredentialRestrictionType when successful
 func (m *PasswordCredentialConfiguration) GetRestrictionType()(*AppCredentialRestrictionType) {
     val, err := m.GetBackingStore().Get("restrictionType")
     if err != nil {
@@ -202,7 +209,6 @@ func (m *PasswordCredentialConfiguration) SetRestrictionType(value *AppCredentia
         panic(err)
     }
 }
-// PasswordCredentialConfigurationable 
 type PasswordCredentialConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

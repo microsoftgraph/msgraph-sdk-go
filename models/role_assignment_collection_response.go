@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RoleAssignmentCollectionResponse 
 type RoleAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewRoleAssignmentCollectionResponse instantiates a new roleAssignmentCollectionResponse and sets the default values.
+// NewRoleAssignmentCollectionResponse instantiates a new RoleAssignmentCollectionResponse and sets the default values.
 func NewRoleAssignmentCollectionResponse()(*RoleAssignmentCollectionResponse) {
     m := &RoleAssignmentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewRoleAssignmentCollectionResponse()(*RoleAssignmentCollectionResponse) {
     return m
 }
 // CreateRoleAssignmentCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRoleAssignmentCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRoleAssignmentCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RoleAssignmentCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *RoleAssignmentCollectionResponse) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []RoleAssignmentable when successful
 func (m *RoleAssignmentCollectionResponse) GetValue()([]RoleAssignmentable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *RoleAssignmentCollectionResponse) SetValue(value []RoleAssignmentable)(
         panic(err)
     }
 }
-// RoleAssignmentCollectionResponseable 
 type RoleAssignmentCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

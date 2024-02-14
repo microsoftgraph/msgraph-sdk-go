@@ -14,6 +14,8 @@ type EntitlementManagementAssignmentsAdditionalAccessRequestBuilder struct {
 type EntitlementManagementAssignmentsAdditionalAccessRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -36,29 +38,30 @@ type EntitlementManagementAssignmentsAdditionalAccessRequestBuilderGetRequestCon
     // Request query parameters
     QueryParameters *EntitlementManagementAssignmentsAdditionalAccessRequestBuilderGetQueryParameters
 }
-// NewEntitlementManagementAssignmentsAdditionalAccessRequestBuilderInternal instantiates a new AdditionalAccessRequestBuilder and sets the default values.
+// NewEntitlementManagementAssignmentsAdditionalAccessRequestBuilderInternal instantiates a new EntitlementManagementAssignmentsAdditionalAccessRequestBuilder and sets the default values.
 func NewEntitlementManagementAssignmentsAdditionalAccessRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAssignmentsAdditionalAccessRequestBuilder) {
     m := &EntitlementManagementAssignmentsAdditionalAccessRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/assignments/additionalAccess(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/assignments/additionalAccess(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewEntitlementManagementAssignmentsAdditionalAccessRequestBuilder instantiates a new AdditionalAccessRequestBuilder and sets the default values.
+// NewEntitlementManagementAssignmentsAdditionalAccessRequestBuilder instantiates a new EntitlementManagementAssignmentsAdditionalAccessRequestBuilder and sets the default values.
 func NewEntitlementManagementAssignmentsAdditionalAccessRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAssignmentsAdditionalAccessRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAssignmentsAdditionalAccessRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function additionalAccess
-// Deprecated: This method is obsolete. Use GetAsAdditionalAccessGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a EntitlementManagementAssignmentsAdditionalAccessResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAssignmentsAdditionalAccessRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentsAdditionalAccessRequestBuilderGetRequestConfiguration)(EntitlementManagementAssignmentsAdditionalAccessResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateEntitlementManagementAssignmentsAdditionalAccessResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -70,14 +73,15 @@ func (m *EntitlementManagementAssignmentsAdditionalAccessRequestBuilder) Get(ctx
     return res.(EntitlementManagementAssignmentsAdditionalAccessResponseable), nil
 }
 // GetAsAdditionalAccessGetResponse invoke function additionalAccess
+// returns a EntitlementManagementAssignmentsAdditionalAccessGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAssignmentsAdditionalAccessRequestBuilder) GetAsAdditionalAccessGetResponse(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentsAdditionalAccessRequestBuilderGetRequestConfiguration)(EntitlementManagementAssignmentsAdditionalAccessGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateEntitlementManagementAssignmentsAdditionalAccessGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -89,6 +93,7 @@ func (m *EntitlementManagementAssignmentsAdditionalAccessRequestBuilder) GetAsAd
     return res.(EntitlementManagementAssignmentsAdditionalAccessGetResponseable), nil
 }
 // ToGetRequestInformation invoke function additionalAccess
+// returns a *RequestInformation when successful
 func (m *EntitlementManagementAssignmentsAdditionalAccessRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentsAdditionalAccessRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -102,6 +107,7 @@ func (m *EntitlementManagementAssignmentsAdditionalAccessRequestBuilder) ToGetRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *EntitlementManagementAssignmentsAdditionalAccessRequestBuilder when successful
 func (m *EntitlementManagementAssignmentsAdditionalAccessRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAssignmentsAdditionalAccessRequestBuilder) {
     return NewEntitlementManagementAssignmentsAdditionalAccessRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

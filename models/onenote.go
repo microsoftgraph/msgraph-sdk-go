@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Onenote 
 type Onenote struct {
     Entity
 }
-// NewOnenote instantiates a new onenote and sets the default values.
+// NewOnenote instantiates a new Onenote and sets the default values.
 func NewOnenote()(*Onenote) {
     m := &Onenote{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewOnenote()(*Onenote) {
     return m
 }
 // CreateOnenoteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnenoteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnenote(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Onenote) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["notebooks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -121,6 +122,7 @@ func (m *Onenote) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetNotebooks gets the notebooks property value. The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+// returns a []Notebookable when successful
 func (m *Onenote) GetNotebooks()([]Notebookable) {
     val, err := m.GetBackingStore().Get("notebooks")
     if err != nil {
@@ -132,6 +134,7 @@ func (m *Onenote) GetNotebooks()([]Notebookable) {
     return nil
 }
 // GetOperations gets the operations property value. The status of OneNote operations. Getting an operations collection isn't supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.
+// returns a []OnenoteOperationable when successful
 func (m *Onenote) GetOperations()([]OnenoteOperationable) {
     val, err := m.GetBackingStore().Get("operations")
     if err != nil {
@@ -143,6 +146,7 @@ func (m *Onenote) GetOperations()([]OnenoteOperationable) {
     return nil
 }
 // GetPages gets the pages property value. The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// returns a []OnenotePageable when successful
 func (m *Onenote) GetPages()([]OnenotePageable) {
     val, err := m.GetBackingStore().Get("pages")
     if err != nil {
@@ -154,6 +158,7 @@ func (m *Onenote) GetPages()([]OnenotePageable) {
     return nil
 }
 // GetResources gets the resources property value. The image and other file resources in OneNote pages. Getting a resources collection isn't supported, but you can get the binary content of a specific resource. Read-only. Nullable.
+// returns a []OnenoteResourceable when successful
 func (m *Onenote) GetResources()([]OnenoteResourceable) {
     val, err := m.GetBackingStore().Get("resources")
     if err != nil {
@@ -165,6 +170,7 @@ func (m *Onenote) GetResources()([]OnenoteResourceable) {
     return nil
 }
 // GetSectionGroups gets the sectionGroups property value. The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// returns a []SectionGroupable when successful
 func (m *Onenote) GetSectionGroups()([]SectionGroupable) {
     val, err := m.GetBackingStore().Get("sectionGroups")
     if err != nil {
@@ -176,6 +182,7 @@ func (m *Onenote) GetSectionGroups()([]SectionGroupable) {
     return nil
 }
 // GetSections gets the sections property value. The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// returns a []OnenoteSectionable when successful
 func (m *Onenote) GetSections()([]OnenoteSectionable) {
     val, err := m.GetBackingStore().Get("sections")
     if err != nil {
@@ -308,7 +315,6 @@ func (m *Onenote) SetSections(value []OnenoteSectionable)() {
         panic(err)
     }
 }
-// Onenoteable 
 type Onenoteable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

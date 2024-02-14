@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TenantAppManagementPolicy 
 type TenantAppManagementPolicy struct {
     PolicyBase
 }
-// NewTenantAppManagementPolicy instantiates a new tenantAppManagementPolicy and sets the default values.
+// NewTenantAppManagementPolicy instantiates a new TenantAppManagementPolicy and sets the default values.
 func NewTenantAppManagementPolicy()(*TenantAppManagementPolicy) {
     m := &TenantAppManagementPolicy{
         PolicyBase: *NewPolicyBase(),
@@ -18,10 +17,12 @@ func NewTenantAppManagementPolicy()(*TenantAppManagementPolicy) {
     return m
 }
 // CreateTenantAppManagementPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTenantAppManagementPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTenantAppManagementPolicy(), nil
 }
 // GetApplicationRestrictions gets the applicationRestrictions property value. Restrictions that apply as default to all application objects in the tenant.
+// returns a AppManagementConfigurationable when successful
 func (m *TenantAppManagementPolicy) GetApplicationRestrictions()(AppManagementConfigurationable) {
     val, err := m.GetBackingStore().Get("applicationRestrictions")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *TenantAppManagementPolicy) GetApplicationRestrictions()(AppManagementCo
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TenantAppManagementPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicyBase.GetFieldDeserializers()
     res["applicationRestrictions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,6 +70,7 @@ func (m *TenantAppManagementPolicy) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetIsEnabled gets the isEnabled property value. Denotes whether the policy is enabled. Default value is false.
+// returns a *bool when successful
 func (m *TenantAppManagementPolicy) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -79,6 +82,7 @@ func (m *TenantAppManagementPolicy) GetIsEnabled()(*bool) {
     return nil
 }
 // GetServicePrincipalRestrictions gets the servicePrincipalRestrictions property value. Restrictions that apply as default to all service principal objects in the tenant.
+// returns a AppManagementConfigurationable when successful
 func (m *TenantAppManagementPolicy) GetServicePrincipalRestrictions()(AppManagementConfigurationable) {
     val, err := m.GetBackingStore().Get("servicePrincipalRestrictions")
     if err != nil {
@@ -136,7 +140,6 @@ func (m *TenantAppManagementPolicy) SetServicePrincipalRestrictions(value AppMan
         panic(err)
     }
 }
-// TenantAppManagementPolicyable 
 type TenantAppManagementPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicyBaseable

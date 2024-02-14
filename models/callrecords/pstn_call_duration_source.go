@@ -2,7 +2,6 @@ package callrecords
 import (
     "errors"
 )
-// 
 type PstnCallDurationSource int
 
 const (

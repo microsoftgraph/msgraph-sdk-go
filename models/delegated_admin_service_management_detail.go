@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DelegatedAdminServiceManagementDetail 
 type DelegatedAdminServiceManagementDetail struct {
     Entity
 }
-// NewDelegatedAdminServiceManagementDetail instantiates a new delegatedAdminServiceManagementDetail and sets the default values.
+// NewDelegatedAdminServiceManagementDetail instantiates a new DelegatedAdminServiceManagementDetail and sets the default values.
 func NewDelegatedAdminServiceManagementDetail()(*DelegatedAdminServiceManagementDetail) {
     m := &DelegatedAdminServiceManagementDetail{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewDelegatedAdminServiceManagementDetail()(*DelegatedAdminServiceManagement
     return m
 }
 // CreateDelegatedAdminServiceManagementDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDelegatedAdminServiceManagementDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDelegatedAdminServiceManagementDetail(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DelegatedAdminServiceManagementDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["serviceManagementUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -45,6 +46,7 @@ func (m *DelegatedAdminServiceManagementDetail) GetFieldDeserializers()(map[stri
     return res
 }
 // GetServiceManagementUrl gets the serviceManagementUrl property value. The URL of the management portal for the managed service. Read-only.
+// returns a *string when successful
 func (m *DelegatedAdminServiceManagementDetail) GetServiceManagementUrl()(*string) {
     val, err := m.GetBackingStore().Get("serviceManagementUrl")
     if err != nil {
@@ -56,6 +58,7 @@ func (m *DelegatedAdminServiceManagementDetail) GetServiceManagementUrl()(*strin
     return nil
 }
 // GetServiceName gets the serviceName property value. The name of a managed service. Read-only.
+// returns a *string when successful
 func (m *DelegatedAdminServiceManagementDetail) GetServiceName()(*string) {
     val, err := m.GetBackingStore().Get("serviceName")
     if err != nil {
@@ -100,7 +103,6 @@ func (m *DelegatedAdminServiceManagementDetail) SetServiceName(value *string)() 
         panic(err)
     }
 }
-// DelegatedAdminServiceManagementDetailable 
 type DelegatedAdminServiceManagementDetailable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

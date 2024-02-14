@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ServiceHealthIssuePost 
 type ServiceHealthIssuePost struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewServiceHealthIssuePost instantiates a new serviceHealthIssuePost and sets the default values.
+// NewServiceHealthIssuePost instantiates a new ServiceHealthIssuePost and sets the default values.
 func NewServiceHealthIssuePost()(*ServiceHealthIssuePost) {
     m := &ServiceHealthIssuePost{
     }
@@ -20,10 +19,12 @@ func NewServiceHealthIssuePost()(*ServiceHealthIssuePost) {
     return m
 }
 // CreateServiceHealthIssuePostFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateServiceHealthIssuePostFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServiceHealthIssuePost(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ServiceHealthIssuePost) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *ServiceHealthIssuePost) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ServiceHealthIssuePost) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCreatedDateTime gets the createdDateTime property value. The published time of the post.
+// returns a *Time when successful
 func (m *ServiceHealthIssuePost) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *ServiceHealthIssuePost) GetCreatedDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetDescription gets the description property value. The content of the service issue post. The supported value for the contentType property is html.
+// returns a ItemBodyable when successful
 func (m *ServiceHealthIssuePost) GetDescription()(ItemBodyable) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *ServiceHealthIssuePost) GetDescription()(ItemBodyable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ServiceHealthIssuePost) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -107,6 +112,7 @@ func (m *ServiceHealthIssuePost) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ServiceHealthIssuePost) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -118,6 +124,7 @@ func (m *ServiceHealthIssuePost) GetOdataType()(*string) {
     return nil
 }
 // GetPostType gets the postType property value. The post type of the service issue historical post. Possible values are: regular, quick, strategic, unknownFutureValue.
+// returns a *PostType when successful
 func (m *ServiceHealthIssuePost) GetPostType()(*PostType) {
     val, err := m.GetBackingStore().Get("postType")
     if err != nil {
@@ -202,7 +209,6 @@ func (m *ServiceHealthIssuePost) SetPostType(value *PostType)() {
         panic(err)
     }
 }
-// ServiceHealthIssuePostable 
 type ServiceHealthIssuePostable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

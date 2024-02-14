@@ -5,11 +5,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// Schema 
 type Schema struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewSchema instantiates a new schema and sets the default values.
+// NewSchema instantiates a new Schema and sets the default values.
 func NewSchema()(*Schema) {
     m := &Schema{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -17,10 +16,12 @@ func NewSchema()(*Schema) {
     return m
 }
 // CreateSchemaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSchemaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSchema(), nil
 }
 // GetBaseType gets the baseType property value. Must be set to microsoft.graph.externalConnector.externalItem. Required.
+// returns a *string when successful
 func (m *Schema) GetBaseType()(*string) {
     val, err := m.GetBackingStore().Get("baseType")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *Schema) GetBaseType()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Schema) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["baseType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -63,6 +65,7 @@ func (m *Schema) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     return res
 }
 // GetProperties gets the properties property value. The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.
+// returns a []Propertyable when successful
 func (m *Schema) GetProperties()([]Propertyable) {
     val, err := m.GetBackingStore().Get("properties")
     if err != nil {
@@ -113,7 +116,6 @@ func (m *Schema) SetProperties(value []Propertyable)() {
         panic(err)
     }
 }
-// Schemaable 
 type Schemaable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

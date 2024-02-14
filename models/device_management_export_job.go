@@ -9,7 +9,7 @@ import (
 type DeviceManagementExportJob struct {
     Entity
 }
-// NewDeviceManagementExportJob instantiates a new deviceManagementExportJob and sets the default values.
+// NewDeviceManagementExportJob instantiates a new DeviceManagementExportJob and sets the default values.
 func NewDeviceManagementExportJob()(*DeviceManagementExportJob) {
     m := &DeviceManagementExportJob{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewDeviceManagementExportJob()(*DeviceManagementExportJob) {
     return m
 }
 // CreateDeviceManagementExportJobFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementExportJobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementExportJob(), nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. Time that the exported report expires
+// returns a *Time when successful
 func (m *DeviceManagementExportJob) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *DeviceManagementExportJob) GetExpirationDateTime()(*i336074805fc853987a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["expirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -143,6 +146,7 @@ func (m *DeviceManagementExportJob) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetFilter gets the filter property value. Filters applied on the report
+// returns a *string when successful
 func (m *DeviceManagementExportJob) GetFilter()(*string) {
     val, err := m.GetBackingStore().Get("filter")
     if err != nil {
@@ -154,6 +158,7 @@ func (m *DeviceManagementExportJob) GetFilter()(*string) {
     return nil
 }
 // GetFormat gets the format property value. Possible values for the file format of a report
+// returns a *DeviceManagementReportFileFormat when successful
 func (m *DeviceManagementExportJob) GetFormat()(*DeviceManagementReportFileFormat) {
     val, err := m.GetBackingStore().Get("format")
     if err != nil {
@@ -165,6 +170,7 @@ func (m *DeviceManagementExportJob) GetFormat()(*DeviceManagementReportFileForma
     return nil
 }
 // GetLocalizationType gets the localizationType property value. Configures how the requested export job is localized
+// returns a *DeviceManagementExportJobLocalizationType when successful
 func (m *DeviceManagementExportJob) GetLocalizationType()(*DeviceManagementExportJobLocalizationType) {
     val, err := m.GetBackingStore().Get("localizationType")
     if err != nil {
@@ -176,6 +182,7 @@ func (m *DeviceManagementExportJob) GetLocalizationType()(*DeviceManagementExpor
     return nil
 }
 // GetReportName gets the reportName property value. Name of the report
+// returns a *string when successful
 func (m *DeviceManagementExportJob) GetReportName()(*string) {
     val, err := m.GetBackingStore().Get("reportName")
     if err != nil {
@@ -187,6 +194,7 @@ func (m *DeviceManagementExportJob) GetReportName()(*string) {
     return nil
 }
 // GetRequestDateTime gets the requestDateTime property value. Time that the exported report was requested
+// returns a *Time when successful
 func (m *DeviceManagementExportJob) GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("requestDateTime")
     if err != nil {
@@ -198,6 +206,7 @@ func (m *DeviceManagementExportJob) GetRequestDateTime()(*i336074805fc853987abe6
     return nil
 }
 // GetSelectEscaped gets the select property value. Columns selected from the report
+// returns a []string when successful
 func (m *DeviceManagementExportJob) GetSelectEscaped()([]string) {
     val, err := m.GetBackingStore().Get("selectEscaped")
     if err != nil {
@@ -209,6 +218,7 @@ func (m *DeviceManagementExportJob) GetSelectEscaped()([]string) {
     return nil
 }
 // GetSnapshotId gets the snapshotId property value. A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.
+// returns a *string when successful
 func (m *DeviceManagementExportJob) GetSnapshotId()(*string) {
     val, err := m.GetBackingStore().Get("snapshotId")
     if err != nil {
@@ -220,6 +230,7 @@ func (m *DeviceManagementExportJob) GetSnapshotId()(*string) {
     return nil
 }
 // GetStatus gets the status property value. Possible statuses associated with a generated report
+// returns a *DeviceManagementReportStatus when successful
 func (m *DeviceManagementExportJob) GetStatus()(*DeviceManagementReportStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -231,6 +242,7 @@ func (m *DeviceManagementExportJob) GetStatus()(*DeviceManagementReportStatus) {
     return nil
 }
 // GetUrl gets the url property value. Temporary location of the exported report
+// returns a *string when successful
 func (m *DeviceManagementExportJob) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -382,7 +394,6 @@ func (m *DeviceManagementExportJob) SetUrl(value *string)() {
         panic(err)
     }
 }
-// DeviceManagementExportJobable 
 type DeviceManagementExportJobable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

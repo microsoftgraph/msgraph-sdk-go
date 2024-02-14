@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ContainerEvidence 
 type ContainerEvidence struct {
     AlertEvidence
 }
-// NewContainerEvidence instantiates a new containerEvidence and sets the default values.
+// NewContainerEvidence instantiates a new ContainerEvidence and sets the default values.
 func NewContainerEvidence()(*ContainerEvidence) {
     m := &ContainerEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -18,10 +17,12 @@ func NewContainerEvidence()(*ContainerEvidence) {
     return m
 }
 // CreateContainerEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateContainerEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewContainerEvidence(), nil
 }
 // GetArgs gets the args property value. The list of arguments.
+// returns a []string when successful
 func (m *ContainerEvidence) GetArgs()([]string) {
     val, err := m.GetBackingStore().Get("args")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ContainerEvidence) GetArgs()([]string) {
     return nil
 }
 // GetCommand gets the command property value. The list of commands.
+// returns a []string when successful
 func (m *ContainerEvidence) GetCommand()([]string) {
     val, err := m.GetBackingStore().Get("command")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ContainerEvidence) GetCommand()([]string) {
     return nil
 }
 // GetContainerId gets the containerId property value. The container ID.
+// returns a *string when successful
 func (m *ContainerEvidence) GetContainerId()(*string) {
     val, err := m.GetBackingStore().Get("containerId")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *ContainerEvidence) GetContainerId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ContainerEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["args"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -142,6 +146,7 @@ func (m *ContainerEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetImage gets the image property value. The image used to run the container.
+// returns a ContainerImageEvidenceable when successful
 func (m *ContainerEvidence) GetImage()(ContainerImageEvidenceable) {
     val, err := m.GetBackingStore().Get("image")
     if err != nil {
@@ -153,6 +158,7 @@ func (m *ContainerEvidence) GetImage()(ContainerImageEvidenceable) {
     return nil
 }
 // GetIsPrivileged gets the isPrivileged property value. The privileged status.
+// returns a *bool when successful
 func (m *ContainerEvidence) GetIsPrivileged()(*bool) {
     val, err := m.GetBackingStore().Get("isPrivileged")
     if err != nil {
@@ -164,6 +170,7 @@ func (m *ContainerEvidence) GetIsPrivileged()(*bool) {
     return nil
 }
 // GetName gets the name property value. The container name.
+// returns a *string when successful
 func (m *ContainerEvidence) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -175,6 +182,7 @@ func (m *ContainerEvidence) GetName()(*string) {
     return nil
 }
 // GetPod gets the pod property value. The pod this container belongs to.
+// returns a KubernetesPodEvidenceable when successful
 func (m *ContainerEvidence) GetPod()(KubernetesPodEvidenceable) {
     val, err := m.GetBackingStore().Get("pod")
     if err != nil {
@@ -284,7 +292,6 @@ func (m *ContainerEvidence) SetPod(value KubernetesPodEvidenceable)() {
         panic(err)
     }
 }
-// ContainerEvidenceable 
 type ContainerEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

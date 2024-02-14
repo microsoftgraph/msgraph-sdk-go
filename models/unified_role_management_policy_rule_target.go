@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// UnifiedRoleManagementPolicyRuleTarget 
 type UnifiedRoleManagementPolicyRuleTarget struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewUnifiedRoleManagementPolicyRuleTarget instantiates a new unifiedRoleManagementPolicyRuleTarget and sets the default values.
+// NewUnifiedRoleManagementPolicyRuleTarget instantiates a new UnifiedRoleManagementPolicyRuleTarget and sets the default values.
 func NewUnifiedRoleManagementPolicyRuleTarget()(*UnifiedRoleManagementPolicyRuleTarget) {
     m := &UnifiedRoleManagementPolicyRuleTarget{
     }
@@ -19,10 +18,12 @@ func NewUnifiedRoleManagementPolicyRuleTarget()(*UnifiedRoleManagementPolicyRule
     return m
 }
 // CreateUnifiedRoleManagementPolicyRuleTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnifiedRoleManagementPolicyRuleTargetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleManagementPolicyRuleTarget(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetAdditionalData()(map[string]a
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCaller gets the caller property value. The type of caller that's the target of the policy rule. Allowed values are: None, Admin, EndUser.
+// returns a *string when successful
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetCaller()(*string) {
     val, err := m.GetBackingStore().Get("caller")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetCaller()(*string) {
     return nil
 }
 // GetEnforcedSettings gets the enforcedSettings property value. The list of role settings that are enforced and cannot be overridden by child scopes. Use All for all settings.
+// returns a []string when successful
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetEnforcedSettings()([]string) {
     val, err := m.GetBackingStore().Get("enforcedSettings")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetEnforcedSettings()([]string) 
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["caller"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -160,6 +165,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetFieldDeserializers()(map[stri
     return res
 }
 // GetInheritableSettings gets the inheritableSettings property value. The list of role settings that can be inherited by child scopes. Use All for all settings.
+// returns a []string when successful
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetInheritableSettings()([]string) {
     val, err := m.GetBackingStore().Get("inheritableSettings")
     if err != nil {
@@ -171,6 +177,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetInheritableSettings()([]strin
     return nil
 }
 // GetLevel gets the level property value. The role assignment type that's the target of policy rule. Allowed values are: Eligibility, Assignment.
+// returns a *string when successful
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetLevel()(*string) {
     val, err := m.GetBackingStore().Get("level")
     if err != nil {
@@ -182,6 +189,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetLevel()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -193,6 +201,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetOdataType()(*string) {
     return nil
 }
 // GetOperations gets the operations property value. The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
+// returns a []UnifiedRoleManagementPolicyRuleTargetOperations when successful
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetOperations()([]UnifiedRoleManagementPolicyRuleTargetOperations) {
     val, err := m.GetBackingStore().Get("operations")
     if err != nil {
@@ -204,6 +213,7 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) GetOperations()([]UnifiedRoleMan
     return nil
 }
 // GetTargetObjects gets the targetObjects property value. The targetObjects property
+// returns a []DirectoryObjectable when successful
 func (m *UnifiedRoleManagementPolicyRuleTarget) GetTargetObjects()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("targetObjects")
     if err != nil {
@@ -332,7 +342,6 @@ func (m *UnifiedRoleManagementPolicyRuleTarget) SetTargetObjects(value []Directo
         panic(err)
     }
 }
-// UnifiedRoleManagementPolicyRuleTargetable 
 type UnifiedRoleManagementPolicyRuleTargetable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

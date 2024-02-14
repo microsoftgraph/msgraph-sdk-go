@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleManagementPolicyEnablementRule 
 type UnifiedRoleManagementPolicyEnablementRule struct {
     UnifiedRoleManagementPolicyRule
 }
-// NewUnifiedRoleManagementPolicyEnablementRule instantiates a new unifiedRoleManagementPolicyEnablementRule and sets the default values.
+// NewUnifiedRoleManagementPolicyEnablementRule instantiates a new UnifiedRoleManagementPolicyEnablementRule and sets the default values.
 func NewUnifiedRoleManagementPolicyEnablementRule()(*UnifiedRoleManagementPolicyEnablementRule) {
     m := &UnifiedRoleManagementPolicyEnablementRule{
         UnifiedRoleManagementPolicyRule: *NewUnifiedRoleManagementPolicyRule(),
@@ -18,10 +17,12 @@ func NewUnifiedRoleManagementPolicyEnablementRule()(*UnifiedRoleManagementPolicy
     return m
 }
 // CreateUnifiedRoleManagementPolicyEnablementRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnifiedRoleManagementPolicyEnablementRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleManagementPolicyEnablementRule(), nil
 }
 // GetEnabledRules gets the enabledRules property value. The collection of rules that are enabled for this policy rule. For example, MultiFactorAuthentication, Ticketing, and Justification.
+// returns a []string when successful
 func (m *UnifiedRoleManagementPolicyEnablementRule) GetEnabledRules()([]string) {
     val, err := m.GetBackingStore().Get("enabledRules")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *UnifiedRoleManagementPolicyEnablementRule) GetEnabledRules()([]string) 
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnifiedRoleManagementPolicyEnablementRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UnifiedRoleManagementPolicyRule.GetFieldDeserializers()
     res["enabledRules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,7 +76,6 @@ func (m *UnifiedRoleManagementPolicyEnablementRule) SetEnabledRules(value []stri
         panic(err)
     }
 }
-// UnifiedRoleManagementPolicyEnablementRuleable 
 type UnifiedRoleManagementPolicyEnablementRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UnifiedRoleManagementPolicyRuleable

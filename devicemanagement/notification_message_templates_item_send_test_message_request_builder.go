@@ -17,20 +17,21 @@ type NotificationMessageTemplatesItemSendTestMessageRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewNotificationMessageTemplatesItemSendTestMessageRequestBuilderInternal instantiates a new SendTestMessageRequestBuilder and sets the default values.
+// NewNotificationMessageTemplatesItemSendTestMessageRequestBuilderInternal instantiates a new NotificationMessageTemplatesItemSendTestMessageRequestBuilder and sets the default values.
 func NewNotificationMessageTemplatesItemSendTestMessageRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*NotificationMessageTemplatesItemSendTestMessageRequestBuilder) {
     m := &NotificationMessageTemplatesItemSendTestMessageRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/notificationMessageTemplates/{notificationMessageTemplate%2Did}/sendTestMessage", pathParameters),
     }
     return m
 }
-// NewNotificationMessageTemplatesItemSendTestMessageRequestBuilder instantiates a new SendTestMessageRequestBuilder and sets the default values.
+// NewNotificationMessageTemplatesItemSendTestMessageRequestBuilder instantiates a new NotificationMessageTemplatesItemSendTestMessageRequestBuilder and sets the default values.
 func NewNotificationMessageTemplatesItemSendTestMessageRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*NotificationMessageTemplatesItemSendTestMessageRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewNotificationMessageTemplatesItemSendTestMessageRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post sends test message using the specified notificationMessageTemplate in the default locale
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/intune-notification-notificationmessagetemplate-sendtestmessage?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *NotificationMessageTemplatesItemSendTestMessageRequestBuilder) Post(ctx
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *NotificationMessageTemplatesItemSendTestMessageRequestBuilder) Post(ctx
     return nil
 }
 // ToPostRequestInformation sends test message using the specified notificationMessageTemplate in the default locale
+// returns a *RequestInformation when successful
 func (m *NotificationMessageTemplatesItemSendTestMessageRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *NotificationMessageTemplatesItemSendTestMessageRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *NotificationMessageTemplatesItemSendTestMessageRequestBuilder) ToPostRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *NotificationMessageTemplatesItemSendTestMessageRequestBuilder when successful
 func (m *NotificationMessageTemplatesItemSendTestMessageRequestBuilder) WithUrl(rawUrl string)(*NotificationMessageTemplatesItemSendTestMessageRequestBuilder) {
     return NewNotificationMessageTemplatesItemSendTestMessageRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

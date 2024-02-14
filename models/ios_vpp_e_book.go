@@ -9,7 +9,7 @@ import (
 type IosVppEBook struct {
     ManagedEBook
 }
-// NewIosVppEBook instantiates a new iosVppEBook and sets the default values.
+// NewIosVppEBook instantiates a new IosVppEBook and sets the default values.
 func NewIosVppEBook()(*IosVppEBook) {
     m := &IosVppEBook{
         ManagedEBook: *NewManagedEBook(),
@@ -19,10 +19,12 @@ func NewIosVppEBook()(*IosVppEBook) {
     return m
 }
 // CreateIosVppEBookFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosVppEBookFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosVppEBook(), nil
 }
 // GetAppleId gets the appleId property value. The Apple ID associated with Vpp token.
+// returns a *string when successful
 func (m *IosVppEBook) GetAppleId()(*string) {
     val, err := m.GetBackingStore().Get("appleId")
     if err != nil {
@@ -34,6 +36,7 @@ func (m *IosVppEBook) GetAppleId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosVppEBook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedEBook.GetFieldDeserializers()
     res["appleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -125,6 +128,7 @@ func (m *IosVppEBook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetGenres gets the genres property value. Genres.
+// returns a []string when successful
 func (m *IosVppEBook) GetGenres()([]string) {
     val, err := m.GetBackingStore().Get("genres")
     if err != nil {
@@ -136,6 +140,7 @@ func (m *IosVppEBook) GetGenres()([]string) {
     return nil
 }
 // GetLanguage gets the language property value. Language.
+// returns a *string when successful
 func (m *IosVppEBook) GetLanguage()(*string) {
     val, err := m.GetBackingStore().Get("language")
     if err != nil {
@@ -147,6 +152,7 @@ func (m *IosVppEBook) GetLanguage()(*string) {
     return nil
 }
 // GetSeller gets the seller property value. Seller.
+// returns a *string when successful
 func (m *IosVppEBook) GetSeller()(*string) {
     val, err := m.GetBackingStore().Get("seller")
     if err != nil {
@@ -158,6 +164,7 @@ func (m *IosVppEBook) GetSeller()(*string) {
     return nil
 }
 // GetTotalLicenseCount gets the totalLicenseCount property value. Total license count.
+// returns a *int32 when successful
 func (m *IosVppEBook) GetTotalLicenseCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalLicenseCount")
     if err != nil {
@@ -169,6 +176,7 @@ func (m *IosVppEBook) GetTotalLicenseCount()(*int32) {
     return nil
 }
 // GetUsedLicenseCount gets the usedLicenseCount property value. Used license count.
+// returns a *int32 when successful
 func (m *IosVppEBook) GetUsedLicenseCount()(*int32) {
     val, err := m.GetBackingStore().Get("usedLicenseCount")
     if err != nil {
@@ -180,6 +188,7 @@ func (m *IosVppEBook) GetUsedLicenseCount()(*int32) {
     return nil
 }
 // GetVppOrganizationName gets the vppOrganizationName property value. The Vpp token's organization name.
+// returns a *string when successful
 func (m *IosVppEBook) GetVppOrganizationName()(*string) {
     val, err := m.GetBackingStore().Get("vppOrganizationName")
     if err != nil {
@@ -191,6 +200,7 @@ func (m *IosVppEBook) GetVppOrganizationName()(*string) {
     return nil
 }
 // GetVppTokenId gets the vppTokenId property value. The Vpp token ID.
+// returns a *UUID when successful
 func (m *IosVppEBook) GetVppTokenId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("vppTokenId")
     if err != nil {
@@ -313,7 +323,6 @@ func (m *IosVppEBook) SetVppTokenId(value *i561e97a8befe7661a44c8f54600992b4207a
         panic(err)
     }
 }
-// IosVppEBookable 
 type IosVppEBookable interface {
     ManagedEBookable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

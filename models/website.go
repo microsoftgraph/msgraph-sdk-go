@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// Website 
 type Website struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewWebsite instantiates a new website and sets the default values.
+// NewWebsite instantiates a new Website and sets the default values.
 func NewWebsite()(*Website) {
     m := &Website{
     }
@@ -19,10 +18,12 @@ func NewWebsite()(*Website) {
     return m
 }
 // CreateWebsiteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWebsiteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWebsite(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Website) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *Website) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAddress gets the address property value. The URL of the website.
+// returns a *string when successful
 func (m *Website) GetAddress()(*string) {
     val, err := m.GetBackingStore().Get("address")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *Website) GetAddress()(*string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *Website) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDisplayName gets the displayName property value. The display name of the web site.
+// returns a *string when successful
 func (m *Website) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *Website) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Website) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["address"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -106,6 +111,7 @@ func (m *Website) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *Website) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *Website) GetOdataType()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The possible values are: other, home, work, blog, profile.
+// returns a *WebsiteType when successful
 func (m *Website) GetTypeEscaped()(*WebsiteType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -201,7 +208,6 @@ func (m *Website) SetTypeEscaped(value *WebsiteType)() {
         panic(err)
     }
 }
-// Websiteable 
 type Websiteable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

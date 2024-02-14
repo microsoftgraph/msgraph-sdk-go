@@ -5,11 +5,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// EdiscoveryReviewSetQueryCollectionResponse 
 type EdiscoveryReviewSetQueryCollectionResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponse
 }
-// NewEdiscoveryReviewSetQueryCollectionResponse instantiates a new ediscoveryReviewSetQueryCollectionResponse and sets the default values.
+// NewEdiscoveryReviewSetQueryCollectionResponse instantiates a new EdiscoveryReviewSetQueryCollectionResponse and sets the default values.
 func NewEdiscoveryReviewSetQueryCollectionResponse()(*EdiscoveryReviewSetQueryCollectionResponse) {
     m := &EdiscoveryReviewSetQueryCollectionResponse{
         BaseCollectionPaginationCountResponse: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewBaseCollectionPaginationCountResponse(),
@@ -17,10 +16,12 @@ func NewEdiscoveryReviewSetQueryCollectionResponse()(*EdiscoveryReviewSetQueryCo
     return m
 }
 // CreateEdiscoveryReviewSetQueryCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEdiscoveryReviewSetQueryCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryReviewSetQueryCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EdiscoveryReviewSetQueryCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +43,7 @@ func (m *EdiscoveryReviewSetQueryCollectionResponse) GetFieldDeserializers()(map
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []EdiscoveryReviewSetQueryable when successful
 func (m *EdiscoveryReviewSetQueryCollectionResponse) GetValue()([]EdiscoveryReviewSetQueryable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -79,7 +81,6 @@ func (m *EdiscoveryReviewSetQueryCollectionResponse) SetValue(value []Ediscovery
         panic(err)
     }
 }
-// EdiscoveryReviewSetQueryCollectionResponseable 
 type EdiscoveryReviewSetQueryCollectionResponseable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

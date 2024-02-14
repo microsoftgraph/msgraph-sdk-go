@@ -40,6 +40,7 @@ type UsersItemTaughtClassesRequestBuilderGetRequestConfiguration struct {
     QueryParameters *UsersItemTaughtClassesRequestBuilderGetQueryParameters
 }
 // ByEducationClassId provides operations to manage the taughtClasses property of the microsoft.graph.educationUser entity.
+// returns a *UsersItemTaughtClassesEducationClassItemRequestBuilder when successful
 func (m *UsersItemTaughtClassesRequestBuilder) ByEducationClassId(educationClassId string)(*UsersItemTaughtClassesEducationClassItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,24 +51,27 @@ func (m *UsersItemTaughtClassesRequestBuilder) ByEducationClassId(educationClass
     }
     return NewUsersItemTaughtClassesEducationClassItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewUsersItemTaughtClassesRequestBuilderInternal instantiates a new TaughtClassesRequestBuilder and sets the default values.
+// NewUsersItemTaughtClassesRequestBuilderInternal instantiates a new UsersItemTaughtClassesRequestBuilder and sets the default values.
 func NewUsersItemTaughtClassesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsersItemTaughtClassesRequestBuilder) {
     m := &UsersItemTaughtClassesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/users/{educationUser%2Did}/taughtClasses{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/users/{educationUser%2Did}/taughtClasses{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewUsersItemTaughtClassesRequestBuilder instantiates a new TaughtClassesRequestBuilder and sets the default values.
+// NewUsersItemTaughtClassesRequestBuilder instantiates a new UsersItemTaughtClassesRequestBuilder and sets the default values.
 func NewUsersItemTaughtClassesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsersItemTaughtClassesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUsersItemTaughtClassesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *UsersItemTaughtClassesCountRequestBuilder when successful
 func (m *UsersItemTaughtClassesRequestBuilder) Count()(*UsersItemTaughtClassesCountRequestBuilder) {
     return NewUsersItemTaughtClassesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the educationClass resources owned by an educationUser.
+// returns a EducationClassCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-list-taughtclasses?view=graph-rest-1.0
@@ -77,8 +81,7 @@ func (m *UsersItemTaughtClassesRequestBuilder) Get(ctx context.Context, requestC
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateEducationClassCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,6 +93,7 @@ func (m *UsersItemTaughtClassesRequestBuilder) Get(ctx context.Context, requestC
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassCollectionResponseable), nil
 }
 // ToGetRequestInformation get the educationClass resources owned by an educationUser.
+// returns a *RequestInformation when successful
 func (m *UsersItemTaughtClassesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersItemTaughtClassesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -103,6 +107,7 @@ func (m *UsersItemTaughtClassesRequestBuilder) ToGetRequestInformation(ctx conte
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *UsersItemTaughtClassesRequestBuilder when successful
 func (m *UsersItemTaughtClassesRequestBuilder) WithUrl(rawUrl string)(*UsersItemTaughtClassesRequestBuilder) {
     return NewUsersItemTaughtClassesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

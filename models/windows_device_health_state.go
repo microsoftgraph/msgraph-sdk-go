@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Computer endpoint protection state
@@ -8,24 +9,26 @@ type WindowsDeviceHealthState int
 
 const (
     // Computer is clean and no action is required
-    CLEAN_WINDOWSDEVICEHEALTHSTATE WindowsDeviceHealthState = iota
+    CLEAN_WINDOWSDEVICEHEALTHSTATE = 1
     // Computer is in pending full scan state
-    FULLSCANPENDING_WINDOWSDEVICEHEALTHSTATE
+    FULLSCANPENDING_WINDOWSDEVICEHEALTHSTATE = 2
     // Computer is in pending reboot state
-    REBOOTPENDING_WINDOWSDEVICEHEALTHSTATE
+    REBOOTPENDING_WINDOWSDEVICEHEALTHSTATE = 4
     // Computer is in pending manual steps state
-    MANUALSTEPSPENDING_WINDOWSDEVICEHEALTHSTATE
+    MANUALSTEPSPENDING_WINDOWSDEVICEHEALTHSTATE = 8
     // Computer is in pending offline scan state
-    OFFLINESCANPENDING_WINDOWSDEVICEHEALTHSTATE
+    OFFLINESCANPENDING_WINDOWSDEVICEHEALTHSTATE = 16
     // Computer is in critical failure state
-    CRITICAL_WINDOWSDEVICEHEALTHSTATE
+    CRITICAL_WINDOWSDEVICEHEALTHSTATE = 32
 )
 
 func (i WindowsDeviceHealthState) String() string {
     var values []string
-    for p := WindowsDeviceHealthState(1); p <= CRITICAL_WINDOWSDEVICEHEALTHSTATE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"clean", "fullScanPending", "rebootPending", "manualStepsPending", "offlineScanPending", "critical"}[p])
+    options := []string{"clean", "fullScanPending", "rebootPending", "manualStepsPending", "offlineScanPending", "critical"}
+    for p := 0; p < 6; p++ {
+        mantis := WindowsDeviceHealthState(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

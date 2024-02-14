@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ConditionalAccessLocations 
 type ConditionalAccessLocations struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewConditionalAccessLocations instantiates a new conditionalAccessLocations and sets the default values.
+// NewConditionalAccessLocations instantiates a new ConditionalAccessLocations and sets the default values.
 func NewConditionalAccessLocations()(*ConditionalAccessLocations) {
     m := &ConditionalAccessLocations{
     }
@@ -19,10 +18,12 @@ func NewConditionalAccessLocations()(*ConditionalAccessLocations) {
     return m
 }
 // CreateConditionalAccessLocationsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConditionalAccessLocationsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConditionalAccessLocations(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ConditionalAccessLocations) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ConditionalAccessLocations) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ConditionalAccessLocations) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetExcludeLocations gets the excludeLocations property value. Location IDs excluded from scope of policy.
+// returns a []string when successful
 func (m *ConditionalAccessLocations) GetExcludeLocations()([]string) {
     val, err := m.GetBackingStore().Get("excludeLocations")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *ConditionalAccessLocations) GetExcludeLocations()([]string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConditionalAccessLocations) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["excludeLocations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -97,6 +101,7 @@ func (m *ConditionalAccessLocations) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetIncludeLocations gets the includeLocations property value. Location IDs in scope of policy unless explicitly excluded, All, or AllTrusted.
+// returns a []string when successful
 func (m *ConditionalAccessLocations) GetIncludeLocations()([]string) {
     val, err := m.GetBackingStore().Get("includeLocations")
     if err != nil {
@@ -108,6 +113,7 @@ func (m *ConditionalAccessLocations) GetIncludeLocations()([]string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ConditionalAccessLocations) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -178,7 +184,6 @@ func (m *ConditionalAccessLocations) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// ConditionalAccessLocationsable 
 type ConditionalAccessLocationsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

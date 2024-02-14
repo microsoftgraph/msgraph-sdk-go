@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AppConsentRequestCollectionResponse 
 type AppConsentRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAppConsentRequestCollectionResponse instantiates a new appConsentRequestCollectionResponse and sets the default values.
+// NewAppConsentRequestCollectionResponse instantiates a new AppConsentRequestCollectionResponse and sets the default values.
 func NewAppConsentRequestCollectionResponse()(*AppConsentRequestCollectionResponse) {
     m := &AppConsentRequestCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewAppConsentRequestCollectionResponse()(*AppConsentRequestCollectionRespon
     return m
 }
 // CreateAppConsentRequestCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAppConsentRequestCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppConsentRequestCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AppConsentRequestCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *AppConsentRequestCollectionResponse) GetFieldDeserializers()(map[string
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []AppConsentRequestable when successful
 func (m *AppConsentRequestCollectionResponse) GetValue()([]AppConsentRequestable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *AppConsentRequestCollectionResponse) SetValue(value []AppConsentRequest
         panic(err)
     }
 }
-// AppConsentRequestCollectionResponseable 
 type AppConsentRequestCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

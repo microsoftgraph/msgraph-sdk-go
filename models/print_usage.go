@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintUsage 
 type PrintUsage struct {
     Entity
 }
-// NewPrintUsage instantiates a new printUsage and sets the default values.
+// NewPrintUsage instantiates a new PrintUsage and sets the default values.
 func NewPrintUsage()(*PrintUsage) {
     m := &PrintUsage{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewPrintUsage()(*PrintUsage) {
     return m
 }
 // CreatePrintUsageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrintUsageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +40,7 @@ func CreatePrintUsageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewPrintUsage(), nil
 }
 // GetBlackAndWhitePageCount gets the blackAndWhitePageCount property value. The blackAndWhitePageCount property
+// returns a *int64 when successful
 func (m *PrintUsage) GetBlackAndWhitePageCount()(*int64) {
     val, err := m.GetBackingStore().Get("blackAndWhitePageCount")
     if err != nil {
@@ -51,6 +52,7 @@ func (m *PrintUsage) GetBlackAndWhitePageCount()(*int64) {
     return nil
 }
 // GetColorPageCount gets the colorPageCount property value. The colorPageCount property
+// returns a *int64 when successful
 func (m *PrintUsage) GetColorPageCount()(*int64) {
     val, err := m.GetBackingStore().Get("colorPageCount")
     if err != nil {
@@ -62,6 +64,7 @@ func (m *PrintUsage) GetColorPageCount()(*int64) {
     return nil
 }
 // GetCompletedBlackAndWhiteJobCount gets the completedBlackAndWhiteJobCount property value. The completedBlackAndWhiteJobCount property
+// returns a *int64 when successful
 func (m *PrintUsage) GetCompletedBlackAndWhiteJobCount()(*int64) {
     val, err := m.GetBackingStore().Get("completedBlackAndWhiteJobCount")
     if err != nil {
@@ -73,6 +76,7 @@ func (m *PrintUsage) GetCompletedBlackAndWhiteJobCount()(*int64) {
     return nil
 }
 // GetCompletedColorJobCount gets the completedColorJobCount property value. The completedColorJobCount property
+// returns a *int64 when successful
 func (m *PrintUsage) GetCompletedColorJobCount()(*int64) {
     val, err := m.GetBackingStore().Get("completedColorJobCount")
     if err != nil {
@@ -84,6 +88,7 @@ func (m *PrintUsage) GetCompletedColorJobCount()(*int64) {
     return nil
 }
 // GetCompletedJobCount gets the completedJobCount property value. The completedJobCount property
+// returns a *int64 when successful
 func (m *PrintUsage) GetCompletedJobCount()(*int64) {
     val, err := m.GetBackingStore().Get("completedJobCount")
     if err != nil {
@@ -95,6 +100,7 @@ func (m *PrintUsage) GetCompletedJobCount()(*int64) {
     return nil
 }
 // GetDoubleSidedSheetCount gets the doubleSidedSheetCount property value. The doubleSidedSheetCount property
+// returns a *int64 when successful
 func (m *PrintUsage) GetDoubleSidedSheetCount()(*int64) {
     val, err := m.GetBackingStore().Get("doubleSidedSheetCount")
     if err != nil {
@@ -106,6 +112,7 @@ func (m *PrintUsage) GetDoubleSidedSheetCount()(*int64) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrintUsage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["blackAndWhitePageCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -221,6 +228,7 @@ func (m *PrintUsage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetIncompleteJobCount gets the incompleteJobCount property value. The incompleteJobCount property
+// returns a *int64 when successful
 func (m *PrintUsage) GetIncompleteJobCount()(*int64) {
     val, err := m.GetBackingStore().Get("incompleteJobCount")
     if err != nil {
@@ -232,6 +240,7 @@ func (m *PrintUsage) GetIncompleteJobCount()(*int64) {
     return nil
 }
 // GetMediaSheetCount gets the mediaSheetCount property value. The mediaSheetCount property
+// returns a *int64 when successful
 func (m *PrintUsage) GetMediaSheetCount()(*int64) {
     val, err := m.GetBackingStore().Get("mediaSheetCount")
     if err != nil {
@@ -243,6 +252,7 @@ func (m *PrintUsage) GetMediaSheetCount()(*int64) {
     return nil
 }
 // GetPageCount gets the pageCount property value. The pageCount property
+// returns a *int64 when successful
 func (m *PrintUsage) GetPageCount()(*int64) {
     val, err := m.GetBackingStore().Get("pageCount")
     if err != nil {
@@ -254,6 +264,7 @@ func (m *PrintUsage) GetPageCount()(*int64) {
     return nil
 }
 // GetSingleSidedSheetCount gets the singleSidedSheetCount property value. The singleSidedSheetCount property
+// returns a *int64 when successful
 func (m *PrintUsage) GetSingleSidedSheetCount()(*int64) {
     val, err := m.GetBackingStore().Get("singleSidedSheetCount")
     if err != nil {
@@ -265,6 +276,7 @@ func (m *PrintUsage) GetSingleSidedSheetCount()(*int64) {
     return nil
 }
 // GetUsageDate gets the usageDate property value. The usageDate property
+// returns a *DateOnly when successful
 func (m *PrintUsage) GetUsageDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("usageDate")
     if err != nil {
@@ -426,7 +438,6 @@ func (m *PrintUsage) SetUsageDate(value *i878a80d2330e89d26896388a3f487eef27b0a0
         panic(err)
     }
 }
-// PrintUsageable 
 type PrintUsageable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

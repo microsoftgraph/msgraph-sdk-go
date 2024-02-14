@@ -32,29 +32,30 @@ type FederationConfigurationsAvailableProviderTypesRequestBuilderGetRequestConfi
     // Request query parameters
     QueryParameters *FederationConfigurationsAvailableProviderTypesRequestBuilderGetQueryParameters
 }
-// NewFederationConfigurationsAvailableProviderTypesRequestBuilderInternal instantiates a new AvailableProviderTypesRequestBuilder and sets the default values.
+// NewFederationConfigurationsAvailableProviderTypesRequestBuilderInternal instantiates a new FederationConfigurationsAvailableProviderTypesRequestBuilder and sets the default values.
 func NewFederationConfigurationsAvailableProviderTypesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FederationConfigurationsAvailableProviderTypesRequestBuilder) {
     m := &FederationConfigurationsAvailableProviderTypesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/federationConfigurations/availableProviderTypes(){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/federationConfigurations/availableProviderTypes(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewFederationConfigurationsAvailableProviderTypesRequestBuilder instantiates a new AvailableProviderTypesRequestBuilder and sets the default values.
+// NewFederationConfigurationsAvailableProviderTypesRequestBuilder instantiates a new FederationConfigurationsAvailableProviderTypesRequestBuilder and sets the default values.
 func NewFederationConfigurationsAvailableProviderTypesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FederationConfigurationsAvailableProviderTypesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFederationConfigurationsAvailableProviderTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function availableProviderTypes
-// Deprecated: This method is obsolete. Use GetAsAvailableProviderTypesGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a FederationConfigurationsAvailableProviderTypesResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *FederationConfigurationsAvailableProviderTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *FederationConfigurationsAvailableProviderTypesRequestBuilderGetRequestConfiguration)(FederationConfigurationsAvailableProviderTypesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateFederationConfigurationsAvailableProviderTypesResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -66,14 +67,15 @@ func (m *FederationConfigurationsAvailableProviderTypesRequestBuilder) Get(ctx c
     return res.(FederationConfigurationsAvailableProviderTypesResponseable), nil
 }
 // GetAsAvailableProviderTypesGetResponse invoke function availableProviderTypes
+// returns a FederationConfigurationsAvailableProviderTypesGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *FederationConfigurationsAvailableProviderTypesRequestBuilder) GetAsAvailableProviderTypesGetResponse(ctx context.Context, requestConfiguration *FederationConfigurationsAvailableProviderTypesRequestBuilderGetRequestConfiguration)(FederationConfigurationsAvailableProviderTypesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateFederationConfigurationsAvailableProviderTypesGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -85,6 +87,7 @@ func (m *FederationConfigurationsAvailableProviderTypesRequestBuilder) GetAsAvai
     return res.(FederationConfigurationsAvailableProviderTypesGetResponseable), nil
 }
 // ToGetRequestInformation invoke function availableProviderTypes
+// returns a *RequestInformation when successful
 func (m *FederationConfigurationsAvailableProviderTypesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FederationConfigurationsAvailableProviderTypesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -98,6 +101,7 @@ func (m *FederationConfigurationsAvailableProviderTypesRequestBuilder) ToGetRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *FederationConfigurationsAvailableProviderTypesRequestBuilder when successful
 func (m *FederationConfigurationsAvailableProviderTypesRequestBuilder) WithUrl(rawUrl string)(*FederationConfigurationsAvailableProviderTypesRequestBuilder) {
     return NewFederationConfigurationsAvailableProviderTypesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

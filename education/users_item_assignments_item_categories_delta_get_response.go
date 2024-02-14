@@ -5,7 +5,6 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// UsersItemAssignmentsItemCategoriesDeltaGetResponse 
 type UsersItemAssignmentsItemCategoriesDeltaGetResponse struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseDeltaFunctionResponse
 }
@@ -17,10 +16,12 @@ func NewUsersItemAssignmentsItemCategoriesDeltaGetResponse()(*UsersItemAssignmen
     return m
 }
 // CreateUsersItemAssignmentsItemCategoriesDeltaGetResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUsersItemAssignmentsItemCategoriesDeltaGetResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUsersItemAssignmentsItemCategoriesDeltaGetResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UsersItemAssignmentsItemCategoriesDeltaGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseDeltaFunctionResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +43,7 @@ func (m *UsersItemAssignmentsItemCategoriesDeltaGetResponse) GetFieldDeserialize
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []EducationCategoryable when successful
 func (m *UsersItemAssignmentsItemCategoriesDeltaGetResponse) GetValue()([]iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationCategoryable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -79,7 +81,6 @@ func (m *UsersItemAssignmentsItemCategoriesDeltaGetResponse) SetValue(value []ia
         panic(err)
     }
 }
-// UsersItemAssignmentsItemCategoriesDeltaGetResponseable 
 type UsersItemAssignmentsItemCategoriesDeltaGetResponseable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseDeltaFunctionResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

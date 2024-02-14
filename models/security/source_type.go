@@ -1,22 +1,24 @@
 package security
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type SourceType int
 
 const (
-    MAILBOX_SOURCETYPE SourceType = iota
-    SITE_SOURCETYPE
-    UNKNOWNFUTUREVALUE_SOURCETYPE
+    MAILBOX_SOURCETYPE = 1
+    SITE_SOURCETYPE = 2
+    UNKNOWNFUTUREVALUE_SOURCETYPE = 4
 )
 
 func (i SourceType) String() string {
     var values []string
-    for p := SourceType(1); p <= UNKNOWNFUTUREVALUE_SOURCETYPE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"mailbox", "site", "unknownFutureValue"}[p])
+    options := []string{"mailbox", "site", "unknownFutureValue"}
+    for p := 0; p < 3; p++ {
+        mantis := SourceType(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

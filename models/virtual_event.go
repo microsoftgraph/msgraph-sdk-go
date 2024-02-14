@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// VirtualEvent 
 type VirtualEvent struct {
     Entity
 }
-// NewVirtualEvent instantiates a new virtualEvent and sets the default values.
+// NewVirtualEvent instantiates a new VirtualEvent and sets the default values.
 func NewVirtualEvent()(*VirtualEvent) {
     m := &VirtualEvent{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewVirtualEvent()(*VirtualEvent) {
     return m
 }
 // CreateVirtualEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVirtualEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -38,6 +38,7 @@ func CreateVirtualEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewVirtualEvent(), nil
 }
 // GetCreatedBy gets the createdBy property value. Identity information for the creator of the virtual event. Inherited from virtualEvent.
+// returns a CommunicationsIdentitySetable when successful
 func (m *VirtualEvent) GetCreatedBy()(CommunicationsIdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -49,6 +50,7 @@ func (m *VirtualEvent) GetCreatedBy()(CommunicationsIdentitySetable) {
     return nil
 }
 // GetDescription gets the description property value. Description of the virtual event.
+// returns a ItemBodyable when successful
 func (m *VirtualEvent) GetDescription()(ItemBodyable) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -60,6 +62,7 @@ func (m *VirtualEvent) GetDescription()(ItemBodyable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Display name of the virtual event.
+// returns a *string when successful
 func (m *VirtualEvent) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -71,6 +74,7 @@ func (m *VirtualEvent) GetDisplayName()(*string) {
     return nil
 }
 // GetEndDateTime gets the endDateTime property value. End time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows.
+// returns a DateTimeTimeZoneable when successful
 func (m *VirtualEvent) GetEndDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -82,6 +86,7 @@ func (m *VirtualEvent) GetEndDateTime()(DateTimeTimeZoneable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VirtualEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -163,6 +168,7 @@ func (m *VirtualEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetSessions gets the sessions property value. Sessions for the virtual event.
+// returns a []VirtualEventSessionable when successful
 func (m *VirtualEvent) GetSessions()([]VirtualEventSessionable) {
     val, err := m.GetBackingStore().Get("sessions")
     if err != nil {
@@ -174,6 +180,7 @@ func (m *VirtualEvent) GetSessions()([]VirtualEventSessionable) {
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. Start time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows.
+// returns a DateTimeTimeZoneable when successful
 func (m *VirtualEvent) GetStartDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -185,6 +192,7 @@ func (m *VirtualEvent) GetStartDateTime()(DateTimeTimeZoneable) {
     return nil
 }
 // GetStatus gets the status property value. Status of the virtual event. The possible values are: draft, published, canceled, unknownFutureValue.
+// returns a *VirtualEventStatus when successful
 func (m *VirtualEvent) GetStatus()(*VirtualEventStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -301,7 +309,6 @@ func (m *VirtualEvent) SetStatus(value *VirtualEventStatus)() {
         panic(err)
     }
 }
-// VirtualEventable 
 type VirtualEventable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SiteCollectionResponse 
 type SiteCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSiteCollectionResponse instantiates a new siteCollectionResponse and sets the default values.
+// NewSiteCollectionResponse instantiates a new SiteCollectionResponse and sets the default values.
 func NewSiteCollectionResponse()(*SiteCollectionResponse) {
     m := &SiteCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewSiteCollectionResponse()(*SiteCollectionResponse) {
     return m
 }
 // CreateSiteCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSiteCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSiteCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SiteCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *SiteCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []Siteable when successful
 func (m *SiteCollectionResponse) GetValue()([]Siteable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *SiteCollectionResponse) SetValue(value []Siteable)() {
         panic(err)
     }
 }
-// SiteCollectionResponseable 
 type SiteCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

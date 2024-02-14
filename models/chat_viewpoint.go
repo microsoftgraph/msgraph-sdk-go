@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ChatViewpoint 
 type ChatViewpoint struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewChatViewpoint instantiates a new chatViewpoint and sets the default values.
+// NewChatViewpoint instantiates a new ChatViewpoint and sets the default values.
 func NewChatViewpoint()(*ChatViewpoint) {
     m := &ChatViewpoint{
     }
@@ -20,10 +19,12 @@ func NewChatViewpoint()(*ChatViewpoint) {
     return m
 }
 // CreateChatViewpointFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateChatViewpointFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChatViewpoint(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ChatViewpoint) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *ChatViewpoint) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ChatViewpoint) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ChatViewpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["isHidden"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -75,6 +78,7 @@ func (m *ChatViewpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetIsHidden gets the isHidden property value. Indicates whether the chat is hidden for the current user.
+// returns a *bool when successful
 func (m *ChatViewpoint) GetIsHidden()(*bool) {
     val, err := m.GetBackingStore().Get("isHidden")
     if err != nil {
@@ -86,6 +90,7 @@ func (m *ChatViewpoint) GetIsHidden()(*bool) {
     return nil
 }
 // GetLastMessageReadDateTime gets the lastMessageReadDateTime property value. Represents the dateTime up until which the current user has read chatMessages in a specific chat.
+// returns a *Time when successful
 func (m *ChatViewpoint) GetLastMessageReadDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastMessageReadDateTime")
     if err != nil {
@@ -97,6 +102,7 @@ func (m *ChatViewpoint) GetLastMessageReadDateTime()(*i336074805fc853987abe6f7fe
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ChatViewpoint) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -167,7 +173,6 @@ func (m *ChatViewpoint) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// ChatViewpointable 
 type ChatViewpointable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

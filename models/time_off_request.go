@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TimeOffRequest 
 type TimeOffRequest struct {
     ScheduleChangeRequest
 }
-// NewTimeOffRequest instantiates a new timeOffRequest and sets the default values.
+// NewTimeOffRequest instantiates a new TimeOffRequest and sets the default values.
 func NewTimeOffRequest()(*TimeOffRequest) {
     m := &TimeOffRequest{
         ScheduleChangeRequest: *NewScheduleChangeRequest(),
@@ -19,10 +18,12 @@ func NewTimeOffRequest()(*TimeOffRequest) {
     return m
 }
 // CreateTimeOffRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTimeOffRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTimeOffRequest(), nil
 }
 // GetEndDateTime gets the endDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *TimeOffRequest) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *TimeOffRequest) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TimeOffRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ScheduleChangeRequest.GetFieldDeserializers()
     res["endDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -69,6 +71,7 @@ func (m *TimeOffRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetStartDateTime gets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *TimeOffRequest) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -80,6 +83,7 @@ func (m *TimeOffRequest) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     return nil
 }
 // GetTimeOffReasonId gets the timeOffReasonId property value. The reason for the time off.
+// returns a *string when successful
 func (m *TimeOffRequest) GetTimeOffReasonId()(*string) {
     val, err := m.GetBackingStore().Get("timeOffReasonId")
     if err != nil {
@@ -137,7 +141,6 @@ func (m *TimeOffRequest) SetTimeOffReasonId(value *string)() {
         panic(err)
     }
 }
-// TimeOffRequestable 
 type TimeOffRequestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ScheduleChangeRequestable

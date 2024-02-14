@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AdministrativeUnit 
 type AdministrativeUnit struct {
     DirectoryObject
 }
-// NewAdministrativeUnit instantiates a new administrativeUnit and sets the default values.
+// NewAdministrativeUnit instantiates a new AdministrativeUnit and sets the default values.
 func NewAdministrativeUnit()(*AdministrativeUnit) {
     m := &AdministrativeUnit{
         DirectoryObject: *NewDirectoryObject(),
@@ -18,10 +17,12 @@ func NewAdministrativeUnit()(*AdministrativeUnit) {
     return m
 }
 // CreateAdministrativeUnitFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAdministrativeUnitFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAdministrativeUnit(), nil
 }
 // GetDescription gets the description property value. An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.
+// returns a *string when successful
 func (m *AdministrativeUnit) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AdministrativeUnit) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
+// returns a *string when successful
 func (m *AdministrativeUnit) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *AdministrativeUnit) GetDisplayName()(*string) {
     return nil
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for this administrative unit. Nullable.
+// returns a []Extensionable when successful
 func (m *AdministrativeUnit) GetExtensions()([]Extensionable) {
     val, err := m.GetBackingStore().Get("extensions")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *AdministrativeUnit) GetExtensions()([]Extensionable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AdministrativeUnit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -138,6 +142,7 @@ func (m *AdministrativeUnit) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetMembers gets the members property value. Users and groups that are members of this administrative unit. Supports $expand.
+// returns a []DirectoryObjectable when successful
 func (m *AdministrativeUnit) GetMembers()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("members")
     if err != nil {
@@ -149,6 +154,7 @@ func (m *AdministrativeUnit) GetMembers()([]DirectoryObjectable) {
     return nil
 }
 // GetScopedRoleMembers gets the scopedRoleMembers property value. Scoped-role members of this administrative unit.
+// returns a []ScopedRoleMembershipable when successful
 func (m *AdministrativeUnit) GetScopedRoleMembers()([]ScopedRoleMembershipable) {
     val, err := m.GetBackingStore().Get("scopedRoleMembers")
     if err != nil {
@@ -160,6 +166,7 @@ func (m *AdministrativeUnit) GetScopedRoleMembers()([]ScopedRoleMembershipable) 
     return nil
 }
 // GetVisibility gets the visibility property value. Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
+// returns a *string when successful
 func (m *AdministrativeUnit) GetVisibility()(*string) {
     val, err := m.GetBackingStore().Get("visibility")
     if err != nil {
@@ -274,7 +281,6 @@ func (m *AdministrativeUnit) SetVisibility(value *string)() {
         panic(err)
     }
 }
-// AdministrativeUnitable 
 type AdministrativeUnitable interface {
     DirectoryObjectable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

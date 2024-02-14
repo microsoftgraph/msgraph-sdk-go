@@ -1,23 +1,25 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type ChatMessagePolicyViolationVerdictDetailsTypes int
 
 const (
-    NONE_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES ChatMessagePolicyViolationVerdictDetailsTypes = iota
-    ALLOWFALSEPOSITIVEOVERRIDE_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES
-    ALLOWOVERRIDEWITHOUTJUSTIFICATION_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES
-    ALLOWOVERRIDEWITHJUSTIFICATION_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES
+    NONE_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES = 1
+    ALLOWFALSEPOSITIVEOVERRIDE_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES = 2
+    ALLOWOVERRIDEWITHOUTJUSTIFICATION_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES = 4
+    ALLOWOVERRIDEWITHJUSTIFICATION_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES = 8
 )
 
 func (i ChatMessagePolicyViolationVerdictDetailsTypes) String() string {
     var values []string
-    for p := ChatMessagePolicyViolationVerdictDetailsTypes(1); p <= ALLOWOVERRIDEWITHJUSTIFICATION_CHATMESSAGEPOLICYVIOLATIONVERDICTDETAILSTYPES; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "allowFalsePositiveOverride", "allowOverrideWithoutJustification", "allowOverrideWithJustification"}[p])
+    options := []string{"none", "allowFalsePositiveOverride", "allowOverrideWithoutJustification", "allowOverrideWithJustification"}
+    for p := 0; p < 4; p++ {
+        mantis := ChatMessagePolicyViolationVerdictDetailsTypes(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

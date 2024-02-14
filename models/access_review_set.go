@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewSet 
 type AccessReviewSet struct {
     Entity
 }
-// NewAccessReviewSet instantiates a new accessReviewSet and sets the default values.
+// NewAccessReviewSet instantiates a new AccessReviewSet and sets the default values.
 func NewAccessReviewSet()(*AccessReviewSet) {
     m := &AccessReviewSet{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewAccessReviewSet()(*AccessReviewSet) {
     return m
 }
 // CreateAccessReviewSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessReviewSetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewSet(), nil
 }
 // GetDefinitions gets the definitions property value. Represents the template and scheduling for an access review.
+// returns a []AccessReviewScheduleDefinitionable when successful
 func (m *AccessReviewSet) GetDefinitions()([]AccessReviewScheduleDefinitionable) {
     val, err := m.GetBackingStore().Get("definitions")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *AccessReviewSet) GetDefinitions()([]AccessReviewScheduleDefinitionable)
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessReviewSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["definitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,6 +70,7 @@ func (m *AccessReviewSet) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetHistoryDefinitions gets the historyDefinitions property value. Represents a collection of access review history data and the scopes used to collect that data.
+// returns a []AccessReviewHistoryDefinitionable when successful
 func (m *AccessReviewSet) GetHistoryDefinitions()([]AccessReviewHistoryDefinitionable) {
     val, err := m.GetBackingStore().Get("historyDefinitions")
     if err != nil {
@@ -124,7 +127,6 @@ func (m *AccessReviewSet) SetHistoryDefinitions(value []AccessReviewHistoryDefin
         panic(err)
     }
 }
-// AccessReviewSetable 
 type AccessReviewSetable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

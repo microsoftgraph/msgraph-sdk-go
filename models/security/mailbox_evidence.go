@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MailboxEvidence 
 type MailboxEvidence struct {
     AlertEvidence
 }
-// NewMailboxEvidence instantiates a new mailboxEvidence and sets the default values.
+// NewMailboxEvidence instantiates a new MailboxEvidence and sets the default values.
 func NewMailboxEvidence()(*MailboxEvidence) {
     m := &MailboxEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -18,10 +17,12 @@ func NewMailboxEvidence()(*MailboxEvidence) {
     return m
 }
 // CreateMailboxEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMailboxEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMailboxEvidence(), nil
 }
 // GetDisplayName gets the displayName property value. The name associated with the mailbox.
+// returns a *string when successful
 func (m *MailboxEvidence) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *MailboxEvidence) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MailboxEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,6 +70,7 @@ func (m *MailboxEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetPrimaryAddress gets the primaryAddress property value. The primary email address of the mailbox.
+// returns a *string when successful
 func (m *MailboxEvidence) GetPrimaryAddress()(*string) {
     val, err := m.GetBackingStore().Get("primaryAddress")
     if err != nil {
@@ -79,6 +82,7 @@ func (m *MailboxEvidence) GetPrimaryAddress()(*string) {
     return nil
 }
 // GetUserAccount gets the userAccount property value. The user account of the mailbox.
+// returns a UserAccountable when successful
 func (m *MailboxEvidence) GetUserAccount()(UserAccountable) {
     val, err := m.GetBackingStore().Get("userAccount")
     if err != nil {
@@ -136,7 +140,6 @@ func (m *MailboxEvidence) SetUserAccount(value UserAccountable)() {
         panic(err)
     }
 }
-// MailboxEvidenceable 
 type MailboxEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

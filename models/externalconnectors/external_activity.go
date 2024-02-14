@@ -6,11 +6,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// ExternalActivity 
 type ExternalActivity struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewExternalActivity instantiates a new externalActivity and sets the default values.
+// NewExternalActivity instantiates a new ExternalActivity and sets the default values.
 func NewExternalActivity()(*ExternalActivity) {
     m := &ExternalActivity{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -18,6 +17,7 @@ func NewExternalActivity()(*ExternalActivity) {
     return m
 }
 // CreateExternalActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExternalActivityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +40,7 @@ func CreateExternalActivityFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     return NewExternalActivity(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExternalActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["performedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -75,6 +76,7 @@ func (m *ExternalActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetPerformedBy gets the performedBy property value. Represents an identity used to identify who is responsible for the activity.
+// returns a Identityable when successful
 func (m *ExternalActivity) GetPerformedBy()(Identityable) {
     val, err := m.GetBackingStore().Get("performedBy")
     if err != nil {
@@ -86,6 +88,7 @@ func (m *ExternalActivity) GetPerformedBy()(Identityable) {
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. The date and time when the particular activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *ExternalActivity) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -97,6 +100,7 @@ func (m *ExternalActivity) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *ExternalActivityType when successful
 func (m *ExternalActivity) GetTypeEscaped()(*ExternalActivityType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -155,7 +159,6 @@ func (m *ExternalActivity) SetTypeEscaped(value *ExternalActivityType)() {
         panic(err)
     }
 }
-// ExternalActivityable 
 type ExternalActivityable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

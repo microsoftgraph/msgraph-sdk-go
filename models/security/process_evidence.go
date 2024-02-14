@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProcessEvidence 
 type ProcessEvidence struct {
     AlertEvidence
 }
-// NewProcessEvidence instantiates a new processEvidence and sets the default values.
+// NewProcessEvidence instantiates a new ProcessEvidence and sets the default values.
 func NewProcessEvidence()(*ProcessEvidence) {
     m := &ProcessEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -19,10 +18,12 @@ func NewProcessEvidence()(*ProcessEvidence) {
     return m
 }
 // CreateProcessEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateProcessEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProcessEvidence(), nil
 }
 // GetDetectionStatus gets the detectionStatus property value. The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.
+// returns a *DetectionStatus when successful
 func (m *ProcessEvidence) GetDetectionStatus()(*DetectionStatus) {
     val, err := m.GetBackingStore().Get("detectionStatus")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *ProcessEvidence) GetDetectionStatus()(*DetectionStatus) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProcessEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["detectionStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -139,6 +141,7 @@ func (m *ProcessEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetImageFile gets the imageFile property value. Image file details.
+// returns a FileDetailsable when successful
 func (m *ProcessEvidence) GetImageFile()(FileDetailsable) {
     val, err := m.GetBackingStore().Get("imageFile")
     if err != nil {
@@ -150,6 +153,7 @@ func (m *ProcessEvidence) GetImageFile()(FileDetailsable) {
     return nil
 }
 // GetMdeDeviceId gets the mdeDeviceId property value. A unique identifier assigned to a device by Microsoft Defender for Endpoint.
+// returns a *string when successful
 func (m *ProcessEvidence) GetMdeDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("mdeDeviceId")
     if err != nil {
@@ -161,6 +165,7 @@ func (m *ProcessEvidence) GetMdeDeviceId()(*string) {
     return nil
 }
 // GetParentProcessCreationDateTime gets the parentProcessCreationDateTime property value. Date and time when the parent of the process was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *ProcessEvidence) GetParentProcessCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("parentProcessCreationDateTime")
     if err != nil {
@@ -172,6 +177,7 @@ func (m *ProcessEvidence) GetParentProcessCreationDateTime()(*i336074805fc853987
     return nil
 }
 // GetParentProcessId gets the parentProcessId property value. Process ID (PID) of the parent process that spawned the process.
+// returns a *int64 when successful
 func (m *ProcessEvidence) GetParentProcessId()(*int64) {
     val, err := m.GetBackingStore().Get("parentProcessId")
     if err != nil {
@@ -183,6 +189,7 @@ func (m *ProcessEvidence) GetParentProcessId()(*int64) {
     return nil
 }
 // GetParentProcessImageFile gets the parentProcessImageFile property value. Parent process image file details.
+// returns a FileDetailsable when successful
 func (m *ProcessEvidence) GetParentProcessImageFile()(FileDetailsable) {
     val, err := m.GetBackingStore().Get("parentProcessImageFile")
     if err != nil {
@@ -194,6 +201,7 @@ func (m *ProcessEvidence) GetParentProcessImageFile()(FileDetailsable) {
     return nil
 }
 // GetProcessCommandLine gets the processCommandLine property value. Command line used to create the new process.
+// returns a *string when successful
 func (m *ProcessEvidence) GetProcessCommandLine()(*string) {
     val, err := m.GetBackingStore().Get("processCommandLine")
     if err != nil {
@@ -205,6 +213,7 @@ func (m *ProcessEvidence) GetProcessCommandLine()(*string) {
     return nil
 }
 // GetProcessCreationDateTime gets the processCreationDateTime property value. Date and time when the process was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *ProcessEvidence) GetProcessCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("processCreationDateTime")
     if err != nil {
@@ -216,6 +225,7 @@ func (m *ProcessEvidence) GetProcessCreationDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetProcessId gets the processId property value. Process ID (PID) of the newly created process.
+// returns a *int64 when successful
 func (m *ProcessEvidence) GetProcessId()(*int64) {
     val, err := m.GetBackingStore().Get("processId")
     if err != nil {
@@ -227,6 +237,7 @@ func (m *ProcessEvidence) GetProcessId()(*int64) {
     return nil
 }
 // GetUserAccount gets the userAccount property value. User details of the user that ran the process.
+// returns a UserAccountable when successful
 func (m *ProcessEvidence) GetUserAccount()(UserAccountable) {
     val, err := m.GetBackingStore().Get("userAccount")
     if err != nil {
@@ -376,7 +387,6 @@ func (m *ProcessEvidence) SetUserAccount(value UserAccountable)() {
         panic(err)
     }
 }
-// ProcessEvidenceable 
 type ProcessEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

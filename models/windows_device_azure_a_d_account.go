@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsDeviceAzureADAccount 
 type WindowsDeviceAzureADAccount struct {
     WindowsDeviceAccount
 }
-// NewWindowsDeviceAzureADAccount instantiates a new windowsDeviceAzureADAccount and sets the default values.
+// NewWindowsDeviceAzureADAccount instantiates a new WindowsDeviceAzureADAccount and sets the default values.
 func NewWindowsDeviceAzureADAccount()(*WindowsDeviceAzureADAccount) {
     m := &WindowsDeviceAzureADAccount{
         WindowsDeviceAccount: *NewWindowsDeviceAccount(),
@@ -18,10 +17,12 @@ func NewWindowsDeviceAzureADAccount()(*WindowsDeviceAzureADAccount) {
     return m
 }
 // CreateWindowsDeviceAzureADAccountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsDeviceAzureADAccountFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsDeviceAzureADAccount(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsDeviceAzureADAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsDeviceAccount.GetFieldDeserializers()
     res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *WindowsDeviceAzureADAccount) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetUserPrincipalName gets the userPrincipalName property value. Not yet documented
+// returns a *string when successful
 func (m *WindowsDeviceAzureADAccount) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *WindowsDeviceAzureADAccount) SetUserPrincipalName(value *string)() {
         panic(err)
     }
 }
-// WindowsDeviceAzureADAccountable 
 type WindowsDeviceAzureADAccountable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsDeviceAccountable

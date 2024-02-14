@@ -8,7 +8,7 @@ import (
 type WindowsInformationProtectionStoreApp struct {
     WindowsInformationProtectionApp
 }
-// NewWindowsInformationProtectionStoreApp instantiates a new windowsInformationProtectionStoreApp and sets the default values.
+// NewWindowsInformationProtectionStoreApp instantiates a new WindowsInformationProtectionStoreApp and sets the default values.
 func NewWindowsInformationProtectionStoreApp()(*WindowsInformationProtectionStoreApp) {
     m := &WindowsInformationProtectionStoreApp{
         WindowsInformationProtectionApp: *NewWindowsInformationProtectionApp(),
@@ -18,10 +18,12 @@ func NewWindowsInformationProtectionStoreApp()(*WindowsInformationProtectionStor
     return m
 }
 // CreateWindowsInformationProtectionStoreAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsInformationProtectionStoreAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsInformationProtectionStoreApp(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsInformationProtectionStoreApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsInformationProtectionApp.GetFieldDeserializers()
     return res
@@ -34,7 +36,6 @@ func (m *WindowsInformationProtectionStoreApp) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// WindowsInformationProtectionStoreAppable 
 type WindowsInformationProtectionStoreAppable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsInformationProtectionAppable

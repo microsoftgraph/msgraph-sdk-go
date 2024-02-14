@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// WatermarkProtectionValues 
 type WatermarkProtectionValues struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewWatermarkProtectionValues instantiates a new watermarkProtectionValues and sets the default values.
+// NewWatermarkProtectionValues instantiates a new WatermarkProtectionValues and sets the default values.
 func NewWatermarkProtectionValues()(*WatermarkProtectionValues) {
     m := &WatermarkProtectionValues{
     }
@@ -19,10 +18,12 @@ func NewWatermarkProtectionValues()(*WatermarkProtectionValues) {
     return m
 }
 // CreateWatermarkProtectionValuesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWatermarkProtectionValuesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWatermarkProtectionValues(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WatermarkProtectionValues) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *WatermarkProtectionValues) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *WatermarkProtectionValues) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WatermarkProtectionValues) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["isEnabledForContentSharing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +77,7 @@ func (m *WatermarkProtectionValues) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetIsEnabledForContentSharing gets the isEnabledForContentSharing property value. Indicates whether to apply a watermark to any shared content.
+// returns a *bool when successful
 func (m *WatermarkProtectionValues) GetIsEnabledForContentSharing()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabledForContentSharing")
     if err != nil {
@@ -85,6 +89,7 @@ func (m *WatermarkProtectionValues) GetIsEnabledForContentSharing()(*bool) {
     return nil
 }
 // GetIsEnabledForVideo gets the isEnabledForVideo property value. Indicates whether to apply a watermark to everyone's video feed.
+// returns a *bool when successful
 func (m *WatermarkProtectionValues) GetIsEnabledForVideo()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabledForVideo")
     if err != nil {
@@ -96,6 +101,7 @@ func (m *WatermarkProtectionValues) GetIsEnabledForVideo()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *WatermarkProtectionValues) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -166,7 +172,6 @@ func (m *WatermarkProtectionValues) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// WatermarkProtectionValuesable 
 type WatermarkProtectionValuesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

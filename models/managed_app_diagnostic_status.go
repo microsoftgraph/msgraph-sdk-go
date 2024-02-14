@@ -10,7 +10,7 @@ type ManagedAppDiagnosticStatus struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewManagedAppDiagnosticStatus instantiates a new managedAppDiagnosticStatus and sets the default values.
+// NewManagedAppDiagnosticStatus instantiates a new ManagedAppDiagnosticStatus and sets the default values.
 func NewManagedAppDiagnosticStatus()(*ManagedAppDiagnosticStatus) {
     m := &ManagedAppDiagnosticStatus{
     }
@@ -19,10 +19,12 @@ func NewManagedAppDiagnosticStatus()(*ManagedAppDiagnosticStatus) {
     return m
 }
 // CreateManagedAppDiagnosticStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedAppDiagnosticStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedAppDiagnosticStatus(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ManagedAppDiagnosticStatus) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *ManagedAppDiagnosticStatus) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ManagedAppDiagnosticStatus) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedAppDiagnosticStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["mitigationInstruction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -84,6 +88,7 @@ func (m *ManagedAppDiagnosticStatus) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetMitigationInstruction gets the mitigationInstruction property value. Instruction on how to mitigate a failed validation
+// returns a *string when successful
 func (m *ManagedAppDiagnosticStatus) GetMitigationInstruction()(*string) {
     val, err := m.GetBackingStore().Get("mitigationInstruction")
     if err != nil {
@@ -95,6 +100,7 @@ func (m *ManagedAppDiagnosticStatus) GetMitigationInstruction()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ManagedAppDiagnosticStatus) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -106,6 +112,7 @@ func (m *ManagedAppDiagnosticStatus) GetOdataType()(*string) {
     return nil
 }
 // GetState gets the state property value. The state of the operation
+// returns a *string when successful
 func (m *ManagedAppDiagnosticStatus) GetState()(*string) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -117,6 +124,7 @@ func (m *ManagedAppDiagnosticStatus) GetState()(*string) {
     return nil
 }
 // GetValidationName gets the validationName property value. The validation friendly name
+// returns a *string when successful
 func (m *ManagedAppDiagnosticStatus) GetValidationName()(*string) {
     val, err := m.GetBackingStore().Get("validationName")
     if err != nil {
@@ -200,7 +208,6 @@ func (m *ManagedAppDiagnosticStatus) SetValidationName(value *string)() {
         panic(err)
     }
 }
-// ManagedAppDiagnosticStatusable 
 type ManagedAppDiagnosticStatusable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

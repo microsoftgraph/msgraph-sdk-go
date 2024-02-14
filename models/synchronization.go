@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Synchronization 
 type Synchronization struct {
     Entity
 }
-// NewSynchronization instantiates a new synchronization and sets the default values.
+// NewSynchronization instantiates a new Synchronization and sets the default values.
 func NewSynchronization()(*Synchronization) {
     m := &Synchronization{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewSynchronization()(*Synchronization) {
     return m
 }
 // CreateSynchronizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSynchronizationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSynchronization(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Synchronization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["jobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -73,6 +74,7 @@ func (m *Synchronization) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetJobs gets the jobs property value. Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
+// returns a []SynchronizationJobable when successful
 func (m *Synchronization) GetJobs()([]SynchronizationJobable) {
     val, err := m.GetBackingStore().Get("jobs")
     if err != nil {
@@ -84,6 +86,7 @@ func (m *Synchronization) GetJobs()([]SynchronizationJobable) {
     return nil
 }
 // GetSecrets gets the secrets property value. Represents a collection of credentials to access provisioned cloud applications.
+// returns a []SynchronizationSecretKeyStringValuePairable when successful
 func (m *Synchronization) GetSecrets()([]SynchronizationSecretKeyStringValuePairable) {
     val, err := m.GetBackingStore().Get("secrets")
     if err != nil {
@@ -95,6 +98,7 @@ func (m *Synchronization) GetSecrets()([]SynchronizationSecretKeyStringValuePair
     return nil
 }
 // GetTemplates gets the templates property value. Preconfigured synchronization settings for a particular application.
+// returns a []SynchronizationTemplateable when successful
 func (m *Synchronization) GetTemplates()([]SynchronizationTemplateable) {
     val, err := m.GetBackingStore().Get("templates")
     if err != nil {
@@ -170,7 +174,6 @@ func (m *Synchronization) SetTemplates(value []SynchronizationTemplateable)() {
         panic(err)
     }
 }
-// Synchronizationable 
 type Synchronizationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

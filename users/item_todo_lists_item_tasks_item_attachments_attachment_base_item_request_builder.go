@@ -32,24 +32,26 @@ type ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderGetReq
     // Request query parameters
     QueryParameters *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderGetQueryParameters
 }
-// NewItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderInternal instantiates a new AttachmentBaseItemRequestBuilder and sets the default values.
+// NewItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderInternal instantiates a new ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder and sets the default values.
 func NewItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) {
     m := &ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/attachments/{attachmentBase%2Did}{?%24select}", pathParameters),
     }
     return m
 }
-// NewItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder instantiates a new AttachmentBaseItemRequestBuilder and sets the default values.
+// NewItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder instantiates a new ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder and sets the default values.
 func NewItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Content provides operations to manage the media for the user entity.
+// returns a *ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder when successful
 func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) Content()(*ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder) {
     return NewItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete a taskFileAttachment object from a todoTask resource.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/taskfileattachment-delete?view=graph-rest-1.0
@@ -59,8 +61,7 @@ func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) 
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -69,6 +70,8 @@ func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) 
     return nil
 }
 // Get read the properties and relationships of a taskFileAttachment object.
+// returns a AttachmentBaseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/taskfileattachment-get?view=graph-rest-1.0
@@ -78,8 +81,7 @@ func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) 
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateAttachmentBaseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -91,8 +93,9 @@ func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) 
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentBaseable), nil
 }
 // ToDeleteRequestInformation delete a taskFileAttachment object from a todoTask resource.
+// returns a *RequestInformation when successful
 func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/attachments/{attachmentBase%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -101,6 +104,7 @@ func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) 
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a taskFileAttachment object.
+// returns a *RequestInformation when successful
 func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -114,6 +118,7 @@ func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder when successful
 func (m *ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) WithUrl(rawUrl string)(*ItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder) {
     return NewItemTodoListsItemTasksItemAttachmentsAttachmentBaseItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

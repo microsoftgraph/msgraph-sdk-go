@@ -27,28 +27,29 @@ type ItemTeamTemplateRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemTeamTemplateRequestBuilderGetQueryParameters
 }
-// NewItemTeamTemplateRequestBuilderInternal instantiates a new TemplateRequestBuilder and sets the default values.
+// NewItemTeamTemplateRequestBuilderInternal instantiates a new ItemTeamTemplateRequestBuilder and sets the default values.
 func NewItemTeamTemplateRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamTemplateRequestBuilder) {
     m := &ItemTeamTemplateRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/template{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/template{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemTeamTemplateRequestBuilder instantiates a new TemplateRequestBuilder and sets the default values.
+// NewItemTeamTemplateRequestBuilder instantiates a new ItemTeamTemplateRequestBuilder and sets the default values.
 func NewItemTeamTemplateRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamTemplateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamTemplateRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the template this team was created from. See available templates.
+// returns a TeamsTemplateable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamTemplateRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamTemplateRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTemplateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateTeamsTemplateFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *ItemTeamTemplateRequestBuilder) Get(ctx context.Context, requestConfigu
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTemplateable), nil
 }
 // ToGetRequestInformation the template this team was created from. See available templates.
+// returns a *RequestInformation when successful
 func (m *ItemTeamTemplateRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamTemplateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *ItemTeamTemplateRequestBuilder) ToGetRequestInformation(ctx context.Con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemTeamTemplateRequestBuilder when successful
 func (m *ItemTeamTemplateRequestBuilder) WithUrl(rawUrl string)(*ItemTeamTemplateRequestBuilder) {
     return NewItemTeamTemplateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

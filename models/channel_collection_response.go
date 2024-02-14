@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChannelCollectionResponse 
 type ChannelCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewChannelCollectionResponse instantiates a new channelCollectionResponse and sets the default values.
+// NewChannelCollectionResponse instantiates a new ChannelCollectionResponse and sets the default values.
 func NewChannelCollectionResponse()(*ChannelCollectionResponse) {
     m := &ChannelCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewChannelCollectionResponse()(*ChannelCollectionResponse) {
     return m
 }
 // CreateChannelCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateChannelCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChannelCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ChannelCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ChannelCollectionResponse) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []Channelable when successful
 func (m *ChannelCollectionResponse) GetValue()([]Channelable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ChannelCollectionResponse) SetValue(value []Channelable)() {
         panic(err)
     }
 }
-// ChannelCollectionResponseable 
 type ChannelCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

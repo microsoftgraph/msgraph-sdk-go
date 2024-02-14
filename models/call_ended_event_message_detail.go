@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CallEndedEventMessageDetail 
 type CallEndedEventMessageDetail struct {
     EventMessageDetail
 }
-// NewCallEndedEventMessageDetail instantiates a new callEndedEventMessageDetail and sets the default values.
+// NewCallEndedEventMessageDetail instantiates a new CallEndedEventMessageDetail and sets the default values.
 func NewCallEndedEventMessageDetail()(*CallEndedEventMessageDetail) {
     m := &CallEndedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
@@ -18,10 +17,12 @@ func NewCallEndedEventMessageDetail()(*CallEndedEventMessageDetail) {
     return m
 }
 // CreateCallEndedEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCallEndedEventMessageDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCallEndedEventMessageDetail(), nil
 }
 // GetCallDuration gets the callDuration property value. Duration of the call.
+// returns a *ISODuration when successful
 func (m *CallEndedEventMessageDetail) GetCallDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("callDuration")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *CallEndedEventMessageDetail) GetCallDuration()(*i878a80d2330e89d2689638
     return nil
 }
 // GetCallEventType gets the callEventType property value. Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.
+// returns a *TeamworkCallEventType when successful
 func (m *CallEndedEventMessageDetail) GetCallEventType()(*TeamworkCallEventType) {
     val, err := m.GetBackingStore().Get("callEventType")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *CallEndedEventMessageDetail) GetCallEventType()(*TeamworkCallEventType)
     return nil
 }
 // GetCallId gets the callId property value. Unique identifier of the call.
+// returns a *string when successful
 func (m *CallEndedEventMessageDetail) GetCallId()(*string) {
     val, err := m.GetBackingStore().Get("callId")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *CallEndedEventMessageDetail) GetCallId()(*string) {
     return nil
 }
 // GetCallParticipants gets the callParticipants property value. List of call participants.
+// returns a []CallParticipantInfoable when successful
 func (m *CallEndedEventMessageDetail) GetCallParticipants()([]CallParticipantInfoable) {
     val, err := m.GetBackingStore().Get("callParticipants")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *CallEndedEventMessageDetail) GetCallParticipants()([]CallParticipantInf
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CallEndedEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EventMessageDetail.GetFieldDeserializers()
     res["callDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -127,6 +132,7 @@ func (m *CallEndedEventMessageDetail) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
+// returns a IdentitySetable when successful
 func (m *CallEndedEventMessageDetail) GetInitiator()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("initiator")
     if err != nil {
@@ -217,7 +223,6 @@ func (m *CallEndedEventMessageDetail) SetInitiator(value IdentitySetable)() {
         panic(err)
     }
 }
-// CallEndedEventMessageDetailable 
 type CallEndedEventMessageDetailable interface {
     EventMessageDetailable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

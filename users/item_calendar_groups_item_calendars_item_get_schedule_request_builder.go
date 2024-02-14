@@ -17,21 +17,23 @@ type ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilderPostRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilderInternal instantiates a new GetScheduleRequestBuilder and sets the default values.
+// NewItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilderInternal instantiates a new ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder and sets the default values.
 func NewItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder) {
     m := &ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/getSchedule", pathParameters),
     }
     return m
 }
-// NewItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder instantiates a new GetScheduleRequestBuilder and sets the default values.
+// NewItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder instantiates a new ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder and sets the default values.
 func NewItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
-// Deprecated: This method is obsolete. Use PostAsGetSchedulePostResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ItemCalendarGroupsItemCalendarsItemGetScheduleResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder) Post(ctx 
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemCalendarGroupsItemCalendarsItemGetScheduleResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,8 @@ func (m *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder) Post(ctx 
     return res.(ItemCalendarGroupsItemCalendarsItemGetScheduleResponseable), nil
 }
 // PostAsGetSchedulePostResponse get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
+// returns a ItemCalendarGroupsItemCalendarsItemGetSchedulePostResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0
@@ -63,8 +66,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder) PostAsGet
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemCalendarGroupsItemCalendarsItemGetSchedulePostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -76,6 +78,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder) PostAsGet
     return res.(ItemCalendarGroupsItemCalendarsItemGetSchedulePostResponseable), nil
 }
 // ToPostRequestInformation get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
+// returns a *RequestInformation when successful
 func (m *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCalendarGroupsItemCalendarsItemGetSchedulePostRequestBodyable, requestConfiguration *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -90,6 +93,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder) ToPostReq
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder when successful
 func (m *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

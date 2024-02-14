@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// HostLogonSessionEvidence 
 type HostLogonSessionEvidence struct {
     AlertEvidence
 }
-// NewHostLogonSessionEvidence instantiates a new hostLogonSessionEvidence and sets the default values.
+// NewHostLogonSessionEvidence instantiates a new HostLogonSessionEvidence and sets the default values.
 func NewHostLogonSessionEvidence()(*HostLogonSessionEvidence) {
     m := &HostLogonSessionEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -19,10 +18,12 @@ func NewHostLogonSessionEvidence()(*HostLogonSessionEvidence) {
     return m
 }
 // CreateHostLogonSessionEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateHostLogonSessionEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHostLogonSessionEvidence(), nil
 }
 // GetAccount gets the account property value. The account property
+// returns a UserEvidenceable when successful
 func (m *HostLogonSessionEvidence) GetAccount()(UserEvidenceable) {
     val, err := m.GetBackingStore().Get("account")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *HostLogonSessionEvidence) GetAccount()(UserEvidenceable) {
     return nil
 }
 // GetEndUtcDateTime gets the endUtcDateTime property value. The endUtcDateTime property
+// returns a *Time when successful
 func (m *HostLogonSessionEvidence) GetEndUtcDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endUtcDateTime")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *HostLogonSessionEvidence) GetEndUtcDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *HostLogonSessionEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["account"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -100,6 +103,7 @@ func (m *HostLogonSessionEvidence) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetHost gets the host property value. The host property
+// returns a DeviceEvidenceable when successful
 func (m *HostLogonSessionEvidence) GetHost()(DeviceEvidenceable) {
     val, err := m.GetBackingStore().Get("host")
     if err != nil {
@@ -111,6 +115,7 @@ func (m *HostLogonSessionEvidence) GetHost()(DeviceEvidenceable) {
     return nil
 }
 // GetSessionId gets the sessionId property value. The sessionId property
+// returns a *string when successful
 func (m *HostLogonSessionEvidence) GetSessionId()(*string) {
     val, err := m.GetBackingStore().Get("sessionId")
     if err != nil {
@@ -122,6 +127,7 @@ func (m *HostLogonSessionEvidence) GetSessionId()(*string) {
     return nil
 }
 // GetStartUtcDateTime gets the startUtcDateTime property value. The startUtcDateTime property
+// returns a *Time when successful
 func (m *HostLogonSessionEvidence) GetStartUtcDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startUtcDateTime")
     if err != nil {
@@ -205,7 +211,6 @@ func (m *HostLogonSessionEvidence) SetStartUtcDateTime(value *i336074805fc853987
         panic(err)
     }
 }
-// HostLogonSessionEvidenceable 
 type HostLogonSessionEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

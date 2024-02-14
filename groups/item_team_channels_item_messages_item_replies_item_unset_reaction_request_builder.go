@@ -17,28 +17,28 @@ type ItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilderPostR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilderInternal instantiates a new UnsetReactionRequestBuilder and sets the default values.
+// NewItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilderInternal instantiates a new ItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilder and sets the default values.
 func NewItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilder) {
     m := &ItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/messages/{chatMessage%2Did}/replies/{chatMessage%2Did1}/unsetReaction", pathParameters),
     }
     return m
 }
-// NewItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilder instantiates a new UnsetReactionRequestBuilder and sets the default values.
+// NewItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilder instantiates a new ItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilder and sets the default values.
 func NewItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action unsetReaction
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilder) Post(ctx context.Context, body ItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionPostRequestBodyable, requestConfiguration *ItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *ItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilder)
     return nil
 }
 // ToPostRequestInformation invoke action unsetReaction
+// returns a *RequestInformation when successful
 func (m *ItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionPostRequestBodyable, requestConfiguration *ItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -61,6 +62,7 @@ func (m *ItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilder)
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilder when successful
 func (m *ItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilder) WithUrl(rawUrl string)(*ItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilder) {
     return NewItemTeamChannelsItemMessagesItemRepliesItemUnsetReactionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

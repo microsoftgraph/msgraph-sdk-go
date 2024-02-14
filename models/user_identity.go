@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserIdentity 
 type UserIdentity struct {
     Identity
 }
-// NewUserIdentity instantiates a new userIdentity and sets the default values.
+// NewUserIdentity instantiates a new UserIdentity and sets the default values.
 func NewUserIdentity()(*UserIdentity) {
     m := &UserIdentity{
         Identity: *NewIdentity(),
@@ -18,10 +17,12 @@ func NewUserIdentity()(*UserIdentity) {
     return m
 }
 // CreateUserIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserIdentity(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Identity.GetFieldDeserializers()
     res["ipAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +48,7 @@ func (m *UserIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetIpAddress gets the ipAddress property value. Indicates the client IP address used by user performing the activity (audit log only).
+// returns a *string when successful
 func (m *UserIdentity) GetIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("ipAddress")
     if err != nil {
@@ -58,6 +60,7 @@ func (m *UserIdentity) GetIpAddress()(*string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName attribute of the user.
+// returns a *string when successful
 func (m *UserIdentity) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *UserIdentity) SetUserPrincipalName(value *string)() {
         panic(err)
     }
 }
-// UserIdentityable 
 type UserIdentityable interface {
     Identityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

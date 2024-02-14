@@ -17,28 +17,28 @@ type MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemRenewUploadR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewMobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemRenewUploadRequestBuilderInternal instantiates a new RenewUploadRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemRenewUploadRequestBuilderInternal instantiates a new MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemRenewUploadRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemRenewUploadRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemRenewUploadRequestBuilder) {
     m := &MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemRenewUploadRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsMobileMSI/contentVersions/{mobileAppContent%2Did}/files/{mobileAppContentFile%2Did}/renewUpload", pathParameters),
     }
     return m
 }
-// NewMobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemRenewUploadRequestBuilder instantiates a new RenewUploadRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemRenewUploadRequestBuilder instantiates a new MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemRenewUploadRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemRenewUploadRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemRenewUploadRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemRenewUploadRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post renews the SAS URI for an application file upload.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemRenewUploadRequestBuilder) Post(ctx context.Context, requestConfiguration *MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemRenewUploadRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemRenewUpl
     return nil
 }
 // ToPostRequestInformation renews the SAS URI for an application file upload.
+// returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemRenewUploadRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemRenewUploadRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -57,6 +58,7 @@ func (m *MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemRenewUpl
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemRenewUploadRequestBuilder when successful
 func (m *MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemRenewUploadRequestBuilder) WithUrl(rawUrl string)(*MobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemRenewUploadRequestBuilder) {
     return NewMobileAppsItemGraphWindowsMobileMSIContentVersionsItemFilesItemRenewUploadRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ChatMessageAttachment 
 type ChatMessageAttachment struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewChatMessageAttachment instantiates a new chatMessageAttachment and sets the default values.
+// NewChatMessageAttachment instantiates a new ChatMessageAttachment and sets the default values.
 func NewChatMessageAttachment()(*ChatMessageAttachment) {
     m := &ChatMessageAttachment{
     }
@@ -19,10 +18,12 @@ func NewChatMessageAttachment()(*ChatMessageAttachment) {
     return m
 }
 // CreateChatMessageAttachmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateChatMessageAttachmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChatMessageAttachment(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ChatMessageAttachment) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ChatMessageAttachment) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ChatMessageAttachment) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetContent gets the content property value. The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
+// returns a *string when successful
 func (m *ChatMessageAttachment) GetContent()(*string) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *ChatMessageAttachment) GetContent()(*string) {
     return nil
 }
 // GetContentType gets the contentType property value. The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
+// returns a *string when successful
 func (m *ChatMessageAttachment) GetContentType()(*string) {
     val, err := m.GetBackingStore().Get("contentType")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *ChatMessageAttachment) GetContentType()(*string) {
     return nil
 }
 // GetContentUrl gets the contentUrl property value. URL for the content of the attachment. Supported protocols: http, https, file and data.
+// returns a *string when successful
 func (m *ChatMessageAttachment) GetContentUrl()(*string) {
     val, err := m.GetBackingStore().Get("contentUrl")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *ChatMessageAttachment) GetContentUrl()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ChatMessageAttachment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -157,6 +163,7 @@ func (m *ChatMessageAttachment) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetId gets the id property value. Read-only. Unique id of the attachment.
+// returns a *string when successful
 func (m *ChatMessageAttachment) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -168,6 +175,7 @@ func (m *ChatMessageAttachment) GetId()(*string) {
     return nil
 }
 // GetName gets the name property value. Name of the attachment.
+// returns a *string when successful
 func (m *ChatMessageAttachment) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -179,6 +187,7 @@ func (m *ChatMessageAttachment) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ChatMessageAttachment) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -190,6 +199,7 @@ func (m *ChatMessageAttachment) GetOdataType()(*string) {
     return nil
 }
 // GetTeamsAppId gets the teamsAppId property value. The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
+// returns a *string when successful
 func (m *ChatMessageAttachment) GetTeamsAppId()(*string) {
     val, err := m.GetBackingStore().Get("teamsAppId")
     if err != nil {
@@ -201,6 +211,7 @@ func (m *ChatMessageAttachment) GetTeamsAppId()(*string) {
     return nil
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
+// returns a *string when successful
 func (m *ChatMessageAttachment) GetThumbnailUrl()(*string) {
     val, err := m.GetBackingStore().Get("thumbnailUrl")
     if err != nil {
@@ -336,7 +347,6 @@ func (m *ChatMessageAttachment) SetThumbnailUrl(value *string)() {
         panic(err)
     }
 }
-// ChatMessageAttachmentable 
 type ChatMessageAttachmentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

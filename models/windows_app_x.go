@@ -8,7 +8,7 @@ import (
 type WindowsAppX struct {
     MobileLobApp
 }
-// NewWindowsAppX instantiates a new windowsAppX and sets the default values.
+// NewWindowsAppX instantiates a new WindowsAppX and sets the default values.
 func NewWindowsAppX()(*WindowsAppX) {
     m := &WindowsAppX{
         MobileLobApp: *NewMobileLobApp(),
@@ -18,10 +18,12 @@ func NewWindowsAppX()(*WindowsAppX) {
     return m
 }
 // CreateWindowsAppXFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsAppXFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsAppX(), nil
 }
 // GetApplicableArchitectures gets the applicableArchitectures property value. Contains properties for Windows architecture.
+// returns a *WindowsArchitecture when successful
 func (m *WindowsAppX) GetApplicableArchitectures()(*WindowsArchitecture) {
     val, err := m.GetBackingStore().Get("applicableArchitectures")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *WindowsAppX) GetApplicableArchitectures()(*WindowsArchitecture) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsAppX) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileLobApp.GetFieldDeserializers()
     res["applicableArchitectures"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -108,6 +111,7 @@ func (m *WindowsAppX) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetIdentityName gets the identityName property value. The identity name of the uploaded app package. For example: 'Contoso.DemoApp'.
+// returns a *string when successful
 func (m *WindowsAppX) GetIdentityName()(*string) {
     val, err := m.GetBackingStore().Get("identityName")
     if err != nil {
@@ -119,6 +123,7 @@ func (m *WindowsAppX) GetIdentityName()(*string) {
     return nil
 }
 // GetIdentityPublisherHash gets the identityPublisherHash property value. The identity publisher hash of the uploaded app package. This is the hash of the publisher from the manifest. For example: 'AB82CD0XYZ'.
+// returns a *string when successful
 func (m *WindowsAppX) GetIdentityPublisherHash()(*string) {
     val, err := m.GetBackingStore().Get("identityPublisherHash")
     if err != nil {
@@ -130,6 +135,7 @@ func (m *WindowsAppX) GetIdentityPublisherHash()(*string) {
     return nil
 }
 // GetIdentityResourceIdentifier gets the identityResourceIdentifier property value. The identity resource identifier of the uploaded app package. For example: 'TestResourceId'.
+// returns a *string when successful
 func (m *WindowsAppX) GetIdentityResourceIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("identityResourceIdentifier")
     if err != nil {
@@ -141,6 +147,7 @@ func (m *WindowsAppX) GetIdentityResourceIdentifier()(*string) {
     return nil
 }
 // GetIdentityVersion gets the identityVersion property value. The identity version of the uploaded app package. For example: '1.0.0.0'.
+// returns a *string when successful
 func (m *WindowsAppX) GetIdentityVersion()(*string) {
     val, err := m.GetBackingStore().Get("identityVersion")
     if err != nil {
@@ -152,6 +159,7 @@ func (m *WindowsAppX) GetIdentityVersion()(*string) {
     return nil
 }
 // GetIsBundle gets the isBundle property value. When TRUE, indicates that the app is a bundle. When FALSE, indicates that the app is not a bundle. By default, property is set to FALSE.
+// returns a *bool when successful
 func (m *WindowsAppX) GetIsBundle()(*bool) {
     val, err := m.GetBackingStore().Get("isBundle")
     if err != nil {
@@ -163,6 +171,7 @@ func (m *WindowsAppX) GetIsBundle()(*bool) {
     return nil
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. The minimum operating system required for a Windows mobile app.
+// returns a WindowsMinimumOperatingSystemable when successful
 func (m *WindowsAppX) GetMinimumSupportedOperatingSystem()(WindowsMinimumOperatingSystemable) {
     val, err := m.GetBackingStore().Get("minimumSupportedOperatingSystem")
     if err != nil {
@@ -273,7 +282,6 @@ func (m *WindowsAppX) SetMinimumSupportedOperatingSystem(value WindowsMinimumOpe
         panic(err)
     }
 }
-// WindowsAppXable 
 type WindowsAppXable interface {
     MobileLobAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SubjectRightsRequestEnumeratedSiteLocation 
 type SubjectRightsRequestEnumeratedSiteLocation struct {
     SubjectRightsRequestSiteLocation
 }
-// NewSubjectRightsRequestEnumeratedSiteLocation instantiates a new subjectRightsRequestEnumeratedSiteLocation and sets the default values.
+// NewSubjectRightsRequestEnumeratedSiteLocation instantiates a new SubjectRightsRequestEnumeratedSiteLocation and sets the default values.
 func NewSubjectRightsRequestEnumeratedSiteLocation()(*SubjectRightsRequestEnumeratedSiteLocation) {
     m := &SubjectRightsRequestEnumeratedSiteLocation{
         SubjectRightsRequestSiteLocation: *NewSubjectRightsRequestSiteLocation(),
@@ -18,10 +17,12 @@ func NewSubjectRightsRequestEnumeratedSiteLocation()(*SubjectRightsRequestEnumer
     return m
 }
 // CreateSubjectRightsRequestEnumeratedSiteLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSubjectRightsRequestEnumeratedSiteLocationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSubjectRightsRequestEnumeratedSiteLocation(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SubjectRightsRequestEnumeratedSiteLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.SubjectRightsRequestSiteLocation.GetFieldDeserializers()
     res["urls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -43,6 +44,7 @@ func (m *SubjectRightsRequestEnumeratedSiteLocation) GetFieldDeserializers()(map
     return res
 }
 // GetUrls gets the urls property value. Collection of site URLs that should be included. Includes the URL of each site, for example, https://www.contoso.com/site1.
+// returns a []string when successful
 func (m *SubjectRightsRequestEnumeratedSiteLocation) GetUrls()([]string) {
     val, err := m.GetBackingStore().Get("urls")
     if err != nil {
@@ -74,7 +76,6 @@ func (m *SubjectRightsRequestEnumeratedSiteLocation) SetUrls(value []string)() {
         panic(err)
     }
 }
-// SubjectRightsRequestEnumeratedSiteLocationable 
 type SubjectRightsRequestEnumeratedSiteLocationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     SubjectRightsRequestSiteLocationable

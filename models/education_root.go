@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// EducationRoot 
 type EducationRoot struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewEducationRoot instantiates a new educationRoot and sets the default values.
+// NewEducationRoot instantiates a new EducationRoot and sets the default values.
 func NewEducationRoot()(*EducationRoot) {
     m := &EducationRoot{
     }
@@ -19,10 +18,12 @@ func NewEducationRoot()(*EducationRoot) {
     return m
 }
 // CreateEducationRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationRoot(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *EducationRoot) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *EducationRoot) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *EducationRoot) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetClasses gets the classes property value. The classes property
+// returns a []EducationClassable when successful
 func (m *EducationRoot) GetClasses()([]EducationClassable) {
     val, err := m.GetBackingStore().Get("classes")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *EducationRoot) GetClasses()([]EducationClassable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["classes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -123,6 +127,7 @@ func (m *EducationRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetMe gets the me property value. The me property
+// returns a EducationUserable when successful
 func (m *EducationRoot) GetMe()(EducationUserable) {
     val, err := m.GetBackingStore().Get("me")
     if err != nil {
@@ -134,6 +139,7 @@ func (m *EducationRoot) GetMe()(EducationUserable) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *EducationRoot) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -145,6 +151,7 @@ func (m *EducationRoot) GetOdataType()(*string) {
     return nil
 }
 // GetSchools gets the schools property value. The schools property
+// returns a []EducationSchoolable when successful
 func (m *EducationRoot) GetSchools()([]EducationSchoolable) {
     val, err := m.GetBackingStore().Get("schools")
     if err != nil {
@@ -156,6 +163,7 @@ func (m *EducationRoot) GetSchools()([]EducationSchoolable) {
     return nil
 }
 // GetUsers gets the users property value. The users property
+// returns a []EducationUserable when successful
 func (m *EducationRoot) GetUsers()([]EducationUserable) {
     val, err := m.GetBackingStore().Get("users")
     if err != nil {
@@ -270,7 +278,6 @@ func (m *EducationRoot) SetUsers(value []EducationUserable)() {
         panic(err)
     }
 }
-// EducationRootable 
 type EducationRootable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -17,20 +17,21 @@ type SharesItemAllowedGroupsItemRefRequestBuilderDeleteRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewSharesItemAllowedGroupsItemRefRequestBuilderInternal instantiates a new RefRequestBuilder and sets the default values.
+// NewSharesItemAllowedGroupsItemRefRequestBuilderInternal instantiates a new SharesItemAllowedGroupsItemRefRequestBuilder and sets the default values.
 func NewSharesItemAllowedGroupsItemRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesItemAllowedGroupsItemRefRequestBuilder) {
     m := &SharesItemAllowedGroupsItemRefRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/allowedGroups/{group%2Did}/$ref", pathParameters),
     }
     return m
 }
-// NewSharesItemAllowedGroupsItemRefRequestBuilder instantiates a new RefRequestBuilder and sets the default values.
+// NewSharesItemAllowedGroupsItemRefRequestBuilder instantiates a new SharesItemAllowedGroupsItemRefRequestBuilder and sets the default values.
 func NewSharesItemAllowedGroupsItemRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesItemAllowedGroupsItemRefRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSharesItemAllowedGroupsItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete revoke the specified group's access to submit print jobs to the associated printerShare.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/printershare-delete-allowedgroup?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *SharesItemAllowedGroupsItemRefRequestBuilder) Delete(ctx context.Contex
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *SharesItemAllowedGroupsItemRefRequestBuilder) Delete(ctx context.Contex
     return nil
 }
 // ToDeleteRequestInformation revoke the specified group's access to submit print jobs to the associated printerShare.
+// returns a *RequestInformation when successful
 func (m *SharesItemAllowedGroupsItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SharesItemAllowedGroupsItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *SharesItemAllowedGroupsItemRefRequestBuilder) ToDeleteRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *SharesItemAllowedGroupsItemRefRequestBuilder when successful
 func (m *SharesItemAllowedGroupsItemRefRequestBuilder) WithUrl(rawUrl string)(*SharesItemAllowedGroupsItemRefRequestBuilder) {
     return NewSharesItemAllowedGroupsItemRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

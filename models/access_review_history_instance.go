@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewHistoryInstance 
 type AccessReviewHistoryInstance struct {
     Entity
 }
-// NewAccessReviewHistoryInstance instantiates a new accessReviewHistoryInstance and sets the default values.
+// NewAccessReviewHistoryInstance instantiates a new AccessReviewHistoryInstance and sets the default values.
 func NewAccessReviewHistoryInstance()(*AccessReviewHistoryInstance) {
     m := &AccessReviewHistoryInstance{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewAccessReviewHistoryInstance()(*AccessReviewHistoryInstance) {
     return m
 }
 // CreateAccessReviewHistoryInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessReviewHistoryInstanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewHistoryInstance(), nil
 }
 // GetDownloadUri gets the downloadUri property value. Uri that can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.
+// returns a *string when successful
 func (m *AccessReviewHistoryInstance) GetDownloadUri()(*string) {
     val, err := m.GetBackingStore().Get("downloadUri")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *AccessReviewHistoryInstance) GetDownloadUri()(*string) {
     return nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. Timestamp when this instance and associated data expires and the history is deleted. Required.
+// returns a *Time when successful
 func (m *AccessReviewHistoryInstance) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *AccessReviewHistoryInstance) GetExpirationDateTime()(*i336074805fc85398
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessReviewHistoryInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["downloadUri"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -118,6 +121,7 @@ func (m *AccessReviewHistoryInstance) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetFulfilledDateTime gets the fulfilledDateTime property value. Timestamp when all of the available data for this instance was collected and is set after this instance's status is set to done. Required.
+// returns a *Time when successful
 func (m *AccessReviewHistoryInstance) GetFulfilledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("fulfilledDateTime")
     if err != nil {
@@ -129,6 +133,7 @@ func (m *AccessReviewHistoryInstance) GetFulfilledDateTime()(*i336074805fc853987
     return nil
 }
 // GetReviewHistoryPeriodEndDateTime gets the reviewHistoryPeriodEndDateTime property value. Timestamp reviews ending on or before this date will be included in the fetched history data.
+// returns a *Time when successful
 func (m *AccessReviewHistoryInstance) GetReviewHistoryPeriodEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("reviewHistoryPeriodEndDateTime")
     if err != nil {
@@ -140,6 +145,7 @@ func (m *AccessReviewHistoryInstance) GetReviewHistoryPeriodEndDateTime()(*i3360
     return nil
 }
 // GetReviewHistoryPeriodStartDateTime gets the reviewHistoryPeriodStartDateTime property value. Timestamp reviews starting on or after this date will be included in the fetched history data.
+// returns a *Time when successful
 func (m *AccessReviewHistoryInstance) GetReviewHistoryPeriodStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("reviewHistoryPeriodStartDateTime")
     if err != nil {
@@ -151,6 +157,7 @@ func (m *AccessReviewHistoryInstance) GetReviewHistoryPeriodStartDateTime()(*i33
     return nil
 }
 // GetRunDateTime gets the runDateTime property value. Timestamp when the instance's history data is scheduled to be generated.
+// returns a *Time when successful
 func (m *AccessReviewHistoryInstance) GetRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("runDateTime")
     if err != nil {
@@ -162,6 +169,7 @@ func (m *AccessReviewHistoryInstance) GetRunDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetStatus gets the status property value. Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue. Once the status has been marked as done, a link can be generated to retrieve the instance's data by calling generateDownloadUri method.
+// returns a *AccessReviewHistoryStatus when successful
 func (m *AccessReviewHistoryInstance) GetStatus()(*AccessReviewHistoryStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -272,7 +280,6 @@ func (m *AccessReviewHistoryInstance) SetStatus(value *AccessReviewHistoryStatus
         panic(err)
     }
 }
-// AccessReviewHistoryInstanceable 
 type AccessReviewHistoryInstanceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Initiator 
 type Initiator struct {
     Identity
 }
-// NewInitiator instantiates a new initiator and sets the default values.
+// NewInitiator instantiates a new Initiator and sets the default values.
 func NewInitiator()(*Initiator) {
     m := &Initiator{
         Identity: *NewIdentity(),
@@ -18,10 +17,12 @@ func NewInitiator()(*Initiator) {
     return m
 }
 // CreateInitiatorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInitiatorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInitiator(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Initiator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Identity.GetFieldDeserializers()
     res["initiatorType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *Initiator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetInitiatorType gets the initiatorType property value. Type of initiator. Possible values are: user, application, system, unknownFutureValue.
+// returns a *InitiatorType when successful
 func (m *Initiator) GetInitiatorType()(*InitiatorType) {
     val, err := m.GetBackingStore().Get("initiatorType")
     if err != nil {
@@ -69,7 +71,6 @@ func (m *Initiator) SetInitiatorType(value *InitiatorType)() {
         panic(err)
     }
 }
-// Initiatorable 
 type Initiatorable interface {
     Identityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

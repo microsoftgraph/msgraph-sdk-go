@@ -27,28 +27,29 @@ type ItemOwnersItemGraphDeviceRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemOwnersItemGraphDeviceRequestBuilderGetQueryParameters
 }
-// NewItemOwnersItemGraphDeviceRequestBuilderInternal instantiates a new GraphDeviceRequestBuilder and sets the default values.
+// NewItemOwnersItemGraphDeviceRequestBuilderInternal instantiates a new ItemOwnersItemGraphDeviceRequestBuilder and sets the default values.
 func NewItemOwnersItemGraphDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOwnersItemGraphDeviceRequestBuilder) {
     m := &ItemOwnersItemGraphDeviceRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/owners/{directoryObject%2Did}/graph.device{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/owners/{directoryObject%2Did}/graph.device{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemOwnersItemGraphDeviceRequestBuilder instantiates a new GraphDeviceRequestBuilder and sets the default values.
+// NewItemOwnersItemGraphDeviceRequestBuilder instantiates a new ItemOwnersItemGraphDeviceRequestBuilder and sets the default values.
 func NewItemOwnersItemGraphDeviceRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOwnersItemGraphDeviceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemOwnersItemGraphDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the item of type microsoft.graph.directoryObject as microsoft.graph.device
+// returns a Deviceable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOwnersItemGraphDeviceRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOwnersItemGraphDeviceRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDeviceFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *ItemOwnersItemGraphDeviceRequestBuilder) Get(ctx context.Context, reque
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Deviceable), nil
 }
 // ToGetRequestInformation get the item of type microsoft.graph.directoryObject as microsoft.graph.device
+// returns a *RequestInformation when successful
 func (m *ItemOwnersItemGraphDeviceRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOwnersItemGraphDeviceRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *ItemOwnersItemGraphDeviceRequestBuilder) ToGetRequestInformation(ctx co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemOwnersItemGraphDeviceRequestBuilder when successful
 func (m *ItemOwnersItemGraphDeviceRequestBuilder) WithUrl(rawUrl string)(*ItemOwnersItemGraphDeviceRequestBuilder) {
     return NewItemOwnersItemGraphDeviceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

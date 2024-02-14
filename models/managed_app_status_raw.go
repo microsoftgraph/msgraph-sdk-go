@@ -8,7 +8,7 @@ import (
 type ManagedAppStatusRaw struct {
     ManagedAppStatus
 }
-// NewManagedAppStatusRaw instantiates a new managedAppStatusRaw and sets the default values.
+// NewManagedAppStatusRaw instantiates a new ManagedAppStatusRaw and sets the default values.
 func NewManagedAppStatusRaw()(*ManagedAppStatusRaw) {
     m := &ManagedAppStatusRaw{
         ManagedAppStatus: *NewManagedAppStatus(),
@@ -18,10 +18,12 @@ func NewManagedAppStatusRaw()(*ManagedAppStatusRaw) {
     return m
 }
 // CreateManagedAppStatusRawFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedAppStatusRawFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedAppStatusRaw(), nil
 }
 // GetContent gets the content property value. Status report content.
+// returns a Jsonable when successful
 func (m *ManagedAppStatusRaw) GetContent()(Jsonable) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *ManagedAppStatusRaw) GetContent()(Jsonable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedAppStatusRaw) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedAppStatus.GetFieldDeserializers()
     res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +71,6 @@ func (m *ManagedAppStatusRaw) SetContent(value Jsonable)() {
         panic(err)
     }
 }
-// ManagedAppStatusRawable 
 type ManagedAppStatusRawable interface {
     ManagedAppStatusable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AttackSimulationTrainingUserCoverage 
 type AttackSimulationTrainingUserCoverage struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAttackSimulationTrainingUserCoverage instantiates a new attackSimulationTrainingUserCoverage and sets the default values.
+// NewAttackSimulationTrainingUserCoverage instantiates a new AttackSimulationTrainingUserCoverage and sets the default values.
 func NewAttackSimulationTrainingUserCoverage()(*AttackSimulationTrainingUserCoverage) {
     m := &AttackSimulationTrainingUserCoverage{
     }
@@ -19,10 +18,12 @@ func NewAttackSimulationTrainingUserCoverage()(*AttackSimulationTrainingUserCove
     return m
 }
 // CreateAttackSimulationTrainingUserCoverageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAttackSimulationTrainingUserCoverageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAttackSimulationTrainingUserCoverage(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AttackSimulationTrainingUserCoverage) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *AttackSimulationTrainingUserCoverage) GetAdditionalData()(map[string]an
     return val.(map[string]any)
 }
 // GetAttackSimulationUser gets the attackSimulationUser property value. User in an attack simulation and training campaign.
+// returns a AttackSimulationUserable when successful
 func (m *AttackSimulationTrainingUserCoverage) GetAttackSimulationUser()(AttackSimulationUserable) {
     val, err := m.GetBackingStore().Get("attackSimulationUser")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *AttackSimulationTrainingUserCoverage) GetAttackSimulationUser()(AttackS
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AttackSimulationTrainingUserCoverage) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AttackSimulationTrainingUserCoverage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["attackSimulationUser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -91,6 +95,7 @@ func (m *AttackSimulationTrainingUserCoverage) GetFieldDeserializers()(map[strin
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AttackSimulationTrainingUserCoverage) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -102,6 +107,7 @@ func (m *AttackSimulationTrainingUserCoverage) GetOdataType()(*string) {
     return nil
 }
 // GetUserTrainings gets the userTrainings property value. List of assigned trainings and their statuses for the user.
+// returns a []UserTrainingStatusInfoable when successful
 func (m *AttackSimulationTrainingUserCoverage) GetUserTrainings()([]UserTrainingStatusInfoable) {
     val, err := m.GetBackingStore().Get("userTrainings")
     if err != nil {
@@ -178,7 +184,6 @@ func (m *AttackSimulationTrainingUserCoverage) SetUserTrainings(value []UserTrai
         panic(err)
     }
 }
-// AttackSimulationTrainingUserCoverageable 
 type AttackSimulationTrainingUserCoverageable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

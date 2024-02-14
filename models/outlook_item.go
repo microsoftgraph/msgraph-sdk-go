@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OutlookItem 
 type OutlookItem struct {
     Entity
 }
-// NewOutlookItem instantiates a new outlookItem and sets the default values.
+// NewOutlookItem instantiates a new OutlookItem and sets the default values.
 func NewOutlookItem()(*OutlookItem) {
     m := &OutlookItem{
         Entity: *NewEntity(),
@@ -17,6 +16,7 @@ func NewOutlookItem()(*OutlookItem) {
     return m
 }
 // CreateOutlookItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOutlookItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -53,6 +53,7 @@ func CreateOutlookItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewOutlookItem(), nil
 }
 // GetCategories gets the categories property value. The categories associated with the item
+// returns a []string when successful
 func (m *OutlookItem) GetCategories()([]string) {
     val, err := m.GetBackingStore().Get("categories")
     if err != nil {
@@ -64,6 +65,7 @@ func (m *OutlookItem) GetCategories()([]string) {
     return nil
 }
 // GetChangeKey gets the changeKey property value. Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
+// returns a *string when successful
 func (m *OutlookItem) GetChangeKey()(*string) {
     val, err := m.GetBackingStore().Get("changeKey")
     if err != nil {
@@ -75,6 +77,7 @@ func (m *OutlookItem) GetChangeKey()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *OutlookItem) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -86,6 +89,7 @@ func (m *OutlookItem) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OutlookItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -137,6 +141,7 @@ func (m *OutlookItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *OutlookItem) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -207,7 +212,6 @@ func (m *OutlookItem) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3
         panic(err)
     }
 }
-// OutlookItemable 
 type OutlookItemable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

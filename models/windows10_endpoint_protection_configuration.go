@@ -8,7 +8,7 @@ import (
 type Windows10EndpointProtectionConfiguration struct {
     DeviceConfiguration
 }
-// NewWindows10EndpointProtectionConfiguration instantiates a new windows10EndpointProtectionConfiguration and sets the default values.
+// NewWindows10EndpointProtectionConfiguration instantiates a new Windows10EndpointProtectionConfiguration and sets the default values.
 func NewWindows10EndpointProtectionConfiguration()(*Windows10EndpointProtectionConfiguration) {
     m := &Windows10EndpointProtectionConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewWindows10EndpointProtectionConfiguration()(*Windows10EndpointProtectionC
     return m
 }
 // CreateWindows10EndpointProtectionConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindows10EndpointProtectionConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows10EndpointProtectionConfiguration(), nil
 }
 // GetApplicationGuardAllowPersistence gets the applicationGuardAllowPersistence property value. Allow persisting user generated data inside the App Guard Containter (favorites, cookies, web passwords, etc.)
+// returns a *bool when successful
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowPersistence()(*bool) {
     val, err := m.GetBackingStore().Get("applicationGuardAllowPersistence")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowPersi
     return nil
 }
 // GetApplicationGuardAllowPrintToLocalPrinters gets the applicationGuardAllowPrintToLocalPrinters property value. Allow printing to Local Printers from Container
+// returns a *bool when successful
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowPrintToLocalPrinters()(*bool) {
     val, err := m.GetBackingStore().Get("applicationGuardAllowPrintToLocalPrinters")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowPrint
     return nil
 }
 // GetApplicationGuardAllowPrintToNetworkPrinters gets the applicationGuardAllowPrintToNetworkPrinters property value. Allow printing to Network Printers from Container
+// returns a *bool when successful
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowPrintToNetworkPrinters()(*bool) {
     val, err := m.GetBackingStore().Get("applicationGuardAllowPrintToNetworkPrinters")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowPrint
     return nil
 }
 // GetApplicationGuardAllowPrintToPDF gets the applicationGuardAllowPrintToPDF property value. Allow printing to PDF from Container
+// returns a *bool when successful
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowPrintToPDF()(*bool) {
     val, err := m.GetBackingStore().Get("applicationGuardAllowPrintToPDF")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowPrint
     return nil
 }
 // GetApplicationGuardAllowPrintToXPS gets the applicationGuardAllowPrintToXPS property value. Allow printing to XPS from Container
+// returns a *bool when successful
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowPrintToXPS()(*bool) {
     val, err := m.GetBackingStore().Get("applicationGuardAllowPrintToXPS")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowPrint
     return nil
 }
 // GetApplicationGuardBlockClipboardSharing gets the applicationGuardBlockClipboardSharing property value. Possible values for applicationGuardBlockClipboardSharingType
+// returns a *ApplicationGuardBlockClipboardSharingType when successful
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardBlockClipboardSharing()(*ApplicationGuardBlockClipboardSharingType) {
     val, err := m.GetBackingStore().Get("applicationGuardBlockClipboardSharing")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardBlockClipb
     return nil
 }
 // GetApplicationGuardBlockFileTransfer gets the applicationGuardBlockFileTransfer property value. Possible values for applicationGuardBlockFileTransfer
+// returns a *ApplicationGuardBlockFileTransferType when successful
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardBlockFileTransfer()(*ApplicationGuardBlockFileTransferType) {
     val, err := m.GetBackingStore().Get("applicationGuardBlockFileTransfer")
     if err != nil {
@@ -99,6 +107,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardBlockFileT
     return nil
 }
 // GetApplicationGuardBlockNonEnterpriseContent gets the applicationGuardBlockNonEnterpriseContent property value. Block enterprise sites to load non-enterprise content, such as third party plug-ins
+// returns a *bool when successful
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardBlockNonEnterpriseContent()(*bool) {
     val, err := m.GetBackingStore().Get("applicationGuardBlockNonEnterpriseContent")
     if err != nil {
@@ -110,6 +119,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardBlockNonEn
     return nil
 }
 // GetApplicationGuardEnabled gets the applicationGuardEnabled property value. Enable Windows Defender Application Guard
+// returns a *bool when successful
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("applicationGuardEnabled")
     if err != nil {
@@ -121,6 +131,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardEnabled()(
     return nil
 }
 // GetApplicationGuardForceAuditing gets the applicationGuardForceAuditing property value. Force auditing will persist Windows logs and events to meet security/compliance criteria (sample events are user login-logoff, use of privilege rights, software installation, system changes, etc.)
+// returns a *bool when successful
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardForceAuditing()(*bool) {
     val, err := m.GetBackingStore().Get("applicationGuardForceAuditing")
     if err != nil {
@@ -132,6 +143,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardForceAudit
     return nil
 }
 // GetAppLockerApplicationControl gets the appLockerApplicationControl property value. Possible values of AppLocker Application Control Types
+// returns a *AppLockerApplicationControlType when successful
 func (m *Windows10EndpointProtectionConfiguration) GetAppLockerApplicationControl()(*AppLockerApplicationControlType) {
     val, err := m.GetBackingStore().Get("appLockerApplicationControl")
     if err != nil {
@@ -143,6 +155,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetAppLockerApplicationContro
     return nil
 }
 // GetBitLockerDisableWarningForOtherDiskEncryption gets the bitLockerDisableWarningForOtherDiskEncryption property value. Allows the Admin to disable the warning prompt for other disk encryption on the user machines.
+// returns a *bool when successful
 func (m *Windows10EndpointProtectionConfiguration) GetBitLockerDisableWarningForOtherDiskEncryption()(*bool) {
     val, err := m.GetBackingStore().Get("bitLockerDisableWarningForOtherDiskEncryption")
     if err != nil {
@@ -154,6 +167,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetBitLockerDisableWarningFor
     return nil
 }
 // GetBitLockerEnableStorageCardEncryptionOnMobile gets the bitLockerEnableStorageCardEncryptionOnMobile property value. Allows the admin to require encryption to be turned on using BitLocker. This policy is valid only for a mobile SKU.
+// returns a *bool when successful
 func (m *Windows10EndpointProtectionConfiguration) GetBitLockerEnableStorageCardEncryptionOnMobile()(*bool) {
     val, err := m.GetBackingStore().Get("bitLockerEnableStorageCardEncryptionOnMobile")
     if err != nil {
@@ -165,6 +179,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetBitLockerEnableStorageCard
     return nil
 }
 // GetBitLockerEncryptDevice gets the bitLockerEncryptDevice property value. Allows the admin to require encryption to be turned on using BitLocker.
+// returns a *bool when successful
 func (m *Windows10EndpointProtectionConfiguration) GetBitLockerEncryptDevice()(*bool) {
     val, err := m.GetBackingStore().Get("bitLockerEncryptDevice")
     if err != nil {
@@ -176,6 +191,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetBitLockerEncryptDevice()(*
     return nil
 }
 // GetBitLockerRemovableDrivePolicy gets the bitLockerRemovableDrivePolicy property value. BitLocker Removable Drive Policy.
+// returns a BitLockerRemovableDrivePolicyable when successful
 func (m *Windows10EndpointProtectionConfiguration) GetBitLockerRemovableDrivePolicy()(BitLockerRemovableDrivePolicyable) {
     val, err := m.GetBackingStore().Get("bitLockerRemovableDrivePolicy")
     if err != nil {
@@ -187,6 +203,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetBitLockerRemovableDrivePol
     return nil
 }
 // GetDefenderAdditionalGuardedFolders gets the defenderAdditionalGuardedFolders property value. List of folder paths to be added to the list of protected folders
+// returns a []string when successful
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderAdditionalGuardedFolders()([]string) {
     val, err := m.GetBackingStore().Get("defenderAdditionalGuardedFolders")
     if err != nil {
@@ -198,6 +215,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderAdditionalGuardedF
     return nil
 }
 // GetDefenderAttackSurfaceReductionExcludedPaths gets the defenderAttackSurfaceReductionExcludedPaths property value. List of exe files and folders to be excluded from attack surface reduction rules
+// returns a []string when successful
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderAttackSurfaceReductionExcludedPaths()([]string) {
     val, err := m.GetBackingStore().Get("defenderAttackSurfaceReductionExcludedPaths")
     if err != nil {
@@ -209,6 +227,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderAttackSurfaceReduc
     return nil
 }
 // GetDefenderExploitProtectionXml gets the defenderExploitProtectionXml property value. Xml content containing information regarding exploit protection details.
+// returns a []byte when successful
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderExploitProtectionXml()([]byte) {
     val, err := m.GetBackingStore().Get("defenderExploitProtectionXml")
     if err != nil {
@@ -220,6 +239,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderExploitProtectionX
     return nil
 }
 // GetDefenderExploitProtectionXmlFileName gets the defenderExploitProtectionXmlFileName property value. Name of the file from which DefenderExploitProtectionXml was obtained.
+// returns a *string when successful
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderExploitProtectionXmlFileName()(*string) {
     val, err := m.GetBackingStore().Get("defenderExploitProtectionXmlFileName")
     if err != nil {
@@ -231,6 +251,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderExploitProtectionX
     return nil
 }
 // GetDefenderGuardedFoldersAllowedAppPaths gets the defenderGuardedFoldersAllowedAppPaths property value. List of paths to exe that are allowed to access protected folders
+// returns a []string when successful
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderGuardedFoldersAllowedAppPaths()([]string) {
     val, err := m.GetBackingStore().Get("defenderGuardedFoldersAllowedAppPaths")
     if err != nil {
@@ -242,6 +263,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderGuardedFoldersAllo
     return nil
 }
 // GetDefenderSecurityCenterBlockExploitProtectionOverride gets the defenderSecurityCenterBlockExploitProtectionOverride property value. Indicates whether or not to block user from overriding Exploit Protection settings.
+// returns a *bool when successful
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterBlockExploitProtectionOverride()(*bool) {
     val, err := m.GetBackingStore().Get("defenderSecurityCenterBlockExploitProtectionOverride")
     if err != nil {
@@ -253,6 +275,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterBloc
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Windows10EndpointProtectionConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["applicationGuardAllowPersistence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -636,6 +659,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetFieldDeserializers()(map[s
     return res
 }
 // GetFirewallBlockStatefulFTP gets the firewallBlockStatefulFTP property value. Blocks stateful FTP connections to the device
+// returns a *bool when successful
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallBlockStatefulFTP()(*bool) {
     val, err := m.GetBackingStore().Get("firewallBlockStatefulFTP")
     if err != nil {
@@ -647,6 +671,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetFirewallBlockStatefulFTP()
     return nil
 }
 // GetFirewallCertificateRevocationListCheckMethod gets the firewallCertificateRevocationListCheckMethod property value. Possible values for firewallCertificateRevocationListCheckMethod
+// returns a *FirewallCertificateRevocationListCheckMethodType when successful
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallCertificateRevocationListCheckMethod()(*FirewallCertificateRevocationListCheckMethodType) {
     val, err := m.GetBackingStore().Get("firewallCertificateRevocationListCheckMethod")
     if err != nil {
@@ -658,6 +683,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetFirewallCertificateRevocat
     return nil
 }
 // GetFirewallIdleTimeoutForSecurityAssociationInSeconds gets the firewallIdleTimeoutForSecurityAssociationInSeconds property value. Configures the idle timeout for security associations, in seconds, from 300 to 3600 inclusive. This is the period after which security associations will expire and be deleted. Valid values 300 to 3600
+// returns a *int32 when successful
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallIdleTimeoutForSecurityAssociationInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("firewallIdleTimeoutForSecurityAssociationInSeconds")
     if err != nil {
@@ -669,6 +695,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetFirewallIdleTimeoutForSecu
     return nil
 }
 // GetFirewallIPSecExemptionsAllowDHCP gets the firewallIPSecExemptionsAllowDHCP property value. Configures IPSec exemptions to allow both IPv4 and IPv6 DHCP traffic
+// returns a *bool when successful
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallIPSecExemptionsAllowDHCP()(*bool) {
     val, err := m.GetBackingStore().Get("firewallIPSecExemptionsAllowDHCP")
     if err != nil {
@@ -680,6 +707,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetFirewallIPSecExemptionsAll
     return nil
 }
 // GetFirewallIPSecExemptionsAllowICMP gets the firewallIPSecExemptionsAllowICMP property value. Configures IPSec exemptions to allow ICMP
+// returns a *bool when successful
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallIPSecExemptionsAllowICMP()(*bool) {
     val, err := m.GetBackingStore().Get("firewallIPSecExemptionsAllowICMP")
     if err != nil {
@@ -691,6 +719,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetFirewallIPSecExemptionsAll
     return nil
 }
 // GetFirewallIPSecExemptionsAllowNeighborDiscovery gets the firewallIPSecExemptionsAllowNeighborDiscovery property value. Configures IPSec exemptions to allow neighbor discovery IPv6 ICMP type-codes
+// returns a *bool when successful
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallIPSecExemptionsAllowNeighborDiscovery()(*bool) {
     val, err := m.GetBackingStore().Get("firewallIPSecExemptionsAllowNeighborDiscovery")
     if err != nil {
@@ -702,6 +731,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetFirewallIPSecExemptionsAll
     return nil
 }
 // GetFirewallIPSecExemptionsAllowRouterDiscovery gets the firewallIPSecExemptionsAllowRouterDiscovery property value. Configures IPSec exemptions to allow router discovery IPv6 ICMP type-codes
+// returns a *bool when successful
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallIPSecExemptionsAllowRouterDiscovery()(*bool) {
     val, err := m.GetBackingStore().Get("firewallIPSecExemptionsAllowRouterDiscovery")
     if err != nil {
@@ -713,6 +743,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetFirewallIPSecExemptionsAll
     return nil
 }
 // GetFirewallMergeKeyingModuleSettings gets the firewallMergeKeyingModuleSettings property value. If an authentication set is not fully supported by a keying module, direct the module to ignore only unsupported authentication suites rather than the entire set
+// returns a *bool when successful
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallMergeKeyingModuleSettings()(*bool) {
     val, err := m.GetBackingStore().Get("firewallMergeKeyingModuleSettings")
     if err != nil {
@@ -724,6 +755,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetFirewallMergeKeyingModuleS
     return nil
 }
 // GetFirewallPacketQueueingMethod gets the firewallPacketQueueingMethod property value. Possible values for firewallPacketQueueingMethod
+// returns a *FirewallPacketQueueingMethodType when successful
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallPacketQueueingMethod()(*FirewallPacketQueueingMethodType) {
     val, err := m.GetBackingStore().Get("firewallPacketQueueingMethod")
     if err != nil {
@@ -735,6 +767,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetFirewallPacketQueueingMeth
     return nil
 }
 // GetFirewallPreSharedKeyEncodingMethod gets the firewallPreSharedKeyEncodingMethod property value. Possible values for firewallPreSharedKeyEncodingMethod
+// returns a *FirewallPreSharedKeyEncodingMethodType when successful
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallPreSharedKeyEncodingMethod()(*FirewallPreSharedKeyEncodingMethodType) {
     val, err := m.GetBackingStore().Get("firewallPreSharedKeyEncodingMethod")
     if err != nil {
@@ -746,6 +779,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetFirewallPreSharedKeyEncodi
     return nil
 }
 // GetFirewallProfileDomain gets the firewallProfileDomain property value. Configures the firewall profile settings for domain networks
+// returns a WindowsFirewallNetworkProfileable when successful
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallProfileDomain()(WindowsFirewallNetworkProfileable) {
     val, err := m.GetBackingStore().Get("firewallProfileDomain")
     if err != nil {
@@ -757,6 +791,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetFirewallProfileDomain()(Wi
     return nil
 }
 // GetFirewallProfilePrivate gets the firewallProfilePrivate property value. Configures the firewall profile settings for private networks
+// returns a WindowsFirewallNetworkProfileable when successful
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallProfilePrivate()(WindowsFirewallNetworkProfileable) {
     val, err := m.GetBackingStore().Get("firewallProfilePrivate")
     if err != nil {
@@ -768,6 +803,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetFirewallProfilePrivate()(W
     return nil
 }
 // GetFirewallProfilePublic gets the firewallProfilePublic property value. Configures the firewall profile settings for public networks
+// returns a WindowsFirewallNetworkProfileable when successful
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallProfilePublic()(WindowsFirewallNetworkProfileable) {
     val, err := m.GetBackingStore().Get("firewallProfilePublic")
     if err != nil {
@@ -779,6 +815,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetFirewallProfilePublic()(Wi
     return nil
 }
 // GetSmartScreenBlockOverrideForFiles gets the smartScreenBlockOverrideForFiles property value. Allows IT Admins to control whether users can can ignore SmartScreen warnings and run malicious files.
+// returns a *bool when successful
 func (m *Windows10EndpointProtectionConfiguration) GetSmartScreenBlockOverrideForFiles()(*bool) {
     val, err := m.GetBackingStore().Get("smartScreenBlockOverrideForFiles")
     if err != nil {
@@ -790,6 +827,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetSmartScreenBlockOverrideFo
     return nil
 }
 // GetSmartScreenEnableInShell gets the smartScreenEnableInShell property value. Allows IT Admins to configure SmartScreen for Windows.
+// returns a *bool when successful
 func (m *Windows10EndpointProtectionConfiguration) GetSmartScreenEnableInShell()(*bool) {
     val, err := m.GetBackingStore().Get("smartScreenEnableInShell")
     if err != nil {
@@ -1282,7 +1320,6 @@ func (m *Windows10EndpointProtectionConfiguration) SetSmartScreenEnableInShell(v
         panic(err)
     }
 }
-// Windows10EndpointProtectionConfigurationable 
 type Windows10EndpointProtectionConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

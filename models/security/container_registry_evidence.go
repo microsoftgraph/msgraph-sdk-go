@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ContainerRegistryEvidence 
 type ContainerRegistryEvidence struct {
     AlertEvidence
 }
-// NewContainerRegistryEvidence instantiates a new containerRegistryEvidence and sets the default values.
+// NewContainerRegistryEvidence instantiates a new ContainerRegistryEvidence and sets the default values.
 func NewContainerRegistryEvidence()(*ContainerRegistryEvidence) {
     m := &ContainerRegistryEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -18,10 +17,12 @@ func NewContainerRegistryEvidence()(*ContainerRegistryEvidence) {
     return m
 }
 // CreateContainerRegistryEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateContainerRegistryEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewContainerRegistryEvidence(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ContainerRegistryEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["registry"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *ContainerRegistryEvidence) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetRegistry gets the registry property value. The registry URI.
+// returns a *string when successful
 func (m *ContainerRegistryEvidence) GetRegistry()(*string) {
     val, err := m.GetBackingStore().Get("registry")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *ContainerRegistryEvidence) SetRegistry(value *string)() {
         panic(err)
     }
 }
-// ContainerRegistryEvidenceable 
 type ContainerRegistryEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

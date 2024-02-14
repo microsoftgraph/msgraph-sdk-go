@@ -8,7 +8,7 @@ import (
 type RotateBitLockerKeysDeviceActionResult struct {
     DeviceActionResult
 }
-// NewRotateBitLockerKeysDeviceActionResult instantiates a new rotateBitLockerKeysDeviceActionResult and sets the default values.
+// NewRotateBitLockerKeysDeviceActionResult instantiates a new RotateBitLockerKeysDeviceActionResult and sets the default values.
 func NewRotateBitLockerKeysDeviceActionResult()(*RotateBitLockerKeysDeviceActionResult) {
     m := &RotateBitLockerKeysDeviceActionResult{
         DeviceActionResult: *NewDeviceActionResult(),
@@ -16,10 +16,12 @@ func NewRotateBitLockerKeysDeviceActionResult()(*RotateBitLockerKeysDeviceAction
     return m
 }
 // CreateRotateBitLockerKeysDeviceActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRotateBitLockerKeysDeviceActionResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRotateBitLockerKeysDeviceActionResult(), nil
 }
 // GetErrorCode gets the errorCode property value. RotateBitLockerKeys action error code
+// returns a *int32 when successful
 func (m *RotateBitLockerKeysDeviceActionResult) GetErrorCode()(*int32) {
     val, err := m.GetBackingStore().Get("errorCode")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *RotateBitLockerKeysDeviceActionResult) GetErrorCode()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RotateBitLockerKeysDeviceActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceActionResult.GetFieldDeserializers()
     res["errorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,7 +69,6 @@ func (m *RotateBitLockerKeysDeviceActionResult) SetErrorCode(value *int32)() {
         panic(err)
     }
 }
-// RotateBitLockerKeysDeviceActionResultable 
 type RotateBitLockerKeysDeviceActionResultable interface {
     DeviceActionResultable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

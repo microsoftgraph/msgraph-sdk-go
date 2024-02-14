@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookWorksheet 
 type WorkbookWorksheet struct {
     Entity
 }
-// NewWorkbookWorksheet instantiates a new workbookWorksheet and sets the default values.
+// NewWorkbookWorksheet instantiates a new WorkbookWorksheet and sets the default values.
 func NewWorkbookWorksheet()(*WorkbookWorksheet) {
     m := &WorkbookWorksheet{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewWorkbookWorksheet()(*WorkbookWorksheet) {
     return m
 }
 // CreateWorkbookWorksheetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookWorksheetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookWorksheet(), nil
 }
 // GetCharts gets the charts property value. Returns collection of charts that are part of the worksheet. Read-only.
+// returns a []WorkbookChartable when successful
 func (m *WorkbookWorksheet) GetCharts()([]WorkbookChartable) {
     val, err := m.GetBackingStore().Get("charts")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *WorkbookWorksheet) GetCharts()([]WorkbookChartable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookWorksheet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["charts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -140,6 +142,7 @@ func (m *WorkbookWorksheet) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetName gets the name property value. The display name of the worksheet.
+// returns a *string when successful
 func (m *WorkbookWorksheet) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -151,6 +154,7 @@ func (m *WorkbookWorksheet) GetName()(*string) {
     return nil
 }
 // GetNames gets the names property value. Returns collection of names that are associated with the worksheet. Read-only.
+// returns a []WorkbookNamedItemable when successful
 func (m *WorkbookWorksheet) GetNames()([]WorkbookNamedItemable) {
     val, err := m.GetBackingStore().Get("names")
     if err != nil {
@@ -162,6 +166,7 @@ func (m *WorkbookWorksheet) GetNames()([]WorkbookNamedItemable) {
     return nil
 }
 // GetPivotTables gets the pivotTables property value. Collection of PivotTables that are part of the worksheet.
+// returns a []WorkbookPivotTableable when successful
 func (m *WorkbookWorksheet) GetPivotTables()([]WorkbookPivotTableable) {
     val, err := m.GetBackingStore().Get("pivotTables")
     if err != nil {
@@ -173,6 +178,7 @@ func (m *WorkbookWorksheet) GetPivotTables()([]WorkbookPivotTableable) {
     return nil
 }
 // GetPosition gets the position property value. The zero-based position of the worksheet within the workbook.
+// returns a *int32 when successful
 func (m *WorkbookWorksheet) GetPosition()(*int32) {
     val, err := m.GetBackingStore().Get("position")
     if err != nil {
@@ -184,6 +190,7 @@ func (m *WorkbookWorksheet) GetPosition()(*int32) {
     return nil
 }
 // GetProtection gets the protection property value. Returns sheet protection object for a worksheet. Read-only.
+// returns a WorkbookWorksheetProtectionable when successful
 func (m *WorkbookWorksheet) GetProtection()(WorkbookWorksheetProtectionable) {
     val, err := m.GetBackingStore().Get("protection")
     if err != nil {
@@ -195,6 +202,7 @@ func (m *WorkbookWorksheet) GetProtection()(WorkbookWorksheetProtectionable) {
     return nil
 }
 // GetTables gets the tables property value. Collection of tables that are part of the worksheet. Read-only.
+// returns a []WorkbookTableable when successful
 func (m *WorkbookWorksheet) GetTables()([]WorkbookTableable) {
     val, err := m.GetBackingStore().Get("tables")
     if err != nil {
@@ -206,6 +214,7 @@ func (m *WorkbookWorksheet) GetTables()([]WorkbookTableable) {
     return nil
 }
 // GetVisibility gets the visibility property value. The Visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
+// returns a *string when successful
 func (m *WorkbookWorksheet) GetVisibility()(*string) {
     val, err := m.GetBackingStore().Get("visibility")
     if err != nil {
@@ -352,7 +361,6 @@ func (m *WorkbookWorksheet) SetVisibility(value *string)() {
         panic(err)
     }
 }
-// WorkbookWorksheetable 
 type WorkbookWorksheetable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

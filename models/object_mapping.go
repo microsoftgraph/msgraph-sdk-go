@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ObjectMapping 
 type ObjectMapping struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewObjectMapping instantiates a new objectMapping and sets the default values.
+// NewObjectMapping instantiates a new ObjectMapping and sets the default values.
 func NewObjectMapping()(*ObjectMapping) {
     m := &ObjectMapping{
     }
@@ -19,10 +18,12 @@ func NewObjectMapping()(*ObjectMapping) {
     return m
 }
 // CreateObjectMappingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateObjectMappingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewObjectMapping(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ObjectMapping) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *ObjectMapping) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAttributeMappings gets the attributeMappings property value. Attribute mappings define which attributes to map from the source object into the target object and how they should flow. A number of functions are available to support the transformation of the original source values.
+// returns a []AttributeMappingable when successful
 func (m *ObjectMapping) GetAttributeMappings()([]AttributeMappingable) {
     val, err := m.GetBackingStore().Get("attributeMappings")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *ObjectMapping) GetAttributeMappings()([]AttributeMappingable) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ObjectMapping) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetEnabled gets the enabled property value. When true, this object mapping will be processed during synchronization. When false, this object mapping will be skipped.
+// returns a *bool when successful
 func (m *ObjectMapping) GetEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("enabled")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *ObjectMapping) GetEnabled()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["attributeMappings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -168,6 +173,7 @@ func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetFlowTypes gets the flowTypes property value. The flowTypes property
+// returns a *ObjectFlowTypes when successful
 func (m *ObjectMapping) GetFlowTypes()(*ObjectFlowTypes) {
     val, err := m.GetBackingStore().Get("flowTypes")
     if err != nil {
@@ -179,6 +185,7 @@ func (m *ObjectMapping) GetFlowTypes()(*ObjectFlowTypes) {
     return nil
 }
 // GetMetadata gets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+// returns a []ObjectMappingMetadataEntryable when successful
 func (m *ObjectMapping) GetMetadata()([]ObjectMappingMetadataEntryable) {
     val, err := m.GetBackingStore().Get("metadata")
     if err != nil {
@@ -190,6 +197,7 @@ func (m *ObjectMapping) GetMetadata()([]ObjectMappingMetadataEntryable) {
     return nil
 }
 // GetName gets the name property value. Human-friendly name of the object mapping.
+// returns a *string when successful
 func (m *ObjectMapping) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -201,6 +209,7 @@ func (m *ObjectMapping) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ObjectMapping) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -212,6 +221,7 @@ func (m *ObjectMapping) GetOdataType()(*string) {
     return nil
 }
 // GetScope gets the scope property value. Defines a filter to be used when deciding whether a given object should be provisioned. For example, you might want to only provision users that are located in the US.
+// returns a Filterable when successful
 func (m *ObjectMapping) GetScope()(Filterable) {
     val, err := m.GetBackingStore().Get("scope")
     if err != nil {
@@ -223,6 +233,7 @@ func (m *ObjectMapping) GetScope()(Filterable) {
     return nil
 }
 // GetSourceObjectName gets the sourceObjectName property value. Name of the object in the source directory. Must match the object name from the source directory definition.
+// returns a *string when successful
 func (m *ObjectMapping) GetSourceObjectName()(*string) {
     val, err := m.GetBackingStore().Get("sourceObjectName")
     if err != nil {
@@ -234,6 +245,7 @@ func (m *ObjectMapping) GetSourceObjectName()(*string) {
     return nil
 }
 // GetTargetObjectName gets the targetObjectName property value. Name of the object in target directory. Must match the object name from the target directory definition.
+// returns a *string when successful
 func (m *ObjectMapping) GetTargetObjectName()(*string) {
     val, err := m.GetBackingStore().Get("targetObjectName")
     if err != nil {
@@ -395,7 +407,6 @@ func (m *ObjectMapping) SetTargetObjectName(value *string)() {
         panic(err)
     }
 }
-// ObjectMappingable 
 type ObjectMappingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

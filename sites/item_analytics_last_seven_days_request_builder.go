@@ -27,28 +27,29 @@ type ItemAnalyticsLastSevenDaysRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemAnalyticsLastSevenDaysRequestBuilderGetQueryParameters
 }
-// NewItemAnalyticsLastSevenDaysRequestBuilderInternal instantiates a new LastSevenDaysRequestBuilder and sets the default values.
+// NewItemAnalyticsLastSevenDaysRequestBuilderInternal instantiates a new ItemAnalyticsLastSevenDaysRequestBuilder and sets the default values.
 func NewItemAnalyticsLastSevenDaysRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAnalyticsLastSevenDaysRequestBuilder) {
     m := &ItemAnalyticsLastSevenDaysRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/analytics/lastSevenDays{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/analytics/lastSevenDays{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemAnalyticsLastSevenDaysRequestBuilder instantiates a new LastSevenDaysRequestBuilder and sets the default values.
+// NewItemAnalyticsLastSevenDaysRequestBuilder instantiates a new ItemAnalyticsLastSevenDaysRequestBuilder and sets the default values.
 func NewItemAnalyticsLastSevenDaysRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAnalyticsLastSevenDaysRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemAnalyticsLastSevenDaysRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get lastSevenDays from sites
+// returns a ItemActivityStatable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAnalyticsLastSevenDaysRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAnalyticsLastSevenDaysRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemActivityStatable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateItemActivityStatFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *ItemAnalyticsLastSevenDaysRequestBuilder) Get(ctx context.Context, requ
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemActivityStatable), nil
 }
 // ToGetRequestInformation get lastSevenDays from sites
+// returns a *RequestInformation when successful
 func (m *ItemAnalyticsLastSevenDaysRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAnalyticsLastSevenDaysRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *ItemAnalyticsLastSevenDaysRequestBuilder) ToGetRequestInformation(ctx c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemAnalyticsLastSevenDaysRequestBuilder when successful
 func (m *ItemAnalyticsLastSevenDaysRequestBuilder) WithUrl(rawUrl string)(*ItemAnalyticsLastSevenDaysRequestBuilder) {
     return NewItemAnalyticsLastSevenDaysRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

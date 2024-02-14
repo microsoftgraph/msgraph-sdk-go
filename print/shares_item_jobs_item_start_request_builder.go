@@ -18,20 +18,22 @@ type SharesItemJobsItemStartRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewSharesItemJobsItemStartRequestBuilderInternal instantiates a new StartRequestBuilder and sets the default values.
+// NewSharesItemJobsItemStartRequestBuilderInternal instantiates a new SharesItemJobsItemStartRequestBuilder and sets the default values.
 func NewSharesItemJobsItemStartRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesItemJobsItemStartRequestBuilder) {
     m := &SharesItemJobsItemStartRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/jobs/{printJob%2Did}/start", pathParameters),
     }
     return m
 }
-// NewSharesItemJobsItemStartRequestBuilder instantiates a new StartRequestBuilder and sets the default values.
+// NewSharesItemJobsItemStartRequestBuilder instantiates a new SharesItemJobsItemStartRequestBuilder and sets the default values.
 func NewSharesItemJobsItemStartRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesItemJobsItemStartRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSharesItemJobsItemStartRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post submits the print job to the associated printer or printerShare. It will be printed after any existing pending jobs are completed, aborted, or canceled.
+// returns a PrintJobStatusable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/printjob-start?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *SharesItemJobsItemStartRequestBuilder) Post(ctx context.Context, reques
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreatePrintJobStatusFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,7 @@ func (m *SharesItemJobsItemStartRequestBuilder) Post(ctx context.Context, reques
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintJobStatusable), nil
 }
 // ToPostRequestInformation submits the print job to the associated printer or printerShare. It will be printed after any existing pending jobs are completed, aborted, or canceled.
+// returns a *RequestInformation when successful
 func (m *SharesItemJobsItemStartRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *SharesItemJobsItemStartRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +66,7 @@ func (m *SharesItemJobsItemStartRequestBuilder) ToPostRequestInformation(ctx con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *SharesItemJobsItemStartRequestBuilder when successful
 func (m *SharesItemJobsItemStartRequestBuilder) WithUrl(rawUrl string)(*SharesItemJobsItemStartRequestBuilder) {
     return NewSharesItemJobsItemStartRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -11,12 +11,19 @@ import (
 type ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilderGetQueryParameters the content stream, if the item represents a file.
+type ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilderGetQueryParameters struct {
+    // Format of the content
+    Format *string `uriparametername:"%24format"`
+}
 // ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilderGetQueryParameters
 }
 // ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilderPutRequestConfiguration struct {
@@ -25,20 +32,22 @@ type ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilderPutRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilderInternal instantiates a new ContentRequestBuilder and sets the default values.
+// NewItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilderInternal instantiates a new ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilder) {
     m := &ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/primaryChannel/filesFolder/content", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/primaryChannel/filesFolder/content{?%24format*}", pathParameters),
     }
     return m
 }
-// NewItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilder instantiates a new ContentRequestBuilder and sets the default values.
+// NewItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilder instantiates a new ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilder and sets the default values.
 func NewItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the content stream, if the item represents a file.
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
@@ -48,8 +57,7 @@ func (m *ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilder) Get(
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -61,14 +69,15 @@ func (m *ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilder) Get(
     return res.([]byte), nil
 }
 // Put the content stream, if the item represents a file.
+// returns a DriveItemable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilderPutRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateDriveItemFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -80,9 +89,13 @@ func (m *ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilder) Put(
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DriveItemable), nil
 }
 // ToGetRequestInformation the content stream, if the item represents a file.
+// returns a *RequestInformation when successful
 func (m *ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
@@ -90,8 +103,9 @@ func (m *ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilder) ToGe
     return requestInfo, nil
 }
 // ToPutRequestInformation the content stream, if the item represents a file.
+// returns a *RequestInformation when successful
 func (m *ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/primaryChannel/filesFolder/content", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -101,6 +115,7 @@ func (m *ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilder) ToPu
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilder when successful
 func (m *ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilder) WithUrl(rawUrl string)(*ItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilder) {
     return NewItemJoinedTeamsItemPrimaryChannelFilesFolderContentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

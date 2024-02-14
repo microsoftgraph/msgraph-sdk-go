@@ -5,11 +5,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// WorkflowTemplate 
 type WorkflowTemplate struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewWorkflowTemplate instantiates a new workflowTemplate and sets the default values.
+// NewWorkflowTemplate instantiates a new WorkflowTemplate and sets the default values.
 func NewWorkflowTemplate()(*WorkflowTemplate) {
     m := &WorkflowTemplate{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -17,10 +16,12 @@ func NewWorkflowTemplate()(*WorkflowTemplate) {
     return m
 }
 // CreateWorkflowTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkflowTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkflowTemplate(), nil
 }
 // GetCategory gets the category property value. The category property
+// returns a *LifecycleWorkflowCategory when successful
 func (m *WorkflowTemplate) GetCategory()(*LifecycleWorkflowCategory) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *WorkflowTemplate) GetCategory()(*LifecycleWorkflowCategory) {
     return nil
 }
 // GetDescription gets the description property value. The description of the workflowTemplate.
+// returns a *string when successful
 func (m *WorkflowTemplate) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *WorkflowTemplate) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the workflowTemplate.Supports $filter(eq, ne) and $orderby.
+// returns a *string when successful
 func (m *WorkflowTemplate) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *WorkflowTemplate) GetDisplayName()(*string) {
     return nil
 }
 // GetExecutionConditions gets the executionConditions property value. Conditions describing when to execute the workflow and the criteria to identify in-scope subject set.
+// returns a WorkflowExecutionConditionsable when successful
 func (m *WorkflowTemplate) GetExecutionConditions()(WorkflowExecutionConditionsable) {
     val, err := m.GetBackingStore().Get("executionConditions")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *WorkflowTemplate) GetExecutionConditions()(WorkflowExecutionConditionsa
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkflowTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -126,6 +131,7 @@ func (m *WorkflowTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetTasks gets the tasks property value. Represents the configured tasks to execute and their execution sequence within a workflow. This relationship is expanded by default.
+// returns a []Taskable when successful
 func (m *WorkflowTemplate) GetTasks()([]Taskable) {
     val, err := m.GetBackingStore().Get("tasks")
     if err != nil {
@@ -216,7 +222,6 @@ func (m *WorkflowTemplate) SetTasks(value []Taskable)() {
         panic(err)
     }
 }
-// WorkflowTemplateable 
 type WorkflowTemplateable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

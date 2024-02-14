@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LearningContent 
 type LearningContent struct {
     Entity
 }
-// NewLearningContent instantiates a new learningContent and sets the default values.
+// NewLearningContent instantiates a new LearningContent and sets the default values.
 func NewLearningContent()(*LearningContent) {
     m := &LearningContent{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewLearningContent()(*LearningContent) {
     return m
 }
 // CreateLearningContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateLearningContentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLearningContent(), nil
 }
 // GetAdditionalTags gets the additionalTags property value. Keywords, topics, and other tags associated with the learning content. Optional.
+// returns a []string when successful
 func (m *LearningContent) GetAdditionalTags()([]string) {
     val, err := m.GetBackingStore().Get("additionalTags")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *LearningContent) GetAdditionalTags()([]string) {
     return nil
 }
 // GetContentWebUrl gets the contentWebUrl property value. The content web URL for the learning content. Required.
+// returns a *string when successful
 func (m *LearningContent) GetContentWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("contentWebUrl")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *LearningContent) GetContentWebUrl()(*string) {
     return nil
 }
 // GetContributors gets the contributors property value. The authors, creators, or contributors of the learning content. Optional.
+// returns a []string when successful
 func (m *LearningContent) GetContributors()([]string) {
     val, err := m.GetBackingStore().Get("contributors")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *LearningContent) GetContributors()([]string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the learning content was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
+// returns a *Time when successful
 func (m *LearningContent) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *LearningContent) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetDescription gets the description property value. The description or summary for the learning content. Optional.
+// returns a *string when successful
 func (m *LearningContent) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *LearningContent) GetDescription()(*string) {
     return nil
 }
 // GetDuration gets the duration property value. The duration of the learning content in seconds. The value is represented in ISO 8601 format for durations. Optional.
+// returns a *ISODuration when successful
 func (m *LearningContent) GetDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("duration")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *LearningContent) GetDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // GetExternalId gets the externalId property value. Unique external content ID for the learning content. Required.
+// returns a *string when successful
 func (m *LearningContent) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *LearningContent) GetExternalId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *LearningContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["additionalTags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -301,6 +309,7 @@ func (m *LearningContent) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetFormat gets the format property value. The format of the learning content. For example, Course, Video, Book, Book Summary, Audiobook Summary. Optional.
+// returns a *string when successful
 func (m *LearningContent) GetFormat()(*string) {
     val, err := m.GetBackingStore().Get("format")
     if err != nil {
@@ -312,6 +321,7 @@ func (m *LearningContent) GetFormat()(*string) {
     return nil
 }
 // GetIsActive gets the isActive property value. Indicates whether the content is active or not. Inactive content doesn't show up in the UI. The default value is true. Optional.
+// returns a *bool when successful
 func (m *LearningContent) GetIsActive()(*bool) {
     val, err := m.GetBackingStore().Get("isActive")
     if err != nil {
@@ -323,6 +333,7 @@ func (m *LearningContent) GetIsActive()(*bool) {
     return nil
 }
 // GetIsPremium gets the isPremium property value. Indicates whether the learning content requires the user to sign-in on the learning provider platform or not. The default value is false. Optional.
+// returns a *bool when successful
 func (m *LearningContent) GetIsPremium()(*bool) {
     val, err := m.GetBackingStore().Get("isPremium")
     if err != nil {
@@ -334,6 +345,7 @@ func (m *LearningContent) GetIsPremium()(*bool) {
     return nil
 }
 // GetIsSearchable gets the isSearchable property value. Indicates whether the learning content is searchable or not. The default value is true. Optional.
+// returns a *bool when successful
 func (m *LearningContent) GetIsSearchable()(*bool) {
     val, err := m.GetBackingStore().Get("isSearchable")
     if err != nil {
@@ -345,6 +357,7 @@ func (m *LearningContent) GetIsSearchable()(*bool) {
     return nil
 }
 // GetLanguageTag gets the languageTag property value. The language of the learning content, for example, en-us or fr-fr. Required.
+// returns a *string when successful
 func (m *LearningContent) GetLanguageTag()(*string) {
     val, err := m.GetBackingStore().Get("languageTag")
     if err != nil {
@@ -356,6 +369,7 @@ func (m *LearningContent) GetLanguageTag()(*string) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the learning content was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
+// returns a *Time when successful
 func (m *LearningContent) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -367,6 +381,7 @@ func (m *LearningContent) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetNumberOfPages gets the numberOfPages property value. The number of pages of the learning content, for example, 9. Optional.
+// returns a *int32 when successful
 func (m *LearningContent) GetNumberOfPages()(*int32) {
     val, err := m.GetBackingStore().Get("numberOfPages")
     if err != nil {
@@ -378,6 +393,7 @@ func (m *LearningContent) GetNumberOfPages()(*int32) {
     return nil
 }
 // GetSkillTags gets the skillTags property value. The skills tags associated with the learning content. Optional.
+// returns a []string when successful
 func (m *LearningContent) GetSkillTags()([]string) {
     val, err := m.GetBackingStore().Get("skillTags")
     if err != nil {
@@ -389,6 +405,7 @@ func (m *LearningContent) GetSkillTags()([]string) {
     return nil
 }
 // GetSourceName gets the sourceName property value. The source name of the learning content, such as LinkedIn Learning or Coursera. Optional.
+// returns a *string when successful
 func (m *LearningContent) GetSourceName()(*string) {
     val, err := m.GetBackingStore().Get("sourceName")
     if err != nil {
@@ -400,6 +417,7 @@ func (m *LearningContent) GetSourceName()(*string) {
     return nil
 }
 // GetThumbnailWebUrl gets the thumbnailWebUrl property value. The URL of learning content thumbnail image. Optional.
+// returns a *string when successful
 func (m *LearningContent) GetThumbnailWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("thumbnailWebUrl")
     if err != nil {
@@ -411,6 +429,7 @@ func (m *LearningContent) GetThumbnailWebUrl()(*string) {
     return nil
 }
 // GetTitle gets the title property value. The title of the learning content. Required.
+// returns a *string when successful
 func (m *LearningContent) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -663,7 +682,6 @@ func (m *LearningContent) SetTitle(value *string)() {
         panic(err)
     }
 }
-// LearningContentable 
 type LearningContentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// Audio 
 type Audio struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAudio instantiates a new audio and sets the default values.
+// NewAudio instantiates a new Audio and sets the default values.
 func NewAudio()(*Audio) {
     m := &Audio{
     }
@@ -19,10 +18,12 @@ func NewAudio()(*Audio) {
     return m
 }
 // CreateAudioFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAudioFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAudio(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Audio) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *Audio) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAlbum gets the album property value. The title of the album for this audio file.
+// returns a *string when successful
 func (m *Audio) GetAlbum()(*string) {
     val, err := m.GetBackingStore().Get("album")
     if err != nil {
@@ -46,6 +48,7 @@ func (m *Audio) GetAlbum()(*string) {
     return nil
 }
 // GetAlbumArtist gets the albumArtist property value. The artist named on the album for the audio file.
+// returns a *string when successful
 func (m *Audio) GetAlbumArtist()(*string) {
     val, err := m.GetBackingStore().Get("albumArtist")
     if err != nil {
@@ -57,6 +60,7 @@ func (m *Audio) GetAlbumArtist()(*string) {
     return nil
 }
 // GetArtist gets the artist property value. The performing artist for the audio file.
+// returns a *string when successful
 func (m *Audio) GetArtist()(*string) {
     val, err := m.GetBackingStore().Get("artist")
     if err != nil {
@@ -68,10 +72,12 @@ func (m *Audio) GetArtist()(*string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *Audio) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBitrate gets the bitrate property value. Bitrate expressed in kbps.
+// returns a *int64 when successful
 func (m *Audio) GetBitrate()(*int64) {
     val, err := m.GetBackingStore().Get("bitrate")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *Audio) GetBitrate()(*int64) {
     return nil
 }
 // GetComposers gets the composers property value. The name of the composer of the audio file.
+// returns a *string when successful
 func (m *Audio) GetComposers()(*string) {
     val, err := m.GetBackingStore().Get("composers")
     if err != nil {
@@ -94,6 +101,7 @@ func (m *Audio) GetComposers()(*string) {
     return nil
 }
 // GetCopyright gets the copyright property value. Copyright information for the audio file.
+// returns a *string when successful
 func (m *Audio) GetCopyright()(*string) {
     val, err := m.GetBackingStore().Get("copyright")
     if err != nil {
@@ -105,6 +113,7 @@ func (m *Audio) GetCopyright()(*string) {
     return nil
 }
 // GetDisc gets the disc property value. The number of the disc this audio file came from.
+// returns a *int32 when successful
 func (m *Audio) GetDisc()(*int32) {
     val, err := m.GetBackingStore().Get("disc")
     if err != nil {
@@ -116,6 +125,7 @@ func (m *Audio) GetDisc()(*int32) {
     return nil
 }
 // GetDiscCount gets the discCount property value. The total number of discs in this album.
+// returns a *int32 when successful
 func (m *Audio) GetDiscCount()(*int32) {
     val, err := m.GetBackingStore().Get("discCount")
     if err != nil {
@@ -127,6 +137,7 @@ func (m *Audio) GetDiscCount()(*int32) {
     return nil
 }
 // GetDuration gets the duration property value. Duration of the audio file, expressed in milliseconds
+// returns a *int64 when successful
 func (m *Audio) GetDuration()(*int64) {
     val, err := m.GetBackingStore().Get("duration")
     if err != nil {
@@ -138,6 +149,7 @@ func (m *Audio) GetDuration()(*int64) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Audio) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["album"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -313,6 +325,7 @@ func (m *Audio) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     return res
 }
 // GetGenre gets the genre property value. The genre of this audio file.
+// returns a *string when successful
 func (m *Audio) GetGenre()(*string) {
     val, err := m.GetBackingStore().Get("genre")
     if err != nil {
@@ -324,6 +337,7 @@ func (m *Audio) GetGenre()(*string) {
     return nil
 }
 // GetHasDrm gets the hasDrm property value. Indicates if the file is protected with digital rights management.
+// returns a *bool when successful
 func (m *Audio) GetHasDrm()(*bool) {
     val, err := m.GetBackingStore().Get("hasDrm")
     if err != nil {
@@ -335,6 +349,7 @@ func (m *Audio) GetHasDrm()(*bool) {
     return nil
 }
 // GetIsVariableBitrate gets the isVariableBitrate property value. Indicates if the file is encoded with a variable bitrate.
+// returns a *bool when successful
 func (m *Audio) GetIsVariableBitrate()(*bool) {
     val, err := m.GetBackingStore().Get("isVariableBitrate")
     if err != nil {
@@ -346,6 +361,7 @@ func (m *Audio) GetIsVariableBitrate()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *Audio) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -357,6 +373,7 @@ func (m *Audio) GetOdataType()(*string) {
     return nil
 }
 // GetTitle gets the title property value. The title of the audio file.
+// returns a *string when successful
 func (m *Audio) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -368,6 +385,7 @@ func (m *Audio) GetTitle()(*string) {
     return nil
 }
 // GetTrack gets the track property value. The number of the track on the original disc for this audio file.
+// returns a *int32 when successful
 func (m *Audio) GetTrack()(*int32) {
     val, err := m.GetBackingStore().Get("track")
     if err != nil {
@@ -379,6 +397,7 @@ func (m *Audio) GetTrack()(*int32) {
     return nil
 }
 // GetTrackCount gets the trackCount property value. The total number of tracks on the original disc for this audio file.
+// returns a *int32 when successful
 func (m *Audio) GetTrackCount()(*int32) {
     val, err := m.GetBackingStore().Get("trackCount")
     if err != nil {
@@ -390,6 +409,7 @@ func (m *Audio) GetTrackCount()(*int32) {
     return nil
 }
 // GetYear gets the year property value. The year the audio file was recorded.
+// returns a *int32 when successful
 func (m *Audio) GetYear()(*int32) {
     val, err := m.GetBackingStore().Get("year")
     if err != nil {
@@ -642,7 +662,6 @@ func (m *Audio) SetYear(value *int32)() {
         panic(err)
     }
 }
-// Audioable 
 type Audioable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

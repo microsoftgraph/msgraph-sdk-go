@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IpNamedLocation 
 type IpNamedLocation struct {
     NamedLocation
 }
-// NewIpNamedLocation instantiates a new ipNamedLocation and sets the default values.
+// NewIpNamedLocation instantiates a new IpNamedLocation and sets the default values.
 func NewIpNamedLocation()(*IpNamedLocation) {
     m := &IpNamedLocation{
         NamedLocation: *NewNamedLocation(),
@@ -16,10 +15,12 @@ func NewIpNamedLocation()(*IpNamedLocation) {
     return m
 }
 // CreateIpNamedLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIpNamedLocationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIpNamedLocation(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IpNamedLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.NamedLocation.GetFieldDeserializers()
     res["ipRanges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -51,6 +52,7 @@ func (m *IpNamedLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetIpRanges gets the ipRanges property value. List of IP address ranges in IPv4 CIDR format (for example, 1.2.3.4/32) or any allowable IPv6 format from IETF RFC5969. Required.
+// returns a []IpRangeable when successful
 func (m *IpNamedLocation) GetIpRanges()([]IpRangeable) {
     val, err := m.GetBackingStore().Get("ipRanges")
     if err != nil {
@@ -62,6 +64,7 @@ func (m *IpNamedLocation) GetIpRanges()([]IpRangeable) {
     return nil
 }
 // GetIsTrusted gets the isTrusted property value. true if this location is explicitly trusted. Optional. Default value is false.
+// returns a *bool when successful
 func (m *IpNamedLocation) GetIsTrusted()(*bool) {
     val, err := m.GetBackingStore().Get("isTrusted")
     if err != nil {
@@ -112,7 +115,6 @@ func (m *IpNamedLocation) SetIsTrusted(value *bool)() {
         panic(err)
     }
 }
-// IpNamedLocationable 
 type IpNamedLocationable interface {
     NamedLocationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

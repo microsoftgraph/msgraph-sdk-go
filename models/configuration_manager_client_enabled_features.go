@@ -10,7 +10,7 @@ type ConfigurationManagerClientEnabledFeatures struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewConfigurationManagerClientEnabledFeatures instantiates a new configurationManagerClientEnabledFeatures and sets the default values.
+// NewConfigurationManagerClientEnabledFeatures instantiates a new ConfigurationManagerClientEnabledFeatures and sets the default values.
 func NewConfigurationManagerClientEnabledFeatures()(*ConfigurationManagerClientEnabledFeatures) {
     m := &ConfigurationManagerClientEnabledFeatures{
     }
@@ -19,10 +19,12 @@ func NewConfigurationManagerClientEnabledFeatures()(*ConfigurationManagerClientE
     return m
 }
 // CreateConfigurationManagerClientEnabledFeaturesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConfigurationManagerClientEnabledFeaturesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConfigurationManagerClientEnabledFeatures(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ConfigurationManagerClientEnabledFeatures) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetAdditionalData()(map[stri
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ConfigurationManagerClientEnabledFeatures) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCompliancePolicy gets the compliancePolicy property value. Whether compliance policy is managed by Intune
+// returns a *bool when successful
 func (m *ConfigurationManagerClientEnabledFeatures) GetCompliancePolicy()(*bool) {
     val, err := m.GetBackingStore().Get("compliancePolicy")
     if err != nil {
@@ -50,6 +54,7 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetCompliancePolicy()(*bool)
     return nil
 }
 // GetDeviceConfiguration gets the deviceConfiguration property value. Whether device configuration is managed by Intune
+// returns a *bool when successful
 func (m *ConfigurationManagerClientEnabledFeatures) GetDeviceConfiguration()(*bool) {
     val, err := m.GetBackingStore().Get("deviceConfiguration")
     if err != nil {
@@ -61,6 +66,7 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetDeviceConfiguration()(*bo
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConfigurationManagerClientEnabledFeatures) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["compliancePolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -136,6 +142,7 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetFieldDeserializers()(map[
     return res
 }
 // GetInventory gets the inventory property value. Whether inventory is managed by Intune
+// returns a *bool when successful
 func (m *ConfigurationManagerClientEnabledFeatures) GetInventory()(*bool) {
     val, err := m.GetBackingStore().Get("inventory")
     if err != nil {
@@ -147,6 +154,7 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetInventory()(*bool) {
     return nil
 }
 // GetModernApps gets the modernApps property value. Whether modern application is managed by Intune
+// returns a *bool when successful
 func (m *ConfigurationManagerClientEnabledFeatures) GetModernApps()(*bool) {
     val, err := m.GetBackingStore().Get("modernApps")
     if err != nil {
@@ -158,6 +166,7 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetModernApps()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ConfigurationManagerClientEnabledFeatures) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -169,6 +178,7 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetOdataType()(*string) {
     return nil
 }
 // GetResourceAccess gets the resourceAccess property value. Whether resource access is managed by Intune
+// returns a *bool when successful
 func (m *ConfigurationManagerClientEnabledFeatures) GetResourceAccess()(*bool) {
     val, err := m.GetBackingStore().Get("resourceAccess")
     if err != nil {
@@ -180,6 +190,7 @@ func (m *ConfigurationManagerClientEnabledFeatures) GetResourceAccess()(*bool) {
     return nil
 }
 // GetWindowsUpdateForBusiness gets the windowsUpdateForBusiness property value. Whether Windows Update for Business is managed by Intune
+// returns a *bool when successful
 func (m *ConfigurationManagerClientEnabledFeatures) GetWindowsUpdateForBusiness()(*bool) {
     val, err := m.GetBackingStore().Get("windowsUpdateForBusiness")
     if err != nil {
@@ -302,7 +313,6 @@ func (m *ConfigurationManagerClientEnabledFeatures) SetWindowsUpdateForBusiness(
         panic(err)
     }
 }
-// ConfigurationManagerClientEnabledFeaturesable 
 type ConfigurationManagerClientEnabledFeaturesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

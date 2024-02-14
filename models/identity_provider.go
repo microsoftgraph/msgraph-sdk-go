@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityProvider 
 type IdentityProvider struct {
     Entity
 }
-// NewIdentityProvider instantiates a new identityProvider and sets the default values.
+// NewIdentityProvider instantiates a new IdentityProvider and sets the default values.
 func NewIdentityProvider()(*IdentityProvider) {
     m := &IdentityProvider{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewIdentityProvider()(*IdentityProvider) {
     return m
 }
 // CreateIdentityProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIdentityProviderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIdentityProvider(), nil
 }
 // GetClientId gets the clientId property value. The client ID for the application. This is the client ID obtained when registering the application with the identity provider. Required. Not nullable.
+// returns a *string when successful
 func (m *IdentityProvider) GetClientId()(*string) {
     val, err := m.GetBackingStore().Get("clientId")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *IdentityProvider) GetClientId()(*string) {
     return nil
 }
 // GetClientSecret gets the clientSecret property value. The client secret for the application. This is the client secret obtained when registering the application with the identity provider. This is write-only. A read operation will return .  Required. Not nullable.
+// returns a *string when successful
 func (m *IdentityProvider) GetClientSecret()(*string) {
     val, err := m.GetBackingStore().Get("clientSecret")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *IdentityProvider) GetClientSecret()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IdentityProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["clientId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -87,6 +90,7 @@ func (m *IdentityProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetName gets the name property value. The display name of the identity provider. Not nullable.
+// returns a *string when successful
 func (m *IdentityProvider) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -98,6 +102,7 @@ func (m *IdentityProvider) GetName()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat, OpenIDConnect. Not nullable.
+// returns a *string when successful
 func (m *IdentityProvider) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -168,7 +173,6 @@ func (m *IdentityProvider) SetTypeEscaped(value *string)() {
         panic(err)
     }
 }
-// IdentityProviderable 
 type IdentityProviderable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

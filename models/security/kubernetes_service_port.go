@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// KubernetesServicePort 
 type KubernetesServicePort struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewKubernetesServicePort instantiates a new kubernetesServicePort and sets the default values.
+// NewKubernetesServicePort instantiates a new KubernetesServicePort and sets the default values.
 func NewKubernetesServicePort()(*KubernetesServicePort) {
     m := &KubernetesServicePort{
     }
@@ -19,10 +18,12 @@ func NewKubernetesServicePort()(*KubernetesServicePort) {
     return m
 }
 // CreateKubernetesServicePortFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateKubernetesServicePortFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewKubernetesServicePort(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *KubernetesServicePort) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *KubernetesServicePort) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAppProtocol gets the appProtocol property value. The application protocol for this port.
+// returns a *string when successful
 func (m *KubernetesServicePort) GetAppProtocol()(*string) {
     val, err := m.GetBackingStore().Get("appProtocol")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *KubernetesServicePort) GetAppProtocol()(*string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *KubernetesServicePort) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *KubernetesServicePort) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["appProtocol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -125,6 +129,7 @@ func (m *KubernetesServicePort) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetName gets the name property value. The name of this port within the service.
+// returns a *string when successful
 func (m *KubernetesServicePort) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -136,6 +141,7 @@ func (m *KubernetesServicePort) GetName()(*string) {
     return nil
 }
 // GetNodePort gets the nodePort property value. The port on each node on which this service is exposed when the type is either NodePort or LoadBalancer.
+// returns a *int32 when successful
 func (m *KubernetesServicePort) GetNodePort()(*int32) {
     val, err := m.GetBackingStore().Get("nodePort")
     if err != nil {
@@ -147,6 +153,7 @@ func (m *KubernetesServicePort) GetNodePort()(*int32) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *KubernetesServicePort) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -158,6 +165,7 @@ func (m *KubernetesServicePort) GetOdataType()(*string) {
     return nil
 }
 // GetPort gets the port property value. The port that this service exposes.
+// returns a *int32 when successful
 func (m *KubernetesServicePort) GetPort()(*int32) {
     val, err := m.GetBackingStore().Get("port")
     if err != nil {
@@ -169,6 +177,7 @@ func (m *KubernetesServicePort) GetPort()(*int32) {
     return nil
 }
 // GetProtocol gets the protocol property value. The protocol name. Possible values are: udp, tcp, sctp, unknownFutureValue.
+// returns a *ContainerPortProtocol when successful
 func (m *KubernetesServicePort) GetProtocol()(*ContainerPortProtocol) {
     val, err := m.GetBackingStore().Get("protocol")
     if err != nil {
@@ -180,6 +189,7 @@ func (m *KubernetesServicePort) GetProtocol()(*ContainerPortProtocol) {
     return nil
 }
 // GetTargetPort gets the targetPort property value. The name or number of the port to access on the pods targeted by the service. The port number must be in the range 1 to 65535. The name must be an IANASVCNAME.
+// returns a *string when successful
 func (m *KubernetesServicePort) GetTargetPort()(*string) {
     val, err := m.GetBackingStore().Get("targetPort")
     if err != nil {
@@ -303,7 +313,6 @@ func (m *KubernetesServicePort) SetTargetPort(value *string)() {
         panic(err)
     }
 }
-// KubernetesServicePortable 
 type KubernetesServicePortable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

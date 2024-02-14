@@ -27,28 +27,29 @@ type ItemGraphRoomRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemGraphRoomRequestBuilderGetQueryParameters
 }
-// NewItemGraphRoomRequestBuilderInternal instantiates a new GraphRoomRequestBuilder and sets the default values.
+// NewItemGraphRoomRequestBuilderInternal instantiates a new ItemGraphRoomRequestBuilder and sets the default values.
 func NewItemGraphRoomRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGraphRoomRequestBuilder) {
     m := &ItemGraphRoomRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/places/{place%2Did}/graph.room{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/places/{place%2Did}/graph.room{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemGraphRoomRequestBuilder instantiates a new GraphRoomRequestBuilder and sets the default values.
+// NewItemGraphRoomRequestBuilder instantiates a new ItemGraphRoomRequestBuilder and sets the default values.
 func NewItemGraphRoomRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGraphRoomRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemGraphRoomRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the item of type microsoft.graph.place as microsoft.graph.room
+// returns a Roomable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGraphRoomRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGraphRoomRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Roomable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateRoomFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *ItemGraphRoomRequestBuilder) Get(ctx context.Context, requestConfigurat
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Roomable), nil
 }
 // ToGetRequestInformation get the item of type microsoft.graph.place as microsoft.graph.room
+// returns a *RequestInformation when successful
 func (m *ItemGraphRoomRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGraphRoomRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *ItemGraphRoomRequestBuilder) ToGetRequestInformation(ctx context.Contex
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemGraphRoomRequestBuilder when successful
 func (m *ItemGraphRoomRequestBuilder) WithUrl(rawUrl string)(*ItemGraphRoomRequestBuilder) {
     return NewItemGraphRoomRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

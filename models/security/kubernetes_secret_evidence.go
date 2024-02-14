@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// KubernetesSecretEvidence 
 type KubernetesSecretEvidence struct {
     AlertEvidence
 }
-// NewKubernetesSecretEvidence instantiates a new kubernetesSecretEvidence and sets the default values.
+// NewKubernetesSecretEvidence instantiates a new KubernetesSecretEvidence and sets the default values.
 func NewKubernetesSecretEvidence()(*KubernetesSecretEvidence) {
     m := &KubernetesSecretEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -18,10 +17,12 @@ func NewKubernetesSecretEvidence()(*KubernetesSecretEvidence) {
     return m
 }
 // CreateKubernetesSecretEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateKubernetesSecretEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewKubernetesSecretEvidence(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *KubernetesSecretEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -57,6 +58,7 @@ func (m *KubernetesSecretEvidence) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetName gets the name property value. The secret name.
+// returns a *string when successful
 func (m *KubernetesSecretEvidence) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -68,6 +70,7 @@ func (m *KubernetesSecretEvidence) GetName()(*string) {
     return nil
 }
 // GetNamespace gets the namespace property value. The secret namespace.
+// returns a KubernetesNamespaceEvidenceable when successful
 func (m *KubernetesSecretEvidence) GetNamespace()(KubernetesNamespaceEvidenceable) {
     val, err := m.GetBackingStore().Get("namespace")
     if err != nil {
@@ -79,6 +82,7 @@ func (m *KubernetesSecretEvidence) GetNamespace()(KubernetesNamespaceEvidenceabl
     return nil
 }
 // GetSecretType gets the secretType property value. The secret type can include both built-in types and custom ones. Examples of built-in types are: Opaque, kubernetes.io/service-account-token, kubernetes.io/dockercfg, kubernetes.io/dockerconfigjson, kubernetes.io/basic-auth, kubernetes.io/ssh-auth, kubernetes.io/tls, bootstrap.kubernetes.io/token.
+// returns a *string when successful
 func (m *KubernetesSecretEvidence) GetSecretType()(*string) {
     val, err := m.GetBackingStore().Get("secretType")
     if err != nil {
@@ -136,7 +140,6 @@ func (m *KubernetesSecretEvidence) SetSecretType(value *string)() {
         panic(err)
     }
 }
-// KubernetesSecretEvidenceable 
 type KubernetesSecretEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

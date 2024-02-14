@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProvisioningObjectSummaryCollectionResponse 
 type ProvisioningObjectSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewProvisioningObjectSummaryCollectionResponse instantiates a new provisioningObjectSummaryCollectionResponse and sets the default values.
+// NewProvisioningObjectSummaryCollectionResponse instantiates a new ProvisioningObjectSummaryCollectionResponse and sets the default values.
 func NewProvisioningObjectSummaryCollectionResponse()(*ProvisioningObjectSummaryCollectionResponse) {
     m := &ProvisioningObjectSummaryCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewProvisioningObjectSummaryCollectionResponse()(*ProvisioningObjectSummary
     return m
 }
 // CreateProvisioningObjectSummaryCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateProvisioningObjectSummaryCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProvisioningObjectSummaryCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProvisioningObjectSummaryCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ProvisioningObjectSummaryCollectionResponse) GetFieldDeserializers()(ma
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ProvisioningObjectSummaryable when successful
 func (m *ProvisioningObjectSummaryCollectionResponse) GetValue()([]ProvisioningObjectSummaryable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ProvisioningObjectSummaryCollectionResponse) SetValue(value []Provision
         panic(err)
     }
 }
-// ProvisioningObjectSummaryCollectionResponseable 
 type ProvisioningObjectSummaryCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -8,7 +8,7 @@ import (
 type IPv6Range struct {
     IpRange
 }
-// NewIPv6Range instantiates a new iPv6Range and sets the default values.
+// NewIPv6Range instantiates a new IPv6Range and sets the default values.
 func NewIPv6Range()(*IPv6Range) {
     m := &IPv6Range{
         IpRange: *NewIpRange(),
@@ -18,10 +18,12 @@ func NewIPv6Range()(*IPv6Range) {
     return m
 }
 // CreateIPv6RangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIPv6RangeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIPv6Range(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IPv6Range) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IpRange.GetFieldDeserializers()
     res["lowerAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +49,7 @@ func (m *IPv6Range) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetLowerAddress gets the lowerAddress property value. Lower address.
+// returns a *string when successful
 func (m *IPv6Range) GetLowerAddress()(*string) {
     val, err := m.GetBackingStore().Get("lowerAddress")
     if err != nil {
@@ -58,6 +61,7 @@ func (m *IPv6Range) GetLowerAddress()(*string) {
     return nil
 }
 // GetUpperAddress gets the upperAddress property value. Upper address.
+// returns a *string when successful
 func (m *IPv6Range) GetUpperAddress()(*string) {
     val, err := m.GetBackingStore().Get("upperAddress")
     if err != nil {
@@ -102,7 +106,6 @@ func (m *IPv6Range) SetUpperAddress(value *string)() {
         panic(err)
     }
 }
-// IPv6Rangeable 
 type IPv6Rangeable interface {
     IpRangeable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// PlannerCategoryDescriptions 
 type PlannerCategoryDescriptions struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPlannerCategoryDescriptions instantiates a new plannerCategoryDescriptions and sets the default values.
+// NewPlannerCategoryDescriptions instantiates a new PlannerCategoryDescriptions and sets the default values.
 func NewPlannerCategoryDescriptions()(*PlannerCategoryDescriptions) {
     m := &PlannerCategoryDescriptions{
     }
@@ -19,10 +18,12 @@ func NewPlannerCategoryDescriptions()(*PlannerCategoryDescriptions) {
     return m
 }
 // CreatePlannerCategoryDescriptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlannerCategoryDescriptionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerCategoryDescriptions(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PlannerCategoryDescriptions) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *PlannerCategoryDescriptions) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *PlannerCategoryDescriptions) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCategory1 gets the category1 property value. The label associated with Category 1
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory1()(*string) {
     val, err := m.GetBackingStore().Get("category1")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *PlannerCategoryDescriptions) GetCategory1()(*string) {
     return nil
 }
 // GetCategory10 gets the category10 property value. The label associated with Category 10
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory10()(*string) {
     val, err := m.GetBackingStore().Get("category10")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *PlannerCategoryDescriptions) GetCategory10()(*string) {
     return nil
 }
 // GetCategory11 gets the category11 property value. The label associated with Category 11
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory11()(*string) {
     val, err := m.GetBackingStore().Get("category11")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *PlannerCategoryDescriptions) GetCategory11()(*string) {
     return nil
 }
 // GetCategory12 gets the category12 property value. The label associated with Category 12
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory12()(*string) {
     val, err := m.GetBackingStore().Get("category12")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *PlannerCategoryDescriptions) GetCategory12()(*string) {
     return nil
 }
 // GetCategory13 gets the category13 property value. The label associated with Category 13
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory13()(*string) {
     val, err := m.GetBackingStore().Get("category13")
     if err != nil {
@@ -94,6 +101,7 @@ func (m *PlannerCategoryDescriptions) GetCategory13()(*string) {
     return nil
 }
 // GetCategory14 gets the category14 property value. The label associated with Category 14
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory14()(*string) {
     val, err := m.GetBackingStore().Get("category14")
     if err != nil {
@@ -105,6 +113,7 @@ func (m *PlannerCategoryDescriptions) GetCategory14()(*string) {
     return nil
 }
 // GetCategory15 gets the category15 property value. The label associated with Category 15
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory15()(*string) {
     val, err := m.GetBackingStore().Get("category15")
     if err != nil {
@@ -116,6 +125,7 @@ func (m *PlannerCategoryDescriptions) GetCategory15()(*string) {
     return nil
 }
 // GetCategory16 gets the category16 property value. The label associated with Category 16
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory16()(*string) {
     val, err := m.GetBackingStore().Get("category16")
     if err != nil {
@@ -127,6 +137,7 @@ func (m *PlannerCategoryDescriptions) GetCategory16()(*string) {
     return nil
 }
 // GetCategory17 gets the category17 property value. The label associated with Category 17
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory17()(*string) {
     val, err := m.GetBackingStore().Get("category17")
     if err != nil {
@@ -138,6 +149,7 @@ func (m *PlannerCategoryDescriptions) GetCategory17()(*string) {
     return nil
 }
 // GetCategory18 gets the category18 property value. The label associated with Category 18
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory18()(*string) {
     val, err := m.GetBackingStore().Get("category18")
     if err != nil {
@@ -149,6 +161,7 @@ func (m *PlannerCategoryDescriptions) GetCategory18()(*string) {
     return nil
 }
 // GetCategory19 gets the category19 property value. The label associated with Category 19
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory19()(*string) {
     val, err := m.GetBackingStore().Get("category19")
     if err != nil {
@@ -160,6 +173,7 @@ func (m *PlannerCategoryDescriptions) GetCategory19()(*string) {
     return nil
 }
 // GetCategory2 gets the category2 property value. The label associated with Category 2
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory2()(*string) {
     val, err := m.GetBackingStore().Get("category2")
     if err != nil {
@@ -171,6 +185,7 @@ func (m *PlannerCategoryDescriptions) GetCategory2()(*string) {
     return nil
 }
 // GetCategory20 gets the category20 property value. The label associated with Category 20
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory20()(*string) {
     val, err := m.GetBackingStore().Get("category20")
     if err != nil {
@@ -182,6 +197,7 @@ func (m *PlannerCategoryDescriptions) GetCategory20()(*string) {
     return nil
 }
 // GetCategory21 gets the category21 property value. The label associated with Category 21
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory21()(*string) {
     val, err := m.GetBackingStore().Get("category21")
     if err != nil {
@@ -193,6 +209,7 @@ func (m *PlannerCategoryDescriptions) GetCategory21()(*string) {
     return nil
 }
 // GetCategory22 gets the category22 property value. The label associated with Category 22
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory22()(*string) {
     val, err := m.GetBackingStore().Get("category22")
     if err != nil {
@@ -204,6 +221,7 @@ func (m *PlannerCategoryDescriptions) GetCategory22()(*string) {
     return nil
 }
 // GetCategory23 gets the category23 property value. The label associated with Category 23
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory23()(*string) {
     val, err := m.GetBackingStore().Get("category23")
     if err != nil {
@@ -215,6 +233,7 @@ func (m *PlannerCategoryDescriptions) GetCategory23()(*string) {
     return nil
 }
 // GetCategory24 gets the category24 property value. The label associated with Category 24
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory24()(*string) {
     val, err := m.GetBackingStore().Get("category24")
     if err != nil {
@@ -226,6 +245,7 @@ func (m *PlannerCategoryDescriptions) GetCategory24()(*string) {
     return nil
 }
 // GetCategory25 gets the category25 property value. The label associated with Category 25
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory25()(*string) {
     val, err := m.GetBackingStore().Get("category25")
     if err != nil {
@@ -237,6 +257,7 @@ func (m *PlannerCategoryDescriptions) GetCategory25()(*string) {
     return nil
 }
 // GetCategory3 gets the category3 property value. The label associated with Category 3
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory3()(*string) {
     val, err := m.GetBackingStore().Get("category3")
     if err != nil {
@@ -248,6 +269,7 @@ func (m *PlannerCategoryDescriptions) GetCategory3()(*string) {
     return nil
 }
 // GetCategory4 gets the category4 property value. The label associated with Category 4
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory4()(*string) {
     val, err := m.GetBackingStore().Get("category4")
     if err != nil {
@@ -259,6 +281,7 @@ func (m *PlannerCategoryDescriptions) GetCategory4()(*string) {
     return nil
 }
 // GetCategory5 gets the category5 property value. The label associated with Category 5
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory5()(*string) {
     val, err := m.GetBackingStore().Get("category5")
     if err != nil {
@@ -270,6 +293,7 @@ func (m *PlannerCategoryDescriptions) GetCategory5()(*string) {
     return nil
 }
 // GetCategory6 gets the category6 property value. The label associated with Category 6
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory6()(*string) {
     val, err := m.GetBackingStore().Get("category6")
     if err != nil {
@@ -281,6 +305,7 @@ func (m *PlannerCategoryDescriptions) GetCategory6()(*string) {
     return nil
 }
 // GetCategory7 gets the category7 property value. The label associated with Category 7
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory7()(*string) {
     val, err := m.GetBackingStore().Get("category7")
     if err != nil {
@@ -292,6 +317,7 @@ func (m *PlannerCategoryDescriptions) GetCategory7()(*string) {
     return nil
 }
 // GetCategory8 gets the category8 property value. The label associated with Category 8
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory8()(*string) {
     val, err := m.GetBackingStore().Get("category8")
     if err != nil {
@@ -303,6 +329,7 @@ func (m *PlannerCategoryDescriptions) GetCategory8()(*string) {
     return nil
 }
 // GetCategory9 gets the category9 property value. The label associated with Category 9
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetCategory9()(*string) {
     val, err := m.GetBackingStore().Get("category9")
     if err != nil {
@@ -314,6 +341,7 @@ func (m *PlannerCategoryDescriptions) GetCategory9()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["category1"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -579,6 +607,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PlannerCategoryDescriptions) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -948,7 +977,6 @@ func (m *PlannerCategoryDescriptions) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// PlannerCategoryDescriptionsable 
 type PlannerCategoryDescriptionsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

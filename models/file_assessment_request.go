@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FileAssessmentRequest 
 type FileAssessmentRequest struct {
     ThreatAssessmentRequest
 }
-// NewFileAssessmentRequest instantiates a new fileAssessmentRequest and sets the default values.
+// NewFileAssessmentRequest instantiates a new FileAssessmentRequest and sets the default values.
 func NewFileAssessmentRequest()(*FileAssessmentRequest) {
     m := &FileAssessmentRequest{
         ThreatAssessmentRequest: *NewThreatAssessmentRequest(),
@@ -18,10 +17,12 @@ func NewFileAssessmentRequest()(*FileAssessmentRequest) {
     return m
 }
 // CreateFileAssessmentRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFileAssessmentRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFileAssessmentRequest(), nil
 }
 // GetContentData gets the contentData property value. Base64 encoded file content. The file content can't fetch back because it isn't stored.
+// returns a *string when successful
 func (m *FileAssessmentRequest) GetContentData()(*string) {
     val, err := m.GetBackingStore().Get("contentData")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *FileAssessmentRequest) GetContentData()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FileAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ThreatAssessmentRequest.GetFieldDeserializers()
     res["contentData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +60,7 @@ func (m *FileAssessmentRequest) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetFileName gets the fileName property value. The file name.
+// returns a *string when successful
 func (m *FileAssessmentRequest) GetFileName()(*string) {
     val, err := m.GetBackingStore().Get("fileName")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *FileAssessmentRequest) SetFileName(value *string)() {
         panic(err)
     }
 }
-// FileAssessmentRequestable 
 type FileAssessmentRequestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ThreatAssessmentRequestable

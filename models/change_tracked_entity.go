@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChangeTrackedEntity 
 type ChangeTrackedEntity struct {
     Entity
 }
-// NewChangeTrackedEntity instantiates a new changeTrackedEntity and sets the default values.
+// NewChangeTrackedEntity instantiates a new ChangeTrackedEntity and sets the default values.
 func NewChangeTrackedEntity()(*ChangeTrackedEntity) {
     m := &ChangeTrackedEntity{
         Entity: *NewEntity(),
@@ -17,6 +16,7 @@ func NewChangeTrackedEntity()(*ChangeTrackedEntity) {
     return m
 }
 // CreateChangeTrackedEntityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateChangeTrackedEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -61,6 +61,7 @@ func CreateChangeTrackedEntityFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewChangeTrackedEntity(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *ChangeTrackedEntity) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -72,6 +73,7 @@ func (m *ChangeTrackedEntity) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ChangeTrackedEntity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -107,6 +109,7 @@ func (m *ChangeTrackedEntity) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Identity of the person who last modified the entity.
+// returns a IdentitySetable when successful
 func (m *ChangeTrackedEntity) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -118,6 +121,7 @@ func (m *ChangeTrackedEntity) GetLastModifiedBy()(IdentitySetable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *ChangeTrackedEntity) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -157,7 +161,6 @@ func (m *ChangeTrackedEntity) SetLastModifiedDateTime(value *i336074805fc853987a
         panic(err)
     }
 }
-// ChangeTrackedEntityable 
 type ChangeTrackedEntityable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

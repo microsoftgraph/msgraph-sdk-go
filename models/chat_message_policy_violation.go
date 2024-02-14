@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ChatMessagePolicyViolation 
 type ChatMessagePolicyViolation struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewChatMessagePolicyViolation instantiates a new chatMessagePolicyViolation and sets the default values.
+// NewChatMessagePolicyViolation instantiates a new ChatMessagePolicyViolation and sets the default values.
 func NewChatMessagePolicyViolation()(*ChatMessagePolicyViolation) {
     m := &ChatMessagePolicyViolation{
     }
@@ -19,10 +18,12 @@ func NewChatMessagePolicyViolation()(*ChatMessagePolicyViolation) {
     return m
 }
 // CreateChatMessagePolicyViolationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateChatMessagePolicyViolationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChatMessagePolicyViolation(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ChatMessagePolicyViolation) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ChatMessagePolicyViolation) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ChatMessagePolicyViolation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDlpAction gets the dlpAction property value. The action taken by the DLP provider on the message with sensitive content. Supported values are: NoneNotifySender -- Inform the sender of the violation but allow readers to read the message.BlockAccess -- Block readers from reading the message.BlockAccessExternal -- Block users outside the organization from reading the message, while allowing users within the organization to read the message.
+// returns a *ChatMessagePolicyViolationDlpActionTypes when successful
 func (m *ChatMessagePolicyViolation) GetDlpAction()(*ChatMessagePolicyViolationDlpActionTypes) {
     val, err := m.GetBackingStore().Get("dlpAction")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *ChatMessagePolicyViolation) GetDlpAction()(*ChatMessagePolicyViolationD
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ChatMessagePolicyViolation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["dlpAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -115,6 +119,7 @@ func (m *ChatMessagePolicyViolation) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetJustificationText gets the justificationText property value. Justification text provided by the sender of the message when overriding a policy violation.
+// returns a *string when successful
 func (m *ChatMessagePolicyViolation) GetJustificationText()(*string) {
     val, err := m.GetBackingStore().Get("justificationText")
     if err != nil {
@@ -126,6 +131,7 @@ func (m *ChatMessagePolicyViolation) GetJustificationText()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ChatMessagePolicyViolation) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -137,6 +143,7 @@ func (m *ChatMessagePolicyViolation) GetOdataType()(*string) {
     return nil
 }
 // GetPolicyTip gets the policyTip property value. Information to display to the message sender about why the message was flagged as a violation.
+// returns a ChatMessagePolicyViolationPolicyTipable when successful
 func (m *ChatMessagePolicyViolation) GetPolicyTip()(ChatMessagePolicyViolationPolicyTipable) {
     val, err := m.GetBackingStore().Get("policyTip")
     if err != nil {
@@ -148,6 +155,7 @@ func (m *ChatMessagePolicyViolation) GetPolicyTip()(ChatMessagePolicyViolationPo
     return nil
 }
 // GetUserAction gets the userAction property value. Indicates the action taken by the user on a message blocked by the DLP provider. Supported values are: NoneOverrideReportFalsePositiveWhen the DLP provider is updating the message for blocking sensitive content, userAction isn't required.
+// returns a *ChatMessagePolicyViolationUserActionTypes when successful
 func (m *ChatMessagePolicyViolation) GetUserAction()(*ChatMessagePolicyViolationUserActionTypes) {
     val, err := m.GetBackingStore().Get("userAction")
     if err != nil {
@@ -159,6 +167,7 @@ func (m *ChatMessagePolicyViolation) GetUserAction()(*ChatMessagePolicyViolation
     return nil
 }
 // GetVerdictDetails gets the verdictDetails property value. Indicates what actions the sender may take in response to the policy violation. Supported values are: NoneAllowFalsePositiveOverride -- Allows the sender to declare the policyViolation to be an error in the DLP app and its rules, and allow readers to see the message again if the dlpAction hides it.AllowOverrideWithoutJustification -- Allows the sender to override the DLP violation and allow readers to see the message again if the dlpAction hides it, without needing to provide an explanation for doing so. AllowOverrideWithJustification -- Allows the sender to override the DLP violation and allow readers to see the message again if the dlpAction hides it, after providing an explanation for doing so.AllowOverrideWithoutJustification and AllowOverrideWithJustification are mutually exclusive.
+// returns a *ChatMessagePolicyViolationVerdictDetailsTypes when successful
 func (m *ChatMessagePolicyViolation) GetVerdictDetails()(*ChatMessagePolicyViolationVerdictDetailsTypes) {
     val, err := m.GetBackingStore().Get("verdictDetails")
     if err != nil {
@@ -271,7 +280,6 @@ func (m *ChatMessagePolicyViolation) SetVerdictDetails(value *ChatMessagePolicyV
         panic(err)
     }
 }
-// ChatMessagePolicyViolationable 
 type ChatMessagePolicyViolationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

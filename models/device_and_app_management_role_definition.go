@@ -8,7 +8,7 @@ import (
 type DeviceAndAppManagementRoleDefinition struct {
     RoleDefinition
 }
-// NewDeviceAndAppManagementRoleDefinition instantiates a new deviceAndAppManagementRoleDefinition and sets the default values.
+// NewDeviceAndAppManagementRoleDefinition instantiates a new DeviceAndAppManagementRoleDefinition and sets the default values.
 func NewDeviceAndAppManagementRoleDefinition()(*DeviceAndAppManagementRoleDefinition) {
     m := &DeviceAndAppManagementRoleDefinition{
         RoleDefinition: *NewRoleDefinition(),
@@ -18,10 +18,12 @@ func NewDeviceAndAppManagementRoleDefinition()(*DeviceAndAppManagementRoleDefini
     return m
 }
 // CreateDeviceAndAppManagementRoleDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceAndAppManagementRoleDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceAndAppManagementRoleDefinition(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceAndAppManagementRoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.RoleDefinition.GetFieldDeserializers()
     return res
@@ -34,7 +36,6 @@ func (m *DeviceAndAppManagementRoleDefinition) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// DeviceAndAppManagementRoleDefinitionable 
 type DeviceAndAppManagementRoleDefinitionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     RoleDefinitionable

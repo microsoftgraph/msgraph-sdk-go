@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// SubjectRightsRequestDetail 
 type SubjectRightsRequestDetail struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSubjectRightsRequestDetail instantiates a new subjectRightsRequestDetail and sets the default values.
+// NewSubjectRightsRequestDetail instantiates a new SubjectRightsRequestDetail and sets the default values.
 func NewSubjectRightsRequestDetail()(*SubjectRightsRequestDetail) {
     m := &SubjectRightsRequestDetail{
     }
@@ -19,10 +18,12 @@ func NewSubjectRightsRequestDetail()(*SubjectRightsRequestDetail) {
     return m
 }
 // CreateSubjectRightsRequestDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSubjectRightsRequestDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSubjectRightsRequestDetail(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SubjectRightsRequestDetail) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *SubjectRightsRequestDetail) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *SubjectRightsRequestDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetExcludedItemCount gets the excludedItemCount property value. Count of items that are excluded from the request.
+// returns a *int64 when successful
 func (m *SubjectRightsRequestDetail) GetExcludedItemCount()(*int64) {
     val, err := m.GetBackingStore().Get("excludedItemCount")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *SubjectRightsRequestDetail) GetExcludedItemCount()(*int64) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SubjectRightsRequestDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["excludedItemCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -147,6 +151,7 @@ func (m *SubjectRightsRequestDetail) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetInsightCounts gets the insightCounts property value. Count of items per insight.
+// returns a []KeyValuePairable when successful
 func (m *SubjectRightsRequestDetail) GetInsightCounts()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("insightCounts")
     if err != nil {
@@ -158,6 +163,7 @@ func (m *SubjectRightsRequestDetail) GetInsightCounts()([]KeyValuePairable) {
     return nil
 }
 // GetItemCount gets the itemCount property value. Count of items found.
+// returns a *int64 when successful
 func (m *SubjectRightsRequestDetail) GetItemCount()(*int64) {
     val, err := m.GetBackingStore().Get("itemCount")
     if err != nil {
@@ -169,6 +175,7 @@ func (m *SubjectRightsRequestDetail) GetItemCount()(*int64) {
     return nil
 }
 // GetItemNeedReview gets the itemNeedReview property value. Count of item that need review.
+// returns a *int64 when successful
 func (m *SubjectRightsRequestDetail) GetItemNeedReview()(*int64) {
     val, err := m.GetBackingStore().Get("itemNeedReview")
     if err != nil {
@@ -180,6 +187,7 @@ func (m *SubjectRightsRequestDetail) GetItemNeedReview()(*int64) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *SubjectRightsRequestDetail) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -191,6 +199,7 @@ func (m *SubjectRightsRequestDetail) GetOdataType()(*string) {
     return nil
 }
 // GetProductItemCounts gets the productItemCounts property value. Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.
+// returns a []KeyValuePairable when successful
 func (m *SubjectRightsRequestDetail) GetProductItemCounts()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("productItemCounts")
     if err != nil {
@@ -202,6 +211,7 @@ func (m *SubjectRightsRequestDetail) GetProductItemCounts()([]KeyValuePairable) 
     return nil
 }
 // GetSignedOffItemCount gets the signedOffItemCount property value. Count of items signed off by the administrator.
+// returns a *int64 when successful
 func (m *SubjectRightsRequestDetail) GetSignedOffItemCount()(*int64) {
     val, err := m.GetBackingStore().Get("signedOffItemCount")
     if err != nil {
@@ -213,6 +223,7 @@ func (m *SubjectRightsRequestDetail) GetSignedOffItemCount()(*int64) {
     return nil
 }
 // GetTotalItemSize gets the totalItemSize property value. Total item size in bytes.
+// returns a *int64 when successful
 func (m *SubjectRightsRequestDetail) GetTotalItemSize()(*int64) {
     val, err := m.GetBackingStore().Get("totalItemSize")
     if err != nil {
@@ -360,7 +371,6 @@ func (m *SubjectRightsRequestDetail) SetTotalItemSize(value *int64)() {
         panic(err)
     }
 }
-// SubjectRightsRequestDetailable 
 type SubjectRightsRequestDetailable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

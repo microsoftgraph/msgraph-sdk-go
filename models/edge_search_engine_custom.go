@@ -8,7 +8,7 @@ import (
 type EdgeSearchEngineCustom struct {
     EdgeSearchEngineBase
 }
-// NewEdgeSearchEngineCustom instantiates a new edgeSearchEngineCustom and sets the default values.
+// NewEdgeSearchEngineCustom instantiates a new EdgeSearchEngineCustom and sets the default values.
 func NewEdgeSearchEngineCustom()(*EdgeSearchEngineCustom) {
     m := &EdgeSearchEngineCustom{
         EdgeSearchEngineBase: *NewEdgeSearchEngineBase(),
@@ -18,10 +18,12 @@ func NewEdgeSearchEngineCustom()(*EdgeSearchEngineCustom) {
     return m
 }
 // CreateEdgeSearchEngineCustomFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEdgeSearchEngineCustomFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdgeSearchEngineCustom(), nil
 }
 // GetEdgeSearchEngineOpenSearchXmlUrl gets the edgeSearchEngineOpenSearchXmlUrl property value. Points to a https link containing the OpenSearch xml file that contains, at minimum, the short name and the URL to the search Engine.
+// returns a *string when successful
 func (m *EdgeSearchEngineCustom) GetEdgeSearchEngineOpenSearchXmlUrl()(*string) {
     val, err := m.GetBackingStore().Get("edgeSearchEngineOpenSearchXmlUrl")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *EdgeSearchEngineCustom) GetEdgeSearchEngineOpenSearchXmlUrl()(*string) 
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EdgeSearchEngineCustom) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EdgeSearchEngineBase.GetFieldDeserializers()
     res["edgeSearchEngineOpenSearchXmlUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +71,6 @@ func (m *EdgeSearchEngineCustom) SetEdgeSearchEngineOpenSearchXmlUrl(value *stri
         panic(err)
     }
 }
-// EdgeSearchEngineCustomable 
 type EdgeSearchEngineCustomable interface {
     EdgeSearchEngineBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

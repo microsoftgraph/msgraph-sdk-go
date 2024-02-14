@@ -8,7 +8,7 @@ import (
 type RoleDefinition struct {
     Entity
 }
-// NewRoleDefinition instantiates a new roleDefinition and sets the default values.
+// NewRoleDefinition instantiates a new RoleDefinition and sets the default values.
 func NewRoleDefinition()(*RoleDefinition) {
     m := &RoleDefinition{
         Entity: *NewEntity(),
@@ -16,6 +16,7 @@ func NewRoleDefinition()(*RoleDefinition) {
     return m
 }
 // CreateRoleDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRoleDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -38,6 +39,7 @@ func CreateRoleDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewRoleDefinition(), nil
 }
 // GetDescription gets the description property value. Description of the Role definition.
+// returns a *string when successful
 func (m *RoleDefinition) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -49,6 +51,7 @@ func (m *RoleDefinition) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Display Name of the Role definition.
+// returns a *string when successful
 func (m *RoleDefinition) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -60,6 +63,7 @@ func (m *RoleDefinition) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -127,6 +131,7 @@ func (m *RoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetIsBuiltIn gets the isBuiltIn property value. Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
+// returns a *bool when successful
 func (m *RoleDefinition) GetIsBuiltIn()(*bool) {
     val, err := m.GetBackingStore().Get("isBuiltIn")
     if err != nil {
@@ -138,6 +143,7 @@ func (m *RoleDefinition) GetIsBuiltIn()(*bool) {
     return nil
 }
 // GetRoleAssignments gets the roleAssignments property value. List of Role assignments for this role definition.
+// returns a []RoleAssignmentable when successful
 func (m *RoleDefinition) GetRoleAssignments()([]RoleAssignmentable) {
     val, err := m.GetBackingStore().Get("roleAssignments")
     if err != nil {
@@ -149,6 +155,7 @@ func (m *RoleDefinition) GetRoleAssignments()([]RoleAssignmentable) {
     return nil
 }
 // GetRolePermissions gets the rolePermissions property value. List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
+// returns a []RolePermissionable when successful
 func (m *RoleDefinition) GetRolePermissions()([]RolePermissionable) {
     val, err := m.GetBackingStore().Get("rolePermissions")
     if err != nil {
@@ -244,7 +251,6 @@ func (m *RoleDefinition) SetRolePermissions(value []RolePermissionable)() {
         panic(err)
     }
 }
-// RoleDefinitionable 
 type RoleDefinitionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

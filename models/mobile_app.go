@@ -9,7 +9,7 @@ import (
 type MobileApp struct {
     Entity
 }
-// NewMobileApp instantiates a new mobileApp and sets the default values.
+// NewMobileApp instantiates a new MobileApp and sets the default values.
 func NewMobileApp()(*MobileApp) {
     m := &MobileApp{
         Entity: *NewEntity(),
@@ -17,6 +17,7 @@ func NewMobileApp()(*MobileApp) {
     return m
 }
 // CreateMobileAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMobileAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -89,6 +90,7 @@ func CreateMobileAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
     return NewMobileApp(), nil
 }
 // GetAssignments gets the assignments property value. The list of group assignments for this mobile app.
+// returns a []MobileAppAssignmentable when successful
 func (m *MobileApp) GetAssignments()([]MobileAppAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -100,6 +102,7 @@ func (m *MobileApp) GetAssignments()([]MobileAppAssignmentable) {
     return nil
 }
 // GetCategories gets the categories property value. The list of categories for this app.
+// returns a []MobileAppCategoryable when successful
 func (m *MobileApp) GetCategories()([]MobileAppCategoryable) {
     val, err := m.GetBackingStore().Get("categories")
     if err != nil {
@@ -111,6 +114,7 @@ func (m *MobileApp) GetCategories()([]MobileAppCategoryable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the app was created.
+// returns a *Time when successful
 func (m *MobileApp) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -122,6 +126,7 @@ func (m *MobileApp) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
     return nil
 }
 // GetDescription gets the description property value. The description of the app.
+// returns a *string when successful
 func (m *MobileApp) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -133,6 +138,7 @@ func (m *MobileApp) GetDescription()(*string) {
     return nil
 }
 // GetDeveloper gets the developer property value. The developer of the app.
+// returns a *string when successful
 func (m *MobileApp) GetDeveloper()(*string) {
     val, err := m.GetBackingStore().Get("developer")
     if err != nil {
@@ -144,6 +150,7 @@ func (m *MobileApp) GetDeveloper()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The admin provided or imported title of the app.
+// returns a *string when successful
 func (m *MobileApp) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -155,6 +162,7 @@ func (m *MobileApp) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MobileApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -322,6 +330,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetInformationUrl gets the informationUrl property value. The more information Url.
+// returns a *string when successful
 func (m *MobileApp) GetInformationUrl()(*string) {
     val, err := m.GetBackingStore().Get("informationUrl")
     if err != nil {
@@ -333,6 +342,7 @@ func (m *MobileApp) GetInformationUrl()(*string) {
     return nil
 }
 // GetIsFeatured gets the isFeatured property value. The value indicating whether the app is marked as featured by the admin.
+// returns a *bool when successful
 func (m *MobileApp) GetIsFeatured()(*bool) {
     val, err := m.GetBackingStore().Get("isFeatured")
     if err != nil {
@@ -344,6 +354,7 @@ func (m *MobileApp) GetIsFeatured()(*bool) {
     return nil
 }
 // GetLargeIcon gets the largeIcon property value. The large icon, to be displayed in the app details and used for upload of the icon.
+// returns a MimeContentable when successful
 func (m *MobileApp) GetLargeIcon()(MimeContentable) {
     val, err := m.GetBackingStore().Get("largeIcon")
     if err != nil {
@@ -355,6 +366,7 @@ func (m *MobileApp) GetLargeIcon()(MimeContentable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the app was last modified.
+// returns a *Time when successful
 func (m *MobileApp) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -366,6 +378,7 @@ func (m *MobileApp) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetNotes gets the notes property value. Notes for the app.
+// returns a *string when successful
 func (m *MobileApp) GetNotes()(*string) {
     val, err := m.GetBackingStore().Get("notes")
     if err != nil {
@@ -377,6 +390,7 @@ func (m *MobileApp) GetNotes()(*string) {
     return nil
 }
 // GetOwner gets the owner property value. The owner of the app.
+// returns a *string when successful
 func (m *MobileApp) GetOwner()(*string) {
     val, err := m.GetBackingStore().Get("owner")
     if err != nil {
@@ -388,6 +402,7 @@ func (m *MobileApp) GetOwner()(*string) {
     return nil
 }
 // GetPrivacyInformationUrl gets the privacyInformationUrl property value. The privacy statement Url.
+// returns a *string when successful
 func (m *MobileApp) GetPrivacyInformationUrl()(*string) {
     val, err := m.GetBackingStore().Get("privacyInformationUrl")
     if err != nil {
@@ -399,6 +414,7 @@ func (m *MobileApp) GetPrivacyInformationUrl()(*string) {
     return nil
 }
 // GetPublisher gets the publisher property value. The publisher of the app.
+// returns a *string when successful
 func (m *MobileApp) GetPublisher()(*string) {
     val, err := m.GetBackingStore().Get("publisher")
     if err != nil {
@@ -410,6 +426,7 @@ func (m *MobileApp) GetPublisher()(*string) {
     return nil
 }
 // GetPublishingState gets the publishingState property value. Indicates the publishing state of an app.
+// returns a *MobileAppPublishingState when successful
 func (m *MobileApp) GetPublishingState()(*MobileAppPublishingState) {
     val, err := m.GetBackingStore().Get("publishingState")
     if err != nil {
@@ -636,7 +653,6 @@ func (m *MobileApp) SetPublishingState(value *MobileAppPublishingState)() {
         panic(err)
     }
 }
-// MobileAppable 
 type MobileAppable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

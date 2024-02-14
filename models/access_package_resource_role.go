@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageResourceRole 
 type AccessPackageResourceRole struct {
     Entity
 }
-// NewAccessPackageResourceRole instantiates a new accessPackageResourceRole and sets the default values.
+// NewAccessPackageResourceRole instantiates a new AccessPackageResourceRole and sets the default values.
 func NewAccessPackageResourceRole()(*AccessPackageResourceRole) {
     m := &AccessPackageResourceRole{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewAccessPackageResourceRole()(*AccessPackageResourceRole) {
     return m
 }
 // CreateAccessPackageResourceRoleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessPackageResourceRoleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageResourceRole(), nil
 }
 // GetDescription gets the description property value. A description for the resource role.
+// returns a *string when successful
 func (m *AccessPackageResourceRole) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *AccessPackageResourceRole) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the resource role such as the role defined by the application.
+// returns a *string when successful
 func (m *AccessPackageResourceRole) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *AccessPackageResourceRole) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessPackageResourceRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -97,6 +100,7 @@ func (m *AccessPackageResourceRole) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetOriginId gets the originId property value. The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId will be the sequence number of the role in the site.
+// returns a *string when successful
 func (m *AccessPackageResourceRole) GetOriginId()(*string) {
     val, err := m.GetBackingStore().Get("originId")
     if err != nil {
@@ -108,6 +112,7 @@ func (m *AccessPackageResourceRole) GetOriginId()(*string) {
     return nil
 }
 // GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
+// returns a *string when successful
 func (m *AccessPackageResourceRole) GetOriginSystem()(*string) {
     val, err := m.GetBackingStore().Get("originSystem")
     if err != nil {
@@ -119,6 +124,7 @@ func (m *AccessPackageResourceRole) GetOriginSystem()(*string) {
     return nil
 }
 // GetResource gets the resource property value. The resource property
+// returns a AccessPackageResourceable when successful
 func (m *AccessPackageResourceRole) GetResource()(AccessPackageResourceable) {
     val, err := m.GetBackingStore().Get("resource")
     if err != nil {
@@ -202,7 +208,6 @@ func (m *AccessPackageResourceRole) SetResource(value AccessPackageResourceable)
         panic(err)
     }
 }
-// AccessPackageResourceRoleable 
 type AccessPackageResourceRoleable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

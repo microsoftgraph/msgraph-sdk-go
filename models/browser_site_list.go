@@ -9,7 +9,7 @@ import (
 type BrowserSiteList struct {
     Entity
 }
-// NewBrowserSiteList instantiates a new browserSiteList and sets the default values.
+// NewBrowserSiteList instantiates a new BrowserSiteList and sets the default values.
 func NewBrowserSiteList()(*BrowserSiteList) {
     m := &BrowserSiteList{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewBrowserSiteList()(*BrowserSiteList) {
     return m
 }
 // CreateBrowserSiteListFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBrowserSiteListFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBrowserSiteList(), nil
 }
 // GetDescription gets the description property value. The description of the site list.
+// returns a *string when successful
 func (m *BrowserSiteList) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *BrowserSiteList) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of the site list.
+// returns a *string when successful
 func (m *BrowserSiteList) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *BrowserSiteList) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BrowserSiteList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -160,6 +164,7 @@ func (m *BrowserSiteList) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The user who last modified the site list.
+// returns a IdentitySetable when successful
 func (m *BrowserSiteList) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -171,6 +176,7 @@ func (m *BrowserSiteList) GetLastModifiedBy()(IdentitySetable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the site list was last modified.
+// returns a *Time when successful
 func (m *BrowserSiteList) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -182,6 +188,7 @@ func (m *BrowserSiteList) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetPublishedBy gets the publishedBy property value. The user who published the site list.
+// returns a IdentitySetable when successful
 func (m *BrowserSiteList) GetPublishedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("publishedBy")
     if err != nil {
@@ -193,6 +200,7 @@ func (m *BrowserSiteList) GetPublishedBy()(IdentitySetable) {
     return nil
 }
 // GetPublishedDateTime gets the publishedDateTime property value. The date and time when the site list was published.
+// returns a *Time when successful
 func (m *BrowserSiteList) GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("publishedDateTime")
     if err != nil {
@@ -204,6 +212,7 @@ func (m *BrowserSiteList) GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad9
     return nil
 }
 // GetRevision gets the revision property value. The current revision of the site list.
+// returns a *string when successful
 func (m *BrowserSiteList) GetRevision()(*string) {
     val, err := m.GetBackingStore().Get("revision")
     if err != nil {
@@ -215,6 +224,7 @@ func (m *BrowserSiteList) GetRevision()(*string) {
     return nil
 }
 // GetSharedCookies gets the sharedCookies property value. A collection of shared cookies defined for the site list.
+// returns a []BrowserSharedCookieable when successful
 func (m *BrowserSiteList) GetSharedCookies()([]BrowserSharedCookieable) {
     val, err := m.GetBackingStore().Get("sharedCookies")
     if err != nil {
@@ -226,6 +236,7 @@ func (m *BrowserSiteList) GetSharedCookies()([]BrowserSharedCookieable) {
     return nil
 }
 // GetSites gets the sites property value. A collection of sites defined for the site list.
+// returns a []BrowserSiteable when successful
 func (m *BrowserSiteList) GetSites()([]BrowserSiteable) {
     val, err := m.GetBackingStore().Get("sites")
     if err != nil {
@@ -237,6 +248,7 @@ func (m *BrowserSiteList) GetSites()([]BrowserSiteable) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *BrowserSiteListStatus when successful
 func (m *BrowserSiteList) GetStatus()(*BrowserSiteListStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -398,7 +410,6 @@ func (m *BrowserSiteList) SetStatus(value *BrowserSiteListStatus)() {
         panic(err)
     }
 }
-// BrowserSiteListable 
 type BrowserSiteListable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -10,7 +10,7 @@ type OmaSetting struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewOmaSetting instantiates a new omaSetting and sets the default values.
+// NewOmaSetting instantiates a new OmaSetting and sets the default values.
 func NewOmaSetting()(*OmaSetting) {
     m := &OmaSetting{
     }
@@ -19,6 +19,7 @@ func NewOmaSetting()(*OmaSetting) {
     return m
 }
 // CreateOmaSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOmaSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -53,6 +54,7 @@ func CreateOmaSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewOmaSetting(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OmaSetting) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -65,10 +67,12 @@ func (m *OmaSetting) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *OmaSetting) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDescription gets the description property value. Description.
+// returns a *string when successful
 func (m *OmaSetting) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -80,6 +84,7 @@ func (m *OmaSetting) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Display Name.
+// returns a *string when successful
 func (m *OmaSetting) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -91,6 +96,7 @@ func (m *OmaSetting) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OmaSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -136,6 +142,7 @@ func (m *OmaSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *OmaSetting) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -147,6 +154,7 @@ func (m *OmaSetting) GetOdataType()(*string) {
     return nil
 }
 // GetOmaUri gets the omaUri property value. OMA.
+// returns a *string when successful
 func (m *OmaSetting) GetOmaUri()(*string) {
     val, err := m.GetBackingStore().Get("omaUri")
     if err != nil {
@@ -230,7 +238,6 @@ func (m *OmaSetting) SetOmaUri(value *string)() {
         panic(err)
     }
 }
-// OmaSettingable 
 type OmaSettingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MicrosoftAuthenticatorAuthenticationMethodConfiguration 
 type MicrosoftAuthenticatorAuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
 }
-// NewMicrosoftAuthenticatorAuthenticationMethodConfiguration instantiates a new microsoftAuthenticatorAuthenticationMethodConfiguration and sets the default values.
+// NewMicrosoftAuthenticatorAuthenticationMethodConfiguration instantiates a new MicrosoftAuthenticatorAuthenticationMethodConfiguration and sets the default values.
 func NewMicrosoftAuthenticatorAuthenticationMethodConfiguration()(*MicrosoftAuthenticatorAuthenticationMethodConfiguration) {
     m := &MicrosoftAuthenticatorAuthenticationMethodConfiguration{
         AuthenticationMethodConfiguration: *NewAuthenticationMethodConfiguration(),
@@ -18,10 +17,12 @@ func NewMicrosoftAuthenticatorAuthenticationMethodConfiguration()(*MicrosoftAuth
     return m
 }
 // CreateMicrosoftAuthenticatorAuthenticationMethodConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMicrosoftAuthenticatorAuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMicrosoftAuthenticatorAuthenticationMethodConfiguration(), nil
 }
 // GetFeatureSettings gets the featureSettings property value. A collection of Microsoft Authenticator settings such as application context and location context, and whether they are enabled for all users or specific users only.
+// returns a MicrosoftAuthenticatorFeatureSettingsable when successful
 func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) GetFeatureSettings()(MicrosoftAuthenticatorFeatureSettingsable) {
     val, err := m.GetBackingStore().Get("featureSettings")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) GetFeatureSett
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethodConfiguration.GetFieldDeserializers()
     res["featureSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +76,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) GetFieldDeseri
     return res
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to use the authentication method. Expanded by default.
+// returns a []MicrosoftAuthenticatorAuthenticationMethodTargetable when successful
 func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) GetIncludeTargets()([]MicrosoftAuthenticatorAuthenticationMethodTargetable) {
     val, err := m.GetBackingStore().Get("includeTargets")
     if err != nil {
@@ -85,6 +88,7 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) GetIncludeTarg
     return nil
 }
 // GetIsSoftwareOathEnabled gets the isSoftwareOathEnabled property value. The isSoftwareOathEnabled property
+// returns a *bool when successful
 func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) GetIsSoftwareOathEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isSoftwareOathEnabled")
     if err != nil {
@@ -148,7 +152,6 @@ func (m *MicrosoftAuthenticatorAuthenticationMethodConfiguration) SetIsSoftwareO
         panic(err)
     }
 }
-// MicrosoftAuthenticatorAuthenticationMethodConfigurationable 
 type MicrosoftAuthenticatorAuthenticationMethodConfigurationable interface {
     AuthenticationMethodConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

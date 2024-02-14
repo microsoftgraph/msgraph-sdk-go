@@ -28,35 +28,38 @@ type MobileAppsItemGraphWindowsWebAppRequestBuilderGetRequestConfiguration struc
     QueryParameters *MobileAppsItemGraphWindowsWebAppRequestBuilderGetQueryParameters
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
+// returns a *MobileAppsItemGraphWindowsWebAppAssignmentsRequestBuilder when successful
 func (m *MobileAppsItemGraphWindowsWebAppRequestBuilder) Assignments()(*MobileAppsItemGraphWindowsWebAppAssignmentsRequestBuilder) {
     return NewMobileAppsItemGraphWindowsWebAppAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+// returns a *MobileAppsItemGraphWindowsWebAppCategoriesRequestBuilder when successful
 func (m *MobileAppsItemGraphWindowsWebAppRequestBuilder) Categories()(*MobileAppsItemGraphWindowsWebAppCategoriesRequestBuilder) {
     return NewMobileAppsItemGraphWindowsWebAppCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewMobileAppsItemGraphWindowsWebAppRequestBuilderInternal instantiates a new GraphWindowsWebAppRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphWindowsWebAppRequestBuilderInternal instantiates a new MobileAppsItemGraphWindowsWebAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWindowsWebAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWindowsWebAppRequestBuilder) {
     m := &MobileAppsItemGraphWindowsWebAppRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsWebApp{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsWebApp{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewMobileAppsItemGraphWindowsWebAppRequestBuilder instantiates a new GraphWindowsWebAppRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphWindowsWebAppRequestBuilder instantiates a new MobileAppsItemGraphWindowsWebAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWindowsWebAppRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWindowsWebAppRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphWindowsWebAppRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsWebApp
+// returns a WindowsWebAppable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphWindowsWebAppRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphWindowsWebAppRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsWebAppable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateWindowsWebAppFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -68,6 +71,7 @@ func (m *MobileAppsItemGraphWindowsWebAppRequestBuilder) Get(ctx context.Context
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WindowsWebAppable), nil
 }
 // ToGetRequestInformation get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsWebApp
+// returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphWindowsWebAppRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphWindowsWebAppRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -81,6 +85,7 @@ func (m *MobileAppsItemGraphWindowsWebAppRequestBuilder) ToGetRequestInformation
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MobileAppsItemGraphWindowsWebAppRequestBuilder when successful
 func (m *MobileAppsItemGraphWindowsWebAppRequestBuilder) WithUrl(rawUrl string)(*MobileAppsItemGraphWindowsWebAppRequestBuilder) {
     return NewMobileAppsItemGraphWindowsWebAppRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

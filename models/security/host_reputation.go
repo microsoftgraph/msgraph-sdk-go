@@ -5,11 +5,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// HostReputation 
 type HostReputation struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewHostReputation instantiates a new hostReputation and sets the default values.
+// NewHostReputation instantiates a new HostReputation and sets the default values.
 func NewHostReputation()(*HostReputation) {
     m := &HostReputation{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -17,10 +16,12 @@ func NewHostReputation()(*HostReputation) {
     return m
 }
 // CreateHostReputationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateHostReputationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHostReputation(), nil
 }
 // GetClassification gets the classification property value. The classification property
+// returns a *HostReputationClassification when successful
 func (m *HostReputation) GetClassification()(*HostReputationClassification) {
     val, err := m.GetBackingStore().Get("classification")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *HostReputation) GetClassification()(*HostReputationClassification) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *HostReputation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["classification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -73,6 +75,7 @@ func (m *HostReputation) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetRules gets the rules property value. A collection of rules that have been used to calculate the classification and score.
+// returns a []HostReputationRuleable when successful
 func (m *HostReputation) GetRules()([]HostReputationRuleable) {
     val, err := m.GetBackingStore().Get("rules")
     if err != nil {
@@ -84,6 +87,7 @@ func (m *HostReputation) GetRules()([]HostReputationRuleable) {
     return nil
 }
 // GetScore gets the score property value. The calculated score (0-100) of the requested host. A higher value indicates that this host is more likely to be suspicious or malicious.
+// returns a *int32 when successful
 func (m *HostReputation) GetScore()(*int32) {
     val, err := m.GetBackingStore().Get("score")
     if err != nil {
@@ -148,7 +152,6 @@ func (m *HostReputation) SetScore(value *int32)() {
         panic(err)
     }
 }
-// HostReputationable 
 type HostReputationable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

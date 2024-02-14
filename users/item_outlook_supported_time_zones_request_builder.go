@@ -32,29 +32,30 @@ type ItemOutlookSupportedTimeZonesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemOutlookSupportedTimeZonesRequestBuilderGetQueryParameters
 }
-// NewItemOutlookSupportedTimeZonesRequestBuilderInternal instantiates a new SupportedTimeZonesRequestBuilder and sets the default values.
+// NewItemOutlookSupportedTimeZonesRequestBuilderInternal instantiates a new ItemOutlookSupportedTimeZonesRequestBuilder and sets the default values.
 func NewItemOutlookSupportedTimeZonesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOutlookSupportedTimeZonesRequestBuilder) {
     m := &ItemOutlookSupportedTimeZonesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook/supportedTimeZones(){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook/supportedTimeZones(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemOutlookSupportedTimeZonesRequestBuilder instantiates a new SupportedTimeZonesRequestBuilder and sets the default values.
+// NewItemOutlookSupportedTimeZonesRequestBuilder instantiates a new ItemOutlookSupportedTimeZonesRequestBuilder and sets the default values.
 func NewItemOutlookSupportedTimeZonesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOutlookSupportedTimeZonesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemOutlookSupportedTimeZonesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function supportedTimeZones
-// Deprecated: This method is obsolete. Use GetAsSupportedTimeZonesGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ItemOutlookSupportedTimeZonesResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOutlookSupportedTimeZonesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOutlookSupportedTimeZonesRequestBuilderGetRequestConfiguration)(ItemOutlookSupportedTimeZonesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemOutlookSupportedTimeZonesResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -66,14 +67,15 @@ func (m *ItemOutlookSupportedTimeZonesRequestBuilder) Get(ctx context.Context, r
     return res.(ItemOutlookSupportedTimeZonesResponseable), nil
 }
 // GetAsSupportedTimeZonesGetResponse invoke function supportedTimeZones
+// returns a ItemOutlookSupportedTimeZonesGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOutlookSupportedTimeZonesRequestBuilder) GetAsSupportedTimeZonesGetResponse(ctx context.Context, requestConfiguration *ItemOutlookSupportedTimeZonesRequestBuilderGetRequestConfiguration)(ItemOutlookSupportedTimeZonesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemOutlookSupportedTimeZonesGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -85,6 +87,7 @@ func (m *ItemOutlookSupportedTimeZonesRequestBuilder) GetAsSupportedTimeZonesGet
     return res.(ItemOutlookSupportedTimeZonesGetResponseable), nil
 }
 // ToGetRequestInformation invoke function supportedTimeZones
+// returns a *RequestInformation when successful
 func (m *ItemOutlookSupportedTimeZonesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookSupportedTimeZonesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -98,6 +101,7 @@ func (m *ItemOutlookSupportedTimeZonesRequestBuilder) ToGetRequestInformation(ct
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemOutlookSupportedTimeZonesRequestBuilder when successful
 func (m *ItemOutlookSupportedTimeZonesRequestBuilder) WithUrl(rawUrl string)(*ItemOutlookSupportedTimeZonesRequestBuilder) {
     return NewItemOutlookSupportedTimeZonesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

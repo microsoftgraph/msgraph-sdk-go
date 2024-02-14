@@ -18,20 +18,22 @@ type ItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilderGetRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilderInternal instantiates a new DataBodyRangeRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilderInternal instantiates a new ItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilder) {
     m := &ItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/tables/{workbookTable%2Did}/dataBodyRange()", pathParameters),
     }
     return m
 }
-// NewItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilder instantiates a new DataBodyRangeRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilder instantiates a new ItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get gets the range object associated with the data body of the table.
+// returns a WorkbookRangeable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/table-databodyrange?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *ItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilder) Get(ctx con
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateWorkbookRangeFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,7 @@ func (m *ItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilder) Get(ctx con
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookRangeable), nil
 }
 // ToGetRequestInformation gets the range object associated with the data body of the table.
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +66,7 @@ func (m *ItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilder) ToGetReques
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilder when successful
 func (m *ItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilder) {
     return NewItemItemsItemWorkbookTablesItemDataBodyRangeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

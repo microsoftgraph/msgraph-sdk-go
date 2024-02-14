@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BlobContainerEvidence 
 type BlobContainerEvidence struct {
     AlertEvidence
 }
-// NewBlobContainerEvidence instantiates a new blobContainerEvidence and sets the default values.
+// NewBlobContainerEvidence instantiates a new BlobContainerEvidence and sets the default values.
 func NewBlobContainerEvidence()(*BlobContainerEvidence) {
     m := &BlobContainerEvidence{
         AlertEvidence: *NewAlertEvidence(),
@@ -18,10 +17,12 @@ func NewBlobContainerEvidence()(*BlobContainerEvidence) {
     return m
 }
 // CreateBlobContainerEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBlobContainerEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBlobContainerEvidence(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BlobContainerEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
     res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -57,6 +58,7 @@ func (m *BlobContainerEvidence) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetName gets the name property value. The name of the blob container.
+// returns a *string when successful
 func (m *BlobContainerEvidence) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -68,6 +70,7 @@ func (m *BlobContainerEvidence) GetName()(*string) {
     return nil
 }
 // GetStorageResource gets the storageResource property value. The storage which the blob container belongs to.
+// returns a AzureResourceEvidenceable when successful
 func (m *BlobContainerEvidence) GetStorageResource()(AzureResourceEvidenceable) {
     val, err := m.GetBackingStore().Get("storageResource")
     if err != nil {
@@ -79,6 +82,7 @@ func (m *BlobContainerEvidence) GetStorageResource()(AzureResourceEvidenceable) 
     return nil
 }
 // GetUrl gets the url property value. The full URL representation of the blob container.
+// returns a *string when successful
 func (m *BlobContainerEvidence) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -136,7 +140,6 @@ func (m *BlobContainerEvidence) SetUrl(value *string)() {
         panic(err)
     }
 }
-// BlobContainerEvidenceable 
 type BlobContainerEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

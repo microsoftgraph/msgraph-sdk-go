@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ExpressionInputObject 
 type ExpressionInputObject struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewExpressionInputObject instantiates a new expressionInputObject and sets the default values.
+// NewExpressionInputObject instantiates a new ExpressionInputObject and sets the default values.
 func NewExpressionInputObject()(*ExpressionInputObject) {
     m := &ExpressionInputObject{
     }
@@ -19,10 +18,12 @@ func NewExpressionInputObject()(*ExpressionInputObject) {
     return m
 }
 // CreateExpressionInputObjectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExpressionInputObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExpressionInputObject(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ExpressionInputObject) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ExpressionInputObject) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ExpressionInputObject) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDefinition gets the definition property value. Definition of the test object.
+// returns a ObjectDefinitionable when successful
 func (m *ExpressionInputObject) GetDefinition()(ObjectDefinitionable) {
     val, err := m.GetBackingStore().Get("definition")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *ExpressionInputObject) GetDefinition()(ObjectDefinitionable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExpressionInputObject) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["definition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -91,6 +95,7 @@ func (m *ExpressionInputObject) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ExpressionInputObject) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -102,6 +107,7 @@ func (m *ExpressionInputObject) GetOdataType()(*string) {
     return nil
 }
 // GetProperties gets the properties property value. Property values of the test object.
+// returns a []StringKeyObjectValuePairable when successful
 func (m *ExpressionInputObject) GetProperties()([]StringKeyObjectValuePairable) {
     val, err := m.GetBackingStore().Get("properties")
     if err != nil {
@@ -178,7 +184,6 @@ func (m *ExpressionInputObject) SetProperties(value []StringKeyObjectValuePairab
         panic(err)
     }
 }
-// ExpressionInputObjectable 
 type ExpressionInputObjectable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

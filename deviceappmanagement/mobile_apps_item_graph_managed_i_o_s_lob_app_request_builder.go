@@ -28,39 +28,43 @@ type MobileAppsItemGraphManagedIOSLobAppRequestBuilderGetRequestConfiguration st
     QueryParameters *MobileAppsItemGraphManagedIOSLobAppRequestBuilderGetQueryParameters
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
+// returns a *MobileAppsItemGraphManagedIOSLobAppAssignmentsRequestBuilder when successful
 func (m *MobileAppsItemGraphManagedIOSLobAppRequestBuilder) Assignments()(*MobileAppsItemGraphManagedIOSLobAppAssignmentsRequestBuilder) {
     return NewMobileAppsItemGraphManagedIOSLobAppAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+// returns a *MobileAppsItemGraphManagedIOSLobAppCategoriesRequestBuilder when successful
 func (m *MobileAppsItemGraphManagedIOSLobAppRequestBuilder) Categories()(*MobileAppsItemGraphManagedIOSLobAppCategoriesRequestBuilder) {
     return NewMobileAppsItemGraphManagedIOSLobAppCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewMobileAppsItemGraphManagedIOSLobAppRequestBuilderInternal instantiates a new GraphManagedIOSLobAppRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphManagedIOSLobAppRequestBuilderInternal instantiates a new MobileAppsItemGraphManagedIOSLobAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphManagedIOSLobAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphManagedIOSLobAppRequestBuilder) {
     m := &MobileAppsItemGraphManagedIOSLobAppRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.managedIOSLobApp{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.managedIOSLobApp{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewMobileAppsItemGraphManagedIOSLobAppRequestBuilder instantiates a new GraphManagedIOSLobAppRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphManagedIOSLobAppRequestBuilder instantiates a new MobileAppsItemGraphManagedIOSLobAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphManagedIOSLobAppRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphManagedIOSLobAppRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphManagedIOSLobAppRequestBuilderInternal(urlParams, requestAdapter)
 }
 // ContentVersions provides operations to manage the contentVersions property of the microsoft.graph.managedMobileLobApp entity.
+// returns a *MobileAppsItemGraphManagedIOSLobAppContentVersionsRequestBuilder when successful
 func (m *MobileAppsItemGraphManagedIOSLobAppRequestBuilder) ContentVersions()(*MobileAppsItemGraphManagedIOSLobAppContentVersionsRequestBuilder) {
     return NewMobileAppsItemGraphManagedIOSLobAppContentVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the item of type microsoft.graph.mobileApp as microsoft.graph.managedIOSLobApp
+// returns a ManagedIOSLobAppable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphManagedIOSLobAppRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphManagedIOSLobAppRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedIOSLobAppable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateManagedIOSLobAppFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -72,6 +76,7 @@ func (m *MobileAppsItemGraphManagedIOSLobAppRequestBuilder) Get(ctx context.Cont
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedIOSLobAppable), nil
 }
 // ToGetRequestInformation get the item of type microsoft.graph.mobileApp as microsoft.graph.managedIOSLobApp
+// returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphManagedIOSLobAppRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphManagedIOSLobAppRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -85,6 +90,7 @@ func (m *MobileAppsItemGraphManagedIOSLobAppRequestBuilder) ToGetRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MobileAppsItemGraphManagedIOSLobAppRequestBuilder when successful
 func (m *MobileAppsItemGraphManagedIOSLobAppRequestBuilder) WithUrl(rawUrl string)(*MobileAppsItemGraphManagedIOSLobAppRequestBuilder) {
     return NewMobileAppsItemGraphManagedIOSLobAppRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

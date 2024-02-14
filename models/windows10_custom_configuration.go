@@ -8,7 +8,7 @@ import (
 type Windows10CustomConfiguration struct {
     DeviceConfiguration
 }
-// NewWindows10CustomConfiguration instantiates a new windows10CustomConfiguration and sets the default values.
+// NewWindows10CustomConfiguration instantiates a new Windows10CustomConfiguration and sets the default values.
 func NewWindows10CustomConfiguration()(*Windows10CustomConfiguration) {
     m := &Windows10CustomConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewWindows10CustomConfiguration()(*Windows10CustomConfiguration) {
     return m
 }
 // CreateWindows10CustomConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindows10CustomConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows10CustomConfiguration(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Windows10CustomConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["omaSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -43,6 +45,7 @@ func (m *Windows10CustomConfiguration) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetOmaSettings gets the omaSettings property value. OMA settings. This collection can contain a maximum of 1000 elements.
+// returns a []OmaSettingable when successful
 func (m *Windows10CustomConfiguration) GetOmaSettings()([]OmaSettingable) {
     val, err := m.GetBackingStore().Get("omaSettings")
     if err != nil {
@@ -80,7 +83,6 @@ func (m *Windows10CustomConfiguration) SetOmaSettings(value []OmaSettingable)() 
         panic(err)
     }
 }
-// Windows10CustomConfigurationable 
 type Windows10CustomConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

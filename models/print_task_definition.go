@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintTaskDefinition 
 type PrintTaskDefinition struct {
     Entity
 }
-// NewPrintTaskDefinition instantiates a new printTaskDefinition and sets the default values.
+// NewPrintTaskDefinition instantiates a new PrintTaskDefinition and sets the default values.
 func NewPrintTaskDefinition()(*PrintTaskDefinition) {
     m := &PrintTaskDefinition{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewPrintTaskDefinition()(*PrintTaskDefinition) {
     return m
 }
 // CreatePrintTaskDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrintTaskDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrintTaskDefinition(), nil
 }
 // GetCreatedBy gets the createdBy property value. The createdBy property
+// returns a AppIdentityable when successful
 func (m *PrintTaskDefinition) GetCreatedBy()(AppIdentityable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *PrintTaskDefinition) GetCreatedBy()(AppIdentityable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of the printTaskDefinition.
+// returns a *string when successful
 func (m *PrintTaskDefinition) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *PrintTaskDefinition) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrintTaskDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -83,6 +86,7 @@ func (m *PrintTaskDefinition) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetTasks gets the tasks property value. A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
+// returns a []PrintTaskable when successful
 func (m *PrintTaskDefinition) GetTasks()([]PrintTaskable) {
     val, err := m.GetBackingStore().Get("tasks")
     if err != nil {
@@ -146,7 +150,6 @@ func (m *PrintTaskDefinition) SetTasks(value []PrintTaskable)() {
         panic(err)
     }
 }
-// PrintTaskDefinitionable 
 type PrintTaskDefinitionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ResourceOperationCollectionResponse 
 type ResourceOperationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewResourceOperationCollectionResponse instantiates a new resourceOperationCollectionResponse and sets the default values.
+// NewResourceOperationCollectionResponse instantiates a new ResourceOperationCollectionResponse and sets the default values.
 func NewResourceOperationCollectionResponse()(*ResourceOperationCollectionResponse) {
     m := &ResourceOperationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewResourceOperationCollectionResponse()(*ResourceOperationCollectionRespon
     return m
 }
 // CreateResourceOperationCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateResourceOperationCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewResourceOperationCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ResourceOperationCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ResourceOperationCollectionResponse) GetFieldDeserializers()(map[string
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ResourceOperationable when successful
 func (m *ResourceOperationCollectionResponse) GetValue()([]ResourceOperationable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ResourceOperationCollectionResponse) SetValue(value []ResourceOperation
         panic(err)
     }
 }
-// ResourceOperationCollectionResponseable 
 type ResourceOperationCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

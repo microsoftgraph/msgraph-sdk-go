@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CrossTenantIdentitySyncPolicyPartner 
 type CrossTenantIdentitySyncPolicyPartner struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCrossTenantIdentitySyncPolicyPartner instantiates a new crossTenantIdentitySyncPolicyPartner and sets the default values.
+// NewCrossTenantIdentitySyncPolicyPartner instantiates a new CrossTenantIdentitySyncPolicyPartner and sets the default values.
 func NewCrossTenantIdentitySyncPolicyPartner()(*CrossTenantIdentitySyncPolicyPartner) {
     m := &CrossTenantIdentitySyncPolicyPartner{
     }
@@ -19,10 +18,12 @@ func NewCrossTenantIdentitySyncPolicyPartner()(*CrossTenantIdentitySyncPolicyPar
     return m
 }
 // CreateCrossTenantIdentitySyncPolicyPartnerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCrossTenantIdentitySyncPolicyPartnerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCrossTenantIdentitySyncPolicyPartner(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CrossTenantIdentitySyncPolicyPartner) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *CrossTenantIdentitySyncPolicyPartner) GetAdditionalData()(map[string]an
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CrossTenantIdentitySyncPolicyPartner) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDisplayName gets the displayName property value. Display name for the cross-tenant user synchronization policy. Use the name of the partner Microsoft Entra tenant to easily identify the policy. Optional.
+// returns a *string when successful
 func (m *CrossTenantIdentitySyncPolicyPartner) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *CrossTenantIdentitySyncPolicyPartner) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CrossTenantIdentitySyncPolicyPartner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,6 +99,7 @@ func (m *CrossTenantIdentitySyncPolicyPartner) GetFieldDeserializers()(map[strin
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *CrossTenantIdentitySyncPolicyPartner) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *CrossTenantIdentitySyncPolicyPartner) GetOdataType()(*string) {
     return nil
 }
 // GetTenantId gets the tenantId property value. Tenant identifier for the partner Microsoft Entra organization. Read-only.
+// returns a *string when successful
 func (m *CrossTenantIdentitySyncPolicyPartner) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *CrossTenantIdentitySyncPolicyPartner) GetTenantId()(*string) {
     return nil
 }
 // GetUserSyncInbound gets the userSyncInbound property value. Defines whether users can be synchronized from the partner tenant. Key.
+// returns a CrossTenantUserSyncInboundable when successful
 func (m *CrossTenantIdentitySyncPolicyPartner) GetUserSyncInbound()(CrossTenantUserSyncInboundable) {
     val, err := m.GetBackingStore().Get("userSyncInbound")
     if err != nil {
@@ -200,7 +207,6 @@ func (m *CrossTenantIdentitySyncPolicyPartner) SetUserSyncInbound(value CrossTen
         panic(err)
     }
 }
-// CrossTenantIdentitySyncPolicyPartnerable 
 type CrossTenantIdentitySyncPolicyPartnerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

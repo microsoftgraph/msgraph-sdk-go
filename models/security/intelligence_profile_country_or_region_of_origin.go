@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// IntelligenceProfileCountryOrRegionOfOrigin 
 type IntelligenceProfileCountryOrRegionOfOrigin struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewIntelligenceProfileCountryOrRegionOfOrigin instantiates a new intelligenceProfileCountryOrRegionOfOrigin and sets the default values.
+// NewIntelligenceProfileCountryOrRegionOfOrigin instantiates a new IntelligenceProfileCountryOrRegionOfOrigin and sets the default values.
 func NewIntelligenceProfileCountryOrRegionOfOrigin()(*IntelligenceProfileCountryOrRegionOfOrigin) {
     m := &IntelligenceProfileCountryOrRegionOfOrigin{
     }
@@ -19,10 +18,12 @@ func NewIntelligenceProfileCountryOrRegionOfOrigin()(*IntelligenceProfileCountry
     return m
 }
 // CreateIntelligenceProfileCountryOrRegionOfOriginFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIntelligenceProfileCountryOrRegionOfOriginFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIntelligenceProfileCountryOrRegionOfOrigin(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *IntelligenceProfileCountryOrRegionOfOrigin) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *IntelligenceProfileCountryOrRegionOfOrigin) GetAdditionalData()(map[str
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *IntelligenceProfileCountryOrRegionOfOrigin) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCode gets the code property value. A codified representation for this country/region of origin.
+// returns a *string when successful
 func (m *IntelligenceProfileCountryOrRegionOfOrigin) GetCode()(*string) {
     val, err := m.GetBackingStore().Get("code")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *IntelligenceProfileCountryOrRegionOfOrigin) GetCode()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IntelligenceProfileCountryOrRegionOfOrigin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["code"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -85,6 +89,7 @@ func (m *IntelligenceProfileCountryOrRegionOfOrigin) GetFieldDeserializers()(map
     return res
 }
 // GetLabel gets the label property value. A display label for this ountry/region of origin.
+// returns a *string when successful
 func (m *IntelligenceProfileCountryOrRegionOfOrigin) GetLabel()(*string) {
     val, err := m.GetBackingStore().Get("label")
     if err != nil {
@@ -96,6 +101,7 @@ func (m *IntelligenceProfileCountryOrRegionOfOrigin) GetLabel()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *IntelligenceProfileCountryOrRegionOfOrigin) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -166,7 +172,6 @@ func (m *IntelligenceProfileCountryOrRegionOfOrigin) SetOdataType(value *string)
         panic(err)
     }
 }
-// IntelligenceProfileCountryOrRegionOfOriginable 
 type IntelligenceProfileCountryOrRegionOfOriginable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

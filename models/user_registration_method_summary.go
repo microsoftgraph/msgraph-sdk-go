@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// UserRegistrationMethodSummary 
 type UserRegistrationMethodSummary struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewUserRegistrationMethodSummary instantiates a new userRegistrationMethodSummary and sets the default values.
+// NewUserRegistrationMethodSummary instantiates a new UserRegistrationMethodSummary and sets the default values.
 func NewUserRegistrationMethodSummary()(*UserRegistrationMethodSummary) {
     m := &UserRegistrationMethodSummary{
     }
@@ -19,10 +18,12 @@ func NewUserRegistrationMethodSummary()(*UserRegistrationMethodSummary) {
     return m
 }
 // CreateUserRegistrationMethodSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserRegistrationMethodSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserRegistrationMethodSummary(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *UserRegistrationMethodSummary) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *UserRegistrationMethodSummary) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *UserRegistrationMethodSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserRegistrationMethodSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -100,6 +103,7 @@ func (m *UserRegistrationMethodSummary) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *UserRegistrationMethodSummary) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -111,6 +115,7 @@ func (m *UserRegistrationMethodSummary) GetOdataType()(*string) {
     return nil
 }
 // GetTotalUserCount gets the totalUserCount property value. Total number of users in the tenant.
+// returns a *int64 when successful
 func (m *UserRegistrationMethodSummary) GetTotalUserCount()(*int64) {
     val, err := m.GetBackingStore().Get("totalUserCount")
     if err != nil {
@@ -122,6 +127,7 @@ func (m *UserRegistrationMethodSummary) GetTotalUserCount()(*int64) {
     return nil
 }
 // GetUserRegistrationMethodCounts gets the userRegistrationMethodCounts property value. Number of users registered for each authentication method.
+// returns a []UserRegistrationMethodCountable when successful
 func (m *UserRegistrationMethodSummary) GetUserRegistrationMethodCounts()([]UserRegistrationMethodCountable) {
     val, err := m.GetBackingStore().Get("userRegistrationMethodCounts")
     if err != nil {
@@ -133,6 +139,7 @@ func (m *UserRegistrationMethodSummary) GetUserRegistrationMethodCounts()([]User
     return nil
 }
 // GetUserRoles gets the userRoles property value. The role type of the user. Possible values are: all, privilegedAdmin, admin, user, unknownFutureValue.
+// returns a *IncludedUserRoles when successful
 func (m *UserRegistrationMethodSummary) GetUserRoles()(*IncludedUserRoles) {
     val, err := m.GetBackingStore().Get("userRoles")
     if err != nil {
@@ -144,6 +151,7 @@ func (m *UserRegistrationMethodSummary) GetUserRoles()(*IncludedUserRoles) {
     return nil
 }
 // GetUserTypes gets the userTypes property value. User type. Possible values are: all, member, guest, unknownFutureValue.
+// returns a *IncludedUserTypes when successful
 func (m *UserRegistrationMethodSummary) GetUserTypes()(*IncludedUserTypes) {
     val, err := m.GetBackingStore().Get("userTypes")
     if err != nil {
@@ -248,7 +256,6 @@ func (m *UserRegistrationMethodSummary) SetUserTypes(value *IncludedUserTypes)()
         panic(err)
     }
 }
-// UserRegistrationMethodSummaryable 
 type UserRegistrationMethodSummaryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

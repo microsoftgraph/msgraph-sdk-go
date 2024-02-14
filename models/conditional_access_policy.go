@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConditionalAccessPolicy 
 type ConditionalAccessPolicy struct {
     Entity
 }
-// NewConditionalAccessPolicy instantiates a new conditionalAccessPolicy and sets the default values.
+// NewConditionalAccessPolicy instantiates a new ConditionalAccessPolicy and sets the default values.
 func NewConditionalAccessPolicy()(*ConditionalAccessPolicy) {
     m := &ConditionalAccessPolicy{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewConditionalAccessPolicy()(*ConditionalAccessPolicy) {
     return m
 }
 // CreateConditionalAccessPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConditionalAccessPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConditionalAccessPolicy(), nil
 }
 // GetConditions gets the conditions property value. The conditions property
+// returns a ConditionalAccessConditionSetable when successful
 func (m *ConditionalAccessPolicy) GetConditions()(ConditionalAccessConditionSetable) {
     val, err := m.GetBackingStore().Get("conditions")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *ConditionalAccessPolicy) GetConditions()(ConditionalAccessConditionSeta
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
+// returns a *Time when successful
 func (m *ConditionalAccessPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *ConditionalAccessPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *ConditionalAccessPolicy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *ConditionalAccessPolicy) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Specifies a display name for the conditionalAccessPolicy object.
+// returns a *string when successful
 func (m *ConditionalAccessPolicy) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *ConditionalAccessPolicy) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConditionalAccessPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["conditions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -160,6 +165,7 @@ func (m *ConditionalAccessPolicy) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetGrantControls gets the grantControls property value. Specifies the grant controls that must be fulfilled to pass the policy.
+// returns a ConditionalAccessGrantControlsable when successful
 func (m *ConditionalAccessPolicy) GetGrantControls()(ConditionalAccessGrantControlsable) {
     val, err := m.GetBackingStore().Get("grantControls")
     if err != nil {
@@ -171,6 +177,7 @@ func (m *ConditionalAccessPolicy) GetGrantControls()(ConditionalAccessGrantContr
     return nil
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
+// returns a *Time when successful
 func (m *ConditionalAccessPolicy) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("modifiedDateTime")
     if err != nil {
@@ -182,6 +189,7 @@ func (m *ConditionalAccessPolicy) GetModifiedDateTime()(*i336074805fc853987abe6f
     return nil
 }
 // GetSessionControls gets the sessionControls property value. Specifies the session controls that are enforced after sign-in.
+// returns a ConditionalAccessSessionControlsable when successful
 func (m *ConditionalAccessPolicy) GetSessionControls()(ConditionalAccessSessionControlsable) {
     val, err := m.GetBackingStore().Get("sessionControls")
     if err != nil {
@@ -193,6 +201,7 @@ func (m *ConditionalAccessPolicy) GetSessionControls()(ConditionalAccessSessionC
     return nil
 }
 // GetState gets the state property value. The state property
+// returns a *ConditionalAccessPolicyState when successful
 func (m *ConditionalAccessPolicy) GetState()(*ConditionalAccessPolicyState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -204,6 +213,7 @@ func (m *ConditionalAccessPolicy) GetState()(*ConditionalAccessPolicyState) {
     return nil
 }
 // GetTemplateId gets the templateId property value. The templateId property
+// returns a *string when successful
 func (m *ConditionalAccessPolicy) GetTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("templateId")
     if err != nil {
@@ -340,7 +350,6 @@ func (m *ConditionalAccessPolicy) SetTemplateId(value *string)() {
         panic(err)
     }
 }
-// ConditionalAccessPolicyable 
 type ConditionalAccessPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

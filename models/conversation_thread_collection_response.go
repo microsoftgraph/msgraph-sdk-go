@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConversationThreadCollectionResponse 
 type ConversationThreadCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewConversationThreadCollectionResponse instantiates a new conversationThreadCollectionResponse and sets the default values.
+// NewConversationThreadCollectionResponse instantiates a new ConversationThreadCollectionResponse and sets the default values.
 func NewConversationThreadCollectionResponse()(*ConversationThreadCollectionResponse) {
     m := &ConversationThreadCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewConversationThreadCollectionResponse()(*ConversationThreadCollectionResp
     return m
 }
 // CreateConversationThreadCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConversationThreadCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConversationThreadCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConversationThreadCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ConversationThreadCollectionResponse) GetFieldDeserializers()(map[strin
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ConversationThreadable when successful
 func (m *ConversationThreadCollectionResponse) GetValue()([]ConversationThreadable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ConversationThreadCollectionResponse) SetValue(value []ConversationThre
         panic(err)
     }
 }
-// ConversationThreadCollectionResponseable 
 type ConversationThreadCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageResourceEnvironment 
 type AccessPackageResourceEnvironment struct {
     Entity
 }
-// NewAccessPackageResourceEnvironment instantiates a new accessPackageResourceEnvironment and sets the default values.
+// NewAccessPackageResourceEnvironment instantiates a new AccessPackageResourceEnvironment and sets the default values.
 func NewAccessPackageResourceEnvironment()(*AccessPackageResourceEnvironment) {
     m := &AccessPackageResourceEnvironment{
         Entity: *NewEntity(),
@@ -17,10 +16,24 @@ func NewAccessPackageResourceEnvironment()(*AccessPackageResourceEnvironment) {
     return m
 }
 // CreateAccessPackageResourceEnvironmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessPackageResourceEnvironmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageResourceEnvironment(), nil
 }
+// GetConnectionInfo gets the connectionInfo property value. The connectionInfo property
+// returns a ConnectionInfoable when successful
+func (m *AccessPackageResourceEnvironment) GetConnectionInfo()(ConnectionInfoable) {
+    val, err := m.GetBackingStore().Get("connectionInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ConnectionInfoable)
+    }
+    return nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. The date and time that this object was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *AccessPackageResourceEnvironment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -32,6 +45,7 @@ func (m *AccessPackageResourceEnvironment) GetCreatedDateTime()(*i336074805fc853
     return nil
 }
 // GetDescription gets the description property value. The description of this object.
+// returns a *string when successful
 func (m *AccessPackageResourceEnvironment) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -43,6 +57,7 @@ func (m *AccessPackageResourceEnvironment) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of this object.
+// returns a *string when successful
 func (m *AccessPackageResourceEnvironment) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -54,8 +69,19 @@ func (m *AccessPackageResourceEnvironment) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessPackageResourceEnvironment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["connectionInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateConnectionInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetConnectionInfo(val.(ConnectionInfoable))
+        }
+        return nil
+    }
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -145,6 +171,7 @@ func (m *AccessPackageResourceEnvironment) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetIsDefaultEnvironment gets the isDefaultEnvironment property value. Determines whether this is default environment or not. It is set to true for all static origin systems, such as Microsoft Entra groups and Microsoft Entra Applications.
+// returns a *bool when successful
 func (m *AccessPackageResourceEnvironment) GetIsDefaultEnvironment()(*bool) {
     val, err := m.GetBackingStore().Get("isDefaultEnvironment")
     if err != nil {
@@ -156,6 +183,7 @@ func (m *AccessPackageResourceEnvironment) GetIsDefaultEnvironment()(*bool) {
     return nil
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. The date and time that this object was last modified. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *AccessPackageResourceEnvironment) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("modifiedDateTime")
     if err != nil {
@@ -167,6 +195,7 @@ func (m *AccessPackageResourceEnvironment) GetModifiedDateTime()(*i336074805fc85
     return nil
 }
 // GetOriginId gets the originId property value. The unique identifier of this environment in the origin system.
+// returns a *string when successful
 func (m *AccessPackageResourceEnvironment) GetOriginId()(*string) {
     val, err := m.GetBackingStore().Get("originId")
     if err != nil {
@@ -178,6 +207,7 @@ func (m *AccessPackageResourceEnvironment) GetOriginId()(*string) {
     return nil
 }
 // GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, that is, SharePointOnline. Requires $filter (eq).
+// returns a *string when successful
 func (m *AccessPackageResourceEnvironment) GetOriginSystem()(*string) {
     val, err := m.GetBackingStore().Get("originSystem")
     if err != nil {
@@ -189,6 +219,7 @@ func (m *AccessPackageResourceEnvironment) GetOriginSystem()(*string) {
     return nil
 }
 // GetResources gets the resources property value. Read-only. Required.
+// returns a []AccessPackageResourceable when successful
 func (m *AccessPackageResourceEnvironment) GetResources()([]AccessPackageResourceable) {
     val, err := m.GetBackingStore().Get("resources")
     if err != nil {
@@ -204,6 +235,12 @@ func (m *AccessPackageResourceEnvironment) Serialize(writer i878a80d2330e89d2689
     err := m.Entity.Serialize(writer)
     if err != nil {
         return err
+    }
+    {
+        err = writer.WriteObjectValue("connectionInfo", m.GetConnectionInfo())
+        if err != nil {
+            return err
+        }
     }
     {
         err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
@@ -261,6 +298,13 @@ func (m *AccessPackageResourceEnvironment) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
+// SetConnectionInfo sets the connectionInfo property value. The connectionInfo property
+func (m *AccessPackageResourceEnvironment) SetConnectionInfo(value ConnectionInfoable)() {
+    err := m.GetBackingStore().Set("connectionInfo", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCreatedDateTime sets the createdDateTime property value. The date and time that this object was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AccessPackageResourceEnvironment) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
@@ -317,10 +361,10 @@ func (m *AccessPackageResourceEnvironment) SetResources(value []AccessPackageRes
         panic(err)
     }
 }
-// AccessPackageResourceEnvironmentable 
 type AccessPackageResourceEnvironmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetConnectionInfo()(ConnectionInfoable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDescription()(*string)
     GetDisplayName()(*string)
@@ -329,6 +373,7 @@ type AccessPackageResourceEnvironmentable interface {
     GetOriginId()(*string)
     GetOriginSystem()(*string)
     GetResources()([]AccessPackageResourceable)
+    SetConnectionInfo(value ConnectionInfoable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()

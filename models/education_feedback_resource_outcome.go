@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationFeedbackResourceOutcome 
 type EducationFeedbackResourceOutcome struct {
     EducationOutcome
 }
-// NewEducationFeedbackResourceOutcome instantiates a new educationFeedbackResourceOutcome and sets the default values.
+// NewEducationFeedbackResourceOutcome instantiates a new EducationFeedbackResourceOutcome and sets the default values.
 func NewEducationFeedbackResourceOutcome()(*EducationFeedbackResourceOutcome) {
     m := &EducationFeedbackResourceOutcome{
         EducationOutcome: *NewEducationOutcome(),
@@ -18,10 +17,12 @@ func NewEducationFeedbackResourceOutcome()(*EducationFeedbackResourceOutcome) {
     return m
 }
 // CreateEducationFeedbackResourceOutcomeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationFeedbackResourceOutcomeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationFeedbackResourceOutcome(), nil
 }
 // GetFeedbackResource gets the feedbackResource property value. The actual feedback resource.
+// returns a EducationResourceable when successful
 func (m *EducationFeedbackResourceOutcome) GetFeedbackResource()(EducationResourceable) {
     val, err := m.GetBackingStore().Get("feedbackResource")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *EducationFeedbackResourceOutcome) GetFeedbackResource()(EducationResour
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationFeedbackResourceOutcome) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EducationOutcome.GetFieldDeserializers()
     res["feedbackResource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +60,7 @@ func (m *EducationFeedbackResourceOutcome) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetResourceStatus gets the resourceStatus property value. The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, unknownFutureValue.
+// returns a *EducationFeedbackResourceOutcomeStatus when successful
 func (m *EducationFeedbackResourceOutcome) GetResourceStatus()(*EducationFeedbackResourceOutcomeStatus) {
     val, err := m.GetBackingStore().Get("resourceStatus")
     if err != nil {
@@ -103,7 +106,6 @@ func (m *EducationFeedbackResourceOutcome) SetResourceStatus(value *EducationFee
         panic(err)
     }
 }
-// EducationFeedbackResourceOutcomeable 
 type EducationFeedbackResourceOutcomeable interface {
     EducationOutcomeable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CollapseProperty 
 type CollapseProperty struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCollapseProperty instantiates a new collapseProperty and sets the default values.
+// NewCollapseProperty instantiates a new CollapseProperty and sets the default values.
 func NewCollapseProperty()(*CollapseProperty) {
     m := &CollapseProperty{
     }
@@ -19,10 +18,12 @@ func NewCollapseProperty()(*CollapseProperty) {
     return m
 }
 // CreateCollapsePropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCollapsePropertyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCollapseProperty(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CollapseProperty) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *CollapseProperty) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CollapseProperty) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CollapseProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["fields"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -80,6 +83,7 @@ func (m *CollapseProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetFields gets the fields property value. Defines the collapse group to trim results. The properties in this collection must be sortable/refinable properties. Required.
+// returns a []string when successful
 func (m *CollapseProperty) GetFields()([]string) {
     val, err := m.GetBackingStore().Get("fields")
     if err != nil {
@@ -91,6 +95,7 @@ func (m *CollapseProperty) GetFields()([]string) {
     return nil
 }
 // GetLimit gets the limit property value. Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
+// returns a *int32 when successful
 func (m *CollapseProperty) GetLimit()(*int32) {
     val, err := m.GetBackingStore().Get("limit")
     if err != nil {
@@ -102,6 +107,7 @@ func (m *CollapseProperty) GetLimit()(*int32) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *CollapseProperty) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -172,7 +178,6 @@ func (m *CollapseProperty) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// CollapsePropertyable 
 type CollapsePropertyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

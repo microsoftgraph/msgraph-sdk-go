@@ -27,28 +27,29 @@ type ItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilderGetRequestConfi
     // Request query parameters
     QueryParameters *ItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilderGetQueryParameters
 }
-// NewItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilderInternal instantiates a new ParentSectionGroupRequestBuilder and sets the default values.
+// NewItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilderInternal instantiates a new ItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilder and sets the default values.
 func NewItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilder) {
     m := &ItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/onenote/sectionGroups/{sectionGroup%2Did}/parentSectionGroup{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/onenote/sectionGroups/{sectionGroup%2Did}/parentSectionGroup{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilder instantiates a new ParentSectionGroupRequestBuilder and sets the default values.
+// NewItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilder instantiates a new ItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilder and sets the default values.
 func NewItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the section group that contains the section group. Read-only.
+// returns a SectionGroupable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SectionGroupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateSectionGroupFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *ItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilder) Get(ctx c
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SectionGroupable), nil
 }
 // ToGetRequestInformation the section group that contains the section group. Read-only.
+// returns a *RequestInformation when successful
 func (m *ItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *ItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilder) ToGetRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilder when successful
 func (m *ItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilder) WithUrl(rawUrl string)(*ItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilder) {
     return NewItemOnenoteSectionGroupsItemParentSectionGroupRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

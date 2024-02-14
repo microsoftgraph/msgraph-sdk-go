@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProvisionedIdentity 
 type ProvisionedIdentity struct {
     Identity
 }
-// NewProvisionedIdentity instantiates a new provisionedIdentity and sets the default values.
+// NewProvisionedIdentity instantiates a new ProvisionedIdentity and sets the default values.
 func NewProvisionedIdentity()(*ProvisionedIdentity) {
     m := &ProvisionedIdentity{
         Identity: *NewIdentity(),
@@ -18,10 +17,12 @@ func NewProvisionedIdentity()(*ProvisionedIdentity) {
     return m
 }
 // CreateProvisionedIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateProvisionedIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProvisionedIdentity(), nil
 }
 // GetDetails gets the details property value. Details of the identity.
+// returns a DetailsInfoable when successful
 func (m *ProvisionedIdentity) GetDetails()(DetailsInfoable) {
     val, err := m.GetBackingStore().Get("details")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ProvisionedIdentity) GetDetails()(DetailsInfoable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProvisionedIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Identity.GetFieldDeserializers()
     res["details"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +60,7 @@ func (m *ProvisionedIdentity) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetIdentityType gets the identityType property value. Type of identity that has been provisioned, such as 'user' or 'group'. Supports $filter (eq, contains).
+// returns a *string when successful
 func (m *ProvisionedIdentity) GetIdentityType()(*string) {
     val, err := m.GetBackingStore().Get("identityType")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *ProvisionedIdentity) SetIdentityType(value *string)() {
         panic(err)
     }
 }
-// ProvisionedIdentityable 
 type ProvisionedIdentityable interface {
     Identityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

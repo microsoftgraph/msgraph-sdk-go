@@ -39,28 +39,29 @@ type ItemGetByPathWithPathExternalColumnsRequestBuilderGetRequestConfiguration s
     // Request query parameters
     QueryParameters *ItemGetByPathWithPathExternalColumnsRequestBuilderGetQueryParameters
 }
-// NewItemGetByPathWithPathExternalColumnsRequestBuilderInternal instantiates a new ExternalColumnsRequestBuilder and sets the default values.
+// NewItemGetByPathWithPathExternalColumnsRequestBuilderInternal instantiates a new ItemGetByPathWithPathExternalColumnsRequestBuilder and sets the default values.
 func NewItemGetByPathWithPathExternalColumnsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGetByPathWithPathExternalColumnsRequestBuilder) {
     m := &ItemGetByPathWithPathExternalColumnsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/externalColumns{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/externalColumns{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemGetByPathWithPathExternalColumnsRequestBuilder instantiates a new ExternalColumnsRequestBuilder and sets the default values.
+// NewItemGetByPathWithPathExternalColumnsRequestBuilder instantiates a new ItemGetByPathWithPathExternalColumnsRequestBuilder and sets the default values.
 func NewItemGetByPathWithPathExternalColumnsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGetByPathWithPathExternalColumnsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemGetByPathWithPathExternalColumnsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get externalColumns from sites
+// returns a ColumnDefinitionCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGetByPathWithPathExternalColumnsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGetByPathWithPathExternalColumnsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateColumnDefinitionCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -72,6 +73,7 @@ func (m *ItemGetByPathWithPathExternalColumnsRequestBuilder) Get(ctx context.Con
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ColumnDefinitionCollectionResponseable), nil
 }
 // ToGetRequestInformation get externalColumns from sites
+// returns a *RequestInformation when successful
 func (m *ItemGetByPathWithPathExternalColumnsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGetByPathWithPathExternalColumnsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -85,6 +87,7 @@ func (m *ItemGetByPathWithPathExternalColumnsRequestBuilder) ToGetRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemGetByPathWithPathExternalColumnsRequestBuilder when successful
 func (m *ItemGetByPathWithPathExternalColumnsRequestBuilder) WithUrl(rawUrl string)(*ItemGetByPathWithPathExternalColumnsRequestBuilder) {
     return NewItemGetByPathWithPathExternalColumnsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

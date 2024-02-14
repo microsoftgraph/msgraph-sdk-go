@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WhoisRecord 
 type WhoisRecord struct {
     WhoisBaseRecord
 }
-// NewWhoisRecord instantiates a new whoisRecord and sets the default values.
+// NewWhoisRecord instantiates a new WhoisRecord and sets the default values.
 func NewWhoisRecord()(*WhoisRecord) {
     m := &WhoisRecord{
         WhoisBaseRecord: *NewWhoisBaseRecord(),
@@ -18,10 +17,12 @@ func NewWhoisRecord()(*WhoisRecord) {
     return m
 }
 // CreateWhoisRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWhoisRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWhoisRecord(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WhoisRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WhoisBaseRecord.GetFieldDeserializers()
     res["history"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -43,6 +44,7 @@ func (m *WhoisRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetHistory gets the history property value. The collection of historical records associated to this WHOIS object.
+// returns a []WhoisHistoryRecordable when successful
 func (m *WhoisRecord) GetHistory()([]WhoisHistoryRecordable) {
     val, err := m.GetBackingStore().Get("history")
     if err != nil {
@@ -80,7 +82,6 @@ func (m *WhoisRecord) SetHistory(value []WhoisHistoryRecordable)() {
         panic(err)
     }
 }
-// WhoisRecordable 
 type WhoisRecordable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WhoisBaseRecordable

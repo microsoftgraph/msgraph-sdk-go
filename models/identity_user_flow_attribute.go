@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityUserFlowAttribute 
 type IdentityUserFlowAttribute struct {
     Entity
 }
-// NewIdentityUserFlowAttribute instantiates a new identityUserFlowAttribute and sets the default values.
+// NewIdentityUserFlowAttribute instantiates a new IdentityUserFlowAttribute and sets the default values.
 func NewIdentityUserFlowAttribute()(*IdentityUserFlowAttribute) {
     m := &IdentityUserFlowAttribute{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewIdentityUserFlowAttribute()(*IdentityUserFlowAttribute) {
     return m
 }
 // CreateIdentityUserFlowAttributeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIdentityUserFlowAttributeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +40,7 @@ func CreateIdentityUserFlowAttributeFromDiscriminatorValue(parseNode i878a80d233
     return NewIdentityUserFlowAttribute(), nil
 }
 // GetDataType gets the dataType property value. The dataType property
+// returns a *IdentityUserFlowAttributeDataType when successful
 func (m *IdentityUserFlowAttribute) GetDataType()(*IdentityUserFlowAttributeDataType) {
     val, err := m.GetBackingStore().Get("dataType")
     if err != nil {
@@ -51,6 +52,7 @@ func (m *IdentityUserFlowAttribute) GetDataType()(*IdentityUserFlowAttributeData
     return nil
 }
 // GetDescription gets the description property value. The description of the user flow attribute that's shown to the user at the time of sign-up.
+// returns a *string when successful
 func (m *IdentityUserFlowAttribute) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -62,6 +64,7 @@ func (m *IdentityUserFlowAttribute) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the user flow attribute.  Supports $filter (eq, ne).
+// returns a *string when successful
 func (m *IdentityUserFlowAttribute) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -73,6 +76,7 @@ func (m *IdentityUserFlowAttribute) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IdentityUserFlowAttribute) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["dataType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -118,6 +122,7 @@ func (m *IdentityUserFlowAttribute) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetUserFlowAttributeType gets the userFlowAttributeType property value. The userFlowAttributeType property
+// returns a *IdentityUserFlowAttributeType when successful
 func (m *IdentityUserFlowAttribute) GetUserFlowAttributeType()(*IdentityUserFlowAttributeType) {
     val, err := m.GetBackingStore().Get("userFlowAttributeType")
     if err != nil {
@@ -190,7 +195,6 @@ func (m *IdentityUserFlowAttribute) SetUserFlowAttributeType(value *IdentityUser
         panic(err)
     }
 }
-// IdentityUserFlowAttributeable 
 type IdentityUserFlowAttributeable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

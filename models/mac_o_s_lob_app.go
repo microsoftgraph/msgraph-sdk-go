@@ -8,7 +8,7 @@ import (
 type MacOSLobApp struct {
     MobileLobApp
 }
-// NewMacOSLobApp instantiates a new macOSLobApp and sets the default values.
+// NewMacOSLobApp instantiates a new MacOSLobApp and sets the default values.
 func NewMacOSLobApp()(*MacOSLobApp) {
     m := &MacOSLobApp{
         MobileLobApp: *NewMobileLobApp(),
@@ -18,10 +18,12 @@ func NewMacOSLobApp()(*MacOSLobApp) {
     return m
 }
 // CreateMacOSLobAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOSLobAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSLobApp(), nil
 }
 // GetBuildNumber gets the buildNumber property value. The build number of the package. This should match the package CFBundleShortVersionString of the .pkg file.
+// returns a *string when successful
 func (m *MacOSLobApp) GetBuildNumber()(*string) {
     val, err := m.GetBackingStore().Get("buildNumber")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *MacOSLobApp) GetBuildNumber()(*string) {
     return nil
 }
 // GetBundleId gets the bundleId property value. The primary bundleId of the package.
+// returns a *string when successful
 func (m *MacOSLobApp) GetBundleId()(*string) {
     val, err := m.GetBackingStore().Get("bundleId")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *MacOSLobApp) GetBundleId()(*string) {
     return nil
 }
 // GetChildApps gets the childApps property value. List of ComplexType macOSLobChildApp objects. Represents the apps expected to be installed by the package.
+// returns a []MacOSLobChildAppable when successful
 func (m *MacOSLobApp) GetChildApps()([]MacOSLobChildAppable) {
     val, err := m.GetBackingStore().Get("childApps")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *MacOSLobApp) GetChildApps()([]MacOSLobChildAppable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSLobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileLobApp.GetFieldDeserializers()
     res["buildNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -162,6 +167,7 @@ func (m *MacOSLobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetIgnoreVersionDetection gets the ignoreVersionDetection property value. When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature.
+// returns a *bool when successful
 func (m *MacOSLobApp) GetIgnoreVersionDetection()(*bool) {
     val, err := m.GetBackingStore().Get("ignoreVersionDetection")
     if err != nil {
@@ -173,6 +179,7 @@ func (m *MacOSLobApp) GetIgnoreVersionDetection()(*bool) {
     return nil
 }
 // GetInstallAsManaged gets the installAsManaged property value. When TRUE, indicates that the app will be installed as managed (requires macOS 11.0 and other managed package restrictions). When FALSE, indicates that the app will be installed as unmanaged.
+// returns a *bool when successful
 func (m *MacOSLobApp) GetInstallAsManaged()(*bool) {
     val, err := m.GetBackingStore().Get("installAsManaged")
     if err != nil {
@@ -184,6 +191,7 @@ func (m *MacOSLobApp) GetInstallAsManaged()(*bool) {
     return nil
 }
 // GetMd5Hash gets the md5Hash property value. The MD5 hash codes. This is empty if the package was uploaded directly. If the Intune App Wrapping Tool is used to create a .intunemac, this value can be found inside the Detection.xml file.
+// returns a []string when successful
 func (m *MacOSLobApp) GetMd5Hash()([]string) {
     val, err := m.GetBackingStore().Get("md5Hash")
     if err != nil {
@@ -195,6 +203,7 @@ func (m *MacOSLobApp) GetMd5Hash()([]string) {
     return nil
 }
 // GetMd5HashChunkSize gets the md5HashChunkSize property value. The chunk size for MD5 hash. This is '0' or empty if the package was uploaded directly. If the Intune App Wrapping Tool is used to create a .intunemac, this value can be found inside the Detection.xml file.
+// returns a *int32 when successful
 func (m *MacOSLobApp) GetMd5HashChunkSize()(*int32) {
     val, err := m.GetBackingStore().Get("md5HashChunkSize")
     if err != nil {
@@ -206,6 +215,7 @@ func (m *MacOSLobApp) GetMd5HashChunkSize()(*int32) {
     return nil
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. ComplexType macOSMinimumOperatingSystem that indicates the minimum operating system applicable for the application.
+// returns a MacOSMinimumOperatingSystemable when successful
 func (m *MacOSLobApp) GetMinimumSupportedOperatingSystem()(MacOSMinimumOperatingSystemable) {
     val, err := m.GetBackingStore().Get("minimumSupportedOperatingSystem")
     if err != nil {
@@ -217,6 +227,7 @@ func (m *MacOSLobApp) GetMinimumSupportedOperatingSystem()(MacOSMinimumOperating
     return nil
 }
 // GetVersionNumber gets the versionNumber property value. The version number of the package. This should match the package CFBundleVersion in the packageinfo file.
+// returns a *string when successful
 func (m *MacOSLobApp) GetVersionNumber()(*string) {
     val, err := m.GetBackingStore().Get("versionNumber")
     if err != nil {
@@ -358,7 +369,6 @@ func (m *MacOSLobApp) SetVersionNumber(value *string)() {
         panic(err)
     }
 }
-// MacOSLobAppable 
 type MacOSLobAppable interface {
     MobileLobAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

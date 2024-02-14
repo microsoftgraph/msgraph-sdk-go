@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// NetworkInfo 
 type NetworkInfo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewNetworkInfo instantiates a new networkInfo and sets the default values.
+// NewNetworkInfo instantiates a new NetworkInfo and sets the default values.
 func NewNetworkInfo()(*NetworkInfo) {
     m := &NetworkInfo{
     }
@@ -19,10 +18,12 @@ func NewNetworkInfo()(*NetworkInfo) {
     return m
 }
 // CreateNetworkInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateNetworkInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNetworkInfo(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *NetworkInfo) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *NetworkInfo) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *NetworkInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBandwidthLowEventRatio gets the bandwidthLowEventRatio property value. Fraction of the call that the media endpoint detected the available bandwidth or bandwidth policy was low enough to cause poor quality of the audio sent.
+// returns a *float32 when successful
 func (m *NetworkInfo) GetBandwidthLowEventRatio()(*float32) {
     val, err := m.GetBackingStore().Get("bandwidthLowEventRatio")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *NetworkInfo) GetBandwidthLowEventRatio()(*float32) {
     return nil
 }
 // GetBasicServiceSetIdentifier gets the basicServiceSetIdentifier property value. The wireless LAN basic service set identifier of the media endpoint used to connect to the network.
+// returns a *string when successful
 func (m *NetworkInfo) GetBasicServiceSetIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("basicServiceSetIdentifier")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *NetworkInfo) GetBasicServiceSetIdentifier()(*string) {
     return nil
 }
 // GetConnectionType gets the connectionType property value. The connectionType property
+// returns a *NetworkConnectionType when successful
 func (m *NetworkInfo) GetConnectionType()(*NetworkConnectionType) {
     val, err := m.GetBackingStore().Get("connectionType")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *NetworkInfo) GetConnectionType()(*NetworkConnectionType) {
     return nil
 }
 // GetDelayEventRatio gets the delayEventRatio property value. Fraction of the call that the media endpoint detected the network delay was significant enough to impact the ability to have real-time two-way communication.
+// returns a *float32 when successful
 func (m *NetworkInfo) GetDelayEventRatio()(*float32) {
     val, err := m.GetBackingStore().Get("delayEventRatio")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *NetworkInfo) GetDelayEventRatio()(*float32) {
     return nil
 }
 // GetDnsSuffix gets the dnsSuffix property value. DNS suffix associated with the network adapter of the media endpoint.
+// returns a *string when successful
 func (m *NetworkInfo) GetDnsSuffix()(*string) {
     val, err := m.GetBackingStore().Get("dnsSuffix")
     if err != nil {
@@ -94,6 +101,7 @@ func (m *NetworkInfo) GetDnsSuffix()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["bandwidthLowEventRatio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -375,6 +383,7 @@ func (m *NetworkInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetIpAddress gets the ipAddress property value. IP address of the media endpoint.
+// returns a *string when successful
 func (m *NetworkInfo) GetIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("ipAddress")
     if err != nil {
@@ -386,6 +395,7 @@ func (m *NetworkInfo) GetIpAddress()(*string) {
     return nil
 }
 // GetLinkSpeed gets the linkSpeed property value. Link speed in bits per second reported by the network adapter used by the media endpoint.
+// returns a *int64 when successful
 func (m *NetworkInfo) GetLinkSpeed()(*int64) {
     val, err := m.GetBackingStore().Get("linkSpeed")
     if err != nil {
@@ -397,6 +407,7 @@ func (m *NetworkInfo) GetLinkSpeed()(*int64) {
     return nil
 }
 // GetMacAddress gets the macAddress property value. The media access control (MAC) address of the media endpoint's network device. This value may be missing or shown as 02:00:00:00:00:00 due to operating system privacy policies.
+// returns a *string when successful
 func (m *NetworkInfo) GetMacAddress()(*string) {
     val, err := m.GetBackingStore().Get("macAddress")
     if err != nil {
@@ -408,6 +419,7 @@ func (m *NetworkInfo) GetMacAddress()(*string) {
     return nil
 }
 // GetNetworkTransportProtocol gets the networkTransportProtocol property value. The networkTransportProtocol property
+// returns a *NetworkTransportProtocol when successful
 func (m *NetworkInfo) GetNetworkTransportProtocol()(*NetworkTransportProtocol) {
     val, err := m.GetBackingStore().Get("networkTransportProtocol")
     if err != nil {
@@ -419,6 +431,7 @@ func (m *NetworkInfo) GetNetworkTransportProtocol()(*NetworkTransportProtocol) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *NetworkInfo) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -430,6 +443,7 @@ func (m *NetworkInfo) GetOdataType()(*string) {
     return nil
 }
 // GetPort gets the port property value. Network port number used by media endpoint.
+// returns a *int32 when successful
 func (m *NetworkInfo) GetPort()(*int32) {
     val, err := m.GetBackingStore().Get("port")
     if err != nil {
@@ -441,6 +455,7 @@ func (m *NetworkInfo) GetPort()(*int32) {
     return nil
 }
 // GetReceivedQualityEventRatio gets the receivedQualityEventRatio property value. Fraction of the call that the media endpoint detected the network was causing poor quality of the audio received.
+// returns a *float32 when successful
 func (m *NetworkInfo) GetReceivedQualityEventRatio()(*float32) {
     val, err := m.GetBackingStore().Get("receivedQualityEventRatio")
     if err != nil {
@@ -452,6 +467,7 @@ func (m *NetworkInfo) GetReceivedQualityEventRatio()(*float32) {
     return nil
 }
 // GetReflexiveIPAddress gets the reflexiveIPAddress property value. IP address of the media endpoint as seen by the media relay server. This is typically the public internet IP address associated to the endpoint.
+// returns a *string when successful
 func (m *NetworkInfo) GetReflexiveIPAddress()(*string) {
     val, err := m.GetBackingStore().Get("reflexiveIPAddress")
     if err != nil {
@@ -463,6 +479,7 @@ func (m *NetworkInfo) GetReflexiveIPAddress()(*string) {
     return nil
 }
 // GetRelayIPAddress gets the relayIPAddress property value. IP address of the media relay server allocated by the media endpoint.
+// returns a *string when successful
 func (m *NetworkInfo) GetRelayIPAddress()(*string) {
     val, err := m.GetBackingStore().Get("relayIPAddress")
     if err != nil {
@@ -474,6 +491,7 @@ func (m *NetworkInfo) GetRelayIPAddress()(*string) {
     return nil
 }
 // GetRelayPort gets the relayPort property value. Network port number allocated on the media relay server by the media endpoint.
+// returns a *int32 when successful
 func (m *NetworkInfo) GetRelayPort()(*int32) {
     val, err := m.GetBackingStore().Get("relayPort")
     if err != nil {
@@ -485,6 +503,7 @@ func (m *NetworkInfo) GetRelayPort()(*int32) {
     return nil
 }
 // GetSentQualityEventRatio gets the sentQualityEventRatio property value. Fraction of the call that the media endpoint detected the network was causing poor quality of the audio sent.
+// returns a *float32 when successful
 func (m *NetworkInfo) GetSentQualityEventRatio()(*float32) {
     val, err := m.GetBackingStore().Get("sentQualityEventRatio")
     if err != nil {
@@ -496,6 +515,7 @@ func (m *NetworkInfo) GetSentQualityEventRatio()(*float32) {
     return nil
 }
 // GetSubnet gets the subnet property value. Subnet used for media stream by the media endpoint.
+// returns a *string when successful
 func (m *NetworkInfo) GetSubnet()(*string) {
     val, err := m.GetBackingStore().Get("subnet")
     if err != nil {
@@ -507,6 +527,7 @@ func (m *NetworkInfo) GetSubnet()(*string) {
     return nil
 }
 // GetTraceRouteHops gets the traceRouteHops property value. List of network trace route hops collected for this media stream.*
+// returns a []TraceRouteHopable when successful
 func (m *NetworkInfo) GetTraceRouteHops()([]TraceRouteHopable) {
     val, err := m.GetBackingStore().Get("traceRouteHops")
     if err != nil {
@@ -518,6 +539,7 @@ func (m *NetworkInfo) GetTraceRouteHops()([]TraceRouteHopable) {
     return nil
 }
 // GetWifiBand gets the wifiBand property value. The wifiBand property
+// returns a *WifiBand when successful
 func (m *NetworkInfo) GetWifiBand()(*WifiBand) {
     val, err := m.GetBackingStore().Get("wifiBand")
     if err != nil {
@@ -529,6 +551,7 @@ func (m *NetworkInfo) GetWifiBand()(*WifiBand) {
     return nil
 }
 // GetWifiBatteryCharge gets the wifiBatteryCharge property value. Estimated remaining battery charge in percentage reported by the media endpoint.
+// returns a *int32 when successful
 func (m *NetworkInfo) GetWifiBatteryCharge()(*int32) {
     val, err := m.GetBackingStore().Get("wifiBatteryCharge")
     if err != nil {
@@ -540,6 +563,7 @@ func (m *NetworkInfo) GetWifiBatteryCharge()(*int32) {
     return nil
 }
 // GetWifiChannel gets the wifiChannel property value. WiFi channel used by the media endpoint.
+// returns a *int32 when successful
 func (m *NetworkInfo) GetWifiChannel()(*int32) {
     val, err := m.GetBackingStore().Get("wifiChannel")
     if err != nil {
@@ -551,6 +575,7 @@ func (m *NetworkInfo) GetWifiChannel()(*int32) {
     return nil
 }
 // GetWifiMicrosoftDriver gets the wifiMicrosoftDriver property value. Name of the Microsoft WiFi driver used by the media endpoint. Value may be localized based on the language used by endpoint.
+// returns a *string when successful
 func (m *NetworkInfo) GetWifiMicrosoftDriver()(*string) {
     val, err := m.GetBackingStore().Get("wifiMicrosoftDriver")
     if err != nil {
@@ -562,6 +587,7 @@ func (m *NetworkInfo) GetWifiMicrosoftDriver()(*string) {
     return nil
 }
 // GetWifiMicrosoftDriverVersion gets the wifiMicrosoftDriverVersion property value. Version of the Microsoft WiFi driver used by the media endpoint.
+// returns a *string when successful
 func (m *NetworkInfo) GetWifiMicrosoftDriverVersion()(*string) {
     val, err := m.GetBackingStore().Get("wifiMicrosoftDriverVersion")
     if err != nil {
@@ -573,6 +599,7 @@ func (m *NetworkInfo) GetWifiMicrosoftDriverVersion()(*string) {
     return nil
 }
 // GetWifiRadioType gets the wifiRadioType property value. The wifiRadioType property
+// returns a *WifiRadioType when successful
 func (m *NetworkInfo) GetWifiRadioType()(*WifiRadioType) {
     val, err := m.GetBackingStore().Get("wifiRadioType")
     if err != nil {
@@ -584,6 +611,7 @@ func (m *NetworkInfo) GetWifiRadioType()(*WifiRadioType) {
     return nil
 }
 // GetWifiSignalStrength gets the wifiSignalStrength property value. WiFi signal strength in percentage reported by the media endpoint.
+// returns a *int32 when successful
 func (m *NetworkInfo) GetWifiSignalStrength()(*int32) {
     val, err := m.GetBackingStore().Get("wifiSignalStrength")
     if err != nil {
@@ -595,6 +623,7 @@ func (m *NetworkInfo) GetWifiSignalStrength()(*int32) {
     return nil
 }
 // GetWifiVendorDriver gets the wifiVendorDriver property value. Name of the WiFi driver used by the media endpoint. Value may be localized based on the language used by endpoint.
+// returns a *string when successful
 func (m *NetworkInfo) GetWifiVendorDriver()(*string) {
     val, err := m.GetBackingStore().Get("wifiVendorDriver")
     if err != nil {
@@ -606,6 +635,7 @@ func (m *NetworkInfo) GetWifiVendorDriver()(*string) {
     return nil
 }
 // GetWifiVendorDriverVersion gets the wifiVendorDriverVersion property value. Version of the WiFi driver used by the media endpoint.
+// returns a *string when successful
 func (m *NetworkInfo) GetWifiVendorDriverVersion()(*string) {
     val, err := m.GetBackingStore().Get("wifiVendorDriverVersion")
     if err != nil {
@@ -998,7 +1028,6 @@ func (m *NetworkInfo) SetWifiVendorDriverVersion(value *string)() {
         panic(err)
     }
 }
-// NetworkInfoable 
 type NetworkInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

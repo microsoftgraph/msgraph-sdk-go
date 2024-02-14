@@ -5,11 +5,10 @@ import (
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242 "github.com/microsoftgraph/msgraph-sdk-go/models"
 )
 
-// EdiscoveryCaseSettings 
 type EdiscoveryCaseSettings struct {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entity
 }
-// NewEdiscoveryCaseSettings instantiates a new ediscoveryCaseSettings and sets the default values.
+// NewEdiscoveryCaseSettings instantiates a new EdiscoveryCaseSettings and sets the default values.
 func NewEdiscoveryCaseSettings()(*EdiscoveryCaseSettings) {
     m := &EdiscoveryCaseSettings{
         Entity: *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.NewEntity(),
@@ -17,10 +16,12 @@ func NewEdiscoveryCaseSettings()(*EdiscoveryCaseSettings) {
     return m
 }
 // CreateEdiscoveryCaseSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEdiscoveryCaseSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryCaseSettings(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EdiscoveryCaseSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["ocr"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -56,6 +57,7 @@ func (m *EdiscoveryCaseSettings) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetOcr gets the ocr property value. The OCR (Optical Character Recognition) settings for the case.
+// returns a OcrSettingsable when successful
 func (m *EdiscoveryCaseSettings) GetOcr()(OcrSettingsable) {
     val, err := m.GetBackingStore().Get("ocr")
     if err != nil {
@@ -67,6 +69,7 @@ func (m *EdiscoveryCaseSettings) GetOcr()(OcrSettingsable) {
     return nil
 }
 // GetRedundancyDetection gets the redundancyDetection property value. The redundancy (near duplicate and email threading) detection settings for the case.
+// returns a RedundancyDetectionSettingsable when successful
 func (m *EdiscoveryCaseSettings) GetRedundancyDetection()(RedundancyDetectionSettingsable) {
     val, err := m.GetBackingStore().Get("redundancyDetection")
     if err != nil {
@@ -78,6 +81,7 @@ func (m *EdiscoveryCaseSettings) GetRedundancyDetection()(RedundancyDetectionSet
     return nil
 }
 // GetTopicModeling gets the topicModeling property value. The Topic Modeling (Themes) settings for the case.
+// returns a TopicModelingSettingsable when successful
 func (m *EdiscoveryCaseSettings) GetTopicModeling()(TopicModelingSettingsable) {
     val, err := m.GetBackingStore().Get("topicModeling")
     if err != nil {
@@ -135,7 +139,6 @@ func (m *EdiscoveryCaseSettings) SetTopicModeling(value TopicModelingSettingsabl
         panic(err)
     }
 }
-// EdiscoveryCaseSettingsable 
 type EdiscoveryCaseSettingsable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AppManagementPolicy 
 type AppManagementPolicy struct {
     PolicyBase
 }
-// NewAppManagementPolicy instantiates a new appManagementPolicy and sets the default values.
+// NewAppManagementPolicy instantiates a new AppManagementPolicy and sets the default values.
 func NewAppManagementPolicy()(*AppManagementPolicy) {
     m := &AppManagementPolicy{
         PolicyBase: *NewPolicyBase(),
@@ -18,10 +17,12 @@ func NewAppManagementPolicy()(*AppManagementPolicy) {
     return m
 }
 // CreateAppManagementPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAppManagementPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppManagementPolicy(), nil
 }
 // GetAppliesTo gets the appliesTo property value. Collection of applications and service principals to which the policy is applied.
+// returns a []DirectoryObjectable when successful
 func (m *AppManagementPolicy) GetAppliesTo()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("appliesTo")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AppManagementPolicy) GetAppliesTo()([]DirectoryObjectable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AppManagementPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicyBase.GetFieldDeserializers()
     res["appliesTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +76,7 @@ func (m *AppManagementPolicy) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetIsEnabled gets the isEnabled property value. Denotes whether the policy is enabled.
+// returns a *bool when successful
 func (m *AppManagementPolicy) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -85,6 +88,7 @@ func (m *AppManagementPolicy) GetIsEnabled()(*bool) {
     return nil
 }
 // GetRestrictions gets the restrictions property value. Restrictions that apply to an application or service principal object.
+// returns a AppManagementConfigurationable when successful
 func (m *AppManagementPolicy) GetRestrictions()(AppManagementConfigurationable) {
     val, err := m.GetBackingStore().Get("restrictions")
     if err != nil {
@@ -148,7 +152,6 @@ func (m *AppManagementPolicy) SetRestrictions(value AppManagementConfigurationab
         panic(err)
     }
 }
-// AppManagementPolicyable 
 type AppManagementPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicyBaseable

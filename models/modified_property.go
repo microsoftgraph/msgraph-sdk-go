@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ModifiedProperty 
 type ModifiedProperty struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewModifiedProperty instantiates a new modifiedProperty and sets the default values.
+// NewModifiedProperty instantiates a new ModifiedProperty and sets the default values.
 func NewModifiedProperty()(*ModifiedProperty) {
     m := &ModifiedProperty{
     }
@@ -19,10 +18,12 @@ func NewModifiedProperty()(*ModifiedProperty) {
     return m
 }
 // CreateModifiedPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateModifiedPropertyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewModifiedProperty(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ModifiedProperty) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ModifiedProperty) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ModifiedProperty) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDisplayName gets the displayName property value. Indicates the property name of the target attribute that was changed.
+// returns a *string when successful
 func (m *ModifiedProperty) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *ModifiedProperty) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ModifiedProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,6 +99,7 @@ func (m *ModifiedProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetNewValue gets the newValue property value. Indicates the updated value for the propery.
+// returns a *string when successful
 func (m *ModifiedProperty) GetNewValue()(*string) {
     val, err := m.GetBackingStore().Get("newValue")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *ModifiedProperty) GetNewValue()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ModifiedProperty) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *ModifiedProperty) GetOdataType()(*string) {
     return nil
 }
 // GetOldValue gets the oldValue property value. Indicates the previous value (before the update) for the property.
+// returns a *string when successful
 func (m *ModifiedProperty) GetOldValue()(*string) {
     val, err := m.GetBackingStore().Get("oldValue")
     if err != nil {
@@ -200,7 +207,6 @@ func (m *ModifiedProperty) SetOldValue(value *string)() {
         panic(err)
     }
 }
-// ModifiedPropertyable 
 type ModifiedPropertyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

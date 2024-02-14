@@ -6,7 +6,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ItemTeamClonePostRequestBody 
 type ItemTeamClonePostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -20,10 +19,12 @@ func NewItemTeamClonePostRequestBody()(*ItemTeamClonePostRequestBody) {
     return m
 }
 // CreateItemTeamClonePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemTeamClonePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemTeamClonePostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemTeamClonePostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *ItemTeamClonePostRequestBody) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ItemTeamClonePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetClassification gets the classification property value. The classification property
+// returns a *string when successful
 func (m *ItemTeamClonePostRequestBody) GetClassification()(*string) {
     val, err := m.GetBackingStore().Get("classification")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *ItemTeamClonePostRequestBody) GetClassification()(*string) {
     return nil
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *ItemTeamClonePostRequestBody) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *ItemTeamClonePostRequestBody) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
 func (m *ItemTeamClonePostRequestBody) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -73,6 +78,7 @@ func (m *ItemTeamClonePostRequestBody) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemTeamClonePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["classification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -138,6 +144,7 @@ func (m *ItemTeamClonePostRequestBody) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetMailNickname gets the mailNickname property value. The mailNickname property
+// returns a *string when successful
 func (m *ItemTeamClonePostRequestBody) GetMailNickname()(*string) {
     val, err := m.GetBackingStore().Get("mailNickname")
     if err != nil {
@@ -149,6 +156,7 @@ func (m *ItemTeamClonePostRequestBody) GetMailNickname()(*string) {
     return nil
 }
 // GetPartsToClone gets the partsToClone property value. The partsToClone property
+// returns a *ClonableTeamParts when successful
 func (m *ItemTeamClonePostRequestBody) GetPartsToClone()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ClonableTeamParts) {
     val, err := m.GetBackingStore().Get("partsToClone")
     if err != nil {
@@ -160,6 +168,7 @@ func (m *ItemTeamClonePostRequestBody) GetPartsToClone()(*iadcd81124412c61e64722
     return nil
 }
 // GetVisibility gets the visibility property value. The visibility property
+// returns a *TeamVisibilityType when successful
 func (m *ItemTeamClonePostRequestBody) GetVisibility()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamVisibilityType) {
     val, err := m.GetBackingStore().Get("visibility")
     if err != nil {
@@ -271,7 +280,6 @@ func (m *ItemTeamClonePostRequestBody) SetVisibility(value *iadcd81124412c61e647
         panic(err)
     }
 }
-// ItemTeamClonePostRequestBodyable 
 type ItemTeamClonePostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

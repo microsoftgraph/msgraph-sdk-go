@@ -27,28 +27,29 @@ type ItemListItemsItemAnalyticsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemListItemsItemAnalyticsRequestBuilderGetQueryParameters
 }
-// NewItemListItemsItemAnalyticsRequestBuilderInternal instantiates a new AnalyticsRequestBuilder and sets the default values.
+// NewItemListItemsItemAnalyticsRequestBuilderInternal instantiates a new ItemListItemsItemAnalyticsRequestBuilder and sets the default values.
 func NewItemListItemsItemAnalyticsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListItemsItemAnalyticsRequestBuilder) {
     m := &ItemListItemsItemAnalyticsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/list/items/{listItem%2Did}/analytics{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/list/items/{listItem%2Did}/analytics{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemListItemsItemAnalyticsRequestBuilder instantiates a new AnalyticsRequestBuilder and sets the default values.
+// NewItemListItemsItemAnalyticsRequestBuilder instantiates a new ItemListItemsItemAnalyticsRequestBuilder and sets the default values.
 func NewItemListItemsItemAnalyticsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListItemsItemAnalyticsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemListItemsItemAnalyticsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get analytics about the view activities that took place on this item.
+// returns a ItemAnalyticsable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemListItemsItemAnalyticsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListItemsItemAnalyticsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemAnalyticsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CreateItemAnalyticsFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *ItemListItemsItemAnalyticsRequestBuilder) Get(ctx context.Context, requ
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ItemAnalyticsable), nil
 }
 // ToGetRequestInformation analytics about the view activities that took place on this item.
+// returns a *RequestInformation when successful
 func (m *ItemListItemsItemAnalyticsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListItemsItemAnalyticsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *ItemListItemsItemAnalyticsRequestBuilder) ToGetRequestInformation(ctx c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemListItemsItemAnalyticsRequestBuilder when successful
 func (m *ItemListItemsItemAnalyticsRequestBuilder) WithUrl(rawUrl string)(*ItemListItemsItemAnalyticsRequestBuilder) {
     return NewItemListItemsItemAnalyticsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

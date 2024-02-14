@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AccessReviewHistoryScheduleSettings 
 type AccessReviewHistoryScheduleSettings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAccessReviewHistoryScheduleSettings instantiates a new accessReviewHistoryScheduleSettings and sets the default values.
+// NewAccessReviewHistoryScheduleSettings instantiates a new AccessReviewHistoryScheduleSettings and sets the default values.
 func NewAccessReviewHistoryScheduleSettings()(*AccessReviewHistoryScheduleSettings) {
     m := &AccessReviewHistoryScheduleSettings{
     }
@@ -19,10 +18,12 @@ func NewAccessReviewHistoryScheduleSettings()(*AccessReviewHistoryScheduleSettin
     return m
 }
 // CreateAccessReviewHistoryScheduleSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessReviewHistoryScheduleSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewHistoryScheduleSettings(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AccessReviewHistoryScheduleSettings) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *AccessReviewHistoryScheduleSettings) GetAdditionalData()(map[string]any
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AccessReviewHistoryScheduleSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessReviewHistoryScheduleSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +77,7 @@ func (m *AccessReviewHistoryScheduleSettings) GetFieldDeserializers()(map[string
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AccessReviewHistoryScheduleSettings) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -85,6 +89,7 @@ func (m *AccessReviewHistoryScheduleSettings) GetOdataType()(*string) {
     return nil
 }
 // GetRecurrence gets the recurrence property value. The recurrence property
+// returns a PatternedRecurrenceable when successful
 func (m *AccessReviewHistoryScheduleSettings) GetRecurrence()(PatternedRecurrenceable) {
     val, err := m.GetBackingStore().Get("recurrence")
     if err != nil {
@@ -96,6 +101,7 @@ func (m *AccessReviewHistoryScheduleSettings) GetRecurrence()(PatternedRecurrenc
     return nil
 }
 // GetReportRange gets the reportRange property value. A duration string in ISO 8601 duration format specifying the lookback period of the generated review history data. For example, if a history definition is scheduled to run on the first of every month, the reportRange is P1M. In this case, on the first of every month, access review history data is collected containing only the previous month's review data. Note: Only years, months, and days ISO 8601 properties are supported. Required.
+// returns a *string when successful
 func (m *AccessReviewHistoryScheduleSettings) GetReportRange()(*string) {
     val, err := m.GetBackingStore().Get("reportRange")
     if err != nil {
@@ -166,7 +172,6 @@ func (m *AccessReviewHistoryScheduleSettings) SetReportRange(value *string)() {
         panic(err)
     }
 }
-// AccessReviewHistoryScheduleSettingsable 
 type AccessReviewHistoryScheduleSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

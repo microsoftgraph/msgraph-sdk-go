@@ -24,20 +24,22 @@ type ItemBrandingLocalizationsItemCustomCSSRequestBuilderPutRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemBrandingLocalizationsItemCustomCSSRequestBuilderInternal instantiates a new CustomCSSRequestBuilder and sets the default values.
+// NewItemBrandingLocalizationsItemCustomCSSRequestBuilderInternal instantiates a new ItemBrandingLocalizationsItemCustomCSSRequestBuilder and sets the default values.
 func NewItemBrandingLocalizationsItemCustomCSSRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBrandingLocalizationsItemCustomCSSRequestBuilder) {
     m := &ItemBrandingLocalizationsItemCustomCSSRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/organization/{organization%2Did}/branding/localizations/{organizationalBrandingLocalization%2Did}/customCSS", pathParameters),
     }
     return m
 }
-// NewItemBrandingLocalizationsItemCustomCSSRequestBuilder instantiates a new CustomCSSRequestBuilder and sets the default values.
+// NewItemBrandingLocalizationsItemCustomCSSRequestBuilder instantiates a new ItemBrandingLocalizationsItemCustomCSSRequestBuilder and sets the default values.
 func NewItemBrandingLocalizationsItemCustomCSSRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBrandingLocalizationsItemCustomCSSRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemBrandingLocalizationsItemCustomCSSRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get cSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
@@ -47,8 +49,7 @@ func (m *ItemBrandingLocalizationsItemCustomCSSRequestBuilder) Get(ctx context.C
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -60,14 +61,15 @@ func (m *ItemBrandingLocalizationsItemCustomCSSRequestBuilder) Get(ctx context.C
     return res.([]byte), nil
 }
 // Put cSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemBrandingLocalizationsItemCustomCSSRequestBuilder) Put(ctx context.Context, body []byte, contentType *string, requestConfiguration *ItemBrandingLocalizationsItemCustomCSSRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, contentType, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -79,6 +81,7 @@ func (m *ItemBrandingLocalizationsItemCustomCSSRequestBuilder) Put(ctx context.C
     return res.([]byte), nil
 }
 // ToGetRequestInformation cSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
+// returns a *RequestInformation when successful
 func (m *ItemBrandingLocalizationsItemCustomCSSRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemBrandingLocalizationsItemCustomCSSRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -89,6 +92,7 @@ func (m *ItemBrandingLocalizationsItemCustomCSSRequestBuilder) ToGetRequestInfor
     return requestInfo, nil
 }
 // ToPutRequestInformation cSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
+// returns a *RequestInformation when successful
 func (m *ItemBrandingLocalizationsItemCustomCSSRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, contentType *string, requestConfiguration *ItemBrandingLocalizationsItemCustomCSSRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -100,6 +104,7 @@ func (m *ItemBrandingLocalizationsItemCustomCSSRequestBuilder) ToPutRequestInfor
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemBrandingLocalizationsItemCustomCSSRequestBuilder when successful
 func (m *ItemBrandingLocalizationsItemCustomCSSRequestBuilder) WithUrl(rawUrl string)(*ItemBrandingLocalizationsItemCustomCSSRequestBuilder) {
     return NewItemBrandingLocalizationsItemCustomCSSRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

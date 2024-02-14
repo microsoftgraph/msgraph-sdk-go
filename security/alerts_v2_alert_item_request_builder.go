@@ -42,31 +42,32 @@ type Alerts_v2AlertItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // Comments the comments property
+// returns a *Alerts_v2ItemCommentsRequestBuilder when successful
 func (m *Alerts_v2AlertItemRequestBuilder) Comments()(*Alerts_v2ItemCommentsRequestBuilder) {
     return NewAlerts_v2ItemCommentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewAlerts_v2AlertItemRequestBuilderInternal instantiates a new AlertItemRequestBuilder and sets the default values.
+// NewAlerts_v2AlertItemRequestBuilderInternal instantiates a new Alerts_v2AlertItemRequestBuilder and sets the default values.
 func NewAlerts_v2AlertItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*Alerts_v2AlertItemRequestBuilder) {
     m := &Alerts_v2AlertItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/alerts_v2/{alert%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/alerts_v2/{alert%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewAlerts_v2AlertItemRequestBuilder instantiates a new AlertItemRequestBuilder and sets the default values.
+// NewAlerts_v2AlertItemRequestBuilder instantiates a new Alerts_v2AlertItemRequestBuilder and sets the default values.
 func NewAlerts_v2AlertItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*Alerts_v2AlertItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAlerts_v2AlertItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property alerts_v2 for security
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *Alerts_v2AlertItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *Alerts_v2AlertItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -75,6 +76,8 @@ func (m *Alerts_v2AlertItemRequestBuilder) Delete(ctx context.Context, requestCo
     return nil
 }
 // Get get the properties and relationships of an alert in an organization based on the specified alert id property.
+// returns a Alertable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-alert-get?view=graph-rest-1.0
@@ -84,8 +87,7 @@ func (m *Alerts_v2AlertItemRequestBuilder) Get(ctx context.Context, requestConfi
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.CreateAlertFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,6 +99,8 @@ func (m *Alerts_v2AlertItemRequestBuilder) Get(ctx context.Context, requestConfi
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.Alertable), nil
 }
 // Patch update the properties of an alert object in an organization based on the specified alert id property.
+// returns a Alertable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-alert-update?view=graph-rest-1.0
@@ -106,8 +110,7 @@ func (m *Alerts_v2AlertItemRequestBuilder) Patch(ctx context.Context, body idd6d
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.CreateAlertFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -119,8 +122,9 @@ func (m *Alerts_v2AlertItemRequestBuilder) Patch(ctx context.Context, body idd6d
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.Alertable), nil
 }
 // ToDeleteRequestInformation delete navigation property alerts_v2 for security
+// returns a *RequestInformation when successful
 func (m *Alerts_v2AlertItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *Alerts_v2AlertItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/security/alerts_v2/{alert%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -129,6 +133,7 @@ func (m *Alerts_v2AlertItemRequestBuilder) ToDeleteRequestInformation(ctx contex
     return requestInfo, nil
 }
 // ToGetRequestInformation get the properties and relationships of an alert in an organization based on the specified alert id property.
+// returns a *RequestInformation when successful
 func (m *Alerts_v2AlertItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *Alerts_v2AlertItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -142,8 +147,9 @@ func (m *Alerts_v2AlertItemRequestBuilder) ToGetRequestInformation(ctx context.C
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of an alert object in an organization based on the specified alert id property.
+// returns a *RequestInformation when successful
 func (m *Alerts_v2AlertItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.Alertable, requestConfiguration *Alerts_v2AlertItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/security/alerts_v2/{alert%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -156,6 +162,7 @@ func (m *Alerts_v2AlertItemRequestBuilder) ToPatchRequestInformation(ctx context
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *Alerts_v2AlertItemRequestBuilder when successful
 func (m *Alerts_v2AlertItemRequestBuilder) WithUrl(rawUrl string)(*Alerts_v2AlertItemRequestBuilder) {
     return NewAlerts_v2AlertItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

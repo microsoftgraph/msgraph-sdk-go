@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BasicAuthentication 
 type BasicAuthentication struct {
     ApiAuthenticationConfigurationBase
 }
-// NewBasicAuthentication instantiates a new basicAuthentication and sets the default values.
+// NewBasicAuthentication instantiates a new BasicAuthentication and sets the default values.
 func NewBasicAuthentication()(*BasicAuthentication) {
     m := &BasicAuthentication{
         ApiAuthenticationConfigurationBase: *NewApiAuthenticationConfigurationBase(),
@@ -18,10 +17,12 @@ func NewBasicAuthentication()(*BasicAuthentication) {
     return m
 }
 // CreateBasicAuthenticationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBasicAuthenticationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBasicAuthentication(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BasicAuthentication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ApiAuthenticationConfigurationBase.GetFieldDeserializers()
     res["password"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +48,7 @@ func (m *BasicAuthentication) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetPassword gets the password property value. The password. It isn't returned in the responses.
+// returns a *string when successful
 func (m *BasicAuthentication) GetPassword()(*string) {
     val, err := m.GetBackingStore().Get("password")
     if err != nil {
@@ -58,6 +60,7 @@ func (m *BasicAuthentication) GetPassword()(*string) {
     return nil
 }
 // GetUsername gets the username property value. The username.
+// returns a *string when successful
 func (m *BasicAuthentication) GetUsername()(*string) {
     val, err := m.GetBackingStore().Get("username")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *BasicAuthentication) SetUsername(value *string)() {
         panic(err)
     }
 }
-// BasicAuthenticationable 
 type BasicAuthenticationable interface {
     ApiAuthenticationConfigurationBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

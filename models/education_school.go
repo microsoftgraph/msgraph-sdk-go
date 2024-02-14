@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationSchool 
 type EducationSchool struct {
     EducationOrganization
 }
-// NewEducationSchool instantiates a new educationSchool and sets the default values.
+// NewEducationSchool instantiates a new EducationSchool and sets the default values.
 func NewEducationSchool()(*EducationSchool) {
     m := &EducationSchool{
         EducationOrganization: *NewEducationOrganization(),
@@ -18,10 +17,12 @@ func NewEducationSchool()(*EducationSchool) {
     return m
 }
 // CreateEducationSchoolFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationSchoolFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationSchool(), nil
 }
 // GetAddress gets the address property value. Address of the school.
+// returns a PhysicalAddressable when successful
 func (m *EducationSchool) GetAddress()(PhysicalAddressable) {
     val, err := m.GetBackingStore().Get("address")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *EducationSchool) GetAddress()(PhysicalAddressable) {
     return nil
 }
 // GetAdministrativeUnit gets the administrativeUnit property value. The underlying administrativeUnit for this school.
+// returns a AdministrativeUnitable when successful
 func (m *EducationSchool) GetAdministrativeUnit()(AdministrativeUnitable) {
     val, err := m.GetBackingStore().Get("administrativeUnit")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *EducationSchool) GetAdministrativeUnit()(AdministrativeUnitable) {
     return nil
 }
 // GetClasses gets the classes property value. Classes taught at the school. Nullable.
+// returns a []EducationClassable when successful
 func (m *EducationSchool) GetClasses()([]EducationClassable) {
     val, err := m.GetBackingStore().Get("classes")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *EducationSchool) GetClasses()([]EducationClassable) {
     return nil
 }
 // GetCreatedBy gets the createdBy property value. Entity who created the school.
+// returns a IdentitySetable when successful
 func (m *EducationSchool) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *EducationSchool) GetCreatedBy()(IdentitySetable) {
     return nil
 }
 // GetExternalId gets the externalId property value. ID of school in syncing system.
+// returns a *string when successful
 func (m *EducationSchool) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *EducationSchool) GetExternalId()(*string) {
     return nil
 }
 // GetExternalPrincipalId gets the externalPrincipalId property value. ID of principal in syncing system.
+// returns a *string when successful
 func (m *EducationSchool) GetExternalPrincipalId()(*string) {
     val, err := m.GetBackingStore().Get("externalPrincipalId")
     if err != nil {
@@ -88,6 +94,7 @@ func (m *EducationSchool) GetExternalPrincipalId()(*string) {
     return nil
 }
 // GetFax gets the fax property value. The fax property
+// returns a *string when successful
 func (m *EducationSchool) GetFax()(*string) {
     val, err := m.GetBackingStore().Get("fax")
     if err != nil {
@@ -99,6 +106,7 @@ func (m *EducationSchool) GetFax()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationSchool) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EducationOrganization.GetFieldDeserializers()
     res["address"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -256,6 +264,7 @@ func (m *EducationSchool) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetHighestGrade gets the highestGrade property value. Highest grade taught.
+// returns a *string when successful
 func (m *EducationSchool) GetHighestGrade()(*string) {
     val, err := m.GetBackingStore().Get("highestGrade")
     if err != nil {
@@ -267,6 +276,7 @@ func (m *EducationSchool) GetHighestGrade()(*string) {
     return nil
 }
 // GetLowestGrade gets the lowestGrade property value. Lowest grade taught.
+// returns a *string when successful
 func (m *EducationSchool) GetLowestGrade()(*string) {
     val, err := m.GetBackingStore().Get("lowestGrade")
     if err != nil {
@@ -278,6 +288,7 @@ func (m *EducationSchool) GetLowestGrade()(*string) {
     return nil
 }
 // GetPhone gets the phone property value. Phone number of school.
+// returns a *string when successful
 func (m *EducationSchool) GetPhone()(*string) {
     val, err := m.GetBackingStore().Get("phone")
     if err != nil {
@@ -289,6 +300,7 @@ func (m *EducationSchool) GetPhone()(*string) {
     return nil
 }
 // GetPrincipalEmail gets the principalEmail property value. Email address of the principal.
+// returns a *string when successful
 func (m *EducationSchool) GetPrincipalEmail()(*string) {
     val, err := m.GetBackingStore().Get("principalEmail")
     if err != nil {
@@ -300,6 +312,7 @@ func (m *EducationSchool) GetPrincipalEmail()(*string) {
     return nil
 }
 // GetPrincipalName gets the principalName property value. Name of the principal.
+// returns a *string when successful
 func (m *EducationSchool) GetPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("principalName")
     if err != nil {
@@ -311,6 +324,7 @@ func (m *EducationSchool) GetPrincipalName()(*string) {
     return nil
 }
 // GetSchoolNumber gets the schoolNumber property value. School Number.
+// returns a *string when successful
 func (m *EducationSchool) GetSchoolNumber()(*string) {
     val, err := m.GetBackingStore().Get("schoolNumber")
     if err != nil {
@@ -322,6 +336,7 @@ func (m *EducationSchool) GetSchoolNumber()(*string) {
     return nil
 }
 // GetUsers gets the users property value. Users in the school. Nullable.
+// returns a []EducationUserable when successful
 func (m *EducationSchool) GetUsers()([]EducationUserable) {
     val, err := m.GetBackingStore().Get("users")
     if err != nil {
@@ -534,7 +549,6 @@ func (m *EducationSchool) SetUsers(value []EducationUserable)() {
         panic(err)
     }
 }
-// EducationSchoolable 
 type EducationSchoolable interface {
     EducationOrganizationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

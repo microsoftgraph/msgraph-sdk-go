@@ -10,7 +10,7 @@ type IosNetworkUsageRule struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewIosNetworkUsageRule instantiates a new iosNetworkUsageRule and sets the default values.
+// NewIosNetworkUsageRule instantiates a new IosNetworkUsageRule and sets the default values.
 func NewIosNetworkUsageRule()(*IosNetworkUsageRule) {
     m := &IosNetworkUsageRule{
     }
@@ -19,10 +19,12 @@ func NewIosNetworkUsageRule()(*IosNetworkUsageRule) {
     return m
 }
 // CreateIosNetworkUsageRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosNetworkUsageRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosNetworkUsageRule(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *IosNetworkUsageRule) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *IosNetworkUsageRule) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *IosNetworkUsageRule) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCellularDataBlocked gets the cellularDataBlocked property value. If set to true, corresponding managed apps will not be allowed to use cellular data at any time.
+// returns a *bool when successful
 func (m *IosNetworkUsageRule) GetCellularDataBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("cellularDataBlocked")
     if err != nil {
@@ -50,6 +54,7 @@ func (m *IosNetworkUsageRule) GetCellularDataBlocked()(*bool) {
     return nil
 }
 // GetCellularDataBlockWhenRoaming gets the cellularDataBlockWhenRoaming property value. If set to true, corresponding managed apps will not be allowed to use cellular data when roaming.
+// returns a *bool when successful
 func (m *IosNetworkUsageRule) GetCellularDataBlockWhenRoaming()(*bool) {
     val, err := m.GetBackingStore().Get("cellularDataBlockWhenRoaming")
     if err != nil {
@@ -61,6 +66,7 @@ func (m *IosNetworkUsageRule) GetCellularDataBlockWhenRoaming()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosNetworkUsageRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["cellularDataBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -112,6 +118,7 @@ func (m *IosNetworkUsageRule) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetManagedApps gets the managedApps property value. Information about the managed apps that this rule is going to apply to. This collection can contain a maximum of 500 elements.
+// returns a []AppListItemable when successful
 func (m *IosNetworkUsageRule) GetManagedApps()([]AppListItemable) {
     val, err := m.GetBackingStore().Get("managedApps")
     if err != nil {
@@ -123,6 +130,7 @@ func (m *IosNetworkUsageRule) GetManagedApps()([]AppListItemable) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *IosNetworkUsageRule) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -212,7 +220,6 @@ func (m *IosNetworkUsageRule) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// IosNetworkUsageRuleable 
 type IosNetworkUsageRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

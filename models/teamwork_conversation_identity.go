@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkConversationIdentity 
 type TeamworkConversationIdentity struct {
     Identity
 }
-// NewTeamworkConversationIdentity instantiates a new teamworkConversationIdentity and sets the default values.
+// NewTeamworkConversationIdentity instantiates a new TeamworkConversationIdentity and sets the default values.
 func NewTeamworkConversationIdentity()(*TeamworkConversationIdentity) {
     m := &TeamworkConversationIdentity{
         Identity: *NewIdentity(),
@@ -18,10 +17,12 @@ func NewTeamworkConversationIdentity()(*TeamworkConversationIdentity) {
     return m
 }
 // CreateTeamworkConversationIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamworkConversationIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkConversationIdentity(), nil
 }
 // GetConversationIdentityType gets the conversationIdentityType property value. Type of conversation. Possible values are: team, channel, chat, and unknownFutureValue.
+// returns a *TeamworkConversationIdentityType when successful
 func (m *TeamworkConversationIdentity) GetConversationIdentityType()(*TeamworkConversationIdentityType) {
     val, err := m.GetBackingStore().Get("conversationIdentityType")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *TeamworkConversationIdentity) GetConversationIdentityType()(*TeamworkCo
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamworkConversationIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Identity.GetFieldDeserializers()
     res["conversationIdentityType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -69,7 +71,6 @@ func (m *TeamworkConversationIdentity) SetConversationIdentityType(value *Teamwo
         panic(err)
     }
 }
-// TeamworkConversationIdentityable 
 type TeamworkConversationIdentityable interface {
     Identityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

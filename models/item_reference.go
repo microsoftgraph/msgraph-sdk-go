@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ItemReference 
 type ItemReference struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewItemReference instantiates a new itemReference and sets the default values.
+// NewItemReference instantiates a new ItemReference and sets the default values.
 func NewItemReference()(*ItemReference) {
     m := &ItemReference{
     }
@@ -19,10 +18,12 @@ func NewItemReference()(*ItemReference) {
     return m
 }
 // CreateItemReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemReferenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemReference(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemReference) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ItemReference) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ItemReference) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDriveId gets the driveId property value. Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+// returns a *string when successful
 func (m *ItemReference) GetDriveId()(*string) {
     val, err := m.GetBackingStore().Get("driveId")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *ItemReference) GetDriveId()(*string) {
     return nil
 }
 // GetDriveType gets the driveType property value. Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+// returns a *string when successful
 func (m *ItemReference) GetDriveType()(*string) {
     val, err := m.GetBackingStore().Get("driveType")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *ItemReference) GetDriveType()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemReference) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["driveId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -156,6 +161,7 @@ func (m *ItemReference) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetId gets the id property value. Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
+// returns a *string when successful
 func (m *ItemReference) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -167,6 +173,7 @@ func (m *ItemReference) GetId()(*string) {
     return nil
 }
 // GetName gets the name property value. The name of the item being referenced. Read-only.
+// returns a *string when successful
 func (m *ItemReference) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -178,6 +185,7 @@ func (m *ItemReference) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ItemReference) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -189,6 +197,7 @@ func (m *ItemReference) GetOdataType()(*string) {
     return nil
 }
 // GetPath gets the path property value. Path that can be used to navigate to the item. Read-only.
+// returns a *string when successful
 func (m *ItemReference) GetPath()(*string) {
     val, err := m.GetBackingStore().Get("path")
     if err != nil {
@@ -200,6 +209,7 @@ func (m *ItemReference) GetPath()(*string) {
     return nil
 }
 // GetShareId gets the shareId property value. A unique identifier for a shared resource that can be accessed via the [Shares][] API.
+// returns a *string when successful
 func (m *ItemReference) GetShareId()(*string) {
     val, err := m.GetBackingStore().Get("shareId")
     if err != nil {
@@ -211,6 +221,7 @@ func (m *ItemReference) GetShareId()(*string) {
     return nil
 }
 // GetSharepointIds gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
+// returns a SharepointIdsable when successful
 func (m *ItemReference) GetSharepointIds()(SharepointIdsable) {
     val, err := m.GetBackingStore().Get("sharepointIds")
     if err != nil {
@@ -222,6 +233,7 @@ func (m *ItemReference) GetSharepointIds()(SharepointIdsable) {
     return nil
 }
 // GetSiteId gets the siteId property value. For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+// returns a *string when successful
 func (m *ItemReference) GetSiteId()(*string) {
     val, err := m.GetBackingStore().Get("siteId")
     if err != nil {
@@ -370,7 +382,6 @@ func (m *ItemReference) SetSiteId(value *string)() {
         panic(err)
     }
 }
-// ItemReferenceable 
 type ItemReferenceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

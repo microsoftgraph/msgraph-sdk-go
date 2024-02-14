@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MeetingAttendanceReport 
 type MeetingAttendanceReport struct {
     Entity
 }
-// NewMeetingAttendanceReport instantiates a new meetingAttendanceReport and sets the default values.
+// NewMeetingAttendanceReport instantiates a new MeetingAttendanceReport and sets the default values.
 func NewMeetingAttendanceReport()(*MeetingAttendanceReport) {
     m := &MeetingAttendanceReport{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewMeetingAttendanceReport()(*MeetingAttendanceReport) {
     return m
 }
 // CreateMeetingAttendanceReportFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMeetingAttendanceReportFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMeetingAttendanceReport(), nil
 }
 // GetAttendanceRecords gets the attendanceRecords property value. List of attendance records of an attendance report. Read-only.
+// returns a []AttendanceRecordable when successful
 func (m *MeetingAttendanceReport) GetAttendanceRecords()([]AttendanceRecordable) {
     val, err := m.GetBackingStore().Get("attendanceRecords")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *MeetingAttendanceReport) GetAttendanceRecords()([]AttendanceRecordable)
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MeetingAttendanceReport) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["attendanceRecords"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -83,6 +85,7 @@ func (m *MeetingAttendanceReport) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetMeetingEndDateTime gets the meetingEndDateTime property value. UTC time when the meeting ended. Read-only.
+// returns a *Time when successful
 func (m *MeetingAttendanceReport) GetMeetingEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("meetingEndDateTime")
     if err != nil {
@@ -94,6 +97,7 @@ func (m *MeetingAttendanceReport) GetMeetingEndDateTime()(*i336074805fc853987abe
     return nil
 }
 // GetMeetingStartDateTime gets the meetingStartDateTime property value. UTC time when the meeting started. Read-only.
+// returns a *Time when successful
 func (m *MeetingAttendanceReport) GetMeetingStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("meetingStartDateTime")
     if err != nil {
@@ -105,6 +109,7 @@ func (m *MeetingAttendanceReport) GetMeetingStartDateTime()(*i336074805fc853987a
     return nil
 }
 // GetTotalParticipantCount gets the totalParticipantCount property value. Total number of participants. Read-only.
+// returns a *int32 when successful
 func (m *MeetingAttendanceReport) GetTotalParticipantCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalParticipantCount")
     if err != nil {
@@ -181,7 +186,6 @@ func (m *MeetingAttendanceReport) SetTotalParticipantCount(value *int32)() {
         panic(err)
     }
 }
-// MeetingAttendanceReportable 
 type MeetingAttendanceReportable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

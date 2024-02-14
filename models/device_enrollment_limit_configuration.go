@@ -8,7 +8,7 @@ import (
 type DeviceEnrollmentLimitConfiguration struct {
     DeviceEnrollmentConfiguration
 }
-// NewDeviceEnrollmentLimitConfiguration instantiates a new deviceEnrollmentLimitConfiguration and sets the default values.
+// NewDeviceEnrollmentLimitConfiguration instantiates a new DeviceEnrollmentLimitConfiguration and sets the default values.
 func NewDeviceEnrollmentLimitConfiguration()(*DeviceEnrollmentLimitConfiguration) {
     m := &DeviceEnrollmentLimitConfiguration{
         DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),
@@ -18,10 +18,12 @@ func NewDeviceEnrollmentLimitConfiguration()(*DeviceEnrollmentLimitConfiguration
     return m
 }
 // CreateDeviceEnrollmentLimitConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceEnrollmentLimitConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceEnrollmentLimitConfiguration(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceEnrollmentLimitConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceEnrollmentConfiguration.GetFieldDeserializers()
     res["limit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *DeviceEnrollmentLimitConfiguration) GetFieldDeserializers()(map[string]
     return res
 }
 // GetLimit gets the limit property value. The maximum number of devices that a user can enroll
+// returns a *int32 when successful
 func (m *DeviceEnrollmentLimitConfiguration) GetLimit()(*int32) {
     val, err := m.GetBackingStore().Get("limit")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *DeviceEnrollmentLimitConfiguration) SetLimit(value *int32)() {
         panic(err)
     }
 }
-// DeviceEnrollmentLimitConfigurationable 
 type DeviceEnrollmentLimitConfigurationable interface {
     DeviceEnrollmentConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

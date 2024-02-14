@@ -8,7 +8,7 @@ import (
 type ManagedAppConfiguration struct {
     ManagedAppPolicy
 }
-// NewManagedAppConfiguration instantiates a new managedAppConfiguration and sets the default values.
+// NewManagedAppConfiguration instantiates a new ManagedAppConfiguration and sets the default values.
 func NewManagedAppConfiguration()(*ManagedAppConfiguration) {
     m := &ManagedAppConfiguration{
         ManagedAppPolicy: *NewManagedAppPolicy(),
@@ -18,6 +18,7 @@ func NewManagedAppConfiguration()(*ManagedAppConfiguration) {
     return m
 }
 // CreateManagedAppConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedAppConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +41,7 @@ func CreateManagedAppConfigurationFromDiscriminatorValue(parseNode i878a80d2330e
     return NewManagedAppConfiguration(), nil
 }
 // GetCustomSettings gets the customSettings property value. A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
+// returns a []KeyValuePairable when successful
 func (m *ManagedAppConfiguration) GetCustomSettings()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("customSettings")
     if err != nil {
@@ -51,6 +53,7 @@ func (m *ManagedAppConfiguration) GetCustomSettings()([]KeyValuePairable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedAppConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedAppPolicy.GetFieldDeserializers()
     res["customSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -98,7 +101,6 @@ func (m *ManagedAppConfiguration) SetCustomSettings(value []KeyValuePairable)() 
         panic(err)
     }
 }
-// ManagedAppConfigurationable 
 type ManagedAppConfigurationable interface {
     ManagedAppPolicyable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

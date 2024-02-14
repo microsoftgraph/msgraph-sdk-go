@@ -26,28 +26,29 @@ type ItemOnenoteSectionsItemPagesCountRequestBuilderGetRequestConfiguration stru
     // Request query parameters
     QueryParameters *ItemOnenoteSectionsItemPagesCountRequestBuilderGetQueryParameters
 }
-// NewItemOnenoteSectionsItemPagesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewItemOnenoteSectionsItemPagesCountRequestBuilderInternal instantiates a new ItemOnenoteSectionsItemPagesCountRequestBuilder and sets the default values.
 func NewItemOnenoteSectionsItemPagesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnenoteSectionsItemPagesCountRequestBuilder) {
     m := &ItemOnenoteSectionsItemPagesCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/onenote/sections/{onenoteSection%2Did}/pages/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/onenote/sections/{onenoteSection%2Did}/pages/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewItemOnenoteSectionsItemPagesCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewItemOnenoteSectionsItemPagesCountRequestBuilder instantiates a new ItemOnenoteSectionsItemPagesCountRequestBuilder and sets the default values.
 func NewItemOnenoteSectionsItemPagesCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnenoteSectionsItemPagesCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemOnenoteSectionsItemPagesCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnenoteSectionsItemPagesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnenoteSectionsItemPagesCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
-        "5XX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *ItemOnenoteSectionsItemPagesCountRequestBuilder) Get(ctx context.Contex
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *ItemOnenoteSectionsItemPagesCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteSectionsItemPagesCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *ItemOnenoteSectionsItemPagesCountRequestBuilder) ToGetRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemOnenoteSectionsItemPagesCountRequestBuilder when successful
 func (m *ItemOnenoteSectionsItemPagesCountRequestBuilder) WithUrl(rawUrl string)(*ItemOnenoteSectionsItemPagesCountRequestBuilder) {
     return NewItemOnenoteSectionsItemPagesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }
