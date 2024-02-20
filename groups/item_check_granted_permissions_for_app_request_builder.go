@@ -31,7 +31,7 @@ func NewItemCheckGrantedPermissionsForAppRequestBuilder(rawUrl string, requestAd
     return NewItemCheckGrantedPermissionsForAppRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action checkGrantedPermissionsForApp
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsCheckGrantedPermissionsForAppPostResponse instead.
 // returns a ItemCheckGrantedPermissionsForAppResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCheckGrantedPermissionsForAppRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemCheckGrantedPermissionsForAppRequestBuilderPostRequestConfiguration)(ItemCheckGrantedPermissionsForAppResponseable, error) {

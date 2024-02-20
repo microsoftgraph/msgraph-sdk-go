@@ -31,7 +31,7 @@ func NewItemPermissionGrantRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewItemPermissionGrantRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post grant users access to a link represented by a [permission][].
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsGrantPostResponse instead.
 // returns a ItemPermissionGrantResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

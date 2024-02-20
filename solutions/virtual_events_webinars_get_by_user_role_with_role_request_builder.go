@@ -55,7 +55,7 @@ func NewVirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilder(rawUrl string, 
     return NewVirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getByUserRole
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetByUserRoleWithRoleGetResponse instead.
 // returns a VirtualEventsWebinarsGetByUserRoleWithRoleResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilderGetRequestConfiguration)(VirtualEventsWebinarsGetByUserRoleWithRoleResponseable, error) {

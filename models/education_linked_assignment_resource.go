@@ -37,7 +37,7 @@ func (m *EducationLinkedAssignmentResource) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetUrl gets the url property value. The url property
+// GetUrl gets the url property value. URL of the actual assignment.
 // returns a *string when successful
 func (m *EducationLinkedAssignmentResource) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
@@ -63,7 +63,7 @@ func (m *EducationLinkedAssignmentResource) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetUrl sets the url property value. The url property
+// SetUrl sets the url property value. URL of the actual assignment.
 func (m *EducationLinkedAssignmentResource) SetUrl(value *string)() {
     err := m.GetBackingStore().Set("url", value)
     if err != nil {

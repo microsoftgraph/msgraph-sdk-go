@@ -31,7 +31,7 @@ func NewItemRemoveGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewItemRemoveGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post removes a group from a lifecycle policy.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsRemoveGroupPostResponse instead.
 // returns a ItemRemoveGroupResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

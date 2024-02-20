@@ -31,7 +31,7 @@ func NewItemItemsItemInviteRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewItemItemsItemInviteRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post sends a sharing invitation for a driveItem.A sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][].
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsInvitePostResponse instead.
 // returns a ItemItemsItemInviteResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

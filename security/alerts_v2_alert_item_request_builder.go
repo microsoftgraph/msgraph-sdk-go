@@ -18,7 +18,7 @@ type Alerts_v2AlertItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Alerts_v2AlertItemRequestBuilderGetQueryParameters get the properties and relationships of an alert in an organization based on the specified alert id property.
+// Alerts_v2AlertItemRequestBuilderGetQueryParameters get the properties and relationships of an alert object.
 type Alerts_v2AlertItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,7 +75,7 @@ func (m *Alerts_v2AlertItemRequestBuilder) Delete(ctx context.Context, requestCo
     }
     return nil
 }
-// Get get the properties and relationships of an alert in an organization based on the specified alert id property.
+// Get get the properties and relationships of an alert object.
 // returns a Alertable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -132,7 +132,7 @@ func (m *Alerts_v2AlertItemRequestBuilder) ToDeleteRequestInformation(ctx contex
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of an alert in an organization based on the specified alert id property.
+// ToGetRequestInformation get the properties and relationships of an alert object.
 // returns a *RequestInformation when successful
 func (m *Alerts_v2AlertItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *Alerts_v2AlertItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

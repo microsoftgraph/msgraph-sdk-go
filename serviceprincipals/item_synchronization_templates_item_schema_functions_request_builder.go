@@ -52,7 +52,7 @@ func NewItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder(rawUrl str
     return NewItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function functions
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsFunctionsGetResponse instead.
 // returns a ItemSynchronizationTemplatesItemSchemaFunctionsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesItemSchemaFunctionsRequestBuilderGetRequestConfiguration)(ItemSynchronizationTemplatesItemSchemaFunctionsResponseable, error) {

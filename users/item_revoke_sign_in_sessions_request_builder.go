@@ -31,7 +31,7 @@ func NewItemRevokeSignInSessionsRequestBuilder(rawUrl string, requestAdapter i2a
     return NewItemRevokeSignInSessionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invalidates all the refresh tokens issued to applications for a user (as well as session cookies in a user's browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization's data through applications on the device by requiring the user to sign in again to all applications that they have previously consented to, independent of device.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsRevokeSignInSessionsPostResponse instead.
 // returns a ItemRevokeSignInSessionsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

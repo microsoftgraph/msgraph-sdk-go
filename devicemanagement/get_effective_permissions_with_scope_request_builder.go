@@ -49,7 +49,7 @@ func NewGetEffectivePermissionsWithScopeRequestBuilder(rawUrl string, requestAda
     return NewGetEffectivePermissionsWithScopeRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get retrieves the effective permissions of the currently authenticated user
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetEffectivePermissionsWithScopeGetResponse instead.
 // returns a GetEffectivePermissionsWithScopeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetEffectivePermissionsWithScopeRequestBuilder) Get(ctx context.Context, requestConfiguration *GetEffectivePermissionsWithScopeRequestBuilderGetRequestConfiguration)(GetEffectivePermissionsWithScopeResponseable, error) {

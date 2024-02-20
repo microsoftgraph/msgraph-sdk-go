@@ -52,7 +52,7 @@ func NewGetAllSitesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewGetAllSitesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getAllSites
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetAllSitesGetResponse instead.
 // returns a GetAllSitesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetAllSitesRequestBuilder) Get(ctx context.Context, requestConfiguration *GetAllSitesRequestBuilderGetRequestConfiguration)(GetAllSitesResponseable, error) {

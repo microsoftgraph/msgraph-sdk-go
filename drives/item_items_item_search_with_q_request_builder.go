@@ -55,7 +55,7 @@ func NewItemItemsItemSearchWithQRequestBuilder(rawUrl string, requestAdapter i2a
     return NewItemItemsItemSearchWithQRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function search
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsSearchWithQGetResponse instead.
 // returns a ItemItemsItemSearchWithQResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemSearchWithQRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemSearchWithQRequestBuilderGetRequestConfiguration)(ItemItemsItemSearchWithQResponseable, error) {

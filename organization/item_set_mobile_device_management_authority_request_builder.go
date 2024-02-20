@@ -31,7 +31,7 @@ func NewItemSetMobileDeviceManagementAuthorityRequestBuilder(rawUrl string, requ
     return NewItemSetMobileDeviceManagementAuthorityRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post set mobile device management authority
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsSetMobileDeviceManagementAuthorityPostResponse instead.
 // returns a ItemSetMobileDeviceManagementAuthorityResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

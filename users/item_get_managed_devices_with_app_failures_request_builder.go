@@ -46,7 +46,7 @@ func NewItemGetManagedDevicesWithAppFailuresRequestBuilder(rawUrl string, reques
     return NewItemGetManagedDevicesWithAppFailuresRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get retrieves the list of devices with failed apps
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetManagedDevicesWithAppFailuresGetResponse instead.
 // returns a ItemGetManagedDevicesWithAppFailuresResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGetManagedDevicesWithAppFailuresRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGetManagedDevicesWithAppFailuresRequestBuilderGetRequestConfiguration)(ItemGetManagedDevicesWithAppFailuresResponseable, error) {

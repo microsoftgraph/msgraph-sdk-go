@@ -52,7 +52,7 @@ func NewItemGetManagedAppPoliciesRequestBuilder(rawUrl string, requestAdapter i2
     return NewItemGetManagedAppPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get gets app restrictions for a given user.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetManagedAppPoliciesGetResponse instead.
 // returns a ItemGetManagedAppPoliciesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGetManagedAppPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGetManagedAppPoliciesRequestBuilderGetRequestConfiguration)(ItemGetManagedAppPoliciesResponseable, error) {

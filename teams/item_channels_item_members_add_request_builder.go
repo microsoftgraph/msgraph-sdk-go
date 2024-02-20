@@ -31,7 +31,7 @@ func NewItemChannelsItemMembersAddRequestBuilder(rawUrl string, requestAdapter i
     return NewItemChannelsItemMembersAddRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsAddPostResponse instead.
 // returns a ItemChannelsItemMembersAddResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

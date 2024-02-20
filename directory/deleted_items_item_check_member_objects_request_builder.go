@@ -31,7 +31,7 @@ func NewDeletedItemsItemCheckMemberObjectsRequestBuilder(rawUrl string, requestA
     return NewDeletedItemsItemCheckMemberObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action checkMemberObjects
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsCheckMemberObjectsPostResponse instead.
 // returns a DeletedItemsItemCheckMemberObjectsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeletedItemsItemCheckMemberObjectsRequestBuilder) Post(ctx context.Context, body DeletedItemsItemCheckMemberObjectsPostRequestBodyable, requestConfiguration *DeletedItemsItemCheckMemberObjectsRequestBuilderPostRequestConfiguration)(DeletedItemsItemCheckMemberObjectsResponseable, error) {

@@ -31,7 +31,7 @@ func NewDeletedItemsItemGetMemberObjectsRequestBuilder(rawUrl string, requestAda
     return NewDeletedItemsItemGetMemberObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsGetMemberObjectsPostResponse instead.
 // returns a DeletedItemsItemGetMemberObjectsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

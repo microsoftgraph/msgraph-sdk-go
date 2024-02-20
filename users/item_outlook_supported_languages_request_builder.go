@@ -46,7 +46,7 @@ func NewItemOutlookSupportedLanguagesRequestBuilder(rawUrl string, requestAdapte
     return NewItemOutlookSupportedLanguagesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language bygetting the user's mailbox settings.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsSupportedLanguagesGetResponse instead.
 // returns a ItemOutlookSupportedLanguagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

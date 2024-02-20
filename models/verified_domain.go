@@ -142,7 +142,7 @@ func (m *VerifiedDomain) GetIsInitial()(*bool) {
     }
     return nil
 }
-// GetName gets the name property value. The domain name; for example, contoso.onmicrosoft.com.
+// GetName gets the name property value. The domain name; for example, contoso.com`.
 // returns a *string when successful
 func (m *VerifiedDomain) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -256,7 +256,7 @@ func (m *VerifiedDomain) SetIsInitial(value *bool)() {
         panic(err)
     }
 }
-// SetName sets the name property value. The domain name; for example, contoso.onmicrosoft.com.
+// SetName sets the name property value. The domain name; for example, contoso.com`.
 func (m *VerifiedDomain) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {

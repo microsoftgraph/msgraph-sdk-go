@@ -52,7 +52,7 @@ func NewSchoolsDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewSchoolsDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function delta
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a SchoolsDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SchoolsDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *SchoolsDeltaRequestBuilderGetRequestConfiguration)(SchoolsDeltaResponseable, error) {

@@ -31,7 +31,7 @@ func NewDeletedItemsGetByIdsRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewDeletedItemsGetByIdsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsGetByIdsPostResponse instead.
 // returns a DeletedItemsGetByIdsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

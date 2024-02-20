@@ -31,7 +31,7 @@ func NewDeletedItemsItemCheckMemberGroupsRequestBuilder(rawUrl string, requestAd
     return NewDeletedItemsItemCheckMemberGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsCheckMemberGroupsPostResponse instead.
 // returns a DeletedItemsItemCheckMemberGroupsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

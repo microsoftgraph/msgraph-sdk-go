@@ -31,7 +31,7 @@ func NewItemCheckMemberObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewItemCheckMemberObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action checkMemberObjects
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsCheckMemberObjectsPostResponse instead.
 // returns a ItemCheckMemberObjectsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCheckMemberObjectsRequestBuilder) Post(ctx context.Context, body ItemCheckMemberObjectsPostRequestBodyable, requestConfiguration *ItemCheckMemberObjectsRequestBuilderPostRequestConfiguration)(ItemCheckMemberObjectsResponseable, error) {

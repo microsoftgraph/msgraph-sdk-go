@@ -52,7 +52,7 @@ func NewItemRecentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewItemRecentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function recent
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsRecentGetResponse instead.
 // returns a ItemRecentResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemRecentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRecentRequestBuilderGetRequestConfiguration)(ItemRecentResponseable, error) {

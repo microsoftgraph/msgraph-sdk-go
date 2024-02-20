@@ -35,7 +35,7 @@ func (m *EducationModuleResource) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetResource gets the resource property value. The resource property
+// GetResource gets the resource property value. Resource object that is with this module.
 // returns a EducationResourceable when successful
 func (m *EducationModuleResource) GetResource()(EducationResourceable) {
     val, err := m.GetBackingStore().Get("resource")
@@ -61,7 +61,7 @@ func (m *EducationModuleResource) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetResource sets the resource property value. The resource property
+// SetResource sets the resource property value. Resource object that is with this module.
 func (m *EducationModuleResource) SetResource(value EducationResourceable)() {
     err := m.GetBackingStore().Set("resource", value)
     if err != nil {

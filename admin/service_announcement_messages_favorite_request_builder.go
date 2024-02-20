@@ -31,7 +31,7 @@ func NewServiceAnnouncementMessagesFavoriteRequestBuilder(rawUrl string, request
     return NewServiceAnnouncementMessagesFavoriteRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post change the status of a list of serviceUpdateMessages to favorite for the signed in user.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsFavoritePostResponse instead.
 // returns a ServiceAnnouncementMessagesFavoriteResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

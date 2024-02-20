@@ -52,7 +52,7 @@ func NewUsersDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewUsersDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function delta
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a UsersDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UsersDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersDeltaRequestBuilderGetRequestConfiguration)(UsersDeltaResponseable, error) {

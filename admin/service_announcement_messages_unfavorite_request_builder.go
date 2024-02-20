@@ -31,7 +31,7 @@ func NewServiceAnnouncementMessagesUnfavoriteRequestBuilder(rawUrl string, reque
     return NewServiceAnnouncementMessagesUnfavoriteRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post remove the favorite status of serviceUpdateMessages for the signed in user.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsUnfavoritePostResponse instead.
 // returns a ServiceAnnouncementMessagesUnfavoriteResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

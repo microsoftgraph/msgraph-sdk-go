@@ -1190,7 +1190,7 @@ func (m *Group) GetLicenseProcessingState()(LicenseProcessingStateable) {
     }
     return nil
 }
-// GetMail gets the mail property value. The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// GetMail gets the mail property value. The SMTP address for the group, for example, 'serviceadmins@contoso.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 // returns a *string when successful
 func (m *Group) GetMail()(*string) {
     val, err := m.GetBackingStore().Get("mail")
@@ -2408,7 +2408,7 @@ func (m *Group) SetLicenseProcessingState(value LicenseProcessingStateable)() {
         panic(err)
     }
 }
-// SetMail sets the mail property value. The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// SetMail sets the mail property value. The SMTP address for the group, for example, 'serviceadmins@contoso.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *Group) SetMail(value *string)() {
     err := m.GetBackingStore().Set("mail", value)
     if err != nil {

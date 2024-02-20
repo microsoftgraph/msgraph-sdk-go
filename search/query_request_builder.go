@@ -31,7 +31,7 @@ func NewQueryRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     return NewQueryRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post runs the query specified in the request body. Search results are provided in the response.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsQueryPostResponse instead.
 // returns a QueryResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

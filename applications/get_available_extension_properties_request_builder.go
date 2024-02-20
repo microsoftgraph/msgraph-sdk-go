@@ -31,7 +31,7 @@ func NewGetAvailableExtensionPropertiesRequestBuilder(rawUrl string, requestAdap
     return NewGetAvailableExtensionPropertiesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsGetAvailableExtensionPropertiesPostResponse instead.
 // returns a GetAvailableExtensionPropertiesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

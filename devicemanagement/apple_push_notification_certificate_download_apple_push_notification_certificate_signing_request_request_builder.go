@@ -31,7 +31,7 @@ func NewApplePushNotificationCertificateDownloadApplePushNotificationCertificate
     return NewApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get download Apple push notification certificate signing request
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsDownloadApplePushNotificationCertificateSigningRequestGetResponse instead.
 // returns a ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestRequestBuilder) Get(ctx context.Context, requestConfiguration *ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestRequestBuilderGetRequestConfiguration)(ApplePushNotificationCertificateDownloadApplePushNotificationCertificateSigningRequestResponseable, error) {

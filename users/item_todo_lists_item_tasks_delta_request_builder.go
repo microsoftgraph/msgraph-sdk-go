@@ -52,7 +52,7 @@ func NewItemTodoListsItemTasksDeltaRequestBuilder(rawUrl string, requestAdapter 
     return NewItemTodoListsItemTasksDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function delta
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a ItemTodoListsItemTasksDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTodoListsItemTasksDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksDeltaRequestBuilderGetRequestConfiguration)(ItemTodoListsItemTasksDeltaResponseable, error) {

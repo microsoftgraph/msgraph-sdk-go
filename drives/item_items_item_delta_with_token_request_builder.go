@@ -55,7 +55,7 @@ func NewItemItemsItemDeltaWithTokenRequestBuilder(rawUrl string, requestAdapter 
     return NewItemItemsItemDeltaWithTokenRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function delta
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsDeltaWithTokenGetResponse instead.
 // returns a ItemItemsItemDeltaWithTokenResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemDeltaWithTokenRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemDeltaWithTokenRequestBuilderGetRequestConfiguration)(ItemItemsItemDeltaWithTokenResponseable, error) {
