@@ -31,7 +31,7 @@ func NewItemGetMailTipsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewItemGetMailTipsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips tobe returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsGetMailTipsPostResponse instead.
 // returns a ItemGetMailTipsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

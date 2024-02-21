@@ -52,7 +52,7 @@ func NewCasesEdiscoveryCasesItemTagsMicrosoftGraphSecurityAsHierarchyRequestBuil
     return NewCasesEdiscoveryCasesItemTagsMicrosoftGraphSecurityAsHierarchyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function asHierarchy
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsAsHierarchyGetResponse instead.
 // returns a CasesEdiscoveryCasesItemTagsMicrosoftGraphSecurityAsHierarchyAsHierarchyResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CasesEdiscoveryCasesItemTagsMicrosoftGraphSecurityAsHierarchyRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemTagsMicrosoftGraphSecurityAsHierarchyRequestBuilderGetRequestConfiguration)(CasesEdiscoveryCasesItemTagsMicrosoftGraphSecurityAsHierarchyAsHierarchyResponseable, error) {

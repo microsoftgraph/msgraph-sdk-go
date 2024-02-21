@@ -31,7 +31,7 @@ func NewItemCalendarGetScheduleRequestBuilder(rawUrl string, requestAdapter i2ae
     return NewItemCalendarGetScheduleRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsGetSchedulePostResponse instead.
 // returns a ItemCalendarGetScheduleResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

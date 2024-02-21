@@ -31,7 +31,7 @@ func NewServiceAnnouncementMessagesMarkReadRequestBuilder(rawUrl string, request
     return NewServiceAnnouncementMessagesMarkReadRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post mark a list of serviceUpdateMessages as read for the signed in user.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsMarkReadPostResponse instead.
 // returns a ServiceAnnouncementMessagesMarkReadResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

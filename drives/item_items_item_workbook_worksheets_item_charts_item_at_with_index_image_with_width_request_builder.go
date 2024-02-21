@@ -35,7 +35,7 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthRe
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function image
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsImageWithWidthGetResponse instead.
 // returns a ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthRequestBuilderGetRequestConfiguration)(ItemItemsItemWorkbookWorksheetsItemChartsItemAtWithIndexImageWithWidthResponseable, error) {

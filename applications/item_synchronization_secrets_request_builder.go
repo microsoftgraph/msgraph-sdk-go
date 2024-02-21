@@ -36,7 +36,7 @@ func (m *ItemSynchronizationSecretsRequestBuilder) Count()(*ItemSynchronizationS
     return NewItemSynchronizationSecretsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Put update property secrets value.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PutAsSecretsPutResponse instead.
 // returns a ItemSynchronizationSecretsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSynchronizationSecretsRequestBuilder) Put(ctx context.Context, body ItemSynchronizationSecretsPutRequestBodyable, requestConfiguration *ItemSynchronizationSecretsRequestBuilderPutRequestConfiguration)(ItemSynchronizationSecretsResponseable, error) {

@@ -31,7 +31,7 @@ func NewItemSitesItemListsItemContentTypesItemIsPublishedRequestBuilder(rawUrl s
     return NewItemSitesItemListsItemContentTypesItemIsPublishedRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function isPublished
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsIsPublishedGetResponse instead.
 // returns a ItemSitesItemListsItemContentTypesItemIsPublishedResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemListsItemContentTypesItemIsPublishedRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemListsItemContentTypesItemIsPublishedRequestBuilderGetRequestConfiguration)(ItemSitesItemListsItemContentTypesItemIsPublishedResponseable, error) {

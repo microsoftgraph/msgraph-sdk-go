@@ -55,7 +55,7 @@ func NewDirectoryRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnReques
     return NewDirectoryRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function filterByCurrentUser
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
 // returns a DirectoryRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DirectoryRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(DirectoryRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnResponseable, error) {

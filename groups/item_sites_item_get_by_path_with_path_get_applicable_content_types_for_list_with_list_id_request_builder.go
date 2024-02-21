@@ -55,7 +55,7 @@ func NewItemSitesItemGetByPathWithPathGetApplicableContentTypesForListWithListId
     return NewItemSitesItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getApplicableContentTypesForList
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetApplicableContentTypesForListWithListIdGetResponse instead.
 // returns a ItemSitesItemGetByPathWithPathGetApplicableContentTypesForListWithListIdResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilderGetRequestConfiguration)(ItemSitesItemGetByPathWithPathGetApplicableContentTypesForListWithListIdResponseable, error) {

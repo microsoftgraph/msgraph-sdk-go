@@ -46,7 +46,7 @@ func NewAuditEventsGetAuditCategoriesRequestBuilder(rawUrl string, requestAdapte
     return NewAuditEventsGetAuditCategoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getAuditCategories
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetAuditCategoriesGetResponse instead.
 // returns a AuditEventsGetAuditCategoriesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AuditEventsGetAuditCategoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *AuditEventsGetAuditCategoriesRequestBuilderGetRequestConfiguration)(AuditEventsGetAuditCategoriesResponseable, error) {

@@ -11,7 +11,7 @@ import (
 type ItemMailFoldersItemMessagesItemAttachmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemMailFoldersItemMessagesItemAttachmentsRequestBuilderGetQueryParameters retrieve a list of attachment objects attached to a message.
+// ItemMailFoldersItemMessagesItemAttachmentsRequestBuilderGetQueryParameters retrieve a list of attachment objects.
 type ItemMailFoldersItemMessagesItemAttachmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,12 +75,12 @@ func (m *ItemMailFoldersItemMessagesItemAttachmentsRequestBuilder) Count()(*Item
 func (m *ItemMailFoldersItemMessagesItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemMailFoldersItemMessagesItemAttachmentsCreateUploadSessionRequestBuilder) {
     return NewItemMailFoldersItemMessagesItemAttachmentsCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of attachment objects attached to a message.
+// Get retrieve a list of attachment objects.
 // returns a AttachmentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
 func (m *ItemMailFoldersItemMessagesItemAttachmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMailFoldersItemMessagesItemAttachmentsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AttachmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +121,7 @@ func (m *ItemMailFoldersItemMessagesItemAttachmentsRequestBuilder) Post(ctx cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Attachmentable), nil
 }
-// ToGetRequestInformation retrieve a list of attachment objects attached to a message.
+// ToGetRequestInformation retrieve a list of attachment objects.
 // returns a *RequestInformation when successful
 func (m *ItemMailFoldersItemMessagesItemAttachmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemMessagesItemAttachmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

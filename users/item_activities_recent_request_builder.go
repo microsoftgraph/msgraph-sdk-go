@@ -52,7 +52,7 @@ func NewItemActivitiesRecentRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewItemActivitiesRecentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get recent activities for a given user. This OData function has some default behaviors included to make it operate like a 'most recently used' API. The service queries for the most recent historyItems, and then pull those related activities. Activities are sorted according to the most recent lastModified on the historyItem. This means that activities without historyItems won't be included in the response. The UserActivity.ReadWrite.CreatedByApp permission will also apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is active and other applications have created more recent activities. To get your application's activities, use the nextLink property to paginate.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsRecentGetResponse instead.
 // returns a ItemActivitiesRecentResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

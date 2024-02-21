@@ -46,7 +46,7 @@ func NewFederationConfigurationsAvailableProviderTypesRequestBuilder(rawUrl stri
     return NewFederationConfigurationsAvailableProviderTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function availableProviderTypes
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsAvailableProviderTypesGetResponse instead.
 // returns a FederationConfigurationsAvailableProviderTypesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *FederationConfigurationsAvailableProviderTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *FederationConfigurationsAvailableProviderTypesRequestBuilderGetRequestConfiguration)(FederationConfigurationsAvailableProviderTypesResponseable, error) {

@@ -52,7 +52,7 @@ func NewItemContentTypesGetCompatibleHubContentTypesRequestBuilder(rawUrl string
     return NewItemContentTypesGetCompatibleHubContentTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getCompatibleHubContentTypes
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetCompatibleHubContentTypesGetResponse instead.
 // returns a ItemContentTypesGetCompatibleHubContentTypesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemContentTypesGetCompatibleHubContentTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContentTypesGetCompatibleHubContentTypesRequestBuilderGetRequestConfiguration)(ItemContentTypesGetCompatibleHubContentTypesResponseable, error) {

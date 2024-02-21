@@ -297,7 +297,7 @@ func (m *Domain) GetIsDefault()(*bool) {
     }
     return nil
 }
-// GetIsInitial gets the isInitial property value. true if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com). There is only one initial domain per company. Not nullable
+// GetIsInitial gets the isInitial property value. true if this is the initial domain created by Microsoft Online Services (contoso.com). There is only one initial domain per company. Not nullable
 // returns a *bool when successful
 func (m *Domain) GetIsInitial()(*bool) {
     val, err := m.GetBackingStore().Get("isInitial")
@@ -605,7 +605,7 @@ func (m *Domain) SetIsDefault(value *bool)() {
         panic(err)
     }
 }
-// SetIsInitial sets the isInitial property value. true if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com). There is only one initial domain per company. Not nullable
+// SetIsInitial sets the isInitial property value. true if this is the initial domain created by Microsoft Online Services (contoso.com). There is only one initial domain per company. Not nullable
 func (m *Domain) SetIsInitial(value *bool)() {
     err := m.GetBackingStore().Set("isInitial", value)
     if err != nil {

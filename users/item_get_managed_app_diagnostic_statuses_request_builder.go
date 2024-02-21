@@ -46,7 +46,7 @@ func NewItemGetManagedAppDiagnosticStatusesRequestBuilder(rawUrl string, request
     return NewItemGetManagedAppDiagnosticStatusesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get gets diagnostics validation status for a given user.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetManagedAppDiagnosticStatusesGetResponse instead.
 // returns a ItemGetManagedAppDiagnosticStatusesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGetManagedAppDiagnosticStatusesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGetManagedAppDiagnosticStatusesRequestBuilderGetRequestConfiguration)(ItemGetManagedAppDiagnosticStatusesResponseable, error) {

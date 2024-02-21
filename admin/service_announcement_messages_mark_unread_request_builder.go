@@ -31,7 +31,7 @@ func NewServiceAnnouncementMessagesMarkUnreadRequestBuilder(rawUrl string, reque
     return NewServiceAnnouncementMessagesMarkUnreadRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post mark a list of serviceUpdateMessages as unread for the signed in user.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsMarkUnreadPostResponse instead.
 // returns a ServiceAnnouncementMessagesMarkUnreadResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

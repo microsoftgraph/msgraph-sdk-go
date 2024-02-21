@@ -37,7 +37,7 @@ func (m *EducationChannelResource) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetUrl gets the url property value. The url property
+// GetUrl gets the url property value. URL of the channel resource.
 // returns a *string when successful
 func (m *EducationChannelResource) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
@@ -63,7 +63,7 @@ func (m *EducationChannelResource) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetUrl sets the url property value. The url property
+// SetUrl sets the url property value. URL of the channel resource.
 func (m *EducationChannelResource) SetUrl(value *string)() {
     err := m.GetBackingStore().Set("url", value)
     if err != nil {

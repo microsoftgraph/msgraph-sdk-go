@@ -31,7 +31,7 @@ func NewGetPresencesByUserIdRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewGetPresencesByUserIdRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post get the presence information for multiple users.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsGetPresencesByUserIdPostResponse instead.
 // returns a GetPresencesByUserIdResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

@@ -52,7 +52,7 @@ func NewItemSharedWithMeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewItemSharedWithMeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function sharedWithMe
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsSharedWithMeGetResponse instead.
 // returns a ItemSharedWithMeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSharedWithMeRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSharedWithMeRequestBuilderGetRequestConfiguration)(ItemSharedWithMeResponseable, error) {

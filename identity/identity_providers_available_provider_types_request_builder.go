@@ -46,7 +46,7 @@ func NewIdentityProvidersAvailableProviderTypesRequestBuilder(rawUrl string, req
     return NewIdentityProvidersAvailableProviderTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function availableProviderTypes
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsAvailableProviderTypesGetResponse instead.
 // returns a IdentityProvidersAvailableProviderTypesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IdentityProvidersAvailableProviderTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentityProvidersAvailableProviderTypesRequestBuilderGetRequestConfiguration)(IdentityProvidersAvailableProviderTypesResponseable, error) {

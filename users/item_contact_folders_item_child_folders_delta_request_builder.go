@@ -52,7 +52,7 @@ func NewItemContactFoldersItemChildFoldersDeltaRequestBuilder(rawUrl string, req
     return NewItemContactFoldersItemChildFoldersDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get a set of contact folders that have been added, deleted, or removed from the user's mailbox. A delta function call for contact folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contact folders. This allows you to maintain and synchronize a local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a ItemContactFoldersItemChildFoldersDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

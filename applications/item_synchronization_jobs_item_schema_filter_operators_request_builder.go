@@ -52,7 +52,7 @@ func NewItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder(rawUrl st
     return NewItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function filterOperators
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsFilterOperatorsGetResponse instead.
 // returns a ItemSynchronizationJobsItemSchemaFilterOperatorsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaFilterOperatorsRequestBuilderGetRequestConfiguration)(ItemSynchronizationJobsItemSchemaFilterOperatorsResponseable, error) {

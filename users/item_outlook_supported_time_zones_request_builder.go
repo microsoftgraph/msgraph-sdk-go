@@ -46,7 +46,7 @@ func NewItemOutlookSupportedTimeZonesRequestBuilder(rawUrl string, requestAdapte
     return NewItemOutlookSupportedTimeZonesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function supportedTimeZones
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsSupportedTimeZonesGetResponse instead.
 // returns a ItemOutlookSupportedTimeZonesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOutlookSupportedTimeZonesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOutlookSupportedTimeZonesRequestBuilderGetRequestConfiguration)(ItemOutlookSupportedTimeZonesResponseable, error) {

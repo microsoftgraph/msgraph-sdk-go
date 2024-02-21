@@ -31,7 +31,7 @@ func NewItemTranslateExchangeIdsRequestBuilder(rawUrl string, requestAdapter i2a
     return NewItemTranslateExchangeIdsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post translate identifiers of Outlook-related resources between formats.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsTranslateExchangeIdsPostResponse instead.
 // returns a ItemTranslateExchangeIdsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

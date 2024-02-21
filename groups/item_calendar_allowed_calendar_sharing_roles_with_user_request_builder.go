@@ -49,7 +49,7 @@ func NewItemCalendarAllowedCalendarSharingRolesWithUserRequestBuilder(rawUrl str
     return NewItemCalendarAllowedCalendarSharingRolesWithUserRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function allowedCalendarSharingRoles
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsAllowedCalendarSharingRolesWithUserGetResponse instead.
 // returns a ItemCalendarAllowedCalendarSharingRolesWithUserResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCalendarAllowedCalendarSharingRolesWithUserRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarAllowedCalendarSharingRolesWithUserRequestBuilderGetRequestConfiguration)(ItemCalendarAllowedCalendarSharingRolesWithUserResponseable, error) {

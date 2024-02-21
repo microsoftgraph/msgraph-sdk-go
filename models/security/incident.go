@@ -93,7 +93,7 @@ func (m *Incident) GetCustomTags()([]string) {
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. A rich text string describing the incident
 // returns a *string when successful
 func (m *Incident) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -401,7 +401,7 @@ func (m *Incident) GetStatus()(*IncidentStatus) {
     }
     return nil
 }
-// GetSystemTags gets the systemTags property value. The systemTags property
+// GetSystemTags gets the systemTags property value. The system tags associated with the incident
 // returns a []string when successful
 func (m *Incident) GetSystemTags()([]string) {
     val, err := m.GetBackingStore().Get("systemTags")
@@ -593,7 +593,7 @@ func (m *Incident) SetCustomTags(value []string)() {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. A rich text string describing the incident
 func (m *Incident) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
@@ -656,7 +656,7 @@ func (m *Incident) SetStatus(value *IncidentStatus)() {
         panic(err)
     }
 }
-// SetSystemTags sets the systemTags property value. The systemTags property
+// SetSystemTags sets the systemTags property value. The system tags associated with the incident
 func (m *Incident) SetSystemTags(value []string)() {
     err := m.GetBackingStore().Set("systemTags", value)
     if err != nil {

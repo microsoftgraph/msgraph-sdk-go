@@ -52,7 +52,7 @@ func NewMeAssignmentsItemCategoriesDeltaRequestBuilder(rawUrl string, requestAda
     return NewMeAssignmentsItemCategoriesDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function delta
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a MeAssignmentsItemCategoriesDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MeAssignmentsItemCategoriesDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *MeAssignmentsItemCategoriesDeltaRequestBuilderGetRequestConfiguration)(MeAssignmentsItemCategoriesDeltaResponseable, error) {

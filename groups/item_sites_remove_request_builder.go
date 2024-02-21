@@ -31,7 +31,7 @@ func NewItemSitesRemoveRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewItemSitesRemoveRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post unfollow a user's site or multiple sites.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsRemovePostResponse instead.
 // returns a ItemSitesRemoveResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

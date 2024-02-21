@@ -11,6 +11,13 @@ import (
 type DeletedItemsDirectoryObjectItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// DeletedItemsDirectoryObjectItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type DeletedItemsDirectoryObjectItemRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
 // DeletedItemsDirectoryObjectItemRequestBuilderGetQueryParameters retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
 type DeletedItemsDirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
@@ -49,6 +56,25 @@ func NewDeletedItemsDirectoryObjectItemRequestBuilder(rawUrl string, requestAdap
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedItemsDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Delete delete navigation property deletedItems for directory
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/directory-deleteditems-delete?view=graph-rest-1.0
+func (m *DeletedItemsDirectoryObjectItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeletedItemsDirectoryObjectItemRequestBuilderDeleteRequestConfiguration)(error) {
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": ia572726a95efa92ddd544552cd950653dc691023836923576b2f4bf716cf204a.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
 }
 // Get retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
 // returns a DirectoryObjectable when successful
@@ -117,6 +143,17 @@ func (m *DeletedItemsDirectoryObjectItemRequestBuilder) GraphUser()(*DeletedItem
 // returns a *DeletedItemsItemRestoreRequestBuilder when successful
 func (m *DeletedItemsDirectoryObjectItemRequestBuilder) Restore()(*DeletedItemsItemRestoreRequestBuilder) {
     return NewDeletedItemsItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ToDeleteRequestInformation delete navigation property deletedItems for directory
+// returns a *RequestInformation when successful
+func (m *DeletedItemsDirectoryObjectItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeletedItemsDirectoryObjectItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/directory/deletedItems/{directoryObject%2Did}", m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
 }
 // ToGetRequestInformation retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
 // returns a *RequestInformation when successful

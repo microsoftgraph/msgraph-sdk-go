@@ -31,7 +31,7 @@ func NewImportedWindowsAutopilotDeviceIdentitiesImportRequestBuilder(rawUrl stri
     return NewImportedWindowsAutopilotDeviceIdentitiesImportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post not yet documented
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsImportPostResponse instead.
 // returns a ImportedWindowsAutopilotDeviceIdentitiesImportResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

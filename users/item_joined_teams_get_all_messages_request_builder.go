@@ -54,7 +54,7 @@ func NewItemJoinedTeamsGetAllMessagesRequestBuilder(rawUrl string, requestAdapte
     return NewItemJoinedTeamsGetAllMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getAllMessages
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetAllMessagesGetResponse instead.
 // returns a ItemJoinedTeamsGetAllMessagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemJoinedTeamsGetAllMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedTeamsGetAllMessagesRequestBuilderGetRequestConfiguration)(ItemJoinedTeamsGetAllMessagesResponseable, error) {

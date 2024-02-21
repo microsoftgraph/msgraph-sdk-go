@@ -11,7 +11,7 @@ import (
 type ItemCalendarsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCalendarsRequestBuilderGetQueryParameters get all the user's calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group. 
+// ItemCalendarsRequestBuilderGetQueryParameters get all the user's calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group.
 type ItemCalendarsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemCalendarsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *ItemCalendarsRequestBuilder) Count()(*ItemCalendarsCountRequestBuilder) {
     return NewItemCalendarsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get all the user's calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group. 
+// Get get all the user's calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group.
 // returns a CalendarCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -120,7 +120,7 @@ func (m *ItemCalendarsRequestBuilder) Post(ctx context.Context, body iadcd811244
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Calendarable), nil
 }
-// ToGetRequestInformation get all the user's calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group. 
+// ToGetRequestInformation get all the user's calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group.
 // returns a *RequestInformation when successful
 func (m *ItemCalendarsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

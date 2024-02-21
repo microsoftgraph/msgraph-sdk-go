@@ -163,7 +163,7 @@ func (m *EducationClass) GetExternalSource()(*EducationExternalSource) {
     }
     return nil
 }
-// GetExternalSourceDetail gets the externalSourceDetail property value. The name of the external source this resources was generated from.
+// GetExternalSourceDetail gets the externalSourceDetail property value. The name of the external source this resource was generated from.
 // returns a *string when successful
 func (m *EducationClass) GetExternalSourceDetail()(*string) {
     val, err := m.GetBackingStore().Get("externalSourceDetail")
@@ -475,7 +475,7 @@ func (m *EducationClass) GetMembers()([]EducationUserable) {
     }
     return nil
 }
-// GetModules gets the modules property value. The modules property
+// GetModules gets the modules property value. All modules in the class. Nullable.
 // returns a []EducationModuleable when successful
 func (m *EducationClass) GetModules()([]EducationModuleable) {
     val, err := m.GetBackingStore().Get("modules")
@@ -778,7 +778,7 @@ func (m *EducationClass) SetExternalSource(value *EducationExternalSource)() {
         panic(err)
     }
 }
-// SetExternalSourceDetail sets the externalSourceDetail property value. The name of the external source this resources was generated from.
+// SetExternalSourceDetail sets the externalSourceDetail property value. The name of the external source this resource was generated from.
 func (m *EducationClass) SetExternalSourceDetail(value *string)() {
     err := m.GetBackingStore().Set("externalSourceDetail", value)
     if err != nil {
@@ -813,7 +813,7 @@ func (m *EducationClass) SetMembers(value []EducationUserable)() {
         panic(err)
     }
 }
-// SetModules sets the modules property value. The modules property
+// SetModules sets the modules property value. All modules in the class. Nullable.
 func (m *EducationClass) SetModules(value []EducationModuleable)() {
     err := m.GetBackingStore().Set("modules", value)
     if err != nil {

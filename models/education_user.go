@@ -610,7 +610,7 @@ func (m *EducationUser) GetGivenName()(*string) {
     }
     return nil
 }
-// GetMail gets the mail property value. The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Read-Only. Supports $filter.
+// GetMail gets the mail property value. The SMTP address for the user, for example, jeff@contoso.com. Read-Only. Supports $filter.
 // returns a *string when successful
 func (m *EducationUser) GetMail()(*string) {
     val, err := m.GetBackingStore().Get("mail")
@@ -1298,7 +1298,7 @@ func (m *EducationUser) SetGivenName(value *string)() {
         panic(err)
     }
 }
-// SetMail sets the mail property value. The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Read-Only. Supports $filter.
+// SetMail sets the mail property value. The SMTP address for the user, for example, jeff@contoso.com. Read-Only. Supports $filter.
 func (m *EducationUser) SetMail(value *string)() {
     err := m.GetBackingStore().Set("mail", value)
     if err != nil {

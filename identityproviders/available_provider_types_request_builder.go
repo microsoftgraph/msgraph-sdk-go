@@ -46,7 +46,7 @@ func NewAvailableProviderTypesRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewAvailableProviderTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function availableProviderTypes
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsAvailableProviderTypesGetResponse instead.
 // returns a AvailableProviderTypesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AvailableProviderTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *AvailableProviderTypesRequestBuilderGetRequestConfiguration)(AvailableProviderTypesResponseable, error) {

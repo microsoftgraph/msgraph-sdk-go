@@ -18,7 +18,7 @@ type ItemCalendarRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemCalendarRequestBuilderGetQueryParameters get the properties and relationships of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. There are two scenarios where an app can get another user's calendar:
+// ItemCalendarRequestBuilderGetQueryParameters get the properties and relationships of a calendar object. The calendar can be one for a user,or the default calendar of a Microsoft 365 group. There are two scenarios where an app can get another user's calendar:
 type ItemCalendarRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -91,7 +91,7 @@ func (m *ItemCalendarRequestBuilder) Delete(ctx context.Context, requestConfigur
 func (m *ItemCalendarRequestBuilder) Events()(*ItemCalendarEventsRequestBuilder) {
     return NewItemCalendarEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the properties and relationships of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. There are two scenarios where an app can get another user's calendar:
+// Get get the properties and relationships of a calendar object. The calendar can be one for a user,or the default calendar of a Microsoft 365 group. There are two scenarios where an app can get another user's calendar:
 // returns a Calendarable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -119,7 +119,7 @@ func (m *ItemCalendarRequestBuilder) Get(ctx context.Context, requestConfigurati
 func (m *ItemCalendarRequestBuilder) GetSchedule()(*ItemCalendarGetScheduleRequestBuilder) {
     return NewItemCalendarGetScheduleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
+// Patch update the properties of a calendar object. The calendar can be one for a user,or the default calendar of a Microsoft 365 group.
 // returns a Calendarable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -153,7 +153,7 @@ func (m *ItemCalendarRequestBuilder) ToDeleteRequestInformation(ctx context.Cont
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. There are two scenarios where an app can get another user's calendar:
+// ToGetRequestInformation get the properties and relationships of a calendar object. The calendar can be one for a user,or the default calendar of a Microsoft 365 group. There are two scenarios where an app can get another user's calendar:
 // returns a *RequestInformation when successful
 func (m *ItemCalendarRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -167,7 +167,7 @@ func (m *ItemCalendarRequestBuilder) ToGetRequestInformation(ctx context.Context
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
+// ToPatchRequestInformation update the properties of a calendar object. The calendar can be one for a user,or the default calendar of a Microsoft 365 group.
 // returns a *RequestInformation when successful
 func (m *ItemCalendarRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Calendarable, requestConfiguration *ItemCalendarRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/users/{user%2Did}/calendar", m.BaseRequestBuilder.PathParameters)

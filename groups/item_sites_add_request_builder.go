@@ -31,7 +31,7 @@ func NewItemSitesAddRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewItemSitesAddRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post follow a user's site or multiple sites.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsAddPostResponse instead.
 // returns a ItemSitesAddResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

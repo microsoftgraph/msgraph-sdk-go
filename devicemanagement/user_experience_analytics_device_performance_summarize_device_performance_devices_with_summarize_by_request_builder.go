@@ -55,7 +55,7 @@ func NewUserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevice
     return NewUserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function summarizeDevicePerformanceDevices
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsSummarizeDevicePerformanceDevicesWithSummarizeByGetResponse instead.
 // returns a UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder) Get(ctx context.Context, requestConfiguration *UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderGetRequestConfiguration)(UserExperienceAnalyticsDevicePerformanceSummarizeDevicePerformanceDevicesWithSummarizeByResponseable, error) {

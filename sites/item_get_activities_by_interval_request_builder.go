@@ -52,7 +52,7 @@ func NewItemGetActivitiesByIntervalRequestBuilder(rawUrl string, requestAdapter 
     return NewItemGetActivitiesByIntervalRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getActivitiesByInterval
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetActivitiesByIntervalGetResponse instead.
 // returns a ItemGetActivitiesByIntervalResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGetActivitiesByIntervalRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGetActivitiesByIntervalRequestBuilderGetRequestConfiguration)(ItemGetActivitiesByIntervalResponseable, error) {

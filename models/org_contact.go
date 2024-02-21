@@ -350,7 +350,7 @@ func (m *OrgContact) GetJobTitle()(*string) {
     }
     return nil
 }
-// GetMail gets the mail property value. The SMTP address for the contact, for example, 'jeff@contoso.onmicrosoft.com'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
+// GetMail gets the mail property value. The SMTP address for the contact, for example, 'jeff@contoso.com'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
 // returns a *string when successful
 func (m *OrgContact) GetMail()(*string) {
     val, err := m.GetBackingStore().Get("mail")
@@ -707,7 +707,7 @@ func (m *OrgContact) SetJobTitle(value *string)() {
         panic(err)
     }
 }
-// SetMail sets the mail property value. The SMTP address for the contact, for example, 'jeff@contoso.onmicrosoft.com'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
+// SetMail sets the mail property value. The SMTP address for the contact, for example, 'jeff@contoso.com'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
 func (m *OrgContact) SetMail(value *string)() {
     err := m.GetBackingStore().Set("mail", value)
     if err != nil {

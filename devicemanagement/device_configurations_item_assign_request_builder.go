@@ -31,7 +31,7 @@ func NewDeviceConfigurationsItemAssignRequestBuilder(rawUrl string, requestAdapt
     return NewDeviceConfigurationsItemAssignRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post not yet documented
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsAssignPostResponse instead.
 // returns a DeviceConfigurationsItemAssignResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

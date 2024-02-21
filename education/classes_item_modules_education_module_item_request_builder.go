@@ -18,7 +18,7 @@ type ClassesItemModulesEducationModuleItemRequestBuilderDeleteRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ClassesItemModulesEducationModuleItemRequestBuilderGetQueryParameters get modules from education
+// ClassesItemModulesEducationModuleItemRequestBuilderGetQueryParameters get the properties and relationships of a module. Only teachers, students, and applications with application permissions can perform this operation. Students can only see published modules; teachers and applications with application permissions can see all modules in a class.
 type ClassesItemModulesEducationModuleItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewClassesItemModulesEducationModuleItemRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemModulesEducationModuleItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property modules for education
+// Delete delete an existing module in a class. Only teachers within a class can delete modules.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationmodule-delete?view=graph-rest-1.0
 func (m *ClassesItemModulesEducationModuleItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ClassesItemModulesEducationModuleItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *ClassesItemModulesEducationModuleItemRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// Get get modules from education
+// Get get the properties and relationships of a module. Only teachers, students, and applications with application permissions can perform this operation. Students can only see published modules; teachers and applications with application permissions can see all modules in a class.
 // returns a EducationModuleable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationmodule-get?view=graph-rest-1.0
 func (m *ClassesItemModulesEducationModuleItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemModulesEducationModuleItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationModuleable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +96,12 @@ func (m *ClassesItemModulesEducationModuleItemRequestBuilder) Get(ctx context.Co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationModuleable), nil
 }
-// Patch update the navigation property modules in education
+// Patch update an educationModule object in a class. Only teachers in the class can perform this operation. You can't use a PATCH request to change the status of a module. Use the publish action to change the module status.
 // returns a EducationModuleable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationmodule-update?view=graph-rest-1.0
 func (m *ClassesItemModulesEducationModuleItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationModuleable, requestConfiguration *ClassesItemModulesEducationModuleItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationModuleable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -130,7 +139,7 @@ func (m *ClassesItemModulesEducationModuleItemRequestBuilder) Resources()(*Class
 func (m *ClassesItemModulesEducationModuleItemRequestBuilder) SetUpResourcesFolder()(*ClassesItemModulesItemSetUpResourcesFolderRequestBuilder) {
     return NewClassesItemModulesItemSetUpResourcesFolderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property modules for education
+// ToDeleteRequestInformation delete an existing module in a class. Only teachers within a class can delete modules.
 // returns a *RequestInformation when successful
 func (m *ClassesItemModulesEducationModuleItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ClassesItemModulesEducationModuleItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/education/classes/{educationClass%2Did}/modules/{educationModule%2Did}", m.BaseRequestBuilder.PathParameters)
@@ -141,7 +150,7 @@ func (m *ClassesItemModulesEducationModuleItemRequestBuilder) ToDeleteRequestInf
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get modules from education
+// ToGetRequestInformation get the properties and relationships of a module. Only teachers, students, and applications with application permissions can perform this operation. Students can only see published modules; teachers and applications with application permissions can see all modules in a class.
 // returns a *RequestInformation when successful
 func (m *ClassesItemModulesEducationModuleItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemModulesEducationModuleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -155,7 +164,7 @@ func (m *ClassesItemModulesEducationModuleItemRequestBuilder) ToGetRequestInform
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property modules in education
+// ToPatchRequestInformation update an educationModule object in a class. Only teachers in the class can perform this operation. You can't use a PATCH request to change the status of a module. Use the publish action to change the module status.
 // returns a *RequestInformation when successful
 func (m *ClassesItemModulesEducationModuleItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationModuleable, requestConfiguration *ClassesItemModulesEducationModuleItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/education/classes/{educationClass%2Did}/modules/{educationModule%2Did}", m.BaseRequestBuilder.PathParameters)

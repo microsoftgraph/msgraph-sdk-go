@@ -31,7 +31,7 @@ func NewServiceAnnouncementMessagesArchiveRequestBuilder(rawUrl string, requestA
     return NewServiceAnnouncementMessagesArchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post archive a list of serviceUpdateMessages for the signed in user.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsArchivePostResponse instead.
 // returns a ServiceAnnouncementMessagesArchiveResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

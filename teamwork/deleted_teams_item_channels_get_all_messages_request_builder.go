@@ -54,7 +54,7 @@ func NewDeletedTeamsItemChannelsGetAllMessagesRequestBuilder(rawUrl string, requ
     return NewDeletedTeamsItemChannelsGetAllMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getAllMessages
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetAllMessagesGetResponse instead.
 // returns a DeletedTeamsItemChannelsGetAllMessagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeletedTeamsItemChannelsGetAllMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsGetAllMessagesRequestBuilderGetRequestConfiguration)(DeletedTeamsItemChannelsGetAllMessagesResponseable, error) {

@@ -40,7 +40,7 @@ func (m *SiteCollection) GetAdditionalData()(map[string]any) {
 func (m *SiteCollection) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDataLocationCode gets the dataLocationCode property value. The geographic region code for where this site collection resides. Read-only.
+// GetDataLocationCode gets the dataLocationCode property value. The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
 // returns a *string when successful
 func (m *SiteCollection) GetDataLocationCode()(*string) {
     val, err := m.GetBackingStore().Get("dataLocationCode")
@@ -179,7 +179,7 @@ func (m *SiteCollection) SetAdditionalData(value map[string]any)() {
 func (m *SiteCollection) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDataLocationCode sets the dataLocationCode property value. The geographic region code for where this site collection resides. Read-only.
+// SetDataLocationCode sets the dataLocationCode property value. The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
 func (m *SiteCollection) SetDataLocationCode(value *string)() {
     err := m.GetBackingStore().Set("dataLocationCode", value)
     if err != nil {

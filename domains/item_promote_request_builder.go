@@ -31,7 +31,7 @@ func NewItemPromoteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewItemPromoteRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsPromotePostResponse instead.
 // returns a ItemPromoteResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

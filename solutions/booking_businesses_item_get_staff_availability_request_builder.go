@@ -31,7 +31,7 @@ func NewBookingBusinessesItemGetStaffAvailabilityRequestBuilder(rawUrl string, r
     return NewBookingBusinessesItemGetStaffAvailabilityRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post get the availability information of staff members of a Microsoft Bookings calendar.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsGetStaffAvailabilityPostResponse instead.
 // returns a BookingBusinessesItemGetStaffAvailabilityResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

@@ -55,7 +55,7 @@ func NewPrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnRequest
     return NewPrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function filterByCurrentUser
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
 // returns a PrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(PrivilegedAccessGroupAssignmentApprovalsFilterByCurrentUserWithOnResponseable, error) {
