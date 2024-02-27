@@ -77,6 +77,22 @@ func (m *UserSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["windows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateWindowsSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]WindowsSettingable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(WindowsSettingable)
+                }
+            }
+            m.SetWindows(res)
+        }
+        return nil
+    }
     return res
 }
 // GetShiftPreferences gets the shiftPreferences property value. The shiftPreferences property
@@ -88,6 +104,18 @@ func (m *UserSettings) GetShiftPreferences()(ShiftPreferencesable) {
     }
     if val != nil {
         return val.(ShiftPreferencesable)
+    }
+    return nil
+}
+// GetWindows gets the windows property value. The windows property
+// returns a []WindowsSettingable when successful
+func (m *UserSettings) GetWindows()([]WindowsSettingable) {
+    val, err := m.GetBackingStore().Get("windows")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsSettingable)
     }
     return nil
 }
@@ -115,6 +143,18 @@ func (m *UserSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    if m.GetWindows() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWindows()))
+        for i, v := range m.GetWindows() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("windows", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetContributionToContentDiscoveryAsOrganizationDisabled sets the contributionToContentDiscoveryAsOrganizationDisabled property value. Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn't have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
@@ -138,13 +178,22 @@ func (m *UserSettings) SetShiftPreferences(value ShiftPreferencesable)() {
         panic(err)
     }
 }
+// SetWindows sets the windows property value. The windows property
+func (m *UserSettings) SetWindows(value []WindowsSettingable)() {
+    err := m.GetBackingStore().Set("windows", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type UserSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetContributionToContentDiscoveryAsOrganizationDisabled()(*bool)
     GetContributionToContentDiscoveryDisabled()(*bool)
     GetShiftPreferences()(ShiftPreferencesable)
+    GetWindows()([]WindowsSettingable)
     SetContributionToContentDiscoveryAsOrganizationDisabled(value *bool)()
     SetContributionToContentDiscoveryDisabled(value *bool)()
     SetShiftPreferences(value ShiftPreferencesable)()
+    SetWindows(value []WindowsSettingable)()
 }

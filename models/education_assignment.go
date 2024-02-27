@@ -624,7 +624,7 @@ func (m *EducationAssignment) GetRubric()(EducationRubricable) {
     }
     return nil
 }
-// GetStatus gets the status property value. Status of the Assignment. You can't PATCH this value. Possible values are: draft, scheduled, published, assigned.
+// GetStatus gets the status property value. Status of the assignment.  You can't PATCH this value. Possible values are: draft, scheduled, published, assigned, unknownFutureValue, inactive. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: inactive.
 // returns a *EducationAssignmentStatus when successful
 func (m *EducationAssignment) GetStatus()(*EducationAssignmentStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -971,7 +971,7 @@ func (m *EducationAssignment) SetRubric(value EducationRubricable)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Status of the Assignment. You can't PATCH this value. Possible values are: draft, scheduled, published, assigned.
+// SetStatus sets the status property value. Status of the assignment.  You can't PATCH this value. Possible values are: draft, scheduled, published, assigned, unknownFutureValue, inactive. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: inactive.
 func (m *EducationAssignment) SetStatus(value *EducationAssignmentStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

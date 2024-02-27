@@ -161,6 +161,11 @@ func (m *ItemSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Conte
     }
     return requestInfo, nil
 }
+// Windows provides operations to manage the windows property of the microsoft.graph.userSettings entity.
+// returns a *ItemSettingsWindowsRequestBuilder when successful
+func (m *ItemSettingsRequestBuilder) Windows()(*ItemSettingsWindowsRequestBuilder) {
+    return NewItemSettingsWindowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *ItemSettingsRequestBuilder when successful
 func (m *ItemSettingsRequestBuilder) WithUrl(rawUrl string)(*ItemSettingsRequestBuilder) {

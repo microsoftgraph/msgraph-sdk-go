@@ -238,6 +238,18 @@ func (m *User) GetCity()(*string) {
     }
     return nil
 }
+// GetCloudClipboard gets the cloudClipboard property value. The cloudClipboard property
+// returns a CloudClipboardRootable when successful
+func (m *User) GetCloudClipboard()(CloudClipboardRootable) {
+    val, err := m.GetBackingStore().Get("cloudClipboard")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudClipboardRootable)
+    }
+    return nil
+}
 // GetCompanyName gets the companyName property value. The name of the company that the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 // returns a *string when successful
 func (m *User) GetCompanyName()(*string) {
@@ -803,6 +815,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         if val != nil {
             m.SetCity(val)
+        }
+        return nil
+    }
+    res["cloudClipboard"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudClipboardRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCloudClipboard(val.(CloudClipboardRootable))
         }
         return nil
     }
@@ -3241,6 +3263,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteObjectValue("cloudClipboard", m.GetCloudClipboard())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("companyName", m.GetCompanyName())
         if err != nil {
             return err
@@ -4196,6 +4224,13 @@ func (m *User) SetCity(value *string)() {
         panic(err)
     }
 }
+// SetCloudClipboard sets the cloudClipboard property value. The cloudClipboard property
+func (m *User) SetCloudClipboard(value CloudClipboardRootable)() {
+    err := m.GetBackingStore().Set("cloudClipboard", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCompanyName sets the companyName property value. The name of the company that the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetCompanyName(value *string)() {
     err := m.GetBackingStore().Set("companyName", value)
@@ -4966,6 +5001,7 @@ type Userable interface {
     GetCalendarView()([]Eventable)
     GetChats()([]Chatable)
     GetCity()(*string)
+    GetCloudClipboard()(CloudClipboardRootable)
     GetCompanyName()(*string)
     GetConsentProvidedForMinor()(*string)
     GetContactFolders()([]ContactFolderable)
@@ -5091,6 +5127,7 @@ type Userable interface {
     SetCalendarView(value []Eventable)()
     SetChats(value []Chatable)()
     SetCity(value *string)()
+    SetCloudClipboard(value CloudClipboardRootable)()
     SetCompanyName(value *string)()
     SetConsentProvidedForMinor(value *string)()
     SetContactFolders(value []ContactFolderable)()

@@ -151,6 +151,18 @@ func (m *PolicyRoot) GetDefaultAppManagementPolicy()(TenantAppManagementPolicyab
     }
     return nil
 }
+// GetDeviceRegistrationPolicy gets the deviceRegistrationPolicy property value. The deviceRegistrationPolicy property
+// returns a DeviceRegistrationPolicyable when successful
+func (m *PolicyRoot) GetDeviceRegistrationPolicy()(DeviceRegistrationPolicyable) {
+    val, err := m.GetBackingStore().Get("deviceRegistrationPolicy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceRegistrationPolicyable)
+    }
+    return nil
+}
 // GetFeatureRolloutPolicies gets the featureRolloutPolicies property value. The feature rollout policy associated with a directory object.
 // returns a []FeatureRolloutPolicyable when successful
 func (m *PolicyRoot) GetFeatureRolloutPolicies()([]FeatureRolloutPolicyable) {
@@ -304,6 +316,16 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         if val != nil {
             m.SetDefaultAppManagementPolicy(val.(TenantAppManagementPolicyable))
+        }
+        return nil
+    }
+    res["deviceRegistrationPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDeviceRegistrationPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceRegistrationPolicy(val.(DeviceRegistrationPolicyable))
         }
         return nil
     }
@@ -617,6 +639,12 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("deviceRegistrationPolicy", m.GetDeviceRegistrationPolicy())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetFeatureRolloutPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFeatureRolloutPolicies()))
         for i, v := range m.GetFeatureRolloutPolicies() {
@@ -786,6 +814,13 @@ func (m *PolicyRoot) SetDefaultAppManagementPolicy(value TenantAppManagementPoli
         panic(err)
     }
 }
+// SetDeviceRegistrationPolicy sets the deviceRegistrationPolicy property value. The deviceRegistrationPolicy property
+func (m *PolicyRoot) SetDeviceRegistrationPolicy(value DeviceRegistrationPolicyable)() {
+    err := m.GetBackingStore().Set("deviceRegistrationPolicy", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetFeatureRolloutPolicies sets the featureRolloutPolicies property value. The feature rollout policy associated with a directory object.
 func (m *PolicyRoot) SetFeatureRolloutPolicies(value []FeatureRolloutPolicyable)() {
     err := m.GetBackingStore().Set("featureRolloutPolicies", value)
@@ -856,6 +891,7 @@ type PolicyRootable interface {
     GetConditionalAccessPolicies()([]ConditionalAccessPolicyable)
     GetCrossTenantAccessPolicy()(CrossTenantAccessPolicyable)
     GetDefaultAppManagementPolicy()(TenantAppManagementPolicyable)
+    GetDeviceRegistrationPolicy()(DeviceRegistrationPolicyable)
     GetFeatureRolloutPolicies()([]FeatureRolloutPolicyable)
     GetHomeRealmDiscoveryPolicies()([]HomeRealmDiscoveryPolicyable)
     GetIdentitySecurityDefaultsEnforcementPolicy()(IdentitySecurityDefaultsEnforcementPolicyable)
@@ -875,6 +911,7 @@ type PolicyRootable interface {
     SetConditionalAccessPolicies(value []ConditionalAccessPolicyable)()
     SetCrossTenantAccessPolicy(value CrossTenantAccessPolicyable)()
     SetDefaultAppManagementPolicy(value TenantAppManagementPolicyable)()
+    SetDeviceRegistrationPolicy(value DeviceRegistrationPolicyable)()
     SetFeatureRolloutPolicies(value []FeatureRolloutPolicyable)()
     SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicyable)()
     SetIdentitySecurityDefaultsEnforcementPolicy(value IdentitySecurityDefaultsEnforcementPolicyable)()

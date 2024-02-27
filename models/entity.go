@@ -286,6 +286,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewChecklistItem(), nil
                     case "#microsoft.graph.claimsMappingPolicy":
                         return NewClaimsMappingPolicy(), nil
+                    case "#microsoft.graph.cloudClipboardItem":
+                        return NewCloudClipboardItem(), nil
+                    case "#microsoft.graph.cloudClipboardRoot":
+                        return NewCloudClipboardRoot(), nil
                     case "#microsoft.graph.columnDefinition":
                         return NewColumnDefinition(), nil
                     case "#microsoft.graph.columnLink":
@@ -348,6 +352,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDelegatedAdminServiceManagementDetail(), nil
                     case "#microsoft.graph.delegatedPermissionClassification":
                         return NewDelegatedPermissionClassification(), nil
+                    case "#microsoft.graph.deletedChat":
+                        return NewDeletedChat(), nil
                     case "#microsoft.graph.deletedItemContainer":
                         return NewDeletedItemContainer(), nil
                     case "#microsoft.graph.deletedTeam":
@@ -432,6 +438,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDeviceManagementReports(), nil
                     case "#microsoft.graph.deviceManagementTroubleshootingEvent":
                         return NewDeviceManagementTroubleshootingEvent(), nil
+                    case "#microsoft.graph.deviceRegistrationPolicy":
+                        return NewDeviceRegistrationPolicy(), nil
                     case "#microsoft.graph.directory":
                         return NewDirectory(), nil
                     case "#microsoft.graph.directoryAudit":
@@ -1000,6 +1008,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewRecordOperation(), nil
                     case "#microsoft.graph.referenceAttachment":
                         return NewReferenceAttachment(), nil
+                    case "#microsoft.graph.relyingPartyDetailedSummary":
+                        return NewRelyingPartyDetailedSummary(), nil
                     case "#microsoft.graph.remoteAssistancePartner":
                         return NewRemoteAssistancePartner(), nil
                     case "#microsoft.graph.remoteDesktopSecurityConfiguration":
@@ -1420,6 +1430,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWindowsPhone81GeneralConfiguration(), nil
                     case "#microsoft.graph.windowsProtectionState":
                         return NewWindowsProtectionState(), nil
+                    case "#microsoft.graph.windowsSetting":
+                        return NewWindowsSetting(), nil
+                    case "#microsoft.graph.windowsSettingInstance":
+                        return NewWindowsSettingInstance(), nil
                     case "#microsoft.graph.windowsUniversalAppX":
                         return NewWindowsUniversalAppX(), nil
                     case "#microsoft.graph.windowsUniversalAppXContainedApp":

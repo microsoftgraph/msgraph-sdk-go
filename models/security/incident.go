@@ -93,7 +93,7 @@ func (m *Incident) GetCustomTags()([]string) {
     }
     return nil
 }
-// GetDescription gets the description property value. A rich text string describing the incident
+// GetDescription gets the description property value. Description of the incident.
 // returns a *string when successful
 func (m *Incident) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -341,7 +341,7 @@ func (m *Incident) GetIncidentWebUrl()(*string) {
     }
     return nil
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. The identity that last modified the incident.
 // returns a *string when successful
 func (m *Incident) GetLastModifiedBy()(*string) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
@@ -365,7 +365,7 @@ func (m *Incident) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     }
     return nil
 }
-// GetRedirectIncidentId gets the redirectIncidentId property value. Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.
+// GetRedirectIncidentId gets the redirectIncidentId property value. Only populated in case an incident is grouped with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.
 // returns a *string when successful
 func (m *Incident) GetRedirectIncidentId()(*string) {
     val, err := m.GetBackingStore().Get("redirectIncidentId")
@@ -401,7 +401,7 @@ func (m *Incident) GetStatus()(*IncidentStatus) {
     }
     return nil
 }
-// GetSystemTags gets the systemTags property value. The system tags associated with the incident
+// GetSystemTags gets the systemTags property value. The system tags associated with the incident.
 // returns a []string when successful
 func (m *Incident) GetSystemTags()([]string) {
     val, err := m.GetBackingStore().Get("systemTags")
@@ -593,7 +593,7 @@ func (m *Incident) SetCustomTags(value []string)() {
         panic(err)
     }
 }
-// SetDescription sets the description property value. A rich text string describing the incident
+// SetDescription sets the description property value. Description of the incident.
 func (m *Incident) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
@@ -621,7 +621,7 @@ func (m *Incident) SetIncidentWebUrl(value *string)() {
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. The identity that last modified the incident.
 func (m *Incident) SetLastModifiedBy(value *string)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {
@@ -635,7 +635,7 @@ func (m *Incident) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a
         panic(err)
     }
 }
-// SetRedirectIncidentId sets the redirectIncidentId property value. Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.
+// SetRedirectIncidentId sets the redirectIncidentId property value. Only populated in case an incident is grouped with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.
 func (m *Incident) SetRedirectIncidentId(value *string)() {
     err := m.GetBackingStore().Set("redirectIncidentId", value)
     if err != nil {
@@ -656,7 +656,7 @@ func (m *Incident) SetStatus(value *IncidentStatus)() {
         panic(err)
     }
 }
-// SetSystemTags sets the systemTags property value. The system tags associated with the incident
+// SetSystemTags sets the systemTags property value. The system tags associated with the incident.
 func (m *Incident) SetSystemTags(value []string)() {
     err := m.GetBackingStore().Set("systemTags", value)
     if err != nil {

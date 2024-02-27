@@ -88,7 +88,7 @@ func (m *AttendeeNotificationInfo) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPhoneNumber gets the phoneNumber property value. The phoneNumber property
+// GetPhoneNumber gets the phoneNumber property value. The phone number of the external attendee. Required.
 // returns a *string when successful
 func (m *AttendeeNotificationInfo) GetPhoneNumber()(*string) {
     val, err := m.GetBackingStore().Get("phoneNumber")
@@ -100,7 +100,7 @@ func (m *AttendeeNotificationInfo) GetPhoneNumber()(*string) {
     }
     return nil
 }
-// GetTimeZone gets the timeZone property value. The timeZone property
+// GetTimeZone gets the timeZone property value. The time zone of the external attendee. The timeZone property can be set to any of the time zones currently supported by Windows. Required.
 // returns a *string when successful
 func (m *AttendeeNotificationInfo) GetTimeZone()(*string) {
     val, err := m.GetBackingStore().Get("timeZone")
@@ -158,14 +158,14 @@ func (m *AttendeeNotificationInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPhoneNumber sets the phoneNumber property value. The phoneNumber property
+// SetPhoneNumber sets the phoneNumber property value. The phone number of the external attendee. Required.
 func (m *AttendeeNotificationInfo) SetPhoneNumber(value *string)() {
     err := m.GetBackingStore().Set("phoneNumber", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTimeZone sets the timeZone property value. The timeZone property
+// SetTimeZone sets the timeZone property value. The time zone of the external attendee. The timeZone property can be set to any of the time zones currently supported by Windows. Required.
 func (m *AttendeeNotificationInfo) SetTimeZone(value *string)() {
     err := m.GetBackingStore().Set("timeZone", value)
     if err != nil {

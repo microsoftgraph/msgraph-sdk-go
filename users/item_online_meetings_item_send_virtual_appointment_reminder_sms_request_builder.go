@@ -30,8 +30,11 @@ func NewItemOnlineMeetingsItemSendVirtualAppointmentReminderSmsRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewItemOnlineMeetingsItemSendVirtualAppointmentReminderSmsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action sendVirtualAppointmentReminderSms
+// Post send an SMS reminder to external attendees for a Teams virtual appointment. This feature requires Teams premium and attendees must have a valid United States phone number to receive SMS notifications.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentremindersms?view=graph-rest-1.0
 func (m *ItemOnlineMeetingsItemSendVirtualAppointmentReminderSmsRequestBuilder) Post(ctx context.Context, body ItemOnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBodyable, requestConfiguration *ItemOnlineMeetingsItemSendVirtualAppointmentReminderSmsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemOnlineMeetingsItemSendVirtualAppointmentReminderSmsRequestBuilder) 
     }
     return nil
 }
-// ToPostRequestInformation invoke action sendVirtualAppointmentReminderSms
+// ToPostRequestInformation send an SMS reminder to external attendees for a Teams virtual appointment. This feature requires Teams premium and attendees must have a valid United States phone number to receive SMS notifications.
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsItemSendVirtualAppointmentReminderSmsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemOnlineMeetingsItemSendVirtualAppointmentReminderSmsPostRequestBodyable, requestConfiguration *ItemOnlineMeetingsItemSendVirtualAppointmentReminderSmsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
