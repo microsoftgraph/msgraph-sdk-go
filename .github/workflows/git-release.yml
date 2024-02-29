@@ -6,6 +6,9 @@ on:
       - "v[0-9]+.[0-9]+.[0-9]+"
   workflow_dispatch:
 
+permissions:
+  contents: write
+  
 jobs:
   Git_Release:
     runs-on: ubuntu-latest
