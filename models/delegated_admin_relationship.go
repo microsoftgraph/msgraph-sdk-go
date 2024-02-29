@@ -110,7 +110,7 @@ func (m *DelegatedAdminRelationship) GetCustomer()(DelegatedAdminRelationshipCus
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner and is set by the partner only when the relationship is in the created status and can't be changed by the customer.
+// GetDisplayName gets the displayName property value. The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner and is set by the partner only when the relationship is in the created status and can't be changed by the customer. Maximum length is 50 characters.
 // returns a *string when successful
 func (m *DelegatedAdminRelationship) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -495,7 +495,7 @@ func (m *DelegatedAdminRelationship) SetCustomer(value DelegatedAdminRelationshi
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner and is set by the partner only when the relationship is in the created status and can't be changed by the customer.
+// SetDisplayName sets the displayName property value. The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner and is set by the partner only when the relationship is in the created status and can't be changed by the customer. Maximum length is 50 characters.
 func (m *DelegatedAdminRelationship) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

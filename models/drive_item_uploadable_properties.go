@@ -52,6 +52,18 @@ func (m *DriveItemUploadableProperties) GetDescription()(*string) {
     }
     return nil
 }
+// GetDriveItemSource gets the driveItemSource property value. Information about the drive item source. Read-write. Only on OneDrive for Business and SharePoint.
+// returns a DriveItemSourceable when successful
+func (m *DriveItemUploadableProperties) GetDriveItemSource()(DriveItemSourceable) {
+    val, err := m.GetBackingStore().Get("driveItemSource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DriveItemSourceable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DriveItemUploadableProperties) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -63,6 +75,16 @@ func (m *DriveItemUploadableProperties) GetFieldDeserializers()(map[string]func(
         }
         if val != nil {
             m.SetDescription(val)
+        }
+        return nil
+    }
+    res["driveItemSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDriveItemSourceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDriveItemSource(val.(DriveItemSourceable))
         }
         return nil
     }
@@ -83,6 +105,16 @@ func (m *DriveItemUploadableProperties) GetFieldDeserializers()(map[string]func(
         }
         if val != nil {
             m.SetFileSystemInfo(val.(FileSystemInfoable))
+        }
+        return nil
+    }
+    res["mediaSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMediaSourceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMediaSource(val.(MediaSourceable))
         }
         return nil
     }
@@ -108,7 +140,7 @@ func (m *DriveItemUploadableProperties) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetFileSize gets the fileSize property value. Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
+// GetFileSize gets the fileSize property value. Provides an expected file size to perform a quota check before uploading. Only on OneDrive Personal.
 // returns a *int64 when successful
 func (m *DriveItemUploadableProperties) GetFileSize()(*int64) {
     val, err := m.GetBackingStore().Get("fileSize")
@@ -129,6 +161,18 @@ func (m *DriveItemUploadableProperties) GetFileSystemInfo()(FileSystemInfoable) 
     }
     if val != nil {
         return val.(FileSystemInfoable)
+    }
+    return nil
+}
+// GetMediaSource gets the mediaSource property value. Media source information. Read-write. Only on OneDrive for Business and SharePoint.
+// returns a MediaSourceable when successful
+func (m *DriveItemUploadableProperties) GetMediaSource()(MediaSourceable) {
+    val, err := m.GetBackingStore().Get("mediaSource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MediaSourceable)
     }
     return nil
 }
@@ -165,6 +209,12 @@ func (m *DriveItemUploadableProperties) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
+        err := writer.WriteObjectValue("driveItemSource", m.GetDriveItemSource())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt64Value("fileSize", m.GetFileSize())
         if err != nil {
             return err
@@ -172,6 +222,12 @@ func (m *DriveItemUploadableProperties) Serialize(writer i878a80d2330e89d2689638
     }
     {
         err := writer.WriteObjectValue("fileSystemInfo", m.GetFileSystemInfo())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("mediaSource", m.GetMediaSource())
         if err != nil {
             return err
         }
@@ -214,7 +270,14 @@ func (m *DriveItemUploadableProperties) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetFileSize sets the fileSize property value. Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
+// SetDriveItemSource sets the driveItemSource property value. Information about the drive item source. Read-write. Only on OneDrive for Business and SharePoint.
+func (m *DriveItemUploadableProperties) SetDriveItemSource(value DriveItemSourceable)() {
+    err := m.GetBackingStore().Set("driveItemSource", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetFileSize sets the fileSize property value. Provides an expected file size to perform a quota check before uploading. Only on OneDrive Personal.
 func (m *DriveItemUploadableProperties) SetFileSize(value *int64)() {
     err := m.GetBackingStore().Set("fileSize", value)
     if err != nil {
@@ -224,6 +287,13 @@ func (m *DriveItemUploadableProperties) SetFileSize(value *int64)() {
 // SetFileSystemInfo sets the fileSystemInfo property value. File system information on client. Read-write.
 func (m *DriveItemUploadableProperties) SetFileSystemInfo(value FileSystemInfoable)() {
     err := m.GetBackingStore().Set("fileSystemInfo", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMediaSource sets the mediaSource property value. Media source information. Read-write. Only on OneDrive for Business and SharePoint.
+func (m *DriveItemUploadableProperties) SetMediaSource(value MediaSourceable)() {
+    err := m.GetBackingStore().Set("mediaSource", value)
     if err != nil {
         panic(err)
     }
@@ -248,14 +318,18 @@ type DriveItemUploadablePropertiesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDescription()(*string)
+    GetDriveItemSource()(DriveItemSourceable)
     GetFileSize()(*int64)
     GetFileSystemInfo()(FileSystemInfoable)
+    GetMediaSource()(MediaSourceable)
     GetName()(*string)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDescription(value *string)()
+    SetDriveItemSource(value DriveItemSourceable)()
     SetFileSize(value *int64)()
     SetFileSystemInfo(value FileSystemInfoable)()
+    SetMediaSource(value MediaSourceable)()
     SetName(value *string)()
     SetOdataType(value *string)()
 }

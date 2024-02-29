@@ -322,6 +322,16 @@ func (m *Device) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["manufacturer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetManufacturer(val)
+        }
+        return nil
+    }
     res["mdmAppId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -345,6 +355,16 @@ func (m *Device) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
                 }
             }
             m.SetMemberOf(res)
+        }
+        return nil
+    }
+    res["model"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetModel(val)
         }
         return nil
     }
@@ -534,6 +554,18 @@ func (m *Device) GetIsManaged()(*bool) {
     }
     return nil
 }
+// GetManufacturer gets the manufacturer property value. Manufacturer of the device. Read-only.
+// returns a *string when successful
+func (m *Device) GetManufacturer()(*string) {
+    val, err := m.GetBackingStore().Get("manufacturer")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetMdmAppId gets the mdmAppId property value. Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
 // returns a *string when successful
 func (m *Device) GetMdmAppId()(*string) {
@@ -555,6 +587,18 @@ func (m *Device) GetMemberOf()([]DirectoryObjectable) {
     }
     if val != nil {
         return val.([]DirectoryObjectable)
+    }
+    return nil
+}
+// GetModel gets the model property value. Model of the device. Read-only.
+// returns a *string when successful
+func (m *Device) GetModel()(*string) {
+    val, err := m.GetBackingStore().Get("model")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -817,6 +861,12 @@ func (m *Device) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     {
+        err = writer.WriteStringValue("manufacturer", m.GetManufacturer())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("mdmAppId", m.GetMdmAppId())
         if err != nil {
             return err
@@ -830,6 +880,12 @@ func (m *Device) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             }
         }
         err = writer.WriteCollectionOfObjectValues("memberOf", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("model", m.GetModel())
         if err != nil {
             return err
         }
@@ -1030,6 +1086,13 @@ func (m *Device) SetIsManaged(value *bool)() {
         panic(err)
     }
 }
+// SetManufacturer sets the manufacturer property value. Manufacturer of the device. Read-only.
+func (m *Device) SetManufacturer(value *string)() {
+    err := m.GetBackingStore().Set("manufacturer", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMdmAppId sets the mdmAppId property value. Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
 func (m *Device) SetMdmAppId(value *string)() {
     err := m.GetBackingStore().Set("mdmAppId", value)
@@ -1040,6 +1103,13 @@ func (m *Device) SetMdmAppId(value *string)() {
 // SetMemberOf sets the memberOf property value. Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
 func (m *Device) SetMemberOf(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("memberOf", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetModel sets the model property value. Model of the device. Read-only.
+func (m *Device) SetModel(value *string)() {
+    err := m.GetBackingStore().Set("model", value)
     if err != nil {
         panic(err)
     }
@@ -1152,8 +1222,10 @@ type Deviceable interface {
     GetExtensions()([]Extensionable)
     GetIsCompliant()(*bool)
     GetIsManaged()(*bool)
+    GetManufacturer()(*string)
     GetMdmAppId()(*string)
     GetMemberOf()([]DirectoryObjectable)
+    GetModel()(*string)
     GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOnPremisesSecurityIdentifier()(*string)
     GetOnPremisesSyncEnabled()(*bool)
@@ -1181,8 +1253,10 @@ type Deviceable interface {
     SetExtensions(value []Extensionable)()
     SetIsCompliant(value *bool)()
     SetIsManaged(value *bool)()
+    SetManufacturer(value *string)()
     SetMdmAppId(value *string)()
     SetMemberOf(value []DirectoryObjectable)()
+    SetModel(value *string)()
     SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOnPremisesSecurityIdentifier(value *string)()
     SetOnPremisesSyncEnabled(value *bool)()
