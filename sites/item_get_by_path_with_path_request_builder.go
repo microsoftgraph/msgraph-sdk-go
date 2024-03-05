@@ -134,6 +134,11 @@ func (m *ItemGetByPathWithPathRequestBuilder) Onenote()(*ItemGetByPathWithPathOn
 func (m *ItemGetByPathWithPathRequestBuilder) Operations()(*ItemGetByPathWithPathOperationsRequestBuilder) {
     return NewItemGetByPathWithPathOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Pages provides operations to manage the pages property of the microsoft.graph.site entity.
+// returns a *ItemGetByPathWithPathPagesRequestBuilder when successful
+func (m *ItemGetByPathWithPathRequestBuilder) Pages()(*ItemGetByPathWithPathPagesRequestBuilder) {
+    return NewItemGetByPathWithPathPagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Permissions provides operations to manage the permissions property of the microsoft.graph.site entity.
 // returns a *ItemGetByPathWithPathPermissionsRequestBuilder when successful
 func (m *ItemGetByPathWithPathRequestBuilder) Permissions()(*ItemGetByPathWithPathPermissionsRequestBuilder) {

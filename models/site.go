@@ -293,6 +293,22 @@ func (m *Site) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["pages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateBaseSitePageFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]BaseSitePageable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(BaseSitePageable)
+                }
+            }
+            m.SetPages(res)
+        }
+        return nil
+    }
     res["permissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePermissionFromDiscriminatorValue)
         if err != nil {
@@ -414,6 +430,18 @@ func (m *Site) GetOperations()([]RichLongRunningOperationable) {
     }
     if val != nil {
         return val.([]RichLongRunningOperationable)
+    }
+    return nil
+}
+// GetPages gets the pages property value. The pages property
+// returns a []BaseSitePageable when successful
+func (m *Site) GetPages()([]BaseSitePageable) {
+    val, err := m.GetBackingStore().Get("pages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]BaseSitePageable)
     }
     return nil
 }
@@ -603,6 +631,18 @@ func (m *Site) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetPages() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPages()))
+        for i, v := range m.GetPages() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("pages", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPermissions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPermissions()))
         for i, v := range m.GetPermissions() {
@@ -738,6 +778,13 @@ func (m *Site) SetOperations(value []RichLongRunningOperationable)() {
         panic(err)
     }
 }
+// SetPages sets the pages property value. The pages property
+func (m *Site) SetPages(value []BaseSitePageable)() {
+    err := m.GetBackingStore().Set("pages", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPermissions sets the permissions property value. The permissions associated with the site. Nullable.
 func (m *Site) SetPermissions(value []Permissionable)() {
     err := m.GetBackingStore().Set("permissions", value)
@@ -789,6 +836,7 @@ type Siteable interface {
     GetLists()([]Listable)
     GetOnenote()(Onenoteable)
     GetOperations()([]RichLongRunningOperationable)
+    GetPages()([]BaseSitePageable)
     GetPermissions()([]Permissionable)
     GetRoot()(Rootable)
     GetSharepointIds()(SharepointIdsable)
@@ -807,6 +855,7 @@ type Siteable interface {
     SetLists(value []Listable)()
     SetOnenote(value Onenoteable)()
     SetOperations(value []RichLongRunningOperationable)()
+    SetPages(value []BaseSitePageable)()
     SetPermissions(value []Permissionable)()
     SetRoot(value Rootable)()
     SetSharepointIds(value SharepointIdsable)()

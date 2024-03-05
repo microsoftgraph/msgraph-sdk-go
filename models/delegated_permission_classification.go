@@ -19,7 +19,7 @@ func NewDelegatedPermissionClassification()(*DelegatedPermissionClassification) 
 func CreateDelegatedPermissionClassificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDelegatedPermissionClassification(), nil
 }
-// GetClassification gets the classification property value. The classification value being given. Possible value: low. Doesn't support $filter.
+// GetClassification gets the classification property value. The classification value. Possible values: low, medium (preview), high (preview). Doesn't support $filter.
 // returns a *PermissionClassificationType when successful
 func (m *DelegatedPermissionClassification) GetClassification()(*PermissionClassificationType) {
     val, err := m.GetBackingStore().Get("classification")
@@ -118,7 +118,7 @@ func (m *DelegatedPermissionClassification) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetClassification sets the classification property value. The classification value being given. Possible value: low. Doesn't support $filter.
+// SetClassification sets the classification property value. The classification value. Possible values: low, medium (preview), high (preview). Doesn't support $filter.
 func (m *DelegatedPermissionClassification) SetClassification(value *PermissionClassificationType)() {
     err := m.GetBackingStore().Set("classification", value)
     if err != nil {

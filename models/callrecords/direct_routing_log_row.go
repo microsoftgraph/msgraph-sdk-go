@@ -363,7 +363,7 @@ func (m *DirectRoutingLogRow) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetFinalSipCode gets the finalSipCode property value. The code with which the call ended. For more information, see RFC 3261.
+// GetFinalSipCode gets the finalSipCode property value. The final response code with which the call ended. For more information, see RFC 3261.
 // returns a *int32 when successful
 func (m *DirectRoutingLogRow) GetFinalSipCode()(*int32) {
     val, err := m.GetBackingStore().Get("finalSipCode")
@@ -399,7 +399,7 @@ func (m *DirectRoutingLogRow) GetId()(*string) {
     }
     return nil
 }
-// GetInviteDateTime gets the inviteDateTime property value. When the initial invite was sent.
+// GetInviteDateTime gets the inviteDateTime property value. The date and time when the initial invite was sent.
 // returns a *Time when successful
 func (m *DirectRoutingLogRow) GetInviteDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("inviteDateTime")
@@ -459,7 +459,7 @@ func (m *DirectRoutingLogRow) GetSignalingLocation()(*string) {
     }
     return nil
 }
-// GetStartDateTime gets the startDateTime property value. Call start time.For failed and unanswered calls, this can be equal to the invite or failure time.
+// GetStartDateTime gets the startDateTime property value. Call start time.For failed and unanswered calls, this value can be equal to the invite or failure time.
 // returns a *Time when successful
 func (m *DirectRoutingLogRow) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
@@ -519,7 +519,7 @@ func (m *DirectRoutingLogRow) GetUserId()(*string) {
     }
     return nil
 }
-// GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP Address, and can be the same as the user's email address.
+// GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName (sign-in name) in Microsoft Entra ID. This value is usually the same as the user's SIP Address, and can be the same as the user's email address.
 // returns a *string when successful
 func (m *DirectRoutingLogRow) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
@@ -740,7 +740,7 @@ func (m *DirectRoutingLogRow) SetFailureDateTime(value *i336074805fc853987abe6f7
         panic(err)
     }
 }
-// SetFinalSipCode sets the finalSipCode property value. The code with which the call ended. For more information, see RFC 3261.
+// SetFinalSipCode sets the finalSipCode property value. The final response code with which the call ended. For more information, see RFC 3261.
 func (m *DirectRoutingLogRow) SetFinalSipCode(value *int32)() {
     err := m.GetBackingStore().Set("finalSipCode", value)
     if err != nil {
@@ -761,7 +761,7 @@ func (m *DirectRoutingLogRow) SetId(value *string)() {
         panic(err)
     }
 }
-// SetInviteDateTime sets the inviteDateTime property value. When the initial invite was sent.
+// SetInviteDateTime sets the inviteDateTime property value. The date and time when the initial invite was sent.
 func (m *DirectRoutingLogRow) SetInviteDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("inviteDateTime", value)
     if err != nil {
@@ -796,7 +796,7 @@ func (m *DirectRoutingLogRow) SetSignalingLocation(value *string)() {
         panic(err)
     }
 }
-// SetStartDateTime sets the startDateTime property value. Call start time.For failed and unanswered calls, this can be equal to the invite or failure time.
+// SetStartDateTime sets the startDateTime property value. Call start time.For failed and unanswered calls, this value can be equal to the invite or failure time.
 func (m *DirectRoutingLogRow) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startDateTime", value)
     if err != nil {
@@ -831,7 +831,7 @@ func (m *DirectRoutingLogRow) SetUserId(value *string)() {
         panic(err)
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. UserPrincipalName (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP Address, and can be the same as the user's email address.
+// SetUserPrincipalName sets the userPrincipalName property value. UserPrincipalName (sign-in name) in Microsoft Entra ID. This value is usually the same as the user's SIP Address, and can be the same as the user's email address.
 func (m *DirectRoutingLogRow) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
     if err != nil {

@@ -220,6 +220,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewBaseItem(), nil
                     case "#microsoft.graph.baseItemVersion":
                         return NewBaseItemVersion(), nil
+                    case "#microsoft.graph.baseSitePage":
+                        return NewBaseSitePage(), nil
                     case "#microsoft.graph.bitlocker":
                         return NewBitlocker(), nil
                     case "#microsoft.graph.bitlockerRecoveryKey":
@@ -268,6 +270,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCallTranscript(), nil
                     case "#microsoft.graph.cancelMediaProcessingOperation":
                         return NewCancelMediaProcessingOperation(), nil
+                    case "#microsoft.graph.canvasLayout":
+                        return NewCanvasLayout(), nil
                     case "#microsoft.graph.certificateBasedAuthConfiguration":
                         return NewCertificateBasedAuthConfiguration(), nil
                     case "#microsoft.graph.changeTrackedEntity":
@@ -290,6 +294,16 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCloudClipboardItem(), nil
                     case "#microsoft.graph.cloudClipboardRoot":
                         return NewCloudClipboardRoot(), nil
+                    case "#microsoft.graph.cloudPcAuditEvent":
+                        return NewCloudPcAuditEvent(), nil
+                    case "#microsoft.graph.cloudPcProvisioningPolicy":
+                        return NewCloudPcProvisioningPolicy(), nil
+                    case "#microsoft.graph.cloudPcProvisioningPolicyAssignment":
+                        return NewCloudPcProvisioningPolicyAssignment(), nil
+                    case "#microsoft.graph.cloudPcUserSetting":
+                        return NewCloudPcUserSetting(), nil
+                    case "#microsoft.graph.cloudPcUserSettingAssignment":
+                        return NewCloudPcUserSettingAssignment(), nil
                     case "#microsoft.graph.columnDefinition":
                         return NewColumnDefinition(), nil
                     case "#microsoft.graph.columnLink":
@@ -590,6 +604,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewGroupSettingTemplate(), nil
                     case "#microsoft.graph.homeRealmDiscoveryPolicy":
                         return NewHomeRealmDiscoveryPolicy(), nil
+                    case "#microsoft.graph.horizontalSection":
+                        return NewHorizontalSection(), nil
+                    case "#microsoft.graph.horizontalSectionColumn":
+                        return NewHorizontalSectionColumn(), nil
                     case "#microsoft.graph.identityApiConnector":
                         return NewIdentityApiConnector(), nil
                     case "#microsoft.graph.identityBuiltInUserFlowAttribute":
@@ -1116,6 +1134,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSingleValueLegacyExtendedProperty(), nil
                     case "#microsoft.graph.site":
                         return NewSite(), nil
+                    case "#microsoft.graph.sitePage":
+                        return NewSitePage(), nil
                     case "#microsoft.graph.skypeForBusinessUserConversationMember":
                         return NewSkypeForBusinessUserConversationMember(), nil
                     case "#microsoft.graph.skypeUserConversationMember":
@@ -1132,6 +1152,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSoftwareOathAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.softwareUpdateStatusSummary":
                         return NewSoftwareUpdateStatusSummary(), nil
+                    case "#microsoft.graph.standardWebPart":
+                        return NewStandardWebPart(), nil
                     case "#microsoft.graph.startHoldMusicOperation":
                         return NewStartHoldMusicOperation(), nil
                     case "#microsoft.graph.stopHoldMusicOperation":
@@ -1210,6 +1232,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewTermsAndConditionsAssignment(), nil
                     case "#microsoft.graph.termsOfUseContainer":
                         return NewTermsOfUseContainer(), nil
+                    case "#microsoft.graph.textWebPart":
+                        return NewTextWebPart(), nil
                     case "#microsoft.graph.threatAssessmentRequest":
                         return NewThreatAssessmentRequest(), nil
                     case "#microsoft.graph.threatAssessmentResult":
@@ -1356,6 +1380,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserSignInInsight(), nil
                     case "#microsoft.graph.userTeamwork":
                         return NewUserTeamwork(), nil
+                    case "#microsoft.graph.verticalSection":
+                        return NewVerticalSection(), nil
                     case "#microsoft.graph.virtualEndpoint":
                         return NewVirtualEndpoint(), nil
                     case "#microsoft.graph.virtualEvent":
@@ -1374,6 +1400,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewVppToken(), nil
                     case "#microsoft.graph.webApp":
                         return NewWebApp(), nil
+                    case "#microsoft.graph.webPart":
+                        return NewWebPart(), nil
                     case "#microsoft.graph.win32LobApp":
                         return NewWin32LobApp(), nil
                     case "#microsoft.graph.windows10CompliancePolicy":
