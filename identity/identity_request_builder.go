@@ -44,7 +44,7 @@ func (m *IdentityRequestBuilder) ApiConnectors()(*ApiConnectorsRequestBuilder) {
 func (m *IdentityRequestBuilder) B2xUserFlows()(*B2xUserFlowsRequestBuilder) {
     return NewB2xUserFlowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ConditionalAccess provides operations to manage the conditionalAccess property of the microsoft.graph.identityContainer entity.
+// ConditionalAccess the conditionalAccess property
 // returns a *ConditionalAccessRequestBuilder when successful
 func (m *IdentityRequestBuilder) ConditionalAccess()(*ConditionalAccessRequestBuilder) {
     return NewConditionalAccessRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

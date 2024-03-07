@@ -11,7 +11,7 @@ import (
 type DirectoryRoleAssignmentScheduleRequestsItemPrincipalRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DirectoryRoleAssignmentScheduleRequestsItemPrincipalRequestBuilderGetQueryParameters the principal that's getting a role assignment through the request. Supports $expand.
+// DirectoryRoleAssignmentScheduleRequestsItemPrincipalRequestBuilderGetQueryParameters the principal that's getting a role assignment through the request. Supports $expand and $select nested in $expand for id only.
 type DirectoryRoleAssignmentScheduleRequestsItemPrincipalRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewDirectoryRoleAssignmentScheduleRequestsItemPrincipalRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryRoleAssignmentScheduleRequestsItemPrincipalRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the principal that's getting a role assignment through the request. Supports $expand.
+// Get the principal that's getting a role assignment through the request. Supports $expand and $select nested in $expand for id only.
 // returns a DirectoryObjectable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DirectoryRoleAssignmentScheduleRequestsItemPrincipalRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentScheduleRequestsItemPrincipalRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable, error) {
@@ -60,7 +60,7 @@ func (m *DirectoryRoleAssignmentScheduleRequestsItemPrincipalRequestBuilder) Get
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectable), nil
 }
-// ToGetRequestInformation the principal that's getting a role assignment through the request. Supports $expand.
+// ToGetRequestInformation the principal that's getting a role assignment through the request. Supports $expand and $select nested in $expand for id only.
 // returns a *RequestInformation when successful
 func (m *DirectoryRoleAssignmentScheduleRequestsItemPrincipalRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentScheduleRequestsItemPrincipalRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

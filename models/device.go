@@ -154,6 +154,18 @@ func (m *Device) GetEnrollmentProfileName()(*string) {
     }
     return nil
 }
+// GetEnrollmentType gets the enrollmentType property value. The enrollmentType property
+// returns a *string when successful
+func (m *Device) GetEnrollmentType()(*string) {
+    val, err := m.GetBackingStore().Get("enrollmentType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the device. Read-only. Nullable.
 // returns a []Extensionable when successful
 func (m *Device) GetExtensions()([]Extensionable) {
@@ -286,6 +298,16 @@ func (m *Device) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["enrollmentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnrollmentType(val)
+        }
+        return nil
+    }
     res["extensions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateExtensionFromDiscriminatorValue)
         if err != nil {
@@ -319,6 +341,26 @@ func (m *Device) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         if val != nil {
             m.SetIsManaged(val)
+        }
+        return nil
+    }
+    res["isRooted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsRooted(val)
+        }
+        return nil
+    }
+    res["managementType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetManagementType(val)
         }
         return nil
     }
@@ -551,6 +593,30 @@ func (m *Device) GetIsManaged()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetIsRooted gets the isRooted property value. The isRooted property
+// returns a *bool when successful
+func (m *Device) GetIsRooted()(*bool) {
+    val, err := m.GetBackingStore().Get("isRooted")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetManagementType gets the managementType property value. The managementType property
+// returns a *string when successful
+func (m *Device) GetManagementType()(*string) {
+    val, err := m.GetBackingStore().Get("managementType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -836,6 +902,12 @@ func (m *Device) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("enrollmentType", m.GetEnrollmentType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetExtensions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExtensions()))
         for i, v := range m.GetExtensions() {
@@ -856,6 +928,18 @@ func (m *Device) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     }
     {
         err = writer.WriteBoolValue("isManaged", m.GetIsManaged())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isRooted", m.GetIsRooted())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("managementType", m.GetManagementType())
         if err != nil {
             return err
         }
@@ -1065,6 +1149,13 @@ func (m *Device) SetEnrollmentProfileName(value *string)() {
         panic(err)
     }
 }
+// SetEnrollmentType sets the enrollmentType property value. The enrollmentType property
+func (m *Device) SetEnrollmentType(value *string)() {
+    err := m.GetBackingStore().Set("enrollmentType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the device. Read-only. Nullable.
 func (m *Device) SetExtensions(value []Extensionable)() {
     err := m.GetBackingStore().Set("extensions", value)
@@ -1082,6 +1173,20 @@ func (m *Device) SetIsCompliant(value *bool)() {
 // SetIsManaged sets the isManaged property value. true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
 func (m *Device) SetIsManaged(value *bool)() {
     err := m.GetBackingStore().Set("isManaged", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsRooted sets the isRooted property value. The isRooted property
+func (m *Device) SetIsRooted(value *bool)() {
+    err := m.GetBackingStore().Set("isRooted", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetManagementType sets the managementType property value. The managementType property
+func (m *Device) SetManagementType(value *string)() {
+    err := m.GetBackingStore().Set("managementType", value)
     if err != nil {
         panic(err)
     }
@@ -1219,9 +1324,12 @@ type Deviceable interface {
     GetDeviceVersion()(*int32)
     GetDisplayName()(*string)
     GetEnrollmentProfileName()(*string)
+    GetEnrollmentType()(*string)
     GetExtensions()([]Extensionable)
     GetIsCompliant()(*bool)
     GetIsManaged()(*bool)
+    GetIsRooted()(*bool)
+    GetManagementType()(*string)
     GetManufacturer()(*string)
     GetMdmAppId()(*string)
     GetMemberOf()([]DirectoryObjectable)
@@ -1250,9 +1358,12 @@ type Deviceable interface {
     SetDeviceVersion(value *int32)()
     SetDisplayName(value *string)()
     SetEnrollmentProfileName(value *string)()
+    SetEnrollmentType(value *string)()
     SetExtensions(value []Extensionable)()
     SetIsCompliant(value *bool)()
     SetIsManaged(value *bool)()
+    SetIsRooted(value *bool)()
+    SetManagementType(value *string)()
     SetManufacturer(value *string)()
     SetMdmAppId(value *string)()
     SetMemberOf(value []DirectoryObjectable)()

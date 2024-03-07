@@ -39,6 +39,11 @@ type ItemFollowedSitesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemFollowedSitesRequestBuilderGetQueryParameters
 }
+// Add provides operations to call the add method.
+// returns a *ItemFollowedSitesAddRequestBuilder when successful
+func (m *ItemFollowedSitesRequestBuilder) Add()(*ItemFollowedSitesAddRequestBuilder) {
+    return NewItemFollowedSitesAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // BySiteId provides operations to manage the followedSites property of the microsoft.graph.user entity.
 // returns a *ItemFollowedSitesSiteItemRequestBuilder when successful
 func (m *ItemFollowedSitesRequestBuilder) BySiteId(siteId string)(*ItemFollowedSitesSiteItemRequestBuilder) {
@@ -91,6 +96,11 @@ func (m *ItemFollowedSitesRequestBuilder) Get(ctx context.Context, requestConfig
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SiteCollectionResponseable), nil
+}
+// Remove provides operations to call the remove method.
+// returns a *ItemFollowedSitesRemoveRequestBuilder when successful
+func (m *ItemFollowedSitesRequestBuilder) Remove()(*ItemFollowedSitesRemoveRequestBuilder) {
+    return NewItemFollowedSitesRemoveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation list the sites that have been followed by the signed in user.
 // returns a *RequestInformation when successful

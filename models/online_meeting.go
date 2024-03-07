@@ -58,7 +58,7 @@ func (m *OnlineMeeting) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     }
     return nil
 }
-// GetEndDateTime gets the endDateTime property value. The meeting end time in UTC.
+// GetEndDateTime gets the endDateTime property value. The meeting end time in UTC. Required when you create an online meeting.
 // returns a *Time when successful
 func (m *OnlineMeeting) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
@@ -212,7 +212,7 @@ func (m *OnlineMeeting) GetIsBroadcast()(*bool) {
     }
     return nil
 }
-// GetParticipants gets the participants property value. The participants associated with the online meeting, including the organizer and the attendees.
+// GetParticipants gets the participants property value. The participants associated with the online meeting.  This includes the organizer and the attendees.
 // returns a MeetingParticipantsable when successful
 func (m *OnlineMeeting) GetParticipants()(MeetingParticipantsable) {
     val, err := m.GetBackingStore().Get("participants")
@@ -236,7 +236,7 @@ func (m *OnlineMeeting) GetRecordings()([]CallRecordingable) {
     }
     return nil
 }
-// GetStartDateTime gets the startDateTime property value. The meeting start time in UTC.
+// GetStartDateTime gets the startDateTime property value. The meeting start time in UTC. Required when you create an online meeting.
 // returns a *Time when successful
 func (m *OnlineMeeting) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
@@ -361,7 +361,7 @@ func (m *OnlineMeeting) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad
         panic(err)
     }
 }
-// SetEndDateTime sets the endDateTime property value. The meeting end time in UTC.
+// SetEndDateTime sets the endDateTime property value. The meeting end time in UTC. Required when you create an online meeting.
 func (m *OnlineMeeting) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("endDateTime", value)
     if err != nil {
@@ -382,7 +382,7 @@ func (m *OnlineMeeting) SetIsBroadcast(value *bool)() {
         panic(err)
     }
 }
-// SetParticipants sets the participants property value. The participants associated with the online meeting, including the organizer and the attendees.
+// SetParticipants sets the participants property value. The participants associated with the online meeting.  This includes the organizer and the attendees.
 func (m *OnlineMeeting) SetParticipants(value MeetingParticipantsable)() {
     err := m.GetBackingStore().Set("participants", value)
     if err != nil {
@@ -396,7 +396,7 @@ func (m *OnlineMeeting) SetRecordings(value []CallRecordingable)() {
         panic(err)
     }
 }
-// SetStartDateTime sets the startDateTime property value. The meeting start time in UTC.
+// SetStartDateTime sets the startDateTime property value. The meeting start time in UTC. Required when you create an online meeting.
 func (m *OnlineMeeting) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startDateTime", value)
     if err != nil {

@@ -34,7 +34,7 @@ func (m *AuthorizationPolicy) GetAllowedToSignUpEmailBasedSubscriptions()(*bool)
     }
     return nil
 }
-// GetAllowedToUseSSPR gets the allowedToUseSSPR property value. Indicates whether users can use the Self-Service Password Reset feature on the tenant.
+// GetAllowedToUseSSPR gets the allowedToUseSSPR property value. Indicates whether administrators of the tenant can use the Self-Service Password Reset (SSPR). For more information, see Self-service password reset for administrators.
 // returns a *bool when successful
 func (m *AuthorizationPolicy) GetAllowedToUseSSPR()(*bool) {
     val, err := m.GetBackingStore().Get("allowedToUseSSPR")
@@ -58,7 +58,7 @@ func (m *AuthorizationPolicy) GetAllowEmailVerifiedUsersToJoinOrganization()(*bo
     }
     return nil
 }
-// GetAllowInvitesFrom gets the allowInvitesFrom property value. Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. For more information, see allowInvitesFrom values.
+// GetAllowInvitesFrom gets the allowInvitesFrom property value. Indicates who can invite guests to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. For more information, see allowInvitesFrom values.
 // returns a *AllowInvitesFrom when successful
 func (m *AuthorizationPolicy) GetAllowInvitesFrom()(*AllowInvitesFrom) {
     val, err := m.GetBackingStore().Get("allowInvitesFrom")
@@ -192,7 +192,7 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetGuestUserRoleId gets the guestUserRoleId property value. Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
+// GetGuestUserRoleId gets the guestUserRoleId property value. Represents role templateId for the role that should be granted to guests. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
 // returns a *UUID when successful
 func (m *AuthorizationPolicy) GetGuestUserRoleId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("guestUserRoleId")
@@ -268,7 +268,7 @@ func (m *AuthorizationPolicy) SetAllowedToSignUpEmailBasedSubscriptions(value *b
         panic(err)
     }
 }
-// SetAllowedToUseSSPR sets the allowedToUseSSPR property value. Indicates whether users can use the Self-Service Password Reset feature on the tenant.
+// SetAllowedToUseSSPR sets the allowedToUseSSPR property value. Indicates whether administrators of the tenant can use the Self-Service Password Reset (SSPR). For more information, see Self-service password reset for administrators.
 func (m *AuthorizationPolicy) SetAllowedToUseSSPR(value *bool)() {
     err := m.GetBackingStore().Set("allowedToUseSSPR", value)
     if err != nil {
@@ -282,7 +282,7 @@ func (m *AuthorizationPolicy) SetAllowEmailVerifiedUsersToJoinOrganization(value
         panic(err)
     }
 }
-// SetAllowInvitesFrom sets the allowInvitesFrom property value. Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. For more information, see allowInvitesFrom values.
+// SetAllowInvitesFrom sets the allowInvitesFrom property value. Indicates who can invite guests to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. For more information, see allowInvitesFrom values.
 func (m *AuthorizationPolicy) SetAllowInvitesFrom(value *AllowInvitesFrom)() {
     err := m.GetBackingStore().Set("allowInvitesFrom", value)
     if err != nil {
@@ -310,7 +310,7 @@ func (m *AuthorizationPolicy) SetDefaultUserRolePermissions(value DefaultUserRol
         panic(err)
     }
 }
-// SetGuestUserRoleId sets the guestUserRoleId property value. Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
+// SetGuestUserRoleId sets the guestUserRoleId property value. Represents role templateId for the role that should be granted to guests. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
 func (m *AuthorizationPolicy) SetGuestUserRoleId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     err := m.GetBackingStore().Set("guestUserRoleId", value)
     if err != nil {

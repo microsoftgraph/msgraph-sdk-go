@@ -147,6 +147,11 @@ func (m *ItemSitesSiteItemRequestBuilder) Onenote()(*ItemSitesItemOnenoteRequest
 func (m *ItemSitesSiteItemRequestBuilder) Operations()(*ItemSitesItemOperationsRequestBuilder) {
     return NewItemSitesItemOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Pages provides operations to manage the pages property of the microsoft.graph.site entity.
+// returns a *ItemSitesItemPagesRequestBuilder when successful
+func (m *ItemSitesSiteItemRequestBuilder) Pages()(*ItemSitesItemPagesRequestBuilder) {
+    return NewItemSitesItemPagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property sites in groups
 // returns a Siteable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

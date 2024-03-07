@@ -34,6 +34,16 @@ type SearchRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Acronyms provides operations to manage the acronyms property of the microsoft.graph.searchEntity entity.
+// returns a *AcronymsRequestBuilder when successful
+func (m *SearchRequestBuilder) Acronyms()(*AcronymsRequestBuilder) {
+    return NewAcronymsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Bookmarks provides operations to manage the bookmarks property of the microsoft.graph.searchEntity entity.
+// returns a *BookmarksRequestBuilder when successful
+func (m *SearchRequestBuilder) Bookmarks()(*BookmarksRequestBuilder) {
+    return NewBookmarksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewSearchRequestBuilderInternal instantiates a new SearchRequestBuilder and sets the default values.
 func NewSearchRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SearchRequestBuilder) {
     m := &SearchRequestBuilder{
@@ -86,6 +96,11 @@ func (m *SearchRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SearchEntityable), nil
+}
+// Qnas provides operations to manage the qnas property of the microsoft.graph.searchEntity entity.
+// returns a *QnasRequestBuilder when successful
+func (m *SearchRequestBuilder) Qnas()(*QnasRequestBuilder) {
+    return NewQnasRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Query provides operations to call the query method.
 // returns a *QueryRequestBuilder when successful

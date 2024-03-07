@@ -30,6 +30,8 @@ func CreateBaseItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.baseSitePage":
+                        return NewBaseSitePage(), nil
                     case "#microsoft.graph.drive":
                         return NewDrive(), nil
                     case "#microsoft.graph.driveItem":
@@ -42,6 +44,8 @@ func CreateBaseItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
                         return NewSharedDriveItem(), nil
                     case "#microsoft.graph.site":
                         return NewSite(), nil
+                    case "#microsoft.graph.sitePage":
+                        return NewSitePage(), nil
                 }
             }
         }

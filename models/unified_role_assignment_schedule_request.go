@@ -31,7 +31,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetAction()(*UnifiedRoleScheduleR
     }
     return nil
 }
-// GetActivatedUsing gets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it's null. Supports $expand.
+// GetActivatedUsing gets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it's null. Supports $expand and $select nested in $expand.
 // returns a UnifiedRoleEligibilityScheduleable when successful
 func (m *UnifiedRoleAssignmentScheduleRequest) GetActivatedUsing()(UnifiedRoleEligibilityScheduleable) {
     val, err := m.GetBackingStore().Get("activatedUsing")
@@ -281,7 +281,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetJustification()(*string) {
     }
     return nil
 }
-// GetPrincipal gets the principal property value. The principal that's getting a role assignment through the request. Supports $expand.
+// GetPrincipal gets the principal property value. The principal that's getting a role assignment through the request. Supports $expand and $select nested in $expand for id only.
 // returns a DirectoryObjectable when successful
 func (m *UnifiedRoleAssignmentScheduleRequest) GetPrincipal()(DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("principal")
@@ -305,7 +305,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetPrincipalId()(*string) {
     }
     return nil
 }
-// GetRoleDefinition gets the roleDefinition property value. Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
+// GetRoleDefinition gets the roleDefinition property value. Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand and $select nested in $expand.
 // returns a UnifiedRoleDefinitionable when successful
 func (m *UnifiedRoleAssignmentScheduleRequest) GetRoleDefinition()(UnifiedRoleDefinitionable) {
     val, err := m.GetBackingStore().Get("roleDefinition")
@@ -341,7 +341,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetScheduleInfo()(RequestSchedule
     }
     return nil
 }
-// GetTargetSchedule gets the targetSchedule property value. The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.
+// GetTargetSchedule gets the targetSchedule property value. The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand and $select nested in $expand.
 // returns a UnifiedRoleAssignmentScheduleable when successful
 func (m *UnifiedRoleAssignmentScheduleRequest) GetTargetSchedule()(UnifiedRoleAssignmentScheduleable) {
     val, err := m.GetBackingStore().Get("targetSchedule")
@@ -489,7 +489,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) SetAction(value *UnifiedRoleSched
         panic(err)
     }
 }
-// SetActivatedUsing sets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it's null. Supports $expand.
+// SetActivatedUsing sets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it's null. Supports $expand and $select nested in $expand.
 func (m *UnifiedRoleAssignmentScheduleRequest) SetActivatedUsing(value UnifiedRoleEligibilityScheduleable)() {
     err := m.GetBackingStore().Set("activatedUsing", value)
     if err != nil {
@@ -538,7 +538,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) SetJustification(value *string)()
         panic(err)
     }
 }
-// SetPrincipal sets the principal property value. The principal that's getting a role assignment through the request. Supports $expand.
+// SetPrincipal sets the principal property value. The principal that's getting a role assignment through the request. Supports $expand and $select nested in $expand for id only.
 func (m *UnifiedRoleAssignmentScheduleRequest) SetPrincipal(value DirectoryObjectable)() {
     err := m.GetBackingStore().Set("principal", value)
     if err != nil {
@@ -552,7 +552,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) SetPrincipalId(value *string)() {
         panic(err)
     }
 }
-// SetRoleDefinition sets the roleDefinition property value. Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
+// SetRoleDefinition sets the roleDefinition property value. Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand and $select nested in $expand.
 func (m *UnifiedRoleAssignmentScheduleRequest) SetRoleDefinition(value UnifiedRoleDefinitionable)() {
     err := m.GetBackingStore().Set("roleDefinition", value)
     if err != nil {
@@ -573,7 +573,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) SetScheduleInfo(value RequestSche
         panic(err)
     }
 }
-// SetTargetSchedule sets the targetSchedule property value. The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.
+// SetTargetSchedule sets the targetSchedule property value. The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand and $select nested in $expand.
 func (m *UnifiedRoleAssignmentScheduleRequest) SetTargetSchedule(value UnifiedRoleAssignmentScheduleable)() {
     err := m.GetBackingStore().Set("targetSchedule", value)
     if err != nil {

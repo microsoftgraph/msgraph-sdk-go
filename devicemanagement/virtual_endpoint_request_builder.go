@@ -41,6 +41,11 @@ type VirtualEndpointRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AuditEvents provides operations to manage the auditEvents property of the microsoft.graph.virtualEndpoint entity.
+// returns a *VirtualEndpointAuditEventsRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) AuditEvents()(*VirtualEndpointAuditEventsRequestBuilder) {
+    return NewVirtualEndpointAuditEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewVirtualEndpointRequestBuilderInternal instantiates a new VirtualEndpointRequestBuilder and sets the default values.
 func NewVirtualEndpointRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointRequestBuilder) {
     m := &VirtualEndpointRequestBuilder{
@@ -110,6 +115,11 @@ func (m *VirtualEndpointRequestBuilder) Patch(ctx context.Context, body iadcd811
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEndpointable), nil
 }
+// ProvisioningPolicies provides operations to manage the provisioningPolicies property of the microsoft.graph.virtualEndpoint entity.
+// returns a *VirtualEndpointProvisioningPoliciesRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) ProvisioningPolicies()(*VirtualEndpointProvisioningPoliciesRequestBuilder) {
+    return NewVirtualEndpointProvisioningPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property virtualEndpoint for deviceManagement
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -149,6 +159,11 @@ func (m *VirtualEndpointRequestBuilder) ToPatchRequestInformation(ctx context.Co
         return nil, err
     }
     return requestInfo, nil
+}
+// UserSettings provides operations to manage the userSettings property of the microsoft.graph.virtualEndpoint entity.
+// returns a *VirtualEndpointUserSettingsRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) UserSettings()(*VirtualEndpointUserSettingsRequestBuilder) {
+    return NewVirtualEndpointUserSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *VirtualEndpointRequestBuilder when successful

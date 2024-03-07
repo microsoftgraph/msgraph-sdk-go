@@ -101,7 +101,7 @@ func (m *EducationAssignmentDefaults) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetNotificationChannelUrl gets the notificationChannelUrl property value. Default Teams channel to which notifications will be sent. Default value is null.
+// GetNotificationChannelUrl gets the notificationChannelUrl property value. Default Teams channel to which notifications are sent. Default value is null.
 // returns a *string when successful
 func (m *EducationAssignmentDefaults) GetNotificationChannelUrl()(*string) {
     val, err := m.GetBackingStore().Get("notificationChannelUrl")
@@ -168,7 +168,7 @@ func (m *EducationAssignmentDefaults) SetDueTime(value *i878a80d2330e89d26896388
         panic(err)
     }
 }
-// SetNotificationChannelUrl sets the notificationChannelUrl property value. Default Teams channel to which notifications will be sent. Default value is null.
+// SetNotificationChannelUrl sets the notificationChannelUrl property value. Default Teams channel to which notifications are sent. Default value is null.
 func (m *EducationAssignmentDefaults) SetNotificationChannelUrl(value *string)() {
     err := m.GetBackingStore().Set("notificationChannelUrl", value)
     if err != nil {

@@ -20,7 +20,7 @@ func NewUnifiedRoleAssignmentScheduleInstance()(*UnifiedRoleAssignmentScheduleIn
 func CreateUnifiedRoleAssignmentScheduleInstanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleAssignmentScheduleInstance(), nil
 }
-// GetActivatedUsing gets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.
+// GetActivatedUsing gets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter shows the related eligible assignment for that activation. Otherwise, it's null. Supports $expand and $select nested in $expand.
 // returns a UnifiedRoleEligibilityScheduleInstanceable when successful
 func (m *UnifiedRoleAssignmentScheduleInstance) GetActivatedUsing()(UnifiedRoleEligibilityScheduleInstanceable) {
     val, err := m.GetBackingStore().Get("activatedUsing")
@@ -32,7 +32,7 @@ func (m *UnifiedRoleAssignmentScheduleInstance) GetActivatedUsing()(UnifiedRoleE
     }
     return nil
 }
-// GetAssignmentType gets the assignmentType property value. Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
+// GetAssignmentType gets the assignmentType property value. The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).
 // returns a *string when successful
 func (m *UnifiedRoleAssignmentScheduleInstance) GetAssignmentType()(*string) {
     val, err := m.GetBackingStore().Get("assignmentType")
@@ -132,7 +132,7 @@ func (m *UnifiedRoleAssignmentScheduleInstance) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetMemberType gets the memberType property value. How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
+// GetMemberType gets the memberType property value. How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
 // returns a *string when successful
 func (m *UnifiedRoleAssignmentScheduleInstance) GetMemberType()(*string) {
     val, err := m.GetBackingStore().Get("memberType")
@@ -230,14 +230,14 @@ func (m *UnifiedRoleAssignmentScheduleInstance) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetActivatedUsing sets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.
+// SetActivatedUsing sets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter shows the related eligible assignment for that activation. Otherwise, it's null. Supports $expand and $select nested in $expand.
 func (m *UnifiedRoleAssignmentScheduleInstance) SetActivatedUsing(value UnifiedRoleEligibilityScheduleInstanceable)() {
     err := m.GetBackingStore().Set("activatedUsing", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAssignmentType sets the assignmentType property value. Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
+// SetAssignmentType sets the assignmentType property value. The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentScheduleInstance) SetAssignmentType(value *string)() {
     err := m.GetBackingStore().Set("assignmentType", value)
     if err != nil {
@@ -251,7 +251,7 @@ func (m *UnifiedRoleAssignmentScheduleInstance) SetEndDateTime(value *i336074805
         panic(err)
     }
 }
-// SetMemberType sets the memberType property value. How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
+// SetMemberType sets the memberType property value. How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
 func (m *UnifiedRoleAssignmentScheduleInstance) SetMemberType(value *string)() {
     err := m.GetBackingStore().Set("memberType", value)
     if err != nil {
