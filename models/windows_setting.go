@@ -71,7 +71,7 @@ func (m *WindowsSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetInstances gets the instances property value. The instances property
+// GetInstances gets the instances property value. A collection of setting values for a given windowsSetting.
 // returns a []WindowsSettingInstanceable when successful
 func (m *WindowsSetting) GetInstances()([]WindowsSettingInstanceable) {
     val, err := m.GetBackingStore().Get("instances")
@@ -83,7 +83,7 @@ func (m *WindowsSetting) GetInstances()([]WindowsSettingInstanceable) {
     }
     return nil
 }
-// GetPayloadType gets the payloadType property value. The payloadType property
+// GetPayloadType gets the payloadType property value. The type of setting payloads contained in the instances navigation property.
 // returns a *string when successful
 func (m *WindowsSetting) GetPayloadType()(*string) {
     val, err := m.GetBackingStore().Get("payloadType")
@@ -107,7 +107,7 @@ func (m *WindowsSetting) GetSettingType()(*WindowsSettingType) {
     }
     return nil
 }
-// GetWindowsDeviceId gets the windowsDeviceId property value. The windowsDeviceId property
+// GetWindowsDeviceId gets the windowsDeviceId property value. A unique identifier for the device the setting might belong to if it is of the settingType backup.
 // returns a *string when successful
 func (m *WindowsSetting) GetWindowsDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("windowsDeviceId")
@@ -158,14 +158,14 @@ func (m *WindowsSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetInstances sets the instances property value. The instances property
+// SetInstances sets the instances property value. A collection of setting values for a given windowsSetting.
 func (m *WindowsSetting) SetInstances(value []WindowsSettingInstanceable)() {
     err := m.GetBackingStore().Set("instances", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPayloadType sets the payloadType property value. The payloadType property
+// SetPayloadType sets the payloadType property value. The type of setting payloads contained in the instances navigation property.
 func (m *WindowsSetting) SetPayloadType(value *string)() {
     err := m.GetBackingStore().Set("payloadType", value)
     if err != nil {
@@ -179,7 +179,7 @@ func (m *WindowsSetting) SetSettingType(value *WindowsSettingType)() {
         panic(err)
     }
 }
-// SetWindowsDeviceId sets the windowsDeviceId property value. The windowsDeviceId property
+// SetWindowsDeviceId sets the windowsDeviceId property value. A unique identifier for the device the setting might belong to if it is of the settingType backup.
 func (m *WindowsSetting) SetWindowsDeviceId(value *string)() {
     err := m.GetBackingStore().Set("windowsDeviceId", value)
     if err != nil {

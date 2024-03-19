@@ -232,30 +232,6 @@ func (m *MobileAppContentFile) Serialize(writer i878a80d2330e89d26896388a3f487ee
         return err
     }
     {
-        err = writer.WriteStringValue("azureStorageUri", m.GetAzureStorageUri())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("azureStorageUriExpirationDateTime", m.GetAzureStorageUriExpirationDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("isCommitted", m.GetIsCommitted())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteByteArrayValue("manifest", m.GetManifest())
         if err != nil {
             return err

@@ -25,6 +25,16 @@ func CreateGoogleCloudResourceEvidenceFromDiscriminatorValue(parseNode i878a80d2
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GoogleCloudResourceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AlertEvidence.GetFieldDeserializers()
+    res["fullResourceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFullResourceName(val)
+        }
+        return nil
+    }
     res["location"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -86,6 +96,18 @@ func (m *GoogleCloudResourceEvidence) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
+}
+// GetFullResourceName gets the fullResourceName property value. The fullResourceName property
+// returns a *string when successful
+func (m *GoogleCloudResourceEvidence) GetFullResourceName()(*string) {
+    val, err := m.GetBackingStore().Get("fullResourceName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLocation gets the location property value. The zone or region where the resource is located.
 // returns a *string when successful
@@ -166,6 +188,12 @@ func (m *GoogleCloudResourceEvidence) Serialize(writer i878a80d2330e89d26896388a
         return err
     }
     {
+        err = writer.WriteStringValue("fullResourceName", m.GetFullResourceName())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("location", m.GetLocation())
         if err != nil {
             return err
@@ -203,6 +231,13 @@ func (m *GoogleCloudResourceEvidence) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     return nil
+}
+// SetFullResourceName sets the fullResourceName property value. The fullResourceName property
+func (m *GoogleCloudResourceEvidence) SetFullResourceName(value *string)() {
+    err := m.GetBackingStore().Set("fullResourceName", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLocation sets the location property value. The zone or region where the resource is located.
 func (m *GoogleCloudResourceEvidence) SetLocation(value *string)() {
@@ -249,12 +284,14 @@ func (m *GoogleCloudResourceEvidence) SetResourceType(value *string)() {
 type GoogleCloudResourceEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFullResourceName()(*string)
     GetLocation()(*string)
     GetLocationType()(*GoogleCloudLocationType)
     GetProjectId()(*string)
     GetProjectNumber()(*int64)
     GetResourceName()(*string)
     GetResourceType()(*string)
+    SetFullResourceName(value *string)()
     SetLocation(value *string)()
     SetLocationType(value *GoogleCloudLocationType)()
     SetProjectId(value *string)()

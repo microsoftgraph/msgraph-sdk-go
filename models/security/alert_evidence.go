@@ -87,6 +87,8 @@ func CreateAlertEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
                         return NewKubernetesServiceAccountEvidence(), nil
                     case "#microsoft.graph.security.kubernetesServiceEvidence":
                         return NewKubernetesServiceEvidence(), nil
+                    case "#microsoft.graph.security.mailboxConfigurationEvidence":
+                        return NewMailboxConfigurationEvidence(), nil
                     case "#microsoft.graph.security.mailboxEvidence":
                         return NewMailboxEvidence(), nil
                     case "#microsoft.graph.security.mailClusterEvidence":

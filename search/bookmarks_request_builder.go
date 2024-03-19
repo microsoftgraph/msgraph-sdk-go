@@ -11,7 +11,7 @@ import (
 type BookmarksRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BookmarksRequestBuilderGetQueryParameters get bookmarks from search
+// BookmarksRequestBuilderGetQueryParameters get a list of bookmark objects and their properties.
 type BookmarksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewBookmarksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *BookmarksRequestBuilder) Count()(*BookmarksCountRequestBuilder) {
     return NewBookmarksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get bookmarks from search
+// Get get a list of bookmark objects and their properties.
 // returns a BookmarkCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-searchentity-list-bookmarks?view=graph-rest-1.0
 func (m *BookmarksRequestBuilder) Get(ctx context.Context, requestConfiguration *BookmarksRequestBuilderGetRequestConfiguration)(i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.BookmarkCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *BookmarksRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.BookmarkCollectionResponseable), nil
 }
-// Post create new navigation property to bookmarks for search
+// Post create a new bookmark object.
 // returns a Bookmarkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-searchentity-post-bookmarks?view=graph-rest-1.0
 func (m *BookmarksRequestBuilder) Post(ctx context.Context, body i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.Bookmarkable, requestConfiguration *BookmarksRequestBuilderPostRequestConfiguration)(i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.Bookmarkable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *BookmarksRequestBuilder) Post(ctx context.Context, body i517b35a40b7cc3
     }
     return res.(i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.Bookmarkable), nil
 }
-// ToGetRequestInformation get bookmarks from search
+// ToGetRequestInformation get a list of bookmark objects and their properties.
 // returns a *RequestInformation when successful
 func (m *BookmarksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookmarksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *BookmarksRequestBuilder) ToGetRequestInformation(ctx context.Context, r
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to bookmarks for search
+// ToPostRequestInformation create a new bookmark object.
 // returns a *RequestInformation when successful
 func (m *BookmarksRequestBuilder) ToPostRequestInformation(ctx context.Context, body i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.Bookmarkable, requestConfiguration *BookmarksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/search/bookmarks", m.BaseRequestBuilder.PathParameters)

@@ -98,7 +98,7 @@ func (m *AnswerKeyword) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetKeywords gets the keywords property value. The keywords property
+// GetKeywords gets the keywords property value. A collection of keywords used to trigger the search answer.
 // returns a []string when successful
 func (m *AnswerKeyword) GetKeywords()([]string) {
     val, err := m.GetBackingStore().Get("keywords")
@@ -110,7 +110,7 @@ func (m *AnswerKeyword) GetKeywords()([]string) {
     }
     return nil
 }
-// GetMatchSimilarKeywords gets the matchSimilarKeywords property value. The matchSimilarKeywords property
+// GetMatchSimilarKeywords gets the matchSimilarKeywords property value. If true, indicates that the search term contains similar words to the keywords that should trigger the search answer.
 // returns a *bool when successful
 func (m *AnswerKeyword) GetMatchSimilarKeywords()(*bool) {
     val, err := m.GetBackingStore().Get("matchSimilarKeywords")
@@ -134,7 +134,7 @@ func (m *AnswerKeyword) GetOdataType()(*string) {
     }
     return nil
 }
-// GetReservedKeywords gets the reservedKeywords property value. The reservedKeywords property
+// GetReservedKeywords gets the reservedKeywords property value. Unique keywords that guarantee the search answer is triggered.
 // returns a []string when successful
 func (m *AnswerKeyword) GetReservedKeywords()([]string) {
     val, err := m.GetBackingStore().Get("reservedKeywords")
@@ -191,14 +191,14 @@ func (m *AnswerKeyword) SetAdditionalData(value map[string]any)() {
 func (m *AnswerKeyword) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetKeywords sets the keywords property value. The keywords property
+// SetKeywords sets the keywords property value. A collection of keywords used to trigger the search answer.
 func (m *AnswerKeyword) SetKeywords(value []string)() {
     err := m.GetBackingStore().Set("keywords", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMatchSimilarKeywords sets the matchSimilarKeywords property value. The matchSimilarKeywords property
+// SetMatchSimilarKeywords sets the matchSimilarKeywords property value. If true, indicates that the search term contains similar words to the keywords that should trigger the search answer.
 func (m *AnswerKeyword) SetMatchSimilarKeywords(value *bool)() {
     err := m.GetBackingStore().Set("matchSimilarKeywords", value)
     if err != nil {
@@ -212,7 +212,7 @@ func (m *AnswerKeyword) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetReservedKeywords sets the reservedKeywords property value. The reservedKeywords property
+// SetReservedKeywords sets the reservedKeywords property value. Unique keywords that guarantee the search answer is triggered.
 func (m *AnswerKeyword) SetReservedKeywords(value []string)() {
     err := m.GetBackingStore().Set("reservedKeywords", value)
     if err != nil {

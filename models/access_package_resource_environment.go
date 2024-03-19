@@ -20,7 +20,7 @@ func NewAccessPackageResourceEnvironment()(*AccessPackageResourceEnvironment) {
 func CreateAccessPackageResourceEnvironmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageResourceEnvironment(), nil
 }
-// GetConnectionInfo gets the connectionInfo property value. The connectionInfo property
+// GetConnectionInfo gets the connectionInfo property value. Connection information of an environment used to connect to a resource.
 // returns a ConnectionInfoable when successful
 func (m *AccessPackageResourceEnvironment) GetConnectionInfo()(ConnectionInfoable) {
     val, err := m.GetBackingStore().Get("connectionInfo")
@@ -298,7 +298,7 @@ func (m *AccessPackageResourceEnvironment) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetConnectionInfo sets the connectionInfo property value. The connectionInfo property
+// SetConnectionInfo sets the connectionInfo property value. Connection information of an environment used to connect to a resource.
 func (m *AccessPackageResourceEnvironment) SetConnectionInfo(value ConnectionInfoable)() {
     err := m.GetBackingStore().Set("connectionInfo", value)
     if err != nil {

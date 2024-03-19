@@ -45,7 +45,7 @@ func (m *Acronym) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     }
     return res
 }
-// GetStandsFor gets the standsFor property value. The standsFor property
+// GetStandsFor gets the standsFor property value. What the acronym stands for.
 // returns a *string when successful
 func (m *Acronym) GetStandsFor()(*string) {
     val, err := m.GetBackingStore().Get("standsFor")
@@ -90,7 +90,7 @@ func (m *Acronym) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     return nil
 }
-// SetStandsFor sets the standsFor property value. The standsFor property
+// SetStandsFor sets the standsFor property value. What the acronym stands for.
 func (m *Acronym) SetStandsFor(value *string)() {
     err := m.GetBackingStore().Set("standsFor", value)
     if err != nil {

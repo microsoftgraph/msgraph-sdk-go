@@ -46,6 +46,11 @@ type VirtualEndpointRequestBuilderPatchRequestConfiguration struct {
 func (m *VirtualEndpointRequestBuilder) AuditEvents()(*VirtualEndpointAuditEventsRequestBuilder) {
     return NewVirtualEndpointAuditEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// CloudPCs provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.
+// returns a *VirtualEndpointCloudPCsRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) CloudPCs()(*VirtualEndpointCloudPCsRequestBuilder) {
+    return NewVirtualEndpointCloudPCsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewVirtualEndpointRequestBuilderInternal instantiates a new VirtualEndpointRequestBuilder and sets the default values.
 func NewVirtualEndpointRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointRequestBuilder) {
     m := &VirtualEndpointRequestBuilder{
@@ -75,6 +80,16 @@ func (m *VirtualEndpointRequestBuilder) Delete(ctx context.Context, requestConfi
     }
     return nil
 }
+// DeviceImages provides operations to manage the deviceImages property of the microsoft.graph.virtualEndpoint entity.
+// returns a *VirtualEndpointDeviceImagesRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) DeviceImages()(*VirtualEndpointDeviceImagesRequestBuilder) {
+    return NewVirtualEndpointDeviceImagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GalleryImages provides operations to manage the galleryImages property of the microsoft.graph.virtualEndpoint entity.
+// returns a *VirtualEndpointGalleryImagesRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) GalleryImages()(*VirtualEndpointGalleryImagesRequestBuilder) {
+    return NewVirtualEndpointGalleryImagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get virtualEndpoint from deviceManagement
 // returns a VirtualEndpointable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -94,6 +109,11 @@ func (m *VirtualEndpointRequestBuilder) Get(ctx context.Context, requestConfigur
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEndpointable), nil
+}
+// OnPremisesConnections provides operations to manage the onPremisesConnections property of the microsoft.graph.virtualEndpoint entity.
+// returns a *VirtualEndpointOnPremisesConnectionsRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) OnPremisesConnections()(*VirtualEndpointOnPremisesConnectionsRequestBuilder) {
+    return NewVirtualEndpointOnPremisesConnectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property virtualEndpoint in deviceManagement
 // returns a VirtualEndpointable when successful

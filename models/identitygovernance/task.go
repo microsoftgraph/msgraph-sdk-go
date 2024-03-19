@@ -44,7 +44,7 @@ func (m *Task) GetCategory()(*LifecycleTaskCategory) {
     }
     return nil
 }
-// GetContinueOnError gets the continueOnError property value. A boolean value that specifies whether, if this task fails, the workflow will stop, and subsequent tasks will not run. Optional.
+// GetContinueOnError gets the continueOnError property value. A boolean value that specifies whether, if this task fails, the workflow stops, and subsequent tasks aren't run. Optional.
 // returns a *bool when successful
 func (m *Task) GetContinueOnError()(*bool) {
     val, err := m.GetBackingStore().Get("continueOnError")
@@ -80,7 +80,7 @@ func (m *Task) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetExecutionSequence gets the executionSequence property value. An integer that states in what order the task will run in a workflow.Supports $orderby.
+// GetExecutionSequence gets the executionSequence property value. An integer that states in what order the task runs in a workflow.Supports $orderby.
 // returns a *int32 when successful
 func (m *Task) GetExecutionSequence()(*int32) {
     val, err := m.GetBackingStore().Get("executionSequence")
@@ -212,7 +212,7 @@ func (m *Task) GetIsEnabled()(*bool) {
     }
     return nil
 }
-// GetTaskDefinitionId gets the taskDefinitionId property value. A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see supported tasks. Required.Supports $filter(eq, ne).
+// GetTaskDefinitionId gets the taskDefinitionId property value. A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see Configure the arguments for built-in Lifecycle Workflow tasks. Required.Supports $filter(eq, ne).
 // returns a *string when successful
 func (m *Task) GetTaskDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("taskDefinitionId")
@@ -325,7 +325,7 @@ func (m *Task) SetCategory(value *LifecycleTaskCategory)() {
         panic(err)
     }
 }
-// SetContinueOnError sets the continueOnError property value. A boolean value that specifies whether, if this task fails, the workflow will stop, and subsequent tasks will not run. Optional.
+// SetContinueOnError sets the continueOnError property value. A boolean value that specifies whether, if this task fails, the workflow stops, and subsequent tasks aren't run. Optional.
 func (m *Task) SetContinueOnError(value *bool)() {
     err := m.GetBackingStore().Set("continueOnError", value)
     if err != nil {
@@ -346,7 +346,7 @@ func (m *Task) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetExecutionSequence sets the executionSequence property value. An integer that states in what order the task will run in a workflow.Supports $orderby.
+// SetExecutionSequence sets the executionSequence property value. An integer that states in what order the task runs in a workflow.Supports $orderby.
 func (m *Task) SetExecutionSequence(value *int32)() {
     err := m.GetBackingStore().Set("executionSequence", value)
     if err != nil {
@@ -360,7 +360,7 @@ func (m *Task) SetIsEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetTaskDefinitionId sets the taskDefinitionId property value. A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see supported tasks. Required.Supports $filter(eq, ne).
+// SetTaskDefinitionId sets the taskDefinitionId property value. A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see Configure the arguments for built-in Lifecycle Workflow tasks. Required.Supports $filter(eq, ne).
 func (m *Task) SetTaskDefinitionId(value *string)() {
     err := m.GetBackingStore().Set("taskDefinitionId", value)
     if err != nil {

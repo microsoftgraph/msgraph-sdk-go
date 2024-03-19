@@ -40,7 +40,7 @@ func (m *CloudClipboardItemPayload) GetAdditionalData()(map[string]any) {
 func (m *CloudClipboardItemPayload) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetContent gets the content property value. The content property
+// GetContent gets the content property value. The formatName version of the value of a cloud clipboard encoded in base64.
 // returns a *string when successful
 func (m *CloudClipboardItemPayload) GetContent()(*string) {
     val, err := m.GetBackingStore().Get("content")
@@ -88,7 +88,7 @@ func (m *CloudClipboardItemPayload) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetFormatName gets the formatName property value. The formatName property
+// GetFormatName gets the formatName property value. For a list of possible values see formatName values.
 // returns a *string when successful
 func (m *CloudClipboardItemPayload) GetFormatName()(*string) {
     val, err := m.GetBackingStore().Get("formatName")
@@ -151,14 +151,14 @@ func (m *CloudClipboardItemPayload) SetAdditionalData(value map[string]any)() {
 func (m *CloudClipboardItemPayload) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetContent sets the content property value. The content property
+// SetContent sets the content property value. The formatName version of the value of a cloud clipboard encoded in base64.
 func (m *CloudClipboardItemPayload) SetContent(value *string)() {
     err := m.GetBackingStore().Set("content", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFormatName sets the formatName property value. The formatName property
+// SetFormatName sets the formatName property value. For a list of possible values see formatName values.
 func (m *CloudClipboardItemPayload) SetFormatName(value *string)() {
     err := m.GetBackingStore().Set("formatName", value)
     if err != nil {

@@ -94,6 +94,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAdminConsentRequestPolicy(), nil
                     case "#microsoft.graph.administrativeUnit":
                         return NewAdministrativeUnit(), nil
+                    case "#microsoft.graph.adminMicrosoft365Apps":
+                        return NewAdminMicrosoft365Apps(), nil
                     case "#microsoft.graph.agreement":
                         return NewAgreement(), nil
                     case "#microsoft.graph.agreementAcceptance":
@@ -294,8 +296,16 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCloudClipboardItem(), nil
                     case "#microsoft.graph.cloudClipboardRoot":
                         return NewCloudClipboardRoot(), nil
+                    case "#microsoft.graph.cloudPC":
+                        return NewCloudPC(), nil
                     case "#microsoft.graph.cloudPcAuditEvent":
                         return NewCloudPcAuditEvent(), nil
+                    case "#microsoft.graph.cloudPcDeviceImage":
+                        return NewCloudPcDeviceImage(), nil
+                    case "#microsoft.graph.cloudPcGalleryImage":
+                        return NewCloudPcGalleryImage(), nil
+                    case "#microsoft.graph.cloudPcOnPremisesConnection":
+                        return NewCloudPcOnPremisesConnection(), nil
                     case "#microsoft.graph.cloudPcProvisioningPolicy":
                         return NewCloudPcProvisioningPolicy(), nil
                     case "#microsoft.graph.cloudPcProvisioningPolicyAssignment":
@@ -442,6 +452,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDeviceLogCollectionResponse(), nil
                     case "#microsoft.graph.deviceManagement":
                         return NewDeviceManagement(), nil
+                    case "#microsoft.graph.deviceManagementCachedReportConfiguration":
+                        return NewDeviceManagementCachedReportConfiguration(), nil
                     case "#microsoft.graph.deviceManagementExchangeConnector":
                         return NewDeviceManagementExchangeConnector(), nil
                     case "#microsoft.graph.deviceManagementExportJob":
@@ -720,6 +732,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewLoginPage(), nil
                     case "#microsoft.graph.longRunningOperation":
                         return NewLongRunningOperation(), nil
+                    case "#microsoft.graph.m365AppsInstallationOptions":
+                        return NewM365AppsInstallationOptions(), nil
                     case "#microsoft.graph.macOSCompliancePolicy":
                         return NewMacOSCompliancePolicy(), nil
                     case "#microsoft.graph.macOSCustomConfiguration":
@@ -1410,6 +1424,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWindows10CustomConfiguration(), nil
                     case "#microsoft.graph.windows10EndpointProtectionConfiguration":
                         return NewWindows10EndpointProtectionConfiguration(), nil
+                    case "#microsoft.graph.windows10EnrollmentCompletionPageConfiguration":
+                        return NewWindows10EnrollmentCompletionPageConfiguration(), nil
                     case "#microsoft.graph.windows10EnterpriseModernAppManagementConfiguration":
                         return NewWindows10EnterpriseModernAppManagementConfiguration(), nil
                     case "#microsoft.graph.windows10GeneralConfiguration":

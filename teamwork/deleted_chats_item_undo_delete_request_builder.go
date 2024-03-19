@@ -30,8 +30,11 @@ func NewDeletedChatsItemUndoDeleteRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedChatsItemUndoDeleteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action undoDelete
+// Post restore a  deletedChat to an active chat.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/deletedchat-undodelete?view=graph-rest-1.0
 func (m *DeletedChatsItemUndoDeleteRequestBuilder) Post(ctx context.Context, requestConfiguration *DeletedChatsItemUndoDeleteRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *DeletedChatsItemUndoDeleteRequestBuilder) Post(ctx context.Context, req
     }
     return nil
 }
-// ToPostRequestInformation invoke action undoDelete
+// ToPostRequestInformation restore a  deletedChat to an active chat.
 // returns a *RequestInformation when successful
 func (m *DeletedChatsItemUndoDeleteRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *DeletedChatsItemUndoDeleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
