@@ -99,6 +99,16 @@ func (m *CloudApplicationEvidence) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["stream"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateStreamFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStream(val.(Streamable))
+        }
+        return nil
+    }
     return res
 }
 // GetInstanceId gets the instanceId property value. Identifier of the instance of the Software as a Service (SaaS) application.
@@ -137,6 +147,18 @@ func (m *CloudApplicationEvidence) GetSaasAppId()(*int64) {
     }
     return nil
 }
+// GetStream gets the stream property value. The stream property
+// returns a Streamable when successful
+func (m *CloudApplicationEvidence) GetStream()(Streamable) {
+    val, err := m.GetBackingStore().Get("stream")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Streamable)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *CloudApplicationEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.AlertEvidence.Serialize(writer)
@@ -169,6 +191,12 @@ func (m *CloudApplicationEvidence) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     {
         err = writer.WriteInt64Value("saasAppId", m.GetSaasAppId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("stream", m.GetStream())
         if err != nil {
             return err
         }
@@ -210,6 +238,13 @@ func (m *CloudApplicationEvidence) SetSaasAppId(value *int64)() {
         panic(err)
     }
 }
+// SetStream sets the stream property value. The stream property
+func (m *CloudApplicationEvidence) SetStream(value Streamable)() {
+    err := m.GetBackingStore().Set("stream", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type CloudApplicationEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -218,9 +253,11 @@ type CloudApplicationEvidenceable interface {
     GetInstanceId()(*int64)
     GetInstanceName()(*string)
     GetSaasAppId()(*int64)
+    GetStream()(Streamable)
     SetAppId(value *int64)()
     SetDisplayName(value *string)()
     SetInstanceId(value *int64)()
     SetInstanceName(value *string)()
     SetSaasAppId(value *int64)()
+    SetStream(value Streamable)()
 }

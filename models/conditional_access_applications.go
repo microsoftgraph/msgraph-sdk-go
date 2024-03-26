@@ -52,7 +52,7 @@ func (m *ConditionalAccessApplications) GetApplicationFilter()(ConditionalAccess
 func (m *ConditionalAccessApplications) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetExcludeApplications gets the excludeApplications property value. Can be one of the following:  The list of client IDs (appId) explicitly excluded from the policy. Office365 - For the list of apps included in Office365, see Apps included in Conditional Access Office 365 app suite
+// GetExcludeApplications gets the excludeApplications property value. Can be one of the following:  The list of client IDs (appId) explicitly excluded from the policy. Office365 - For the list of apps included in Office365, see Apps included in Conditional Access Office 365 app suite  MicrosoftAdminPortals - For more information, see Conditional Access Target resources: Microsoft Admin Portals
 // returns a []string when successful
 func (m *ConditionalAccessApplications) GetExcludeApplications()([]string) {
     val, err := m.GetBackingStore().Get("excludeApplications")
@@ -154,7 +154,7 @@ func (m *ConditionalAccessApplications) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetIncludeApplications gets the includeApplications property value. Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Apps included in Conditional Access Office 365 app suite
+// GetIncludeApplications gets the includeApplications property value. Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Apps included in Conditional Access Office 365 app suite  MicrosoftAdminPortals - For more information, see Conditional Access Target resources: Microsoft Admin Portals
 // returns a []string when successful
 func (m *ConditionalAccessApplications) GetIncludeApplications()([]string) {
     val, err := m.GetBackingStore().Get("includeApplications")
@@ -266,14 +266,14 @@ func (m *ConditionalAccessApplications) SetApplicationFilter(value ConditionalAc
 func (m *ConditionalAccessApplications) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetExcludeApplications sets the excludeApplications property value. Can be one of the following:  The list of client IDs (appId) explicitly excluded from the policy. Office365 - For the list of apps included in Office365, see Apps included in Conditional Access Office 365 app suite
+// SetExcludeApplications sets the excludeApplications property value. Can be one of the following:  The list of client IDs (appId) explicitly excluded from the policy. Office365 - For the list of apps included in Office365, see Apps included in Conditional Access Office 365 app suite  MicrosoftAdminPortals - For more information, see Conditional Access Target resources: Microsoft Admin Portals
 func (m *ConditionalAccessApplications) SetExcludeApplications(value []string)() {
     err := m.GetBackingStore().Set("excludeApplications", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIncludeApplications sets the includeApplications property value. Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Apps included in Conditional Access Office 365 app suite
+// SetIncludeApplications sets the includeApplications property value. Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Apps included in Conditional Access Office 365 app suite  MicrosoftAdminPortals - For more information, see Conditional Access Target resources: Microsoft Admin Portals
 func (m *ConditionalAccessApplications) SetIncludeApplications(value []string)() {
     err := m.GetBackingStore().Set("includeApplications", value)
     if err != nil {

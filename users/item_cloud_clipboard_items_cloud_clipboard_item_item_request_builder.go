@@ -18,7 +18,7 @@ type ItemCloudClipboardItemsCloudClipboardItemItemRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemCloudClipboardItemsCloudClipboardItemItemRequestBuilderGetQueryParameters get items from users
+// ItemCloudClipboardItemsCloudClipboardItemItemRequestBuilderGetQueryParameters represents a collection of Cloud Clipboard items.
 type ItemCloudClipboardItemsCloudClipboardItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemCloudClipboardItemsCloudClipboardItemItemRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get get items from users
+// Get represents a collection of Cloud Clipboard items.
 // returns a CloudClipboardItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCloudClipboardItemsCloudClipboardItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCloudClipboardItemsCloudClipboardItemItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudClipboardItemable, error) {
@@ -121,7 +121,7 @@ func (m *ItemCloudClipboardItemsCloudClipboardItemItemRequestBuilder) ToDeleteRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get items from users
+// ToGetRequestInformation represents a collection of Cloud Clipboard items.
 // returns a *RequestInformation when successful
 func (m *ItemCloudClipboardItemsCloudClipboardItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCloudClipboardItemsCloudClipboardItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

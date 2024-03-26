@@ -40,7 +40,7 @@ func (m *CloudPcAuditProperty) GetAdditionalData()(map[string]any) {
 func (m *CloudPcAuditProperty) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name for this property.
 // returns a *string when successful
 func (m *CloudPcAuditProperty) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -98,7 +98,7 @@ func (m *CloudPcAuditProperty) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetNewValue gets the newValue property value. The newValue property
+// GetNewValue gets the newValue property value. The new value for this property.
 // returns a *string when successful
 func (m *CloudPcAuditProperty) GetNewValue()(*string) {
     val, err := m.GetBackingStore().Get("newValue")
@@ -122,7 +122,7 @@ func (m *CloudPcAuditProperty) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOldValue gets the oldValue property value. The oldValue property
+// GetOldValue gets the oldValue property value. The old value for this property.
 // returns a *string when successful
 func (m *CloudPcAuditProperty) GetOldValue()(*string) {
     val, err := m.GetBackingStore().Get("oldValue")
@@ -179,14 +179,14 @@ func (m *CloudPcAuditProperty) SetAdditionalData(value map[string]any)() {
 func (m *CloudPcAuditProperty) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name for this property.
 func (m *CloudPcAuditProperty) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNewValue sets the newValue property value. The newValue property
+// SetNewValue sets the newValue property value. The new value for this property.
 func (m *CloudPcAuditProperty) SetNewValue(value *string)() {
     err := m.GetBackingStore().Set("newValue", value)
     if err != nil {
@@ -200,7 +200,7 @@ func (m *CloudPcAuditProperty) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOldValue sets the oldValue property value. The oldValue property
+// SetOldValue sets the oldValue property value. The old value for this property.
 func (m *CloudPcAuditProperty) SetOldValue(value *string)() {
     err := m.GetBackingStore().Set("oldValue", value)
     if err != nil {

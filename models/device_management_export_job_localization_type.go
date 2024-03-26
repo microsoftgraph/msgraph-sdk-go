@@ -2,13 +2,13 @@ package models
 import (
     "errors"
 )
-// Configures how the requested export job is localized
+// Configures how the requested export job is localized.
 type DeviceManagementExportJobLocalizationType int
 
 const (
-    // Configures the export job to expose localized values as an additional column
+    // Configures the export job to expose localized values as an additional column.
     LOCALIZEDVALUESASADDITIONALCOLUMN_DEVICEMANAGEMENTEXPORTJOBLOCALIZATIONTYPE DeviceManagementExportJobLocalizationType = iota
-    // Configures the export job to replace enumerable values with their localized values
+    // Configures the export job to replace enumerable values with their localized values.
     REPLACELOCALIZABLEVALUES_DEVICEMANAGEMENTEXPORTJOBLOCALIZATIONTYPE
 )
 

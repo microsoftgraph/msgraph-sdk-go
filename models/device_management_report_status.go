@@ -2,19 +2,19 @@ package models
 import (
     "errors"
 )
-// Possible statuses associated with a generated report
+// Possible statuses associated with a generated report.
 type DeviceManagementReportStatus int
 
 const (
-    // Report generation status is unknown
+    // Report generation status is unknown.
     UNKNOWN_DEVICEMANAGEMENTREPORTSTATUS DeviceManagementReportStatus = iota
-    // Report generation has not started
+    // Report generation has not started.
     NOTSTARTED_DEVICEMANAGEMENTREPORTSTATUS
-    // Report generation is in progress
+    // Report generation is in progress.
     INPROGRESS_DEVICEMANAGEMENTREPORTSTATUS
-    // Report generation is completed
+    // Report generation is completed.
     COMPLETED_DEVICEMANAGEMENTREPORTSTATUS
-    // Report generation has failed
+    // Report generation has failed.
     FAILED_DEVICEMANAGEMENTREPORTSTATUS
 )
 

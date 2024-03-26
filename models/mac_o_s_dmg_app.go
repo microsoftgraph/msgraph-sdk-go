@@ -96,7 +96,7 @@ func (m *MacOSDmgApp) GetIgnoreVersionDetection()(*bool) {
     }
     return nil
 }
-// GetIncludedApps gets the includedApps property value. The list of .apps expected to be installed by the DMG (Apple Disk Image)
+// GetIncludedApps gets the includedApps property value. The list of .apps expected to be installed by the DMG (Apple Disk Image). This collection can contain a maximum of 500 elements.
 // returns a []MacOSIncludedAppable when successful
 func (m *MacOSDmgApp) GetIncludedApps()([]MacOSIncludedAppable) {
     val, err := m.GetBackingStore().Get("includedApps")
@@ -195,7 +195,7 @@ func (m *MacOSDmgApp) SetIgnoreVersionDetection(value *bool)() {
         panic(err)
     }
 }
-// SetIncludedApps sets the includedApps property value. The list of .apps expected to be installed by the DMG (Apple Disk Image)
+// SetIncludedApps sets the includedApps property value. The list of .apps expected to be installed by the DMG (Apple Disk Image). This collection can contain a maximum of 500 elements.
 func (m *MacOSDmgApp) SetIncludedApps(value []MacOSIncludedAppable)() {
     err := m.GetBackingStore().Set("includedApps", value)
     if err != nil {

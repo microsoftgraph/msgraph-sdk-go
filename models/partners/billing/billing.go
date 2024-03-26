@@ -56,6 +56,16 @@ func (m *Billing) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["reconciliation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateBillingReconciliationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetReconciliation(val.(BillingReconciliationable))
+        }
+        return nil
+    }
     res["usage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAzureUsageFromDiscriminatorValue)
         if err != nil {
@@ -89,6 +99,18 @@ func (m *Billing) GetOperations()([]Operationable) {
     }
     if val != nil {
         return val.([]Operationable)
+    }
+    return nil
+}
+// GetReconciliation gets the reconciliation property value. The reconciliation property
+// returns a BillingReconciliationable when successful
+func (m *Billing) GetReconciliation()(BillingReconciliationable) {
+    val, err := m.GetBackingStore().Get("reconciliation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(BillingReconciliationable)
     }
     return nil
 }
@@ -135,6 +157,12 @@ func (m *Billing) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         }
     }
     {
+        err = writer.WriteObjectValue("reconciliation", m.GetReconciliation())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("usage", m.GetUsage())
         if err != nil {
             return err
@@ -156,6 +184,13 @@ func (m *Billing) SetOperations(value []Operationable)() {
         panic(err)
     }
 }
+// SetReconciliation sets the reconciliation property value. The reconciliation property
+func (m *Billing) SetReconciliation(value BillingReconciliationable)() {
+    err := m.GetBackingStore().Set("reconciliation", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUsage sets the usage property value. The usage property
 func (m *Billing) SetUsage(value AzureUsageable)() {
     err := m.GetBackingStore().Set("usage", value)
@@ -168,8 +203,10 @@ type Billingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetManifests()([]Manifestable)
     GetOperations()([]Operationable)
+    GetReconciliation()(BillingReconciliationable)
     GetUsage()(AzureUsageable)
     SetManifests(value []Manifestable)()
     SetOperations(value []Operationable)()
+    SetReconciliation(value BillingReconciliationable)()
     SetUsage(value AzureUsageable)()
 }

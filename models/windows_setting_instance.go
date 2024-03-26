@@ -20,7 +20,7 @@ func NewWindowsSettingInstance()(*WindowsSettingInstance) {
 func CreateWindowsSettingInstanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsSettingInstance(), nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Set by the server. Represents the dateTime in UTC when the object was created on the server.
 // returns a *Time when successful
 func (m *WindowsSettingInstance) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -32,7 +32,7 @@ func (m *WindowsSettingInstance) GetCreatedDateTime()(*i336074805fc853987abe6f7f
     }
     return nil
 }
-// GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
+// GetExpirationDateTime gets the expirationDateTime property value. Set by the server. The object expires at the specified dateTime in UTC, making it unavailable after that time.
 // returns a *Time when successful
 func (m *WindowsSettingInstance) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
@@ -90,7 +90,7 @@ func (m *WindowsSettingInstance) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Set by the server if not provided in the request from the Windows client device. Refers to the user's Windows device that modified the object at the specified dateTime in UTC.
 // returns a *Time when successful
 func (m *WindowsSettingInstance) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -102,7 +102,7 @@ func (m *WindowsSettingInstance) GetLastModifiedDateTime()(*i336074805fc853987ab
     }
     return nil
 }
-// GetPayload gets the payload property value. The payload property
+// GetPayload gets the payload property value. Base64-encoded JSON setting value.
 // returns a *string when successful
 func (m *WindowsSettingInstance) GetPayload()(*string) {
     val, err := m.GetBackingStore().Get("payload")
@@ -146,28 +146,28 @@ func (m *WindowsSettingInstance) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Set by the server. Represents the dateTime in UTC when the object was created on the server.
 func (m *WindowsSettingInstance) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property
+// SetExpirationDateTime sets the expirationDateTime property value. Set by the server. The object expires at the specified dateTime in UTC, making it unavailable after that time.
 func (m *WindowsSettingInstance) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Set by the server if not provided in the request from the Windows client device. Refers to the user's Windows device that modified the object at the specified dateTime in UTC.
 func (m *WindowsSettingInstance) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPayload sets the payload property value. The payload property
+// SetPayload sets the payload property value. Base64-encoded JSON setting value.
 func (m *WindowsSettingInstance) SetPayload(value *string)() {
     err := m.GetBackingStore().Set("payload", value)
     if err != nil {

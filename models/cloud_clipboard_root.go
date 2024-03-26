@@ -41,7 +41,7 @@ func (m *CloudClipboardRoot) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetItems gets the items property value. The items property
+// GetItems gets the items property value. Represents a collection of Cloud Clipboard items.
 // returns a []CloudClipboardItemable when successful
 func (m *CloudClipboardRoot) GetItems()([]CloudClipboardItemable) {
     val, err := m.GetBackingStore().Get("items")
@@ -73,7 +73,7 @@ func (m *CloudClipboardRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetItems sets the items property value. The items property
+// SetItems sets the items property value. Represents a collection of Cloud Clipboard items.
 func (m *CloudClipboardRoot) SetItems(value []CloudClipboardItemable)() {
     err := m.GetBackingStore().Set("items", value)
     if err != nil {

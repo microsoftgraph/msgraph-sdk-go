@@ -2,15 +2,15 @@ package models
 import (
     "errors"
 )
-// Possible values for the file format of a report
+// Possible values for the file format of a report.
 type DeviceManagementReportFileFormat int
 
 const (
-    // CSV Format
+    // CSV Format.
     CSV_DEVICEMANAGEMENTREPORTFILEFORMAT DeviceManagementReportFileFormat = iota
-    // PDF Format
+    // PDF Format (Deprecate later).
     PDF_DEVICEMANAGEMENTREPORTFILEFORMAT
-    // JSON Format
+    // JSON Format.
     JSON_DEVICEMANAGEMENTREPORTFILEFORMAT
     // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTREPORTFILEFORMAT

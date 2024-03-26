@@ -39,11 +39,6 @@ type ItemSitesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemSitesRequestBuilderGetQueryParameters
 }
-// Add provides operations to call the add method.
-// returns a *ItemSitesAddRequestBuilder when successful
-func (m *ItemSitesRequestBuilder) Add()(*ItemSitesAddRequestBuilder) {
-    return NewItemSitesAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // BySiteId1 provides operations to manage the sites property of the microsoft.graph.site entity.
 // returns a *ItemSitesSiteItemRequestBuilder when successful
 func (m *ItemSitesRequestBuilder) BySiteId1(siteId1 string)(*ItemSitesSiteItemRequestBuilder) {
@@ -96,11 +91,6 @@ func (m *ItemSitesRequestBuilder) Get(ctx context.Context, requestConfiguration 
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SiteCollectionResponseable), nil
-}
-// Remove provides operations to call the remove method.
-// returns a *ItemSitesRemoveRequestBuilder when successful
-func (m *ItemSitesRequestBuilder) Remove()(*ItemSitesRemoveRequestBuilder) {
-    return NewItemSitesRemoveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get a collection of subsites defined for a [site][].
 // returns a *RequestInformation when successful

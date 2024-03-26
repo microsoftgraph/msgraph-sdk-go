@@ -112,12 +112,6 @@ func (m *AndroidStoreApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("packageId", m.GetPackageId())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetAppStoreUrl sets the appStoreUrl property value. The Android app store URL.

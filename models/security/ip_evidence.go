@@ -57,6 +57,16 @@ func (m *IpEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["stream"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateStreamFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStream(val.(Streamable))
+        }
+        return nil
+    }
     return res
 }
 // GetIpAddress gets the ipAddress property value. The value of the IP Address, can be either in V4 address or V6 address format.
@@ -68,6 +78,18 @@ func (m *IpEvidence) GetIpAddress()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetStream gets the stream property value. The stream property
+// returns a Streamable when successful
+func (m *IpEvidence) GetStream()(Streamable) {
+    val, err := m.GetBackingStore().Get("stream")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Streamable)
     }
     return nil
 }
@@ -89,6 +111,12 @@ func (m *IpEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("stream", m.GetStream())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCountryLetterCode sets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc.
@@ -105,11 +133,20 @@ func (m *IpEvidence) SetIpAddress(value *string)() {
         panic(err)
     }
 }
+// SetStream sets the stream property value. The stream property
+func (m *IpEvidence) SetStream(value Streamable)() {
+    err := m.GetBackingStore().Set("stream", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type IpEvidenceable interface {
     AlertEvidenceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCountryLetterCode()(*string)
     GetIpAddress()(*string)
+    GetStream()(Streamable)
     SetCountryLetterCode(value *string)()
     SetIpAddress(value *string)()
+    SetStream(value Streamable)()
 }

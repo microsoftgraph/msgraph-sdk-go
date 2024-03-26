@@ -124,7 +124,7 @@ func (m *Win32LobAppFileSystemRule) GetFileOrFolderName()(*string) {
     }
     return nil
 }
-// GetOperationType gets the operationType property value. Contains all supported file system detection type.
+// GetOperationType gets the operationType property value. A list of possible operations for rules used to make determinations about an application based on files or folders. Unless noted, can be used with either detection or requirement rules.
 // returns a *Win32LobAppFileSystemOperationType when successful
 func (m *Win32LobAppFileSystemRule) GetOperationType()(*Win32LobAppFileSystemOperationType) {
     val, err := m.GetBackingStore().Get("operationType")
@@ -227,7 +227,7 @@ func (m *Win32LobAppFileSystemRule) SetFileOrFolderName(value *string)() {
         panic(err)
     }
 }
-// SetOperationType sets the operationType property value. Contains all supported file system detection type.
+// SetOperationType sets the operationType property value. A list of possible operations for rules used to make determinations about an application based on files or folders. Unless noted, can be used with either detection or requirement rules.
 func (m *Win32LobAppFileSystemRule) SetOperationType(value *Win32LobAppFileSystemOperationType)() {
     err := m.GetBackingStore().Set("operationType", value)
     if err != nil {

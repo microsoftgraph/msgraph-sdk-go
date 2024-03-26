@@ -132,7 +132,7 @@ func (m *DocumentSetVersion) GetItems()([]DocumentSetVersionItemable) {
     }
     return nil
 }
-// GetShouldCaptureMinorVersion gets the shouldCaptureMinorVersion property value. If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
+// GetShouldCaptureMinorVersion gets the shouldCaptureMinorVersion property value. If true, minor versions of items are also captured; otherwise, only major versions are captured. The default value is false.
 // returns a *bool when successful
 func (m *DocumentSetVersion) GetShouldCaptureMinorVersion()(*bool) {
     val, err := m.GetBackingStore().Get("shouldCaptureMinorVersion")
@@ -216,7 +216,7 @@ func (m *DocumentSetVersion) SetItems(value []DocumentSetVersionItemable)() {
         panic(err)
     }
 }
-// SetShouldCaptureMinorVersion sets the shouldCaptureMinorVersion property value. If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
+// SetShouldCaptureMinorVersion sets the shouldCaptureMinorVersion property value. If true, minor versions of items are also captured; otherwise, only major versions are captured. The default value is false.
 func (m *DocumentSetVersion) SetShouldCaptureMinorVersion(value *bool)() {
     err := m.GetBackingStore().Set("shouldCaptureMinorVersion", value)
     if err != nil {

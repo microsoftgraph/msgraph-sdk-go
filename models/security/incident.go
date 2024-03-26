@@ -281,6 +281,16 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["resolvingComment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetResolvingComment(val)
+        }
+        return nil
+    }
     res["severity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAlertSeverity)
         if err != nil {
@@ -369,6 +379,18 @@ func (m *Incident) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
 // returns a *string when successful
 func (m *Incident) GetRedirectIncidentId()(*string) {
     val, err := m.GetBackingStore().Get("redirectIncidentId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetResolvingComment gets the resolvingComment property value. The resolvingComment property
+// returns a *string when successful
+func (m *Incident) GetResolvingComment()(*string) {
+    val, err := m.GetBackingStore().Get("resolvingComment")
     if err != nil {
         panic(err)
     }
@@ -523,6 +545,12 @@ func (m *Incident) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("resolvingComment", m.GetResolvingComment())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSeverity() != nil {
         cast := (*m.GetSeverity()).String()
         err = writer.WriteStringValue("severity", &cast)
@@ -642,6 +670,13 @@ func (m *Incident) SetRedirectIncidentId(value *string)() {
         panic(err)
     }
 }
+// SetResolvingComment sets the resolvingComment property value. The resolvingComment property
+func (m *Incident) SetResolvingComment(value *string)() {
+    err := m.GetBackingStore().Set("resolvingComment", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSeverity sets the severity property value. The severity property
 func (m *Incident) SetSeverity(value *AlertSeverity)() {
     err := m.GetBackingStore().Set("severity", value)
@@ -686,6 +721,7 @@ type Incidentable interface {
     GetLastModifiedBy()(*string)
     GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRedirectIncidentId()(*string)
+    GetResolvingComment()(*string)
     GetSeverity()(*AlertSeverity)
     GetStatus()(*IncidentStatus)
     GetSystemTags()([]string)
@@ -703,6 +739,7 @@ type Incidentable interface {
     SetLastModifiedBy(value *string)()
     SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRedirectIncidentId(value *string)()
+    SetResolvingComment(value *string)()
     SetSeverity(value *AlertSeverity)()
     SetStatus(value *IncidentStatus)()
     SetSystemTags(value []string)()

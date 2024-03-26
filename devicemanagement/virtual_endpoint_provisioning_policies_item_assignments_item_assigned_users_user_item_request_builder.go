@@ -11,7 +11,7 @@ import (
 type VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersUserItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersUserItemRequestBuilderGetQueryParameters get assignedUsers from deviceManagement
+// VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersUserItemRequestBuilderGetQueryParameters the assignment targeted users for the provisioning policy. This list of users is computed based on assignments, licenses, group memberships, and policies. Read-only. Supports$expand.
 type VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersUserItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewVirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersUserI
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersUserItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get assignedUsers from deviceManagement
+// Get the assignment targeted users for the provisioning policy. This list of users is computed based on assignments, licenses, group memberships, and policies. Read-only. Supports$expand.
 // returns a Userable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersUserItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersUserItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Userable, error) {
@@ -70,7 +70,7 @@ func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersUser
 func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersUserItemRequestBuilder) ServiceProvisioningErrors()(*VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersItemServiceProvisioningErrorsRequestBuilder) {
     return NewVirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersItemServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get assignedUsers from deviceManagement
+// ToGetRequestInformation the assignment targeted users for the provisioning policy. This list of users is computed based on assignments, licenses, group memberships, and policies. Read-only. Supports$expand.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersUserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

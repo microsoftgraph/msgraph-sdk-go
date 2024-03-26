@@ -47,7 +47,7 @@ func (m *EventMessageResponse) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetProposedNewTime gets the proposedNewTime property value. The proposedNewTime property
+// GetProposedNewTime gets the proposedNewTime property value. An alternate date/time proposed by an invitee for a meeting request to start and end. Read-only. Not filterable.
 // returns a TimeSlotable when successful
 func (m *EventMessageResponse) GetProposedNewTime()(TimeSlotable) {
     val, err := m.GetBackingStore().Get("proposedNewTime")
@@ -59,7 +59,7 @@ func (m *EventMessageResponse) GetProposedNewTime()(TimeSlotable) {
     }
     return nil
 }
-// GetResponseType gets the responseType property value. The responseType property
+// GetResponseType gets the responseType property value. Specifies the type of response to a meeting request. Possible values are: tentativelyAccepted, accepted, declined. For the eventMessageResponse type, none, organizer, and notResponded are not supported. Read-only. Not filterable.
 // returns a *ResponseType when successful
 func (m *EventMessageResponse) GetResponseType()(*ResponseType) {
     val, err := m.GetBackingStore().Get("responseType")
@@ -92,14 +92,14 @@ func (m *EventMessageResponse) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetProposedNewTime sets the proposedNewTime property value. The proposedNewTime property
+// SetProposedNewTime sets the proposedNewTime property value. An alternate date/time proposed by an invitee for a meeting request to start and end. Read-only. Not filterable.
 func (m *EventMessageResponse) SetProposedNewTime(value TimeSlotable)() {
     err := m.GetBackingStore().Set("proposedNewTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResponseType sets the responseType property value. The responseType property
+// SetResponseType sets the responseType property value. Specifies the type of response to a meeting request. Possible values are: tentativelyAccepted, accepted, declined. For the eventMessageResponse type, none, organizer, and notResponded are not supported. Read-only. Not filterable.
 func (m *EventMessageResponse) SetResponseType(value *ResponseType)() {
     err := m.GetBackingStore().Set("responseType", value)
     if err != nil {

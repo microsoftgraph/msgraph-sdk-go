@@ -20,7 +20,7 @@ func NewCloudPcUserSettingAssignment()(*CloudPcUserSettingAssignment) {
 func CreateCloudPcUserSettingAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcUserSettingAssignment(), nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when this assignment was created. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *CloudPcUserSettingAssignment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -58,7 +58,7 @@ func (m *CloudPcUserSettingAssignment) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetTarget gets the target property value. The target property
+// GetTarget gets the target property value. The assignment target for the user setting. Currently, the only target supported for this user setting is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
 // returns a CloudPcManagementAssignmentTargetable when successful
 func (m *CloudPcUserSettingAssignment) GetTarget()(CloudPcManagementAssignmentTargetable) {
     val, err := m.GetBackingStore().Get("target")
@@ -90,14 +90,14 @@ func (m *CloudPcUserSettingAssignment) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when this assignment was created. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CloudPcUserSettingAssignment) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTarget sets the target property value. The target property
+// SetTarget sets the target property value. The assignment target for the user setting. Currently, the only target supported for this user setting is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
 func (m *CloudPcUserSettingAssignment) SetTarget(value CloudPcManagementAssignmentTargetable)() {
     err := m.GetBackingStore().Set("target", value)
     if err != nil {

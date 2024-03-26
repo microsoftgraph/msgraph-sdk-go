@@ -19,7 +19,7 @@ func NewSynchronizationJob()(*SynchronizationJob) {
 func CreateSynchronizationJobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSynchronizationJob(), nil
 }
-// GetBulkUpload gets the bulkUpload property value. The bulkUpload property
+// GetBulkUpload gets the bulkUpload property value. The bulk upload operation for the job.
 // returns a BulkUploadable when successful
 func (m *SynchronizationJob) GetBulkUpload()(BulkUploadable) {
     val, err := m.GetBackingStore().Get("bulkUpload")
@@ -213,7 +213,7 @@ func (m *SynchronizationJob) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetBulkUpload sets the bulkUpload property value. The bulkUpload property
+// SetBulkUpload sets the bulkUpload property value. The bulk upload operation for the job.
 func (m *SynchronizationJob) SetBulkUpload(value BulkUploadable)() {
     err := m.GetBackingStore().Set("bulkUpload", value)
     if err != nil {

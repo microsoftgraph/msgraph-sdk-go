@@ -18,7 +18,7 @@ type VirtualEndpointRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointRequestBuilderGetQueryParameters get virtualEndpoint from deviceManagement
+// VirtualEndpointRequestBuilderGetQueryParameters virtual endpoint
 type VirtualEndpointRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -45,6 +45,11 @@ type VirtualEndpointRequestBuilderPatchRequestConfiguration struct {
 // returns a *VirtualEndpointAuditEventsRequestBuilder when successful
 func (m *VirtualEndpointRequestBuilder) AuditEvents()(*VirtualEndpointAuditEventsRequestBuilder) {
     return NewVirtualEndpointAuditEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CloudPCs provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.
+// returns a *VirtualEndpointCloudPCsRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) CloudPCs()(*VirtualEndpointCloudPCsRequestBuilder) {
+    return NewVirtualEndpointCloudPCsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewVirtualEndpointRequestBuilderInternal instantiates a new VirtualEndpointRequestBuilder and sets the default values.
 func NewVirtualEndpointRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointRequestBuilder) {
@@ -75,7 +80,17 @@ func (m *VirtualEndpointRequestBuilder) Delete(ctx context.Context, requestConfi
     }
     return nil
 }
-// Get get virtualEndpoint from deviceManagement
+// DeviceImages provides operations to manage the deviceImages property of the microsoft.graph.virtualEndpoint entity.
+// returns a *VirtualEndpointDeviceImagesRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) DeviceImages()(*VirtualEndpointDeviceImagesRequestBuilder) {
+    return NewVirtualEndpointDeviceImagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GalleryImages provides operations to manage the galleryImages property of the microsoft.graph.virtualEndpoint entity.
+// returns a *VirtualEndpointGalleryImagesRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) GalleryImages()(*VirtualEndpointGalleryImagesRequestBuilder) {
+    return NewVirtualEndpointGalleryImagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Get virtual endpoint
 // returns a VirtualEndpointable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEndpointable, error) {
@@ -94,6 +109,11 @@ func (m *VirtualEndpointRequestBuilder) Get(ctx context.Context, requestConfigur
         return nil, nil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.VirtualEndpointable), nil
+}
+// OnPremisesConnections provides operations to manage the onPremisesConnections property of the microsoft.graph.virtualEndpoint entity.
+// returns a *VirtualEndpointOnPremisesConnectionsRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) OnPremisesConnections()(*VirtualEndpointOnPremisesConnectionsRequestBuilder) {
+    return NewVirtualEndpointOnPremisesConnectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property virtualEndpoint in deviceManagement
 // returns a VirtualEndpointable when successful
@@ -131,7 +151,7 @@ func (m *VirtualEndpointRequestBuilder) ToDeleteRequestInformation(ctx context.C
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get virtualEndpoint from deviceManagement
+// ToGetRequestInformation virtual endpoint
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
