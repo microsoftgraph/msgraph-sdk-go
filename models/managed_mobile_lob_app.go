@@ -172,12 +172,6 @@ func (m *ManagedMobileLobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
-    {
-        err = writer.WriteInt64Value("size", m.GetSize())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetCommittedContentVersion sets the committedContentVersion property value. The internal committed content version.

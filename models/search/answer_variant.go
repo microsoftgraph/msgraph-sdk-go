@@ -41,7 +41,7 @@ func (m *AnswerVariant) GetAdditionalData()(map[string]any) {
 func (m *AnswerVariant) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The answer variation description that is shown on the search results page.
 // returns a *string when successful
 func (m *AnswerVariant) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -53,7 +53,7 @@ func (m *AnswerVariant) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The answer variation name that is displayed in search results.
 // returns a *string when successful
 func (m *AnswerVariant) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -131,7 +131,7 @@ func (m *AnswerVariant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetLanguageTag gets the languageTag property value. The languageTag property
+// GetLanguageTag gets the languageTag property value. The country or region that can view this answer variation.
 // returns a *string when successful
 func (m *AnswerVariant) GetLanguageTag()(*string) {
     val, err := m.GetBackingStore().Get("languageTag")
@@ -155,7 +155,7 @@ func (m *AnswerVariant) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPlatform gets the platform property value. The platform property
+// GetPlatform gets the platform property value. The device or operating system that can view this answer variation. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
 // returns a *DevicePlatformType when successful
 func (m *AnswerVariant) GetPlatform()(*iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DevicePlatformType) {
     val, err := m.GetBackingStore().Get("platform")
@@ -167,7 +167,7 @@ func (m *AnswerVariant) GetPlatform()(*iadcd81124412c61e647227ecfc4449d8bba17de0
     }
     return nil
 }
-// GetWebUrl gets the webUrl property value. The webUrl property
+// GetWebUrl gets the webUrl property value. The URL link for the answer variation. When users select this answer variation from the search results, they're directed to the specified URL.
 // returns a *string when successful
 func (m *AnswerVariant) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
@@ -237,21 +237,21 @@ func (m *AnswerVariant) SetAdditionalData(value map[string]any)() {
 func (m *AnswerVariant) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The answer variation description that is shown on the search results page.
 func (m *AnswerVariant) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The answer variation name that is displayed in search results.
 func (m *AnswerVariant) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLanguageTag sets the languageTag property value. The languageTag property
+// SetLanguageTag sets the languageTag property value. The country or region that can view this answer variation.
 func (m *AnswerVariant) SetLanguageTag(value *string)() {
     err := m.GetBackingStore().Set("languageTag", value)
     if err != nil {
@@ -265,14 +265,14 @@ func (m *AnswerVariant) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPlatform sets the platform property value. The platform property
+// SetPlatform sets the platform property value. The device or operating system that can view this answer variation. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
 func (m *AnswerVariant) SetPlatform(value *iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DevicePlatformType)() {
     err := m.GetBackingStore().Set("platform", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWebUrl sets the webUrl property value. The webUrl property
+// SetWebUrl sets the webUrl property value. The URL link for the answer variation. When users select this answer variation from the search results, they're directed to the specified URL.
 func (m *AnswerVariant) SetWebUrl(value *string)() {
     err := m.GetBackingStore().Set("webUrl", value)
     if err != nil {

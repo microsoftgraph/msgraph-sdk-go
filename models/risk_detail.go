@@ -20,10 +20,13 @@ const (
     M365DADMINDISMISSEDDETECTION_RISKDETAIL
     ADMINCONFIRMEDSERVICEPRINCIPALCOMPROMISED_RISKDETAIL
     ADMINDISMISSEDALLRISKFORSERVICEPRINCIPAL_RISKDETAIL
+    USERCHANGEDPASSWORDONPREMISES_RISKDETAIL
+    ADMINDISMISSEDRISKFORSIGNIN_RISKDETAIL
+    ADMINCONFIRMEDACCOUNTSAFE_RISKDETAIL
 )
 
 func (i RiskDetail) String() string {
-    return []string{"none", "adminGeneratedTemporaryPassword", "userPerformedSecuredPasswordChange", "userPerformedSecuredPasswordReset", "adminConfirmedSigninSafe", "aiConfirmedSigninSafe", "userPassedMFADrivenByRiskBasedPolicy", "adminDismissedAllRiskForUser", "adminConfirmedSigninCompromised", "hidden", "adminConfirmedUserCompromised", "unknownFutureValue", "m365DAdminDismissedDetection", "adminConfirmedServicePrincipalCompromised", "adminDismissedAllRiskForServicePrincipal"}[i]
+    return []string{"none", "adminGeneratedTemporaryPassword", "userPerformedSecuredPasswordChange", "userPerformedSecuredPasswordReset", "adminConfirmedSigninSafe", "aiConfirmedSigninSafe", "userPassedMFADrivenByRiskBasedPolicy", "adminDismissedAllRiskForUser", "adminConfirmedSigninCompromised", "hidden", "adminConfirmedUserCompromised", "unknownFutureValue", "m365DAdminDismissedDetection", "adminConfirmedServicePrincipalCompromised", "adminDismissedAllRiskForServicePrincipal", "userChangedPasswordOnPremises", "adminDismissedRiskForSignIn", "adminConfirmedAccountSafe"}[i]
 }
 func ParseRiskDetail(v string) (any, error) {
     result := NONE_RISKDETAIL
@@ -58,6 +61,12 @@ func ParseRiskDetail(v string) (any, error) {
             result = ADMINCONFIRMEDSERVICEPRINCIPALCOMPROMISED_RISKDETAIL
         case "adminDismissedAllRiskForServicePrincipal":
             result = ADMINDISMISSEDALLRISKFORSERVICEPRINCIPAL_RISKDETAIL
+        case "userChangedPasswordOnPremises":
+            result = USERCHANGEDPASSWORDONPREMISES_RISKDETAIL
+        case "adminDismissedRiskForSignIn":
+            result = ADMINDISMISSEDRISKFORSIGNIN_RISKDETAIL
+        case "adminConfirmedAccountSafe":
+            result = ADMINCONFIRMEDACCOUNTSAFE_RISKDETAIL
         default:
             return 0, errors.New("Unknown RiskDetail value: " + v)
     }

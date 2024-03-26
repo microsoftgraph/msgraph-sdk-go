@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementExportJob entity representing a job to export a report
+// DeviceManagementExportJob entity representing a job to export a report.
 type DeviceManagementExportJob struct {
     Entity
 }
@@ -157,7 +157,7 @@ func (m *DeviceManagementExportJob) GetFilter()(*string) {
     }
     return nil
 }
-// GetFormat gets the format property value. Possible values for the file format of a report
+// GetFormat gets the format property value. Possible values for the file format of a report.
 // returns a *DeviceManagementReportFileFormat when successful
 func (m *DeviceManagementExportJob) GetFormat()(*DeviceManagementReportFileFormat) {
     val, err := m.GetBackingStore().Get("format")
@@ -169,7 +169,7 @@ func (m *DeviceManagementExportJob) GetFormat()(*DeviceManagementReportFileForma
     }
     return nil
 }
-// GetLocalizationType gets the localizationType property value. Configures how the requested export job is localized
+// GetLocalizationType gets the localizationType property value. Configures how the requested export job is localized.
 // returns a *DeviceManagementExportJobLocalizationType when successful
 func (m *DeviceManagementExportJob) GetLocalizationType()(*DeviceManagementExportJobLocalizationType) {
     val, err := m.GetBackingStore().Get("localizationType")
@@ -229,7 +229,7 @@ func (m *DeviceManagementExportJob) GetSnapshotId()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. Possible statuses associated with a generated report
+// GetStatus gets the status property value. Possible statuses associated with a generated report.
 // returns a *DeviceManagementReportStatus when successful
 func (m *DeviceManagementExportJob) GetStatus()(*DeviceManagementReportStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -338,14 +338,14 @@ func (m *DeviceManagementExportJob) SetFilter(value *string)() {
         panic(err)
     }
 }
-// SetFormat sets the format property value. Possible values for the file format of a report
+// SetFormat sets the format property value. Possible values for the file format of a report.
 func (m *DeviceManagementExportJob) SetFormat(value *DeviceManagementReportFileFormat)() {
     err := m.GetBackingStore().Set("format", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLocalizationType sets the localizationType property value. Configures how the requested export job is localized
+// SetLocalizationType sets the localizationType property value. Configures how the requested export job is localized.
 func (m *DeviceManagementExportJob) SetLocalizationType(value *DeviceManagementExportJobLocalizationType)() {
     err := m.GetBackingStore().Set("localizationType", value)
     if err != nil {
@@ -380,7 +380,7 @@ func (m *DeviceManagementExportJob) SetSnapshotId(value *string)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Possible statuses associated with a generated report
+// SetStatus sets the status property value. Possible statuses associated with a generated report.
 func (m *DeviceManagementExportJob) SetStatus(value *DeviceManagementReportStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

@@ -18,7 +18,7 @@ type ItemSynchronizationJobsItemBulkUploadRequestBuilderDeleteRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSynchronizationJobsItemBulkUploadRequestBuilderGetQueryParameters get bulkUpload from servicePrincipals
+// ItemSynchronizationJobsItemBulkUploadRequestBuilderGetQueryParameters the bulk upload operation for the job.
 type ItemSynchronizationJobsItemBulkUploadRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,7 +75,7 @@ func (m *ItemSynchronizationJobsItemBulkUploadRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// Get get bulkUpload from servicePrincipals
+// Get the bulk upload operation for the job.
 // returns a BulkUploadable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSynchronizationJobsItemBulkUploadRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemBulkUploadRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BulkUploadable, error) {
@@ -126,7 +126,7 @@ func (m *ItemSynchronizationJobsItemBulkUploadRequestBuilder) ToDeleteRequestInf
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get bulkUpload from servicePrincipals
+// ToGetRequestInformation the bulk upload operation for the job.
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationJobsItemBulkUploadRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemBulkUploadRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

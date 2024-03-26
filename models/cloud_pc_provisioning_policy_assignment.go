@@ -19,7 +19,7 @@ func NewCloudPcProvisioningPolicyAssignment()(*CloudPcProvisioningPolicyAssignme
 func CreateCloudPcProvisioningPolicyAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcProvisioningPolicyAssignment(), nil
 }
-// GetAssignedUsers gets the assignedUsers property value. The assignedUsers property
+// GetAssignedUsers gets the assignedUsers property value. The assignment targeted users for the provisioning policy. This list of users is computed based on assignments, licenses, group memberships, and policies. Read-only. Supports$expand.
 // returns a []Userable when successful
 func (m *CloudPcProvisioningPolicyAssignment) GetAssignedUsers()([]Userable) {
     val, err := m.GetBackingStore().Get("assignedUsers")
@@ -63,7 +63,7 @@ func (m *CloudPcProvisioningPolicyAssignment) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetTarget gets the target property value. The target property
+// GetTarget gets the target property value. The assignment target for the provisioning policy. Currently, the only target supported for this policy is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
 // returns a CloudPcManagementAssignmentTargetable when successful
 func (m *CloudPcProvisioningPolicyAssignment) GetTarget()(CloudPcManagementAssignmentTargetable) {
     val, err := m.GetBackingStore().Get("target")
@@ -101,14 +101,14 @@ func (m *CloudPcProvisioningPolicyAssignment) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetAssignedUsers sets the assignedUsers property value. The assignedUsers property
+// SetAssignedUsers sets the assignedUsers property value. The assignment targeted users for the provisioning policy. This list of users is computed based on assignments, licenses, group memberships, and policies. Read-only. Supports$expand.
 func (m *CloudPcProvisioningPolicyAssignment) SetAssignedUsers(value []Userable)() {
     err := m.GetBackingStore().Set("assignedUsers", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTarget sets the target property value. The target property
+// SetTarget sets the target property value. The assignment target for the provisioning policy. Currently, the only target supported for this policy is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
 func (m *CloudPcProvisioningPolicyAssignment) SetTarget(value CloudPcManagementAssignmentTargetable)() {
     err := m.GetBackingStore().Set("target", value)
     if err != nil {

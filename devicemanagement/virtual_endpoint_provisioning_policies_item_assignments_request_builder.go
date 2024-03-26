@@ -11,7 +11,7 @@ import (
 type VirtualEndpointProvisioningPoliciesItemAssignmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointProvisioningPoliciesItemAssignmentsRequestBuilderGetQueryParameters get assignments from deviceManagement
+// VirtualEndpointProvisioningPoliciesItemAssignmentsRequestBuilderGetQueryParameters a defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.
 type VirtualEndpointProvisioningPoliciesItemAssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewVirtualEndpointProvisioningPoliciesItemAssignmentsRequestBuilder(rawUrl 
 func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsRequestBuilder) Count()(*VirtualEndpointProvisioningPoliciesItemAssignmentsCountRequestBuilder) {
     return NewVirtualEndpointProvisioningPoliciesItemAssignmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get assignments from deviceManagement
+// Get a defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.
 // returns a CloudPcProvisioningPolicyAssignmentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointProvisioningPoliciesItemAssignmentsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudPcProvisioningPolicyAssignmentCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsRequestBuilder) Post(
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudPcProvisioningPolicyAssignmentable), nil
 }
-// ToGetRequestInformation get assignments from deviceManagement
+// ToGetRequestInformation a defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointProvisioningPoliciesItemAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

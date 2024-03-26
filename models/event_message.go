@@ -183,7 +183,7 @@ func (m *EventMessage) GetIsAllDay()(*bool) {
     }
     return nil
 }
-// GetIsDelegated gets the isDelegated property value. The isDelegated property
+// GetIsDelegated gets the isDelegated property value. True if this meeting request is accessible to a delegate, false otherwise. Default is false.
 // returns a *bool when successful
 func (m *EventMessage) GetIsDelegated()(*bool) {
     val, err := m.GetBackingStore().Get("isDelegated")
@@ -219,7 +219,7 @@ func (m *EventMessage) GetLocation()(Locationable) {
     }
     return nil
 }
-// GetMeetingMessageType gets the meetingMessageType property value. The meetingMessageType property
+// GetMeetingMessageType gets the meetingMessageType property value. The type of event message: none, meetingRequest, meetingCancelled, meetingAccepted, meetingTenativelyAccepted, meetingDeclined.
 // returns a *MeetingMessageType when successful
 func (m *EventMessage) GetMeetingMessageType()(*MeetingMessageType) {
     val, err := m.GetBackingStore().Get("meetingMessageType")
@@ -358,7 +358,7 @@ func (m *EventMessage) SetIsAllDay(value *bool)() {
         panic(err)
     }
 }
-// SetIsDelegated sets the isDelegated property value. The isDelegated property
+// SetIsDelegated sets the isDelegated property value. True if this meeting request is accessible to a delegate, false otherwise. Default is false.
 func (m *EventMessage) SetIsDelegated(value *bool)() {
     err := m.GetBackingStore().Set("isDelegated", value)
     if err != nil {
@@ -379,7 +379,7 @@ func (m *EventMessage) SetLocation(value Locationable)() {
         panic(err)
     }
 }
-// SetMeetingMessageType sets the meetingMessageType property value. The meetingMessageType property
+// SetMeetingMessageType sets the meetingMessageType property value. The type of event message: none, meetingRequest, meetingCancelled, meetingAccepted, meetingTenativelyAccepted, meetingDeclined.
 func (m *EventMessage) SetMeetingMessageType(value *MeetingMessageType)() {
     err := m.GetBackingStore().Set("meetingMessageType", value)
     if err != nil {

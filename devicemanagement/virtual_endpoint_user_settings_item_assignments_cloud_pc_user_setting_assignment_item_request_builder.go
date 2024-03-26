@@ -18,7 +18,7 @@ type VirtualEndpointUserSettingsItemAssignmentsCloudPcUserSettingAssignmentItemR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointUserSettingsItemAssignmentsCloudPcUserSettingAssignmentItemRequestBuilderGetQueryParameters get assignments from deviceManagement
+// VirtualEndpointUserSettingsItemAssignmentsCloudPcUserSettingAssignmentItemRequestBuilderGetQueryParameters represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSetting.
 type VirtualEndpointUserSettingsItemAssignmentsCloudPcUserSettingAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *VirtualEndpointUserSettingsItemAssignmentsCloudPcUserSettingAssignmentI
     }
     return nil
 }
-// Get get assignments from deviceManagement
+// Get represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSetting.
 // returns a CloudPcUserSettingAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointUserSettingsItemAssignmentsCloudPcUserSettingAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointUserSettingsItemAssignmentsCloudPcUserSettingAssignmentItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudPcUserSettingAssignmentable, error) {
@@ -121,7 +121,7 @@ func (m *VirtualEndpointUserSettingsItemAssignmentsCloudPcUserSettingAssignmentI
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get assignments from deviceManagement
+// ToGetRequestInformation represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSetting.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointUserSettingsItemAssignmentsCloudPcUserSettingAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointUserSettingsItemAssignmentsCloudPcUserSettingAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

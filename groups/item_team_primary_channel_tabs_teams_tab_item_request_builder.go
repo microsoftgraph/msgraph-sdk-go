@@ -96,7 +96,7 @@ func (m *ItemTeamPrimaryChannelTabsTeamsTabItemRequestBuilder) Get(ctx context.C
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable), nil
 }
-// Patch update the properties of the specified tab.This can be used to configure the content of the tab.
+// Patch update the properties of the specified tab.This API can be used to configure the content of the tab.
 // returns a TeamsTabable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -149,7 +149,7 @@ func (m *ItemTeamPrimaryChannelTabsTeamsTabItemRequestBuilder) ToGetRequestInfor
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of the specified tab.This can be used to configure the content of the tab.
+// ToPatchRequestInformation update the properties of the specified tab.This API can be used to configure the content of the tab.
 // returns a *RequestInformation when successful
 func (m *ItemTeamPrimaryChannelTabsTeamsTabItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TeamsTabable, requestConfiguration *ItemTeamPrimaryChannelTabsTeamsTabItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/groups/{group%2Did}/team/primaryChannel/tabs/{teamsTab%2Did}", m.BaseRequestBuilder.PathParameters)

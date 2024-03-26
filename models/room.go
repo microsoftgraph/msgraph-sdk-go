@@ -295,7 +295,7 @@ func (m *Room) GetNickname()(*string) {
     }
     return nil
 }
-// GetTags gets the tags property value. Specifies additional features of the room, for example, details like the type of view or furniture type.
+// GetTags gets the tags property value. Specifies other features of the room, for example, details like the type of view or furniture type.
 // returns a []string when successful
 func (m *Room) GetTags()([]string) {
     val, err := m.GetBackingStore().Get("tags")
@@ -483,7 +483,7 @@ func (m *Room) SetNickname(value *string)() {
         panic(err)
     }
 }
-// SetTags sets the tags property value. Specifies additional features of the room, for example, details like the type of view or furniture type.
+// SetTags sets the tags property value. Specifies other features of the room, for example, details like the type of view or furniture type.
 func (m *Room) SetTags(value []string)() {
     err := m.GetBackingStore().Set("tags", value)
     if err != nil {

@@ -18,7 +18,7 @@ type BookmarksBookmarkItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BookmarksBookmarkItemRequestBuilderGetQueryParameters get bookmarks from search
+// BookmarksBookmarkItemRequestBuilderGetQueryParameters read the properties and relationships of a bookmark object.
 type BookmarksBookmarkItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewBookmarksBookmarkItemRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewBookmarksBookmarkItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property bookmarks for search
+// Delete delete a bookmark object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-bookmark-delete?view=graph-rest-1.0
 func (m *BookmarksBookmarkItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BookmarksBookmarkItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *BookmarksBookmarkItemRequestBuilder) Delete(ctx context.Context, reques
     }
     return nil
 }
-// Get get bookmarks from search
+// Get read the properties and relationships of a bookmark object.
 // returns a Bookmarkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-bookmark-get?view=graph-rest-1.0
 func (m *BookmarksBookmarkItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BookmarksBookmarkItemRequestBuilderGetRequestConfiguration)(i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.Bookmarkable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +96,12 @@ func (m *BookmarksBookmarkItemRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.Bookmarkable), nil
 }
-// Patch update the navigation property bookmarks in search
+// Patch update the properties of a bookmark object.
 // returns a Bookmarkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-bookmark-update?view=graph-rest-1.0
 func (m *BookmarksBookmarkItemRequestBuilder) Patch(ctx context.Context, body i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.Bookmarkable, requestConfiguration *BookmarksBookmarkItemRequestBuilderPatchRequestConfiguration)(i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.Bookmarkable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -110,7 +119,7 @@ func (m *BookmarksBookmarkItemRequestBuilder) Patch(ctx context.Context, body i5
     }
     return res.(i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.Bookmarkable), nil
 }
-// ToDeleteRequestInformation delete navigation property bookmarks for search
+// ToDeleteRequestInformation delete a bookmark object.
 // returns a *RequestInformation when successful
 func (m *BookmarksBookmarkItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BookmarksBookmarkItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/search/bookmarks/{bookmark%2Did}", m.BaseRequestBuilder.PathParameters)
@@ -121,7 +130,7 @@ func (m *BookmarksBookmarkItemRequestBuilder) ToDeleteRequestInformation(ctx con
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get bookmarks from search
+// ToGetRequestInformation read the properties and relationships of a bookmark object.
 // returns a *RequestInformation when successful
 func (m *BookmarksBookmarkItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookmarksBookmarkItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +144,7 @@ func (m *BookmarksBookmarkItemRequestBuilder) ToGetRequestInformation(ctx contex
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property bookmarks in search
+// ToPatchRequestInformation update the properties of a bookmark object.
 // returns a *RequestInformation when successful
 func (m *BookmarksBookmarkItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i517b35a40b7cc3c50a0c7990c48f2ec92f4c4d36a97445a2aebfdc3c0071c22e.Bookmarkable, requestConfiguration *BookmarksBookmarkItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/search/bookmarks/{bookmark%2Did}", m.BaseRequestBuilder.PathParameters)

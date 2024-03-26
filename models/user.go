@@ -2036,6 +2036,22 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["sponsors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DirectoryObjectable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(DirectoryObjectable)
+                }
+            }
+            m.SetSponsors(res)
+        }
+        return nil
+    }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -2983,6 +2999,18 @@ func (m *User) GetSkills()([]string) {
     }
     if val != nil {
         return val.([]string)
+    }
+    return nil
+}
+// GetSponsors gets the sponsors property value. The sponsors property
+// returns a []DirectoryObjectable when successful
+func (m *User) GetSponsors()([]DirectoryObjectable) {
+    val, err := m.GetBackingStore().Get("sponsors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DirectoryObjectable)
     }
     return nil
 }
@@ -4036,6 +4064,18 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetSponsors() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSponsors()))
+        for i, v := range m.GetSponsors() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("sponsors", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("state", m.GetState())
         if err != nil {
@@ -4917,6 +4957,13 @@ func (m *User) SetSkills(value []string)() {
         panic(err)
     }
 }
+// SetSponsors sets the sponsors property value. The sponsors property
+func (m *User) SetSponsors(value []DirectoryObjectable)() {
+    err := m.GetBackingStore().Set("sponsors", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetState sets the state property value. The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetState(value *string)() {
     err := m.GetBackingStore().Set("state", value)
@@ -5100,6 +5147,7 @@ type Userable interface {
     GetSignInActivity()(SignInActivityable)
     GetSignInSessionsValidFromDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSkills()([]string)
+    GetSponsors()([]DirectoryObjectable)
     GetState()(*string)
     GetStreetAddress()(*string)
     GetSurname()(*string)
@@ -5226,6 +5274,7 @@ type Userable interface {
     SetSignInActivity(value SignInActivityable)()
     SetSignInSessionsValidFromDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSkills(value []string)()
+    SetSponsors(value []DirectoryObjectable)()
     SetState(value *string)()
     SetStreetAddress(value *string)()
     SetSurname(value *string)()

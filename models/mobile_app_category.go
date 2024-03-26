@@ -83,12 +83,6 @@ func (m *MobileAppCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
-    {
-        err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetDisplayName sets the displayName property value. The name of the app category.

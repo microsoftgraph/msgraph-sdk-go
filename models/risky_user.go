@@ -164,7 +164,7 @@ func (m *RiskyUser) GetIsDeleted()(*bool) {
     }
     return nil
 }
-// GetIsProcessing gets the isProcessing property value. Indicates whether a user's risky state is being processed by the backend. Supports $filter (eq).
+// GetIsProcessing gets the isProcessing property value. Indicates whether the backend is processing a user's risky state.
 // returns a *bool when successful
 func (m *RiskyUser) GetIsProcessing()(*bool) {
     val, err := m.GetBackingStore().Get("isProcessing")
@@ -176,7 +176,7 @@ func (m *RiskyUser) GetIsProcessing()(*bool) {
     }
     return nil
 }
-// GetRiskDetail gets the riskDetail property value. Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
+// GetRiskDetail gets the riskDetail property value. The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection, userChangedPasswordOnPremises, adminDismissedRiskForSignIn, adminConfirmedAccountSafe. You must use the Prefer: include-unknown-enum-members request header to get the following value or values in this evolvable enum: adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection, userChangedPasswordOnPremises, adminDismissedRiskForSignIn, adminConfirmedAccountSafe.
 // returns a *RiskDetail when successful
 func (m *RiskyUser) GetRiskDetail()(*RiskDetail) {
     val, err := m.GetBackingStore().Get("riskDetail")
@@ -188,7 +188,7 @@ func (m *RiskyUser) GetRiskDetail()(*RiskDetail) {
     }
     return nil
 }
-// GetRiskLastUpdatedDateTime gets the riskLastUpdatedDateTime property value. The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, gt, lt).
+// GetRiskLastUpdatedDateTime gets the riskLastUpdatedDateTime property value. The date and time that the risky user was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *RiskyUser) GetRiskLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("riskLastUpdatedDateTime")
@@ -200,7 +200,7 @@ func (m *RiskyUser) GetRiskLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad9
     }
     return nil
 }
-// GetRiskLevel gets the riskLevel property value. Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Supports $filter (eq).
+// GetRiskLevel gets the riskLevel property value. Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
 // returns a *RiskLevel when successful
 func (m *RiskyUser) GetRiskLevel()(*RiskLevel) {
     val, err := m.GetBackingStore().Get("riskLevel")
@@ -212,7 +212,7 @@ func (m *RiskyUser) GetRiskLevel()(*RiskLevel) {
     }
     return nil
 }
-// GetRiskState gets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue. Supports $filter (eq).
+// GetRiskState gets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
 // returns a *RiskState when successful
 func (m *RiskyUser) GetRiskState()(*RiskState) {
     val, err := m.GetBackingStore().Get("riskState")
@@ -333,35 +333,35 @@ func (m *RiskyUser) SetIsDeleted(value *bool)() {
         panic(err)
     }
 }
-// SetIsProcessing sets the isProcessing property value. Indicates whether a user's risky state is being processed by the backend. Supports $filter (eq).
+// SetIsProcessing sets the isProcessing property value. Indicates whether the backend is processing a user's risky state.
 func (m *RiskyUser) SetIsProcessing(value *bool)() {
     err := m.GetBackingStore().Set("isProcessing", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRiskDetail sets the riskDetail property value. Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
+// SetRiskDetail sets the riskDetail property value. The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection, userChangedPasswordOnPremises, adminDismissedRiskForSignIn, adminConfirmedAccountSafe. You must use the Prefer: include-unknown-enum-members request header to get the following value or values in this evolvable enum: adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection, userChangedPasswordOnPremises, adminDismissedRiskForSignIn, adminConfirmedAccountSafe.
 func (m *RiskyUser) SetRiskDetail(value *RiskDetail)() {
     err := m.GetBackingStore().Set("riskDetail", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRiskLastUpdatedDateTime sets the riskLastUpdatedDateTime property value. The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, gt, lt).
+// SetRiskLastUpdatedDateTime sets the riskLastUpdatedDateTime property value. The date and time that the risky user was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *RiskyUser) SetRiskLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("riskLastUpdatedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRiskLevel sets the riskLevel property value. Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Supports $filter (eq).
+// SetRiskLevel sets the riskLevel property value. Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
 func (m *RiskyUser) SetRiskLevel(value *RiskLevel)() {
     err := m.GetBackingStore().Set("riskLevel", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRiskState sets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue. Supports $filter (eq).
+// SetRiskState sets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
 func (m *RiskyUser) SetRiskState(value *RiskState)() {
     err := m.GetBackingStore().Set("riskState", value)
     if err != nil {

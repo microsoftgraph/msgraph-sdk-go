@@ -33,6 +33,18 @@ func (m *Alert) GetActorDisplayName()(*string) {
     }
     return nil
 }
+// GetAdditionalDataProperty gets the additionalData property value. A collection of other alert properties, including user-defined properties. Any custom details defined in the alert, and any dynamic content in the alert details, are stored here.
+// returns a Dictionaryable when successful
+func (m *Alert) GetAdditionalDataProperty()(Dictionaryable) {
+    val, err := m.GetBackingStore().Get("additionalDataProperty")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Dictionaryable)
+    }
+    return nil
+}
 // GetAlertPolicyId gets the alertPolicyId property value. The ID of the policy that generated the alert, and populated when there is a specific policy that generated the alert, whether configured by a customer or a built-in policy.
 // returns a *string when successful
 func (m *Alert) GetAlertPolicyId()(*string) {
@@ -188,6 +200,16 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         if val != nil {
             m.SetActorDisplayName(val)
+        }
+        return nil
+    }
+    res["additionalData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDictionaryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAdditionalDataProperty(val.(Dictionaryable))
         }
         return nil
     }
@@ -746,6 +768,12 @@ func (m *Alert) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     {
+        err = writer.WriteObjectValue("additionalData", m.GetAdditionalDataProperty())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("alertPolicyId", m.GetAlertPolicyId())
         if err != nil {
             return err
@@ -948,6 +976,13 @@ func (m *Alert) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 // SetActorDisplayName sets the actorDisplayName property value. The adversary or activity group that is associated with this alert.
 func (m *Alert) SetActorDisplayName(value *string)() {
     err := m.GetBackingStore().Set("actorDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAdditionalDataProperty sets the additionalData property value. A collection of other alert properties, including user-defined properties. Any custom details defined in the alert, and any dynamic content in the alert details, are stored here.
+func (m *Alert) SetAdditionalDataProperty(value Dictionaryable)() {
+    err := m.GetBackingStore().Set("additionalDataProperty", value)
     if err != nil {
         panic(err)
     }
@@ -1166,6 +1201,7 @@ type Alertable interface {
     iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetActorDisplayName()(*string)
+    GetAdditionalDataProperty()(Dictionaryable)
     GetAlertPolicyId()(*string)
     GetAlertWebUrl()(*string)
     GetAssignedTo()(*string)
@@ -1197,6 +1233,7 @@ type Alertable interface {
     GetThreatFamilyName()(*string)
     GetTitle()(*string)
     SetActorDisplayName(value *string)()
+    SetAdditionalDataProperty(value Dictionaryable)()
     SetAlertPolicyId(value *string)()
     SetAlertWebUrl(value *string)()
     SetAssignedTo(value *string)()

@@ -52,7 +52,7 @@ func (m *AggregationOption) GetBucketDefinition()(BucketAggregationDefinitionabl
     }
     return nil
 }
-// GetField gets the field property value. Computes aggregation on the field while the field exists in current entity type. Required.
+// GetField gets the field property value. Computes aggregation on the field while the field exists in the current entity type. Required.
 // returns a *string when successful
 func (m *AggregationOption) GetField()(*string) {
     val, err := m.GetBackingStore().Get("field")
@@ -122,7 +122,7 @@ func (m *AggregationOption) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSize gets the size property value. The number of searchBucket resources to be returned. This isn't required when the range is provided manually in the search request. Optional.
+// GetSize gets the size property value. The number of searchBucket resources to be returned. This isn't required when the range is provided manually in the search request. The minimum accepted size is 1, and the maximum is 65535. Optional.
 // returns a *int32 when successful
 func (m *AggregationOption) GetSize()(*int32) {
     val, err := m.GetBackingStore().Get("size")
@@ -186,7 +186,7 @@ func (m *AggregationOption) SetBucketDefinition(value BucketAggregationDefinitio
         panic(err)
     }
 }
-// SetField sets the field property value. Computes aggregation on the field while the field exists in current entity type. Required.
+// SetField sets the field property value. Computes aggregation on the field while the field exists in the current entity type. Required.
 func (m *AggregationOption) SetField(value *string)() {
     err := m.GetBackingStore().Set("field", value)
     if err != nil {
@@ -200,7 +200,7 @@ func (m *AggregationOption) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSize sets the size property value. The number of searchBucket resources to be returned. This isn't required when the range is provided manually in the search request. Optional.
+// SetSize sets the size property value. The number of searchBucket resources to be returned. This isn't required when the range is provided manually in the search request. The minimum accepted size is 1, and the maximum is 65535. Optional.
 func (m *AggregationOption) SetSize(value *int32)() {
     err := m.GetBackingStore().Set("size", value)
     if err != nil {

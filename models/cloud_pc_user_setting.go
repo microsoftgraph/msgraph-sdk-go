@@ -20,7 +20,7 @@ func NewCloudPcUserSetting()(*CloudPcUserSetting) {
 func CreateCloudPcUserSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcUserSetting(), nil
 }
-// GetAssignments gets the assignments property value. The assignments property
+// GetAssignments gets the assignments property value. Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSetting.
 // returns a []CloudPcUserSettingAssignmentable when successful
 func (m *CloudPcUserSetting) GetAssignments()([]CloudPcUserSettingAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
@@ -32,7 +32,7 @@ func (m *CloudPcUserSetting) GetAssignments()([]CloudPcUserSettingAssignmentable
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the setting was created. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *CloudPcUserSetting) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -44,7 +44,7 @@ func (m *CloudPcUserSetting) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The setting name displayed in the user interface.
 // returns a *string when successful
 func (m *CloudPcUserSetting) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -138,7 +138,7 @@ func (m *CloudPcUserSetting) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the setting was last modified. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *CloudPcUserSetting) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -150,7 +150,7 @@ func (m *CloudPcUserSetting) GetLastModifiedDateTime()(*i336074805fc853987abe6f7
     }
     return nil
 }
-// GetLocalAdminEnabled gets the localAdminEnabled property value. The localAdminEnabled property
+// GetLocalAdminEnabled gets the localAdminEnabled property value. Indicates whether the local admin option is enabled. The default value is false. To enable the local admin option, change the setting to true. If the local admin option is enabled, the end user can be an admin of the Cloud PC device.
 // returns a *bool when successful
 func (m *CloudPcUserSetting) GetLocalAdminEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("localAdminEnabled")
@@ -162,7 +162,7 @@ func (m *CloudPcUserSetting) GetLocalAdminEnabled()(*bool) {
     }
     return nil
 }
-// GetResetEnabled gets the resetEnabled property value. The resetEnabled property
+// GetResetEnabled gets the resetEnabled property value. Indicates whether an end user is allowed to reset their Cloud PC. When true, the user is allowed to reset their Cloud PC. When false, end-user initiated reset is not allowed. The default value is false.
 // returns a *bool when successful
 func (m *CloudPcUserSetting) GetResetEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("resetEnabled")
@@ -174,7 +174,7 @@ func (m *CloudPcUserSetting) GetResetEnabled()(*bool) {
     }
     return nil
 }
-// GetRestorePointSetting gets the restorePointSetting property value. The restorePointSetting property
+// GetRestorePointSetting gets the restorePointSetting property value. Defines how frequently a restore point is created that is, a snapshot is taken) for users' provisioned Cloud PCs (default is 12 hours), and whether the user is allowed to restore their own Cloud PCs to a backup made at a specific point in time.
 // returns a CloudPcRestorePointSettingable when successful
 func (m *CloudPcUserSetting) GetRestorePointSetting()(CloudPcRestorePointSettingable) {
     val, err := m.GetBackingStore().Get("restorePointSetting")
@@ -242,49 +242,49 @@ func (m *CloudPcUserSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetAssignments sets the assignments property value. The assignments property
+// SetAssignments sets the assignments property value. Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSetting.
 func (m *CloudPcUserSetting) SetAssignments(value []CloudPcUserSettingAssignmentable)() {
     err := m.GetBackingStore().Set("assignments", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the setting was created. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CloudPcUserSetting) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The setting name displayed in the user interface.
 func (m *CloudPcUserSetting) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the setting was last modified. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CloudPcUserSetting) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLocalAdminEnabled sets the localAdminEnabled property value. The localAdminEnabled property
+// SetLocalAdminEnabled sets the localAdminEnabled property value. Indicates whether the local admin option is enabled. The default value is false. To enable the local admin option, change the setting to true. If the local admin option is enabled, the end user can be an admin of the Cloud PC device.
 func (m *CloudPcUserSetting) SetLocalAdminEnabled(value *bool)() {
     err := m.GetBackingStore().Set("localAdminEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResetEnabled sets the resetEnabled property value. The resetEnabled property
+// SetResetEnabled sets the resetEnabled property value. Indicates whether an end user is allowed to reset their Cloud PC. When true, the user is allowed to reset their Cloud PC. When false, end-user initiated reset is not allowed. The default value is false.
 func (m *CloudPcUserSetting) SetResetEnabled(value *bool)() {
     err := m.GetBackingStore().Set("resetEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRestorePointSetting sets the restorePointSetting property value. The restorePointSetting property
+// SetRestorePointSetting sets the restorePointSetting property value. Defines how frequently a restore point is created that is, a snapshot is taken) for users' provisioned Cloud PCs (default is 12 hours), and whether the user is allowed to restore their own Cloud PCs to a backup made at a specific point in time.
 func (m *CloudPcUserSetting) SetRestorePointSetting(value CloudPcRestorePointSettingable)() {
     err := m.GetBackingStore().Set("restorePointSetting", value)
     if err != nil {

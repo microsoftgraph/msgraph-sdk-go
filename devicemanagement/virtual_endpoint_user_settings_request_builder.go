@@ -11,7 +11,7 @@ import (
 type VirtualEndpointUserSettingsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointUserSettingsRequestBuilderGetQueryParameters get userSettings from deviceManagement
+// VirtualEndpointUserSettingsRequestBuilderGetQueryParameters get a list of cloudPcUserSetting objects and their properties.
 type VirtualEndpointUserSettingsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewVirtualEndpointUserSettingsRequestBuilder(rawUrl string, requestAdapter 
 func (m *VirtualEndpointUserSettingsRequestBuilder) Count()(*VirtualEndpointUserSettingsCountRequestBuilder) {
     return NewVirtualEndpointUserSettingsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get userSettings from deviceManagement
+// Get get a list of cloudPcUserSetting objects and their properties.
 // returns a CloudPcUserSettingCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-list-usersettings?view=graph-rest-1.0
 func (m *VirtualEndpointUserSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointUserSettingsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudPcUserSettingCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *VirtualEndpointUserSettingsRequestBuilder) Get(ctx context.Context, req
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudPcUserSettingCollectionResponseable), nil
 }
-// Post create new navigation property to userSettings for deviceManagement
+// Post create a new cloudPcUserSetting object.
 // returns a CloudPcUserSettingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-post-usersettings?view=graph-rest-1.0
 func (m *VirtualEndpointUserSettingsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudPcUserSettingable, requestConfiguration *VirtualEndpointUserSettingsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudPcUserSettingable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *VirtualEndpointUserSettingsRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudPcUserSettingable), nil
 }
-// ToGetRequestInformation get userSettings from deviceManagement
+// ToGetRequestInformation get a list of cloudPcUserSetting objects and their properties.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointUserSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointUserSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *VirtualEndpointUserSettingsRequestBuilder) ToGetRequestInformation(ctx 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to userSettings for deviceManagement
+// ToPostRequestInformation create a new cloudPcUserSetting object.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointUserSettingsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CloudPcUserSettingable, requestConfiguration *VirtualEndpointUserSettingsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/deviceManagement/virtualEndpoint/userSettings", m.BaseRequestBuilder.PathParameters)

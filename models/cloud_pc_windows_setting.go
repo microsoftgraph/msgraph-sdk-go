@@ -66,7 +66,7 @@ func (m *CloudPcWindowsSetting) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetLocale gets the locale property value. The locale property
+// GetLocale gets the locale property value. The Windows language or region tag to use for language pack configuration and localization of the Cloud PC. The default value is en-US, which corresponds to English (United States).
 // returns a *string when successful
 func (m *CloudPcWindowsSetting) GetLocale()(*string) {
     val, err := m.GetBackingStore().Get("locale")
@@ -123,7 +123,7 @@ func (m *CloudPcWindowsSetting) SetAdditionalData(value map[string]any)() {
 func (m *CloudPcWindowsSetting) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetLocale sets the locale property value. The locale property
+// SetLocale sets the locale property value. The Windows language or region tag to use for language pack configuration and localization of the Cloud PC. The default value is en-US, which corresponds to English (United States).
 func (m *CloudPcWindowsSetting) SetLocale(value *string)() {
     err := m.GetBackingStore().Set("locale", value)
     if err != nil {

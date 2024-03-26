@@ -40,7 +40,7 @@ func (m *CloudPcDomainJoinConfiguration) GetAdditionalData()(map[string]any) {
 func (m *CloudPcDomainJoinConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDomainJoinType gets the domainJoinType property value. The domainJoinType property
+// GetDomainJoinType gets the domainJoinType property value. Specifies the method by which the provisioned Cloud PC joins Microsoft Entra ID. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave the regionName property empty. If you choose the azureADJoin type, provide a value for either the onPremisesConnectionId or the regionName property. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
 // returns a *CloudPcDomainJoinType when successful
 func (m *CloudPcDomainJoinConfiguration) GetDomainJoinType()(*CloudPcDomainJoinType) {
     val, err := m.GetBackingStore().Get("domainJoinType")
@@ -120,7 +120,7 @@ func (m *CloudPcDomainJoinConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOnPremisesConnectionId gets the onPremisesConnectionId property value. The onPremisesConnectionId property
+// GetOnPremisesConnectionId gets the onPremisesConnectionId property value. The Azure network connection ID that matches the virtual network IT admins want the provisioning policy to use when they create Cloud PCs. You can use this property in both domain join types: Azure AD joined or Hybrid Microsoft Entra joined. If you enter an onPremisesConnectionId, leave the regionName property empty.
 // returns a *string when successful
 func (m *CloudPcDomainJoinConfiguration) GetOnPremisesConnectionId()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesConnectionId")
@@ -132,7 +132,7 @@ func (m *CloudPcDomainJoinConfiguration) GetOnPremisesConnectionId()(*string) {
     }
     return nil
 }
-// GetRegionGroup gets the regionGroup property value. The regionGroup property
+// GetRegionGroup gets the regionGroup property value. The logical geographic group this region belongs to. Multiple regions can belong to one region group. A customer can select a regionGroup when they provision a Cloud PC, and the Cloud PC is put in one of the regions in the group based on resource status. For example, the Europe region group contains the Northern Europe and Western Europe regions. Possible values are: default, australia, canada, usCentral, usEast, usWest, france, germany, europeUnion, unitedKingdom, japan, asia, india, southAmerica, euap, usGovernment, usGovernmentDOD, unknownFutureValue, norway, switzerland, southKorea. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: norway, switzerland, southKorea. Read-only.
 // returns a *CloudPcRegionGroup when successful
 func (m *CloudPcDomainJoinConfiguration) GetRegionGroup()(*CloudPcRegionGroup) {
     val, err := m.GetBackingStore().Get("regionGroup")
@@ -144,7 +144,7 @@ func (m *CloudPcDomainJoinConfiguration) GetRegionGroup()(*CloudPcRegionGroup) {
     }
     return nil
 }
-// GetRegionName gets the regionName property value. The regionName property
+// GetRegionName gets the regionName property value. The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. Within this region, the Windows 365 service creates and manages the underlying virtual network. This option is available only when the IT admin selects Microsoft Entra joined as the domain join type. If you enter a regionName, leave the onPremisesConnectionId property empty.
 // returns a *string when successful
 func (m *CloudPcDomainJoinConfiguration) GetRegionName()(*string) {
     val, err := m.GetBackingStore().Get("regionName")
@@ -209,7 +209,7 @@ func (m *CloudPcDomainJoinConfiguration) SetAdditionalData(value map[string]any)
 func (m *CloudPcDomainJoinConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDomainJoinType sets the domainJoinType property value. The domainJoinType property
+// SetDomainJoinType sets the domainJoinType property value. Specifies the method by which the provisioned Cloud PC joins Microsoft Entra ID. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave the regionName property empty. If you choose the azureADJoin type, provide a value for either the onPremisesConnectionId or the regionName property. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
 func (m *CloudPcDomainJoinConfiguration) SetDomainJoinType(value *CloudPcDomainJoinType)() {
     err := m.GetBackingStore().Set("domainJoinType", value)
     if err != nil {
@@ -223,21 +223,21 @@ func (m *CloudPcDomainJoinConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOnPremisesConnectionId sets the onPremisesConnectionId property value. The onPremisesConnectionId property
+// SetOnPremisesConnectionId sets the onPremisesConnectionId property value. The Azure network connection ID that matches the virtual network IT admins want the provisioning policy to use when they create Cloud PCs. You can use this property in both domain join types: Azure AD joined or Hybrid Microsoft Entra joined. If you enter an onPremisesConnectionId, leave the regionName property empty.
 func (m *CloudPcDomainJoinConfiguration) SetOnPremisesConnectionId(value *string)() {
     err := m.GetBackingStore().Set("onPremisesConnectionId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRegionGroup sets the regionGroup property value. The regionGroup property
+// SetRegionGroup sets the regionGroup property value. The logical geographic group this region belongs to. Multiple regions can belong to one region group. A customer can select a regionGroup when they provision a Cloud PC, and the Cloud PC is put in one of the regions in the group based on resource status. For example, the Europe region group contains the Northern Europe and Western Europe regions. Possible values are: default, australia, canada, usCentral, usEast, usWest, france, germany, europeUnion, unitedKingdom, japan, asia, india, southAmerica, euap, usGovernment, usGovernmentDOD, unknownFutureValue, norway, switzerland, southKorea. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: norway, switzerland, southKorea. Read-only.
 func (m *CloudPcDomainJoinConfiguration) SetRegionGroup(value *CloudPcRegionGroup)() {
     err := m.GetBackingStore().Set("regionGroup", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRegionName sets the regionName property value. The regionName property
+// SetRegionName sets the regionName property value. The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. Within this region, the Windows 365 service creates and manages the underlying virtual network. This option is available only when the IT admin selects Microsoft Entra joined as the domain join type. If you enter a regionName, leave the onPremisesConnectionId property empty.
 func (m *CloudPcDomainJoinConfiguration) SetRegionName(value *string)() {
     err := m.GetBackingStore().Set("regionName", value)
     if err != nil {

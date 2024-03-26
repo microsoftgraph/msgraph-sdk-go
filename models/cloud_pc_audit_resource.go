@@ -40,7 +40,7 @@ func (m *CloudPcAuditResource) GetAdditionalData()(map[string]any) {
 func (m *CloudPcAuditResource) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the modified resource entity.
 // returns a *string when successful
 func (m *CloudPcAuditResource) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -104,7 +104,7 @@ func (m *CloudPcAuditResource) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetModifiedProperties gets the modifiedProperties property value. The modifiedProperties property
+// GetModifiedProperties gets the modifiedProperties property value. The list of modified properties.
 // returns a []CloudPcAuditPropertyable when successful
 func (m *CloudPcAuditResource) GetModifiedProperties()([]CloudPcAuditPropertyable) {
     val, err := m.GetBackingStore().Get("modifiedProperties")
@@ -128,7 +128,7 @@ func (m *CloudPcAuditResource) GetOdataType()(*string) {
     }
     return nil
 }
-// GetResourceId gets the resourceId property value. The resourceId property
+// GetResourceId gets the resourceId property value. The unique identifier of the modified resource entity.
 // returns a *string when successful
 func (m *CloudPcAuditResource) GetResourceId()(*string) {
     val, err := m.GetBackingStore().Get("resourceId")
@@ -191,14 +191,14 @@ func (m *CloudPcAuditResource) SetAdditionalData(value map[string]any)() {
 func (m *CloudPcAuditResource) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the modified resource entity.
 func (m *CloudPcAuditResource) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetModifiedProperties sets the modifiedProperties property value. The modifiedProperties property
+// SetModifiedProperties sets the modifiedProperties property value. The list of modified properties.
 func (m *CloudPcAuditResource) SetModifiedProperties(value []CloudPcAuditPropertyable)() {
     err := m.GetBackingStore().Set("modifiedProperties", value)
     if err != nil {
@@ -212,7 +212,7 @@ func (m *CloudPcAuditResource) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetResourceId sets the resourceId property value. The resourceId property
+// SetResourceId sets the resourceId property value. The unique identifier of the modified resource entity.
 func (m *CloudPcAuditResource) SetResourceId(value *string)() {
     err := m.GetBackingStore().Set("resourceId", value)
     if err != nil {

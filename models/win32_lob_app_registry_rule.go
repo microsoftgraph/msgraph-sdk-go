@@ -124,7 +124,7 @@ func (m *Win32LobAppRegistryRule) GetKeyPath()(*string) {
     }
     return nil
 }
-// GetOperationType gets the operationType property value. Contains all supported registry data detection type.
+// GetOperationType gets the operationType property value. A list of possible operations for rules used to make determinations about an application based on registry keys or values. Unless noted, the values can be used with either detection or requirement rules.
 // returns a *Win32LobAppRegistryRuleOperationType when successful
 func (m *Win32LobAppRegistryRule) GetOperationType()(*Win32LobAppRegistryRuleOperationType) {
     val, err := m.GetBackingStore().Get("operationType")
@@ -227,7 +227,7 @@ func (m *Win32LobAppRegistryRule) SetKeyPath(value *string)() {
         panic(err)
     }
 }
-// SetOperationType sets the operationType property value. Contains all supported registry data detection type.
+// SetOperationType sets the operationType property value. A list of possible operations for rules used to make determinations about an application based on registry keys or values. Unless noted, the values can be used with either detection or requirement rules.
 func (m *Win32LobAppRegistryRule) SetOperationType(value *Win32LobAppRegistryRuleOperationType)() {
     err := m.GetBackingStore().Set("operationType", value)
     if err != nil {

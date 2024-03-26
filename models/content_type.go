@@ -19,7 +19,7 @@ func NewContentType()(*ContentType) {
 func CreateContentTypeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewContentType(), nil
 }
-// GetAssociatedHubsUrls gets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+// GetAssociatedHubsUrls gets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type is applied to the lists in the enforced sites.
 // returns a []string when successful
 func (m *ContentType) GetAssociatedHubsUrls()([]string) {
     val, err := m.GetBackingStore().Get("associatedHubsUrls")
@@ -79,7 +79,7 @@ func (m *ContentType) GetColumnPositions()([]ColumnDefinitionable) {
     }
     return nil
 }
-// GetColumns gets the columns property value. The collection of column definitions for this contentType.
+// GetColumns gets the columns property value. The collection of column definitions for this content type.
 // returns a []ColumnDefinitionable when successful
 func (m *ContentType) GetColumns()([]ColumnDefinitionable) {
     val, err := m.GetBackingStore().Get("columns")
@@ -437,7 +437,7 @@ func (m *ContentType) GetParentId()(*string) {
     }
     return nil
 }
-// GetPropagateChanges gets the propagateChanges property value. If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
+// GetPropagateChanges gets the propagateChanges property value. If true, any changes made to the content type are pushed to inherited content types and lists that implement the content type.
 // returns a *bool when successful
 func (m *ContentType) GetPropagateChanges()(*bool) {
     val, err := m.GetBackingStore().Get("propagateChanges")
@@ -619,7 +619,7 @@ func (m *ContentType) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetAssociatedHubsUrls sets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+// SetAssociatedHubsUrls sets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type is applied to the lists in the enforced sites.
 func (m *ContentType) SetAssociatedHubsUrls(value []string)() {
     err := m.GetBackingStore().Set("associatedHubsUrls", value)
     if err != nil {
@@ -654,7 +654,7 @@ func (m *ContentType) SetColumnPositions(value []ColumnDefinitionable)() {
         panic(err)
     }
 }
-// SetColumns sets the columns property value. The collection of column definitions for this contentType.
+// SetColumns sets the columns property value. The collection of column definitions for this content type.
 func (m *ContentType) SetColumns(value []ColumnDefinitionable)() {
     err := m.GetBackingStore().Set("columns", value)
     if err != nil {
@@ -731,7 +731,7 @@ func (m *ContentType) SetParentId(value *string)() {
         panic(err)
     }
 }
-// SetPropagateChanges sets the propagateChanges property value. If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
+// SetPropagateChanges sets the propagateChanges property value. If true, any changes made to the content type are pushed to inherited content types and lists that implement the content type.
 func (m *ContentType) SetPropagateChanges(value *bool)() {
     err := m.GetBackingStore().Set("propagateChanges", value)
     if err != nil {

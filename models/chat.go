@@ -248,7 +248,7 @@ func (m *Chat) GetInstalledApps()([]TeamsAppInstallationable) {
     }
     return nil
 }
-// GetLastMessagePreview gets the lastMessagePreview property value. Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
+// GetLastMessagePreview gets the lastMessagePreview property value. Preview of the last message sent in the chat. Null if no messages were sent in the chat. Currently, only the list chats operation supports this property.
 // returns a ChatMessageInfoable when successful
 func (m *Chat) GetLastMessagePreview()(ChatMessageInfoable) {
     val, err := m.GetBackingStore().Get("lastMessagePreview")
@@ -260,7 +260,7 @@ func (m *Chat) GetLastMessagePreview()(ChatMessageInfoable) {
     }
     return nil
 }
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Date and time at which the chat was renamed or list of members were last changed. Read-only.
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Date and time at which the chat was renamed or the list of members was last changed. Read-only.
 // returns a *Time when successful
 func (m *Chat) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
@@ -368,7 +368,7 @@ func (m *Chat) GetTopic()(*string) {
     }
     return nil
 }
-// GetViewpoint gets the viewpoint property value. Represents caller-specific information about the chat, such as last message read date and time. This property is populated only when the request is made in a delegated context.
+// GetViewpoint gets the viewpoint property value. Represents caller-specific information about the chat, such as the last message read date and time. This property is populated only when the request is made in a delegated context.
 // returns a ChatViewpointable when successful
 func (m *Chat) GetViewpoint()(ChatViewpointable) {
     val, err := m.GetBackingStore().Get("viewpoint")
@@ -548,14 +548,14 @@ func (m *Chat) SetInstalledApps(value []TeamsAppInstallationable)() {
         panic(err)
     }
 }
-// SetLastMessagePreview sets the lastMessagePreview property value. Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
+// SetLastMessagePreview sets the lastMessagePreview property value. Preview of the last message sent in the chat. Null if no messages were sent in the chat. Currently, only the list chats operation supports this property.
 func (m *Chat) SetLastMessagePreview(value ChatMessageInfoable)() {
     err := m.GetBackingStore().Set("lastMessagePreview", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Date and time at which the chat was renamed or list of members were last changed. Read-only.
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Date and time at which the chat was renamed or the list of members was last changed. Read-only.
 func (m *Chat) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
     if err != nil {
@@ -618,7 +618,7 @@ func (m *Chat) SetTopic(value *string)() {
         panic(err)
     }
 }
-// SetViewpoint sets the viewpoint property value. Represents caller-specific information about the chat, such as last message read date and time. This property is populated only when the request is made in a delegated context.
+// SetViewpoint sets the viewpoint property value. Represents caller-specific information about the chat, such as the last message read date and time. This property is populated only when the request is made in a delegated context.
 func (m *Chat) SetViewpoint(value ChatViewpointable)() {
     err := m.GetBackingStore().Set("viewpoint", value)
     if err != nil {

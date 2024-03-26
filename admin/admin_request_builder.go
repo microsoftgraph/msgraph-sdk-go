@@ -72,6 +72,11 @@ func (m *AdminRequestBuilder) Get(ctx context.Context, requestConfiguration *Adm
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Adminable), nil
 }
+// Microsoft365Apps provides operations to manage the microsoft365Apps property of the microsoft.graph.admin entity.
+// returns a *Microsoft365AppsRequestBuilder when successful
+func (m *AdminRequestBuilder) Microsoft365Apps()(*Microsoft365AppsRequestBuilder) {
+    return NewMicrosoft365AppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update admin
 // returns a Adminable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

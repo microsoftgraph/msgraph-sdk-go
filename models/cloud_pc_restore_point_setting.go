@@ -76,7 +76,7 @@ func (m *CloudPcRestorePointSetting) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetFrequencyType gets the frequencyType property value. The frequencyType property
+// GetFrequencyType gets the frequencyType property value. The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are: default, fourHours, sixHours, twelveHours, sixteenHours, twentyFourHours, unknownFutureValue. The default value is default that indicates that the time interval for automatic capturing of restore point snapshots is set to 12 hours.
 // returns a *CloudPcRestorePointFrequencyType when successful
 func (m *CloudPcRestorePointSetting) GetFrequencyType()(*CloudPcRestorePointFrequencyType) {
     val, err := m.GetBackingStore().Get("frequencyType")
@@ -100,7 +100,7 @@ func (m *CloudPcRestorePointSetting) GetOdataType()(*string) {
     }
     return nil
 }
-// GetUserRestoreEnabled gets the userRestoreEnabled property value. The userRestoreEnabled property
+// GetUserRestoreEnabled gets the userRestoreEnabled property value. If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users can't use snapshots to restore the Cloud PC.
 // returns a *bool when successful
 func (m *CloudPcRestorePointSetting) GetUserRestoreEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("userRestoreEnabled")
@@ -152,7 +152,7 @@ func (m *CloudPcRestorePointSetting) SetAdditionalData(value map[string]any)() {
 func (m *CloudPcRestorePointSetting) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetFrequencyType sets the frequencyType property value. The frequencyType property
+// SetFrequencyType sets the frequencyType property value. The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are: default, fourHours, sixHours, twelveHours, sixteenHours, twentyFourHours, unknownFutureValue. The default value is default that indicates that the time interval for automatic capturing of restore point snapshots is set to 12 hours.
 func (m *CloudPcRestorePointSetting) SetFrequencyType(value *CloudPcRestorePointFrequencyType)() {
     err := m.GetBackingStore().Set("frequencyType", value)
     if err != nil {
@@ -166,7 +166,7 @@ func (m *CloudPcRestorePointSetting) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetUserRestoreEnabled sets the userRestoreEnabled property value. The userRestoreEnabled property
+// SetUserRestoreEnabled sets the userRestoreEnabled property value. If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users can't use snapshots to restore the Cloud PC.
 func (m *CloudPcRestorePointSetting) SetUserRestoreEnabled(value *bool)() {
     err := m.GetBackingStore().Set("userRestoreEnabled", value)
     if err != nil {

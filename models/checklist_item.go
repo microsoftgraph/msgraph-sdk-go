@@ -44,7 +44,7 @@ func (m *ChecklistItem) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. Field indicating the title of checklistItem.
+// GetDisplayName gets the displayName property value. Indicates the title of the checklistItem.
 // returns a *string when successful
 func (m *ChecklistItem) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -102,7 +102,7 @@ func (m *ChecklistItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetIsChecked gets the isChecked property value. State indicating whether the item is checked off or not.
+// GetIsChecked gets the isChecked property value. State that indicates whether the item is checked off or not.
 // returns a *bool when successful
 func (m *ChecklistItem) GetIsChecked()(*bool) {
     val, err := m.GetBackingStore().Get("isChecked")
@@ -160,14 +160,14 @@ func (m *ChecklistItem) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad9
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. Field indicating the title of checklistItem.
+// SetDisplayName sets the displayName property value. Indicates the title of the checklistItem.
 func (m *ChecklistItem) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsChecked sets the isChecked property value. State indicating whether the item is checked off or not.
+// SetIsChecked sets the isChecked property value. State that indicates whether the item is checked off or not.
 func (m *ChecklistItem) SetIsChecked(value *bool)() {
     err := m.GetBackingStore().Set("isChecked", value)
     if err != nil {

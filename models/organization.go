@@ -46,7 +46,7 @@ func (m *Organization) GetBranding()(OrganizationalBrandingable) {
     }
     return nil
 }
-// GetBusinessPhones gets the businessPhones property value. Telephone number for the organization. Although this is a string collection, only one number can be set for this property.
+// GetBusinessPhones gets the businessPhones property value. Telephone number for the organization. Although this property is a string collection, only one number can be set.
 // returns a []string when successful
 func (m *Organization) GetBusinessPhones()([]string) {
     val, err := m.GetBackingStore().Get("businessPhones")
@@ -82,7 +82,7 @@ func (m *Organization) GetCity()(*string) {
     }
     return nil
 }
-// GetCountry gets the country property value. Country/region name of the address for the organization.
+// GetCountry gets the country property value. Country or region name of the address for the organization.
 // returns a *string when successful
 func (m *Organization) GetCountry()(*string) {
     val, err := m.GetBackingStore().Get("country")
@@ -106,7 +106,7 @@ func (m *Organization) GetCountryLetterCode()(*string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// GetCreatedDateTime gets the createdDateTime property value. Timestamp of when the organization was created. The value can't be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 // returns a *Time when successful
 func (m *Organization) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -526,7 +526,7 @@ func (m *Organization) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7
     }
     return nil
 }
-// GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
+// GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object isn't synced from on-premises active directory (default).
 // returns a *bool when successful
 func (m *Organization) GetOnPremisesSyncEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("onPremisesSyncEnabled")
@@ -658,7 +658,7 @@ func (m *Organization) GetTechnicalNotificationMails()([]string) {
     }
     return nil
 }
-// GetTenantType gets the tenantType property value. Not nullable. The tenant type option that was selected when the tenant was created. The possible values are:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C A customer identity access management (CIAM) service that serves business-to-consumer (B2C) scenarios.
+// GetTenantType gets the tenantType property value. Not nullable. Can be one of the following types:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C An identity access management (IAM) service that serves business-to-consumer (B2C) scenarios.   CIAM - A customer identity & access management (CIAM) solution that provides an integrated platform to serve consumers, partners, and citizen scenarios.
 // returns a *string when successful
 func (m *Organization) GetTenantType()(*string) {
     val, err := m.GetBackingStore().Get("tenantType")
@@ -898,7 +898,7 @@ func (m *Organization) SetBranding(value OrganizationalBrandingable)() {
         panic(err)
     }
 }
-// SetBusinessPhones sets the businessPhones property value. Telephone number for the organization. Although this is a string collection, only one number can be set for this property.
+// SetBusinessPhones sets the businessPhones property value. Telephone number for the organization. Although this property is a string collection, only one number can be set.
 func (m *Organization) SetBusinessPhones(value []string)() {
     err := m.GetBackingStore().Set("businessPhones", value)
     if err != nil {
@@ -919,7 +919,7 @@ func (m *Organization) SetCity(value *string)() {
         panic(err)
     }
 }
-// SetCountry sets the country property value. Country/region name of the address for the organization.
+// SetCountry sets the country property value. Country or region name of the address for the organization.
 func (m *Organization) SetCountry(value *string)() {
     err := m.GetBackingStore().Set("country", value)
     if err != nil {
@@ -933,7 +933,7 @@ func (m *Organization) SetCountryLetterCode(value *string)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// SetCreatedDateTime sets the createdDateTime property value. Timestamp of when the organization was created. The value can't be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *Organization) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
@@ -982,7 +982,7 @@ func (m *Organization) SetOnPremisesLastSyncDateTime(value *i336074805fc853987ab
         panic(err)
     }
 }
-// SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
+// SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object isn't synced from on-premises active directory (default).
 func (m *Organization) SetOnPremisesSyncEnabled(value *bool)() {
     err := m.GetBackingStore().Set("onPremisesSyncEnabled", value)
     if err != nil {
@@ -1059,7 +1059,7 @@ func (m *Organization) SetTechnicalNotificationMails(value []string)() {
         panic(err)
     }
 }
-// SetTenantType sets the tenantType property value. Not nullable. The tenant type option that was selected when the tenant was created. The possible values are:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C A customer identity access management (CIAM) service that serves business-to-consumer (B2C) scenarios.
+// SetTenantType sets the tenantType property value. Not nullable. Can be one of the following types:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C An identity access management (IAM) service that serves business-to-consumer (B2C) scenarios.   CIAM - A customer identity & access management (CIAM) solution that provides an integrated platform to serve consumers, partners, and citizen scenarios.
 func (m *Organization) SetTenantType(value *string)() {
     err := m.GetBackingStore().Set("tenantType", value)
     if err != nil {

@@ -32,7 +32,7 @@ func (m *SignIn) GetAppDisplayName()(*string) {
     }
     return nil
 }
-// GetAppId gets the appId property value. Unique GUID representing the app ID in the Microsoft Entra ID.  Supports $filter (eq).
+// GetAppId gets the appId property value. Unique GUID that represents the app ID in the Microsoft Entra ID.  Supports $filter (eq).
 // returns a *string when successful
 func (m *SignIn) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
@@ -44,7 +44,7 @@ func (m *SignIn) GetAppId()(*string) {
     }
     return nil
 }
-// GetAppliedConditionalAccessPolicies gets the appliedConditionalAccessPolicies property value. Provides a list of conditional access policies that are triggered by the corresponding sign-in activity. Apps need additional Conditional Access-related privileges to read the details of this property. For more information, see Viewing applied conditional access (CA) policies in sign-ins.
+// GetAppliedConditionalAccessPolicies gets the appliedConditionalAccessPolicies property value. Provides a list of conditional access policies that the corresponding sign-in activity triggers. Apps need more Conditional Access-related privileges to read the details of this property. For more information, see Viewing applied conditional access (CA) policies in sign-ins.
 // returns a []AppliedConditionalAccessPolicyable when successful
 func (m *SignIn) GetAppliedConditionalAccessPolicies()([]AppliedConditionalAccessPolicyable) {
     val, err := m.GetBackingStore().Get("appliedConditionalAccessPolicies")
@@ -80,7 +80,7 @@ func (m *SignIn) GetConditionalAccessStatus()(*ConditionalAccessStatus) {
     }
     return nil
 }
-// GetCorrelationId gets the correlationId property value. The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity.  Supports $filter (eq).
+// GetCorrelationId gets the correlationId property value. The request ID sent from the client when the sign-in is initiated. Used to troubleshoot sign-in activity.  Supports $filter (eq).
 // returns a *string when successful
 func (m *SignIn) GetCorrelationId()(*string) {
     val, err := m.GetBackingStore().Get("correlationId")
@@ -382,7 +382,7 @@ func (m *SignIn) GetIpAddress()(*string) {
     }
     return nil
 }
-// GetIsInteractive gets the isInteractive property value. Indicates if a sign-in is interactive or not.
+// GetIsInteractive gets the isInteractive property value. Indicates whether a sign-in is interactive.
 // returns a *bool when successful
 func (m *SignIn) GetIsInteractive()(*bool) {
     val, err := m.GetBackingStore().Get("isInteractive")
@@ -430,7 +430,7 @@ func (m *SignIn) GetResourceId()(*string) {
     }
     return nil
 }
-// GetRiskDetail gets the riskDetail property value. Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq).Note: Details for this property require a Microsoft Entra ID P2 license. Other licenses return the value hidden.
+// GetRiskDetail gets the riskDetail property value. The reason behind a specific state of a risky user, sign-in, or a risk event. The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection, userChangedPasswordOnPremises, adminDismissedRiskForSignIn, adminConfirmedAccountSafe. You must use the Prefer: include-unknown-enum-members request header to get the following value or values in this evolvable enum: adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection, userChangedPasswordOnPremises, adminDismissedRiskForSignIn, adminConfirmedAccountSafe.The value none means that Microsoft Entra risk detection did not flag the user or the sign-in as a risky event so far.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
 // returns a *RiskDetail when successful
 func (m *SignIn) GetRiskDetail()(*RiskDetail) {
     val, err := m.GetBackingStore().Get("riskDetail")
@@ -442,7 +442,7 @@ func (m *SignIn) GetRiskDetail()(*RiskDetail) {
     }
     return nil
 }
-// GetRiskEventTypes gets the riskEventTypes property value. Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue.  Supports $filter (eq).
+// GetRiskEventTypes gets the riskEventTypes property value. The riskEventTypes property
 // returns a []RiskEventType when successful
 func (m *SignIn) GetRiskEventTypes()([]RiskEventType) {
     val, err := m.GetBackingStore().Get("riskEventTypes")
@@ -454,7 +454,7 @@ func (m *SignIn) GetRiskEventTypes()([]RiskEventType) {
     }
     return nil
 }
-// GetRiskEventTypesV2 gets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue.  Supports $filter (eq, startsWith).
+// GetRiskEventTypesV2 gets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic, or unknownFutureValue.  Supports $filter (eq, startsWith).
 // returns a []string when successful
 func (m *SignIn) GetRiskEventTypesV2()([]string) {
     val, err := m.GetBackingStore().Get("riskEventTypes_v2")
@@ -478,7 +478,7 @@ func (m *SignIn) GetRiskLevelAggregated()(*RiskLevel) {
     }
     return nil
 }
-// GetRiskLevelDuringSignIn gets the riskLevelDuringSignIn property value. Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports $filter (eq).  Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
+// GetRiskLevelDuringSignIn gets the riskLevelDuringSignIn property value. Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
 // returns a *RiskLevel when successful
 func (m *SignIn) GetRiskLevelDuringSignIn()(*RiskLevel) {
     val, err := m.GetBackingStore().Get("riskLevelDuringSignIn")
@@ -502,7 +502,7 @@ func (m *SignIn) GetRiskState()(*RiskState) {
     }
     return nil
 }
-// GetStatus gets the status property value. Sign-in status. Includes the error code and description of the error (if there's a sign-in failure).  Supports $filter (eq) on errorCode property.
+// GetStatus gets the status property value. Sign-in status. Includes the error code and description of the error (if a sign-in failure occurs).  Supports $filter (eq) on errorCode property.
 // returns a SignInStatusable when successful
 func (m *SignIn) GetStatus()(SignInStatusable) {
     val, err := m.GetBackingStore().Get("status")
@@ -714,14 +714,14 @@ func (m *SignIn) SetAppDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetAppId sets the appId property value. Unique GUID representing the app ID in the Microsoft Entra ID.  Supports $filter (eq).
+// SetAppId sets the appId property value. Unique GUID that represents the app ID in the Microsoft Entra ID.  Supports $filter (eq).
 func (m *SignIn) SetAppId(value *string)() {
     err := m.GetBackingStore().Set("appId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAppliedConditionalAccessPolicies sets the appliedConditionalAccessPolicies property value. Provides a list of conditional access policies that are triggered by the corresponding sign-in activity. Apps need additional Conditional Access-related privileges to read the details of this property. For more information, see Viewing applied conditional access (CA) policies in sign-ins.
+// SetAppliedConditionalAccessPolicies sets the appliedConditionalAccessPolicies property value. Provides a list of conditional access policies that the corresponding sign-in activity triggers. Apps need more Conditional Access-related privileges to read the details of this property. For more information, see Viewing applied conditional access (CA) policies in sign-ins.
 func (m *SignIn) SetAppliedConditionalAccessPolicies(value []AppliedConditionalAccessPolicyable)() {
     err := m.GetBackingStore().Set("appliedConditionalAccessPolicies", value)
     if err != nil {
@@ -742,7 +742,7 @@ func (m *SignIn) SetConditionalAccessStatus(value *ConditionalAccessStatus)() {
         panic(err)
     }
 }
-// SetCorrelationId sets the correlationId property value. The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity.  Supports $filter (eq).
+// SetCorrelationId sets the correlationId property value. The request ID sent from the client when the sign-in is initiated. Used to troubleshoot sign-in activity.  Supports $filter (eq).
 func (m *SignIn) SetCorrelationId(value *string)() {
     err := m.GetBackingStore().Set("correlationId", value)
     if err != nil {
@@ -770,7 +770,7 @@ func (m *SignIn) SetIpAddress(value *string)() {
         panic(err)
     }
 }
-// SetIsInteractive sets the isInteractive property value. Indicates if a sign-in is interactive or not.
+// SetIsInteractive sets the isInteractive property value. Indicates whether a sign-in is interactive.
 func (m *SignIn) SetIsInteractive(value *bool)() {
     err := m.GetBackingStore().Set("isInteractive", value)
     if err != nil {
@@ -798,21 +798,21 @@ func (m *SignIn) SetResourceId(value *string)() {
         panic(err)
     }
 }
-// SetRiskDetail sets the riskDetail property value. Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq).Note: Details for this property require a Microsoft Entra ID P2 license. Other licenses return the value hidden.
+// SetRiskDetail sets the riskDetail property value. The reason behind a specific state of a risky user, sign-in, or a risk event. The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection, userChangedPasswordOnPremises, adminDismissedRiskForSignIn, adminConfirmedAccountSafe. You must use the Prefer: include-unknown-enum-members request header to get the following value or values in this evolvable enum: adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection, userChangedPasswordOnPremises, adminDismissedRiskForSignIn, adminConfirmedAccountSafe.The value none means that Microsoft Entra risk detection did not flag the user or the sign-in as a risky event so far.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
 func (m *SignIn) SetRiskDetail(value *RiskDetail)() {
     err := m.GetBackingStore().Set("riskDetail", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRiskEventTypes sets the riskEventTypes property value. Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue.  Supports $filter (eq).
+// SetRiskEventTypes sets the riskEventTypes property value. The riskEventTypes property
 func (m *SignIn) SetRiskEventTypes(value []RiskEventType)() {
     err := m.GetBackingStore().Set("riskEventTypes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRiskEventTypesV2 sets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue.  Supports $filter (eq, startsWith).
+// SetRiskEventTypesV2 sets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic, or unknownFutureValue.  Supports $filter (eq, startsWith).
 func (m *SignIn) SetRiskEventTypesV2(value []string)() {
     err := m.GetBackingStore().Set("riskEventTypes_v2", value)
     if err != nil {
@@ -826,7 +826,7 @@ func (m *SignIn) SetRiskLevelAggregated(value *RiskLevel)() {
         panic(err)
     }
 }
-// SetRiskLevelDuringSignIn sets the riskLevelDuringSignIn property value. Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports $filter (eq).  Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
+// SetRiskLevelDuringSignIn sets the riskLevelDuringSignIn property value. Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
 func (m *SignIn) SetRiskLevelDuringSignIn(value *RiskLevel)() {
     err := m.GetBackingStore().Set("riskLevelDuringSignIn", value)
     if err != nil {
@@ -840,7 +840,7 @@ func (m *SignIn) SetRiskState(value *RiskState)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Sign-in status. Includes the error code and description of the error (if there's a sign-in failure).  Supports $filter (eq) on errorCode property.
+// SetStatus sets the status property value. Sign-in status. Includes the error code and description of the error (if a sign-in failure occurs).  Supports $filter (eq) on errorCode property.
 func (m *SignIn) SetStatus(value SignInStatusable)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

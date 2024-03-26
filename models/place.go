@@ -109,7 +109,7 @@ func (m *Place) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     }
     return res
 }
-// GetGeoCoordinates gets the geoCoordinates property value. Specifies the place location in latitude, longitude and (optionally) altitude coordinates.
+// GetGeoCoordinates gets the geoCoordinates property value. Specifies the place location in latitude, longitude, and (optionally) altitude coordinates.
 // returns a OutlookGeoCoordinatesable when successful
 func (m *Place) GetGeoCoordinates()(OutlookGeoCoordinatesable) {
     val, err := m.GetBackingStore().Get("geoCoordinates")
@@ -179,7 +179,7 @@ func (m *Place) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetGeoCoordinates sets the geoCoordinates property value. Specifies the place location in latitude, longitude and (optionally) altitude coordinates.
+// SetGeoCoordinates sets the geoCoordinates property value. Specifies the place location in latitude, longitude, and (optionally) altitude coordinates.
 func (m *Place) SetGeoCoordinates(value OutlookGeoCoordinatesable)() {
     err := m.GetBackingStore().Set("geoCoordinates", value)
     if err != nil {

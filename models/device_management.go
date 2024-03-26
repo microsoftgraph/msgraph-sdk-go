@@ -1667,7 +1667,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsWorkFromAnywhereModelPerfor
     }
     return nil
 }
-// GetVirtualEndpoint gets the virtualEndpoint property value. The virtualEndpoint property
+// GetVirtualEndpoint gets the virtualEndpoint property value. Virtual endpoint
 // returns a VirtualEndpointable when successful
 func (m *DeviceManagement) GetVirtualEndpoint()(VirtualEndpointable) {
     val, err := m.GetBackingStore().Get("virtualEndpoint")
@@ -2833,7 +2833,7 @@ func (m *DeviceManagement) SetUserExperienceAnalyticsWorkFromAnywhereModelPerfor
         panic(err)
     }
 }
-// SetVirtualEndpoint sets the virtualEndpoint property value. The virtualEndpoint property
+// SetVirtualEndpoint sets the virtualEndpoint property value. Virtual endpoint
 func (m *DeviceManagement) SetVirtualEndpoint(value VirtualEndpointable)() {
     err := m.GetBackingStore().Set("virtualEndpoint", value)
     if err != nil {

@@ -468,12 +468,6 @@ func (m *MobileApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
-        err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
             return err
@@ -505,12 +499,6 @@ func (m *MobileApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     {
         err = writer.WriteObjectValue("largeIcon", m.GetLargeIcon())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
         if err != nil {
             return err
         }

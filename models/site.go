@@ -21,7 +21,7 @@ func NewSite()(*Site) {
 func CreateSiteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSite(), nil
 }
-// GetAnalytics gets the analytics property value. Analytics about the view activities that took place in this site.
+// GetAnalytics gets the analytics property value. Analytics about the view activities that took place on this site.
 // returns a ItemAnalyticsable when successful
 func (m *Site) GetAnalytics()(ItemAnalyticsable) {
     val, err := m.GetBackingStore().Get("analytics")
@@ -457,7 +457,7 @@ func (m *Site) GetPermissions()([]Permissionable) {
     }
     return nil
 }
-// GetRoot gets the root property value. If present, indicates that this is the root site in the site collection. Read-only.
+// GetRoot gets the root property value. If present, provides the root site in the site collection. Read-only.
 // returns a Rootable when successful
 func (m *Site) GetRoot()(Rootable) {
     val, err := m.GetBackingStore().Get("root")
@@ -687,7 +687,7 @@ func (m *Site) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     return nil
 }
-// SetAnalytics sets the analytics property value. Analytics about the view activities that took place in this site.
+// SetAnalytics sets the analytics property value. Analytics about the view activities that took place on this site.
 func (m *Site) SetAnalytics(value ItemAnalyticsable)() {
     err := m.GetBackingStore().Set("analytics", value)
     if err != nil {
@@ -792,7 +792,7 @@ func (m *Site) SetPermissions(value []Permissionable)() {
         panic(err)
     }
 }
-// SetRoot sets the root property value. If present, indicates that this is the root site in the site collection. Read-only.
+// SetRoot sets the root property value. If present, provides the root site in the site collection. Read-only.
 func (m *Site) SetRoot(value Rootable)() {
     err := m.GetBackingStore().Set("root", value)
     if err != nil {

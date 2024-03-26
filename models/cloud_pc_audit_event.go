@@ -20,7 +20,7 @@ func NewCloudPcAuditEvent()(*CloudPcAuditEvent) {
 func CreateCloudPcAuditEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcAuditEvent(), nil
 }
-// GetActivity gets the activity property value. The activity property
+// GetActivity gets the activity property value. The friendly name of the audit activity.
 // returns a *string when successful
 func (m *CloudPcAuditEvent) GetActivity()(*string) {
     val, err := m.GetBackingStore().Get("activity")
@@ -32,7 +32,7 @@ func (m *CloudPcAuditEvent) GetActivity()(*string) {
     }
     return nil
 }
-// GetActivityDateTime gets the activityDateTime property value. The activityDateTime property
+// GetActivityDateTime gets the activityDateTime property value. The date time in UTC when the activity was performed. Read-only.
 // returns a *Time when successful
 func (m *CloudPcAuditEvent) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("activityDateTime")
@@ -68,7 +68,7 @@ func (m *CloudPcAuditEvent) GetActivityResult()(*CloudPcAuditActivityResult) {
     }
     return nil
 }
-// GetActivityType gets the activityType property value. The activityType property
+// GetActivityType gets the activityType property value. The type of activity that was performed. Read-only.
 // returns a *string when successful
 func (m *CloudPcAuditEvent) GetActivityType()(*string) {
     val, err := m.GetBackingStore().Get("activityType")
@@ -104,7 +104,7 @@ func (m *CloudPcAuditEvent) GetCategory()(*CloudPcAuditCategory) {
     }
     return nil
 }
-// GetComponentName gets the componentName property value. The componentName property
+// GetComponentName gets the componentName property value. The component name for the audit event. Read-only.
 // returns a *string when successful
 func (m *CloudPcAuditEvent) GetComponentName()(*string) {
     val, err := m.GetBackingStore().Get("componentName")
@@ -116,7 +116,7 @@ func (m *CloudPcAuditEvent) GetComponentName()(*string) {
     }
     return nil
 }
-// GetCorrelationId gets the correlationId property value. The correlationId property
+// GetCorrelationId gets the correlationId property value. The client request ID that is used to correlate activity within the system. Read-only.
 // returns a *string when successful
 func (m *CloudPcAuditEvent) GetCorrelationId()(*string) {
     val, err := m.GetBackingStore().Get("correlationId")
@@ -128,7 +128,7 @@ func (m *CloudPcAuditEvent) GetCorrelationId()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name for the audit event. Read-only.
 // returns a *string when successful
 func (m *CloudPcAuditEvent) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -262,7 +262,7 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetResources gets the resources property value. The resources property
+// GetResources gets the resources property value. The list of cloudPcAuditResource objects. Read-only.
 // returns a []CloudPcAuditResourceable when successful
 func (m *CloudPcAuditEvent) GetResources()([]CloudPcAuditResourceable) {
     val, err := m.GetBackingStore().Get("resources")
@@ -357,14 +357,14 @@ func (m *CloudPcAuditEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetActivity sets the activity property value. The activity property
+// SetActivity sets the activity property value. The friendly name of the audit activity.
 func (m *CloudPcAuditEvent) SetActivity(value *string)() {
     err := m.GetBackingStore().Set("activity", value)
     if err != nil {
         panic(err)
     }
 }
-// SetActivityDateTime sets the activityDateTime property value. The activityDateTime property
+// SetActivityDateTime sets the activityDateTime property value. The date time in UTC when the activity was performed. Read-only.
 func (m *CloudPcAuditEvent) SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("activityDateTime", value)
     if err != nil {
@@ -385,7 +385,7 @@ func (m *CloudPcAuditEvent) SetActivityResult(value *CloudPcAuditActivityResult)
         panic(err)
     }
 }
-// SetActivityType sets the activityType property value. The activityType property
+// SetActivityType sets the activityType property value. The type of activity that was performed. Read-only.
 func (m *CloudPcAuditEvent) SetActivityType(value *string)() {
     err := m.GetBackingStore().Set("activityType", value)
     if err != nil {
@@ -406,28 +406,28 @@ func (m *CloudPcAuditEvent) SetCategory(value *CloudPcAuditCategory)() {
         panic(err)
     }
 }
-// SetComponentName sets the componentName property value. The componentName property
+// SetComponentName sets the componentName property value. The component name for the audit event. Read-only.
 func (m *CloudPcAuditEvent) SetComponentName(value *string)() {
     err := m.GetBackingStore().Set("componentName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCorrelationId sets the correlationId property value. The correlationId property
+// SetCorrelationId sets the correlationId property value. The client request ID that is used to correlate activity within the system. Read-only.
 func (m *CloudPcAuditEvent) SetCorrelationId(value *string)() {
     err := m.GetBackingStore().Set("correlationId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name for the audit event. Read-only.
 func (m *CloudPcAuditEvent) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResources sets the resources property value. The resources property
+// SetResources sets the resources property value. The list of cloudPcAuditResource objects. Read-only.
 func (m *CloudPcAuditEvent) SetResources(value []CloudPcAuditResourceable)() {
     err := m.GetBackingStore().Set("resources", value)
     if err != nil {
