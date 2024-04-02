@@ -88,7 +88,7 @@ func (m *ItemMessagesRequestBuilder) Delta()(*ItemMessagesDeltaRequestBuilder) {
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0
 func (m *ItemMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMessagesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MessageCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -106,12 +106,12 @@ func (m *ItemMessagesRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.MessageCollectionResponseable), nil
 }
-// Post create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.
+// Post create a draft of a new message in either JSON or MIME format. When using JSON format, you can:- Include an attachment to the message.- Update the draft later to add content to the body or change other message properties. When using MIME format:- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.- /* Add any attachments and S/MIME properties to the MIME content. By default, this operation saves the draft in the Drafts folder. Send the draft message in a subsequent operation. Alternatively, send a new message in a single operation, or create a draft to forward, reply and reply-all to an existing message.
 // returns a Messageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-post-messages?view=graph-rest-1.0
 func (m *ItemMessagesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable, requestConfiguration *ItemMessagesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -143,7 +143,7 @@ func (m *ItemMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.
+// ToPostRequestInformation create a draft of a new message in either JSON or MIME format. When using JSON format, you can:- Include an attachment to the message.- Update the draft later to add content to the body or change other message properties. When using MIME format:- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.- /* Add any attachments and S/MIME properties to the MIME content. By default, this operation saves the draft in the Drafts folder. Send the draft message in a subsequent operation. Alternatively, send a new message in a single operation, or create a draft to forward, reply and reply-all to an existing message.
 // returns a *RequestInformation when successful
 func (m *ItemMessagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Messageable, requestConfiguration *ItemMessagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/users/{user%2Did}/messages", m.BaseRequestBuilder.PathParameters)

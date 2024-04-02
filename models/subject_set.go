@@ -52,6 +52,8 @@ func CreateSubjectSetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
                         return NewTargetApplicationOwners(), nil
                     case "#microsoft.graph.targetManager":
                         return NewTargetManager(), nil
+                    case "#microsoft.graph.targetUserSponsors":
+                        return NewTargetUserSponsors(), nil
                 }
             }
         }

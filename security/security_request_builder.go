@@ -92,6 +92,11 @@ func (m *SecurityRequestBuilder) Get(ctx context.Context, requestConfiguration *
 func (m *SecurityRequestBuilder) Incidents()(*IncidentsRequestBuilder) {
     return NewIncidentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Labels provides operations to manage the labels property of the microsoft.graph.security entity.
+// returns a *LabelsRequestBuilder when successful
+func (m *SecurityRequestBuilder) Labels()(*LabelsRequestBuilder) {
+    return NewLabelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // MicrosoftGraphSecurityRunHuntingQuery provides operations to call the runHuntingQuery method.
 // returns a *MicrosoftGraphSecurityRunHuntingQueryRequestBuilder when successful
 func (m *SecurityRequestBuilder) MicrosoftGraphSecurityRunHuntingQuery()(*MicrosoftGraphSecurityRunHuntingQueryRequestBuilder) {

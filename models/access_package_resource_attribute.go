@@ -66,6 +66,26 @@ func (m *AccessPackageResourceAttribute) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["isEditable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsEditable(val)
+        }
+        return nil
+    }
+    res["isPersistedOnAssignmentRemoval"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsPersistedOnAssignmentRemoval(val)
+        }
+        return nil
+    }
     res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -97,6 +117,30 @@ func (m *AccessPackageResourceAttribute) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetIsEditable gets the isEditable property value. The isEditable property
+// returns a *bool when successful
+func (m *AccessPackageResourceAttribute) GetIsEditable()(*bool) {
+    val, err := m.GetBackingStore().Get("isEditable")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsPersistedOnAssignmentRemoval gets the isPersistedOnAssignmentRemoval property value. The isPersistedOnAssignmentRemoval property
+// returns a *bool when successful
+func (m *AccessPackageResourceAttribute) GetIsPersistedOnAssignmentRemoval()(*bool) {
+    val, err := m.GetBackingStore().Get("isPersistedOnAssignmentRemoval")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetName gets the name property value. The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension2b676109c7c74ae2b41549205f1947edpersonalTitle.
 // returns a *string when successful
@@ -138,6 +182,18 @@ func (m *AccessPackageResourceAttribute) GetSource()(AccessPackageResourceAttrib
 func (m *AccessPackageResourceAttribute) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("destination", m.GetDestination())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("isEditable", m.GetIsEditable())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("isPersistedOnAssignmentRemoval", m.GetIsPersistedOnAssignmentRemoval())
         if err != nil {
             return err
         }
@@ -186,6 +242,20 @@ func (m *AccessPackageResourceAttribute) SetDestination(value AccessPackageResou
         panic(err)
     }
 }
+// SetIsEditable sets the isEditable property value. The isEditable property
+func (m *AccessPackageResourceAttribute) SetIsEditable(value *bool)() {
+    err := m.GetBackingStore().Set("isEditable", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsPersistedOnAssignmentRemoval sets the isPersistedOnAssignmentRemoval property value. The isPersistedOnAssignmentRemoval property
+func (m *AccessPackageResourceAttribute) SetIsPersistedOnAssignmentRemoval(value *bool)() {
+    err := m.GetBackingStore().Set("isPersistedOnAssignmentRemoval", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetName sets the name property value. The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension2b676109c7c74ae2b41549205f1947edpersonalTitle.
 func (m *AccessPackageResourceAttribute) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
@@ -213,11 +283,15 @@ type AccessPackageResourceAttributeable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDestination()(AccessPackageResourceAttributeDestinationable)
+    GetIsEditable()(*bool)
+    GetIsPersistedOnAssignmentRemoval()(*bool)
     GetName()(*string)
     GetOdataType()(*string)
     GetSource()(AccessPackageResourceAttributeSourceable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDestination(value AccessPackageResourceAttributeDestinationable)()
+    SetIsEditable(value *bool)()
+    SetIsPersistedOnAssignmentRemoval(value *bool)()
     SetName(value *string)()
     SetOdataType(value *string)()
     SetSource(value AccessPackageResourceAttributeSourceable)()

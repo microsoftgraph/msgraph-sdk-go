@@ -95,6 +95,11 @@ func (m *InvitationItemRequestBuilder) Get(ctx context.Context, requestConfigura
 func (m *InvitationItemRequestBuilder) InvitedUser()(*ItemInvitedUserRequestBuilder) {
     return NewItemInvitedUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// InvitedUserSponsors provides operations to manage the invitedUserSponsors property of the microsoft.graph.invitation entity.
+// returns a *ItemInvitedUserSponsorsRequestBuilder when successful
+func (m *InvitationItemRequestBuilder) InvitedUserSponsors()(*ItemInvitedUserSponsorsRequestBuilder) {
+    return NewItemInvitedUserSponsorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update entity in invitations
 // returns a Invitationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
