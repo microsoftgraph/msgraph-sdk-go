@@ -31,7 +31,7 @@ func (m *MessageRule) GetActions()(MessageRuleActionsable) {
     }
     return nil
 }
-// GetConditions gets the conditions property value. Conditions that when fulfilled, will trigger the corresponding actions for that rule.
+// GetConditions gets the conditions property value. Conditions that when fulfilled trigger the corresponding actions for that rule.
 // returns a MessageRulePredicatesable when successful
 func (m *MessageRule) GetConditions()(MessageRulePredicatesable) {
     val, err := m.GetBackingStore().Get("conditions")
@@ -264,7 +264,7 @@ func (m *MessageRule) SetActions(value MessageRuleActionsable)() {
         panic(err)
     }
 }
-// SetConditions sets the conditions property value. Conditions that when fulfilled, will trigger the corresponding actions for that rule.
+// SetConditions sets the conditions property value. Conditions that when fulfilled trigger the corresponding actions for that rule.
 func (m *MessageRule) SetConditions(value MessageRulePredicatesable)() {
     err := m.GetBackingStore().Set("conditions", value)
     if err != nil {

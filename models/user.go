@@ -3002,7 +3002,7 @@ func (m *User) GetSkills()([]string) {
     }
     return nil
 }
-// GetSponsors gets the sponsors property value. The sponsors property
+// GetSponsors gets the sponsors property value. The users and groups responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
 // returns a []DirectoryObjectable when successful
 func (m *User) GetSponsors()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("sponsors")
@@ -3110,7 +3110,7 @@ func (m *User) GetUserPrincipalName()(*string) {
     }
     return nil
 }
-// GetUserType gets the userType property value. A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?
+// GetUserType gets the userType property value. A string value that can be used to classify user types in your directory. The possible values are Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?
 // returns a *string when successful
 func (m *User) GetUserType()(*string) {
     val, err := m.GetBackingStore().Get("userType")
@@ -4957,7 +4957,7 @@ func (m *User) SetSkills(value []string)() {
         panic(err)
     }
 }
-// SetSponsors sets the sponsors property value. The sponsors property
+// SetSponsors sets the sponsors property value. The users and groups responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
 func (m *User) SetSponsors(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("sponsors", value)
     if err != nil {
@@ -5020,7 +5020,7 @@ func (m *User) SetUserPrincipalName(value *string)() {
         panic(err)
     }
 }
-// SetUserType sets the userType property value. A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?
+// SetUserType sets the userType property value. A string value that can be used to classify user types in your directory. The possible values are Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?
 func (m *User) SetUserType(value *string)() {
     err := m.GetBackingStore().Set("userType", value)
     if err != nil {

@@ -41,6 +41,11 @@ type UsersItemAssignmentsEducationAssignmentItemRequestBuilderPatchRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Activate provides operations to call the activate method.
+// returns a *UsersItemAssignmentsItemActivateRequestBuilder when successful
+func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Activate()(*UsersItemAssignmentsItemActivateRequestBuilder) {
+    return NewUsersItemAssignmentsItemActivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Categories provides operations to manage the categories property of the microsoft.graph.educationAssignment entity.
 // returns a *UsersItemAssignmentsItemCategoriesRequestBuilder when successful
 func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Categories()(*UsersItemAssignmentsItemCategoriesRequestBuilder) {
@@ -58,6 +63,11 @@ func NewUsersItemAssignmentsEducationAssignmentItemRequestBuilder(rawUrl string,
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUsersItemAssignmentsEducationAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Deactivate provides operations to call the deactivate method.
+// returns a *UsersItemAssignmentsItemDeactivateRequestBuilder when successful
+func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Deactivate()(*UsersItemAssignmentsItemDeactivateRequestBuilder) {
+    return NewUsersItemAssignmentsItemDeactivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property assignments for education
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -153,7 +163,7 @@ func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) Submissions(
 // ToDeleteRequestInformation delete navigation property assignments for education
 // returns a *RequestInformation when successful
 func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsEducationAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -178,7 +188,7 @@ func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) ToGetRequest
 // ToPatchRequestInformation update the navigation property assignments in education
 // returns a *RequestInformation when successful
 func (m *UsersItemAssignmentsEducationAssignmentItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentable, requestConfiguration *UsersItemAssignmentsEducationAssignmentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

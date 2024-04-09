@@ -92,6 +92,11 @@ func (m *SecurityRequestBuilder) Get(ctx context.Context, requestConfiguration *
 func (m *SecurityRequestBuilder) Incidents()(*IncidentsRequestBuilder) {
     return NewIncidentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Labels provides operations to manage the labels property of the microsoft.graph.security entity.
+// returns a *LabelsRequestBuilder when successful
+func (m *SecurityRequestBuilder) Labels()(*LabelsRequestBuilder) {
+    return NewLabelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // MicrosoftGraphSecurityRunHuntingQuery provides operations to call the runHuntingQuery method.
 // returns a *MicrosoftGraphSecurityRunHuntingQueryRequestBuilder when successful
 func (m *SecurityRequestBuilder) MicrosoftGraphSecurityRunHuntingQuery()(*MicrosoftGraphSecurityRunHuntingQueryRequestBuilder) {
@@ -154,7 +159,7 @@ func (m *SecurityRequestBuilder) ToGetRequestInformation(ctx context.Context, re
 // ToPatchRequestInformation update security
 // returns a *RequestInformation when successful
 func (m *SecurityRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Securityable, requestConfiguration *SecurityRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/security", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
