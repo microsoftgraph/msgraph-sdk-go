@@ -120,7 +120,7 @@ func (m *ServerProcessedContent) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetHtmlStrings gets the htmlStrings property value. The htmlStrings property
+// GetHtmlStrings gets the htmlStrings property value. A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.
 // returns a []MetaDataKeyStringPairable when successful
 func (m *ServerProcessedContent) GetHtmlStrings()([]MetaDataKeyStringPairable) {
     val, err := m.GetBackingStore().Get("htmlStrings")
@@ -132,7 +132,7 @@ func (m *ServerProcessedContent) GetHtmlStrings()([]MetaDataKeyStringPairable) {
     }
     return nil
 }
-// GetImageSources gets the imageSources property value. The imageSources property
+// GetImageSources gets the imageSources property value. A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
 // returns a []MetaDataKeyStringPairable when successful
 func (m *ServerProcessedContent) GetImageSources()([]MetaDataKeyStringPairable) {
     val, err := m.GetBackingStore().Get("imageSources")
@@ -144,7 +144,7 @@ func (m *ServerProcessedContent) GetImageSources()([]MetaDataKeyStringPairable) 
     }
     return nil
 }
-// GetLinks gets the links property value. The links property
+// GetLinks gets the links property value. A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
 // returns a []MetaDataKeyStringPairable when successful
 func (m *ServerProcessedContent) GetLinks()([]MetaDataKeyStringPairable) {
     val, err := m.GetBackingStore().Get("links")
@@ -168,7 +168,7 @@ func (m *ServerProcessedContent) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSearchablePlainTexts gets the searchablePlainTexts property value. The searchablePlainTexts property
+// GetSearchablePlainTexts gets the searchablePlainTexts property value. A key-value map where keys are string identifiers and values are strings that should be search indexed.
 // returns a []MetaDataKeyStringPairable when successful
 func (m *ServerProcessedContent) GetSearchablePlainTexts()([]MetaDataKeyStringPairable) {
     val, err := m.GetBackingStore().Get("searchablePlainTexts")
@@ -255,21 +255,21 @@ func (m *ServerProcessedContent) SetAdditionalData(value map[string]any)() {
 func (m *ServerProcessedContent) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetHtmlStrings sets the htmlStrings property value. The htmlStrings property
+// SetHtmlStrings sets the htmlStrings property value. A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.
 func (m *ServerProcessedContent) SetHtmlStrings(value []MetaDataKeyStringPairable)() {
     err := m.GetBackingStore().Set("htmlStrings", value)
     if err != nil {
         panic(err)
     }
 }
-// SetImageSources sets the imageSources property value. The imageSources property
+// SetImageSources sets the imageSources property value. A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
 func (m *ServerProcessedContent) SetImageSources(value []MetaDataKeyStringPairable)() {
     err := m.GetBackingStore().Set("imageSources", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLinks sets the links property value. The links property
+// SetLinks sets the links property value. A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
 func (m *ServerProcessedContent) SetLinks(value []MetaDataKeyStringPairable)() {
     err := m.GetBackingStore().Set("links", value)
     if err != nil {
@@ -283,7 +283,7 @@ func (m *ServerProcessedContent) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSearchablePlainTexts sets the searchablePlainTexts property value. The searchablePlainTexts property
+// SetSearchablePlainTexts sets the searchablePlainTexts property value. A key-value map where keys are string identifiers and values are strings that should be search indexed.
 func (m *ServerProcessedContent) SetSearchablePlainTexts(value []MetaDataKeyStringPairable)() {
     err := m.GetBackingStore().Set("searchablePlainTexts", value)
     if err != nil {

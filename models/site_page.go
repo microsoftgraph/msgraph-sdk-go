@@ -19,7 +19,7 @@ func NewSitePage()(*SitePage) {
 func CreateSitePageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSitePage(), nil
 }
-// GetCanvasLayout gets the canvasLayout property value. The canvasLayout property
+// GetCanvasLayout gets the canvasLayout property value. Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical sections.
 // returns a CanvasLayoutable when successful
 func (m *SitePage) GetCanvasLayout()(CanvasLayoutable) {
     val, err := m.GetBackingStore().Get("canvasLayout")
@@ -123,7 +123,7 @@ func (m *SitePage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetPromotionKind gets the promotionKind property value. The promotionKind property
+// GetPromotionKind gets the promotionKind property value. Indicates the promotion kind of the sitePage. The possible values are: microsoftReserved, page, newsPost, unknownFutureValue.
 // returns a *PagePromotionType when successful
 func (m *SitePage) GetPromotionKind()(*PagePromotionType) {
     val, err := m.GetBackingStore().Get("promotionKind")
@@ -135,7 +135,7 @@ func (m *SitePage) GetPromotionKind()(*PagePromotionType) {
     }
     return nil
 }
-// GetReactions gets the reactions property value. The reactions property
+// GetReactions gets the reactions property value. Reactions information for the page.
 // returns a ReactionsFacetable when successful
 func (m *SitePage) GetReactions()(ReactionsFacetable) {
     val, err := m.GetBackingStore().Get("reactions")
@@ -147,7 +147,7 @@ func (m *SitePage) GetReactions()(ReactionsFacetable) {
     }
     return nil
 }
-// GetShowComments gets the showComments property value. The showComments property
+// GetShowComments gets the showComments property value. Determines whether or not to show comments at the bottom of the page.
 // returns a *bool when successful
 func (m *SitePage) GetShowComments()(*bool) {
     val, err := m.GetBackingStore().Get("showComments")
@@ -159,7 +159,7 @@ func (m *SitePage) GetShowComments()(*bool) {
     }
     return nil
 }
-// GetShowRecommendedPages gets the showRecommendedPages property value. The showRecommendedPages property
+// GetShowRecommendedPages gets the showRecommendedPages property value. Determines whether or not to show recommended pages at the bottom of the page.
 // returns a *bool when successful
 func (m *SitePage) GetShowRecommendedPages()(*bool) {
     val, err := m.GetBackingStore().Get("showRecommendedPages")
@@ -171,7 +171,7 @@ func (m *SitePage) GetShowRecommendedPages()(*bool) {
     }
     return nil
 }
-// GetThumbnailWebUrl gets the thumbnailWebUrl property value. The thumbnailWebUrl property
+// GetThumbnailWebUrl gets the thumbnailWebUrl property value. Url of the sitePage's thumbnail image
 // returns a *string when successful
 func (m *SitePage) GetThumbnailWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("thumbnailWebUrl")
@@ -183,7 +183,7 @@ func (m *SitePage) GetThumbnailWebUrl()(*string) {
     }
     return nil
 }
-// GetTitleArea gets the titleArea property value. The titleArea property
+// GetTitleArea gets the titleArea property value. Title area on the SharePoint page.
 // returns a TitleAreaable when successful
 func (m *SitePage) GetTitleArea()(TitleAreaable) {
     val, err := m.GetBackingStore().Get("titleArea")
@@ -195,7 +195,7 @@ func (m *SitePage) GetTitleArea()(TitleAreaable) {
     }
     return nil
 }
-// GetWebParts gets the webParts property value. The webParts property
+// GetWebParts gets the webParts property value. Collection of webparts on the SharePoint page.
 // returns a []WebPartable when successful
 func (m *SitePage) GetWebParts()([]WebPartable) {
     val, err := m.GetBackingStore().Get("webParts")
@@ -270,56 +270,56 @@ func (m *SitePage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetCanvasLayout sets the canvasLayout property value. The canvasLayout property
+// SetCanvasLayout sets the canvasLayout property value. Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical sections.
 func (m *SitePage) SetCanvasLayout(value CanvasLayoutable)() {
     err := m.GetBackingStore().Set("canvasLayout", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPromotionKind sets the promotionKind property value. The promotionKind property
+// SetPromotionKind sets the promotionKind property value. Indicates the promotion kind of the sitePage. The possible values are: microsoftReserved, page, newsPost, unknownFutureValue.
 func (m *SitePage) SetPromotionKind(value *PagePromotionType)() {
     err := m.GetBackingStore().Set("promotionKind", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReactions sets the reactions property value. The reactions property
+// SetReactions sets the reactions property value. Reactions information for the page.
 func (m *SitePage) SetReactions(value ReactionsFacetable)() {
     err := m.GetBackingStore().Set("reactions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetShowComments sets the showComments property value. The showComments property
+// SetShowComments sets the showComments property value. Determines whether or not to show comments at the bottom of the page.
 func (m *SitePage) SetShowComments(value *bool)() {
     err := m.GetBackingStore().Set("showComments", value)
     if err != nil {
         panic(err)
     }
 }
-// SetShowRecommendedPages sets the showRecommendedPages property value. The showRecommendedPages property
+// SetShowRecommendedPages sets the showRecommendedPages property value. Determines whether or not to show recommended pages at the bottom of the page.
 func (m *SitePage) SetShowRecommendedPages(value *bool)() {
     err := m.GetBackingStore().Set("showRecommendedPages", value)
     if err != nil {
         panic(err)
     }
 }
-// SetThumbnailWebUrl sets the thumbnailWebUrl property value. The thumbnailWebUrl property
+// SetThumbnailWebUrl sets the thumbnailWebUrl property value. Url of the sitePage's thumbnail image
 func (m *SitePage) SetThumbnailWebUrl(value *string)() {
     err := m.GetBackingStore().Set("thumbnailWebUrl", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTitleArea sets the titleArea property value. The titleArea property
+// SetTitleArea sets the titleArea property value. Title area on the SharePoint page.
 func (m *SitePage) SetTitleArea(value TitleAreaable)() {
     err := m.GetBackingStore().Set("titleArea", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWebParts sets the webParts property value. The webParts property
+// SetWebParts sets the webParts property value. Collection of webparts on the SharePoint page.
 func (m *SitePage) SetWebParts(value []WebPartable)() {
     err := m.GetBackingStore().Set("webParts", value)
     if err != nil {

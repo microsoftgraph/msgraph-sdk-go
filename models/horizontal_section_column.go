@@ -51,7 +51,7 @@ func (m *HorizontalSectionColumn) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetWebparts gets the webparts property value. The webparts property
+// GetWebparts gets the webparts property value. The collection of WebParts in this column.
 // returns a []WebPartable when successful
 func (m *HorizontalSectionColumn) GetWebparts()([]WebPartable) {
     val, err := m.GetBackingStore().Get("webparts")
@@ -63,7 +63,7 @@ func (m *HorizontalSectionColumn) GetWebparts()([]WebPartable) {
     }
     return nil
 }
-// GetWidth gets the width property value. The width property
+// GetWidth gets the width property value. Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.
 // returns a *int32 when successful
 func (m *HorizontalSectionColumn) GetWidth()(*int32) {
     val, err := m.GetBackingStore().Get("width")
@@ -101,14 +101,14 @@ func (m *HorizontalSectionColumn) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetWebparts sets the webparts property value. The webparts property
+// SetWebparts sets the webparts property value. The collection of WebParts in this column.
 func (m *HorizontalSectionColumn) SetWebparts(value []WebPartable)() {
     err := m.GetBackingStore().Set("webparts", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWidth sets the width property value. The width property
+// SetWidth sets the width property value. Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.
 func (m *HorizontalSectionColumn) SetWidth(value *int32)() {
     err := m.GetBackingStore().Set("width", value)
     if err != nil {

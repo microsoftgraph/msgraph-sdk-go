@@ -11,7 +11,7 @@ import (
 type ItemOutlookMasterCategoriesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOutlookMasterCategoriesRequestBuilderGetQueryParameters get all the categories that have been defined for the user.
+// ItemOutlookMasterCategoriesRequestBuilderGetQueryParameters get all the categories that have been defined for a user.
 type ItemOutlookMasterCategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,7 +72,7 @@ func NewItemOutlookMasterCategoriesRequestBuilder(rawUrl string, requestAdapter 
 func (m *ItemOutlookMasterCategoriesRequestBuilder) Count()(*ItemOutlookMasterCategoriesCountRequestBuilder) {
     return NewItemOutlookMasterCategoriesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get all the categories that have been defined for the user.
+// Get get all the categories that have been defined for a user.
 // returns a OutlookCategoryCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -118,7 +118,7 @@ func (m *ItemOutlookMasterCategoriesRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OutlookCategoryable), nil
 }
-// ToGetRequestInformation get all the categories that have been defined for the user.
+// ToGetRequestInformation get all the categories that have been defined for a user.
 // returns a *RequestInformation when successful
 func (m *ItemOutlookMasterCategoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookMasterCategoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +135,7 @@ func (m *ItemOutlookMasterCategoriesRequestBuilder) ToGetRequestInformation(ctx 
 // ToPostRequestInformation create an outlookCategory object in the user's master list of categories.
 // returns a *RequestInformation when successful
 func (m *ItemOutlookMasterCategoriesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OutlookCategoryable, requestConfiguration *ItemOutlookMasterCategoriesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/users/{user%2Did}/outlook/masterCategories", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

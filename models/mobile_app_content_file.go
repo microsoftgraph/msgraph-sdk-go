@@ -101,6 +101,16 @@ func (m *MobileAppContentFile) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["isDependency"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsDependency(val)
+        }
+        return nil
+    }
     res["manifest"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
@@ -157,6 +167,18 @@ func (m *MobileAppContentFile) GetFieldDeserializers()(map[string]func(i878a80d2
 // returns a *bool when successful
 func (m *MobileAppContentFile) GetIsCommitted()(*bool) {
     val, err := m.GetBackingStore().Get("isCommitted")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsDependency gets the isDependency property value. Indicates whether this content file is a dependency for the main content file. TRUE means that the content file is a dependency, FALSE means that the content file is not a dependency and is the main content file. Defaults to FALSE.
+// returns a *bool when successful
+func (m *MobileAppContentFile) GetIsDependency()(*bool) {
+    val, err := m.GetBackingStore().Get("isDependency")
     if err != nil {
         panic(err)
     }
@@ -232,6 +254,12 @@ func (m *MobileAppContentFile) Serialize(writer i878a80d2330e89d26896388a3f487ee
         return err
     }
     {
+        err = writer.WriteBoolValue("isDependency", m.GetIsDependency())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteByteArrayValue("manifest", m.GetManifest())
         if err != nil {
             return err
@@ -292,6 +320,13 @@ func (m *MobileAppContentFile) SetIsCommitted(value *bool)() {
         panic(err)
     }
 }
+// SetIsDependency sets the isDependency property value. Indicates whether this content file is a dependency for the main content file. TRUE means that the content file is a dependency, FALSE means that the content file is not a dependency and is the main content file. Defaults to FALSE.
+func (m *MobileAppContentFile) SetIsDependency(value *bool)() {
+    err := m.GetBackingStore().Set("isDependency", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetManifest sets the manifest property value. The manifest information.
 func (m *MobileAppContentFile) SetManifest(value []byte)() {
     err := m.GetBackingStore().Set("manifest", value)
@@ -334,6 +369,7 @@ type MobileAppContentFileable interface {
     GetAzureStorageUriExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIsCommitted()(*bool)
+    GetIsDependency()(*bool)
     GetManifest()([]byte)
     GetName()(*string)
     GetSize()(*int64)
@@ -343,6 +379,7 @@ type MobileAppContentFileable interface {
     SetAzureStorageUriExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIsCommitted(value *bool)()
+    SetIsDependency(value *bool)()
     SetManifest(value []byte)()
     SetName(value *string)()
     SetSize(value *int64)()

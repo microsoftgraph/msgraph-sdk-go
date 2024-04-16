@@ -99,6 +99,11 @@ func (m *ItemLicenseDetailsRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LicenseDetailsCollectionResponseable), nil
 }
+// GetTeamsLicensingDetails provides operations to call the getTeamsLicensingDetails method.
+// returns a *ItemLicenseDetailsGetTeamsLicensingDetailsRequestBuilder when successful
+func (m *ItemLicenseDetailsRequestBuilder) GetTeamsLicensingDetails()(*ItemLicenseDetailsGetTeamsLicensingDetailsRequestBuilder) {
+    return NewItemLicenseDetailsGetTeamsLicensingDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create new navigation property to licenseDetails for users
 // returns a LicenseDetailsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -136,7 +141,7 @@ func (m *ItemLicenseDetailsRequestBuilder) ToGetRequestInformation(ctx context.C
 // ToPostRequestInformation create new navigation property to licenseDetails for users
 // returns a *RequestInformation when successful
 func (m *ItemLicenseDetailsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.LicenseDetailsable, requestConfiguration *ItemLicenseDetailsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/users/{user%2Did}/licenseDetails", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

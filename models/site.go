@@ -433,7 +433,7 @@ func (m *Site) GetOperations()([]RichLongRunningOperationable) {
     }
     return nil
 }
-// GetPages gets the pages property value. The pages property
+// GetPages gets the pages property value. The collection of pages in the baseSitePages list in this site.
 // returns a []BaseSitePageable when successful
 func (m *Site) GetPages()([]BaseSitePageable) {
     val, err := m.GetBackingStore().Get("pages")
@@ -778,7 +778,7 @@ func (m *Site) SetOperations(value []RichLongRunningOperationable)() {
         panic(err)
     }
 }
-// SetPages sets the pages property value. The pages property
+// SetPages sets the pages property value. The collection of pages in the baseSitePages list in this site.
 func (m *Site) SetPages(value []BaseSitePageable)() {
     err := m.GetBackingStore().Set("pages", value)
     if err != nil {

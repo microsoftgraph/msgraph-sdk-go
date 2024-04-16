@@ -117,7 +117,7 @@ func (m *FederatedIdentityCredential) GetIssuer()(*string) {
     }
     return nil
 }
-// GetName gets the name property value. The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. The string is immutable after it's created. Required. Not nullable. Supports $filter (eq).
+// GetName gets the name property value. The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. The string is immutable after it's created. Alternate key. Required. Not nullable. Supports $filter (eq).
 // returns a *string when successful
 func (m *FederatedIdentityCredential) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -200,7 +200,7 @@ func (m *FederatedIdentityCredential) SetIssuer(value *string)() {
         panic(err)
     }
 }
-// SetName sets the name property value. The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. The string is immutable after it's created. Required. Not nullable. Supports $filter (eq).
+// SetName sets the name property value. The unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. The string is immutable after it's created. Alternate key. Required. Not nullable. Supports $filter (eq).
 func (m *FederatedIdentityCredential) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {

@@ -1622,7 +1622,7 @@ func (m *Group) GetTransitiveMembers()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetUniqueName gets the uniqueName property value. The uniqueName property
+// GetUniqueName gets the uniqueName property value. The unique identifier that can be assigned to a group and used as an alternate key. Immutable. Read-only.
 // returns a *string when successful
 func (m *Group) GetUniqueName()(*string) {
     val, err := m.GetBackingStore().Get("uniqueName")
@@ -2660,7 +2660,7 @@ func (m *Group) SetTransitiveMembers(value []DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetUniqueName sets the uniqueName property value. The uniqueName property
+// SetUniqueName sets the uniqueName property value. The unique identifier that can be assigned to a group and used as an alternate key. Immutable. Read-only.
 func (m *Group) SetUniqueName(value *string)() {
     err := m.GetBackingStore().Set("uniqueName", value)
     if err != nil {

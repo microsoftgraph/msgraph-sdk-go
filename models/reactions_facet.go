@@ -40,7 +40,7 @@ func (m *ReactionsFacet) GetAdditionalData()(map[string]any) {
 func (m *ReactionsFacet) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCommentCount gets the commentCount property value. The commentCount property
+// GetCommentCount gets the commentCount property value. Count of comments.
 // returns a *int32 when successful
 func (m *ReactionsFacet) GetCommentCount()(*int32) {
     val, err := m.GetBackingStore().Get("commentCount")
@@ -98,7 +98,7 @@ func (m *ReactionsFacet) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetLikeCount gets the likeCount property value. The likeCount property
+// GetLikeCount gets the likeCount property value. Count of likes.
 // returns a *int32 when successful
 func (m *ReactionsFacet) GetLikeCount()(*int32) {
     val, err := m.GetBackingStore().Get("likeCount")
@@ -122,7 +122,7 @@ func (m *ReactionsFacet) GetOdataType()(*string) {
     }
     return nil
 }
-// GetShareCount gets the shareCount property value. The shareCount property
+// GetShareCount gets the shareCount property value. Count of shares.
 // returns a *int32 when successful
 func (m *ReactionsFacet) GetShareCount()(*int32) {
     val, err := m.GetBackingStore().Get("shareCount")
@@ -179,14 +179,14 @@ func (m *ReactionsFacet) SetAdditionalData(value map[string]any)() {
 func (m *ReactionsFacet) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCommentCount sets the commentCount property value. The commentCount property
+// SetCommentCount sets the commentCount property value. Count of comments.
 func (m *ReactionsFacet) SetCommentCount(value *int32)() {
     err := m.GetBackingStore().Set("commentCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLikeCount sets the likeCount property value. The likeCount property
+// SetLikeCount sets the likeCount property value. Count of likes.
 func (m *ReactionsFacet) SetLikeCount(value *int32)() {
     err := m.GetBackingStore().Set("likeCount", value)
     if err != nil {
@@ -200,7 +200,7 @@ func (m *ReactionsFacet) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetShareCount sets the shareCount property value. The shareCount property
+// SetShareCount sets the shareCount property value. Count of shares.
 func (m *ReactionsFacet) SetShareCount(value *int32)() {
     err := m.GetBackingStore().Set("shareCount", value)
     if err != nil {

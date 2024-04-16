@@ -37,7 +37,7 @@ func (m *TextWebPart) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetInnerHtml gets the innerHtml property value. The innerHtml property
+// GetInnerHtml gets the innerHtml property value. The HTML string in text web part.
 // returns a *string when successful
 func (m *TextWebPart) GetInnerHtml()(*string) {
     val, err := m.GetBackingStore().Get("innerHtml")
@@ -63,7 +63,7 @@ func (m *TextWebPart) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetInnerHtml sets the innerHtml property value. The innerHtml property
+// SetInnerHtml sets the innerHtml property value. The HTML string in text web part.
 func (m *TextWebPart) SetInnerHtml(value *string)() {
     err := m.GetBackingStore().Set("innerHtml", value)
     if err != nil {

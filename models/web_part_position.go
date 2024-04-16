@@ -40,7 +40,7 @@ func (m *WebPartPosition) GetAdditionalData()(map[string]any) {
 func (m *WebPartPosition) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetColumnId gets the columnId property value. The columnId property
+// GetColumnId gets the columnId property value. Indicates the identifier of the column where the web part is located.
 // returns a *float64 when successful
 func (m *WebPartPosition) GetColumnId()(*float64) {
     val, err := m.GetBackingStore().Get("columnId")
@@ -108,7 +108,7 @@ func (m *WebPartPosition) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetHorizontalSectionId gets the horizontalSectionId property value. The horizontalSectionId property
+// GetHorizontalSectionId gets the horizontalSectionId property value. Indicates the horizontal section where the web part is located.
 // returns a *float64 when successful
 func (m *WebPartPosition) GetHorizontalSectionId()(*float64) {
     val, err := m.GetBackingStore().Get("horizontalSectionId")
@@ -120,7 +120,7 @@ func (m *WebPartPosition) GetHorizontalSectionId()(*float64) {
     }
     return nil
 }
-// GetIsInVerticalSection gets the isInVerticalSection property value. The isInVerticalSection property
+// GetIsInVerticalSection gets the isInVerticalSection property value. Indicates whether the web part is located in the vertical section.
 // returns a *bool when successful
 func (m *WebPartPosition) GetIsInVerticalSection()(*bool) {
     val, err := m.GetBackingStore().Get("isInVerticalSection")
@@ -144,7 +144,7 @@ func (m *WebPartPosition) GetOdataType()(*string) {
     }
     return nil
 }
-// GetWebPartIndex gets the webPartIndex property value. The webPartIndex property
+// GetWebPartIndex gets the webPartIndex property value. Index of the current web part. Represents the order of the web part in this column or section.
 // returns a *float64 when successful
 func (m *WebPartPosition) GetWebPartIndex()(*float64) {
     val, err := m.GetBackingStore().Get("webPartIndex")
@@ -207,21 +207,21 @@ func (m *WebPartPosition) SetAdditionalData(value map[string]any)() {
 func (m *WebPartPosition) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetColumnId sets the columnId property value. The columnId property
+// SetColumnId sets the columnId property value. Indicates the identifier of the column where the web part is located.
 func (m *WebPartPosition) SetColumnId(value *float64)() {
     err := m.GetBackingStore().Set("columnId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHorizontalSectionId sets the horizontalSectionId property value. The horizontalSectionId property
+// SetHorizontalSectionId sets the horizontalSectionId property value. Indicates the horizontal section where the web part is located.
 func (m *WebPartPosition) SetHorizontalSectionId(value *float64)() {
     err := m.GetBackingStore().Set("horizontalSectionId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsInVerticalSection sets the isInVerticalSection property value. The isInVerticalSection property
+// SetIsInVerticalSection sets the isInVerticalSection property value. Indicates whether the web part is located in the vertical section.
 func (m *WebPartPosition) SetIsInVerticalSection(value *bool)() {
     err := m.GetBackingStore().Set("isInVerticalSection", value)
     if err != nil {
@@ -235,7 +235,7 @@ func (m *WebPartPosition) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetWebPartIndex sets the webPartIndex property value. The webPartIndex property
+// SetWebPartIndex sets the webPartIndex property value. Index of the current web part. Represents the order of the web part in this column or section.
 func (m *WebPartPosition) SetWebPartIndex(value *float64)() {
     err := m.GetBackingStore().Set("webPartIndex", value)
     if err != nil {

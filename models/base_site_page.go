@@ -75,7 +75,7 @@ func (m *BaseSitePage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetPageLayout gets the pageLayout property value. The pageLayout property
+// GetPageLayout gets the pageLayout property value. The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue.
 // returns a *PageLayoutType when successful
 func (m *BaseSitePage) GetPageLayout()(*PageLayoutType) {
     val, err := m.GetBackingStore().Get("pageLayout")
@@ -87,7 +87,7 @@ func (m *BaseSitePage) GetPageLayout()(*PageLayoutType) {
     }
     return nil
 }
-// GetPublishingState gets the publishingState property value. The publishingState property
+// GetPublishingState gets the publishingState property value. The publishing status and the MM.mm version of the page.
 // returns a PublicationFacetable when successful
 func (m *BaseSitePage) GetPublishingState()(PublicationFacetable) {
     val, err := m.GetBackingStore().Get("publishingState")
@@ -99,7 +99,7 @@ func (m *BaseSitePage) GetPublishingState()(PublicationFacetable) {
     }
     return nil
 }
-// GetTitle gets the title property value. The title property
+// GetTitle gets the title property value. Title of the sitePage.
 // returns a *string when successful
 func (m *BaseSitePage) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
@@ -138,21 +138,21 @@ func (m *BaseSitePage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetPageLayout sets the pageLayout property value. The pageLayout property
+// SetPageLayout sets the pageLayout property value. The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue.
 func (m *BaseSitePage) SetPageLayout(value *PageLayoutType)() {
     err := m.GetBackingStore().Set("pageLayout", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPublishingState sets the publishingState property value. The publishingState property
+// SetPublishingState sets the publishingState property value. The publishing status and the MM.mm version of the page.
 func (m *BaseSitePage) SetPublishingState(value PublicationFacetable)() {
     err := m.GetBackingStore().Set("publishingState", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTitle sets the title property value. The title property
+// SetTitle sets the title property value. Title of the sitePage.
 func (m *BaseSitePage) SetTitle(value *string)() {
     err := m.GetBackingStore().Set("title", value)
     if err != nil {

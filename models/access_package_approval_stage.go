@@ -256,7 +256,7 @@ func (m *AccessPackageApprovalStage) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPrimaryApprovers gets the primaryApprovers property value. The subjects, typically users, who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors or externalSponsors.
+// GetPrimaryApprovers gets the primaryApprovers property value. The subjects, typically users, who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors, externalSponsors, or targetUserSponsors.
 // returns a []SubjectSetable when successful
 func (m *AccessPackageApprovalStage) GetPrimaryApprovers()([]SubjectSetable) {
     val, err := m.GetBackingStore().Get("primaryApprovers")
@@ -423,7 +423,7 @@ func (m *AccessPackageApprovalStage) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPrimaryApprovers sets the primaryApprovers property value. The subjects, typically users, who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors or externalSponsors.
+// SetPrimaryApprovers sets the primaryApprovers property value. The subjects, typically users, who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors, externalSponsors, or targetUserSponsors.
 func (m *AccessPackageApprovalStage) SetPrimaryApprovers(value []SubjectSetable)() {
     err := m.GetBackingStore().Set("primaryApprovers", value)
     if err != nil {

@@ -19,7 +19,7 @@ func NewRelyingPartyDetailedSummary()(*RelyingPartyDetailedSummary) {
 func CreateRelyingPartyDetailedSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRelyingPartyDetailedSummary(), nil
 }
-// GetFailedSignInCount gets the failedSignInCount property value. The failedSignInCount property
+// GetFailedSignInCount gets the failedSignInCount property value. Number of failed sign ins on AD FS in the period specified. Supports $orderby, $filter (eq).
 // returns a *int64 when successful
 func (m *RelyingPartyDetailedSummary) GetFailedSignInCount()(*int64) {
     val, err := m.GetBackingStore().Get("failedSignInCount")
@@ -171,7 +171,7 @@ func (m *RelyingPartyDetailedSummary) GetMigrationStatus()(*MigrationStatus) {
     }
     return nil
 }
-// GetMigrationValidationDetails gets the migrationValidationDetails property value. The migrationValidationDetails property
+// GetMigrationValidationDetails gets the migrationValidationDetails property value. Specifies all the validations checks done on applications config details.
 // returns a []KeyValuePairable when successful
 func (m *RelyingPartyDetailedSummary) GetMigrationValidationDetails()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("migrationValidationDetails")
@@ -183,7 +183,7 @@ func (m *RelyingPartyDetailedSummary) GetMigrationValidationDetails()([]KeyValue
     }
     return nil
 }
-// GetRelyingPartyId gets the relyingPartyId property value. The relyingPartyId property
+// GetRelyingPartyId gets the relyingPartyId property value. Identifies the relying party to this federation service. It's used when issuing claims to the relying party. Supports $orderby, $filter (eq).
 // returns a *string when successful
 func (m *RelyingPartyDetailedSummary) GetRelyingPartyId()(*string) {
     val, err := m.GetBackingStore().Get("relyingPartyId")
@@ -195,7 +195,7 @@ func (m *RelyingPartyDetailedSummary) GetRelyingPartyId()(*string) {
     }
     return nil
 }
-// GetRelyingPartyName gets the relyingPartyName property value. The relyingPartyName property
+// GetRelyingPartyName gets the relyingPartyName property value. Name of the relying party's website or other entity on the Internet that uses an identity provider to authenticate a user who wants to log in. Supports $orderby, $filter (eq).
 // returns a *string when successful
 func (m *RelyingPartyDetailedSummary) GetRelyingPartyName()(*string) {
     val, err := m.GetBackingStore().Get("relyingPartyName")
@@ -207,7 +207,7 @@ func (m *RelyingPartyDetailedSummary) GetRelyingPartyName()(*string) {
     }
     return nil
 }
-// GetReplyUrls gets the replyUrls property value. The replyUrls property
+// GetReplyUrls gets the replyUrls property value. Specifies where the relying party expects to receive the token.
 // returns a []string when successful
 func (m *RelyingPartyDetailedSummary) GetReplyUrls()([]string) {
     val, err := m.GetBackingStore().Get("replyUrls")
@@ -219,7 +219,7 @@ func (m *RelyingPartyDetailedSummary) GetReplyUrls()([]string) {
     }
     return nil
 }
-// GetServiceId gets the serviceId property value. The serviceId property
+// GetServiceId gets the serviceId property value. Uniquely identifies the Active Directory forest. Supports $orderby, $filter (eq).
 // returns a *string when successful
 func (m *RelyingPartyDetailedSummary) GetServiceId()(*string) {
     val, err := m.GetBackingStore().Get("serviceId")
@@ -231,7 +231,7 @@ func (m *RelyingPartyDetailedSummary) GetServiceId()(*string) {
     }
     return nil
 }
-// GetSignInSuccessRate gets the signInSuccessRate property value. The signInSuccessRate property
+// GetSignInSuccessRate gets the signInSuccessRate property value. Calculated as Number of successful / (Number of successful + Number of failed sign ins) or successfulSignInCount / totalSignInCount on AD FS in the period specified. Supports $orderby, $filter (eq).
 // returns a *float64 when successful
 func (m *RelyingPartyDetailedSummary) GetSignInSuccessRate()(*float64) {
     val, err := m.GetBackingStore().Get("signInSuccessRate")
@@ -243,7 +243,7 @@ func (m *RelyingPartyDetailedSummary) GetSignInSuccessRate()(*float64) {
     }
     return nil
 }
-// GetSuccessfulSignInCount gets the successfulSignInCount property value. The successfulSignInCount property
+// GetSuccessfulSignInCount gets the successfulSignInCount property value. Number of successful sign ins on AD FS. Supports $orderby, $filter (eq).
 // returns a *int64 when successful
 func (m *RelyingPartyDetailedSummary) GetSuccessfulSignInCount()(*int64) {
     val, err := m.GetBackingStore().Get("successfulSignInCount")
@@ -255,7 +255,7 @@ func (m *RelyingPartyDetailedSummary) GetSuccessfulSignInCount()(*int64) {
     }
     return nil
 }
-// GetTotalSignInCount gets the totalSignInCount property value. The totalSignInCount property
+// GetTotalSignInCount gets the totalSignInCount property value. Number of successful + failed sign ins on AD FS in the period specified. Supports $orderby, $filter (eq).
 // returns a *int64 when successful
 func (m *RelyingPartyDetailedSummary) GetTotalSignInCount()(*int64) {
     val, err := m.GetBackingStore().Get("totalSignInCount")
@@ -267,7 +267,7 @@ func (m *RelyingPartyDetailedSummary) GetTotalSignInCount()(*int64) {
     }
     return nil
 }
-// GetUniqueUserCount gets the uniqueUserCount property value. The uniqueUserCount property
+// GetUniqueUserCount gets the uniqueUserCount property value. Number of unique users that signed into the application. Supports $orderby, $filter (eq).
 // returns a *int64 when successful
 func (m *RelyingPartyDetailedSummary) GetUniqueUserCount()(*int64) {
     val, err := m.GetBackingStore().Get("uniqueUserCount")
@@ -360,7 +360,7 @@ func (m *RelyingPartyDetailedSummary) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetFailedSignInCount sets the failedSignInCount property value. The failedSignInCount property
+// SetFailedSignInCount sets the failedSignInCount property value. Number of failed sign ins on AD FS in the period specified. Supports $orderby, $filter (eq).
 func (m *RelyingPartyDetailedSummary) SetFailedSignInCount(value *int64)() {
     err := m.GetBackingStore().Set("failedSignInCount", value)
     if err != nil {
@@ -374,63 +374,63 @@ func (m *RelyingPartyDetailedSummary) SetMigrationStatus(value *MigrationStatus)
         panic(err)
     }
 }
-// SetMigrationValidationDetails sets the migrationValidationDetails property value. The migrationValidationDetails property
+// SetMigrationValidationDetails sets the migrationValidationDetails property value. Specifies all the validations checks done on applications config details.
 func (m *RelyingPartyDetailedSummary) SetMigrationValidationDetails(value []KeyValuePairable)() {
     err := m.GetBackingStore().Set("migrationValidationDetails", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRelyingPartyId sets the relyingPartyId property value. The relyingPartyId property
+// SetRelyingPartyId sets the relyingPartyId property value. Identifies the relying party to this federation service. It's used when issuing claims to the relying party. Supports $orderby, $filter (eq).
 func (m *RelyingPartyDetailedSummary) SetRelyingPartyId(value *string)() {
     err := m.GetBackingStore().Set("relyingPartyId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRelyingPartyName sets the relyingPartyName property value. The relyingPartyName property
+// SetRelyingPartyName sets the relyingPartyName property value. Name of the relying party's website or other entity on the Internet that uses an identity provider to authenticate a user who wants to log in. Supports $orderby, $filter (eq).
 func (m *RelyingPartyDetailedSummary) SetRelyingPartyName(value *string)() {
     err := m.GetBackingStore().Set("relyingPartyName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReplyUrls sets the replyUrls property value. The replyUrls property
+// SetReplyUrls sets the replyUrls property value. Specifies where the relying party expects to receive the token.
 func (m *RelyingPartyDetailedSummary) SetReplyUrls(value []string)() {
     err := m.GetBackingStore().Set("replyUrls", value)
     if err != nil {
         panic(err)
     }
 }
-// SetServiceId sets the serviceId property value. The serviceId property
+// SetServiceId sets the serviceId property value. Uniquely identifies the Active Directory forest. Supports $orderby, $filter (eq).
 func (m *RelyingPartyDetailedSummary) SetServiceId(value *string)() {
     err := m.GetBackingStore().Set("serviceId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSignInSuccessRate sets the signInSuccessRate property value. The signInSuccessRate property
+// SetSignInSuccessRate sets the signInSuccessRate property value. Calculated as Number of successful / (Number of successful + Number of failed sign ins) or successfulSignInCount / totalSignInCount on AD FS in the period specified. Supports $orderby, $filter (eq).
 func (m *RelyingPartyDetailedSummary) SetSignInSuccessRate(value *float64)() {
     err := m.GetBackingStore().Set("signInSuccessRate", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSuccessfulSignInCount sets the successfulSignInCount property value. The successfulSignInCount property
+// SetSuccessfulSignInCount sets the successfulSignInCount property value. Number of successful sign ins on AD FS. Supports $orderby, $filter (eq).
 func (m *RelyingPartyDetailedSummary) SetSuccessfulSignInCount(value *int64)() {
     err := m.GetBackingStore().Set("successfulSignInCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalSignInCount sets the totalSignInCount property value. The totalSignInCount property
+// SetTotalSignInCount sets the totalSignInCount property value. Number of successful + failed sign ins on AD FS in the period specified. Supports $orderby, $filter (eq).
 func (m *RelyingPartyDetailedSummary) SetTotalSignInCount(value *int64)() {
     err := m.GetBackingStore().Set("totalSignInCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUniqueUserCount sets the uniqueUserCount property value. The uniqueUserCount property
+// SetUniqueUserCount sets the uniqueUserCount property value. Number of unique users that signed into the application. Supports $orderby, $filter (eq).
 func (m *RelyingPartyDetailedSummary) SetUniqueUserCount(value *int64)() {
     err := m.GetBackingStore().Set("uniqueUserCount", value)
     if err != nil {

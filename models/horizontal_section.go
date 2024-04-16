@@ -19,7 +19,7 @@ func NewHorizontalSection()(*HorizontalSection) {
 func CreateHorizontalSectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHorizontalSection(), nil
 }
-// GetColumns gets the columns property value. The columns property
+// GetColumns gets the columns property value. The set of vertical columns in this section.
 // returns a []HorizontalSectionColumnable when successful
 func (m *HorizontalSection) GetColumns()([]HorizontalSectionColumnable) {
     val, err := m.GetBackingStore().Get("columns")
@@ -31,7 +31,7 @@ func (m *HorizontalSection) GetColumns()([]HorizontalSectionColumnable) {
     }
     return nil
 }
-// GetEmphasis gets the emphasis property value. The emphasis property
+// GetEmphasis gets the emphasis property value. Enumeration value that indicates the emphasis of the section background. The possible values are: none, netural, soft, strong, unknownFutureValue.
 // returns a *SectionEmphasisType when successful
 func (m *HorizontalSection) GetEmphasis()(*SectionEmphasisType) {
     val, err := m.GetBackingStore().Get("emphasis")
@@ -85,7 +85,7 @@ func (m *HorizontalSection) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetLayout gets the layout property value. The layout property
+// GetLayout gets the layout property value. Layout type of the section. The possible values are: none, oneColumn, twoColumns, threeColumns, oneThirdLeftColumn, oneThirdRightColumn, fullWidth, unknownFutureValue.
 // returns a *HorizontalSectionLayoutType when successful
 func (m *HorizontalSection) GetLayout()(*HorizontalSectionLayoutType) {
     val, err := m.GetBackingStore().Get("layout")
@@ -131,21 +131,21 @@ func (m *HorizontalSection) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetColumns sets the columns property value. The columns property
+// SetColumns sets the columns property value. The set of vertical columns in this section.
 func (m *HorizontalSection) SetColumns(value []HorizontalSectionColumnable)() {
     err := m.GetBackingStore().Set("columns", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEmphasis sets the emphasis property value. The emphasis property
+// SetEmphasis sets the emphasis property value. Enumeration value that indicates the emphasis of the section background. The possible values are: none, netural, soft, strong, unknownFutureValue.
 func (m *HorizontalSection) SetEmphasis(value *SectionEmphasisType)() {
     err := m.GetBackingStore().Set("emphasis", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLayout sets the layout property value. The layout property
+// SetLayout sets the layout property value. Layout type of the section. The possible values are: none, oneColumn, twoColumns, threeColumns, oneThirdLeftColumn, oneThirdRightColumn, fullWidth, unknownFutureValue.
 func (m *HorizontalSection) SetLayout(value *HorizontalSectionLayoutType)() {
     err := m.GetBackingStore().Set("layout", value)
     if err != nil {

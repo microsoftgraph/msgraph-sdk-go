@@ -250,6 +250,16 @@ func (m *LearningContent) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["level"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseLevel)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLevel(val.(*Level))
+        }
+        return nil
+    }
     res["numberOfPages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -377,6 +387,18 @@ func (m *LearningContent) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetLevel gets the level property value. The level property
+// returns a *Level when successful
+func (m *LearningContent) GetLevel()(*Level) {
+    val, err := m.GetBackingStore().Get("level")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Level)
     }
     return nil
 }
@@ -524,6 +546,13 @@ func (m *LearningContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    if m.GetLevel() != nil {
+        cast := (*m.GetLevel()).String()
+        err = writer.WriteStringValue("level", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteInt32Value("numberOfPages", m.GetNumberOfPages())
         if err != nil {
@@ -647,6 +676,13 @@ func (m *LearningContent) SetLastModifiedDateTime(value *i336074805fc853987abe6f
         panic(err)
     }
 }
+// SetLevel sets the level property value. The level property
+func (m *LearningContent) SetLevel(value *Level)() {
+    err := m.GetBackingStore().Set("level", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetNumberOfPages sets the numberOfPages property value. The number of pages of the learning content, for example, 9. Optional.
 func (m *LearningContent) SetNumberOfPages(value *int32)() {
     err := m.GetBackingStore().Set("numberOfPages", value)
@@ -698,6 +734,7 @@ type LearningContentable interface {
     GetIsSearchable()(*bool)
     GetLanguageTag()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetLevel()(*Level)
     GetNumberOfPages()(*int32)
     GetSkillTags()([]string)
     GetSourceName()(*string)
@@ -716,6 +753,7 @@ type LearningContentable interface {
     SetIsSearchable(value *bool)()
     SetLanguageTag(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetLevel(value *Level)()
     SetNumberOfPages(value *int32)()
     SetSkillTags(value []string)()
     SetSourceName(value *string)()
