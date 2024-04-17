@@ -127,7 +127,7 @@ func (m *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) Patch(ctx c
 // ToDeleteRequestInformation delete a tokenLifetimePolicy object.
 // returns a *RequestInformation when successful
 func (m *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/policies/tokenLifetimePolicies/{tokenLifetimePolicy%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -152,7 +152,7 @@ func (m *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) ToGetReques
 // ToPatchRequestInformation update the properties of a tokenLifetimePolicy object.
 // returns a *RequestInformation when successful
 func (m *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TokenLifetimePolicyable, requestConfiguration *TokenLifetimePoliciesTokenLifetimePolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/policies/tokenLifetimePolicies/{tokenLifetimePolicy%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

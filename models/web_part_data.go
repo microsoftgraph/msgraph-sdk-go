@@ -40,7 +40,7 @@ func (m *WebPartData) GetAdditionalData()(map[string]any) {
 func (m *WebPartData) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDataVersion gets the dataVersion property value. The dataVersion property
+// GetDataVersion gets the dataVersion property value. Data version of the web part. The value is defined by the web part developer. Different dataVersions usually refers to a different property structure.
 // returns a *string when successful
 func (m *WebPartData) GetDataVersion()(*string) {
     val, err := m.GetBackingStore().Get("dataVersion")
@@ -52,7 +52,7 @@ func (m *WebPartData) GetDataVersion()(*string) {
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. Description of the web part.
 // returns a *string when successful
 func (m *WebPartData) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -142,7 +142,7 @@ func (m *WebPartData) GetOdataType()(*string) {
     }
     return nil
 }
-// GetProperties gets the properties property value. The properties property
+// GetProperties gets the properties property value. Properties bag of the web part.
 // returns a Jsonable when successful
 func (m *WebPartData) GetProperties()(Jsonable) {
     val, err := m.GetBackingStore().Get("properties")
@@ -154,7 +154,7 @@ func (m *WebPartData) GetProperties()(Jsonable) {
     }
     return nil
 }
-// GetServerProcessedContent gets the serverProcessedContent property value. The serverProcessedContent property
+// GetServerProcessedContent gets the serverProcessedContent property value. Contains collections of data that can be processed by server side services like search index and link fixup.
 // returns a ServerProcessedContentable when successful
 func (m *WebPartData) GetServerProcessedContent()(ServerProcessedContentable) {
     val, err := m.GetBackingStore().Get("serverProcessedContent")
@@ -166,7 +166,7 @@ func (m *WebPartData) GetServerProcessedContent()(ServerProcessedContentable) {
     }
     return nil
 }
-// GetTitle gets the title property value. The title property
+// GetTitle gets the title property value. Title of the web part.
 // returns a *string when successful
 func (m *WebPartData) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
@@ -235,14 +235,14 @@ func (m *WebPartData) SetAdditionalData(value map[string]any)() {
 func (m *WebPartData) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDataVersion sets the dataVersion property value. The dataVersion property
+// SetDataVersion sets the dataVersion property value. Data version of the web part. The value is defined by the web part developer. Different dataVersions usually refers to a different property structure.
 func (m *WebPartData) SetDataVersion(value *string)() {
     err := m.GetBackingStore().Set("dataVersion", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. Description of the web part.
 func (m *WebPartData) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
@@ -256,21 +256,21 @@ func (m *WebPartData) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetProperties sets the properties property value. The properties property
+// SetProperties sets the properties property value. Properties bag of the web part.
 func (m *WebPartData) SetProperties(value Jsonable)() {
     err := m.GetBackingStore().Set("properties", value)
     if err != nil {
         panic(err)
     }
 }
-// SetServerProcessedContent sets the serverProcessedContent property value. The serverProcessedContent property
+// SetServerProcessedContent sets the serverProcessedContent property value. Contains collections of data that can be processed by server side services like search index and link fixup.
 func (m *WebPartData) SetServerProcessedContent(value ServerProcessedContentable)() {
     err := m.GetBackingStore().Set("serverProcessedContent", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTitle sets the title property value. The title property
+// SetTitle sets the title property value. Title of the web part.
 func (m *WebPartData) SetTitle(value *string)() {
     err := m.GetBackingStore().Set("title", value)
     if err != nil {

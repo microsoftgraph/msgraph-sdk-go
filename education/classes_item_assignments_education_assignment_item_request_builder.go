@@ -41,6 +41,11 @@ type ClassesItemAssignmentsEducationAssignmentItemRequestBuilderPatchRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Activate provides operations to call the activate method.
+// returns a *ClassesItemAssignmentsItemActivateRequestBuilder when successful
+func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) Activate()(*ClassesItemAssignmentsItemActivateRequestBuilder) {
+    return NewClassesItemAssignmentsItemActivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Categories provides operations to manage the categories property of the microsoft.graph.educationAssignment entity.
 // returns a *ClassesItemAssignmentsItemCategoriesRequestBuilder when successful
 func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) Categories()(*ClassesItemAssignmentsItemCategoriesRequestBuilder) {
@@ -58,6 +63,11 @@ func NewClassesItemAssignmentsEducationAssignmentItemRequestBuilder(rawUrl strin
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemAssignmentsEducationAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Deactivate provides operations to call the deactivate method.
+// returns a *ClassesItemAssignmentsItemDeactivateRequestBuilder when successful
+func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) Deactivate()(*ClassesItemAssignmentsItemDeactivateRequestBuilder) {
+    return NewClassesItemAssignmentsItemDeactivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete an existing assignment. Only teachers within a class can delete assignments.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -162,7 +172,7 @@ func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) Submission
 // ToDeleteRequestInformation delete an existing assignment. Only teachers within a class can delete assignments.
 // returns a *RequestInformation when successful
 func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentsEducationAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -187,7 +197,7 @@ func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) ToGetReque
 // ToPatchRequestInformation update an educationAssignment object.  Only teachers can perform this action.  Alternatively, request to change the status of an assignment with publish action. Don't use a PATCH operation for this purpose.
 // returns a *RequestInformation when successful
 func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationAssignmentable, requestConfiguration *ClassesItemAssignmentsEducationAssignmentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

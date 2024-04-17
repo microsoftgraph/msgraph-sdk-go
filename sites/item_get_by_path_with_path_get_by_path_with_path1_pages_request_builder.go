@@ -11,7 +11,7 @@ import (
 type ItemGetByPathWithPathGetByPathWithPath1PagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemGetByPathWithPathGetByPathWithPath1PagesRequestBuilderGetQueryParameters get pages from sites
+// ItemGetByPathWithPathGetByPathWithPath1PagesRequestBuilderGetQueryParameters get the collection of [baseSitePage][] objects from the site pages [list][] in a [site][]. All pages in the site are returned (with pagination). Sort alphabetically by name in ascending order. The following table lists the available subtypes.
 type ItemGetByPathWithPathGetByPathWithPath1PagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -59,9 +59,12 @@ func NewItemGetByPathWithPathGetByPathWithPath1PagesRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewItemGetByPathWithPathGetByPathWithPath1PagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get pages from sites
+// Get get the collection of [baseSitePage][] objects from the site pages [list][] in a [site][]. All pages in the site are returned (with pagination). Sort alphabetically by name in ascending order. The following table lists the available subtypes.
 // returns a BaseSitePageCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/basesitepage-list?view=graph-rest-1.0
 func (m *ItemGetByPathWithPathGetByPathWithPath1PagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGetByPathWithPathGetByPathWithPath1PagesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseSitePageCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -79,9 +82,12 @@ func (m *ItemGetByPathWithPathGetByPathWithPath1PagesRequestBuilder) Get(ctx con
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseSitePageCollectionResponseable), nil
 }
-// Post create new navigation property to pages for sites
+// Post create a new [sitePage][] in the site pages [list][] in a [site][].
 // returns a BaseSitePageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/sitepage-create?view=graph-rest-1.0
 func (m *ItemGetByPathWithPathGetByPathWithPath1PagesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseSitePageable, requestConfiguration *ItemGetByPathWithPathGetByPathWithPath1PagesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseSitePageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -99,7 +105,7 @@ func (m *ItemGetByPathWithPathGetByPathWithPath1PagesRequestBuilder) Post(ctx co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseSitePageable), nil
 }
-// ToGetRequestInformation get pages from sites
+// ToGetRequestInformation get the collection of [baseSitePage][] objects from the site pages [list][] in a [site][]. All pages in the site are returned (with pagination). Sort alphabetically by name in ascending order. The following table lists the available subtypes.
 // returns a *RequestInformation when successful
 func (m *ItemGetByPathWithPathGetByPathWithPath1PagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGetByPathWithPathGetByPathWithPath1PagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -113,10 +119,10 @@ func (m *ItemGetByPathWithPathGetByPathWithPath1PagesRequestBuilder) ToGetReques
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to pages for sites
+// ToPostRequestInformation create a new [sitePage][] in the site pages [list][] in a [site][].
 // returns a *RequestInformation when successful
 func (m *ItemGetByPathWithPathGetByPathWithPath1PagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseSitePageable, requestConfiguration *ItemGetByPathWithPathGetByPathWithPath1PagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/getByPath(path='{path1}')/pages", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

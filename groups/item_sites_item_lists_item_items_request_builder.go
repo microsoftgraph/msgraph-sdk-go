@@ -69,6 +69,16 @@ func NewItemSitesItemListsItemItemsRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemListsItemItemsRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Delta provides operations to call the delta method.
+// returns a *ItemSitesItemListsItemItemsDeltaRequestBuilder when successful
+func (m *ItemSitesItemListsItemItemsRequestBuilder) Delta()(*ItemSitesItemListsItemItemsDeltaRequestBuilder) {
+    return NewItemSitesItemListsItemItemsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DeltaWithToken provides operations to call the delta method.
+// returns a *ItemSitesItemListsItemItemsDeltaWithTokenRequestBuilder when successful
+func (m *ItemSitesItemListsItemItemsRequestBuilder) DeltaWithToken(token *string)(*ItemSitesItemListsItemItemsDeltaWithTokenRequestBuilder) {
+    return NewItemSitesItemListsItemItemsDeltaWithTokenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, token)
+}
 // Get get the collection of [items][item] in a [list][].
 // returns a ListItemCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -132,7 +142,7 @@ func (m *ItemSitesItemListsItemItemsRequestBuilder) ToGetRequestInformation(ctx 
 // ToPostRequestInformation create a new [listItem][] in a [list][].
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemListsItemItemsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ListItemable, requestConfiguration *ItemSitesItemListsItemItemsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/items", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

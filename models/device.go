@@ -154,7 +154,7 @@ func (m *Device) GetEnrollmentProfileName()(*string) {
     }
     return nil
 }
-// GetEnrollmentType gets the enrollmentType property value. The enrollmentType property
+// GetEnrollmentType gets the enrollmentType property value. Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.
 // returns a *string when successful
 func (m *Device) GetEnrollmentType()(*string) {
     val, err := m.GetBackingStore().Get("enrollmentType")
@@ -596,7 +596,7 @@ func (m *Device) GetIsManaged()(*bool) {
     }
     return nil
 }
-// GetIsRooted gets the isRooted property value. The isRooted property
+// GetIsRooted gets the isRooted property value. true if the device is rooted; false if the device is jail-broken. This property can only be updated by Intune.
 // returns a *bool when successful
 func (m *Device) GetIsRooted()(*bool) {
     val, err := m.GetBackingStore().Get("isRooted")
@@ -608,7 +608,7 @@ func (m *Device) GetIsRooted()(*bool) {
     }
     return nil
 }
-// GetManagementType gets the managementType property value. The managementType property
+// GetManagementType gets the managementType property value. The management channel of the device. This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
 // returns a *string when successful
 func (m *Device) GetManagementType()(*string) {
     val, err := m.GetBackingStore().Get("managementType")
@@ -1149,7 +1149,7 @@ func (m *Device) SetEnrollmentProfileName(value *string)() {
         panic(err)
     }
 }
-// SetEnrollmentType sets the enrollmentType property value. The enrollmentType property
+// SetEnrollmentType sets the enrollmentType property value. Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.
 func (m *Device) SetEnrollmentType(value *string)() {
     err := m.GetBackingStore().Set("enrollmentType", value)
     if err != nil {
@@ -1177,14 +1177,14 @@ func (m *Device) SetIsManaged(value *bool)() {
         panic(err)
     }
 }
-// SetIsRooted sets the isRooted property value. The isRooted property
+// SetIsRooted sets the isRooted property value. true if the device is rooted; false if the device is jail-broken. This property can only be updated by Intune.
 func (m *Device) SetIsRooted(value *bool)() {
     err := m.GetBackingStore().Set("isRooted", value)
     if err != nil {
         panic(err)
     }
 }
-// SetManagementType sets the managementType property value. The managementType property
+// SetManagementType sets the managementType property value. The management channel of the device. This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
 func (m *Device) SetManagementType(value *string)() {
     err := m.GetBackingStore().Set("managementType", value)
     if err != nil {

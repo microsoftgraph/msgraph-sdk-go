@@ -128,6 +128,26 @@ func (m *DeviceEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["lastExternalIpAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastExternalIpAddress(val)
+        }
+        return nil
+    }
+    res["lastIpAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastIpAddress(val)
+        }
+        return nil
+    }
     res["loggedOnUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateLoggedOnUserFromDiscriminatorValue)
         if err != nil {
@@ -269,6 +289,30 @@ func (m *DeviceEvidence) GetIpInterfaces()([]string) {
     }
     if val != nil {
         return val.([]string)
+    }
+    return nil
+}
+// GetLastExternalIpAddress gets the lastExternalIpAddress property value. The lastExternalIpAddress property
+// returns a *string when successful
+func (m *DeviceEvidence) GetLastExternalIpAddress()(*string) {
+    val, err := m.GetBackingStore().Get("lastExternalIpAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetLastIpAddress gets the lastIpAddress property value. The lastIpAddress property
+// returns a *string when successful
+func (m *DeviceEvidence) GetLastIpAddress()(*string) {
+    val, err := m.GetBackingStore().Get("lastIpAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -436,6 +480,18 @@ func (m *DeviceEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("lastExternalIpAddress", m.GetLastExternalIpAddress())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("lastIpAddress", m.GetLastIpAddress())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetLoggedOnUsers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLoggedOnUsers()))
         for i, v := range m.GetLoggedOnUsers() {
@@ -548,6 +604,20 @@ func (m *DeviceEvidence) SetIpInterfaces(value []string)() {
         panic(err)
     }
 }
+// SetLastExternalIpAddress sets the lastExternalIpAddress property value. The lastExternalIpAddress property
+func (m *DeviceEvidence) SetLastExternalIpAddress(value *string)() {
+    err := m.GetBackingStore().Set("lastExternalIpAddress", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLastIpAddress sets the lastIpAddress property value. The lastIpAddress property
+func (m *DeviceEvidence) SetLastIpAddress(value *string)() {
+    err := m.GetBackingStore().Set("lastIpAddress", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLoggedOnUsers sets the loggedOnUsers property value. Users that were logged on the machine during the time of the alert.
 func (m *DeviceEvidence) SetLoggedOnUsers(value []LoggedOnUserable)() {
     err := m.GetBackingStore().Set("loggedOnUsers", value)
@@ -627,6 +697,8 @@ type DeviceEvidenceable interface {
     GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetHealthStatus()(*DeviceHealthStatus)
     GetIpInterfaces()([]string)
+    GetLastExternalIpAddress()(*string)
+    GetLastIpAddress()(*string)
     GetLoggedOnUsers()([]LoggedOnUserable)
     GetMdeDeviceId()(*string)
     GetOnboardingStatus()(*OnboardingStatus)
@@ -643,6 +715,8 @@ type DeviceEvidenceable interface {
     SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetHealthStatus(value *DeviceHealthStatus)()
     SetIpInterfaces(value []string)()
+    SetLastExternalIpAddress(value *string)()
+    SetLastIpAddress(value *string)()
     SetLoggedOnUsers(value []LoggedOnUserable)()
     SetMdeDeviceId(value *string)()
     SetOnboardingStatus(value *OnboardingStatus)()

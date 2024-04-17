@@ -387,7 +387,7 @@ func (m *Incident) GetRedirectIncidentId()(*string) {
     }
     return nil
 }
-// GetResolvingComment gets the resolvingComment property value. The resolvingComment property
+// GetResolvingComment gets the resolvingComment property value. User input that explains the resolution of the incident and the classification choice. This property contains free editable text.
 // returns a *string when successful
 func (m *Incident) GetResolvingComment()(*string) {
     val, err := m.GetBackingStore().Get("resolvingComment")
@@ -670,7 +670,7 @@ func (m *Incident) SetRedirectIncidentId(value *string)() {
         panic(err)
     }
 }
-// SetResolvingComment sets the resolvingComment property value. The resolvingComment property
+// SetResolvingComment sets the resolvingComment property value. User input that explains the resolution of the incident and the classification choice. This property contains free editable text.
 func (m *Incident) SetResolvingComment(value *string)() {
     err := m.GetBackingStore().Set("resolvingComment", value)
     if err != nil {

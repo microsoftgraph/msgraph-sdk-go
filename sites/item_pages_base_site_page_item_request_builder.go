@@ -18,7 +18,7 @@ type ItemPagesBaseSitePageItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemPagesBaseSitePageItemRequestBuilderGetQueryParameters get pages from sites
+// ItemPagesBaseSitePageItemRequestBuilderGetQueryParameters get the metadata for a [baseSitePage][] in the site pages [list][] in a [site][].
 type ItemPagesBaseSitePageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -59,8 +59,11 @@ func NewItemPagesBaseSitePageItemRequestBuilder(rawUrl string, requestAdapter i2
 func (m *ItemPagesBaseSitePageItemRequestBuilder) CreatedByUser()(*ItemPagesItemCreatedByUserRequestBuilder) {
     return NewItemPagesItemCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete navigation property pages for sites
+// Delete delete a [baseSitePage][] from the site pages [list][] in a [site][].
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/basesitepage-delete?view=graph-rest-1.0
 func (m *ItemPagesBaseSitePageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemPagesBaseSitePageItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +78,12 @@ func (m *ItemPagesBaseSitePageItemRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// Get get pages from sites
+// Get get the metadata for a [baseSitePage][] in the site pages [list][] in a [site][].
 // returns a BaseSitePageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/basesitepage-get?view=graph-rest-1.0
 func (m *ItemPagesBaseSitePageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPagesBaseSitePageItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseSitePageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -125,10 +131,10 @@ func (m *ItemPagesBaseSitePageItemRequestBuilder) Patch(ctx context.Context, bod
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseSitePageable), nil
 }
-// ToDeleteRequestInformation delete navigation property pages for sites
+// ToDeleteRequestInformation delete a [baseSitePage][] from the site pages [list][] in a [site][].
 // returns a *RequestInformation when successful
 func (m *ItemPagesBaseSitePageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemPagesBaseSitePageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/sites/{site%2Did}/pages/{baseSitePage%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -136,7 +142,7 @@ func (m *ItemPagesBaseSitePageItemRequestBuilder) ToDeleteRequestInformation(ctx
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get pages from sites
+// ToGetRequestInformation get the metadata for a [baseSitePage][] in the site pages [list][] in a [site][].
 // returns a *RequestInformation when successful
 func (m *ItemPagesBaseSitePageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPagesBaseSitePageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -153,7 +159,7 @@ func (m *ItemPagesBaseSitePageItemRequestBuilder) ToGetRequestInformation(ctx co
 // ToPatchRequestInformation update the navigation property pages in sites
 // returns a *RequestInformation when successful
 func (m *ItemPagesBaseSitePageItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BaseSitePageable, requestConfiguration *ItemPagesBaseSitePageItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/sites/{site%2Did}/pages/{baseSitePage%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

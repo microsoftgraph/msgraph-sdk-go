@@ -113,6 +113,11 @@ func (m *ApplicationItemRequestBuilder) ExtensionProperties()(*ItemExtensionProp
 func (m *ApplicationItemRequestBuilder) FederatedIdentityCredentials()(*ItemFederatedIdentityCredentialsRequestBuilder) {
     return NewItemFederatedIdentityCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// FederatedIdentityCredentialsWithName provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.application entity.
+// returns a *ItemFederatedIdentityCredentialsWithNameRequestBuilder when successful
+func (m *ApplicationItemRequestBuilder) FederatedIdentityCredentialsWithName(name *string)(*ItemFederatedIdentityCredentialsWithNameRequestBuilder) {
+    return NewItemFederatedIdentityCredentialsWithNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, name)
+}
 // Get get the properties and relationships of an application object.
 // returns a Applicationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -161,12 +166,12 @@ func (m *ApplicationItemRequestBuilder) Logo()(*ItemLogoRequestBuilder) {
 func (m *ApplicationItemRequestBuilder) Owners()(*ItemOwnersRequestBuilder) {
     return NewItemOwnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of an application object.
+// Patch create a new application object if it doesn't exist, or update the properties of an existing application object.
 // returns a Applicationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/application-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/application-upsert?view=graph-rest-1.0
 func (m *ApplicationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable, requestConfiguration *ApplicationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -212,7 +217,7 @@ func (m *ApplicationItemRequestBuilder) Synchronization()(*ItemSynchronizationRe
 // ToDeleteRequestInformation delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.
 // returns a *RequestInformation when successful
 func (m *ApplicationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ApplicationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/applications/{application%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -244,10 +249,10 @@ func (m *ApplicationItemRequestBuilder) TokenIssuancePolicies()(*ItemTokenIssuan
 func (m *ApplicationItemRequestBuilder) TokenLifetimePolicies()(*ItemTokenLifetimePoliciesRequestBuilder) {
     return NewItemTokenLifetimePoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToPatchRequestInformation update the properties of an application object.
+// ToPatchRequestInformation create a new application object if it doesn't exist, or update the properties of an existing application object.
 // returns a *RequestInformation when successful
 func (m *ApplicationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Applicationable, requestConfiguration *ApplicationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/applications/{application%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

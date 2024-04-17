@@ -51,7 +51,7 @@ func (m *CanvasLayout) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetHorizontalSections gets the horizontalSections property value. The horizontalSections property
+// GetHorizontalSections gets the horizontalSections property value. Collection of horizontal sections on the SharePoint page.
 // returns a []HorizontalSectionable when successful
 func (m *CanvasLayout) GetHorizontalSections()([]HorizontalSectionable) {
     val, err := m.GetBackingStore().Get("horizontalSections")
@@ -63,7 +63,7 @@ func (m *CanvasLayout) GetHorizontalSections()([]HorizontalSectionable) {
     }
     return nil
 }
-// GetVerticalSection gets the verticalSection property value. The verticalSection property
+// GetVerticalSection gets the verticalSection property value. Vertical section on the SharePoint page.
 // returns a VerticalSectionable when successful
 func (m *CanvasLayout) GetVerticalSection()(VerticalSectionable) {
     val, err := m.GetBackingStore().Get("verticalSection")
@@ -101,14 +101,14 @@ func (m *CanvasLayout) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetHorizontalSections sets the horizontalSections property value. The horizontalSections property
+// SetHorizontalSections sets the horizontalSections property value. Collection of horizontal sections on the SharePoint page.
 func (m *CanvasLayout) SetHorizontalSections(value []HorizontalSectionable)() {
     err := m.GetBackingStore().Set("horizontalSections", value)
     if err != nil {
         panic(err)
     }
 }
-// SetVerticalSection sets the verticalSection property value. The verticalSection property
+// SetVerticalSection sets the verticalSection property value. Vertical section on the SharePoint page.
 func (m *CanvasLayout) SetVerticalSection(value VerticalSectionable)() {
     err := m.GetBackingStore().Set("verticalSection", value)
     if err != nil {

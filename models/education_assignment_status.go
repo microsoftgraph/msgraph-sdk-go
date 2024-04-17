@@ -9,10 +9,11 @@ const (
     PUBLISHED_EDUCATIONASSIGNMENTSTATUS
     ASSIGNED_EDUCATIONASSIGNMENTSTATUS
     UNKNOWNFUTUREVALUE_EDUCATIONASSIGNMENTSTATUS
+    INACTIVE_EDUCATIONASSIGNMENTSTATUS
 )
 
 func (i EducationAssignmentStatus) String() string {
-    return []string{"draft", "published", "assigned", "unknownFutureValue"}[i]
+    return []string{"draft", "published", "assigned", "unknownFutureValue", "inactive"}[i]
 }
 func ParseEducationAssignmentStatus(v string) (any, error) {
     result := DRAFT_EDUCATIONASSIGNMENTSTATUS
@@ -25,6 +26,8 @@ func ParseEducationAssignmentStatus(v string) (any, error) {
             result = ASSIGNED_EDUCATIONASSIGNMENTSTATUS
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EDUCATIONASSIGNMENTSTATUS
+        case "inactive":
+            result = INACTIVE_EDUCATIONASSIGNMENTSTATUS
         default:
             return 0, errors.New("Unknown EducationAssignmentStatus value: " + v)
     }

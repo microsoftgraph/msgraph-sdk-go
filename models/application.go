@@ -1005,7 +1005,7 @@ func (m *Application) GetServicePrincipalLockConfiguration()(ServicePrincipalLoc
     }
     return nil
 }
-// GetSignInAudience gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you might need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).
+// GetSignInAudience gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg (default), AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount, and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you might need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).
 // returns a *string when successful
 func (m *Application) GetSignInAudience()(*string) {
     val, err := m.GetBackingStore().Get("signInAudience")
@@ -1089,7 +1089,7 @@ func (m *Application) GetTokenLifetimePolicies()([]TokenLifetimePolicyable) {
     }
     return nil
 }
-// GetUniqueName gets the uniqueName property value. The uniqueName property
+// GetUniqueName gets the uniqueName property value. The unique identifier that can be assigned to an application and used as an alternate key. Immutable. Read-only.
 // returns a *string when successful
 func (m *Application) GetUniqueName()(*string) {
     val, err := m.GetBackingStore().Get("uniqueName")
@@ -1733,7 +1733,7 @@ func (m *Application) SetServicePrincipalLockConfiguration(value ServicePrincipa
         panic(err)
     }
 }
-// SetSignInAudience sets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you might need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).
+// SetSignInAudience sets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg (default), AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount, and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you might need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).
 func (m *Application) SetSignInAudience(value *string)() {
     err := m.GetBackingStore().Set("signInAudience", value)
     if err != nil {
@@ -1782,7 +1782,7 @@ func (m *Application) SetTokenLifetimePolicies(value []TokenLifetimePolicyable)(
         panic(err)
     }
 }
-// SetUniqueName sets the uniqueName property value. The uniqueName property
+// SetUniqueName sets the uniqueName property value. The unique identifier that can be assigned to an application and used as an alternate key. Immutable. Read-only.
 func (m *Application) SetUniqueName(value *string)() {
     err := m.GetBackingStore().Set("uniqueName", value)
     if err != nil {

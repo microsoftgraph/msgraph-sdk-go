@@ -11,7 +11,7 @@ import (
 type ItemSitesItemPagesItemGraphSitePageCanvasLayoutHorizontalSectionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemPagesItemGraphSitePageCanvasLayoutHorizontalSectionsRequestBuilderGetQueryParameters get horizontalSections from groups
+// ItemSitesItemPagesItemGraphSitePageCanvasLayoutHorizontalSectionsRequestBuilderGetQueryParameters collection of horizontal sections on the SharePoint page.
 type ItemSitesItemPagesItemGraphSitePageCanvasLayoutHorizontalSectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewItemSitesItemPagesItemGraphSitePageCanvasLayoutHorizontalSectionsRequest
 func (m *ItemSitesItemPagesItemGraphSitePageCanvasLayoutHorizontalSectionsRequestBuilder) Count()(*ItemSitesItemPagesItemGraphSitePageCanvasLayoutHorizontalSectionsCountRequestBuilder) {
     return NewItemSitesItemPagesItemGraphSitePageCanvasLayoutHorizontalSectionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get horizontalSections from groups
+// Get collection of horizontal sections on the SharePoint page.
 // returns a HorizontalSectionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemPagesItemGraphSitePageCanvasLayoutHorizontalSectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemPagesItemGraphSitePageCanvasLayoutHorizontalSectionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HorizontalSectionCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ItemSitesItemPagesItemGraphSitePageCanvasLayoutHorizontalSectionsReques
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HorizontalSectionable), nil
 }
-// ToGetRequestInformation get horizontalSections from groups
+// ToGetRequestInformation collection of horizontal sections on the SharePoint page.
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemPagesItemGraphSitePageCanvasLayoutHorizontalSectionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemPagesItemGraphSitePageCanvasLayoutHorizontalSectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +133,7 @@ func (m *ItemSitesItemPagesItemGraphSitePageCanvasLayoutHorizontalSectionsReques
 // ToPostRequestInformation create new navigation property to horizontalSections for groups
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemPagesItemGraphSitePageCanvasLayoutHorizontalSectionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.HorizontalSectionable, requestConfiguration *ItemSitesItemPagesItemGraphSitePageCanvasLayoutHorizontalSectionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/pages/{baseSitePage%2Did}/graph.sitePage/canvasLayout/horizontalSections", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

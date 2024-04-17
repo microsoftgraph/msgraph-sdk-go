@@ -73,7 +73,7 @@ func (m *VirtualEvent) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetEndDateTime gets the endDateTime property value. End time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows.
+// GetEndDateTime gets the endDateTime property value. End time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows. For details on how to get all available time zones using PowerShell, see Get-TimeZone.
 // returns a DateTimeTimeZoneable when successful
 func (m *VirtualEvent) GetEndDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("endDateTime")
@@ -179,7 +179,7 @@ func (m *VirtualEvent) GetSessions()([]VirtualEventSessionable) {
     }
     return nil
 }
-// GetStartDateTime gets the startDateTime property value. Start time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows.
+// GetStartDateTime gets the startDateTime property value. Start time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows. For details on how to get all available time zones using PowerShell, see Get-TimeZone.
 // returns a DateTimeTimeZoneable when successful
 func (m *VirtualEvent) GetStartDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("startDateTime")
@@ -281,7 +281,7 @@ func (m *VirtualEvent) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetEndDateTime sets the endDateTime property value. End time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows.
+// SetEndDateTime sets the endDateTime property value. End time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows. For details on how to get all available time zones using PowerShell, see Get-TimeZone.
 func (m *VirtualEvent) SetEndDateTime(value DateTimeTimeZoneable)() {
     err := m.GetBackingStore().Set("endDateTime", value)
     if err != nil {
@@ -295,7 +295,7 @@ func (m *VirtualEvent) SetSessions(value []VirtualEventSessionable)() {
         panic(err)
     }
 }
-// SetStartDateTime sets the startDateTime property value. Start time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows.
+// SetStartDateTime sets the startDateTime property value. Start time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows. For details on how to get all available time zones using PowerShell, see Get-TimeZone.
 func (m *VirtualEvent) SetStartDateTime(value DateTimeTimeZoneable)() {
     err := m.GetBackingStore().Set("startDateTime", value)
     if err != nil {

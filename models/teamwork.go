@@ -79,6 +79,26 @@ func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["isTeamsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsTeamsEnabled(val)
+        }
+        return nil
+    }
+    res["region"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRegion(val)
+        }
+        return nil
+    }
     res["teamsAppSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamsAppSettingsFromDiscriminatorValue)
         if err != nil {
@@ -106,6 +126,30 @@ func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     return res
+}
+// GetIsTeamsEnabled gets the isTeamsEnabled property value. Indicates whether Microsoft Teams is enabled for the organization.
+// returns a *bool when successful
+func (m *Teamwork) GetIsTeamsEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isTeamsEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetRegion gets the region property value. Represents the region of the organization. > The region property contains the organization's or the user's region. The property contains the user's region (if available) for users who have a valid multigeo license. For users without multigeo licenses, the region property contains the organization's region.
+// returns a *string when successful
+func (m *Teamwork) GetRegion()(*string) {
+    val, err := m.GetBackingStore().Get("region")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTeamsAppSettings gets the teamsAppSettings property value. Represents tenant-wide settings for all Teams apps in the tenant.
 // returns a TeamsAppSettingsable when successful
@@ -162,6 +206,18 @@ func (m *Teamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
+        err = writer.WriteBoolValue("isTeamsEnabled", m.GetIsTeamsEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("region", m.GetRegion())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("teamsAppSettings", m.GetTeamsAppSettings())
         if err != nil {
             return err
@@ -195,6 +251,20 @@ func (m *Teamwork) SetDeletedTeams(value []DeletedTeamable)() {
         panic(err)
     }
 }
+// SetIsTeamsEnabled sets the isTeamsEnabled property value. Indicates whether Microsoft Teams is enabled for the organization.
+func (m *Teamwork) SetIsTeamsEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isTeamsEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetRegion sets the region property value. Represents the region of the organization. > The region property contains the organization's or the user's region. The property contains the user's region (if available) for users who have a valid multigeo license. For users without multigeo licenses, the region property contains the organization's region.
+func (m *Teamwork) SetRegion(value *string)() {
+    err := m.GetBackingStore().Set("region", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTeamsAppSettings sets the teamsAppSettings property value. Represents tenant-wide settings for all Teams apps in the tenant.
 func (m *Teamwork) SetTeamsAppSettings(value TeamsAppSettingsable)() {
     err := m.GetBackingStore().Set("teamsAppSettings", value)
@@ -214,10 +284,14 @@ type Teamworkable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDeletedChats()([]DeletedChatable)
     GetDeletedTeams()([]DeletedTeamable)
+    GetIsTeamsEnabled()(*bool)
+    GetRegion()(*string)
     GetTeamsAppSettings()(TeamsAppSettingsable)
     GetWorkforceIntegrations()([]WorkforceIntegrationable)
     SetDeletedChats(value []DeletedChatable)()
     SetDeletedTeams(value []DeletedTeamable)()
+    SetIsTeamsEnabled(value *bool)()
+    SetRegion(value *string)()
     SetTeamsAppSettings(value TeamsAppSettingsable)()
     SetWorkforceIntegrations(value []WorkforceIntegrationable)()
 }

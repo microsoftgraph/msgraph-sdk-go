@@ -11,7 +11,7 @@ import (
 type ItemPagesItemGraphSitePageWebPartsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPagesItemGraphSitePageWebPartsRequestBuilderGetQueryParameters get webParts from sites
+// ItemPagesItemGraphSitePageWebPartsRequestBuilderGetQueryParameters collection of webparts on the SharePoint page.
 type ItemPagesItemGraphSitePageWebPartsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewItemPagesItemGraphSitePageWebPartsRequestBuilder(rawUrl string, requestA
 func (m *ItemPagesItemGraphSitePageWebPartsRequestBuilder) Count()(*ItemPagesItemGraphSitePageWebPartsCountRequestBuilder) {
     return NewItemPagesItemGraphSitePageWebPartsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get webParts from sites
+// Get collection of webparts on the SharePoint page.
 // returns a WebPartCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPagesItemGraphSitePageWebPartsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPagesItemGraphSitePageWebPartsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WebPartCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ItemPagesItemGraphSitePageWebPartsRequestBuilder) Post(ctx context.Cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WebPartable), nil
 }
-// ToGetRequestInformation get webParts from sites
+// ToGetRequestInformation collection of webparts on the SharePoint page.
 // returns a *RequestInformation when successful
 func (m *ItemPagesItemGraphSitePageWebPartsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPagesItemGraphSitePageWebPartsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +133,7 @@ func (m *ItemPagesItemGraphSitePageWebPartsRequestBuilder) ToGetRequestInformati
 // ToPostRequestInformation create new navigation property to webParts for sites
 // returns a *RequestInformation when successful
 func (m *ItemPagesItemGraphSitePageWebPartsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WebPartable, requestConfiguration *ItemPagesItemGraphSitePageWebPartsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/sites/{site%2Did}/pages/{baseSitePage%2Did}/graph.sitePage/webParts", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
