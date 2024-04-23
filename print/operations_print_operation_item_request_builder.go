@@ -18,7 +18,7 @@ type OperationsPrintOperationItemRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// OperationsPrintOperationItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a printOperation object.
+// OperationsPrintOperationItemRequestBuilderGetQueryParameters the list of print long running operations.
 type OperationsPrintOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *OperationsPrintOperationItemRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get retrieve the properties and relationships of a printOperation object.
+// Get the list of print long running operations.
 // returns a PrintOperationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/printoperation-get?view=graph-rest-1.0
 func (m *OperationsPrintOperationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *OperationsPrintOperationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PrintOperationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +121,7 @@ func (m *OperationsPrintOperationItemRequestBuilder) ToDeleteRequestInformation(
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a printOperation object.
+// ToGetRequestInformation the list of print long running operations.
 // returns a *RequestInformation when successful
 func (m *OperationsPrintOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OperationsPrintOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type ServicePrincipalRiskDetectionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ServicePrincipalRiskDetectionsRequestBuilderGetQueryParameters retrieve the properties of a collection of servicePrincipalRiskDetection objects.
+// ServicePrincipalRiskDetectionsRequestBuilderGetQueryParameters represents information about detected at-risk service principals in a Microsoft Entra tenant.
 type ServicePrincipalRiskDetectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewServicePrincipalRiskDetectionsRequestBuilder(rawUrl string, requestAdapt
 func (m *ServicePrincipalRiskDetectionsRequestBuilder) Count()(*ServicePrincipalRiskDetectionsCountRequestBuilder) {
     return NewServicePrincipalRiskDetectionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties of a collection of servicePrincipalRiskDetection objects.
+// Get represents information about detected at-risk service principals in a Microsoft Entra tenant.
 // returns a ServicePrincipalRiskDetectionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/identityprotectionroot-list-serviceprincipalriskdetections?view=graph-rest-1.0
 func (m *ServicePrincipalRiskDetectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ServicePrincipalRiskDetectionsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServicePrincipalRiskDetectionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *ServicePrincipalRiskDetectionsRequestBuilder) Post(ctx context.Context,
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ServicePrincipalRiskDetectionable), nil
 }
-// ToGetRequestInformation retrieve the properties of a collection of servicePrincipalRiskDetection objects.
+// ToGetRequestInformation represents information about detected at-risk service principals in a Microsoft Entra tenant.
 // returns a *RequestInformation when successful
 func (m *ServicePrincipalRiskDetectionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ServicePrincipalRiskDetectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

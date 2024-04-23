@@ -33,9 +33,12 @@ func NewGetEmailActivityUserCountsWithPeriodRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewGetEmailActivityUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getEmailActivityUserCounts
+// Get enables you to understand trends on the number of unique users who are performing email activities like send, read, and receive.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getemailactivityusercounts?view=graph-rest-1.0
 func (m *GetEmailActivityUserCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetEmailActivityUserCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *GetEmailActivityUserCountsWithPeriodRequestBuilder) Get(ctx context.Con
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getEmailActivityUserCounts
+// ToGetRequestInformation enables you to understand trends on the number of unique users who are performing email activities like send, read, and receive.
 // returns a *RequestInformation when successful
 func (m *GetEmailActivityUserCountsWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetEmailActivityUserCountsWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

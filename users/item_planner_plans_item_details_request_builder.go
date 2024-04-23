@@ -18,7 +18,7 @@ type ItemPlannerPlansItemDetailsRequestBuilderDeleteRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemPlannerPlansItemDetailsRequestBuilderGetQueryParameters retrieve the properties and relationships of a plannerPlanDetails object.
+// ItemPlannerPlansItemDetailsRequestBuilderGetQueryParameters read-only. Nullable. Extra details about the plan.
 type ItemPlannerPlansItemDetailsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *ItemPlannerPlansItemDetailsRequestBuilder) Delete(ctx context.Context, 
     }
     return nil
 }
-// Get retrieve the properties and relationships of a plannerPlanDetails object.
+// Get read-only. Nullable. Extra details about the plan.
 // returns a PlannerPlanDetailsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-1.0
 func (m *ItemPlannerPlansItemDetailsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPlannerPlansItemDetailsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerPlanDetailsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +93,6 @@ func (m *ItemPlannerPlansItemDetailsRequestBuilder) Get(ctx context.Context, req
 // Patch update the navigation property details in users
 // returns a PlannerPlanDetailsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/plannerplandetails-update?view=graph-rest-1.0
 func (m *ItemPlannerPlansItemDetailsRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerPlanDetailsable, requestConfiguration *ItemPlannerPlansItemDetailsRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerPlanDetailsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,7 +121,7 @@ func (m *ItemPlannerPlansItemDetailsRequestBuilder) ToDeleteRequestInformation(c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a plannerPlanDetails object.
+// ToGetRequestInformation read-only. Nullable. Extra details about the plan.
 // returns a *RequestInformation when successful
 func (m *ItemPlannerPlansItemDetailsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerPlansItemDetailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

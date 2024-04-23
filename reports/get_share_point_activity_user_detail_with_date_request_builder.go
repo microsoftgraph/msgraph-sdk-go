@@ -34,9 +34,12 @@ func NewGetSharePointActivityUserDetailWithDateRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewGetSharePointActivityUserDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getSharePointActivityUserDetail
+// Get get details about SharePoint activity by user.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getsharepointactivityuserdetail?view=graph-rest-1.0
 func (m *GetSharePointActivityUserDetailWithDateRequestBuilder) Get(ctx context.Context, requestConfiguration *GetSharePointActivityUserDetailWithDateRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -54,7 +57,7 @@ func (m *GetSharePointActivityUserDetailWithDateRequestBuilder) Get(ctx context.
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getSharePointActivityUserDetail
+// ToGetRequestInformation get details about SharePoint activity by user.
 // returns a *RequestInformation when successful
 func (m *GetSharePointActivityUserDetailWithDateRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetSharePointActivityUserDetailWithDateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

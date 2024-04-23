@@ -11,7 +11,7 @@ import (
 type SchoolsItemClassesRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SchoolsItemClassesRefRequestBuilderDeleteQueryParameters delete a class from a school.
+// SchoolsItemClassesRefRequestBuilderDeleteQueryParameters delete ref of navigation property classes for education
 type SchoolsItemClassesRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
     Id *string `uriparametername:"%40id"`
@@ -25,7 +25,7 @@ type SchoolsItemClassesRefRequestBuilderDeleteRequestConfiguration struct {
     // Request query parameters
     QueryParameters *SchoolsItemClassesRefRequestBuilderDeleteQueryParameters
 }
-// SchoolsItemClassesRefRequestBuilderGetQueryParameters get the educationClass resources owned by an educationSchool.
+// SchoolsItemClassesRefRequestBuilderGetQueryParameters classes taught at the school. Nullable.
 type SchoolsItemClassesRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,11 +69,8 @@ func NewSchoolsItemClassesRefRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewSchoolsItemClassesRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a class from a school.
+// Delete delete ref of navigation property classes for education
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-delete-classes?view=graph-rest-1.0
 func (m *SchoolsItemClassesRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *SchoolsItemClassesRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -88,12 +85,9 @@ func (m *SchoolsItemClassesRefRequestBuilder) Delete(ctx context.Context, reques
     }
     return nil
 }
-// Get get the educationClass resources owned by an educationSchool.
+// Get classes taught at the school. Nullable.
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-list-classes?view=graph-rest-1.0
 func (m *SchoolsItemClassesRefRequestBuilder) Get(ctx context.Context, requestConfiguration *SchoolsItemClassesRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -111,11 +105,8 @@ func (m *SchoolsItemClassesRefRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
-// Post add a class to a school.
+// Post create new navigation property ref to classes for education
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-post-classes?view=graph-rest-1.0
 func (m *SchoolsItemClassesRefRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *SchoolsItemClassesRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -130,7 +121,7 @@ func (m *SchoolsItemClassesRefRequestBuilder) Post(ctx context.Context, body iad
     }
     return nil
 }
-// ToDeleteRequestInformation delete a class from a school.
+// ToDeleteRequestInformation delete ref of navigation property classes for education
 // returns a *RequestInformation when successful
 func (m *SchoolsItemClassesRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SchoolsItemClassesRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/education/schools/{educationSchool%2Did}/classes/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *SchoolsItemClassesRefRequestBuilder) ToDeleteRequestInformation(ctx con
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the educationClass resources owned by an educationSchool.
+// ToGetRequestInformation classes taught at the school. Nullable.
 // returns a *RequestInformation when successful
 func (m *SchoolsItemClassesRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SchoolsItemClassesRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/education/schools/{educationSchool%2Did}/classes/$ref{?%24count,%24filter,%24orderby,%24search,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
@@ -158,7 +149,7 @@ func (m *SchoolsItemClassesRefRequestBuilder) ToGetRequestInformation(ctx contex
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation add a class to a school.
+// ToPostRequestInformation create new navigation property ref to classes for education
 // returns a *RequestInformation when successful
 func (m *SchoolsItemClassesRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *SchoolsItemClassesRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/education/schools/{educationSchool%2Did}/classes/$ref", m.BaseRequestBuilder.PathParameters)

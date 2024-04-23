@@ -11,7 +11,7 @@ import (
 type ItemTermStoresItemGroupsItemSetsItemTermsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTermStoresItemGroupsItemSetsItemTermsRequestBuilderGetQueryParameters read the properties and relationships of a term object.
+// ItemTermStoresItemGroupsItemSetsItemTermsRequestBuilderGetQueryParameters all the terms under the set.
 type ItemTermStoresItemGroupsItemSetsItemTermsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewItemTermStoresItemGroupsItemSetsItemTermsRequestBuilder(rawUrl string, r
 func (m *ItemTermStoresItemGroupsItemSetsItemTermsRequestBuilder) Count()(*ItemTermStoresItemGroupsItemSetsItemTermsCountRequestBuilder) {
     return NewItemTermStoresItemGroupsItemSetsItemTermsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a term object.
+// Get all the terms under the set.
 // returns a TermCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTermStoresItemGroupsItemSetsItemTermsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTermStoresItemGroupsItemSetsItemTermsRequestBuilderGetRequestConfiguration)(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.TermCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ItemTermStoresItemGroupsItemSetsItemTermsRequestBuilder) Post(ctx conte
     }
     return res.(ia3c27b33aa3d3ed80f9de797c48fbb8ed73f13887e301daf51f08450e9a634a3.Termable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a term object.
+// ToGetRequestInformation all the terms under the set.
 // returns a *RequestInformation when successful
 func (m *ItemTermStoresItemGroupsItemSetsItemTermsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTermStoresItemGroupsItemSetsItemTermsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

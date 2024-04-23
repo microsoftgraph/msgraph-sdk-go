@@ -10,7 +10,7 @@ import (
 type VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointDeviceImagesGetSourceImagesRequestBuilderGetQueryParameters invoke function getSourceImages
+// VirtualEndpointDeviceImagesGetSourceImagesRequestBuilderGetQueryParameters get cloudPcSourceDeviceImage objects that can be uploaded and used on Cloud PCs. View a list of all the managed image resources from your Microsoft Entra subscriptions.
 type VirtualEndpointDeviceImagesGetSourceImagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -45,10 +45,13 @@ func NewVirtualEndpointDeviceImagesGetSourceImagesRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointDeviceImagesGetSourceImagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getSourceImages
+// Get get cloudPcSourceDeviceImage objects that can be uploaded and used on Cloud PCs. View a list of all the managed image resources from your Microsoft Entra subscriptions.
 // Deprecated: This method is obsolete. Use GetAsGetSourceImagesGetResponse instead.
 // returns a VirtualEndpointDeviceImagesGetSourceImagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-getsourceimages?view=graph-rest-1.0
 func (m *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilderGetRequestConfiguration)(VirtualEndpointDeviceImagesGetSourceImagesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -66,9 +69,12 @@ func (m *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) Get(ctx conte
     }
     return res.(VirtualEndpointDeviceImagesGetSourceImagesResponseable), nil
 }
-// GetAsGetSourceImagesGetResponse invoke function getSourceImages
+// GetAsGetSourceImagesGetResponse get cloudPcSourceDeviceImage objects that can be uploaded and used on Cloud PCs. View a list of all the managed image resources from your Microsoft Entra subscriptions.
 // returns a VirtualEndpointDeviceImagesGetSourceImagesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-getsourceimages?view=graph-rest-1.0
 func (m *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) GetAsGetSourceImagesGetResponse(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilderGetRequestConfiguration)(VirtualEndpointDeviceImagesGetSourceImagesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +92,7 @@ func (m *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) GetAsGetSourc
     }
     return res.(VirtualEndpointDeviceImagesGetSourceImagesGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getSourceImages
+// ToGetRequestInformation get cloudPcSourceDeviceImage objects that can be uploaded and used on Cloud PCs. View a list of all the managed image resources from your Microsoft Entra subscriptions.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

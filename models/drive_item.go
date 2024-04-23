@@ -723,7 +723,7 @@ func (m *DriveItem) GetSubscriptions()([]Subscriptionable) {
     }
     return nil
 }
-// GetThumbnails gets the thumbnails property value. Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.
+// GetThumbnails gets the thumbnails property value. Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.
 // returns a []ThumbnailSetable when successful
 func (m *DriveItem) GetThumbnails()([]ThumbnailSetable) {
     val, err := m.GetBackingStore().Get("thumbnails")
@@ -735,7 +735,7 @@ func (m *DriveItem) GetThumbnails()([]ThumbnailSetable) {
     }
     return nil
 }
-// GetVersions gets the versions property value. The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
+// GetVersions gets the versions property value. The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.
 // returns a []DriveItemVersionable when successful
 func (m *DriveItem) GetVersions()([]DriveItemVersionable) {
     val, err := m.GetBackingStore().Get("versions")
@@ -1215,14 +1215,14 @@ func (m *DriveItem) SetSubscriptions(value []Subscriptionable)() {
         panic(err)
     }
 }
-// SetThumbnails sets the thumbnails property value. Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.
+// SetThumbnails sets the thumbnails property value. Collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.
 func (m *DriveItem) SetThumbnails(value []ThumbnailSetable)() {
     err := m.GetBackingStore().Set("thumbnails", value)
     if err != nil {
         panic(err)
     }
 }
-// SetVersions sets the versions property value. The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
+// SetVersions sets the versions property value. The list of previous versions of the item. For more info, see getting previous versions. Read-only. Nullable.
 func (m *DriveItem) SetVersions(value []DriveItemVersionable)() {
     err := m.GetBackingStore().Set("versions", value)
     if err != nil {

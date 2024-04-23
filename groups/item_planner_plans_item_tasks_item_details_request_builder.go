@@ -18,7 +18,7 @@ type ItemPlannerPlansItemTasksItemDetailsRequestBuilderDeleteRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemPlannerPlansItemTasksItemDetailsRequestBuilderGetQueryParameters retrieve the properties and relationships of a plannerTaskDetails object.
+// ItemPlannerPlansItemTasksItemDetailsRequestBuilderGetQueryParameters read-only. Nullable. More details about the task.
 type ItemPlannerPlansItemTasksItemDetailsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *ItemPlannerPlansItemTasksItemDetailsRequestBuilder) Delete(ctx context.
     }
     return nil
 }
-// Get retrieve the properties and relationships of a plannerTaskDetails object.
+// Get read-only. Nullable. More details about the task.
 // returns a PlannerTaskDetailsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
 func (m *ItemPlannerPlansItemTasksItemDetailsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPlannerPlansItemTasksItemDetailsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerTaskDetailsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +93,6 @@ func (m *ItemPlannerPlansItemTasksItemDetailsRequestBuilder) Get(ctx context.Con
 // Patch update the navigation property details in groups
 // returns a PlannerTaskDetailsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
 func (m *ItemPlannerPlansItemTasksItemDetailsRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerTaskDetailsable, requestConfiguration *ItemPlannerPlansItemTasksItemDetailsRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerTaskDetailsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,7 +121,7 @@ func (m *ItemPlannerPlansItemTasksItemDetailsRequestBuilder) ToDeleteRequestInfo
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a plannerTaskDetails object.
+// ToGetRequestInformation read-only. Nullable. More details about the task.
 // returns a *RequestInformation when successful
 func (m *ItemPlannerPlansItemTasksItemDetailsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerPlansItemTasksItemDetailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

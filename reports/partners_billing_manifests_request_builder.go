@@ -11,7 +11,7 @@ import (
 type PartnersBillingManifestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PartnersBillingManifestsRequestBuilderGetQueryParameters read the properties and relationships of a manifest object.
+// PartnersBillingManifestsRequestBuilderGetQueryParameters represents metadata for the exported data.
 type PartnersBillingManifestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewPartnersBillingManifestsRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *PartnersBillingManifestsRequestBuilder) Count()(*PartnersBillingManifestsCountRequestBuilder) {
     return NewPartnersBillingManifestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a manifest object.
+// Get represents metadata for the exported data.
 // returns a ManifestCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PartnersBillingManifestsRequestBuilder) Get(ctx context.Context, requestConfiguration *PartnersBillingManifestsRequestBuilderGetRequestConfiguration)(ieaa1d050ea8ba883c482e05cf2306cb5376cc6e2cf5966c1a6850c42c6118fa4.ManifestCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *PartnersBillingManifestsRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(ieaa1d050ea8ba883c482e05cf2306cb5376cc6e2cf5966c1a6850c42c6118fa4.Manifestable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a manifest object.
+// ToGetRequestInformation represents metadata for the exported data.
 // returns a *RequestInformation when successful
 func (m *PartnersBillingManifestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PartnersBillingManifestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

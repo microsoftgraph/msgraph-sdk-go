@@ -18,7 +18,7 @@ type PrintersPrinterItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PrintersPrinterItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a printer object.
+// PrintersPrinterItemRequestBuilderGetQueryParameters the list of printers registered in the tenant.
 type PrintersPrinterItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -59,11 +59,8 @@ func NewPrintersPrinterItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewPrintersPrinterItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete (unregister) a printer.
+// Delete delete navigation property printers for print
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/printer-delete?view=graph-rest-1.0
 func (m *PrintersPrinterItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PrintersPrinterItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,12 +75,9 @@ func (m *PrintersPrinterItemRequestBuilder) Delete(ctx context.Context, requestC
     }
     return nil
 }
-// Get retrieve the properties and relationships of a printer object.
+// Get the list of printers registered in the tenant.
 // returns a Printerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/printer-get?view=graph-rest-1.0
 func (m *PrintersPrinterItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PrintersPrinterItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printerable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -106,12 +100,9 @@ func (m *PrintersPrinterItemRequestBuilder) Get(ctx context.Context, requestConf
 func (m *PrintersPrinterItemRequestBuilder) Jobs()(*PrintersItemJobsRequestBuilder) {
     return NewPrintersItemJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a printer object.
+// Patch update the navigation property printers in print
 // returns a Printerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/printer-update?view=graph-rest-1.0
 func (m *PrintersPrinterItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printerable, requestConfiguration *PrintersPrinterItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printerable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -144,7 +135,7 @@ func (m *PrintersPrinterItemRequestBuilder) Shares()(*PrintersItemSharesRequestB
 func (m *PrintersPrinterItemRequestBuilder) TaskTriggers()(*PrintersItemTaskTriggersRequestBuilder) {
     return NewPrintersItemTaskTriggersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete (unregister) a printer.
+// ToDeleteRequestInformation delete navigation property printers for print
 // returns a *RequestInformation when successful
 func (m *PrintersPrinterItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrintersPrinterItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -155,7 +146,7 @@ func (m *PrintersPrinterItemRequestBuilder) ToDeleteRequestInformation(ctx conte
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a printer object.
+// ToGetRequestInformation the list of printers registered in the tenant.
 // returns a *RequestInformation when successful
 func (m *PrintersPrinterItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrintersPrinterItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -169,7 +160,7 @@ func (m *PrintersPrinterItemRequestBuilder) ToGetRequestInformation(ctx context.
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a printer object.
+// ToPatchRequestInformation update the navigation property printers in print
 // returns a *RequestInformation when successful
 func (m *PrintersPrinterItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.Printerable, requestConfiguration *PrintersPrinterItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

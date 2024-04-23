@@ -40,7 +40,7 @@ func (m *Album) GetAdditionalData()(map[string]any) {
 func (m *Album) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCoverImageItemId gets the coverImageItemId property value. Unique identifier of the [driveItem][] that is the cover of the album.
+// GetCoverImageItemId gets the coverImageItemId property value. Unique identifier of the driveItem that is the cover of the album.
 // returns a *string when successful
 func (m *Album) GetCoverImageItemId()(*string) {
     val, err := m.GetBackingStore().Get("coverImageItemId")
@@ -123,7 +123,7 @@ func (m *Album) SetAdditionalData(value map[string]any)() {
 func (m *Album) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCoverImageItemId sets the coverImageItemId property value. Unique identifier of the [driveItem][] that is the cover of the album.
+// SetCoverImageItemId sets the coverImageItemId property value. Unique identifier of the driveItem that is the cover of the album.
 func (m *Album) SetCoverImageItemId(value *string)() {
     err := m.GetBackingStore().Set("coverImageItemId", value)
     if err != nil {

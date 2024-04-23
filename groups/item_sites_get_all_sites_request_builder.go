@@ -10,7 +10,7 @@ import (
 type ItemSitesGetAllSitesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesGetAllSitesRequestBuilderGetQueryParameters invoke function getAllSites
+// ItemSitesGetAllSitesRequestBuilderGetQueryParameters list sites across geographies in an organization. This API can also be used to enumerate all sites in a non-multi-geo tenant. For more information, see Best practices for discovering files and detecting changes at scale.
 type ItemSitesGetAllSitesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,10 +51,13 @@ func NewItemSitesGetAllSitesRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesGetAllSitesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getAllSites
+// Get list sites across geographies in an organization. This API can also be used to enumerate all sites in a non-multi-geo tenant. For more information, see Best practices for discovering files and detecting changes at scale.
 // Deprecated: This method is obsolete. Use GetAsGetAllSitesGetResponse instead.
 // returns a ItemSitesGetAllSitesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-getallsites?view=graph-rest-1.0
 func (m *ItemSitesGetAllSitesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesGetAllSitesRequestBuilderGetRequestConfiguration)(ItemSitesGetAllSitesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,9 +75,12 @@ func (m *ItemSitesGetAllSitesRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(ItemSitesGetAllSitesResponseable), nil
 }
-// GetAsGetAllSitesGetResponse invoke function getAllSites
+// GetAsGetAllSitesGetResponse list sites across geographies in an organization. This API can also be used to enumerate all sites in a non-multi-geo tenant. For more information, see Best practices for discovering files and detecting changes at scale.
 // returns a ItemSitesGetAllSitesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-getallsites?view=graph-rest-1.0
 func (m *ItemSitesGetAllSitesRequestBuilder) GetAsGetAllSitesGetResponse(ctx context.Context, requestConfiguration *ItemSitesGetAllSitesRequestBuilderGetRequestConfiguration)(ItemSitesGetAllSitesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +98,7 @@ func (m *ItemSitesGetAllSitesRequestBuilder) GetAsGetAllSitesGetResponse(ctx con
     }
     return res.(ItemSitesGetAllSitesGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getAllSites
+// ToGetRequestInformation list sites across geographies in an organization. This API can also be used to enumerate all sites in a non-multi-geo tenant. For more information, see Best practices for discovering files and detecting changes at scale.
 // returns a *RequestInformation when successful
 func (m *ItemSitesGetAllSitesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesGetAllSitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -18,7 +18,7 @@ type DeletedChatsDeletedChatItemRequestBuilderDeleteRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DeletedChatsDeletedChatItemRequestBuilderGetQueryParameters read the properties and relationships of a deletedChat object.
+// DeletedChatsDeletedChatItemRequestBuilderGetQueryParameters a collection of deleted chats.
 type DeletedChatsDeletedChatItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *DeletedChatsDeletedChatItemRequestBuilder) Delete(ctx context.Context, 
     }
     return nil
 }
-// Get read the properties and relationships of a deletedChat object.
+// Get a collection of deleted chats.
 // returns a DeletedChatable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/deletedchat-get?view=graph-rest-1.0
 func (m *DeletedChatsDeletedChatItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedChatsDeletedChatItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeletedChatable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +121,7 @@ func (m *DeletedChatsDeletedChatItemRequestBuilder) ToDeleteRequestInformation(c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a deletedChat object.
+// ToGetRequestInformation a collection of deleted chats.
 // returns a *RequestInformation when successful
 func (m *DeletedChatsDeletedChatItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedChatsDeletedChatItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

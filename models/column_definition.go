@@ -573,7 +573,7 @@ func (m *ColumnDefinition) GetLookup()(LookupColumnable) {
     }
     return nil
 }
-// GetName gets the name property value. The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.
+// GetName gets the name property value. The API-facing name of the column as it appears in the fields on a listItem. For the user-facing name, see displayName.
 // returns a *string when successful
 func (m *ColumnDefinition) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -1063,7 +1063,7 @@ func (m *ColumnDefinition) SetLookup(value LookupColumnable)() {
         panic(err)
     }
 }
-// SetName sets the name property value. The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.
+// SetName sets the name property value. The API-facing name of the column as it appears in the fields on a listItem. For the user-facing name, see displayName.
 func (m *ColumnDefinition) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {

@@ -40,9 +40,6 @@ func NewItemPhotoValueContentRequestBuilder(rawUrl string, requestAdapter i2ae41
 // Get get media content for the navigation property photo from users
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0
 func (m *ItemPhotoValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPhotoValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

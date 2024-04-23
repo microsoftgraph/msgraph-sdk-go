@@ -11,7 +11,7 @@ import (
 type ItemScopedMembersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemScopedMembersRequestBuilderGetQueryParameters retrieve a list of scopedRoleMembership objects for a directory role.
+// ItemScopedMembersRequestBuilderGetQueryParameters members of this directory role that are scoped to administrative units. Read-only. Nullable.
 type ItemScopedMembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewItemScopedMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *ItemScopedMembersRequestBuilder) Count()(*ItemScopedMembersCountRequestBuilder) {
     return NewItemScopedMembersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of scopedRoleMembership objects for a directory role.
+// Get members of this directory role that are scoped to administrative units. Read-only. Nullable.
 // returns a ScopedRoleMembershipCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/directoryrole-list-scopedmembers?view=graph-rest-1.0
 func (m *ItemScopedMembersRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemScopedMembersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ScopedRoleMembershipCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *ItemScopedMembersRequestBuilder) Post(ctx context.Context, body iadcd81
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ScopedRoleMembershipable), nil
 }
-// ToGetRequestInformation retrieve a list of scopedRoleMembership objects for a directory role.
+// ToGetRequestInformation members of this directory role that are scoped to administrative units. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemScopedMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemScopedMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

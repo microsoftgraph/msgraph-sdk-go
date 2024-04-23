@@ -33,9 +33,12 @@ func NewGetM365AppPlatformUserCountsWithPeriodRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewGetM365AppPlatformUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getM365AppPlatformUserCounts
+// Get get a report that provides the trend of active users across all apps for each platform (Windows, Mac, web, and mobile) in your organization.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getm365appplatformusercounts?view=graph-rest-1.0
 func (m *GetM365AppPlatformUserCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetM365AppPlatformUserCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *GetM365AppPlatformUserCountsWithPeriodRequestBuilder) Get(ctx context.C
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getM365AppPlatformUserCounts
+// ToGetRequestInformation get a report that provides the trend of active users across all apps for each platform (Windows, Mac, web, and mobile) in your organization.
 // returns a *RequestInformation when successful
 func (m *GetM365AppPlatformUserCountsWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetM365AppPlatformUserCountsWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

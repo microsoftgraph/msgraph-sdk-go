@@ -33,9 +33,12 @@ func NewGetMailboxUsageStorageWithPeriodRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewGetMailboxUsageStorageWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getMailboxUsageStorage
+// Get get the amount of storage used in your organization.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getmailboxusagestorage?view=graph-rest-1.0
 func (m *GetMailboxUsageStorageWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetMailboxUsageStorageWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *GetMailboxUsageStorageWithPeriodRequestBuilder) Get(ctx context.Context
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getMailboxUsageStorage
+// ToGetRequestInformation get the amount of storage used in your organization.
 // returns a *RequestInformation when successful
 func (m *GetMailboxUsageStorageWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetMailboxUsageStorageWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

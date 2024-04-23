@@ -18,7 +18,7 @@ type UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a identityUserFlowAttribute object.
+// UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderGetQueryParameters represents entry point for identity userflow attributes.
 type UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewUserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewUserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a custom identityUserFlowAttribute.
+// Delete delete navigation property userFlowAttributes for identity
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/identityuserflowattribute-delete?view=graph-rest-1.0
 func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get retrieve the properties and relationships of a identityUserFlowAttribute object.
+// Get represents entry point for identity userflow attributes.
 // returns a IdentityUserFlowAttributeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/identityuserflowattribute-get?view=graph-rest-1.0
 func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) Get(ctx context.Context, requestConfiguration *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityUserFlowAttributeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) Get(ctx 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityUserFlowAttributeable), nil
 }
-// Patch update the properties of a custom identityUserFlowAttribute object.
+// Patch update the navigation property userFlowAttributes in identity
 // returns a IdentityUserFlowAttributeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/identityuserflowattribute-update?view=graph-rest-1.0
 func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityUserFlowAttributeable, requestConfiguration *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityUserFlowAttributeable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +110,7 @@ func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) Patch(ct
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityUserFlowAttributeable), nil
 }
-// ToDeleteRequestInformation delete a custom identityUserFlowAttribute.
+// ToDeleteRequestInformation delete navigation property userFlowAttributes for identity
 // returns a *RequestInformation when successful
 func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +121,7 @@ func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) ToDelete
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a identityUserFlowAttribute object.
+// ToGetRequestInformation represents entry point for identity userflow attributes.
 // returns a *RequestInformation when successful
 func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) ToGetReq
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a custom identityUserFlowAttribute object.
+// ToPatchRequestInformation update the navigation property userFlowAttributes in identity
 // returns a *RequestInformation when successful
 func (m *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.IdentityUserFlowAttributeable, requestConfiguration *UserFlowAttributesIdentityUserFlowAttributeItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

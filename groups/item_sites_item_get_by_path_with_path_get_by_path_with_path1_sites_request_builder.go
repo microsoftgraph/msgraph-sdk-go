@@ -11,7 +11,7 @@ import (
 type ItemSitesItemGetByPathWithPathGetByPathWithPath1SitesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemGetByPathWithPathGetByPathWithPath1SitesRequestBuilderGetQueryParameters get a collection of subsites defined for a [site][].
+// ItemSitesItemGetByPathWithPathGetByPathWithPath1SitesRequestBuilderGetQueryParameters the collection of the sub-sites under this site.
 type ItemSitesItemGetByPathWithPathGetByPathWithPath1SitesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -52,12 +52,9 @@ func NewItemSitesItemGetByPathWithPathGetByPathWithPath1SitesRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemGetByPathWithPathGetByPathWithPath1SitesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get a collection of subsites defined for a [site][].
+// Get the collection of the sub-sites under this site.
 // returns a SiteCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/site-list-subsites?view=graph-rest-1.0
 func (m *ItemSitesItemGetByPathWithPathGetByPathWithPath1SitesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemGetByPathWithPathGetByPathWithPath1SitesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SiteCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,7 +72,7 @@ func (m *ItemSitesItemGetByPathWithPathGetByPathWithPath1SitesRequestBuilder) Ge
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.SiteCollectionResponseable), nil
 }
-// ToGetRequestInformation get a collection of subsites defined for a [site][].
+// ToGetRequestInformation the collection of the sub-sites under this site.
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemGetByPathWithPathGetByPathWithPath1SitesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemGetByPathWithPathGetByPathWithPath1SitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

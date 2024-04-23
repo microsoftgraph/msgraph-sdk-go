@@ -31,7 +31,7 @@ func NewItemSitesItemListsItemContentTypesAddCopyRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemListsItemContentTypesAddCopyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post add a copy of a [content type][contentType] from a [site][site] to a [list][list].
+// Post add a copy of a content type from a site to a list.
 // returns a ContentTypeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,7 +54,7 @@ func (m *ItemSitesItemListsItemContentTypesAddCopyRequestBuilder) Post(ctx conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable), nil
 }
-// ToPostRequestInformation add a copy of a [content type][contentType] from a [site][site] to a [list][list].
+// ToPostRequestInformation add a copy of a content type from a site to a list.
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemListsItemContentTypesAddCopyRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSitesItemListsItemContentTypesAddCopyPostRequestBodyable, requestConfiguration *ItemSitesItemListsItemContentTypesAddCopyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

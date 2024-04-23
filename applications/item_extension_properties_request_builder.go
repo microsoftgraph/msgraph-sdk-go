@@ -11,7 +11,7 @@ import (
 type ItemExtensionPropertiesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemExtensionPropertiesRequestBuilderGetQueryParameters retrieve the list of directory extension definitions, represented by extensionProperty objects on an application.
+// ItemExtensionPropertiesRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
 type ItemExtensionPropertiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewItemExtensionPropertiesRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *ItemExtensionPropertiesRequestBuilder) Count()(*ItemExtensionPropertiesCountRequestBuilder) {
     return NewItemExtensionPropertiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the list of directory extension definitions, represented by extensionProperty objects on an application.
+// Get read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
 // returns a ExtensionPropertyCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/application-list-extensionproperty?view=graph-rest-1.0
 func (m *ItemExtensionPropertiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemExtensionPropertiesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExtensionPropertyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *ItemExtensionPropertiesRequestBuilder) Get(ctx context.Context, request
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExtensionPropertyCollectionResponseable), nil
 }
-// Post create a new directory extension definition, represented by an extensionProperty object.
+// Post create new navigation property to extensionProperties for applications
 // returns a ExtensionPropertyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/application-post-extensionproperty?view=graph-rest-1.0
 func (m *ItemExtensionPropertiesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExtensionPropertyable, requestConfiguration *ItemExtensionPropertiesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExtensionPropertyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *ItemExtensionPropertiesRequestBuilder) Post(ctx context.Context, body i
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExtensionPropertyable), nil
 }
-// ToGetRequestInformation retrieve the list of directory extension definitions, represented by extensionProperty objects on an application.
+// ToGetRequestInformation read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
 // returns a *RequestInformation when successful
 func (m *ItemExtensionPropertiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemExtensionPropertiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *ItemExtensionPropertiesRequestBuilder) ToGetRequestInformation(ctx cont
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new directory extension definition, represented by an extensionProperty object.
+// ToPostRequestInformation create new navigation property to extensionProperties for applications
 // returns a *RequestInformation when successful
 func (m *ItemExtensionPropertiesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ExtensionPropertyable, requestConfiguration *ItemExtensionPropertiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

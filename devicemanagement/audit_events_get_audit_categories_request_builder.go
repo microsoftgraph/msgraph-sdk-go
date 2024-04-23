@@ -10,7 +10,7 @@ import (
 type AuditEventsGetAuditCategoriesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AuditEventsGetAuditCategoriesRequestBuilderGetQueryParameters invoke function getAuditCategories
+// AuditEventsGetAuditCategoriesRequestBuilderGetQueryParameters not yet documented
 type AuditEventsGetAuditCategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -45,10 +45,13 @@ func NewAuditEventsGetAuditCategoriesRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewAuditEventsGetAuditCategoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getAuditCategories
+// Get not yet documented
 // Deprecated: This method is obsolete. Use GetAsGetAuditCategoriesGetResponse instead.
 // returns a AuditEventsGetAuditCategoriesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-auditing-auditevent-getauditcategories?view=graph-rest-1.0
 func (m *AuditEventsGetAuditCategoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *AuditEventsGetAuditCategoriesRequestBuilderGetRequestConfiguration)(AuditEventsGetAuditCategoriesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -66,9 +69,12 @@ func (m *AuditEventsGetAuditCategoriesRequestBuilder) Get(ctx context.Context, r
     }
     return res.(AuditEventsGetAuditCategoriesResponseable), nil
 }
-// GetAsGetAuditCategoriesGetResponse invoke function getAuditCategories
+// GetAsGetAuditCategoriesGetResponse not yet documented
 // returns a AuditEventsGetAuditCategoriesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/intune-auditing-auditevent-getauditcategories?view=graph-rest-1.0
 func (m *AuditEventsGetAuditCategoriesRequestBuilder) GetAsGetAuditCategoriesGetResponse(ctx context.Context, requestConfiguration *AuditEventsGetAuditCategoriesRequestBuilderGetRequestConfiguration)(AuditEventsGetAuditCategoriesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +92,7 @@ func (m *AuditEventsGetAuditCategoriesRequestBuilder) GetAsGetAuditCategoriesGet
     }
     return res.(AuditEventsGetAuditCategoriesGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getAuditCategories
+// ToGetRequestInformation not yet documented
 // returns a *RequestInformation when successful
 func (m *AuditEventsGetAuditCategoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuditEventsGetAuditCategoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

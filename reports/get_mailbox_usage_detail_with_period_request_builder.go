@@ -33,9 +33,12 @@ func NewGetMailboxUsageDetailWithPeriodRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewGetMailboxUsageDetailWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getMailboxUsageDetail
+// Get get details about mailbox usage.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getmailboxusagedetail?view=graph-rest-1.0
 func (m *GetMailboxUsageDetailWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetMailboxUsageDetailWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *GetMailboxUsageDetailWithPeriodRequestBuilder) Get(ctx context.Context,
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getMailboxUsageDetail
+// ToGetRequestInformation get details about mailbox usage.
 // returns a *RequestInformation when successful
 func (m *GetMailboxUsageDetailWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetMailboxUsageDetailWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

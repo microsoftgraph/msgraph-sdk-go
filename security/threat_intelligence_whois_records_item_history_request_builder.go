@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilderGetQueryParameters get the history for a whoisRecord, as represented by a collection of whoisHistoryRecord resources.
+// ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilderGetQueryParameters the collection of historical records associated to this WHOIS object.
 type ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,12 +69,9 @@ func NewThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder(rawUrl string, r
 func (m *ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder) Count()(*ThreatIntelligenceWhoisRecordsItemHistoryCountRequestBuilder) {
     return NewThreatIntelligenceWhoisRecordsItemHistoryCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the history for a whoisRecord, as represented by a collection of whoisHistoryRecord resources.
+// Get the collection of historical records associated to this WHOIS object.
 // returns a WhoisHistoryRecordCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-whoisrecord-list-history?view=graph-rest-1.0
 func (m *ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.WhoisHistoryRecordCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +89,7 @@ func (m *ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder) Get(ctx contex
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.WhoisHistoryRecordCollectionResponseable), nil
 }
-// ToGetRequestInformation get the history for a whoisRecord, as represented by a collection of whoisHistoryRecord resources.
+// ToGetRequestInformation the collection of historical records associated to this WHOIS object.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceWhoisRecordsItemHistoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

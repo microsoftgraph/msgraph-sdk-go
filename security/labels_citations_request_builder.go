@@ -11,7 +11,7 @@ import (
 type LabelsCitationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LabelsCitationsRequestBuilderGetQueryParameters get a list of the citationTemplate objects and their properties.
+// LabelsCitationsRequestBuilderGetQueryParameters the specific rule or regulation created by a jurisdiction used to determine whether certain labels and content should be retained or deleted.
 type LabelsCitationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewLabelsCitationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *LabelsCitationsRequestBuilder) Count()(*LabelsCitationsCountRequestBuilder) {
     return NewLabelsCitationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the citationTemplate objects and their properties.
+// Get the specific rule or regulation created by a jurisdiction used to determine whether certain labels and content should be retained or deleted.
 // returns a CitationTemplateCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-list-citations?view=graph-rest-1.0
 func (m *LabelsCitationsRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsCitationsRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.CitationTemplateCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *LabelsCitationsRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.CitationTemplateCollectionResponseable), nil
 }
-// Post create a new citationTemplate object.
+// Post create new navigation property to citations for security
 // returns a CitationTemplateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-post-citations?view=graph-rest-1.0
 func (m *LabelsCitationsRequestBuilder) Post(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.CitationTemplateable, requestConfiguration *LabelsCitationsRequestBuilderPostRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.CitationTemplateable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *LabelsCitationsRequestBuilder) Post(ctx context.Context, body idd6d442c
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.CitationTemplateable), nil
 }
-// ToGetRequestInformation get a list of the citationTemplate objects and their properties.
+// ToGetRequestInformation the specific rule or regulation created by a jurisdiction used to determine whether certain labels and content should be retained or deleted.
 // returns a *RequestInformation when successful
 func (m *LabelsCitationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsCitationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *LabelsCitationsRequestBuilder) ToGetRequestInformation(ctx context.Cont
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new citationTemplate object.
+// ToPostRequestInformation create new navigation property to citations for security
 // returns a *RequestInformation when successful
 func (m *LabelsCitationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.CitationTemplateable, requestConfiguration *LabelsCitationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

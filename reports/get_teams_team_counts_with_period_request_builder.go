@@ -33,9 +33,12 @@ func NewGetTeamsTeamCountsWithPeriodRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewGetTeamsTeamCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getTeamsTeamCounts
+// Get get the number of teams of a particular type in an instance of Microsoft Teams.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getteamsteamcounts?view=graph-rest-1.0
 func (m *GetTeamsTeamCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetTeamsTeamCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *GetTeamsTeamCountsWithPeriodRequestBuilder) Get(ctx context.Context, re
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getTeamsTeamCounts
+// ToGetRequestInformation get the number of teams of a particular type in an instance of Microsoft Teams.
 // returns a *RequestInformation when successful
 func (m *GetTeamsTeamCountsWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetTeamsTeamCountsWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type ItemTeamScheduleTimeOffRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamScheduleTimeOffRequestsRequestBuilderGetQueryParameters retrieve a list of timeOffRequest objects in the team.
+// ItemTeamScheduleTimeOffRequestsRequestBuilderGetQueryParameters the time off requests in the schedule.
 type ItemTeamScheduleTimeOffRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,12 +74,9 @@ func NewItemTeamScheduleTimeOffRequestsRequestBuilder(rawUrl string, requestAdap
 func (m *ItemTeamScheduleTimeOffRequestsRequestBuilder) Count()(*ItemTeamScheduleTimeOffRequestsCountRequestBuilder) {
     return NewItemTeamScheduleTimeOffRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of timeOffRequest objects in the team.
+// Get the time off requests in the schedule.
 // returns a TimeOffRequestCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/timeoffrequest-list?view=graph-rest-1.0
 func (m *ItemTeamScheduleTimeOffRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamScheduleTimeOffRequestsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffRequestCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -117,7 +114,7 @@ func (m *ItemTeamScheduleTimeOffRequestsRequestBuilder) Post(ctx context.Context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TimeOffRequestable), nil
 }
-// ToGetRequestInformation retrieve a list of timeOffRequest objects in the team.
+// ToGetRequestInformation the time off requests in the schedule.
 // returns a *RequestInformation when successful
 func (m *ItemTeamScheduleTimeOffRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamScheduleTimeOffRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type UsersItemAssignmentsItemCategoriesRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// UsersItemAssignmentsItemCategoriesRefRequestBuilderDeleteQueryParameters remove an educationCategory from an educationAssignment. Only teachers can perform this operation.
+// UsersItemAssignmentsItemCategoriesRefRequestBuilderDeleteQueryParameters delete ref of navigation property categories for education
 type UsersItemAssignmentsItemCategoriesRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
     Id *string `uriparametername:"%40id"`
@@ -25,7 +25,7 @@ type UsersItemAssignmentsItemCategoriesRefRequestBuilderDeleteRequestConfigurati
     // Request query parameters
     QueryParameters *UsersItemAssignmentsItemCategoriesRefRequestBuilderDeleteQueryParameters
 }
-// UsersItemAssignmentsItemCategoriesRefRequestBuilderGetQueryParameters list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+// UsersItemAssignmentsItemCategoriesRefRequestBuilderGetQueryParameters when set, enables users to easily find assignments of a given type. Read-only. Nullable.
 type UsersItemAssignmentsItemCategoriesRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,11 +69,8 @@ func NewUsersItemAssignmentsItemCategoriesRefRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewUsersItemAssignmentsItemCategoriesRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove an educationCategory from an educationAssignment. Only teachers can perform this operation.
+// Delete delete ref of navigation property categories for education
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-remove-category?view=graph-rest-1.0
 func (m *UsersItemAssignmentsItemCategoriesRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemCategoriesRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -88,12 +85,9 @@ func (m *UsersItemAssignmentsItemCategoriesRefRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// Get list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+// Get when set, enables users to easily find assignments of a given type. Read-only. Nullable.
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
 func (m *UsersItemAssignmentsItemCategoriesRefRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemCategoriesRefRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -111,11 +105,8 @@ func (m *UsersItemAssignmentsItemCategoriesRefRequestBuilder) Get(ctx context.Co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.StringCollectionResponseable), nil
 }
-// Post add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation.
+// Post create new navigation property ref to categories for education
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-post-categories?view=graph-rest-1.0
 func (m *UsersItemAssignmentsItemCategoriesRefRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *UsersItemAssignmentsItemCategoriesRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -130,7 +121,7 @@ func (m *UsersItemAssignmentsItemCategoriesRefRequestBuilder) Post(ctx context.C
     }
     return nil
 }
-// ToDeleteRequestInformation remove an educationCategory from an educationAssignment. Only teachers can perform this operation.
+// ToDeleteRequestInformation delete ref of navigation property categories for education
 // returns a *RequestInformation when successful
 func (m *UsersItemAssignmentsItemCategoriesRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemCategoriesRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}/categories/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *UsersItemAssignmentsItemCategoriesRefRequestBuilder) ToDeleteRequestInf
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation list all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+// ToGetRequestInformation when set, enables users to easily find assignments of a given type. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *UsersItemAssignmentsItemCategoriesRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemCategoriesRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}/categories/$ref{?%24count,%24filter,%24orderby,%24search,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
@@ -158,7 +149,7 @@ func (m *UsersItemAssignmentsItemCategoriesRefRequestBuilder) ToGetRequestInform
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation.
+// ToPostRequestInformation create new navigation property ref to categories for education
 // returns a *RequestInformation when successful
 func (m *UsersItemAssignmentsItemCategoriesRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ReferenceCreateable, requestConfiguration *UsersItemAssignmentsItemCategoriesRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}/categories/$ref", m.BaseRequestBuilder.PathParameters)

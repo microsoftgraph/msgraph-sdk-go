@@ -33,9 +33,12 @@ func NewGetOneDriveUsageStorageWithPeriodRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewGetOneDriveUsageStorageWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getOneDriveUsageStorage
+// Get get the trend on the amount of storage you're using in OneDrive for Business.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getonedriveusagestorage?view=graph-rest-1.0
 func (m *GetOneDriveUsageStorageWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOneDriveUsageStorageWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *GetOneDriveUsageStorageWithPeriodRequestBuilder) Get(ctx context.Contex
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getOneDriveUsageStorage
+// ToGetRequestInformation get the trend on the amount of storage you're using in OneDrive for Business.
 // returns a *RequestInformation when successful
 func (m *GetOneDriveUsageStorageWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetOneDriveUsageStorageWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -33,9 +33,12 @@ func NewGetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewGetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getOffice365GroupsActivityFileCounts
+// Get get the total number of files and how many of them were active across all group sites associated with a Microsoft 365 group.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getoffice365groupsactivityfilecounts?view=graph-rest-1.0
 func (m *GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder) Get(ctx c
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getOffice365GroupsActivityFileCounts
+// ToGetRequestInformation get the total number of files and how many of them were active across all group sites associated with a Microsoft 365 group.
 // returns a *RequestInformation when successful
 func (m *GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

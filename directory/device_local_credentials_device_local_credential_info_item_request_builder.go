@@ -18,7 +18,7 @@ type DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderGetQueryParameters retrieve the properties of a deviceLocalCredentialInfo for a specified device object. 
+// DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderGetQueryParameters the credentials of the device's local administrator account backed up to Microsoft Entra ID.
 type DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -68,12 +68,9 @@ func (m *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder) Dele
     }
     return nil
 }
-// Get retrieve the properties of a deviceLocalCredentialInfo for a specified device object. 
+// Get the credentials of the device's local administrator account backed up to Microsoft Entra ID.
 // returns a DeviceLocalCredentialInfoable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/devicelocalcredentialinfo-get?view=graph-rest-1.0
 func (m *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DeviceLocalCredentialInfoable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -122,7 +119,7 @@ func (m *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder) ToDe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties of a deviceLocalCredentialInfo for a specified device object. 
+// ToGetRequestInformation the credentials of the device's local administrator account backed up to Microsoft Entra ID.
 // returns a *RequestInformation when successful
 func (m *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceLocalCredentialsDeviceLocalCredentialInfoItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

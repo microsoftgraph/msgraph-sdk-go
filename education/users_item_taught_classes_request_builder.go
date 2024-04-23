@@ -11,7 +11,7 @@ import (
 type UsersItemTaughtClassesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// UsersItemTaughtClassesRequestBuilderGetQueryParameters get the educationClass resources owned by an educationUser.
+// UsersItemTaughtClassesRequestBuilderGetQueryParameters classes for which the user is a teacher.
 type UsersItemTaughtClassesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,12 +69,9 @@ func NewUsersItemTaughtClassesRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *UsersItemTaughtClassesRequestBuilder) Count()(*UsersItemTaughtClassesCountRequestBuilder) {
     return NewUsersItemTaughtClassesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the educationClass resources owned by an educationUser.
+// Get classes for which the user is a teacher.
 // returns a EducationClassCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-list-taughtclasses?view=graph-rest-1.0
 func (m *UsersItemTaughtClassesRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersItemTaughtClassesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +89,7 @@ func (m *UsersItemTaughtClassesRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EducationClassCollectionResponseable), nil
 }
-// ToGetRequestInformation get the educationClass resources owned by an educationUser.
+// ToGetRequestInformation classes for which the user is a teacher.
 // returns a *RequestInformation when successful
 func (m *UsersItemTaughtClassesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersItemTaughtClassesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

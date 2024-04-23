@@ -11,7 +11,7 @@ import (
 type DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilderGetQueryParameters list properties and relationships of the enrollmentConfigurationAssignment objects.
+// DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilderGetQueryParameters the list of group assignments for the device configuration profile
 type DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder(rawUrl strin
 func (m *DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) Count()(*DeviceEnrollmentConfigurationsItemAssignmentsCountRequestBuilder) {
     return NewDeviceEnrollmentConfigurationsItemAssignmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list properties and relationships of the enrollmentConfigurationAssignment objects.
+// Get the list of group assignments for the device configuration profile
 // returns a EnrollmentConfigurationAssignmentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-enrollmentconfigurationassignment-list?view=graph-rest-1.0
 func (m *DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EnrollmentConfigurationAssignmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) Get(ctx co
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EnrollmentConfigurationAssignmentCollectionResponseable), nil
 }
-// Post create a new enrollmentConfigurationAssignment object.
+// Post create new navigation property to assignments for deviceManagement
 // returns a EnrollmentConfigurationAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-onboarding-enrollmentconfigurationassignment-create?view=graph-rest-1.0
 func (m *DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EnrollmentConfigurationAssignmentable, requestConfiguration *DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EnrollmentConfigurationAssignmentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) Post(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EnrollmentConfigurationAssignmentable), nil
 }
-// ToGetRequestInformation list properties and relationships of the enrollmentConfigurationAssignment objects.
+// ToGetRequestInformation the list of group assignments for the device configuration profile
 // returns a *RequestInformation when successful
 func (m *DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) ToGetReque
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new enrollmentConfigurationAssignment object.
+// ToPostRequestInformation create new navigation property to assignments for deviceManagement
 // returns a *RequestInformation when successful
 func (m *DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.EnrollmentConfigurationAssignmentable, requestConfiguration *DeviceEnrollmentConfigurationsItemAssignmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

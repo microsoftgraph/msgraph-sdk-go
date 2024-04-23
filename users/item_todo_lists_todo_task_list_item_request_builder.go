@@ -18,7 +18,7 @@ type ItemTodoListsTodoTaskListItemRequestBuilderDeleteRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTodoListsTodoTaskListItemRequestBuilderGetQueryParameters read the properties and relationships of a todoTaskList object.
+// ItemTodoListsTodoTaskListItemRequestBuilderGetQueryParameters the task lists in the users mailbox.
 type ItemTodoListsTodoTaskListItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewItemTodoListsTodoTaskListItemRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewItemTodoListsTodoTaskListItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a todoTaskList object.
+// Delete delete navigation property lists for users
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/todotasklist-delete?view=graph-rest-1.0
 func (m *ItemTodoListsTodoTaskListItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTodoListsTodoTaskListItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,12 +75,9 @@ func (m *ItemTodoListsTodoTaskListItemRequestBuilder) Delete(ctx context.Context
 func (m *ItemTodoListsTodoTaskListItemRequestBuilder) Extensions()(*ItemTodoListsItemExtensionsRequestBuilder) {
     return NewItemTodoListsItemExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a todoTaskList object.
+// Get the task lists in the users mailbox.
 // returns a TodoTaskListable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/todotasklist-get?view=graph-rest-1.0
 func (m *ItemTodoListsTodoTaskListItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTodoListsTodoTaskListItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TodoTaskListable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,12 +95,9 @@ func (m *ItemTodoListsTodoTaskListItemRequestBuilder) Get(ctx context.Context, r
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TodoTaskListable), nil
 }
-// Patch update the properties of a todoTaskList object.
+// Patch update the navigation property lists in users
 // returns a TodoTaskListable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/todotasklist-update?view=graph-rest-1.0
 func (m *ItemTodoListsTodoTaskListItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TodoTaskListable, requestConfiguration *ItemTodoListsTodoTaskListItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TodoTaskListable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -129,7 +120,7 @@ func (m *ItemTodoListsTodoTaskListItemRequestBuilder) Patch(ctx context.Context,
 func (m *ItemTodoListsTodoTaskListItemRequestBuilder) Tasks()(*ItemTodoListsItemTasksRequestBuilder) {
     return NewItemTodoListsItemTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation deletes a todoTaskList object.
+// ToDeleteRequestInformation delete navigation property lists for users
 // returns a *RequestInformation when successful
 func (m *ItemTodoListsTodoTaskListItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsTodoTaskListItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,7 +131,7 @@ func (m *ItemTodoListsTodoTaskListItemRequestBuilder) ToDeleteRequestInformation
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a todoTaskList object.
+// ToGetRequestInformation the task lists in the users mailbox.
 // returns a *RequestInformation when successful
 func (m *ItemTodoListsTodoTaskListItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsTodoTaskListItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,7 +145,7 @@ func (m *ItemTodoListsTodoTaskListItemRequestBuilder) ToGetRequestInformation(ct
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a todoTaskList object.
+// ToPatchRequestInformation update the navigation property lists in users
 // returns a *RequestInformation when successful
 func (m *ItemTodoListsTodoTaskListItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.TodoTaskListable, requestConfiguration *ItemTodoListsTodoTaskListItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

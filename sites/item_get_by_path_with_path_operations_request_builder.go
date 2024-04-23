@@ -11,7 +11,7 @@ import (
 type ItemGetByPathWithPathOperationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemGetByPathWithPathOperationsRequestBuilderGetQueryParameters get a list of rich long-running operations associated with a site.
+// ItemGetByPathWithPathOperationsRequestBuilderGetQueryParameters the collection of long-running operations on the site.
 type ItemGetByPathWithPathOperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -59,12 +59,9 @@ func NewItemGetByPathWithPathOperationsRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewItemGetByPathWithPathOperationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get a list of rich long-running operations associated with a site.
+// Get the collection of long-running operations on the site.
 // returns a RichLongRunningOperationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/site-list-operations?view=graph-rest-1.0
 func (m *ItemGetByPathWithPathOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGetByPathWithPathOperationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RichLongRunningOperationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -102,7 +99,7 @@ func (m *ItemGetByPathWithPathOperationsRequestBuilder) Post(ctx context.Context
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.RichLongRunningOperationable), nil
 }
-// ToGetRequestInformation get a list of rich long-running operations associated with a site.
+// ToGetRequestInformation the collection of long-running operations on the site.
 // returns a *RequestInformation when successful
 func (m *ItemGetByPathWithPathOperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGetByPathWithPathOperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

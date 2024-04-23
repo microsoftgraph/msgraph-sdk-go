@@ -18,7 +18,7 @@ type ItemFederationConfigurationInternalDomainFederationItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemFederationConfigurationInternalDomainFederationItemRequestBuilderGetQueryParameters read the properties and relationships of an internalDomainFederation object.
+// ItemFederationConfigurationInternalDomainFederationItemRequestBuilderGetQueryParameters domain settings configured by a customer when federated with Microsoft Entra ID. Supports $expand.
 type ItemFederationConfigurationInternalDomainFederationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewItemFederationConfigurationInternalDomainFederationItemRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewItemFederationConfigurationInternalDomainFederationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an internalDomainFederation object.
+// Delete delete navigation property federationConfiguration for domains
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/internaldomainfederation-delete?view=graph-rest-1.0
 func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemFederationConfigurationInternalDomainFederationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) 
     }
     return nil
 }
-// Get read the properties and relationships of an internalDomainFederation object.
+// Get domain settings configured by a customer when federated with Microsoft Entra ID. Supports $expand.
 // returns a InternalDomainFederationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/internaldomainfederation-get?view=graph-rest-1.0
 func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemFederationConfigurationInternalDomainFederationItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable), nil
 }
-// Patch update the properties of an internalDomainFederation object.
+// Patch update the navigation property federationConfiguration in domains
 // returns a InternalDomainFederationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/internaldomainfederation-update?view=graph-rest-1.0
 func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable, requestConfiguration *ItemFederationConfigurationInternalDomainFederationItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +110,7 @@ func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) 
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable), nil
 }
-// ToDeleteRequestInformation delete an internalDomainFederation object.
+// ToDeleteRequestInformation delete navigation property federationConfiguration for domains
 // returns a *RequestInformation when successful
 func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemFederationConfigurationInternalDomainFederationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +121,7 @@ func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an internalDomainFederation object.
+// ToGetRequestInformation domain settings configured by a customer when federated with Microsoft Entra ID. Supports $expand.
 // returns a *RequestInformation when successful
 func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemFederationConfigurationInternalDomainFederationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an internalDomainFederation object.
+// ToPatchRequestInformation update the navigation property federationConfiguration in domains
 // returns a *RequestInformation when successful
 func (m *ItemFederationConfigurationInternalDomainFederationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.InternalDomainFederationable, requestConfiguration *ItemFederationConfigurationInternalDomainFederationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

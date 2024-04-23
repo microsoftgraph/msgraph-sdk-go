@@ -80,7 +80,7 @@ func (m *Alert) GetAzureTenantId()(*string) {
     }
     return nil
 }
-// GetCategory gets the category property value. Category of the alert (for example, credentialTheft, ransomware, etc.).
+// GetCategory gets the category property value. Category of the alert (for example, credentialTheft, ransomware).
 // returns a *string when successful
 func (m *Alert) GetCategory()(*string) {
     val, err := m.GetBackingStore().Get("category")
@@ -176,7 +176,7 @@ func (m *Alert) GetDetectionIds()([]string) {
     }
     return nil
 }
-// GetEventDateTime gets the eventDateTime property value. Time at which the event(s) that served as the trigger(s) to generate the alert occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
+// GetEventDateTime gets the eventDateTime property value. Time at which the event or events that served as the trigger to generate the alert occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
 // returns a *Time when successful
 func (m *Alert) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("eventDateTime")
@@ -188,7 +188,7 @@ func (m *Alert) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a163
     }
     return nil
 }
-// GetFeedback gets the feedback property value. Analyst feedback on the alert. Possible values are: unknown, truePositive, falsePositive, benignPositive. (supports update)
+// GetFeedback gets the feedback property value. Analyst feedback on the alert. Possible values are: unknown, truePositive, falsePositive, benignPositive. Supports update.
 // returns a *AlertFeedback when successful
 func (m *Alert) GetFeedback()(*AlertFeedback) {
     val, err := m.GetBackingStore().Get("feedback")
@@ -908,7 +908,7 @@ func (m *Alert) GetSeverity()(*AlertSeverity) {
     }
     return nil
 }
-// GetSourceMaterials gets the sourceMaterials property value. Hyperlinks (URIs) to the source material related to the alert, for example, provider's user interface for alerts or log search, etc.
+// GetSourceMaterials gets the sourceMaterials property value. Hyperlinks (URIs) to the source material related to the alert, for example, provider's user interface for alerts or log search.
 // returns a []string when successful
 func (m *Alert) GetSourceMaterials()([]string) {
     val, err := m.GetBackingStore().Get("sourceMaterials")
@@ -932,7 +932,7 @@ func (m *Alert) GetStatus()(*AlertStatus) {
     }
     return nil
 }
-// GetTags gets the tags property value. User-definable labels that can be applied to an alert and can serve as filter conditions (for example 'HVA', 'SAW', etc.) (supports update).
+// GetTags gets the tags property value. User-definable labels that can be applied to an alert and can serve as filter conditions (for example 'HVA', 'SAW') (supports update).
 // returns a []string when successful
 func (m *Alert) GetTags()([]string) {
     val, err := m.GetBackingStore().Get("tags")
@@ -1392,7 +1392,7 @@ func (m *Alert) SetAzureTenantId(value *string)() {
         panic(err)
     }
 }
-// SetCategory sets the category property value. Category of the alert (for example, credentialTheft, ransomware, etc.).
+// SetCategory sets the category property value. Category of the alert (for example, credentialTheft, ransomware).
 func (m *Alert) SetCategory(value *string)() {
     err := m.GetBackingStore().Set("category", value)
     if err != nil {
@@ -1448,14 +1448,14 @@ func (m *Alert) SetDetectionIds(value []string)() {
         panic(err)
     }
 }
-// SetEventDateTime sets the eventDateTime property value. Time at which the event(s) that served as the trigger(s) to generate the alert occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
+// SetEventDateTime sets the eventDateTime property value. Time at which the event or events that served as the trigger to generate the alert occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
 func (m *Alert) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("eventDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFeedback sets the feedback property value. Analyst feedback on the alert. Possible values are: unknown, truePositive, falsePositive, benignPositive. (supports update)
+// SetFeedback sets the feedback property value. Analyst feedback on the alert. Possible values are: unknown, truePositive, falsePositive, benignPositive. Supports update.
 func (m *Alert) SetFeedback(value *AlertFeedback)() {
     err := m.GetBackingStore().Set("feedback", value)
     if err != nil {
@@ -1567,7 +1567,7 @@ func (m *Alert) SetSeverity(value *AlertSeverity)() {
         panic(err)
     }
 }
-// SetSourceMaterials sets the sourceMaterials property value. Hyperlinks (URIs) to the source material related to the alert, for example, provider's user interface for alerts or log search, etc.
+// SetSourceMaterials sets the sourceMaterials property value. Hyperlinks (URIs) to the source material related to the alert, for example, provider's user interface for alerts or log search.
 func (m *Alert) SetSourceMaterials(value []string)() {
     err := m.GetBackingStore().Set("sourceMaterials", value)
     if err != nil {
@@ -1581,7 +1581,7 @@ func (m *Alert) SetStatus(value *AlertStatus)() {
         panic(err)
     }
 }
-// SetTags sets the tags property value. User-definable labels that can be applied to an alert and can serve as filter conditions (for example 'HVA', 'SAW', etc.) (supports update).
+// SetTags sets the tags property value. User-definable labels that can be applied to an alert and can serve as filter conditions (for example 'HVA', 'SAW') (supports update).
 func (m *Alert) SetTags(value []string)() {
     err := m.GetBackingStore().Set("tags", value)
     if err != nil {

@@ -11,7 +11,7 @@ import (
 type MobileAppConfigurationsItemAssignmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MobileAppConfigurationsItemAssignmentsRequestBuilderGetQueryParameters list properties and relationships of the managedDeviceMobileAppConfigurationAssignment objects.
+// MobileAppConfigurationsItemAssignmentsRequestBuilderGetQueryParameters the list of group assignemenets for app configration.
 type MobileAppConfigurationsItemAssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewMobileAppConfigurationsItemAssignmentsRequestBuilder(rawUrl string, requ
 func (m *MobileAppConfigurationsItemAssignmentsRequestBuilder) Count()(*MobileAppConfigurationsItemAssignmentsCountRequestBuilder) {
     return NewMobileAppConfigurationsItemAssignmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list properties and relationships of the managedDeviceMobileAppConfigurationAssignment objects.
+// Get the list of group assignemenets for app configration.
 // returns a ManagedDeviceMobileAppConfigurationAssignmentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationassignment-list?view=graph-rest-1.0
 func (m *MobileAppConfigurationsItemAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppConfigurationsItemAssignmentsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationAssignmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *MobileAppConfigurationsItemAssignmentsRequestBuilder) Get(ctx context.C
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationAssignmentCollectionResponseable), nil
 }
-// Post create a new managedDeviceMobileAppConfigurationAssignment object.
+// Post create new navigation property to assignments for deviceAppManagement
 // returns a ManagedDeviceMobileAppConfigurationAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationassignment-create?view=graph-rest-1.0
 func (m *MobileAppConfigurationsItemAssignmentsRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationAssignmentable, requestConfiguration *MobileAppConfigurationsItemAssignmentsRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationAssignmentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *MobileAppConfigurationsItemAssignmentsRequestBuilder) Post(ctx context.
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationAssignmentable), nil
 }
-// ToGetRequestInformation list properties and relationships of the managedDeviceMobileAppConfigurationAssignment objects.
+// ToGetRequestInformation the list of group assignemenets for app configration.
 // returns a *RequestInformation when successful
 func (m *MobileAppConfigurationsItemAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppConfigurationsItemAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *MobileAppConfigurationsItemAssignmentsRequestBuilder) ToGetRequestInfor
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new managedDeviceMobileAppConfigurationAssignment object.
+// ToPostRequestInformation create new navigation property to assignments for deviceAppManagement
 // returns a *RequestInformation when successful
 func (m *MobileAppConfigurationsItemAssignmentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ManagedDeviceMobileAppConfigurationAssignmentable, requestConfiguration *MobileAppConfigurationsItemAssignmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

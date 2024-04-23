@@ -30,10 +30,13 @@ func NewSubjectRightsRequestsItemGetFinalReportRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewSubjectRightsRequestsItemGetFinalReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getFinalReport
+// Get get the final report for a subject rights request. The report is a text file that contains information about the files that were included by the privacy administrator.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/subjectrightsrequest-getfinalreport?view=graph-rest-1.0
 func (m *SubjectRightsRequestsItemGetFinalReportRequestBuilder) Get(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemGetFinalReportRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -51,7 +54,7 @@ func (m *SubjectRightsRequestsItemGetFinalReportRequestBuilder) Get(ctx context.
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getFinalReport
+// ToGetRequestInformation get the final report for a subject rights request. The report is a text file that contains information about the files that were included by the privacy administrator.
 // Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
 // returns a *RequestInformation when successful
 func (m *SubjectRightsRequestsItemGetFinalReportRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemGetFinalReportRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

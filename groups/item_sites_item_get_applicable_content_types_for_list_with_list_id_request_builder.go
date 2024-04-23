@@ -10,7 +10,7 @@ import (
 type ItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters invoke function getApplicableContentTypesForList
+// ItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters get site contentTypes that can be added to a list.
 type ItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -54,10 +54,13 @@ func NewItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getApplicableContentTypesForList
+// Get get site contentTypes that can be added to a list.
 // Deprecated: This method is obsolete. Use GetAsGetApplicableContentTypesForListWithListIdGetResponse instead.
 // returns a ItemSitesItemGetApplicableContentTypesForListWithListIdResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-getapplicablecontenttypesforlist?view=graph-rest-1.0
 func (m *ItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilderGetRequestConfiguration)(ItemSitesItemGetApplicableContentTypesForListWithListIdResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +78,12 @@ func (m *ItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilder) 
     }
     return res.(ItemSitesItemGetApplicableContentTypesForListWithListIdResponseable), nil
 }
-// GetAsGetApplicableContentTypesForListWithListIdGetResponse invoke function getApplicableContentTypesForList
+// GetAsGetApplicableContentTypesForListWithListIdGetResponse get site contentTypes that can be added to a list.
 // returns a ItemSitesItemGetApplicableContentTypesForListWithListIdGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-getapplicablecontenttypesforlist?view=graph-rest-1.0
 func (m *ItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilder) GetAsGetApplicableContentTypesForListWithListIdGetResponse(ctx context.Context, requestConfiguration *ItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilderGetRequestConfiguration)(ItemSitesItemGetApplicableContentTypesForListWithListIdGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +101,7 @@ func (m *ItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilder) 
     }
     return res.(ItemSitesItemGetApplicableContentTypesForListWithListIdGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getApplicableContentTypesForList
+// ToGetRequestInformation get site contentTypes that can be added to a list.
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemGetApplicableContentTypesForListWithListIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

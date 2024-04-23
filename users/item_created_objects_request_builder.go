@@ -11,7 +11,7 @@ import (
 type ItemCreatedObjectsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCreatedObjectsRequestBuilderGetQueryParameters get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn't in any administrator role; otherwise, it returns an empty object.
+// ItemCreatedObjectsRequestBuilderGetQueryParameters directory objects that the user created. Read-only. Nullable.
 type ItemCreatedObjectsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,12 +69,9 @@ func NewItemCreatedObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *ItemCreatedObjectsRequestBuilder) Count()(*ItemCreatedObjectsCountRequestBuilder) {
     return NewItemCreatedObjectsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn't in any administrator role; otherwise, it returns an empty object.
+// Get directory objects that the user created. Read-only. Nullable.
 // returns a DirectoryObjectCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-createdobjects?view=graph-rest-1.0
 func (m *ItemCreatedObjectsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCreatedObjectsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -97,7 +94,7 @@ func (m *ItemCreatedObjectsRequestBuilder) Get(ctx context.Context, requestConfi
 func (m *ItemCreatedObjectsRequestBuilder) GraphServicePrincipal()(*ItemCreatedObjectsGraphServicePrincipalRequestBuilder) {
     return NewItemCreatedObjectsGraphServicePrincipalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn't in any administrator role; otherwise, it returns an empty object.
+// ToGetRequestInformation directory objects that the user created. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemCreatedObjectsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCreatedObjectsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

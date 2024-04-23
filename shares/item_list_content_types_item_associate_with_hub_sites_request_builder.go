@@ -30,7 +30,7 @@ func NewItemListContentTypesItemAssociateWithHubSitesRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewItemListContentTypesItemAssociateWithHubSitesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post associate a published [content type][contentType] present in a content type hub with a list of hub sites.
+// Post associate a published content type present in a content type hub with a list of hub sites.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -49,7 +49,7 @@ func (m *ItemListContentTypesItemAssociateWithHubSitesRequestBuilder) Post(ctx c
     }
     return nil
 }
-// ToPostRequestInformation associate a published [content type][contentType] present in a content type hub with a list of hub sites.
+// ToPostRequestInformation associate a published content type present in a content type hub with a list of hub sites.
 // returns a *RequestInformation when successful
 func (m *ItemListContentTypesItemAssociateWithHubSitesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemListContentTypesItemAssociateWithHubSitesPostRequestBodyable, requestConfiguration *ItemListContentTypesItemAssociateWithHubSitesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

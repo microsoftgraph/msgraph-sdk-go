@@ -35,7 +35,7 @@ func (m *Bundle) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAlbum gets the album property value. If the bundle is an [album][], then the album property is included
+// GetAlbum gets the album property value. If the bundle is an album, then the album property is included
 // returns a Albumable when successful
 func (m *Bundle) GetAlbum()(Albumable) {
     val, err := m.GetBackingStore().Get("album")
@@ -147,7 +147,7 @@ func (m *Bundle) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAlbum sets the album property value. If the bundle is an [album][], then the album property is included
+// SetAlbum sets the album property value. If the bundle is an album, then the album property is included
 func (m *Bundle) SetAlbum(value Albumable)() {
     err := m.GetBackingStore().Set("album", value)
     if err != nil {

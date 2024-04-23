@@ -11,7 +11,7 @@ import (
 type SiteItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SiteItemRequestBuilderGetQueryParameters retrieve properties and relationships for a [site][] resource.A site resource represents a team site in SharePoint.
+// SiteItemRequestBuilderGetQueryParameters retrieve properties and relationships for a site resource.A site resource represents a team site in SharePoint.
 type SiteItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -82,7 +82,7 @@ func (m *SiteItemRequestBuilder) Drives()(*ItemDrivesRequestBuilder) {
 func (m *SiteItemRequestBuilder) ExternalColumns()(*ItemExternalColumnsRequestBuilder) {
     return NewItemExternalColumnsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve properties and relationships for a [site][] resource.A site resource represents a team site in SharePoint.
+// Get retrieve properties and relationships for a site resource.A site resource represents a team site in SharePoint.
 // returns a Siteable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -195,7 +195,7 @@ func (m *SiteItemRequestBuilder) TermStore()(*ItemTermStoreRequestBuilder) {
 func (m *SiteItemRequestBuilder) TermStores()(*ItemTermStoresRequestBuilder) {
     return NewItemTermStoresRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve properties and relationships for a [site][] resource.A site resource represents a team site in SharePoint.
+// ToGetRequestInformation retrieve properties and relationships for a site resource.A site resource represents a team site in SharePoint.
 // returns a *RequestInformation when successful
 func (m *SiteItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SiteItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

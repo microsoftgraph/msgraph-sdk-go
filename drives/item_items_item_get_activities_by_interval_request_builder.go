@@ -10,7 +10,7 @@ import (
 type ItemItemsItemGetActivitiesByIntervalRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemsItemGetActivitiesByIntervalRequestBuilderGetQueryParameters invoke function getActivitiesByInterval
+// ItemItemsItemGetActivitiesByIntervalRequestBuilderGetQueryParameters get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
 type ItemItemsItemGetActivitiesByIntervalRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,10 +51,13 @@ func NewItemItemsItemGetActivitiesByIntervalRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemGetActivitiesByIntervalRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getActivitiesByInterval
+// Get get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
 // Deprecated: This method is obsolete. Use GetAsGetActivitiesByIntervalGetResponse instead.
 // returns a ItemItemsItemGetActivitiesByIntervalResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/itemactivitystat-getactivitybyinterval?view=graph-rest-1.0
 func (m *ItemItemsItemGetActivitiesByIntervalRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemGetActivitiesByIntervalRequestBuilderGetRequestConfiguration)(ItemItemsItemGetActivitiesByIntervalResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,9 +75,12 @@ func (m *ItemItemsItemGetActivitiesByIntervalRequestBuilder) Get(ctx context.Con
     }
     return res.(ItemItemsItemGetActivitiesByIntervalResponseable), nil
 }
-// GetAsGetActivitiesByIntervalGetResponse invoke function getActivitiesByInterval
+// GetAsGetActivitiesByIntervalGetResponse get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
 // returns a ItemItemsItemGetActivitiesByIntervalGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/itemactivitystat-getactivitybyinterval?view=graph-rest-1.0
 func (m *ItemItemsItemGetActivitiesByIntervalRequestBuilder) GetAsGetActivitiesByIntervalGetResponse(ctx context.Context, requestConfiguration *ItemItemsItemGetActivitiesByIntervalRequestBuilderGetRequestConfiguration)(ItemItemsItemGetActivitiesByIntervalGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +98,7 @@ func (m *ItemItemsItemGetActivitiesByIntervalRequestBuilder) GetAsGetActivitiesB
     }
     return res.(ItemItemsItemGetActivitiesByIntervalGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getActivitiesByInterval
+// ToGetRequestInformation get a collection of itemActivityStats resources for the activities that took place on this resource within the specified time interval. Analytics aggregates might not be available for all action types.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemGetActivitiesByIntervalRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemGetActivitiesByIntervalRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

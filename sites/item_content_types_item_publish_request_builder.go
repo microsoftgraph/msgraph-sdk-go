@@ -30,7 +30,7 @@ func NewItemContentTypesItemPublishRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewItemContentTypesItemPublishRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post publishes a [contentType][] present in the content type hub site.
+// Post publishes a contentType present in the content type hub site.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -49,7 +49,7 @@ func (m *ItemContentTypesItemPublishRequestBuilder) Post(ctx context.Context, re
     }
     return nil
 }
-// ToPostRequestInformation publishes a [contentType][] present in the content type hub site.
+// ToPostRequestInformation publishes a contentType present in the content type hub site.
 // returns a *RequestInformation when successful
 func (m *ItemContentTypesItemPublishRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemContentTypesItemPublishRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

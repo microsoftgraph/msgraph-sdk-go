@@ -18,7 +18,7 @@ type Alerts_v2AlertItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// Alerts_v2AlertItemRequestBuilderGetQueryParameters get the properties and relationships of an alert object.
+// Alerts_v2AlertItemRequestBuilderGetQueryParameters a collection of alerts in Microsoft 365 Defender.
 type Alerts_v2AlertItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,12 +75,9 @@ func (m *Alerts_v2AlertItemRequestBuilder) Delete(ctx context.Context, requestCo
     }
     return nil
 }
-// Get get the properties and relationships of an alert object.
+// Get a collection of alerts in Microsoft 365 Defender.
 // returns a Alertable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-alert-get?view=graph-rest-1.0
 func (m *Alerts_v2AlertItemRequestBuilder) Get(ctx context.Context, requestConfiguration *Alerts_v2AlertItemRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.Alertable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,12 +95,9 @@ func (m *Alerts_v2AlertItemRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.Alertable), nil
 }
-// Patch update the properties of an alert object in an organization based on the specified alert id property.
+// Patch update the navigation property alerts_v2 in security
 // returns a Alertable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-alert-update?view=graph-rest-1.0
 func (m *Alerts_v2AlertItemRequestBuilder) Patch(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.Alertable, requestConfiguration *Alerts_v2AlertItemRequestBuilderPatchRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.Alertable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -132,7 +126,7 @@ func (m *Alerts_v2AlertItemRequestBuilder) ToDeleteRequestInformation(ctx contex
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of an alert object.
+// ToGetRequestInformation a collection of alerts in Microsoft 365 Defender.
 // returns a *RequestInformation when successful
 func (m *Alerts_v2AlertItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *Alerts_v2AlertItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -146,7 +140,7 @@ func (m *Alerts_v2AlertItemRequestBuilder) ToGetRequestInformation(ctx context.C
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an alert object in an organization based on the specified alert id property.
+// ToPatchRequestInformation update the navigation property alerts_v2 in security
 // returns a *RequestInformation when successful
 func (m *Alerts_v2AlertItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.Alertable, requestConfiguration *Alerts_v2AlertItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

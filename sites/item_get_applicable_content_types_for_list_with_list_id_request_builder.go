@@ -10,7 +10,7 @@ import (
 type ItemGetApplicableContentTypesForListWithListIdRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemGetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters invoke function getApplicableContentTypesForList
+// ItemGetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters get site contentTypes that can be added to a list.
 type ItemGetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -54,10 +54,13 @@ func NewItemGetApplicableContentTypesForListWithListIdRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewItemGetApplicableContentTypesForListWithListIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getApplicableContentTypesForList
+// Get get site contentTypes that can be added to a list.
 // Deprecated: This method is obsolete. Use GetAsGetApplicableContentTypesForListWithListIdGetResponse instead.
 // returns a ItemGetApplicableContentTypesForListWithListIdResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-getapplicablecontenttypesforlist?view=graph-rest-1.0
 func (m *ItemGetApplicableContentTypesForListWithListIdRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGetApplicableContentTypesForListWithListIdRequestBuilderGetRequestConfiguration)(ItemGetApplicableContentTypesForListWithListIdResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +78,12 @@ func (m *ItemGetApplicableContentTypesForListWithListIdRequestBuilder) Get(ctx c
     }
     return res.(ItemGetApplicableContentTypesForListWithListIdResponseable), nil
 }
-// GetAsGetApplicableContentTypesForListWithListIdGetResponse invoke function getApplicableContentTypesForList
+// GetAsGetApplicableContentTypesForListWithListIdGetResponse get site contentTypes that can be added to a list.
 // returns a ItemGetApplicableContentTypesForListWithListIdGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-getapplicablecontenttypesforlist?view=graph-rest-1.0
 func (m *ItemGetApplicableContentTypesForListWithListIdRequestBuilder) GetAsGetApplicableContentTypesForListWithListIdGetResponse(ctx context.Context, requestConfiguration *ItemGetApplicableContentTypesForListWithListIdRequestBuilderGetRequestConfiguration)(ItemGetApplicableContentTypesForListWithListIdGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +101,7 @@ func (m *ItemGetApplicableContentTypesForListWithListIdRequestBuilder) GetAsGetA
     }
     return res.(ItemGetApplicableContentTypesForListWithListIdGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getApplicableContentTypesForList
+// ToGetRequestInformation get site contentTypes that can be added to a list.
 // returns a *RequestInformation when successful
 func (m *ItemGetApplicableContentTypesForListWithListIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGetApplicableContentTypesForListWithListIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

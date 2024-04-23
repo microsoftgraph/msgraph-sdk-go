@@ -11,7 +11,7 @@ import (
 type CallsItemOperationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CallsItemOperationsRequestBuilderGetQueryParameters get the status of an operation that adds the large gallery view to a call.
+// CallsItemOperationsRequestBuilderGetQueryParameters get operations from communications
 type CallsItemOperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewCallsItemOperationsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *CallsItemOperationsRequestBuilder) Count()(*CallsItemOperationsCountRequestBuilder) {
     return NewCallsItemOperationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the status of an operation that adds the large gallery view to a call.
+// Get get operations from communications
 // returns a CommsOperationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CallsItemOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *CallsItemOperationsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CommsOperationCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *CallsItemOperationsRequestBuilder) Post(ctx context.Context, body iadcd
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.CommsOperationable), nil
 }
-// ToGetRequestInformation get the status of an operation that adds the large gallery view to a call.
+// ToGetRequestInformation get operations from communications
 // returns a *RequestInformation when successful
 func (m *CallsItemOperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CallsItemOperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

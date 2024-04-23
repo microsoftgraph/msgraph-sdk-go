@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceHostsItemPortsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceHostsItemPortsRequestBuilderGetQueryParameters get the list of hostPort resources associated with a host.
+// ThreatIntelligenceHostsItemPortsRequestBuilderGetQueryParameters the hostPorts associated with a host.
 type ThreatIntelligenceHostsItemPortsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,12 +69,9 @@ func NewThreatIntelligenceHostsItemPortsRequestBuilder(rawUrl string, requestAda
 func (m *ThreatIntelligenceHostsItemPortsRequestBuilder) Count()(*ThreatIntelligenceHostsItemPortsCountRequestBuilder) {
     return NewThreatIntelligenceHostsItemPortsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of hostPort resources associated with a host.
+// Get the hostPorts associated with a host.
 // returns a HostPortCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-host-list-ports?view=graph-rest-1.0
 func (m *ThreatIntelligenceHostsItemPortsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemPortsRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HostPortCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +89,7 @@ func (m *ThreatIntelligenceHostsItemPortsRequestBuilder) Get(ctx context.Context
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HostPortCollectionResponseable), nil
 }
-// ToGetRequestInformation get the list of hostPort resources associated with a host.
+// ToGetRequestInformation the hostPorts associated with a host.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostsItemPortsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemPortsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

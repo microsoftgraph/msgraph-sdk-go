@@ -18,7 +18,7 @@ type ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderDeleteRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderGetQueryParameters get the properties and relationships of the specified outlookCategory object.
+// ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderGetQueryParameters a list of categories defined for the user.
 type ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -52,11 +52,8 @@ func NewItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete the specified outlookCategory object.
+// Delete delete navigation property masterCategories for users
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/outlookcategory-delete?view=graph-rest-1.0
 func (m *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -71,12 +68,9 @@ func (m *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) Delete(ct
     }
     return nil
 }
-// Get get the properties and relationships of the specified outlookCategory object.
+// Get a list of categories defined for the user.
 // returns a OutlookCategoryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/outlookcategory-get?view=graph-rest-1.0
 func (m *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OutlookCategoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -94,12 +88,9 @@ func (m *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) Get(ctx c
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OutlookCategoryable), nil
 }
-// Patch update the writable property, color, of the specified outlookCategory object. You can't modify the displayName property once you have created the category.
+// Patch update the navigation property masterCategories in users
 // returns a OutlookCategoryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/outlookcategory-update?view=graph-rest-1.0
 func (m *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OutlookCategoryable, requestConfiguration *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OutlookCategoryable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -117,7 +108,7 @@ func (m *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) Patch(ctx
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OutlookCategoryable), nil
 }
-// ToDeleteRequestInformation delete the specified outlookCategory object.
+// ToDeleteRequestInformation delete navigation property masterCategories for users
 // returns a *RequestInformation when successful
 func (m *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -128,7 +119,7 @@ func (m *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) ToDeleteR
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of the specified outlookCategory object.
+// ToGetRequestInformation a list of categories defined for the user.
 // returns a *RequestInformation when successful
 func (m *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -142,7 +133,7 @@ func (m *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) ToGetRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the writable property, color, of the specified outlookCategory object. You can't modify the displayName property once you have created the category.
+// ToPatchRequestInformation update the navigation property masterCategories in users
 // returns a *RequestInformation when successful
 func (m *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.OutlookCategoryable, requestConfiguration *ItemOutlookMasterCategoriesOutlookCategoryItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

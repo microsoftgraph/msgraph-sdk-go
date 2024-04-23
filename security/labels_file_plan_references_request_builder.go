@@ -11,7 +11,7 @@ import (
 type LabelsFilePlanReferencesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LabelsFilePlanReferencesRequestBuilderGetQueryParameters get a list of the filePlanReferenceTemplate objects and their properties.
+// LabelsFilePlanReferencesRequestBuilderGetQueryParameters specifies a unique alpha-numeric identifier for an organization’s retention schedule.
 type LabelsFilePlanReferencesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewLabelsFilePlanReferencesRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *LabelsFilePlanReferencesRequestBuilder) Count()(*LabelsFilePlanReferencesCountRequestBuilder) {
     return NewLabelsFilePlanReferencesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the filePlanReferenceTemplate objects and their properties.
+// Get specifies a unique alpha-numeric identifier for an organization’s retention schedule.
 // returns a FilePlanReferenceTemplateCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-list-fileplanreferences?view=graph-rest-1.0
 func (m *LabelsFilePlanReferencesRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsFilePlanReferencesRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.FilePlanReferenceTemplateCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *LabelsFilePlanReferencesRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.FilePlanReferenceTemplateCollectionResponseable), nil
 }
-// Post create a new filePlanReferenceTemplate object.
+// Post create new navigation property to filePlanReferences for security
 // returns a FilePlanReferenceTemplateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-post-fileplanreferences?view=graph-rest-1.0
 func (m *LabelsFilePlanReferencesRequestBuilder) Post(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.FilePlanReferenceTemplateable, requestConfiguration *LabelsFilePlanReferencesRequestBuilderPostRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.FilePlanReferenceTemplateable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *LabelsFilePlanReferencesRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.FilePlanReferenceTemplateable), nil
 }
-// ToGetRequestInformation get a list of the filePlanReferenceTemplate objects and their properties.
+// ToGetRequestInformation specifies a unique alpha-numeric identifier for an organization’s retention schedule.
 // returns a *RequestInformation when successful
 func (m *LabelsFilePlanReferencesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsFilePlanReferencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *LabelsFilePlanReferencesRequestBuilder) ToGetRequestInformation(ctx con
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new filePlanReferenceTemplate object.
+// ToPostRequestInformation create new navigation property to filePlanReferences for security
 // returns a *RequestInformation when successful
 func (m *LabelsFilePlanReferencesRequestBuilder) ToPostRequestInformation(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.FilePlanReferenceTemplateable, requestConfiguration *LabelsFilePlanReferencesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

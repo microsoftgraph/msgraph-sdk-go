@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookApplicationRequestBuilderDeleteRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookApplicationRequestBuilderGetQueryParameters retrieve the properties and relationships of a workbookApplication object.
+// ItemItemsItemWorkbookApplicationRequestBuilderGetQueryParameters get application from drives
 type ItemItemsItemWorkbookApplicationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,12 +75,9 @@ func (m *ItemItemsItemWorkbookApplicationRequestBuilder) Delete(ctx context.Cont
     }
     return nil
 }
-// Get retrieve the properties and relationships of a workbookApplication object.
+// Get get application from drives
 // returns a WorkbookApplicationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/workbookapplication-get?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookApplicationRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookApplicationRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookApplicationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -129,7 +126,7 @@ func (m *ItemItemsItemWorkbookApplicationRequestBuilder) ToDeleteRequestInformat
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a workbookApplication object.
+// ToGetRequestInformation get application from drives
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookApplicationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookApplicationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

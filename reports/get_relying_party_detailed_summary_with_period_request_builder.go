@@ -10,7 +10,7 @@ import (
 type GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters invoke function getRelyingPartyDetailedSummary
+// GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters get a summary of AD FS relying parties information.
 type GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -54,10 +54,13 @@ func NewGetRelyingPartyDetailedSummaryWithPeriodRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewGetRelyingPartyDetailedSummaryWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getRelyingPartyDetailedSummary
+// Get get a summary of AD FS relying parties information.
 // Deprecated: This method is obsolete. Use GetAsGetRelyingPartyDetailedSummaryWithPeriodGetResponse instead.
 // returns a GetRelyingPartyDetailedSummaryWithPeriodResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getrelyingpartydetailedsummary?view=graph-rest-1.0
 func (m *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration)(GetRelyingPartyDetailedSummaryWithPeriodResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +78,12 @@ func (m *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) Get(ctx context
     }
     return res.(GetRelyingPartyDetailedSummaryWithPeriodResponseable), nil
 }
-// GetAsGetRelyingPartyDetailedSummaryWithPeriodGetResponse invoke function getRelyingPartyDetailedSummary
+// GetAsGetRelyingPartyDetailedSummaryWithPeriodGetResponse get a summary of AD FS relying parties information.
 // returns a GetRelyingPartyDetailedSummaryWithPeriodGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getrelyingpartydetailedsummary?view=graph-rest-1.0
 func (m *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) GetAsGetRelyingPartyDetailedSummaryWithPeriodGetResponse(ctx context.Context, requestConfiguration *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration)(GetRelyingPartyDetailedSummaryWithPeriodGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +101,7 @@ func (m *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) GetAsGetRelying
     }
     return res.(GetRelyingPartyDetailedSummaryWithPeriodGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getRelyingPartyDetailedSummary
+// ToGetRequestInformation get a summary of AD FS relying parties information.
 // returns a *RequestInformation when successful
 func (m *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

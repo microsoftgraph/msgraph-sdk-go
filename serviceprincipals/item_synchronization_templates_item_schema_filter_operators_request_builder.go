@@ -10,7 +10,7 @@ import (
 type ItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilderGetQueryParameters invoke function filterOperators
+// ItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilderGetQueryParameters list all operators supported in the scoping filters.
 type ItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,10 +51,13 @@ func NewItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function filterOperators
+// Get list all operators supported in the scoping filters.
 // Deprecated: This method is obsolete. Use GetAsFilterOperatorsGetResponse instead.
 // returns a ItemSynchronizationTemplatesItemSchemaFilterOperatorsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0
 func (m *ItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilderGetRequestConfiguration)(ItemSynchronizationTemplatesItemSchemaFilterOperatorsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,9 +75,12 @@ func (m *ItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilder) Ge
     }
     return res.(ItemSynchronizationTemplatesItemSchemaFilterOperatorsResponseable), nil
 }
-// GetAsFilterOperatorsGetResponse invoke function filterOperators
+// GetAsFilterOperatorsGetResponse list all operators supported in the scoping filters.
 // returns a ItemSynchronizationTemplatesItemSchemaFilterOperatorsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0
 func (m *ItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilder) GetAsFilterOperatorsGetResponse(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilderGetRequestConfiguration)(ItemSynchronizationTemplatesItemSchemaFilterOperatorsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +98,7 @@ func (m *ItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilder) Ge
     }
     return res.(ItemSynchronizationTemplatesItemSchemaFilterOperatorsGetResponseable), nil
 }
-// ToGetRequestInformation invoke function filterOperators
+// ToGetRequestInformation list all operators supported in the scoping filters.
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesItemSchemaFilterOperatorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceHostSslCertificatesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceHostSslCertificatesRequestBuilderGetQueryParameters get the properties and relationships of a hostSslCertificate object.
+// ThreatIntelligenceHostSslCertificatesRequestBuilderGetQueryParameters retrieve details about hostSslCertificate objects.Note: List retrieval is not yet supported.
 type ThreatIntelligenceHostSslCertificatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewThreatIntelligenceHostSslCertificatesRequestBuilder(rawUrl string, reque
 func (m *ThreatIntelligenceHostSslCertificatesRequestBuilder) Count()(*ThreatIntelligenceHostSslCertificatesCountRequestBuilder) {
     return NewThreatIntelligenceHostSslCertificatesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the properties and relationships of a hostSslCertificate object.
+// Get retrieve details about hostSslCertificate objects.Note: List retrieval is not yet supported.
 // returns a HostSslCertificateCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ThreatIntelligenceHostSslCertificatesRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostSslCertificatesRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HostSslCertificateCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ThreatIntelligenceHostSslCertificatesRequestBuilder) Post(ctx context.C
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.HostSslCertificateable), nil
 }
-// ToGetRequestInformation get the properties and relationships of a hostSslCertificate object.
+// ToGetRequestInformation retrieve details about hostSslCertificate objects.Note: List retrieval is not yet supported.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostSslCertificatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostSslCertificatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

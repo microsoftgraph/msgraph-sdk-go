@@ -18,7 +18,7 @@ type EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderDele
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderGetQueryParameters get a browserSite that resides on a browserSiteList.
+// EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderGetQueryParameters a collection of sites defined for the site list.
 type EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewEdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewEdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a browserSite from a browserSiteList.
+// Delete delete navigation property sites for admin
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/browsersitelist-delete-sites?view=graph-rest-1.0
 func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder
     }
     return nil
 }
-// Get get a browserSite that resides on a browserSiteList.
+// Get a collection of sites defined for the site list.
 // returns a BrowserSiteable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/browsersite-get?view=graph-rest-1.0
 func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteable), nil
 }
-// Patch update the properties of a browserSite object.
+// Patch update the navigation property sites in admin
 // returns a BrowserSiteable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/browsersite-update?view=graph-rest-1.0
 func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteable, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +110,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteable), nil
 }
-// ToDeleteRequestInformation delete a browserSite from a browserSiteList.
+// ToDeleteRequestInformation delete navigation property sites for admin
 // returns a *RequestInformation when successful
 func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +121,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get a browserSite that resides on a browserSiteList.
+// ToGetRequestInformation a collection of sites defined for the site list.
 // returns a *RequestInformation when successful
 func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a browserSite object.
+// ToPatchRequestInformation update the navigation property sites in admin
 // returns a *RequestInformation when successful
 func (m *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.BrowserSiteable, requestConfiguration *EdgeInternetExplorerModeSiteListsItemSitesBrowserSiteItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

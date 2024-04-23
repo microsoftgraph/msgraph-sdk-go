@@ -11,7 +11,7 @@ import (
 type ItemSitesItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilderGetQueryParameters get the collection of [contentType][contentType] resources in a [site][].
+// ItemSitesItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilderGetQueryParameters the collection of content types defined for this site.
 type ItemSitesItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -59,12 +59,9 @@ func NewItemSitesItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuild
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get the collection of [contentType][contentType] resources in a [site][].
+// Get the collection of content types defined for this site.
 // returns a ContentTypeCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/site-list-contenttypes?view=graph-rest-1.0
 func (m *ItemSitesItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -82,12 +79,9 @@ func (m *ItemSitesItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeCollectionResponseable), nil
 }
-// Post create a new [contentType][] in a [site][].
+// Post create new navigation property to contentTypes for groups
 // returns a ContentTypeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/site-post-contenttypes?view=graph-rest-1.0
 func (m *ItemSitesItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable, requestConfiguration *ItemSitesItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -105,7 +99,7 @@ func (m *ItemSitesItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuil
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable), nil
 }
-// ToGetRequestInformation get the collection of [contentType][contentType] resources in a [site][].
+// ToGetRequestInformation the collection of content types defined for this site.
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -119,7 +113,7 @@ func (m *ItemSitesItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuil
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new [contentType][] in a [site][].
+// ToPostRequestInformation create new navigation property to contentTypes for groups
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContentTypeable, requestConfiguration *ItemSitesItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

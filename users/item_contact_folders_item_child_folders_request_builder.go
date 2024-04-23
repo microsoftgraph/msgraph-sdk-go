@@ -11,7 +11,7 @@ import (
 type ItemContactFoldersItemChildFoldersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemContactFoldersItemChildFoldersRequestBuilderGetQueryParameters get a collection of child folders under the specified contact folder.
+// ItemContactFoldersItemChildFoldersRequestBuilderGetQueryParameters the collection of child folders in the folder. Navigation property. Read-only. Nullable.
 type ItemContactFoldersItemChildFoldersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,12 +79,9 @@ func (m *ItemContactFoldersItemChildFoldersRequestBuilder) Count()(*ItemContactF
 func (m *ItemContactFoldersItemChildFoldersRequestBuilder) Delta()(*ItemContactFoldersItemChildFoldersDeltaRequestBuilder) {
     return NewItemContactFoldersItemChildFoldersDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a collection of child folders under the specified contact folder.
+// Get the collection of child folders in the folder. Navigation property. Read-only. Nullable.
 // returns a ContactFolderCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/contactfolder-list-childfolders?view=graph-rest-1.0
 func (m *ItemContactFoldersItemChildFoldersRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -102,12 +99,9 @@ func (m *ItemContactFoldersItemChildFoldersRequestBuilder) Get(ctx context.Conte
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderCollectionResponseable), nil
 }
-// Post create a new contactFolder as a child of a specified folder.  You can also create a new contactFolder under the user's default contact folder.
+// Post create new navigation property to childFolders for users
 // returns a ContactFolderable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/contactfolder-post-childfolders?view=graph-rest-1.0
 func (m *ItemContactFoldersItemChildFoldersRequestBuilder) Post(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable, requestConfiguration *ItemContactFoldersItemChildFoldersRequestBuilderPostRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -125,7 +119,7 @@ func (m *ItemContactFoldersItemChildFoldersRequestBuilder) Post(ctx context.Cont
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable), nil
 }
-// ToGetRequestInformation get a collection of child folders under the specified contact folder.
+// ToGetRequestInformation the collection of child folders in the folder. Navigation property. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemContactFoldersItemChildFoldersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,7 +133,7 @@ func (m *ItemContactFoldersItemChildFoldersRequestBuilder) ToGetRequestInformati
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new contactFolder as a child of a specified folder.  You can also create a new contactFolder under the user's default contact folder.
+// ToPostRequestInformation create new navigation property to childFolders for users
 // returns a *RequestInformation when successful
 func (m *ItemContactFoldersItemChildFoldersRequestBuilder) ToPostRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ContactFolderable, requestConfiguration *ItemContactFoldersItemChildFoldersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type ItemAcceptancesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemAcceptancesRequestBuilderGetQueryParameters get the details about the acceptance records for a specific agreement.
+// ItemAcceptancesRequestBuilderGetQueryParameters read-only. Information about acceptances of this agreement.
 type ItemAcceptancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewItemAcceptancesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *ItemAcceptancesRequestBuilder) Count()(*ItemAcceptancesCountRequestBuilder) {
     return NewItemAcceptancesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the details about the acceptance records for a specific agreement.
+// Get read-only. Information about acceptances of this agreement.
 // returns a AgreementAcceptanceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/agreement-list-acceptances?view=graph-rest-1.0
 func (m *ItemAcceptancesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAcceptancesRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AgreementAcceptanceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *ItemAcceptancesRequestBuilder) Post(ctx context.Context, body iadcd8112
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.AgreementAcceptanceable), nil
 }
-// ToGetRequestInformation get the details about the acceptance records for a specific agreement.
+// ToGetRequestInformation read-only. Information about acceptances of this agreement.
 // returns a *RequestInformation when successful
 func (m *ItemAcceptancesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAcceptancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

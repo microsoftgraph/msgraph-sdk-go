@@ -18,7 +18,7 @@ type CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderGetQueryParameters read the properties and relationships of an ediscoveryReviewTag object.
+// CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderGetQueryParameters returns a list of ediscoveryReviewTag objects associated to this case.
 type CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -59,11 +59,8 @@ func NewCasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove an ediscoveryReviewTag object.
+// Delete delete navigation property tags for security
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycase-delete-tags?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,12 +75,9 @@ func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) Dele
     }
     return nil
 }
-// Get read the properties and relationships of an ediscoveryReviewTag object.
+// Get returns a list of ediscoveryReviewTag objects associated to this case.
 // returns a EdiscoveryReviewTagable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoveryreviewtag-get?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderGetRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -106,12 +100,9 @@ func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) Get(
 func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) Parent()(*CasesEdiscoveryCasesItemTagsItemParentRequestBuilder) {
     return NewCasesEdiscoveryCasesItemTagsItemParentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of an ediscoveryReviewTag object.
+// Patch update the navigation property tags in security
 // returns a EdiscoveryReviewTagable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoveryreviewtag-update?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) Patch(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable, requestConfiguration *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderPatchRequestConfiguration)(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -129,7 +120,7 @@ func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) Patc
     }
     return res.(idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable), nil
 }
-// ToDeleteRequestInformation remove an ediscoveryReviewTag object.
+// ToDeleteRequestInformation delete navigation property tags for security
 // returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,7 +131,7 @@ func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) ToDe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an ediscoveryReviewTag object.
+// ToGetRequestInformation returns a list of ediscoveryReviewTag objects associated to this case.
 // returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,7 +145,7 @@ func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) ToGe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an ediscoveryReviewTag object.
+// ToPatchRequestInformation update the navigation property tags in security
 // returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body idd6d442c3cc83a389b8f0b8dd7ac355916e813c2882ff3aaa23331424ba827ae.EdiscoveryReviewTagable, requestConfiguration *CasesEdiscoveryCasesItemTagsEdiscoveryReviewTagItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

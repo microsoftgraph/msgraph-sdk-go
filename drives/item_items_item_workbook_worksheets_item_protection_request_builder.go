@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilderGetQueryParameters retrieve the properties and relationships of worksheetprotection object.
+// ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilderGetQueryParameters returns sheet protection object for a worksheet. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get retrieve the properties and relationships of worksheetprotection object.
+// Get returns sheet protection object for a worksheet. Read-only.
 // returns a WorkbookWorksheetProtectionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/worksheetprotection-get?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.WorkbookWorksheetProtectionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -129,7 +126,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) ToDeleteRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of worksheetprotection object.
+// ToGetRequestInformation returns sheet protection object for a worksheet. Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemProtectionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

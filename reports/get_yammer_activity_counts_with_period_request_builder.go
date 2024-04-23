@@ -33,9 +33,12 @@ func NewGetYammerActivityCountsWithPeriodRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewGetYammerActivityCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getYammerActivityCounts
+// Get get the trends on the amount of Yammer activity in your organization by how many messages were posted, read, and liked.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getyammeractivitycounts?view=graph-rest-1.0
 func (m *GetYammerActivityCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetYammerActivityCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *GetYammerActivityCountsWithPeriodRequestBuilder) Get(ctx context.Contex
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getYammerActivityCounts
+// ToGetRequestInformation get the trends on the amount of Yammer activity in your organization by how many messages were posted, read, and liked.
 // returns a *RequestInformation when successful
 func (m *GetYammerActivityCountsWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetYammerActivityCountsWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

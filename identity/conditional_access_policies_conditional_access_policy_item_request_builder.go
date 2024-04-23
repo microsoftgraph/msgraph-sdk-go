@@ -18,7 +18,7 @@ type ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderDeleteReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a conditionalAccessPolicy object.
+// ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
 type ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a conditionalAccessPolicy object.
+// Delete delete navigation property policies for identity
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/conditionalaccesspolicy-delete?view=graph-rest-1.0
 func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) Del
     }
     return nil
 }
-// Get retrieve the properties and relationships of a conditionalAccessPolicy object.
+// Get read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
 // returns a ConditionalAccessPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/conditionalaccesspolicy-get?view=graph-rest-1.0
 func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConditionalAccessPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) Get
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConditionalAccessPolicyable), nil
 }
-// Patch update the properties of a conditionalAccessPolicy object.
+// Patch update the navigation property policies in identity
 // returns a ConditionalAccessPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/conditionalaccesspolicy-update?view=graph-rest-1.0
 func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConditionalAccessPolicyable, requestConfiguration *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConditionalAccessPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +110,7 @@ func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) Pat
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConditionalAccessPolicyable), nil
 }
-// ToDeleteRequestInformation delete a conditionalAccessPolicy object.
+// ToDeleteRequestInformation delete navigation property policies for identity
 // returns a *RequestInformation when successful
 func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +121,7 @@ func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) ToD
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a conditionalAccessPolicy object.
+// ToGetRequestInformation read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
 // returns a *RequestInformation when successful
 func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) ToG
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a conditionalAccessPolicy object.
+// ToPatchRequestInformation update the navigation property policies in identity
 // returns a *RequestInformation when successful
 func (m *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ConditionalAccessPolicyable, requestConfiguration *ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

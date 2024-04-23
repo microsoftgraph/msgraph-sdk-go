@@ -11,7 +11,7 @@ import (
 type ItemAllChannelsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemAllChannelsRequestBuilderGetQueryParameters get the list of channels either in this team or shared with this team (incoming channels).
+// ItemAllChannelsRequestBuilderGetQueryParameters list of channels either hosted in or shared with the team (incoming channels).
 type ItemAllChannelsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,12 +69,9 @@ func NewItemAllChannelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *ItemAllChannelsRequestBuilder) Count()(*ItemAllChannelsCountRequestBuilder) {
     return NewItemAllChannelsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of channels either in this team or shared with this team (incoming channels).
+// Get list of channels either hosted in or shared with the team (incoming channels).
 // returns a ChannelCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/team-list-allchannels?view=graph-rest-1.0
 func (m *ItemAllChannelsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAllChannelsRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChannelCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +89,7 @@ func (m *ItemAllChannelsRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.ChannelCollectionResponseable), nil
 }
-// ToGetRequestInformation get the list of channels either in this team or shared with this team (incoming channels).
+// ToGetRequestInformation list of channels either hosted in or shared with the team (incoming channels).
 // returns a *RequestInformation when successful
 func (m *ItemAllChannelsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAllChannelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

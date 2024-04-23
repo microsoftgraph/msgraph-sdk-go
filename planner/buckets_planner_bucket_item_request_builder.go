@@ -18,7 +18,7 @@ type BucketsPlannerBucketItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BucketsPlannerBucketItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a plannerBucket object.
+// BucketsPlannerBucketItemRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified buckets
 type BucketsPlannerBucketItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewBucketsPlannerBucketItemRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewBucketsPlannerBucketItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete plannerBucket.
+// Delete delete navigation property buckets for planner
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/plannerbucket-delete?view=graph-rest-1.0
 func (m *BucketsPlannerBucketItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BucketsPlannerBucketItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *BucketsPlannerBucketItemRequestBuilder) Delete(ctx context.Context, req
     }
     return nil
 }
-// Get retrieve the properties and relationships of a plannerBucket object.
+// Get read-only. Nullable. Returns a collection of the specified buckets
 // returns a PlannerBucketable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/plannerbucket-get?view=graph-rest-1.0
 func (m *BucketsPlannerBucketItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BucketsPlannerBucketItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerBucketable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,9 +93,6 @@ func (m *BucketsPlannerBucketItemRequestBuilder) Get(ctx context.Context, reques
 // Patch update the navigation property buckets in planner
 // returns a PlannerBucketable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/plannerbucket-update?view=graph-rest-1.0
 func (m *BucketsPlannerBucketItemRequestBuilder) Patch(ctx context.Context, body iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerBucketable, requestConfiguration *BucketsPlannerBucketItemRequestBuilderPatchRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.PlannerBucketable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -124,7 +115,7 @@ func (m *BucketsPlannerBucketItemRequestBuilder) Patch(ctx context.Context, body
 func (m *BucketsPlannerBucketItemRequestBuilder) Tasks()(*BucketsItemTasksRequestBuilder) {
     return NewBucketsItemTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete plannerBucket.
+// ToDeleteRequestInformation delete navigation property buckets for planner
 // returns a *RequestInformation when successful
 func (m *BucketsPlannerBucketItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BucketsPlannerBucketItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +126,7 @@ func (m *BucketsPlannerBucketItemRequestBuilder) ToDeleteRequestInformation(ctx 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a plannerBucket object.
+// ToGetRequestInformation read-only. Nullable. Returns a collection of the specified buckets
 // returns a *RequestInformation when successful
 func (m *BucketsPlannerBucketItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BucketsPlannerBucketItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

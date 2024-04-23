@@ -18,7 +18,7 @@ type ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderGetQueryParameters read the properties and relationships of a documentSetVersion object.
+// ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderGetQueryParameters version information for a document set version created by a user.
 type ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a version of a document set in a list.
+// Delete delete navigation property documentSetVersions for shares
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/documentsetversion-delete?view=graph-rest-1.0
 func (m *ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,12 +75,9 @@ func (m *ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilde
 func (m *ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) Fields()(*ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder) {
     return NewItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a documentSetVersion object.
+// Get version information for a document set version created by a user.
 // returns a DocumentSetVersionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/documentsetversion-get?view=graph-rest-1.0
 func (m *ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderGetRequestConfiguration)(iadcd81124412c61e647227ecfc4449d8bba17de0380ddda76f641a29edf2b242.DocumentSetVersionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -126,7 +120,7 @@ func (m *ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilde
 func (m *ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) Restore()(*ItemListItemsItemDocumentSetVersionsItemRestoreRequestBuilder) {
     return NewItemListItemsItemDocumentSetVersionsItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a version of a document set in a list.
+// ToDeleteRequestInformation delete navigation property documentSetVersions for shares
 // returns a *RequestInformation when successful
 func (m *ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -137,7 +131,7 @@ func (m *ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilde
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a documentSetVersion object.
+// ToGetRequestInformation version information for a document set version created by a user.
 // returns a *RequestInformation when successful
 func (m *ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListItemsItemDocumentSetVersionsDocumentSetVersionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

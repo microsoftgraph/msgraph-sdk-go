@@ -54,11 +54,8 @@ func NewConnectionsItemGroupsItemMembersIdentityItemRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewConnectionsItemGroupsItemMembersIdentityItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an identity resource to remove the corresponding member from an externalGroup.
+// Delete delete navigation property members for external
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalgroupmember-delete?view=graph-rest-1.0
 func (m *ConnectionsItemGroupsItemMembersIdentityItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectionsItemGroupsItemMembersIdentityItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -113,7 +110,7 @@ func (m *ConnectionsItemGroupsItemMembersIdentityItemRequestBuilder) Patch(ctx c
     }
     return res.(i648e92ed22999203da3c8fad3bc63deefe974fd0d511e7f830d70ea0aff57ffc.Identityable), nil
 }
-// ToDeleteRequestInformation delete an identity resource to remove the corresponding member from an externalGroup.
+// ToDeleteRequestInformation delete navigation property members for external
 // returns a *RequestInformation when successful
 func (m *ConnectionsItemGroupsItemMembersIdentityItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectionsItemGroupsItemMembersIdentityItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

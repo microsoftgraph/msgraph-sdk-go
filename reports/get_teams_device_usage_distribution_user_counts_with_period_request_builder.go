@@ -33,9 +33,12 @@ func NewGetTeamsDeviceUsageDistributionUserCountsWithPeriodRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewGetTeamsDeviceUsageDistributionUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getTeamsDeviceUsageDistributionUserCounts
+// Get get the number of Microsoft Teams unique users by device type over the selected time period.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getteamsdeviceusagedistributionusercounts?view=graph-rest-1.0
 func (m *GetTeamsDeviceUsageDistributionUserCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetTeamsDeviceUsageDistributionUserCountsWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *GetTeamsDeviceUsageDistributionUserCountsWithPeriodRequestBuilder) Get(
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getTeamsDeviceUsageDistributionUserCounts
+// ToGetRequestInformation get the number of Microsoft Teams unique users by device type over the selected time period.
 // returns a *RequestInformation when successful
 func (m *GetTeamsDeviceUsageDistributionUserCountsWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetTeamsDeviceUsageDistributionUserCountsWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
